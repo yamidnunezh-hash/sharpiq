@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SharpIQ — Panel de Administración</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #020509;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+    }
+
+    .top {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .top-tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #f0a500;
+      border: 1px solid rgba(240,165,0,.3);
+      background: rgba(240,165,0,.08);
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .top h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(22px, 4vw, 38px);
+      font-weight: 900;
+      color: #fff;
+    }
+    .top h1 span { color: #f0a500; }
+    .top p {
+      color: #64748b;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .card {
+      background: #06101a;
+      border: 1px solid #1e2d3d;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 20px 28px;
+      border-bottom: 1px solid #1e2d3d;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(240,165,0,.04);
+    }
+    .card-num {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f0a500, #ff4e00);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Orbitron', monospace;
+      font-size: 13px; font-weight: 700;
+      color: #000;
+      flex-shrink: 0;
+    }
+    .card-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .card-sub {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .card-body { padding: 28px; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media(max-width: 580px) { .form-grid { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+    input, select {
+      background: #020509;
+      border: 1px solid #1e2d3d;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #e2e8f0;
+      transition: border-color .2s;
+      outline: none;
+      width: 100%;
+    }
+    input:focus, select:focus { border-color: rgba(240,165,0,.5); }
+    select option { background: #06101a; }
+
+    .btn-gen {
+      margin-top: 20px;
+      width: 100%;
+      padding: 15px;
+      font-family: 'Orbitron', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #000;
+      background: linear-gradient(135deg, #f0a500, #ff4e00);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+      box-shadow: 0 4px 20px rgba(240,165,0,.3);
+    }
+    .btn-gen:hover { opacity: .9; transform: translateY(-2px); }
+    .btn-gen:active { transform: translateY(0); }
+
+    /* Output block */
+    .output-wrap {
+      margin-top: 20px;
+      display: none;
+    }
+    .output-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #22c55e;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .output-label::before {
+      content: '✓';
+      width: 18px; height: 18px;
+      background: rgba(34,197,94,.15);
+      border: 1px solid rgba(34,197,94,.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px;
+    }
+    .output-box {
+      background: #000;
+      border: 1px solid #1e2d3d;
+      border-radius: 8px;
+      padding: 18px 20px;
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      color: #a3e635;
+      white-space: pre;
+      overflow-x: auto;
+      line-height: 1.8;
+    }
+    .btn-copy {
+      margin-top: 12px;
+      width: 100%;
+      padding: 12px;
+      font-family: 'Orbitron', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #22c55e;
+      background: rgba(34,197,94,.1);
+      border: 1px solid rgba(34,197,94,.3);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .btn-copy:hover { background: rgba(34,197,94,.2); }
+    .btn-copy.copied { color: #fff; background: rgba(34,197,94,.3); }
+
+    /* Instructions box */
+    .instruct {
+      background: rgba(240,165,0,.06);
+      border: 1px solid rgba(240,165,0,.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .instruct h3 {
+      font-family: 'Orbitron', monospace;
+      font-size: 12px;
+      color: #f0a500;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .instruct ol {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .instruct li {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+    .instruct li strong { color: #e2e8f0; }
+
+    .divider {
+      text-align: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #1e2d3d;
+      position: relative;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 45%;
+      height: 1px;
+      background: #1e2d3d;
+    }
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+  </style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-tag">PANEL PRIVADO</div>
+  <h1>Admin <span>SharpIQ</span></h1>
+  <p>Genera el texto listo para copiar en datos.js — sin tocar código</p>
+</div>
+
+<div class="container">
+
+  <!-- INSTRUCCIONES -->
+  <div class="instruct">
+    <h3>¿Cómo usar este panel?</h3>
+    <ol>
+      <li>Rellena el formulario del tipo de evento que necesitas</li>
+      <li>Pulsa <strong>Generar Código</strong></li>
+      <li>Pulsa <strong>Copiar</strong></li>
+      <li>Abre <strong>datos.js</strong> con el Bloc de Notas</li>
+      <li>Pega el texto dentro de los corchetes <strong>[ ]</strong> de la sección correcta</li>
+      <li>Guarda el archivo → recarga la web</li>
+    </ol>
+  </div>
+
+  <!-- FORMULARIO 1: PRÓXIMO EVENTO -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">1</div>
+      <div>
+        <div class="card-title">Agregar Próximo Evento</div>
+        <div class="card-sub">Partidos de los próximos días — predicción bloqueada para visitantes</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="form-grid">
+        <div class="field">
+          <label>Fecha del partido</label>
+          <input type="text" id="ev-fecha" placeholder="ej: 20/05/26">
+        </div>
+        <div class="field">
+          <label>Hora (zona horaria)</label>
+          <input type="text" id="ev-hora" placeholder="ej: 21:00 CET">
+        </div>
+        <div class="field full">
+          <label>Partido</label>
+          <input type="text" id="ev-partido" placeholder="ej: Real Madrid vs Barcelona">
+        </div>
+        <div class="field">
+          <label>Liga / Competición</label>
+          <select id="ev-liga">
+            <option value="LaLiga">LaLiga</option>
+            <option value="Premier League">Premier League</option>
+            <option value="Champions League">Champions League</option>
+            <option value="Serie A">Serie A</option>
+            <option value="Bundesliga">Bundesliga</option>
+            <option value="Ligue 1">Ligue 1</option>
+            <option value="Copa Libertadores">Copa Libertadores</option>
+            <option value="Liga BetPlay">Liga BetPlay</option>
+            <option value="NBA">NBA</option>
+            <option value="Otra">Otra (escribe abajo)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Liga personalizada (si elegiste "Otra")</label>
+          <input type="text" id="ev-liga-custom" placeholder="ej: Eliminatorias CONMEBOL">
+        </div>
+        <div class="field full">
+          <label>Tu predicción</label>
+          <input type="text" id="ev-pred" placeholder="ej: Over 2.5 Goles  /  1 Local  /  Ambos Marcan">
+        </div>
+        <div class="field">
+          <label>Cuota</label>
+          <input type="text" id="ev-cuota" placeholder="ej: 1.85">
+        </div>
+      </div>
+      <button class="btn-gen" onclick="generarEvento()">Generar Código → Próximo Evento</button>
+      <div class="output-wrap" id="out-ev">
+        <div class="output-label">Texto generado — cópialo en datos.js</div>
+        <div class="output-box" id="code-ev"></div>
+        <button class="btn-copy" id="copy-ev" onclick="copiar('code-ev','copy-ev')">📋 Copiar al portapapeles</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">────────────────────</div>
+
+  <!-- FORMULARIO 2: REGISTRAR RESULTADO -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">2</div>
+      <div>
+        <div class="card-title">Registrar Resultado</div>
+        <div class="card-sub">Cuando termina el partido — se mueve al historial con el resultado</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="form-grid">
+        <div class="field">
+          <label>Fecha del partido</label>
+          <input type="text" id="res-fecha" placeholder="ej: 18/05/26">
+        </div>
+        <div class="field full">
+          <label>Partido</label>
+          <input type="text" id="res-partido" placeholder="ej: Real Madrid vs Barcelona">
+        </div>
+        <div class="field">
+          <label>Liga / Competición</label>
+          <select id="res-liga">
+            <option value="LaLiga">LaLiga</option>
+            <option value="Premier League">Premier League</option>
+            <option value="Champions League">Champions League</option>
+            <option value="Serie A">Serie A</option>
+            <option value="Bundesliga">Bundesliga</option>
+            <option value="Ligue 1">Ligue 1</option>
+            <option value="Copa Libertadores">Copa Libertadores</option>
+            <option value="Liga BetPlay">Liga BetPlay</option>
+            <option value="NBA">NBA</option>
+            <option value="Otra">Otra (escribe abajo)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Liga personalizada (si elegiste "Otra")</label>
+          <input type="text" id="res-liga-custom" placeholder="ej: Eliminatorias CONMEBOL">
+        </div>
+        <div class="field full">
+          <label>Predicción que diste</label>
+          <input type="text" id="res-pred" placeholder="ej: Over 2.5 Goles">
+        </div>
+        <div class="field">
+          <label>Cuota</label>
+          <input type="text" id="res-cuota" placeholder="ej: 1.85">
+        </div>
+        <div class="field">
+          <label>Resultado</label>
+          <select id="res-resultado">
+            <option value="win">✓ ACIERTO — Acerté</option>
+            <option value="loss">✗ FALLO — Fallé</option>
+            <option value="pending">⏳ PENDIENTE — Aún no jugó</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-gen" onclick="generarResultado()">Generar Código → Historial</button>
+      <div class="output-wrap" id="out-res">
+        <div class="output-label">Texto generado — cópialo en datos.js</div>
+        <div class="output-box" id="code-res"></div>
+        <button class="btn-copy" id="copy-res" onclick="copiar('code-res','copy-res')">📋 Copiar al portapapeles</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECORDATORIO -->
+  <div class="instruct">
+    <h3>¿Dónde pego el texto en datos.js?</h3>
+    <ol>
+      <li>Para Próximos Eventos: busca <strong>PROXIMOS_EVENTOS = [</strong> y pega <strong>antes</strong> del último evento (antes del último <strong>}</strong> seguido de <strong>]</strong>)</li>
+      <li>Para el Historial: busca <strong>PREDICCIONES_HISTORIAL = [</strong> y pega al <strong>principio</strong>, justo después del primer <strong>[</strong></li>
+      <li>Asegúrate de que cada bloque termina con una <strong>coma ,</strong> (ya está incluida en el texto generado)</li>
+      <li>Guarda datos.js → recarga la web y listo</li>
+    </ol>
+  </div>
+
+</div>
+
+<script>
+  function getliga(selectId, customId) {
+    const sel = document.getElementById(selectId).value;
+    const custom = document.getElementById(customId).value.trim();
+    return (sel === 'Otra' && custom) ? custom : sel;
+  }
+
+  function generarEvento() {
+    const fecha   = document.getElementById('ev-fecha').value.trim()   || 'DD/MM/AA';
+    const partido = document.getElementById('ev-partido').value.trim() || 'Equipo A vs Equipo B';
+    const liga    = getliga('ev-liga', 'ev-liga-custom');
+    const pred    = document.getElementById('ev-pred').value.trim()    || 'Tu predicción aquí';
+    const cuota   = document.getElementById('ev-cuota').value.trim()   || '1.00';
+    const hora    = document.getElementById('ev-hora').value.trim()    || '00:00 CET';
+
+    const code =
+`  {
+    fecha:      "${fecha}",
+    partido:    "${partido}",
+    liga:       "${liga}",
+    prediccion: "${pred}",
+    cuota:      "${cuota}",
+    hora:       "${hora}",
+    status:     "vip"
+  },`;
+
+    document.getElementById('code-ev').textContent = code;
+    const wrap = document.getElementById('out-ev');
+    wrap.style.display = 'block';
+    wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const btn = document.getElementById('copy-ev');
+    btn.textContent = '📋 Copiar al portapapeles';
+    btn.classList.remove('copied');
+  }
+
+  function generarResultado() {
+    const fecha     = document.getElementById('res-fecha').value.trim()     || 'DD/MM/AA';
+    const partido   = document.getElementById('res-partido').value.trim()   || 'Equipo A vs Equipo B';
+    const liga      = getliga('res-liga', 'res-liga-custom');
+    const pred      = document.getElementById('res-pred').value.trim()      || 'Tu predicción aquí';
+    const cuota     = document.getElementById('res-cuota').value.trim()     || '1.00';
+    const resultado = document.getElementById('res-resultado').value;
+
+    const code =
+`  {
+    fecha:      "${fecha}",
+    partido:    "${partido}",
+    liga:       "${liga}",
+    prediccion: "${pred}",
+    cuota:      "${cuota}",
+    resultado:  "${resultado}"
+  },`;
+
+    document.getElementById('code-res').textContent = code;
+    const wrap = document.getElementById('out-res');
+    wrap.style.display = 'block';
+    wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const btn = document.getElementById('copy-res');
+    btn.textContent = '📋 Copiar al portapapeles';
+    btn.classList.remove('copied');
+  }
+
+  function copiar(codeId, btnId) {
+    const text = document.getElementById(codeId).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById(btnId);
+      btn.textContent = '✓ ¡Copiado! Ahora pégalo en datos.js';
+      btn.classList.add('copied');
+    });
+  }
+</script>
+</body>
+</html>
