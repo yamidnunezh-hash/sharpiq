@@ -115,6 +115,7 @@ LIGAS_ODDS = {
     "3":   "soccer_uefa_europa_league",
     "13":  "soccer_conmebol_copa_libertadores",
     "11":  "soccer_conmebol_copa_sudamericana",
+    "1":   "soccer_fifa_world_cup",
 }
 
 # Casas de apuestas preferidas (europeas, disponibles en Colombia)
@@ -134,20 +135,21 @@ LIGAS = {
 
 # Liga IDs de api-sports.io que el motor analiza
 LIGAS_APIFB = {
-    39:   "Premier League",
-    140:  "La Liga",
-    78:   "Bundesliga",
-    135:  "Serie A",
-    61:   "Ligue 1",
+    1:    "Mundial FIFA 2026",
     2:    "Champions League",
     3:    "Europa League",
-    13:   "Copa Libertadores",
-    11:   "Copa Sudamericana",
-    241:  "Copa Colombia",
+    39:   "Premier League",
+    61:   "Ligue 1",
     71:   "Brasileirao Serie A",
-    262:  "Liga MX",
-    253:  "MLS",
+    78:   "Bundesliga",
+    11:   "Copa Sudamericana",
+    13:   "Copa Libertadores",
     128:  "Liga BetPlay",
+    135:  "Serie A",
+    140:  "La Liga",
+    241:  "Copa Colombia",
+    253:  "MLS",
+    262:  "Liga MX",
 }
 
 # ── API-FOOTBALL: FORMA, H2H, LESIONES ─────────────────────────
