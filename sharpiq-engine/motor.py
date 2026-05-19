@@ -103,6 +103,8 @@ LIGAS_ODDS = {
     "SA":  "soccer_italy_serie_a",
     "FL1": "soccer_france_ligue_one",
     "CL":  "soccer_uefa_champs_league",
+    "CLI": "soccer_conmebol_copa_libertadores",
+    "CSA": "soccer_conmebol_copa_sudamericana",
 }
 
 # Casas de apuestas preferidas (europeas, disponibles en Colombia)
@@ -115,6 +117,8 @@ LIGAS = {
     "SA":  "Serie A",
     "FL1": "Ligue 1",
     "CL":  "Champions League",
+    "CLI": "Copa Libertadores",
+    "CSA": "Copa Sudamericana",
     "WC":  "Mundial",
 }
 
@@ -298,7 +302,7 @@ def cargar_stats_liga(codigo_liga):
         pass
 
 def cargar_todas_las_stats():
-    for codigo in ["PL", "PD", "BL1", "SA", "FL1"]:
+    for codigo in ["PL", "PD", "BL1", "SA", "FL1", "CLI", "CSA"]:
         cargar_stats_liga(codigo)
 
 def get_stats_equipo(nombre):
@@ -462,6 +466,49 @@ STATS_EQUIPOS = {
     "PSG":                       {"ataque": 2.2, "defensa": 0.8, "forma": 0.86},
     "Inter Milan":               {"ataque": 1.8, "defensa": 0.8, "forma": 0.83},
     "Juventus":                  {"ataque": 1.5, "defensa": 0.9, "forma": 0.72},
+    # Copa Libertadores 2026
+    "Boca Juniors":              {"ataque": 1.7, "defensa": 1.0, "forma": 0.78},
+    "Fluminense":                {"ataque": 1.5, "defensa": 1.1, "forma": 0.72},
+    "Cruzeiro":                  {"ataque": 1.6, "defensa": 1.0, "forma": 0.74},
+    "Rosario Central":           {"ataque": 1.4, "defensa": 1.2, "forma": 0.68},
+    "Santa Fe":                  {"ataque": 1.3, "defensa": 1.2, "forma": 0.65},
+    "Coquimbo Unido":            {"ataque": 1.2, "defensa": 1.3, "forma": 0.62},
+    "Tolima":                    {"ataque": 1.3, "defensa": 1.2, "forma": 0.64},
+    "Always Ready":              {"ataque": 1.2, "defensa": 1.3, "forma": 0.60},
+    "Mirassol":                  {"ataque": 1.4, "defensa": 1.1, "forma": 0.68},
+    "Platense":                  {"ataque": 1.2, "defensa": 1.3, "forma": 0.62},
+    "Bolivar":                   {"ataque": 1.6, "defensa": 1.0, "forma": 0.72},
+    "Club Bolivar":              {"ataque": 1.6, "defensa": 1.0, "forma": 0.72},
+    "Universidad Cesar Vallejo": {"ataque": 1.1, "defensa": 1.4, "forma": 0.58},
+    "UCV":                       {"ataque": 1.1, "defensa": 1.4, "forma": 0.58},
+    # Copa Sudamericana 2026
+    "America de Cali":           {"ataque": 1.4, "defensa": 1.2, "forma": 0.66},
+    "America":                   {"ataque": 1.4, "defensa": 1.2, "forma": 0.66},
+    "Tigre":                     {"ataque": 1.3, "defensa": 1.2, "forma": 0.64},
+    "Boston River":              {"ataque": 1.2, "defensa": 1.3, "forma": 0.60},
+    "O'Higgins":                 {"ataque": 1.3, "defensa": 1.2, "forma": 0.63},
+    "Sao Paulo":                 {"ataque": 1.6, "defensa": 1.0, "forma": 0.74},
+    "São Paulo":                 {"ataque": 1.6, "defensa": 1.0, "forma": 0.74},
+    "Millonarios":               {"ataque": 1.4, "defensa": 1.1, "forma": 0.68},
+    "Cuenca":                    {"ataque": 1.1, "defensa": 1.4, "forma": 0.58},
+    "Deportivo Cuenca":          {"ataque": 1.1, "defensa": 1.4, "forma": 0.58},
+    "Recoleta":                  {"ataque": 1.1, "defensa": 1.4, "forma": 0.56},
+    "Deportes Recoleta":         {"ataque": 1.1, "defensa": 1.4, "forma": 0.56},
+    "Torque":                    {"ataque": 1.2, "defensa": 1.3, "forma": 0.60},
+    "Deportivo Riestra":         {"ataque": 1.2, "defensa": 1.3, "forma": 0.62},
+    "Dep. Riestra":              {"ataque": 1.2, "defensa": 1.3, "forma": 0.62},
+    "Audax Italiano":            {"ataque": 1.3, "defensa": 1.2, "forma": 0.63},
+    "Barracas Central":          {"ataque": 1.2, "defensa": 1.3, "forma": 0.61},
+    "Barracas":                  {"ataque": 1.2, "defensa": 1.3, "forma": 0.61},
+    "Racing Club":               {"ataque": 1.7, "defensa": 1.0, "forma": 0.76},
+    "River Plate":               {"ataque": 1.9, "defensa": 0.9, "forma": 0.82},
+    "Atletico Nacional":         {"ataque": 1.5, "defensa": 1.1, "forma": 0.70},
+    "Junior":                    {"ataque": 1.3, "defensa": 1.2, "forma": 0.64},
+    "Independiente":             {"ataque": 1.4, "defensa": 1.2, "forma": 0.66},
+    "Estudiantes":               {"ataque": 1.5, "defensa": 1.1, "forma": 0.70},
+    "Palestino":                 {"ataque": 1.2, "defensa": 1.3, "forma": 0.61},
+    "LDU Quito":                 {"ataque": 1.5, "defensa": 1.1, "forma": 0.70},
+    "Deportes Iquique":          {"ataque": 1.1, "defensa": 1.4, "forma": 0.57},
 }
 
 PROMEDIO_LIGA = {"ataque": 1.35, "defensa": 1.35}

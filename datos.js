@@ -9,15 +9,6 @@
 // Cuando terminen, muévelos a PREDICCIONES_HISTORIAL y pon el resultado.
 // status: "vip" = bloqueado para no suscriptores, "free" = visible para todos
 const PROXIMOS_EVENTOS = [
-  {
-    fecha:      "18/05/26",
-    partido:    "Bayern Munich vs PSG",
-    liga:       "Champions League",
-    prediccion: "Victoria Local (1)",
-    cuota:      "2.24",
-    hora:       "16:00 COT",
-    status:     "vip"
-  }
 ];
 
 // ── HISTORIAL DE PREDICCIONES ─────────────────────────────────
@@ -56,7 +47,7 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Champions League",
     prediccion: "Victoria Local (1)",
     cuota:      "2.24",
-    resultado:  "pending"
+    resultado:  "loss"
   },
   {
     fecha:      "17/05/26",
