@@ -105,6 +105,16 @@ LIGAS_ODDS = {
     "CL":  "soccer_uefa_champs_league",
     "CLI": "soccer_conmebol_copa_libertadores",
     "CSA": "soccer_conmebol_copa_sudamericana",
+    # api-sports IDs → the-odds-api
+    "39":  "soccer_epl",
+    "140": "soccer_spain_la_liga",
+    "78":  "soccer_germany_bundesliga",
+    "135": "soccer_italy_serie_a",
+    "61":  "soccer_france_ligue_one",
+    "2":   "soccer_uefa_champs_league",
+    "3":   "soccer_uefa_europa_league",
+    "13":  "soccer_conmebol_copa_libertadores",
+    "11":  "soccer_conmebol_copa_sudamericana",
 }
 
 # Casas de apuestas preferidas (europeas, disponibles en Colombia)
@@ -120,6 +130,24 @@ LIGAS = {
     "CLI": "Copa Libertadores",
     "CSA": "Copa Sudamericana",
     "WC":  "Mundial",
+}
+
+# Liga IDs de api-sports.io que el motor analiza
+LIGAS_APIFB = {
+    39:   "Premier League",
+    140:  "La Liga",
+    78:   "Bundesliga",
+    135:  "Serie A",
+    61:   "Ligue 1",
+    2:    "Champions League",
+    3:    "Europa League",
+    13:   "Copa Libertadores",
+    11:   "Copa Sudamericana",
+    241:  "Copa Colombia",
+    71:   "Brasileirao Serie A",
+    262:  "Liga MX",
+    253:  "MLS",
+    128:  "Liga BetPlay",
 }
 
 # ── API-FOOTBALL: FORMA, H2H, LESIONES ─────────────────────────
@@ -250,6 +278,37 @@ def obtener_lesiones(equipo):
     return lesionados
 
 # ── OBTENER PARTIDOS DEL DÍA ────────────────────────────────────
+def obtener_partidos_hoy_apifb():
+    """Una sola llamada trae todos los partidos del día de todas las ligas configuradas."""
+    hoy = date.today().isoformat()
+    data = _apifb("fixtures", {"date": hoy})
+    if not data or not data.get("response"):
+        return []
+    partidos = []
+    conteo = {}
+    for f in data["response"]:
+        lid = f["league"]["id"]
+        if lid not in LIGAS_APIFB:
+            continue
+        nombre_liga = LIGAS_APIFB[lid]
+        status = f["fixture"]["status"]["short"]
+        if status not in ("NS", "TBD"):
+            continue  # solo partidos no iniciados
+        partidos.append({
+            "id":         f["fixture"]["id"],
+            "liga":       nombre_liga,
+            "liga_code":  str(lid),
+            "local":      f["teams"]["home"]["name"],
+            "visitante":  f["teams"]["away"]["name"],
+            "hora":       f["fixture"]["date"][11:16],
+            "estado":     status,
+        })
+        conteo[nombre_liga] = conteo.get(nombre_liga, 0) + 1
+    for liga, n in sorted(conteo.items()):
+        print(f"  {liga}: {n} partidos")
+    return partidos
+
+
 def obtener_partidos_liga(codigo_liga, fecha):
     headers = {"X-Auth-Token": API_KEY}
     url = f"{API_URL}/competitions/{codigo_liga}/matches?dateFrom={fecha}&dateTo={fecha}&status=SCHEDULED"
@@ -313,6 +372,13 @@ def get_stats_equipo(nombre):
     return {"ataque": 1.35, "defensa": 1.35, "forma": 0.75}
 
 def obtener_partidos_hoy():
+    # Primero intentar api-sports.io (cubre todas las ligas del mundo)
+    if APIFOOTBALL_KEY:
+        partidos = obtener_partidos_hoy_apifb()
+        if partidos:
+            return partidos
+        print("  api-sports sin resultados, usando football-data.org...")
+    # Fallback: football-data.org (solo ligas europeas)
     hoy = date.today().isoformat()
     todos = []
     for codigo in LIGAS.keys():
