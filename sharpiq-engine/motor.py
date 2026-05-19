@@ -790,7 +790,7 @@ def calcular_value_bet(prob_modelo, cuota_casa):
     prob_decimal = prob_modelo / 100
     value = (prob_decimal * cuota_casa) - 1
     ev_porcentaje = round(value * 100, 1)
-    tiene_valor = bool(value > 0.05)  # mínimo 5% de valor
+    tiene_valor = bool(value > 0.15)  # mínimo 15% EV — solo ALTO VALOR
     return {
         "value": float(round(value, 3)),
         "ev_porcentaje": float(ev_porcentaje),
