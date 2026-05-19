@@ -489,7 +489,7 @@
 
     /* ── PLANES ── */
     .sec-plans{padding:120px 0;background:var(--bg1);position:relative;z-index:2}
-    .plans-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:start}
+    .plans-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:stretch}
     .plan-card{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:40px;position:relative;overflow:hidden}
     .plan-card.feat{border-color:var(--gold);box-shadow:0 0 50px rgba(240,165,0,.1)}
     .plan-card.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),#ff4e00)}
@@ -522,6 +522,44 @@
     .lv-d{font-size:13px;color:var(--t2)}
     .lv-p{font-family:'Space Mono',monospace;font-size:14px;font-weight:700;color:var(--green)}
     .mlm-note{font-size:12px;color:var(--t3);line-height:1.65;margin-bottom:24px;font-style:italic}
+
+    /* ── ESTRATEGIA DE RENTABILIDAD ── */
+    .sec-rent{padding:120px 0;background:var(--bg2);position:relative;z-index:2}
+    .rent-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .rent-meto{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:36px;height:100%}
+    .rent-meto h3{font-family:'Orbitron',monospace;font-size:15px;color:var(--gold);margin-bottom:24px}
+    .rent-steps{display:flex;flex-direction:column;gap:20px}
+    .rent-step{display:flex;gap:16px;align-items:flex-start}
+    .rent-sn{background:rgba(240,165,0,.15);border:1px solid rgba(240,165,0,.4);color:var(--gold);font-weight:700;font-size:13px;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .rent-st{font-size:14px;color:var(--t2);line-height:1.7}
+    .rent-st strong{color:var(--t1);display:block;margin-bottom:4px}
+    .calc-card{background:var(--card);border:1px solid rgba(240,165,0,.3);border-radius:var(--rl);padding:36px;box-shadow:0 0 50px rgba(240,165,0,.07)}
+    .calc-card h3{font-family:'Orbitron',monospace;font-size:15px;color:var(--gold);margin-bottom:24px}
+    .calc-label{font-size:11px;font-weight:700;color:var(--t2);letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+    .calc-input{background:var(--bg1);border:1px solid var(--border);border-radius:8px;padding:14px 18px;font-size:22px;font-weight:700;color:var(--t1);font-family:'Orbitron',monospace;outline:none;transition:border-color .2s;width:100%;margin-bottom:20px}
+    .calc-input:focus{border-color:var(--gold)}
+    .risk-btns{display:flex;gap:8px;margin-bottom:24px}
+    .risk-btn{flex:1;padding:10px 6px;border-radius:7px;border:1px solid var(--border);background:var(--bg1);color:var(--t2);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;line-height:1.4}
+    .risk-btn.active{background:rgba(240,165,0,.15);border-color:var(--gold);color:var(--gold)}
+    .risk-btn:hover{border-color:var(--borderg);color:var(--goldl)}
+    .calc-results{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+    .calc-res{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--bg1);border-radius:8px;border:1px solid var(--border)}
+    .calc-res-lbl{font-size:13px;color:var(--t2)}
+    .calc-res-val{font-family:'Orbitron',monospace;font-size:15px;font-weight:700;color:var(--green)}
+    .calc-res-val.gold{color:var(--gold)}
+    .calc-disc{padding:14px 16px;background:rgba(240,165,0,.05);border-left:3px solid rgba(240,165,0,.25);border-radius:4px;font-size:12px;color:var(--t3);line-height:1.65}
+    .risk-table-wrap{margin-top:56px;overflow-x:auto}
+    .risk-tit{font-family:'Orbitron',monospace;font-size:14px;color:var(--t1);margin-bottom:20px;text-align:center;letter-spacing:.5px}
+    .risk-table{width:100%;border-collapse:collapse;font-size:13px}
+    .risk-table th{background:rgba(240,165,0,.07);border:1px solid var(--border);padding:12px 16px;color:var(--gold);font-family:'Orbitron',monospace;font-size:10px;letter-spacing:.5px;text-transform:uppercase;text-align:left}
+    .risk-table td{border:1px solid var(--border);padding:12px 16px;color:var(--t2);vertical-align:middle}
+    .risk-table tr:hover td{background:rgba(255,255,255,.02)}
+    .risk-badge{display:inline-block;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+    .rb-c{background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25)}
+    .rb-m{background:rgba(240,165,0,.12);color:var(--gold);border:1px solid rgba(240,165,0,.25)}
+    .rb-a{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.25)}
+    @media(max-width:1024px){.rent-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.risk-btns{flex-direction:column}.risk-table th:nth-child(6),.risk-table td:nth-child(6){display:none}}
 
     /* ── CONTACTO ── */
     .sec-cont{padding:120px 0;position:relative;z-index:2}
@@ -649,6 +687,7 @@
       <li><a href="#predicciones">Predicciones</a></li>
       <li><a href="#analisis">Análisis</a></li>
       <li><a href="#planes">Planes</a></li>
+      <li><a href="#estrategia">Estrategia</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="nav-cta">Únete — $10 USD</a>
@@ -660,6 +699,7 @@
   <a href="#predicciones" onclick="closeNav()">Predicciones</a>
   <a href="#analisis"     onclick="closeNav()">Análisis</a>
   <a href="#planes"       onclick="closeNav()">Planes</a>
+  <a href="#estrategia"   onclick="closeNav()">Estrategia</a>
   <a href="#contacto"     onclick="closeNav()">Contacto</a>
   <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="btn-g" onclick="closeNav()" style="text-align:center;border-radius:7px;padding:14px;margin-top:8px;display:block">Únete — $10 USD/mes</a>
 </div>
@@ -1098,13 +1138,13 @@
         <div class="plan-price"><span class="p-cur">$</span><span class="p-amt">10</span><span class="p-per">USD / mes</span></div>
         <p class="plan-desc">Acceso completo a predicciones, análisis escritos y alertas en tiempo real. Sin filtros ni retrasos.</p>
         <ul class="plan-feats">
-          <li>Predicciones diarias de fútbol</li>
-          <li>Análisis NBA completo</li>
-          <li>Alertas por WhatsApp / Telegram</li>
-          <li>Historial de predicciones verificable</li>
-          <li>Análisis escrito semanal</li>
-          <li>Acceso a comunidad exclusiva</li>
-          <li>Sistema de referidos multinivel activo</li>
+          <li>Canal VIP de Telegram con acceso inmediato</li>
+          <li>Predicciones diarias con value bets detectados por IA</li>
+          <li>Análisis de cuotas: Over/Under, BTTS, 1X2</li>
+          <li>Alertas antes de cada partido — sin retrasos</li>
+          <li>Historial de predicciones 100% verificable</li>
+          <li>Estrategia de bankroll incluida (stake 3%)</li>
+          <li>Soporte directo con el equipo SharpIQ</li>
         </ul>
         <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="btn-plan gold">Unirme Ahora → $10 USD 🔥 Lanzamiento</a>
       </div>
@@ -1123,6 +1163,118 @@
           <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="btn-plan out">Activar Membresía VIP</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ESTRATEGIA DE RENTABILIDAD ── -->
+<section class="sec-rent" id="estrategia">
+  <div class="wrap">
+    <div class="sh c">
+      <span class="stag rv">Gestión de Capital</span>
+      <h2 class="st rv">Estrategia de <span>Rentabilidad</span></h2>
+      <p class="ssub rv">Nuestro sistema usa gestión fraccionada de bankroll: apuestas pequeñas y constantes, crecimiento sostenido. Calcula cuánto puedes ganar con tu propio capital.</p>
+    </div>
+    <div class="rent-grid">
+      <!-- Metodología -->
+      <div class="rent-meto rvl">
+        <h3>⚙️ Cómo funciona la estrategia</h3>
+        <div class="rent-steps">
+          <div class="rent-step">
+            <div class="rent-sn">1</div>
+            <div class="rent-st">
+              <strong>Define tu bankroll</strong>
+              Capital total que destinas a apuestas. Nunca dinero que no puedas perder — la disciplina es la base de todo.
+            </div>
+          </div>
+          <div class="rent-step">
+            <div class="rent-sn">2</div>
+            <div class="rent-st">
+              <strong>Stake del 3% por apuesta</strong>
+              Por cada evento apostás el 3% de tu bankroll. Con $500.000 COP, cada apuesta es $15.000. Bajo riesgo, sin ruina, crecimiento constante.
+            </div>
+          </div>
+          <div class="rent-step">
+            <div class="rent-sn">3</div>
+            <div class="rent-st">
+              <strong>Value Betting con IA</strong>
+              Solo apostamos cuando el modelo detecta valor real — la cuota del mercado es mayor a la probabilidad real del evento. EV positivo garantizado como filtro.
+            </div>
+          </div>
+          <div class="rent-step">
+            <div class="rent-sn">4</div>
+            <div class="rent-st">
+              <strong>Reinversión compuesta</strong>
+              Las ganancias se suman al bankroll. El stake crece con él. A 6 meses la diferencia entre apostar fijo vs. compuesto es enorme.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Calculadora -->
+      <div class="calc-card rvr">
+        <h3>🧮 Calculadora de Proyecciones</h3>
+        <div class="calc-label">Tu Bankroll (COP $)</div>
+        <input class="calc-input" type="number" id="calc-bankroll" placeholder="500000" oninput="calcular()" value="500000">
+        <div class="calc-label" style="margin-bottom:8px">Nivel de riesgo</div>
+        <div class="risk-btns">
+          <button class="risk-btn" onclick="setRisk(1,this)">🛡️ 1%<br><small>Conservador</small></button>
+          <button class="risk-btn active" onclick="setRisk(3,this)">⚡ 3%<br><small>Moderado</small></button>
+          <button class="risk-btn" onclick="setRisk(5,this)">🔥 5%<br><small>Agresivo</small></button>
+        </div>
+        <div class="calc-results">
+          <div class="calc-res"><span class="calc-res-lbl">Stake por apuesta</span><span class="calc-res-val gold" id="r-stake">$15.000</span></div>
+          <div class="calc-res"><span class="calc-res-lbl">Apuestas estimadas / semana</span><span class="calc-res-val" id="r-bets">5 eventos</span></div>
+          <div class="calc-res"><span class="calc-res-lbl">Ganancia estimada / semana</span><span class="calc-res-val" id="r-week">+$11.025</span></div>
+          <div class="calc-res"><span class="calc-res-lbl">Ganancia estimada / mes</span><span class="calc-res-val" id="r-month">+$44.100</span></div>
+          <div class="calc-res"><span class="calc-res-lbl">ROI mensual estimado</span><span class="calc-res-val gold" id="r-roi">+8.8%</span></div>
+        </div>
+        <div class="calc-disc">
+          Proyecciones basadas en 82% de precisión histórica, cuotas promedio 1.85 y 5 eventos semanales. Los resultados pasados no garantizan rendimientos futuros.
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla comparativa de niveles de riesgo -->
+    <div class="risk-table-wrap rv">
+      <div class="risk-tit">Comparativa de Niveles de Riesgo — Bankroll $500.000 COP</div>
+      <table class="risk-table">
+        <thead>
+          <tr>
+            <th>Nivel</th>
+            <th>Stake %</th>
+            <th>Por apuesta</th>
+            <th>Ganancia / mes</th>
+            <th>ROI mensual</th>
+            <th>Perfil ideal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="risk-badge rb-c">Conservador</span></td>
+            <td><strong style="color:var(--green)">1%</strong></td>
+            <td>$5.000</td>
+            <td style="color:var(--green);font-weight:600">+$14.700</td>
+            <td style="color:var(--green);font-weight:600">+2.9%</td>
+            <td>Principiante, capital limitado, aprendiendo el sistema</td>
+          </tr>
+          <tr>
+            <td><span class="risk-badge rb-m">Moderado ★</span></td>
+            <td><strong style="color:var(--gold)">3%</strong></td>
+            <td>$15.000</td>
+            <td style="color:var(--gold);font-weight:600">+$44.100</td>
+            <td style="color:var(--gold);font-weight:600">+8.8%</td>
+            <td>Recomendado por SharpIQ — balance riesgo/retorno óptimo</td>
+          </tr>
+          <tr>
+            <td><span class="risk-badge rb-a">Agresivo</span></td>
+            <td><strong style="color:#f87171">5%</strong></td>
+            <td>$25.000</td>
+            <td style="color:#f87171;font-weight:600">+$73.500</td>
+            <td style="color:#f87171;font-weight:600">+14.7%</td>
+            <td>Experto, tolera drawdowns, bankroll consolidado</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -1191,6 +1343,7 @@
           <li><a href="#predicciones">Predicciones</a></li>
           <li><a href="#analisis">Análisis</a></li>
           <li><a href="#planes">Planes</a></li>
+          <li><a href="#estrategia">Estrategia</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
@@ -1464,6 +1617,34 @@ document.querySelectorAll('.snum[data-target]').forEach(el=>co.observe(el));
     ring.appendChild(dot);
   }
 })();
+
+// CALCULADORA DE RENTABILIDAD
+let currentRisk = 3;
+function setRisk(pct, btn) {
+  currentRisk = pct;
+  document.querySelectorAll('.risk-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  calcular();
+}
+function calcular() {
+  const bankroll = parseFloat(document.getElementById('calc-bankroll').value) || 0;
+  const stake    = bankroll * (currentRisk / 100);
+  const WIN_RATE = 0.62;
+  const AVG_ODDS = 1.85;
+  const BETS     = 5;
+  const evPerBet  = stake * (WIN_RATE * AVG_ODDS - 1);
+  const weekly    = evPerBet * BETS;
+  const monthly   = weekly * 4;
+  const roi       = bankroll > 0 ? (monthly / bankroll * 100) : 0;
+  const fmt = v => '$' + Math.round(v).toLocaleString('es-CO');
+  document.getElementById('r-stake').textContent = fmt(stake);
+  document.getElementById('r-bets').textContent  = BETS + ' eventos';
+  document.getElementById('r-week').textContent  = '+' + fmt(weekly);
+  document.getElementById('r-month').textContent = '+' + fmt(monthly);
+  document.getElementById('r-roi').textContent   = '+' + roi.toFixed(1) + '%';
+}
+// inicializar calculadora al cargar
+document.addEventListener('DOMContentLoaded', calcular);
 
 // FORM
 function handleForm(e){
