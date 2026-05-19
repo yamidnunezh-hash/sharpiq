@@ -815,28 +815,28 @@
         <div class="dc gold-card rv d1">
           <span class="dc-pill gp">Predicciones Correctas</span>
           <div class="dc-ico gi">📊</div>
-          <div class="dc-val"><span data-target="11" class="snum" style="font-size:52px;color:var(--t1)">0</span><span class="dc-suf">&nbsp;/ 15</span></div>
+          <div class="dc-val"><span id="dash-wins" class="snum" style="font-size:52px;color:var(--t1)">0</span><span class="dc-suf" id="dash-total">&nbsp;/ —</span></div>
           <div class="dc-sub">Últimos 30 días</div>
         </div>
 
         <div class="dc dark-card rv d2">
-          <span class="dc-pill dp">ROI Estimado</span>
+          <span class="dc-pill dp">Yield Verificado</span>
           <div class="dc-ico bi">📈</div>
-          <div class="dc-val"><span class="dc-pre">+</span><span data-target="19" class="snum" style="font-size:52px;color:var(--t1)">0</span><span class="dc-suf">%</span></div>
-          <div class="dc-sub">Sobre capital invertido</div>
+          <div class="dc-val"><span class="dc-pre">+</span><span id="dash-roi" class="snum" style="font-size:52px;color:var(--t1)">0</span><span class="dc-suf">%</span></div>
+          <div class="dc-sub">Ganancia por unidad apostada</div>
         </div>
 
         <div class="dc green-card rv d3">
-          <span class="dc-pill grp">Suscriptores</span>
-          <div class="dc-ico gri">👥</div>
-          <div class="dc-val"><span class="dc-pre">+</span><span data-target="143" class="snum" style="font-size:52px;color:var(--t1)">0</span></div>
-          <div class="dc-sub">Comunidad activa</div>
+          <span class="dc-pill grp">Partidos Analizados</span>
+          <div class="dc-ico gri">🔬</div>
+          <div class="dc-val"><span id="dash-total2" class="snum" style="font-size:52px;color:var(--t1)">0</span></div>
+          <div class="dc-sub">Con modelo activo</div>
         </div>
 
         <div class="dc blue-card rv d4">
           <span class="dc-pill bp">Racha Actual</span>
           <div class="dc-ico bi">🔥</div>
-          <div class="dc-val"><span data-target="4" class="snum" style="font-size:52px;color:var(--t1)">0</span></div>
+          <div class="dc-val"><span id="dash-racha" class="snum" style="font-size:52px;color:var(--t1)">0</span></div>
           <div class="dc-sub">Aciertos consecutivos</div>
         </div>
 
@@ -849,7 +849,7 @@
           <div class="ring-center">
             <div class="rc-label">Tasa de Aciertos</div>
             <div class="rc-val">
-              <span data-target="73" class="snum" style="font-size:86px;color:var(--t1)" id="ringNum">0</span>
+              <span id="dash-tasa" class="snum" style="font-size:86px;color:var(--t1)" id="ringNum">0</span>
               <span class="rc-val-pct">%</span>
             </div>
             <div class="rc-badge"><div class="hero-dot" style="background:#000;width:6px;height:6px"></div>MODELO IA ACTIVO</div>
@@ -1489,6 +1489,18 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     if(kRac){kRac.dataset.target=racha;kRac.textContent=0;}
     if(kRoi){kRoi.dataset.target=yieldPct;kRoi.textContent=0;}
     if(kOdds) kOdds.textContent=avgOdds;
+
+    // Sync dashboard cards with same data
+    const tasa=resolved.length?Math.round(wins.length/resolved.length*100):0;
+    const dW=document.getElementById('dash-wins'),dT=document.getElementById('dash-total'),
+          dT2=document.getElementById('dash-total2'),dRoi=document.getElementById('dash-roi'),
+          dRac=document.getElementById('dash-racha'),dTasa=document.getElementById('dash-tasa');
+    if(dW){dW.dataset.target=wins.length;dW.textContent=0;}
+    if(dT) dT.textContent=' / '+resolved.length;
+    if(dT2){dT2.dataset.target=PREDICCIONES_HISTORIAL.length;dT2.textContent=0;}
+    if(dRoi){dRoi.dataset.target=yieldPct;dRoi.textContent=0;}
+    if(dRac){dRac.dataset.target=racha;dRac.textContent=0;}
+    if(dTasa){dTasa.dataset.target=tasa;dTasa.textContent=0;}
   }
 
   // Próximos Eventos grid
