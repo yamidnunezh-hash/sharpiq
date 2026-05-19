@@ -30,6 +30,28 @@ class SharpIQHandler(SimpleHTTPRequestHandler):
         self._cors()
         self.end_headers()
 
+    def do_GET(self):
+        if self.path == "/api/pendientes":
+            try:
+                pendientes = leer_pendientes()
+                self.send_response(200)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps(pendientes).encode())
+            except Exception as e:
+                self.send_response(500)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode())
+            return
+        if self.path.startswith("/api/"):
+            self.send_response(404)
+            self.end_headers()
+            return
+        super().do_GET()
+
     def do_POST(self):
         if self.path == "/api/publicar":
             length = int(self.headers.get("Content-Length", 0))
@@ -48,16 +70,26 @@ class SharpIQHandler(SimpleHTTPRequestHandler):
                 self.send_header("Content-Type", "application/json")
                 self.end_headers()
                 self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode())
+        elif self.path == "/api/resultado":
+            length = int(self.headers.get("Content-Length", 0))
+            body = self.rfile.read(length)
+            try:
+                data = json.loads(body)
+                resultado = actualizar_resultado(data["partido"], data["resultado"])
+                self.send_response(200)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps(resultado).encode())
+            except Exception as e:
+                self.send_response(500)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode())
         else:
             self.send_response(404)
             self.end_headers()
-
-    def do_GET(self):
-        if self.path.startswith("/api/"):
-            self.send_response(404)
-            self.end_headers()
-            return
-        super().do_GET()
 
     def _cors(self):
         self.send_header("Access-Control-Allow-Origin", "*")
@@ -99,6 +131,46 @@ def publicar_en_datos_js(pred):
 
     git_ok = git_push_auto(partido)
     return {"ok": True, "mensaje": f"Publicado: {partido}", "git": git_ok}
+
+
+def leer_pendientes():
+    with open(DATOS_JS, "r", encoding="utf-8") as f:
+        contenido = f.read()
+    # Extraer bloque PREDICCIONES_HISTORIAL
+    m = re.search(r"const PREDICCIONES_HISTORIAL\s*=\s*(\[.*?\]);", contenido, re.DOTALL)
+    if not m:
+        return []
+    bloque = m.group(1)
+    pendientes = []
+    entradas = re.finditer(
+        r'\{[^}]*partido\s*:\s*"([^"]+)"[^}]*prediccion\s*:\s*"([^"]+)"[^}]*cuota\s*:\s*"([^"]+)"[^}]*resultado\s*:\s*"(pending)"[^}]*\}',
+        bloque, re.DOTALL
+    )
+    for e in entradas:
+        pendientes.append({
+            "partido": e.group(1),
+            "prediccion": e.group(2),
+            "cuota": e.group(3),
+        })
+    return pendientes
+
+
+def actualizar_resultado(partido, resultado):
+    with open(DATOS_JS, "r", encoding="utf-8") as f:
+        contenido = f.read()
+
+    # Reemplazar resultado: "pending" por win/loss solo para ese partido
+    patron = r'(partido\s*:\s*"' + re.escape(partido) + r'".*?resultado\s*:\s*)"pending"'
+    nuevo_contenido = re.sub(patron, r'\1"' + resultado + '"', contenido, count=1, flags=re.DOTALL)
+
+    if nuevo_contenido == contenido:
+        return {"ok": False, "error": "Partido no encontrado o ya actualizado"}
+
+    with open(DATOS_JS, "w", encoding="utf-8") as f:
+        f.write(nuevo_contenido)
+
+    git_push_auto(f"Resultado: {partido} → {resultado}")
+    return {"ok": True, "mensaje": f"{partido} → {resultado}"}
 
 
 def git_push_auto(partido):
