@@ -501,7 +501,8 @@
 
     /* ── PLANES ── */
     .sec-plans{padding:120px 0;background:var(--bg1);position:relative;z-index:2}
-    .plans-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:stretch}
+    .plans-layout{display:flex;justify-content:center}
+    .plan-single{max-width:680px;width:100%}
     .plan-card{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:40px;position:relative;overflow:hidden}
     .plan-card.feat{border-color:var(--gold);box-shadow:0 0 50px rgba(240,165,0,.1)}
     .plan-card.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),#ff4e00)}
@@ -1154,36 +1155,47 @@
       <p class="ssub rv">Una sola membresía te da acceso a predicciones y al sistema de referidos.</p>
     </div>
     <div class="plans-layout">
-      <div class="plan-card feat rvl">
-        <span class="plan-bdg">⭐ PLAN PRINCIPAL</span>
-        <div class="plan-name">Membresía VIP</div>
-        <div class="plan-price"><span class="p-cur">$</span><span class="p-amt">10</span><span class="p-per">USD / mes</span></div>
-        <p class="plan-desc">Acceso completo a predicciones, análisis escritos y alertas en tiempo real. Sin filtros ni retrasos.</p>
-        <ul class="plan-feats">
-          <li>Canal VIP de Telegram con acceso inmediato</li>
-          <li>Predicciones diarias con value bets detectados por IA</li>
-          <li>Análisis de cuotas: Over/Under, BTTS, 1X2</li>
-          <li>Alertas antes de cada partido — sin retrasos</li>
-          <li>Historial de predicciones 100% verificable</li>
-          <li>Estrategia de bankroll incluida (stake 3%)</li>
-          <li>Soporte directo con el equipo SharpIQ</li>
-        </ul>
-        <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="btn-plan gold">Unirme Ahora → $10 USD 🔥 Lanzamiento</a>
-      </div>
-      <div class="rvr">
-        <div class="mlm-card">
-          <div class="mlm-tit">📡 Canal VIP en Telegram</div>
-          <p class="mlm-sub">Con tu membresía activa recibes acceso inmediato al canal privado de Telegram con predicciones diarias, análisis de cuotas y alertas antes de cada partido.</p>
-          <div class="mlm-lvls">
-            <div class="mlm-lv"><div class="lv-l"><span class="lv-b">✅</span><span class="lv-d">Predicciones diarias de alto valor</span></div></div>
-            <div class="mlm-lv"><div class="lv-l"><span class="lv-b">✅</span><span class="lv-d">Alertas antes del partido</span></div></div>
-            <div class="mlm-lv"><div class="lv-l"><span class="lv-b">✅</span><span class="lv-d">Análisis de cuotas y value bets</span></div></div>
-            <div class="mlm-lv"><div class="lv-l"><span class="lv-b">✅</span><span class="lv-d">Acceso al historial completo</span></div></div>
-            <div class="mlm-lv"><div class="lv-l"><span class="lv-b">✅</span><span class="lv-d">Soporte directo por Telegram</span></div></div>
-          </div>
-          <p class="mlm-note">* Al confirmar tu pago recibirás instrucciones para unirte al canal VIP automáticamente.</p>
-          <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="btn-plan out">Activar Membresía VIP</a>
+      <div class="plan-card feat rv plan-single">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:28px">
+          <span class="plan-bdg">⭐ PLAN PRINCIPAL</span>
+          <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--gold);background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.3);padding:4px 12px;border-radius:20px;letter-spacing:1px">🔥 LANZAMIENTO</span>
         </div>
+        <div class="plan-name">Membresía VIP — SharpIQ</div>
+        <div class="plan-price"><span class="p-cur">$</span><span class="p-amt">10</span><span class="p-per">USD / mes</span></div>
+        <p class="plan-desc">Acceso completo a predicciones con IA, análisis de cuotas y canal privado de Telegram. Sin filtros ni retrasos.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0">
+          <div style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px">
+            <span style="font-size:20px">📡</span>
+            <span style="font-size:13px;color:var(--t1)">Canal VIP Telegram</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px">
+            <span style="font-size:20px">🎯</span>
+            <span style="font-size:13px;color:var(--t1)">Value bets con IA</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px">
+            <span style="font-size:20px">⚡</span>
+            <span style="font-size:13px;color:var(--t1)">Alertas en tiempo real</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px">
+            <span style="font-size:20px">📊</span>
+            <span style="font-size:13px;color:var(--t1)">Historial verificable</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px">
+            <span style="font-size:20px">💰</span>
+            <span style="font-size:13px;color:var(--t1)">Bankroll stake 3%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px">
+            <span style="font-size:20px">💬</span>
+            <span style="font-size:13px;color:var(--t1)">Soporte directo</span>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid var(--border);padding-top:20px;margin-bottom:24px">
+          <p style="font-size:12px;color:var(--t3);font-family:'Space Mono',monospace;text-align:center">✅ Acceso inmediato al confirmar el pago · Sin permanencia</p>
+        </div>
+
+        <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="btn-plan gold">Unirme Ahora → $10 USD / mes</a>
       </div>
     </div>
   </div>
