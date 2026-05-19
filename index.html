@@ -943,11 +943,8 @@
           </tbody>
         </table>
       </div>
-      <div class="pred-lock">
-        <div class="lock-icon">🔒</div>
-        <div class="lock-title">Acceso VIP Requerido</div>
-        <div class="lock-sub">Las predicciones completas, análisis de cuotas y alertas en tiempo real son exclusivos para suscriptores del plan VIP.</div>
-        <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="btn-g" style="margin-top:8px">Únete por $10 USD/mes</a>
+      <div class="pred-lock" style="background:none;height:auto;position:relative;padding:24px;align-items:center;justify-content:center;">
+        <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="btn-g">Únete al canal VIP — $10 USD/mes</a>
       </div>
       <div class="pred-kpis">
         <div class="pred-kpi">
@@ -1409,9 +1406,8 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   // Historial table
   const tbody=document.getElementById('predBody');
   if(tbody&&typeof PREDICCIONES_HISTORIAL!=='undefined'){
-    const FREE_ROWS=3;
     tbody.innerHTML=PREDICCIONES_HISTORIAL.map((p,i)=>`
-      <tr${i>=FREE_ROWS?' class="locked"':''}>
+      <tr>
         <td><span class="match-date">${p.fecha}</span></td>
         <td><span class="match-name">${p.partido}</span></td>
         <td>${leagueBadge(p.liga)}</td>
