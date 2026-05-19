@@ -347,7 +347,8 @@ async function cargar() {
     document.getElementById('grid').innerHTML = `
       <div style="grid-column:1/-1;padding:40px;text-align:center;color:#ef4444;">
         <div style="font-size:1.1rem;margin-bottom:10px;">Sin predicciones disponibles</div>
-        <div style="color:#6b7a99;font-size:0.85rem;">Ejecuta: <code style="color:#f0a500;">py sharpiq-engine/motor.py</code> para generar el archivo predicciones.json</div>
+        <div style="color:#6b7a99;font-size:0.85rem;margin-bottom:8px;">Ejecuta: <code style="color:#f0a500;">py sharpiq-engine/motor.py</code> para generar el archivo predicciones.json</div>
+        <div style="color:#f87171;font-size:0.8rem;font-family:monospace;">Error: ${e.message || e}</div>
       </div>`;
   } finally {
     document.getElementById('loading').style.display = 'none';

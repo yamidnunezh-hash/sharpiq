@@ -7,6 +7,7 @@ import json
 import math
 import os
 import sys
+import csv
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from datetime import datetime, date
 from scipy.stats import poisson
@@ -21,13 +22,78 @@ except Exception:
 
 # Ruta siempre correcta sin importar desde donde se ejecute
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON_PATH = os.path.join(BASE_DIR, "..", "predicciones.json")
-MEJOR_PATH = os.path.join(BASE_DIR, "..", "mejor_prediccion.json")
+JSON_PATH       = os.path.join(BASE_DIR, "..", "predicciones.json")
+MEJOR_PATH      = os.path.join(BASE_DIR, "..", "mejor_prediccion.json")
+HISTORIAL_PATH  = os.path.join(BASE_DIR, "historial_cuotas.csv")
+
+# Dixon-Coles: correlación negativa entre goles local/visita en marcadores bajos
+RHO = -0.10
 
 # ── CONFIGURACIÓN ──────────────────────────────────────────────
 from config import FOOTBALL_DATA_KEY as API_KEY, ODDS_API_KEY
-API_URL = "https://api.football-data.org/v4"
-ODDS_API_URL = "https://api.the-odds-api.com/v4"
+try:
+    from config import APIFOOTBALL_KEY
+except ImportError:
+    APIFOOTBALL_KEY = None
+
+API_URL       = "https://api.football-data.org/v4"
+ODDS_API_URL  = "https://api.the-odds-api.com/v4"
+APIFB_URL     = "https://v3.football.api-sports.io"
+
+# ── TEAM IDs para api-football ──────────────────────────────────
+TEAM_IDS = {
+    # Premier League
+    "Manchester City FC": 50,      "Manchester City": 50,
+    "Arsenal FC": 42,              "Arsenal": 42,
+    "Liverpool FC": 40,            "Liverpool": 40,
+    "Chelsea FC": 49,              "Chelsea": 49,
+    "Tottenham Hotspur FC": 47,    "Tottenham": 47,
+    "Newcastle United FC": 34,     "Newcastle": 34,
+    "Aston Villa FC": 66,          "Aston Villa": 66,
+    "Manchester United FC": 33,    "Manchester United": 33,
+    "Brighton & Hove Albion FC": 51,"Brighton": 51,
+    "West Ham United FC": 48,      "West Ham": 48,
+    "Fulham FC": 36,               "Fulham": 36,
+    "Brentford FC": 55,            "Brentford": 55,
+    "Crystal Palace FC": 52,       "Crystal Palace": 52,
+    "Everton FC": 45,              "Everton": 45,
+    "Nottingham Forest FC": 65,    "Nottingham Forest": 65,
+    "AFC Bournemouth": 35,         "Bournemouth": 35,
+    "Wolverhampton Wanderers FC": 39, "Wolves": 39,
+    "Leicester City FC": 46,       "Leicester": 46,
+    "Ipswich Town FC": 57,         "Ipswich": 57,
+    "Sunderland AFC": 64,          "Sunderland": 64,
+    # La Liga
+    "Real Madrid CF": 541,         "Real Madrid": 541,
+    "FC Barcelona": 529,           "Barcelona": 529,
+    "Club Atletico de Madrid": 530,"Atletico Madrid": 530,
+    "Athletic Club": 532,
+    "Villarreal CF": 533,          "Villarreal": 533,
+    "Real Sociedad de Futbol": 548,"Real Sociedad": 548,
+    "Real Betis Balompie": 543,    "Real Betis": 543,
+    "Sevilla FC": 536,             "Sevilla": 536,
+    # Bundesliga
+    "FC Bayern Munchen": 157,      "Bayern Munich": 157,
+    "Borussia Dortmund": 165,      "Dortmund": 165,
+    "Bayer 04 Leverkusen": 168,    "Leverkusen": 168,
+    "RB Leipzig": 173,             "Leipzig": 173,
+    "Eintracht Frankfurt": 169,    "Frankfurt": 169,
+    "VfB Stuttgart": 172,          "Stuttgart": 172,
+    # Serie A
+    "FC Internazionale Milano": 505,"Inter Milan": 505,
+    "Juventus FC": 496,            "Juventus": 496,
+    "SSC Napoli": 492,             "Napoli": 492,
+    "AC Milan": 489,               "Milan": 489,
+    "AS Roma": 497,                "Roma": 497,
+    "SS Lazio": 487,               "Lazio": 487,
+    "Atalanta BC": 499,            "Atalanta": 499,
+    # Ligue 1
+    "Paris Saint-Germain FC": 85,  "PSG": 85,
+    "Olympique de Marseille": 81,  "Marseille": 81,
+    "AS Monaco FC": 91,            "Monaco": 91,
+    "Lille OSC": 79,               "Lille": 79,
+    "OGC Nice": 84,                "Nice": 84,
+}
 
 # Mapeo ligas football-data.org → the-odds-api.com
 LIGAS_ODDS = {
@@ -51,6 +117,133 @@ LIGAS = {
     "CL":  "Champions League",
     "WC":  "Mundial",
 }
+
+# ── API-FOOTBALL: FORMA, H2H, LESIONES ─────────────────────────
+_cache_apifb = {}
+
+def _apifb(endpoint, params):
+    if not APIFOOTBALL_KEY:
+        return None
+    cache_key = f"{endpoint}_{sorted(params.items())}"
+    if cache_key in _cache_apifb:
+        return _cache_apifb[cache_key]
+    try:
+        r = requests.get(
+            f"{APIFB_URL}/{endpoint}",
+            headers={"x-apisports-key": APIFOOTBALL_KEY},
+            params=params, timeout=15
+        )
+        if r.status_code != 200:
+            return None
+        data = r.json()
+        restantes = r.headers.get("x-ratelimit-requests-remaining", "?")
+        print(f"    API-Football /{endpoint} | Restantes: {restantes}")
+        _cache_apifb[cache_key] = data
+        return data
+    except Exception as e:
+        print(f"    API-Football error: {e}")
+        return None
+
+def obtener_forma_reciente(equipo, n=5):
+    """Últimos N partidos: devuelve forma, ataque y defensa recientes."""
+    team_id = TEAM_IDS.get(equipo)
+    if not team_id:
+        return None
+    data = _apifb("fixtures", {"team": team_id, "last": n, "status": "FT"})
+    if not data or not data.get("response"):
+        return None
+    fixtures = data["response"]
+    if not fixtures:
+        return None
+    puntos = goles_favor = goles_contra = 0
+    for f in fixtures:
+        es_local = f["teams"]["home"]["id"] == team_id
+        sh = f["score"]["fulltime"]["home"] or 0
+        sa = f["score"]["fulltime"]["away"] or 0
+        gf, gc = (sh, sa) if es_local else (sa, sh)
+        goles_favor += gf
+        goles_contra += gc
+        if gf > gc:    puntos += 3
+        elif gf == gc: puntos += 1
+    total = len(fixtures)
+    forma = round(puntos / (total * 3), 3)
+    print(f"    Forma {equipo[-12:]}: {puntos}/{total*3}pts | Gf:{round(goles_favor/total,2)} Gc:{round(goles_contra/total,2)}")
+    return {
+        "forma":            forma,
+        "ataque_reciente":  round(goles_favor  / total, 3),
+        "defensa_reciente": round(goles_contra / total, 3),
+        "partidos":         total,
+    }
+
+def obtener_h2h(local, visitante):
+    """Últimos 10 enfrentamientos directos."""
+    id_l = TEAM_IDS.get(local)
+    id_v = TEAM_IDS.get(visitante)
+    if not id_l or not id_v:
+        return None
+    data = _apifb("fixtures/headtohead", {"h2h": f"{id_l}-{id_v}", "last": 10})
+    if not data or not data.get("response"):
+        return None
+    fixtures = data["response"]
+    if len(fixtures) < 3:
+        return None
+    vl = ve = vv = total_goles = 0
+    for f in fixtures:
+        es_local = f["teams"]["home"]["id"] == id_l
+        sh = f["score"]["fulltime"]["home"] or 0
+        sa = f["score"]["fulltime"]["away"] or 0
+        gf, gc = (sh, sa) if es_local else (sa, sh)
+        total_goles += sh + sa
+        if gf > gc:    vl += 1
+        elif gf == gc: ve += 1
+        else:          vv += 1
+    n = len(fixtures)
+    print(f"    H2H {local[-10:]} vs {visitante[-10:]}: {vl}W-{ve}D-{vv}L | {round(total_goles/n,1)} goles/p")
+    return {
+        "victorias_local":   vl / n,
+        "empates":           ve / n,
+        "victorias_visita":  vv / n,
+        "goles_por_partido": round(total_goles / n, 2),
+        "partidos":          n,
+    }
+
+def obtener_lesiones(equipo):
+    """Jugadores con baja activa para el próximo partido del equipo."""
+    team_id = TEAM_IDS.get(equipo)
+    if not team_id:
+        return []
+    # Temporada actual: 2025 = temporada 2025/26
+    temporada = date.today().year if date.today().month >= 7 else date.today().year - 1
+    data = _apifb("injuries", {"team": team_id, "season": temporada})
+    if not data or not data.get("response"):
+        return []
+
+    hoy = date.today()
+    lesionados = []
+    vistos = set()  # evitar duplicados por nombre
+
+    for p in data["response"]:
+        tipo   = p.get("player", {}).get("type", "")
+        nombre = p.get("player", {}).get("name", "Unknown")
+        razon  = p.get("player", {}).get("reason", "")
+
+        # Filtrar solo lesiones de partidos futuros (no historial)
+        fixture_fecha_str = p.get("fixture", {}).get("date", "")
+        if fixture_fecha_str:
+            try:
+                fixture_fecha = datetime.fromisoformat(fixture_fecha_str[:10]).date()
+                if fixture_fecha < hoy:
+                    continue  # lesión pasada, ignorar
+            except Exception:
+                pass
+
+        if tipo in ("Missing Fixture", "Questionable") and nombre not in vistos:
+            vistos.add(nombre)
+            lesionados.append({"nombre": nombre, "tipo": tipo, "razon": razon})
+
+    if lesionados:
+        print(f"    Lesiones {equipo[-12:]}: {len(lesionados)} activa(s) → {', '.join(l['nombre'] for l in lesionados[:3])}")
+    return lesionados
 
 # ── OBTENER PARTIDOS DEL DÍA ────────────────────────────────────
 def obtener_partidos_liga(codigo_liga, fecha):
@@ -152,48 +345,58 @@ def partidos_demo():
          "hora": "20:45", "estado": "SCHEDULED"},
     ]
 
-# ── MODELO POISSON ──────────────────────────────────────────────
+# ── DIXON-COLES CORRECTION ──────────────────────────────────────
+def _dc_tau(i, j, mu_h, mu_a):
+    """Factor de corrección Dixon-Coles para marcadores bajos (0-0, 1-0, 0-1, 1-1)."""
+    if   i == 0 and j == 0: return 1 - mu_h * mu_a * RHO
+    elif i == 1 and j == 0: return 1 + mu_a * RHO
+    elif i == 0 and j == 1: return 1 + mu_h * RHO
+    elif i == 1 and j == 1: return 1 - RHO
+    return 1.0
+
+# ── MODELO POISSON + DIXON-COLES ────────────────────────────────
 def modelo_poisson(goles_local_esperados, goles_visita_esperados):
     """
-    Calcula probabilidades de resultado usando distribución Poisson.
-    Retorna: {victoria_local, empate, victoria_visita, over25, under25, btts}
+    Distribución Poisson con corrección Dixon-Coles (ρ=-0.10).
+    Ajusta marcadores bajos que Poisson puro subestima (0-0, 1-1).
     """
     max_goles = 8
+    mu_h = goles_local_esperados
+    mu_a = goles_visita_esperados
 
-    prob_local = [poisson.pmf(i, goles_local_esperados) for i in range(max_goles)]
-    prob_visita = [poisson.pmf(i, goles_visita_esperados) for i in range(max_goles)]
-
-    victoria_local = 0
-    empate = 0
-    victoria_visita = 0
-    over25 = 0
-    btts = 0
-
+    # Matriz de probabilidades con corrección
+    matriz = {}
+    total = 0.0
     for i in range(max_goles):
         for j in range(max_goles):
-            p = prob_local[i] * prob_visita[j]
-            if i > j:
-                victoria_local += p
-            elif i == j:
-                empate += p
-            else:
-                victoria_visita += p
-            if (i + j) > 2.5:
-                over25 += p
-            if i > 0 and j > 0:
-                btts += p
+            p = poisson.pmf(i, mu_h) * poisson.pmf(j, mu_a) * _dc_tau(i, j, mu_h, mu_a)
+            p = max(p, 0.0)
+            matriz[(i, j)] = p
+            total += p
+
+    # Normalizar
+    if total > 0:
+        matriz = {k: v / total for k, v in matriz.items()}
+
+    victoria_local = empate = victoria_visita = over25 = btts = 0.0
+    for (i, j), p in matriz.items():
+        if   i > j: victoria_local  += p
+        elif i == j: empate         += p
+        else:        victoria_visita += p
+        if i + j > 2.5: over25 += p
+        if i > 0 and j > 0: btts += p
 
     return {
-        "victoria_local": round(victoria_local * 100, 1),
-        "empate": round(empate * 100, 1),
-        "victoria_visita": round(victoria_visita * 100, 1),
-        "over25": round(over25 * 100, 1),
-        "under25": round((1 - over25) * 100, 1),
-        "btts_si": round(btts * 100, 1),
-        "btts_no": round((1 - btts) * 100, 1),
-        "goles_esperados_local": round(goles_local_esperados, 2),
-        "goles_esperados_visita": round(goles_visita_esperados, 2),
-        "total_goles_esperados": round(goles_local_esperados + goles_visita_esperados, 2),
+        "victoria_local":           round(victoria_local  * 100, 1),
+        "empate":                   round(empate           * 100, 1),
+        "victoria_visita":          round(victoria_visita  * 100, 1),
+        "over25":                   round(over25           * 100, 1),
+        "under25":                  round((1 - over25)     * 100, 1),
+        "btts_si":                  round(btts             * 100, 1),
+        "btts_no":                  round((1 - btts)       * 100, 1),
+        "goles_esperados_local":    round(mu_h, 2),
+        "goles_esperados_visita":   round(mu_a, 2),
+        "total_goles_esperados":    round(mu_h + mu_a, 2),
     }
 
 # ── ESTADÍSTICAS DE EQUIPOS ────────────────────────────────────
@@ -264,18 +467,53 @@ STATS_EQUIPOS = {
 PROMEDIO_LIGA = {"ataque": 1.35, "defensa": 1.35}
 
 def calcular_goles_esperados(local, visitante):
-    stats_l = get_stats_equipo(local)
-    stats_v = get_stats_equipo(visitante)
+    stats_l = dict(get_stats_equipo(local))
+    stats_v = dict(get_stats_equipo(visitante))
 
-    ventaja_local = 1.25  # factor ventaja de local
+    # ── Enriquecer con forma reciente (API-Football) ────────────
+    if APIFOOTBALL_KEY:
+        forma_l = obtener_forma_reciente(local)
+        forma_v = obtener_forma_reciente(visitante)
+        # Blend: 40% temporada + 60% últimos 5 partidos
+        if forma_l:
+            stats_l["ataque"]  = round(stats_l["ataque"]  * 0.4 + forma_l["ataque_reciente"]  * 0.6, 3)
+            stats_l["defensa"] = round(stats_l["defensa"] * 0.4 + forma_l["defensa_reciente"] * 0.6, 3)
+            stats_l["forma"]   = round(stats_l["forma"]   * 0.4 + forma_l["forma"]            * 0.6, 3)
+        if forma_v:
+            stats_v["ataque"]  = round(stats_v["ataque"]  * 0.4 + forma_v["ataque_reciente"]  * 0.6, 3)
+            stats_v["defensa"] = round(stats_v["defensa"] * 0.4 + forma_v["defensa_reciente"] * 0.6, 3)
+            stats_v["forma"]   = round(stats_v["forma"]   * 0.4 + forma_v["forma"]            * 0.6, 3)
 
-    goles_local = (stats_l["ataque"] / PROMEDIO_LIGA["ataque"]) * \
-                  (stats_v["defensa"] / PROMEDIO_LIGA["defensa"]) * \
-                  PROMEDIO_LIGA["ataque"] * ventaja_local * stats_l["forma"]
+    ventaja_local = 1.25
 
-    goles_visita = (stats_v["ataque"] / PROMEDIO_LIGA["ataque"]) * \
+    goles_local  = (stats_l["ataque"]  / PROMEDIO_LIGA["ataque"])  * \
+                   (stats_v["defensa"] / PROMEDIO_LIGA["defensa"]) * \
+                   PROMEDIO_LIGA["ataque"] * ventaja_local * stats_l["forma"]
+
+    goles_visita = (stats_v["ataque"]  / PROMEDIO_LIGA["ataque"])  * \
                    (stats_l["defensa"] / PROMEDIO_LIGA["defensa"]) * \
                    PROMEDIO_LIGA["ataque"] * stats_v["forma"]
+
+    # ── Ajuste H2H (30% de corrección) ─────────────────────────
+    if APIFOOTBALL_KEY:
+        h2h = obtener_h2h(local, visitante)
+        if h2h:
+            total_modelo = goles_local + goles_visita
+            if total_modelo > 0:
+                factor = h2h["goles_por_partido"] / total_modelo
+                factor = max(0.80, min(factor, 1.20))  # limitar ±20%
+                goles_local  *= 1 + (factor - 1) * 0.3
+                goles_visita *= 1 + (factor - 1) * 0.3
+
+    # ── Ajuste por lesiones (-0.12 por baja ofensiva) ──────────
+    if APIFOOTBALL_KEY:
+        bajas_l = obtener_lesiones(local)
+        bajas_v = obtener_lesiones(visitante)
+        # Reducir ataque por número de bajas (máx -20%)
+        penalidad_l = min(len(bajas_l) * 0.05, 0.20)
+        penalidad_v = min(len(bajas_v) * 0.05, 0.20)
+        goles_local  *= (1 - penalidad_l)
+        goles_visita *= (1 - penalidad_v)
 
     return goles_local, goles_visita
 
@@ -289,8 +527,8 @@ def obtener_cuotas_liga(sport_key):
         url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
         params = {
             "apiKey": ODDS_API_KEY,
-            "regions": "eu",
-            "markets": "h2h",
+            "regions": "eu,uk",
+            "markets": "h2h,totals",
             "oddsFormat": "decimal",
         }
         r = requests.get(url, params=params, timeout=15)
@@ -318,27 +556,62 @@ def buscar_cuotas_partido(local, visitante, sport_key):
     return None
 
 def extraer_mejor_cuota(partido):
-    mejor = {"1": None, "X": None, "2": None, "casa": None}
+    mejor = {
+        "1": None,       "1_casa": None,
+        "X": None,       "X_casa": None,
+        "2": None,       "2_casa": None,
+        "over25": None,  "over25_casa": None,
+        "under25": None, "under25_casa": None,
+        "btts_si": None, "btts_si_casa": None,
+        "btts_no": None, "btts_no_casa": None,
+    }
     home = partido.get("home_team", "")
     away = partido.get("away_team", "")
 
     for bm in partido.get("bookmakers", []):
+        bm_name = bm.get("title", "")
         for market in bm.get("markets", []):
-            if market.get("key") != "h2h":
-                continue
-            outcomes = {o["name"]: o["price"] for o in market.get("outcomes", [])}
-            c1 = outcomes.get(home)
-            c2 = outcomes.get(away)
-            draw_keys = [k for k in outcomes if k not in [home, away]]
-            cx = outcomes.get(draw_keys[0]) if draw_keys else None
+            key = market.get("key")
+            outcomes = market.get("outcomes", [])
 
-            if c1 and (mejor["1"] is None or c1 > mejor["1"]):
-                mejor["1"] = round(c1, 2)
-                mejor["casa"] = bm.get("title", "")
-            if cx and (mejor["X"] is None or cx > mejor["X"]):
-                mejor["X"] = round(cx, 2)
-            if c2 and (mejor["2"] is None or c2 > mejor["2"]):
-                mejor["2"] = round(c2, 2)
+            if key == "h2h":
+                prices = {o["name"]: o["price"] for o in outcomes}
+                c1 = prices.get(home)
+                c2 = prices.get(away)
+                draw_keys = [k for k in prices if k not in [home, away]]
+                cx = prices.get(draw_keys[0]) if draw_keys else None
+                if c1 and (mejor["1"] is None or c1 > mejor["1"]):
+                    mejor["1"] = round(c1, 2);  mejor["1_casa"] = bm_name
+                if cx and (mejor["X"] is None or cx > mejor["X"]):
+                    mejor["X"] = round(cx, 2);  mejor["X_casa"] = bm_name
+                if c2 and (mejor["2"] is None or c2 > mejor["2"]):
+                    mejor["2"] = round(c2, 2);  mejor["2_casa"] = bm_name
+
+            elif key == "totals":
+                for o in outcomes:
+                    p = o.get("point", 0)
+                    if abs(p - 2.5) > 0.01:
+                        continue
+                    if o.get("name") == "Over":
+                        if mejor["over25"] is None or o["price"] > mejor["over25"]:
+                            mejor["over25"] = round(o["price"], 2)
+                            mejor["over25_casa"] = bm_name
+                    elif o.get("name") == "Under":
+                        if mejor["under25"] is None or o["price"] > mejor["under25"]:
+                            mejor["under25"] = round(o["price"], 2)
+                            mejor["under25_casa"] = bm_name
+
+            elif key == "btts":
+                for o in outcomes:
+                    if o.get("name") in ("Yes", "Sí"):
+                        if mejor["btts_si"] is None or o["price"] > mejor["btts_si"]:
+                            mejor["btts_si"] = round(o["price"], 2)
+                            mejor["btts_si_casa"] = bm_name
+                    elif o.get("name") == "No":
+                        if mejor["btts_no"] is None or o["price"] > mejor["btts_no"]:
+                            mejor["btts_no"] = round(o["price"], 2)
+                            mejor["btts_no_casa"] = bm_name
+
     return mejor if mejor["1"] else None
 
 # ── VALUE BETTING ───────────────────────────────────────────────
@@ -396,10 +669,16 @@ def predecir_partido(local, visitante, cuotas=None):
             "2": round(1 / (probs["victoria_visita"] / 100) * 0.9, 2),
         }
 
-    # Value bets
-    value_local = calcular_value_bet(probs["victoria_local"], cuotas.get("1", 2.0))
-    value_empate = calcular_value_bet(probs["empate"], cuotas.get("X", 3.2))
+    # Value bets 1X2
+    value_local  = calcular_value_bet(probs["victoria_local"],  cuotas.get("1", 2.0))
+    value_empate = calcular_value_bet(probs["empate"],          cuotas.get("X", 3.2))
     value_visita = calcular_value_bet(probs["victoria_visita"], cuotas.get("2", 3.5))
+
+    # Value bets mercados adicionales (solo si hay cuota real de la API)
+    value_over25  = calcular_value_bet(probs["over25"],  cuotas["over25"])  if cuotas.get("over25")  else None
+    value_under25 = calcular_value_bet(probs["under25"], cuotas["under25"]) if cuotas.get("under25") else None
+    value_btts_si = calcular_value_bet(probs["btts_si"], cuotas["btts_si"]) if cuotas.get("btts_si") else None
+    value_btts_no = calcular_value_bet(probs["btts_no"], cuotas["btts_no"]) if cuotas.get("btts_no") else None
 
     # Kelly
     kelly_local = kelly_criterion(probs["victoria_local"], cuotas.get("1", 2.0))
@@ -413,19 +692,25 @@ def predecir_partido(local, visitante, cuotas=None):
     else:
         prediccion_principal = {"mercado": "Victoria Visitante (2)", "prob": probs["victoria_visita"]}
 
+    value_bets = {
+        "victoria_local":  value_local,
+        "empate":          value_empate,
+        "victoria_visita": value_visita,
+    }
+    if value_over25:  value_bets["over25"]  = value_over25
+    if value_under25: value_bets["under25"] = value_under25
+    if value_btts_si: value_bets["btts_si"] = value_btts_si
+    if value_btts_no: value_bets["btts_no"] = value_btts_no
+
     return {
-        "local": local,
-        "visitante": visitante,
+        "local":      local,
+        "visitante":  visitante,
         "probabilidades": probs,
-        "cuotas": cuotas,
-        "value_bets": {
-            "victoria_local": value_local,
-            "empate": value_empate,
-            "victoria_visita": value_visita,
-        },
-        "kelly": kelly_local,
+        "cuotas":     cuotas,
+        "value_bets": value_bets,
+        "kelly":      kelly_local,
         "prediccion_principal": prediccion_principal,
-        "confianza": round(max_prob, 1),
+        "confianza":  round(max_prob, 1),
     }
 
 # ── GENERAR REPORTE DEL DÍA ─────────────────────────────────────
@@ -487,8 +772,25 @@ def seleccionar_mejor_prediccion(reporte):
                 h, m2 = (int(x) for x in utc_hora.split(":"))
                 cot_h = ((h - 5) + 24) % 24
                 hora_cot = f"{str(cot_h).zfill(2)}:{str(m2).zfill(2)} COT"
-                nombres = {"victoria_local": "Victoria Local (1)", "empate": "Empate (X)", "victoria_visita": "Victoria Visitante (2)"}
-                cuota_key = "1" if mercado == "victoria_local" else "X" if mercado == "empate" else "2"
+                nombres = {
+                    "victoria_local":  "Victoria Local (1)",
+                    "empate":          "Empate (X)",
+                    "victoria_visita": "Victoria Visitante (2)",
+                    "over25":          "Over 2.5",
+                    "under25":         "Under 2.5",
+                    "btts_si":         "Ambos Marcan — Sí",
+                    "btts_no":         "Ambos Marcan — No",
+                }
+                cuota_key_map = {
+                    "victoria_local":  "1",
+                    "empate":          "X",
+                    "victoria_visita": "2",
+                    "over25":          "over25",
+                    "under25":         "under25",
+                    "btts_si":         "btts_si",
+                    "btts_no":         "btts_no",
+                }
+                cuota_key = cuota_key_map.get(mercado, "1")
                 mejor = {
                     "partido": f"{pred['local']} vs {pred['visitante']}",
                     "liga": pred.get("liga", ""),
@@ -497,6 +799,7 @@ def seleccionar_mejor_prediccion(reporte):
                     "prediccion": nombres.get(mercado, mercado),
                     "mercado_key": mercado,
                     "cuota": str(pred["cuotas"].get(cuota_key, "")),
+                    "casa": pred["cuotas"].get(cuota_key + "_casa", ""),
                     "hora_utc": utc_hora,
                     "hora_cot": hora_cot,
                     "ev": vb["ev_porcentaje"],
@@ -531,6 +834,45 @@ def seleccionar_mejor_prediccion(reporte):
     return mejor
 
 
+# ── HISTORIAL DE CUOTAS (base para CLV futuro) ──────────────────
+def guardar_historial_cuotas(reporte):
+    """
+    Guarda cuotas de apertura en CSV cada vez que corre el motor.
+    Acumula datos para calcular Closing Line Value con el tiempo.
+    """
+    campos = [
+        "fecha_consulta", "partido", "liga", "hora_partido",
+        "cuota_1", "casa_1", "cuota_X", "casa_X", "cuota_2", "casa_2",
+        "cuota_over25", "casa_over25", "cuota_under25", "casa_under25",
+    ]
+    ahora = datetime.now().isoformat(timespec="seconds")
+    filas = []
+    for pred in reporte["predicciones"]:
+        if not pred.get("cuotas_reales"):
+            continue  # solo cuotas reales de la API, no estimadas
+        c = pred.get("cuotas", {})
+        filas.append({
+            "fecha_consulta":  ahora,
+            "partido":         f"{pred['local']} vs {pred['visitante']}",
+            "liga":            pred.get("liga", ""),
+            "hora_partido":    pred.get("hora", ""),
+            "cuota_1":         c.get("1", ""),    "casa_1":     c.get("1_casa", ""),
+            "cuota_X":         c.get("X", ""),    "casa_X":     c.get("X_casa", ""),
+            "cuota_2":         c.get("2", ""),    "casa_2":     c.get("2_casa", ""),
+            "cuota_over25":    c.get("over25", ""),  "casa_over25":  c.get("over25_casa", ""),
+            "cuota_under25":   c.get("under25", ""), "casa_under25": c.get("under25_casa", ""),
+        })
+    if not filas:
+        return
+    existe = os.path.isfile(HISTORIAL_PATH)
+    with open(HISTORIAL_PATH, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=campos)
+        if not existe:
+            writer.writeheader()
+        writer.writerows(filas)
+    print(f"  Historial cuotas: {len(filas)} partidos → historial_cuotas.csv")
+
+
 # ── GUARDAR JSON PARA EL PANEL ──────────────────────────────────
 def guardar_predicciones():
     reporte = reporte_del_dia()
@@ -538,6 +880,8 @@ def guardar_predicciones():
         json.dump(reporte, f, ensure_ascii=False, indent=2)
     print(f"✅ Predicciones guardadas: {reporte['total_partidos']} partidos")
     print(f"📅 Fecha: {reporte['fecha']}")
+
+    guardar_historial_cuotas(reporte)
 
     mejor = seleccionar_mejor_prediccion(reporte)
     if mejor:
@@ -574,7 +918,16 @@ if __name__ == "__main__":
         print(f"   Over 2.5: {pred['probabilidades']['over25']}% | BTTS: {pred['probabilidades']['btts_si']}%")
         print(f"   → {pred['prediccion_principal']['mercado']} ({pred['confianza']}% confianza)")
 
-        # Mostrar value bets
+        # Mostrar value bets con casa de apuestas
+        cuota_key_map = {
+            "victoria_local": "1", "empate": "X", "victoria_visita": "2",
+            "over25": "over25", "under25": "under25",
+            "btts_si": "btts_si", "btts_no": "btts_no",
+        }
         for mercado, vb in pred["value_bets"].items():
             if vb["tiene_valor"]:
-                print(f"   💰 VALUE BET: {mercado} → EV: +{vb['ev_porcentaje']}% [{vb['clasificacion']}]")
+                ck = cuota_key_map.get(mercado, "1")
+                cuota = pred["cuotas"].get(ck, "")
+                casa  = pred["cuotas"].get(ck + "_casa", "")
+                casa_str = f" [{casa}]" if casa else ""
+                print(f"   💰 VALUE BET: {mercado} @ {cuota}{casa_str} → EV: +{vb['ev_porcentaje']}% [{vb['clasificacion']}]")

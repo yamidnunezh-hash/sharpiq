@@ -69,24 +69,55 @@ def enviar_mensaje(texto, chat_id=None):
 
 
 def enviar_alerta_value_bet(pred, mercado, vb):
-    emoji_valor = "ALTO VALOR" if vb["clasificacion"] == "ALTO VALOR" else "VALOR"
     emoji = "🔥" if vb["clasificacion"] == "ALTO VALOR" else "💰"
 
     nombres_mercado = {
-        "victoria_local": "Victoria Local (1)",
-        "empate": "Empate (X)",
-        "victoria_visita": "Victoria Visitante (2)"
+        "victoria_local":  "Victoria Local (1)",
+        "empate":          "Empate (X)",
+        "victoria_visita": "Victoria Visitante (2)",
+        "over25":          "Over 2.5 Goles",
+        "under25":         "Under 2.5 Goles",
+        "btts_si":         "Ambos Marcan — Sí",
+        "btts_no":         "Ambos Marcan — No",
+    }
+    cuota_key_map = {
+        "victoria_local":  "1",
+        "empate":          "X",
+        "victoria_visita": "2",
+        "over25":          "over25",
+        "under25":         "under25",
+        "btts_si":         "btts_si",
+        "btts_no":         "btts_no",
+    }
+    prob_key_map = {
+        "victoria_local":  "victoria_local",
+        "empate":          "empate",
+        "victoria_visita": "victoria_visita",
+        "over25":          "over25",
+        "under25":         "under25",
+        "btts_si":         "btts_si",
+        "btts_no":         "btts_no",
     }
 
-    texto = f"""{emoji} <b>SharpIQ — {emoji_valor}</b>
+    ck    = cuota_key_map.get(mercado, "1")
+    cuota = pred["cuotas"].get(ck, "?")
+    casa  = pred["cuotas"].get(ck + "_casa", "")
+    prob  = pred["probabilidades"].get(prob_key_map.get(mercado, "victoria_local"), 0)
+
+    h, m2 = pred.get("hora", "00:00").split(":")
+    hora_cot = f"{str((int(h)-5+24)%24).zfill(2)}:{m2} COT"
+
+    casa_linea = f"\n🏠 <b>Casa recomendada:</b> {casa}" if casa else ""
+
+    texto = f"""{emoji} <b>SharpIQ — {vb['clasificacion']}</b>
 
 ⚽ <b>{pred['local']} vs {pred['visitante']}</b>
-🏆 {pred.get('liga', '')} | {pred.get('hora', '')} UTC
+🏆 {pred.get('liga', '')} | {hora_cot}
 
 📊 <b>Mercado:</b> {nombres_mercado.get(mercado, mercado)}
-📈 <b>Probabilidad modelo:</b> {pred['probabilidades'].get('victoria_local' if mercado == 'victoria_local' else 'empate' if mercado == 'empate' else 'victoria_visita', 0)}%
-💵 <b>Cuota:</b> {pred['cuotas'].get('1' if mercado == 'victoria_local' else 'X' if mercado == 'empate' else '2', '?')}
-✅ <b>EV:</b> +{vb['ev_porcentaje']}% [{vb['clasificacion']}]
+📈 <b>Probabilidad modelo:</b> {prob}%
+💵 <b>Cuota:</b> {cuota}{casa_linea}
+✅ <b>Valor esperado:</b> +{vb['ev_porcentaje']}%
 
 <i>SharpIQ Engine — La ventaja inteligente</i>"""
 
@@ -107,14 +138,25 @@ def enviar_resumen_dia(reporte):
 🔥 Alto Valor: {alto_valor}
 
 """
+    nombres = {
+        "victoria_local":"Local (1)","empate":"Empate (X)","victoria_visita":"Visitante (2)",
+        "over25":"Over 2.5","under25":"Under 2.5","btts_si":"BTTS Sí","btts_no":"BTTS No",
+    }
+    cuota_map = {
+        "victoria_local":"1","empate":"X","victoria_visita":"2",
+        "over25":"over25","under25":"under25","btts_si":"btts_si","btts_no":"btts_no",
+    }
     for pred in preds:
-        tiene_vb = any(v["tiene_valor"] for v in pred["value_bets"].values())
+        tiene_vb = any(v["tiene_valor"] for v in pred["value_bets"].values() if v)
         if tiene_vb:
-            texto += f"• {pred['local']} vs {pred['visitante']} ({pred.get('liga','')})\n"
+            texto += f"• {pred['local']} vs {pred['visitante']}\n"
             for m, vb in pred["value_bets"].items():
-                if vb["tiene_valor"]:
-                    nombres = {"victoria_local":"Local","empate":"Empate","victoria_visita":"Visitante"}
-                    texto += f"  → {nombres.get(m,m)}: EV +{vb['ev_porcentaje']}%\n"
+                if vb and vb["tiene_valor"]:
+                    ck   = cuota_map.get(m, "1")
+                    cuota = pred["cuotas"].get(ck, "")
+                    casa  = pred["cuotas"].get(ck + "_casa", "")
+                    casa_str = f" [{casa}]" if casa else ""
+                    texto += f"  → {nombres.get(m,m)} @ {cuota}{casa_str}: EV +{vb['ev_porcentaje']}%\n"
 
     texto += "\n<i>sharpiq.co — La ventaja inteligente</i>"
     return enviar_mensaje(texto)
