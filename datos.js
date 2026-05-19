@@ -11,6 +11,16 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "19/05/26",
+    partido:    "Club Always Ready vs Mirassol FC",
+    liga:       "Copa Libertadores",
+    prediccion: "under25 — EV +19.2%",
+    cuota:      "6.4",
+    hora:       "19:00 COT",
+    status:     "free"
+  },
+
+  {
+    fecha:      "19/05/26",
     partido:    "Fluminense FC vs Club Bolívar",
     liga:       "Copa Libertadores",
     prediccion: "under25 — EV +54.1%",
