@@ -9,6 +9,16 @@
 // Cuando terminen, muévelos a PREDICCIONES_HISTORIAL y pon el resultado.
 // status: "vip" = bloqueado para no suscriptores, "free" = visible para todos
 const PROXIMOS_EVENTOS = [
+  {
+    fecha:      "19/05/26",
+    partido:    "Fluminense FC vs Club Bolívar",
+    liga:       "Copa Libertadores",
+    prediccion: "under25 — EV +54.1%",
+    cuota:      "1.21",
+    hora:       "17:00 COT",
+    status:     "vip"
+  },
+
 ];
 
 // ── HISTORIAL DE PREDICCIONES ─────────────────────────────────
