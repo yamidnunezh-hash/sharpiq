@@ -6,6 +6,7 @@ Sirve archivos estaticos + endpoint para publicar predicciones a datos.js
 import os
 import re
 import json
+import subprocess
 from datetime import datetime
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
@@ -96,7 +97,21 @@ def publicar_en_datos_js(pred):
     with open(DATOS_JS, "w", encoding="utf-8") as f:
         f.write(nuevo_contenido)
 
-    return {"ok": True, "mensaje": f"Publicado: {partido}"}
+    git_ok = git_push_auto(partido)
+    return {"ok": True, "mensaje": f"Publicado: {partido}", "git": git_ok}
+
+
+def git_push_auto(partido):
+    try:
+        cwd = WEB_DIR
+        subprocess.run(["git", "add", "datos.js"], cwd=cwd, check=True, capture_output=True)
+        subprocess.run(["git", "commit", "-m", f"Prediccion: {partido}"], cwd=cwd, check=True, capture_output=True)
+        subprocess.run(["git", "push"], cwd=cwd, check=True, capture_output=True)
+        print(f"  git push OK: {partido}")
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"  git push error: {e.stderr.decode() if e.stderr else e}")
+        return False
 
 
 if __name__ == "__main__":
