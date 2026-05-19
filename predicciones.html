@@ -189,11 +189,41 @@
     display: flex; justify-content: space-between; align-items: center;
   }
 
+  /* BANNER RECOMENDACIÓN */
+  #banner-rec {
+    display: none;
+    margin: 14px 24px 0;
+    background: linear-gradient(135deg, rgba(240,165,0,0.08), rgba(240,165,0,0.03));
+    border: 1px solid rgba(240,165,0,0.4);
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  #banner-rec .rec-left { display: flex; flex-direction: column; gap: 3px; }
+  #banner-rec .rec-tag { font-size: 0.65rem; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+  #banner-rec .rec-partido { font-size: 0.95rem; font-weight: 700; color: #fff; }
+  #banner-rec .rec-det { font-size: 0.78rem; color: var(--muted); }
+  #banner-rec .rec-det strong { color: var(--green); }
+  #banner-rec .btn-rec {
+    background: linear-gradient(135deg, #f0a500, #e07b00);
+    color: #000; border: none; border-radius: 8px;
+    padding: 10px 22px; font-weight: 800; font-size: 0.85rem;
+    cursor: pointer; white-space: nowrap; transition: opacity 0.2s;
+    flex-shrink: 0;
+  }
+  #banner-rec .btn-rec:hover { opacity: 0.88; }
+  #banner-rec .btn-rec.ok { background: linear-gradient(135deg,#22c55e,#16a34a); color: #fff; }
+
   @media(max-width:600px){
     header{flex-wrap:wrap;gap:10px;}
     .stats-bar{gap:16px;}
     .main,.toolbar{padding-left:14px;padding-right:14px;}
     #grid{grid-template-columns:1fr;}
+    #banner-rec{margin:10px 14px 0;}
   }
 </style>
 </head>
@@ -221,6 +251,16 @@
   <div class="stat"><div class="stat-n" id="s-conf">—</div><div class="stat-l">Max Confianza</div></div>
   <div class="stat"><div class="stat-n" id="s-over">—</div><div class="stat-l">Over2.5 Prom.</div></div>
   <div class="stat"><div class="stat-n" id="s-gen" style="font-size:0.9rem;">—</div><div class="stat-l">Generado</div></div>
+</div>
+
+<!-- BANNER RECOMENDACIÓN DEL DÍA -->
+<div id="banner-rec">
+  <div class="rec-left">
+    <span class="rec-tag">⭐ Recomendación del día</span>
+    <span class="rec-partido" id="rec-partido">—</span>
+    <span class="rec-det" id="rec-det">—</span>
+  </div>
+  <button class="btn-rec" id="btn-rec" onclick="publicarRecomendacion()">Publicar con 1 clic</button>
 </div>
 
 <div class="toolbar">
@@ -274,7 +314,7 @@
 
 <script>
 const MN = {victoria_local:'Victoria Local (1)', empate:'Empate (X)', victoria_visita:'Victoria Visitante (2)'};
-let ALL = [], orden = 'conf', filtro = 'todos';
+let ALL = [], orden = 'conf', filtro = 'todos', recData = null;
 
 async function cargar() {
   const btn = document.getElementById('btn-refresh');
@@ -405,7 +445,7 @@ function card(p) {
 // ── PUBLICAR ────────────────────────────────────────────────────
 let predActual = null;
 
-function abrirModal(p) {
+function abrirModal(p, prediccionPresel, cuotaPresel) {
   predActual = p;
   document.getElementById('m-partido').value = `${p.local} vs ${p.visitante}`;
 
@@ -436,9 +476,21 @@ function abrirModal(p) {
   const cotH = ((h - 5) + 24) % 24;
   document.getElementById('m-hora').value = `${String(cotH).padStart(2,'0')}:${String(m2).padStart(2,'0')} COT`;
 
-  // Cuota de la casa si hay cuotas reales
-  const c = p.cuotas;
-  document.getElementById('m-cuota').value = c && c['1'] ? c['1'] : '';
+  // Cuota: usar pre-seleccionada si viene del banner, si no la de la casa
+  if (cuotaPresel) {
+    document.getElementById('m-cuota').value = cuotaPresel;
+  } else {
+    const c = p.cuotas;
+    document.getElementById('m-cuota').value = c && c['1'] ? c['1'] : '';
+  }
+
+  // Pre-seleccionar prediccion si viene del banner
+  if (prediccionPresel) {
+    const sel = document.getElementById('m-mercado');
+    for (let opt of sel.options) {
+      if (opt.value.startsWith(prediccionPresel)) { sel.value = opt.value; break; }
+    }
+  }
 
   document.getElementById('modal').classList.add('show');
 }
@@ -490,8 +542,32 @@ document.getElementById('modal').addEventListener('click', function(e) {
   if (e.target === this) cerrarModal();
 });
 
+async function cargarRecomendacion() {
+  try {
+    const r = await fetch('mejor_prediccion.json?_=' + Date.now());
+    if (!r.ok) return;
+    recData = await r.json();
+    const banner = document.getElementById('banner-rec');
+    banner.style.display = 'flex';
+    document.getElementById('rec-partido').textContent = recData.partido + ' — ' + recData.prediccion;
+    let det = recData.liga;
+    if (recData.ev) det += ` | <strong>EV +${recData.ev}% [${recData.clasificacion}]</strong> | Cuota ${recData.cuota}`;
+    else det += ` | Confianza ${recData.confianza}%`;
+    det += ` | ${recData.hora_cot}`;
+    document.getElementById('rec-det').innerHTML = det;
+  } catch { /* sin recomendacion */ }
+}
+
+function publicarRecomendacion() {
+  if (!recData || !recData.pred_completa) return;
+  abrirModal(recData.pred_completa, recData.prediccion, recData.cuota);
+  document.getElementById('btn-rec').textContent = 'Abriendo...';
+  setTimeout(() => { document.getElementById('btn-rec').textContent = 'Publicar con 1 clic'; }, 800);
+}
+
 document.getElementById('fecha-hdr').textContent = new Date().toLocaleDateString('es-CO',{weekday:'long',day:'numeric',month:'long'});
 cargar();
+cargarRecomendacion();
 </script>
 </body>
 </html>

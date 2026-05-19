@@ -6,14 +6,23 @@ import requests
 import json
 import math
 import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from datetime import datetime, date
 from scipy.stats import poisson
 from scipy.optimize import minimize
 import numpy as np
 
+try:
+    from telegram_alertas import enviar_alerta_value_bet, enviar_resumen_dia
+    TELEGRAM_OK = True
+except Exception:
+    TELEGRAM_OK = False
+
 # Ruta siempre correcta sin importar desde donde se ejecute
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_PATH = os.path.join(BASE_DIR, "..", "predicciones.json")
+MEJOR_PATH = os.path.join(BASE_DIR, "..", "mejor_prediccion.json")
 
 # ── CONFIGURACIÓN ──────────────────────────────────────────────
 from config import FOOTBALL_DATA_KEY as API_KEY, ODDS_API_KEY
@@ -461,6 +470,67 @@ def reporte_del_dia():
         "generado": datetime.now().strftime("%H:%M:%S")
     }
 
+# ── SELECCIONAR MEJOR PREDICCIÓN DEL DÍA ───────────────────────
+def seleccionar_mejor_prediccion(reporte):
+    mejor = None
+    mejor_ev = -999
+
+    for pred in reporte["predicciones"]:
+        for mercado, vb in pred["value_bets"].items():
+            if not vb["tiene_valor"]:
+                continue
+            prioridad = 2 if vb["clasificacion"] == "ALTO VALOR" else 1
+            score = prioridad * 1000 + vb["ev_porcentaje"]
+            if score > mejor_ev:
+                mejor_ev = score
+                utc_hora = pred.get("hora", "00:00")
+                h, m2 = (int(x) for x in utc_hora.split(":"))
+                cot_h = ((h - 5) + 24) % 24
+                hora_cot = f"{str(cot_h).zfill(2)}:{str(m2).zfill(2)} COT"
+                nombres = {"victoria_local": "Victoria Local (1)", "empate": "Empate (X)", "victoria_visita": "Victoria Visitante (2)"}
+                cuota_key = "1" if mercado == "victoria_local" else "X" if mercado == "empate" else "2"
+                mejor = {
+                    "partido": f"{pred['local']} vs {pred['visitante']}",
+                    "liga": pred.get("liga", ""),
+                    "local": pred["local"],
+                    "visitante": pred["visitante"],
+                    "prediccion": nombres.get(mercado, mercado),
+                    "mercado_key": mercado,
+                    "cuota": str(pred["cuotas"].get(cuota_key, "")),
+                    "hora_utc": utc_hora,
+                    "hora_cot": hora_cot,
+                    "ev": vb["ev_porcentaje"],
+                    "clasificacion": vb["clasificacion"],
+                    "confianza": pred["confianza"],
+                    "pred_completa": pred,
+                }
+
+    # Si no hay value bets, tomar la de mayor confianza
+    if not mejor and reporte["predicciones"]:
+        pred = reporte["predicciones"][0]
+        utc_hora = pred.get("hora", "00:00")
+        h, m2 = (int(x) for x in utc_hora.split(":"))
+        cot_h = ((h - 5) + 24) % 24
+        hora_cot = f"{str(cot_h).zfill(2)}:{str(m2).zfill(2)} COT"
+        mejor = {
+            "partido": f"{pred['local']} vs {pred['visitante']}",
+            "liga": pred.get("liga", ""),
+            "local": pred["local"],
+            "visitante": pred["visitante"],
+            "prediccion": pred["prediccion_principal"]["mercado"],
+            "mercado_key": None,
+            "cuota": str(pred["cuotas"].get("1", "")),
+            "hora_utc": utc_hora,
+            "hora_cot": hora_cot,
+            "ev": None,
+            "clasificacion": None,
+            "confianza": pred["confianza"],
+            "pred_completa": pred,
+        }
+
+    return mejor
+
+
 # ── GUARDAR JSON PARA EL PANEL ──────────────────────────────────
 def guardar_predicciones():
     reporte = reporte_del_dia()
@@ -468,6 +538,27 @@ def guardar_predicciones():
         json.dump(reporte, f, ensure_ascii=False, indent=2)
     print(f"✅ Predicciones guardadas: {reporte['total_partidos']} partidos")
     print(f"📅 Fecha: {reporte['fecha']}")
+
+    mejor = seleccionar_mejor_prediccion(reporte)
+    if mejor:
+        with open(MEJOR_PATH, "w", encoding="utf-8") as f:
+            json.dump(mejor, f, ensure_ascii=False, indent=2)
+        print(f"⭐ Mejor prediccion: {mejor['partido']} — {mejor['prediccion']}")
+
+    if TELEGRAM_OK:
+        print("\n📲 Enviando alertas Telegram...")
+        alto_valor_enviados = 0
+        for pred in reporte["predicciones"]:
+            for mercado, vb in pred["value_bets"].items():
+                if vb["clasificacion"] == "ALTO VALOR":
+                    ok = enviar_alerta_value_bet(pred, mercado, vb)
+                    if ok:
+                        alto_valor_enviados += 1
+        if alto_valor_enviados:
+            print(f"  🔥 {alto_valor_enviados} alertas ALTO VALOR enviadas")
+        enviar_resumen_dia(reporte)
+        print("  📋 Resumen del día enviado")
+
     return reporte
 
 if __name__ == "__main__":

@@ -11,6 +11,16 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "18/05/26",
+    partido:    "Inter Milan vs Juventus",
+    liga:       "Serie A",
+    prediccion: "Victoria Local (1)",
+    cuota:      "1.76",
+    hora:       "15:45 COT",
+    status:     "free"
+  },
+
+  {
+    fecha:      "18/05/26",
     partido:    "Bayern Munich vs PSG",
     liga:       "Champions League",
     prediccion: "Victoria Local (1)",
