@@ -450,22 +450,55 @@ def modelo_poisson(goles_local_esperados, goles_visita_esperados):
     if total > 0:
         matriz = {k: v / total for k, v in matriz.items()}
 
-    victoria_local = empate = victoria_visita = over25 = btts = 0.0
+    victoria_local = empate = victoria_visita = 0.0
+    over15 = over25 = over35 = over45 = 0.0
+    btts = 0.0
+    hdc_local = hdc_visita = 0.0  # handicap -1 local / +1 visita
+
     for (i, j), p in matriz.items():
+        # 1X2
         if   i > j: victoria_local  += p
         elif i == j: empate         += p
         else:        victoria_visita += p
-        if i + j > 2.5: over25 += p
+        # Totales
+        total_g = i + j
+        if total_g > 1.5: over15 += p
+        if total_g > 2.5: over25 += p
+        if total_g > 3.5: over35 += p
+        if total_g > 4.5: over45 += p
+        # BTTS
         if i > 0 and j > 0: btts += p
+        # Handicap: local gana por 2+ / visita no pierde por 1
+        if i - j >= 2: hdc_local  += p
+        if j - i >= 0: hdc_visita += p  # visita +1 (gana o empata ajustado)
+
+    double_1x = victoria_local + empate
+    double_x2 = empate + victoria_visita
+    double_12 = victoria_local + victoria_visita
+    dnb_local  = victoria_local / double_12 if double_12 > 0 else 0
+    dnb_visita = victoria_visita / double_12 if double_12 > 0 else 0
 
     return {
         "victoria_local":           round(victoria_local  * 100, 1),
         "empate":                   round(empate           * 100, 1),
         "victoria_visita":          round(victoria_visita  * 100, 1),
+        "over15":                   round(over15           * 100, 1),
+        "under15":                  round((1 - over15)     * 100, 1),
         "over25":                   round(over25           * 100, 1),
         "under25":                  round((1 - over25)     * 100, 1),
+        "over35":                   round(over35           * 100, 1),
+        "under35":                  round((1 - over35)     * 100, 1),
+        "over45":                   round(over45           * 100, 1),
+        "under45":                  round((1 - over45)     * 100, 1),
         "btts_si":                  round(btts             * 100, 1),
         "btts_no":                  round((1 - btts)       * 100, 1),
+        "doble_1x":                 round(double_1x        * 100, 1),
+        "doble_x2":                 round(double_x2        * 100, 1),
+        "doble_12":                 round(double_12        * 100, 1),
+        "dnb_local":                round(dnb_local        * 100, 1),
+        "dnb_visita":               round(dnb_visita       * 100, 1),
+        "hdc_local_menos1":         round(hdc_local        * 100, 1),
+        "hdc_visita_mas1":          round(hdc_visita       * 100, 1),
         "goles_esperados_local":    round(mu_h, 2),
         "goles_esperados_visita":   round(mu_a, 2),
         "total_goles_esperados":    round(mu_h + mu_a, 2),
@@ -643,7 +676,7 @@ def obtener_cuotas_liga(sport_key):
         params = {
             "apiKey": ODDS_API_KEY,
             "regions": "eu,uk",
-            "markets": "h2h,totals",
+            "markets": "h2h,totals,btts,double_chance,draw_no_bet",
             "oddsFormat": "decimal",
         }
         r = requests.get(url, params=params, timeout=15)
@@ -675,10 +708,19 @@ def extraer_mejor_cuota(partido):
         "1": None,       "1_casa": None,
         "X": None,       "X_casa": None,
         "2": None,       "2_casa": None,
+        "over15": None,  "over15_casa": None,
+        "under15": None, "under15_casa": None,
         "over25": None,  "over25_casa": None,
         "under25": None, "under25_casa": None,
+        "over35": None,  "over35_casa": None,
+        "under35": None, "under35_casa": None,
         "btts_si": None, "btts_si_casa": None,
         "btts_no": None, "btts_no_casa": None,
+        "doble_1x": None, "doble_1x_casa": None,
+        "doble_x2": None, "doble_x2_casa": None,
+        "doble_12": None, "doble_12_casa": None,
+        "dnb_local": None,  "dnb_local_casa": None,
+        "dnb_visita": None, "dnb_visita_casa": None,
     }
     home = partido.get("home_team", "")
     away = partido.get("away_team", "")
@@ -704,28 +746,38 @@ def extraer_mejor_cuota(partido):
 
             elif key == "totals":
                 for o in outcomes:
-                    p = o.get("point", 0)
-                    if abs(p - 2.5) > 0.01:
-                        continue
-                    if o.get("name") == "Over":
-                        if mejor["over25"] is None or o["price"] > mejor["over25"]:
-                            mejor["over25"] = round(o["price"], 2)
-                            mejor["over25_casa"] = bm_name
-                    elif o.get("name") == "Under":
-                        if mejor["under25"] is None or o["price"] > mejor["under25"]:
-                            mejor["under25"] = round(o["price"], 2)
-                            mejor["under25_casa"] = bm_name
+                    pt = o.get("point", 0)
+                    nm = o.get("name")
+                    pr = o["price"]
+                    for lim, over_k, under_k in [(1.5,"over15","under15"),(2.5,"over25","under25"),(3.5,"over35","under35")]:
+                        if abs(pt - lim) < 0.01:
+                            if nm == "Over" and (mejor[over_k] is None or pr > mejor[over_k]):
+                                mejor[over_k] = round(pr, 2); mejor[over_k+"_casa"] = bm_name
+                            elif nm == "Under" and (mejor[under_k] is None or pr > mejor[under_k]):
+                                mejor[under_k] = round(pr, 2); mejor[under_k+"_casa"] = bm_name
 
             elif key == "btts":
                 for o in outcomes:
                     if o.get("name") in ("Yes", "Sí"):
                         if mejor["btts_si"] is None or o["price"] > mejor["btts_si"]:
-                            mejor["btts_si"] = round(o["price"], 2)
-                            mejor["btts_si_casa"] = bm_name
+                            mejor["btts_si"] = round(o["price"], 2); mejor["btts_si_casa"] = bm_name
                     elif o.get("name") == "No":
                         if mejor["btts_no"] is None or o["price"] > mejor["btts_no"]:
-                            mejor["btts_no"] = round(o["price"], 2)
-                            mejor["btts_no_casa"] = bm_name
+                            mejor["btts_no"] = round(o["price"], 2); mejor["btts_no_casa"] = bm_name
+
+            elif key == "double_chance":
+                dc_map = {"1X": "doble_1x", "X2": "doble_x2", "12": "doble_12"}
+                for o in outcomes:
+                    k2 = dc_map.get(o.get("name",""))
+                    if k2 and (mejor[k2] is None or o["price"] > mejor[k2]):
+                        mejor[k2] = round(o["price"], 2); mejor[k2+"_casa"] = bm_name
+
+            elif key == "draw_no_bet":
+                for o in outcomes:
+                    if o["name"] == home and (mejor["dnb_local"] is None or o["price"] > mejor["dnb_local"]):
+                        mejor["dnb_local"] = round(o["price"], 2); mejor["dnb_local_casa"] = bm_name
+                    elif o["name"] == away and (mejor["dnb_visita"] is None or o["price"] > mejor["dnb_visita"]):
+                        mejor["dnb_visita"] = round(o["price"], 2); mejor["dnb_visita_casa"] = bm_name
 
     return mejor if mejor["1"] else None
 
@@ -789,11 +841,22 @@ def predecir_partido(local, visitante, cuotas=None):
     value_empate = calcular_value_bet(probs["empate"],          cuotas.get("X", 3.2))
     value_visita = calcular_value_bet(probs["victoria_visita"], cuotas.get("2", 3.5))
 
-    # Value bets mercados adicionales (solo si hay cuota real de la API)
-    value_over25  = calcular_value_bet(probs["over25"],  cuotas["over25"])  if cuotas.get("over25")  else None
-    value_under25 = calcular_value_bet(probs["under25"], cuotas["under25"]) if cuotas.get("under25") else None
-    value_btts_si = calcular_value_bet(probs["btts_si"], cuotas["btts_si"]) if cuotas.get("btts_si") else None
-    value_btts_no = calcular_value_bet(probs["btts_no"], cuotas["btts_no"]) if cuotas.get("btts_no") else None
+    # Value bets — todos los mercados con cuota real de la API
+    mercados_extra = [
+        ("over15",    "over15"),
+        ("under15",   "under15"),
+        ("over25",    "over25"),
+        ("under25",   "under25"),
+        ("over35",    "over35"),
+        ("under35",   "under35"),
+        ("btts_si",   "btts_si"),
+        ("btts_no",   "btts_no"),
+        ("doble_1x",  "doble_1x"),
+        ("doble_x2",  "doble_x2"),
+        ("doble_12",  "doble_12"),
+        ("dnb_local", "dnb_local"),
+        ("dnb_visita","dnb_visita"),
+    ]
 
     # Kelly
     kelly_local = kelly_criterion(probs["victoria_local"], cuotas.get("1", 2.0))
@@ -812,10 +875,10 @@ def predecir_partido(local, visitante, cuotas=None):
         "empate":          value_empate,
         "victoria_visita": value_visita,
     }
-    if value_over25:  value_bets["over25"]  = value_over25
-    if value_under25: value_bets["under25"] = value_under25
-    if value_btts_si: value_bets["btts_si"] = value_btts_si
-    if value_btts_no: value_bets["btts_no"] = value_btts_no
+    for mercado_key, prob_key in mercados_extra:
+        if cuotas.get(mercado_key):
+            vb = calcular_value_bet(probs[prob_key], cuotas[mercado_key])
+            if vb: value_bets[mercado_key] = vb
 
     return {
         "local":      local,
