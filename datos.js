@@ -10,36 +10,6 @@
 // status: "vip" = bloqueado para no suscriptores, "free" = visible para todos
 const PROXIMOS_EVENTOS = [
   {
-    fecha:      "19/05/26",
-    partido:    "Chelsea FC vs Tottenham Hotspur FC",
-    liga:       "Premier League",
-    prediccion: "under25 — EV +24.7%",
-    cuota:      "2.01",
-    hora:       "14:15 COT",
-    status:     "vip"
-  },
-
-  {
-    fecha:      "19/05/26",
-    partido:    "AFC Bournemouth vs Manchester City FC",
-    liga:       "Premier League",
-    prediccion: "under25 — EV +24.6%",
-    cuota:      "5",
-    hora:       "13:30 COT",
-    status:     "vip"
-  },
-
-  {
-    fecha:      "19/05/26",
-    partido:    "Chelsea vs Tottenham",
-    liga:       "Premier League",
-    prediccion: "Victoria Local (1)",
-    cuota:      "1.72",
-    hora:       "20:00 COT",
-    status:     "free"
-  },
-
-  {
     fecha:      "18/05/26",
     partido:    "Bayern Munich vs PSG",
     liga:       "Champions League",
@@ -58,11 +28,27 @@ const PROXIMOS_EVENTOS = [
 const PREDICCIONES_HISTORIAL = [
   {
     fecha:      "19/05/26",
+    partido:    "Chelsea FC vs Tottenham Hotspur FC",
+    liga:       "Premier League",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "2.12",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "19/05/26",
+    partido:    "AFC Bournemouth vs Manchester City FC",
+    liga:       "Premier League",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "2.88",
+    resultado:  "win"
+  },
+  {
+    fecha:      "19/05/26",
     partido:    "Chelsea vs Tottenham",
     liga:       "Premier League",
     prediccion: "Victoria Local (1)",
-    cuota:      "1.72",
-    resultado:  "pending"
+    cuota:      "1.97",
+    resultado:  "win"
   },
   {
     fecha:      "18/05/26",
