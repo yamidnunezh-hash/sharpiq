@@ -16,10 +16,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_PATH = os.path.join(BASE_DIR, "..", "predicciones.json")
 
 # ── CONFIGURACIÓN ──────────────────────────────────────────────
-API_KEY = "6f8675fcb0334e1ea5e392a0ba6f7903"  # football-data.org
+from config import FOOTBALL_DATA_KEY as API_KEY, ODDS_API_KEY
 API_URL = "https://api.football-data.org/v4"
-
-ODDS_API_KEY = "e74d439f9cb1aa5b25df97226c1236d3"  # the-odds-api.com
 ODDS_API_URL = "https://api.the-odds-api.com/v4"
 
 # Mapeo ligas football-data.org → the-odds-api.com
