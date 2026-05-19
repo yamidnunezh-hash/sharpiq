@@ -952,18 +952,18 @@
       <div class="pred-kpis">
         <div class="pred-kpi">
           <div class="pred-kpi-l">Últimos 30 días</div>
-          <div class="pred-kpi-v"><span data-target="23" class="snum" style="font-size:28px">0</span><span style="font-family:'Bebas Neue';font-size:18px;color:var(--t3)">/28</span></div>
+          <div class="pred-kpi-v"><span id="kpi-wins" class="snum" style="font-size:28px">—</span><span id="kpi-total" style="font-family:'Bebas Neue';font-size:18px;color:var(--t3)"></span></div>
           <div class="pred-kpi-s">predicciones correctas</div>
         </div>
         <div class="pred-kpi">
           <div class="pred-kpi-l">Racha Actual</div>
-          <div class="pred-kpi-v"><span data-target="7" class="snum" style="font-size:28px">0</span></div>
+          <div class="pred-kpi-v"><span id="kpi-racha" class="snum" style="font-size:28px">—</span></div>
           <div class="pred-kpi-s">aciertos consecutivos</div>
         </div>
         <div class="pred-kpi">
-          <div class="pred-kpi-l">ROI Estimado</div>
-          <div class="pred-kpi-v">+<span data-target="34" class="snum" style="font-size:28px">0</span><span style="font-family:'Bebas Neue';font-size:18px;color:var(--gold)">%</span></div>
-          <div class="pred-kpi-s">sobre capital invertido</div>
+          <div class="pred-kpi-l">Yield Verificado</div>
+          <div class="pred-kpi-v">+<span id="kpi-roi" class="snum" style="font-size:28px">—</span><span style="font-family:'Bebas Neue';font-size:18px;color:var(--gold)">%</span></div>
+          <div class="pred-kpi-s">ganancia por unidad apostada</div>
         </div>
       </div>
     </div>
@@ -1419,6 +1419,24 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
         <td><span class="odds-val">${p.cuota}</span></td>
         <td>${resultBadge(p.resultado)}</td>
       </tr>`).join('');
+
+    // Live stats from data
+    const resolved=PREDICCIONES_HISTORIAL.filter(p=>p.resultado!=='pending');
+    const wins=resolved.filter(p=>p.resultado==='win');
+    const losses=resolved.filter(p=>p.resultado==='loss');
+    let racha=0;
+    for(const p of PREDICCIONES_HISTORIAL){
+      if(p.resultado==='pending') continue;
+      if(p.resultado==='win') racha++; else break;
+    }
+    const profitWins=wins.reduce((s,p)=>s+(parseFloat(p.cuota)-1),0);
+    const yieldPct=resolved.length?Math.round((profitWins-losses.length)/resolved.length*100):0;
+    const kW=document.getElementById('kpi-wins'),kT=document.getElementById('kpi-total'),
+          kRac=document.getElementById('kpi-racha'),kRoi=document.getElementById('kpi-roi');
+    if(kW){kW.dataset.target=wins.length;kW.textContent=0;}
+    if(kT) kT.textContent='/'+resolved.length;
+    if(kRac){kRac.dataset.target=racha;kRac.textContent=0;}
+    if(kRoi){kRoi.dataset.target=yieldPct;kRoi.textContent=0;}
   }
 
   // Próximos Eventos grid
