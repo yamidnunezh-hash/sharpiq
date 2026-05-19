@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SharpIQ — ¡Bienvenido al VIP!</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #020509;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #f0a500;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: #0a1b2e;
+      border: 1px solid rgba(240,165,0,0.25);
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(240,165,0,0.08);
+    }
+
+    .check {
+      font-size: 4rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      color: #f0a500;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      font-size: 1rem;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .steps {
+      text-align: left;
+      margin-bottom: 36px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .step-num {
+      background: rgba(240,165,0,0.15);
+      border: 1px solid rgba(240,165,0,0.4);
+      color: #f0a500;
+      font-weight: 700;
+      font-size: 0.9rem;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .step-text strong {
+      color: #f0a500;
+    }
+
+    .command-box {
+      background: #05101c;
+      border: 1px solid rgba(240,165,0,0.3);
+      border-radius: 8px;
+      padding: 14px 20px;
+      font-family: monospace;
+      font-size: 1rem;
+      color: #f0a500;
+      margin: 8px 0 4px;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.2s;
+    }
+
+    .command-box:hover {
+      background: rgba(240,165,0,0.08);
+    }
+
+    .copy-hint {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-bottom: 0;
+    }
+
+    .bot-link {
+      display: inline-block;
+      margin-top: 24px;
+      background: linear-gradient(135deg, #f0a500, #d97706);
+      color: #000;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s;
+    }
+
+    .bot-link:hover { opacity: 0.88; }
+
+    .note {
+      margin-top: 28px;
+      padding: 14px 18px;
+      background: rgba(240,165,0,0.05);
+      border-left: 3px solid rgba(240,165,0,0.4);
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: left;
+    }
+
+    .home-link {
+      margin-top: 32px;
+      font-size: 0.85rem;
+      color: #475569;
+      text-decoration: none;
+    }
+
+    .home-link:hover { color: #94a3b8; }
+
+    @media (max-width: 480px) {
+      .card { padding: 32px 24px; }
+      h1 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">SHARP<span style="color:#fff">IQ</span></div>
+
+  <div class="card">
+    <div class="check">✅</div>
+    <h1>¡Pago confirmado!</h1>
+    <p class="subtitle">Tu suscripción VIP está activa. Sigue estos pasos para acceder al canal de predicciones exclusivas.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          Abre Telegram y busca el bot <strong>@sharpiq_alertas_bot</strong><br>
+          o haz clic en el botón de abajo.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          Envía este comando con el email que usaste para pagar:
+          <div class="command-box" onclick="copiarComando()" title="Toca para copiar">
+            /vip tu@email.com
+          </div>
+          <div class="copy-hint">Reemplaza "tu@email.com" con tu email real · Toca para copiar</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          El bot te enviará automáticamente un <strong>link de acceso único</strong> al canal VIP SharpIQ.
+        </div>
+      </div>
+    </div>
+
+    <a href="https://t.me/sharpiq_alertas_bot" target="_blank" class="bot-link">
+      Abrir @sharpiq_alertas_bot en Telegram
+    </a>
+
+    <div class="note">
+      Si tu pago es reciente, espera 2-3 minutos antes de enviar el comando.<br><br>
+      ¿Problemas? Escribe a <strong>@sharpiq_soporte</strong> en Telegram.
+    </div>
+  </div>
+
+  <a href="/" class="home-link">← Volver a sharpiq.co</a>
+
+  <script>
+    function copiarComando() {
+      navigator.clipboard.writeText('/vip tu@email.com').then(() => {
+        const box = document.querySelector('.command-box');
+        const orig = box.textContent;
+        box.textContent = '¡Copiado!';
+        setTimeout(() => box.textContent = orig, 1500);
+      });
+    }
+  </script>
+
+</body>
+</html>
