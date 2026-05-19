@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>SharpIQ Logo Generator</title>
+<style>
+  body { background: #111; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; font-family: Arial, sans-serif; gap: 20px; }
+  canvas { border: 1px solid #333; }
+  button { background: #f0a500; color: #000; border: none; padding: 14px 32px; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 6px; }
+  button:hover { background: #ffc200; }
+  h2 { color: #f0a500; margin: 0; }
+  p { color: #aaa; margin: 0; font-size: 13px; }
+</style>
+</head>
+<body>
+<h2>SharpIQ — Generador de Logo</h2>
+
+<canvas id="logo" width="512" height="512"></canvas>
+<button onclick="download('logo','sharpiq-logo-512.png')">Descargar Logo (512x512)</button>
+
+<canvas id="cover" width="1640" height="624"></canvas>
+<button onclick="download('cover','sharpiq-portada-facebook.png')">Descargar Portada Facebook</button>
+
+<p>Abre este archivo en el navegador, descarga ambas imágenes y úsalas en Facebook e Instagram.</p>
+
+<script>
+function hexPoints(cx, cy, r) {
+  let pts = [];
+  for (let i = 0; i < 6; i++) {
+    let a = Math.PI / 180 * (60 * i - 30);
+    pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
+  }
+  return pts;
+}
+
+function drawHex(ctx, cx, cy, r, fill, stroke, lw) {
+  let pts = hexPoints(cx, cy, r);
+  ctx.beginPath();
+  ctx.moveTo(pts[0][0], pts[0][1]);
+  for (let i = 1; i < 6; i++) ctx.lineTo(pts[i][0], pts[i][1]);
+  ctx.closePath();
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke(); }
+}
+
+// --- LOGO 512x512 ---
+const logo = document.getElementById('logo');
+const lc = logo.getContext('2d');
+
+lc.fillStyle = '#020509';
+lc.fillRect(0, 0, 512, 512);
+
+drawHex(lc, 256, 256, 220, '#020509', '#f0a500', 14);
+
+lc.fillStyle = '#f0a500';
+lc.font = 'bold 260px Arial Black, Arial, sans-serif';
+lc.textAlign = 'center';
+lc.textBaseline = 'middle';
+lc.fillText('S', 256, 272);
+
+// --- COVER 1640x624 ---
+const cover = document.getElementById('cover');
+const cc = cover.getContext('2d');
+
+// Background gradient
+const grad = cc.createLinearGradient(0, 0, 1640, 624);
+grad.addColorStop(0, '#020509');
+grad.addColorStop(1, '#0a1020');
+cc.fillStyle = grad;
+cc.fillRect(0, 0, 1640, 624);
+
+// Grid lines decoration
+cc.strokeStyle = 'rgba(240,165,0,0.06)';
+cc.lineWidth = 1;
+for (let x = 0; x < 1640; x += 60) { cc.beginPath(); cc.moveTo(x, 0); cc.lineTo(x, 624); cc.stroke(); }
+for (let y = 0; y < 624; y += 60) { cc.beginPath(); cc.moveTo(0, y); cc.lineTo(1640, y); cc.stroke(); }
+
+// Mini hex decorations
+for (let i = 0; i < 8; i++) {
+  drawHex(cc, 1300 + (i%4)*80, 120 + Math.floor(i/4)*140, 30, null, 'rgba(240,165,0,0.15)', 2);
+}
+
+// Logo hexagon
+drawHex(cc, 260, 312, 200, '#020509', '#f0a500', 12);
+drawHex(cc, 260, 312, 186, null, 'rgba(240,165,0,0.3)', 2);
+
+cc.fillStyle = '#f0a500';
+cc.font = 'bold 230px Arial Black, Arial, sans-serif';
+cc.textAlign = 'center';
+cc.textBaseline = 'middle';
+cc.fillText('S', 260, 325);
+
+// SharpIQ text
+cc.fillStyle = '#ffffff';
+cc.font = 'bold 110px Arial Black, Arial, sans-serif';
+cc.textAlign = 'left';
+cc.textBaseline = 'middle';
+cc.fillText('Sharp', 530, 260);
+
+cc.fillStyle = '#f0a500';
+cc.fillText('IQ', 870, 260);
+
+// Tagline
+cc.fillStyle = 'rgba(255,255,255,0.6)';
+cc.font = '38px Arial, sans-serif';
+cc.letterSpacing = '4px';
+cc.fillText('LA VENTAJA INTELIGENTE', 530, 360);
+
+// Bottom line
+cc.strokeStyle = '#f0a500';
+cc.lineWidth = 3;
+cc.beginPath();
+cc.moveTo(530, 410);
+cc.lineTo(1100, 410);
+cc.stroke();
+
+// Website
+cc.fillStyle = 'rgba(240,165,0,0.7)';
+cc.font = '28px Arial, sans-serif';
+cc.fillText('sharpiq.co', 530, 450);
+
+function download(id, name) {
+  const c = document.getElementById(id);
+  const a = document.createElement('a');
+  a.download = name;
+  a.href = c.toDataURL('image/png');
+  a.click();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SharpIQ — Motor de Predicciones</title>
+<style>
+  :root {
+    --gold: #f0a500;
+    --gold2: #ffd166;
+    --bg: #020509;
+    --bg2: #0a1020;
+    --bg3: #111927;
+    --text: #e8edf5;
+    --muted: #6b7a99;
+    --green: #22c55e;
+    --red: #ef4444;
+    --blue: #3b82f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+
+  header {
+    background: var(--bg2);
+    border-bottom: 1px solid rgba(240,165,0,0.2);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo svg { width: 34px; height: 34px; }
+  .logo-text { font-size: 1.3rem; font-weight: 800; color: #fff; }
+  .logo-text span { color: var(--gold); }
+  .header-right { display: flex; align-items: center; gap: 14px; }
+  .badge-engine { background: rgba(240,165,0,0.12); border: 1px solid rgba(240,165,0,0.3); color: var(--gold); padding: 4px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px; }
+  #btn-refresh {
+    background: var(--gold); color: #000; border: none;
+    padding: 7px 18px; border-radius: 8px; font-weight: 700;
+    cursor: pointer; font-size: 0.82rem; transition: background 0.2s;
+  }
+  #btn-refresh:hover { background: var(--gold2); }
+  #btn-refresh:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .stats-bar {
+    background: var(--bg2);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 12px 24px;
+    display: flex; gap: 28px; overflow-x: auto;
+  }
+  .stat { text-align: center; white-space: nowrap; }
+  .stat-n { font-size: 1.4rem; font-weight: 800; color: var(--gold); }
+  .stat-l { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+  .toolbar {
+    padding: 14px 24px;
+    display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .tb-label { color: var(--muted); font-size: 0.78rem; }
+  .f-btn {
+    background: var(--bg3); border: 1px solid rgba(255,255,255,0.08);
+    color: var(--muted); padding: 5px 14px; border-radius: 20px;
+    font-size: 0.78rem; cursor: pointer; transition: all 0.2s;
+  }
+  .f-btn.on, .f-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(240,165,0,0.07); }
+  .tb-sep { width: 1px; background: rgba(255,255,255,0.08); height: 20px; align-self: center; }
+
+  .main { padding: 16px 24px 48px; }
+  #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
+
+  .card {
+    background: var(--bg2); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px; overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); border-color: rgba(240,165,0,0.25); }
+  .card.vbet { border-color: rgba(240,165,0,0.35); }
+
+  .ch {
+    background: var(--bg3); padding: 9px 14px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .ch-liga { font-size: 0.72rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.5px; }
+  .ch-hora { color: var(--muted); font-size: 0.72rem; }
+
+  .cb { padding: 14px; }
+
+  .equipos {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px; gap: 6px;
+  }
+  .eq { text-align: center; flex: 1; }
+  .eq-n { font-size: 0.8rem; font-weight: 600; line-height: 1.3; }
+  .eq-g { font-size: 1rem; color: var(--gold); font-weight: 800; margin-top: 3px; }
+  .vs-txt { color: var(--muted); font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+
+  .pbar-wrap { margin-bottom: 12px; }
+  .pbar-lbls { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--muted); margin-bottom: 3px; }
+  .pbar { height: 7px; border-radius: 4px; display: flex; overflow: hidden; }
+  .pbl { background: var(--green); }
+  .pbx { background: #475569; }
+  .pbv { background: var(--blue); }
+  .pbar-vals { display: flex; justify-content: space-between; margin-top: 3px; }
+  .pv { font-size: 0.76rem; font-weight: 700; }
+  .pv.l { color: var(--green); }
+  .pv.x { color: #94a3b8; }
+  .pv.v { color: var(--blue); }
+
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .chip {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 7px; padding: 4px 9px; font-size: 0.7rem;
+    display: flex; flex-direction: column; align-items: center; min-width: 58px;
+  }
+  .chip .cl { color: var(--muted); font-size: 0.62rem; text-transform: uppercase; }
+  .chip .cv { font-weight: 700; color: var(--text); }
+  .chip.hi { border-color: rgba(240,165,0,0.35); background: rgba(240,165,0,0.05); }
+  .chip.hi .cv { color: var(--gold); }
+
+  .pred-box {
+    background: rgba(255,255,255,0.04); border-radius: 7px;
+    padding: 7px 11px; display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 9px;
+  }
+  .pred-lbl { font-size: 0.68rem; color: var(--muted); }
+  .pred-m { font-size: 0.82rem; font-weight: 700; }
+  .conf { background: rgba(240,165,0,0.1); color: var(--gold); border: 1px solid rgba(240,165,0,0.25); border-radius: 5px; padding: 2px 9px; font-size: 0.72rem; font-weight: 700; }
+
+  .vbets { display: flex; flex-direction: column; gap: 5px; }
+  .vb {
+    background: rgba(240,165,0,0.05); border: 1px solid rgba(240,165,0,0.2);
+    border-radius: 7px; padding: 6px 11px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .vb-m { font-size: 0.75rem; font-weight: 600; color: var(--gold); }
+  .vb-ev { font-size: 0.75rem; font-weight: 700; color: var(--green); }
+  .vb-tag {
+    font-size: 0.62rem; padding: 2px 7px; border-radius: 4px; font-weight: 700;
+    background: rgba(240,165,0,0.12); color: var(--gold);
+  }
+  .vb-tag.hi { background: rgba(34,197,94,0.12); color: var(--green); }
+
+  /* BOTON PUBLICAR */
+  .btn-publicar {
+    width: 100%; margin-top: 10px; padding: 9px;
+    background: linear-gradient(135deg, #f0a500, #e07b00);
+    color: #000; border: none; border-radius: 8px;
+    font-weight: 800; font-size: 0.82rem; cursor: pointer;
+    letter-spacing: 0.3px; transition: opacity 0.2s, transform 0.1s;
+  }
+  .btn-publicar:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-publicar:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+  .btn-publicar.ok { background: linear-gradient(135deg,#22c55e,#16a34a); color: #fff; }
+
+  /* MODAL PUBLICAR */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75); z-index: 999;
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.show { display: flex; }
+  .modal {
+    background: #0a1020; border: 1px solid rgba(240,165,0,0.3);
+    border-radius: 14px; padding: 24px; width: 420px; max-width: 95vw;
+  }
+  .modal h3 { color: var(--gold); font-size: 1rem; margin-bottom: 16px; }
+  .modal label { display: block; font-size: 0.72rem; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; margin-top: 12px; }
+  .modal input, .modal select {
+    width: 100%; background: var(--bg); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 7px; padding: 9px 12px; color: var(--text); font-size: 0.85rem;
+  }
+  .modal input:focus, .modal select:focus { outline: none; border-color: var(--gold); }
+  .modal-btns { display: flex; gap: 10px; margin-top: 20px; }
+  .modal-btns button { flex: 1; padding: 10px; border-radius: 8px; font-weight: 700; cursor: pointer; border: none; font-size: 0.85rem; }
+  .btn-confirmar { background: var(--gold); color: #000; }
+  .btn-cancelar { background: rgba(255,255,255,0.07); color: var(--muted); }
+
+  #loading { display:none; text-align:center; padding:50px; color:var(--muted); }
+  .spin { width:32px;height:32px;border:3px solid rgba(240,165,0,0.15);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 14px; }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  #empty { display:none; text-align:center; padding:50px; color:var(--muted); font-size:0.9rem; }
+
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 14px 24px; color: var(--muted); font-size: 0.72rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  @media(max-width:600px){
+    header{flex-wrap:wrap;gap:10px;}
+    .stats-bar{gap:16px;}
+    .main,.toolbar{padding-left:14px;padding-right:14px;}
+    #grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="32,2 58,17 58,47 32,62 6,47 6,17" fill="#020509" stroke="#f0a500" stroke-width="3"/>
+      <text x="32" y="44" font-family="Arial Black,sans-serif" font-size="30" font-weight="900" fill="#f0a500" text-anchor="middle">S</text>
+    </svg>
+    <div class="logo-text">Sharp<span>IQ</span></div>
+  </a>
+  <div class="header-right">
+    <span class="badge-engine">MOTOR IA</span>
+    <span id="fecha-hdr" style="color:var(--muted);font-size:0.8rem;"></span>
+    <button id="btn-refresh" onclick="cargar()">Actualizar</button>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-n" id="s-total">—</div><div class="stat-l">Partidos</div></div>
+  <div class="stat"><div class="stat-n" id="s-vbet">—</div><div class="stat-l">Value Bets</div></div>
+  <div class="stat"><div class="stat-n" id="s-alto">—</div><div class="stat-l">Alto Valor</div></div>
+  <div class="stat"><div class="stat-n" id="s-conf">—</div><div class="stat-l">Max Confianza</div></div>
+  <div class="stat"><div class="stat-n" id="s-over">—</div><div class="stat-l">Over2.5 Prom.</div></div>
+  <div class="stat"><div class="stat-n" id="s-gen" style="font-size:0.9rem;">—</div><div class="stat-l">Generado</div></div>
+</div>
+
+<div class="toolbar">
+  <span class="tb-label">Filtro:</span>
+  <button class="f-btn on" onclick="setf('todos',this)">Todos</button>
+  <button class="f-btn" onclick="setf('value',this)">Value Bets</button>
+  <button class="f-btn" onclick="setf('high',this)">Confianza +60%</button>
+  <button class="f-btn" onclick="setf('over',this)">Over2.5 +55%</button>
+  <button class="f-btn" onclick="setf('btts',this)">BTTS +55%</button>
+  <div class="tb-sep"></div>
+  <span class="tb-label">Ordenar:</span>
+  <button class="f-btn on" onclick="setord('conf',this)">Confianza</button>
+  <button class="f-btn" onclick="setord('over',this)">Over2.5</button>
+  <button class="f-btn" onclick="setord('hora',this)">Hora</button>
+</div>
+
+<!-- MODAL PUBLICAR -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h3>Publicar en SharpIQ</h3>
+    <label>Partido</label>
+    <input type="text" id="m-partido" readonly style="opacity:0.6;">
+    <label>Prediccion a publicar</label>
+    <select id="m-mercado"></select>
+    <label>Cuota (de la casa de apuestas)</label>
+    <input type="number" id="m-cuota" step="0.01" placeholder="ej: 1.85">
+    <label>Hora local Colombia (COT = UTC-5)</label>
+    <input type="text" id="m-hora" placeholder="ej: 13:30 COT">
+    <label>Visibilidad</label>
+    <select id="m-status">
+      <option value="vip">VIP — Solo suscriptores</option>
+      <option value="free">FREE — Visible para todos</option>
+    </select>
+    <div class="modal-btns">
+      <button class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+      <button class="btn-confirmar" onclick="confirmarPublicar()">Publicar ahora</button>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div id="loading"><div class="spin"></div><div>Cargando predicciones...</div></div>
+  <div id="empty">No hay partidos con este filtro.</div>
+  <div id="grid"></div>
+</div>
+
+<footer>
+  <span>SharpIQ Engine — Modelo Poisson + Value Betting + Kelly Criterion</span>
+  <span id="footer-ts"></span>
+</footer>
+
+<script>
+const MN = {victoria_local:'Victoria Local (1)', empate:'Empate (X)', victoria_visita:'Victoria Visitante (2)'};
+let ALL = [], orden = 'conf', filtro = 'todos';
+
+async function cargar() {
+  const btn = document.getElementById('btn-refresh');
+  btn.disabled = true; btn.textContent = 'Cargando...';
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('grid').innerHTML = '';
+  document.getElementById('empty').style.display = 'none';
+  try {
+    let data;
+    try {
+      const r = await fetch('http://localhost:5000/api/predicciones', {signal: AbortSignal.timeout(2500)});
+      data = await r.json();
+    } catch {
+      const r = await fetch('predicciones.json?_=' + Date.now());
+      if (!r.ok) throw new Error('Sin datos');
+      data = await r.json();
+    }
+    ALL = data.predicciones || [];
+    document.getElementById('fecha-hdr').textContent = data.fecha || '';
+    document.getElementById('s-gen').textContent = data.generado || '—';
+    document.getElementById('footer-ts').textContent = 'Actualizado: ' + (data.generado || '—');
+    stats(); render();
+  } catch(e) {
+    document.getElementById('grid').innerHTML = `
+      <div style="grid-column:1/-1;padding:40px;text-align:center;color:#ef4444;">
+        <div style="font-size:1.1rem;margin-bottom:10px;">Sin predicciones disponibles</div>
+        <div style="color:#6b7a99;font-size:0.85rem;">Ejecuta: <code style="color:#f0a500;">py sharpiq-engine/motor.py</code> para generar el archivo predicciones.json</div>
+      </div>`;
+  } finally {
+    document.getElementById('loading').style.display = 'none';
+    btn.disabled = false; btn.textContent = 'Actualizar';
+  }
+}
+
+function stats() {
+  let vb = 0, alto = 0, sumOver = 0, maxConf = 0;
+  ALL.forEach(p => {
+    Object.values(p.value_bets).forEach(v => { if(v.tiene_valor) vb++; if(v.clasificacion==='ALTO VALOR') alto++; });
+    sumOver += p.probabilidades.over25;
+    if(p.confianza > maxConf) maxConf = p.confianza;
+  });
+  document.getElementById('s-total').textContent = ALL.length;
+  document.getElementById('s-vbet').textContent = vb;
+  document.getElementById('s-alto').textContent = alto;
+  document.getElementById('s-conf').textContent = maxConf > 0 ? maxConf + '%' : '—';
+  document.getElementById('s-over').textContent = ALL.length ? Math.round(sumOver / ALL.length) + '%' : '—';
+}
+
+function setf(t, btn) {
+  document.querySelectorAll('.toolbar .f-btn').forEach(b => { if(b.onclick.toString().includes('setf')) b.classList.remove('on'); });
+  btn.classList.add('on'); filtro = t; render();
+}
+function setord(t, btn) {
+  document.querySelectorAll('.toolbar .f-btn').forEach(b => { if(b.onclick.toString().includes('setord')) b.classList.remove('on'); });
+  btn.classList.add('on'); orden = t; render();
+}
+
+function render() {
+  let lista = [...ALL];
+  if (filtro==='value') lista = lista.filter(p => Object.values(p.value_bets).some(v=>v.tiene_valor));
+  else if (filtro==='high') lista = lista.filter(p => p.confianza >= 60);
+  else if (filtro==='over') lista = lista.filter(p => p.probabilidades.over25 >= 55);
+  else if (filtro==='btts') lista = lista.filter(p => p.probabilidades.btts_si >= 55);
+
+  if (orden==='over') lista.sort((a,b) => b.probabilidades.over25 - a.probabilidades.over25);
+  else if (orden==='hora') lista.sort((a,b) => (a.hora||'').localeCompare(b.hora||''));
+  else lista.sort((a,b) => b.confianza - a.confianza);
+
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  if (!lista.length) { grid.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display = 'none';
+  grid.innerHTML = lista.map(card).join('');
+}
+
+function card(p) {
+  const pr = p.probabilidades, vbs = p.value_bets;
+  const hasVB = Object.values(vbs).some(v=>v.tiene_valor);
+  const vbHTML = Object.entries(vbs).filter(([,v])=>v.tiene_valor).map(([m,v])=>`
+    <div class="vb">
+      <span class="vb-m">${MN[m]||m}</span>
+      <span class="vb-ev">EV +${v.ev_porcentaje}%</span>
+      <span class="vb-tag ${v.clasificacion==='ALTO VALOR'?'hi':''}">${v.clasificacion}</span>
+    </div>`).join('');
+  return `
+  <div class="card ${hasVB?'vbet':''}">
+    <div class="ch">
+      <span class="ch-liga">${p.liga||''}</span>
+      <span class="ch-hora">${p.hora||''} UTC</span>
+    </div>
+    <div class="cb">
+      <div class="equipos">
+        <div class="eq"><div class="eq-n">${p.local}</div><div class="eq-g">${pr.goles_esperados_local}</div></div>
+        <div class="vs-txt">VS</div>
+        <div class="eq"><div class="eq-n">${p.visitante}</div><div class="eq-g">${pr.goles_esperados_visita}</div></div>
+      </div>
+      <div class="pbar-wrap">
+        <div class="pbar-lbls"><span>Local</span><span>Empate</span><span>Visitante</span></div>
+        <div class="pbar">
+          <div class="pbl" style="width:${pr.victoria_local}%"></div>
+          <div class="pbx" style="width:${pr.empate}%"></div>
+          <div class="pbv" style="width:${pr.victoria_visita}%"></div>
+        </div>
+        <div class="pbar-vals">
+          <span class="pv l">${pr.victoria_local}%</span>
+          <span class="pv x">${pr.empate}%</span>
+          <span class="pv v">${pr.victoria_visita}%</span>
+        </div>
+      </div>
+      <div class="chips">
+        <div class="chip ${pr.over25>=55?'hi':''}"><span class="cl">Over2.5</span><span class="cv">${pr.over25}%</span></div>
+        <div class="chip"><span class="cl">Under2.5</span><span class="cv">${pr.under25}%</span></div>
+        <div class="chip ${pr.btts_si>=55?'hi':''}"><span class="cl">BTTS Si</span><span class="cv">${pr.btts_si}%</span></div>
+        <div class="chip"><span class="cl">Goles Esp.</span><span class="cv">${pr.total_goles_esperados}</span></div>
+      </div>
+      <div class="pred-box">
+        <div><div class="pred-lbl">Prediccion principal</div><div class="pred-m">${p.prediccion_principal.mercado}</div></div>
+        <span class="conf">${p.confianza}%</span>
+      </div>
+      ${hasVB ? `<div class="vbets">${vbHTML}</div>` : ''}
+      <button class="btn-publicar" id="pub-${p.id}" onclick='abrirModal(${JSON.stringify(p)})'>
+        Publicar en SharpIQ
+      </button>
+    </div>
+  </div>`;
+}
+
+// ── PUBLICAR ────────────────────────────────────────────────────
+let predActual = null;
+
+function abrirModal(p) {
+  predActual = p;
+  document.getElementById('m-partido').value = `${p.local} vs ${p.visitante}`;
+
+  // Opciones de mercado: primero value bets, luego todos
+  const sel = document.getElementById('m-mercado');
+  sel.innerHTML = '';
+  const opciones = [
+    { v: p.prediccion_principal.mercado, label: p.prediccion_principal.mercado + ' (prediccion principal)' },
+    { v: 'Over 2.5 Goles', label: `Over 2.5 Goles (${p.probabilidades.over25}%)` },
+    { v: 'Under 2.5 Goles', label: `Under 2.5 Goles (${p.probabilidades.under25}%)` },
+    { v: 'Ambos Marcan - Si', label: `BTTS Si (${p.probabilidades.btts_si}%)` },
+  ];
+  // Value bets al inicio
+  Object.entries(p.value_bets).forEach(([m, vb]) => {
+    if (vb.tiene_valor) {
+      opciones.unshift({ v: (MN[m]||m) + ` — EV +${vb.ev_porcentaje}%`, label: `VALUE: ${MN[m]||m} EV +${vb.ev_porcentaje}% [${vb.clasificacion}]` });
+    }
+  });
+  opciones.forEach(o => {
+    const opt = document.createElement('option');
+    opt.value = o.v; opt.textContent = o.label;
+    sel.appendChild(opt);
+  });
+
+  // Hora local Colombia (UTC-5)
+  const utcHora = p.hora || '00:00';
+  const [h, m2] = utcHora.split(':').map(Number);
+  const cotH = ((h - 5) + 24) % 24;
+  document.getElementById('m-hora').value = `${String(cotH).padStart(2,'0')}:${String(m2).padStart(2,'0')} COT`;
+
+  // Cuota de la casa si hay cuotas reales
+  const c = p.cuotas;
+  document.getElementById('m-cuota').value = c && c['1'] ? c['1'] : '';
+
+  document.getElementById('modal').classList.add('show');
+}
+
+function cerrarModal() {
+  document.getElementById('modal').classList.remove('show');
+  predActual = null;
+}
+
+async function confirmarPublicar() {
+  if (!predActual) return;
+  const mercado = document.getElementById('m-mercado').value;
+  const cuota = document.getElementById('m-cuota').value;
+  const hora = document.getElementById('m-hora').value;
+  const status = document.getElementById('m-status').value;
+
+  if (!cuota) { alert('Ingresa la cuota de la casa de apuestas'); return; }
+
+  const payload = {
+    ...predActual,
+    mercado,
+    cuota_publicar: cuota,
+    hora_local: hora,
+    status
+  };
+
+  try {
+    const r = await fetch('http://localhost:8080/api/publicar', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const res = await r.json();
+    if (res.ok) {
+      const btn = document.getElementById(`pub-${predActual.id}`);
+      if (btn) { btn.textContent = 'Publicado'; btn.classList.add('ok'); btn.disabled = true; }
+      cerrarModal();
+      alert(`Publicado correctamente.\nAhora recarga sharpiq.co para verlo en el sitio.`);
+    } else {
+      alert('Error: ' + res.error);
+    }
+  } catch(e) {
+    alert('Error al conectar con el servidor.');
+  }
+}
+
+// Cerrar modal al hacer clic fuera
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) cerrarModal();
+});
+
+document.getElementById('fecha-hdr').textContent = new Date().toLocaleDateString('es-CO',{weekday:'long',day:'numeric',month:'long'});
+cargar();
+</script>
+</body>
+</html>

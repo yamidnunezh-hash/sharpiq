@@ -11,6 +11,16 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "18/05/26",
+    partido:    "Bayern Munich vs PSG",
+    liga:       "Champions League",
+    prediccion: "Victoria Local (1)",
+    cuota:      "2.24",
+    hora:       "16:00 COT",
+    status:     "vip"
+  },
+
+  {
+    fecha:      "18/05/26",
     partido:    "Barcelona vs Villarreal",
     liga:       "LaLiga",
     prediccion: "Barcelona Gana + Over 1.5",
