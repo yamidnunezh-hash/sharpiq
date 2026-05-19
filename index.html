@@ -1280,7 +1280,9 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
         <div class="ev-date"><span>${e.fecha}</span></div>
         <div class="ev-match">${e.partido}</div>
         <div><span class="ev-liga">${e.liga}</span></div>
-        <div class="ev-pred-locked">🔒 Predicción VIP</div>
+        ${e.status === 'free'
+          ? `<div style="display:flex;align-items:center;gap:7px;font-family:'Space Mono',monospace;font-size:11px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);padding:6px 12px;border-radius:6px;color:#22c55e;">✅ ${e.prediccion} &nbsp;<span style="color:#f0a500;font-weight:700;">${e.cuota}</span></div>`
+          : `<div class="ev-pred-locked">🔒 Predicción VIP</div>`}
         <div class="ev-hora">⏰ ${e.hora}</div>
       </div>`).join('');
   }
