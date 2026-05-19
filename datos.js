@@ -11,6 +11,16 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "19/05/26",
+    partido:    "Chelsea FC vs Tottenham Hotspur FC",
+    liga:       "Premier League",
+    prediccion: "under25 — EV +24.7%",
+    cuota:      "2.01",
+    hora:       "14:15 COT",
+    status:     "vip"
+  },
+
+  {
+    fecha:      "19/05/26",
     partido:    "AFC Bournemouth vs Manchester City FC",
     liga:       "Premier League",
     prediccion: "under25 — EV +24.6%",
