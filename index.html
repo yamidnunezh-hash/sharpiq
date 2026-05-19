@@ -347,9 +347,21 @@
     .lock-icon{font-size:32px}
     .lock-title{font-family:'Orbitron',monospace;font-size:18px;font-weight:700;color:var(--t1)}
     .lock-sub{font-size:15px;color:var(--t2);text-align:center;max-width:400px;line-height:1.6}
+    /* Liga filter tabs */
+    .liga-filters{display:flex;gap:8px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.01)}
+    .liga-btn{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;padding:5px 12px;border-radius:5px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s}
+    .liga-btn:hover{color:var(--t1);border-color:var(--t2)}
+    .liga-btn.active{background:rgba(240,165,0,.12);border-color:rgba(240,165,0,.4);color:var(--gold)}
+    /* P&L column */
+    .pl-pos{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--green)}
+    .pl-neg{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--red)}
+    .pl-pend{font-family:'Space Mono',monospace;font-size:12px;color:var(--t3)}
+    /* EV badge */
+    .ev-badge-val{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:var(--green);background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);padding:3px 8px;border-radius:4px;margin-top:6px}
+    .ev-badge-high{color:#f0a500;background:rgba(240,165,0,.1);border-color:rgba(240,165,0,.3)}
     /* Stats bar below table */
     .pred-kpis{
-      display:grid;grid-template-columns:repeat(3,1fr);
+      display:grid;grid-template-columns:repeat(4,1fr);
       border-top:1px solid var(--border);
     }
     .pred-kpi{
@@ -612,7 +624,7 @@
     /* ── RESPONSIVE ── */
     @media(max-width:1024px){.nos-grid,.anal-grid,.plans-layout,.ft-top{grid-template-columns:1fr;gap:48px}.stats-row{grid-template-columns:repeat(2,1fr)}.stat-cell{border-right:none;border-bottom:1px solid var(--border)}.stat-cell:nth-child(2n){border-right:none}.stat-cell:last-child,.stat-cell:nth-last-child(2){border-bottom:none}}
     @media(max-width:768px){.nav-ul,.nav-cta{display:none}.nav-tog{display:flex}.dep-grid,.met-grid,.cont-grid{grid-template-columns:1fr}.met-grid{gap:28px}.pred-table th:nth-child(3),.pred-table td:nth-child(3){display:none}.ft-top{gap:36px}.ft-bot{flex-direction:column;gap:8px;text-align:center}.plan-card{padding:24px}.plan-feats li{flex-wrap:wrap;word-break:break-word}.plan-name{font-size:16px}.p-amt{font-size:42px}}
-    @media(max-width:560px){.hero-acts{flex-direction:column}.btn-g,.btn-o{text-align:center}.frow{grid-template-columns:1fr}.pred-kpis{grid-template-columns:1fr}.pred-kpi{border-right:none;border-bottom:1px solid var(--border)}.pred-table th:nth-child(4),.pred-table td:nth-child(4){display:none}}
+    @media(max-width:560px){.hero-acts{flex-direction:column}.btn-g,.btn-o{text-align:center}.frow{grid-template-columns:1fr}.pred-kpis{grid-template-columns:repeat(2,1fr)}.pred-kpi{border-right:none;border-bottom:1px solid var(--border)}.pred-table th:nth-child(4),.pred-table td:nth-child(4){display:none}.pred-table th:nth-child(7),.pred-table td:nth-child(7){display:none}}
     @media(prefers-reduced-motion:reduce){.rv,.rvl,.rvr{transition:none;opacity:1;transform:none}}
   </style>
 </head>
@@ -926,6 +938,15 @@
         </div>
         <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--t3)">Últimas predicciones</span>
       </div>
+      <div class="liga-filters" id="ligaFilters">
+        <button class="liga-btn active" data-liga="todas">Todas</button>
+        <button class="liga-btn" data-liga="Premier League">Premier League</button>
+        <button class="liga-btn" data-liga="La Liga">La Liga</button>
+        <button class="liga-btn" data-liga="Champions League">Champions</button>
+        <button class="liga-btn" data-liga="Serie A">Serie A</button>
+        <button class="liga-btn" data-liga="Ligue 1">Ligue 1</button>
+        <button class="liga-btn" data-liga="Bundesliga">Bundesliga</button>
+      </div>
       <div style="overflow-x:auto">
         <table class="pred-table">
           <thead>
@@ -935,6 +956,7 @@
               <th>Liga</th>
               <th>Predicción IA</th>
               <th>Cuota</th>
+              <th>P&L</th>
               <th>Resultado</th>
             </tr>
           </thead>
@@ -961,6 +983,11 @@
           <div class="pred-kpi-l">Yield Verificado</div>
           <div class="pred-kpi-v">+<span id="kpi-roi" class="snum" style="font-size:28px">—</span><span style="font-family:'Bebas Neue';font-size:18px;color:var(--gold)">%</span></div>
           <div class="pred-kpi-s">ganancia por unidad apostada</div>
+        </div>
+        <div class="pred-kpi">
+          <div class="pred-kpi-l">Cuota Promedio</div>
+          <div class="pred-kpi-v"><span id="kpi-odds" style="font-size:28px;color:var(--gold);font-family:'Bebas Neue',cursive">—</span></div>
+          <div class="pred-kpi-s">valor medio por apuesta</div>
         </div>
       </div>
     </div>
@@ -1403,18 +1430,44 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     return'<span class="status-pend">⏳ PENDIENTE</span>';
   }
 
-  // Historial table
-  const tbody=document.getElementById('predBody');
-  if(tbody&&typeof PREDICCIONES_HISTORIAL!=='undefined'){
-    tbody.innerHTML=PREDICCIONES_HISTORIAL.map((p,i)=>`
-      <tr>
+  function plCell(p){
+    if(p.resultado==='pending') return'<span class="pl-pend">—</span>';
+    if(p.resultado==='win'){const g=(parseFloat(p.cuota)-1).toFixed(2);return`<span class="pl-pos">+${g}u</span>`;}
+    return'<span class="pl-neg">-1.00u</span>';
+  }
+
+  function renderHistorial(data){
+    const tbody=document.getElementById('predBody');
+    if(!tbody)return;
+    tbody.innerHTML=data.map(p=>`
+      <tr data-liga="${p.liga}">
         <td><span class="match-date">${p.fecha}</span></td>
         <td><span class="match-name">${p.partido}</span></td>
         <td>${leagueBadge(p.liga)}</td>
         <td><span class="pred-type">${p.prediccion}</span></td>
         <td><span class="odds-val">${p.cuota}</span></td>
+        <td>${plCell(p)}</td>
         <td>${resultBadge(p.resultado)}</td>
       </tr>`).join('');
+  }
+
+  // Historial table + filters
+  if(typeof PREDICCIONES_HISTORIAL!=='undefined'){
+    renderHistorial(PREDICCIONES_HISTORIAL);
+
+    // Liga filter buttons
+    const filters=document.getElementById('ligaFilters');
+    if(filters){
+      filters.addEventListener('click',e=>{
+        const btn=e.target.closest('.liga-btn');
+        if(!btn)return;
+        filters.querySelectorAll('.liga-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const liga=btn.dataset.liga;
+        const data=liga==='todas'?PREDICCIONES_HISTORIAL:PREDICCIONES_HISTORIAL.filter(p=>p.liga===liga);
+        renderHistorial(data);
+      });
+    }
 
     // Live stats from data
     const resolved=PREDICCIONES_HISTORIAL.filter(p=>p.resultado!=='pending');
@@ -1427,12 +1480,15 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     }
     const profitWins=wins.reduce((s,p)=>s+(parseFloat(p.cuota)-1),0);
     const yieldPct=resolved.length?Math.round((profitWins-losses.length)/resolved.length*100):0;
+    const avgOdds=resolved.length?(resolved.reduce((s,p)=>s+parseFloat(p.cuota),0)/resolved.length).toFixed(2):0;
     const kW=document.getElementById('kpi-wins'),kT=document.getElementById('kpi-total'),
-          kRac=document.getElementById('kpi-racha'),kRoi=document.getElementById('kpi-roi');
+          kRac=document.getElementById('kpi-racha'),kRoi=document.getElementById('kpi-roi'),
+          kOdds=document.getElementById('kpi-odds');
     if(kW){kW.dataset.target=wins.length;kW.textContent=0;}
     if(kT) kT.textContent='/'+resolved.length;
     if(kRac){kRac.dataset.target=racha;kRac.textContent=0;}
     if(kRoi){kRoi.dataset.target=yieldPct;kRoi.textContent=0;}
+    if(kOdds) kOdds.textContent=avgOdds;
   }
 
   // Próximos Eventos grid
@@ -1440,16 +1496,25 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   const cnt=document.getElementById('upcomingCount');
   if(grid&&typeof PROXIMOS_EVENTOS!=='undefined'){
     if(cnt) cnt.textContent=PROXIMOS_EVENTOS.length+' eventos próximos';
-    grid.innerHTML=PROXIMOS_EVENTOS.map(e=>`
-      <div class="ev-card">
-        <div class="ev-date"><span>${e.fecha}</span></div>
+    grid.innerHTML=PROXIMOS_EVENTOS.map(e=>{
+      const evMatch=e.prediccion.match(/EV\s*\+?([\d.]+)%/i);
+      const evPct=evMatch?parseFloat(evMatch[1]):null;
+      const isAlto=evPct&&evPct>=15;
+      let predBlock='';
+      if(e.status==='free'){
+        predBlock=`<div style="display:flex;align-items:center;gap:7px;font-family:'Space Mono',monospace;font-size:11px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);padding:6px 12px;border-radius:6px;color:#22c55e;flex-wrap:wrap;">✅ ${e.prediccion.split('—')[0].trim()} &nbsp;<span style="color:#f0a500;font-weight:700;">${e.cuota}</span></div>
+          ${evPct?`<div class="ev-badge-val${isAlto?' ev-badge-high':''}">⚡ EV +${evPct}%${isAlto?' — ALTO VALOR':''}</div>`:''}`;
+      } else {
+        predBlock=`<div class="ev-pred-locked">🔒 Predicción VIP — Canal privado Telegram</div>
+          ${evPct?`<div class="ev-badge-val${isAlto?' ev-badge-high':''}">⚡ EV +${evPct}%${isAlto?' — ALTO VALOR':''}</div>`:''}`;
+      }
+      return`<div class="ev-card">
+        <div class="ev-date"><span>${e.fecha}</span>${e.hora?`<span style="color:var(--gold)">${e.hora}</span>`:''}</div>
         <div class="ev-match">${e.partido}</div>
         <div><span class="ev-liga">${e.liga}</span></div>
-        ${e.status === 'free'
-          ? `<div style="display:flex;align-items:center;gap:7px;font-family:'Space Mono',monospace;font-size:11px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);padding:6px 12px;border-radius:6px;color:#22c55e;">✅ ${e.prediccion} &nbsp;<span style="color:#f0a500;font-weight:700;">${e.cuota}</span></div>`
-          : `<div class="ev-pred-locked">🔒 Predicción VIP</div>`}
-        <div class="ev-hora">⏰ ${e.hora}</div>
-      </div>`).join('');
+        ${predBlock}
+      </div>`;
+    }).join('');
   }
 })();
 
