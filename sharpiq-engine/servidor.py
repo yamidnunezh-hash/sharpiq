@@ -13,6 +13,14 @@ from urllib.parse import urlparse, parse_qs
 import threading
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+import sys
+sys.path.insert(0, BASE_DIR)
+try:
+    from telegram_alertas import enviar_mensaje as _tg_send
+    _TELEGRAM_OK = True
+except Exception:
+    _TELEGRAM_OK = False
 WEB_DIR = os.path.join(BASE_DIR, "..")
 DATOS_JS = os.path.join(WEB_DIR, "datos.js")
 
@@ -130,6 +138,7 @@ def publicar_en_datos_js(pred):
         f.write(nuevo_contenido)
 
     git_ok = git_push_auto(partido)
+    _telegram_nueva_prediccion(partido, liga, mercado, cuota, hora, status)
     return {"ok": True, "mensaje": f"Publicado: {partido}", "git": git_ok}
 
 
@@ -171,6 +180,25 @@ def actualizar_resultado(partido, resultado):
 
     git_push_auto(f"Resultado: {partido} → {resultado}")
     return {"ok": True, "mensaje": f"{partido} → {resultado}"}
+
+
+def _telegram_nueva_prediccion(partido, liga, mercado, cuota, hora, status):
+    if not _TELEGRAM_OK:
+        return
+    try:
+        emoji = "🔥" if "EV" in mercado else "⚽"
+        texto = (
+            f"{emoji} <b>SharpIQ — Nueva predicción VIP</b>\n\n"
+            f"⚽ <b>{partido}</b>\n"
+            f"🏆 {liga} | {hora}\n"
+            f"📊 <b>Mercado:</b> {mercado}\n"
+            f"💵 <b>Cuota:</b> {cuota}\n\n"
+            f"<i>SharpIQ — La ventaja inteligente</i>"
+        )
+        ok = _tg_send(texto)
+        print(f"  Telegram {'OK' if ok else 'ERROR'}: {partido}")
+    except Exception as e:
+        print(f"  Telegram error: {e}")
 
 
 def git_push_auto(partido):
