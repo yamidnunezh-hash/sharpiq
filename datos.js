@@ -9,26 +9,6 @@
 // Cuando terminen, muévelos a PREDICCIONES_HISTORIAL y pon el resultado.
 // status: "vip" = bloqueado para no suscriptores, "free" = visible para todos
 const PROXIMOS_EVENTOS = [
-  {
-    fecha:      "19/05/26",
-    partido:    "Club Always Ready vs Mirassol FC",
-    liga:       "Copa Libertadores",
-    prediccion: "under25 — EV +19.2%",
-    cuota:      "6.4",
-    hora:       "19:00 COT",
-    status:     "free"
-  },
-
-  {
-    fecha:      "19/05/26",
-    partido:    "Independiente Santa Fe vs CA Platense",
-    liga:       "Copa Libertadores",
-    prediccion: "over25 — EV +7.1%",
-    cuota:      "2.24",
-    hora:       "19:00 COT",
-    status:     "free"
-  },
-
 ];
 
 // ── HISTORIAL DE PREDICCIONES ─────────────────────────────────
@@ -37,6 +17,22 @@ const PROXIMOS_EVENTOS = [
 // resultado: "win" | "loss" | "pending"
 // ORDEN: más reciente primero — el algoritmo calcula racha desde arriba.
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "19/05/26",
+    partido:    "Independiente Santa Fe vs CA Platense",
+    liga:       "Copa Libertadores",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "2.24",
+    resultado:  "win"
+  },
+  {
+    fecha:      "19/05/26",
+    partido:    "Club Always Ready vs Mirassol FC",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.86",
+    resultado:  "loss"
+  },
   {
     fecha:      "19/05/26",
     partido:    "Fluminense FC vs Club Bolívar",
