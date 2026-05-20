@@ -906,6 +906,18 @@ def reporte_del_dia():
     for codigo, sport_key in LIGAS_ODDS.items():
         cuotas_por_liga[codigo] = obtener_cuotas_liga(sport_key)
 
+    # Determinar tipo de snapshot según la hora
+    hora_actual = datetime.now().hour
+    snapshot_tipo = "apertura" if hora_actual < 13 else "tarde"
+    print(f"\n  Snapshot de cuotas: {snapshot_tipo} ({hora_actual}h)")
+
+    try:
+        from database import inicializar as db_init, guardar_snapshot, get_movimiento
+        db_init()
+        db_ok = True
+    except Exception:
+        db_ok = False
+
     for p in partidos:
         # Buscar cuotas reales para este partido
         sport_key = LIGAS_ODDS.get(p["liga_code"])
@@ -913,11 +925,28 @@ def reporte_del_dia():
         if sport_key:
             cuotas_reales = buscar_cuotas_partido(p["local"], p["visitante"], sport_key)
 
+        # Guardar snapshot para tracking de movimiento
+        if db_ok and cuotas_reales and p.get("id"):
+            try:
+                guardar_snapshot(p["id"], p["local"], p["visitante"],
+                                 date.today().isoformat(), snapshot_tipo, cuotas_reales)
+            except Exception:
+                pass
+
         pred = predecir_partido(p["local"], p["visitante"], cuotas=cuotas_reales)
         pred["liga"] = p["liga"]
         pred["hora"] = p["hora"]
         pred["id"] = p["id"]
         pred["cuotas_reales"] = bool(cuotas_reales)
+
+        # Leer movimiento de línea si existe snapshot anterior
+        pred["movimiento"] = None
+        if db_ok and p.get("id"):
+            try:
+                pred["movimiento"] = get_movimiento(p["id"])
+            except Exception:
+                pass
+
         predicciones.append(pred)
 
     # Ordenar: primero value bets, luego por confianza

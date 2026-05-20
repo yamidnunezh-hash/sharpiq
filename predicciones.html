@@ -400,6 +400,34 @@ function render() {
   grid.innerHTML = lista.map(card).join('');
 }
 
+const MN_MOV = {"1":"Local","X":"Empate","2":"Visitante","over25":"Over 2.5","under25":"Under 2.5","btts_si":"BTTS"};
+
+function movimientoHTML(mov) {
+  if (!mov || !mov.hay_movimiento) return '';
+  const items = Object.entries(mov.mercados)
+    .filter(([,v]) => Math.abs(v.cambio_pct) >= 5)
+    .sort((a,b) => Math.abs(b[1].cambio_pct) - Math.abs(a[1].cambio_pct))
+    .slice(0,3)
+    .map(([m,v]) => {
+      const baja = v.cambio_pct < 0;
+      const color = baja ? '#22c55e' : '#ef4444';
+      const flecha = baja ? '▼' : '▲';
+      const label = baja ? 'Dinero entrando' : 'Dinero saliendo';
+      const steam = v.steam ? ' ⚡ STEAM' : '';
+      return `<div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;">
+        <span style="color:${color};font-weight:800;">${flecha} ${Math.abs(v.cambio_pct)}%</span>
+        <span style="color:#7a90b0;">${MN_MOV[m]||m}</span>
+        <span style="color:#364760;font-size:0.7rem;">${v.apertura} → ${v.actual}</span>
+        <span style="color:${color};font-size:0.7rem;">${label}${steam}</span>
+      </div>`;
+    }).join('');
+  if (!items) return '';
+  return `<div style="background:rgba(240,165,0,0.06);border:1px solid rgba(240,165,0,0.2);border-radius:8px;padding:10px 14px;margin-bottom:10px;">
+    <div style="font-size:0.68rem;font-weight:800;letter-spacing:1px;color:#f0a500;margin-bottom:8px;">📊 MOVIMIENTO DE LÍNEA</div>
+    ${items}
+  </div>`;
+}
+
 function card(p) {
   const pr = p.probabilidades, vbs = p.value_bets;
   const hasVB = Object.values(vbs).some(v=>v.tiene_valor);
@@ -445,6 +473,7 @@ function card(p) {
         <span class="conf">${p.confianza}%</span>
       </div>
       ${hasVB ? `<div class="vbets">${vbHTML}</div>` : ''}
+      ${movimientoHTML(p.movimiento)}
       <button class="btn-publicar" id="pub-${p.id}" onclick='abrirModal(${JSON.stringify(p)})'>
         Publicar en SharpIQ
       </button>

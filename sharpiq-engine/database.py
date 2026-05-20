@@ -70,6 +70,25 @@ def inicializar():
         UNIQUE(fixture_id)
     );
 
+    CREATE TABLE IF NOT EXISTS movimientos_cuotas (
+        id              INTEGER PRIMARY KEY AUTOINCREMENT,
+        fixture_id      INTEGER,
+        local           TEXT,
+        visitante       TEXT,
+        fecha_partido   TEXT,
+        snapshot        TEXT,
+        hora_consulta   TEXT DEFAULT (datetime('now')),
+        cuota_1         REAL,
+        cuota_x         REAL,
+        cuota_2         REAL,
+        cuota_over25    REAL,
+        cuota_under25   REAL,
+        cuota_over15    REAL,
+        cuota_under15   REAL,
+        cuota_btts_si   REAL,
+        UNIQUE(fixture_id, snapshot)
+    );
+
     CREATE TABLE IF NOT EXISTS promedios_equipo (
         equipo              TEXT PRIMARY KEY,
         liga_id             INTEGER,
@@ -238,6 +257,83 @@ def resumen():
         print(f"  Registros de stats : {stats}")
         print(f"  Cuotas de apertura : {cuotas}")
         print(f"  Ligas cubiertas    : {ligas}")
+    finally:
+        conn.close()
+
+
+# ── GUARDAR SNAPSHOT DE MOVIMIENTO ──────────────────────────────
+def guardar_snapshot(fixture_id, local, visitante, fecha_partido, snapshot, cuotas):
+    conn = conectar()
+    try:
+        conn.execute("""
+            INSERT OR REPLACE INTO movimientos_cuotas
+            (fixture_id, local, visitante, fecha_partido, snapshot,
+             cuota_1, cuota_x, cuota_2, cuota_over25, cuota_under25,
+             cuota_over15, cuota_under15, cuota_btts_si)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+        """, (fixture_id, local, visitante, fecha_partido, snapshot,
+              cuotas.get("1"), cuotas.get("X"), cuotas.get("2"),
+              cuotas.get("over25"), cuotas.get("under25"),
+              cuotas.get("over15"), cuotas.get("under15"),
+              cuotas.get("btts_si")))
+        conn.commit()
+    finally:
+        conn.close()
+
+
+# ── DETECTAR MOVIMIENTO DE LÍNEA ─────────────────────────────────
+def get_movimiento(fixture_id):
+    """
+    Compara snapshot 'apertura' vs 'tarde'.
+    Devuelve dict con cambio % por mercado y señales de steam/RLM.
+    """
+    conn = conectar()
+    try:
+        apertura = conn.execute(
+            "SELECT * FROM movimientos_cuotas WHERE fixture_id=? AND snapshot='apertura'",
+            (fixture_id,)
+        ).fetchone()
+        tarde = conn.execute(
+            "SELECT * FROM movimientos_cuotas WHERE fixture_id=? AND snapshot='tarde'",
+            (fixture_id,)
+        ).fetchone()
+
+        if not apertura or not tarde:
+            return None
+
+        mercados = ["cuota_1", "cuota_x", "cuota_2", "cuota_over25", "cuota_under25", "cuota_btts_si"]
+        nombres  = ["1", "X", "2", "over25", "under25", "btts_si"]
+        cambios  = {}
+
+        for col, nombre in zip(mercados, nombres):
+            v_ap = apertura[col]
+            v_td = tarde[col]
+            if v_ap and v_td and v_ap > 0:
+                pct = round((v_td - v_ap) / v_ap * 100, 1)
+                cambios[nombre] = {
+                    "apertura": v_ap,
+                    "actual":   v_td,
+                    "cambio_pct": pct,
+                    # Cuota baja = dinero entrando = señal steam
+                    "steam": pct <= -8,
+                    # Cuota sube mucho = dinero saliendo
+                    "fade":  pct >= 8,
+                }
+
+        # Señal global: steam en local o visitante
+        steam_local  = cambios.get("1",  {}).get("steam", False)
+        steam_visita = cambios.get("2",  {}).get("steam", False)
+        steam_over   = cambios.get("over25",  {}).get("steam", False)
+        steam_under  = cambios.get("under25", {}).get("steam", False)
+
+        return {
+            "mercados": cambios,
+            "steam_local":  steam_local,
+            "steam_visita": steam_visita,
+            "steam_over25": steam_over,
+            "steam_under25":steam_under,
+            "hay_movimiento": any(abs(v.get("cambio_pct", 0)) >= 5 for v in cambios.values()),
+        }
     finally:
         conn.close()
 
