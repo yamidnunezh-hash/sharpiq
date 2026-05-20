@@ -96,6 +96,12 @@
     .footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
     .footer p { color: var(--t3); font-size: 13px; margin-top: 8px; }
 
+    /* SIMULADOR */
+    .stake-btn { font-family:'Space Mono',monospace;font-size:11px;padding:8px 14px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s; }
+    .stake-btn:hover { color:var(--t1);border-color:var(--t2); }
+    .stake-btn.active { background:rgba(240,165,0,.12);border-color:rgba(240,165,0,.4);color:var(--gold); }
+    #simCapital:focus { border-color:rgba(240,165,0,.4); }
+
     @media(max-width:600px){
       .nav { padding: 14px 16px; }
       .hero { padding: 40px 16px 28px; }
@@ -176,6 +182,67 @@
     <div class="strip" id="strip"></div>
   </div>
 
+</div>
+
+<!-- ── SIMULADOR DE BANKROLL ── -->
+<div class="wrap" style="margin-bottom:48px">
+  <div class="section-title">Simulador de Bankroll</div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;">
+
+    <p style="color:var(--t2);font-size:14px;margin-bottom:24px;line-height:1.6">
+      ¿Cuánto tendrías hoy si hubieras seguido las predicciones de SharpIQ?<br>
+      <span style="color:var(--t3);font-size:12px">Stake fijo del 3% por apuesta — la estrategia recomendada.</span>
+    </p>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:28px">
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Mi capital inicial</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <input id="simCapital" type="number" value="100000" min="1000" step="10000"
+            style="background:#05101c;border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--t1);font-size:15px;font-family:'Space Mono',monospace;width:160px;outline:none"
+            oninput="simularBankroll()">
+          <span style="color:var(--t3);font-size:13px">COP</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Stake por apuesta</div>
+        <div style="display:flex;gap:6px">
+          <button class="stake-btn active" data-pct="3" onclick="setStake(this,3)">3%</button>
+          <button class="stake-btn" data-pct="5" onclick="setStake(this,5)">5%</button>
+          <button class="stake-btn" data-pct="10" onclick="setStake(this,10)">10%</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resultados -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px">
+      <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Capital Final</div>
+        <div id="simFinal" style="font-family:'Orbitron',monospace;font-size:1.4rem;font-weight:900;color:var(--gold)">—</div>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Ganancia / Pérdida</div>
+        <div id="simGanancia" style="font-family:'Orbitron',monospace;font-size:1.4rem;font-weight:900">—</div>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">ROI Real</div>
+        <div id="simROI" style="font-family:'Orbitron',monospace;font-size:1.4rem;font-weight:900">—</div>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Próxima apuesta</div>
+        <div id="simSiguiente" style="font-family:'Orbitron',monospace;font-size:1.4rem;font-weight:900;color:var(--gold)">—</div>
+      </div>
+    </div>
+
+    <!-- Curva simulada -->
+    <div style="position:relative;height:180px">
+      <canvas id="chartSim"></canvas>
+    </div>
+
+    <p style="margin-top:14px;font-size:11px;color:var(--t3);text-align:center;font-family:'Space Mono',monospace">
+      Simulación basada en historial real · Stake compuesto (se recalcula cada apuesta)
+    </p>
+  </div>
 </div>
 
 <div class="footer">
@@ -433,6 +500,101 @@ document.getElementById('tblFilters').addEventListener('click', e=>{
     strip.appendChild(blk);
   });
 })();
+
+// ── SIMULADOR DE BANKROLL ────────────────────────────────────────
+let _stakePct = 3;
+let _chartSim = null;
+
+function setStake(btn, pct){
+  _stakePct = pct;
+  document.querySelectorAll('.stake-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  simularBankroll();
+}
+
+function simularBankroll(){
+  const capital0 = parseFloat(document.getElementById('simCapital').value) || 100000;
+  const pct = _stakePct / 100;
+  const ordenados = [...resueltos].reverse();
+
+  let bank = capital0;
+  const labels = [];
+  const data   = [capital0];
+
+  ordenados.forEach((p,i)=>{
+    const stake = bank * pct;
+    if(p.resultado === 'win'){
+      bank += stake * (parseFloat(p.cuota) - 1);
+    } else {
+      bank -= stake;
+    }
+    bank = Math.max(bank, 0);
+    labels.push(i+1);
+    data.push(parseFloat(bank.toFixed(0)));
+  });
+
+  const ganancia  = bank - capital0;
+  const roi       = ((ganancia / capital0) * 100).toFixed(1);
+  const siguiente = (bank * pct).toFixed(0);
+  const color     = ganancia >= 0 ? 'var(--green)' : 'var(--red)';
+
+  document.getElementById('simFinal').textContent    = '$' + Math.round(bank).toLocaleString('es-CO');
+  document.getElementById('simFinal').style.color    = color;
+  document.getElementById('simGanancia').textContent = (ganancia>=0?'+':'')+Math.round(ganancia).toLocaleString('es-CO');
+  document.getElementById('simGanancia').style.color = color;
+  document.getElementById('simROI').textContent      = (roi>=0?'+':'')+roi+'%';
+  document.getElementById('simROI').style.color      = color;
+  document.getElementById('simSiguiente').textContent= '$' + parseInt(siguiente).toLocaleString('es-CO');
+
+  // Gráfica
+  const ctx = document.getElementById('chartSim').getContext('2d');
+  if(_chartSim) _chartSim.destroy();
+  const grad = ctx.createLinearGradient(0,0,0,180);
+  const hex = ganancia>=0 ? 'rgba(34,197,94,' : 'rgba(239,68,68,';
+  grad.addColorStop(0, hex+'0.25)');
+  grad.addColorStop(1, hex+'0)');
+
+  _chartSim = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [0, ...labels],
+      datasets: [{
+        data,
+        borderColor: ganancia>=0?'#22c55e':'#ef4444',
+        backgroundColor: grad,
+        borderWidth: 2,
+        pointRadius: 0,
+        fill: true,
+        tension: 0.3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: {
+          label: ctx => '$' + Math.round(ctx.raw).toLocaleString('es-CO') + ' COP'
+        }}
+      },
+      scales: {
+        x: { display: false },
+        y: {
+          grid: { color:'rgba(255,255,255,.04)' },
+          ticks: { color:'#475569', font:{family:'Space Mono',size:9},
+            callback: v => '$'+Math.round(v/1000)+'K' }
+        }
+      }
+    }
+  });
+}
+
+// Inicializar simulador
+if(resueltos.length) simularBankroll();
+else {
+  ['simFinal','simGanancia','simROI','simSiguiente'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){ el.textContent='Sin datos'; el.style.fontSize='14px'; }
+  });
+}
 </script>
 </body>
 </html>
