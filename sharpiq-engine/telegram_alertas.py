@@ -9,6 +9,10 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(__file__))
 from config import TELEGRAM_TOKEN
+try:
+    from config import TELEGRAM_YAMID_ID
+except ImportError:
+    TELEGRAM_YAMID_ID = None
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.py")
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
@@ -177,7 +181,28 @@ def enviar_resumen_dia(reporte):
                     texto += f"  → {nombres.get(m,m)} @ {cuota}{casa_str}: EV +{vb['ev_porcentaje']}%\n"
 
     texto += "\n<i>sharpiq.co — La ventaja inteligente</i>"
-    return enviar_mensaje(texto)
+    # Resumen va solo a Yamid, no al canal VIP
+    return enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
+
+
+def enviar_aviso_yamid(texto):
+    """Mensaje privado a Yamid — alertas del motor, auto-publicaciones, errores."""
+    return enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
+
+
+def enviar_autopublicacion(partido, liga, mercado, cuota, hora, ev):
+    """Avisa a Yamid cuando el motor auto-publicó una predicción."""
+    texto = (
+        f"🤖 <b>SharpIQ — Auto-publicado</b>\n\n"
+        f"⚽ <b>{partido}</b>\n"
+        f"🏆 {liga} | {hora}\n"
+        f"📊 <b>Mercado:</b> {mercado}\n"
+        f"💵 <b>Cuota:</b> {cuota}\n"
+        f"⚡ <b>EV:</b> +{ev}%\n\n"
+        f"✅ Publicado en sharpiq.co y enviado al canal VIP\n"
+        f"<i>Revisa cuando puedas — puedes corregir desde el panel</i>"
+    )
+    return enviar_aviso_yamid(texto)
 
 
 if __name__ == "__main__":
