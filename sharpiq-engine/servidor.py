@@ -39,6 +39,21 @@ class SharpIQHandler(SimpleHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        if self.path == "/api/vapid-public-key":
+            try:
+                from config import VAPID_PUBLIC_KEY
+                self.send_response(200)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"key": VAPID_PUBLIC_KEY}).encode())
+            except Exception as e:
+                self.send_response(500)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode())
+            return
         if self.path == "/api/pendientes":
             try:
                 pendientes = leer_pendientes()
@@ -72,6 +87,24 @@ class SharpIQHandler(SimpleHTTPRequestHandler):
                 self.send_header("Content-Type", "application/json")
                 self.end_headers()
                 self.wfile.write(json.dumps(resultado).encode())
+            except Exception as e:
+                self.send_response(500)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode())
+        elif self.path == "/api/subscribe":
+            length = int(self.headers.get("Content-Length", 0))
+            body = self.rfile.read(length)
+            try:
+                sub = json.loads(body)
+                from push_notifications import guardar_suscripcion
+                nueva = guardar_suscripcion(sub)
+                self.send_response(200)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": True, "nueva": nueva}).encode())
             except Exception as e:
                 self.send_response(500)
                 self._cors()

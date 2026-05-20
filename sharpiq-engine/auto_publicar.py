@@ -198,6 +198,15 @@ def correr():
     except Exception as e:
         print(f"  Telegram error: {e}")
 
+    # Push notification a suscriptores web
+    try:
+        from push_notifications import enviar_push_prediccion
+        enviados = enviar_push_prediccion(partido, nombre_mercado, cuota, ev)
+        if enviados:
+            print(f"  Push enviado a {enviados} suscriptores ✓")
+    except Exception as e:
+        print(f"  Push error: {e}")
+
     return {"partido": partido, "mercado": nombre_mercado, "cuota": cuota, "ev": ev}
 
 
