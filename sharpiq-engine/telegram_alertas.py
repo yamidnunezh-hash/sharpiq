@@ -88,12 +88,12 @@ def enviar_mensaje(texto, chat_id=None):
     return r.status_code == 200
 
 
-def enviar_gif_free(gif_url, caption=""):
-    """Envia un GIF al canal free. Falla silenciosamente si Telegram no puede descargarlo."""
-    if not TELEGRAM_FREE_ID:
+def _enviar_gif(chat_id, gif_url, caption=""):
+    """Base: envia un GIF a cualquier chat_id. Falla silenciosamente."""
+    if not chat_id:
         return False
     try:
-        payload = {"chat_id": TELEGRAM_FREE_ID, "animation": gif_url}
+        payload = {"chat_id": chat_id, "animation": gif_url}
         if caption:
             payload["caption"] = caption
             payload["parse_mode"] = "HTML"
@@ -101,6 +101,16 @@ def enviar_gif_free(gif_url, caption=""):
         return r.status_code == 200
     except Exception:
         return False
+
+
+def enviar_gif_free(gif_url, caption=""):
+    """Envia un GIF al canal free."""
+    return _enviar_gif(TELEGRAM_FREE_ID, gif_url, caption)
+
+
+def enviar_gif_vip(gif_url, caption=""):
+    """Envia un GIF al canal VIP."""
+    return _enviar_gif(get_chat_id(), gif_url, caption)
 
 
 def enviar_alerta_value_bet(pred, mercado, vb):
@@ -386,6 +396,37 @@ def enviar_resultado_free(partido, resultado_texto, emoji_resultado):
         f"<i>SharpIQ — La ventaja inteligente</i>"
     )
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
+
+
+def enviar_resultado_vip(partido, resultado_texto, emoji_resultado):
+    """
+    Publica el resultado de una predicción en el canal VIP con GIF celebratorio en WIN.
+    """
+    import random
+    es_win = emoji_resultado == "✅"
+
+    if es_win:
+        enviar_gif_vip(random.choice(GIFS_WIN))
+
+    wins_vip = [
+        "¡Predicción acertada! 🤖🔥 Así se trabaja con datos.",
+        "¡EV positivo convertido en ganancia! 📊💪",
+        "¡Otro acierto SharpIQ! ⚡ La ventaja inteligente.",
+    ]
+    losses_vip = [
+        "Resultado adverso — el modelo sigue aprendiendo 📊",
+        "No todas entran. El largo plazo nos da la razón 💡",
+        "Pérdida registrada. Bankroll y disciplina son clave 🤖",
+    ]
+    comentario = random.choice(wins_vip if es_win else losses_vip)
+
+    texto = (
+        f"{emoji_resultado} <b>Resultado VIP — {partido}</b>\n\n"
+        f"<b>{resultado_texto}</b>\n\n"
+        f"{comentario}\n\n"
+        f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+    )
+    return enviar_mensaje(texto, chat_id=get_chat_id())
 
 
 if __name__ == "__main__":

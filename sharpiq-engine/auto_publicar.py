@@ -173,13 +173,16 @@ def correr():
 
     # Telegram: tres destinos
     try:
-        from telegram_alertas import enviar_autopublicacion, enviar_mensaje, enviar_canal_free
+        from telegram_alertas import (enviar_autopublicacion, enviar_mensaje,
+                                       enviar_canal_free, enviar_gif_vip, GIFS_MANANA)
+        import random
         from config import TELEGRAM_CHAT_ID
 
         # 1. Aviso privado a Yamid
         enviar_autopublicacion(partido, liga, nombre_mercado, cuota, hora_cot, ev)
 
-        # 2. Canal VIP — predicción completa
+        # 2. Canal VIP — GIF matutino + predicción completa
+        enviar_gif_vip(random.choice(GIFS_MANANA))
         enviar_mensaje(
             f"🔥 <b>SharpIQ — Nueva Predicción VIP</b>\n\n"
             f"⚽ <b>{partido}</b>\n"
