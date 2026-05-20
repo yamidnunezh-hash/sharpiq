@@ -105,18 +105,34 @@ def correr():
                 continue
             candidatos.append((pred, mercado, vb))
 
+    # Fallback: si no hay EV >= 15%, tomar el mejor candidato con cualquier EV positivo
     if not candidatos:
-        print("  Sin value bets con cuota real y EV >= 15% hoy")
-        try:
-            from telegram_alertas import enviar_aviso_yamid
-            enviar_aviso_yamid(
-                f"📋 <b>SharpIQ — Motor {date.today().isoformat()}</b>\n\n"
-                f"Sin predicciones con cuota real hoy.\n"
-                f"Verifica manualmente en localhost:8080/predicciones.html"
-            )
-        except Exception:
-            pass
-        return
+        print("  Sin EV >= 15% — buscando mejor candidato del día...")
+        for pred in reporte.get("predicciones", []):
+            for mercado, vb in pred.get("value_bets", {}).items():
+                if not vb or vb.get("ev_porcentaje", 0) <= 0:
+                    continue
+                candidatos.append((pred, mercado, vb))
+
+    # Último recurso: mejor predicción por confianza, con o sin cuota real
+    if not candidatos:
+        print("  Sin value bets positivos — usando predicción de mayor confianza")
+        for pred in reporte.get("predicciones", []):
+            mercado = pred.get("prediccion_principal", {}).get("mercado", "victoria_local")
+            mercado_key = {
+                "Victoria Local (1)": "victoria_local",
+                "Empate (X)": "empate",
+                "Victoria Visitante (2)": "victoria_visita",
+            }.get(mercado, "victoria_local")
+            vb = {"ev_porcentaje": 0, "clasificacion": "ANALISIS", "tiene_valor": False}
+            candidatos.append((pred, mercado_key, vb))
+        if not candidatos:
+            try:
+                from telegram_alertas import enviar_aviso_yamid
+                enviar_aviso_yamid(f"⚠️ SharpIQ {date.today().isoformat()} — Sin partidos para analizar hoy.")
+            except Exception:
+                pass
+            return
 
     # Ordenar por EV descendente, priorizar ALTO VALOR
     candidatos.sort(key=lambda x: (
@@ -129,7 +145,7 @@ def correr():
     liga     = pred.get("liga", "")
     hora_utc = pred.get("hora", "00:00")
     hora_cot = _hora_cot(hora_utc)
-    ev       = vb["ev_porcentaje"]
+    ev       = vb.get("ev_porcentaje", 0)
 
     nombres = {
         "victoria_local":  "Victoria Local (1)",
@@ -182,14 +198,25 @@ def correr():
         enviar_autopublicacion(partido, liga, nombre_mercado, cuota, hora_cot, ev)
 
         # 2. Canal VIP — GIF matutino + predicción completa
+        clasificacion = vb.get("clasificacion", "ANALISIS")
+        if clasificacion == "ALTO VALOR":
+            titulo = "🔥 <b>SharpIQ — ALTO VALOR</b>"
+            ev_linea = f"⚡ <b>EV:</b> +{ev}%\n\n"
+        elif ev > 0:
+            titulo = "📊 <b>SharpIQ — Predicción del Día</b>"
+            ev_linea = f"⚡ <b>EV:</b> +{ev}%\n\n"
+        else:
+            titulo = "📊 <b>SharpIQ — Análisis del Día</b>"
+            ev_linea = f"🔍 <b>Confianza modelo:</b> {pred.get('confianza', '')}%\n\n"
+
         enviar_gif_vip(random.choice(GIFS_MANANA))
         enviar_mensaje(
-            f"🔥 <b>SharpIQ — Nueva Predicción VIP</b>\n\n"
+            f"{titulo}\n\n"
             f"⚽ <b>{partido}</b>\n"
             f"🏆 {liga} | {hora_cot}\n"
             f"📊 <b>Mercado:</b> {nombre_mercado}\n"
             f"💵 <b>Cuota:</b> {cuota}\n"
-            f"⚡ <b>EV:</b> +{ev}%\n\n"
+            f"{ev_linea}"
             f"<i>SharpIQ — La ventaja inteligente</i>",
             chat_id=TELEGRAM_CHAT_ID
         )
