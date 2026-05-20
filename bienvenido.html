@@ -158,6 +158,76 @@
 
     .home-link:hover { color: #94a3b8; }
 
+    .ref-card {
+      margin-top: 28px;
+      background: rgba(240,165,0,0.05);
+      border: 1px solid rgba(240,165,0,0.25);
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: left;
+    }
+
+    .ref-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95rem;
+      color: #f0a500;
+      margin-bottom: 8px;
+    }
+
+    .ref-desc {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .ref-link-box {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .ref-link-input {
+      flex: 1;
+      background: #05101c;
+      border: 1px solid rgba(240,165,0,0.3);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #f0a500;
+      font-family: monospace;
+      outline: none;
+    }
+
+    .ref-copy-btn {
+      background: linear-gradient(135deg,#f0a500,#d97706);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .ref-stats {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #475569;
+    }
+
+    .ref-alert {
+      margin-top: 16px;
+      padding: 12px 14px;
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.25);
+      border-radius: 8px;
+      font-size: 0.83rem;
+      color: #86efac;
+      line-height: 1.5;
+    }
+
     @media (max-width: 480px) {
       .card { padding: 32px 24px; }
       h1 { font-size: 1.2rem; }
@@ -211,6 +281,25 @@
     </div>
   </div>
 
+  <!-- ── SECCIÓN REFERIDOS ── -->
+  <div class="ref-card" id="refSection" style="max-width:560px;width:100%">
+    <div class="ref-title">🎁 Gana días gratis — Invita amigos</div>
+    <div class="ref-desc">Por cada amigo que se suscriba con tu link, ganas <b style="color:#f0a500">7 días extra</b> en tu suscripción VIP. Sin límite de referidos.</div>
+
+    <div class="ref-link-box">
+      <input class="ref-link-input" id="refLinkInput" readonly value="cargando...">
+      <button class="ref-copy-btn" onclick="copiarRefLink()">Copiar</button>
+    </div>
+    <div class="ref-stats" id="refStats">Comparte este link con tus amigos</div>
+
+    <!-- Se muestra solo si el usuario llegó referido -->
+    <div class="ref-alert" id="refAlertBox" style="display:none">
+      ✅ <b>Llegaste referido por un amigo.</b> Envía este comando al bot para registrar tu referido y que tu amigo gane 7 días:<br><br>
+      <span id="refComandoBox" style="font-family:monospace;background:rgba(0,0,0,.3);padding:4px 8px;border-radius:4px;cursor:pointer" onclick="copiarComandoRef()"></span><br>
+      <span style="font-size:11px;opacity:.7">Toca el comando para copiarlo</span>
+    </div>
+  </div>
+
   <a href="/" class="home-link">← Volver a sharpiq.co</a>
 
   <script>
@@ -222,6 +311,52 @@
         setTimeout(() => box.textContent = orig, 1500);
       });
     }
+
+    // ── REFERIDOS ────────────────────────────────────────────────
+    function generarCodigo(){
+      let c = localStorage.getItem('sharpiq_mi_ref');
+      if(!c){
+        c = Math.random().toString(36).substring(2,8).toUpperCase();
+        localStorage.setItem('sharpiq_mi_ref', c);
+      }
+      return c;
+    }
+
+    function copiarRefLink(){
+      const input = document.getElementById('refLinkInput');
+      navigator.clipboard.writeText(input.value).then(()=>{
+        const btn = document.querySelector('.ref-copy-btn');
+        btn.textContent = '¡Copiado!';
+        setTimeout(()=> btn.textContent = 'Copiar', 1800);
+      });
+    }
+
+    function copiarComandoRef(){
+      const span = document.getElementById('refComandoBox');
+      navigator.clipboard.writeText(span.textContent).then(()=>{
+        const orig = span.textContent;
+        span.textContent = '¡Copiado!';
+        setTimeout(()=> span.textContent = orig, 1800);
+      });
+    }
+
+    // Inicializar sección referidos
+    (function(){
+      const miCodigo = generarCodigo();
+      const miLink = 'https://sharpiq.co/?ref=' + miCodigo;
+      const input = document.getElementById('refLinkInput');
+      if(input) input.value = miLink;
+
+      // Si llegó referido por alguien
+      const refPendiente = localStorage.getItem('sharpiq_ref_pendiente') || localStorage.getItem('sharpiq_ref');
+      if(refPendiente && refPendiente !== miCodigo){
+        const alertBox = document.getElementById('refAlertBox');
+        const cmdBox   = document.getElementById('refComandoBox');
+        if(alertBox) alertBox.style.display = 'block';
+        if(cmdBox)   cmdBox.textContent = '/referido ' + refPendiente;
+        localStorage.removeItem('sharpiq_ref_pendiente');
+      }
+    })();
   </script>
 
 </body>

@@ -223,6 +223,61 @@ def enviar_autopublicacion(partido, liga, mercado, cuota, hora, ev):
     return enviar_aviso_yamid(texto)
 
 
+def notificar_referido(codigo_ref, telegram_usuario="desconocido"):
+    """Avisa a Yamid cuando alguien registra un referido vía /referido CODIGO."""
+    texto = (
+        f"🎁 <b>SharpIQ — Nuevo Referido</b>\n\n"
+        f"👤 <b>Nuevo suscriptor:</b> @{telegram_usuario}\n"
+        f"🔗 <b>Código referidor:</b> <code>{codigo_ref}</code>\n\n"
+        f"✅ Acción: dar <b>7 días extra</b> al suscriptor con código {codigo_ref}\n"
+        f"<i>Verifica el pago en MercadoPago antes de aplicar el beneficio</i>"
+    )
+    return enviar_aviso_yamid(texto)
+
+
+def procesar_updates_bot():
+    """
+    Procesa mensajes nuevos al bot. Maneja /referido CODIGO.
+    Llama desde un cron o manualmente para procesar la cola.
+    """
+    r = requests.get(f"{TELEGRAM_API}/getUpdates", timeout=10)
+    if r.status_code != 200:
+        return
+    updates = r.json().get("result", [])
+    ultimo_id = None
+
+    for upd in updates:
+        ultimo_id = upd["update_id"]
+        msg = upd.get("message", {})
+        texto = msg.get("text", "")
+        usuario = msg.get("from", {}).get("username", "desconocido")
+        chat_id_usuario = str(msg.get("chat", {}).get("id", ""))
+
+        if texto.startswith("/referido"):
+            partes = texto.split()
+            if len(partes) >= 2:
+                codigo = partes[1].strip().upper()
+                notificar_referido(codigo, usuario)
+                # Confirmar al usuario que registró
+                enviar_mensaje(
+                    f"✅ Referido registrado correctamente.\n"
+                    f"Código: <code>{codigo}</code>\n\n"
+                    f"Tu amigo recibirá 7 días extra en su suscripción. "
+                    f"¡Gracias por hacer crecer la comunidad SharpIQ! 🔥",
+                    chat_id=chat_id_usuario
+                )
+            else:
+                enviar_mensaje(
+                    "Uso: <code>/referido CODIGO</code>\nEjemplo: /referido ABC123",
+                    chat_id=chat_id_usuario
+                )
+
+    # Marcar updates como leídos
+    if ultimo_id is not None:
+        requests.get(f"{TELEGRAM_API}/getUpdates",
+                     params={"offset": ultimo_id + 1}, timeout=10)
+
+
 def enviar_saludo_manana_free(partidos_hoy):
     """
     Saludo matutino al canal free — estilo dinámico CampeonesColombia.

@@ -725,6 +725,11 @@
   <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="btn-g" onclick="closeNav()" style="text-align:center;border-radius:7px;padding:14px;margin-top:8px;display:block">Únete — $10 USD/mes</a>
 </div>
 
+<!-- ── BANNER REFERIDO ── -->
+<div id="ref-banner" style="display:none;background:linear-gradient(90deg,rgba(240,165,0,.12),rgba(240,165,0,.06));border-bottom:1px solid rgba(240,165,0,.3);padding:10px 20px;text-align:center;font-size:13px;color:#f0a500;">
+  💎 <b>Acceso especial</b> — Un amigo de la comunidad SharpIQ te invitó. <span style="color:#94a3b8">El primer mes tienes acceso con beneficio de bienvenida.</span>
+</div>
+
 <!-- ── HERO V2 — 3D Neural Sphere ── -->
 <section class="hero-v2" id="hero">
   <canvas id="heroCanvas"></canvas>
@@ -1813,6 +1818,31 @@ function handleForm(e){
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('/sw.js').catch(()=>{});
 }
+</script>
+<script>
+// ── SISTEMA DE REFERIDOS ─────────────────────────────────────
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get('ref');
+  if(ref){
+    localStorage.setItem('sharpiq_ref', ref);
+    const banner = document.getElementById('ref-banner');
+    if(banner) banner.style.display = 'block';
+  }
+
+  // Agregar ref como parámetro de rastreo en todos los botones de pago
+  const MP_BASE = 'https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c';
+  function agregarRefAlLink(a){
+    const refGuardado = localStorage.getItem('sharpiq_ref');
+    if(refGuardado){
+      // No podemos modificar la URL de MP directamente, pero guardamos para bienvenido.html
+      localStorage.setItem('sharpiq_ref_pendiente', refGuardado);
+    }
+  }
+  document.querySelectorAll('a[href*="preapproval_plan_id"]').forEach(a=>{
+    a.addEventListener('click', ()=> agregarRefAlLink(a));
+  });
+})();
 </script>
 </body>
 </html>
