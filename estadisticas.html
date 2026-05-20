@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SharpIQ — Estadísticas & Historial Verificable</title>
+  <meta name="description" content="Historial completo de predicciones SharpIQ. Win rate, ROI y curva de bankroll en tiempo real. Sin filtros, sin editar derrotas.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg:    #020509;
+      --card:  #0a1520;
+      --border: rgba(240,165,0,.15);
+      --gold:  #f0a500;
+      --green: #22c55e;
+      --red:   #ef4444;
+      --t1:    #e2e8f0;
+      --t2:    #94a3b8;
+      --t3:    #475569;
+      --r:     12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--t1); font-family: 'Inter', sans-serif; min-height: 100vh; }
+
+    /* NAV */
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(2,5,9,.92); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-logo { font-family: 'Orbitron', monospace; font-size: 1.1rem; font-weight: 900; color: var(--gold); letter-spacing: 2px; text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 13px; color: var(--t2); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--t1); }
+    .nav-cta { background: linear-gradient(135deg,#f0a500,#d97706); color: #000 !important; font-weight: 700; padding: 8px 18px; border-radius: 7px; font-size: 12px !important; }
+
+    /* HERO */
+    .hero { padding: 60px 32px 40px; text-align: center; border-bottom: 1px solid var(--border); }
+    .hero-tag { display: inline-block; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); background: rgba(240,165,0,.1); border: 1px solid rgba(240,165,0,.25); padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Orbitron', monospace; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 14px; }
+    .hero h1 span { color: var(--gold); }
+    .hero p { color: var(--t2); font-size: 15px; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+    /* WRAP */
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* KPI GRID */
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 40px 0; }
+    .kpi { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 20px; text-align: center; }
+    .kpi-val { font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+    .kpi-val.green { color: var(--green); }
+    .kpi-val.red   { color: var(--red); }
+    .kpi-lbl { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--t3); }
+
+    /* CHARTS */
+    .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
+    @media(max-width:700px){ .charts-grid { grid-template-columns: 1fr; } }
+    .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; }
+    .chart-title { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--t3); margin-bottom: 20px; }
+    .chart-wrap { position: relative; height: 220px; }
+
+    /* LIGA TABLE */
+    .liga-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .liga-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 16px 18px; }
+    .liga-name { font-size: 13px; font-weight: 600; color: var(--t1); margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .liga-bar-wrap { height: 4px; background: rgba(255,255,255,.06); border-radius: 2px; margin-bottom: 8px; }
+    .liga-bar { height: 4px; border-radius: 2px; background: linear-gradient(90deg,var(--gold),#d97706); }
+    .liga-stats { display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--t2); }
+
+    /* HISTORIAL TABLE */
+    .section-title { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--t3); margin-bottom: 16px; }
+    .tbl-wrap { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin-bottom: 48px; }
+    .tbl-filters { display: flex; gap: 8px; flex-wrap: wrap; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+    .f-btn { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: .5px; padding: 5px 12px; border-radius: 5px; border: 1px solid var(--border); background: transparent; color: var(--t3); cursor: pointer; transition: all .2s; }
+    .f-btn:hover { color: var(--t1); border-color: var(--t2); }
+    .f-btn.active { background: rgba(240,165,0,.12); border-color: rgba(240,165,0,.4); color: var(--gold); }
+    .tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .tbl th { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--t3); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    .tbl td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,.04); color: var(--t2); vertical-align: middle; }
+    .tbl tr:last-child td { border-bottom: none; }
+    .tbl tr:hover td { background: rgba(255,255,255,.02); }
+    .badge { display: inline-block; font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 4px; letter-spacing: .5px; }
+    .badge-win  { background: rgba(34,197,94,.12); border: 1px solid rgba(34,197,94,.3); color: var(--green); }
+    .badge-loss { background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.25); color: var(--red); }
+    .badge-pend { background: rgba(255,255,255,.04); border: 1px solid var(--border); color: var(--t3); }
+    .pl-pos { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; color: var(--green); }
+    .pl-neg { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; color: var(--red); }
+    .match-name { color: var(--t1); font-weight: 500; font-size: 13px; }
+    .match-date { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--t3); }
+    .liga-tag { font-size: 11px; color: var(--t3); }
+
+    /* STRIP */
+    .strip { display: flex; gap: 4px; flex-wrap: wrap; padding: 20px 24px; border-top: 1px solid var(--border); }
+    .blk { width: 22px; height: 22px; border-radius: 3px; }
+
+    /* FOOTER */
+    .footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+    .footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    .footer p { color: var(--t3); font-size: 13px; margin-top: 8px; }
+
+    @media(max-width:600px){
+      .nav { padding: 14px 16px; }
+      .hero { padding: 40px 16px 28px; }
+      .kpi-val { font-size: 1.5rem; }
+      .tbl th:nth-child(3), .tbl td:nth-child(3),
+      .tbl th:nth-child(5), .tbl td:nth-child(5) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">SHARP<span style="color:#fff">IQ</span></a>
+  <div class="nav-links">
+    <a href="/">Inicio</a>
+    <a href="/#predicciones">Predicciones</a>
+    <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c" target="_blank" class="nav-cta">Canal VIP →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Transparencia Total</div>
+  <h1>Historial <span>Verificable</span></h1>
+  <p>Cada predicción con su resultado real. Sin editar derrotas. Sin inventar aciertos. Los números hablan solos.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- KPIs -->
+  <div class="kpi-grid" id="kpiGrid">
+    <div class="kpi"><div class="kpi-val" id="kWinRate">—</div><div class="kpi-lbl">Win Rate</div></div>
+    <div class="kpi"><div class="kpi-val" id="kYield">—</div><div class="kpi-lbl">Yield (ROI)</div></div>
+    <div class="kpi"><div class="kpi-val" id="kTotal">—</div><div class="kpi-lbl">Predicciones</div></div>
+    <div class="kpi"><div class="kpi-val" id="kRacha">—</div><div class="kpi-lbl">Racha Actual</div></div>
+    <div class="kpi"><div class="kpi-val" id="kUnits">—</div><div class="kpi-lbl">Unidades Netas</div></div>
+    <div class="kpi"><div class="kpi-val" id="kMejorCuota">—</div><div class="kpi-lbl">Mejor Cuota Acertada</div></div>
+  </div>
+
+  <!-- GRÁFICAS -->
+  <div class="charts-grid">
+    <div class="chart-card">
+      <div class="chart-title">Curva de Bankroll (unidades)</div>
+      <div class="chart-wrap"><canvas id="chartBankroll"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Resultados por Mes</div>
+      <div class="chart-wrap"><canvas id="chartMeses"></canvas></div>
+    </div>
+  </div>
+
+  <!-- POR LIGA -->
+  <div class="section-title">Rendimiento por Liga</div>
+  <div class="liga-grid" id="ligaGrid"></div>
+
+  <!-- HISTORIAL COMPLETO -->
+  <div class="tbl-wrap">
+    <div class="tbl-filters" id="tblFilters">
+      <button class="f-btn active" data-f="todas">Todas</button>
+      <button class="f-btn" data-f="win">Solo Wins ✅</button>
+      <button class="f-btn" data-f="loss">Solo Losses ❌</button>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Partido</th>
+            <th>Liga</th>
+            <th>Predicción</th>
+            <th>Cuota</th>
+            <th>P&L</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody id="tblBody"></tbody>
+      </table>
+    </div>
+    <div class="strip" id="strip"></div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <a href="/">← Volver a sharpiq.co</a>
+  <p>SharpIQ — La ventaja inteligente · Historial actualizado automáticamente</p>
+</div>
+
+<script src="datos.js"></script>
+<script>
+// ── UTILIDADES ──────────────────────────────────────────────────
+const MESES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+function parseFecha(str){
+  // "19/05/26" → Date
+  const [d,m,y] = str.split('/');
+  return new Date(2000+parseInt(y), parseInt(m)-1, parseInt(d));
+}
+
+function pl(p){
+  if(p.resultado==='win')  return parseFloat(p.cuota)-1;
+  if(p.resultado==='loss') return -1;
+  return 0;
+}
+
+// ── CALCULAR STATS ──────────────────────────────────────────────
+const todos    = (typeof PREDICCIONES_HISTORIAL !== 'undefined') ? PREDICCIONES_HISTORIAL : [];
+const resueltos = todos.filter(p=>p.resultado==='win'||p.resultado==='loss');
+const wins      = resueltos.filter(p=>p.resultado==='win');
+const losses    = resueltos.filter(p=>p.resultado==='loss');
+const totalPL   = resueltos.reduce((s,p)=>s+pl(p), 0);
+const winRate   = resueltos.length ? Math.round(wins.length/resueltos.length*100) : 0;
+const yield_pct = resueltos.length ? (totalPL/resueltos.length*100).toFixed(1) : 0;
+
+// Racha actual
+let racha = 0, rachaTipo = '';
+for(const p of todos){
+  if(p.resultado==='pending') continue;
+  if(!rachaTipo) rachaTipo = p.resultado;
+  if(p.resultado === rachaTipo) racha++;
+  else break;
+}
+
+// Mejor cuota acertada
+const mejorCuota = wins.length
+  ? Math.max(...wins.map(p=>parseFloat(p.cuota)||0)).toFixed(2)
+  : '—';
+
+// ── PINTAR KPIs ─────────────────────────────────────────────────
+function setKpi(id, val, cls){
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.textContent = val;
+  if(cls) el.classList.add(cls);
+}
+
+setKpi('kWinRate',  winRate+'%',   winRate>=55?'green':winRate<45?'red':'');
+setKpi('kTotal',    resueltos.length);
+setKpi('kRacha',    (rachaTipo==='win'?'+':'-')+racha+' '+rachaTipo.toUpperCase(), rachaTipo==='win'?'green':'red');
+setKpi('kMejorCuota', mejorCuota);
+
+const yieldEl = document.getElementById('kYield');
+if(yieldEl){
+  yieldEl.textContent = (totalPL>=0?'+':'')+parseFloat(yield_pct).toFixed(1)+'%';
+  yieldEl.classList.add(totalPL>=0?'green':'red');
+}
+const unitsEl = document.getElementById('kUnits');
+if(unitsEl){
+  unitsEl.textContent = (totalPL>=0?'+':'')+totalPL.toFixed(2)+'u';
+  unitsEl.classList.add(totalPL>=0?'green':'red');
+}
+
+// ── CURVA DE BANKROLL ───────────────────────────────────────────
+(function(){
+  const ordenados = [...resueltos].reverse(); // cronológico
+  let bank = 0;
+  const labels = [];
+  const data   = [];
+  ordenados.forEach((p,i)=>{
+    bank += pl(p);
+    labels.push(i+1);
+    data.push(parseFloat(bank.toFixed(2)));
+  });
+  if(!labels.length){ labels.push(0); data.push(0); }
+
+  const color = totalPL >= 0 ? '#22c55e' : '#ef4444';
+  const ctx = document.getElementById('chartBankroll').getContext('2d');
+  const grad = ctx.createLinearGradient(0,0,0,220);
+  grad.addColorStop(0, totalPL>=0?'rgba(34,197,94,.3)':'rgba(239,68,68,.3)');
+  grad.addColorStop(1, 'rgba(0,0,0,0)');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        data,
+        borderColor: color,
+        backgroundColor: grad,
+        borderWidth: 2,
+        pointRadius: data.length > 30 ? 0 : 3,
+        pointBackgroundColor: color,
+        fill: true,
+        tension: 0.3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { display: false },
+        y: {
+          grid: { color: 'rgba(255,255,255,.04)' },
+          ticks: { color: '#475569', font: { family: 'Space Mono', size: 10 } }
+        }
+      }
+    }
+  });
+})();
+
+// ── RESULTADOS POR MES ──────────────────────────────────────────
+(function(){
+  const mapa = {};
+  resueltos.forEach(p=>{
+    const d = parseFecha(p.fecha);
+    const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+    if(!mapa[key]) mapa[key] = {w:0,l:0};
+    p.resultado==='win' ? mapa[key].w++ : mapa[key].l++;
+  });
+  const keys   = Object.keys(mapa).sort();
+  const labels = keys.map(k=>{ const [y,m]=k.split('-'); return MESES[parseInt(m)-1]+' '+y.slice(2); });
+  const ws = keys.map(k=>mapa[k].w);
+  const ls = keys.map(k=>mapa[k].l);
+  if(!keys.length){ labels.push('—'); ws.push(0); ls.push(0); }
+
+  new Chart(document.getElementById('chartMeses').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label:'Wins',   data: ws, backgroundColor:'rgba(34,197,94,.7)', borderRadius:4 },
+        { label:'Losses', data: ls, backgroundColor:'rgba(239,68,68,.5)', borderRadius:4 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color:'#94a3b8', font:{ family:'Space Mono', size:10 } } } },
+      scales: {
+        x: { stacked: false, grid:{ display:false }, ticks:{ color:'#475569', font:{family:'Space Mono',size:10} } },
+        y: { grid:{ color:'rgba(255,255,255,.04)' }, ticks:{ color:'#475569', font:{family:'Space Mono',size:10}, stepSize:1 } }
+      }
+    }
+  });
+})();
+
+// ── POR LIGA ────────────────────────────────────────────────────
+(function(){
+  const mapa = {};
+  resueltos.forEach(p=>{
+    const l = p.liga || 'Sin liga';
+    if(!mapa[l]) mapa[l] = {w:0,l:0,pl:0};
+    p.resultado==='win' ? mapa[l].w++ : mapa[l].l++;
+    mapa[l].pl += pl(p);
+  });
+  const ligaGrid = document.getElementById('ligaGrid');
+  if(!ligaGrid) return;
+  Object.entries(mapa).sort((a,b)=>(b[1].w+b[1].l)-(a[1].w+a[1].l)).forEach(([liga,s])=>{
+    const total = s.w + s.l;
+    const wr = total ? Math.round(s.w/total*100) : 0;
+    const plStr = (s.pl>=0?'+':'')+s.pl.toFixed(2)+'u';
+    const color = wr>=55?'var(--green)':wr<45?'var(--red)':'var(--gold)';
+    ligaGrid.innerHTML += `
+      <div class="liga-card">
+        <div class="liga-name" title="${liga}">${liga}</div>
+        <div class="liga-bar-wrap"><div class="liga-bar" style="width:${wr}%;background:${color}"></div></div>
+        <div class="liga-stats">
+          <span>${s.w}W / ${s.l}L</span>
+          <span style="color:${color}">${wr}% · ${plStr}</span>
+        </div>
+      </div>`;
+  });
+  if(!Object.keys(mapa).length) ligaGrid.innerHTML='<p style="color:var(--t3);padding:20px">Historial en construcción.</p>';
+})();
+
+// ── HISTORIAL TABLE ─────────────────────────────────────────────
+function renderTabla(data){
+  const tbody = document.getElementById('tblBody');
+  if(!tbody) return;
+  if(!data.length){
+    tbody.innerHTML='<tr><td colspan="7" style="text-align:center;color:var(--t3);padding:32px">Sin predicciones en este filtro</td></tr>';
+    return;
+  }
+  tbody.innerHTML = data.map(p=>{
+    const badge = p.resultado==='win'
+      ? '<span class="badge badge-win">WIN ✅</span>'
+      : p.resultado==='loss'
+      ? '<span class="badge badge-loss">LOSS ❌</span>'
+      : '<span class="badge badge-pend">PEND</span>';
+    const plVal = p.resultado==='win'
+      ? `<span class="pl-pos">+${(parseFloat(p.cuota)-1).toFixed(2)}u</span>`
+      : p.resultado==='loss'
+      ? '<span class="pl-neg">-1.00u</span>'
+      : '<span style="color:var(--t3)">—</span>';
+    return `<tr>
+      <td><span class="match-date">${p.fecha}</span></td>
+      <td><span class="match-name">${p.partido}</span></td>
+      <td><span class="liga-tag">${p.liga||'—'}</span></td>
+      <td style="color:var(--t2)">${p.prediccion}</td>
+      <td style="font-family:'Space Mono',monospace;font-size:12px">${p.cuota}</td>
+      <td>${plVal}</td>
+      <td>${badge}</td>
+    </tr>`;
+  }).join('');
+}
+renderTabla(todos);
+
+// Filtros
+document.getElementById('tblFilters').addEventListener('click', e=>{
+  const btn = e.target.closest('.f-btn');
+  if(!btn) return;
+  document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const f = btn.dataset.f;
+  const data = f==='todas' ? todos : todos.filter(p=>p.resultado===f);
+  renderTabla(data);
+});
+
+// Agregar botones de liga dinámicos
+(function(){
+  const filters = document.getElementById('tblFilters');
+  const ligas = [...new Set(todos.map(p=>p.liga).filter(Boolean))];
+  const nombres = {'Copa Libertadores':'Libertadores','Champions League':'Champions','Premier League':'Premier','Liga BetPlay':'BetPlay','Bundesliga':'Bundesliga','Serie A':'Serie A','Ligue 1':'Ligue 1','La Liga':'La Liga'};
+  ligas.forEach(liga=>{
+    const btn = document.createElement('button');
+    btn.className = 'f-btn';
+    btn.dataset.f = liga;
+    btn.textContent = nombres[liga] || liga;
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      renderTabla(todos.filter(p=>p.liga===liga));
+    });
+    filters.appendChild(btn);
+  });
+})();
+
+// ── STRIP ───────────────────────────────────────────────────────
+(function(){
+  const strip = document.getElementById('strip');
+  if(!strip) return;
+  [...resueltos].reverse().forEach(p=>{
+    const blk = document.createElement('div');
+    blk.className = 'blk';
+    blk.style.background = p.resultado==='win'?'var(--green)':'var(--red)';
+    blk.title = `${p.partido} · ${p.resultado.toUpperCase()}`;
+    strip.appendChild(blk);
+  });
+})();
+</script>
+</body>
+</html>
