@@ -239,7 +239,7 @@ def enviar_canal_free(partido, liga, hora):
         f"📊 <b>Predicción:</b> 🔒 Solo VIP\n"
         f"💵 <b>Cuota:</b> 🔒 Solo VIP\n\n"
         f"🔥 <b>¿Quieres la predicción completa?</b>\n"
-        f"Únete al canal VIP → @SharpIQVIP\n\n"
+        f"Únete al canal VIP → https://t.me/+pQw56rc0JVQ3NjQ5\n\n"
         f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
     )
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
@@ -358,7 +358,7 @@ def enviar_saludo_manana_free(partidos_hoy):
     texto += (
         f"\n🔒 <b>Las predicciones VIP ya están listas</b>\n"
         f"¿Quieres las cuotas y mercados exactos?\n"
-        f"👉 Únete al canal VIP → @SharpIQVIP\n\n"
+        f"👉 Únete al canal VIP → https://t.me/+pQw56rc0JVQ3NjQ5\n\n"
         f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
     )
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
@@ -392,7 +392,7 @@ def enviar_resultado_free(partido, resultado_texto, emoji_resultado):
         f"{emoji_resultado} <b>Resultado — {partido}</b>\n\n"
         f"<b>{resultado_texto}</b>\n\n"
         f"{comentario}\n\n"
-        f"🔒 Ver predicciones de mañana → @SharpIQVIP\n"
+        f"🔒 Ver predicciones de mañana → https://t.me/+pQw56rc0JVQ3NjQ5\n"
         f"<i>SharpIQ — La ventaja inteligente</i>"
     )
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
@@ -500,7 +500,7 @@ def _construir_narrativa(pred, mercado, vb, canal):
         pie_free = (
             f"📊 Probabilidad SharpIQ: <b>{prob_raw}%</b> | Cuota justa: <b>{cuota_justa_str}</b>\n"
             f"La casa paga <b>{cuota_api}</b> — ventaja del <b>+{ev}%</b> a tu favor.\n\n"
-            f"🔒 <b>¿Quieres la predicción completa?</b> 👉 @SharpIQVIP\n\n"
+            f"🔒 <b>¿Quieres la predicción completa?</b> 👉 https://t.me/+pQw56rc0JVQ3NjQ5\n\n"
             f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
         )
         intro_free = "El modelo detecta que la casa <b>subestima</b> la probabilidad real de este resultado.\n\n"
@@ -514,7 +514,7 @@ def _construir_narrativa(pred, mercado, vb, canal):
         pie_vip  = "<i>Este análisis es informativo. Hoy no hay apuesta con valor matemático confirmado.</i>"
         pie_free = (
             f"🔍 Partido interesante para seguir hoy.\n\n"
-            f"🔒 Predicciones con valor confirmado → @SharpIQVIP\n\n"
+            f"🔒 Predicciones con valor confirmado → https://t.me/+pQw56rc0JVQ3NjQ5\n\n"
             f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
         )
         intro_free = ""
