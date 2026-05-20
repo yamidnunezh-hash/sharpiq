@@ -1092,72 +1092,11 @@
 <section class="sec-anal" id="analisis">
   <div class="wrap">
     <div class="sh">
-      <span class="stag rv">Análisis Escrito</span>
-      <h2 class="st rv">Opinión de <span>Mercado</span></h2>
-      <p class="ssub rv">Sin video. Sin ruido. Análisis fundamentado en datos, redactado con criterio. Vieja escuela: el resultado habla por sí solo.</p>
+      <span class="stag rv">Resultados Reales</span>
+      <h2 class="st rv">Historial <span>Verificable</span></h2>
+      <p class="ssub rv">Cada predicción con su resultado real. Sin editar derrotas. Sin inventar aciertos. Los números hablan solos.</p>
     </div>
-    <div class="anal-grid">
-      <div class="anal-main rvl">
-        <div class="anal-img-placeholder">⚽</div>
-        <div class="anal-body">
-          <div class="anal-meta">
-            <span class="anal-date">16 Mayo 2026</span>
-            <span class="anal-cat">Champions League</span>
-          </div>
-          <h3>PSG vs Bayern: El valor está en el hándicap asiático visitante</h3>
-          <p class="anal-excerpt">
-            "En los últimos 6 enfrentamientos directos entre ambos equipos, el Bayern ha cubierto el hándicap -0.5 asiático en 4 ocasiones. El índice de pressing del equipo bávaro en fase eliminatoria alcanza 78 PPDA, 23% superior a su media de temporada regular. Con una cuota de apertura de 2.10 para el hándicap visitante y un cierre proyectado de 1.85, identificamos una ventaja estadística del +12.8% sobre la probabilidad implícita del mercado..."
-          </p>
-          <div class="anal-lock">🔒 Continúa leyendo — Acceso VIP exclusivo</div>
-          <div class="anal-result-win">✓ Predicción correcta — PSG 1-2 Bayern · Cuota cobrada: 2.10</div>
-        </div>
-      </div>
-      <div class="anal-list rvr">
-        <div class="anal-item">
-          <div class="anal-item-num">02</div>
-          <div class="anal-item-body">
-            <div class="anal-item-cat">NBA · PLAYOFFS</div>
-            <div class="anal-item-title">Celtics vs Heat: El spread de -4.5 tiene valor estadístico positivo</div>
-            <div class="anal-item-meta">
-              <span class="anal-item-date">15 Mayo 2026</span>
-              <span class="status-win" style="font-size:10px">✓ ACIERTO</span>
-            </div>
-          </div>
-        </div>
-        <div class="anal-item">
-          <div class="anal-item-num">03</div>
-          <div class="anal-item-body">
-            <div class="anal-item-cat">PREMIER LEAGUE</div>
-            <div class="anal-item-title">Arsenal vs Chelsea: Over 2.5 con mercado de cuotas sobrevaluado</div>
-            <div class="anal-item-meta">
-              <span class="anal-item-date">16 Mayo 2026</span>
-              <span class="status-win" style="font-size:10px">✓ ACIERTO</span>
-            </div>
-          </div>
-        </div>
-        <div class="anal-item">
-          <div class="anal-item-num">04</div>
-          <div class="anal-item-body">
-            <div class="anal-item-cat">LALIGA</div>
-            <div class="anal-item-title">Real Madrid vs Atlético: Análisis del mercado de ambos marcan</div>
-            <div class="anal-item-meta">
-              <span class="anal-item-date">14 Mayo 2026</span>
-              <span class="status-loss" style="font-size:10px">✗ FALLO</span>
-            </div>
-          </div>
-        </div>
-        <div class="anal-item" style="border-color:var(--borderg)">
-          <div class="anal-item-num" style="color:var(--gold)">+</div>
-          <div class="anal-item-body">
-            <div class="anal-item-cat" style="color:var(--t2)">ACCESO VIP</div>
-            <div class="anal-item-title">Desbloquea todos los análisis y el historial completo</div>
-            <div class="anal-item-meta">
-              <a href="#planes" style="font-family:'Space Mono',monospace;font-size:11px;color:var(--gold)">Ver planes →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="analisis-grid"></div>
   </div>
 </section>
 
@@ -1555,6 +1494,60 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
         const tip=`${p.partido} | ${p.prediccion} @ ${p.cuota}`;
         return`<div title="${tip}" style="width:28px;height:28px;border-radius:4px;background:${isWin?'rgba(34,197,94,0.85)':'rgba(239,68,68,0.75)'};cursor:default;flex-shrink:0;" aria-label="${isWin?'WIN':'LOSS'}"></div>`;
       }).join('');
+    }
+  }
+
+  // Sección Resultados Reales — historial dinámico
+  const analGrid = document.getElementById('analisis-grid');
+  if(analGrid && typeof PREDICCIONES_HISTORIAL !== 'undefined' && PREDICCIONES_HISTORIAL.length){
+    const resueltos = PREDICCIONES_HISTORIAL.filter(p=>p.resultado!=='pending');
+    if(resueltos.length === 0){
+      analGrid.innerHTML = '<p style="color:var(--t3);text-align:center;padding:40px 0">Historial en construcción — primeras predicciones en curso.</p>';
+    } else {
+      const primero = resueltos[0];
+      const resto   = resueltos.slice(1, 5);
+      const winPct  = Math.round(resueltos.filter(p=>p.resultado==='win').length/resueltos.length*100);
+      analGrid.innerHTML = `
+        <div class="anal-main rvl">
+          <div class="anal-img-placeholder" style="font-size:32px;display:flex;align-items:center;justify-content:center;height:80px;background:rgba(240,165,0,0.06);border-radius:10px;margin-bottom:20px;">⚽</div>
+          <div class="anal-body">
+            <div class="anal-meta">
+              <span class="anal-date">${primero.fecha}</span>
+              <span class="anal-cat">${primero.liga}</span>
+            </div>
+            <h3>${primero.partido}</h3>
+            <p class="anal-excerpt" style="margin:12px 0;color:var(--t2);font-size:14px;line-height:1.7;">
+              Predicción: <strong style="color:var(--t1)">${primero.prediccion}</strong> a cuota <strong style="color:var(--gold)">${primero.cuota}</strong>
+            </p>
+            <div class="${primero.resultado==='win'?'anal-result-win':'anal-result-loss'}" style="margin-top:12px;">
+              ${primero.resultado==='win'?'✓ ACIERTO':'✗ FALLO'} — Cuota: ${primero.cuota}
+            </div>
+          </div>
+        </div>
+        <div class="anal-list rvr">
+          ${resto.map((p,i)=>`
+          <div class="anal-item">
+            <div class="anal-item-num" style="color:${p.resultado==='win'?'var(--green)':'var(--red)'}">${String(i+2).padStart(2,'0')}</div>
+            <div class="anal-item-body">
+              <div class="anal-item-cat">${p.liga}</div>
+              <div class="anal-item-title">${p.partido} — ${p.prediccion}</div>
+              <div class="anal-item-meta">
+                <span class="anal-item-date">${p.fecha} · @${p.cuota}</span>
+                <span class="${p.resultado==='win'?'status-win':'status-loss'}" style="font-size:10px">${p.resultado==='win'?'✓ ACIERTO':'✗ FALLO'}</span>
+              </div>
+            </div>
+          </div>`).join('')}
+          <div class="anal-item" style="border-color:var(--borderg)">
+            <div class="anal-item-num" style="color:var(--gold)">%</div>
+            <div class="anal-item-body">
+              <div class="anal-item-cat" style="color:var(--t2)">TASA DE ACIERTOS</div>
+              <div class="anal-item-title" style="color:var(--gold);font-size:22px;font-family:'Bebas Neue',cursive">${winPct}% — ${resueltos.filter(p=>p.resultado==='win').length}W / ${resueltos.filter(p=>p.resultado==='loss').length}L</div>
+              <div class="anal-item-meta">
+                <a href="#predicciones" style="font-family:'Space Mono',monospace;font-size:11px;color:var(--gold)">Ver historial completo →</a>
+              </div>
+            </div>
+          </div>
+        </div>`;
     }
   }
 
