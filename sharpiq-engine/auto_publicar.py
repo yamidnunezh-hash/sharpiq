@@ -200,14 +200,17 @@ def correr():
         # 2. Canal VIP — GIF matutino + predicción completa
         clasificacion = vb.get("clasificacion", "ANALISIS")
         if clasificacion == "ALTO VALOR":
-            titulo = "🔥 <b>SharpIQ — ALTO VALOR</b>"
+            titulo   = "🔥 <b>SharpIQ — ALTO VALOR</b>"
             ev_linea = f"⚡ <b>EV:</b> +{ev}%\n\n"
         elif ev > 0:
-            titulo = "📊 <b>SharpIQ — Predicción del Día</b>"
+            titulo   = "📊 <b>SharpIQ — Predicción del Día</b>"
             ev_linea = f"⚡ <b>EV:</b> +{ev}%\n\n"
         else:
-            titulo = "📊 <b>SharpIQ — Análisis del Día</b>"
-            ev_linea = f"🔍 <b>Confianza modelo:</b> {pred.get('confianza', '')}%\n\n"
+            titulo   = "📅 <b>SharpIQ — Partido del Día</b>"
+            ev_linea = (
+                f"🔍 <b>Confianza modelo:</b> {pred.get('confianza', '')}%\n"
+                f"⚠️ <i>Hoy no hay ventaja matemática confirmada — partido para observar.</i>\n\n"
+            )
 
         enviar_gif_vip(random.choice(GIFS_MANANA))
         enviar_mensaje(

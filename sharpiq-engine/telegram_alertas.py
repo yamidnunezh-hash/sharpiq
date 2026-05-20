@@ -487,13 +487,37 @@ def _construir_narrativa(pred, mercado, vb, canal):
         f"(total ~{goles_esp})\n"
     ) if goles_esp else ""
 
-    # ── Bloque EV ──
-    linea_ev = (
-        f"📈 <b>El valor matemático:</b>\n"
-        f"• Probabilidad del modelo: <b>{prob_raw}%</b> para {nombre_mercado}\n"
-        f"• Cuota justa: <b>{cuota_justa_str}</b> — la casa ofrece <b>{cuota_api}</b>\n"
-        f"• Ventaja a tu favor: <b>EV +{ev}%</b>\n"
-    )
+    # ── Bloque EV — solo si EV es positivo ──
+    tiene_valor = ev > 0 and cuota_api and cuota_justa_str and float(cuota_api) > float(cuota_justa_str)
+    if tiene_valor:
+        linea_ev = (
+            f"📈 <b>El valor matemático:</b>\n"
+            f"• Probabilidad del modelo: <b>{prob_raw}%</b> para {nombre_mercado}\n"
+            f"• Cuota justa: <b>{cuota_justa_str}</b> — la casa ofrece <b>{cuota_api}</b>\n"
+            f"• Ventaja a tu favor: <b>EV +{ev}%</b>\n"
+        )
+        pie_vip  = "<i>EV positivo confirmado — apuesta con criterio matemático.</i>"
+        pie_free = (
+            f"📊 Probabilidad SharpIQ: <b>{prob_raw}%</b> | Cuota justa: <b>{cuota_justa_str}</b>\n"
+            f"La casa paga <b>{cuota_api}</b> — ventaja del <b>+{ev}%</b> a tu favor.\n\n"
+            f"🔒 <b>¿Quieres la predicción completa?</b> 👉 @SharpIQVIP\n\n"
+            f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+        )
+        intro_free = "El modelo detecta que la casa <b>subestima</b> la probabilidad real de este resultado.\n\n"
+    else:
+        linea_ev = (
+            f"📊 <b>Análisis del modelo:</b>\n"
+            f"• Probabilidad estimada: <b>{prob_raw}%</b> para {nombre_mercado}\n"
+            f"• Cuota disponible: <b>{cuota_api}</b>\n"
+            f"⚠️ <i>Sin ventaja matemática detectada — partido para observar, no apostar.</i>\n"
+        )
+        pie_vip  = "<i>Este análisis es informativo. Hoy no hay apuesta con valor matemático confirmado.</i>"
+        pie_free = (
+            f"🔍 Partido interesante para seguir hoy.\n\n"
+            f"🔒 Predicciones con valor confirmado → @SharpIQVIP\n\n"
+            f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+        )
+        intro_free = ""
 
     if canal == "vip":
         texto = (
@@ -502,21 +526,15 @@ def _construir_narrativa(pred, mercado, vb, canal):
             f"{linea_forma}"
             f"{linea_h2h}\n"
             f"{linea_ev}\n"
-            f"<i>El EV positivo no garantiza ganar cada apuesta, pero a largo plazo es la única "
-            f"estrategia matemáticamente ganadora.</i>"
+            f"{pie_vip}"
         )
     else:  # free
         texto = (
-            f"🔍 <b>¿Por qué esta predicción?</b>\n\n"
+            f"🔍 <b>{'¿Por qué esta predicción?' if tiene_valor else 'Partido del día'}</b>\n\n"
             f"{linea_goles}"
             f"{linea_h2h}\n"
-            f"El modelo detecta que la casa de apuestas <b>subestima</b> la probabilidad "
-            f"real de este resultado.\n\n"
-            f"📊 Probabilidad SharpIQ: <b>{prob_raw}%</b> | Cuota justa: <b>{cuota_justa_str}</b>\n"
-            f"La casa paga <b>{cuota_api}</b> — ventaja del <b>+{ev}%</b> a tu favor.\n\n"
-            f"🔒 <b>¿Quieres la predicción completa + mercado + cuota exacta?</b>\n"
-            f"👉 @SharpIQVIP\n\n"
-            f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+            f"{intro_free}"
+            f"{pie_free}"
         )
 
     return texto.strip()
