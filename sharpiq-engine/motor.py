@@ -994,6 +994,11 @@ def reporte_del_dia():
         pred["cuotas_reales"] = bool(cuotas_reales)
         pred["cuotas_avisos"] = avisos_cuota
 
+        # Datos de contexto para narrativa — usa el caché de api-football, 0 llamadas extra
+        pred["forma_local"]  = obtener_forma_reciente(p["local"])
+        pred["forma_visita"] = obtener_forma_reciente(p["visitante"])
+        pred["h2h"]          = obtener_h2h(p["local"], p["visitante"])
+
         # Leer movimiento de línea si existe snapshot anterior
         pred["movimiento"] = None
         if db_ok and p.get("id"):

@@ -398,6 +398,141 @@ def enviar_resultado_free(partido, resultado_texto, emoji_resultado):
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
 
 
+def _construir_narrativa(pred, mercado, vb, canal):
+    """
+    Genera texto de análisis narrativo a partir de los datos de la predicción.
+    canal: 'free' (incluye CTA a VIP) | 'vip' (más detallado, sin CTA)
+    """
+    local     = pred["local"]
+    visitante = pred["visitante"]
+    probs     = pred.get("probabilidades", {})
+    cuotas    = pred.get("cuotas", {})
+    forma_l   = pred.get("forma_local")  or {}
+    forma_v   = pred.get("forma_visita") or {}
+    h2h       = pred.get("h2h")          or {}
+
+    ev        = vb.get("ev_porcentaje", 0)
+    prob_raw  = 0.0
+    cuota_api = 0.0
+    cuota_justa_str = ""
+
+    # Mapeo mercado → clave de probabilidad y cuota
+    prob_map = {
+        "victoria_local":  ("victoria_local",  "1"),
+        "empate":          ("empate",           "X"),
+        "victoria_visita": ("victoria_visita",  "2"),
+        "over25":          ("over25",           "over25"),
+        "under25":         ("under25",          "under25"),
+        "over15":          ("over15",           "over15"),
+        "under15":         ("under15",          "under15"),
+        "over35":          ("over35",           "over35"),
+        "btts_si":         ("btts_si",          "btts_si"),
+        "btts_no":         ("btts_no",          "btts_no"),
+    }
+    mercado_nombres = {
+        "victoria_local":  "Victoria Local",
+        "empate":          "Empate",
+        "victoria_visita": "Victoria Visitante",
+        "over25":          "Over 2.5 Goles",
+        "under25":         "Under 2.5 Goles",
+        "over15":          "Over 1.5 Goles",
+        "under15":         "Under 1.5 Goles",
+        "over35":          "Over 3.5 Goles",
+        "btts_si":         "Ambos Marcan — Sí",
+        "btts_no":         "Ambos Marcan — No",
+    }
+
+    prob_key, cuota_key = prob_map.get(mercado, ("victoria_local", "1"))
+    prob_raw  = probs.get(prob_key, 0)
+    cuota_api = cuotas.get(cuota_key, 0)
+    nombre_mercado = mercado_nombres.get(mercado, mercado)
+
+    if prob_raw and prob_raw > 0:
+        cuota_justa = round(100 / prob_raw, 2)
+        cuota_justa_str = str(cuota_justa)
+
+    goles_esp  = probs.get("total_goles_esperados", 0)
+    goles_l    = probs.get("goles_esperados_local", 0)
+    goles_v    = probs.get("goles_esperados_visita", 0)
+
+    # ── Bloque de forma ──
+    linea_forma = ""
+    if forma_l.get("ataque_reciente") and forma_v.get("ataque_reciente"):
+        atq_l = forma_l["ataque_reciente"]
+        def_l = forma_l.get("defensa_reciente", 0)
+        atq_v = forma_v["ataque_reciente"]
+        def_v = forma_v.get("defensa_reciente", 0)
+        linea_forma = (
+            f"📋 <b>Forma reciente (últimos 5 partidos):</b>\n"
+            f"• {local}: {atq_l} goles/p anotados, {def_l} recibidos\n"
+            f"• {visitante}: {atq_v} goles/p anotados, {def_v} recibidos\n"
+        )
+
+    # ── Bloque H2H ──
+    linea_h2h = ""
+    if h2h.get("partidos"):
+        n = h2h["partidos"]
+        gpp = h2h.get("goles_por_partido", 0)
+        vl  = round(h2h.get("victorias_local", 0)  * n)
+        ve  = round(h2h.get("empates", 0)           * n)
+        vv  = round(h2h.get("victorias_visita", 0)  * n)
+        linea_h2h = (
+            f"🔁 <b>Últimos {n} enfrentamientos:</b> "
+            f"{vl}V {ve}E {vv}D — {gpp} goles/partido en promedio\n"
+        )
+
+    # ── Bloque de goles esperados ──
+    linea_goles = (
+        f"⚽ <b>Goles esperados:</b> {local} {goles_l} — {goles_v} {visitante} "
+        f"(total ~{goles_esp})\n"
+    ) if goles_esp else ""
+
+    # ── Bloque EV ──
+    linea_ev = (
+        f"📈 <b>El valor matemático:</b>\n"
+        f"• Probabilidad del modelo: <b>{prob_raw}%</b> para {nombre_mercado}\n"
+        f"• Cuota justa: <b>{cuota_justa_str}</b> — la casa ofrece <b>{cuota_api}</b>\n"
+        f"• Ventaja a tu favor: <b>EV +{ev}%</b>\n"
+    )
+
+    if canal == "vip":
+        texto = (
+            f"🔬 <b>Análisis completo — SharpIQ Engine</b>\n\n"
+            f"{linea_goles}"
+            f"{linea_forma}"
+            f"{linea_h2h}\n"
+            f"{linea_ev}\n"
+            f"<i>El EV positivo no garantiza ganar cada apuesta, pero a largo plazo es la única "
+            f"estrategia matemáticamente ganadora.</i>"
+        )
+    else:  # free
+        texto = (
+            f"🔍 <b>¿Por qué esta predicción?</b>\n\n"
+            f"{linea_goles}"
+            f"{linea_h2h}\n"
+            f"El modelo detecta que la casa de apuestas <b>subestima</b> la probabilidad "
+            f"real de este resultado.\n\n"
+            f"📊 Probabilidad SharpIQ: <b>{prob_raw}%</b> | Cuota justa: <b>{cuota_justa_str}</b>\n"
+            f"La casa paga <b>{cuota_api}</b> — ventaja del <b>+{ev}%</b> a tu favor.\n\n"
+            f"🔒 <b>¿Quieres la predicción completa + mercado + cuota exacta?</b>\n"
+            f"👉 @SharpIQVIP\n\n"
+            f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+        )
+
+    return texto.strip()
+
+
+def enviar_narrativa(pred, mercado, vb):
+    """Envía el análisis narrativo al canal free y al canal VIP."""
+    try:
+        texto_free = _construir_narrativa(pred, mercado, vb, canal="free")
+        texto_vip  = _construir_narrativa(pred, mercado, vb, canal="vip")
+        enviar_mensaje(texto_free, chat_id=TELEGRAM_FREE_ID)
+        enviar_mensaje(texto_vip,  chat_id=get_chat_id())
+    except Exception as e:
+        print(f"  Narrativa error: {e}")
+
+
 def enviar_resultado_vip(partido, resultado_texto, emoji_resultado):
     """
     Publica el resultado de una predicción en el canal VIP con GIF celebratorio en WIN.

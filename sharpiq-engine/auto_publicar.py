@@ -201,6 +201,15 @@ def correr():
     except Exception as e:
         print(f"  Telegram error: {e}")
 
+    # Narrativa de análisis — free + VIP
+    try:
+        from telegram_alertas import enviar_narrativa
+        vb_data = pred.get("value_bets", {}).get(mercado, {})
+        enviar_narrativa(pred, mercado, vb_data)
+        print("  Narrativa enviada (Free + VIP) ✓")
+    except Exception as e:
+        print(f"  Narrativa error: {e}")
+
     # Push notification a suscriptores web
     try:
         from push_notifications import enviar_push_prediccion
