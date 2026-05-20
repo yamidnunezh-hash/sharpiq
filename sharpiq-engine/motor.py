@@ -2,6 +2,7 @@
 SharpIQ — Motor de Predicciones
 Modelo: Poisson + Dixon-Coles + Value Betting
 """
+import re
 import requests
 import json
 import math
@@ -116,6 +117,12 @@ LIGAS_ODDS = {
     "13":  "soccer_conmebol_copa_libertadores",
     "11":  "soccer_conmebol_copa_sudamericana",
     "1":   "soccer_fifa_world_cup",
+    # Ligas activas año redondo
+    "71":  "soccer_brazil_campeonato",
+    "262": "soccer_mexico_ligamx",
+    "253": "soccer_usa_mls",
+    "239": "soccer_argentina_primera_division",
+    "265": "soccer_chile_campeonato",
 }
 
 # Casas de apuestas preferidas (europeas, disponibles en Colombia)
@@ -141,15 +148,18 @@ LIGAS_APIFB = {
     39:   "Premier League",
     61:   "Ligue 1",
     71:   "Brasileirao Serie A",
+    72:   "Brasileirao Serie B",
     78:   "Bundesliga",
     11:   "Copa Sudamericana",
     13:   "Copa Libertadores",
     128:  "Liga BetPlay",
     135:  "Serie A",
     140:  "La Liga",
+    239:  "Primera División Argentina",
     241:  "Copa Colombia",
     253:  "MLS",
     262:  "Liga MX",
+    265:  "Primera División Chile",
 }
 
 # ── API-FOOTBALL: FORMA, H2H, LESIONES ─────────────────────────
@@ -691,15 +701,39 @@ def obtener_cuotas_liga(sport_key):
         print(f"  Error Odds API: {e}")
         return []
 
+_STOPWORDS_EQUIPO = {
+    'club', 'fc', 'cf', 'sc', 'ac', 'as', 'sk', 'sd', 'cd', 'ca',
+    'de', 'del', 'los', 'las', 'el', 'la', 'the', 'united', 'city',
+    'sport', 'sporting', 'atletico', 'atletico', 'real', 'deportivo',
+    'sociedad', 'association',
+}
+
+def _norm_equipo(nombre):
+    """Normaliza nombre de equipo: quita sufijos de ciudad, acentos, stopwords."""
+    n = nombre.lower()
+    n = re.sub(r'[-]\w{2}$', '', n)          # Palmeiras-SP → palmeiras
+    n = re.sub(r'[áàä]','a', re.sub(r'[éèë]','e', re.sub(r'[íìï]','i',
+        re.sub(r'[óòö]','o', re.sub(r'[úùü]','u', n)))))
+    n = re.sub(r'[^a-z0-9 ]', ' ', n)
+    palabras = [p for p in n.split() if p not in _STOPWORDS_EQUIPO and len(p) > 1]
+    return set(palabras)
+
+def _match_equipos(a, b):
+    """True si los nombres corresponden al mismo equipo (fuzzy)."""
+    sa, sb = _norm_equipo(a), _norm_equipo(b)
+    if not sa or not sb:
+        return False
+    interseccion = len(sa & sb)
+    minimo = min(len(sa), len(sb))
+    return interseccion / minimo >= 0.6
+
+
 def buscar_cuotas_partido(local, visitante, sport_key):
     partidos = obtener_cuotas_liga(sport_key)
-    local_norm = local.lower().replace(" fc", "").replace(" cf", "").strip()
-    visita_norm = visitante.lower().replace(" fc", "").replace(" cf", "").strip()
-
     for p in partidos:
-        h = p.get("home_team", "").lower().replace(" fc", "").replace(" cf", "").strip()
-        a = p.get("away_team", "").lower().replace(" fc", "").replace(" cf", "").strip()
-        if (local_norm in h or h in local_norm) and (visita_norm in a or a in visita_norm):
+        h = p.get("home_team", "")
+        a = p.get("away_team", "")
+        if _match_equipos(local, h) and _match_equipos(visitante, a):
             return extraer_mejor_cuota(p)
     return None
 
