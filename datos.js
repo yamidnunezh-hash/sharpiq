@@ -29,15 +29,6 @@ const PROXIMOS_EVENTOS = [
     status:     "free"
   },
 
-  {
-    fecha:      "19/05/26",
-    partido:    "Fluminense FC vs Club Bolívar",
-    liga:       "Copa Libertadores",
-    prediccion: "under25 — EV +54.1%",
-    cuota:      "1.21",
-    hora:       "17:00 COT",
-    status:     "vip"
-  },
 ];
 
 // ── HISTORIAL DE PREDICCIONES ─────────────────────────────────
@@ -46,6 +37,14 @@ const PROXIMOS_EVENTOS = [
 // resultado: "win" | "loss" | "pending"
 // ORDEN: más reciente primero — el algoritmo calcula racha desde arriba.
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "19/05/26",
+    partido:    "Fluminense FC vs Club Bolívar",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.21",
+    resultado:  "loss"
+  },
   {
     fecha:      "19/05/26",
     partido:    "Chelsea FC vs Tottenham Hotspur FC",
