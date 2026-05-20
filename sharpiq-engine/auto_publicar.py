@@ -148,12 +148,15 @@ def correr():
     except subprocess.CalledProcessError as e:
         print(f"  Git error: {e}")
 
-    # Telegram: aviso privado a Yamid
+    # Telegram: tres destinos
     try:
-        from telegram_alertas import enviar_autopublicacion, enviar_mensaje
+        from telegram_alertas import enviar_autopublicacion, enviar_mensaje, enviar_canal_free
         from config import TELEGRAM_CHAT_ID
+
+        # 1. Aviso privado a Yamid
         enviar_autopublicacion(partido, liga, nombre_mercado, cuota, hora_cot, ev)
-        # También al canal VIP
+
+        # 2. Canal VIP — predicción completa
         enviar_mensaje(
             f"🔥 <b>SharpIQ — Nueva Predicción VIP</b>\n\n"
             f"⚽ <b>{partido}</b>\n"
@@ -164,7 +167,11 @@ def correr():
             f"<i>SharpIQ — La ventaja inteligente</i>",
             chat_id=TELEGRAM_CHAT_ID
         )
-        print("  Telegram enviado ✓")
+
+        # 3. Canal free — teaser sin mercado ni cuota
+        enviar_canal_free(partido, liga, hora_cot)
+
+        print("  Telegram enviado (VIP + Free + Yamid) ✓")
     except Exception as e:
         print(f"  Telegram error: {e}")
 

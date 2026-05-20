@@ -13,6 +13,10 @@ try:
     from config import TELEGRAM_YAMID_ID
 except ImportError:
     TELEGRAM_YAMID_ID = None
+try:
+    from config import TELEGRAM_FREE_ID
+except ImportError:
+    TELEGRAM_FREE_ID = None
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.py")
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
@@ -188,6 +192,20 @@ def enviar_resumen_dia(reporte):
 def enviar_aviso_yamid(texto):
     """Mensaje privado a Yamid — alertas del motor, auto-publicaciones, errores."""
     return enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
+
+
+def enviar_canal_free(partido, liga, hora):
+    """Publica un teaser en el canal público — mercado oculto para generar curiosidad."""
+    texto = (
+        f"⚽ <b>{partido}</b>\n"
+        f"🏆 {liga} | {hora}\n\n"
+        f"📊 <b>Predicción:</b> 🔒 Solo VIP\n"
+        f"💵 <b>Cuota:</b> 🔒 Solo VIP\n\n"
+        f"🔥 <b>¿Quieres la predicción completa?</b>\n"
+        f"Únete al canal VIP → @SharpIQVIP\n\n"
+        f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+    )
+    return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
 
 
 def enviar_autopublicacion(partido, liga, mercado, cuota, hora, ev):
