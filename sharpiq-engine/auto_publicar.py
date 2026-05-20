@@ -172,6 +172,21 @@ def correr():
 
     print(f"  Publicando: {partido} | {nombre_mercado} @ {cuota} | EV +{ev}%")
 
+    # Guardar snapshot de apertura para CLV tracking
+    try:
+        from database import inicializar, guardar_snapshot
+        inicializar()
+        fixture_id = pred.get("id")
+        if fixture_id:
+            guardar_snapshot(
+                fixture_id, pred["local"], pred["visitante"],
+                date.today().isoformat(), "apertura",
+                pred.get("cuotas", {})
+            )
+            print(f"  CLV snapshot apertura guardado ✓")
+    except Exception as e:
+        print(f"  CLV snapshot error: {e}")
+
     # Actualizar datos.js
     _agregar_a_datos_js(partido, liga, nombre_mercado, cuota, hora_cot, ev)
 

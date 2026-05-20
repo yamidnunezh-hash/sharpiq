@@ -202,12 +202,44 @@ def correr():
         texto = mover_a_historial(texto, evento, resultado)
         actualizados += 1
 
+        # Guardar snapshot de cierre y calcular CLV
+        clv_texto = ""
+        try:
+            from motor import buscar_cuotas_partido, LIGAS_ODDS
+            from database import inicializar, guardar_snapshot, get_movimiento
+            inicializar()
+            fid = fixture.get("fixture", {}).get("id")
+            liga_id = str(fixture.get("league", {}).get("id", ""))
+            sport_key = LIGAS_ODDS.get(liga_id)
+            if fid and sport_key:
+                cuotas_cierre = buscar_cuotas_partido(local_js, visita_js, sport_key)
+                if cuotas_cierre:
+                    guardar_snapshot(fid, local_js, visita_js,
+                                     date.today().isoformat(), "tarde", cuotas_cierre)
+                    mov = get_movimiento(fid)
+                    if mov and mov.get("mercados"):
+                        mercados = mov["mercados"]
+                        lineas_clv = []
+                        for m, datos in mercados.items():
+                            pct = datos.get("cambio_pct", 0)
+                            if abs(pct) >= 3:
+                                dir = "▼" if pct < 0 else "▲"
+                                lineas_clv.append(f"{m}: {datos['apertura']} → {datos['actual']} ({dir}{abs(pct)}%)")
+                        if lineas_clv:
+                            clv_texto = "\n📊 <b>CLV:</b> " + " | ".join(lineas_clv)
+                            print(f"  CLV: {' | '.join(lineas_clv)}")
+        except Exception as clv_e:
+            print(f"  CLV error: {clv_e}")
+
         # Notificar resultado — free + VIP
         try:
-            from telegram_alertas import enviar_resultado_free, enviar_resultado_vip
+            from telegram_alertas import enviar_resultado_free, enviar_resultado_vip, enviar_aviso_yamid
             resultado_texto = f"WIN ✅  {gl}-{gv}" if resultado == 'win' else f"LOSS ❌  {gl}-{gv}"
             enviar_resultado_free(partido, resultado_texto, emoji)
             enviar_resultado_vip(partido, resultado_texto, emoji)
+            # Reporte CLV privado a Yamid
+            if clv_texto:
+                enviar_aviso_yamid(f"📈 CLV {partido}\n{resultado_texto}{clv_texto}")
         except Exception as te:
             print(f"  Telegram resultado error: {te}")
 
