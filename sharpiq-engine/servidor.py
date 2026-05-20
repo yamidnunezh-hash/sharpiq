@@ -24,14 +24,32 @@ except Exception:
 WEB_DIR = os.path.join(BASE_DIR, "..")
 DATOS_JS = os.path.join(WEB_DIR, "datos.js")
 
+try:
+    from config import PANEL_TOKEN as _PANEL_TOKEN
+except Exception:
+    _PANEL_TOKEN = ""
+
+
 class SharpIQHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=WEB_DIR, **kwargs)
 
     def log_message(self, format, *args):
-        # Solo mostrar errores, no cada request
         if args[1] not in ('200', '304'):
             print(f"  [{args[1]}] {args[0]}")
+
+    def _token_valido(self):
+        auth = self.headers.get("Authorization", "")
+        if auth.startswith("Bearer "):
+            return auth[7:] == _PANEL_TOKEN
+        return False
+
+    def _sin_auth(self):
+        self.send_response(401)
+        self._cors()
+        self.send_header("Content-Type", "application/json")
+        self.end_headers()
+        self.wfile.write(json.dumps({"ok": False, "error": "No autorizado"}).encode())
 
     def do_OPTIONS(self):
         self.send_response(200)
@@ -76,6 +94,9 @@ class SharpIQHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self):
+        if not self._token_valido():
+            self._sin_auth()
+            return
         if self.path == "/api/publicar":
             length = int(self.headers.get("Content-Length", 0))
             body = self.rfile.read(length)

@@ -229,6 +229,24 @@
 </head>
 <body>
 
+<!-- LOGIN -->
+<div id="loginScreen" style="position:fixed;inset:0;background:#020509;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:24px">
+  <div style="font-family:'Orbitron',monospace;font-size:1.4rem;font-weight:900;color:#f0a500;letter-spacing:2px">SHARP<span style="color:#fff">IQ</span></div>
+  <div style="font-size:12px;color:#64748b;font-family:monospace;letter-spacing:1px">PANEL DE ADMINISTRACIÓN</div>
+  <div style="width:100%;max-width:320px;display:flex;flex-direction:column;gap:10px">
+    <input id="loginInput" type="password" placeholder="Clave de acceso"
+      style="width:100%;background:#0a1520;border:1px solid rgba(240,165,0,.3);border-radius:8px;padding:13px 16px;font-size:15px;color:#e2e8f0;outline:none;font-family:monospace"
+      onkeydown="if(event.key==='Enter')doLogin()">
+    <button onclick="doLogin()"
+      style="background:linear-gradient(135deg,#f0a500,#d97706);color:#000;font-weight:700;font-size:13px;padding:13px;border:none;border-radius:8px;cursor:pointer;letter-spacing:1px">
+      ENTRAR →
+    </button>
+    <div id="loginErr" style="display:none;color:#ef4444;font-size:12px;text-align:center;font-family:monospace">Clave incorrecta</div>
+  </div>
+</div>
+
+<div id="panelWrap" style="display:none">
+
 <header>
   <a class="logo" href="index.html">
     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -334,7 +352,7 @@ async function cargar() {
   try {
     let data;
     try {
-      const r = await fetch('http://localhost:5000/api/predicciones', {signal: AbortSignal.timeout(2500)});
+      const r = await fetch(_apiBase()+'/api/predicciones', {signal: AbortSignal.timeout(2500)});
       data = await r.json();
     } catch {
       const r = await fetch('predicciones.json?_=' + Date.now());
@@ -566,7 +584,7 @@ async function confirmarPublicar() {
   };
 
   try {
-    const r = await fetch('http://localhost:8080/api/publicar', {
+    const r = await fetch(_apiBase()+'/api/publicar', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
@@ -615,7 +633,7 @@ function publicarRecomendacion() {
 
 async function cargarPendientes() {
   try {
-    const r = await fetch('http://localhost:8080/api/pendientes');
+    const r = await fetch(_apiBase()+'/api/pendientes');
     const lista = await r.json();
     if (!lista.length) return;
     const sec = document.getElementById('sec-pendientes');
@@ -638,7 +656,7 @@ async function cargarPendientes() {
 async function marcarResultado(partido, resultado, btn) {
   btn.disabled = true;
   try {
-    const r = await fetch('http://localhost:8080/api/resultado', {
+    const r = await fetch(_apiBase()+'/api/resultado', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({partido, resultado})
@@ -651,10 +669,57 @@ async function marcarResultado(partido, resultado, btn) {
   } catch { btn.disabled = false; }
 }
 
-document.getElementById('fecha-hdr').textContent = new Date().toLocaleDateString('es-CO',{weekday:'long',day:'numeric',month:'long'});
-cargar();
-cargarRecomendacion();
-cargarPendientes();
+// ── AUTH + API BASE ──────────────────────────────────────────────
+const _TK = 'sharpiq_panel_token';
+function _apiBase(){ return window.location.origin.startsWith('file') ? 'http://localhost:8080' : window.location.origin; }
+function _getToken(){ return localStorage.getItem(_TK)||''; }
+
+// Inyectar token en todos los fetch a /api/
+const _fetchOrig = window.fetch;
+window.fetch = function(url, opts={}){
+  const tk = _getToken();
+  if(tk && typeof url==='string' && url.includes('/api/')){
+    opts.headers = Object.assign({}, opts.headers||{}, {'Authorization':'Bearer '+tk});
+  }
+  return _fetchOrig(url, opts);
+};
+
+function doLogin(){
+  const val = document.getElementById('loginInput').value.trim();
+  if(!val) return;
+  // Prueba el token con una llamada real al servidor
+  _fetchOrig(_apiBase()+'/api/pendientes', {headers:{'Authorization':'Bearer '+val}})
+    .then(r=>{
+      if(r.ok){
+        localStorage.setItem(_TK, val);
+        mostrarPanel();
+      } else {
+        document.getElementById('loginErr').style.display='block';
+      }
+    })
+    .catch(()=>{
+      // Si el servidor no responde aún, aceptar si tiene formato válido
+      if(val.length >= 6){ localStorage.setItem(_TK, val); mostrarPanel(); }
+      else document.getElementById('loginErr').style.display='block';
+    });
+}
+
+function mostrarPanel(){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('panelWrap').style.display='block';
+  document.getElementById('fecha-hdr').textContent = new Date().toLocaleDateString('es-CO',{weekday:'long',day:'numeric',month:'long'});
+  cargar();
+  cargarRecomendacion();
+  cargarPendientes();
+}
+
+// Al cargar
+(function(){
+  const tk = _getToken();
+  if(tk){ mostrarPanel(); }
+  else { setTimeout(()=>{ const i=document.getElementById('loginInput'); if(i) i.focus(); },100); }
+})();
 </script>
+</div><!-- /panelWrap -->
 </body>
 </html>
