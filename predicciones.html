@@ -277,6 +277,34 @@
   <div id="lista-pendientes" style="display:flex; flex-direction:column; gap:8px;"></div>
 </div>
 
+<!-- SECCIÓN EDITAR PRÓXIMOS EVENTOS -->
+<div id="sec-editar" style="display:none;margin:14px 24px 0;background:#0a1020;border:1px solid rgba(240,165,0,0.15);border-radius:12px;padding:14px 18px;">
+  <div style="font-size:0.72rem;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">✏️ Editar predicciones publicadas</div>
+  <div id="lista-editar" style="display:flex;flex-direction:column;gap:8px;"></div>
+</div>
+
+<!-- MODAL EDITAR -->
+<div id="modalEditar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:999;align-items:center;justify-content:center;">
+  <div style="background:#0a1020;border:1px solid rgba(240,165,0,.3);border-radius:14px;padding:24px;width:400px;max-width:95vw;">
+    <h3 style="color:var(--gold);font-size:1rem;margin-bottom:4px">✏️ Editar predicción</h3>
+    <p id="editPartido" style="font-size:12px;color:var(--muted);margin-bottom:16px;"></p>
+
+    <label style="display:block;font-size:11px;color:var(--muted);text-transform:uppercase;margin-bottom:4px">Mercado / Predicción</label>
+    <input id="editPrediccion" type="text" placeholder="ej: Over 2.5 Goles — EV +18%"
+      style="width:100%;background:var(--bg);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 12px;color:var(--text);font-size:14px;margin-bottom:12px">
+
+    <label style="display:block;font-size:11px;color:var(--muted);text-transform:uppercase;margin-bottom:4px">Cuota</label>
+    <input id="editCuota" type="text" placeholder="ej: 2.10"
+      style="width:100%;background:var(--bg);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 12px;color:var(--text);font-size:14px;margin-bottom:20px">
+
+    <div style="display:flex;gap:10px">
+      <button onclick="confirmarEdicion()" style="flex:1;background:var(--gold);color:#000;border:none;padding:10px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer">Guardar cambios</button>
+      <button onclick="cerrarModalEditar()" style="flex:1;background:rgba(255,255,255,.07);color:var(--muted);border:none;padding:10px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer">Cancelar</button>
+    </div>
+    <button onclick="confirmarEliminar()" style="width:100%;margin-top:10px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#ef4444;padding:9px;border-radius:8px;font-weight:700;font-size:12px;cursor:pointer">🗑 Eliminar esta predicción</button>
+  </div>
+</div>
+
 <!-- BANNER RECOMENDACIÓN DEL DÍA -->
 <div id="banner-rec">
   <div class="rec-left">
@@ -669,6 +697,73 @@ async function marcarResultado(partido, resultado, btn) {
   } catch { btn.disabled = false; }
 }
 
+// ── EDITAR PRÓXIMOS EVENTOS ──────────────────────────────────────
+let _partidoEditando = null;
+
+async function cargarProximos() {
+  try {
+    const r = await fetch(_apiBase()+'/api/proximos');
+    const lista = await r.json();
+    const sec  = document.getElementById('sec-editar');
+    const cont = document.getElementById('lista-editar');
+    if(!lista.length){ sec.style.display='none'; return; }
+    sec.style.display = 'block';
+    cont.innerHTML = lista.map(p=>`
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:9px 13px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">${p.partido}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px">${p.prediccion} &nbsp;·&nbsp; Cuota ${p.cuota} &nbsp;·&nbsp; ${p.hora||''}</div>
+        </div>
+        <button onclick="abrirModalEditar('${p.partido.replace(/'/g,"\\'")}','${(p.prediccion||'').replace(/'/g,"\\'")}','${p.cuota||''}')"
+          style="background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.3);color:var(--gold);padding:6px 14px;border-radius:6px;font-weight:700;font-size:12px;cursor:pointer;white-space:nowrap">
+          ✏️ Editar
+        </button>
+      </div>`).join('');
+  } catch { /* servidor no activo */ }
+}
+
+function abrirModalEditar(partido, prediccion, cuota) {
+  _partidoEditando = partido;
+  document.getElementById('editPartido').textContent    = partido;
+  document.getElementById('editPrediccion').value       = prediccion;
+  document.getElementById('editCuota').value            = cuota;
+  document.getElementById('modalEditar').style.display  = 'flex';
+}
+
+function cerrarModalEditar() {
+  document.getElementById('modalEditar').style.display = 'none';
+  _partidoEditando = null;
+}
+
+async function confirmarEdicion() {
+  if(!_partidoEditando) return;
+  const prediccion = document.getElementById('editPrediccion').value.trim();
+  const cuota      = document.getElementById('editCuota').value.trim();
+  const r = await fetch(_apiBase()+'/api/proximos', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ partido: _partidoEditando, accion: 'editar', prediccion, cuota })
+  });
+  const res = await r.json();
+  cerrarModalEditar();
+  if(res.ok){ cargarProximos(); cargarPendientes(); }
+  else alert('Error: ' + res.error);
+}
+
+async function confirmarEliminar() {
+  if(!_partidoEditando) return;
+  if(!confirm(`¿Eliminar "${_partidoEditando}" de los próximos eventos?`)) return;
+  const r = await fetch(_apiBase()+'/api/proximos', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ partido: _partidoEditando, accion: 'eliminar' })
+  });
+  const res = await r.json();
+  cerrarModalEditar();
+  if(res.ok){ cargarProximos(); }
+  else alert('Error: ' + res.error);
+}
+
 // ── AUTH + API BASE ──────────────────────────────────────────────
 const _TK = 'sharpiq_panel_token';
 function _apiBase(){ return window.location.origin.startsWith('file') ? 'http://localhost:8080' : window.location.origin; }
@@ -711,6 +806,7 @@ function mostrarPanel(){
   cargar();
   cargarRecomendacion();
   cargarPendientes();
+  cargarProximos();
 }
 
 // Al cargar

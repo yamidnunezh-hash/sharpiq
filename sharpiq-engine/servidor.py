@@ -72,6 +72,20 @@ class SharpIQHandler(SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"error": str(e)}).encode())
             return
+        if self.path == "/api/proximos":
+            try:
+                self.send_response(200)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps(leer_proximos()).encode())
+            except Exception as e:
+                self.send_response(500)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode())
+            return
         if self.path == "/api/pendientes":
             try:
                 pendientes = leer_pendientes()
@@ -126,6 +140,23 @@ class SharpIQHandler(SimpleHTTPRequestHandler):
                 self.send_header("Content-Type", "application/json")
                 self.end_headers()
                 self.wfile.write(json.dumps({"ok": True, "nueva": nueva}).encode())
+            except Exception as e:
+                self.send_response(500)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": False, "error": str(e)}).encode())
+        elif self.path == "/api/proximos":
+            length = int(self.headers.get("Content-Length", 0))
+            body = self.rfile.read(length)
+            try:
+                data = json.loads(body)
+                resultado = editar_proximo(data)
+                self.send_response(200)
+                self._cors()
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps(resultado).encode())
             except Exception as e:
                 self.send_response(500)
                 self._cors()
@@ -194,6 +225,69 @@ def publicar_en_datos_js(pred):
     git_ok = git_push_auto(partido)
     _telegram_nueva_prediccion(partido, liga, mercado, cuota, hora, status)
     return {"ok": True, "mensaje": f"Publicado: {partido}", "git": git_ok}
+
+
+def leer_proximos():
+    """Lee todos los eventos de PROXIMOS_EVENTOS de datos.js."""
+    with open(DATOS_JS, "r", encoding="utf-8") as f:
+        contenido = f.read()
+    m = re.search(r"const PROXIMOS_EVENTOS\s*=\s*(\[.*?\]);", contenido, re.DOTALL)
+    if not m:
+        return []
+    bloque = m.group(1)
+    proximos = []
+    for obj in re.finditer(r'\{([^}]+)\}', bloque, re.DOTALL):
+        item = {}
+        for campo in re.finditer(r'(\w+)\s*:\s*"([^"]*)"', obj.group(1)):
+            item[campo.group(1)] = campo.group(2)
+        if item.get("partido"):
+            proximos.append(item)
+    return proximos
+
+
+def editar_proximo(data):
+    """
+    Edita o elimina un evento de PROXIMOS_EVENTOS.
+    data: { partido, accion: 'editar'|'eliminar', prediccion?, cuota?, liga? }
+    """
+    with open(DATOS_JS, "r", encoding="utf-8") as f:
+        contenido = f.read()
+
+    partido_esc = re.escape(data["partido"])
+
+    if data.get("accion") == "eliminar":
+        patron = r'\s*\{[^}]*partido\s*:\s*"' + partido_esc + r'"[^}]*\},?'
+        nuevo = re.sub(patron, '', contenido, count=1)
+        if nuevo == contenido:
+            return {"ok": False, "error": "Partido no encontrado"}
+        with open(DATOS_JS, "w", encoding="utf-8") as f:
+            f.write(nuevo)
+        git_push_auto(f"Eliminar: {data['partido']}")
+        return {"ok": True, "mensaje": f"Eliminado: {data['partido']}"}
+
+    # Editar — reemplazar campos dentro del bloque del partido
+    def reemplazar_campo(texto, campo, valor):
+        return re.sub(
+            r'(partido\s*:\s*"' + partido_esc + r'".*?' + campo + r'\s*:\s*)"[^"]*"',
+            r'\g<1>"' + valor + '"',
+            texto, count=1, flags=re.DOTALL
+        )
+
+    nuevo = contenido
+    if data.get("prediccion"):
+        nuevo = reemplazar_campo(nuevo, "prediccion", data["prediccion"])
+    if data.get("cuota"):
+        nuevo = reemplazar_campo(nuevo, "cuota", data["cuota"])
+    if data.get("liga"):
+        nuevo = reemplazar_campo(nuevo, "liga", data["liga"])
+
+    if nuevo == contenido:
+        return {"ok": False, "error": "Sin cambios — verifica el nombre del partido"}
+
+    with open(DATOS_JS, "w", encoding="utf-8") as f:
+        f.write(nuevo)
+    git_push_auto(f"Editar: {data['partido']}")
+    return {"ok": True, "mensaje": f"Actualizado: {data['partido']}"}
 
 
 def leer_pendientes():
