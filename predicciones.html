@@ -292,7 +292,10 @@
     <label>Prediccion a publicar</label>
     <select id="m-mercado"></select>
     <label>Cuota (de la casa de apuestas)</label>
-    <input type="number" id="m-cuota" step="0.01" placeholder="ej: 1.85">
+    <input type="number" id="m-cuota" step="0.01" placeholder="ej: 1.85" oninput="verificarCuota(this.value)">
+    <div id="aviso-cuota" style="display:none;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.4);color:#ef4444;padding:10px 14px;border-radius:8px;font-size:0.82rem;font-weight:600;margin-top:6px;">
+      ⚠ Cuota alta — verifica en Betplay o tu casa de apuestas antes de publicar
+    </div>
     <label>Hora local Colombia (COT = UTC-5)</label>
     <input type="text" id="m-hora" placeholder="ej: 13:30 COT">
     <label>Visibilidad</label>
@@ -499,7 +502,16 @@ function abrirModal(p, prediccionPresel, cuotaPresel) {
     }
   }
 
+  // Mostrar aviso si la cuota es alta
+  const cuotaVal = parseFloat(document.getElementById('m-cuota').value);
+  verificarCuota(cuotaVal);
+
   document.getElementById('modal').classList.add('show');
+}
+
+function verificarCuota(valor) {
+  const aviso = document.getElementById('aviso-cuota');
+  if (aviso) aviso.style.display = parseFloat(valor) >= 8 ? 'block' : 'none';
 }
 
 function cerrarModal() {
