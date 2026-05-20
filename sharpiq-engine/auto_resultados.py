@@ -202,6 +202,14 @@ def correr():
         texto = mover_a_historial(texto, evento, resultado)
         actualizados += 1
 
+        # Notificar resultado al canal free
+        try:
+            from telegram_alertas import enviar_resultado_free
+            resultado_texto = f"WIN ✅  {gl}-{gv}" if resultado == 'win' else f"LOSS ❌  {gl}-{gv}"
+            enviar_resultado_free(partido, resultado_texto, emoji)
+        except Exception as te:
+            print(f"  Telegram resultado error: {te}")
+
     if actualizados > 0:
         escribir_datos(texto)
         print(f"\n  datos.js actualizado ({actualizados} resultado/s)")

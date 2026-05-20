@@ -62,6 +62,12 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev):
         f.write(texto_nuevo)
 
 
+def _hora_cot_de_pred(pred):
+    h, m = pred.get("hora", "00:00").split(":")
+    cot = (int(h) - 5 + 24) % 24
+    return f"{str(cot).zfill(2)}:{m} COT"
+
+
 def correr():
     print("\n SharpIQ — Auto Publicar")
 
@@ -69,6 +75,23 @@ def correr():
     if not reporte:
         print("  Sin predicciones.json — corre motor.py primero")
         return
+
+    # Saludo matutino al canal free con lista de partidos del día
+    try:
+        from telegram_alertas import enviar_saludo_manana_free
+        partidos_hoy = [
+            {
+                "local":    p["local"],
+                "visitante": p["visitante"],
+                "liga":     p.get("liga", ""),
+                "hora":     _hora_cot_de_pred(p),
+            }
+            for p in reporte.get("predicciones", [])
+        ]
+        enviar_saludo_manana_free(partidos_hoy)
+        print("  Saludo matutino enviado al canal free ✓")
+    except Exception as e:
+        print(f"  Saludo free error: {e}")
 
     # Buscar mejor predicción con cuota real y EV >= 15%
     candidatos = []

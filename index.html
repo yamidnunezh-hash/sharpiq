@@ -949,12 +949,7 @@
       </div>
       <div class="liga-filters" id="ligaFilters">
         <button class="liga-btn active" data-liga="todas">Todas</button>
-        <button class="liga-btn" data-liga="Premier League">Premier League</button>
-        <button class="liga-btn" data-liga="La Liga">La Liga</button>
-        <button class="liga-btn" data-liga="Champions League">Champions</button>
-        <button class="liga-btn" data-liga="Serie A">Serie A</button>
-        <button class="liga-btn" data-liga="Ligue 1">Ligue 1</button>
-        <button class="liga-btn" data-liga="Bundesliga">Bundesliga</button>
+        <!-- Botones de liga generados dinámicamente por JS -->
       </div>
       <div style="overflow-x:auto">
         <table class="pred-table">
@@ -1431,6 +1426,18 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     // Liga filter buttons
     const filters=document.getElementById('ligaFilters');
     if(filters){
+      // Generar botones dinámicamente desde las ligas reales del historial
+      const ligas=[...new Set(PREDICCIONES_HISTORIAL.map(p=>p.liga).filter(Boolean))];
+      ligas.forEach(liga=>{
+        const btn=document.createElement('button');
+        btn.className='liga-btn';
+        btn.dataset.liga=liga;
+        // Nombre corto para ligas largas
+        const nombres={'Copa Libertadores':'Libertadores','UEFA Champions League':'Champions','Champions League':'Champions','Premier League':'Premier','La Liga':'La Liga','Liga BetPlay':'BetPlay','Bundesliga':'Bundesliga','Serie A':'Serie A','Ligue 1':'Ligue 1'};
+        btn.textContent=nombres[liga]||liga;
+        filters.appendChild(btn);
+      });
+
       filters.addEventListener('click',e=>{
         const btn=e.target.closest('.liga-btn');
         if(!btn)return;

@@ -823,6 +823,52 @@ def kelly_criterion(prob_modelo, cuota_casa, bankroll=1000, fraccion=0.25):
         "recomendacion": f"Apostar {stake_porcentaje}% del bankroll"
     }
 
+# ── VALIDACIÓN DE CUOTAS ────────────────────────────────────────
+def _validar_cuotas(cuotas, probs):
+    """
+    Elimina cuotas de la API que son implausibles dado lo que predice el modelo.
+    Regla: si cuota_api > 3x la cuota_justa (1/prob), es error de datos → descartada.
+    Retorna (cuotas_limpias, advertencias)
+    """
+    if not cuotas:
+        return cuotas, []
+
+    mapa = {
+        "1":       probs.get("victoria_local", 0) / 100,
+        "X":       probs.get("empate", 0) / 100,
+        "2":       probs.get("victoria_visita", 0) / 100,
+        "over25":  probs.get("over25", 0) / 100,
+        "under25": probs.get("under25", 0) / 100,
+        "over15":  probs.get("over15", 0) / 100,
+        "under15": probs.get("under15", 0) / 100,
+        "over35":  probs.get("over35", 0) / 100,
+        "under35": probs.get("under35", 0) / 100,
+        "btts_si": probs.get("btts_si", 0) / 100,
+        "btts_no": probs.get("btts_no", 0) / 100,
+    }
+
+    limpias = dict(cuotas)
+    advertencias = []
+    for clave, prob in mapa.items():
+        val = limpias.get(clave)
+        if not val or prob <= 0:
+            continue
+        try:
+            cuota_api  = float(val)
+            cuota_justa = 1.0 / prob
+        except (ValueError, ZeroDivisionError):
+            continue
+        if cuota_api > cuota_justa * 3.0:
+            advertencias.append(
+                f"{clave}: {cuota_api} (esperada ~{cuota_justa:.2f}, prob {prob*100:.0f}%) — DESCARTADA"
+            )
+            del limpias[clave]
+            # También borrar _casa si existe
+            limpias.pop(clave + "_casa", None)
+
+    return limpias, advertencias
+
+
 # ── PREDICCIÓN COMPLETA ─────────────────────────────────────────
 def predecir_partido(local, visitante, cuotas=None):
     goles_local, goles_visita = calcular_goles_esperados(local, visitante)
@@ -933,11 +979,20 @@ def reporte_del_dia():
             except Exception:
                 pass
 
+        # Validar cuotas contra probabilidades del modelo antes de usarlas
+        avisos_cuota = []
+        if cuotas_reales:
+            probs_prev = modelo_poisson(*calcular_goles_esperados(p["local"], p["visitante"]))
+            cuotas_reales, avisos_cuota = _validar_cuotas(cuotas_reales, probs_prev)
+            for av in avisos_cuota:
+                print(f"  ⚠ Cuota sospechosa {p['local']} vs {p['visitante']}: {av}")
+
         pred = predecir_partido(p["local"], p["visitante"], cuotas=cuotas_reales)
         pred["liga"] = p["liga"]
         pred["hora"] = p["hora"]
         pred["id"] = p["id"]
         pred["cuotas_reales"] = bool(cuotas_reales)
+        pred["cuotas_avisos"] = avisos_cuota
 
         # Leer movimiento de línea si existe snapshot anterior
         pred["movimiento"] = None
@@ -1110,7 +1165,69 @@ def guardar_predicciones():
         enviar_resumen_dia(reporte)
         print("  📋 Resumen del día enviado")
 
+    # Alertas de steam — solo en pasada de tarde (snapshot_tipo == "tarde")
+    hora_actual = datetime.now().hour
+    if hora_actual >= 13:
+        _alertar_steam(reporte)
+
     return reporte
+
+
+def _alertar_steam(reporte):
+    """Detecta steam moves y RLM, avisa a Yamid por Telegram."""
+    try:
+        from database import get_movimiento
+        from telegram_alertas import enviar_aviso_yamid
+    except Exception:
+        return
+
+    alertas = []
+    nombres_mercado = {
+        "1": "Victoria Local", "X": "Empate", "2": "Victoria Visitante",
+        "over25": "Over 2.5", "under25": "Under 2.5",
+        "over15": "Over 1.5", "under15": "Under 1.5", "btts_si": "Ambos Marcan",
+    }
+    for pred in reporte.get("predicciones", []):
+        fid = pred.get("id")
+        if not fid:
+            continue
+        try:
+            mov = get_movimiento(fid)
+        except Exception:
+            continue
+        if not mov:
+            continue
+
+        partido = f"{pred['local']} vs {pred['visitante']}"
+        lineas = []
+        for mk, info in mov.items():
+            if not isinstance(info, dict):
+                continue
+            cambio = info.get("cambio_pct", 0)
+            if abs(cambio) < 8:
+                continue
+            tipo = info.get("tipo", "")
+            emoji = "⚡ STEAM" if tipo == "steam" else ("🔄 RLM" if tipo == "rlm" else "📉")
+            nombre = nombres_mercado.get(mk, mk)
+            ap = info.get("apertura", "?")
+            ta = info.get("tarde", "?")
+            lineas.append(f"  {emoji} {nombre}: {ap} → {ta} ({cambio:+.1f}%)")
+
+        if lineas:
+            alertas.append(f"⚽ <b>{partido}</b>\n" + "\n".join(lineas))
+
+    if not alertas:
+        print("  Sin steam moves significativos")
+        return
+
+    texto = (
+        f"⚡ <b>SharpIQ — Movimiento de Línea</b>\n"
+        f"🕐 Pasada de tarde — {date.today().isoformat()}\n\n"
+        + "\n\n".join(alertas) +
+        "\n\n<i>Cuotas que cayeron ≥8% = dinero profesional entrando</i>"
+    )
+    ok = enviar_aviso_yamid(texto)
+    print(f"  Steam alert: {'OK' if ok else 'FALLO'} ({len(alertas)} partido/s)")
 
 if __name__ == "__main__":
     print("🔮 SharpIQ — Motor de Predicciones")

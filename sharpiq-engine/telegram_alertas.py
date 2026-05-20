@@ -223,6 +223,81 @@ def enviar_autopublicacion(partido, liga, mercado, cuota, hora, ev):
     return enviar_aviso_yamid(texto)
 
 
+def enviar_saludo_manana_free(partidos_hoy):
+    """
+    Saludo matutino al canal free — estilo dinámico CampeonesColombia.
+    partidos_hoy: lista de dicts con claves 'local', 'visitante', 'liga', 'hora'
+    """
+    from datetime import date
+    import random
+
+    dias = {0:"Lunes",1:"Martes",2:"Miércoles",3:"Jueves",4:"Viernes",5:"Sábado",6:"Domingo"}
+    meses = {1:"enero",2:"febrero",3:"marzo",4:"abril",5:"mayo",6:"junio",
+             7:"julio",8:"agosto",9:"septiembre",10:"octubre",11:"noviembre",12:"diciembre"}
+    hoy = date.today()
+    dia_nombre = dias[hoy.weekday()]
+    mes_nombre = meses[hoy.month]
+
+    saludos = [
+        "¡Buenos días comunidad! ☀️",
+        "¡Arriba la comunidad SharpIQ! 🔥",
+        "¡Feliz día a todos! Aquí empieza la jornada ⚡",
+        "¡Buenos días! El fútbol no para y nosotros tampoco 💪",
+    ]
+    saludo = random.choice(saludos)
+
+    texto = (
+        f"{saludo}\n\n"
+        f"📅 <b>{dia_nombre} {hoy.day} de {mes_nombre}</b>\n\n"
+        f"⚽ <b>Partidos de hoy:</b>\n"
+    )
+
+    if partidos_hoy:
+        for p in partidos_hoy[:6]:  # máximo 6 partidos
+            texto += f"• {p['local']} vs {p['visitante']} — {p.get('hora','')}\n"
+            if p.get('liga'):
+                texto += f"  🏆 {p['liga']}\n"
+    else:
+        texto += "• Jornada tranquila hoy — analizando opciones\n"
+
+    texto += (
+        f"\n🔒 <b>Las predicciones VIP ya están listas</b>\n"
+        f"¿Quieres las cuotas y mercados exactos?\n"
+        f"👉 Únete al canal VIP → @SharpIQVIP\n\n"
+        f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+    )
+    return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
+
+
+def enviar_resultado_free(partido, resultado_texto, emoji_resultado):
+    """
+    Publica el resultado de una predicción en el canal free.
+    resultado_texto: 'WIN ✅' o 'LOSS ❌'
+    emoji_resultado: '✅' o '❌'
+    """
+    import random
+    wins = [
+        "¡La IA no falla! 🤖🔥",
+        "¡Eso es análisis de datos! 📊💪",
+        "¡SharpIQ suma otro acierto! ⚡",
+    ]
+    losses = [
+        "El fútbol siempre sorprende. Seguimos analizando 📊",
+        "No todas entran, pero el EV positivo es clave a largo plazo 💡",
+        "Pérdida asumida — el modelo aprende 🤖",
+    ]
+    comentario = random.choice(wins if emoji_resultado == "✅" else losses)
+
+    texto = (
+        f"{emoji_resultado} <b>Resultado — {partido}</b>\n\n"
+        f"<b>{resultado_texto}</b>\n\n"
+        f"{comentario}\n\n"
+        f"🔒 Ver predicciones de mañana → @SharpIQVIP\n"
+        f"<i>SharpIQ — La ventaja inteligente</i>"
+    )
+    return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "setup":
         print("\nSetup SharpIQ Alertas Telegram")
