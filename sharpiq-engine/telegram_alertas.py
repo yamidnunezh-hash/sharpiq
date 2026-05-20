@@ -21,6 +21,18 @@ except ImportError:
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.py")
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
 
+# GIFs enviados al canal FREE — puedes reemplazar las URLs por las que prefieras
+GIFS_WIN = [
+    "https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif",
+    "https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif",
+    "https://media.giphy.com/media/l0HlRnAWXxn0MhKLK/giphy.gif",
+]
+GIFS_MANANA = [
+    "https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif",
+    "https://media.giphy.com/media/l0HlMZrXA0mL9OHLU/giphy.gif",
+    "https://media.giphy.com/media/WoD6JZnwap6s8/giphy.gif",
+]
+
 
 def get_chat_id():
     """Lee el chat_id guardado en config.py"""
@@ -74,6 +86,21 @@ def enviar_mensaje(texto, chat_id=None):
         "parse_mode": "HTML"
     }, timeout=10)
     return r.status_code == 200
+
+
+def enviar_gif_free(gif_url, caption=""):
+    """Envia un GIF al canal free. Falla silenciosamente si Telegram no puede descargarlo."""
+    if not TELEGRAM_FREE_ID:
+        return False
+    try:
+        payload = {"chat_id": TELEGRAM_FREE_ID, "animation": gif_url}
+        if caption:
+            payload["caption"] = caption
+            payload["parse_mode"] = "HTML"
+        r = requests.post(f"{TELEGRAM_API}/sendAnimation", json=payload, timeout=15)
+        return r.status_code == 200
+    except Exception:
+        return False
 
 
 def enviar_alerta_value_bet(pred, mercado, vb):
@@ -286,6 +313,9 @@ def enviar_saludo_manana_free(partidos_hoy):
     from datetime import date
     import random
 
+    # GIF de análisis antes del texto
+    enviar_gif_free(random.choice(GIFS_MANANA))
+
     dias = {0:"Lunes",1:"Martes",2:"Miércoles",3:"Jueves",4:"Viernes",5:"Sábado",6:"Domingo"}
     meses = {1:"enero",2:"febrero",3:"marzo",4:"abril",5:"mayo",6:"junio",
              7:"julio",8:"agosto",9:"septiembre",10:"octubre",11:"noviembre",12:"diciembre"}
@@ -341,7 +371,12 @@ def enviar_resultado_free(partido, resultado_texto, emoji_resultado):
         "No todas entran, pero el EV positivo es clave a largo plazo 💡",
         "Pérdida asumida — el modelo aprende 🤖",
     ]
-    comentario = random.choice(wins if emoji_resultado == "✅" else losses)
+    es_win = emoji_resultado == "✅"
+    comentario = random.choice(wins if es_win else losses)
+
+    # GIF celebratorio solo en WIN
+    if es_win:
+        enviar_gif_free(random.choice(GIFS_WIN))
 
     texto = (
         f"{emoji_resultado} <b>Resultado — {partido}</b>\n\n"
