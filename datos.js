@@ -11,15 +11,6 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "21/05/26",
-    partido:    "VfL Wolfsburg vs SC Paderborn 07",
-    liga:       "Bundesliga",
-    prediccion: "Victoria Visitante (2)",
-    cuota:      "2.12",
-    hora:       "13:30 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "21/05/26",
     partido:    "Águilas Doradas vs Deportivo Pereira",
     liga:       "Copa Colombia",
     prediccion: "Victoria Local (1)",
@@ -71,6 +62,14 @@ const PROXIMOS_EVENTOS = [
 // resultado: "win" | "loss" | "pending"
 // ORDEN: más reciente primero — el algoritmo calcula racha desde arriba.
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "21/05/26",
+    partido:    "VfL Wolfsburg vs SC Paderborn 07",
+    liga:       "Bundesliga",
+    prediccion: "Victoria Visitante (2)",
+    cuota:      "2.12",
+    resultado:  "loss"
+  },
   {
     fecha:      "20/05/26",
     partido:    "Fortaleza FC vs Orsomarso",
