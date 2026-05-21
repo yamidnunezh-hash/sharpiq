@@ -61,8 +61,16 @@ async function procesarPago(env, tipo, dataId) {
       chatId = data?.external_reference || null;
     }
 
-    if (estado !== "authorized" && estado !== "approved" && estado !== "active") {
-      return; // pago pendiente o rechazado — no hacer nada
+    const ESTADOS_ACTIVOS     = ["authorized", "approved", "active"];
+    const ESTADOS_CANCELADOS  = ["cancelled", "paused", "suspended", "rejected", "charged_back"];
+
+    if (ESTADOS_CANCELADOS.includes(estado)) {
+      await desactivarVip(env, chatId, emailPagador, dataId, estado);
+      return;
+    }
+
+    if (!ESTADOS_ACTIVOS.includes(estado)) {
+      return; // pendiente u otro — no hacer nada
     }
 
     // Prioridad 1: usar external_reference (chat_id directo, sin email)
@@ -136,6 +144,56 @@ async function crearLinkVip(env) {
   });
   const data = await r.json();
   return data?.result?.invite_link || null;
+}
+
+async function desactivarVip(env, chatId, emailPagador, dataId, estado) {
+  if (!chatId) {
+    await notificarYamid(env,
+      `⚠️ Suscripción ${estado.toUpperCase()}\n` +
+      `✉️ ${emailPagador || "sin email"} | ID: ${dataId}\n` +
+      `No se pudo identificar usuario Telegram. Revisar manualmente.`
+    );
+    return;
+  }
+
+  // Expulsar del canal VIP
+  await fetch(`${TG_BASE}/bot${env.TELEGRAM_TOKEN}/banChatMember`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: env.TELEGRAM_VIP_ID,
+      user_id: chatId,
+      revoke_messages: false
+    })
+  });
+
+  // Desbloquear inmediatamente (ban temporal = expulsión sin bloqueo permanente)
+  await fetch(`${TG_BASE}/bot${env.TELEGRAM_TOKEN}/unbanChatMember`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: env.TELEGRAM_VIP_ID,
+      user_id: chatId,
+      only_if_banned: true
+    })
+  });
+
+  // Notificar al usuario por bot
+  await tgSend(env, chatId,
+    `😔 <b>Tu suscripción SharpIQ VIP ha sido cancelada.</b>\n\n` +
+    `Tu acceso al canal ha sido desactivado.\n\n` +
+    `Si quieres volver, puedes suscribirte nuevamente en sharpiq.co\n\n` +
+    `<i>SharpIQ — La ventaja inteligente</i>`
+  );
+
+  // Limpiar KV
+  await env.SHARPIQ_KV.delete(`vip:${chatId}`);
+
+  await notificarYamid(env,
+    `🔴 <b>VIP cancelado</b>\n` +
+    `chat_id: ${chatId} | Estado: ${estado}\n` +
+    (emailPagador ? `✉️ ${emailPagador}` : "")
+  );
 }
 
 async function notificarYamid(env, mensaje) {
