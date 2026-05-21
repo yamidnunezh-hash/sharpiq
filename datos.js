@@ -14,35 +14,8 @@ const PROXIMOS_EVENTOS = [
     partido:    "Cusco FC vs CD Independiente Medellín",
     liga:       "Copa Libertadores",
     prediccion: "Tarjetas Over 4.5",
-    cuota:      "3.83",
-    hora:       "21:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "21/05/26",
-    partido:    "SE Palmeiras vs Club Cerro Porteño",
-    liga:       "Copa Libertadores",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "1.71",
-    hora:       "19:30 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "21/05/26",
-    partido:    "CR Flamengo vs Estudiantes de La Plata",
-    liga:       "Copa Libertadores",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "1.61",
-    hora:       "19:30 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "21/05/26",
-    partido:    "LDU de Quito vs CA Lanús",
-    liga:       "Copa Libertadores",
-    prediccion: "Tarjetas Over 4.5",
     cuota:      "2.34",
-    hora:       "19:30 COT",
+    hora:       "21:00 COT",
     status:     "vip"
   },
   {
