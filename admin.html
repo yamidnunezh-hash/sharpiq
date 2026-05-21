@@ -3,477 +3,519 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SharpIQ — Panel de Administración</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <title>SharpIQ — Panel Privado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg:     #07051A;
+      --card:   #0d0b2a;
+      --border: rgba(0,200,255,.15);
+      --cyan:   #00C8FF;
+      --purple: #7B5CF0;
+      --green:  #22c55e;
+      --red:    #ef4444;
+      --t1:     #e2e8f0;
+      --t2:     #94a3b8;
+      --t3:     #475569;
+    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #020509;
-      color: #e2e8f0;
-      font-family: 'Inter', sans-serif;
+    body { background: var(--bg); color: var(--t1); font-family: 'Inter', sans-serif; min-height: 100vh; padding: 24px 16px 80px; }
+
+    /* ── LOGIN ── */
+    #screen-login {
       min-height: 100vh;
-      padding: 40px 20px 80px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 24px;
     }
+    .login-logo { font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 900; color: var(--cyan); letter-spacing: 4px; }
+    .login-sub  { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--t3); letter-spacing: 2px; text-transform: uppercase; }
+    .login-box  { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 28px; width: 100%; max-width: 360px; display: flex; flex-direction: column; gap: 16px; }
+    .login-box input {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 14px 16px; color: var(--t1); font-size: 16px; outline: none; width: 100%;
+      text-align: center; letter-spacing: 4px; font-family: 'Space Mono', monospace;
+    }
+    .login-box input:focus { border-color: var(--cyan); }
+    .btn-grad {
+      padding: 14px; border: none; border-radius: 10px; cursor: pointer;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      color: #fff; font-family: 'Orbitron', monospace; font-size: 12px;
+      font-weight: 700; letter-spacing: 1px; transition: opacity .2s;
+    }
+    .btn-grad:hover { opacity: .85; }
+    .login-err { color: var(--red); font-size: 13px; text-align: center; display: none; }
 
-    .top {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .top-tag {
-      display: inline-block;
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 3px;
-      color: #f0a500;
-      border: 1px solid rgba(240,165,0,.3);
-      background: rgba(240,165,0,.08);
-      padding: 6px 16px;
-      border-radius: 50px;
-      margin-bottom: 16px;
-    }
-    .top h1 {
-      font-family: 'Orbitron', monospace;
-      font-size: clamp(22px, 4vw, 38px);
-      font-weight: 900;
-      color: #fff;
-    }
-    .top h1 span { color: #f0a500; }
-    .top p {
-      color: #64748b;
-      margin-top: 10px;
-      font-size: 15px;
-    }
+    /* ── SETUP TOKEN ── */
+    #screen-setup { display: none; flex-direction: column; gap: 20px; max-width: 480px; margin: 0 auto; padding-top: 40px; }
+    .setup-title { font-family: 'Orbitron', monospace; font-size: 1.1rem; color: var(--cyan); text-align: center; }
+    .setup-note  { font-size: 13px; color: var(--t2); text-align: center; line-height: 1.6; }
+    .field label { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--t3); display: block; margin-bottom: 6px; }
+    .field input  { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; color: var(--t1); font-size: 14px; width: 100%; outline: none; }
+    .field input:focus { border-color: var(--cyan); }
 
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
+    /* ── MAIN PANEL ── */
+    #screen-main { display: none; flex-direction: column; gap: 20px; max-width: 560px; margin: 0 auto; }
 
-    .card {
-      background: #06101a;
-      border: 1px solid #1e2d3d;
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .card-header {
-      padding: 20px 28px;
-      border-bottom: 1px solid #1e2d3d;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: rgba(240,165,0,.04);
-    }
-    .card-num {
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #f0a500, #ff4e00);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Orbitron', monospace;
-      font-size: 13px; font-weight: 700;
-      color: #000;
-      flex-shrink: 0;
-    }
-    .card-title {
-      font-family: 'Orbitron', monospace;
-      font-size: 14px;
-      font-weight: 700;
-      color: #fff;
-    }
-    .card-sub {
-      font-size: 12px;
-      color: #64748b;
-      margin-top: 2px;
-    }
-    .card-body { padding: 28px; }
+    .panel-header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .panel-logo   { font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 900; color: var(--cyan); letter-spacing: 3px; }
+    .btn-logout   { font-size: 12px; color: var(--t3); background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    @media(max-width: 580px) { .form-grid { grid-template-columns: 1fr; } }
+    .section-label { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--t3); margin-bottom: 10px; }
 
-    .field { display: flex; flex-direction: column; gap: 7px; }
-    .field.full { grid-column: 1 / -1; }
+    /* Pred cards */
+    .pred-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 16px 18px; display: flex; flex-direction: column; gap: 10px;
+    }
+    .pred-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+    .pred-partido { font-weight: 700; font-size: 14px; color: var(--t1); }
+    .pred-liga    { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--t3); }
+    .pred-hora    { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--cyan); }
+    .pred-probs   { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--t2); }
+    .pred-pick    { font-size: 13px; color: var(--t1); font-weight: 600; }
+    .pred-ev      { font-size: 12px; }
+    .ev-pos { color: var(--green); } .ev-neg { color: var(--red); } .ev-neu { color: var(--t3); }
 
-    label {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #64748b;
+    .pred-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .btn-vip, .btn-free, .btn-result {
+      flex: 1; min-width: 100px; padding: 10px 8px; border: none; border-radius: 8px;
+      font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700;
+      letter-spacing: .5px; cursor: pointer; transition: all .2s;
     }
-    input, select {
-      background: #020509;
-      border: 1px solid #1e2d3d;
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      color: #e2e8f0;
-      transition: border-color .2s;
-      outline: none;
-      width: 100%;
-    }
-    input:focus, select:focus { border-color: rgba(240,165,0,.5); }
-    select option { background: #06101a; }
+    .btn-vip    { background: linear-gradient(135deg,var(--cyan),var(--purple)); color: #fff; }
+    .btn-free   { background: rgba(0,200,255,.1); border: 1px solid rgba(0,200,255,.3); color: var(--cyan); }
+    .btn-result { background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3); color: var(--green); }
+    .btn-vip:active, .btn-free:active, .btn-result:active { opacity: .7; transform: scale(.97); }
 
-    .btn-gen {
-      margin-top: 20px;
-      width: 100%;
-      padding: 15px;
-      font-family: 'Orbitron', monospace;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #000;
-      background: linear-gradient(135deg, #f0a500, #ff4e00);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: opacity .2s, transform .2s;
-      box-shadow: 0 4px 20px rgba(240,165,0,.3);
+    /* Manual pick */
+    .manual-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+    .form-row   { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .form-row.full { grid-template-columns: 1fr; }
+    .field-s    { display: flex; flex-direction: column; gap: 5px; }
+    .field-s label { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--t3); }
+    .field-s input, .field-s select {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 7px;
+      padding: 10px 12px; color: var(--t1); font-size: 13px; outline: none; width: 100%;
     }
-    .btn-gen:hover { opacity: .9; transform: translateY(-2px); }
-    .btn-gen:active { transform: translateY(0); }
+    .field-s input:focus, .field-s select:focus { border-color: var(--cyan); }
+    .field-s select option { background: var(--card); }
 
-    /* Output block */
-    .output-wrap {
-      margin-top: 20px;
-      display: none;
+    /* Toast */
+    #toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+      background: var(--cyan); color: #000; font-family: 'Space Mono', monospace;
+      font-size: 12px; font-weight: 700; padding: 12px 24px; border-radius: 50px;
+      opacity: 0; transition: opacity .3s; pointer-events: none; white-space: nowrap; z-index: 99;
     }
-    .output-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #22c55e;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .output-label::before {
-      content: '✓';
-      width: 18px; height: 18px;
-      background: rgba(34,197,94,.15);
-      border: 1px solid rgba(34,197,94,.3);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px;
-    }
-    .output-box {
-      background: #000;
-      border: 1px solid #1e2d3d;
-      border-radius: 8px;
-      padding: 18px 20px;
-      font-family: 'Space Mono', monospace;
-      font-size: 13px;
-      color: #a3e635;
-      white-space: pre;
-      overflow-x: auto;
-      line-height: 1.8;
-    }
-    .btn-copy {
-      margin-top: 12px;
-      width: 100%;
-      padding: 12px;
-      font-family: 'Orbitron', monospace;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #22c55e;
-      background: rgba(34,197,94,.1);
-      border: 1px solid rgba(34,197,94,.3);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all .2s;
-    }
-    .btn-copy:hover { background: rgba(34,197,94,.2); }
-    .btn-copy.copied { color: #fff; background: rgba(34,197,94,.3); }
-
-    /* Instructions box */
-    .instruct {
-      background: rgba(240,165,0,.06);
-      border: 1px solid rgba(240,165,0,.2);
-      border-radius: 12px;
-      padding: 20px 24px;
-    }
-    .instruct h3 {
-      font-family: 'Orbitron', monospace;
-      font-size: 12px;
-      color: #f0a500;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-    .instruct ol {
-      padding-left: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .instruct li {
-      font-size: 14px;
-      color: #94a3b8;
-      line-height: 1.6;
-    }
-    .instruct li strong { color: #e2e8f0; }
-
-    .divider {
-      text-align: center;
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 3px;
-      color: #1e2d3d;
-      position: relative;
-    }
-    .divider::before, .divider::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      width: 45%;
-      height: 1px;
-      background: #1e2d3d;
-    }
-    .divider::before { left: 0; }
-    .divider::after { right: 0; }
+    #toast.show { opacity: 1; }
+    #toast.err  { background: var(--red); color: #fff; }
   </style>
 </head>
 <body>
 
-<div class="top">
-  <div class="top-tag">PANEL PRIVADO</div>
-  <h1>Admin <span>SharpIQ</span></h1>
-  <p>Genera el texto listo para copiar en datos.js — sin tocar código</p>
+<!-- ── LOGIN ── -->
+<div id="screen-login">
+  <div class="login-logo">SHARP<span style="color:#fff">IQ</span></div>
+  <div class="login-sub">Panel Privado</div>
+  <div class="login-box">
+    <input type="password" id="pin" placeholder="Contraseña" autocomplete="off" onkeydown="if(event.key==='Enter')login()">
+    <button class="btn-grad" onclick="login()">Entrar</button>
+    <div class="login-err" id="login-err">Contraseña incorrecta</div>
+  </div>
 </div>
 
-<div class="container">
+<!-- ── SETUP TOKEN ── -->
+<div id="screen-setup">
+  <div class="setup-title">Configurar tokens Telegram</div>
+  <div class="setup-note">Solo la primera vez. Los datos se guardan en tu dispositivo.</div>
+  <div class="field">
+    <label>Token del bot (@sharpiq_alertas_bot)</label>
+    <input type="text" id="cfg-token" placeholder="123456789:AAFxxx...">
+  </div>
+  <div class="field">
+    <label>ID Canal VIP</label>
+    <input type="text" id="cfg-vip" placeholder="-1003833982154">
+  </div>
+  <div class="field">
+    <label>ID Canal Free</label>
+    <input type="text" id="cfg-free" placeholder="-1003834900758">
+  </div>
+  <button class="btn-grad" onclick="guardarConfig()">Guardar y continuar</button>
+</div>
 
-  <!-- INSTRUCCIONES -->
-  <div class="instruct">
-    <h3>¿Cómo usar este panel?</h3>
-    <ol>
-      <li>Rellena el formulario del tipo de evento que necesitas</li>
-      <li>Pulsa <strong>Generar Código</strong></li>
-      <li>Pulsa <strong>Copiar</strong></li>
-      <li>Abre <strong>datos.js</strong> con el Bloc de Notas</li>
-      <li>Pega el texto dentro de los corchetes <strong>[ ]</strong> de la sección correcta</li>
-      <li>Guarda el archivo → recarga la web</li>
-    </ol>
+<!-- ── MAIN PANEL ── -->
+<div id="screen-main">
+  <div class="panel-header">
+    <div class="panel-logo">SHARP<span style="color:#fff">IQ</span></div>
+    <button class="btn-logout" onclick="logout()">Salir</button>
   </div>
 
-  <!-- FORMULARIO 1: PRÓXIMO EVENTO -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num">1</div>
-      <div>
-        <div class="card-title">Agregar Próximo Evento</div>
-        <div class="card-sub">Partidos de los próximos días — predicción bloqueada para visitantes</div>
-      </div>
+  <!-- Predicciones del día -->
+  <div>
+    <div class="section-label">Predicciones de hoy — <span id="fecha-hoy"></span></div>
+    <div id="pred-list" style="display:flex;flex-direction:column;gap:12px">
+      <div style="color:var(--t3);font-size:13px;padding:20px 0">Cargando predicciones...</div>
     </div>
-    <div class="card-body">
-      <div class="form-grid">
-        <div class="field">
-          <label>Fecha del partido</label>
-          <input type="text" id="ev-fecha" placeholder="ej: 20/05/26">
-        </div>
-        <div class="field">
-          <label>Hora (zona horaria)</label>
-          <input type="text" id="ev-hora" placeholder="ej: 21:00 CET">
-        </div>
-        <div class="field full">
+    <button class="btn-grad" style="width:100%;margin-top:14px" onclick="enviarTodoVip()">📢 Enviar TODAS al Canal VIP</button>
+    <button style="width:100%;margin-top:8px;padding:12px;border-radius:10px;border:1px solid rgba(0,200,255,.3);background:rgba(0,200,255,.08);color:var(--cyan);font-family:'Space Mono',monospace;font-size:11px;font-weight:700;cursor:pointer;letter-spacing:.5px" onclick="enviarTeaserFree()">📣 Enviar Teaser al Canal Free</button>
+  </div>
+
+  <!-- Pick manual -->
+  <div>
+    <div class="section-label">Publicar pick manual</div>
+    <div class="manual-card">
+      <div class="form-row">
+        <div class="field-s">
           <label>Partido</label>
-          <input type="text" id="ev-partido" placeholder="ej: Real Madrid vs Barcelona">
+          <input type="text" id="m-partido" placeholder="Real Madrid vs Barça">
         </div>
-        <div class="field">
-          <label>Liga / Competición</label>
-          <select id="ev-liga">
-            <option value="LaLiga">LaLiga</option>
-            <option value="Premier League">Premier League</option>
-            <option value="Champions League">Champions League</option>
-            <option value="Serie A">Serie A</option>
-            <option value="Bundesliga">Bundesliga</option>
-            <option value="Ligue 1">Ligue 1</option>
-            <option value="Copa Libertadores">Copa Libertadores</option>
-            <option value="Liga BetPlay">Liga BetPlay</option>
-            <option value="NBA">NBA</option>
-            <option value="Otra">Otra (escribe abajo)</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Liga personalizada (si elegiste "Otra")</label>
-          <input type="text" id="ev-liga-custom" placeholder="ej: Eliminatorias CONMEBOL">
-        </div>
-        <div class="field full">
-          <label>Tu predicción</label>
-          <input type="text" id="ev-pred" placeholder="ej: Over 2.5 Goles  /  1 Local  /  Ambos Marcan">
-        </div>
-        <div class="field">
-          <label>Cuota</label>
-          <input type="text" id="ev-cuota" placeholder="ej: 1.85">
+        <div class="field-s">
+          <label>Liga</label>
+          <input type="text" id="m-liga" placeholder="La Liga">
         </div>
       </div>
-      <button class="btn-gen" onclick="generarEvento()">Generar Código → Próximo Evento</button>
-      <div class="output-wrap" id="out-ev">
-        <div class="output-label">Texto generado — cópialo en datos.js</div>
-        <div class="output-box" id="code-ev"></div>
-        <button class="btn-copy" id="copy-ev" onclick="copiar('code-ev','copy-ev')">📋 Copiar al portapapeles</button>
+      <div class="form-row">
+        <div class="field-s">
+          <label>Predicción</label>
+          <input type="text" id="m-pred" placeholder="Over 2.5 Goles">
+        </div>
+        <div class="field-s">
+          <label>Cuota</label>
+          <input type="text" id="m-cuota" placeholder="1.85">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field-s">
+          <label>Hora (COT)</label>
+          <input type="text" id="m-hora" placeholder="20:00 COT">
+        </div>
+        <div class="field-s">
+          <label>Confianza %</label>
+          <input type="number" id="m-conf" placeholder="72" min="50" max="99">
+        </div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn-vip" style="flex:1;padding:12px" onclick="publicarManualVip()">📢 VIP</button>
+        <button class="btn-free" style="flex:1;padding:12px" onclick="publicarManualFree()">📣 Free</button>
       </div>
     </div>
   </div>
 
-  <div class="divider">────────────────────</div>
-
-  <!-- FORMULARIO 2: REGISTRAR RESULTADO -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num">2</div>
-      <div>
-        <div class="card-title">Registrar Resultado</div>
-        <div class="card-sub">Cuando termina el partido — se mueve al historial con el resultado</div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="form-grid">
-        <div class="field">
-          <label>Fecha del partido</label>
-          <input type="text" id="res-fecha" placeholder="ej: 18/05/26">
-        </div>
-        <div class="field full">
+  <!-- Registrar resultado -->
+  <div>
+    <div class="section-label">Registrar Resultado</div>
+    <div class="manual-card">
+      <div class="form-row full">
+        <div class="field-s">
           <label>Partido</label>
-          <input type="text" id="res-partido" placeholder="ej: Real Madrid vs Barcelona">
+          <input type="text" id="r-partido" placeholder="Real Madrid vs Barça">
         </div>
-        <div class="field">
-          <label>Liga / Competición</label>
-          <select id="res-liga">
-            <option value="LaLiga">LaLiga</option>
-            <option value="Premier League">Premier League</option>
-            <option value="Champions League">Champions League</option>
-            <option value="Serie A">Serie A</option>
-            <option value="Bundesliga">Bundesliga</option>
-            <option value="Ligue 1">Ligue 1</option>
-            <option value="Copa Libertadores">Copa Libertadores</option>
-            <option value="Liga BetPlay">Liga BetPlay</option>
-            <option value="NBA">NBA</option>
-            <option value="Otra">Otra (escribe abajo)</option>
-          </select>
+      </div>
+      <div class="form-row">
+        <div class="field-s">
+          <label>Predicción dada</label>
+          <input type="text" id="r-pred" placeholder="Over 2.5 Goles">
         </div>
-        <div class="field">
-          <label>Liga personalizada (si elegiste "Otra")</label>
-          <input type="text" id="res-liga-custom" placeholder="ej: Eliminatorias CONMEBOL">
-        </div>
-        <div class="field full">
-          <label>Predicción que diste</label>
-          <input type="text" id="res-pred" placeholder="ej: Over 2.5 Goles">
-        </div>
-        <div class="field">
+        <div class="field-s">
           <label>Cuota</label>
-          <input type="text" id="res-cuota" placeholder="ej: 1.85">
+          <input type="text" id="r-cuota" placeholder="1.85">
         </div>
-        <div class="field">
+      </div>
+      <div class="form-row full">
+        <div class="field-s">
           <label>Resultado</label>
-          <select id="res-resultado">
-            <option value="win">✓ ACIERTO — Acerté</option>
-            <option value="loss">✗ FALLO — Fallé</option>
-            <option value="pending">⏳ PENDIENTE — Aún no jugó</option>
+          <select id="r-resultado">
+            <option value="win">✅ WIN — Acerté</option>
+            <option value="loss">❌ LOSS — Fallé</option>
           </select>
         </div>
       </div>
-      <button class="btn-gen" onclick="generarResultado()">Generar Código → Historial</button>
-      <div class="output-wrap" id="out-res">
-        <div class="output-label">Texto generado — cópialo en datos.js</div>
-        <div class="output-box" id="code-res"></div>
-        <button class="btn-copy" id="copy-res" onclick="copiar('code-res','copy-res')">📋 Copiar al portapapeles</button>
-      </div>
+      <button class="btn-result" style="padding:12px;width:100%;font-size:11px;font-weight:700" onclick="publicarResultado()">📊 Publicar Resultado al Canal VIP</button>
     </div>
   </div>
-
-  <!-- RECORDATORIO -->
-  <div class="instruct">
-    <h3>¿Dónde pego el texto en datos.js?</h3>
-    <ol>
-      <li>Para Próximos Eventos: busca <strong>PROXIMOS_EVENTOS = [</strong> y pega <strong>antes</strong> del último evento (antes del último <strong>}</strong> seguido de <strong>]</strong>)</li>
-      <li>Para el Historial: busca <strong>PREDICCIONES_HISTORIAL = [</strong> y pega al <strong>principio</strong>, justo después del primer <strong>[</strong></li>
-      <li>Asegúrate de que cada bloque termina con una <strong>coma ,</strong> (ya está incluida en el texto generado)</li>
-      <li>Guarda datos.js → recarga la web y listo</li>
-    </ol>
-  </div>
-
 </div>
+
+<div id="toast"></div>
 
 <script>
-  function getliga(selectId, customId) {
-    const sel = document.getElementById(selectId).value;
-    const custom = document.getElementById(customId).value.trim();
-    return (sel === 'Otra' && custom) ? custom : sel;
+const PASS = 'SharpIQ2026';
+let CFG  = {};
+let PREDS = [];
+
+// ── AUTH ──────────────────────────────────────────────────────────
+function login() {
+  const val = document.getElementById('pin').value;
+  if (val !== PASS) {
+    document.getElementById('login-err').style.display = 'block';
+    return;
   }
+  localStorage.setItem('siq_auth', '1');
+  verificarConfig();
+}
 
-  function generarEvento() {
-    const fecha   = document.getElementById('ev-fecha').value.trim()   || 'DD/MM/AA';
-    const partido = document.getElementById('ev-partido').value.trim() || 'Equipo A vs Equipo B';
-    const liga    = getliga('ev-liga', 'ev-liga-custom');
-    const pred    = document.getElementById('ev-pred').value.trim()    || 'Tu predicción aquí';
-    const cuota   = document.getElementById('ev-cuota').value.trim()   || '1.00';
-    const hora    = document.getElementById('ev-hora').value.trim()    || '00:00 CET';
+function logout() {
+  localStorage.removeItem('siq_auth');
+  location.reload();
+}
 
-    const code =
-`  {
-    fecha:      "${fecha}",
-    partido:    "${partido}",
-    liga:       "${liga}",
-    prediccion: "${pred}",
-    cuota:      "${cuota}",
-    hora:       "${hora}",
-    status:     "vip"
-  },`;
-
-    document.getElementById('code-ev').textContent = code;
-    const wrap = document.getElementById('out-ev');
-    wrap.style.display = 'block';
-    wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    const btn = document.getElementById('copy-ev');
-    btn.textContent = '📋 Copiar al portapapeles';
-    btn.classList.remove('copied');
+function verificarConfig() {
+  const token = localStorage.getItem('siq_token');
+  if (!token) {
+    show('screen-setup');
+    return;
   }
+  CFG = {
+    token: localStorage.getItem('siq_token'),
+    vip:   localStorage.getItem('siq_vip')   || '-1003833982154',
+    free:  localStorage.getItem('siq_free')  || '-1003834900758',
+  };
+  show('screen-main');
+  cargarPredicciones();
+}
 
-  function generarResultado() {
-    const fecha     = document.getElementById('res-fecha').value.trim()     || 'DD/MM/AA';
-    const partido   = document.getElementById('res-partido').value.trim()   || 'Equipo A vs Equipo B';
-    const liga      = getliga('res-liga', 'res-liga-custom');
-    const pred      = document.getElementById('res-pred').value.trim()      || 'Tu predicción aquí';
-    const cuota     = document.getElementById('res-cuota').value.trim()     || '1.00';
-    const resultado = document.getElementById('res-resultado').value;
+function guardarConfig() {
+  const t = document.getElementById('cfg-token').value.trim();
+  const v = document.getElementById('cfg-vip').value.trim();
+  const f = document.getElementById('cfg-free').value.trim();
+  if (!t) { toast('Ingresa el token del bot', true); return; }
+  localStorage.setItem('siq_token', t);
+  if (v) localStorage.setItem('siq_vip', v);
+  if (f) localStorage.setItem('siq_free', f);
+  CFG = { token: t, vip: v || '-1003833982154', free: f || '-1003834900758' };
+  show('screen-main');
+  cargarPredicciones();
+}
 
-    const code =
-`  {
-    fecha:      "${fecha}",
-    partido:    "${partido}",
-    liga:       "${liga}",
-    prediccion: "${pred}",
-    cuota:      "${cuota}",
-    resultado:  "${resultado}"
-  },`;
+function show(id) {
+  ['screen-login','screen-setup','screen-main'].forEach(s => {
+    const el = document.getElementById(s);
+    el.style.display = s === id ? 'flex' : 'none';
+  });
+}
 
-    document.getElementById('code-res').textContent = code;
-    const wrap = document.getElementById('out-res');
-    wrap.style.display = 'block';
-    wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    const btn = document.getElementById('copy-res');
-    btn.textContent = '📋 Copiar al portapapeles';
-    btn.classList.remove('copied');
+// ── CARGAR PREDICCIONES ───────────────────────────────────────────
+async function cargarPredicciones() {
+  try {
+    const r = await fetch('predicciones.json?t=' + Date.now());
+    const data = await r.json();
+    PREDS = data.predicciones || [];
+    const fecha = data.fecha || '';
+    document.getElementById('fecha-hoy').textContent = fecha;
+    renderPreds();
+  } catch(e) {
+    document.getElementById('pred-list').innerHTML =
+      '<div style="color:var(--red);font-size:13px">No se encontró predicciones.json — corre el motor primero.</div>';
   }
+}
 
-  function copiar(codeId, btnId) {
-    const text = document.getElementById(codeId).textContent;
-    navigator.clipboard.writeText(text).then(() => {
-      const btn = document.getElementById(btnId);
-      btn.textContent = '✓ ¡Copiado! Ahora pégalo en datos.js';
-      btn.classList.add('copied');
+function renderPreds() {
+  const container = document.getElementById('pred-list');
+  if (!PREDS.length) {
+    container.innerHTML = '<div style="color:var(--t3);font-size:13px;padding:20px 0">Sin predicciones para hoy.</div>';
+    return;
+  }
+  const CUOTA_MAP = {victoria_local:'1',empate:'X',victoria_visita:'2',over25:'over25',under25:'under25',btts_si:'btts_si',btts_no:'btts_no',over15:'over15',over35:'over35'};
+  const NOMBRES   = {victoria_local:'Local (1)',empate:'Empate (X)',victoria_visita:'Visitante (2)',over25:'Over 2.5',under25:'Under 2.5',btts_si:'BTTS Sí',btts_no:'BTTS No',over15:'Over 1.5',over35:'Over 3.5'};
+
+  container.innerHTML = PREDS.map((p, i) => {
+    const hora_utc = p.hora || '00:00';
+    const [h, m]   = hora_utc.split(':');
+    const hora_cot = String((parseInt(h)-5+24)%24).padStart(2,'0') + ':' + m + ' COT';
+    const probs    = p.probabilidades;
+    const pred_p   = p.prediccion_principal;
+
+    // Mejor value bet
+    let mejorMk = null, mejorVb = null, mejorEv = -999;
+    Object.entries(p.value_bets || {}).forEach(([mk, vb]) => {
+      if (vb && typeof vb.ev_porcentaje === 'number' && vb.ev_porcentaje > mejorEv) {
+        mejorEv = vb.ev_porcentaje; mejorMk = mk; mejorVb = vb;
+      }
     });
+
+    let evHtml = '';
+    if (mejorVb) {
+      const ck    = CUOTA_MAP[mejorMk] || '1';
+      const cuota = p.cuotas?.[ck] || '';
+      const ev    = mejorVb.ev_porcentaje;
+      const cls   = ev > 0 ? 'ev-pos' : 'ev-neg';
+      const emoji = mejorVb.clasificacion === 'ALTO VALOR' ? '🔥' : (ev > 0 ? '💰' : '📊');
+      evHtml = `<div class="pred-ev"><span class="${cls}">${emoji} ${NOMBRES[mejorMk]||mejorMk} @ ${cuota} — EV: ${ev>=0?'+':''}${ev}%</span></div>`;
+    }
+
+    return `<div class="pred-card">
+      <div class="pred-top">
+        <div>
+          <div class="pred-partido">${p.local} vs ${p.visitante}</div>
+          <div class="pred-liga">${p.liga || ''}</div>
+        </div>
+        <div class="pred-hora">${hora_cot}</div>
+      </div>
+      <div class="pred-probs">1: ${probs.victoria_local}% · X: ${probs.empate}% · 2: ${probs.victoria_visita}%</div>
+      <div class="pred-pick">🎯 ${pred_p.mercado} (${pred_p.prob}%)</div>
+      ${evHtml}
+      <div class="pred-actions">
+        <button class="btn-vip"    onclick="enviarPredVip(${i})">📢 VIP</button>
+        <button class="btn-free"   onclick="enviarPredFree(${i})">📣 Free</button>
+        <button class="btn-result" onclick="llenarResultado(${i})">✅ Resultado</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── TELEGRAM ──────────────────────────────────────────────────────
+async function tgSend(chatId, text) {
+  const url = `https://api.telegram.org/bot${CFG.token}/sendMessage`;
+  const r = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' })
+  });
+  const d = await r.json();
+  return d.ok;
+}
+
+function buildMsgVip(p) {
+  const CUOTA_MAP = {victoria_local:'1',empate:'X',victoria_visita:'2',over25:'over25',under25:'under25',btts_si:'btts_si',btts_no:'btts_no',over15:'over15',over35:'over35'};
+  const NOMBRES   = {victoria_local:'Local (1)',empate:'Empate (X)',victoria_visita:'Visitante (2)',over25:'Over 2.5',under25:'Under 2.5',btts_si:'BTTS Sí',btts_no:'BTTS No',over15:'Over 1.5',over35:'Over 3.5'};
+  const [h,m] = (p.hora||'00:00').split(':');
+  const hora_cot = String((parseInt(h)-5+24)%24).padStart(2,'0')+':'+m+' COT';
+  const probs  = p.probabilidades;
+  const pred_p = p.prediccion_principal;
+
+  let mejorMk=null,mejorVb=null,mejorEv=-999;
+  Object.entries(p.value_bets||{}).forEach(([mk,vb])=>{
+    if(vb && typeof vb.ev_porcentaje==='number' && vb.ev_porcentaje>mejorEv){mejorEv=vb.ev_porcentaje;mejorMk=mk;mejorVb=vb;}
+  });
+
+  let evLinea = '';
+  if(mejorVb){
+    const ck=CUOTA_MAP[mejorMk]||'1';
+    const cuota=p.cuotas?.[ck]||'';
+    const casa=p.cuotas?.[ck+'_casa']||'';
+    const ev=mejorVb.ev_porcentaje;
+    const emoji=mejorVb.clasificacion==='ALTO VALOR'?'🔥':(ev>0?'💰':'📊');
+    evLinea=`\n${emoji} <b>${NOMBRES[mejorMk]||mejorMk}</b> @ ${cuota}${casa?' ['+casa+']':''} | EV: ${ev>=0?'+':''}${ev}%`;
   }
+
+  return `⚽ <b>${p.local} vs ${p.visitante}</b>\n🏆 ${p.liga||''} | ${hora_cot}\n\n📈 1:${probs.victoria_local}% · X:${probs.empate}% · 2:${probs.victoria_visita}%\n🎯 <b>${pred_p.mercado}</b> (${pred_p.prob}% confianza)${evLinea}\n\n<i>SharpIQ — La ventaja inteligente</i>`;
+}
+
+function buildMsgFree(p) {
+  const [h,m] = (p.hora||'00:00').split(':');
+  const hora_cot = String((parseInt(h)-5+24)%24).padStart(2,'0')+':'+m+' COT';
+  return `⚽ <b>${p.local} vs ${p.visitante}</b>\n🏆 ${p.liga||''} | ${hora_cot}\n\n📊 Predicción: 🔒 <b>Solo VIP</b>\n💵 Cuota: 🔒 <b>Solo VIP</b>\n\n🔥 Únete al canal VIP → https://t.me/sharpiq_alertas_bot\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>`;
+}
+
+async function enviarPredVip(i) {
+  const ok = await tgSend(CFG.vip, buildMsgVip(PREDS[i]));
+  toast(ok ? '✓ Enviado al VIP' : '✗ Error al enviar', !ok);
+}
+
+async function enviarPredFree(i) {
+  const ok = await tgSend(CFG.free, buildMsgFree(PREDS[i]));
+  toast(ok ? '✓ Enviado al Free' : '✗ Error al enviar', !ok);
+}
+
+async function enviarTodoVip() {
+  if (!PREDS.length) { toast('Sin predicciones cargadas', true); return; }
+  const fecha = document.getElementById('fecha-hoy').textContent;
+  let texto = `📊 <b>SharpIQ — Predicciones del día</b>\n📅 ${fecha}\n\n`;
+  PREDS.forEach(p => { texto += buildMsgVip(p) + '\n\n──────────────\n\n'; });
+  texto += '<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>';
+  const ok = await tgSend(CFG.vip, texto);
+  toast(ok ? `✓ ${PREDS.length} predicciones enviadas al VIP` : '✗ Error al enviar', !ok);
+}
+
+async function enviarTeaserFree() {
+  if (!PREDS.length) { toast('Sin predicciones cargadas', true); return; }
+  const fecha = document.getElementById('fecha-hoy').textContent;
+  let texto = `⚡ <b>SharpIQ — Picks del día</b>\n📅 ${fecha}\n\n`;
+  PREDS.forEach(p => {
+    const [h,m] = (p.hora||'00:00').split(':');
+    const hora_cot = String((parseInt(h)-5+24)%24).padStart(2,'0')+':'+m+' COT';
+    texto += `⚽ ${p.local} vs ${p.visitante} | ${p.liga||''}\n⏰ ${hora_cot} | Predicción: 🔒 VIP\n\n`;
+  });
+  texto += `🔥 <b>¿Quieres los picks exactos?</b>\nÚnete al canal VIP → https://t.me/sharpiq_alertas_bot\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>`;
+  const ok = await tgSend(CFG.free, texto);
+  toast(ok ? '✓ Teaser enviado al Free' : '✗ Error al enviar', !ok);
+}
+
+// ── PICK MANUAL ───────────────────────────────────────────────────
+async function publicarManualVip() {
+  const partido = document.getElementById('m-partido').value.trim();
+  const liga    = document.getElementById('m-liga').value.trim();
+  const pred    = document.getElementById('m-pred').value.trim();
+  const cuota   = document.getElementById('m-cuota').value.trim();
+  const hora    = document.getElementById('m-hora').value.trim() || '—';
+  const conf    = document.getElementById('m-conf').value.trim();
+  if (!partido || !pred) { toast('Completa partido y predicción', true); return; }
+
+  const texto = `🎯 <b>SharpIQ — Pick VIP</b>\n\n⚽ <b>${partido}</b>\n🏆 ${liga} | ⏰ ${hora}\n\n📊 <b>Predicción:</b> ${pred}\n💵 <b>Cuota:</b> ${cuota}${conf ? '\n🔒 Confianza: '+conf+'%' : ''}\n\n<i>SharpIQ — La ventaja inteligente</i>`;
+  const ok = await tgSend(CFG.vip, texto);
+  toast(ok ? '✓ Pick enviado al VIP' : '✗ Error al enviar', !ok);
+}
+
+async function publicarManualFree() {
+  const partido = document.getElementById('m-partido').value.trim();
+  const liga    = document.getElementById('m-liga').value.trim();
+  const hora    = document.getElementById('m-hora').value.trim() || '—';
+  if (!partido) { toast('Completa el partido', true); return; }
+
+  const texto = `⚽ <b>${partido}</b>\n🏆 ${liga} | ⏰ ${hora}\n\n📊 Predicción: 🔒 <b>Solo VIP</b>\n\n🔥 Únete → https://t.me/sharpiq_alertas_bot\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>`;
+  const ok = await tgSend(CFG.free, texto);
+  toast(ok ? '✓ Teaser enviado al Free' : '✗ Error al enviar', !ok);
+}
+
+// ── RESULTADO ─────────────────────────────────────────────────────
+function llenarResultado(i) {
+  const p = PREDS[i];
+  document.getElementById('r-partido').value = `${p.local} vs ${p.visitante}`;
+  const pred_p = p.prediccion_principal;
+  document.getElementById('r-pred').value = pred_p?.mercado || '';
+  const CUOTA_MAP = {victoria_local:'1',empate:'X',victoria_visita:'2',over25:'over25'};
+  const mk = Object.keys(p.value_bets||{}).find(k=>p.value_bets[k]?.tiene_valor) || 'victoria_local';
+  const ck = CUOTA_MAP[mk]||'1';
+  document.getElementById('r-cuota').value = p.cuotas?.[ck]||'';
+  window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+}
+
+async function publicarResultado() {
+  const partido   = document.getElementById('r-partido').value.trim();
+  const pred      = document.getElementById('r-pred').value.trim();
+  const cuota     = document.getElementById('r-cuota').value.trim();
+  const resultado = document.getElementById('r-resultado').value;
+  if (!partido) { toast('Completa el partido', true); return; }
+
+  const esWin  = resultado === 'win';
+  const emoji  = esWin ? '✅' : '❌';
+  const titulo = esWin ? 'WIN — ¡Acertamos!' : 'LOSS — Falló';
+  const ganancia = cuota ? (esWin ? `+${(parseFloat(cuota)-1).toFixed(2)}u` : '-1.00u') : '';
+  const comentario = esWin
+    ? '¡Predicción acertada! El modelo sigue funcionando. 🤖🔥'
+    : 'No todas entran. El largo plazo nos da la razón 💡';
+
+  const texto = `${emoji} <b>Resultado — ${partido}</b>\n\n📊 Predicción: ${pred}\n💵 Cuota: ${cuota}${ganancia ? '\n📈 P&L: <b>'+ganancia+'</b>' : ''}\n\n${comentario}\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>`;
+  const ok = await tgSend(CFG.vip, texto);
+  toast(ok ? '✓ Resultado publicado en VIP' : '✗ Error al enviar', !ok);
+}
+
+// ── TOAST ─────────────────────────────────────────────────────────
+let _toastTimer;
+function toast(msg, err=false) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className   = 'show' + (err ? ' err' : '');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => { el.className = ''; }, 3000);
+}
+
+// ── INIT ──────────────────────────────────────────────────────────
+window.onload = () => {
+  if (localStorage.getItem('siq_auth') === '1') {
+    verificarConfig();
+  }
+  document.getElementById('pin').focus();
+};
 </script>
 </body>
 </html>

@@ -9,6 +9,15 @@ import math
 import os
 import sys
 import csv
+import numpy as np
+
+class _NpEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, (np.integer,)):  return int(obj)
+        if isinstance(obj, (np.floating,)): return float(obj)
+        if isinstance(obj, (np.bool_,)):    return bool(obj)
+        if isinstance(obj, np.ndarray):     return obj.tolist()
+        return super().default(obj)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from datetime import datetime, date
 from scipy.stats import poisson
@@ -1452,7 +1461,7 @@ def guardar_historial_cuotas(reporte):
 def guardar_predicciones():
     reporte = reporte_del_dia()
     with open(JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump(reporte, f, ensure_ascii=False, indent=2)
+        json.dump(reporte, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
     print(f"✅ Predicciones guardadas: {reporte['total_partidos']} partidos")
     print(f"📅 Fecha: {reporte['fecha']}")
 
@@ -1461,7 +1470,7 @@ def guardar_predicciones():
     mejor = seleccionar_mejor_prediccion(reporte)
     if mejor:
         with open(MEJOR_PATH, "w", encoding="utf-8") as f:
-            json.dump(mejor, f, ensure_ascii=False, indent=2)
+            json.dump(mejor, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
         print(f"⭐ Mejor prediccion: {mejor['partido']} — {mejor['prediccion']}")
 
     if TELEGRAM_OK:

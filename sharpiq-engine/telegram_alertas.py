@@ -222,8 +222,50 @@ def enviar_resumen_dia(reporte):
                     texto += f"  → {nombres.get(m,m)} @ {cuota}{casa_str}: EV +{vb['ev_porcentaje']}%\n"
 
     texto += "\n<i>sharpiq.co — La ventaja inteligente</i>"
-    # Resumen va solo a Yamid, no al canal VIP
-    return enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
+    enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
+
+    # Enviar predicciones completas al canal VIP
+    cuota_map_vip = {
+        "victoria_local":"1","empate":"X","victoria_visita":"2",
+        "over25":"over25","under25":"under25","btts_si":"btts_si","btts_no":"btts_no",
+        "over15":"over15","over35":"over35",
+    }
+    nombres_vip = {
+        "victoria_local":"Local (1)","empate":"Empate (X)","victoria_visita":"Visitante (2)",
+        "over25":"Over 2.5","under25":"Under 2.5","btts_si":"BTTS Si","btts_no":"BTTS No",
+        "over15":"Over 1.5","over35":"Over 3.5",
+    }
+    vip_texto = f"📊 <b>SharpIQ — Predicciones del dia</b>\n📅 {reporte['fecha']}\n\n"
+    for pred in preds:
+        hora_utc = pred.get("hora", "00:00")
+        h, m2 = hora_utc.split(":")
+        hora_cot = f"{str((int(h)-5+24)%24).zfill(2)}:{m2} COT"
+        probs = pred["probabilidades"]
+        pred_p = pred["prediccion_principal"]
+
+        mejor_vb = None
+        mejor_ev = -999
+        for mk, vb in pred["value_bets"].items():
+            if vb and vb.get("ev_porcentaje", -999) > mejor_ev:
+                mejor_ev = vb["ev_porcentaje"]
+                mejor_vb = (mk, vb)
+
+        vip_texto += f"⚽ <b>{pred['local']} vs {pred['visitante']}</b>\n"
+        vip_texto += f"🏆 {pred.get('liga','')} | {hora_cot}\n"
+        vip_texto += f"📈 1:{probs['victoria_local']}% X:{probs['empate']}% 2:{probs['victoria_visita']}%\n"
+        vip_texto += f"🎯 <b>{pred_p['mercado']}</b> ({pred_p['prob']}%)\n"
+        if mejor_vb:
+            mk, vb = mejor_vb
+            ck = cuota_map_vip.get(mk, "1")
+            cuota = pred["cuotas"].get(ck, "")
+            ev = vb["ev_porcentaje"]
+            emoji = "🔥" if vb["clasificacion"] == "ALTO VALOR" else ("💰" if ev > 0 else "📊")
+            vip_texto += f"{emoji} {nombres_vip.get(mk, mk)} @ {cuota} | EV: {('+' if ev>=0 else '')}{ev}%\n"
+        vip_texto += "\n"
+
+    vip_texto += "<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+    from config import TELEGRAM_CHAT_ID
+    return enviar_mensaje(vip_texto, chat_id=TELEGRAM_CHAT_ID)
 
 
 def enviar_aviso_yamid(texto):
