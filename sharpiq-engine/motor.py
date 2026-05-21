@@ -1560,7 +1560,7 @@ def _actualizar_datos_js(reporte):
 
     repo_dir = os.path.join(BASE_DIR, "..")
     try:
-        subprocess.run(["git", "add", "predicciones.json", "mejor_prediccion.json", "datos.js"],
+        subprocess.run(["git", "add", "-f", "predicciones.json", "mejor_prediccion.json", "datos.js"],
                        cwd=repo_dir, check=True, capture_output=True)
         subprocess.run(["git", "commit", "-m", f"auto: predicciones {date.today().isoformat()}"],
                        cwd=repo_dir, check=True, capture_output=True)
