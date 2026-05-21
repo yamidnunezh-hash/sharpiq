@@ -93,7 +93,8 @@ def correr():
     except Exception as e:
         print(f"  Saludo free error: {e}")
 
-    MIN_PICKS = 3   # Mínimo de predicciones diarias — siempre hay análisis
+    MIN_PICKS = 3   # Mínimo garantizado — siempre hay análisis
+    MAX_PICKS = 10  # Techo para no saturar
     EV_ALTO   = 10  # EV >= 10% → "ALTO VALOR"
     EV_MIN    = 0   # EV >= 0%  → "Valor moderado"
 
@@ -146,8 +147,11 @@ def correr():
         if _ya_publicado(item[0]['local']):
             continue
         partidos_vistos.add(partido_key)
-        picks_publicar.append(item)
-        if len(picks_publicar) >= MIN_PICKS:
+        ev_item = item[3]
+        # Incluir si: aún no llegamos al mínimo, O hay valor real (EV > 5%), hasta el máximo
+        if len(picks_publicar) < MIN_PICKS or ev_item >= 5:
+            picks_publicar.append(item)
+        if len(picks_publicar) >= MAX_PICKS:
             break
 
     if not picks_publicar:
