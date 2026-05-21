@@ -258,13 +258,11 @@ LIGAS_APIFB = {
     71:   "Brasileirao Serie A",
     72:   "Brasileirao Serie B",
     78:   "Bundesliga",
-    11:   "Copa Sudamericana",
     13:   "Copa Libertadores",
     128:  "Liga BetPlay",
     135:  "Serie A",
     140:  "La Liga",
     239:  "Primera División Argentina",
-    241:  "Copa Colombia",
     253:  "MLS",
     262:  "Liga MX",
     265:  "Primera División Chile",
@@ -481,7 +479,7 @@ def cargar_stats_liga(codigo_liga):
         pass
 
 def cargar_todas_las_stats():
-    for codigo in ["PL", "PD", "BL1", "SA", "FL1", "CLI", "CSA"]:
+    for codigo in ["PL", "PD", "BL1", "SA", "FL1", "CLI"]:
         cargar_stats_liga(codigo)
 
 def get_stats_equipo(nombre):
@@ -938,6 +936,7 @@ def obtener_cuotas_liga(sport_key):
             "regions": "eu,uk",
             "markets": "h2h,totals,btts,double_chance,draw_no_bet",
             "oddsFormat": "decimal",
+            "bookmakers": "pinnacle,bet365,betfair,unibet,williamhill,bwin",
         }
         r = requests.get(url, params=params, timeout=15)
         if r.status_code != 200:
@@ -1005,12 +1004,19 @@ def extraer_mejor_cuota(partido):
         "doble_12": None, "doble_12_casa": None,
         "dnb_local": None,  "dnb_local_casa": None,
         "dnb_visita": None, "dnb_visita_casa": None,
+        # Pinnacle como benchmark de probabilidad real
+        "pinnacle_1": None, "pinnacle_X": None, "pinnacle_2": None,
+        "pinnacle_over25": None, "pinnacle_under25": None,
+        "pinnacle_over15": None, "pinnacle_under15": None,
+        "pinnacle_over35": None, "pinnacle_under35": None,
     }
     home = partido.get("home_team", "")
     away = partido.get("away_team", "")
 
     for bm in partido.get("bookmakers", []):
-        bm_name = bm.get("title", "")
+        bm_name  = bm.get("title", "")
+        bm_key   = bm.get("key", "")
+        es_pinn  = bm_key == "pinnacle"
         for market in bm.get("markets", []):
             key = market.get("key")
             outcomes = market.get("outcomes", [])
@@ -1021,6 +1027,10 @@ def extraer_mejor_cuota(partido):
                 c2 = prices.get(away)
                 draw_keys = [k for k in prices if k not in [home, away]]
                 cx = prices.get(draw_keys[0]) if draw_keys else None
+                if es_pinn:
+                    if c1: mejor["pinnacle_1"] = round(c1, 2)
+                    if cx: mejor["pinnacle_X"] = round(cx, 2)
+                    if c2: mejor["pinnacle_2"] = round(c2, 2)
                 if c1 and (mejor["1"] is None or c1 > mejor["1"]):
                     mejor["1"] = round(c1, 2);  mejor["1_casa"] = bm_name
                 if cx and (mejor["X"] is None or cx > mejor["X"]):
@@ -1039,6 +1049,9 @@ def extraer_mejor_cuota(partido):
                                 mejor[over_k] = round(pr, 2); mejor[over_k+"_casa"] = bm_name
                             elif nm == "Under" and (mejor[under_k] is None or pr > mejor[under_k]):
                                 mejor[under_k] = round(pr, 2); mejor[under_k+"_casa"] = bm_name
+                            if es_pinn:
+                                if nm == "Over":    mejor[f"pinnacle_{over_k}"]  = round(pr, 2)
+                                elif nm == "Under": mejor[f"pinnacle_{under_k}"] = round(pr, 2)
 
             elif key == "btts":
                 for o in outcomes:
@@ -1201,6 +1214,41 @@ def predecir_partido(local, visitante, cuotas=None, liga_code=""):
         if cuotas.get(mercado_key):
             vb = calcular_value_bet(probs[prob_key], cuotas[mercado_key])
             if vb: value_bets[mercado_key] = vb
+
+    # EV vs Pinnacle — desviar cuotas Pinnacle para obtener probabilidad real
+    if cuotas:
+        pinn1 = cuotas.get("pinnacle_1")
+        pinnX = cuotas.get("pinnacle_X")
+        pinn2 = cuotas.get("pinnacle_2")
+        pinn_probs = {}
+        if pinn1 and pinnX and pinn2:
+            s3 = 1/pinn1 + 1/pinnX + 1/pinn2
+            pinn_probs["victoria_local"]  = (1/pinn1) / s3
+            pinn_probs["empate"]          = (1/pinnX) / s3
+            pinn_probs["victoria_visita"] = (1/pinn2) / s3
+        for lim_str in ["15", "25", "35"]:
+            po = cuotas.get(f"pinnacle_over{lim_str}")
+            pu = cuotas.get(f"pinnacle_under{lim_str}")
+            if po and pu:
+                s2 = 1/po + 1/pu
+                pinn_probs[f"over{lim_str}"]  = (1/po) / s2
+                pinn_probs[f"under{lim_str}"] = (1/pu) / s2
+        _pinn_ck = {
+            "victoria_local": "1", "empate": "X", "victoria_visita": "2",
+            "over15": "over15", "under15": "under15",
+            "over25": "over25", "under25": "under25",
+            "over35": "over35", "under35": "under35",
+        }
+        for mk, vb in value_bets.items():
+            pp = pinn_probs.get(mk)
+            q  = cuotas.get(_pinn_ck.get(mk, mk))
+            if pp and q:
+                ev_p = round((pp * float(q) - 1) * 100, 1)
+                vb["ev_pinn"]          = ev_p
+                vb["tiene_valor_pinn"] = ev_p > 0
+            else:
+                vb["ev_pinn"]          = None
+                vb["tiene_valor_pinn"] = None
 
     # Mercados extendidos: corners, tarjetas, handicap asiático
     mercados_ext = {}
@@ -1420,6 +1468,9 @@ def seleccionar_mejor_prediccion(reporte):
         for mercado, vb in pred["value_bets"].items():
             if not vb["tiene_valor"]:
                 continue
+            ev_pinn = vb.get("ev_pinn")
+            if ev_pinn is not None and ev_pinn <= 0:
+                continue  # Pinnacle no confirma el valor
             prioridad = 2 if vb["clasificacion"] == "ALTO VALOR" else 1
             score = prioridad * 1000 + vb["ev_porcentaje"]
             if score > mejor_ev:
@@ -1531,6 +1582,14 @@ def guardar_historial_cuotas(reporte):
 
 # ── GUARDAR JSON PARA EL PANEL ──────────────────────────────────
 def guardar_predicciones():
+    try:
+        from db_clv import guardar_pick as _db_pick, inicializar as _db_init
+        _db_init()
+        _db_ok = True
+    except Exception as _e:
+        print(f"  DB CLV: {_e}")
+        _db_ok = False
+
     reporte = reporte_del_dia()
     with open(JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(reporte, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
@@ -1548,12 +1607,36 @@ def guardar_predicciones():
     if TELEGRAM_OK:
         print("\n📲 Enviando alertas Telegram...")
         alto_valor_enviados = 0
+        _mk2ck = {
+            "victoria_local":"1","empate":"X","victoria_visita":"2",
+            "over15":"over15","under15":"under15",
+            "over25":"over25","under25":"under25",
+            "over35":"over35","under35":"under35",
+            "btts_si":"btts_si","btts_no":"btts_no",
+        }
         for pred in reporte["predicciones"]:
             for mercado, vb in pred["value_bets"].items():
                 if vb["clasificacion"] == "ALTO VALOR":
+                    ev_pinn = vb.get("ev_pinn")
+                    if ev_pinn is not None and ev_pinn <= 0:
+                        continue  # Pinnacle no confirma el valor — skip
                     ok = enviar_alerta_value_bet(pred, mercado, vb)
                     if ok:
                         alto_valor_enviados += 1
+                        if _db_ok:
+                            _ck = _mk2ck.get(mercado, mercado)
+                            try:
+                                _db_pick(
+                                    fecha=reporte["fecha"],
+                                    partido=f"{pred['local']} vs {pred['visitante']}",
+                                    liga=pred.get("liga", ""),
+                                    mercado=mercado,
+                                    prob_modelo=pred["probabilidades"].get(mercado, 50),
+                                    cuota_apertura=float(pred["cuotas"].get(_ck) or 0),
+                                    cuota_pinnacle=pred["cuotas"].get(f"pinnacle_{_ck}"),
+                                )
+                            except Exception:
+                                pass
         if alto_valor_enviados:
             print(f"  🔥 {alto_valor_enviados} alertas ALTO VALOR enviadas")
         enviar_resumen_dia(reporte)
