@@ -9,8 +9,17 @@ from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
-from config import (TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, TELEGRAM_YAMID_ID,
-                    MP_ACCESS_TOKEN, CF_ACCOUNT_ID, CF_API_TOKEN, CF_KV_NAMESPACE)
+try:
+    from config import (TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, TELEGRAM_YAMID_ID,
+                        MP_ACCESS_TOKEN, CF_ACCOUNT_ID, CF_API_TOKEN, CF_KV_NAMESPACE)
+except ImportError:
+    TELEGRAM_TOKEN    = os.environ.get('TELEGRAM_TOKEN', '')
+    TELEGRAM_CHAT_ID  = os.environ.get('TELEGRAM_CHAT_ID', '')
+    TELEGRAM_YAMID_ID = os.environ.get('TELEGRAM_YAMID_ID', '')
+    MP_ACCESS_TOKEN   = os.environ.get('MP_ACCESS_TOKEN', '')
+    CF_ACCOUNT_ID     = os.environ.get('CF_ACCOUNT_ID', '')
+    CF_API_TOKEN      = os.environ.get('CF_API_TOKEN', '')
+    CF_KV_NAMESPACE   = os.environ.get('CF_KV_NAMESPACE', '')
 
 DB_PATH  = os.path.join(BASE_DIR, "sharpiq.db")
 API_URL  = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
