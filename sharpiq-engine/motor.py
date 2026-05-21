@@ -1487,6 +1487,10 @@ def guardar_predicciones():
         enviar_resumen_dia(reporte)
         print("  📋 Resumen del día enviado")
 
+    # Actualizar web con predicciones del día
+    print("\n🌐 Actualizando web...")
+    _actualizar_datos_js(reporte)
+
     # Alertas de steam — solo en pasada de tarde (snapshot_tipo == "tarde")
     hora_actual = datetime.now().hour
     if hora_actual >= 13:
@@ -1506,6 +1510,65 @@ def guardar_predicciones():
         print(f"  Player props error: {e}")
 
     return reporte
+
+
+def _actualizar_datos_js(reporte):
+    """Sobreescribe PROXIMOS_EVENTOS en datos.js con las predicciones del día y hace push."""
+    import subprocess
+    DATOS_PATH = os.path.join(BASE_DIR, "..", "datos.js")
+    try:
+        with open(DATOS_PATH, encoding='utf-8') as f:
+            texto = f.read()
+    except Exception as e:
+        print(f"  datos.js no encontrado: {e}")
+        return
+
+    hoy = date.today().strftime('%d/%m/%y')
+    entradas = []
+    for p in reporte.get("predicciones", []):
+        pred   = p.get("prediccion_principal", {}).get("mercado", "")
+        cuotas = p.get("cuotas", {})
+        hora_utc = p.get("hora", "00:00")
+        h, m = hora_utc.split(":")
+        hora_cot = f"{str((int(h)-5+24)%24).zfill(2)}:{m} COT"
+        pred_l = pred.lower()
+        ck = "2" if ("visitante" in pred_l or "(2)" in pred_l) else \
+             "X" if ("empate" in pred_l or "(x)" in pred_l) else "1"
+        cuota_val = cuotas.get(ck, "")
+        entradas.append(
+            f'  {{\n'
+            f'    fecha:      "{hoy}",\n'
+            f'    partido:    "{p["local"]} vs {p["visitante"]}",\n'
+            f'    liga:       "{p.get("liga", "")}",\n'
+            f'    prediccion: "{pred}",\n'
+            f'    cuota:      "{cuota_val}",\n'
+            f'    hora:       "{hora_cot}",\n'
+            f'    status:     "vip"\n'
+            f'  }}'
+        )
+
+    nuevo_bloque = ",\n".join(entradas)
+    nuevo_texto = re.sub(
+        r'(const\s+PROXIMOS_EVENTOS\s*=\s*\[)[^\]]*(\];)',
+        lambda m: m.group(1) + "\n" + nuevo_bloque + "\n" + m.group(2),
+        texto,
+        flags=re.DOTALL
+    )
+    with open(DATOS_PATH, 'w', encoding='utf-8') as f:
+        f.write(nuevo_texto)
+    print(f"  datos.js actualizado ({len(entradas)} predicciones)")
+
+    repo_dir = os.path.join(BASE_DIR, "..")
+    try:
+        subprocess.run(["git", "add", "predicciones.json", "mejor_prediccion.json", "datos.js"],
+                       cwd=repo_dir, check=True, capture_output=True)
+        subprocess.run(["git", "commit", "-m", f"auto: predicciones {date.today().isoformat()}"],
+                       cwd=repo_dir, check=True, capture_output=True)
+        subprocess.run(["git", "push", "origin", "main"],
+                       cwd=repo_dir, check=True, capture_output=True)
+        print("  GitHub actualizado (predicciones + web) ✓")
+    except subprocess.CalledProcessError as e:
+        print(f"  Git error: {e}")
 
 
 def _alertar_steam(reporte):

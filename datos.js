@@ -9,6 +9,60 @@
 // Cuando terminen, muévelos a PREDICCIONES_HISTORIAL y pon el resultado.
 // status: "vip" = bloqueado para no suscriptores, "free" = visible para todos
 const PROXIMOS_EVENTOS = [
+  {
+    fecha:      "21/05/26",
+    partido:    "VfL Wolfsburg vs SC Paderborn 07",
+    liga:       "Bundesliga",
+    prediccion: "Victoria Visitante (2)",
+    cuota:      "2.12",
+    hora:       "13:30 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "21/05/26",
+    partido:    "Águilas Doradas vs Deportivo Pereira",
+    liga:       "Copa Colombia",
+    prediccion: "Victoria Local (1)",
+    cuota:      "2.30",
+    hora:       "15:30 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "21/05/26",
+    partido:    "Jaguares vs Ind. Yumbo",
+    liga:       "Copa Colombia",
+    prediccion: "Victoria Local (1)",
+    cuota:      "2.30",
+    hora:       "16:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "21/05/26",
+    partido:    "Atletico-MG vs Cienciano",
+    liga:       "Copa Sudamericana",
+    prediccion: "Victoria Local (1)",
+    cuota:      "2.30",
+    hora:       "17:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "21/05/26",
+    partido:    "Puerto Cabello vs Juventud",
+    liga:       "Copa Sudamericana",
+    prediccion: "Victoria Local (1)",
+    cuota:      "2.30",
+    hora:       "17:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "21/05/26",
+    partido:    "Deportivo La Guaira vs Independ. Rivadavia",
+    liga:       "Copa Libertadores",
+    prediccion: "Victoria Local (1)",
+    cuota:      "2.30",
+    hora:       "17:00 COT",
+    status:     "vip"
+  },
 ];
 
 // ── HISTORIAL DE PREDICCIONES ─────────────────────────────────
