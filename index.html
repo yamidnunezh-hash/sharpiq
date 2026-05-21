@@ -45,28 +45,38 @@
     /* ── TICKER ── */
     .ticker{
       position:fixed;top:0;left:0;right:0;z-index:1100;
-      background:var(--gold);height:30px;
+      background:linear-gradient(90deg,#0a1a08 0%,#0d2010 40%,#0a1a08 100%);
+      border-bottom:1px solid rgba(34,197,94,0.4);
+      height:34px;
       display:flex;align-items:center;overflow:hidden;
+      box-shadow:0 2px 18px rgba(34,197,94,0.18),0 0 40px rgba(240,165,0,0.06);
     }
     .ticker-label{
-      flex-shrink:0;background:#000;color:var(--gold);
-      font-family:'Orbitron',monospace;font-size:10px;font-weight:700;
-      letter-spacing:2px;padding:0 14px;height:100%;
-      display:flex;align-items:center;gap:6px;
+      flex-shrink:0;
+      background:linear-gradient(135deg,#b8820a 0%,#e6a90e 50%,#b8820a 100%);
+      color:#000;
+      font-family:'Orbitron',monospace;font-size:10px;font-weight:900;
+      letter-spacing:2px;padding:0 16px;height:100%;
+      display:flex;align-items:center;gap:7px;
+      text-shadow:none;
+      box-shadow:2px 0 12px rgba(240,165,0,0.35);
     }
     .ticker-live{
-      width:7px;height:7px;border-radius:50%;background:var(--gold);
+      width:8px;height:8px;border-radius:50%;
+      background:#22c55e;
+      box-shadow:0 0 8px #22c55e,0 0 16px rgba(34,197,94,0.6);
       animation:pulse-live 1.2s infinite;
     }
-    @keyframes pulse-live{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+    @keyframes pulse-live{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 8px #22c55e,0 0 16px rgba(34,197,94,0.6)}50%{opacity:0.5;transform:scale(0.7);box-shadow:0 0 4px #22c55e,0 0 8px rgba(34,197,94,0.3)}}
     .ticker-track-wrap{flex:1;overflow:hidden;height:100%;display:flex;align-items:center}
     .ticker-track{
       display:flex;white-space:nowrap;
-      animation:ticker-scroll 40s linear infinite;
+      animation:ticker-scroll 38s linear infinite;
       font-family:'Space Mono',monospace;font-size:11px;
-      color:#000;font-weight:700;gap:0;
+      color:#22c55e;font-weight:700;gap:0;
+      text-shadow:0 0 8px rgba(34,197,94,0.5);
     }
-    .ticker-track span{padding:0 32px;border-right:1px solid rgba(0,0,0,0.2)}
+    .ticker-track span{padding:0 32px;border-right:1px solid rgba(34,197,94,0.2)}
     @keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
     /* ── NAVBAR ── */
@@ -87,10 +97,15 @@
     .nav-ul a:hover{color:var(--gold)}
     .nav-cta{
       font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;
-      color:#000;background:var(--gold);padding:10px 20px;border-radius:6px;
-      transition:background .2s,transform .15s;white-space:nowrap;flex-shrink:0;
+      color:#000;
+      background:linear-gradient(135deg,#f5c842 0%,#e6a90e 40%,#c47f05 70%,#e6a90e 100%);
+      background-size:200% auto;
+      padding:10px 20px;border-radius:6px;
+      box-shadow:0 2px 12px rgba(230,169,14,0.45),inset 0 1px 0 rgba(255,220,80,0.4);
+      transition:all .25s;white-space:nowrap;flex-shrink:0;
+      text-shadow:0 1px 2px rgba(0,0,0,0.25);
     }
-    .nav-cta:hover{background:var(--goldl);transform:translateY(-1px)}
+    .nav-cta:hover{background-position:right center;transform:translateY(-1px);box-shadow:0 4px 20px rgba(230,169,14,0.65),inset 0 1px 0 rgba(255,220,80,0.4)}
     .nav-tog{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
     .nav-tog span{display:block;width:24px;height:2px;background:var(--t1);border-radius:2px;transition:all .3s}
     .nav-mob{display:none;flex-direction:column;position:fixed;top:98px;left:0;right:0;background:rgba(7,5,26,.97);backdrop-filter:blur(24px);padding:20px 28px;gap:4px;z-index:999;border-bottom:1px solid var(--border)}
@@ -135,11 +150,14 @@
     .hero-acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:48px;animation:fadeUp 1s .5s ease both}
     .btn-g{
       font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;
-      color:#000;background:linear-gradient(135deg,#00C8FF,#7B5CF0);
-      padding:15px 36px;border-radius:7px;transition:all .25s;
-      box-shadow:0 4px 24px rgba(0,200,255,.4);
+      color:#000;
+      background:linear-gradient(135deg,#f5c842 0%,#e6a90e 35%,#c47f05 65%,#f5c842 100%);
+      background-size:200% auto;
+      padding:15px 36px;border-radius:7px;transition:all .3s;
+      box-shadow:0 4px 24px rgba(230,169,14,0.5),inset 0 1px 0 rgba(255,225,90,0.45),0 1px 0 rgba(0,0,0,0.2);
+      text-shadow:0 1px 2px rgba(0,0,0,0.2);
     }
-    .btn-g:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(0,200,255,.6)}
+    .btn-g:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 10px 40px rgba(230,169,14,0.7),inset 0 1px 0 rgba(255,225,90,0.45)}
     .btn-o{
       font-size:14px;font-weight:500;color:var(--t1);
       border:1px solid rgba(255,255,255,.18);padding:15px 36px;border-radius:7px;
@@ -186,96 +204,154 @@
 
     /* ── LEAGUES BAR ── */
     .leagues-bar{
-      background:var(--bg1);border-bottom:1px solid var(--border);
-      padding:18px 0;position:relative;z-index:2;overflow:hidden;
+      background:linear-gradient(90deg,#060f06 0%,#09160a 40%,#060f06 100%);
+      border-top:1px solid rgba(34,197,94,0.22);
+      border-bottom:1px solid rgba(34,197,94,0.22);
+      box-shadow:0 0 28px rgba(34,197,94,0.07),inset 0 1px 0 rgba(240,165,0,0.06);
+      padding:16px 0;position:relative;z-index:2;overflow:hidden;
+    }
+    .leagues-bar::before{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(90deg,#060f06 0%,transparent 8%,transparent 92%,#060f06 100%);
+      pointer-events:none;z-index:2;
     }
     .leagues-track-w{overflow:hidden}
     .leagues-track{
       display:flex;white-space:nowrap;gap:0;
-      animation:ticker-scroll 35s linear infinite;
+      animation:ticker-scroll 32s linear infinite;
     }
     .league-item{
-      display:inline-flex;align-items:center;gap:10px;padding:0 32px;
-      border-right:1px solid var(--border);flex-shrink:0;
+      display:inline-flex;align-items:center;gap:10px;padding:0 36px;
+      border-right:1px solid rgba(34,197,94,0.15);flex-shrink:0;
+      transition:all .2s;
     }
-    .league-item span{font-family:'Space Mono',monospace;font-size:12px;color:var(--t2);letter-spacing:.5px}
-    .league-item strong{font-size:13px;color:var(--t1);font-weight:600}
+    .league-item:hover strong{color:#e6a90e;text-shadow:0 0 10px rgba(240,165,0,0.5)}
+    .league-item span{font-family:'Space Mono',monospace;font-size:12px;color:rgba(34,197,94,0.6);letter-spacing:.5px}
+    .league-item strong{font-size:13px;color:#c8f7d8;font-weight:700;text-shadow:0 0 6px rgba(34,197,94,0.25);transition:all .2s}
+    /* dot separator intercalado */
+    .league-item .ldot{width:6px;height:6px;border-radius:50%;background:#22c55e;opacity:0.7;box-shadow:0 0 6px #22c55e;flex-shrink:0}
 
-    /* ── STATS DASHBOARD (estilo Xtera) ── */
+    /* ── STATS DASHBOARD ── */
     .stats-dash{
-      background:#08061F;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-      padding:48px 0;position:relative;z-index:2;
+      background:linear-gradient(180deg,#08061F 0%,#0A0828 100%);
+      border-top:1px solid rgba(230,169,14,0.12);
+      border-bottom:1px solid rgba(0,200,255,0.1);
+      padding:64px 0;position:relative;z-index:2;overflow:hidden;
     }
-    .dash-layout{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center}
-    .dash-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .stats-dash::before{
+      content:'';position:absolute;inset:0;
+      background-image:linear-gradient(rgba(0,200,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.025) 1px,transparent 1px);
+      background-size:48px 48px;
+      mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 30%,transparent 100%);
+      pointer-events:none;
+    }
+    .dash-layout{display:grid;grid-template-columns:1fr 400px;gap:40px;align-items:center}
+    .dash-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 
-    /* Card estilo Xtera */
+    /* ── DC CARD ── */
     .dc{
-      border-radius:16px;padding:22px 22px 22px 22px;
+      border-radius:18px;padding:26px;
       position:relative;overflow:hidden;
-      border:1px solid rgba(255,255,255,0.06);
-      transition:transform .25s,border-color .25s;
+      border:1px solid rgba(255,255,255,0.07);
+      transition:transform .3s cubic-bezier(.25,.8,.25,1),border-color .3s,box-shadow .3s;
+      backdrop-filter:blur(8px);
     }
-    .dc:hover{transform:translateY(-4px);border-color:var(--borderg)}
-    .dc.gold-card{background:linear-gradient(145deg,#0A0828 0%,#130E3A 100%)}
-    .dc.dark-card{background:linear-gradient(145deg,#08071C 0%,#0F0D2E 100%)}
-    .dc.green-card{background:linear-gradient(145deg,#061410 0%,#0a2018 100%)}
-    .dc.blue-card{background:linear-gradient(145deg,#050d1a 0%,#091530 100%)}
+    .dc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:18px 18px 0 0;opacity:0;transition:opacity .3s}
+    .dc:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+    .dc:hover::before{opacity:1}
+    .dc.gold-card{background:linear-gradient(145deg,#0E0B2E 0%,#160D3C 100%);box-shadow:0 4px 24px rgba(0,0,0,0.3)}
+    .dc.gold-card::before{background:linear-gradient(90deg,#e6a90e,#f5c842,#e6a90e)}
+    .dc.gold-card:hover{border-color:rgba(230,169,14,0.35);box-shadow:0 20px 60px rgba(230,169,14,0.12)}
+    .dc.dark-card{background:linear-gradient(145deg,#09081F 0%,#11102E 100%);box-shadow:0 4px 24px rgba(0,0,0,0.3)}
+    .dc.dark-card::before{background:linear-gradient(90deg,var(--gold),var(--goldl))}
+    .dc.dark-card:hover{border-color:rgba(0,200,255,0.3);box-shadow:0 20px 60px rgba(0,200,255,0.08)}
+    .dc.green-card{background:linear-gradient(145deg,#071510 0%,#0C2018 100%);box-shadow:0 4px 24px rgba(0,0,0,0.3)}
+    .dc.green-card::before{background:linear-gradient(90deg,#22c55e,#4ade80)}
+    .dc.green-card:hover{border-color:rgba(34,197,94,0.3);box-shadow:0 20px 60px rgba(34,197,94,0.08)}
+    .dc.blue-card{background:linear-gradient(145deg,#07091C 0%,#0C1232 100%);box-shadow:0 4px 24px rgba(0,0,0,0.3)}
+    .dc.blue-card::before{background:linear-gradient(90deg,var(--purple),#a78bfa)}
+    .dc.blue-card:hover{border-color:rgba(123,92,240,0.3);box-shadow:0 20px 60px rgba(123,92,240,0.08)}
 
-    /* Pill label */
+    /* Corner accent */
+    .dc::after{content:'';position:absolute;bottom:0;right:0;width:60px;height:60px;border-radius:0 0 18px 0;opacity:0.04;transition:opacity .3s}
+    .dc.gold-card::after{background:radial-gradient(circle at 100% 100%,#e6a90e,transparent)}
+    .dc.green-card::after{background:radial-gradient(circle at 100% 100%,#22c55e,transparent)}
+
+    /* Pill */
     .dc-pill{
       display:inline-flex;align-items:center;gap:6px;
       font-family:'Orbitron',monospace;font-size:9px;font-weight:700;letter-spacing:1.5px;
-      text-transform:uppercase;padding:5px 12px;border-radius:50px;
-      margin-bottom:14px;
+      text-transform:uppercase;padding:5px 13px;border-radius:50px;margin-bottom:16px;
     }
-    .dc-pill.gp{color:#000;background:var(--gold)}
-    .dc-pill.dp{color:var(--t1);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.12)}
-    .dc-pill.grp{color:#000;background:var(--green)}
-    .dc-pill.bp{color:var(--blue);background:var(--blued);border:1px solid rgba(59,130,246,.3)}
+    .dc-pill.gp{color:#000;background:linear-gradient(135deg,#f5c842,#e6a90e);box-shadow:0 2px 8px rgba(230,169,14,0.4)}
+    .dc-pill.dp{color:var(--gold);background:rgba(0,200,255,0.08);border:1px solid rgba(0,200,255,0.25)}
+    .dc-pill.grp{color:#000;background:linear-gradient(135deg,#4ade80,#22c55e);box-shadow:0 2px 8px rgba(34,197,94,0.35)}
+    .dc-pill.bp{color:#c4b5fd;background:rgba(123,92,240,0.12);border:1px solid rgba(123,92,240,0.3)}
 
-    /* Icon circle */
+    /* Icon */
     .dc-ico{
-      position:absolute;top:18px;right:18px;
-      width:42px;height:42px;border-radius:50%;
+      position:absolute;top:20px;right:20px;
+      width:44px;height:44px;border-radius:12px;
       display:flex;align-items:center;justify-content:center;font-size:20px;
     }
-    .dc-ico.gi{background:radial-gradient(circle,rgba(0,200,255,.35) 0%,rgba(0,200,255,.1) 100%);box-shadow:0 0 16px rgba(0,200,255,.3)}
-    .dc-ico.gri{background:radial-gradient(circle,rgba(34,197,94,.35) 0%,rgba(34,197,94,.1) 100%);box-shadow:0 0 16px rgba(34,197,94,.3)}
-    .dc-ico.bi{background:radial-gradient(circle,rgba(59,130,246,.3) 0%,rgba(59,130,246,.1) 100%);box-shadow:0 0 16px rgba(59,130,246,.25)}
+    .dc-ico.gi{background:linear-gradient(135deg,rgba(230,169,14,.2),rgba(230,169,14,.06));border:1px solid rgba(230,169,14,.2);box-shadow:0 0 16px rgba(230,169,14,.15)}
+    .dc-ico.gri{background:linear-gradient(135deg,rgba(34,197,94,.2),rgba(34,197,94,.06));border:1px solid rgba(34,197,94,.2);box-shadow:0 0 16px rgba(34,197,94,.15)}
+    .dc-ico.bi{background:linear-gradient(135deg,rgba(0,200,255,.15),rgba(0,200,255,.04));border:1px solid rgba(0,200,255,.18);box-shadow:0 0 16px rgba(0,200,255,.12)}
 
-    .dc-val{font-family:'Bebas Neue',cursive;font-size:52px;color:var(--t1);line-height:1;margin-bottom:4px;display:flex;align-items:baseline;gap:4px}
-    .dc-suf{font-family:'Bebas Neue',cursive;font-size:28px;color:var(--t2)}
-    .dc-pre{font-family:'Bebas Neue',cursive;font-size:28px;color:var(--t2)}
-    .dc-sub{font-size:12px;color:var(--t3)}
+    .dc-val{font-family:'Bebas Neue',cursive;font-size:58px;line-height:1;margin-bottom:4px;display:flex;align-items:baseline;gap:4px}
+    .dc-suf{font-family:'Bebas Neue',cursive;font-size:30px;color:var(--t2)}
+    .dc-pre{font-family:'Bebas Neue',cursive;font-size:30px;color:var(--t2)}
+    .dc-sub{font-size:11px;color:var(--t3);letter-spacing:.3px}
     .dc-ph{font-size:10px;color:var(--t3);font-style:italic}
-
-    /* snum alias for counters outside this section */
-    .snum{font-family:'Bebas Neue',cursive;font-size:56px;color:var(--gold);line-height:1}
+    .snum{font-family:'Bebas Neue',cursive;font-size:58px;color:var(--t1);line-height:1}
     .ssuf{font-family:'Bebas Neue',cursive;font-size:30px;color:var(--gold)}
 
-    /* ── ANILLO DE PUNTOS (ring hero) ── */
-    .ring-wrap{position:relative;width:340px;height:340px;margin:0 auto;flex-shrink:0}
-    .dot-ring{position:absolute;inset:0;z-index:1}
+    /* ── RING HERO ── */
+    .ring-wrap{position:relative;width:360px;height:360px;margin:0 auto;flex-shrink:0}
+    .ring-bg{
+      position:absolute;inset:0;border-radius:50%;
+      background:radial-gradient(circle at 50% 50%,rgba(230,169,14,0.04) 0%,rgba(230,169,14,0.01) 40%,transparent 70%);
+    }
+    .ring-svg-deco{position:absolute;inset:0;z-index:0}
+    .dot-ring{position:absolute;inset:0;z-index:2}
     .rdot{position:absolute;border-radius:50%;transform:translate(-50%,-50%)}
     .rdot.lit{
-      width:10px;height:10px;
-      background:var(--gold);
-      box-shadow:0 0 10px 3px rgba(0,200,255,.7),0 0 22px rgba(0,200,255,.35);
-      animation:dot-pulse 2.4s ease-in-out infinite;
+      width:11px;height:11px;
+      background:radial-gradient(circle,#fff5c0 0%,#f5c842 40%,#c47f05 100%);
+      box-shadow:0 0 8px 2px rgba(230,169,14,.9),0 0 20px rgba(230,169,14,.45),0 0 40px rgba(230,169,14,.15);
+      animation:dot-pulse 2.8s ease-in-out infinite;
     }
-    .rdot.dim{width:8px;height:8px;background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.18)}
-    @keyframes dot-pulse{0%,100%{opacity:1;box-shadow:0 0 10px 3px rgba(0,200,255,.7),0 0 22px rgba(0,200,255,.35)}50%{opacity:.55;box-shadow:0 0 6px 2px rgba(0,200,255,.4),0 0 12px rgba(0,200,255,.15)}}
+    .rdot.dim{width:7px;height:7px;background:rgba(230,169,14,.08);border:1px solid rgba(230,169,14,.2)}
+    @keyframes dot-pulse{
+      0%,100%{opacity:1;box-shadow:0 0 8px 2px rgba(230,169,14,.9),0 0 20px rgba(230,169,14,.45),0 0 40px rgba(230,169,14,.15)}
+      50%{opacity:.45;box-shadow:0 0 4px 1px rgba(230,169,14,.5),0 0 10px rgba(230,169,14,.2)}
+    }
+    .ring-scan{
+      position:absolute;inset:0;z-index:1;border-radius:50%;
+      background:conic-gradient(from -90deg,rgba(230,169,14,0.12) 0deg,rgba(230,169,14,0.02) 60deg,transparent 90deg,transparent 360deg);
+      animation:ring-scan 4s linear infinite;
+    }
+    @keyframes ring-scan{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
     .ring-center{
-      position:absolute;inset:0;z-index:2;
+      position:absolute;inset:0;z-index:3;
       display:flex;flex-direction:column;align-items:center;justify-content:center;
       text-align:center;
     }
-    .rc-label{font-family:'Orbitron',monospace;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--t3);margin-bottom:8px}
-    .rc-val{font-family:'Bebas Neue',cursive;font-size:86px;color:var(--t1);line-height:1;display:flex;align-items:baseline;gap:2px}
-    .rc-val-pct{font-family:'Bebas Neue',cursive;font-size:46px;color:var(--gold)}
-    .rc-badge{display:inline-flex;align-items:center;gap:5px;font-family:'Orbitron',monospace;font-size:9px;font-weight:700;color:#000;background:var(--gold);padding:4px 12px;border-radius:50px;margin-top:10px}
-    .rc-sub{font-size:11px;color:var(--t3);margin-top:6px;font-family:'Space Mono',monospace}
+    .rc-label{font-family:'Orbitron',monospace;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(230,169,14,0.6);margin-bottom:6px}
+    .rc-val{font-family:'Bebas Neue',cursive;font-size:92px;color:var(--t1);line-height:1;display:flex;align-items:baseline;gap:2px;text-shadow:0 0 40px rgba(230,169,14,0.2)}
+    .rc-val-pct{font-family:'Bebas Neue',cursive;font-size:48px;background:linear-gradient(160deg,#ffe580 0%,#e6a90e 50%,#c47f05 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .rc-divider{width:48px;height:1px;background:linear-gradient(90deg,transparent,rgba(230,169,14,0.5),transparent);margin:10px auto}
+    .rc-badge{
+      display:inline-flex;align-items:center;gap:6px;
+      font-family:'Orbitron',monospace;font-size:9px;font-weight:700;
+      color:#000;letter-spacing:1px;
+      background:linear-gradient(135deg,#ffe066 0%,#e6a90e 50%,#b8820a 100%);
+      box-shadow:0 3px 14px rgba(230,169,14,0.55),inset 0 1px 0 rgba(255,230,80,0.5),0 1px 0 rgba(0,0,0,0.15);
+      padding:5px 14px;border-radius:50px;
+      text-shadow:0 1px 1px rgba(0,0,0,0.15);
+    }
+    .rc-badge-dot{width:6px;height:6px;border-radius:50%;background:#000;opacity:0.6}
+    .rc-sub{font-size:10px;color:rgba(255,255,255,0.3);margin-top:8px;font-family:'Space Mono',monospace;letter-spacing:.5px}
 
     @media(max-width:1024px){.dash-layout{grid-template-columns:1fr}.ring-wrap{width:280px;height:280px}}
     @media(max-width:600px){.dash-cards{grid-template-columns:1fr}.ring-wrap{width:260px;height:260px}}
@@ -365,19 +441,39 @@
     /* EV badge */
     .ev-badge-val{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:var(--green);background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);padding:3px 8px;border-radius:4px;margin-top:6px}
     .ev-badge-high{color:#00C8FF;background:rgba(0,200,255,.1);border-color:rgba(0,200,255,.3)}
-    /* Stats bar below table */
+    /* Stats KPI cards */
     .pred-kpis{
       display:grid;grid-template-columns:repeat(4,1fr);
-      border-top:1px solid var(--border);
+      gap:0;border-top:1px solid var(--border);
+      background:var(--bg0);
     }
     .pred-kpi{
-      padding:20px 24px;border-right:1px solid var(--border);
-      display:flex;flex-direction:column;gap:4px;
+      padding:28px 24px 24px;
+      border-right:1px solid var(--border);
+      display:flex;flex-direction:column;gap:0;
+      position:relative;overflow:hidden;
+      transition:background .25s;
     }
     .pred-kpi:last-child{border-right:none}
-    .pred-kpi-l{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3)}
-    .pred-kpi-v{font-family:'Bebas Neue',cursive;font-size:28px;color:var(--gold);line-height:1}
-    .pred-kpi-s{font-size:12px;color:var(--t2)}
+    .pred-kpi::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+    }
+    .pred-kpi:nth-child(1)::before{background:linear-gradient(90deg,#e6a90e,#ffe066)}
+    .pred-kpi:nth-child(2)::before{background:linear-gradient(90deg,#22c55e,#4ade80)}
+    .pred-kpi:nth-child(3)::before{background:linear-gradient(90deg,var(--gold),var(--goldl))}
+    .pred-kpi:nth-child(4)::before{background:linear-gradient(90deg,var(--purple),#a78bfa)}
+    .pred-kpi:hover{background:rgba(255,255,255,0.02)}
+    .pred-kpi-l{
+      font-family:'Space Mono',monospace;font-size:9px;
+      letter-spacing:2px;text-transform:uppercase;
+      color:var(--t3);margin-bottom:10px;
+    }
+    .pred-kpi-v{
+      font-family:'Bebas Neue',cursive;font-size:46px;
+      line-height:1;margin-bottom:6px;
+      display:flex;align-items:baseline;gap:3px;
+    }
+    .pred-kpi-s{font-size:11px;color:var(--t3);letter-spacing:.2px}
 
     /* ── PRÓXIMOS EVENTOS ── */
     .upcoming-wrap{
@@ -526,8 +622,8 @@
     .plan-feats li{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--t2)}
     .plan-feats li::before{content:'✓';width:20px;height:20px;border-radius:50%;background:var(--greend);border:1px solid rgba(34,197,94,.25);color:var(--green);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .btn-plan{width:100%;display:block;text-align:center;font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;padding:15px;border-radius:7px;transition:all .25s;border:none;cursor:pointer}
-    .btn-plan.gold{color:#000;background:linear-gradient(135deg,var(--gold),#7B5CF0);box-shadow:0 4px 24px rgba(0,200,255,.35)}
-    .btn-plan.gold:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(0,200,255,.55)}
+    .btn-plan.gold{color:#000;background:linear-gradient(135deg,#f5c842 0%,#e6a90e 35%,#c47f05 65%,#f5c842 100%);background-size:200% auto;box-shadow:0 4px 24px rgba(230,169,14,0.45),inset 0 1px 0 rgba(255,225,90,0.4);text-shadow:0 1px 2px rgba(0,0,0,0.2)}
+    .btn-plan.gold:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 10px 40px rgba(230,169,14,0.65),inset 0 1px 0 rgba(255,225,90,0.4)}
     .btn-plan.out{color:var(--green);background:transparent;border:1px solid rgba(34,197,94,.4)}
     .btn-plan.out:hover{background:var(--greend);border-color:var(--green);transform:translateY(-3px)}
     /* MLM */
@@ -601,8 +697,8 @@
     .fg textarea{resize:vertical;min-height:110px}
     .fg select option{background:var(--bg2)}
     .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .btn-send{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;color:#000;background:linear-gradient(135deg,var(--gold),#7B5CF0);padding:15px 32px;border-radius:7px;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 20px rgba(0,200,255,.3)}
-    .btn-send:hover{transform:translateY(-3px);box-shadow:0 8px 36px rgba(0,200,255,.5)}
+    .btn-send{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;color:#000;background:linear-gradient(135deg,#f5c842 0%,#e6a90e 35%,#c47f05 65%,#f5c842 100%);background-size:200% auto;padding:15px 32px;border-radius:7px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(230,169,14,0.45),inset 0 1px 0 rgba(255,225,90,0.4);text-shadow:0 1px 2px rgba(0,0,0,0.2)}
+    .btn-send:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 8px 36px rgba(230,169,14,0.65)}
 
     /* ── FOOTER ── */
     footer{background:var(--bg1);border-top:1px solid var(--border);padding:64px 0 28px;position:relative;z-index:2}
@@ -802,25 +898,24 @@
 <div class="leagues-bar">
   <div class="leagues-track-w">
     <div class="leagues-track">
-      <div class="league-item"><span>🇪🇸</span><strong>LaLiga</strong><span>España</span></div>
-      <div class="league-item"><span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><strong>Premier League</strong><span>Inglaterra</span></div>
-      <div class="league-item"><span>🇩🇪</span><strong>Bundesliga</strong><span>Alemania</span></div>
-      <div class="league-item"><span>🇮🇹</span><strong>Serie A</strong><span>Italia</span></div>
-      <div class="league-item"><span>🇫🇷</span><strong>Ligue 1</strong><span>Francia</span></div>
-      <div class="league-item"><span>🌍</span><strong>Champions League</strong><span>UEFA</span></div>
-      <div class="league-item"><span>🇺🇸</span><strong>NBA</strong><span>Basketball</span></div>
-      <div class="league-item"><span>🌎</span><strong>Copa Libertadores</strong><span>CONMEBOL</span></div>
-      <div class="league-item"><span>🇨🇴</span><strong>Liga BetPlay</strong><span>Colombia</span></div>
-      <!-- duplicado -->
-      <div class="league-item"><span>🇪🇸</span><strong>LaLiga</strong><span>España</span></div>
-      <div class="league-item"><span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><strong>Premier League</strong><span>Inglaterra</span></div>
-      <div class="league-item"><span>🇩🇪</span><strong>Bundesliga</strong><span>Alemania</span></div>
-      <div class="league-item"><span>🇮🇹</span><strong>Serie A</strong><span>Italia</span></div>
-      <div class="league-item"><span>🇫🇷</span><strong>Ligue 1</strong><span>Francia</span></div>
-      <div class="league-item"><span>🌍</span><strong>Champions League</strong><span>UEFA</span></div>
-      <div class="league-item"><span>🇺🇸</span><strong>NBA</strong><span>Basketball</span></div>
-      <div class="league-item"><span>🌎</span><strong>Copa Libertadores</strong><span>CONMEBOL</span></div>
-      <div class="league-item"><span>🇨🇴</span><strong>Liga BetPlay</strong><span>Colombia</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇪🇸</span><strong>LaLiga</strong><span>España</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><strong>Premier League</strong><span>Inglaterra</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇩🇪</span><strong>Bundesliga</strong><span>Alemania</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇮🇹</span><strong>Serie A</strong><span>Italia</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇫🇷</span><strong>Ligue 1</strong><span>Francia</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🌍</span><strong>Champions League</strong><span>UEFA</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇺🇸</span><strong>NBA</strong><span>Basketball</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🌎</span><strong>Copa Libertadores</strong><span>CONMEBOL</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇨🇴</span><strong>Liga BetPlay</strong><span>Colombia</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇪🇸</span><strong>LaLiga</strong><span>España</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><strong>Premier League</strong><span>Inglaterra</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇩🇪</span><strong>Bundesliga</strong><span>Alemania</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇮🇹</span><strong>Serie A</strong><span>Italia</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇫🇷</span><strong>Ligue 1</strong><span>Francia</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🌍</span><strong>Champions League</strong><span>UEFA</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇺🇸</span><strong>NBA</strong><span>Basketball</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🌎</span><strong>Copa Libertadores</strong><span>CONMEBOL</span></div>
+      <div class="league-item"><div class="ldot"></div><span>🇨🇴</span><strong>Liga BetPlay</strong><span>Colombia</span></div>
     </div>
   </div>
 </div>
@@ -836,28 +931,39 @@
         <div class="dc gold-card rv d1">
           <span class="dc-pill gp">Predicciones Correctas</span>
           <div class="dc-ico gi">📊</div>
-          <div class="dc-val"><span id="dash-wins" class="snum" style="font-size:52px;color:var(--t1)">0</span><span class="dc-suf" id="dash-total">&nbsp;/ —</span></div>
+          <div class="dc-val">
+            <span id="dash-wins" class="snum" style="font-size:58px;background:linear-gradient(135deg,#ffe066,#e6a90e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">0</span>
+            <span class="dc-suf" id="dash-total">&nbsp;/ —</span>
+          </div>
           <div class="dc-sub">Últimos 30 días</div>
         </div>
 
         <div class="dc dark-card rv d2">
           <span class="dc-pill dp">Yield Verificado</span>
           <div class="dc-ico bi">📈</div>
-          <div class="dc-val"><span class="dc-pre">+</span><span id="dash-roi" class="snum" style="font-size:52px;color:var(--t1)">0</span><span class="dc-suf">%</span></div>
+          <div class="dc-val">
+            <span class="dc-pre" style="color:var(--gold)">+</span>
+            <span id="dash-roi" class="snum" style="font-size:58px;color:var(--gold)">0</span>
+            <span class="dc-suf" style="color:var(--gold)">%</span>
+          </div>
           <div class="dc-sub">Ganancia por unidad apostada</div>
         </div>
 
         <div class="dc green-card rv d3">
           <span class="dc-pill grp">Partidos Analizados</span>
           <div class="dc-ico gri">🔬</div>
-          <div class="dc-val"><span id="dash-total2" class="snum" style="font-size:52px;color:var(--t1)">0</span></div>
+          <div class="dc-val">
+            <span id="dash-total2" class="snum" style="font-size:58px;color:#4ade80">0</span>
+          </div>
           <div class="dc-sub">Con modelo activo</div>
         </div>
 
         <div class="dc blue-card rv d4">
           <span class="dc-pill bp">Racha Actual</span>
           <div class="dc-ico bi">🔥</div>
-          <div class="dc-val"><span id="dash-racha" class="snum" style="font-size:52px;color:var(--t1)">0</span></div>
+          <div class="dc-val">
+            <span id="dash-racha" class="snum" style="font-size:58px;color:#a78bfa">0</span>
+          </div>
           <div class="dc-sub">Aciertos consecutivos</div>
         </div>
 
@@ -866,14 +972,54 @@
       <!-- Anillo de puntos hero -->
       <div class="rv d2">
         <div class="ring-wrap">
+          <!-- Fondo glow -->
+          <div class="ring-bg"></div>
+          <!-- Scan sweep -->
+          <div class="ring-scan"></div>
+          <!-- SVG decorativo: anillos concéntricos + arco de progreso -->
+          <svg class="ring-svg-deco" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Anillos decorativos -->
+            <circle cx="180" cy="180" r="170" stroke="rgba(230,169,14,0.06)" stroke-width="1"/>
+            <circle cx="180" cy="180" r="148" stroke="rgba(230,169,14,0.04)" stroke-width="0.5"/>
+            <circle cx="180" cy="180" r="100" stroke="rgba(230,169,14,0.05)" stroke-width="0.8"/>
+            <!-- Arco de progreso dorado al 43% (desde -90° = 1.533 rad de circunferencia) -->
+            <!-- circumference r=148: 2π×148≈929.9 · 43%≈399.9 -->
+            <circle cx="180" cy="180" r="148"
+              stroke="url(#goldArc)" stroke-width="3"
+              stroke-linecap="round" stroke-dasharray="400 930"
+              stroke-dashoffset="0"
+              transform="rotate(-90 180 180)"
+              opacity="0.7"/>
+            <!-- Crucetas en los ejes -->
+            <line x1="180" y1="10" x2="180" y2="24" stroke="rgba(230,169,14,0.3)" stroke-width="1.5"/>
+            <line x1="180" y1="336" x2="180" y2="350" stroke="rgba(230,169,14,0.3)" stroke-width="1.5"/>
+            <line x1="10" y1="180" x2="24" y2="180" stroke="rgba(230,169,14,0.3)" stroke-width="1.5"/>
+            <line x1="336" y1="180" x2="350" y2="180" stroke="rgba(230,169,14,0.3)" stroke-width="1.5"/>
+            <!-- Punto final del arco (43%) -->
+            <circle cx="180" cy="180" r="148" fill="none" opacity="0">
+              <!-- marcador invisible, el dot se posiciona con transform -->
+            </circle>
+            <!-- Punto inicial del arco -->
+            <circle cx="180" cy="32" r="4" fill="#e6a90e" opacity="0.9"/>
+            <defs>
+              <linearGradient id="goldArc" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ffe066"/>
+                <stop offset="60%" stop-color="#e6a90e"/>
+                <stop offset="100%" stop-color="#c47f05"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <!-- Dots JS -->
           <div class="dot-ring" id="dotRing"></div>
+          <!-- Centro -->
           <div class="ring-center">
             <div class="rc-label">Tasa de Aciertos</div>
             <div class="rc-val">
-              <span id="dash-tasa" class="snum" style="font-size:86px;color:var(--t1)" id="ringNum">0</span>
+              <span id="dash-tasa" class="snum" style="font-size:92px;color:var(--t1)">0</span>
               <span class="rc-val-pct">%</span>
             </div>
-            <div class="rc-badge"><div class="hero-dot" style="background:#000;width:6px;height:6px"></div>MODELO IA ACTIVO</div>
+            <div class="rc-divider"></div>
+            <div class="rc-badge"><div class="rc-badge-dot"></div>MODELO IA ACTIVO</div>
             <div class="rc-sub">Modelo v2.0 · 2026</div>
           </div>
         </div>
@@ -986,24 +1132,37 @@
       </div>
       <div class="pred-kpis">
         <div class="pred-kpi">
-          <div class="pred-kpi-l">Últimos 30 días</div>
-          <div class="pred-kpi-v"><span id="kpi-wins" class="snum" style="font-size:28px">—</span><span id="kpi-total" style="font-family:'Bebas Neue';font-size:18px;color:var(--t3)"></span></div>
+          <div class="pred-kpi-l">Win Rate · 30 días</div>
+          <div class="pred-kpi-v">
+            <span id="kpi-wins" style="font-family:'Bebas Neue',cursive;font-size:46px;background:linear-gradient(135deg,#ffe066,#e6a90e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">—</span>
+            <span id="kpi-total" style="font-family:'Bebas Neue',cursive;font-size:22px;color:var(--t3)"></span>
+          </div>
           <div class="pred-kpi-s">predicciones correctas</div>
         </div>
         <div class="pred-kpi">
-          <div class="pred-kpi-l">Racha Actual</div>
-          <div class="pred-kpi-v"><span id="kpi-racha" class="snum" style="font-size:28px">—</span></div>
-          <div class="pred-kpi-s">aciertos consecutivos</div>
-        </div>
-        <div class="pred-kpi">
           <div class="pred-kpi-l">Yield Verificado</div>
-          <div class="pred-kpi-v"><span id="kpi-roi-sign">+</span><span id="kpi-roi" class="snum" style="font-size:28px">—</span><span id="kpi-roi-pct" style="font-family:'Bebas Neue';font-size:18px;color:var(--gold)">%</span></div>
+          <div class="pred-kpi-v">
+            <span id="kpi-roi-sign" style="font-family:'Bebas Neue',cursive;font-size:46px;color:#22c55e">+</span>
+            <span id="kpi-roi" style="font-family:'Bebas Neue',cursive;font-size:46px;color:#22c55e">—</span>
+            <span id="kpi-roi-pct" style="font-family:'Bebas Neue',cursive;font-size:26px;color:#4ade80">%</span>
+          </div>
           <div class="pred-kpi-s">ganancia por unidad apostada</div>
         </div>
         <div class="pred-kpi">
+          <div class="pred-kpi-l">Racha Actual</div>
+          <div class="pred-kpi-v">
+            <span style="font-family:'Bebas Neue',cursive;font-size:36px;color:var(--gold)">+</span>
+            <span id="kpi-racha" style="font-family:'Bebas Neue',cursive;font-size:46px;color:var(--gold)">—</span>
+            <span style="font-family:'Bebas Neue',cursive;font-size:24px;color:var(--t3)">WIN</span>
+          </div>
+          <div class="pred-kpi-s">aciertos consecutivos</div>
+        </div>
+        <div class="pred-kpi">
           <div class="pred-kpi-l">Cuota Promedio</div>
-          <div class="pred-kpi-v"><span id="kpi-odds" style="font-size:28px;color:var(--gold);font-family:'Bebas Neue',cursive">—</span></div>
-          <div class="pred-kpi-s">valor medio por apuesta</div>
+          <div class="pred-kpi-v">
+            <span id="kpi-odds" style="font-family:'Bebas Neue',cursive;font-size:46px;color:#a78bfa">—</span>
+          </div>
+          <div class="pred-kpi-s">valor medio acertado</div>
         </div>
       </div>
 
@@ -1220,7 +1379,7 @@
           <div class="calc-res"><span class="calc-res-lbl">ROI mensual estimado</span><span class="calc-res-val gold" id="r-roi">+8.8%</span></div>
         </div>
         <div class="calc-disc">
-          Proyecciones basadas en 82% de precisión histórica, cuotas promedio 1.85 y 5 eventos semanales. Los resultados pasados no garantizan rendimientos futuros.
+          Proyecciones basadas en 43% de tasa de aciertos verificada, cuotas promedio 2.10 y mínimo 21 eventos semanales (3/día). Los resultados pasados no garantizan rendimientos futuros.
         </div>
       </div>
     </div>
@@ -1795,9 +1954,9 @@ function setRisk(pct, btn) {
 function calcular() {
   const bankroll = parseFloat(document.getElementById('calc-bankroll').value) || 0;
   const stake    = bankroll * (currentRisk / 100);
-  const WIN_RATE = 0.62;
-  const AVG_ODDS = 1.85;
-  const BETS     = 5;
+  const WIN_RATE = 0.43;   // tasa real verificada SharpIQ
+  const AVG_ODDS = 2.45;   // cuota promedio picks VIP (solo apuestas con EV+)
+  const BETS     = 21;     // mínimo 3 picks/día × 7 días
   const evPerBet  = stake * (WIN_RATE * AVG_ODDS - 1);
   const weekly    = evPerBet * BETS;
   const monthly   = weekly * 4;
@@ -1805,9 +1964,9 @@ function calcular() {
   const fmt = v => '$' + Math.round(v).toLocaleString('es-CO');
   document.getElementById('r-stake').textContent = fmt(stake);
   document.getElementById('r-bets').textContent  = BETS + ' eventos';
-  document.getElementById('r-week').textContent  = '+' + fmt(weekly);
-  document.getElementById('r-month').textContent = '+' + fmt(monthly);
-  document.getElementById('r-roi').textContent   = '+' + roi.toFixed(1) + '%';
+  document.getElementById('r-week').textContent  = (weekly >= 0 ? '+' : '') + fmt(weekly);
+  document.getElementById('r-month').textContent = (monthly >= 0 ? '+' : '') + fmt(monthly);
+  document.getElementById('r-roi').textContent   = (roi >= 0 ? '+' : '') + roi.toFixed(1) + '%';
 }
 // inicializar calculadora al cargar
 document.addEventListener('DOMContentLoaded', calcular);

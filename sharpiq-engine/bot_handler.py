@@ -14,8 +14,12 @@ from config import (TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, TELEGRAM_YAMID_ID,
 
 DB_PATH  = os.path.join(BASE_DIR, "sharpiq.db")
 API_URL  = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
-MP_PLAN  = "79abf20272b64347b16a901055c89d8c"
-MP_LINK  = f"https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id={MP_PLAN}"
+MP_PLAN = "79abf20272b64347b16a901055c89d8c"
+
+def mp_link(chat_id):
+    """Link de MP con external_reference = chat_id para auto-activar sin pedir email."""
+    return (f"https://www.mercadopago.com.co/subscriptions/checkout"
+            f"?preapproval_plan_id={MP_PLAN}&external_reference={chat_id}")
 
 # ── DB ────────────────────────────────────────────────────────────
 
@@ -124,7 +128,8 @@ def notificar_yamid(mensaje):
 
 # ── ESTADOS DE CONVERSACIÓN ───────────────────────────────────────
 
-_esperando_email = {}   # chat_id → True
+_esperando_email  = {}   # chat_id → True
+_esperando_metodo = {}   # chat_id → método elegido ('mp' | 'paypal')
 
 
 # ── HANDLERS ─────────────────────────────────────────────────────
@@ -229,15 +234,6 @@ def handle_start(chat_id, username, first_name, ref_codigo=None):
         with _db() as c:
             ya = c.execute("SELECT 1 FROM referidos WHERE referido_id=?", (chat_id,)).fetchone()
             if not ya and ref_codigo != codigo_referido(chat_id):
-                c.execute("""INSERT OR IGNORE INTO referidos
-                             (codigo, referidor_id, referidor_user, referido_id, referido_user, creado)
-                             VALUES (?,
-                                (SELECT chat_id FROM vip_pendientes WHERE chat_id=(
-                                    SELECT MIN(chat_id) FROM vip_pendientes
-                                ) LIMIT 1),
-                                ?, ?, ?, ?)""",
-                          (ref_codigo, ref_codigo, chat_id, username, datetime.now().isoformat()))
-                # Buscar referidor por código
                 referidor_id = None
                 for row in _listar_todos():
                     if codigo_referido(row[0]) == ref_codigo:
@@ -251,14 +247,20 @@ def handle_start(chat_id, username, first_name, ref_codigo=None):
                                    (ref_codigo, referidor_id, ref_codigo, chat_id, username, datetime.now().isoformat()))
                     notificar_yamid(f"🔗 Nuevo referido\nReferidor ID: {referidor_id}\nNuevo usuario: @{username}")
 
-    _esperando_email[chat_id] = True
+    link = mp_link(chat_id)
+    # Guardar chat_id en DB esperando confirmación de pago
+    guardar_pendiente(chat_id, username, f"pending_{chat_id}@mp")
+
     enviar(chat_id,
         f"👋 Hola <b>{first_name}</b>, bienvenido a <b>SharpIQ VIP</b>.\n\n"
-        f"🎯 Predicciones con IA · Corners · Tarjetas · Handicap · Alertas en vivo\n\n"
-        f"Para activar tu membresía automáticamente después del pago, "
-        f"necesito tu email de Mercado Pago.\n\n"
-        f"✉️ <b>¿Cuál es tu email?</b>\n\n"
-        f"<i>O escribe /prueba para 7 días gratis</i>"
+        f"📊 Picks diarios con IA · Corners · Tarjetas · Alertas en vivo\n"
+        f"✅ Acceso inmediato al canal VIP tras el pago\n"
+        f"💰 <b>$10 USD/mes</b> — cancela cuando quieras\n\n"
+        f"👇 Toca el botón para activar tu membresía:",
+        reply_markup={"inline_keyboard": [
+            [{"text": "💳 Suscribirme ahora — $10 USD/mes", "url": link}],
+            [{"text": "🎁 Probar 7 días GRATIS",            "callback_data": "pago_prueba"}]
+        ]}
     )
 
 def _listar_todos():
@@ -281,27 +283,46 @@ def handle_status(chat_id):
 
 # ── ACTIVACIÓN POR EMAIL (llamada desde webhook) ──────────────────
 
-def activar_por_email(email_pagador):
-    """Llama esto cuando MP confirma un pago. Envía acceso VIP al usuario."""
-    row = buscar_por_email(email_pagador)
-    if not row:
-        notificar_yamid(f"⚠️ Pago recibido de {email_pagador} pero no hay usuario registrado con ese email.")
-        return False
+def activar_por_referencia(external_reference):
+    """
+    Activa VIP usando external_reference = chat_id (sin necesitar email).
+    Llama esto desde el webhook de MP cuando confirma el pago.
+    """
+    try:
+        chat_id = int(external_reference)
+    except (ValueError, TypeError):
+        # Fallback: intentar por email (compatibilidad con flujo antiguo)
+        return activar_por_email(external_reference)
 
-    chat_id, username = row
+    with _db() as c:
+        row = c.execute("SELECT username FROM vip_pendientes WHERE chat_id=?",
+                        (chat_id,)).fetchone()
+    username = row[0] if row else "usuario"
+
     link = crear_link_vip()
     if not link:
-        notificar_yamid(f"❌ No se pudo generar link VIP para @{username} ({email_pagador})")
+        notificar_yamid(f"❌ No se pudo generar link VIP para chat_id {chat_id}")
         return False
 
     activar_vip(chat_id)
     enviar(chat_id,
         f"🎉 <b>¡Pago confirmado! Acceso VIP activado.</b>\n\n"
         f"Únete al canal SharpIQ VIP con este link exclusivo:\n{link}\n\n"
+        f"✅ Acceso a todos los picks diarios\n"
+        f"✅ Alertas en vivo durante partidos\n\n"
         f"<i>SharpIQ — La ventaja inteligente</i>"
     )
-    notificar_yamid(f"💰 NUEVO VIP activado automáticamente\n👤 @{username} | {email_pagador}")
+    notificar_yamid(f"💰 NUEVO VIP activado\n👤 @{username} | chat_id: {chat_id}")
     return True
+
+def activar_por_email(email_pagador):
+    """Fallback: activa por email (flujo antiguo o casos especiales)."""
+    row = buscar_por_email(email_pagador)
+    if not row:
+        notificar_yamid(f"⚠️ Pago de {email_pagador} sin usuario registrado.")
+        return False
+    chat_id, username = row
+    return activar_por_referencia(str(chat_id))
 
 
 # ── POLLING LOOP ──────────────────────────────────────────────────

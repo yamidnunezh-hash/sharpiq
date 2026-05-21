@@ -43,7 +43,7 @@ export default {
 
 async function procesarPago(env, tipo, dataId) {
   try {
-    // Obtener detalles del pago/suscripción desde MP
+    let chatId = null;
     let emailPagador = null;
     let estado = null;
 
@@ -51,31 +51,31 @@ async function procesarPago(env, tipo, dataId) {
       const data = await mpGet(env, `/v1/payments/${dataId}`);
       estado = data?.status;
       emailPagador = data?.payer?.email;
+      // external_reference trae el chat_id de Telegram
+      chatId = data?.external_reference || null;
     } else {
       // preapproval / subscription
       const data = await mpGet(env, `/preapproval/${dataId}`);
       estado = data?.status;
-      emailPagador = data?.payer_email || data?.external_reference;
+      emailPagador = data?.payer_email;
+      chatId = data?.external_reference || null;
     }
 
     if (estado !== "authorized" && estado !== "approved" && estado !== "active") {
-      await notificarYamid(env, `ℹ️ Webhook MP recibido: ${tipo} | estado: ${estado} | no requiere acción`);
-      return;
+      return; // pago pendiente o rechazado — no hacer nada
     }
 
-    if (!emailPagador) {
-      await notificarYamid(env, `⚠️ Pago aprobado (${dataId}) pero sin email del pagador.`);
-      return;
+    // Prioridad 1: usar external_reference (chat_id directo, sin email)
+    if (!chatId && emailPagador) {
+      // Fallback: buscar por email en KV (usuarios registrados con flujo antiguo)
+      chatId = await env.SHARPIQ_KV.get(`email:${emailPagador.toLowerCase()}`);
     }
-
-    // Buscar chat_id por email en KV
-    const chatId = await env.SHARPIQ_KV.get(`email:${emailPagador.toLowerCase()}`);
 
     if (!chatId) {
       await notificarYamid(env,
-        `💰 Pago aprobado de <b>${emailPagador}</b>\n` +
-        `⚠️ No hay usuario Telegram registrado con ese email.\n` +
-        `ID pago/suscripción: ${dataId}`
+        `💰 Pago aprobado\n` +
+        `✉️ ${emailPagador || "sin email"} | ID: ${dataId}\n` +
+        `⚠️ No se pudo identificar al usuario Telegram. Activa manualmente con /activar.`
       );
       return;
     }
@@ -83,7 +83,7 @@ async function procesarPago(env, tipo, dataId) {
     // Generar link de invitación único (1 solo uso)
     const inviteLink = await crearLinkVip(env);
     if (!inviteLink) {
-      await notificarYamid(env, `❌ Error generando link VIP para ${emailPagador}`);
+      await notificarYamid(env, `❌ Error generando link VIP para chat_id ${chatId}`);
       return;
     }
 
@@ -91,16 +91,17 @@ async function procesarPago(env, tipo, dataId) {
     await tgSend(env, chatId,
       `🎉 <b>¡Pago confirmado! Acceso VIP activado.</b>\n\n` +
       `Únete al canal SharpIQ VIP con este link exclusivo:\n${inviteLink}\n\n` +
+      `✅ Picks diarios · Alertas en vivo · Análisis IA\n\n` +
       `<i>SharpIQ — La ventaja inteligente</i>`
     );
 
-    // Marcar como activado en KV
-    await env.SHARPIQ_KV.put(`email:${emailPagador.toLowerCase()}`, `activated:${chatId}`);
+    // Marcar activado en KV
+    await env.SHARPIQ_KV.put(`vip:${chatId}`, `active:${Date.now()}`);
 
     await notificarYamid(env,
       `💰 <b>NUEVO VIP activado automáticamente</b>\n` +
-      `✉️ ${emailPagador}\n` +
-      `chat_id: ${chatId}`
+      `chat_id: ${chatId}\n` +
+      (emailPagador ? `✉️ ${emailPagador}` : "")
     );
 
   } catch (err) {
