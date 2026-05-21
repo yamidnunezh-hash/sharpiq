@@ -1264,11 +1264,28 @@ def reporte_del_dia():
 
         predicciones.append(pred)
 
-    # Ordenar: primero value bets, luego por confianza
-    predicciones.sort(key=lambda x: (
-        any(v["tiene_valor"] for v in x["value_bets"].values()),
-        x["confianza"]
-    ), reverse=True)
+    # Prioridad por competición — partidos grandes siempre primero
+    PRIORIDAD_LIGA = {
+        "2": 100, "CL": 100,        # Champions League
+        "3": 90,  "EL": 90,         # Europa League
+        "848": 85,                   # Conference League
+        "1": 95,                     # Mundial FIFA
+        "39": 70, "PL": 70,         # Premier League
+        "140": 68, "PD": 68,        # La Liga
+        "78": 65, "BL1": 65,        # Bundesliga
+        "135": 63, "SA": 63,        # Serie A
+        "61": 60, "FL1": 60,        # Ligue 1
+        "13": 55, "CLI": 55,        # Copa Libertadores
+        "11": 50, "CSA": 50,        # Copa Sudamericana
+    }
+
+    def _score_pred(p):
+        liga_prio = PRIORIDAD_LIGA.get(str(p.get("liga_code", "")), 30)
+        tiene_valor = any(v.get("tiene_valor") for v in p["value_bets"].values())
+        mejor_ev = max((v.get("ev_porcentaje", 0) for v in p["value_bets"].values()), default=0)
+        return (liga_prio * 0.4) + (mejor_ev * 0.4) + (p["confianza"] * 0.2) + (50 if tiene_valor else 0)
+
+    predicciones.sort(key=_score_pred, reverse=True)
 
     return {
         "fecha": date.today().isoformat(),

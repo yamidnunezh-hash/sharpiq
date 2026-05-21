@@ -93,54 +93,69 @@ def correr():
     except Exception as e:
         print(f"  Saludo free error: {e}")
 
-    # Buscar mejor predicción con cuota real y EV >= 15%
-    candidatos = []
+    MIN_PICKS = 3   # Mínimo de predicciones diarias — siempre hay análisis
+    EV_ALTO   = 10  # EV >= 10% → "ALTO VALOR"
+    EV_MIN    = 0   # EV >= 0%  → "Valor moderado"
+
+    # Construir pool de candidatos con score compuesto
+    PRIORIDAD_LIGA = {
+        "2": 100, "3": 90, "848": 85, "1": 95,
+        "39": 70, "140": 68, "78": 65, "135": 63, "61": 60,
+        "13": 55, "11": 50, "128": 45,
+    }
+
+    pool = []
     for pred in reporte.get("predicciones", []):
-        if not pred.get("cuotas_reales"):
-            continue  # Solo cuotas reales — nunca estimadas
+        liga_prio = PRIORIDAD_LIGA.get(str(pred.get("liga_code", "")), 30)
+        # Encontrar el mejor mercado para este partido
+        mejor_mercado, mejor_vb, mejor_ev = None, None, -999
         for mercado, vb in pred.get("value_bets", {}).items():
-            if not vb or not vb.get("tiene_valor"):
+            if not vb:
                 continue
-            if vb.get("ev_porcentaje", 0) < 15:
-                continue
-            candidatos.append((pred, mercado, vb))
+            ev_val = vb.get("ev_porcentaje", 0)
+            if ev_val > mejor_ev:
+                mejor_ev = ev_val
+                mejor_mercado = mercado
+                mejor_vb = vb
+        if mejor_mercado is None:
+            # Usar predicción principal si no hay value bets
+            m = pred.get("prediccion_principal", {}).get("mercado", "Victoria Local (1)")
+            mejor_mercado = {"Victoria Local (1)": "victoria_local", "Empate (X)": "empate",
+                             "Victoria Visitante (2)": "victoria_visita"}.get(m, "victoria_local")
+            mejor_vb = {"ev_porcentaje": 0, "clasificacion": "ANALISIS", "tiene_valor": False}
+            mejor_ev = 0
+        score = liga_prio * 0.5 + mejor_ev * 0.3 + pred.get("confianza", 50) * 0.2
+        pool.append((pred, mejor_mercado, mejor_vb, mejor_ev, score))
 
-    # Fallback: si no hay EV >= 15%, tomar el mejor candidato con cualquier EV positivo
-    if not candidatos:
-        print("  Sin EV >= 15% — buscando mejor candidato del día...")
-        for pred in reporte.get("predicciones", []):
-            for mercado, vb in pred.get("value_bets", {}).items():
-                if not vb or vb.get("ev_porcentaje", 0) <= 0:
-                    continue
-                candidatos.append((pred, mercado, vb))
+    if not pool:
+        try:
+            from telegram_alertas import enviar_aviso_yamid
+            enviar_aviso_yamid(f"⚠️ SharpIQ {date.today().isoformat()} — Sin partidos para analizar hoy.")
+        except Exception:
+            pass
+        return
 
-    # Último recurso: mejor predicción por confianza, con o sin cuota real
-    if not candidatos:
-        print("  Sin value bets positivos — usando predicción de mayor confianza")
-        for pred in reporte.get("predicciones", []):
-            mercado = pred.get("prediccion_principal", {}).get("mercado", "victoria_local")
-            mercado_key = {
-                "Victoria Local (1)": "victoria_local",
-                "Empate (X)": "empate",
-                "Victoria Visitante (2)": "victoria_visita",
-            }.get(mercado, "victoria_local")
-            vb = {"ev_porcentaje": 0, "clasificacion": "ANALISIS", "tiene_valor": False}
-            candidatos.append((pred, mercado_key, vb))
-        if not candidatos:
-            try:
-                from telegram_alertas import enviar_aviso_yamid
-                enviar_aviso_yamid(f"⚠️ SharpIQ {date.today().isoformat()} — Sin partidos para analizar hoy.")
-            except Exception:
-                pass
-            return
+    # Ordenar por score y tomar los TOP picks sin duplicar partido
+    pool.sort(key=lambda x: x[4], reverse=True)
+    picks_publicar = []
+    partidos_vistos = set()
+    for item in pool:
+        partido_key = f"{item[0]['local']} vs {item[0]['visitante']}"
+        if partido_key in partidos_vistos:
+            continue
+        if _ya_publicado(item[0]['local']):
+            continue
+        partidos_vistos.add(partido_key)
+        picks_publicar.append(item)
+        if len(picks_publicar) >= MIN_PICKS:
+            break
 
-    # Ordenar por EV descendente, priorizar ALTO VALOR
-    candidatos.sort(key=lambda x: (
-        x[2].get("clasificacion") == "ALTO VALOR",
-        x[2].get("ev_porcentaje", 0)
-    ), reverse=True)
+    if not picks_publicar:
+        print("  Todos los partidos ya publicados hoy")
+        return
 
-    pred, mercado, vb = candidatos[0]
+    # El primero es la predicción PRINCIPAL (mejor score)
+    pred, mercado, vb, ev, _ = picks_publicar[0]
     partido  = f"{pred['local']} vs {pred['visitante']}"
     liga     = pred.get("liga", "")
     hora_utc = pred.get("hora", "00:00")
@@ -263,6 +278,38 @@ def correr():
             print(f"  Push enviado a {enviados} suscriptores ✓")
     except Exception as e:
         print(f"  Push error: {e}")
+
+    # Publicar picks 2 y 3 al canal VIP (sin gif, formato compacto)
+    try:
+        from telegram_alertas import enviar_mensaje
+        from config import TELEGRAM_CHAT_ID
+        for item in picks_publicar[1:]:
+            p2, m2, vb2, ev2, _ = item
+            p2_partido = f"{p2['local']} vs {p2['visitante']}"
+            p2_liga    = p2.get("liga", "")
+            p2_hora    = _hora_cot(p2.get("hora", "00:00"))
+            p2_nombre  = nombres.get(m2, m2)
+            p2_cuota   = str(p2["cuotas"].get(cuota_map.get(m2, "1"), "?"))
+            p2_ev      = ev2
+            if ev2 >= EV_ALTO:
+                p2_tag = f"⚡ EV +{ev2}%"
+            elif ev2 > 0:
+                p2_tag = f"📈 EV +{ev2}%"
+            else:
+                p2_tag = f"🔍 Confianza {p2.get('confianza','')}%"
+            enviar_mensaje(
+                f"📋 <b>Pick adicional</b>\n\n"
+                f"⚽ <b>{p2_partido}</b>\n"
+                f"🏆 {p2_liga} | {p2_hora}\n"
+                f"📊 {p2_nombre} @ {p2_cuota}\n"
+                f"{p2_tag}\n\n"
+                f"<i>SharpIQ — La ventaja inteligente</i>",
+                chat_id=TELEGRAM_CHAT_ID
+            )
+            _agregar_a_datos_js(p2_partido, p2_liga, p2_nombre, p2_cuota, p2_hora, round(p2_ev))
+            print(f"  Pick adicional: {p2_partido} | {p2_nombre} @ {p2_cuota}")
+    except Exception as e:
+        print(f"  Picks adicionales error: {e}")
 
     return {"partido": partido, "mercado": nombre_mercado, "cuota": cuota, "ev": ev}
 
