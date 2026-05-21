@@ -290,6 +290,14 @@ def correr():
     except Exception as e:
         print(f"  Narrativa error: {e}")
 
+    # Mercados extendidos — corners, tarjetas, handicap (solo VIP)
+    try:
+        from telegram_alertas import enviar_mercados_ext_vip
+        enviar_mercados_ext_vip(pred)
+        print("  Mercados extendidos enviados (VIP) ✓")
+    except Exception as e:
+        print(f"  Mercados ext error: {e}")
+
     # Push notification a suscriptores web
     try:
         from push_notifications import enviar_push_prediccion

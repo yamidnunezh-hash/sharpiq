@@ -551,6 +551,80 @@ def enviar_narrativa(pred, mercado, vb):
         print(f"  Narrativa error: {e}")
 
 
+def enviar_mercados_ext_vip(pred):
+    """
+    Envía al canal VIP el análisis de corners, tarjetas y handicap asiático.
+    Se llama después del mensaje principal de la predicción.
+    """
+    ext = pred.get("mercados_ext", {})
+    if not ext:
+        return False
+
+    local    = pred["local"]
+    visitante = pred["visitante"]
+    corners  = ext.get("corners",  {})
+    tarjetas = ext.get("tarjetas", {})
+    handicap = ext.get("handicap", {})
+
+    # ── Corners ──────────────────────────────────────────────────
+    c_esp = corners.get("corners_esperados", "?")
+    lineas_c = [f"• Esperados: <b>{c_esp}</b> totales en el partido"]
+    for k, label in [("10", "Over/Under 9.5"), ("11", "Over/Under 10.5"), ("12", "Over/Under 11.5")]:
+        ov = corners.get(f"corners_over{k}")
+        un = corners.get(f"corners_under{k}")
+        if ov is not None:
+            cj_ov = round(100 / ov, 2) if ov > 0 else "—"
+            cj_un = round(100 / un, 2) if un and un > 0 else "—"
+            lim = int(k) - 0.5
+            lineas_c.append(
+                f"• O/U {lim}: Over {ov}% (justa {cj_ov}) | Under {un}% (justa {cj_un})"
+            )
+
+    # ── Tarjetas ─────────────────────────────────────────────────
+    t_esp = tarjetas.get("tarjetas_esperadas", "?")
+    lineas_t = [f"• Esperadas: <b>{t_esp}</b> tarjetas en el partido"]
+    for k, label in [("3", "2.5"), ("4", "3.5"), ("5", "4.5")]:
+        ov = tarjetas.get(f"tarjetas_over{k}")
+        un = tarjetas.get(f"tarjetas_under{k}")
+        if ov is not None:
+            cj_ov = round(100 / ov, 2) if ov > 0 else "—"
+            cj_un = round(100 / un, 2) if un and un > 0 else "—"
+            lim = int(k) - 0.5
+            lineas_t.append(
+                f"• O/U {lim}: Over {ov}% (justa {cj_ov}) | Under {un}% (justa {cj_un})"
+            )
+
+    # ── Handicap Asiático ─────────────────────────────────────────
+    lineas_ah = []
+    ah_map = [
+        ("ah_local_menos05",  f"{local} -0.5"),
+        ("ah_visita_mas05",   f"{visitante} +0.5"),
+        ("ah_local_menos1",   f"{local} -1"),
+        ("ah_visita_mas1",    f"{visitante} +1"),
+        ("ah_local_menos15",  f"{local} -1.5"),
+        ("ah_visita_mas15",   f"{visitante} +1.5"),
+    ]
+    for key, nombre in ah_map:
+        prob = handicap.get(key)
+        if prob is not None:
+            cj = round(100 / prob, 2) if prob > 0 else "—"
+            lineas_ah.append(f"• {nombre}: {prob}% → cuota justa <b>{cj}</b>")
+
+    texto = (
+        f"📊 <b>Análisis Extendido — SharpIQ</b>\n\n"
+        f"⚽ <b>{local} vs {visitante}</b>\n\n"
+        f"🚩 <b>CORNERS</b>\n"
+        + "\n".join(lineas_c) + "\n\n"
+        f"🟨 <b>TARJETAS</b>\n"
+        + "\n".join(lineas_t) + "\n\n"
+        f"🔢 <b>HANDICAP ASIÁTICO</b>\n"
+        + "\n".join(lineas_ah) + "\n\n"
+        f"💡 <i>Si encuentras una cuota mayor a la justa → tienes ventaja matemática</i>\n\n"
+        f"<i>SharpIQ — La ventaja inteligente</i>"
+    )
+    return enviar_mensaje(texto, chat_id=get_chat_id())
+
+
 def enviar_resultado_vip(partido, resultado_texto, emoji_resultado):
     """
     Publica el resultado de una predicción en el canal VIP con GIF celebratorio en WIN.
