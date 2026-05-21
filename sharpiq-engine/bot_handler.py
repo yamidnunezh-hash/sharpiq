@@ -32,6 +32,22 @@ def inicializar_bot_db():
             creado      TEXT,
             activado    TEXT
         )""")
+        c.execute("""CREATE TABLE IF NOT EXISTS trials (
+            chat_id     INTEGER PRIMARY KEY,
+            username    TEXT,
+            inicio      TEXT,
+            fin         TEXT,
+            usado       INTEGER DEFAULT 0
+        )""")
+        c.execute("""CREATE TABLE IF NOT EXISTS referidos (
+            codigo          TEXT PRIMARY KEY,
+            referidor_id    INTEGER,
+            referidor_user  TEXT,
+            referido_id     INTEGER,
+            referido_user   TEXT,
+            recompensa      INTEGER DEFAULT 0,
+            creado          TEXT
+        )""")
 
 def guardar_pendiente(chat_id, username, email):
     with _db() as c:
@@ -79,16 +95,24 @@ def enviar(chat_id, texto, reply_markup=None):
         payload["reply_markup"] = json.dumps(reply_markup)
     requests.post(f"{API_URL}/sendMessage", json=payload, timeout=10)
 
-def crear_link_vip():
-    """Genera un link de invitación único de un solo uso para el canal VIP."""
-    r = requests.post(f"{API_URL}/createChatInviteLink", json={
+def crear_link_vip(expire_days=None, nombre="VIP"):
+    """Genera un link de invitación único de un solo uso para el canal VIP.
+    expire_days: si se indica, el link expira en N días (para trials)."""
+    payload = {
         "chat_id": TELEGRAM_CHAT_ID,
         "member_limit": 1,
-        "name": f"VIP-{int(time.time())}"
-    }, timeout=10).json()
+        "name": f"{nombre}-{int(time.time())}"
+    }
+    if expire_days:
+        payload["expire_date"] = int(time.time()) + expire_days * 86400
+    r = requests.post(f"{API_URL}/createChatInviteLink", json=payload, timeout=10).json()
     if r.get("ok"):
         return r["result"]["invite_link"]
     return None
+
+def codigo_referido(chat_id):
+    """Genera código de referido único basado en chat_id."""
+    return f"SIQ{str(chat_id)[-5:]}"
 
 def notificar_yamid(mensaje):
     requests.post(f"{API_URL}/sendMessage", json={
@@ -147,6 +171,99 @@ def handle_activar(chat_id, username):
         notificar_yamid(f"✅ VIP activado manualmente\n👤 @{username} | chat_id: {chat_id}")
     else:
         enviar(chat_id, "⚠️ Error generando el link. Contacta a @yamidnunezh")
+
+def handle_prueba(chat_id, username):
+    """7 días gratis — un solo uso por usuario."""
+    with _db() as c:
+        usado = c.execute("SELECT usado FROM trials WHERE chat_id=?", (chat_id,)).fetchone()
+    if usado and usado[0]:
+        enviar(chat_id,
+            "⚠️ Ya usaste tu prueba gratuita de 7 días.\n\n"
+            f"Para continuar con acceso VIP:\n"
+            f"👇 <a href=\"{MP_LINK}\">Suscribirme — $10 USD/mes</a>",
+            reply_markup={"inline_keyboard": [[{"text": "💳 Suscribirme ahora", "url": MP_LINK}]]}
+        )
+        return
+
+    link = crear_link_vip(expire_days=7, nombre="TRIAL")
+    if not link:
+        enviar(chat_id, "⚠️ Error activando la prueba. Contacta a @yamidnunezh")
+        return
+
+    from datetime import timedelta
+    inicio = datetime.now()
+    fin    = inicio + timedelta(days=7)
+    with _db() as c:
+        c.execute("""INSERT OR REPLACE INTO trials (chat_id, username, inicio, fin, usado)
+                     VALUES (?,?,?,?,1)""",
+                  (chat_id, username, inicio.isoformat(), fin.isoformat()))
+
+    enviar(chat_id,
+        f"🎁 <b>¡7 días GRATIS en SharpIQ VIP!</b>\n\n"
+        f"Accede al canal con este link exclusivo:\n{link}\n\n"
+        f"⏰ Válido hasta: <b>{fin.strftime('%d/%m/%Y')}</b>\n\n"
+        f"Tendrás acceso a:\n"
+        f"✅ Picks diarios con EV\n"
+        f"✅ Corners, tarjetas, handicap\n"
+        f"✅ Alertas en vivo durante partidos\n\n"
+        f"<i>SharpIQ — La ventaja inteligente</i>"
+    )
+    notificar_yamid(f"🎁 Trial activado\n👤 @{username} | chat_id: {chat_id}\nFin: {fin.strftime('%d/%m/%Y')}")
+
+def handle_micodigo(chat_id, username):
+    """Muestra el código de referido personal y link para compartir."""
+    codigo = codigo_referido(chat_id)
+    link_ref = f"https://t.me/sharpiq_alertas_bot?start=ref_{codigo}"
+    enviar(chat_id,
+        f"🔗 <b>Tu código de referido</b>\n\n"
+        f"Código: <code>{codigo}</code>\n\n"
+        f"Comparte este link con tus amigos:\n{link_ref}\n\n"
+        f"🎁 <b>¿Cómo funciona?</b>\n"
+        f"Cuando un amigo se suscriba usando tu link, recibes <b>1 mes gratis</b>.\n\n"
+        f"<i>SharpIQ — La ventaja inteligente</i>"
+    )
+
+def handle_start(chat_id, username, first_name, ref_codigo=None):
+    # Registrar referido si viene con código
+    if ref_codigo:
+        with _db() as c:
+            ya = c.execute("SELECT 1 FROM referidos WHERE referido_id=?", (chat_id,)).fetchone()
+            if not ya and ref_codigo != codigo_referido(chat_id):
+                c.execute("""INSERT OR IGNORE INTO referidos
+                             (codigo, referidor_id, referidor_user, referido_id, referido_user, creado)
+                             VALUES (?,
+                                (SELECT chat_id FROM vip_pendientes WHERE chat_id=(
+                                    SELECT MIN(chat_id) FROM vip_pendientes
+                                ) LIMIT 1),
+                                ?, ?, ?, ?)""",
+                          (ref_codigo, ref_codigo, chat_id, username, datetime.now().isoformat()))
+                # Buscar referidor por código
+                referidor_id = None
+                for row in _listar_todos():
+                    if codigo_referido(row[0]) == ref_codigo:
+                        referidor_id = row[0]
+                        break
+                if referidor_id:
+                    with _db() as c2:
+                        c2.execute("""INSERT OR REPLACE INTO referidos
+                                      (codigo, referidor_id, referidor_user, referido_id, referido_user, creado)
+                                      VALUES (?,?,?,?,?,?)""",
+                                   (ref_codigo, referidor_id, ref_codigo, chat_id, username, datetime.now().isoformat()))
+                    notificar_yamid(f"🔗 Nuevo referido\nReferidor ID: {referidor_id}\nNuevo usuario: @{username}")
+
+    _esperando_email[chat_id] = True
+    enviar(chat_id,
+        f"👋 Hola <b>{first_name}</b>, bienvenido a <b>SharpIQ VIP</b>.\n\n"
+        f"🎯 Predicciones con IA · Corners · Tarjetas · Handicap · Alertas en vivo\n\n"
+        f"Para activar tu membresía automáticamente después del pago, "
+        f"necesito tu email de Mercado Pago.\n\n"
+        f"✉️ <b>¿Cuál es tu email?</b>\n\n"
+        f"<i>O escribe /prueba para 7 días gratis</i>"
+    )
+
+def _listar_todos():
+    with _db() as c:
+        return c.execute("SELECT chat_id FROM vip_pendientes").fetchall()
 
 def handle_status(chat_id):
     """Solo para Yamid — ver lista de pendientes."""
@@ -212,7 +329,15 @@ def correr():
                 text      = msg.get("text", "").strip()
 
                 if text.startswith("/start"):
-                    handle_start(chat_id, username, first_name)
+                    partes = text.split()
+                    ref = None
+                    if len(partes) > 1 and partes[1].startswith("ref_"):
+                        ref = partes[1][4:]
+                    handle_start(chat_id, username, first_name, ref_codigo=ref)
+                elif text.startswith("/prueba"):
+                    handle_prueba(chat_id, username)
+                elif text.startswith("/micodigo"):
+                    handle_micodigo(chat_id, username)
                 elif text.startswith("/activar"):
                     handle_activar(chat_id, username)
                 elif text.startswith("/status"):
