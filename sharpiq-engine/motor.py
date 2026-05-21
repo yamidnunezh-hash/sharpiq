@@ -21,6 +21,12 @@ try:
 except Exception:
     TELEGRAM_OK = False
 
+try:
+    from stats_mercados import analizar_mercados_ext
+    MERCADOS_EXT_OK = True
+except Exception:
+    MERCADOS_EXT_OK = False
+
 # Ruta siempre correcta sin importar desde donde se ejecute
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_PATH       = os.path.join(BASE_DIR, "..", "predicciones.json")
@@ -1181,6 +1187,14 @@ def predecir_partido(local, visitante, cuotas=None, liga_code=""):
             vb = calcular_value_bet(probs[prob_key], cuotas[mercado_key])
             if vb: value_bets[mercado_key] = vb
 
+    # Mercados extendidos: corners, tarjetas, handicap asiático
+    mercados_ext = {}
+    if MERCADOS_EXT_OK and liga_code:
+        try:
+            mercados_ext = analizar_mercados_ext(local, visitante, liga_code, probs)
+        except Exception:
+            pass
+
     return {
         "local":      local,
         "visitante":  visitante,
@@ -1190,6 +1204,7 @@ def predecir_partido(local, visitante, cuotas=None, liga_code=""):
         "kelly":      kelly_local,
         "prediccion_principal": prediccion_principal,
         "confianza":  round(max_prob, 1),
+        "mercados_ext": mercados_ext,
     }
 
 # ── GENERAR REPORTE DEL DÍA ─────────────────────────────────────
