@@ -890,6 +890,24 @@
   </div>
 </div>
 
+<!-- ── PRÓXIMOS EVENTOS (debajo de ligas) ── -->
+<div style="background:var(--bg);padding:40px 0 0">
+  <div class="wrap">
+    <div class="upcoming-wrap rv" id="upcomingWrap">
+      <div class="upcoming-header">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="live-badge" style="background:rgba(0,200,255,.12);border-color:rgba(0,200,255,.3)"><div class="hero-dot"></div>PICKS DE HOY</div>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--t3)" id="upcomingCount"></span>
+        </div>
+        <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px">EXCLUSIVO VIP — SE REVELAN 1h ANTES DEL PARTIDO</span>
+      </div>
+      <div class="upcoming-grid" id="upcomingGrid">
+        <!-- Renderizado por JS desde datos.js -->
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ── STATS DASHBOARD (estilo Xtera) ── -->
 <div class="stats-dash">
   <div class="wrap">
@@ -1050,20 +1068,6 @@
       <span class="stag rv">Predicciones Activas</span>
       <h2 class="st rv">Resultados <span>Verificables</span></h2>
       <p class="ssub rv">Historial público de predicciones con resultados reales. Sin filtros. Sin editar derrotas. Transparencia total.</p>
-    </div>
-
-    <!-- ── PRÓXIMOS EVENTOS ── -->
-    <div class="upcoming-wrap rv" id="upcomingWrap">
-      <div class="upcoming-header">
-        <div style="display:flex;align-items:center;gap:10px">
-          <div class="live-badge" style="background:rgba(0,200,255,.12);border-color:rgba(0,200,255,.3)"><div class="hero-dot"></div>PRÓXIMOS EVENTOS</div>
-          <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--t3)" id="upcomingCount"></span>
-        </div>
-        <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px">EXCLUSIVO VIP — SE REVELAN 1h ANTES DEL PARTIDO</span>
-      </div>
-      <div class="upcoming-grid" id="upcomingGrid">
-        <!-- Renderizado por JS desde datos.js -->
-      </div>
     </div>
 
     <!-- ── HISTORIAL ── -->
