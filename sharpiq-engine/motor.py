@@ -27,6 +27,12 @@ try:
 except Exception:
     MERCADOS_EXT_OK = False
 
+try:
+    from xg_integracion import ajustar_con_xg
+    XG_OK = True
+except Exception:
+    XG_OK = False
+
 # Ruta siempre correcta sin importar desde donde se ejecute
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_PATH       = os.path.join(BASE_DIR, "..", "predicciones.json")
@@ -900,6 +906,14 @@ def calcular_goles_esperados(local, visitante, liga_code=""):
         goles_local  *= (1 - penalidad_l)
         goles_visita *= (1 - penalidad_v)
 
+    # ── Ajuste xG (shots on target proxy, caché de stats_mercados) ─
+    if APIFOOTBALL_KEY and XG_OK and liga_code:
+        try:
+            goles_local, goles_visita = ajustar_con_xg(
+                local, visitante, liga_code, goles_local, goles_visita)
+        except Exception:
+            pass
+
     return goles_local, goles_visita
 
 # ── CUOTAS REALES (The Odds API) ────────────────────────────────
@@ -1302,6 +1316,13 @@ def reporte_del_dia():
 
     predicciones.sort(key=_score_pred, reverse=True)
 
+    # Scan arbitraje — aviso inmediato a Yamid si hay oportunidad garantizada
+    try:
+        from arbitraje import correr_scan
+        correr_scan(cuotas_por_liga)
+    except Exception as e:
+        print(f"  Arbitraje scan error: {e}")
+
     return {
         "fecha": date.today().isoformat(),
         "total_partidos": len(predicciones),
@@ -1461,6 +1482,19 @@ def guardar_predicciones():
     hora_actual = datetime.now().hour
     if hora_actual >= 13:
         _alertar_steam(reporte)
+
+    # Player props — goleadores del dia al canal VIP
+    try:
+        from player_props import analizar_player_props, construir_mensaje_props
+        from telegram_alertas import enviar_mensaje
+        from config import TELEGRAM_CHAT_ID
+        props_dia = analizar_player_props(reporte["predicciones"])
+        msg_props = construir_mensaje_props(props_dia)
+        if msg_props:
+            enviar_mensaje(msg_props, chat_id=TELEGRAM_CHAT_ID)
+            print("  Goleadores del dia enviados (VIP)")
+    except Exception as e:
+        print(f"  Player props error: {e}")
 
     return reporte
 
