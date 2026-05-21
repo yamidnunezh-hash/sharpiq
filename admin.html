@@ -140,6 +140,11 @@
     <label>ID Canal Free</label>
     <input type="text" id="cfg-free" placeholder="-1003834900758">
   </div>
+  <div class="field">
+    <label>GitHub Token (para actualizar estadísticas)</label>
+    <input type="text" id="cfg-gh" placeholder="ghp_xxxxxxxxxxxx">
+  </div>
+  <div class="setup-note" style="font-size:11px">GitHub Token: en github.com → Settings → Developer settings → Personal access tokens → Fine-grained → Contents: Read &amp; Write</div>
   <button class="btn-grad" onclick="guardarConfig()">Guardar y continuar</button>
 </div>
 
@@ -221,7 +226,7 @@
           <input type="text" id="r-cuota" placeholder="1.85">
         </div>
       </div>
-      <div class="form-row full">
+      <div class="form-row">
         <div class="field-s">
           <label>Resultado</label>
           <select id="r-resultado">
@@ -229,10 +234,30 @@
             <option value="loss">❌ LOSS — Fallé</option>
           </select>
         </div>
+        <div class="field-s">
+          <label>Canal del pick</label>
+          <select id="r-canal">
+            <option value="vip">🔒 VIP</option>
+            <option value="free">🆓 Free</option>
+          </select>
+        </div>
       </div>
-      <div style="display:flex;gap:8px">
-        <button class="btn-result" style="flex:1;padding:12px;font-size:10px;font-weight:700" onclick="publicarResultado('vip')">📢 Solo VIP</button>
-        <button class="btn-grad"   style="flex:2;padding:12px;font-size:10px" onclick="publicarResultado('ambos')">📢📣 VIP + Free</button>
+      <div class="form-row">
+        <div class="field-s">
+          <label>Liga</label>
+          <input type="text" id="r-liga" placeholder="Bundesliga">
+        </div>
+        <div class="field-s">
+          <label>Fecha</label>
+          <input type="text" id="r-fecha" placeholder="21/05/26">
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-direction:column">
+        <div style="display:flex;gap:8px">
+          <button class="btn-result" style="flex:1;padding:11px;font-size:10px;font-weight:700" onclick="publicarResultado('vip')">📢 Solo VIP</button>
+          <button class="btn-grad"   style="flex:2;padding:11px;font-size:10px" onclick="publicarResultado('ambos')">📢📣 VIP + Free</button>
+        </div>
+        <button style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(123,92,240,.4);background:rgba(123,92,240,.1);color:#7B5CF0;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;cursor:pointer;letter-spacing:.5px" onclick="guardarEnHistorial()">💾 Guardar en estadísticas (datos.js)</button>
       </div>
     </div>
   </div>
@@ -269,22 +294,25 @@ function verificarConfig() {
   }
   CFG = {
     token: localStorage.getItem('siq_token'),
-    vip:   localStorage.getItem('siq_vip')   || '-1003833982154',
-    free:  localStorage.getItem('siq_free')  || '-1003834900758',
+    vip:   localStorage.getItem('siq_vip')  || '-1003833982154',
+    free:  localStorage.getItem('siq_free') || '-1003834900758',
+    gh:    localStorage.getItem('siq_gh')   || '',
   };
   show('screen-main');
   cargarPredicciones();
 }
 
 function guardarConfig() {
-  const t = document.getElementById('cfg-token').value.trim();
-  const v = document.getElementById('cfg-vip').value.trim();
-  const f = document.getElementById('cfg-free').value.trim();
+  const t  = document.getElementById('cfg-token').value.trim();
+  const v  = document.getElementById('cfg-vip').value.trim();
+  const f  = document.getElementById('cfg-free').value.trim();
+  const gh = document.getElementById('cfg-gh').value.trim();
   if (!t) { toast('Ingresa el token del bot', true); return; }
   localStorage.setItem('siq_token', t);
-  if (v) localStorage.setItem('siq_vip', v);
-  if (f) localStorage.setItem('siq_free', f);
-  CFG = { token: t, vip: v || '-1003833982154', free: f || '-1003834900758' };
+  if (v)  localStorage.setItem('siq_vip', v);
+  if (f)  localStorage.setItem('siq_free', f);
+  if (gh) localStorage.setItem('siq_gh', gh);
+  CFG = { token: t, vip: v || '-1003833982154', free: f || '-1003834900758', gh: gh || '' };
   show('screen-main');
   cargarPredicciones();
 }
@@ -550,6 +578,69 @@ function toast(msg, err=false) {
   el.className   = 'show' + (err ? ' err' : '');
   clearTimeout(_toastTimer);
   _toastTimer = setTimeout(() => { el.className = ''; }, 3000);
+}
+
+// ── GUARDAR EN HISTORIAL (datos.js via GitHub API) ────────────────
+async function guardarEnHistorial() {
+  const partido   = document.getElementById('r-partido').value.trim();
+  const pred      = document.getElementById('r-pred').value.trim();
+  const cuota     = document.getElementById('r-cuota').value.trim();
+  const resultado = document.getElementById('r-resultado').value;
+  const canal     = document.getElementById('r-canal').value;
+  const liga      = document.getElementById('r-liga').value.trim() || '—';
+  const fechaRaw  = document.getElementById('r-fecha').value.trim();
+
+  if (!partido || !pred) { toast('Completa partido y predicción', true); return; }
+  if (!CFG.gh) { toast('Falta GitHub Token — agrégalo en configuración', true); return; }
+
+  // Fecha: si está vacía usar hoy
+  let fecha = fechaRaw;
+  if (!fecha) {
+    const h = new Date();
+    fecha = `${String(h.getDate()).padStart(2,'0')}/${String(h.getMonth()+1).padStart(2,'0')}/${String(h.getFullYear()).slice(2)}`;
+  }
+
+  const REPO  = 'yamidnunezh-hash/sharpiq';
+  const PATH  = 'datos.js';
+  const API   = `https://api.github.com/repos/${REPO}/contents/${PATH}`;
+
+  toast('Actualizando estadísticas...', false);
+
+  // Obtener archivo actual
+  const r = await fetch(API, {
+    headers: { Authorization: `Bearer ${CFG.gh}`, Accept: 'application/vnd.github+json' }
+  });
+  if (!r.ok) { toast('Error al leer datos.js — verifica el GitHub Token', true); return; }
+  const file = await r.json();
+  const contenido = atob(file.content.replace(/\n/g,''));
+
+  // Nueva entrada
+  const nuevaEntrada = `  {\n    fecha:      "${fecha}",\n    partido:    "${partido}",\n    liga:       "${liga}",\n    prediccion: "${pred}",\n    cuota:      "${cuota}",\n    resultado:  "${resultado}",\n    canal:      "${canal}"\n  },\n`;
+
+  // Insertar al inicio de PREDICCIONES_HISTORIAL
+  const marcador = 'const PREDICCIONES_HISTORIAL = [';
+  if (!contenido.includes(marcador)) {
+    toast('No se encontró PREDICCIONES_HISTORIAL en datos.js', true); return;
+  }
+  const nuevoContenido = contenido.replace(marcador, marcador + '\n' + nuevaEntrada);
+
+  // Subir
+  const put = await fetch(API, {
+    method: 'PUT',
+    headers: { Authorization: `Bearer ${CFG.gh}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      message: `resultado: ${partido} — ${resultado.toUpperCase()}`,
+      content: btoa(unescape(encodeURIComponent(nuevoContenido))),
+      sha: file.sha
+    })
+  });
+
+  if (put.ok) {
+    toast(`✓ ${resultado.toUpperCase()} guardado en estadísticas`, false);
+  } else {
+    const err = await put.json();
+    toast('Error al guardar: ' + (err.message || 'desconocido'), true);
+  }
 }
 
 // ── INIT ──────────────────────────────────────────────────────────
