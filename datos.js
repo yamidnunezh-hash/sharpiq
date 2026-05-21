@@ -9,15 +9,6 @@
 // Cuando terminen, muévelos a PREDICCIONES_HISTORIAL y pon el resultado.
 // status: "vip" = bloqueado para no suscriptores, "free" = visible para todos
 const PROXIMOS_EVENTOS = [
-  {
-    fecha:      "20/05/26",
-    partido:    "Fortaleza FC vs Orsomarso",
-    liga:       "Copa Colombia",
-    prediccion: "Victoria Local (1) — EV +0%",
-    cuota:      "2.21",
-    hora:       "15:00 COT",
-    status:     "vip"
-  },
 ];
 
 // ── HISTORIAL DE PREDICCIONES ─────────────────────────────────
@@ -26,6 +17,14 @@ const PROXIMOS_EVENTOS = [
 // resultado: "win" | "loss" | "pending"
 // ORDEN: más reciente primero — el algoritmo calcula racha desde arriba.
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "20/05/26",
+    partido:    "Fortaleza FC vs Orsomarso",
+    liga:       "Copa Colombia",
+    prediccion: "Victoria Local (1) — EV +0%",
+    cuota:      "2.21",
+    resultado:  "loss"
+  },
   {
     fecha:      "19/05/26",
     partido:    "Independiente Santa Fe vs CA Platense",
