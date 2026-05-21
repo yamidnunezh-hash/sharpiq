@@ -45,38 +45,28 @@
     /* ── TICKER ── */
     .ticker{
       position:fixed;top:0;left:0;right:0;z-index:1100;
-      background:linear-gradient(90deg,#0a1a08 0%,#0d2010 40%,#0a1a08 100%);
-      border-bottom:1px solid rgba(34,197,94,0.4);
-      height:34px;
+      background:var(--gold);height:30px;
       display:flex;align-items:center;overflow:hidden;
-      box-shadow:0 2px 18px rgba(34,197,94,0.18),0 0 40px rgba(240,165,0,0.06);
     }
     .ticker-label{
-      flex-shrink:0;
-      background:linear-gradient(135deg,#b8820a 0%,#e6a90e 50%,#b8820a 100%);
-      color:#000;
-      font-family:'Orbitron',monospace;font-size:10px;font-weight:900;
-      letter-spacing:2px;padding:0 16px;height:100%;
-      display:flex;align-items:center;gap:7px;
-      text-shadow:none;
-      box-shadow:2px 0 12px rgba(240,165,0,0.35);
+      flex-shrink:0;background:#000;color:var(--gold);
+      font-family:'Orbitron',monospace;font-size:10px;font-weight:700;
+      letter-spacing:2px;padding:0 14px;height:100%;
+      display:flex;align-items:center;gap:6px;
     }
     .ticker-live{
-      width:8px;height:8px;border-radius:50%;
-      background:#22c55e;
-      box-shadow:0 0 8px #22c55e,0 0 16px rgba(34,197,94,0.6);
+      width:7px;height:7px;border-radius:50%;background:var(--gold);
       animation:pulse-live 1.2s infinite;
     }
-    @keyframes pulse-live{0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 8px #22c55e,0 0 16px rgba(34,197,94,0.6)}50%{opacity:0.5;transform:scale(0.7);box-shadow:0 0 4px #22c55e,0 0 8px rgba(34,197,94,0.3)}}
+    @keyframes pulse-live{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
     .ticker-track-wrap{flex:1;overflow:hidden;height:100%;display:flex;align-items:center}
     .ticker-track{
       display:flex;white-space:nowrap;
-      animation:ticker-scroll 38s linear infinite;
+      animation:ticker-scroll 40s linear infinite;
       font-family:'Space Mono',monospace;font-size:11px;
-      color:#22c55e;font-weight:700;gap:0;
-      text-shadow:0 0 8px rgba(34,197,94,0.5);
+      color:#000;font-weight:700;gap:0;
     }
-    .ticker-track span{padding:0 32px;border-right:1px solid rgba(34,197,94,0.2)}
+    .ticker-track span{padding:0 32px;border-right:1px solid rgba(0,0,0,0.2)}
     @keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
     /* ── NAVBAR ── */
@@ -97,15 +87,10 @@
     .nav-ul a:hover{color:var(--gold)}
     .nav-cta{
       font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;
-      color:#000;
-      background:linear-gradient(135deg,#f5c842 0%,#e6a90e 40%,#c47f05 70%,#e6a90e 100%);
-      background-size:200% auto;
-      padding:10px 20px;border-radius:6px;
-      box-shadow:0 2px 12px rgba(230,169,14,0.45),inset 0 1px 0 rgba(255,220,80,0.4);
-      transition:all .25s;white-space:nowrap;flex-shrink:0;
-      text-shadow:0 1px 2px rgba(0,0,0,0.25);
+      color:#000;background:var(--gold);padding:10px 20px;border-radius:6px;
+      transition:background .2s,transform .15s;white-space:nowrap;flex-shrink:0;
     }
-    .nav-cta:hover{background-position:right center;transform:translateY(-1px);box-shadow:0 4px 20px rgba(230,169,14,0.65),inset 0 1px 0 rgba(255,220,80,0.4)}
+    .nav-cta:hover{background:var(--goldl);transform:translateY(-1px)}
     .nav-tog{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
     .nav-tog span{display:block;width:24px;height:2px;background:var(--t1);border-radius:2px;transition:all .3s}
     .nav-mob{display:none;flex-direction:column;position:fixed;top:98px;left:0;right:0;background:rgba(7,5,26,.97);backdrop-filter:blur(24px);padding:20px 28px;gap:4px;z-index:999;border-bottom:1px solid var(--border)}
@@ -150,14 +135,11 @@
     .hero-acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:48px;animation:fadeUp 1s .5s ease both}
     .btn-g{
       font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;
-      color:#000;
-      background:linear-gradient(135deg,#f5c842 0%,#e6a90e 35%,#c47f05 65%,#f5c842 100%);
-      background-size:200% auto;
-      padding:15px 36px;border-radius:7px;transition:all .3s;
-      box-shadow:0 4px 24px rgba(230,169,14,0.5),inset 0 1px 0 rgba(255,225,90,0.45),0 1px 0 rgba(0,0,0,0.2);
-      text-shadow:0 1px 2px rgba(0,0,0,0.2);
+      color:#000;background:linear-gradient(135deg,#00C8FF,#7B5CF0);
+      padding:15px 36px;border-radius:7px;transition:all .25s;
+      box-shadow:0 4px 24px rgba(0,200,255,.4);
     }
-    .btn-g:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 10px 40px rgba(230,169,14,0.7),inset 0 1px 0 rgba(255,225,90,0.45)}
+    .btn-g:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(0,200,255,.6)}
     .btn-o{
       font-size:14px;font-weight:500;color:var(--t1);
       border:1px solid rgba(255,255,255,.18);padding:15px 36px;border-radius:7px;
@@ -204,32 +186,21 @@
 
     /* ── LEAGUES BAR ── */
     .leagues-bar{
-      background:linear-gradient(90deg,#060f06 0%,#09160a 40%,#060f06 100%);
-      border-top:1px solid rgba(34,197,94,0.22);
-      border-bottom:1px solid rgba(34,197,94,0.22);
-      box-shadow:0 0 28px rgba(34,197,94,0.07),inset 0 1px 0 rgba(240,165,0,0.06);
-      padding:16px 0;position:relative;z-index:2;overflow:hidden;
-    }
-    .leagues-bar::before{
-      content:'';position:absolute;inset:0;
-      background:linear-gradient(90deg,#060f06 0%,transparent 8%,transparent 92%,#060f06 100%);
-      pointer-events:none;z-index:2;
+      background:var(--bg1);border-bottom:1px solid var(--border);
+      padding:18px 0;position:relative;z-index:2;overflow:hidden;
     }
     .leagues-track-w{overflow:hidden}
     .leagues-track{
       display:flex;white-space:nowrap;gap:0;
-      animation:ticker-scroll 32s linear infinite;
+      animation:ticker-scroll 35s linear infinite;
     }
     .league-item{
-      display:inline-flex;align-items:center;gap:10px;padding:0 36px;
-      border-right:1px solid rgba(34,197,94,0.15);flex-shrink:0;
-      transition:all .2s;
+      display:inline-flex;align-items:center;gap:10px;padding:0 32px;
+      border-right:1px solid var(--border);flex-shrink:0;
     }
-    .league-item:hover strong{color:#e6a90e;text-shadow:0 0 10px rgba(240,165,0,0.5)}
-    .league-item span{font-family:'Space Mono',monospace;font-size:12px;color:rgba(34,197,94,0.6);letter-spacing:.5px}
-    .league-item strong{font-size:13px;color:#c8f7d8;font-weight:700;text-shadow:0 0 6px rgba(34,197,94,0.25);transition:all .2s}
-    /* dot separator intercalado */
-    .league-item .ldot{width:6px;height:6px;border-radius:50%;background:#22c55e;opacity:0.7;box-shadow:0 0 6px #22c55e;flex-shrink:0}
+    .league-item span{font-family:'Space Mono',monospace;font-size:12px;color:var(--t2);letter-spacing:.5px}
+    .league-item strong{font-size:13px;color:var(--t1);font-weight:600}
+    .league-item .ldot{width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:0.6;box-shadow:0 0 5px var(--gold);flex-shrink:0}
 
     /* ── STATS DASHBOARD ── */
     .stats-dash{
@@ -316,19 +287,19 @@
     .dot-ring{position:absolute;inset:0;z-index:2}
     .rdot{position:absolute;border-radius:50%;transform:translate(-50%,-50%)}
     .rdot.lit{
-      width:11px;height:11px;
-      background:radial-gradient(circle,#fff5c0 0%,#f5c842 40%,#c47f05 100%);
-      box-shadow:0 0 8px 2px rgba(230,169,14,.9),0 0 20px rgba(230,169,14,.45),0 0 40px rgba(230,169,14,.15);
-      animation:dot-pulse 2.8s ease-in-out infinite;
+      width:10px;height:10px;
+      background:var(--gold);
+      box-shadow:0 0 10px 3px rgba(0,200,255,.7),0 0 22px rgba(0,200,255,.35);
+      animation:dot-pulse 2.4s ease-in-out infinite;
     }
-    .rdot.dim{width:7px;height:7px;background:rgba(230,169,14,.08);border:1px solid rgba(230,169,14,.2)}
+    .rdot.dim{width:8px;height:8px;background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.18)}
     @keyframes dot-pulse{
-      0%,100%{opacity:1;box-shadow:0 0 8px 2px rgba(230,169,14,.9),0 0 20px rgba(230,169,14,.45),0 0 40px rgba(230,169,14,.15)}
-      50%{opacity:.45;box-shadow:0 0 4px 1px rgba(230,169,14,.5),0 0 10px rgba(230,169,14,.2)}
+      0%,100%{opacity:1;box-shadow:0 0 10px 3px rgba(0,200,255,.7),0 0 22px rgba(0,200,255,.35)}
+      50%{opacity:.55;box-shadow:0 0 6px 2px rgba(0,200,255,.4),0 0 12px rgba(0,200,255,.15)}
     }
     .ring-scan{
       position:absolute;inset:0;z-index:1;border-radius:50%;
-      background:conic-gradient(from -90deg,rgba(230,169,14,0.12) 0deg,rgba(230,169,14,0.02) 60deg,transparent 90deg,transparent 360deg);
+      background:conic-gradient(from -90deg,rgba(0,200,255,0.1) 0deg,rgba(0,200,255,0.02) 60deg,transparent 90deg,transparent 360deg);
       animation:ring-scan 4s linear infinite;
     }
     @keyframes ring-scan{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
@@ -339,16 +310,15 @@
     }
     .rc-label{font-family:'Orbitron',monospace;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(230,169,14,0.6);margin-bottom:6px}
     .rc-val{font-family:'Bebas Neue',cursive;font-size:92px;color:var(--t1);line-height:1;display:flex;align-items:baseline;gap:2px;text-shadow:0 0 40px rgba(230,169,14,0.2)}
-    .rc-val-pct{font-family:'Bebas Neue',cursive;font-size:48px;background:linear-gradient(160deg,#ffe580 0%,#e6a90e 50%,#c47f05 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .rc-divider{width:48px;height:1px;background:linear-gradient(90deg,transparent,rgba(230,169,14,0.5),transparent);margin:10px auto}
+    .rc-val-pct{font-family:'Bebas Neue',cursive;font-size:48px;color:var(--gold)}
+    .rc-divider{width:48px;height:1px;background:linear-gradient(90deg,transparent,rgba(0,200,255,0.5),transparent);margin:10px auto}
     .rc-badge{
       display:inline-flex;align-items:center;gap:6px;
       font-family:'Orbitron',monospace;font-size:9px;font-weight:700;
       color:#000;letter-spacing:1px;
-      background:linear-gradient(135deg,#ffe066 0%,#e6a90e 50%,#b8820a 100%);
-      box-shadow:0 3px 14px rgba(230,169,14,0.55),inset 0 1px 0 rgba(255,230,80,0.5),0 1px 0 rgba(0,0,0,0.15);
+      background:var(--gold);
+      box-shadow:0 3px 14px rgba(0,200,255,0.4);
       padding:5px 14px;border-radius:50px;
-      text-shadow:0 1px 1px rgba(0,0,0,0.15);
     }
     .rc-badge-dot{width:6px;height:6px;border-radius:50%;background:#000;opacity:0.6}
     .rc-sub{font-size:10px;color:rgba(255,255,255,0.3);margin-top:8px;font-family:'Space Mono',monospace;letter-spacing:.5px}
@@ -622,8 +592,8 @@
     .plan-feats li{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--t2)}
     .plan-feats li::before{content:'✓';width:20px;height:20px;border-radius:50%;background:var(--greend);border:1px solid rgba(34,197,94,.25);color:var(--green);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .btn-plan{width:100%;display:block;text-align:center;font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;padding:15px;border-radius:7px;transition:all .25s;border:none;cursor:pointer}
-    .btn-plan.gold{color:#000;background:linear-gradient(135deg,#f5c842 0%,#e6a90e 35%,#c47f05 65%,#f5c842 100%);background-size:200% auto;box-shadow:0 4px 24px rgba(230,169,14,0.45),inset 0 1px 0 rgba(255,225,90,0.4);text-shadow:0 1px 2px rgba(0,0,0,0.2)}
-    .btn-plan.gold:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 10px 40px rgba(230,169,14,0.65),inset 0 1px 0 rgba(255,225,90,0.4)}
+    .btn-plan.gold{color:#000;background:linear-gradient(135deg,var(--gold),#7B5CF0);box-shadow:0 4px 24px rgba(0,200,255,.35)}
+    .btn-plan.gold:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(0,200,255,.55)}
     .btn-plan.out{color:var(--green);background:transparent;border:1px solid rgba(34,197,94,.4)}
     .btn-plan.out:hover{background:var(--greend);border-color:var(--green);transform:translateY(-3px)}
     /* MLM */
@@ -697,8 +667,8 @@
     .fg textarea{resize:vertical;min-height:110px}
     .fg select option{background:var(--bg2)}
     .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .btn-send{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;color:#000;background:linear-gradient(135deg,#f5c842 0%,#e6a90e 35%,#c47f05 65%,#f5c842 100%);background-size:200% auto;padding:15px 32px;border-radius:7px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(230,169,14,0.45),inset 0 1px 0 rgba(255,225,90,0.4);text-shadow:0 1px 2px rgba(0,0,0,0.2)}
-    .btn-send:hover{background-position:right center;transform:translateY(-3px);box-shadow:0 8px 36px rgba(230,169,14,0.65)}
+    .btn-send{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;color:#000;background:linear-gradient(135deg,var(--gold),#7B5CF0);padding:15px 32px;border-radius:7px;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 20px rgba(0,200,255,.3)}
+    .btn-send:hover{transform:translateY(-3px);box-shadow:0 8px 36px rgba(0,200,255,.5)}
 
     /* ── FOOTER ── */
     footer{background:var(--bg1);border-top:1px solid var(--border);padding:64px 0 28px;position:relative;z-index:2}
@@ -808,7 +778,7 @@
       <li><a href="#estrategia">Estrategia</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a href="https://t.me/sharpiq_alertas_bot" target="_blank" class="nav-cta">Únete — $10 USD</a>
+    <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="nav-cta">Únete — $10 USD</a>
     <button class="nav-tog" id="navTog" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -819,7 +789,7 @@
   <a href="#planes"          onclick="closeNav()">Planes</a>
   <a href="#estrategia"   onclick="closeNav()">Estrategia</a>
   <a href="#contacto"     onclick="closeNav()">Contacto</a>
-  <a href="https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-g" onclick="closeNav()" style="text-align:center;border-radius:7px;padding:14px;margin-top:8px;display:block">Únete — $10 USD/mes</a>
+  <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-g" onclick="closeNav()" style="text-align:center;border-radius:7px;padding:14px;margin-top:8px;display:block">Únete — $10 USD/mes</a>
 </div>
 
 <!-- ── BANNER REFERIDO ── -->
@@ -869,7 +839,7 @@
       Decisiones con respaldo matemático real — no intuición.
     </p>
     <div class="hero-acts">
-      <a href="https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-g">Acceder Ahora — $10 USD/mes</a>
+      <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-g">Acceder Ahora — $10 USD/mes</a>
       <a href="#predicciones" class="btn-o">Ver Predicciones</a>
     </div>
     <div style="margin-top:14px">
@@ -1003,9 +973,9 @@
             <circle cx="180" cy="32" r="4" fill="#e6a90e" opacity="0.9"/>
             <defs>
               <linearGradient id="goldArc" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#ffe066"/>
-                <stop offset="60%" stop-color="#e6a90e"/>
-                <stop offset="100%" stop-color="#c47f05"/>
+                <stop offset="0%" stop-color="#00C8FF"/>
+                <stop offset="60%" stop-color="#33D6FF"/>
+                <stop offset="100%" stop-color="#7B5CF0"/>
               </linearGradient>
             </defs>
           </svg>
@@ -1128,7 +1098,7 @@
         </table>
       </div>
       <div class="pred-lock" style="background:none;height:auto;position:relative;padding:24px;align-items:center;justify-content:center;">
-        <a href="https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-g">Únete al canal VIP — $10 USD/mes</a>
+        <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-g">Únete al canal VIP — $10 USD/mes</a>
       </div>
       <div class="pred-kpis">
         <div class="pred-kpi">
@@ -1311,7 +1281,7 @@
         <!-- Nota -->
         <p style="font-size:11px;color:var(--t3);font-family:'Space Mono',monospace;text-align:center;margin-bottom:20px;padding-top:20px;border-top:1px solid var(--border)">✅ Acceso inmediato al confirmar el pago · Sin permanencia mínima</p>
         <!-- Botón -->
-        <a href="https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-plan gold">Unirme Ahora → $10 USD / mes</a>
+        <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-plan gold">Unirme Ahora → $10 USD / mes</a>
       </div>
     </div>
   </div>
@@ -2054,7 +2024,7 @@ if('serviceWorker' in navigator && 'PushManager' in window){
   }
 
   // Agregar ref como parámetro de rastreo en todos los botones de pago
-  const MP_BASE = 'https://t.me/sharpiq_alertas_bot';
+  const MP_BASE = 'https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot';
   function agregarRefAlLink(a){
     const refGuardado = localStorage.getItem('sharpiq_ref');
     if(refGuardado){
