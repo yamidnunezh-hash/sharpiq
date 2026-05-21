@@ -1191,15 +1191,7 @@ def predecir_partido(local, visitante, cuotas=None, liga_code=""):
     # Kelly
     kelly_local = kelly_criterion(probs["victoria_local"], cuotas.get("1", 2.0))
 
-    # Predicción principal
-    max_prob = max(probs["victoria_local"], probs["empate"], probs["victoria_visita"])
-    if max_prob == probs["victoria_local"]:
-        prediccion_principal = {"mercado": "Victoria Local (1)", "prob": probs["victoria_local"]}
-    elif max_prob == probs["empate"]:
-        prediccion_principal = {"mercado": "Empate (X)", "prob": probs["empate"]}
-    else:
-        prediccion_principal = {"mercado": "Victoria Visitante (2)", "prob": probs["victoria_visita"]}
-
+    # Value bets — todos los mercados con cuota
     value_bets = {
         "victoria_local":  value_local,
         "empate":          value_empate,
@@ -1218,6 +1210,86 @@ def predecir_partido(local, visitante, cuotas=None, liga_code=""):
         except Exception:
             pass
 
+    # ── PREDICCIÓN PRINCIPAL — mejor EV entre TODOS los mercados ──
+    _NOMBRES = {
+        "victoria_local":    ("Victoria Local (1)",        probs["victoria_local"]),
+        "empate":            ("Empate (X)",                 probs["empate"]),
+        "victoria_visita":   ("Victoria Visitante (2)",     probs["victoria_visita"]),
+        "over25":            ("Over 2.5 Goles",             probs.get("over25", 0)),
+        "under25":           ("Under 2.5 Goles",            probs.get("under25", 0)),
+        "over15":            ("Over 1.5 Goles",             probs.get("over15", 0)),
+        "under15":           ("Under 1.5 Goles",            probs.get("under15", 0)),
+        "over35":            ("Over 3.5 Goles",             probs.get("over35", 0)),
+        "under35":           ("Under 3.5 Goles",            probs.get("under35", 0)),
+        "btts_si":           ("Ambos Marcan — Sí",          probs.get("btts_si", 0)),
+        "btts_no":           ("Ambos Marcan — No",          probs.get("btts_no", 0)),
+        "doble_1x":          ("Doble Oportunidad 1X",       probs.get("doble_1x", 0)),
+        "doble_x2":          ("Doble Oportunidad X2",       probs.get("doble_x2", 0)),
+        "doble_12":          ("Doble Oportunidad 12",       probs.get("doble_12", 0)),
+        "dnb_local":         ("DNB Local",                  probs.get("dnb_local", 0)),
+        "dnb_visita":        ("DNB Visitante",              probs.get("dnb_visita", 0)),
+    }
+    _NOMBRES_EXT = {
+        "corners_over9":     "Corners Over 9.5",
+        "corners_under9":    "Corners Under 9.5",
+        "corners_over10":    "Corners Over 10.5",
+        "corners_under10":   "Corners Under 10.5",
+        "corners_over11":    "Corners Over 11.5",
+        "corners_under11":   "Corners Under 11.5",
+        "corners_over12":    "Corners Over 12.5",
+        "corners_under12":   "Corners Under 12.5",
+        "tarjetas_over3":    "Tarjetas Over 3.5",
+        "tarjetas_under3":   "Tarjetas Under 3.5",
+        "tarjetas_over4":    "Tarjetas Over 4.5",
+        "tarjetas_under4":   "Tarjetas Under 4.5",
+        "tarjetas_over5":    "Tarjetas Over 5.5",
+        "tarjetas_under5":   "Tarjetas Under 5.5",
+        "ah_local_menos05":  "Handicap Local -0.5",
+        "ah_visita_mas05":   "Handicap Visitante +0.5",
+        "ah_local_menos1":   "Handicap Local -1",
+        "ah_visita_mas1":    "Handicap Visitante +1",
+        "ah_local_menos15":  "Handicap Local -1.5",
+        "ah_visita_mas15":   "Handicap Visitante +1.5",
+    }
+
+    mejor_ev   = -9999
+    mejor_pred = None
+
+    # Escanear value_bets (1X2 + goles + doble chance + DNB)
+    for mk, vb in value_bets.items():
+        if not vb or mk not in _NOMBRES:
+            continue
+        ev = vb.get("ev_porcentaje", -9999)
+        if ev > mejor_ev:
+            mejor_ev = ev
+            nombre, prob = _NOMBRES[mk]
+            mejor_pred = {"mercado": nombre, "prob": round(prob, 1), "ev": round(ev, 1)}
+
+    # Escanear mercados extendidos (corners, tarjetas, handicap)
+    for mk, datos in (mercados_ext.get("ev_ext") or {}).items():
+        if mk not in _NOMBRES_EXT:
+            continue
+        ev = datos.get("ev_porcentaje", -9999)
+        if ev > mejor_ev:
+            mejor_ev = ev
+            mejor_pred = {
+                "mercado": _NOMBRES_EXT[mk],
+                "prob":    round(datos.get("prob_modelo", 0), 1),
+                "ev":      round(ev, 1),
+            }
+
+    # Fallback: si no hay datos suficientes, usar mayor probabilidad 1X2
+    if mejor_pred is None:
+        max_p = max(probs["victoria_local"], probs["empate"], probs["victoria_visita"])
+        if max_p == probs["victoria_local"]:
+            mejor_pred = {"mercado": "Victoria Local (1)",    "prob": round(probs["victoria_local"], 1),  "ev": None}
+        elif max_p == probs["empate"]:
+            mejor_pred = {"mercado": "Empate (X)",             "prob": round(probs["empate"], 1),          "ev": None}
+        else:
+            mejor_pred = {"mercado": "Victoria Visitante (2)", "prob": round(probs["victoria_visita"], 1), "ev": None}
+
+    prediccion_principal = mejor_pred
+
     return {
         "local":      local,
         "visitante":  visitante,
@@ -1226,7 +1298,7 @@ def predecir_partido(local, visitante, cuotas=None, liga_code=""):
         "value_bets": value_bets,
         "kelly":      kelly_local,
         "prediccion_principal": prediccion_principal,
-        "confianza":  round(max_prob, 1),
+        "confianza":  prediccion_principal["prob"],
         "mercados_ext": mercados_ext,
     }
 
