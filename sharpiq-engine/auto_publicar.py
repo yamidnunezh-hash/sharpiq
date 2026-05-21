@@ -222,7 +222,7 @@ def correr():
         from telegram_alertas import (enviar_autopublicacion, enviar_mensaje,
                                        enviar_canal_free, enviar_gif_vip, GIFS_MANANA)
         import random
-        from config import TELEGRAM_CHAT_ID
+        from config import TELEGRAM_CHAT_ID, TELEGRAM_FREE_ID
 
         # 1. Aviso privado a Yamid
         enviar_autopublicacion(partido, liga, nombre_mercado, cuota, hora_cot, ev)
@@ -254,8 +254,24 @@ def correr():
             chat_id=TELEGRAM_CHAT_ID
         )
 
-        # 3. Canal free — teaser sin mercado ni cuota
+        # 3. Canal free — teaser pick principal
         enviar_canal_free(partido, liga, hora_cot)
+
+        # 4. Canal free — aviso de picks adicionales si hay más de 1
+        if len(picks_publicar) > 1:
+            total_picks = len(picks_publicar)
+            partidos_extra = "\n".join(
+                f"⚽ {p['local']} vs {p['visitante']} — {p.get('liga','')}"
+                for p, _, _, _, _ in picks_publicar[1:]
+            )
+            enviar_mensaje(
+                f"📋 <b>Hoy hay {total_picks} picks en el canal VIP</b>\n\n"
+                f"{partidos_extra}\n\n"
+                f"🔒 Mercados y cuotas exactas solo para suscriptores\n"
+                f"👉 <a href=\"https://t.me/sharpiq_alertas_bot\">Activar acceso VIP</a>\n\n"
+                f"<i>SharpIQ — La ventaja inteligente</i>",
+                chat_id=TELEGRAM_FREE_ID
+            )
 
         print("  Telegram enviado (VIP + Free + Yamid) ✓")
     except Exception as e:
