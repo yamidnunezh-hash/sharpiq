@@ -331,6 +331,18 @@ def correr():
     except Exception as e:
         print(f"  Picks adicionales error: {e}")
 
+    # Lanzar monitor en vivo en proceso separado (no bloquea)
+    try:
+        import subprocess
+        monitor_path = os.path.join(BASE_DIR, "live_monitor.py")
+        subprocess.Popen(
+            [sys.executable, monitor_path],
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
+        )
+        print("  Monitor en vivo iniciado ✓")
+    except Exception as e:
+        print(f"  Monitor en vivo error: {e}")
+
     return {"partido": partido, "mercado": nombre_mercado, "cuota": cuota, "ev": ev}
 
 
