@@ -230,7 +230,10 @@
           </select>
         </div>
       </div>
-      <button class="btn-result" style="padding:12px;width:100%;font-size:11px;font-weight:700" onclick="publicarResultado()">📊 Publicar Resultado al Canal VIP</button>
+      <div style="display:flex;gap:8px">
+        <button class="btn-result" style="flex:1;padding:12px;font-size:10px;font-weight:700" onclick="publicarResultado('vip')">📢 Solo VIP</button>
+        <button class="btn-grad"   style="flex:2;padding:12px;font-size:10px" onclick="publicarResultado('ambos')">📢📣 VIP + Free</button>
+      </div>
     </div>
   </div>
 </div>
@@ -429,15 +432,44 @@ async function enviarTodoVip() {
 async function enviarTeaserFree() {
   if (!PREDS.length) { toast('Sin predicciones cargadas', true); return; }
   const fecha = document.getElementById('fecha-hoy').textContent;
+  const CUOTA_MAP = {victoria_local:'1',empate:'X',victoria_visita:'2',over25:'over25',under25:'under25',btts_si:'btts_si',btts_no:'btts_no',over15:'over15',over35:'over35'};
+  const NOMBRES   = {victoria_local:'Local (1)',empate:'Empate (X)',victoria_visita:'Visitante (2)',over25:'Over 2.5',under25:'Under 2.5',btts_si:'BTTS Sí',btts_no:'BTTS No',over15:'Over 1.5',over35:'Over 3.5'};
+
   let texto = `⚡ <b>SharpIQ — Picks del día</b>\n📅 ${fecha}\n\n`;
-  PREDS.forEach(p => {
+
+  PREDS.forEach((p, i) => {
     const [h,m] = (p.hora||'00:00').split(':');
     const hora_cot = String((parseInt(h)-5+24)%24).padStart(2,'0')+':'+m+' COT';
-    texto += `⚽ ${p.local} vs ${p.visitante} | ${p.liga||''}\n⏰ ${hora_cot} | Predicción: 🔒 VIP\n\n`;
+    texto += `⚽ <b>${p.local} vs ${p.visitante}</b>\n🏆 ${p.liga||''} | ⏰ ${hora_cot}\n`;
+
+    if (i < 2) {
+      // Primeras 2 predicciones: completas (pick + cuota visibles)
+      const pred_p = p.prediccion_principal;
+      let mejorMk=null, mejorVb=null, mejorEv=-999;
+      Object.entries(p.value_bets||{}).forEach(([mk,vb])=>{
+        if(vb && typeof vb.ev_porcentaje==='number' && vb.ev_porcentaje>mejorEv){mejorEv=vb.ev_porcentaje;mejorMk=mk;mejorVb=vb;}
+      });
+      const ck = mejorMk ? (CUOTA_MAP[mejorMk]||'1') : '1';
+      const cuota = p.cuotas?.[ck] || '';
+      const nombre_pred = mejorMk ? (NOMBRES[mejorMk]||mejorMk) : pred_p?.mercado || '';
+      texto += `📊 <b>${nombre_pred}</b>${cuota ? ' @ '+cuota : ''}\n`;
+      if (i === 1 && PREDS.length > 2) {
+        texto += `\n`;
+      }
+    } else {
+      // Resto: bloqueadas
+      texto += `📊 Predicción: 🔒 <b>Solo VIP</b>\n`;
+    }
+    texto += `\n`;
   });
-  texto += `🔥 <b>¿Quieres los picks exactos?</b>\nÚnete al canal VIP → https://t.me/sharpiq_alertas_bot\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>`;
+
+  if (PREDS.length > 2) {
+    texto += `🔒 <b>${PREDS.length - 2} predicciones más disponibles en VIP</b>\n`;
+  }
+  texto += `\n🔥 Accede a todos los picks → https://t.me/sharpiq_alertas_bot\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>`;
+
   const ok = await tgSend(CFG.free, texto);
-  toast(ok ? '✓ Teaser enviado al Free' : '✗ Error al enviar', !ok);
+  toast(ok ? '✓ Enviado al Free (2 picks visibles)' : '✗ Error al enviar', !ok);
 }
 
 // ── PICK MANUAL ───────────────────────────────────────────────────
@@ -479,24 +511,35 @@ function llenarResultado(i) {
   window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
 }
 
-async function publicarResultado() {
+async function publicarResultado(destino) {
   const partido   = document.getElementById('r-partido').value.trim();
   const pred      = document.getElementById('r-pred').value.trim();
   const cuota     = document.getElementById('r-cuota').value.trim();
   const resultado = document.getElementById('r-resultado').value;
   if (!partido) { toast('Completa el partido', true); return; }
 
-  const esWin  = resultado === 'win';
-  const emoji  = esWin ? '✅' : '❌';
-  const titulo = esWin ? 'WIN — ¡Acertamos!' : 'LOSS — Falló';
+  const esWin    = resultado === 'win';
+  const emoji    = esWin ? '✅' : '❌';
   const ganancia = cuota ? (esWin ? `+${(parseFloat(cuota)-1).toFixed(2)}u` : '-1.00u') : '';
-  const comentario = esWin
-    ? '¡Predicción acertada! El modelo sigue funcionando. 🤖🔥'
-    : 'No todas entran. El largo plazo nos da la razón 💡';
 
-  const texto = `${emoji} <b>Resultado — ${partido}</b>\n\n📊 Predicción: ${pred}\n💵 Cuota: ${cuota}${ganancia ? '\n📈 P&L: <b>'+ganancia+'</b>' : ''}\n\n${comentario}\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>`;
-  const ok = await tgSend(CFG.vip, texto);
-  toast(ok ? '✓ Resultado publicado en VIP' : '✗ Error al enviar', !ok);
+  const comentarioVip = esWin
+    ? '¡Predicción acertada! EV positivo convertido en ganancia. 🤖🔥'
+    : 'Resultado adverso — el modelo sigue aprendiendo. El largo plazo nos da la razón 💡';
+  const comentarioFree = esWin
+    ? '¡Acertamos! Así se trabaja con inteligencia artificial. 🔥\n\n🔒 Quieres los picks de mañana con cuotas exactas → https://t.me/sharpiq_alertas_bot'
+    : 'No todas entran, pero el EV positivo es clave a largo plazo 💡\n\n🔒 Picks VIP con análisis completo → https://t.me/sharpiq_alertas_bot';
+
+  const textoVip  = `${emoji} <b>Resultado VIP — ${partido}</b>\n\n📊 ${pred}\n💵 Cuota: ${cuota}${ganancia ? '\n📈 P&L: <b>'+ganancia+'</b>' : ''}\n\n${comentarioVip}\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>`;
+  const textoFree = `${emoji} <b>Resultado — ${partido}</b>\n\n📊 ${pred} @ ${cuota}${ganancia ? '\n📈 P&L: <b>'+ganancia+'</b>' : ''}\n\n${comentarioFree}\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>`;
+
+  let ok1 = true, ok2 = true;
+  ok1 = await tgSend(CFG.vip, textoVip);
+  if (destino === 'ambos') {
+    ok2 = await tgSend(CFG.free, textoFree);
+  }
+
+  const canales = destino === 'ambos' ? 'VIP + Free' : 'VIP';
+  toast((ok1 && ok2) ? `✓ Resultado publicado en ${canales}` : '✗ Error en algún canal', !(ok1 && ok2));
 }
 
 // ── TOAST ─────────────────────────────────────────────────────────
