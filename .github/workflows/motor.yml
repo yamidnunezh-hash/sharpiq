@@ -26,7 +26,7 @@ jobs:
           cache: 'pip'
 
       - name: Instalar dependencias
-        run: pip install requests numpy scipy
+        run: pip install requests numpy scipy psycopg2-binary
 
       - name: Generar config.py
         env:
@@ -43,28 +43,31 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_KV_NAMESPACE: ${{ secrets.CF_KV_NAMESPACE }}
+          DATABASE_PUBLIC_URL: ${{ secrets.DATABASE_PUBLIC_URL }}
         run: |
           python - << 'EOF'
           import os
           cfg = (
               "import os\n"
-              f"FOOTBALL_DATA_KEY = {os.environ['FOOTBALL_DATA_KEY']!r}\n"
-              f"ODDS_API_KEY      = {os.environ['ODDS_API_KEY']!r}\n"
-              f"APIFOOTBALL_KEY   = {os.environ['APIFOOTBALL_KEY']!r}\n"
-              f"TELEGRAM_TOKEN    = {os.environ['TELEGRAM_TOKEN']!r}\n"
-              f"TELEGRAM_CHAT_ID  = {os.environ['TELEGRAM_CHAT_ID']!r}\n"
-              f"TELEGRAM_YAMID_ID = {os.environ['TELEGRAM_YAMID_ID']!r}\n"
-              f"TELEGRAM_FREE_ID  = {os.environ['TELEGRAM_FREE_ID']!r}\n"
-              f"PANEL_TOKEN       = 'sharpiq2026'\n"
-              f"VAPID_PUBLIC_KEY  = ''\n"
-              f"VAPID_PRIVATE_PEM = ''\n"
-              f"VAPID_CLAIMS      = {{'sub': 'mailto:yamidnunezh@gmail.com'}}\n"
-              f"MP_PUBLIC_KEY     = {os.environ['MP_PUBLIC_KEY']!r}\n"
-              f"MP_ACCESS_TOKEN   = {os.environ['MP_ACCESS_TOKEN']!r}\n"
-              f"MP_CLIENT_ID      = {os.environ['MP_CLIENT_ID']!r}\n"
-              f"CF_ACCOUNT_ID     = {os.environ['CF_ACCOUNT_ID']!r}\n"
-              f"CF_API_TOKEN      = {os.environ['CF_API_TOKEN']!r}\n"
-              f"CF_KV_NAMESPACE   = {os.environ['CF_KV_NAMESPACE']!r}\n"
+              f"FOOTBALL_DATA_KEY   = {os.environ['FOOTBALL_DATA_KEY']!r}\n"
+              f"ODDS_API_KEY        = {os.environ['ODDS_API_KEY']!r}\n"
+              f"APIFOOTBALL_KEY     = {os.environ['APIFOOTBALL_KEY']!r}\n"
+              f"TELEGRAM_TOKEN      = {os.environ['TELEGRAM_TOKEN']!r}\n"
+              f"TELEGRAM_CHAT_ID    = {os.environ['TELEGRAM_CHAT_ID']!r}\n"
+              f"TELEGRAM_YAMID_ID   = {os.environ['TELEGRAM_YAMID_ID']!r}\n"
+              f"TELEGRAM_FREE_ID    = {os.environ['TELEGRAM_FREE_ID']!r}\n"
+              f"PANEL_TOKEN         = 'sharpiq2026'\n"
+              f"VAPID_PUBLIC_KEY    = ''\n"
+              f"VAPID_PRIVATE_PEM   = ''\n"
+              f"VAPID_CLAIMS        = {{'sub': 'mailto:yamidnunezh@gmail.com'}}\n"
+              f"MP_PUBLIC_KEY       = {os.environ['MP_PUBLIC_KEY']!r}\n"
+              f"MP_ACCESS_TOKEN     = {os.environ['MP_ACCESS_TOKEN']!r}\n"
+              f"MP_CLIENT_ID        = {os.environ['MP_CLIENT_ID']!r}\n"
+              f"CF_ACCOUNT_ID       = {os.environ['CF_ACCOUNT_ID']!r}\n"
+              f"CF_API_TOKEN        = {os.environ['CF_API_TOKEN']!r}\n"
+              f"CF_KV_NAMESPACE     = {os.environ['CF_KV_NAMESPACE']!r}\n"
+              f"DATABASE_URL        = {os.environ['DATABASE_PUBLIC_URL']!r}\n"
+              f"DATABASE_PUBLIC_URL = {os.environ['DATABASE_PUBLIC_URL']!r}\n"
           )
           open('sharpiq-engine/config.py', 'w').write(cfg)
           print("config.py generado OK")
