@@ -11,46 +11,28 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "21/05/26",
-    partido:    "Águilas Doradas vs Deportivo Pereira",
-    liga:       "Copa Colombia",
-    prediccion: "Victoria Local (1)",
-    cuota:      "2.3",
-    hora:       "15:30 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "21/05/26",
-    partido:    "Jaguares vs Ind. Yumbo",
-    liga:       "Copa Colombia",
-    prediccion: "Victoria Local (1)",
-    cuota:      "2.3",
-    hora:       "16:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "21/05/26",
-    partido:    "Atletico-MG vs Cienciano",
-    liga:       "Copa Sudamericana",
-    prediccion: "Victoria Local (1)",
-    cuota:      "2.3",
-    hora:       "17:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "21/05/26",
-    partido:    "Puerto Cabello vs Juventud",
-    liga:       "Copa Sudamericana",
-    prediccion: "Victoria Local (1)",
-    cuota:      "2.3",
-    hora:       "17:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "21/05/26",
-    partido:    "Deportivo La Guaira vs Independ. Rivadavia",
+    partido:    "Cusco FC vs CD Independiente Medellín",
     liga:       "Copa Libertadores",
-    prediccion: "Victoria Local (1)",
-    cuota:      "2.3",
+    prediccion: "Tarjetas Over 4.5",
+    cuota:      "2.34",
+    hora:       "21:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "21/05/26",
+    partido:    "CDP Junior FC vs CS Cristal",
+    liga:       "Copa Libertadores",
+    prediccion: "Tarjetas Over 4.5",
+    cuota:      "2.34",
+    hora:       "21:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "21/05/26",
+    partido:    "Deportivo La Guaira FC vs CS Independiente Rivadavia",
+    liga:       "Copa Libertadores",
+    prediccion: "Tarjetas Over 4.5",
+    cuota:      "2.34",
     hora:       "17:00 COT",
     status:     "vip"
   }
