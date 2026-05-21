@@ -23,7 +23,7 @@ const PROXIMOS_EVENTOS = [
     partido:    "Águilas Doradas vs Deportivo Pereira",
     liga:       "Copa Colombia",
     prediccion: "Victoria Local (1)",
-    cuota:      "2.30",
+    cuota:      "2.3",
     hora:       "15:30 COT",
     status:     "vip"
   },
@@ -32,7 +32,7 @@ const PROXIMOS_EVENTOS = [
     partido:    "Jaguares vs Ind. Yumbo",
     liga:       "Copa Colombia",
     prediccion: "Victoria Local (1)",
-    cuota:      "2.30",
+    cuota:      "2.3",
     hora:       "16:00 COT",
     status:     "vip"
   },
@@ -41,7 +41,7 @@ const PROXIMOS_EVENTOS = [
     partido:    "Atletico-MG vs Cienciano",
     liga:       "Copa Sudamericana",
     prediccion: "Victoria Local (1)",
-    cuota:      "2.30",
+    cuota:      "2.3",
     hora:       "17:00 COT",
     status:     "vip"
   },
@@ -50,7 +50,7 @@ const PROXIMOS_EVENTOS = [
     partido:    "Puerto Cabello vs Juventud",
     liga:       "Copa Sudamericana",
     prediccion: "Victoria Local (1)",
-    cuota:      "2.30",
+    cuota:      "2.3",
     hora:       "17:00 COT",
     status:     "vip"
   },
@@ -59,10 +59,10 @@ const PROXIMOS_EVENTOS = [
     partido:    "Deportivo La Guaira vs Independ. Rivadavia",
     liga:       "Copa Libertadores",
     prediccion: "Victoria Local (1)",
-    cuota:      "2.30",
+    cuota:      "2.3",
     hora:       "17:00 COT",
     status:     "vip"
-  },
+  }
 ];
 
 // ── HISTORIAL DE PREDICCIONES ─────────────────────────────────
