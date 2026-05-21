@@ -349,6 +349,20 @@ def correr():
 
             for update in r.get("result", []):
                 offset = update["update_id"] + 1
+
+                # Botones inline (callback_query)
+                cq = update.get("callback_query")
+                if cq:
+                    cq_id     = cq["id"]
+                    cq_chat   = cq["message"]["chat"]["id"]
+                    cq_user   = cq["message"]["chat"].get("username", "sin_username")
+                    cq_data   = cq.get("data", "")
+                    requests.post(f"{API_URL}/answerCallbackQuery",
+                                  json={"callback_query_id": cq_id}, timeout=10)
+                    if cq_data == "pago_prueba":
+                        handle_prueba(cq_chat, cq_user)
+                    continue
+
                 msg = update.get("message", {})
                 if not msg:
                     continue
