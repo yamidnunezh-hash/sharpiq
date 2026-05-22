@@ -3467,7 +3467,7 @@
       "hora": "19:10",
       "cuotas": {
         "Cleveland Cavaliers": 1.79,
-        "New York Knicks": 2.18
+        "New York Knicks": 2.15
       },
       "probabilidades": {
         "Cleveland Cavaliers": 55.5,
@@ -3487,13 +3487,13 @@
           "pinn_prob": 55.5
         },
         "New York Knicks": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.18,
+          "cuota": 2.15,
           "casa": "BetMGM",
           "pinn_prob": 44.5
         }
@@ -3823,7 +3823,7 @@
       "liga_code": "baseball_mlb",
       "hora": "18:11",
       "cuotas": {
-        "Miami Marlins": 1.91,
+        "Miami Marlins": 1.89,
         "New York Mets": 1.98
       },
       "probabilidades": {
@@ -3833,13 +3833,13 @@
       "confianza": 50.9,
       "value_bets": {
         "Miami Marlins": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
+          "cuota": 1.89,
           "casa": "Unibet",
           "pinn_prob": 50.9
         },
@@ -3856,8 +3856,8 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Miami Marlins",
-        "prob": 50.9,
+        "mercado": "New York Mets",
+        "prob": 49.1,
         "ev": -2.8
       },
       "cuotas_reales": true,
@@ -5245,5 +5245,5 @@
       "movimiento": null
     }
   ],
-  "generado": "09:12:40"
+  "generado": "09:14:42"
 }

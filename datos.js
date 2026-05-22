@@ -202,7 +202,7 @@ const PROXIMOS_EVENTOS = [
     fecha:      "22/05/26",
     partido:    "Miami Marlins vs New York Mets",
     liga:       "MLB",
-    prediccion: "Miami Marlins",
+    prediccion: "New York Mets",
     cuota:      "",
     hora:       "13:11 COT",
     status:     "vip"
