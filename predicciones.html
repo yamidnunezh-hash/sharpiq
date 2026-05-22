@@ -142,6 +142,9 @@
     background: rgba(240,165,0,0.12); color: var(--gold);
   }
   .vb-tag.hi { background: rgba(34,197,94,0.12); color: var(--green); }
+  .vb-pinn { font-size: 0.62rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; letter-spacing: 0.4px; }
+  .pinn-ok  { background: rgba(16,185,129,0.15); color: #10b981; }
+  .pinn-no  { background: rgba(239,68,68,0.12);  color: #ef4444; }
 
   /* BOTON PUBLICAR */
   .btn-publicar {
@@ -504,12 +507,18 @@ function movimientoHTML(mov) {
 function card(p) {
   const pr = p.probabilidades, vbs = p.value_bets;
   const hasVB = Object.values(vbs).some(v=>v.tiene_valor);
-  const vbHTML = Object.entries(vbs).filter(([,v])=>v.tiene_valor).map(([m,v])=>`
+  const vbHTML = Object.entries(vbs).filter(([,v])=>v.tiene_valor).map(([m,v])=>{
+    const pinnBadge = v.ev_pinn != null
+      ? `<span class="vb-pinn ${v.tiene_valor_pinn ? 'pinn-ok' : 'pinn-no'}">PINNACLE ${v.ev_pinn > 0 ? '+' : ''}${v.ev_pinn}%</span>`
+      : '';
+    return `
     <div class="vb">
       <span class="vb-m">${MN[m]||m}</span>
       <span class="vb-ev">EV +${v.ev_porcentaje}%</span>
+      ${pinnBadge}
       <span class="vb-tag ${v.clasificacion==='ALTO VALOR'?'hi':''}">${v.clasificacion}</span>
-    </div>`).join('');
+    </div>`;
+  }).join('');
   return `
   <div class="card ${hasVB?'vbet':''}">
     <div class="ch">
@@ -573,7 +582,8 @@ function abrirModal(p, prediccionPresel, cuotaPresel) {
   // Value bets al inicio
   Object.entries(p.value_bets).forEach(([m, vb]) => {
     if (vb.tiene_valor) {
-      opciones.unshift({ v: (MN[m]||m) + ` — EV +${vb.ev_porcentaje}%`, label: `VALUE: ${MN[m]||m} EV +${vb.ev_porcentaje}% [${vb.clasificacion}]` });
+      const pinnStr = vb.ev_pinn != null ? ` | Pinnacle ${vb.ev_pinn > 0 ? '+' : ''}${vb.ev_pinn}%` : '';
+      opciones.unshift({ v: (MN[m]||m) + ` — EV +${vb.ev_porcentaje}%`, label: `VALUE: ${MN[m]||m} EV +${vb.ev_porcentaje}%${pinnStr} [${vb.clasificacion}]` });
     }
   });
   opciones.forEach(o => {
