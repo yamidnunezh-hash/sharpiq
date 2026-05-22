@@ -113,7 +113,7 @@
       font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1px;
       color:var(--gold);background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.3);
       padding:8px 20px;border-radius:50px;margin-bottom:36px;
-      animation:fadeDown 0.4s ease both;
+      animation:fadeDown 0.4s ease forwards;
     }
     .hero-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse-live 1.2s infinite}
     .hero-h1{
@@ -121,7 +121,7 @@
       font-size:clamp(50px,9vw,110px);
       font-weight:900;line-height:.92;letter-spacing:-3px;
       color:var(--t1);margin-bottom:28px;
-      animation:fadeUp 0.4s 0.08s ease both;
+      animation:fadeUp 0.4s 0.05s ease forwards;
     }
     .hero-h1 em{
       display:block;font-style:normal;
@@ -130,9 +130,9 @@
     }
     .hero-sub{
       font-size:clamp(15px,1.8vw,19px);color:var(--t2);max-width:560px;line-height:1.75;
-      margin-bottom:44px;animation:fadeUp 0.4s 0.15s ease both;
+      margin-bottom:44px;animation:fadeUp 0.4s 0.1s ease forwards;
     }
-    .hero-acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:48px;animation:fadeUp 0.4s 0.22s ease both}
+    .hero-acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:48px;animation:fadeUp 0.4s 0.15s ease forwards}
     .btn-g{
       font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:1px;
       color:#000;background:linear-gradient(135deg,#00C8FF,#7B5CF0);
@@ -146,7 +146,7 @@
       transition:all .25s;backdrop-filter:blur(6px);
     }
     .btn-o:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
-    .hero-tags{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.4s 0.3s ease both}
+    .hero-tags{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.4s 0.2s ease forwards}
     .hero-tags span{font-family:'Space Mono',monospace;font-size:12px;color:var(--t3);display:flex;align-items:center;gap:6px}
     .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.5;animation:bounce-y 2.5s infinite}
     .scroll-hint span{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--t2)}
@@ -686,15 +686,17 @@
     .ft-bot{display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:1px solid var(--border);font-size:12px;color:var(--t3)}
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeUp{from{transform:translateY(24px)}to{transform:translateY(0)}}
+    @keyframes fadeDown{from{transform:translateY(-14px)}to{transform:translateY(0)}}
     @keyframes bounce-y{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(12px)}}
-    .rv{opacity:0;transform:translateY(40px) translateZ(0);transition:opacity .7s ease,transform .7s ease;will-change:opacity,transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
-    .rv.on{opacity:1;transform:translateY(0) translateZ(0)}
-    .rvl{opacity:0;transform:translateX(-40px) translateZ(0);transition:opacity .7s ease,transform .7s ease;will-change:opacity,transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
-    .rvl.on{opacity:1;transform:translateX(0) translateZ(0)}
-    .rvr{opacity:0;transform:translateX(40px) translateZ(0);transition:opacity .7s ease,transform .7s ease;will-change:opacity,transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
-    .rvr.on{opacity:1;transform:translateX(0) translateZ(0)}
+    @keyframes rv-show{to{opacity:1;transform:none}}
+    /* .rv inicia invisible pero tiene animación CSS de respaldo a 1.2s por si JS falla */
+    .rv{opacity:0;transform:translateY(40px) translateZ(0);transition:opacity .7s ease,transform .7s ease;will-change:opacity,transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:rv-show .5s 1.2s ease forwards}
+    .rv.on{opacity:1;transform:translateY(0) translateZ(0);animation:none}
+    .rvl{opacity:0;transform:translateX(-40px) translateZ(0);transition:opacity .7s ease,transform .7s ease;will-change:opacity,transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:rv-show .5s 1.4s ease forwards}
+    .rvl.on{opacity:1;transform:translateX(0) translateZ(0);animation:none}
+    .rvr{opacity:0;transform:translateX(40px) translateZ(0);transition:opacity .7s ease,transform .7s ease;will-change:opacity,transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:rv-show .5s 1.4s ease forwards}
+    .rvr.on{opacity:1;transform:translateX(0) translateZ(0);animation:none}
     .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
     /* ── RESPONSIVE ── */
