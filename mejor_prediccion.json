@@ -1,61 +1,61 @@
 {
-  "partido": "Colorado Avalanche vs Vegas Golden Knights",
-  "liga": "NHL",
-  "local": "Colorado Avalanche",
-  "visitante": "Vegas Golden Knights",
-  "prediccion": "Vegas Golden Knights",
-  "mercado_key": "Vegas Golden Knights",
+  "partido": "Chicago Cubs vs Houston Astros",
+  "liga": "MLB",
+  "local": "Chicago Cubs",
+  "visitante": "Houston Astros",
+  "prediccion": "Houston Astros",
+  "mercado_key": "Houston Astros",
   "cuota": "",
   "casa": "",
-  "hora_utc": "19:00",
-  "hora_cot": "14:00 COT",
-  "ev": 30.5,
+  "hora_utc": "13:21",
+  "hora_cot": "08:21 COT",
+  "ev": 51.2,
   "clasificacion": "ALTO VALOR",
-  "confianza": 64.2,
+  "confianza": 54.0,
   "pred_completa": {
-    "local": "Colorado Avalanche",
-    "visitante": "Vegas Golden Knights",
-    "liga": "NHL",
-    "liga_code": "icehockey_nhl",
-    "deporte": "NHL",
-    "hora": "19:00",
+    "local": "Chicago Cubs",
+    "visitante": "Houston Astros",
+    "liga": "MLB",
+    "liga_code": "baseball_mlb",
+    "deporte": "MLB",
+    "hora": "13:21",
     "cuotas": {
-      "Colorado Avalanche": 1.77,
-      "Vegas Golden Knights": 3.65
+      "Chicago Cubs": 1.48,
+      "Houston Astros": 2.8
     },
     "probabilidades": {
-      "Colorado Avalanche": 64.2,
-      "Vegas Golden Knights": 35.8
+      "Chicago Cubs": 46.0,
+      "Houston Astros": 54.0
     },
-    "confianza": 64.2,
+    "confianza": 54.0,
     "value_bets": {
-      "Colorado Avalanche": {
-        "value": 0.137,
-        "ev_porcentaje": 13.7,
-        "ev_pinn": 13.7,
-        "tiene_valor": true,
-        "tiene_valor_pinn": true,
-        "clasificacion": "ALTO VALOR",
-        "cuota": 1.77,
-        "casa": "Unibet",
-        "pinn_prob": 64.2
+      "Chicago Cubs": {
+        "value": -0.319,
+        "ev_porcentaje": -31.9,
+        "ev_pinn": -31.9,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.48,
+        "casa": "FanDuel",
+        "pinn_prob": 46.0
       },
-      "Vegas Golden Knights": {
-        "value": 0.305,
-        "ev_porcentaje": 30.5,
-        "ev_pinn": 30.5,
+      "Houston Astros": {
+        "value": 0.512,
+        "ev_porcentaje": 51.2,
+        "ev_pinn": 51.2,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 3.65,
-        "casa": "Unibet",
-        "pinn_prob": 35.8
+        "cuota": 2.8,
+        "casa": "BetMGM",
+        "pinn_prob": 54.0
       }
     },
     "prediccion_principal": {
-      "mercado": "Vegas Golden Knights",
-      "prob": 35.8,
-      "ev": 30.5
+      "mercado": "Houston Astros",
+      "prob": 54.0,
+      "ev": 51.2
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
