@@ -6,8 +6,8 @@ xG proxy = shots_on_target × 0.35 (ratio histórico internacional)
 Blending: 60% modelo base + 40% xG proxy
 """
 
-XG_CONV_RATE = 0.35   # ~35% de disparos a puerta terminan en gol
-XG_BLEND     = 0.40   # peso del xG en el blend final
+XG_CONV_RATE = 0.33   # ~33% de disparos a puerta terminan en gol (calibrado Europa 2020-25)
+XG_BLEND     = 0.25   # proxy shots×rate es menos preciso que xG real → peso conservador
 
 
 def ajustar_con_xg(local, visitante, liga_id, lambda_local, lambda_visita):

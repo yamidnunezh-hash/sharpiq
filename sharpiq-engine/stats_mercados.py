@@ -79,14 +79,29 @@ def obtener_stats_ext(equipo, liga_id):
         return cached
 
     try:
-        from motor import _apifb, TEAM_IDS
+        from motor import _apifb, TEAM_IDS, _match_equipos
+
+        # Búsqueda exacta primero, luego fuzzy para nombres que no coinciden exacto
         team_id = TEAM_IDS.get(equipo)
         if not team_id:
+            for nombre, tid in TEAM_IDS.items():
+                if _match_equipos(equipo, nombre):
+                    team_id = tid
+                    break
+        if not team_id:
             return None
+
+        # Aceptar tanto códigos numéricos (api-sports) como strings (football-data)
+        _liga_map = {
+            "PL": 39, "PD": 140, "BL1": 78, "SA": 135, "FL1": 61,
+            "CL": 2,  "CLI": 13, "CSA": 11,
+        }
         try:
             liga_int = int(liga_id)
         except (ValueError, TypeError):
-            return None  # código de liga no numérico (ej: "CLI", "PL")
+            liga_int = _liga_map.get(str(liga_id))
+            if not liga_int:
+                return None
 
         season = date.today().year if date.today().month >= 7 else date.today().year - 1
         data = _apifb("teams/statistics", {
