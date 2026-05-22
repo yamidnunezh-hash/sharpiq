@@ -1,21 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="gc" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00C8FF"/>
-      <stop offset="100%" stop-color="#7B5CF0"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <!-- Hexagon background -->
-  <polygon points="32,3 56,17 56,47 32,61 8,47 8,17"
-    fill="#07051A" stroke="url(#gc)" stroke-width="2.5" filter="url(#glow)"/>
-  <!-- Trend line / analytics symbol -->
-  <polyline points="16,42 24,34 31,38 40,24 48,20"
-    fill="none" stroke="url(#gc)" stroke-width="2.5"
-    stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
-  <!-- Circle at peak -->
-  <circle cx="48" cy="20" r="3.5" fill="#00C8FF" filter="url(#glow)"/>
+
+  <!-- Hexagon (flat-top, dark fill, cyan border with glow) -->
+  <polygon points="32,4 56,18 56,46 32,60 8,46 8,18"
+    fill="#07091F" stroke="#00C8FF" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Inner faint hex ring -->
+  <polygon points="32,11 50,21.5 50,42.5 32,53 14,42.5 14,21.5"
+    fill="none" stroke="#00C8FF" stroke-width="0.5" opacity="0.25"/>
+
+  <!-- Targeting crosshair lines -->
+  <!-- Vertical top -->
+  <line x1="32" y1="18" x2="32" y2="28" stroke="#00C8FF" stroke-width="1.5" stroke-linecap="round" filter="url(#glow)"/>
+  <!-- Diagonal left -->
+  <line x1="32" y1="34" x2="20" y2="40" stroke="#00C8FF" stroke-width="1.5" stroke-linecap="round" filter="url(#glow)"/>
+  <!-- Diagonal right -->
+  <line x1="32" y1="34" x2="44" y2="40" stroke="#00C8FF" stroke-width="1.5" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Node top -->
+  <circle cx="32" cy="17" r="2.5" fill="#00C8FF" filter="url(#glow-strong)"/>
+  <!-- Node left -->
+  <circle cx="19" cy="40.5" r="2.5" fill="#00C8FF" filter="url(#glow-strong)"/>
+  <!-- Node right -->
+  <circle cx="45" cy="40.5" r="2.5" fill="#00C8FF" filter="url(#glow-strong)"/>
+
+  <!-- Center node (hub) -->
+  <circle cx="32" cy="32" r="4" fill="#07091F" stroke="#00C8FF" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="32" cy="32" r="1.8" fill="#00C8FF" filter="url(#glow-strong)"/>
 </svg>
