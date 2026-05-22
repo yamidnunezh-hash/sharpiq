@@ -11,119 +11,29 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "22/05/26",
-    partido:    "Fiorentina vs Atalanta",
+    partido:    "CA Peñarol vs SC Corinthians Paulista",
+    liga:       "Copa Libertadores",
+    prediccion: "Handicap Visitante +1.5",
+    cuota:      "2.88",
+    hora:       "19:30 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "22/05/26",
+    partido:    "CD Universidad Católica vs Barcelona SC",
+    liga:       "Copa Libertadores",
+    prediccion: "Tarjetas Over 4.5",
+    cuota:      "2.62",
+    hora:       "19:30 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "22/05/26",
+    partido:    "ACF Fiorentina vs Atalanta BC",
     liga:       "Serie A",
-    prediccion: "Tarjetas Over 3.5",
-    cuota:      "2.27",
+    prediccion: "Tarjetas Over 4.5",
+    cuota:      "3.96",
     hora:       "13:45 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "VPS vs HJK Helsinki",
-    liga:       "Veikkausliiga",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.27",
-    hora:       "11:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Djurgardens IF vs IF Brommapojkarna",
-    liga:       "Allsvenskan",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.27",
-    hora:       "12:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Ried vs Rapid Vienna",
-    liga:       "Austrian Bundesliga",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.62",
-    hora:       "12:30 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Sudtirol vs Bari",
-    liga:       "Serie B",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.62",
-    hora:       "13:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Rot-Weiß Essen vs SpVgg Greuther Fürth",
-    liga:       "Bundesliga 2",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.62",
-    hora:       "13:30 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Derry City vs St Patrick's Athl.",
-    liga:       "League of Ireland",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.27",
-    hora:       "13:45 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Galway United vs Bohemians",
-    liga:       "League of Ireland",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.27",
-    hora:       "13:45 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Shelbourne vs Waterford",
-    liga:       "League of Ireland",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.27",
-    hora:       "13:45 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Drogheda United vs Dundalk",
-    liga:       "League of Ireland",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.27",
-    hora:       "14:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Shamrock Rovers vs Sligo Rovers",
-    liga:       "League of Ireland",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.27",
-    hora:       "14:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Everton de Vina vs Coquimbo Unido",
-    liga:       "Primera División Chile",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.12",
-    hora:       "14:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Nautico Recife vs Cuiaba",
-    liga:       "Brasileirao Serie B",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.27",
-    hora:       "17:00 COT",
     status:     "vip"
   },
   {
@@ -169,6 +79,15 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Philadelphia Phillies",
     cuota:      "",
     hora:       "12:41 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "22/05/26",
+    partido:    "New York Yankees vs Tampa Bay Rays",
+    liga:       "MLB",
+    prediccion: "Tampa Bay Rays",
+    cuota:      "",
+    hora:       "13:06 COT",
     status:     "vip"
   },
   {
@@ -286,150 +205,6 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Montréal Canadiens",
     cuota:      "",
     hora:       "13:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Seattle Seahawks vs New England Patriots",
-    liga:       "NFL",
-    prediccion: "Seattle Seahawks",
-    cuota:      "",
-    hora:       "14:15 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Los Angeles Rams vs San Francisco 49ers",
-    liga:       "NFL",
-    prediccion: "Los Angeles Rams",
-    cuota:      "",
-    hora:       "14:35 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Pittsburgh Steelers vs Atlanta Falcons",
-    liga:       "NFL",
-    prediccion: "Pittsburgh Steelers",
-    cuota:      "",
-    hora:       "07:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Indianapolis Colts vs Baltimore Ravens",
-    liga:       "NFL",
-    prediccion: "Indianapolis Colts",
-    cuota:      "",
-    hora:       "07:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Houston Texans vs Buffalo Bills",
-    liga:       "NFL",
-    prediccion: "Houston Texans",
-    cuota:      "",
-    hora:       "07:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Carolina Panthers vs Chicago Bears",
-    liga:       "NFL",
-    prediccion: "Chicago Bears",
-    cuota:      "",
-    hora:       "07:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Cincinnati Bengals vs Tampa Bay Buccaneers",
-    liga:       "NFL",
-    prediccion: "Tampa Bay Buccaneers",
-    cuota:      "",
-    hora:       "07:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Jacksonville Jaguars vs Cleveland Browns",
-    liga:       "NFL",
-    prediccion: "Jacksonville Jaguars",
-    cuota:      "",
-    hora:       "07:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Detroit Lions vs New Orleans Saints",
-    liga:       "NFL",
-    prediccion: "New Orleans Saints",
-    cuota:      "",
-    hora:       "07:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Tennessee Titans vs New York Jets",
-    liga:       "NFL",
-    prediccion: "New York Jets",
-    cuota:      "",
-    hora:       "07:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Los Angeles Chargers vs Arizona Cardinals",
-    liga:       "NFL",
-    prediccion: "Arizona Cardinals",
-    cuota:      "",
-    hora:       "10:25 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Minnesota Vikings vs Green Bay Packers",
-    liga:       "NFL",
-    prediccion: "Minnesota Vikings",
-    cuota:      "",
-    hora:       "10:25 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Las Vegas Raiders vs Miami Dolphins",
-    liga:       "NFL",
-    prediccion: "Miami Dolphins",
-    cuota:      "",
-    hora:       "10:25 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Philadelphia Eagles vs Washington Commanders",
-    liga:       "NFL",
-    prediccion: "Washington Commanders",
-    cuota:      "",
-    hora:       "10:25 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "New York Giants vs Dallas Cowboys",
-    liga:       "NFL",
-    prediccion: "New York Giants",
-    cuota:      "",
-    hora:       "14:20 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
-    partido:    "Kansas City Chiefs vs Denver Broncos",
-    liga:       "NFL",
-    prediccion: "Kansas City Chiefs",
-    cuota:      "",
-    hora:       "14:15 COT",
     status:     "vip"
   },
   {
