@@ -204,8 +204,9 @@ TEAM_IDS = {
     "Audax Italiano": 2361,        "Audax": 2361,
 }
 
-# Mapeo ligas football-data.org → the-odds-api.com
+# Mapeo ligas football-data.org / api-sports → the-odds-api.com
 LIGAS_ODDS = {
+    # football-data.org codes
     "PL":  "soccer_epl",
     "PD":  "soccer_spain_la_liga",
     "BL1": "soccer_germany_bundesliga",
@@ -214,23 +215,56 @@ LIGAS_ODDS = {
     "CL":  "soccer_uefa_champs_league",
     "CLI": "soccer_conmebol_copa_libertadores",
     "CSA": "soccer_conmebol_copa_sudamericana",
-    # api-sports IDs → the-odds-api
-    "39":  "soccer_epl",
-    "140": "soccer_spain_la_liga",
-    "78":  "soccer_germany_bundesliga",
-    "135": "soccer_italy_serie_a",
-    "61":  "soccer_france_ligue_one",
+    # api-sports IDs — UEFA / Europa
     "2":   "soccer_uefa_champs_league",
     "3":   "soccer_uefa_europa_league",
+    "848": "soccer_uefa_europa_conference_league",
+    "1":   "soccer_fifa_world_cup",
+    # api-sports IDs — Grandes ligas europeas
+    "39":  "soccer_epl",
+    "40":  "soccer_efl_champ",
+    "41":  "soccer_england_league1",
+    "42":  "soccer_england_league2",
+    "78":  "soccer_germany_bundesliga",
+    "79":  "soccer_germany_bundesliga2",
+    "135": "soccer_italy_serie_a",
+    "136": "soccer_italy_serie_b",
+    "140": "soccer_spain_la_liga",
+    "141": "soccer_spain_segunda_division",
+    "61":  "soccer_france_ligue_one",
+    "218": "soccer_austria_bundesliga",
+    "144": "soccer_belgium_first_div",
+    # api-sports IDs — LATAM / Americas
     "13":  "soccer_conmebol_copa_libertadores",
     "11":  "soccer_conmebol_copa_sudamericana",
-    "1":   "soccer_fifa_world_cup",
-    # Ligas activas año redondo
     "71":  "soccer_brazil_campeonato",
+    "72":  "soccer_brazil_serie_b",
+    "239": "soccer_argentina_primera_division",
     "262": "soccer_mexico_ligamx",
     "253": "soccer_usa_mls",
-    "239": "soccer_argentina_primera_division",
     "265": "soccer_chile_campeonato",
+    # api-sports IDs — Asia / Pacífico / Europa norte
+    "98":  "soccer_japan_j_league",
+    "169": "soccer_china_superleague",
+    "103": "soccer_norway_eliteserien",
+    "113": "soccer_sweden_allsvenskan",
+    "114": "soccer_sweden_superettan",
+    "106": "soccer_poland_ekstraklasa",
+    "244": "soccer_finland_veikkausliiga",
+    "357": "soccer_league_of_ireland",
+}
+
+# Deportes adicionales cubiertos por The Odds API (no requieren API-Football)
+# El motor los analiza directo con EV vs Pinnacle
+SPORTS_ODDS_ONLY = {
+    "basketball_nba":           "NBA",
+    "basketball_euroleague":    "Euroleague",
+    "baseball_mlb":             "MLB",
+    "icehockey_nhl":            "NHL",
+    "tennis_atp_french_open":   "ATP Roland Garros",
+    "tennis_wta_french_open":   "WTA Roland Garros",
+    "americanfootball_nfl":     "NFL",
+    "americanfootball_ufl":     "UFL",
 }
 
 # Casas de apuestas preferidas (europeas, disponibles en Colombia)
@@ -250,22 +284,44 @@ LIGAS = {
 
 # Liga IDs de api-sports.io que el motor analiza
 LIGAS_APIFB = {
+    # UEFA / FIFA
     1:    "Mundial FIFA 2026",
     2:    "Champions League",
     3:    "Europa League",
+    848:  "Conference League",
+    # Grandes ligas europeas
     39:   "Premier League",
+    40:   "Championship",
+    41:   "League One",
+    42:   "League Two",
+    78:   "Bundesliga",
+    79:   "Bundesliga 2",
+    135:  "Serie A",
+    136:  "Serie B",
+    140:  "La Liga",
+    141:  "La Liga 2",
     61:   "Ligue 1",
+    218:  "Austrian Bundesliga",
+    144:  "Belgian Pro League",
+    # LATAM / Americas
+    13:   "Copa Libertadores",
+    11:   "Copa Sudamericana",
     71:   "Brasileirao Serie A",
     72:   "Brasileirao Serie B",
-    78:   "Bundesliga",
-    13:   "Copa Libertadores",
     128:  "Liga BetPlay",
-    135:  "Serie A",
-    140:  "La Liga",
     239:  "Primera División Argentina",
     253:  "MLS",
     262:  "Liga MX",
     265:  "Primera División Chile",
+    # Asia / Europa norte
+    98:   "J1 League",
+    169:  "Chinese Super League",
+    103:  "Eliteserien",
+    113:  "Allsvenskan",
+    114:  "Superettan",
+    106:  "Ekstraklasa",
+    244:  "Veikkausliiga",
+    357:  "League of Ireland",
 }
 
 # ── API-FOOTBALL: FORMA, H2H, LESIONES ─────────────────────────
@@ -926,17 +982,32 @@ def calcular_goles_esperados(local, visitante, liga_code=""):
 # ── CUOTAS REALES (The Odds API) ────────────────────────────────
 _cache_cuotas = {}  # cache para no gastar créditos
 
+_SPORTS_US = {
+    "basketball_nba", "basketball_wnba", "baseball_mlb", "icehockey_nhl",
+    "americanfootball_nfl", "americanfootball_ufl", "americanfootball_ncaaf",
+    "lacrosse_pll", "lacrosse_ncaa",
+}
+
 def obtener_cuotas_liga(sport_key):
     if sport_key in _cache_cuotas:
         return _cache_cuotas[sport_key]
     try:
         url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
+        # Deportes americanos: incluir región us para más casas
+        if sport_key in _SPORTS_US:
+            regions   = "eu,uk,us"
+            bookmakers = "pinnacle,draftkings,fanduel,bet365,betmgm,unibet"
+            markets    = "h2h,totals"
+        else:
+            regions   = "eu,uk"
+            bookmakers = "pinnacle,bet365,betfair,unibet,williamhill,bwin"
+            markets    = "h2h,totals,btts,double_chance,draw_no_bet"
         params = {
-            "apiKey": ODDS_API_KEY,
-            "regions": "eu,uk",
-            "markets": "h2h,totals,btts,double_chance,draw_no_bet",
-            "oddsFormat": "decimal",
-            "bookmakers": "pinnacle,bet365,betfair,unibet,williamhill,bwin",
+            "apiKey":      ODDS_API_KEY,
+            "regions":     regions,
+            "markets":     markets,
+            "oddsFormat":  "decimal",
+            "bookmakers":  bookmakers,
         }
         r = requests.get(url, params=params, timeout=15)
         if r.status_code != 200:
@@ -1599,6 +1670,110 @@ def guardar_historial_cuotas(reporte):
     print(f"  Historial cuotas: {len(filas)} partidos → historial_cuotas.csv")
 
 
+# ── ANÁLISIS MULTIDEPORTE (NBA / NHL / MLB / Tennis / NFL) ───────
+def analizar_deporte_sharp(sport_key, nombre_liga):
+    """
+    Analiza cualquier deporte desde The Odds API usando Pinnacle como línea sharp.
+    Retorna lista de predicciones en el mismo formato que reporte_del_dia().
+    """
+    eventos = obtener_cuotas_liga(sport_key)
+    if not eventos:
+        return []
+
+    predicciones = []
+    for ev in eventos:
+        home  = ev.get("home_team", "")
+        away  = ev.get("away_team", "")
+        hora  = ev.get("commence_time", "")[:16].replace("T", " ")
+
+        # Buscar Pinnacle primero
+        pinn_h2h = None
+        for bm in ev.get("bookmakers", []):
+            if bm["key"] == "pinnacle":
+                for mkt in bm.get("markets", []):
+                    if mkt["key"] == "h2h":
+                        pinn_h2h = {o["name"]: o["price"] for o in mkt["outcomes"]}
+                break
+
+        if not pinn_h2h or len(pinn_h2h) < 2:
+            continue  # sin Pinnacle no hay EV fiable
+
+        # Desviar Pinnacle → probabilidades reales
+        overround = sum(1/p for p in pinn_h2h.values() if p)
+        pinn_probs = {k: (1/v)/overround for k, v in pinn_h2h.items() if v}
+
+        # Buscar mejor cuota disponible en otras casas
+        best_odds = {}
+        best_book = {}
+        for bm in ev.get("bookmakers", []):
+            if bm["key"] == "pinnacle":
+                continue
+            for mkt in bm.get("markets", []):
+                if mkt["key"] == "h2h":
+                    for o in mkt["outcomes"]:
+                        name, price = o["name"], o["price"]
+                        if name not in best_odds or price > best_odds[name]:
+                            best_odds[name] = price
+                            best_book[name] = bm.get("title", "")
+
+        # Calcular EV para cada resultado
+        value_bets = {}
+        mejor_ev, mejor_outcome = -999, None
+        for outcome, prob in pinn_probs.items():
+            cuota = best_odds.get(outcome)
+            if not cuota:
+                continue
+            ev_pct = round((prob * cuota - 1) * 100, 1)
+            tiene_valor = ev_pct >= 5
+            value_bets[outcome] = {
+                "value":          round(prob * cuota - 1, 3),
+                "ev_porcentaje":  ev_pct,
+                "ev_pinn":        ev_pct,
+                "tiene_valor":    tiene_valor,
+                "tiene_valor_pinn": tiene_valor,
+                "clasificacion":  "ALTO VALOR" if ev_pct >= 10 else "VALOR" if ev_pct >= 5 else "SIN VALOR",
+                "cuota":          cuota,
+                "casa":           best_book.get(outcome, ""),
+                "pinn_prob":      round(prob * 100, 1),
+            }
+            if ev_pct > mejor_ev:
+                mejor_ev = ev_pct
+                mejor_outcome = outcome
+
+        if not value_bets or mejor_outcome is None:
+            continue
+
+        # Convertir hora UTC a COT
+        hora_cot = hora
+        try:
+            h_part = hora.split("T")[-1][:5] if "T" in hora else hora[-5:]
+            hh, mm = int(h_part[:2]), int(h_part[3:5])
+            hh_cot = (hh - 5 + 24) % 24
+            hora_cot = f"{str(hh_cot).zfill(2)}:{str(mm).zfill(2)}"
+        except Exception:
+            pass
+
+        cuota_best = value_bets[mejor_outcome]["cuota"]
+        predicciones.append({
+            "local":      home,
+            "visitante":  away,
+            "liga":       nombre_liga,
+            "liga_code":  sport_key,
+            "hora":       hora_cot,
+            "cuotas":     {o: best_odds.get(o) for o in pinn_probs},
+            "probabilidades": {o: round(p*100,1) for o, p in pinn_probs.items()},
+            "confianza":  round(max(pinn_probs.values())*100, 1),
+            "value_bets": value_bets,
+            "prediccion_principal": {"mercado": mejor_outcome, "prob": round(pinn_probs.get(mejor_outcome,0)*100,1), "ev": mejor_ev},
+            "cuotas_reales": True,
+            "cuotas_avisos": [],
+            "forma_local": [], "forma_visita": [], "h2h": {}, "movimiento": None,
+        })
+
+    print(f"  {nombre_liga}: {len(predicciones)} eventos con Pinnacle")
+    return predicciones
+
+
 # ── GUARDAR JSON PARA EL PANEL ──────────────────────────────────
 def guardar_predicciones():
     try:
@@ -1610,6 +1785,17 @@ def guardar_predicciones():
         _db_ok = False
 
     reporte = reporte_del_dia()
+
+    # Añadir análisis de deportes adicionales (NBA, NHL, MLB, Tennis…)
+    print("\nAnalizando deportes adicionales...")
+    for sport_key, nombre in SPORTS_ODDS_ONLY.items():
+        try:
+            preds_extra = analizar_deporte_sharp(sport_key, nombre)
+            reporte["predicciones"].extend(preds_extra)
+            reporte["total_partidos"] += len(preds_extra)
+        except Exception as _ex:
+            print(f"  {nombre} error: {_ex}")
+
     with open(JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(reporte, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
     print(f"✅ Predicciones guardadas: {reporte['total_partidos']} partidos")
