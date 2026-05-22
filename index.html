@@ -923,7 +923,7 @@
             <span id="dash-wins" class="snum" style="font-size:58px;background:linear-gradient(135deg,#ffe066,#e6a90e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">0</span>
             <span class="dc-suf" id="dash-total">&nbsp;/ —</span>
           </div>
-          <div class="dc-sub">Últimos 30 días</div>
+          <div class="dc-sub" id="dash-desde">Desde Mayo 2026</div>
         </div>
 
         <div class="dc dark-card rv d2">
@@ -952,7 +952,7 @@
           <div class="dc-val">
             <span id="dash-racha" class="snum" style="font-size:58px;color:#a78bfa">0</span>
           </div>
-          <div class="dc-sub">Aciertos consecutivos</div>
+          <div class="dc-sub" id="dc-racha-sub">Aciertos consecutivos</div>
         </div>
 
       </div>
@@ -1075,7 +1075,7 @@
       <div class="pred-header">
         <div class="pred-header-left">
           <div class="live-badge"><div class="hero-dot" style="background:var(--green)"></div>HISTORIAL</div>
-          <span class="pred-title">Predicciones SharpIQ — Mayo 2026</span>
+          <span class="pred-title" id="pred-title">Predicciones SharpIQ — Mayo 2026</span>
         </div>
         <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--t3)">Últimas predicciones</span>
       </div>
@@ -1142,7 +1142,10 @@
 
       <!-- Barra visual de resultados -->
       <div id="historial-strip" style="margin-top:28px;padding:18px 20px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);">
-        <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Historial de resultados</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--t3)">Historial de resultados</div>
+          <div id="strip-context" style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);background:rgba(0,200,255,.06);border:1px solid rgba(0,200,255,.12);padding:3px 10px;border-radius:20px;letter-spacing:.5px"></div>
+        </div>
         <div id="strip-bloques" style="display:flex;gap:5px;flex-wrap:wrap;"></div>
       </div>
 
@@ -1353,7 +1356,7 @@
           <div class="calc-res"><span class="calc-res-lbl">ROI mensual estimado</span><span class="calc-res-val gold" id="r-roi">+8.8%</span></div>
         </div>
         <div class="calc-disc">
-          Proyecciones basadas en 43% de tasa de aciertos verificada, cuotas promedio 2.10 y mínimo 21 eventos semanales (3/día). Los resultados pasados no garantizan rendimientos futuros.
+          Proyecciones del modelo con picks filtrados por EV positivo vs Pinnacle, cuota promedio objetivo 2.10 y mínimo 21 eventos semanales. Los resultados pasados no garantizan rendimientos futuros.
         </div>
       </div>
     </div>
@@ -1564,6 +1567,15 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
       </tr>`).join('');
   }
 
+  // Título dinámico del historial
+  (function(){
+    const pt=document.getElementById('pred-title');
+    if(!pt) return;
+    const meses=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    const now=new Date();
+    pt.textContent='Predicciones SharpIQ — '+meses[now.getMonth()]+' '+now.getFullYear();
+  })();
+
   // Historial table + filters
   if(typeof PREDICCIONES_HISTORIAL!=='undefined'){
     renderHistorial(PREDICCIONES_HISTORIAL);
@@ -1612,7 +1624,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
           kSign=document.getElementById('kpi-roi-sign'),kPct=document.getElementById('kpi-roi-pct');
     if(kW){kW.dataset.target=wins.length;kW.textContent=0;}
     if(kT) kT.textContent='/'+resolved.length;
-    if(kRac){kRac.dataset.target=racha;kRac.textContent=0;}
+    if(kRac){if(racha===0){const p=kRac.parentElement;if(p)p.innerHTML='<span style="font-family:\'Bebas Neue\',cursive;font-size:40px;color:var(--t3);letter-spacing:1px">SIN RACHA</span>';}else{kRac.dataset.target=racha;kRac.textContent=0;}}
     if(kRoi){kRoi.dataset.target=Math.abs(yieldPct);kRoi.textContent=0;}
     if(kSign) kSign.textContent=yieldPct>=0?'+':'−';
     if(kPct) kPct.style.color=yieldPct>=0?'var(--gold)':'var(--red)';
@@ -1621,6 +1633,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
 
     // Sync dashboard cards with same data
     const tasa=resolved.length?Math.round(wins.length/resolved.length*100):0;
+    window._iq_tasa=tasa; // para dot ring
     const dW=document.getElementById('dash-wins'),dT=document.getElementById('dash-total'),
           dT2=document.getElementById('dash-total2'),dRoi=document.getElementById('dash-roi'),
           dRac=document.getElementById('dash-racha'),dTasa=document.getElementById('dash-tasa');
@@ -1628,7 +1641,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     if(dT) dT.textContent=' / '+resolved.length;
     if(dT2){dT2.dataset.target=PREDICCIONES_HISTORIAL.length;dT2.textContent=0;}
     if(dRoi){dRoi.dataset.target=Math.abs(yieldPct);dRoi.textContent=0;}
-    if(dRac){dRac.dataset.target=racha;dRac.textContent=0;}
+    if(dRac){if(racha===0){dRac.textContent='—';dRac.style.fontSize='58px';const ds=document.getElementById('dc-racha-sub');if(ds)ds.textContent='Próximo pick puede iniciar racha';}else{dRac.dataset.target=racha;dRac.textContent=0;}}
     if(dTasa){dTasa.dataset.target=tasa;dTasa.textContent=0;}
     // Color yield dashboard card
     const dRoiEl=document.getElementById('dash-roi');
@@ -1640,6 +1653,8 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
 
     // Barra visual de resultados
     const strip=document.getElementById('strip-bloques');
+    const stripCtx=document.getElementById('strip-context');
+    if(stripCtx&&resolved.length) stripCtx.textContent=`${resolved.length} picks · filtro Pinnacle activo`;
     if(strip&&resolved.length){
       strip.innerHTML=[...resolved].reverse().map(p=>{
         const isWin=p.resultado==='win';
@@ -1656,8 +1671,8 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     if(resueltos.length === 0){
       analGrid.innerHTML = '<p style="color:var(--t3);text-align:center;padding:40px 0">Historial en construcción — primeras predicciones en curso.</p>';
     } else {
-      const primero = resueltos[0];
-      const resto   = resueltos.slice(1, 5);
+      const primero = resueltos.find(p=>p.resultado==='win') || resueltos[0];
+      const resto   = resueltos.filter(p=>p!==primero).slice(0,4);
       const winPct  = Math.round(resueltos.filter(p=>p.resultado==='win').length/resueltos.length*100);
       analGrid.innerHTML = `
         <div class="anal-main rvl">
@@ -1757,8 +1772,8 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     // Badge 4: ROI
     const b4v=document.querySelector('.hf4 .hf-val'), b4l=document.querySelector('.hf4 .hf-lbl');
     if(b4v&&b4l&&resolved.length>=3){
-      b4v.textContent=(roi>=0?'+':'')+roi+'% ROI';
-      b4l.textContent=wins.length+'W · '+losses.length+'L verificados';
+      if(roi<0){b4v.textContent='Calibrando';b4l.textContent=wins.length+'W · '+losses.length+'L · '+resolved.length+' picks';}
+      else{b4v.textContent='+'+roi+'% ROI';b4l.textContent=wins.length+'W · '+losses.length+'L verificados';}
     }
 
     // Actualizar arco del ring SVG con tasa real
@@ -1979,7 +1994,7 @@ document.querySelectorAll('.snum[data-target]').forEach(el=>co.observe(el));
   const ring = document.getElementById('dotRing');
   if(!ring) return;
   const N = 56;           // total de puntos
-  const accuracy = 82;    // % de aciertos → puntos encendidos
+  const accuracy = (typeof window._iq_tasa!=='undefined'&&window._iq_tasa>0)?window._iq_tasa:33;
   const litCount = Math.round(N * accuracy / 100);
   const wrap = ring.parentElement;
   const size = wrap.offsetWidth || 340;
