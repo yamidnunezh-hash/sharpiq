@@ -667,6 +667,63 @@ def enviar_mercados_ext_vip(pred):
     return enviar_mensaje(texto, chat_id=get_chat_id())
 
 
+def enviar_tiers_vip(seguro, principal, alto_valor):
+    """
+    Mensaje único al canal VIP con los 3 picks del día en formato de tiers.
+    Formato: 🛡️ SEGURO / ⭐ PICK PRINCIPAL / 🔥 ALTO VALOR
+    """
+    from config import TELEGRAM_CHAT_ID
+
+    def _hcot(pred):
+        h, m = pred.get("hora", "00:00").split(":")
+        return f"{str((int(h)-5+24)%24).zfill(2)}:{m} COT"
+
+    bloques = []
+
+    if seguro:
+        p = seguro["pred"]
+        bloques.append(
+            f"🛡️ <b>SEGURO</b>\n"
+            f"⚽ <b>{p['local']} vs {p['visitante']}</b>\n"
+            f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
+            f"{seguro['mercado_nombre']} | @{seguro['cuota']}\n"
+            f"<i>Prob modelo: {round(seguro['prob'])}%</i>"
+        )
+
+    if principal:
+        p = principal["pred"]
+        bloques.append(
+            f"⭐ <b>PICK PRINCIPAL</b>\n"
+            f"⚽ <b>{p['local']} vs {p['visitante']}</b>\n"
+            f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
+            f"{principal['mercado_nombre']} | @{principal['cuota']}\n"
+            f"<i>Prob DNB: {round(principal['prob'])}%</i>"
+        )
+
+    if alto_valor:
+        p = alto_valor["pred"]
+        ev = round(alto_valor.get("ev_pinn", alto_valor.get("ev", 0)) or 0)
+        bloques.append(
+            f"🔥 <b>ALTO VALOR</b>\n"
+            f"⚽ <b>{p['local']} vs {p['visitante']}</b>\n"
+            f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
+            f"{alto_valor['mercado_nombre']} | @{alto_valor['cuota']} — EV +{ev}%\n"
+            f"<i>Prob: {round(alto_valor['prob'])}%</i>"
+        )
+
+    if not bloques:
+        return False
+
+    sep = "\n" + "─" * 30 + "\n\n"
+    texto = (
+        f"📊 <b>SharpIQ — Picks del Día</b>\n"
+        f"{'─' * 30}\n\n"
+        + sep.join(bloques)
+        + "\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+    )
+    return enviar_mensaje(texto, chat_id=TELEGRAM_CHAT_ID)
+
+
 def enviar_resultado_vip(partido, resultado_texto, emoji_resultado):
     """
     Publica el resultado de una predicción en el canal VIP con GIF celebratorio en WIN.

@@ -1989,6 +1989,113 @@ def _alertar_steam(reporte):
     ok = enviar_aviso_yamid(texto)
     print(f"  Steam alert: {'OK' if ok else 'FALLO'} ({len(alertas)} partido/s)")
 
+def clasificar_tiers(reporte):
+    """
+    Selecciona los 3 picks del día según jerarquía de tiers.
+    SEGURO:     Over 1.5 goles, prob >= 68%, cuota >= 1.28
+    PRINCIPAL:  Draw No Bet local o visitante, prob >= 58%, cuota >= 1.55
+    ALTO VALOR: EV vs Pinnacle >= 8%, cuota >= 1.90
+    Nunca repite partido entre tiers.
+    """
+    SEGURO_MIN_PROB  = 68.0
+    SEGURO_MIN_CUOTA = 1.28
+    PRINC_MIN_PROB   = 58.0
+    PRINC_MIN_CUOTA  = 1.55
+    AV_MIN_EV        = 8.0
+    AV_MIN_CUOTA     = 1.90
+
+    _CK = {
+        "victoria_local":"1","empate":"X","victoria_visita":"2",
+        "over15":"over15","under15":"under15","over25":"over25","under25":"under25",
+        "over35":"over35","under35":"under35","btts_si":"btts_si","btts_no":"btts_no",
+        "doble_12":"doble_12","dnb_local":"dnb_local","dnb_visita":"dnb_visita",
+    }
+    _NOMBRES = {
+        "victoria_local":"Victoria Local","empate":"Empate","victoria_visita":"Victoria Visitante",
+        "over15":"Over 1.5 Goles","over25":"Over 2.5 Goles","under25":"Under 2.5 Goles",
+        "over35":"Over 3.5 Goles","btts_si":"Ambos Marcan","doble_12":"Doble Oportunidad 1-2",
+        "dnb_local":"Draw No Bet Local","dnb_visita":"Draw No Bet Visitante",
+    }
+
+    seguro_pool = []
+    principal_pool = []
+    alto_pool = []
+
+    for pred in reporte.get("predicciones", []):
+        probs  = pred.get("probabilidades", {})
+        cuotas = pred.get("cuotas", {})
+        vbs    = pred.get("value_bets", {})
+
+        # ── SEGURO: Over 1.5 ────────────────────────────────────
+        prob_o15  = probs.get("over15", 0)
+        cuota_o15 = cuotas.get("over15")
+        if prob_o15 >= SEGURO_MIN_PROB and cuota_o15 and float(cuota_o15) >= SEGURO_MIN_CUOTA:
+            seguro_pool.append({
+                "pred":           pred,
+                "mercado":        "over15",
+                "mercado_nombre": "Over 1.5 Goles",
+                "prob":           prob_o15,
+                "cuota":          float(cuota_o15),
+                "score":          prob_o15 + float(cuota_o15) * 5,
+            })
+
+        # ── PICK PRINCIPAL: DNB ──────────────────────────────────
+        for dnb_k in ("dnb_local", "dnb_visita"):
+            prob_dnb  = probs.get(dnb_k, 0)
+            cuota_dnb = cuotas.get(dnb_k)
+            if prob_dnb >= PRINC_MIN_PROB and cuota_dnb and float(cuota_dnb) >= PRINC_MIN_CUOTA:
+                principal_pool.append({
+                    "pred":           pred,
+                    "mercado":        dnb_k,
+                    "mercado_nombre": _NOMBRES[dnb_k],
+                    "prob":           prob_dnb,
+                    "cuota":          float(cuota_dnb),
+                    "score":          prob_dnb + float(cuota_dnb) * 10,
+                })
+
+        # ── ALTO VALOR: EV vs Pinnacle >= 8% ────────────────────
+        for mk, vb in vbs.items():
+            if not vb:
+                continue
+            ev_p = vb.get("ev_pinn")
+            if ev_p is None or ev_p < AV_MIN_EV:
+                continue
+            ck = _CK.get(mk, mk)
+            cuota_v = cuotas.get(ck)
+            if not cuota_v or float(cuota_v) < AV_MIN_CUOTA:
+                continue
+            alto_pool.append({
+                "pred":           pred,
+                "mercado":        mk,
+                "mercado_nombre": _NOMBRES.get(mk, mk),
+                "prob":           probs.get(mk, vb.get("pinn_prob", 0)),
+                "cuota":          float(cuota_v),
+                "ev_pinn":        ev_p,
+                "score":          ev_p,
+            })
+
+    seguro_pool.sort(key=lambda x: x["score"], reverse=True)
+    principal_pool.sort(key=lambda x: x["score"], reverse=True)
+    alto_pool.sort(key=lambda x: x["score"], reverse=True)
+
+    usados = set()
+
+    def _pick(pool):
+        for c in pool:
+            k = f"{c['pred']['local']} vs {c['pred']['visitante']}"
+            if k not in usados:
+                usados.add(k)
+                return c
+        return None
+
+    # Orden: ALTO VALOR primero para no "desperdiciar" el mejor partido
+    alto_valor = _pick(alto_pool)
+    principal  = _pick(principal_pool)
+    seguro     = _pick(seguro_pool)
+
+    return {"seguro": seguro, "principal": principal, "alto_valor": alto_valor}
+
+
 if __name__ == "__main__":
     print("🔮 SharpIQ — Motor de Predicciones")
     print("=" * 50)
