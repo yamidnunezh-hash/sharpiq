@@ -83,10 +83,14 @@ def obtener_stats_ext(equipo, liga_id):
         team_id = TEAM_IDS.get(equipo)
         if not team_id:
             return None
+        try:
+            liga_int = int(liga_id)
+        except (ValueError, TypeError):
+            return None  # código de liga no numérico (ej: "CLI", "PL")
 
         season = date.today().year if date.today().month >= 7 else date.today().year - 1
         data = _apifb("teams/statistics", {
-            "team": team_id, "season": season, "league": int(liga_id)
+            "team": team_id, "season": season, "league": liga_int
         })
         if not data or not data.get("response"):
             return None

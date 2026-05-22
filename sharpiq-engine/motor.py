@@ -1719,6 +1719,8 @@ def _actualizar_datos_js(reporte):
                        cwd=repo_dir, check=True, capture_output=True)
         subprocess.run(["git", "commit", "-m", f"auto: predicciones {date.today().isoformat()}"],
                        cwd=repo_dir, check=True, capture_output=True)
+        subprocess.run(["git", "pull", "--rebase", "origin", "main"],
+                       cwd=repo_dir, check=True, capture_output=True)
         subprocess.run(["git", "push", "origin", "main"],
                        cwd=repo_dir, check=True, capture_output=True)
         print("  GitHub actualizado (predicciones + web) ✓")
