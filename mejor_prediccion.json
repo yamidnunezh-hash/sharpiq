@@ -1,274 +1,66 @@
 {
-  "partido": "Cusco FC vs CD Independiente Medellín",
-  "liga": "Copa Libertadores",
-  "local": "Cusco FC",
-  "visitante": "CD Independiente Medellín",
-  "prediccion": "Tarjetas Over 4.5",
-  "mercado_key": null,
-  "cuota": "2.34",
-  "hora_utc": "02:00",
-  "hora_cot": "21:00 COT",
-  "ev": null,
-  "clasificacion": null,
-  "confianza": 67.1,
+  "partido": "Colorado Avalanche vs Vegas Golden Knights",
+  "liga": "NHL",
+  "local": "Colorado Avalanche",
+  "visitante": "Vegas Golden Knights",
+  "prediccion": "Vegas Golden Knights",
+  "mercado_key": "Vegas Golden Knights",
+  "cuota": "",
+  "casa": "",
+  "hora_utc": "19:00",
+  "hora_cot": "14:00 COT",
+  "ev": 30.5,
+  "clasificacion": "ALTO VALOR",
+  "confianza": 64.2,
   "pred_completa": {
-    "local": "Cusco FC",
-    "visitante": "CD Independiente Medellín",
-    "probabilidades": {
-      "victoria_local": 38.4,
-      "empate": 28.9,
-      "victoria_visita": 32.7,
-      "over15": 74.5,
-      "under15": 25.5,
-      "over25": 48.1,
-      "under25": 51.9,
-      "over35": 26.3,
-      "under35": 73.7,
-      "over45": 12.2,
-      "under45": 87.8,
-      "btts_si": 54.0,
-      "btts_no": 46.0,
-      "doble_1x": 67.3,
-      "doble_x2": 61.6,
-      "doble_12": 71.1,
-      "dnb_local": 54.0,
-      "dnb_visita": 46.0,
-      "hdc_local_menos1": 18.3,
-      "hdc_visita_mas1": 61.6,
-      "goles_esperados_local": 1.36,
-      "goles_esperados_visita": 1.24,
-      "total_goles_esperados": 2.6
-    },
+    "local": "Colorado Avalanche",
+    "visitante": "Vegas Golden Knights",
+    "liga": "NHL",
+    "liga_code": "icehockey_nhl",
+    "hora": "19:00",
     "cuotas": {
-      "1": 2.34,
-      "X": 3.11,
-      "2": 2.75
+      "Colorado Avalanche": 1.77,
+      "Vegas Golden Knights": 3.65
     },
+    "probabilidades": {
+      "Colorado Avalanche": 64.2,
+      "Vegas Golden Knights": 35.8
+    },
+    "confianza": 64.2,
     "value_bets": {
-      "victoria_local": {
-        "value": -0.101,
-        "ev_porcentaje": -10.1,
-        "tiene_valor": false,
-        "clasificacion": "SIN VALOR",
-        "ev_pinn": null,
-        "tiene_valor_pinn": null
+      "Colorado Avalanche": {
+        "value": 0.137,
+        "ev_porcentaje": 13.7,
+        "ev_pinn": 13.7,
+        "tiene_valor": true,
+        "tiene_valor_pinn": true,
+        "clasificacion": "ALTO VALOR",
+        "cuota": 1.77,
+        "casa": "Unibet",
+        "pinn_prob": 64.2
       },
-      "empate": {
-        "value": -0.101,
-        "ev_porcentaje": -10.1,
-        "tiene_valor": false,
-        "clasificacion": "SIN VALOR",
-        "ev_pinn": null,
-        "tiene_valor_pinn": null
-      },
-      "victoria_visita": {
-        "value": -0.101,
-        "ev_porcentaje": -10.1,
-        "tiene_valor": false,
-        "clasificacion": "SIN VALOR",
-        "ev_pinn": null,
-        "tiene_valor_pinn": null
+      "Vegas Golden Knights": {
+        "value": 0.305,
+        "ev_porcentaje": 30.5,
+        "ev_pinn": 30.5,
+        "tiene_valor": true,
+        "tiene_valor_pinn": true,
+        "clasificacion": "ALTO VALOR",
+        "cuota": 3.65,
+        "casa": "Unibet",
+        "pinn_prob": 35.8
       }
-    },
-    "kelly": {
-      "stake_porcentaje": 0,
-      "stake_dinero": 0,
-      "recomendacion": "NO APOSTAR"
     },
     "prediccion_principal": {
-      "mercado": "Tarjetas Over 4.5",
-      "prob": 67.1,
-      "ev": -4.7
+      "mercado": "Vegas Golden Knights",
+      "prob": 35.8,
+      "ev": 30.5
     },
-    "confianza": 67.1,
-    "mercados_ext": {
-      "corners": {
-        "corners_esperados": 10.8,
-        "corners_over9": 75.1,
-        "corners_under9": 24.9,
-        "corners_over10": 63.9,
-        "corners_under10": 36.1,
-        "corners_over11": 51.7,
-        "corners_under11": 48.3,
-        "corners_over12": 39.8,
-        "corners_under12": 60.2,
-        "corners_over13": 29.1,
-        "corners_under13": 70.9
-      },
-      "tarjetas": {
-        "tarjetas_esperadas": 4.6,
-        "tarjetas_over3": 83.5,
-        "tarjetas_under3": 16.5,
-        "tarjetas_over4": 67.1,
-        "tarjetas_under4": 32.9,
-        "tarjetas_over5": 48.3,
-        "tarjetas_under5": 51.7,
-        "tarjetas_over6": 31.1,
-        "tarjetas_under6": 68.9
-      },
-      "handicap": {
-        "ah_local_menos05": 38.4,
-        "ah_visita_mas05": 61.6,
-        "ah_local_menos1": 18.3,
-        "ah_visita_mas1": 81.7,
-        "ah_local_menos15": 12.8,
-        "ah_visita_mas15": 87.2
-      },
-      "ev_ext": {
-        "corners_over9": {
-          "prob_modelo": 75.1,
-          "cuota_justa": 1.33,
-          "cuota_ref": 1.26,
-          "ev_porcentaje": -5.4,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "corners_under9": {
-          "prob_modelo": 24.9,
-          "cuota_justa": 4.02,
-          "cuota_ref": 3.82,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "corners_over10": {
-          "prob_modelo": 63.9,
-          "cuota_justa": 1.56,
-          "cuota_ref": 1.49,
-          "ev_porcentaje": -4.8,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "corners_under10": {
-          "prob_modelo": 36.1,
-          "cuota_justa": 2.77,
-          "cuota_ref": 2.63,
-          "ev_porcentaje": -5.1,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "corners_over11": {
-          "prob_modelo": 51.7,
-          "cuota_justa": 1.93,
-          "cuota_ref": 1.84,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "corners_under11": {
-          "prob_modelo": 48.3,
-          "cuota_justa": 2.07,
-          "cuota_ref": 1.97,
-          "ev_porcentaje": -4.8,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_over3": {
-          "prob_modelo": 83.5,
-          "cuota_justa": 1.2,
-          "cuota_ref": 1.14,
-          "ev_porcentaje": -4.8,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_under3": {
-          "prob_modelo": 16.5,
-          "cuota_justa": 6.06,
-          "cuota_ref": 5.76,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_over4": {
-          "prob_modelo": 67.1,
-          "cuota_justa": 1.49,
-          "cuota_ref": 1.42,
-          "ev_porcentaje": -4.7,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_under4": {
-          "prob_modelo": 32.9,
-          "cuota_justa": 3.04,
-          "cuota_ref": 2.89,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_over5": {
-          "prob_modelo": 48.3,
-          "cuota_justa": 2.07,
-          "cuota_ref": 1.97,
-          "ev_porcentaje": -4.8,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_under5": {
-          "prob_modelo": 51.7,
-          "cuota_justa": 1.93,
-          "cuota_ref": 1.84,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_local_menos05": {
-          "prob_modelo": 38.4,
-          "cuota_justa": 2.6,
-          "cuota_ref": 2.47,
-          "ev_porcentaje": -5.2,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_visita_mas05": {
-          "prob_modelo": 61.6,
-          "cuota_justa": 1.62,
-          "cuota_ref": 1.54,
-          "ev_porcentaje": -5.1,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_local_menos1": {
-          "prob_modelo": 18.3,
-          "cuota_justa": 5.46,
-          "cuota_ref": 5.19,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_visita_mas1": {
-          "prob_modelo": 81.7,
-          "cuota_justa": 1.22,
-          "cuota_ref": 1.16,
-          "ev_porcentaje": -5.2,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_local_menos15": {
-          "prob_modelo": 12.8,
-          "cuota_justa": 7.81,
-          "cuota_ref": 7.42,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_visita_mas15": {
-          "prob_modelo": 87.2,
-          "cuota_justa": 1.15,
-          "cuota_ref": 1.09,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        }
-      }
-    },
-    "liga": "Copa Libertadores",
-    "hora": "02:00",
-    "id": 557093,
-    "cuotas_reales": false,
+    "cuotas_reales": true,
     "cuotas_avisos": [],
-    "forma_local": null,
-    "forma_visita": null,
-    "h2h": null,
+    "forma_local": [],
+    "forma_visita": [],
+    "h2h": {},
     "movimiento": null
   }
 }
