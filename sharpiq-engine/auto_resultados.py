@@ -12,6 +12,29 @@ sys.path.insert(0, BASE_DIR)
 from config import APIFOOTBALL_KEY
 from motor import _apifb, LIGAS_APIFB
 
+# Mapeo predicción (display) → clave de mercado en DB
+_PRED_TO_MERCADO = {
+    "victoria local":     "victoria_local",
+    "victoria visitante": "victoria_visita",
+    "empate":             "empate",
+    "over 2.5":           "over25",
+    "under 2.5":          "under25",
+    "over 1.5":           "over15",
+    "under 1.5":          "under15",
+    "over 3.5":           "over35",
+    "under 3.5":          "under35",
+    "ambos marcan":       "btts_si",
+    "tarjetas over":      "btts_si",  # fallback genérico
+    "corners over":       "btts_si",
+}
+
+def _pred_to_mercado_key(prediccion):
+    p = prediccion.lower()
+    for k, v in _PRED_TO_MERCADO.items():
+        if k in p:
+            return v
+    return prediccion
+
 DATOS_PATH = os.path.join(BASE_DIR, "..", "datos.js")
 
 
@@ -202,6 +225,14 @@ def correr():
         texto = mover_a_historial(texto, evento, resultado)
         actualizados += 1
 
+        # Registrar resultado en PostgreSQL (CLV tracking)
+        try:
+            from db_clv import actualizar_resultado as _db_resultado
+            mercado_key = _pred_to_mercado_key(evento.get('prediccion', ''))
+            _db_resultado(partido, mercado_key, resultado)
+        except Exception as _dbe:
+            print(f"  DB CLV resultado: {_dbe}")
+
         # Guardar snapshot de cierre y calcular CLV
         clv_texto = ""
         try:
@@ -250,11 +281,13 @@ def correr():
         # Git push automático
         repo_dir = os.path.join(BASE_DIR, "..")
         try:
-            subprocess.run(["git", "add", "datos.js"], cwd=repo_dir, check=True)
+            subprocess.run(["git", "add", "datos.js"], cwd=repo_dir, check=True, capture_output=True)
             subprocess.run(["git", "commit", "-m",
                 f"auto: resultados actualizados ({date.today().isoformat()})"],
-                cwd=repo_dir, check=True)
-            subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=True)
+                cwd=repo_dir, check=True, capture_output=True)
+            subprocess.run(["git", "pull", "--rebase", "origin", "main"],
+                cwd=repo_dir, check=True, capture_output=True)
+            subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=True, capture_output=True)
             print("  GitHub actualizado ✓")
         except subprocess.CalledProcessError as e:
             print(f"  Git error: {e}")
