@@ -2022,52 +2022,88 @@ def clasificar_tiers(reporte):
     alto_pool = []
 
     for pred in reporte.get("predicciones", []):
-        probs  = pred.get("probabilidades", {})
-        cuotas = pred.get("cuotas", {})
-        vbs    = pred.get("value_bets", {})
+        probs      = pred.get("probabilidades", {})
+        cuotas     = pred.get("cuotas", {})
+        vbs        = pred.get("value_bets", {})
+        liga_code  = str(pred.get("liga_code", ""))
+        es_futbol  = liga_code not in SPORTS_ODDS_ONLY
 
-        # ── SEGURO: Over 1.5 ────────────────────────────────────
-        prob_o15  = probs.get("over15", 0)
-        cuota_o15 = cuotas.get("over15")
-        if prob_o15 >= SEGURO_MIN_PROB and cuota_o15 and float(cuota_o15) >= SEGURO_MIN_CUOTA:
-            seguro_pool.append({
-                "pred":           pred,
-                "mercado":        "over15",
-                "mercado_nombre": "Over 1.5 Goles",
-                "prob":           prob_o15,
-                "cuota":          float(cuota_o15),
-                "score":          prob_o15 + float(cuota_o15) * 5,
-            })
-
-        # ── PICK PRINCIPAL: DNB ──────────────────────────────────
-        for dnb_k in ("dnb_local", "dnb_visita"):
-            prob_dnb  = probs.get(dnb_k, 0)
-            cuota_dnb = cuotas.get(dnb_k)
-            if prob_dnb >= PRINC_MIN_PROB and cuota_dnb and float(cuota_dnb) >= PRINC_MIN_CUOTA:
-                principal_pool.append({
+        if es_futbol:
+            # ── SEGURO: Over 1.5 goles ───────────────────────────
+            prob_o15  = probs.get("over15", 0)
+            cuota_o15 = cuotas.get("over15")
+            if prob_o15 >= SEGURO_MIN_PROB and cuota_o15 and float(cuota_o15) >= SEGURO_MIN_CUOTA:
+                seguro_pool.append({
                     "pred":           pred,
-                    "mercado":        dnb_k,
-                    "mercado_nombre": _NOMBRES[dnb_k],
-                    "prob":           prob_dnb,
-                    "cuota":          float(cuota_dnb),
-                    "score":          prob_dnb + float(cuota_dnb) * 10,
+                    "mercado":        "over15",
+                    "mercado_nombre": "Over 1.5 Goles",
+                    "prob":           prob_o15,
+                    "cuota":          float(cuota_o15),
+                    "score":          prob_o15 + float(cuota_o15) * 5,
                 })
 
-        # ── ALTO VALOR: EV vs Pinnacle >= 8% ────────────────────
+            # ── PICK PRINCIPAL: Draw No Bet ──────────────────────
+            for dnb_k in ("dnb_local", "dnb_visita"):
+                prob_dnb  = probs.get(dnb_k, 0)
+                cuota_dnb = cuotas.get(dnb_k)
+                if prob_dnb >= PRINC_MIN_PROB and cuota_dnb and float(cuota_dnb) >= PRINC_MIN_CUOTA:
+                    principal_pool.append({
+                        "pred":           pred,
+                        "mercado":        dnb_k,
+                        "mercado_nombre": _NOMBRES[dnb_k],
+                        "prob":           prob_dnb,
+                        "cuota":          float(cuota_dnb),
+                        "score":          prob_dnb + float(cuota_dnb) * 10,
+                    })
+
+        else:
+            # ── SEGURO otros deportes: favorito moneyline ≥ 68% ──
+            # En NBA/NHL/MLB no hay empate — moneyline directo
+            for team, prob_val in probs.items():
+                cuota_val = cuotas.get(team)
+                if not cuota_val:
+                    continue
+                if prob_val >= SEGURO_MIN_PROB and float(cuota_val) >= SEGURO_MIN_CUOTA:
+                    seguro_pool.append({
+                        "pred":           pred,
+                        "mercado":        team,
+                        "mercado_nombre": f"Gana {team}",
+                        "prob":           prob_val,
+                        "cuota":          float(cuota_val),
+                        "score":          prob_val + float(cuota_val) * 5,
+                    })
+
+            # ── PRINCIPAL otros deportes: moneyline ≥ 58% ────────
+            for team, prob_val in probs.items():
+                cuota_val = cuotas.get(team)
+                if not cuota_val:
+                    continue
+                if prob_val >= PRINC_MIN_PROB and float(cuota_val) >= PRINC_MIN_CUOTA:
+                    principal_pool.append({
+                        "pred":           pred,
+                        "mercado":        team,
+                        "mercado_nombre": f"Gana {team}",
+                        "prob":           prob_val,
+                        "cuota":          float(cuota_val),
+                        "score":          prob_val + float(cuota_val) * 10,
+                    })
+
+        # ── ALTO VALOR: EV vs Pinnacle >= 8% (todos los deportes)
         for mk, vb in vbs.items():
             if not vb:
                 continue
             ev_p = vb.get("ev_pinn")
             if ev_p is None or ev_p < AV_MIN_EV:
                 continue
-            ck = _CK.get(mk, mk)
+            ck = _CK.get(mk, mk)          # fallback: clave = nombre del equipo
             cuota_v = cuotas.get(ck)
             if not cuota_v or float(cuota_v) < AV_MIN_CUOTA:
                 continue
+            nombre_mk = _NOMBRES.get(mk) or (f"Gana {mk}" if not es_futbol else mk)
             alto_pool.append({
                 "pred":           pred,
                 "mercado":        mk,
-                "mercado_nombre": _NOMBRES.get(mk, mk),
+                "mercado_nombre": nombre_mk,
                 "prob":           probs.get(mk, vb.get("pinn_prob", 0)),
                 "cuota":          float(cuota_v),
                 "ev_pinn":        ev_p,
