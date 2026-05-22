@@ -561,6 +561,16 @@ def _construir_narrativa(pred, mercado, vb, canal):
         )
         intro_free = ""
 
+    # ── Árbitro y sede neutral ────────────────────────────────────
+    linea_contexto = ""
+    arbitro = pred.get("arbitro", "")
+    if arbitro:
+        linea_contexto += f"👮 <b>Árbitro:</b> {arbitro}\n"
+    if pred.get("sede_neutral"):
+        linea_contexto += f"🏟️ <b>Sede neutral</b> — sin ventaja de local\n"
+    if linea_contexto:
+        linea_contexto = "\n" + linea_contexto
+
     if canal == "vip":
         texto = (
             f"🔬 <b>Análisis completo — SharpIQ Engine</b>\n\n"
@@ -568,6 +578,7 @@ def _construir_narrativa(pred, mercado, vb, canal):
             f"{linea_forma}"
             f"{linea_h2h}\n"
             f"{linea_ev}\n"
+            f"{linea_contexto}"
             f"{pie_vip}"
         )
     else:  # free

@@ -468,14 +468,24 @@ def obtener_partidos_hoy_apifb():
         status = f["fixture"]["status"]["short"]
         if status not in ("NS", "TBD"):
             continue  # solo partidos no iniciados
+        # Sede neutral: finales, semifinales o Mundial (todas en sede neutral)
+        round_name   = f["league"].get("round", "").lower()
+        sede_neutral = (
+            lid == 1  # Mundial FIFA — todos en sede neutral
+            or any(kw in round_name for kw in ("final", "semi-final", "3rd place", "third place"))
+        )
+        arbitro = f["fixture"].get("referee") or ""
+
         partidos.append({
-            "id":         f["fixture"]["id"],
-            "liga":       nombre_liga,
-            "liga_code":  str(lid),
-            "local":      f["teams"]["home"]["name"],
-            "visitante":  f["teams"]["away"]["name"],
-            "hora":       f["fixture"]["date"][11:16],
-            "estado":     status,
+            "id":           f["fixture"]["id"],
+            "liga":         nombre_liga,
+            "liga_code":    str(lid),
+            "local":        f["teams"]["home"]["name"],
+            "visitante":    f["teams"]["away"]["name"],
+            "hora":         f["fixture"]["date"][11:16],
+            "estado":       status,
+            "sede_neutral": sede_neutral,
+            "arbitro":      arbitro,
         })
         conteo[nombre_liga] = conteo.get(nombre_liga, 0) + 1
     for liga, n in sorted(conteo.items()):
@@ -902,7 +912,7 @@ STATS_EQUIPOS = {
 
 PROMEDIO_LIGA = {"ataque": 1.35, "defensa": 1.35}
 
-def calcular_goles_esperados(local, visitante, liga_code=""):
+def calcular_goles_esperados(local, visitante, liga_code="", sede_neutral=False):
     stats_l = dict(get_stats_equipo(local))
     stats_v = dict(get_stats_equipo(visitante))
 
@@ -937,8 +947,9 @@ def calcular_goles_esperados(local, visitante, liga_code=""):
         "265": 1.21,   # Chile Primera
         "253": 1.20,   # MLS
     }
-    # liga_code viene como parámetro de la función
     ventaja_local = VENTAJA_LOCAL_LIGA.get(liga_code, 1.25)
+    if sede_neutral:
+        ventaja_local = 1.0  # final o sede neutral: sin ventaja de cancha
 
     goles_local  = (stats_l["ataque"]  / PROMEDIO_LIGA["ataque"])  * \
                    (stats_v["defensa"] / PROMEDIO_LIGA["defensa"]) * \
@@ -1253,8 +1264,8 @@ def _validar_cuotas(cuotas, probs):
 
 
 # ── PREDICCIÓN COMPLETA ─────────────────────────────────────────
-def predecir_partido(local, visitante, cuotas=None, liga_code=""):
-    goles_local, goles_visita = calcular_goles_esperados(local, visitante, liga_code)
+def predecir_partido(local, visitante, cuotas=None, liga_code="", sede_neutral=False):
+    goles_local, goles_visita = calcular_goles_esperados(local, visitante, liga_code, sede_neutral)
     probs = modelo_poisson(goles_local, goles_visita)
 
     # Cuotas por defecto si no se pasan
@@ -1490,10 +1501,21 @@ def reporte_del_dia():
             for av in avisos_cuota:
                 print(f"  ⚠ Cuota sospechosa {p['local']} vs {p['visitante']}: {av}")
 
-        pred = predecir_partido(p["local"], p["visitante"], cuotas=cuotas_reales, liga_code=p.get("liga_code",""))
-        pred["liga"] = p["liga"]
-        pred["hora"] = p["hora"]
-        pred["id"] = p["id"]
+        sede_neutral = p.get("sede_neutral", False)
+        if sede_neutral:
+            print(f"  Sede neutral detectada: {p['local']} vs {p['visitante']} ({p['liga']})")
+
+        pred = predecir_partido(
+            p["local"], p["visitante"],
+            cuotas=cuotas_reales,
+            liga_code=p.get("liga_code", ""),
+            sede_neutral=sede_neutral,
+        )
+        pred["liga"]         = p["liga"]
+        pred["hora"]         = p["hora"]
+        pred["id"]           = p["id"]
+        pred["sede_neutral"] = sede_neutral
+        pred["arbitro"]      = p.get("arbitro", "")
         pred["cuotas_reales"] = bool(cuotas_reales)
         pred["cuotas_avisos"] = avisos_cuota
 
