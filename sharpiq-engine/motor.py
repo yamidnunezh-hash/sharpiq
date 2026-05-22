@@ -951,30 +951,41 @@ def obtener_cuotas_liga(sport_key):
         return []
 
 _STOPWORDS_EQUIPO = {
-    'club', 'fc', 'cf', 'sc', 'ac', 'as', 'sk', 'sd', 'cd', 'ca',
-    'de', 'del', 'los', 'las', 'el', 'la', 'the', 'united', 'city',
-    'sport', 'sporting', 'atletico', 'atletico', 'real', 'deportivo',
-    'sociedad', 'association',
+    # Sufijos genéricos
+    'club', 'fc', 'cf', 'sc', 'ac', 'as', 'sk', 'sd', 'cd', 'ca', 'cs', 'cdp',
+    'rc', 'ra', 'fk', 'nk', 'pk', 'bv', 'sv', 'nr', 'gd', 'if',
+    # Artículos / preposiciones
+    'de', 'del', 'los', 'las', 'el', 'la', 'the', 'y', 'e', 'do', 'da', 'dos',
+    # Palabras comunes en nombres de equipos
+    'united', 'city', 'sport', 'sporting', 'atletico', 'real', 'deportivo',
+    'sociedad', 'association', 'junior', 'seniors',
+    # Códigos de estado Brasil
+    'rj', 'sp', 'mg', 'pr', 'rs', 'ba', 'pe', 'sc', 'go', 'ce',
+    # Prefijos LATAM
+    'ldu', 'csd', 'bsc', 'uanl', 'lfc',
 }
 
 def _norm_equipo(nombre):
-    """Normaliza nombre de equipo: quita sufijos de ciudad, acentos, stopwords."""
     n = nombre.lower()
-    n = re.sub(r'[-]\w{2}$', '', n)          # Palmeiras-SP → palmeiras
+    n = re.sub(r'\b\w{2,3}\b$', '', n)        # quita sufijos de 2-3 chars al final (SP, RJ, FC…)
     n = re.sub(r'[áàä]','a', re.sub(r'[éèë]','e', re.sub(r'[íìï]','i',
         re.sub(r'[óòö]','o', re.sub(r'[úùü]','u', n)))))
     n = re.sub(r'[^a-z0-9 ]', ' ', n)
-    palabras = [p for p in n.split() if p not in _STOPWORDS_EQUIPO and len(p) > 1]
+    palabras = [p for p in n.split() if p not in _STOPWORDS_EQUIPO and len(p) > 2]
     return set(palabras)
 
 def _match_equipos(a, b):
-    """True si los nombres corresponden al mismo equipo (fuzzy)."""
     sa, sb = _norm_equipo(a), _norm_equipo(b)
     if not sa or not sb:
         return False
-    interseccion = len(sa & sb)
-    minimo = min(len(sa), len(sb))
-    return interseccion / minimo >= 0.6
+    interseccion = sa & sb
+    if not interseccion:
+        return False
+    # Si hay al menos una palabra larga (≥5 chars) en común → match directo
+    if any(len(w) >= 5 for w in interseccion):
+        return True
+    # Umbral proporcional: 50% de las palabras del set más pequeño
+    return len(interseccion) / min(len(sa), len(sb)) >= 0.5
 
 
 def buscar_cuotas_partido(local, visitante, sport_key):
@@ -984,6 +995,10 @@ def buscar_cuotas_partido(local, visitante, sport_key):
         a = p.get("away_team", "")
         if _match_equipos(local, h) and _match_equipos(visitante, a):
             return extraer_mejor_cuota(p)
+    # Sin match — loguear candidatos para diagnóstico
+    if partidos:
+        candidatos = [f"{p['home_team']} vs {p['away_team']}" for p in partidos[:6]]
+        print(f"  No match '{local}' vs '{visitante}' en {sport_key}. API tiene: {candidatos}")
     return None
 
 def extraer_mejor_cuota(partido):

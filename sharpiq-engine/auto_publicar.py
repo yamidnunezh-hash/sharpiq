@@ -43,11 +43,12 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev):
     with open(DATOS_PATH, encoding="utf-8") as f:
         texto = f.read()
 
+    ev_tag = f" — EV +{ev}%" if ev > 0 else ""
     nueva_entrada = f"""  {{
     fecha:      "{date.today().strftime('%d/%m/%y')}",
     partido:    "{partido}",
     liga:       "{liga}",
-    prediccion: "{mercado} — EV +{ev}%",
+    prediccion: "{mercado}{ev_tag}",
     cuota:      "{cuota}",
     hora:       "{hora}",
     status:     "vip"
