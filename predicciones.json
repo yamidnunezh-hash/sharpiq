@@ -3413,6 +3413,7 @@
       "visitante": "Oklahoma City Thunder",
       "liga": "NBA",
       "liga_code": "basketball_nba",
+      "deporte": "NBA",
       "hora": "19:40",
       "cuotas": {
         "Oklahoma City Thunder": 2.1,
@@ -3464,10 +3465,11 @@
       "visitante": "New York Knicks",
       "liga": "NBA",
       "liga_code": "basketball_nba",
+      "deporte": "NBA",
       "hora": "19:10",
       "cuotas": {
         "Cleveland Cavaliers": 1.79,
-        "New York Knicks": 2.15
+        "New York Knicks": 2.18
       },
       "probabilidades": {
         "Cleveland Cavaliers": 55.5,
@@ -3487,13 +3489,13 @@
           "pinn_prob": 55.5
         },
         "New York Knicks": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.15,
+          "cuota": 2.18,
           "casa": "BetMGM",
           "pinn_prob": 44.5
         }
@@ -3515,10 +3517,11 @@
       "visitante": "Houston Astros",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "13:21",
       "cuotas": {
-        "Chicago Cubs": 1.71,
-        "Houston Astros": 2.2
+        "Chicago Cubs": 1.7,
+        "Houston Astros": 2.28
       },
       "probabilidades": {
         "Chicago Cubs": 56.6,
@@ -3527,32 +3530,32 @@
       "confianza": 56.6,
       "value_bets": {
         "Chicago Cubs": {
-          "value": -0.031,
-          "ev_porcentaje": -3.1,
-          "ev_pinn": -3.1,
+          "value": -0.037,
+          "ev_porcentaje": -3.7,
+          "ev_pinn": -3.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.71,
-          "casa": "BetMGM",
+          "cuota": 1.7,
+          "casa": "FanDuel",
           "pinn_prob": 56.6
         },
         "Houston Astros": {
-          "value": -0.046,
-          "ev_porcentaje": -4.6,
-          "ev_pinn": -4.6,
+          "value": -0.011,
+          "ev_porcentaje": -1.1,
+          "ev_pinn": -1.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.2,
-          "casa": "FanDuel",
+          "cuota": 2.28,
+          "casa": "Unibet",
           "pinn_prob": 43.4
         }
       },
       "prediccion_principal": {
-        "mercado": "Chicago Cubs",
-        "prob": 56.6,
-        "ev": -3.1
+        "mercado": "Houston Astros",
+        "prob": 43.4,
+        "ev": -1.1
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3566,44 +3569,45 @@
       "visitante": "St. Louis Cardinals",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "17:41",
       "cuotas": {
-        "Cincinnati Reds": 1.88,
+        "Cincinnati Reds": 1.85,
         "St. Louis Cardinals": 2.05
       },
       "probabilidades": {
-        "Cincinnati Reds": 53.0,
-        "St. Louis Cardinals": 47.0
+        "Cincinnati Reds": 53.3,
+        "St. Louis Cardinals": 46.7
       },
-      "confianza": 53.0,
+      "confianza": 53.3,
       "value_bets": {
         "Cincinnati Reds": {
-          "value": -0.003,
-          "ev_porcentaje": -0.3,
-          "ev_pinn": -0.3,
+          "value": -0.014,
+          "ev_porcentaje": -1.4,
+          "ev_pinn": -1.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.88,
-          "casa": "Unibet",
-          "pinn_prob": 53.0
+          "cuota": 1.85,
+          "casa": "FanDuel",
+          "pinn_prob": 53.3
         },
         "St. Louis Cardinals": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.05,
           "casa": "BetMGM",
-          "pinn_prob": 47.0
+          "pinn_prob": 46.7
         }
       },
       "prediccion_principal": {
         "mercado": "Cincinnati Reds",
-        "prob": 53.0,
-        "ev": -0.3
+        "prob": 53.3,
+        "ev": -1.4
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3617,44 +3621,45 @@
       "visitante": "Cleveland Guardians",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "17:41",
       "cuotas": {
-        "Cleveland Guardians": 2.58,
-        "Philadelphia Phillies": 1.53
+        "Cleveland Guardians": 2.54,
+        "Philadelphia Phillies": 1.56
       },
       "probabilidades": {
-        "Cleveland Guardians": 36.9,
-        "Philadelphia Phillies": 63.1
+        "Cleveland Guardians": 37.2,
+        "Philadelphia Phillies": 62.8
       },
-      "confianza": 63.1,
+      "confianza": 62.8,
       "value_bets": {
         "Cleveland Guardians": {
-          "value": -0.048,
-          "ev_porcentaje": -4.8,
-          "ev_pinn": -4.8,
+          "value": -0.054,
+          "ev_porcentaje": -5.4,
+          "ev_pinn": -5.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.58,
-          "casa": "FanDuel",
-          "pinn_prob": 36.9
+          "cuota": 2.54,
+          "casa": "DraftKings",
+          "pinn_prob": 37.2
         },
         "Philadelphia Phillies": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.53,
+          "cuota": 1.56,
           "casa": "FanDuel",
-          "pinn_prob": 63.1
+          "pinn_prob": 62.8
         }
       },
       "prediccion_principal": {
         "mercado": "Philadelphia Phillies",
-        "prob": 63.1,
-        "ev": -3.5
+        "prob": 62.8,
+        "ev": -2.1
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3668,44 +3673,45 @@
       "visitante": "Tampa Bay Rays",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "18:06",
       "cuotas": {
         "New York Yankees": 1.65,
-        "Tampa Bay Rays": 2.35
+        "Tampa Bay Rays": 2.38
       },
       "probabilidades": {
-        "New York Yankees": 57.6,
-        "Tampa Bay Rays": 42.4
+        "New York Yankees": 58.4,
+        "Tampa Bay Rays": 41.6
       },
-      "confianza": 57.6,
+      "confianza": 58.4,
       "value_bets": {
         "New York Yankees": {
-          "value": -0.05,
-          "ev_porcentaje": -5.0,
-          "ev_pinn": -5.0,
+          "value": -0.036,
+          "ev_porcentaje": -3.6,
+          "ev_pinn": -3.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.65,
           "casa": "BetMGM",
-          "pinn_prob": 57.6
+          "pinn_prob": 58.4
         },
         "Tampa Bay Rays": {
-          "value": -0.004,
-          "ev_porcentaje": -0.4,
-          "ev_pinn": -0.4,
+          "value": -0.01,
+          "ev_porcentaje": -1.0,
+          "ev_pinn": -1.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.35,
+          "cuota": 2.38,
           "casa": "Unibet",
-          "pinn_prob": 42.4
+          "pinn_prob": 41.6
         }
       },
       "prediccion_principal": {
         "mercado": "Tampa Bay Rays",
-        "prob": 42.4,
-        "ev": -0.4
+        "prob": 41.6,
+        "ev": -1.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3719,44 +3725,45 @@
       "visitante": "Pittsburgh Pirates",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "18:08",
       "cuotas": {
         "Pittsburgh Pirates": 2.4,
         "Toronto Blue Jays": 1.61
       },
       "probabilidades": {
-        "Pittsburgh Pirates": 39.6,
-        "Toronto Blue Jays": 60.4
+        "Pittsburgh Pirates": 39.9,
+        "Toronto Blue Jays": 60.1
       },
-      "confianza": 60.4,
+      "confianza": 60.1,
       "value_bets": {
         "Pittsburgh Pirates": {
-          "value": -0.049,
-          "ev_porcentaje": -4.9,
-          "ev_pinn": -4.9,
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.4,
           "casa": "BetMGM",
-          "pinn_prob": 39.6
+          "pinn_prob": 39.9
         },
         "Toronto Blue Jays": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.61,
           "casa": "FanDuel",
-          "pinn_prob": 60.4
+          "pinn_prob": 60.1
         }
       },
       "prediccion_principal": {
         "mercado": "Toronto Blue Jays",
-        "prob": 60.4,
-        "ev": -2.8
+        "prob": 60.1,
+        "ev": -3.2
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3770,44 +3777,45 @@
       "visitante": "Minnesota Twins",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "18:11",
       "cuotas": {
         "Boston Red Sox": 1.68,
         "Minnesota Twins": 2.32
       },
       "probabilidades": {
-        "Boston Red Sox": 58.8,
-        "Minnesota Twins": 41.2
+        "Boston Red Sox": 58.7,
+        "Minnesota Twins": 41.3
       },
-      "confianza": 58.8,
+      "confianza": 58.7,
       "value_bets": {
         "Boston Red Sox": {
-          "value": -0.013,
-          "ev_porcentaje": -1.3,
-          "ev_pinn": -1.3,
+          "value": -0.014,
+          "ev_porcentaje": -1.4,
+          "ev_pinn": -1.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.68,
           "casa": "Unibet",
-          "pinn_prob": 58.8
+          "pinn_prob": 58.7
         },
         "Minnesota Twins": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.32,
           "casa": "FanDuel",
-          "pinn_prob": 41.2
+          "pinn_prob": 41.3
         }
       },
       "prediccion_principal": {
         "mercado": "Boston Red Sox",
-        "prob": 58.8,
-        "ev": -1.3
+        "prob": 58.7,
+        "ev": -1.4
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3821,6 +3829,7 @@
       "visitante": "New York Mets",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "18:11",
       "cuotas": {
         "Miami Marlins": 1.89,
@@ -3872,6 +3881,7 @@
       "visitante": "Washington Nationals",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "18:15",
       "cuotas": {
         "Atlanta Braves": 1.45,
@@ -3923,6 +3933,7 @@
       "visitante": "Detroit Tigers",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "18:16",
       "cuotas": {
         "Baltimore Orioles": 1.72,
@@ -3974,44 +3985,45 @@
       "visitante": "Seattle Mariners",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "18:41",
       "cuotas": {
         "Kansas City Royals": 2.08,
         "Seattle Mariners": 1.85
       },
       "probabilidades": {
-        "Kansas City Royals": 47.2,
-        "Seattle Mariners": 52.8
+        "Kansas City Royals": 48.5,
+        "Seattle Mariners": 51.5
       },
-      "confianza": 52.8,
+      "confianza": 51.5,
       "value_bets": {
         "Kansas City Royals": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
+          "value": 0.008,
+          "ev_porcentaje": 0.8,
+          "ev_pinn": 0.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.08,
           "casa": "Unibet",
-          "pinn_prob": 47.2
+          "pinn_prob": 48.5
         },
         "Seattle Mariners": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.85,
           "casa": "BetMGM",
-          "pinn_prob": 52.8
+          "pinn_prob": 51.5
         }
       },
       "prediccion_principal": {
         "mercado": "Kansas City Royals",
-        "prob": 47.2,
-        "ev": -1.8
+        "prob": 48.5,
+        "ev": 0.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4025,44 +4037,45 @@
       "visitante": "Los Angeles Dodgers",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "18:41",
       "cuotas": {
         "Los Angeles Dodgers": 1.91,
         "Milwaukee Brewers": 1.96
       },
       "probabilidades": {
-        "Los Angeles Dodgers": 50.3,
-        "Milwaukee Brewers": 49.7
+        "Los Angeles Dodgers": 49.6,
+        "Milwaukee Brewers": 50.4
       },
-      "confianza": 50.3,
+      "confianza": 50.4,
       "value_bets": {
         "Los Angeles Dodgers": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.91,
           "casa": "DraftKings",
-          "pinn_prob": 50.3
+          "pinn_prob": 49.6
         },
         "Milwaukee Brewers": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.012,
+          "ev_porcentaje": -1.2,
+          "ev_pinn": -1.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.96,
           "casa": "FanDuel",
-          "pinn_prob": 49.7
+          "pinn_prob": 50.4
         }
       },
       "prediccion_principal": {
         "mercado": "Milwaukee Brewers",
-        "prob": 49.7,
-        "ev": -2.5
+        "prob": 50.4,
+        "ev": -1.2
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4076,44 +4089,45 @@
       "visitante": "Texas Rangers",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "20:39",
       "cuotas": {
         "Los Angeles Angels": 2.45,
         "Texas Rangers": 1.62
       },
       "probabilidades": {
-        "Los Angeles Angels": 39.7,
-        "Texas Rangers": 60.3
+        "Los Angeles Angels": 40.2,
+        "Texas Rangers": 59.8
       },
-      "confianza": 60.3,
+      "confianza": 59.8,
       "value_bets": {
         "Los Angeles Angels": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.45,
           "casa": "BetMGM",
-          "pinn_prob": 39.7
+          "pinn_prob": 40.2
         },
         "Texas Rangers": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.62,
           "casa": "Unibet",
-          "pinn_prob": 60.3
+          "pinn_prob": 59.8
         }
       },
       "prediccion_principal": {
-        "mercado": "Texas Rangers",
-        "prob": 60.3,
-        "ev": -2.3
+        "mercado": "Los Angeles Angels",
+        "prob": 40.2,
+        "ev": -1.5
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4127,6 +4141,7 @@
       "visitante": "Colorado Rockies",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "20:41",
       "cuotas": {
         "Arizona Diamondbacks": 1.48,
@@ -4178,6 +4193,7 @@
       "visitante": "Athletics",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "20:41",
       "cuotas": {
         "Athletics": 2.12,
@@ -4229,44 +4245,45 @@
       "visitante": "Chicago White Sox",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
+      "deporte": "MLB",
       "hora": "21:16",
       "cuotas": {
         "Chicago White Sox": 1.91,
         "San Francisco Giants": 1.95
       },
       "probabilidades": {
-        "Chicago White Sox": 50.6,
-        "San Francisco Giants": 49.4
+        "Chicago White Sox": 50.9,
+        "San Francisco Giants": 49.1
       },
-      "confianza": 50.6,
+      "confianza": 50.9,
       "value_bets": {
         "Chicago White Sox": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.91,
           "casa": "FanDuel",
-          "pinn_prob": 50.6
+          "pinn_prob": 50.9
         },
         "San Francisco Giants": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.95,
           "casa": "DraftKings",
-          "pinn_prob": 49.4
+          "pinn_prob": 49.1
         }
       },
       "prediccion_principal": {
         "mercado": "Chicago White Sox",
-        "prob": 50.6,
-        "ev": -3.3
+        "prob": 50.9,
+        "ev": -2.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4280,6 +4297,7 @@
       "visitante": "Vegas Golden Knights",
       "liga": "NHL",
       "liga_code": "icehockey_nhl",
+      "deporte": "NHL",
       "hora": "19:00",
       "cuotas": {
         "Colorado Avalanche": 1.77,
@@ -4331,6 +4349,7 @@
       "visitante": "Montréal Canadiens",
       "liga": "NHL",
       "liga_code": "icehockey_nhl",
+      "deporte": "NHL",
       "hora": "18:00",
       "cuotas": {
         "Carolina Hurricanes": 1.82,
@@ -4382,6 +4401,7 @@
       "visitante": "New England Patriots",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "19:15",
       "cuotas": {
         "New England Patriots": 2.85,
@@ -4433,6 +4453,7 @@
       "visitante": "San Francisco 49ers",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "19:35",
       "cuotas": {
         "Los Angeles Rams": 1.71,
@@ -4484,6 +4505,7 @@
       "visitante": "Atlanta Falcons",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "12:00",
       "cuotas": {
         "Atlanta Falcons": 2.45,
@@ -4535,6 +4557,7 @@
       "visitante": "Baltimore Ravens",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "12:00",
       "cuotas": {
         "Baltimore Ravens": 1.52,
@@ -4586,6 +4609,7 @@
       "visitante": "Buffalo Bills",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "12:00",
       "cuotas": {
         "Buffalo Bills": 1.89,
@@ -4637,6 +4661,7 @@
       "visitante": "Chicago Bears",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "12:00",
       "cuotas": {
         "Carolina Panthers": 2.2,
@@ -4688,6 +4713,7 @@
       "visitante": "Tampa Bay Buccaneers",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "12:00",
       "cuotas": {
         "Cincinnati Bengals": 1.52,
@@ -4739,6 +4765,7 @@
       "visitante": "Cleveland Browns",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "12:00",
       "cuotas": {
         "Cleveland Browns": 3.95,
@@ -4790,6 +4817,7 @@
       "visitante": "New Orleans Saints",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "12:00",
       "cuotas": {
         "Detroit Lions": 1.31,
@@ -4841,6 +4869,7 @@
       "visitante": "New York Jets",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "12:00",
       "cuotas": {
         "New York Jets": 2.4,
@@ -4892,6 +4921,7 @@
       "visitante": "Arizona Cardinals",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "15:25",
       "cuotas": {
         "Arizona Cardinals": 5.75,
@@ -4943,6 +4973,7 @@
       "visitante": "Green Bay Packers",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "15:25",
       "cuotas": {
         "Green Bay Packers": 1.83,
@@ -4994,6 +5025,7 @@
       "visitante": "Miami Dolphins",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "15:25",
       "cuotas": {
         "Las Vegas Raiders": 1.58,
@@ -5045,6 +5077,7 @@
       "visitante": "Washington Commanders",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "15:25",
       "cuotas": {
         "Philadelphia Eagles": 1.47,
@@ -5096,6 +5129,7 @@
       "visitante": "Dallas Cowboys",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "19:20",
       "cuotas": {
         "Dallas Cowboys": 1.77,
@@ -5147,6 +5181,7 @@
       "visitante": "Denver Broncos",
       "liga": "NFL",
       "liga_code": "americanfootball_nfl",
+      "deporte": "NFL",
       "hora": "19:15",
       "cuotas": {
         "Denver Broncos": 2.35,
@@ -5198,6 +5233,7 @@
       "visitante": "DC Defenders",
       "liga": "UFL",
       "liga_code": "americanfootball_ufl",
+      "deporte": "UFL",
       "hora": "19:00",
       "cuotas": {
         "DC Defenders": 2.25,
@@ -5245,5 +5281,5 @@
       "movimiento": null
     }
   ],
-  "generado": "09:16:38"
+  "generado": "09:32:03"
 }

@@ -148,7 +148,7 @@ const PROXIMOS_EVENTOS = [
     fecha:      "22/05/26",
     partido:    "Chicago Cubs vs Houston Astros",
     liga:       "MLB",
-    prediccion: "Chicago Cubs",
+    prediccion: "Houston Astros",
     cuota:      "",
     hora:       "08:21 COT",
     status:     "vip"
@@ -169,6 +169,15 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Philadelphia Phillies",
     cuota:      "",
     hora:       "12:41 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "22/05/26",
+    partido:    "New York Yankees vs Tampa Bay Rays",
+    liga:       "MLB",
+    prediccion: "Tampa Bay Rays",
+    cuota:      "",
+    hora:       "13:06 COT",
     status:     "vip"
   },
   {
@@ -238,7 +247,7 @@ const PROXIMOS_EVENTOS = [
     fecha:      "22/05/26",
     partido:    "Los Angeles Angels vs Texas Rangers",
     liga:       "MLB",
-    prediccion: "Texas Rangers",
+    prediccion: "Los Angeles Angels",
     cuota:      "",
     hora:       "15:39 COT",
     status:     "vip"
