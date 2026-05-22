@@ -173,15 +173,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "22/05/26",
-    partido:    "New York Yankees vs Tampa Bay Rays",
-    liga:       "MLB",
-    prediccion: "Tampa Bay Rays",
-    cuota:      "",
-    hora:       "13:06 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "22/05/26",
     partido:    "Toronto Blue Jays vs Pittsburgh Pirates",
     liga:       "MLB",
     prediccion: "Toronto Blue Jays",
@@ -458,6 +449,14 @@ const PROXIMOS_EVENTOS = [
 // resultado: "win" | "loss" | "pending"
 // ORDEN: más reciente primero — el algoritmo calcula racha desde arriba.
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "22/05/26",
+    partido:    "New York Yankees vs Tampa Bay Rays",
+    liga:       "MLB",
+    prediccion: "Tampa Bay Rays",
+    cuota:      "",
+    resultado:  "loss"
+  },
   {
     fecha:      "22/05/26",
     partido:    "New York Yankees vs Tampa Bay Rays",
