@@ -31,7 +31,7 @@ def _get_cache(liga_id, season):
     with _db() as c:
         row = c.execute(
             "SELECT data_json, actualizado FROM topscorers_cache WHERE liga_id=? AND season=?",
-            (int(liga_id), season)
+            (str(liga_id), season)
         ).fetchone()
     if not row:
         return None

@@ -77,22 +77,29 @@ def correr():
         print("  Sin predicciones.json — corre motor.py primero")
         return
 
-    # Saludo matutino al canal free con lista de partidos del día
-    try:
-        from telegram_alertas import enviar_saludo_manana_free
-        partidos_hoy = [
-            {
-                "local":     p["local"],
-                "visitante": p["visitante"],
-                "liga":      p.get("liga", ""),
-                "hora":      _hora_cot_de_pred(p),
-            }
-            for p in reporte.get("predicciones", [])
-        ]
-        enviar_saludo_manana_free(partidos_hoy)
-        print("  Saludo matutino enviado al canal free")
-    except Exception as e:
-        print(f"  Saludo free error: {e}")
+    # Saludo matutino al canal free — solo una vez por día
+    import os as _os
+    BASE_DIR_AP = _os.path.dirname(_os.path.abspath(__file__))
+    _saludo_sent = _os.path.join(BASE_DIR_AP, "logs", f"saludo_{date.today().isoformat()}.sent")
+    if not _os.path.exists(_saludo_sent):
+        try:
+            from telegram_alertas import enviar_saludo_manana_free
+            partidos_hoy = [
+                {
+                    "local":     p["local"],
+                    "visitante": p["visitante"],
+                    "liga":      p.get("liga", ""),
+                    "hora":      _hora_cot_de_pred(p),
+                }
+                for p in reporte.get("predicciones", [])
+            ]
+            enviar_saludo_manana_free(partidos_hoy)
+            open(_saludo_sent, "w").close()
+            print("  Saludo matutino enviado al canal free")
+        except Exception as e:
+            print(f"  Saludo free error: {e}")
+    else:
+        print("  Saludo de hoy ya enviado — skip")
 
     # ── Clasificar picks en 3 tiers ─────────────────────────────
     try:

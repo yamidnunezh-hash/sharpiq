@@ -2019,6 +2019,10 @@ def guardar_predicciones():
         print(f"⭐ Mejor prediccion: {mejor['partido']} — {mejor['prediccion']}")
 
     if TELEGRAM_OK:
+        # Control de duplicados: si ya se enviaron alertas hoy, no reenviar
+        _sentinel = os.path.join(BASE_DIR, "logs", f"alertas_{reporte['fecha']}.sent")
+        _ya_enviado = os.path.exists(_sentinel)
+
         print("\n📲 Enviando alertas Telegram...")
         alto_valor_enviados = 0
         _mk2ck = {
@@ -2028,31 +2032,48 @@ def guardar_predicciones():
             "over35":"over35","under35":"under35",
             "btts_si":"btts_si","btts_no":"btts_no",
         }
-        for pred in reporte["predicciones"]:
-            for mercado, vb in pred["value_bets"].items():
-                if vb["clasificacion"] == "ALTO VALOR":
-                    ev_pinn = vb.get("ev_pinn")
-                    if ev_pinn is not None and ev_pinn <= 0:
-                        continue  # Pinnacle no confirma el valor — skip
-                    ok = enviar_alerta_value_bet(pred, mercado, vb)
-                    if ok:
-                        alto_valor_enviados += 1
-                        if _db_ok:
-                            _ck = _mk2ck.get(mercado, mercado)
-                            try:
-                                _db_pick(
-                                    fecha=reporte["fecha"],
-                                    partido=f"{pred['local']} vs {pred['visitante']}",
-                                    liga=pred.get("liga", ""),
-                                    mercado=mercado,
-                                    prob_modelo=pred["probabilidades"].get(mercado, 50),
-                                    cuota_apertura=float(pred["cuotas"].get(_ck) or 0),
-                                    cuota_pinnacle=pred["cuotas"].get(f"pinnacle_{_ck}"),
-                                )
-                            except Exception:
-                                pass
-        if alto_valor_enviados:
-            print(f"  🔥 {alto_valor_enviados} alertas ALTO VALOR enviadas")
+
+        if _ya_enviado:
+            print("  Alertas de hoy ya enviadas — skip")
+        else:
+            # Por partido: solo enviar el mercado con mayor EV (no ambos equipos)
+            for pred in reporte["predicciones"]:
+                mejor_mk, mejor_vb, mejor_ev = None, None, -999
+                for mercado, vb in pred["value_bets"].items():
+                    if vb["clasificacion"] == "ALTO VALOR":
+                        ev_pinn = vb.get("ev_pinn", vb.get("ev_porcentaje", 0)) or 0
+                        if ev_pinn > mejor_ev:
+                            mejor_ev = ev_pinn
+                            mejor_mk, mejor_vb = mercado, vb
+
+                if mejor_mk is None:
+                    continue
+                if mejor_ev <= 0:
+                    continue
+
+                ok = enviar_alerta_value_bet(pred, mejor_mk, mejor_vb)
+                if ok:
+                    alto_valor_enviados += 1
+                    if _db_ok:
+                        _ck = _mk2ck.get(mejor_mk, mejor_mk)
+                        try:
+                            _db_pick(
+                                fecha=reporte["fecha"],
+                                partido=f"{pred['local']} vs {pred['visitante']}",
+                                liga=pred.get("liga", ""),
+                                mercado=mejor_mk,
+                                prob_modelo=pred["probabilidades"].get(mejor_mk, 50),
+                                cuota_apertura=float(pred["cuotas"].get(_ck) or 0),
+                                cuota_pinnacle=pred["cuotas"].get(f"pinnacle_{_ck}"),
+                            )
+                        except Exception:
+                            pass
+
+            if alto_valor_enviados:
+                print(f"  🔥 {alto_valor_enviados} alertas ALTO VALOR enviadas")
+                # Marcar como enviado para no duplicar
+                open(_sentinel, "w").close()
+
         enviar_resumen_dia(reporte)
         print("  📋 Resumen del día enviado")
 
@@ -2132,8 +2153,6 @@ def _actualizar_datos_js(reporte):
         subprocess.run(["git", "add", "-f", "predicciones.json", "mejor_prediccion.json", "datos.js"],
                        cwd=repo_dir, check=True, capture_output=True)
         subprocess.run(["git", "commit", "-m", f"auto: predicciones {date.today().isoformat()}"],
-                       cwd=repo_dir, check=True, capture_output=True)
-        subprocess.run(["git", "pull", "--rebase", "origin", "main"],
                        cwd=repo_dir, check=True, capture_output=True)
         subprocess.run(["git", "push", "origin", "main"],
                        cwd=repo_dir, check=True, capture_output=True)
