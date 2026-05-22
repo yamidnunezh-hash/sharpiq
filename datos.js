@@ -9,33 +9,7 @@
 // Cuando terminen, muévelos a PREDICCIONES_HISTORIAL y pon el resultado.
 // status: "vip" = bloqueado para no suscriptores, "free" = visible para todos
 const PROXIMOS_EVENTOS = [
-  {
-    fecha:      "21/05/26",
-    partido:    "Cusco FC vs CD Independiente Medellín",
-    liga:       "Copa Libertadores",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.34",
-    hora:       "21:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "21/05/26",
-    partido:    "CDP Junior FC vs CS Cristal",
-    liga:       "Copa Libertadores",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.34",
-    hora:       "21:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "21/05/26",
-    partido:    "Deportivo La Guaira FC vs CS Independiente Rivadavia",
-    liga:       "Copa Libertadores",
-    prediccion: "Tarjetas Over 4.5",
-    cuota:      "2.34",
-    hora:       "17:00 COT",
-    status:     "vip"
-  }
+  // Motor actualiza esta sección automáticamente a las 8am y 1pm COT
 ];
 
 // ── HISTORIAL DE PREDICCIONES ─────────────────────────────────
@@ -56,7 +30,7 @@ const PREDICCIONES_HISTORIAL = [
     fecha:      "20/05/26",
     partido:    "Fortaleza FC vs Orsomarso",
     liga:       "Copa Colombia",
-    prediccion: "Victoria Local (1) — EV +0%",
+    prediccion: "Victoria Local (1)",
     cuota:      "2.21",
     resultado:  "loss"
   },

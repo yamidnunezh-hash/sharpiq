@@ -1703,12 +1703,93 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     }
   }
 
+  // ── TICKER DINÁMICO ──────────────────────────────────────────
+  (function(){
+    const track=document.getElementById('tickerTrack');
+    if(!track) return;
+    const items=[];
+    if(typeof PROXIMOS_EVENTOS!=='undefined' && PROXIMOS_EVENTOS.length){
+      PROXIMOS_EVENTOS.forEach(e=>items.push(`⚽ ${e.liga} · ${e.partido} · <strong>${e.hora||''} — PICK HOY</strong>`));
+    }
+    if(typeof PREDICCIONES_HISTORIAL!=='undefined'){
+      PREDICCIONES_HISTORIAL.slice(0,6).forEach(p=>{
+        const r=p.resultado==='win'?'✓ ACIERTO':(p.resultado==='loss'?'✗ FALLO':'⏳ PENDIENTE');
+        const pred=p.prediccion.split('—')[0].trim();
+        items.push(`⚽ ${p.liga||''} · ${p.partido} · <strong>${pred} @${p.cuota} — ${r}</strong>`);
+      });
+    }
+    if(items.length===0) return;
+    track.innerHTML=[...items,...items].map(t=>`<span>${t}</span>`).join('');
+  })();
+
+  // ── FLOATING BADGES DINÁMICOS ──────────────────────────────
+  (function(){
+    if(typeof PREDICCIONES_HISTORIAL==='undefined') return;
+    const resolved=PREDICCIONES_HISTORIAL.filter(p=>p.resultado!=='pending');
+    const wins=resolved.filter(p=>p.resultado==='win');
+    const losses=resolved.filter(p=>p.resultado==='loss');
+    const tasa=resolved.length?Math.round(wins.length/resolved.length*100):0;
+    const profitWins=wins.reduce((s,p)=>s+(parseFloat(p.cuota)-1),0);
+    const roi=resolved.length?Math.round((profitWins-losses.length)/resolved.length*100):0;
+
+    // Badge 1: Tasa de aciertos real
+    const b1v=document.querySelector('.hf1 .hf-val'), b1l=document.querySelector('.hf1 .hf-lbl');
+    if(b1v&&resolved.length>=3){b1v.textContent=tasa+'%'; b1l.textContent='Tasa Aciertos';}
+
+    // Badge 2: Picks hoy / estado del sistema
+    const b2v=document.querySelector('.hf2 .hf-val'), b2l=document.querySelector('.hf2 .hf-lbl');
+    if(b2v&&b2l){
+      const hoy=typeof PROXIMOS_EVENTOS!=='undefined'&&PROXIMOS_EVENTOS.length;
+      b2v.textContent=hoy?PROXIMOS_EVENTOS.length+' picks hoy':'🚀 Sistema activo';
+      b2l.textContent=hoy?'Análisis IA activo':'Siguiente análisis 8am COT';
+    }
+
+    // Badge 3: Último resultado
+    if(resolved.length){
+      const ult=resolved[0];
+      const b3v=document.querySelector('.hf3 .hf-val'), b3l=document.querySelector('.hf3 .hf-lbl');
+      if(b3v&&b3l){
+        b3v.textContent=(ult.resultado==='win'?'✅ ':'❌ ')+(ult.liga||'Último pick');
+        b3l.textContent=ult.partido.split(' vs ')[0]+' @'+ult.cuota;
+      }
+    }
+
+    // Badge 4: ROI
+    const b4v=document.querySelector('.hf4 .hf-val'), b4l=document.querySelector('.hf4 .hf-lbl');
+    if(b4v&&b4l&&resolved.length>=3){
+      b4v.textContent=(roi>=0?'+':'')+roi+'% ROI';
+      b4l.textContent=wins.length+'W · '+losses.length+'L verificados';
+    }
+
+    // Actualizar arco del ring SVG con tasa real
+    if(resolved.length>=5){
+      const arc=document.querySelector('.ring-svg-deco circle[stroke="url(#goldArc)"]');
+      if(arc){
+        const circ=Math.round(2*Math.PI*148);
+        const dash=Math.round(circ*tasa/100);
+        arc.setAttribute('stroke-dasharray',dash+' '+circ);
+      }
+    }
+  })();
+
   // Próximos Eventos grid
   const grid=document.getElementById('upcomingGrid');
   const cnt=document.getElementById('upcomingCount');
   if(grid&&typeof PROXIMOS_EVENTOS!=='undefined'){
-    if(cnt) cnt.textContent=PROXIMOS_EVENTOS.length+' eventos próximos';
-    grid.innerHTML=PROXIMOS_EVENTOS.map(e=>{
+    if(cnt) cnt.textContent=PROXIMOS_EVENTOS.length?PROXIMOS_EVENTOS.length+' picks disponibles':'Próximos picks: 8am COT';
+    if(PROXIMOS_EVENTOS.length===0){
+      grid.innerHTML=`<div style="padding:48px 24px;text-align:center;width:100%;">
+        <div style="font-size:32px;margin-bottom:16px;">⚙️</div>
+        <div style="font-family:'Orbitron',monospace;font-size:13px;font-weight:700;color:var(--gold);margin-bottom:8px;letter-spacing:1px">MOTOR EN PROCESO</div>
+        <div style="font-size:14px;color:var(--t2);line-height:1.7;max-width:420px;margin:0 auto">
+          El análisis IA se ejecuta automáticamente a las <strong style="color:var(--t1)">8:00 AM</strong> y <strong style="color:var(--t1)">1:00 PM</strong> Colombia.<br>
+          Solo publicamos picks con <strong style="color:var(--gold)">EV positivo vs Pinnacle</strong> — calidad sobre cantidad.
+        </div>
+        <div style="margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;color:var(--green);background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);padding:8px 16px;border-radius:8px">
+          <div class="hero-dot"></div>Sistema activo — resultados verificados en historial
+        </div>
+      </div>`;
+    } else grid.innerHTML=PROXIMOS_EVENTOS.map(e=>{
       const evMatch=e.prediccion.match(/EV\s*\+?([\d.]+)%/i);
       const evPct=evMatch?parseFloat(evMatch[1]):null;
       const isAlto=evPct&&evPct>=15;
@@ -1736,7 +1817,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
         </div>
         ${predBlock}
       </div>`;
-    }).join('');
+    }).join('');}
   }
 })();
 
