@@ -162,19 +162,25 @@ def enviar_alerta_value_bet(pred, mercado, vb):
         "btts_no":         "btts_no",
     }
 
-    ck    = cuota_key_map.get(mercado, "1")
-    cuota = pred["cuotas"].get(ck, "?")
-    casa  = pred["cuotas"].get(ck + "_casa", "")
-    prob  = pred["probabilidades"].get(prob_key_map.get(mercado, "victoria_local"), 0)
+    # cuota: prefiere el valor ya calculado en vb, si no busca en pred["cuotas"]
+    ck    = cuota_key_map.get(mercado, mercado)
+    cuota = vb.get("cuota") or pred["cuotas"].get(ck) or pred["cuotas"].get(mercado, "?")
+    # casa: viene en vb para deportes americanos, en cuotas para fútbol
+    casa  = vb.get("casa") or pred["cuotas"].get(ck + "_casa", "") or pred["cuotas"].get(mercado + "_casa", "")
+    # prob: pinn_prob para deportes americanos, prob_modelo para fútbol
+    prob  = vb.get("pinn_prob") or vb.get("prob_modelo") or pred["probabilidades"].get(prob_key_map.get(mercado, mercado), 0)
 
     h, m2 = pred.get("hora", "00:00").split(":")
     hora_cot = f"{str((int(h)-5+24)%24).zfill(2)}:{m2} COT"
 
     casa_linea = f"\n🏠 <b>Casa recomendada:</b> {casa}" if casa else ""
 
+    deporte = pred.get("deporte", "").upper()
+    sport_emoji = {"NBA": "🏀", "NHL": "🏒", "MLB": "⚾", "NFL": "🏈"}.get(deporte, "⚽")
+
     texto = f"""{emoji} <b>SharpIQ — {vb['clasificacion']}</b>
 
-⚽ <b>{pred['local']} vs {pred['visitante']}</b>
+{sport_emoji} <b>{pred['local']} vs {pred['visitante']}</b>
 🏆 {pred.get('liga', '')} | {hora_cot}
 
 📊 <b>Mercado:</b> {nombres_mercado.get(mercado, mercado)}
@@ -250,9 +256,17 @@ def enviar_resumen_dia(reporte):
                 mejor_ev = vb["ev_porcentaje"]
                 mejor_vb = (mk, vb)
 
-        vip_texto += f"⚽ <b>{pred['local']} vs {pred['visitante']}</b>\n"
+        es_prop = pred.get("es_player_prop", False)
+        sport_emoji = "🏀" if pred.get("deporte","").lower() in ("nba","nhl","mlb","nfl") else "⚽"
+        vip_texto += f"{sport_emoji} <b>{pred['local']} vs {pred['visitante']}</b>\n"
         vip_texto += f"🏆 {pred.get('liga','')} | {hora_cot}\n"
-        vip_texto += f"📈 1:{probs['victoria_local']}% X:{probs['empate']}% 2:{probs['victoria_visita']}%\n"
+        vl  = probs.get('victoria_local', '')
+        emp = probs.get('empate', '')
+        vv  = probs.get('victoria_visita', '')
+        if vl and vv and emp:
+            vip_texto += f"📈 1:{vl}% X:{emp}% 2:{vv}%\n"
+        elif vl and vv:
+            vip_texto += f"📈 Local:{vl}% Visita:{vv}%\n"
         vip_texto += f"🎯 <b>{pred_p['mercado']}</b> ({pred_p['prob']}%)\n"
         if mejor_vb:
             mk, vb = mejor_vb
@@ -316,45 +330,64 @@ def notificar_referido(codigo_ref, telegram_usuario="desconocido"):
 
 def procesar_updates_bot():
     """
-    Procesa mensajes nuevos al bot. Maneja /referido CODIGO.
+    Procesa mensajes nuevos al bot. Maneja /referido CODIGO y /start.
     Llama desde un cron o manualmente para procesar la cola.
     """
-    r = requests.get(f"{TELEGRAM_API}/getUpdates", timeout=10)
-    if r.status_code != 200:
-        return
-    updates = r.json().get("result", [])
-    ultimo_id = None
+    try:
+        r = requests.get(f"{TELEGRAM_API}/getUpdates", timeout=10)
+        if r.status_code != 200:
+            return
+        updates = r.json().get("result", [])
+        ultimo_id = None
 
-    for upd in updates:
-        ultimo_id = upd["update_id"]
-        msg = upd.get("message", {})
-        texto = msg.get("text", "")
-        usuario = msg.get("from", {}).get("username", "desconocido")
-        chat_id_usuario = str(msg.get("chat", {}).get("id", ""))
+        for upd in updates:
+            ultimo_id = upd["update_id"]
+            msg = upd.get("message", {})
+            texto = msg.get("text", "").strip()
+            usuario = msg.get("from", {}).get("username", "desconocido")
+            chat_id_usuario = str(msg.get("chat", {}).get("id", ""))
 
-        if texto.startswith("/referido"):
-            partes = texto.split()
-            if len(partes) >= 2:
-                codigo = partes[1].strip().upper()
-                notificar_referido(codigo, usuario)
-                # Confirmar al usuario que registró
+            if texto.startswith("/start"):
                 enviar_mensaje(
-                    f"✅ Referido registrado correctamente.\n"
-                    f"Código: <code>{codigo}</code>\n\n"
-                    f"Tu amigo recibirá 7 días extra en su suscripción. "
-                    f"¡Gracias por hacer crecer la comunidad SharpIQ! 🔥",
+                    "👋 <b>Bienvenido a SharpIQ</b>\n\n"
+                    "Somos el sistema de predicciones deportivas con inteligencia artificial "
+                    "más preciso de Colombia. 🧠⚽🏀\n\n"
+                    "🔒 <b>Acceso VIP — $42.000 COP/mes</b>\n"
+                    "✅ 3 picks diarios con análisis completo\n"
+                    "✅ Corners, tarjetas, handicap asiático\n"
+                    "✅ EV vs Pinnacle en tiempo real\n\n"
+                    "👇 <b>Suscríbete aquí:</b>\n"
+                    "https://www.mercadopago.com.co/subscriptions/checkout"
+                    "?preapproval_plan_id=79abf20272b64347b16a901055c89d8c\n\n"
+                    "Después de pagar, escríbele a @YamidNH para activar tu acceso. 🚀",
                     chat_id=chat_id_usuario
                 )
-            else:
-                enviar_mensaje(
-                    "Uso: <code>/referido CODIGO</code>\nEjemplo: /referido ABC123",
-                    chat_id=chat_id_usuario
-                )
 
-    # Marcar updates como leídos
-    if ultimo_id is not None:
-        requests.get(f"{TELEGRAM_API}/getUpdates",
-                     params={"offset": ultimo_id + 1}, timeout=10)
+            elif texto.startswith("/referido"):
+                partes = texto.split()
+                if len(partes) >= 2:
+                    codigo = partes[1].strip().upper()
+                    notificar_referido(codigo, usuario)
+                    enviar_mensaje(
+                        f"✅ Referido registrado correctamente.\n"
+                        f"Código: <code>{codigo}</code>\n\n"
+                        f"Tu amigo recibirá 7 días extra en su suscripción. "
+                        f"¡Gracias por hacer crecer la comunidad SharpIQ! 🔥",
+                        chat_id=chat_id_usuario
+                    )
+                else:
+                    enviar_mensaje(
+                        "Uso: <code>/referido CODIGO</code>\nEjemplo: /referido ABC123",
+                        chat_id=chat_id_usuario
+                    )
+
+        # Marcar updates como leídos
+        if ultimo_id is not None:
+            requests.get(f"{TELEGRAM_API}/getUpdates",
+                         params={"offset": ultimo_id + 1}, timeout=10)
+
+    except Exception as e:
+        print(f"procesar_updates_bot error: {e}")
 
 
 def enviar_saludo_manana_free(partidos_hoy):
@@ -719,9 +752,11 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 ev = round(tier.get("ev_pinn", tier.get("ev", 0)) or 0)
                 ev_extra = f" — EV +{ev}%"
             prob_label = "Prob DNB" if "dnb" in tier.get("mercado", "") else "Prob modelo"
+            deporte = p.get("deporte", "").upper()
+            sp_emoji = {"NBA": "🏀", "NHL": "🏒", "MLB": "⚾", "NFL": "🏈", "UFL": "🏈"}.get(deporte, "⚽")
             return (
                 f"{emoji} <b>{label}</b>\n"
-                f"⚽ <b>{p['local']} vs {p['visitante']}</b>\n"
+                f"{sp_emoji} <b>{p['local']} vs {p['visitante']}</b>\n"
                 f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
                 f"{tier['mercado_nombre']} | @{tier['cuota']}{ev_extra}\n"
                 f"<i>{prob_label}: {round(tier['prob'])}%</i>"

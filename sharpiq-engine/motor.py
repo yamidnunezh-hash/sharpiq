@@ -1956,6 +1956,7 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
             "visitante":  away,
             "liga":       nombre_liga,
             "liga_code":  sport_key,
+            "deporte":    SPORTS_ODDS_ONLY.get(sport_key, nombre_liga),
             "hora":       hora_cot,
             "cuotas":     {o: best_odds.get(o) for o in pinn_probs},
             "probabilidades": {o: round(p*100,1) for o, p in pinn_probs.items()},
@@ -2373,10 +2374,18 @@ if __name__ == "__main__":
 
     print("\n📊 PREDICCIONES DEL DÍA:")
     for pred in reporte["predicciones"]:
-        print(f"\n⚽ {pred['liga']} | {pred['hora']}")
+        probs = pred['probabilidades']
+        print(f"\n{'🏀' if pred.get('deporte','').upper() in ('NBA','NHL','MLB','NFL') else '⚽'} {pred['liga']} | {pred['hora']}")
         print(f"   {pred['local']} vs {pred['visitante']}")
-        print(f"   1: {pred['probabilidades']['victoria_local']}% | X: {pred['probabilidades']['empate']}% | 2: {pred['probabilidades']['victoria_visita']}%")
-        print(f"   Over 2.5: {pred['probabilidades']['over25']}% | BTTS: {pred['probabilidades']['btts_si']}%")
+        vl = probs.get('victoria_local', '')
+        emp = probs.get('empate', '')
+        vv = probs.get('victoria_visita', '')
+        if vl and emp and vv:
+            print(f"   1:{vl}% X:{emp}% 2:{vv}%")
+        elif vl and vv:
+            print(f"   Local:{vl}% Visita:{vv}%")
+        if probs.get('over25'):
+            print(f"   Over 2.5: {probs['over25']}% | BTTS: {probs.get('btts_si','')}%")
         print(f"   → {pred['prediccion_principal']['mercado']} ({pred['confianza']}% confianza)")
 
         # Mostrar value bets con casa de apuestas

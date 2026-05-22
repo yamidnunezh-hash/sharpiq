@@ -108,7 +108,7 @@ def buscar_fixture(local_js, visita_js, fixtures_api):
 
 # ── EVALUADOR DE PREDICCIONES ────────────────────────────────────
 
-def evaluar(prediccion, gl, gv):
+def evaluar(prediccion, gl, gv, local="", visitante=""):
     """Devuelve 'win', 'loss' según la predicción y marcador real."""
     p = prediccion.lower()
     total = gl + gv
@@ -137,6 +137,19 @@ def evaluar(prediccion, gl, gv):
         return 'win' if gl >= gv else 'loss'
     if 'doble_x2' in p or 'x2' in p:
         return 'win' if gv >= gl else 'loss'
+    if 'draw no bet' in p or 'dnb' in p:
+        if 'local' in p:
+            return 'win' if gl > gv else ('push' if gl == gv else 'loss')
+        if 'visitante' in p or 'visita' in p:
+            return 'win' if gv > gl else ('push' if gl == gv else 'loss')
+
+    # "Gana [Nombre Equipo]" — picks de NBA/NHL/MLB/NFL
+    if 'gana ' in p and (local or visitante):
+        team_pred = p.replace('gana ', '').split(' —')[0].split(' ev')[0].strip()
+        if local and (team_pred in local.lower() or local.lower() in team_pred):
+            return 'win' if gl > gv else 'loss'
+        if visitante and (team_pred in visitante.lower() or visitante.lower() in team_pred):
+            return 'win' if gv > gl else 'loss'
 
     print(f"  ⚠ No reconozco predicción: '{prediccion}' — marcada como loss")
     return 'loss'
@@ -217,7 +230,7 @@ def correr():
 
         gl = fixture["score"]["fulltime"]["home"] or 0
         gv = fixture["score"]["fulltime"]["away"] or 0
-        resultado = evaluar(evento.get('prediccion', ''), gl, gv)
+        resultado = evaluar(evento.get('prediccion', ''), gl, gv, local_js, visita_js)
 
         emoji = "✅" if resultado == 'win' else "❌"
         print(f"  {emoji} {partido} | {gl}-{gv} | {evento.get('prediccion','')} → {resultado.upper()}")
@@ -281,13 +294,11 @@ def correr():
         # Git push automático
         repo_dir = os.path.join(BASE_DIR, "..")
         try:
-            subprocess.run(["git", "add", "datos.js"], cwd=repo_dir, check=True, capture_output=True)
+            subprocess.run(["git", "add", "datos.js"], cwd=repo_dir, check=True)
             subprocess.run(["git", "commit", "-m",
                 f"auto: resultados actualizados ({date.today().isoformat()})"],
-                cwd=repo_dir, check=True, capture_output=True)
-            subprocess.run(["git", "pull", "--rebase", "origin", "main"],
-                cwd=repo_dir, check=True, capture_output=True)
-            subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=True, capture_output=True)
+                cwd=repo_dir, check=True)
+            subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=True)
             print("  GitHub actualizado ✓")
         except subprocess.CalledProcessError as e:
             print(f"  Git error: {e}")
