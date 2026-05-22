@@ -341,7 +341,6 @@ def correr():
 
     # Lanzar monitor en vivo en proceso separado (no bloquea)
     try:
-        import subprocess
         monitor_path = os.path.join(BASE_DIR, "live_monitor.py")
         subprocess.Popen(
             [sys.executable, monitor_path],

@@ -1383,6 +1383,10 @@ def reporte_del_dia():
         cuotas_reales = None
         if sport_key:
             cuotas_reales = buscar_cuotas_partido(p["local"], p["visitante"], sport_key)
+            if cuotas_reales:
+                print(f"  Cuotas OK: {p['local']} vs {p['visitante']} ({sport_key})")
+            else:
+                print(f"  Sin cuotas: {p['local']} vs {p['visitante']} ({sport_key}) — usando fallback")
 
         # Guardar snapshot para tracking de movimiento
         if db_ok and cuotas_reales and p.get("id"):
