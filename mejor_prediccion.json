@@ -1,61 +1,61 @@
 {
-  "partido": "Chicago Cubs vs Houston Astros",
-  "liga": "MLB",
-  "local": "Chicago Cubs",
-  "visitante": "Houston Astros",
-  "prediccion": "Houston Astros",
-  "mercado_key": "Houston Astros",
+  "partido": "Carolina Hurricanes vs Montréal Canadiens",
+  "liga": "NHL",
+  "local": "Carolina Hurricanes",
+  "visitante": "Montréal Canadiens",
+  "prediccion": "Montréal Canadiens",
+  "mercado_key": "Montréal Canadiens",
   "cuota": "",
   "casa": "",
-  "hora_utc": "13:21",
-  "hora_cot": "08:21 COT",
-  "ev": 51.2,
+  "hora_utc": "18:00",
+  "hora_cot": "13:00 COT",
+  "ev": 30.9,
   "clasificacion": "ALTO VALOR",
-  "confianza": 54.0,
+  "confianza": 64.6,
   "pred_completa": {
-    "local": "Chicago Cubs",
-    "visitante": "Houston Astros",
-    "liga": "MLB",
-    "liga_code": "baseball_mlb",
-    "deporte": "MLB",
-    "hora": "13:21",
+    "local": "Carolina Hurricanes",
+    "visitante": "Montréal Canadiens",
+    "liga": "NHL",
+    "liga_code": "icehockey_nhl",
+    "deporte": "NHL",
+    "hora": "18:00",
     "cuotas": {
-      "Chicago Cubs": 1.48,
-      "Houston Astros": 2.8
+      "Carolina Hurricanes": 1.79,
+      "Montréal Canadiens": 3.7
     },
     "probabilidades": {
-      "Chicago Cubs": 46.0,
-      "Houston Astros": 54.0
+      "Carolina Hurricanes": 64.6,
+      "Montréal Canadiens": 35.4
     },
-    "confianza": 54.0,
+    "confianza": 64.6,
     "value_bets": {
-      "Chicago Cubs": {
-        "value": -0.319,
-        "ev_porcentaje": -31.9,
-        "ev_pinn": -31.9,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.48,
-        "casa": "FanDuel",
-        "pinn_prob": 46.0
-      },
-      "Houston Astros": {
-        "value": 0.512,
-        "ev_porcentaje": 51.2,
-        "ev_pinn": 51.2,
+      "Carolina Hurricanes": {
+        "value": 0.157,
+        "ev_porcentaje": 15.7,
+        "ev_pinn": 15.7,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 2.8,
-        "casa": "BetMGM",
-        "pinn_prob": 54.0
+        "cuota": 1.79,
+        "casa": "Unibet",
+        "pinn_prob": 64.6
+      },
+      "Montréal Canadiens": {
+        "value": 0.309,
+        "ev_porcentaje": 30.9,
+        "ev_pinn": 30.9,
+        "tiene_valor": true,
+        "tiene_valor_pinn": true,
+        "clasificacion": "ALTO VALOR",
+        "cuota": 3.7,
+        "casa": "Unibet",
+        "pinn_prob": 35.4
       }
     },
     "prediccion_principal": {
-      "mercado": "Houston Astros",
-      "prob": 54.0,
-      "ev": 51.2
+      "mercado": "Montréal Canadiens",
+      "prob": 35.4,
+      "ev": 30.9
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
