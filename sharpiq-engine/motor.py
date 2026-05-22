@@ -1670,6 +1670,181 @@ def guardar_historial_cuotas(reporte):
     print(f"  Historial cuotas: {len(filas)} partidos → historial_cuotas.csv")
 
 
+# ── PLAYER PROPS (NBA / NHL / MLB) ──────────────────────────────
+# Mercados de props por deporte — The Odds API market keys
+_PROP_MARKETS = {
+    "basketball_nba": ["player_points", "player_rebounds", "player_assists"],
+    "icehockey_nhl":  ["player_points", "player_shots_on_target"],
+    "baseball_mlb":   ["batter_hits",   "pitcher_strikeouts"],
+}
+_PROP_NOMBRES = {
+    "player_points":          "Puntos",
+    "player_rebounds":        "Rebotes",
+    "player_assists":         "Asistencias",
+    "player_shots_on_target": "Tiros al Arco",
+    "batter_hits":            "Hits",
+    "pitcher_strikeouts":     "Strikeouts",
+}
+
+
+def analizar_player_props_sharp(sport_key, nombre_liga):
+    """
+    Obtiene player props (puntos/rebotes/asistencias) de The Odds API,
+    devigea líneas de Pinnacle y calcula EV vs mejor casa disponible.
+    Retorna predicciones en el mismo formato estándar del motor.
+    """
+    mercados = _PROP_MARKETS.get(sport_key, [])
+    if not mercados:
+        return []
+
+    cache_key = f"props_{sport_key}"
+    if cache_key in _cache_cuotas:
+        eventos = _cache_cuotas[cache_key]
+    else:
+        try:
+            url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
+            params = {
+                "apiKey":     ODDS_API_KEY,
+                "regions":    "us,eu",
+                "markets":    ",".join(mercados),
+                "oddsFormat": "decimal",
+                "bookmakers": "pinnacle,draftkings,fanduel,bet365,betmgm,unibet",
+            }
+            r = requests.get(url, params=params, timeout=20)
+            if r.status_code != 200:
+                print(f"  Player props {sport_key}: HTTP {r.status_code}")
+                return []
+            eventos = r.json()
+            _cache_cuotas[cache_key] = eventos
+            restantes = r.headers.get("x-requests-remaining", "?")
+            print(f"  Player props {nombre_liga}: {len(eventos)} eventos | Créditos: {restantes}")
+        except Exception as e:
+            print(f"  Player props {sport_key} error: {e}")
+            return []
+
+    predicciones = []
+
+    for ev in eventos:
+        home = ev.get("home_team", "")
+        away = ev.get("away_team", "")
+        hora_raw = ev.get("commence_time", "")
+        try:
+            hh = int(hora_raw[11:13])
+            mm = int(hora_raw[14:16])
+            hora_cot = f"{str((hh-5+24)%24).zfill(2)}:{str(mm).zfill(2)}"
+        except Exception:
+            hora_cot = "00:00"
+
+        # Recopilar líneas de Pinnacle y mejor cuota disponible por jugador+tipo+dirección
+        pinn_lines = {}   # {(jugador, tipo, dir): (linea, precio)}
+        best_odds  = {}   # {(jugador, tipo, dir): (precio, casa)}
+
+        for bm in ev.get("bookmakers", []):
+            bm_key  = bm.get("key", "")
+            bm_name = bm.get("title", "")
+            es_pinn = bm_key == "pinnacle"
+
+            for mkt in bm.get("markets", []):
+                tipo = mkt.get("key", "")
+                if tipo not in mercados:
+                    continue
+                for o in mkt.get("outcomes", []):
+                    jugador   = o.get("description", "")
+                    direction = o.get("name", "").lower()   # "over" / "under"
+                    precio    = o.get("price", 0)
+                    linea     = o.get("point", 0)
+                    if not jugador or not precio or direction not in ("over", "under"):
+                        continue
+                    k = (jugador, tipo, direction)
+                    if es_pinn:
+                        pinn_lines[k] = (linea, precio)
+                    else:
+                        if k not in best_odds or precio > best_odds[k][0]:
+                            best_odds[k] = (precio, bm_name)
+
+        # Construir predicción por jugador+tipo usando Pinnacle como referencia
+        procesados = set()
+        for (jugador, tipo, _), (linea, _) in pinn_lines.items():
+            par = (jugador, tipo)
+            if par in procesados:
+                continue
+            procesados.add(par)
+
+            pinn_over  = pinn_lines.get((jugador, tipo, "over"))
+            pinn_under = pinn_lines.get((jugador, tipo, "under"))
+            if not pinn_over or not pinn_under:
+                continue
+
+            _, p_over_precio  = pinn_over
+            _, p_under_precio = pinn_under
+            overround = 1/p_over_precio + 1/p_under_precio
+            prob_over  = round((1/p_over_precio)  / overround * 100, 1)
+            prob_under = round((1/p_under_precio) / overround * 100, 1)
+
+            tipo_n = _PROP_NOMBRES.get(tipo, tipo)
+            vbs = {}
+            cuotas_entry = {
+                "pinnacle_over":  round(p_over_precio,  2),
+                "pinnacle_under": round(p_under_precio, 2),
+            }
+
+            for direction, prob_val in (("over", prob_over), ("under", prob_under)):
+                best = best_odds.get((jugador, tipo, direction))
+                if not best:
+                    continue
+                best_precio, best_casa = best
+                ev_pct = round((prob_val/100 * best_precio - 1) * 100, 1)
+                cuotas_entry[direction] = round(best_precio, 2)
+                cuotas_entry[f"{direction}_casa"] = best_casa
+                vbs[direction] = {
+                    "value":            round(prob_val/100 * best_precio - 1, 3),
+                    "ev_porcentaje":    ev_pct,
+                    "ev_pinn":          ev_pct,
+                    "tiene_valor":      ev_pct >= 5,
+                    "tiene_valor_pinn": ev_pct >= 5,
+                    "clasificacion":    "ALTO VALOR" if ev_pct >= 10 else "VALOR" if ev_pct >= 5 else "SIN VALOR",
+                    "cuota":            round(best_precio, 2),
+                    "casa":             best_casa,
+                    "pinn_prob":        prob_val,
+                }
+
+            if not vbs:
+                continue
+
+            mejor_dir = max(vbs, key=lambda d: vbs[d]["ev_pinn"])
+            mejor_vb  = vbs[mejor_dir]
+            mercado_nombre = f"{'Over' if mejor_dir == 'over' else 'Under'} {linea} {tipo_n}"
+
+            predicciones.append({
+                "local":      jugador,
+                "visitante":  f"{home} vs {away}",
+                "liga":       f"{nombre_liga} — Props",
+                "liga_code":  sport_key,
+                "hora":       hora_cot,
+                "partido":    f"{home} vs {away}",
+                "es_player_prop": True,
+                "prop_tipo":  tipo,
+                "prop_linea": linea,
+                "prop_jugador": jugador,
+                "cuotas":     cuotas_entry,
+                "probabilidades": {"over": prob_over, "under": prob_under},
+                "confianza":  max(prob_over, prob_under),
+                "value_bets": vbs,
+                "prediccion_principal": {
+                    "mercado": mercado_nombre,
+                    "prob":    mejor_vb["pinn_prob"],
+                    "ev":      mejor_vb["ev_pinn"],
+                },
+                "cuotas_reales": True,
+                "cuotas_avisos": [],
+                "forma_local": [], "forma_visita": [], "h2h": {}, "movimiento": None,
+                "mercados_ext": {},
+            })
+
+    print(f"  Player props {nombre_liga}: {len(predicciones)} jugadores analizados")
+    return predicciones
+
+
 # ── ANÁLISIS MULTIDEPORTE (NBA / NHL / MLB / Tennis / NFL) ───────
 def analizar_deporte_sharp(sport_key, nombre_liga):
     """
@@ -1795,6 +1970,17 @@ def guardar_predicciones():
             reporte["total_partidos"] += len(preds_extra)
         except Exception as _ex:
             print(f"  {nombre} error: {_ex}")
+
+    # Player props: puntos, rebotes, asistencias (NBA / NHL / MLB)
+    print("\nAnalizando player props...")
+    for sport_key in _PROP_MARKETS:
+        nombre = SPORTS_ODDS_ONLY.get(sport_key, sport_key)
+        try:
+            props = analizar_player_props_sharp(sport_key, nombre)
+            reporte["predicciones"].extend(props)
+            reporte["total_partidos"] += len(props)
+        except Exception as _ex:
+            print(f"  {nombre} props error: {_ex}")
 
     with open(JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(reporte, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
@@ -2056,9 +2242,35 @@ def clasificar_tiers(reporte):
                         "score":          prob_dnb + float(cuota_dnb) * 10,
                     })
 
+        elif pred.get("es_player_prop"):
+            # ── Player props: Over con alta probabilidad ──────────
+            for direction in ("over", "under"):
+                prob_val  = probs.get(direction, 0)
+                cuota_val = cuotas.get(direction)
+                if not cuota_val:
+                    continue
+                mercado_nombre = pred["prediccion_principal"]["mercado"]
+                if prob_val >= SEGURO_MIN_PROB and float(cuota_val) >= SEGURO_MIN_CUOTA:
+                    seguro_pool.append({
+                        "pred":           pred,
+                        "mercado":        direction,
+                        "mercado_nombre": mercado_nombre,
+                        "prob":           prob_val,
+                        "cuota":          float(cuota_val),
+                        "score":          prob_val + float(cuota_val) * 5,
+                    })
+                if prob_val >= PRINC_MIN_PROB and float(cuota_val) >= PRINC_MIN_CUOTA:
+                    principal_pool.append({
+                        "pred":           pred,
+                        "mercado":        direction,
+                        "mercado_nombre": mercado_nombre,
+                        "prob":           prob_val,
+                        "cuota":          float(cuota_val),
+                        "score":          prob_val + float(cuota_val) * 10,
+                    })
+
         else:
             # ── SEGURO otros deportes: favorito moneyline ≥ 68% ──
-            # En NBA/NHL/MLB no hay empate — moneyline directo
             for team, prob_val in probs.items():
                 cuota_val = cuotas.get(team)
                 if not cuota_val:

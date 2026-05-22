@@ -678,38 +678,49 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
         h, m = pred.get("hora", "00:00").split(":")
         return f"{str((int(h)-5+24)%24).zfill(2)}:{m} COT"
 
-    bloques = []
+    def _bloque(tier, emoji, label):
+        if not tier:
+            return None
+        p  = tier["pred"]
+        es_prop = p.get("es_player_prop", False)
 
-    if seguro:
-        p = seguro["pred"]
-        bloques.append(
-            f"🛡️ <b>SEGURO</b>\n"
-            f"⚽ <b>{p['local']} vs {p['visitante']}</b>\n"
-            f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
-            f"{seguro['mercado_nombre']} | @{seguro['cuota']}\n"
-            f"<i>Prob modelo: {round(seguro['prob'])}%</i>"
-        )
+        if es_prop:
+            # Player prop: mostrar jugador + partido de contexto
+            jugador  = p.get("prop_jugador", p["local"])
+            partido  = p.get("partido", p["visitante"])
+            ev_extra = ""
+            if label == "ALTO VALOR":
+                ev = round(tier.get("ev_pinn", tier.get("ev", 0)) or 0)
+                ev_extra = f" — EV +{ev}%"
+            prob_label = "Prob modelo"
+            return (
+                f"{emoji} <b>{label}</b>\n"
+                f"🏀 <b>{jugador}</b>\n"
+                f"📌 {partido}\n"
+                f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
+                f"{tier['mercado_nombre']} | @{tier['cuota']}{ev_extra}\n"
+                f"<i>{prob_label}: {round(tier['prob'])}%</i>"
+            )
+        else:
+            # Partido normal (fútbol u otro deporte de equipo)
+            ev_extra = ""
+            if label == "ALTO VALOR":
+                ev = round(tier.get("ev_pinn", tier.get("ev", 0)) or 0)
+                ev_extra = f" — EV +{ev}%"
+            prob_label = "Prob DNB" if "dnb" in tier.get("mercado", "") else "Prob modelo"
+            return (
+                f"{emoji} <b>{label}</b>\n"
+                f"⚽ <b>{p['local']} vs {p['visitante']}</b>\n"
+                f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
+                f"{tier['mercado_nombre']} | @{tier['cuota']}{ev_extra}\n"
+                f"<i>{prob_label}: {round(tier['prob'])}%</i>"
+            )
 
-    if principal:
-        p = principal["pred"]
-        bloques.append(
-            f"⭐ <b>PICK PRINCIPAL</b>\n"
-            f"⚽ <b>{p['local']} vs {p['visitante']}</b>\n"
-            f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
-            f"{principal['mercado_nombre']} | @{principal['cuota']}\n"
-            f"<i>Prob DNB: {round(principal['prob'])}%</i>"
-        )
-
-    if alto_valor:
-        p = alto_valor["pred"]
-        ev = round(alto_valor.get("ev_pinn", alto_valor.get("ev", 0)) or 0)
-        bloques.append(
-            f"🔥 <b>ALTO VALOR</b>\n"
-            f"⚽ <b>{p['local']} vs {p['visitante']}</b>\n"
-            f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
-            f"{alto_valor['mercado_nombre']} | @{alto_valor['cuota']} — EV +{ev}%\n"
-            f"<i>Prob: {round(alto_valor['prob'])}%</i>"
-        )
+    bloques = [b for b in [
+        _bloque(seguro,      "🛡️", "SEGURO"),
+        _bloque(principal,   "⭐", "PICK PRINCIPAL"),
+        _bloque(alto_valor,  "🔥", "ALTO VALOR"),
+    ] if b]
 
     if not bloques:
         return False
