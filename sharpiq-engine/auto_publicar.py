@@ -72,6 +72,10 @@ def _hora_cot_de_pred(pred):
 def correr():
     print("\n SharpIQ — Auto Publicar (3 tiers)")
 
+    # Ventana horaria en COT: solo picks con hora de inicio <= HASTA_HORA_COT
+    # Se pasa como variable de entorno desde GitHub Actions en cada turno
+    HASTA_HORA_COT = int(os.environ.get("HASTA_HORA_COT", "23"))
+
     reporte = _leer_predicciones()
     if not reporte:
         print("  Sin predicciones.json — corre motor.py primero")
@@ -124,16 +128,19 @@ def correr():
             print(f"  Tier {k} ya publicado: {t['pred']['local']}")
             tiers[k] = None
             continue
-        # Descartar si el partido ya empezó (hora UTC del partido <= ahora UTC)
+        # Descartar si el partido ya empezó o si está fuera de la ventana horaria
         try:
             hora_str = t["pred"].get("hora", "")
             if hora_str:
                 h, m = hora_str.split(":")
+                cot_h       = (int(h) - 5 + 24) % 24
                 partido_utc = datetime.utcnow().replace(hour=int(h), minute=int(m), second=0, microsecond=0)
                 ahora_utc   = datetime.utcnow().replace(second=0, microsecond=0)
                 if ahora_utc >= partido_utc:
-                    cot_h = (int(h) - 5 + 24) % 24
-                    print(f"  Tier {k} descartado — partido {t['pred']['local']} ya empezó ({cot_h:02d}:{m} COT, ahora {(ahora_utc.hour-5)%24:02d}:{ahora_utc.minute:02d} COT)")
+                    print(f"  Tier {k} descartado — {t['pred']['local']} ya empezó ({cot_h:02d}:{m} COT)")
+                    tiers[k] = None
+                elif cot_h > HASTA_HORA_COT:
+                    print(f"  Tier {k} fuera de ventana — {t['pred']['local']} a las {cot_h:02d}:{m} COT (ventana hasta {HASTA_HORA_COT:02d}:00)")
                     tiers[k] = None
         except Exception:
             pass

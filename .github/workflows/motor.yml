@@ -1,11 +1,22 @@
 name: SharpIQ Motor
 
+# Horarios en COT (UTC-5):
+#   7:00 AM COT  = 12:00 UTC  → picks de mañana   (7-11 AM)
+#  11:00 AM COT  = 16:00 UTC  → picks de mediodía  (11 AM-3 PM)
+#   3:00 PM COT  = 20:00 UTC  → picks de tarde     (3-7 PM)
+#   7:00 PM COT  = 00:00 UTC  → picks de noche     (7 PM-medianoche)
+
 on:
   schedule:
-    - cron: '0 14 * * *'    # 9:00 AM COT  (mañana)
-    - cron: '0 21 * * *'    # 4:00 PM COT  (tarde)
-    - cron: '30 4 * * *'    # 11:30 PM COT (resultados)
-  workflow_dispatch:          # Ejecución manual desde GitHub
+    - cron: '0 12 * * *'    # 7:00 AM COT
+    - cron: '0 16 * * *'    # 11:00 AM COT
+    - cron: '0 20 * * *'    # 3:00 PM COT
+    - cron: '0 0 * * *'     # 7:00 PM COT (00:00 UTC siguiente)
+  workflow_dispatch:
+    inputs:
+      hasta_hora:
+        description: 'Ventana hasta hora COT (0-23)'
+        default: '23'
 
 jobs:
   motor:
@@ -20,7 +31,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Setup Python
+      - name: Setup Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -56,7 +67,7 @@ jobs:
           ]
           with open("sharpiq-engine/config.py", "w") as f:
               f.write("\n".join(lines) + "\n")
-          print("config.py creado OK")
+          print("config.py OK")
           PYEOF
 
       - name: Configurar git
@@ -65,35 +76,57 @@ jobs:
           git config user.email "motor@sharpiq.co"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-      - name: Detectar turno
+      - name: Detectar turno y ventana horaria
         id: turno
         run: |
           HOUR=$(date -u +%H)
-          if [ "$HOUR" = "04" ]; then
-            echo "tipo=resultados" >> $GITHUB_OUTPUT
+          MANUAL_HASTA="${{ github.event.inputs.hasta_hora }}"
+
+          if [ "$HOUR" = "12" ]; then
+            echo "turno=manana"    >> $GITHUB_OUTPUT
+            echo "hasta_hora=11"  >> $GITHUB_OUTPUT
+            echo "label=Mañana (7-11 AM COT)" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "16" ]; then
+            echo "turno=mediodia" >> $GITHUB_OUTPUT
+            echo "hasta_hora=15"  >> $GITHUB_OUTPUT
+            echo "label=Mediodía (11 AM-3 PM COT)" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "20" ]; then
+            echo "turno=tarde"    >> $GITHUB_OUTPUT
+            echo "hasta_hora=19"  >> $GITHUB_OUTPUT
+            echo "label=Tarde (3-7 PM COT)" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "00" ]; then
+            echo "turno=noche"    >> $GITHUB_OUTPUT
+            echo "hasta_hora=23"  >> $GITHUB_OUTPUT
+            echo "label=Noche (7 PM-medianoche COT)" >> $GITHUB_OUTPUT
           else
-            echo "tipo=motor" >> $GITHUB_OUTPUT
+            echo "turno=manual"   >> $GITHUB_OUTPUT
+            echo "hasta_hora=${MANUAL_HASTA:-23}" >> $GITHUB_OUTPUT
+            echo "label=Manual"   >> $GITHUB_OUTPUT
           fi
 
-      - name: Correr motor (mañana o tarde)
-        if: steps.turno.outputs.tipo == 'motor'
+      - name: Log turno
+        run: echo "Turno → ${{ steps.turno.outputs.label }} | Ventana hasta ${{ steps.turno.outputs.hasta_hora }}:00 COT"
+
+      # Turno mañana: genera TODAS las predicciones del día + envía picks de mañana
+      - name: Generar predicciones del día (solo turno mañana)
+        if: steps.turno.outputs.turno == 'manana'
         working-directory: sharpiq-engine
         run: |
-          python auto_resultados.py 2>&1 | tail -20
-          python recolector.py ayer 2>&1 | tail -20
+          python auto_resultados.py 2>&1 | tail -15
+          python recolector.py ayer 2>&1 | tail -15
           python motor.py           2>&1 | tail -60
-          python auto_publicar.py   2>&1 | tail -20
 
-      - name: Correr resultados (noche)
-        if: steps.turno.outputs.tipo == 'resultados'
+      # Todos los turnos: enviar picks de la ventana horaria correspondiente
+      - name: Publicar picks de la ventana
         working-directory: sharpiq-engine
-        run: |
-          python auto_resultados.py 2>&1 | tail -30
+        env:
+          HASTA_HORA_COT: ${{ steps.turno.outputs.hasta_hora }}
+        run: python auto_publicar.py 2>&1 | tail -30
 
-      - name: Commit y push final
+      - name: Commit y push
         run: |
           git add -f predicciones.json mejor_prediccion.json datos.js 2>/dev/null || true
           git add -f sharpiq-engine/sharpiq.db 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "auto: predicciones $(date -u +%Y-%m-%d)"
+          git diff --cached --quiet || git commit -m "auto: predicciones $(date -u +%Y-%m-%d %H:%M UTC)"
           git pull origin main --no-rebase --quiet
           git push origin main
