@@ -109,12 +109,34 @@ def correr():
         print(f"  Error clasificar_tiers: {e}")
         tiers = {"seguro": None, "principal": None, "alto_valor": None}
 
-    # Filtrar ya-publicados
+    # Filtrar ya-publicados y partidos ya comenzados
+    from datetime import datetime
+    ahora_cot = datetime.utcnow().replace(tzinfo=None)
+    ahora_cot = ahora_cot.replace(
+        hour=(datetime.utcnow().hour - 5) % 24,
+        minute=datetime.utcnow().minute
+    )
     for k in ("seguro", "principal", "alto_valor"):
         t = tiers.get(k)
-        if t and _ya_publicado(t["pred"]["local"]):
+        if not t:
+            continue
+        if _ya_publicado(t["pred"]["local"]):
             print(f"  Tier {k} ya publicado: {t['pred']['local']}")
             tiers[k] = None
+            continue
+        # Descartar si el partido ya empezó (hora UTC del partido <= ahora UTC)
+        try:
+            hora_str = t["pred"].get("hora", "")
+            if hora_str:
+                h, m = hora_str.split(":")
+                partido_utc = datetime.utcnow().replace(hour=int(h), minute=int(m), second=0, microsecond=0)
+                ahora_utc   = datetime.utcnow().replace(second=0, microsecond=0)
+                if ahora_utc >= partido_utc:
+                    cot_h = (int(h) - 5 + 24) % 24
+                    print(f"  Tier {k} descartado — partido {t['pred']['local']} ya empezó ({cot_h:02d}:{m} COT, ahora {(ahora_utc.hour-5)%24:02d}:{ahora_utc.minute:02d} COT)")
+                    tiers[k] = None
+        except Exception:
+            pass
 
     tiene_alguno = any(tiers.get(k) for k in ("seguro", "principal", "alto_valor"))
     if not tiene_alguno:
