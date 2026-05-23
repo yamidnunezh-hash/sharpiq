@@ -180,6 +180,11 @@ async function cargarDashboard(){
     const d = await r.json();
 
     const p = d.perfil;
+    // El plan del JWT tiene prioridad sobre el de la DB (admin bypass)
+    try {
+      const jwtPlan = JSON.parse(atob(token().split('.')[1])).plan;
+      if(jwtPlan==='admin'||jwtPlan==='vip') p.plan = jwtPlan;
+    } catch(e){}
     document.getElementById('perfilNombre').textContent  = p.nombre || '—';
     document.getElementById('perfilEmail').textContent   = p.email  || '—';
     document.getElementById('avatarLetter').textContent  = (p.nombre||'?')[0].toUpperCase();
