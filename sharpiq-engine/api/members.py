@@ -23,6 +23,9 @@ def dashboard(token=Depends(usuario_activo)):
             WHERE u.id=%s
         """, (user_id,))
         perfil = dict(cur.fetchone() or {})
+        # El plan del JWT siempre tiene prioridad (admin bypass)
+        if token.get("plan") in ("admin", "vip"):
+            perfil["plan"] = token["plan"]
 
         # Pagos
         cur.execute("""
