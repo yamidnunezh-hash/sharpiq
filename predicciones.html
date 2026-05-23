@@ -367,10 +367,10 @@
 
 <div class="toolbar">
   <span class="tb-label">Filtro:</span>
-  <button class="f-btn on" onclick="setf('todos',this)">Todos</button>
+  <button class="f-btn" onclick="setf('todos',this)">Todos</button>
   <button class="f-btn" onclick="setf('value',this)">Value Bets</button>
   <button class="f-btn" onclick="setf('high',this)">Confianza +60%</button>
-  <button class="f-btn" onclick="setf('ev',this)">Solo EV+</button>
+  <button class="f-btn on" onclick="setf('ev',this)">Solo EV+8%</button>
   <button class="f-btn" onclick="setf('soccer',this)">Fútbol</button>
   <button class="f-btn" onclick="setf('us',this)">NBA/MLB/NHL</button>
   <div class="tb-sep"></div>
@@ -421,7 +421,19 @@
 <script>
 const GH_REPO = 'yamidnunezh-hash/sharpiq';
 const GH_FILE = 'datos.js';
-let ALL = [], orden = 'ev', filtro = 'todos', recData = null;
+let ALL = [], orden = 'ev', filtro = 'ev', recData = null;
+
+const NOMBRES_MERCADO = {
+  victoria_local:  'Victoria Local',
+  empate:          'Empate',
+  victoria_visita: 'Victoria Visitante',
+  over15: 'Over 1.5', under15: 'Under 1.5',
+  over25: 'Over 2.5', under25: 'Under 2.5',
+  over35: 'Over 3.5', under35: 'Under 3.5',
+  btts_si: 'BTTS Sí', btts_no: 'BTTS No',
+  doble_12: 'Doble 12', doble_1x: 'Doble 1X', doble_x2: 'Doble X2',
+  dnb_local: 'DNB Local', dnb_visita: 'DNB Visitante',
+};
 
 async function cargar() {
   const btn = document.getElementById('btn-refresh');
@@ -489,9 +501,9 @@ function setord(t, btn) {
 function render() {
   let lista = [...ALL];
   const esSoccer = p => !!(p.probabilidades||{}).victoria_local;
-  if (filtro==='value') lista = lista.filter(p => _maxEv(p) >= 5);
+  if (filtro==='value') lista = lista.filter(p => _maxEv(p) >= 8);
   else if (filtro==='high') lista = lista.filter(p => (p.confianza||0) >= 60);
-  else if (filtro==='ev') lista = lista.filter(p => _maxEv(p) >= 5);
+  else if (filtro==='ev') lista = lista.filter(p => _maxEv(p) >= 8);
   else if (filtro==='soccer') lista = lista.filter(esSoccer);
   else if (filtro==='us') lista = lista.filter(p => !esSoccer(p));
 
@@ -538,7 +550,7 @@ function card(p) {
 
   // Value bets positivos ordenados
   const vbsPos = Object.entries(vbs)
-    .filter(([,v]) => v && (v.ev_pinn||0) >= 5)
+    .filter(([,v]) => v && (v.ev_pinn||0) >= 8)
     .sort((a,b) => (b[1].ev_pinn||0) - (a[1].ev_pinn||0));
   const hasVB = vbsPos.length > 0;
 
@@ -585,7 +597,7 @@ function card(p) {
   const vbHTML = vbsPos.map(([mk,vb]) => {
     const cuota = vb.cuota ? Number(vb.cuota).toFixed(2) : '?';
     const casa  = vb.casa ? ` [${vb.casa}]` : '';
-    const mk_d  = vb.mercado_nombre || mk;
+    const mk_d  = vb.mercado_nombre || NOMBRES_MERCADO[mk] || mk;
     return `<div class="vb">
       <span class="vb-m">${mk_d}</span>
       <span class="vb-ev">EV +${vb.ev_pinn}%</span>
@@ -638,7 +650,7 @@ function abrirModal(pStr) {
     .sort((a,b)=>(b[1].ev_pinn||0)-(a[1].ev_pinn||0));
   vbsPos.forEach(([mk,vb]) => {
     const opt = document.createElement('option');
-    const mkD = vb.mercado_nombre || mk;
+    const mkD = vb.mercado_nombre || NOMBRES_MERCADO[mk] || mk;
     const cuota = vb.cuota ? ` @ ${Number(vb.cuota).toFixed(2)}` : '';
     opt.value = mkD;
     opt.textContent = `EV+${vb.ev_pinn}% — ${mkD}${cuota} [${vb.clasificacion}]`;
