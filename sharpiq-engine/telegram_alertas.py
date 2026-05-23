@@ -221,11 +221,17 @@ def enviar_resumen_dia(reporte):
             texto += f"• {pred['local']} vs {pred['visitante']}\n"
             for m, vb in pred["value_bets"].items():
                 if vb and vb["tiene_valor"]:
-                    ck   = cuota_map.get(m, "1")
-                    cuota = pred["cuotas"].get(ck, "")
-                    casa  = pred["cuotas"].get(ck + "_casa", "")
+                    ck    = cuota_map.get(m, "1")
+                    cuota = (vb.get("cuota") or
+                             pred["cuotas"].get(ck) or
+                             pred["cuotas"].get(m) or None)
+                    try:
+                        cuota_str2 = f"{float(cuota):.2f}" if cuota else "—"
+                    except (ValueError, TypeError):
+                        cuota_str2 = str(cuota) if cuota else "—"
+                    casa  = vb.get("casa") or pred["cuotas"].get(ck + "_casa", "") or ""
                     casa_str = f" [{casa}]" if casa else ""
-                    texto += f"  → {nombres.get(m,m)} @ {cuota}{casa_str}: EV +{vb['ev_porcentaje']}%\n"
+                    texto += f"  → {nombres.get(m,m)} @ {cuota_str2}{casa_str}: EV +{vb['ev_porcentaje']}%\n"
 
     texto += "\n<i>sharpiq.co — La ventaja inteligente</i>"
     enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
@@ -290,8 +296,14 @@ def enviar_resumen_dia(reporte):
         elif vl and vv:
             vip_texto += f"📈 Local:{vl}% Visita:{vv}%\n"
         for mk, vb in vbs_positivos:
-            cuota = vb.get("cuota") or pred["cuotas"].get(cuota_map_vip.get(mk, mk), "")
-            cuota_str = f"{cuota:.2f}" if isinstance(cuota, float) else str(cuota)
+            cuota = (vb.get("cuota") or
+                     pred["cuotas"].get(cuota_map_vip.get(mk, mk)) or
+                     pred["cuotas"].get(mk) or
+                     pred["cuotas"].get(mk.replace("victoria_", "")) or None)
+            try:
+                cuota_str = f"{float(cuota):.2f}" if cuota else "—"
+            except (ValueError, TypeError):
+                cuota_str = str(cuota) if cuota else "—"
             ev = vb["ev_pinn"]
             emoji_ev = "🔥" if ev >= 12 else "💰"
             mk_display = vb.get("mercado_nombre") or nombres_vip.get(mk, mk)
@@ -328,7 +340,7 @@ def enviar_canal_free(partido, liga, hora, pick_free=None, prob_free=None):
             f"📊 <b>Pick FREE:</b> <b>{pick_free}</b>\n"
             f"📈 Probabilidad estimada: {prob_free}%\n\n"
             f"💡 <i>Cuota exacta + 2 picks VIP adicionales con EV vs Pinnacle</i>\n"
-            f"🔒 Acceso VIP → https://t.me/sharpiq_alertas_bot\n\n"
+            f"🔒 Acceso VIP → https://sharpiq.co\n\n"
             f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
         )
     else:
@@ -337,7 +349,7 @@ def enviar_canal_free(partido, liga, hora, pick_free=None, prob_free=None):
             f"📅 {liga} | {hora}\n\n"
             f"🔎 El motor detectó valor en este partido.\n"
             f"📊 Predicción completa + cuota EV+ → solo en canal VIP\n\n"
-            f"🔒 Únete → https://t.me/sharpiq_alertas_bot\n\n"
+            f"🔒 Únete → https://sharpiq.co\n\n"
             f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
         )
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
@@ -475,7 +487,7 @@ def enviar_saludo_manana_free(partidos_hoy):
     texto += (
         f"\n🔒 <b>Las predicciones VIP ya están listas</b>\n"
         f"¿Quieres las cuotas y mercados exactos?\n"
-        f"👉 Únete al canal VIP → https://t.me/sharpiq_alertas_bot\n\n"
+        f"👉 Únete al canal VIP → https://sharpiq.co\n\n"
         f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
     )
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
@@ -509,7 +521,7 @@ def enviar_resultado_free(partido, resultado_texto, emoji_resultado):
         f"{emoji_resultado} <b>Resultado — {partido}</b>\n\n"
         f"<b>{resultado_texto}</b>\n\n"
         f"{comentario}\n\n"
-        f"🔒 Ver predicciones de mañana → https://t.me/sharpiq_alertas_bot\n"
+        f"🔒 Ver predicciones de mañana → https://sharpiq.co\n"
         f"<i>SharpIQ — La ventaja inteligente</i>"
     )
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
@@ -617,7 +629,7 @@ def _construir_narrativa(pred, mercado, vb, canal):
         pie_free = (
             f"📊 Probabilidad SharpIQ: <b>{prob_raw}%</b> | Cuota justa: <b>{cuota_justa_str}</b>\n"
             f"La casa paga <b>{cuota_api}</b> — ventaja del <b>+{ev}%</b> a tu favor.\n\n"
-            f"🔒 <b>¿Quieres la predicción completa?</b> 👉 https://t.me/sharpiq_alertas_bot\n\n"
+            f"🔒 <b>¿Quieres la predicción completa?</b> 👉 https://sharpiq.co\n\n"
             f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
         )
         intro_free = "El modelo detecta que la casa <b>subestima</b> la probabilidad real de este resultado.\n\n"
@@ -631,7 +643,7 @@ def _construir_narrativa(pred, mercado, vb, canal):
         pie_vip  = "<i>Este análisis es informativo. Hoy no hay apuesta con valor matemático confirmado.</i>"
         pie_free = (
             f"🔍 Partido interesante para seguir hoy.\n\n"
-            f"🔒 Predicciones con valor confirmado → https://t.me/sharpiq_alertas_bot\n\n"
+            f"🔒 Predicciones con valor confirmado → https://sharpiq.co\n\n"
             f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
         )
         intro_free = ""

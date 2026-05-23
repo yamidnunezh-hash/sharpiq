@@ -422,6 +422,8 @@
 const GH_REPO = 'yamidnunezh-hash/sharpiq';
 const GH_FILE = 'datos.js';
 let ALL = [], orden = 'ev', filtro = 'ev', recData = null;
+let PUBLICADOS = {}; // partido.toLowerCase() → {status, cuota, prediccion}
+let _CARDS = [];     // lista ordenada actualmente en pantalla (índice = onclick)
 
 const NOMBRES_MERCADO = {
   victoria_local:  'Victoria Local',
@@ -518,7 +520,23 @@ function render() {
   const empty = document.getElementById('empty');
   if (!lista.length) { grid.innerHTML=''; empty.style.display='block'; return; }
   empty.style.display = 'none';
-  grid.innerHTML = lista.map(card).join('');
+  _CARDS = lista;
+  grid.innerHTML = lista.map((p, i) => card(p, i)).join('');
+}
+
+function _btnPublicar(p, idx) {
+  const k   = `${p.local} vs ${p.visitante}`.toLowerCase();
+  const pub = PUBLICADOS[k];
+  if (!pub) return `<button class="btn-publicar" onclick="abrirModal(${idx})">Publicar en SharpIQ</button>`;
+  const isVip    = pub.status === 'vip';
+  const colorRgb = isVip ? '123,92,240' : '34,197,94';
+  const colorHex = isVip ? '#a78bfa' : '#22c55e';
+  const badge    = isVip ? '🔒 VIP' : '🆓 FREE';
+  const opposite = isVip ? 'free' : 'vip';
+  return `<div style="display:flex;gap:6px;margin-top:10px">
+    <div style="flex:1;padding:8px;background:rgba(${colorRgb},0.1);border:1px solid rgba(${colorRgb},0.35);border-radius:8px;text-align:center;font-size:0.72rem;font-weight:700;color:${colorHex}">${badge} — Publicado</div>
+    <button class="btn-publicar" style="flex:1;font-size:0.68rem;padding:8px" onclick="cambiarStatus(${idx},'${opposite}')">→ ${opposite.toUpperCase()}</button>
+  </div>`;
 }
 
 function _horaCot(horaUtc) {
@@ -539,7 +557,7 @@ function _fechaLabel(fechaEv) {
   return ` — ${d.getDate()} ${meses[d.getMonth()]}`;
 }
 
-function card(p) {
+function card(p, idx=0) {
   const pr   = p.probabilidades || {};
   const vbs  = p.value_bets || {};
   const pred = p.prediccion_principal || {};
@@ -606,9 +624,6 @@ function card(p) {
     </div>`;
   }).join('');
 
-  // JSON seguro para onclick
-  const pJson = JSON.stringify(p).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-
   return `
   <div class="card ${hasVB?'vbet':''}">
     <div class="ch">
@@ -628,7 +643,7 @@ function card(p) {
         <span class="conf">${p.confianza||0}%</span>
       </div>` : ''}
       ${hasVB ? `<div class="vbets">${vbHTML}</div>` : ''}
-      <button class="btn-publicar" onclick="abrirModal('${pJson}')">Publicar en SharpIQ</button>
+      ${_btnPublicar(p, idx)}
     </div>
   </div>`;
 }
@@ -636,9 +651,9 @@ function card(p) {
 // ── PUBLICAR ────────────────────────────────────────────────────
 let predActual = null;
 
-function abrirModal(pStr) {
-  try { predActual = typeof pStr === 'string' ? JSON.parse(pStr.replace(/\\'/g,"'")) : pStr; }
-  catch(e) { alert('Error al abrir el partido: ' + e.message); return; }
+function abrirModal(idx) {
+  predActual = _CARDS[idx] || null;
+  if (!predActual) { alert('Error: no se encontró el partido'); return; }
   const p = predActual;
   document.getElementById('m-partido').value = `${p.local} vs ${p.visitante}`;
 
@@ -719,6 +734,12 @@ async function confirmarPublicar() {
       })
     });
     const res = await r.json();
+    if (r.status === 409) {
+      cerrarModal();
+      btn.textContent = 'Publicar ahora'; btn.disabled = false;
+      await cambiarStatus(predActual, status); // predActual es objeto aquí
+      return;
+    }
     if (!r.ok) throw new Error(res.detail || 'Error al publicar');
     cerrarModal();
     cargarProximos();
@@ -728,6 +749,29 @@ async function confirmarPublicar() {
   } finally {
     btn.textContent = 'Publicar ahora'; btn.disabled = false;
   }
+}
+
+// ── CAMBIAR STATUS FREE ↔ VIP ────────────────────────────────────
+async function cambiarStatus(idxOrObj, nuevoStatus) {
+  const p = typeof idxOrObj === 'number' ? _CARDS[idxOrObj]
+          : (idxOrObj && typeof idxOrObj === 'object') ? idxOrObj : null;
+  const partido = p ? `${p.local} vs ${p.visitante}` : String(idxOrObj);
+  if (!confirm(`¿Cambiar "${partido}" a ${nuevoStatus.toUpperCase()}?`)) return;
+  try {
+    const ok = await _ghEditDatosJs(src => {
+      const esc     = partido.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      const updated = src.replace(
+        new RegExp(`(partido:\\s*"${esc}"[^}]*?status:\\s*")[^"]*"`),
+        `$1${nuevoStatus}"`
+      );
+      if (updated === src) throw new Error('No se encontró el partido en datos.js');
+      return updated;
+    });
+    if (ok) {
+      await cargarProximos();
+      alert(`✅ "${partido}" → ${nuevoStatus.toUpperCase()}\nYa actualizado en sharpiq.co`);
+    }
+  } catch(e) { alert('Error: ' + e.message); }
 }
 
 // Cerrar modal al hacer clic fuera
@@ -860,8 +904,17 @@ function cerrarModalEditar() {
 
 // ── EDITAR / ELIMINAR VIA GITHUB ────────────────────────────────
 async function _ghEditDatosJs(transformFn) {
-  const token = localStorage.getItem('sharpiq_gh_token');
-  if (!token) { alert('Falta token GitHub. Ve a admin.html para configurarlo.'); return false; }
+  let token = localStorage.getItem('sharpiq_gh_token');
+  if (!token) {
+    token = prompt(
+      'Para editar picks necesitas un GitHub Personal Access Token.\n\n' +
+      'Crea uno en: github.com → Settings → Developer settings → Personal access tokens → Tokens (classic)\n' +
+      'Permiso necesario: repo\n\nPega tu token aquí:'
+    );
+    if (!token || !token.trim()) return false;
+    localStorage.setItem('sharpiq_gh_token', token.trim());
+    token = token.trim();
+  }
   const apiUrl = `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`;
   const readR  = await fetch(apiUrl, { headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'} });
   if (!readR.ok) throw new Error(`GitHub ${readR.status}`);
@@ -915,6 +968,14 @@ async function cargarProximos() {
     const match = txt.match(/const PROXIMOS_EVENTOS\s*=\s*(\[[\s\S]*?\]);/);
     if (!match) return;
     const lista = Function('"use strict"; return ' + match[1])();
+
+    // Poblar PUBLICADOS para que las cards muestren badge
+    PUBLICADOS = {};
+    lista.forEach(p => {
+      if (p.partido) PUBLICADOS[p.partido.toLowerCase()] = {status: p.status||'vip', cuota: p.cuota, prediccion: p.prediccion};
+    });
+    if (_CARDS.length) render(); // re-renderizar badges
+
     const sec   = document.getElementById('sec-editar');
     const cont  = document.getElementById('lista-editar');
     if (!lista.length) { sec.style.display='none'; return; }
