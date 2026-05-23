@@ -695,61 +695,36 @@ async function confirmarPublicar() {
   const status  = document.getElementById('m-status').value;
   if (!cuota) { alert('Ingresa la cuota de la casa de apuestas'); return; }
 
-  const token = localStorage.getItem('sharpiq_gh_token');
-  if (!token) {
-    alert('Falta el token de GitHub.\nVe a admin.html -> seccion GitHub -> pega tu token personal.');
-    return;
-  }
-
   const btn = document.querySelector('.btn-confirmar');
   btn.textContent = 'Publicando...'; btn.disabled = true;
 
   try {
-    const apiUrl = `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`;
-    const readR  = await fetch(apiUrl, {
-      headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
-    });
-    if (!readR.ok) throw new Error(`GitHub ${readR.status}: no se pudo leer datos.js`);
-    const fileData  = await readR.json();
-    const contenido = decodeURIComponent(escape(atob(fileData.content.replace(/\n/g,''))));
-
     const p = predActual;
-    const fechaStr = new Date().toLocaleDateString('es-CO', {day:'numeric', month:'long'});
-    const nueva = [
-      '  {',
-      `    partido: "${p.local} vs ${p.visitante}",`,
-      `    prediccion: "${mercado}",`,
-      `    cuota: "${cuota}",`,
-      `    hora: "${hora}",`,
-      `    liga: "${p.liga||p.deporte||''}",`,
-      `    fecha: "${fechaStr}",`,
-      `    emoji: "${p.deporte_emoji||''}",`,
-      `    status: "${status}",`,
-      `    resultado: "pendiente"`,
-      '  }'
-    ].join('\n');
-
-    const nuevo = contenido.replace(
-      /const PROXIMOS_EVENTOS\s*=\s*\[/,
-      `const PROXIMOS_EVENTOS = [\n${nueva},`
-    );
-    if (nuevo === contenido) throw new Error('No se encontro PROXIMOS_EVENTOS en datos.js');
-
-    const writeR = await fetch(apiUrl, {
-      method: 'PUT',
-      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+    const jwtToken = localStorage.getItem('sharpiq_token');
+    const r = await fetch('https://api.sharpiq.co/admin/publicar-pick', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${jwtToken}`
+      },
       body: JSON.stringify({
-        message: `pick: ${p.local} vs ${p.visitante} — ${mercado}`,
-        content: btoa(unescape(encodeURIComponent(nuevo))),
-        sha: fileData.sha
+        partido:    `${p.local} vs ${p.visitante}`,
+        prediccion: mercado,
+        cuota:      cuota,
+        hora:       hora,
+        liga:       p.liga || p.deporte || '',
+        emoji:      p.deporte_emoji || '',
+        status:     status,
+        ev:         _maxEv(p)
       })
     });
-    if (!writeR.ok) { const e = await writeR.json(); throw new Error(e.message || 'Error GitHub'); }
-
+    const res = await r.json();
+    if (!r.ok) throw new Error(res.detail || 'Error al publicar');
     cerrarModal();
-    alert(`Publicado: ${p.local} vs ${p.visitante}\n${mercado} @ ${cuota}\n\nYa visible en sharpiq.co`);
+    cargarProximos();
+    alert(`✅ Publicado: ${p.local} vs ${p.visitante}\n${mercado} @ ${cuota}\n\nYa visible en sharpiq.co`);
   } catch(e) {
-    alert('Error al publicar: ' + e.message);
+    alert('Error: ' + e.message);
   } finally {
     btn.textContent = 'Publicar ahora'; btn.disabled = false;
   }
