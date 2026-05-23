@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SharpIQ — Mi cuenta</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#07051A;--card:#0d0b2a;--gold:#00C8FF;--purple:#7B5CF0;--border:rgba(0,200,255,.15);--t1:#e2e8f0;--t2:#94a3b8;--t3:#475569;--green:#22c55e;--red:#ef4444}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;min-height:100vh}
+    body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,200,255,.07) 0%,transparent 65%);pointer-events:none}
+
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,5,26,.92);backdrop-filter:blur(12px);z-index:100}
+    .nav-logo{font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:900;color:var(--gold);letter-spacing:3px;text-decoration:none}
+    .nav-links{display:flex;gap:20px;align-items:center}
+    .nav-links a{font-size:13px;color:var(--t2);text-decoration:none;font-family:'Space Mono',monospace}
+    .nav-links a:hover{color:var(--t1)}
+    .btn-logout{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:var(--red);padding:6px 14px;border-radius:6px;cursor:pointer;font-family:'Space Mono',monospace;font-size:10px}
+
+    .wrap{max-width:900px;margin:0 auto;padding:40px 24px;position:relative;z-index:1}
+
+    .profile-hero{display:flex;align-items:center;gap:20px;margin-bottom:36px;padding:24px;background:rgba(13,11,42,.8);border:1px solid var(--border);border-radius:16px}
+    .avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--purple));display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;font-size:1.4rem;font-weight:900;flex-shrink:0}
+    .profile-info h2{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:700}
+    .profile-info p{color:var(--t3);font-family:'Space Mono',monospace;font-size:11px;margin-top:4px}
+    .plan-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;margin-top:8px}
+    .plan-free{background:rgba(71,85,105,.2);border:1px solid rgba(71,85,105,.4);color:var(--t2)}
+    .plan-vip{background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.3);color:var(--gold)}
+
+    .tabs{display:flex;gap:4px;margin-bottom:24px;border-bottom:1px solid var(--border);padding-bottom:0}
+    .tab{padding:10px 20px;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+    .tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+
+    .section-title{font-family:'Orbitron',monospace;font-size:.85rem;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+
+    .kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:28px}
+    .kpi{background:rgba(13,11,42,.8);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center}
+    .kpi-val{font-family:'Orbitron',monospace;font-size:1.6rem;font-weight:900;color:var(--gold)}
+    .kpi-lbl{font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);margin-top:6px;text-transform:uppercase}
+
+    .ref-box{background:rgba(0,200,255,.04);border:1px solid rgba(0,200,255,.15);border-radius:12px;padding:20px;margin-bottom:20px}
+    .ref-link{display:flex;gap:8px;margin-top:12px}
+    .ref-link input{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--gold);font-family:'Space Mono',monospace;font-size:12px;outline:none}
+    .btn-copy{background:var(--gold);color:#000;border:none;border-radius:8px;padding:10px 16px;font-family:'Orbitron',monospace;font-size:10px;font-weight:700;cursor:pointer;white-space:nowrap}
+
+    .upgrade-banner{background:linear-gradient(135deg,rgba(0,200,255,.08),rgba(123,92,240,.08));border:1px solid rgba(0,200,255,.2);border-radius:12px;padding:24px;text-align:center;margin-bottom:24px}
+    .upgrade-banner h3{font-family:'Orbitron',monospace;font-size:1rem;color:var(--gold);margin-bottom:8px}
+    .upgrade-banner p{font-size:13px;color:var(--t2);margin-bottom:16px;line-height:1.6}
+    .btn-upgrade{background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:10px;padding:14px 32px;font-family:'Orbitron',monospace;font-size:11px;font-weight:700;cursor:pointer;letter-spacing:2px}
+
+    .pago-item{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);font-size:13px}
+    .pago-item:last-child{border-bottom:none}
+    .pago-monto{font-family:'Orbitron',monospace;font-weight:700;color:var(--green)}
+    .pago-fecha{color:var(--t3);font-family:'Space Mono',monospace;font-size:11px}
+
+    .spin{display:inline-block;width:16px;height:16px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .loading{text-align:center;padding:40px;color:var(--t3);font-family:'Space Mono',monospace;font-size:12px}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="/" class="nav-logo">SHARP<span style="color:var(--gold)">IQ</span></a>
+  <div class="nav-links">
+    <a href="predicciones.html">Picks</a>
+    <a href="estadisticas.html">Stats</a>
+    <button class="btn-logout" onclick="logout()">SALIR</button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div id="loadingState" class="loading"><span class="spin"></span> Cargando perfil...</div>
+  <div id="mainContent" style="display:none">
+
+    <!-- Hero perfil -->
+    <div class="profile-hero">
+      <div class="avatar" id="avatarLetter">Y</div>
+      <div class="profile-info">
+        <h2 id="perfilNombre">—</h2>
+        <p id="perfilEmail">—</p>
+        <div class="plan-badge" id="planBadge">FREE</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('picks')">Mis Picks</div>
+      <div class="tab" onclick="showTab('referidos')">Referidos</div>
+      <div class="tab" onclick="showTab('pagos')">Pagos</div>
+      <div class="tab" onclick="showTab('config')">Configuración</div>
+    </div>
+
+    <!-- Tab: Picks -->
+    <div id="tab-picks" class="tab-panel active">
+      <div id="upgradeBanner" style="display:none" class="upgrade-banner">
+        <h3>Accede a todos los picks EV+</h3>
+        <p>Los suscriptores VIP reciben cada día picks con ventaja real calculada contra líneas de Pinnacle.<br>Solo $15 USD al mes. Cancela cuando quieras.</p>
+        <button class="btn-upgrade" onclick="suscribir()">ACTIVAR VIP — $15/mes</button>
+      </div>
+      <div id="picksContainer" class="loading"><span class="spin"></span> Cargando picks...</div>
+    </div>
+
+    <!-- Tab: Referidos -->
+    <div id="tab-referidos" class="tab-panel">
+      <div class="kpi-row" id="refKpis">
+        <div class="kpi"><div class="kpi-val" id="refTotal">0</div><div class="kpi-lbl">Referidos</div></div>
+        <div class="kpi"><div class="kpi-val" id="refVip">0</div><div class="kpi-lbl">VIP activos</div></div>
+        <div class="kpi"><div class="kpi-val" id="refComision">$0</div><div class="kpi-lbl">Comisión total</div></div>
+        <div class="kpi"><div class="kpi-val" id="refPend">$0</div><div class="kpi-lbl">Por cobrar</div></div>
+      </div>
+      <div class="ref-box">
+        <div class="section-title">Tu enlace de referido</div>
+        <p style="font-size:13px;color:var(--t2);line-height:1.7">Ganas el <strong style="color:var(--gold)">20%</strong> del primer mes de cada persona que se suscriba con tu enlace. Sin límite de referidos.</p>
+        <div class="ref-link">
+          <input type="text" id="refInput" readonly>
+          <button class="btn-copy" onclick="copiarRef()">COPIAR</button>
+        </div>
+      </div>
+      <div id="refLista" style="font-size:13px;color:var(--t3);font-family:'Space Mono',monospace"></div>
+    </div>
+
+    <!-- Tab: Pagos -->
+    <div id="tab-pagos" class="tab-panel">
+      <div id="pagosContainer" class="loading"><span class="spin"></span> Cargando historial...</div>
+    </div>
+
+    <!-- Tab: Config -->
+    <div id="tab-config" class="tab-panel">
+      <div style="background:rgba(13,11,42,.8);border:1px solid var(--border);border-radius:12px;padding:24px;max-width:480px">
+        <div class="section-title">Cambiar contraseña</div>
+        <div style="margin-bottom:12px">
+          <label style="font-size:11px;font-family:'Space Mono',monospace;color:var(--t3);display:block;margin-bottom:6px">CONTRASEÑA ACTUAL</label>
+          <input type="password" id="pwActual" style="width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--t1);font-size:14px;outline:none">
+        </div>
+        <div style="margin-bottom:16px">
+          <label style="font-size:11px;font-family:'Space Mono',monospace;color:var(--t3);display:block;margin-bottom:6px">NUEVA CONTRASEÑA</label>
+          <input type="password" id="pwNueva" style="width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--t1);font-size:14px;outline:none">
+        </div>
+        <button onclick="cambiarPass()" style="background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:8px;padding:12px 24px;font-family:'Orbitron',monospace;font-size:10px;font-weight:700;cursor:pointer;letter-spacing:1px">ACTUALIZAR</button>
+        <div id="configMsg" style="margin-top:12px;font-family:'Space Mono',monospace;font-size:11px;display:none"></div>
+      </div>
+    </div>
+
+  </div><!-- /mainContent -->
+</div>
+
+<script>
+const API = 'https://api.sharpiq.co';
+
+function token(){ return localStorage.getItem('sharpiq_token'); }
+function headers(){ return {'Content-Type':'application/json','Authorization':'Bearer '+token()}; }
+
+function logout(){
+  localStorage.removeItem('sharpiq_token');
+  localStorage.removeItem('sharpiq_plan');
+  window.location.href = 'login.html';
+}
+
+function showTab(name){
+  document.querySelectorAll('.tab').forEach((t,i)=>{
+    const names=['picks','referidos','pagos','config'];
+    t.classList.toggle('active', names[i]===name);
+  });
+  document.querySelectorAll('.tab-panel').forEach(p=> p.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if(name==='referidos') cargarReferidos();
+  if(name==='pagos') cargarPagos();
+}
+
+async function cargarDashboard(){
+  if(!token()){ window.location.href='login.html'; return; }
+  try {
+    const r = await fetch(`${API}/members/dashboard`, {headers: headers()});
+    if(r.status===401){ logout(); return; }
+    const d = await r.json();
+
+    const p = d.perfil;
+    document.getElementById('perfilNombre').textContent  = p.nombre || '—';
+    document.getElementById('perfilEmail').textContent   = p.email  || '—';
+    document.getElementById('avatarLetter').textContent  = (p.nombre||'?')[0].toUpperCase();
+
+    const badge = document.getElementById('planBadge');
+    badge.textContent = (p.plan||'free').toUpperCase();
+    badge.className = 'plan-badge ' + (p.plan==='vip'||p.plan==='admin' ? 'plan-vip' : 'plan-free');
+
+    // Referidos
+    document.getElementById('refInput').value = d.link_ref || '';
+    document.getElementById('refTotal').textContent   = d.referidos.total;
+    document.getElementById('refVip').textContent     = d.referidos.activos;
+    document.getElementById('refComision').textContent = '$'+d.referidos.comision.toFixed(2);
+
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('mainContent').style.display  = 'block';
+
+    cargarPicks(p.plan);
+
+    if(new URLSearchParams(location.search).get('upgrade')==='1' && p.plan==='free'){
+      suscribir();
+    }
+  } catch(e){
+    document.getElementById('loadingState').textContent = 'Error al cargar perfil: '+e.message;
+  }
+}
+
+async function cargarPicks(plan){
+  const c = document.getElementById('picksContainer');
+  try {
+    const r = await fetch(`${API}/picks/hoy`, {headers: headers()});
+    const d = await r.json();
+
+    if(plan==='free'){
+      document.getElementById('upgradeBanner').style.display = 'block';
+    }
+
+    if(!d.picks||!d.picks.length){
+      c.innerHTML = '<div style="text-align:center;padding:40px;color:var(--t3);font-family:\'Space Mono\',monospace;font-size:12px">Sin picks disponibles hoy.</div>';
+      return;
+    }
+
+    c.innerHTML = d.picks.map(p=> p.bloqueado ? `
+      <div style="background:rgba(13,11,42,.6);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:10px;opacity:.6;position:relative">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:11px;color:var(--gold)">🔒 VIP</div>
+        <div style="filter:blur(4px)">
+          <div style="font-weight:600">${p.deporte_emoji||'⚽'} ${p.local} vs ${p.visitante}</div>
+          <div style="font-size:12px;color:var(--t3)">${p.liga} · ${p.hora}</div>
+        </div>
+      </div>` : `
+      <div style="background:rgba(13,11,42,.8);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:10px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div style="font-weight:600;margin-bottom:4px">${p.deporte_emoji||'⚽'} ${p.local} vs ${p.visitante}</div>
+            <div style="font-size:12px;color:var(--t3)">${p.liga} · ${p.hora}</div>
+          </div>
+          ${p.prediccion_principal?.ev >= 5 ? `<div style="background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);border-radius:6px;padding:4px 10px;font-family:'Space Mono',monospace;font-size:11px;color:var(--green)">EV +${p.prediccion_principal.ev}%</div>` : ''}
+        </div>
+        ${p.prediccion_principal?.mercado ? `<div style="margin-top:10px;font-family:'Space Mono',monospace;font-size:12px;color:var(--gold)">${p.prediccion_principal.mercado}</div>` : ''}
+      </div>`
+    ).join('');
+  } catch(e){
+    c.innerHTML = `<div style="color:var(--red);text-align:center;padding:20px;font-family:'Space Mono',monospace;font-size:12px">Error: ${e.message}</div>`;
+  }
+}
+
+async function cargarReferidos(){
+  try {
+    const r = await fetch(`${API}/referidos/mis-referidos`, {headers: headers()});
+    const d = await r.json();
+    document.getElementById('refTotal').textContent    = d.total_referidos;
+    document.getElementById('refVip').textContent      = d.referidos_vip;
+    document.getElementById('refComision').textContent = '$'+d.comision_total.toFixed(2);
+    document.getElementById('refPend').textContent     = '$'+d.comision_pendiente.toFixed(2);
+    document.getElementById('refInput').value          = d.link_referido;
+
+    if(d.lista && d.lista.length){
+      document.getElementById('refLista').innerHTML = '<div style="margin-top:8px">'+
+        d.lista.map(r=>`<div style="padding:8px 0;border-bottom:1px solid var(--border)">${r.nombre} — ${r.plan==='vip'?'<span style=\'color:var(--gold)\'>VIP</span>':'Free'} · $${(r.comision_usd||0).toFixed(2)}</div>`).join('')+
+      '</div>';
+    }
+  } catch(e){}
+}
+
+async function cargarPagos(){
+  const c = document.getElementById('pagosContainer');
+  try {
+    const r = await fetch(`${API}/pagos/mi-suscripcion`, {headers: headers()});
+    const d = await r.json();
+    if(d.activo){
+      c.innerHTML = `<div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:16px;margin-bottom:16px;font-family:'Space Mono',monospace;font-size:12px">
+        ✅ Suscripción VIP activa · $${d.precio}/mes · Próximo cobro: ${d.fecha_fin?.slice(0,10)||'—'}
+      </div>`;
+    } else {
+      c.innerHTML = `<div style="color:var(--t3);font-family:'Space Mono',monospace;font-size:12px;text-align:center;padding:24px">Sin suscripción activa. <a href="#" onclick="suscribir()" style="color:var(--gold)">Activar VIP →</a></div>`;
+    }
+  } catch(e){
+    c.innerHTML = `<div style="color:var(--red);text-align:center;padding:20px;font-size:12px">${e.message}</div>`;
+  }
+}
+
+async function suscribir(){
+  try {
+    const r = await fetch(`${API}/pagos/suscribir/vip`, {method:'POST', headers: headers()});
+    const d = await r.json();
+    if(d.checkout_url){ window.location.href = d.checkout_url; }
+    else throw new Error(d.detail||'Error al crear suscripción');
+  } catch(e){ alert('Error: '+e.message); }
+}
+
+function copiarRef(){
+  const v = document.getElementById('refInput').value;
+  navigator.clipboard.writeText(v).then(()=>{ alert('Enlace copiado'); });
+}
+
+async function cambiarPass(){
+  const actual = document.getElementById('pwActual').value;
+  const nueva  = document.getElementById('pwNueva').value;
+  const msg    = document.getElementById('configMsg');
+  try {
+    const r = await fetch(`${API}/auth/cambiar-password`, {
+      method:'POST', headers: headers(),
+      body: JSON.stringify({password_actual: actual, password_nuevo: nueva})
+    });
+    const d = await r.json();
+    msg.style.display='block';
+    msg.style.color = r.ok ? 'var(--green)' : 'var(--red)';
+    msg.textContent = d.mensaje || d.detail || 'Error';
+  } catch(e){ alert(e.message); }
+}
+
+cargarDashboard();
+</script>
+</body>
+</html>
