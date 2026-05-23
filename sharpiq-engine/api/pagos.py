@@ -26,8 +26,8 @@ MP_BASE = "https://api.mercadopago.com"
 PLANES = {
     "vip": {
         "nombre":      "SharpIQ VIP",
-        "precio":      62000.00,   # ~$15 USD en COP
-        "moneda":      "COP",
+        "precio":      15.00,
+        "moneda":      "USD",
         "descripcion": "Acceso completo a picks EV+ diarios con análisis Sharp",
         "frecuencia":  1,
         "tipo_freq":   "months",
@@ -161,7 +161,7 @@ def _activar_vip(user_id: int, sub_id: str, email: str):
         cur.execute("""
             INSERT INTO suscripciones (usuario_id, plan, precio_usd, fecha_fin,
                                        mp_subscription_id, mp_payer_email, estado)
-            VALUES (%s,'vip',62000.00,%s,%s,%s,'active')
+            VALUES (%s,'vip',15.00,%s,%s,%s,'active')
             ON CONFLICT (usuario_id, estado) DO UPDATE
             SET fecha_fin=%s, mp_subscription_id=%s, mp_payer_email=%s
         """, (user_id, fecha_fin, sub_id, email, fecha_fin, sub_id, email))

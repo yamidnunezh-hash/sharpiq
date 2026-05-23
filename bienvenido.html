@@ -3,361 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SharpIQ — ¡Bienvenido al VIP!</title>
+  <title>SharpIQ — Bienvenido VIP</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root{--bg:#07051A;--gold:#00C8FF;--purple:#7B5CF0;--border:rgba(0,200,255,.15);--t1:#e2e8f0;--t2:#94a3b8;--t3:#475569;--green:#22c55e;--red:#ef4444}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden}
+    body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,200,255,.1) 0%,transparent 65%);pointer-events:none}
+    body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 80% 80%,rgba(123,92,240,.07) 0%,transparent 50%);pointer-events:none}
 
-    body {
-      background: #020509;
-      color: #e2e8f0;
-      font-family: 'Inter', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
+    .wrap{width:100%;max-width:520px;text-align:center;position:relative;z-index:1;animation:fadeUp .6s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
-    .logo {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #f0a500;
-      letter-spacing: 2px;
-      margin-bottom: 40px;
-    }
+    .logo{font-family:'Orbitron',monospace;font-size:1.4rem;font-weight:900;letter-spacing:4px;color:#fff;margin-bottom:40px}
+    .logo span{color:var(--gold)}
 
-    .card {
-      background: #0a1b2e;
-      border: 1px solid rgba(240,165,0,0.25);
-      border-radius: 16px;
-      padding: 48px 40px;
-      max-width: 560px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 0 40px rgba(240,165,0,0.08);
-    }
+    .check-ring{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,rgba(0,200,255,.15),rgba(123,92,240,.15));border:2px solid rgba(0,200,255,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;animation:pulse 2s ease infinite}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,200,255,.3)}50%{box-shadow:0 0 0 16px rgba(0,200,255,0)}}
+    .check-icon{font-size:2.8rem}
 
-    .check {
-      font-size: 4rem;
-      margin-bottom: 16px;
-    }
+    .title{font-family:'Orbitron',monospace;font-size:1.5rem;font-weight:900;margin-bottom:12px}
+    .title span{color:var(--gold)}
+    .sub{color:var(--t2);font-size:15px;line-height:1.6;margin-bottom:32px}
 
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.5rem;
-      color: #f0a500;
-      margin-bottom: 12px;
-    }
+    .badge-vip{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(0,200,255,.12),rgba(123,92,240,.12));border:1px solid rgba(0,200,255,.35);border-radius:24px;padding:10px 24px;font-family:'Orbitron',monospace;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:36px}
 
-    .subtitle {
-      color: #94a3b8;
-      font-size: 1rem;
-      margin-bottom: 36px;
-      line-height: 1.6;
-    }
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px;text-align:left}
+    .feat{background:rgba(13,11,42,.8);border:1px solid var(--border);border-radius:12px;padding:16px}
+    .feat-icon{font-size:1.4rem;margin-bottom:8px}
+    .feat-title{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+    .feat-desc{font-size:12px;color:var(--t2);line-height:1.5}
 
-    .steps {
-      text-align: left;
-      margin-bottom: 36px;
-    }
+    .btn{display:inline-block;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:10px;padding:16px 40px;font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:2px;cursor:pointer;text-decoration:none;transition:opacity .2s,transform .1s}
+    .btn:hover{opacity:.9}
+    .btn:active{transform:scale(.98)}
 
-    .step {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-
-    .step-num {
-      background: rgba(240,165,0,0.15);
-      border: 1px solid rgba(240,165,0,0.4);
-      color: #f0a500;
-      font-weight: 700;
-      font-size: 0.9rem;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .step-text {
-      font-size: 0.95rem;
-      color: #cbd5e1;
-      line-height: 1.6;
-    }
-
-    .step-text strong {
-      color: #f0a500;
-    }
-
-    .command-box {
-      background: #05101c;
-      border: 1px solid rgba(240,165,0,0.3);
-      border-radius: 8px;
-      padding: 14px 20px;
-      font-family: monospace;
-      font-size: 1rem;
-      color: #f0a500;
-      margin: 8px 0 4px;
-      cursor: pointer;
-      position: relative;
-      transition: background 0.2s;
-    }
-
-    .command-box:hover {
-      background: rgba(240,165,0,0.08);
-    }
-
-    .copy-hint {
-      font-size: 0.75rem;
-      color: #64748b;
-      margin-bottom: 0;
-    }
-
-    .bot-link {
-      display: inline-block;
-      margin-top: 24px;
-      background: linear-gradient(135deg, #f0a500, #d97706);
-      color: #000;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 14px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      transition: opacity 0.2s;
-    }
-
-    .bot-link:hover { opacity: 0.88; }
-
-    .note {
-      margin-top: 28px;
-      padding: 14px 18px;
-      background: rgba(240,165,0,0.05);
-      border-left: 3px solid rgba(240,165,0,0.4);
-      border-radius: 4px;
-      font-size: 0.85rem;
-      color: #94a3b8;
-      text-align: left;
-    }
-
-    .home-link {
-      margin-top: 32px;
-      font-size: 0.85rem;
-      color: #475569;
-      text-decoration: none;
-    }
-
-    .home-link:hover { color: #94a3b8; }
-
-    .ref-card {
-      margin-top: 28px;
-      background: rgba(240,165,0,0.05);
-      border: 1px solid rgba(240,165,0,0.25);
-      border-radius: 12px;
-      padding: 24px 20px;
-      text-align: left;
-    }
-
-    .ref-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.95rem;
-      color: #f0a500;
-      margin-bottom: 8px;
-    }
-
-    .ref-desc {
-      font-size: 0.85rem;
-      color: #94a3b8;
-      margin-bottom: 14px;
-      line-height: 1.5;
-    }
-
-    .ref-link-box {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .ref-link-input {
-      flex: 1;
-      background: #05101c;
-      border: 1px solid rgba(240,165,0,0.3);
-      border-radius: 6px;
-      padding: 10px 14px;
-      font-size: 12px;
-      color: #f0a500;
-      font-family: monospace;
-      outline: none;
-    }
-
-    .ref-copy-btn {
-      background: linear-gradient(135deg,#f0a500,#d97706);
-      color: #000;
-      border: none;
-      border-radius: 6px;
-      padding: 10px 16px;
-      font-weight: 700;
-      font-size: 12px;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .ref-stats {
-      margin-top: 12px;
-      font-size: 12px;
-      color: #475569;
-    }
-
-    .ref-alert {
-      margin-top: 16px;
-      padding: 12px 14px;
-      background: rgba(34,197,94,0.08);
-      border: 1px solid rgba(34,197,94,0.25);
-      border-radius: 8px;
-      font-size: 0.83rem;
-      color: #86efac;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 480px) {
-      .card { padding: 32px 24px; }
-      h1 { font-size: 1.2rem; }
-    }
+    .pending-box{background:rgba(234,179,8,.06);border:1px solid rgba(234,179,8,.2);border-radius:12px;padding:16px 20px;margin-bottom:28px;font-family:'Space Mono',monospace;font-size:11px;color:#eab308;line-height:1.6;display:none}
   </style>
 </head>
 <body>
+<div class="wrap">
+  <div class="logo">SHARP<span>IQ</span></div>
 
-  <div class="logo">SHARP<span style="color:#fff">IQ</span></div>
+  <div class="check-ring">
+    <div class="check-icon" id="statusIcon">✓</div>
+  </div>
 
-  <div class="card">
-    <div class="check">✅</div>
-    <h1>¡Pago confirmado!</h1>
-    <p class="subtitle">Tu suscripción VIP está activa. Sigue estos pasos para acceder al canal de predicciones exclusivas.</p>
+  <div class="title" id="mainTitle">¡Bienvenido <span>VIP</span>!</div>
+  <p class="sub" id="mainSub">Tu suscripción está activa. Ya tienes acceso a todos los picks EV+ con ventaja real calculada contra líneas de Pinnacle.</p>
 
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-text">
-          Abre Telegram y busca el bot <strong>@sharpiq_alertas_bot</strong><br>
-          o haz clic en el botón de abajo.
-        </div>
-      </div>
+  <div class="pending-box" id="pendingBox">
+    Tu pago está siendo procesado. En unos minutos tu cuenta quedará activa automáticamente. Si no se activa en 10 minutos, escríbenos a info@sharpiq.co
+  </div>
 
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          Envía este comando con el email que usaste para pagar:
-          <div class="command-box" onclick="copiarComando()" title="Toca para copiar">
-            /vip tu@email.com
-          </div>
-          <div class="copy-hint">Reemplaza "tu@email.com" con tu email real · Toca para copiar</div>
-        </div>
-      </div>
+  <div class="badge-vip" id="badgeVip">★ PLAN VIP ACTIVO</div>
 
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-text">
-          El bot te enviará automáticamente un <strong>link de acceso único</strong> al canal VIP SharpIQ.
-        </div>
-      </div>
+  <div class="features" id="featGrid">
+    <div class="feat">
+      <div class="feat-icon">📊</div>
+      <div class="feat-title">Picks EV+</div>
+      <div class="feat-desc">Todos los picks con valor esperado positivo vs Pinnacle</div>
     </div>
-
-    <a href="https://t.me/sharpiq_alertas_bot" target="_blank" class="bot-link">
-      Abrir @sharpiq_alertas_bot en Telegram
-    </a>
-
-    <div class="note">
-      Si tu pago es reciente, espera 2-3 minutos antes de enviar el comando.<br><br>
-      ¿Problemas? Escribe a <strong>@sharpiq_soporte</strong> en Telegram.
+    <div class="feat">
+      <div class="feat-icon">⚡</div>
+      <div class="feat-title">Diario</div>
+      <div class="feat-desc">Análisis publicados cada mañana antes del primer partido</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🎯</div>
+      <div class="feat-title">Sharp Lines</div>
+      <div class="feat-desc">Líneas de referencia de las casas más eficientes del mundo</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">Acceso total</div>
+      <div class="feat-desc">Sin límites, sin marcas de agua, sin picks bloqueados</div>
     </div>
   </div>
 
-  <!-- ── SECCIÓN REFERIDOS ── -->
-  <div class="ref-card" id="refSection" style="max-width:560px;width:100%">
-    <div class="ref-title">🎁 Gana días gratis — Invita amigos</div>
-    <div class="ref-desc">Por cada amigo que se suscriba con tu link, ganas <b style="color:#f0a500">7 días extra</b> en tu suscripción VIP. Sin límite de referidos.</div>
+  <a class="btn" id="mainBtn" href="cuenta.html">VER MIS PICKS →</a>
+</div>
 
-    <div class="ref-link-box">
-      <input class="ref-link-input" id="refLinkInput" readonly value="cargando...">
-      <button class="ref-copy-btn" onclick="copiarRefLink()">Copiar</button>
-    </div>
-    <div class="ref-stats" id="refStats">Comparte este link con tus amigos</div>
+<script>
+(function(){
+  const params  = new URLSearchParams(location.search);
+  const status  = params.get('status') || params.get('collection_status');
+  const pending = document.getElementById('pendingBox');
+  const icon    = document.getElementById('statusIcon');
+  const title   = document.getElementById('mainTitle');
+  const sub     = document.getElementById('mainSub');
+  const badge   = document.getElementById('badgeVip');
+  const feats   = document.getElementById('featGrid');
+  const btn     = document.getElementById('mainBtn');
 
-    <!-- Se muestra solo si el usuario llegó referido -->
-    <div class="ref-alert" id="refAlertBox" style="display:none">
-      ✅ <b>Llegaste referido por un amigo.</b> Envía este comando al bot para registrar tu referido y que tu amigo gane 7 días:<br><br>
-      <span id="refComandoBox" style="font-family:monospace;background:rgba(0,0,0,.3);padding:4px 8px;border-radius:4px;cursor:pointer" onclick="copiarComandoRef()"></span><br>
-      <span style="font-size:11px;opacity:.7">Toca el comando para copiarlo</span>
-    </div>
-  </div>
+  if(status === 'pending' || status === 'in_process'){
+    icon.textContent = '⏳';
+    title.innerHTML  = 'Pago <span>procesando</span>';
+    sub.textContent  = 'Tu pago está siendo verificado. Te avisamos cuando se confirme.';
+    pending.style.display = 'block';
+    badge.style.display   = 'none';
+  } else if(status === 'failure' || status === 'rejected'){
+    icon.textContent = '✗';
+    title.innerHTML  = 'Pago <span style="color:var(--red)">no procesado</span>';
+    sub.textContent  = 'Hubo un problema con tu pago. Por favor intenta de nuevo.';
+    badge.style.display  = 'none';
+    feats.style.display  = 'none';
+    btn.textContent      = 'INTENTAR DE NUEVO →';
+    btn.href             = 'cuenta.html';
+  }
 
-  <a href="/" class="home-link">← Volver a sharpiq.co</a>
-
-  <script>
-    function copiarComando() {
-      navigator.clipboard.writeText('/vip tu@email.com').then(() => {
-        const box = document.querySelector('.command-box');
-        const orig = box.textContent;
-        box.textContent = '¡Copiado!';
-        setTimeout(() => box.textContent = orig, 1500);
-      });
-    }
-
-    // ── REFERIDOS ────────────────────────────────────────────────
-    function generarCodigo(){
-      let c = localStorage.getItem('sharpiq_mi_ref');
-      if(!c){
-        c = Math.random().toString(36).substring(2,8).toUpperCase();
-        localStorage.setItem('sharpiq_mi_ref', c);
-      }
-      return c;
-    }
-
-    function copiarRefLink(){
-      const input = document.getElementById('refLinkInput');
-      navigator.clipboard.writeText(input.value).then(()=>{
-        const btn = document.querySelector('.ref-copy-btn');
-        btn.textContent = '¡Copiado!';
-        setTimeout(()=> btn.textContent = 'Copiar', 1800);
-      });
-    }
-
-    function copiarComandoRef(){
-      const span = document.getElementById('refComandoBox');
-      navigator.clipboard.writeText(span.textContent).then(()=>{
-        const orig = span.textContent;
-        span.textContent = '¡Copiado!';
-        setTimeout(()=> span.textContent = orig, 1800);
-      });
-    }
-
-    // Inicializar sección referidos
-    (function(){
-      const miCodigo = generarCodigo();
-      const miLink = 'https://sharpiq.co/?ref=' + miCodigo;
-      const input = document.getElementById('refLinkInput');
-      if(input) input.value = miLink;
-
-      // Si llegó referido por alguien
-      const refPendiente = localStorage.getItem('sharpiq_ref_pendiente') || localStorage.getItem('sharpiq_ref');
-      if(refPendiente && refPendiente !== miCodigo){
-        const alertBox = document.getElementById('refAlertBox');
-        const cmdBox   = document.getElementById('refComandoBox');
-        if(alertBox) alertBox.style.display = 'block';
-        if(cmdBox)   cmdBox.textContent = '/referido ' + refPendiente;
-        localStorage.removeItem('sharpiq_ref_pendiente');
-      }
-    })();
-  </script>
-
+  // Refrescar plan en localStorage si el pago fue aprobado
+  const token = localStorage.getItem('sharpiq_token');
+  if(token && status !== 'failure' && status !== 'rejected'){
+    fetch('https://api.sharpiq.co/pagos/mi-suscripcion', {
+      headers: {'Authorization': 'Bearer ' + token}
+    })
+    .then(r => r.json())
+    .then(data => {
+      if(data.plan === 'vip') localStorage.setItem('sharpiq_plan', 'vip');
+    })
+    .catch(()=>{});
+  }
+})();
+</script>
 </body>
 </html>
