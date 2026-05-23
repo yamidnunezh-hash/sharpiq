@@ -132,14 +132,19 @@ def correr():
         try:
             hora_str = t["pred"].get("hora", "")
             if hora_str:
-                h, m = hora_str.split(":")
-                cot_h       = (int(h) - 5 + 24) % 24
-                partido_utc = datetime.utcnow().replace(hour=int(h), minute=int(m), second=0, microsecond=0)
-                ahora_utc   = datetime.utcnow().replace(second=0, microsecond=0)
-                if ahora_utc >= partido_utc:
+                h, m  = hora_str.split(":")
+                cot_h = (int(h) - 5 + 24) % 24
+                # Comparar en COT: hora actual COT vs hora del partido COT
+                ahora_cot_h = (datetime.utcnow().hour - 5) % 24
+                ahora_cot_m = datetime.utcnow().minute
+                ahora_cot_mins  = ahora_cot_h * 60 + ahora_cot_m
+                partido_cot_mins = cot_h * 60 + int(m)
+                # Solo descartar si el partido es HOY en COT y ya pasó la hora
+                fecha_ev = t["pred"].get("fecha_evento", date.today().isoformat())
+                if fecha_ev == date.today().isoformat() and ahora_cot_mins >= partido_cot_mins:
                     print(f"  Tier {k} descartado — {t['pred']['local']} ya empezó ({cot_h:02d}:{m} COT)")
                     tiers[k] = None
-                elif cot_h > HASTA_HORA_COT:
+                elif cot_h > HASTA_HORA_COT and fecha_ev == date.today().isoformat():
                     print(f"  Tier {k} fuera de ventana — {t['pred']['local']} a las {cot_h:02d}:{m} COT (ventana hasta {HASTA_HORA_COT:02d}:00)")
                     tiers[k] = None
         except Exception:
@@ -271,16 +276,6 @@ def correr():
                 print("  CLV snapshot apertura guardado")
         except Exception as e:
             print(f"  CLV snapshot error: {e}")
-
-        try:
-            from telegram_alertas import enviar_narrativa
-            pred    = mejor_tier["pred"]
-            mk      = mejor_tier["mercado"]
-            vb_data = pred.get("value_bets", {}).get(mk, {})
-            enviar_narrativa(pred, mk, vb_data)
-            print("  Narrativa enviada (Free + VIP)")
-        except Exception as e:
-            print(f"  Narrativa error: {e}")
 
         try:
             from telegram_alertas import enviar_mercados_ext_vip
