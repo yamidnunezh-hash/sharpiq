@@ -9,9 +9,9 @@
   "casa": "",
   "hora_utc": "23:00",
   "hora_cot": "18:00 COT",
-  "ev": 27.3,
+  "ev": 27.1,
   "clasificacion": "ALTO VALOR",
-  "confianza": 65.6,
+  "confianza": 65.7,
   "pred_completa": {
     "local": "Carolina Hurricanes",
     "visitante": "Montréal Canadiens",
@@ -25,38 +25,38 @@
       "Montréal Canadiens": 3.7
     },
     "probabilidades": {
-      "Carolina Hurricanes": 65.6,
-      "Montréal Canadiens": 34.4
+      "Carolina Hurricanes": 65.7,
+      "Montréal Canadiens": 34.3
     },
-    "confianza": 65.6,
+    "confianza": 65.7,
     "value_bets": {
       "Carolina Hurricanes": {
-        "value": 0.174,
-        "ev_porcentaje": 17.4,
-        "ev_pinn": 17.4,
+        "value": 0.175,
+        "ev_porcentaje": 17.5,
+        "ev_pinn": 17.5,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
         "cuota": 1.79,
         "casa": "Unibet",
-        "pinn_prob": 65.6
+        "pinn_prob": 65.7
       },
       "Montréal Canadiens": {
-        "value": 0.273,
-        "ev_porcentaje": 27.3,
-        "ev_pinn": 27.3,
+        "value": 0.271,
+        "ev_porcentaje": 27.1,
+        "ev_pinn": 27.1,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
         "cuota": 3.7,
         "casa": "Unibet",
-        "pinn_prob": 34.4
+        "pinn_prob": 34.3
       }
     },
     "prediccion_principal": {
       "mercado": "Montréal Canadiens",
-      "prob": 34.4,
-      "ev": 27.3
+      "prob": 34.3,
+      "ev": 27.1
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],

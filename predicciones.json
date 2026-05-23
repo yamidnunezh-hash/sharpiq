@@ -1,6 +1,6 @@
 {
   "fecha": "2026-05-22",
-  "total_partidos": 28,
+  "total_partidos": 29,
   "predicciones": [
     {
       "local": "Cleveland Cavaliers",
@@ -11,7 +11,7 @@
       "hora": "00:10",
       "fecha_evento": "2026-05-23",
       "cuotas": {
-        "Cleveland Cavaliers": 1.77,
+        "Cleveland Cavaliers": 1.79,
         "New York Knicks": 2.15
       },
       "probabilidades": {
@@ -21,13 +21,13 @@
       "confianza": 55.6,
       "value_bets": {
         "Cleveland Cavaliers": {
-          "value": -0.016,
-          "ev_porcentaje": -1.6,
-          "ev_pinn": -1.6,
+          "value": -0.005,
+          "ev_porcentaje": -0.5,
+          "ev_pinn": -0.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.77,
+          "cuota": 1.79,
           "casa": "FanDuel",
           "pinn_prob": 55.6
         },
@@ -46,7 +46,60 @@
       "prediccion_principal": {
         "mercado": "Cleveland Cavaliers",
         "prob": 55.6,
-        "ev": -1.6
+        "ev": -0.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "San Antonio Spurs",
+      "visitante": "Oklahoma City Thunder",
+      "liga": "NBA",
+      "liga_code": "basketball_nba",
+      "deporte": "NBA",
+      "hora": "00:00",
+      "fecha_evento": "2026-05-24",
+      "cuotas": {
+        "Oklahoma City Thunder": 2.05,
+        "San Antonio Spurs": 1.82
+      },
+      "probabilidades": {
+        "Oklahoma City Thunder": 47.2,
+        "San Antonio Spurs": 52.8
+      },
+      "confianza": 52.8,
+      "value_bets": {
+        "Oklahoma City Thunder": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.05,
+          "casa": "DraftKings",
+          "pinn_prob": 47.2
+        },
+        "San Antonio Spurs": {
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.82,
+          "casa": "FanDuel",
+          "pinn_prob": 52.8
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Oklahoma City Thunder",
+        "prob": 47.2,
+        "ev": -3.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -64,7 +117,7 @@
       "hora": "19:08",
       "fecha_evento": "2026-05-23",
       "cuotas": {
-        "Pittsburgh Pirates": 1.67,
+        "Pittsburgh Pirates": 1.65,
         "Toronto Blue Jays": 2.3
       },
       "probabilidades": {
@@ -74,14 +127,14 @@
       "confianza": 57.8,
       "value_bets": {
         "Pittsburgh Pirates": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.67,
-          "casa": "DraftKings",
+          "cuota": 1.65,
+          "casa": "FanDuel",
           "pinn_prob": 57.8
         },
         "Toronto Blue Jays": {
@@ -277,7 +330,7 @@
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Atlanta Braves": 1.56,
-        "Washington Nationals": 2.65
+        "Washington Nationals": 2.58
       },
       "probabilidades": {
         "Atlanta Braves": 63.3,
@@ -297,14 +350,14 @@
           "pinn_prob": 63.3
         },
         "Washington Nationals": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
+          "value": -0.054,
+          "ev_porcentaje": -5.4,
+          "ev_pinn": -5.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.65,
-          "casa": "BetMGM",
+          "cuota": 2.58,
+          "casa": "DraftKings",
           "pinn_prob": 36.7
         }
       },
@@ -598,38 +651,38 @@
         "Montréal Canadiens": 3.7
       },
       "probabilidades": {
-        "Carolina Hurricanes": 65.6,
-        "Montréal Canadiens": 34.4
+        "Carolina Hurricanes": 65.7,
+        "Montréal Canadiens": 34.3
       },
-      "confianza": 65.6,
+      "confianza": 65.7,
       "value_bets": {
         "Carolina Hurricanes": {
-          "value": 0.174,
-          "ev_porcentaje": 17.4,
-          "ev_pinn": 17.4,
+          "value": 0.175,
+          "ev_porcentaje": 17.5,
+          "ev_pinn": 17.5,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
           "cuota": 1.79,
           "casa": "Unibet",
-          "pinn_prob": 65.6
+          "pinn_prob": 65.7
         },
         "Montréal Canadiens": {
-          "value": 0.273,
-          "ev_porcentaje": 27.3,
-          "ev_pinn": 27.3,
+          "value": 0.271,
+          "ev_porcentaje": 27.1,
+          "ev_pinn": 27.1,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
           "cuota": 3.7,
           "casa": "Unibet",
-          "pinn_prob": 34.4
+          "pinn_prob": 34.3
         }
       },
       "prediccion_principal": {
         "mercado": "Montréal Canadiens",
-        "prob": 34.4,
-        "ev": 27.3
+        "prob": 34.3,
+        "ev": 27.1
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1487,5 +1540,5 @@
       "movimiento": null
     }
   ],
-  "generado": "22:34:49"
+  "generado": "22:48:23"
 }
