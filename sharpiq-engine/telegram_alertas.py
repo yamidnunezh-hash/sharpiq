@@ -241,15 +241,27 @@ def enviar_resumen_dia(reporte):
         "over25":"Over 2.5","under25":"Under 2.5","btts_si":"BTTS Si","btts_no":"BTTS No",
         "over15":"Over 1.5","over35":"Over 3.5",
     }
-    # Solo incluir predicciones con al menos un value bet positivo
-    preds_con_valor = [
-        p for p in preds
-        if any(vb.get("ev_pinn", 0) >= 5 for vb in p.get("value_bets", {}).values())
-    ]
+    from datetime import date as _date2, datetime as _dt2
+    hoy_str = _date2.today().isoformat()
+    manana_str = (_dt2.utcnow().date()).isoformat()
+
+    # Solo picks de HOY (o mañana para US sports nocturnos) con EV >= 8%
+    preds_con_valor = []
+    for p in preds:
+        fecha_ev = p.get("fecha_evento", hoy_str)
+        if fecha_ev > manana_str:
+            continue  # descarta Copa Lib semana próxima, Mundial junio, etc.
+        if any(vb.get("ev_pinn", 0) >= 8 for vb in p.get("value_bets", {}).values()):
+            best_ev = max((vb.get("ev_pinn", 0) for vb in p.get("value_bets", {}).values()), default=0)
+            preds_con_valor.append((best_ev, p))
+    # Ordenar por mayor EV y tomar solo los top 8
+    preds_con_valor.sort(key=lambda x: x[0], reverse=True)
+    preds_con_valor = [p for _, p in preds_con_valor[:8]]
+
     vip_total = len(preds_con_valor)
-    vip_texto = f"📊 <b>SharpIQ — Value Bets del dia</b>\n📅 {reporte['fecha']} · {vip_total} picks con EV+\n\n"
+    vip_texto = f"📊 <b>SharpIQ — Top Value Bets</b>\n📅 {reporte['fecha']} · {vip_total} picks EV+8%\n\n"
     if not preds_con_valor:
-        vip_texto += "<i>Hoy no se detectaron value bets con EV positivo.\nEl motor seguirá analizando.</i>\n\n"
+        vip_texto += "<i>Hoy no se detectaron value bets con EV ≥8%.\nEl motor seguirá analizando.</i>\n\n"
     for pred in preds_con_valor:
         hora_utc = pred.get("hora", "00:00")
         try:
@@ -258,34 +270,18 @@ def enviar_resumen_dia(reporte):
         except Exception:
             hora_cot = hora_utc
 
-        # Fecha del evento (puede ser distinta a hoy para NFL futuro, etc.)
-        fecha_ev = pred.get("fecha_evento", reporte.get("fecha", ""))
-        fecha_label = ""
-        if fecha_ev and fecha_ev != reporte.get("fecha", ""):
-            try:
-                from datetime import datetime as _dt2, date as _date2
-                dias = (_dt2.strptime(fecha_ev, "%Y-%m-%d").date() - _date2.today()).days
-                if dias == 1:
-                    fecha_label = " — Mañana"
-                elif dias > 1:
-                    meses_es = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]
-                    d = _dt2.strptime(fecha_ev, "%Y-%m-%d")
-                    fecha_label = f" — {d.day} {meses_es[d.month-1]}"
-            except Exception:
-                fecha_label = f" — {fecha_ev}"
-
         probs = pred["probabilidades"]
 
-        # Todos los value bets positivos, ordenados de mayor a menor EV
+        # Solo el mejor value bet por partido (no todos)
         vbs_positivos = sorted(
-            [(mk, vb) for mk, vb in pred["value_bets"].items() if vb and vb.get("ev_pinn", 0) >= 5],
+            [(mk, vb) for mk, vb in pred["value_bets"].items() if vb and vb.get("ev_pinn", 0) >= 8],
             key=lambda x: x[1]["ev_pinn"], reverse=True
-        )
+        )[:2]  # máximo 2 mercados por partido
 
         _SE = {"NBA":"🏀","MLB":"⚾","NHL":"🏒","NFL":"🏈"}
         sport_emoji = pred.get("deporte_emoji") or _SE.get(pred.get("deporte","").upper(), "⚽")
         vip_texto += f"{sport_emoji} <b>{pred['local']} vs {pred['visitante']}</b>\n"
-        vip_texto += f"🗓 {pred.get('liga','')} | {hora_cot}{fecha_label}\n"
+        vip_texto += f"🗓 {pred.get('liga','')} | {hora_cot}\n"
         vl  = probs.get('victoria_local', '')
         emp = probs.get('empate', '')
         vv  = probs.get('victoria_visita', '')
@@ -297,7 +293,7 @@ def enviar_resumen_dia(reporte):
             cuota = vb.get("cuota") or pred["cuotas"].get(cuota_map_vip.get(mk, mk), "")
             cuota_str = f"{cuota:.2f}" if isinstance(cuota, float) else str(cuota)
             ev = vb["ev_pinn"]
-            emoji_ev = "🔥" if ev >= 10 else "💰"
+            emoji_ev = "🔥" if ev >= 12 else "💰"
             mk_display = vb.get("mercado_nombre") or nombres_vip.get(mk, mk)
             vip_texto += f"{emoji_ev} <b>{mk_display}</b> @ {cuota_str} | EV: +{ev}%\n"
         vip_texto += "\n"
@@ -312,17 +308,27 @@ def enviar_aviso_yamid(texto):
     return enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
 
 
-def enviar_canal_free(partido, liga, hora):
-    """Publica un teaser en el canal público — mercado oculto para generar curiosidad."""
-    texto = (
-        f"⚽ <b>{partido}</b>\n"
-        f"🏆 {liga} | {hora}\n\n"
-        f"📊 <b>Predicción:</b> 🔒 Solo VIP\n"
-        f"💵 <b>Cuota:</b> 🔒 Solo VIP\n\n"
-        f"🔥 <b>¿Quieres la predicción completa?</b>\n"
-        f"Únete al canal VIP → https://t.me/sharpiq_alertas_bot\n\n"
-        f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
-    )
+def enviar_canal_free(partido, liga, hora, pick_free=None, prob_free=None):
+    """Publica en el canal público: un pick real de baja complejidad + teaser VIP."""
+    if pick_free:
+        texto = (
+            f"⚽ <b>{partido}</b>\n"
+            f"🏆 {liga} | {hora}\n\n"
+            f"📊 <b>Pick FREE:</b> <b>{pick_free}</b>\n"
+            f"📈 Probabilidad estimada: {prob_free}%\n\n"
+            f"💡 <i>Cuota exacta + 2 picks VIP adicionales con EV vs Pinnacle</i>\n"
+            f"🔒 Acceso VIP → https://t.me/sharpiq_alertas_bot\n\n"
+            f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+        )
+    else:
+        texto = (
+            f"⚽ <b>{partido}</b>\n"
+            f"🏆 {liga} | {hora}\n\n"
+            f"🔎 El motor detectó valor en este partido.\n"
+            f"📊 Predicción completa + cuota EV+ → solo en canal VIP\n\n"
+            f"🔒 Únete → https://t.me/sharpiq_alertas_bot\n\n"
+            f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+        )
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
 
 

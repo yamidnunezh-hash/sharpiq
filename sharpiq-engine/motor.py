@@ -498,6 +498,8 @@ def obtener_partidos_hoy_apifb():
         return []
     partidos = []
     conteo = {}
+    # Solo aceptar fixtures dentro de las próximas 36h (filtra Mundial TBD y Copa Lib futura)
+    limite_utc = datetime.utcnow() + timedelta(hours=36)
     for f in data["response"]:
         lid = f["league"]["id"]
         if lid not in LIGAS_APIFB:
@@ -506,6 +508,15 @@ def obtener_partidos_hoy_apifb():
         status = f["fixture"]["status"]["short"]
         if status not in ("NS", "TBD"):
             continue  # solo partidos no iniciados
+        # Verificar que el fixture esté dentro de las próximas 36h
+        fixture_date_str = (f["fixture"].get("date") or "")[:16]
+        if fixture_date_str:
+            try:
+                fixture_dt = datetime.strptime(fixture_date_str, "%Y-%m-%dT%H:%M")
+                if fixture_dt > limite_utc:
+                    continue  # partido demasiado lejos (Mundial, Copa Lib futura, etc.)
+            except Exception:
+                pass
         # Sede neutral: finales, semifinales o Mundial (todas en sede neutral)
         round_name   = f["league"].get("round", "").lower()
         sede_neutral = (

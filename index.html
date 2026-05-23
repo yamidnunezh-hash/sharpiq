@@ -781,7 +781,7 @@
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <div id="navAuthArea" style="display:flex;align-items:center;gap:10px">
-      <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="nav-cta" id="navCta">Únete — $10 USD</a>
+      <a href="cuenta.html" target="_blank" class="nav-cta" id="navCta">Únete — $15 USD</a>
     </div>
     <button class="nav-tog" id="navTog" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
@@ -793,7 +793,7 @@
   <a href="#planes"          onclick="closeNav()">Planes</a>
   <a href="#estrategia"   onclick="closeNav()">Estrategia</a>
   <a href="#contacto"     onclick="closeNav()">Contacto</a>
-  <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-g" onclick="closeNav()" style="text-align:center;border-radius:7px;padding:14px;margin-top:8px;display:block">Únete — $10 USD/mes</a>
+  <a href="cuenta.html" target="_blank" class="btn-g" onclick="closeNav()" style="text-align:center;border-radius:7px;padding:14px;margin-top:8px;display:block">Únete — $15 USD/mes</a>
 </div>
 
 <!-- ── BANNER REFERIDO ── -->
@@ -843,7 +843,7 @@
       Decisiones con respaldo matemático real — no intuición.
     </p>
     <div class="hero-acts">
-      <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-g">Acceder Ahora — $10 USD/mes</a>
+      <a href="cuenta.html" target="_blank" class="btn-g">Acceder Ahora — $15 USD/mes</a>
       <a href="#predicciones" class="btn-o">Ver Predicciones</a>
     </div>
     <div style="margin-top:14px">
@@ -1106,7 +1106,7 @@
         </table>
       </div>
       <div class="pred-lock" style="background:none;height:auto;position:relative;padding:24px;align-items:center;justify-content:center;">
-        <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-g">Únete al canal VIP — $10 USD/mes</a>
+        <a href="cuenta.html" target="_blank" class="btn-g">Únete al canal VIP — $15 USD/mes</a>
       </div>
       <div class="pred-kpis">
         <div class="pred-kpi">
@@ -1292,7 +1292,7 @@
         <!-- Nota -->
         <p style="font-size:11px;color:var(--t3);font-family:'Space Mono',monospace;text-align:center;margin-bottom:20px;padding-top:20px;border-top:1px solid var(--border)">✅ Acceso inmediato al confirmar el pago · Sin permanencia mínima</p>
         <!-- Botón -->
-        <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="btn-plan gold">Unirme Ahora → $10 USD / mes</a>
+        <a href="cuenta.html" target="_blank" class="btn-plan gold">Unirme Ahora → $15 USD / mes</a>
       </div>
     </div>
   </div>
@@ -1437,7 +1437,7 @@
             <label>¿Qué te interesa?</label>
             <select name="interes">
               <option value="">Selecciona una opción</option>
-              <option>Plan VIP — Acceso a predicciones ($10 USD/mes)</option>
+              <option>Plan VIP — Acceso a predicciones ($15 USD/mes)</option>
               <option>Sistema de referidos — Construir mi red</option>
               <option>Quiero más información</option>
             </select>
@@ -2130,7 +2130,7 @@ if('serviceWorker' in navigator && 'PushManager' in window){
   }
 
   // Agregar ref como parámetro de rastreo en todos los botones de pago
-  const MP_BASE = 'https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot';
+  const MP_BASE = 'cuenta.html';
   function agregarRefAlLink(a){
     const refGuardado = localStorage.getItem('sharpiq_ref');
     if(refGuardado){
@@ -2163,7 +2163,7 @@ if('serviceWorker' in navigator && 'PushManager' in window){
   } else {
     area.innerHTML=`
       <a href="login.html" style="font-family:'Space Mono',monospace;font-size:11px;color:#94a3b8;text-decoration:none;padding:6px 12px;border:1px solid rgba(255,255,255,.1);border-radius:6px;transition:color .2s" onmouseover="this.style.color='#e2e8f0'" onmouseout="this.style.color='#94a3b8'">Acceso VIP</a>
-      <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=79abf20272b64347b16a901055c89d8c&back_url=https://t.me/sharpiq_alertas_bot" target="_blank" class="nav-cta">Únete — $10 USD</a>`;
+      <a href="cuenta.html" target="_blank" class="nav-cta">Únete — $15 USD</a>`;
   }
 })();
 
