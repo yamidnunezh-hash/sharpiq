@@ -81,22 +81,28 @@ def suscribir(plan_key: str, token=Depends(usuario_activo)):
         if not user:
             raise HTTPException(404, "Usuario no encontrado")
 
-    # Crear preferencia de pago (checkout)
-    # payer_email se omite: si se incluye, MP valida el país de la cuenta del comprador
-    # y lanza "Cannot operate between different countries" cuando no coincide con el vendedor.
+    # Checkout Pro — pago único mensual (evita restricciones de preapproval cross-country)
     payload = {
-        "reason":         plan["nombre"],
-        "auto_recurring": {
-            "frequency":          plan["frecuencia"],
-            "frequency_type":     plan["tipo_freq"],
-            "transaction_amount": plan["precio"],
-            "currency_id":        plan["moneda"],
+        "items": [
+            {
+                "title":       plan["nombre"],
+                "description": plan["descripcion"],
+                "quantity":    1,
+                "unit_price":  plan["precio"],
+                "currency_id": plan["moneda"],
+            }
+        ],
+        "payer": {"email": user["email"]},
+        "back_urls": {
+            "success": f"https://sharpiq.co/bienvenido.html?plan={plan_key}&uid={user_id}",
+            "failure": f"https://sharpiq.co/cuenta.html?error=pago",
+            "pending": f"https://sharpiq.co/cuenta.html?pending=1",
         },
-        "back_url":    f"https://sharpiq.co/bienvenido.html?plan={plan_key}&uid={user_id}",
-        "status":      "pending",
+        "auto_return":        "approved",
         "external_reference": str(user_id),
+        "notification_url":   "https://api.sharpiq.co/pagos/webhook",
     }
-    r = http.post(f"{MP_BASE}/preapproval", headers=_mp_headers(), json=payload, timeout=15)
+    r = http.post(f"{MP_BASE}/checkout/preferences", headers=_mp_headers(), json=payload, timeout=15)
     if r.status_code not in (200, 201):
         raise HTTPException(500, f"MercadoPago error: {r.text}")
 
