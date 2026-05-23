@@ -1,61 +1,61 @@
 {
-  "partido": "Colorado Avalanche vs Vegas Golden Knights",
+  "partido": "Carolina Hurricanes vs Montréal Canadiens",
   "liga": "NHL",
-  "local": "Colorado Avalanche",
-  "visitante": "Vegas Golden Knights",
-  "prediccion": "Vegas Golden Knights",
-  "mercado_key": "Vegas Golden Knights",
+  "local": "Carolina Hurricanes",
+  "visitante": "Montréal Canadiens",
+  "prediccion": "Montréal Canadiens",
+  "mercado_key": "Montréal Canadiens",
   "cuota": "",
   "casa": "",
-  "hora_utc": "19:00",
-  "hora_cot": "14:00 COT",
-  "ev": 30.5,
+  "hora_utc": "18:00",
+  "hora_cot": "13:00 COT",
+  "ev": 30.9,
   "clasificacion": "ALTO VALOR",
-  "confianza": 64.2,
+  "confianza": 64.6,
   "pred_completa": {
-    "local": "Colorado Avalanche",
-    "visitante": "Vegas Golden Knights",
+    "local": "Carolina Hurricanes",
+    "visitante": "Montréal Canadiens",
     "liga": "NHL",
     "liga_code": "icehockey_nhl",
     "deporte": "NHL",
-    "hora": "19:00",
+    "hora": "18:00",
     "cuotas": {
-      "Colorado Avalanche": 1.77,
-      "Vegas Golden Knights": 3.65
+      "Carolina Hurricanes": 1.79,
+      "Montréal Canadiens": 3.7
     },
     "probabilidades": {
-      "Colorado Avalanche": 64.2,
-      "Vegas Golden Knights": 35.8
+      "Carolina Hurricanes": 64.6,
+      "Montréal Canadiens": 35.4
     },
-    "confianza": 64.2,
+    "confianza": 64.6,
     "value_bets": {
-      "Colorado Avalanche": {
-        "value": 0.137,
-        "ev_porcentaje": 13.7,
-        "ev_pinn": 13.7,
+      "Carolina Hurricanes": {
+        "value": 0.157,
+        "ev_porcentaje": 15.7,
+        "ev_pinn": 15.7,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 1.77,
+        "cuota": 1.79,
         "casa": "Unibet",
-        "pinn_prob": 64.2
+        "pinn_prob": 64.6
       },
-      "Vegas Golden Knights": {
-        "value": 0.305,
-        "ev_porcentaje": 30.5,
-        "ev_pinn": 30.5,
+      "Montréal Canadiens": {
+        "value": 0.309,
+        "ev_porcentaje": 30.9,
+        "ev_pinn": 30.9,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 3.65,
+        "cuota": 3.7,
         "casa": "Unibet",
-        "pinn_prob": 35.8
+        "pinn_prob": 35.4
       }
     },
     "prediccion_principal": {
-      "mercado": "Vegas Golden Knights",
-      "prob": 35.8,
-      "ev": 30.5
+      "mercado": "Montréal Canadiens",
+      "prob": 35.4,
+      "ev": 30.9
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
