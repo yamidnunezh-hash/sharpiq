@@ -308,12 +308,23 @@ def enviar_aviso_yamid(texto):
     return enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
 
 
+def _sport_emoji(liga: str) -> str:
+    liga_up = liga.upper()
+    if any(x in liga_up for x in ("NHL", "HOCKEY")):       return "🏒"
+    if any(x in liga_up for x in ("NBA", "BASKET")):       return "🏀"
+    if any(x in liga_up for x in ("MLB", "BASEBALL")):     return "⚾"
+    if any(x in liga_up for x in ("NFL", "UFL")):          return "🏈"
+    if any(x in liga_up for x in ("TENIS", "ATP", "WTA")): return "🎾"
+    return "⚽"
+
+
 def enviar_canal_free(partido, liga, hora, pick_free=None, prob_free=None):
     """Publica en el canal público: un pick real de baja complejidad + teaser VIP."""
+    sp = _sport_emoji(liga)
     if pick_free:
         texto = (
-            f"⚽ <b>{partido}</b>\n"
-            f"🏆 {liga} | {hora}\n\n"
+            f"{sp} <b>{partido}</b>\n"
+            f"📅 {liga} | {hora}\n\n"
             f"📊 <b>Pick FREE:</b> <b>{pick_free}</b>\n"
             f"📈 Probabilidad estimada: {prob_free}%\n\n"
             f"💡 <i>Cuota exacta + 2 picks VIP adicionales con EV vs Pinnacle</i>\n"
@@ -322,8 +333,8 @@ def enviar_canal_free(partido, liga, hora, pick_free=None, prob_free=None):
         )
     else:
         texto = (
-            f"⚽ <b>{partido}</b>\n"
-            f"🏆 {liga} | {hora}\n\n"
+            f"{sp} <b>{partido}</b>\n"
+            f"📅 {liga} | {hora}\n\n"
             f"🔎 El motor detectó valor en este partido.\n"
             f"📊 Predicción completa + cuota EV+ → solo en canal VIP\n\n"
             f"🔒 Únete → https://t.me/sharpiq_alertas_bot\n\n"
