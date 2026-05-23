@@ -2,12 +2,11 @@
 SharpIQ — Conexión PostgreSQL Railway
 """
 import os
+import sys
 import psycopg2
 import psycopg2.extras
 from contextlib import contextmanager
 
-sys.path = __import__('sys').path
-import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
