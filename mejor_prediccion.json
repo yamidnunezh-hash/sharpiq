@@ -18,11 +18,16 @@
     "liga": "NHL",
     "liga_code": "icehockey_nhl",
     "deporte": "NHL",
+    "deporte_emoji": "🏒",
     "hora": "23:00",
     "fecha_evento": "2026-05-23",
     "cuotas": {
       "Carolina Hurricanes": 1.79,
-      "Montréal Canadiens": 3.7
+      "Montréal Canadiens": 3.7,
+      "Over 6.0": 1.95,
+      "Under 6.0": 1.87,
+      "Carolina Hurricanes (-1.5)": 2.24,
+      "Montréal Canadiens (+1.5)": 1.71
     },
     "probabilidades": {
       "Carolina Hurricanes": 65.7,
@@ -39,7 +44,8 @@
         "clasificacion": "ALTO VALOR",
         "cuota": 1.79,
         "casa": "Unibet",
-        "pinn_prob": 65.7
+        "pinn_prob": 65.7,
+        "mercado_nombre": "Carolina Hurricanes"
       },
       "Montréal Canadiens": {
         "value": 0.271,
@@ -50,7 +56,56 @@
         "clasificacion": "ALTO VALOR",
         "cuota": 3.7,
         "casa": "Unibet",
-        "pinn_prob": 34.3
+        "pinn_prob": 34.3,
+        "mercado_nombre": "Montréal Canadiens"
+      },
+      "over_6_0": {
+        "value": -0.058,
+        "ev_porcentaje": -5.8,
+        "ev_pinn": -5.8,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.95,
+        "casa": "BetMGM",
+        "pinn_prob": 48.3,
+        "mercado_nombre": "Over 6.0"
+      },
+      "under_6_0": {
+        "value": -0.034,
+        "ev_porcentaje": -3.4,
+        "ev_pinn": -3.4,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.87,
+        "casa": "BetMGM",
+        "pinn_prob": 51.7,
+        "mercado_nombre": "Under 6.0"
+      },
+      "spread_carolina_hurricanes_m1_5": {
+        "value": -0.02,
+        "ev_porcentaje": -2.0,
+        "ev_pinn": -2.0,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 2.24,
+        "casa": "DraftKings",
+        "pinn_prob": 43.8,
+        "mercado_nombre": "Carolina Hurricanes (-1.5)"
+      },
+      "spread_montréal_canadiens_1_5": {
+        "value": -0.038,
+        "ev_porcentaje": -3.8,
+        "ev_pinn": -3.8,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.71,
+        "casa": "BetMGM",
+        "pinn_prob": 56.2,
+        "mercado_nombre": "Montréal Canadiens (+1.5)"
       }
     },
     "prediccion_principal": {

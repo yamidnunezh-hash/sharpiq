@@ -1,6 +1,6 @@
 {
   "fecha": "2026-05-22",
-  "total_partidos": 29,
+  "total_partidos": 14,
   "predicciones": [
     {
       "local": "Cleveland Cavaliers",
@@ -8,11 +8,16 @@
       "liga": "NBA",
       "liga_code": "basketball_nba",
       "deporte": "NBA",
+      "deporte_emoji": "🏀",
       "hora": "00:10",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Cleveland Cavaliers": 1.79,
-        "New York Knicks": 2.15
+        "New York Knicks": 2.15,
+        "Over 213.5": 1.91,
+        "Under 213.5": 1.93,
+        "Cleveland Cavaliers (-2.5)": 1.93,
+        "New York Knicks (+2.5)": 1.91
       },
       "probabilidades": {
         "Cleveland Cavaliers": 55.6,
@@ -29,7 +34,8 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.79,
           "casa": "FanDuel",
-          "pinn_prob": 55.6
+          "pinn_prob": 55.6,
+          "mercado_nombre": "Cleveland Cavaliers"
         },
         "New York Knicks": {
           "value": -0.045,
@@ -40,13 +46,62 @@
           "clasificacion": "SIN VALOR",
           "cuota": 2.15,
           "casa": "BetMGM",
-          "pinn_prob": 44.4
+          "pinn_prob": 44.4,
+          "mercado_nombre": "New York Knicks"
+        },
+        "over_213_5": {
+          "value": -0.0,
+          "ev_porcentaje": -0.0,
+          "ev_pinn": -0.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "DraftKings",
+          "pinn_prob": 52.3,
+          "mercado_nombre": "Over 213.5"
+        },
+        "under_213_5": {
+          "value": -0.08,
+          "ev_porcentaje": -8.0,
+          "ev_pinn": -8.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "FanDuel",
+          "pinn_prob": 47.7,
+          "mercado_nombre": "Under 213.5"
+        },
+        "spread_cleveland_cavaliers_m2_5": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "FanDuel",
+          "pinn_prob": 49.6,
+          "mercado_nombre": "Cleveland Cavaliers (-2.5)"
+        },
+        "spread_new_york_knicks_2_5": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "DraftKings",
+          "pinn_prob": 50.4,
+          "mercado_nombre": "New York Knicks (+2.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Cleveland Cavaliers",
-        "prob": 55.6,
-        "ev": -0.5
+        "mercado": "Over 213.5",
+        "prob": 52.3,
+        "ev": -0.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -61,45 +116,74 @@
       "liga": "NBA",
       "liga_code": "basketball_nba",
       "deporte": "NBA",
+      "deporte_emoji": "🏀",
       "hora": "00:00",
       "fecha_evento": "2026-05-24",
       "cuotas": {
         "Oklahoma City Thunder": 2.05,
-        "San Antonio Spurs": 1.82
+        "San Antonio Spurs": 1.82,
+        "Oklahoma City Thunder (+1.5)": 1.98,
+        "San Antonio Spurs (-1.5)": 1.91
       },
       "probabilidades": {
-        "Oklahoma City Thunder": 47.2,
-        "San Antonio Spurs": 52.8
+        "Oklahoma City Thunder": 46.4,
+        "San Antonio Spurs": 53.6
       },
-      "confianza": 52.8,
+      "confianza": 53.6,
       "value_bets": {
         "Oklahoma City Thunder": {
+          "value": -0.049,
+          "ev_porcentaje": -4.9,
+          "ev_pinn": -4.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.05,
+          "casa": "DraftKings",
+          "pinn_prob": 46.4,
+          "mercado_nombre": "Oklahoma City Thunder"
+        },
+        "San Antonio Spurs": {
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.82,
+          "casa": "FanDuel",
+          "pinn_prob": 53.6,
+          "mercado_nombre": "San Antonio Spurs"
+        },
+        "spread_oklahoma_city_thunder_1_5": {
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.98,
+          "casa": "BetMGM",
+          "pinn_prob": 49.4,
+          "mercado_nombre": "Oklahoma City Thunder (+1.5)"
+        },
+        "spread_san_antonio_spurs_m1_5": {
           "value": -0.033,
           "ev_porcentaje": -3.3,
           "ev_pinn": -3.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.05,
-          "casa": "DraftKings",
-          "pinn_prob": 47.2
-        },
-        "San Antonio Spurs": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.82,
-          "casa": "FanDuel",
-          "pinn_prob": 52.8
+          "cuota": 1.91,
+          "casa": "Unibet",
+          "pinn_prob": 50.6,
+          "mercado_nombre": "San Antonio Spurs (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Oklahoma City Thunder",
-        "prob": 47.2,
-        "ev": -3.3
+        "mercado": "Oklahoma City Thunder (+1.5)",
+        "prob": 49.4,
+        "ev": -2.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -114,11 +198,16 @@
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
+      "deporte_emoji": "⚾",
       "hora": "19:08",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Pittsburgh Pirates": 1.65,
-        "Toronto Blue Jays": 2.3
+        "Toronto Blue Jays": 2.3,
+        "Over 7.5": 1.95,
+        "Under 7.5": 1.88,
+        "Pittsburgh Pirates (-1.5)": 2.2,
+        "Toronto Blue Jays (+1.5)": 1.75
       },
       "probabilidades": {
         "Pittsburgh Pirates": 57.8,
@@ -135,7 +224,8 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.65,
           "casa": "FanDuel",
-          "pinn_prob": 57.8
+          "pinn_prob": 57.8,
+          "mercado_nombre": "Pittsburgh Pirates"
         },
         "Toronto Blue Jays": {
           "value": -0.028,
@@ -146,13 +236,62 @@
           "clasificacion": "SIN VALOR",
           "cuota": 2.3,
           "casa": "FanDuel",
-          "pinn_prob": 42.3
+          "pinn_prob": 42.3,
+          "mercado_nombre": "Toronto Blue Jays"
+        },
+        "over_7_5": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "FanDuel",
+          "pinn_prob": 49.4,
+          "mercado_nombre": "Over 7.5"
+        },
+        "under_7_5": {
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "DraftKings",
+          "pinn_prob": 50.6,
+          "mercado_nombre": "Under 7.5"
+        },
+        "spread_pittsburgh_pirates_m1_5": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.2,
+          "casa": "BetMGM",
+          "pinn_prob": 44.2,
+          "mercado_nombre": "Pittsburgh Pirates (-1.5)"
+        },
+        "spread_toronto_blue_jays_1_5": {
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.75,
+          "casa": "FanDuel",
+          "pinn_prob": 55.8,
+          "mercado_nombre": "Toronto Blue Jays (+1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Toronto Blue Jays",
-        "prob": 42.3,
-        "ev": -2.8
+        "mercado": "Toronto Blue Jays (+1.5)",
+        "prob": 55.8,
+        "ev": -2.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -167,11 +306,14 @@
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
+      "deporte_emoji": "⚾",
       "hora": "20:06",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Baltimore Orioles": 1.86,
-        "Detroit Tigers": 2.0
+        "Detroit Tigers": 2.0,
+        "Over 8.0": 1.87,
+        "Under 8.0": 1.95
       },
       "probabilidades": {
         "Baltimore Orioles": 52.4,
@@ -188,7 +330,8 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.86,
           "casa": "FanDuel",
-          "pinn_prob": 52.4
+          "pinn_prob": 52.4,
+          "mercado_nombre": "Baltimore Orioles"
         },
         "Detroit Tigers": {
           "value": -0.049,
@@ -199,7 +342,32 @@
           "clasificacion": "SIN VALOR",
           "cuota": 2.0,
           "casa": "DraftKings",
-          "pinn_prob": 47.6
+          "pinn_prob": 47.6,
+          "mercado_nombre": "Detroit Tigers"
+        },
+        "over_8_0": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "FanDuel",
+          "pinn_prob": 51.4,
+          "mercado_nombre": "Over 8.0"
+        },
+        "under_8_0": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "FanDuel",
+          "pinn_prob": 48.6,
+          "mercado_nombre": "Under 8.0"
         }
       },
       "prediccion_principal": {
@@ -220,11 +388,16 @@
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
+      "deporte_emoji": "⚾",
       "hora": "20:06",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Chicago White Sox": 2.06,
-        "San Francisco Giants": 1.81
+        "San Francisco Giants": 1.81,
+        "Over 8.5": 1.98,
+        "Under 8.5": 1.87,
+        "Chicago White Sox (+1.5)": 1.5,
+        "San Francisco Giants (-1.5)": 2.72
       },
       "probabilidades": {
         "Chicago White Sox": 46.6,
@@ -241,7 +414,8 @@
           "clasificacion": "SIN VALOR",
           "cuota": 2.06,
           "casa": "FanDuel",
-          "pinn_prob": 46.6
+          "pinn_prob": 46.6,
+          "mercado_nombre": "Chicago White Sox"
         },
         "San Francisco Giants": {
           "value": -0.033,
@@ -252,13 +426,62 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.81,
           "casa": "FanDuel",
-          "pinn_prob": 53.4
+          "pinn_prob": 53.4,
+          "mercado_nombre": "San Francisco Giants"
+        },
+        "over_8_5": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.98,
+          "casa": "DraftKings",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Over 8.5"
+        },
+        "under_8_5": {
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "FanDuel",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Under 8.5"
+        },
+        "spread_chicago_white_sox_1_5": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.5,
+          "casa": "DraftKings",
+          "pinn_prob": 63.8,
+          "mercado_nombre": "Chicago White Sox (+1.5)"
+        },
+        "spread_san_francisco_giants_m1_5": {
+          "value": -0.016,
+          "ev_porcentaje": -1.6,
+          "ev_pinn": -1.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.72,
+          "casa": "FanDuel",
+          "pinn_prob": 36.2,
+          "mercado_nombre": "San Francisco Giants (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "San Francisco Giants",
-        "prob": 53.4,
-        "ev": -3.3
+        "mercado": "San Francisco Giants (-1.5)",
+        "prob": 36.2,
+        "ev": -1.6
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -273,11 +496,16 @@
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
+      "deporte_emoji": "⚾",
       "hora": "20:06",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Cleveland Guardians": 2.72,
-        "Philadelphia Phillies": 1.5
+        "Philadelphia Phillies": 1.5,
+        "Over 7.0": 1.82,
+        "Under 7.0": 2.0,
+        "Cleveland Guardians (+1.5)": 1.79,
+        "Philadelphia Phillies (-1.5)": 2.1
       },
       "probabilidades": {
         "Cleveland Guardians": 35.9,
@@ -294,7 +522,8 @@
           "clasificacion": "SIN VALOR",
           "cuota": 2.72,
           "casa": "FanDuel",
-          "pinn_prob": 35.9
+          "pinn_prob": 35.9,
+          "mercado_nombre": "Cleveland Guardians"
         },
         "Philadelphia Phillies": {
           "value": -0.039,
@@ -305,13 +534,62 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.5,
           "casa": "DraftKings",
-          "pinn_prob": 64.1
+          "pinn_prob": 64.1,
+          "mercado_nombre": "Philadelphia Phillies"
+        },
+        "over_7_0": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.82,
+          "casa": "FanDuel",
+          "pinn_prob": 52.8,
+          "mercado_nombre": "Over 7.0"
+        },
+        "under_7_0": {
+          "value": -0.057,
+          "ev_porcentaje": -5.7,
+          "ev_pinn": -5.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "FanDuel",
+          "pinn_prob": 47.2,
+          "mercado_nombre": "Under 7.0"
+        },
+        "spread_cleveland_guardians_1_5": {
+          "value": -0.007,
+          "ev_porcentaje": -0.7,
+          "ev_pinn": -0.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.79,
+          "casa": "FanDuel",
+          "pinn_prob": 55.5,
+          "mercado_nombre": "Cleveland Guardians (+1.5)"
+        },
+        "spread_philadelphia_phillies_m1_5": {
+          "value": -0.065,
+          "ev_porcentaje": -6.5,
+          "ev_pinn": -6.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.1,
+          "casa": "BetMGM",
+          "pinn_prob": 44.5,
+          "mercado_nombre": "Philadelphia Phillies (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Cleveland Guardians",
-        "prob": 35.9,
-        "ev": -2.3
+        "mercado": "Cleveland Guardians (+1.5)",
+        "prob": 55.5,
+        "ev": -0.7
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -326,11 +604,16 @@
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
+      "deporte_emoji": "⚾",
       "hora": "20:11",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Atlanta Braves": 1.56,
-        "Washington Nationals": 2.58
+        "Washington Nationals": 2.65,
+        "Over 9.0": 1.95,
+        "Under 9.0": 1.95,
+        "Atlanta Braves (-1.5)": 2.1,
+        "Washington Nationals (+1.5)": 1.79
       },
       "probabilidades": {
         "Atlanta Braves": 63.3,
@@ -347,24 +630,74 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.56,
           "casa": "FanDuel",
-          "pinn_prob": 63.3
+          "pinn_prob": 63.3,
+          "mercado_nombre": "Atlanta Braves"
         },
         "Washington Nationals": {
-          "value": -0.054,
-          "ev_porcentaje": -5.4,
-          "ev_pinn": -5.4,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.58,
+          "cuota": 2.65,
+          "casa": "BetMGM",
+          "pinn_prob": 36.7,
+          "mercado_nombre": "Washington Nationals"
+        },
+        "over_9_0": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "FanDuel",
+          "pinn_prob": 48.6,
+          "mercado_nombre": "Over 9.0"
+        },
+        "under_9_0": {
+          "value": 0.003,
+          "ev_porcentaje": 0.3,
+          "ev_pinn": 0.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "BetMGM",
+          "pinn_prob": 51.4,
+          "mercado_nombre": "Under 9.0"
+        },
+        "spread_atlanta_braves_m1_5": {
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.1,
+          "casa": "FanDuel",
+          "pinn_prob": 45.7,
+          "mercado_nombre": "Atlanta Braves (-1.5)"
+        },
+        "spread_washington_nationals_1_5": {
+          "value": -0.027,
+          "ev_porcentaje": -2.7,
+          "ev_pinn": -2.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.79,
           "casa": "DraftKings",
-          "pinn_prob": 36.7
+          "pinn_prob": 54.3,
+          "mercado_nombre": "Washington Nationals (+1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Atlanta Braves",
-        "prob": 63.3,
-        "ev": -1.2
+        "mercado": "Under 9.0",
+        "prob": 51.4,
+        "ev": 0.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -379,45 +712,100 @@
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
+      "deporte_emoji": "⚾",
       "hora": "20:11",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Kansas City Royals": 2.2,
-        "Seattle Mariners": 1.7
+        "Seattle Mariners": 1.7,
+        "Over 8.5": 1.88,
+        "Under 8.5": 2.0,
+        "Kansas City Royals (+1.5)": 1.74,
+        "Seattle Mariners (-1.5)": 2.16
       },
       "probabilidades": {
-        "Kansas City Royals": 43.0,
-        "Seattle Mariners": 57.0
+        "Kansas City Royals": 44.2,
+        "Seattle Mariners": 55.8
       },
-      "confianza": 57.0,
+      "confianza": 55.8,
       "value_bets": {
         "Kansas City Royals": {
-          "value": -0.055,
-          "ev_porcentaje": -5.5,
-          "ev_pinn": -5.5,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.2,
           "casa": "FanDuel",
-          "pinn_prob": 43.0
+          "pinn_prob": 44.2,
+          "mercado_nombre": "Kansas City Royals"
         },
         "Seattle Mariners": {
+          "value": -0.051,
+          "ev_porcentaje": -5.1,
+          "ev_pinn": -5.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.7,
+          "casa": "FanDuel",
+          "pinn_prob": 55.8,
+          "mercado_nombre": "Seattle Mariners"
+        },
+        "over_8_5": {
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "DraftKings",
+          "pinn_prob": 52.2,
+          "mercado_nombre": "Over 8.5"
+        },
+        "under_8_5": {
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "FanDuel",
+          "pinn_prob": 47.8,
+          "mercado_nombre": "Under 8.5"
+        },
+        "spread_kansas_city_royals_1_5": {
           "value": -0.03,
           "ev_porcentaje": -3.0,
           "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.7,
+          "cuota": 1.74,
+          "casa": "DraftKings",
+          "pinn_prob": 55.7,
+          "mercado_nombre": "Kansas City Royals (+1.5)"
+        },
+        "spread_seattle_mariners_m1_5": {
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.16,
           "casa": "FanDuel",
-          "pinn_prob": 57.0
+          "pinn_prob": 44.3,
+          "mercado_nombre": "Seattle Mariners (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Seattle Mariners",
-        "prob": 57.0,
-        "ev": -3.0
+        "mercado": "Over 8.5",
+        "prob": 52.2,
+        "ev": -1.9
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -432,11 +820,16 @@
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
+      "deporte_emoji": "⚾",
       "hora": "23:16",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Los Angeles Dodgers": 1.8,
-        "Milwaukee Brewers": 2.08
+        "Milwaukee Brewers": 2.08,
+        "Over 9.0": 2.0,
+        "Under 9.0": 1.87,
+        "Los Angeles Dodgers (-1.5)": 2.34,
+        "Milwaukee Brewers (+1.5)": 1.65
       },
       "probabilidades": {
         "Los Angeles Dodgers": 53.9,
@@ -453,7 +846,8 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.8,
           "casa": "BetMGM",
-          "pinn_prob": 53.9
+          "pinn_prob": 53.9,
+          "mercado_nombre": "Los Angeles Dodgers"
         },
         "Milwaukee Brewers": {
           "value": -0.042,
@@ -464,13 +858,62 @@
           "clasificacion": "SIN VALOR",
           "cuota": 2.08,
           "casa": "FanDuel",
-          "pinn_prob": 46.1
+          "pinn_prob": 46.1,
+          "mercado_nombre": "Milwaukee Brewers"
+        },
+        "over_9_0": {
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "FanDuel",
+          "pinn_prob": 48.3,
+          "mercado_nombre": "Over 9.0"
+        },
+        "under_9_0": {
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "DraftKings",
+          "pinn_prob": 51.7,
+          "mercado_nombre": "Under 9.0"
+        },
+        "spread_los_angeles_dodgers_m1_5": {
+          "value": -0.012,
+          "ev_porcentaje": -1.2,
+          "ev_pinn": -1.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.34,
+          "casa": "FanDuel",
+          "pinn_prob": 42.2,
+          "mercado_nombre": "Los Angeles Dodgers (-1.5)"
+        },
+        "spread_milwaukee_brewers_1_5": {
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.65,
+          "casa": "BetMGM",
+          "pinn_prob": 57.8,
+          "mercado_nombre": "Milwaukee Brewers (+1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Los Angeles Dodgers",
-        "prob": 53.9,
-        "ev": -2.9
+        "mercado": "Los Angeles Dodgers (-1.5)",
+        "prob": 42.2,
+        "ev": -1.2
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -485,11 +928,14 @@
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
+      "deporte_emoji": "⚾",
       "hora": "01:41",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Athletics": 1.93,
-        "San Diego Padres": 1.93
+        "San Diego Padres": 1.93,
+        "Over 8.0": 1.95,
+        "Under 8.0": 1.91
       },
       "probabilidades": {
         "Athletics": 49.7,
@@ -506,7 +952,8 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.93,
           "casa": "FanDuel",
-          "pinn_prob": 49.7
+          "pinn_prob": 49.7,
+          "mercado_nombre": "Athletics"
         },
         "San Diego Padres": {
           "value": -0.03,
@@ -517,13 +964,38 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.93,
           "casa": "FanDuel",
-          "pinn_prob": 50.3
+          "pinn_prob": 50.3,
+          "mercado_nombre": "San Diego Padres"
+        },
+        "over_8_0": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "DraftKings",
+          "pinn_prob": 49.0,
+          "mercado_nombre": "Over 8.0"
+        },
+        "under_8_0": {
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "FanDuel",
+          "pinn_prob": 51.0,
+          "mercado_nombre": "Under 8.0"
         }
       },
       "prediccion_principal": {
-        "mercado": "San Diego Padres",
-        "prob": 50.3,
-        "ev": -3.0
+        "mercado": "Under 8.0",
+        "prob": 51.0,
+        "ev": -2.5
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -538,11 +1010,16 @@
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
+      "deporte_emoji": "⚾",
       "hora": "02:06",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Los Angeles Angels": 2.15,
-        "Texas Rangers": 1.76
+        "Texas Rangers": 1.76,
+        "Over 8.0": 1.91,
+        "Under 8.0": 1.95,
+        "Los Angeles Angels (+1.5)": 1.65,
+        "Texas Rangers (-1.5)": 2.3
       },
       "probabilidades": {
         "Los Angeles Angels": 45.2,
@@ -559,7 +1036,8 @@
           "clasificacion": "SIN VALOR",
           "cuota": 2.15,
           "casa": "BetMGM",
-          "pinn_prob": 45.2
+          "pinn_prob": 45.2,
+          "mercado_nombre": "Los Angeles Angels"
         },
         "Texas Rangers": {
           "value": -0.035,
@@ -570,13 +1048,62 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.76,
           "casa": "FanDuel",
-          "pinn_prob": 54.8
+          "pinn_prob": 54.8,
+          "mercado_nombre": "Texas Rangers"
+        },
+        "over_8_0": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "FanDuel",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Over 8.0"
+        },
+        "under_8_0": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "DraftKings",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Under 8.0"
+        },
+        "spread_los_angeles_angels_1_5": {
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.65,
+          "casa": "BetMGM",
+          "pinn_prob": 57.8,
+          "mercado_nombre": "Los Angeles Angels (+1.5)"
+        },
+        "spread_texas_rangers_m1_5": {
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.3,
+          "casa": "FanDuel",
+          "pinn_prob": 42.2,
+          "mercado_nombre": "Texas Rangers (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Los Angeles Angels",
-        "prob": 45.2,
-        "ev": -2.9
+        "mercado": "Over 8.0",
+        "prob": 50.9,
+        "ev": -2.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -591,11 +1118,16 @@
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
+      "deporte_emoji": "⚾",
       "hora": "02:11",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Arizona Diamondbacks": 1.62,
-        "Colorado Rockies": 2.5
+        "Colorado Rockies": 2.5,
+        "Over 9.0": 1.82,
+        "Under 9.0": 2.02,
+        "Arizona Diamondbacks (-1.5)": 2.26,
+        "Colorado Rockies (+1.5)": 1.69
       },
       "probabilidades": {
         "Arizona Diamondbacks": 61.0,
@@ -612,7 +1144,8 @@
           "clasificacion": "SIN VALOR",
           "cuota": 1.62,
           "casa": "FanDuel",
-          "pinn_prob": 61.0
+          "pinn_prob": 61.0,
+          "mercado_nombre": "Arizona Diamondbacks"
         },
         "Colorado Rockies": {
           "value": -0.024,
@@ -623,7 +1156,56 @@
           "clasificacion": "SIN VALOR",
           "cuota": 2.5,
           "casa": "BetMGM",
-          "pinn_prob": 39.0
+          "pinn_prob": 39.0,
+          "mercado_nombre": "Colorado Rockies"
+        },
+        "over_9_0": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.82,
+          "casa": "DraftKings",
+          "pinn_prob": 52.6,
+          "mercado_nombre": "Over 9.0"
+        },
+        "under_9_0": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.02,
+          "casa": "DraftKings",
+          "pinn_prob": 47.4,
+          "mercado_nombre": "Under 9.0"
+        },
+        "spread_arizona_diamondbacks_m1_5": {
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.26,
+          "casa": "FanDuel",
+          "pinn_prob": 43.7,
+          "mercado_nombre": "Arizona Diamondbacks (-1.5)"
+        },
+        "spread_colorado_rockies_1_5": {
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.69,
+          "casa": "DraftKings",
+          "pinn_prob": 56.3,
+          "mercado_nombre": "Colorado Rockies (+1.5)"
         }
       },
       "prediccion_principal": {
@@ -644,11 +1226,16 @@
       "liga": "NHL",
       "liga_code": "icehockey_nhl",
       "deporte": "NHL",
+      "deporte_emoji": "🏒",
       "hora": "23:00",
       "fecha_evento": "2026-05-23",
       "cuotas": {
         "Carolina Hurricanes": 1.79,
-        "Montréal Canadiens": 3.7
+        "Montréal Canadiens": 3.7,
+        "Over 6.0": 1.95,
+        "Under 6.0": 1.87,
+        "Carolina Hurricanes (-1.5)": 2.24,
+        "Montréal Canadiens (+1.5)": 1.71
       },
       "probabilidades": {
         "Carolina Hurricanes": 65.7,
@@ -665,7 +1252,8 @@
           "clasificacion": "ALTO VALOR",
           "cuota": 1.79,
           "casa": "Unibet",
-          "pinn_prob": 65.7
+          "pinn_prob": 65.7,
+          "mercado_nombre": "Carolina Hurricanes"
         },
         "Montréal Canadiens": {
           "value": 0.271,
@@ -676,7 +1264,56 @@
           "clasificacion": "ALTO VALOR",
           "cuota": 3.7,
           "casa": "Unibet",
-          "pinn_prob": 34.3
+          "pinn_prob": 34.3,
+          "mercado_nombre": "Montréal Canadiens"
+        },
+        "over_6_0": {
+          "value": -0.058,
+          "ev_porcentaje": -5.8,
+          "ev_pinn": -5.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "BetMGM",
+          "pinn_prob": 48.3,
+          "mercado_nombre": "Over 6.0"
+        },
+        "under_6_0": {
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "BetMGM",
+          "pinn_prob": 51.7,
+          "mercado_nombre": "Under 6.0"
+        },
+        "spread_carolina_hurricanes_m1_5": {
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.24,
+          "casa": "DraftKings",
+          "pinn_prob": 43.8,
+          "mercado_nombre": "Carolina Hurricanes (-1.5)"
+        },
+        "spread_montréal_canadiens_1_5": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.71,
+          "casa": "BetMGM",
+          "pinn_prob": 56.2,
+          "mercado_nombre": "Montréal Canadiens (+1.5)"
         }
       },
       "prediccion_principal": {
@@ -692,845 +1329,105 @@
       "movimiento": null
     },
     {
-      "local": "Seattle Seahawks",
-      "visitante": "New England Patriots",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "00:15",
-      "fecha_evento": "2026-09-09",
+      "local": "Vegas Golden Knights",
+      "visitante": "Colorado Avalanche",
+      "liga": "NHL",
+      "liga_code": "icehockey_nhl",
+      "deporte": "NHL",
+      "deporte_emoji": "🏒",
+      "hora": "00:00",
+      "fecha_evento": "2026-05-24",
       "cuotas": {
-        "New England Patriots": 2.85,
-        "Seattle Seahawks": 1.49
+        "Colorado Avalanche": 2.23,
+        "Vegas Golden Knights": 2.75,
+        "Over 6.0": 1.91,
+        "Under 6.0": 1.91,
+        "Colorado Avalanche (-1.5)": 2.7,
+        "Vegas Golden Knights (+1.5)": 1.51
       },
       "probabilidades": {
-        "New England Patriots": 32.0,
-        "Seattle Seahawks": 68.0
+        "Colorado Avalanche": 55.6,
+        "Vegas Golden Knights": 44.4
       },
-      "confianza": 68.0,
+      "confianza": 55.6,
       "value_bets": {
-        "New England Patriots": {
-          "value": -0.089,
-          "ev_porcentaje": -8.9,
-          "ev_pinn": -8.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.85,
-          "casa": "BetMGM",
-          "pinn_prob": 32.0
+        "Colorado Avalanche": {
+          "value": 0.24,
+          "ev_porcentaje": 24.0,
+          "ev_pinn": 24.0,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 2.23,
+          "casa": "Unibet",
+          "pinn_prob": 55.6,
+          "mercado_nombre": "Colorado Avalanche"
         },
-        "Seattle Seahawks": {
-          "value": 0.013,
-          "ev_porcentaje": 1.3,
-          "ev_pinn": 1.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.49,
-          "casa": "DraftKings",
-          "pinn_prob": 68.0
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Seattle Seahawks",
-        "prob": 68.0,
-        "ev": 1.3
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Los Angeles Rams",
-      "visitante": "San Francisco 49ers",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "00:35",
-      "fecha_evento": "2026-09-10",
-      "cuotas": {
-        "Los Angeles Rams": 1.71,
-        "San Francisco 49ers": 2.3
-      },
-      "probabilidades": {
-        "Los Angeles Rams": 60.1,
-        "San Francisco 49ers": 39.9
-      },
-      "confianza": 60.1,
-      "value_bets": {
-        "Los Angeles Rams": {
-          "value": 0.029,
-          "ev_porcentaje": 2.9,
-          "ev_pinn": 2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.71,
-          "casa": "BetMGM",
-          "pinn_prob": 60.1
+        "Vegas Golden Knights": {
+          "value": 0.221,
+          "ev_porcentaje": 22.1,
+          "ev_pinn": 22.1,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 2.75,
+          "casa": "Unibet",
+          "pinn_prob": 44.4,
+          "mercado_nombre": "Vegas Golden Knights"
         },
-        "San Francisco 49ers": {
-          "value": -0.083,
-          "ev_porcentaje": -8.3,
-          "ev_pinn": -8.3,
+        "over_6_0": {
+          "value": -0.062,
+          "ev_porcentaje": -6.2,
+          "ev_pinn": -6.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.3,
-          "casa": "DraftKings",
-          "pinn_prob": 39.9
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Los Angeles Rams",
-        "prob": 60.1,
-        "ev": 2.9
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Pittsburgh Steelers",
-      "visitante": "Atlanta Falcons",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "17:00",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Atlanta Falcons": 2.45,
-        "Pittsburgh Steelers": 1.7
-      },
-      "probabilidades": {
-        "Atlanta Falcons": 39.7,
-        "Pittsburgh Steelers": 60.3
-      },
-      "confianza": 60.3,
-      "value_bets": {
-        "Atlanta Falcons": {
+          "cuota": 1.91,
+          "casa": "BetMGM",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Over 6.0"
+        },
+        "under_6_0": {
           "value": -0.028,
           "ev_porcentaje": -2.8,
           "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.45,
+          "cuota": 1.91,
+          "casa": "BetMGM",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Under 6.0"
+        },
+        "spread_colorado_avalanche_m1_5": {
+          "value": -0.098,
+          "ev_porcentaje": -9.8,
+          "ev_pinn": -9.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.7,
           "casa": "DraftKings",
-          "pinn_prob": 39.7
+          "pinn_prob": 33.4,
+          "mercado_nombre": "Colorado Avalanche (-1.5)"
         },
-        "Pittsburgh Steelers": {
-          "value": 0.026,
-          "ev_porcentaje": 2.6,
-          "ev_pinn": 2.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.7,
-          "casa": "Unibet",
-          "pinn_prob": 60.3
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Pittsburgh Steelers",
-        "prob": 60.3,
-        "ev": 2.6
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Indianapolis Colts",
-      "visitante": "Baltimore Ravens",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "17:00",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Baltimore Ravens": 1.52,
-        "Indianapolis Colts": 2.72
-      },
-      "probabilidades": {
-        "Baltimore Ravens": 62.9,
-        "Indianapolis Colts": 37.1
-      },
-      "confianza": 62.9,
-      "value_bets": {
-        "Baltimore Ravens": {
-          "value": -0.044,
-          "ev_porcentaje": -4.4,
-          "ev_pinn": -4.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.52,
-          "casa": "DraftKings",
-          "pinn_prob": 62.9
-        },
-        "Indianapolis Colts": {
-          "value": 0.009,
-          "ev_porcentaje": 0.9,
-          "ev_pinn": 0.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.72,
-          "casa": "FanDuel",
-          "pinn_prob": 37.1
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Indianapolis Colts",
-        "prob": 37.1,
-        "ev": 0.9
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Houston Texans",
-      "visitante": "Buffalo Bills",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "17:00",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Buffalo Bills": 1.89,
-        "Houston Texans": 1.96
-      },
-      "probabilidades": {
-        "Buffalo Bills": 50.4,
-        "Houston Texans": 49.6
-      },
-      "confianza": 50.4,
-      "value_bets": {
-        "Buffalo Bills": {
-          "value": -0.048,
-          "ev_porcentaje": -4.8,
-          "ev_pinn": -4.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.89,
-          "casa": "DraftKings",
-          "pinn_prob": 50.4
-        },
-        "Houston Texans": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.96,
-          "casa": "Unibet",
-          "pinn_prob": 49.6
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Houston Texans",
-        "prob": 49.6,
-        "ev": -2.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Carolina Panthers",
-      "visitante": "Chicago Bears",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "17:00",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Carolina Panthers": 2.2,
-        "Chicago Bears": 1.74
-      },
-      "probabilidades": {
-        "Carolina Panthers": 42.2,
-        "Chicago Bears": 57.8
-      },
-      "confianza": 57.8,
-      "value_bets": {
-        "Carolina Panthers": {
-          "value": -0.071,
-          "ev_porcentaje": -7.1,
-          "ev_pinn": -7.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.2,
-          "casa": "FanDuel",
-          "pinn_prob": 42.2
-        },
-        "Chicago Bears": {
+        "spread_vegas_golden_knights_1_5": {
           "value": 0.006,
           "ev_porcentaje": 0.6,
           "ev_pinn": 0.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.74,
-          "casa": "DraftKings",
-          "pinn_prob": 57.8
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Chicago Bears",
-        "prob": 57.8,
-        "ev": 0.6
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Cincinnati Bengals",
-      "visitante": "Tampa Bay Buccaneers",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "17:00",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Cincinnati Bengals": 1.52,
-        "Tampa Bay Buccaneers": 2.65
-      },
-      "probabilidades": {
-        "Cincinnati Bengals": 62.6,
-        "Tampa Bay Buccaneers": 37.4
-      },
-      "confianza": 62.6,
-      "value_bets": {
-        "Cincinnati Bengals": {
-          "value": -0.049,
-          "ev_porcentaje": -4.9,
-          "ev_pinn": -4.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.52,
-          "casa": "Unibet",
-          "pinn_prob": 62.6
-        },
-        "Tampa Bay Buccaneers": {
-          "value": -0.008,
-          "ev_porcentaje": -0.8,
-          "ev_pinn": -0.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.65,
-          "casa": "BetMGM",
-          "pinn_prob": 37.4
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Tampa Bay Buccaneers",
-        "prob": 37.4,
-        "ev": -0.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Jacksonville Jaguars",
-      "visitante": "Cleveland Browns",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "17:00",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Cleveland Browns": 3.95,
-        "Jacksonville Jaguars": 1.34
-      },
-      "probabilidades": {
-        "Cleveland Browns": 24.8,
-        "Jacksonville Jaguars": 75.2
-      },
-      "confianza": 75.2,
-      "value_bets": {
-        "Cleveland Browns": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.95,
+          "cuota": 1.51,
           "casa": "FanDuel",
-          "pinn_prob": 24.8
-        },
-        "Jacksonville Jaguars": {
-          "value": 0.008,
-          "ev_porcentaje": 0.8,
-          "ev_pinn": 0.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.34,
-          "casa": "DraftKings",
-          "pinn_prob": 75.2
+          "pinn_prob": 66.6,
+          "mercado_nombre": "Vegas Golden Knights (+1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Jacksonville Jaguars",
-        "prob": 75.2,
-        "ev": 0.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Detroit Lions",
-      "visitante": "New Orleans Saints",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "17:00",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Detroit Lions": 1.31,
-        "New Orleans Saints": 4.1
-      },
-      "probabilidades": {
-        "Detroit Lions": 74.2,
-        "New Orleans Saints": 25.8
-      },
-      "confianza": 74.2,
-      "value_bets": {
-        "Detroit Lions": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.31,
-          "casa": "DraftKings",
-          "pinn_prob": 74.2
-        },
-        "New Orleans Saints": {
-          "value": 0.06,
-          "ev_porcentaje": 6.0,
-          "ev_pinn": 6.0,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "VALOR",
-          "cuota": 4.1,
-          "casa": "FanDuel",
-          "pinn_prob": 25.8
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "New Orleans Saints",
-        "prob": 25.8,
-        "ev": 6.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Tennessee Titans",
-      "visitante": "New York Jets",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "17:00",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "New York Jets": 2.4,
-        "Tennessee Titans": 1.72
-      },
-      "probabilidades": {
-        "New York Jets": 42.2,
-        "Tennessee Titans": 57.8
-      },
-      "confianza": 57.8,
-      "value_bets": {
-        "New York Jets": {
-          "value": 0.013,
-          "ev_porcentaje": 1.3,
-          "ev_pinn": 1.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
-          "casa": "DraftKings",
-          "pinn_prob": 42.2
-        },
-        "Tennessee Titans": {
-          "value": -0.006,
-          "ev_porcentaje": -0.6,
-          "ev_pinn": -0.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.72,
-          "casa": "FanDuel",
-          "pinn_prob": 57.8
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "New York Jets",
-        "prob": 42.2,
-        "ev": 1.3
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Los Angeles Chargers",
-      "visitante": "Arizona Cardinals",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "20:25",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Arizona Cardinals": 5.75,
-        "Los Angeles Chargers": 1.19
-      },
-      "probabilidades": {
-        "Arizona Cardinals": 19.0,
-        "Los Angeles Chargers": 81.0
-      },
-      "confianza": 81.0,
-      "value_bets": {
-        "Arizona Cardinals": {
-          "value": 0.091,
-          "ev_porcentaje": 9.1,
-          "ev_pinn": 9.1,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "VALOR",
-          "cuota": 5.75,
-          "casa": "BetMGM",
-          "pinn_prob": 19.0
-        },
-        "Los Angeles Chargers": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.19,
-          "casa": "Unibet",
-          "pinn_prob": 81.0
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Arizona Cardinals",
-        "prob": 19.0,
-        "ev": 9.1
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Minnesota Vikings",
-      "visitante": "Green Bay Packers",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "20:25",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Green Bay Packers": 1.83,
-        "Minnesota Vikings": 2.06
-      },
-      "probabilidades": {
-        "Green Bay Packers": 51.7,
-        "Minnesota Vikings": 48.3
-      },
-      "confianza": 51.7,
-      "value_bets": {
-        "Green Bay Packers": {
-          "value": -0.054,
-          "ev_porcentaje": -5.4,
-          "ev_pinn": -5.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
-          "casa": "FanDuel",
-          "pinn_prob": 51.7
-        },
-        "Minnesota Vikings": {
-          "value": -0.004,
-          "ev_porcentaje": -0.4,
-          "ev_pinn": -0.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.06,
-          "casa": "Unibet",
-          "pinn_prob": 48.3
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Minnesota Vikings",
-        "prob": 48.3,
-        "ev": -0.4
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Las Vegas Raiders",
-      "visitante": "Miami Dolphins",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "20:25",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Las Vegas Raiders": 1.58,
-        "Miami Dolphins": 2.76
-      },
-      "probabilidades": {
-        "Las Vegas Raiders": 62.6,
-        "Miami Dolphins": 37.4
-      },
-      "confianza": 62.6,
-      "value_bets": {
-        "Las Vegas Raiders": {
-          "value": -0.012,
-          "ev_porcentaje": -1.2,
-          "ev_pinn": -1.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.58,
-          "casa": "Unibet",
-          "pinn_prob": 62.6
-        },
-        "Miami Dolphins": {
-          "value": 0.033,
-          "ev_porcentaje": 3.3,
-          "ev_pinn": 3.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.76,
-          "casa": "FanDuel",
-          "pinn_prob": 37.4
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Miami Dolphins",
-        "prob": 37.4,
-        "ev": 3.3
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Philadelphia Eagles",
-      "visitante": "Washington Commanders",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "20:25",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Philadelphia Eagles": 1.47,
-        "Washington Commanders": 2.95
-      },
-      "probabilidades": {
-        "Philadelphia Eagles": 65.5,
-        "Washington Commanders": 34.5
-      },
-      "confianza": 65.5,
-      "value_bets": {
-        "Philadelphia Eagles": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.47,
-          "casa": "FanDuel",
-          "pinn_prob": 65.5
-        },
-        "Washington Commanders": {
-          "value": 0.018,
-          "ev_porcentaje": 1.8,
-          "ev_pinn": 1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.95,
-          "casa": "DraftKings",
-          "pinn_prob": 34.5
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Washington Commanders",
-        "prob": 34.5,
-        "ev": 1.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "New York Giants",
-      "visitante": "Dallas Cowboys",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "00:20",
-      "fecha_evento": "2026-09-13",
-      "cuotas": {
-        "Dallas Cowboys": 1.77,
-        "New York Giants": 2.26
-      },
-      "probabilidades": {
-        "Dallas Cowboys": 55.2,
-        "New York Giants": 44.8
-      },
-      "confianza": 55.2,
-      "value_bets": {
-        "Dallas Cowboys": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.77,
-          "casa": "DraftKings",
-          "pinn_prob": 55.2
-        },
-        "New York Giants": {
-          "value": 0.012,
-          "ev_porcentaje": 1.2,
-          "ev_pinn": 1.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.26,
-          "casa": "FanDuel",
-          "pinn_prob": 44.8
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "New York Giants",
-        "prob": 44.8,
-        "ev": 1.2
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Kansas City Chiefs",
-      "visitante": "Denver Broncos",
-      "liga": "NFL",
-      "liga_code": "americanfootball_nfl",
-      "deporte": "NFL",
-      "hora": "00:15",
-      "fecha_evento": "2026-09-14",
-      "cuotas": {
-        "Denver Broncos": 2.35,
-        "Kansas City Chiefs": 1.7
-      },
-      "probabilidades": {
-        "Denver Broncos": 40.8,
-        "Kansas City Chiefs": 59.2
-      },
-      "confianza": 59.2,
-      "value_bets": {
-        "Denver Broncos": {
-          "value": -0.041,
-          "ev_porcentaje": -4.1,
-          "ev_pinn": -4.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.35,
-          "casa": "BetMGM",
-          "pinn_prob": 40.8
-        },
-        "Kansas City Chiefs": {
-          "value": 0.006,
-          "ev_porcentaje": 0.6,
-          "ev_pinn": 0.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.7,
-          "casa": "FanDuel",
-          "pinn_prob": 59.2
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Kansas City Chiefs",
-        "prob": 59.2,
-        "ev": 0.6
+        "mercado": "Colorado Avalanche",
+        "prob": 55.6,
+        "ev": 24.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1540,5 +1437,5 @@
       "movimiento": null
     }
   ],
-  "generado": "22:48:23"
+  "generado": "22:58:11"
 }
