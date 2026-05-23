@@ -76,12 +76,7 @@
       <label>Contraseña</label>
       <input type="password" id="pass" placeholder="Mínimo 8 caracteres" autocomplete="new-password">
     </div>
-    <div class="field">
-      <label>Código de referido <span style="color:var(--t3)">(opcional)</span></label>
-      <input type="text" id="refCode" placeholder="Ej: AB12CD34" style="text-transform:uppercase"
-             oninput="this.value=this.value.toUpperCase()">
-      <div class="ref-badge" id="refBadge">Referido válido — tendrás prioridad en soporte</div>
-    </div>
+    <input type="hidden" id="refCode" value="">
 
     <button class="btn" id="btnReg" onclick="registrar()">CREAR CUENTA →</button>
     <div class="err" id="errMsg"></div>
