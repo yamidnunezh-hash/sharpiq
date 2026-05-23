@@ -153,6 +153,11 @@ def analizar_player_props(predicciones):
         visitante = pred.get("visitante", "")
         if not liga_id or not local or not visitante:
             continue
+        # Solo fútbol tiene liga_id numérico — saltar NBA/MLB/NHL/props
+        try:
+            int(liga_id)
+        except (ValueError, TypeError):
+            continue
 
         lam_l = pred.get("probabilidades", {}).get("goles_esperados_local",  1.3)
         lam_v = pred.get("probabilidades", {}).get("goles_esperados_visita", 1.1)

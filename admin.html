@@ -370,11 +370,21 @@ async function cargarMotor(){
       const px=Math.round((probs.empate||0)*100);
       const p2=Math.round((probs.victoria_visita||probs.gana_visita||0)*100);
       const hora=p.hora?(()=>{try{const[h,m]=p.hora.split(':');return`${String((parseInt(h)-5+24)%24).padStart(2,'0')}:${m} COT`;}catch(_){return p.hora;}})():'';
+      // Fecha del evento — puede diferir de hoy (NFL meses adelante)
+      const fechaEv=p.fecha_evento||'';
+      const todayStr=new Date().toISOString().slice(0,10);
+      let fechaLabel='';
+      if(fechaEv && fechaEv!==todayStr){
+        const d=new Date(fechaEv+'T12:00:00');
+        const meses=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+        const diff=Math.round((d-new Date(todayStr+'T12:00:00'))/(86400000));
+        fechaLabel=diff===1?' — Mañana':`<span style="color:#f87171;font-weight:700"> — ${d.getDate()} ${meses[d.getMonth()]} ${d.getFullYear()}</span>`;
+      }
       const vbHtml=Object.entries(vbs).map(([mk,vb])=>{
         const cls=vb.clasificacion==='ALTO VALOR'?'vb-alto':vb.clasificacion==='VALOR MEDIO'?'vb-medio':'vb-bajo';
         const nombre=MK[mk]||mk;
         const ev=Math.round(vb.ev_pinn||vb.ev_porcentaje||0);
-        const cuota=vb.cuota||'?';
+        const cuota=vb.cuota?Number(vb.cuota).toFixed(2):'?';
         const horaCOT=hora;
         const pred_str=`${nombre} — EV +${ev}%`;
         return `<span class="vb-tag ${cls}">${nombre} @${cuota} EV+${ev}%
@@ -388,7 +398,7 @@ async function cargarMotor(){
           </div>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
             <span class="pred-liga">${p.liga||''}</span>
-            <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--gold)">${hora}</span>
+            <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--gold)">${hora}${fechaLabel}</span>
           </div>
         </div>
         ${p1||px||p2?`<div class="pred-probs">

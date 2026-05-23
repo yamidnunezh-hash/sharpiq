@@ -176,7 +176,7 @@ def enviar_alerta_value_bet(pred, mercado, vb):
     casa_linea = f"\n🏠 <b>Casa recomendada:</b> {casa}" if casa else ""
 
     deporte = pred.get("deporte", "").upper()
-    sport_emoji = {"NBA": "🏀", "NHL": "🏒", "MLB": "⚾", "NFL": "🏈"}.get(deporte, "⚽")
+    sport_emoji = pred.get("deporte_emoji") or {"NBA":"🏀","NHL":"🏒","MLB":"⚾","NFL":"🏈"}.get(deporte, "⚽")
 
     texto = f"""{emoji} <b>SharpIQ — {vb['clasificacion']}</b>
 
@@ -241,25 +241,51 @@ def enviar_resumen_dia(reporte):
         "over25":"Over 2.5","under25":"Under 2.5","btts_si":"BTTS Si","btts_no":"BTTS No",
         "over15":"Over 1.5","over35":"Over 3.5",
     }
-    vip_texto = f"📊 <b>SharpIQ — Predicciones del dia</b>\n📅 {reporte['fecha']}\n\n"
-    for pred in preds:
+    # Solo incluir predicciones con al menos un value bet positivo
+    preds_con_valor = [
+        p for p in preds
+        if any(vb.get("ev_pinn", 0) >= 5 for vb in p.get("value_bets", {}).values())
+    ]
+    vip_total = len(preds_con_valor)
+    vip_texto = f"📊 <b>SharpIQ — Value Bets del dia</b>\n📅 {reporte['fecha']} · {vip_total} picks con EV+\n\n"
+    if not preds_con_valor:
+        vip_texto += "<i>Hoy no se detectaron value bets con EV positivo.\nEl motor seguirá analizando.</i>\n\n"
+    for pred in preds_con_valor:
         hora_utc = pred.get("hora", "00:00")
-        h, m2 = hora_utc.split(":")
-        hora_cot = f"{str((int(h)-5+24)%24).zfill(2)}:{m2} COT"
+        try:
+            h, m2 = hora_utc.split(":")
+            hora_cot = f"{str((int(h)-5+24)%24).zfill(2)}:{m2} COT"
+        except Exception:
+            hora_cot = hora_utc
+
+        # Fecha del evento (puede ser distinta a hoy para NFL futuro, etc.)
+        fecha_ev = pred.get("fecha_evento", reporte.get("fecha", ""))
+        fecha_label = ""
+        if fecha_ev and fecha_ev != reporte.get("fecha", ""):
+            try:
+                from datetime import datetime as _dt2, date as _date2
+                dias = (_dt2.strptime(fecha_ev, "%Y-%m-%d").date() - _date2.today()).days
+                if dias == 1:
+                    fecha_label = " — Mañana"
+                elif dias > 1:
+                    meses_es = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]
+                    d = _dt2.strptime(fecha_ev, "%Y-%m-%d")
+                    fecha_label = f" — {d.day} {meses_es[d.month-1]}"
+            except Exception:
+                fecha_label = f" — {fecha_ev}"
+
         probs = pred["probabilidades"]
-        pred_p = pred["prediccion_principal"]
 
-        mejor_vb = None
-        mejor_ev = -999
-        for mk, vb in pred["value_bets"].items():
-            if vb and vb.get("ev_porcentaje", -999) > mejor_ev:
-                mejor_ev = vb["ev_porcentaje"]
-                mejor_vb = (mk, vb)
+        # Todos los value bets positivos, ordenados de mayor a menor EV
+        vbs_positivos = sorted(
+            [(mk, vb) for mk, vb in pred["value_bets"].items() if vb and vb.get("ev_pinn", 0) >= 5],
+            key=lambda x: x[1]["ev_pinn"], reverse=True
+        )
 
-        es_prop = pred.get("es_player_prop", False)
-        sport_emoji = "🏀" if pred.get("deporte","").lower() in ("nba","nhl","mlb","nfl") else "⚽"
+        _SE = {"NBA":"🏀","MLB":"⚾","NHL":"🏒","NFL":"🏈"}
+        sport_emoji = pred.get("deporte_emoji") or _SE.get(pred.get("deporte","").upper(), "⚽")
         vip_texto += f"{sport_emoji} <b>{pred['local']} vs {pred['visitante']}</b>\n"
-        vip_texto += f"🏆 {pred.get('liga','')} | {hora_cot}\n"
+        vip_texto += f"🗓 {pred.get('liga','')} | {hora_cot}{fecha_label}\n"
         vl  = probs.get('victoria_local', '')
         emp = probs.get('empate', '')
         vv  = probs.get('victoria_visita', '')
@@ -267,14 +293,13 @@ def enviar_resumen_dia(reporte):
             vip_texto += f"📈 1:{vl}% X:{emp}% 2:{vv}%\n"
         elif vl and vv:
             vip_texto += f"📈 Local:{vl}% Visita:{vv}%\n"
-        vip_texto += f"🎯 <b>{pred_p['mercado']}</b> ({pred_p['prob']}%)\n"
-        if mejor_vb:
-            mk, vb = mejor_vb
-            ck = cuota_map_vip.get(mk, "1")
-            cuota = pred["cuotas"].get(ck, "")
-            ev = vb["ev_porcentaje"]
-            emoji = "🔥" if vb["clasificacion"] == "ALTO VALOR" else ("💰" if ev > 0 else "📊")
-            vip_texto += f"{emoji} {nombres_vip.get(mk, mk)} @ {cuota} | EV: {('+' if ev>=0 else '')}{ev}%\n"
+        for mk, vb in vbs_positivos:
+            cuota = vb.get("cuota") or pred["cuotas"].get(cuota_map_vip.get(mk, mk), "")
+            cuota_str = f"{cuota:.2f}" if isinstance(cuota, float) else str(cuota)
+            ev = vb["ev_pinn"]
+            emoji_ev = "🔥" if ev >= 10 else "💰"
+            mk_display = vb.get("mercado_nombre") or nombres_vip.get(mk, mk)
+            vip_texto += f"{emoji_ev} <b>{mk_display}</b> @ {cuota_str} | EV: +{ev}%\n"
         vip_texto += "\n"
 
     vip_texto += "<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"

@@ -19,7 +19,7 @@ class _NpEncoder(json.JSONEncoder):
         if isinstance(obj, np.ndarray):     return obj.tolist()
         return super().default(obj)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from scipy.stats import poisson
 from scipy.optimize import minimize
 import numpy as np
@@ -239,6 +239,7 @@ LIGAS_ODDS = {
     "11":  "soccer_conmebol_copa_sudamericana",
     "71":  "soccer_brazil_campeonato",
     "72":  "soccer_brazil_serie_b",
+    # "128": "soccer_colombia_primera_a",  # 404 en The Odds API — liga no disponible
     "239": "soccer_argentina_primera_division",
     "262": "soccer_mexico_ligamx",
     "253": "soccer_usa_mls",
@@ -252,6 +253,43 @@ LIGAS_ODDS = {
     "106": "soccer_poland_ekstraklasa",
     "244": "soccer_finland_veikkausliiga",
     "357": "soccer_league_of_ireland",
+}
+
+# Nombre legible por sport_key (para logs y predicciones)
+_SPORT_NOMBRE = {
+    "soccer_epl":                              "Premier League",
+    "soccer_spain_la_liga":                    "La Liga",
+    "soccer_germany_bundesliga":               "Bundesliga",
+    "soccer_italy_serie_a":                    "Serie A",
+    "soccer_france_ligue_one":                 "Ligue 1",
+    "soccer_uefa_champs_league":               "Champions League",
+    "soccer_conmebol_copa_libertadores":       "Copa Libertadores",
+    "soccer_conmebol_copa_sudamericana":       "Copa Sudamericana",
+    "soccer_uefa_europa_league":               "Europa League",
+    "soccer_uefa_europa_conference_league":    "Conference League",
+    "soccer_fifa_world_cup":                   "FIFA World Cup",
+    "soccer_efl_champ":                        "EFL Championship",
+    "soccer_england_league1":                  "League One",
+    "soccer_england_league2":                  "League Two",
+    "soccer_germany_bundesliga2":              "2. Bundesliga",
+    "soccer_italy_serie_b":                    "Serie B",
+    "soccer_spain_segunda_division":           "Segunda División",
+    "soccer_austria_bundesliga":               "Austria Bundesliga",
+    "soccer_belgium_first_div":                "Belgian First Div",
+    "soccer_brazil_campeonato":                "Brasileirao",
+    "soccer_brazil_serie_b":                   "Brasileirao B",
+    "soccer_argentina_primera_division":       "Liga Profesional",
+    "soccer_mexico_ligamx":                    "Liga MX",
+    "soccer_usa_mls":                          "MLS",
+    "soccer_chile_campeonato":                 "Campeonato Chileno",
+    "soccer_japan_j_league":                   "J-League",
+    "soccer_china_superleague":                "Super Liga China",
+    "soccer_norway_eliteserien":               "Eliteserien",
+    "soccer_sweden_allsvenskan":               "Allsvenskan",
+    "soccer_sweden_superettan":                "Superettan",
+    "soccer_poland_ekstraklasa":               "Ekstraklasa",
+    "soccer_finland_veikkausliiga":            "Veikkausliiga",
+    "soccer_league_of_ireland":                "League of Ireland",
 }
 
 # Deportes adicionales cubiertos por The Odds API (no requieren API-Football)
@@ -991,7 +1029,8 @@ def calcular_goles_esperados(local, visitante, liga_code="", sede_neutral=False)
     return goles_local, goles_visita
 
 # ── CUOTAS REALES (The Odds API) ────────────────────────────────
-_cache_cuotas = {}  # cache para no gastar créditos
+_cache_cuotas     = {}  # cache para no gastar créditos
+_cache_cuotas_ext = {}  # cache para mercados extendidos de fútbol
 
 _SPORTS_US = {
     "basketball_nba", "basketball_wnba", "baseball_mlb", "icehockey_nhl",
@@ -1008,7 +1047,7 @@ def obtener_cuotas_liga(sport_key):
         if sport_key in _SPORTS_US:
             regions   = "eu,uk,us"
             bookmakers = "pinnacle,draftkings,fanduel,bet365,betmgm,unibet"
-            markets    = "h2h,totals"
+            markets    = "h2h,spreads,totals"
         else:
             regions   = "eu,uk"
             bookmakers = "pinnacle,bet365,betfair,unibet,williamhill,bwin"
@@ -1031,6 +1070,37 @@ def obtener_cuotas_liga(sport_key):
     except Exception as e:
         print(f"  Error Odds API: {e}")
         return []
+
+def _fetch_odds_ext(sport_key):
+    """
+    Obtiene cuotas completas para un deporte de fútbol.
+    Mercados: 1X2, Over/Under (todas las líneas), BTTS, DC, DNB, Handicap, Team Totals.
+    Caché separada de obtener_cuotas_liga para no mezclar respuestas.
+    """
+    if sport_key in _cache_cuotas_ext:
+        return _cache_cuotas_ext[sport_key]
+    try:
+        url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
+        params = {
+            "apiKey":      ODDS_API_KEY,
+            "regions":     "eu,uk",
+            "markets":     "h2h,totals,btts,double_chance,draw_no_bet",
+            "oddsFormat":  "decimal",
+            "bookmakers":  "pinnacle,bet365,betfair,unibet,williamhill,bwin",
+        }
+        r = requests.get(url, params=params, timeout=20)
+        if r.status_code != 200:
+            print(f"  Odds ext {sport_key}: HTTP {r.status_code}")
+            return []
+        data = r.json()
+        _cache_cuotas_ext[sport_key] = data
+        restantes = r.headers.get("x-requests-remaining", "?")
+        print(f"  Odds ext {sport_key}: {len(data)} eventos | Créditos: {restantes}")
+        return data
+    except Exception as e:
+        print(f"  Odds ext {sport_key} error: {e}")
+        return []
+
 
 _STOPWORDS_EQUIPO = {
     # Sufijos genéricos
@@ -1879,96 +1949,480 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
 
     predicciones = []
     for ev in eventos:
-        home  = ev.get("home_team", "")
-        away  = ev.get("away_team", "")
-        hora  = ev.get("commence_time", "")[:16].replace("T", " ")
+        home     = ev.get("home_team", "")
+        away     = ev.get("away_team", "")
+        hora_raw = ev.get("commence_time", "")
+        hora     = hora_raw[:16].replace("T", " ")
 
-        # Buscar Pinnacle primero
-        pinn_h2h = None
+        # ── Filtro temporal: solo próximas 48 horas ─────────────────
+        try:
+            dt = datetime.strptime(hora_raw[:16], "%Y-%m-%dT%H:%M")
+            ahora_utc = datetime.utcnow()
+            if ahora_utc >= dt:
+                continue  # partido ya empezó
+            if dt > ahora_utc + timedelta(hours=48):
+                continue  # partido demasiado lejos (NFL septiembre, etc.)
+        except Exception:
+            pass
+
+        # ── Recopilar cuotas Pinnacle y mejores por mercado ──────────
+        pinn_h2h     = {}
+        pinn_totals  = {}   # {("Over"|"Under", punto): precio}
+        pinn_spreads = {}   # {(equipo, punto): precio}
+        best_h2h     = {}   # {equipo: (precio, casa)}
+        best_totals  = {}   # {("Over"|"Under", punto): (precio, casa)}
+        best_spreads = {}   # {(equipo, punto): (precio, casa)}
+
         for bm in ev.get("bookmakers", []):
-            if bm["key"] == "pinnacle":
-                for mkt in bm.get("markets", []):
-                    if mkt["key"] == "h2h":
-                        pinn_h2h = {o["name"]: o["price"] for o in mkt["outcomes"]}
-                break
+            bm_key  = bm.get("key", "")
+            bm_name = bm.get("title", "")
+            es_pinn = bm_key == "pinnacle"
+            for mkt in bm.get("markets", []):
+                mk = mkt.get("key", "")
+                if mk == "h2h":
+                    for o in mkt.get("outcomes", []):
+                        nm, pr = o["name"], o.get("price", 0)
+                        if not pr: continue
+                        if es_pinn:
+                            pinn_h2h[nm] = pr
+                        elif nm not in best_h2h or pr > best_h2h[nm][0]:
+                            best_h2h[nm] = (pr, bm_name)
+                elif mk == "totals":
+                    for o in mkt.get("outcomes", []):
+                        nm  = o.get("name", "")   # "Over" / "Under"
+                        pt  = o.get("point", 0)
+                        pr  = o.get("price", 0)
+                        if not pr or nm not in ("Over", "Under"): continue
+                        k = (nm, pt)
+                        if es_pinn:
+                            pinn_totals[k] = pr
+                        elif k not in best_totals or pr > best_totals[k][0]:
+                            best_totals[k] = (pr, bm_name)
+                elif mk == "spreads":
+                    for o in mkt.get("outcomes", []):
+                        nm  = o.get("name", "")
+                        pt  = o.get("point", 0)
+                        pr  = o.get("price", 0)
+                        if not pr or not nm: continue
+                        k = (nm, pt)
+                        if es_pinn:
+                            pinn_spreads[k] = pr
+                        elif k not in best_spreads or pr > best_spreads[k][0]:
+                            best_spreads[k] = (pr, bm_name)
 
-        if not pinn_h2h or len(pinn_h2h) < 2:
-            continue  # sin Pinnacle no hay EV fiable
+        if len(pinn_h2h) < 2:
+            continue  # sin Pinnacle moneyline no hay base de EV
 
-        # Desviar Pinnacle → probabilidades reales
-        overround = sum(1/p for p in pinn_h2h.values() if p)
+        # ── Devigear h2h → probabilidades reales ─────────────────────
+        overround  = sum(1/p for p in pinn_h2h.values() if p)
         pinn_probs = {k: (1/v)/overround for k, v in pinn_h2h.items() if v}
 
-        # Buscar mejor cuota disponible en otras casas
-        best_odds = {}
-        best_book = {}
-        for bm in ev.get("bookmakers", []):
-            if bm["key"] == "pinnacle":
-                continue
-            for mkt in bm.get("markets", []):
-                if mkt["key"] == "h2h":
-                    for o in mkt["outcomes"]:
-                        name, price = o["name"], o["price"]
-                        if name not in best_odds or price > best_odds[name]:
-                            best_odds[name] = price
-                            best_book[name] = bm.get("title", "")
-
-        # Calcular EV para cada resultado
+        # ── Calcular EV ───────────────────────────────────────────────
         value_bets = {}
         mejor_ev, mejor_outcome = -999, None
-        for outcome, prob in pinn_probs.items():
-            cuota = best_odds.get(outcome)
-            if not cuota:
-                continue
+
+        def _vb_us(mk_key, mk_nombre, prob, cuota, casa):
+            nonlocal mejor_ev, mejor_outcome
+            if not cuota: return
             ev_pct = round((prob * cuota - 1) * 100, 1)
-            tiene_valor = ev_pct >= 5
-            value_bets[outcome] = {
-                "value":          round(prob * cuota - 1, 3),
-                "ev_porcentaje":  ev_pct,
-                "ev_pinn":        ev_pct,
-                "tiene_valor":    tiene_valor,
-                "tiene_valor_pinn": tiene_valor,
-                "clasificacion":  "ALTO VALOR" if ev_pct >= 10 else "VALOR" if ev_pct >= 5 else "SIN VALOR",
-                "cuota":          cuota,
-                "casa":           best_book.get(outcome, ""),
-                "pinn_prob":      round(prob * 100, 1),
+            value_bets[mk_key] = {
+                "value": round(prob*cuota-1, 3), "ev_porcentaje": ev_pct,
+                "ev_pinn": ev_pct, "tiene_valor": ev_pct >= 5,
+                "tiene_valor_pinn": ev_pct >= 5,
+                "clasificacion": "ALTO VALOR" if ev_pct >= 10 else "VALOR" if ev_pct >= 5 else "SIN VALOR",
+                "cuota": cuota, "casa": casa,
+                "pinn_prob": round(prob*100, 1), "mercado_nombre": mk_nombre,
             }
             if ev_pct > mejor_ev:
-                mejor_ev = ev_pct
-                mejor_outcome = outcome
+                mejor_ev, mejor_outcome = ev_pct, mk_key
+
+        # Moneyline
+        for outcome, prob in pinn_probs.items():
+            best = best_h2h.get(outcome)
+            if best:
+                _vb_us(outcome, outcome, prob, best[0], best[1])
+
+        # Totals (Over/Under — todas las líneas de Pinnacle)
+        lineas_tot = set(pt for (_, pt) in pinn_totals)
+        for pt in lineas_tot:
+            p_ov = pinn_totals.get(("Over",  pt))
+            p_un = pinn_totals.get(("Under", pt))
+            if not p_ov or not p_un: continue
+            s = 1/p_ov + 1/p_un
+            for direction, prob in [("Over", (1/p_ov)/s), ("Under", (1/p_un)/s)]:
+                best = best_totals.get((direction, pt))
+                if not best: continue
+                pt_str = str(pt).replace(".", "_")
+                mk_key = f"{'over' if direction=='Over' else 'under'}_{pt_str}"
+                mk_nombre = f"{direction} {pt}"
+                _vb_us(mk_key, mk_nombre, prob, best[0], best[1])
+
+        # Spreads (Handicap)
+        spread_pts = set(abs(pt) for (_, pt) in pinn_spreads)
+        for pt_abs in spread_pts:
+            # Buscar el par local/visita para este punto
+            par = {nm: (pt, pr) for (nm, pt), pr in pinn_spreads.items() if abs(pt) == pt_abs}
+            if len(par) < 2: continue
+            for nm, (pt, pr_pinn) in par.items():
+                nm2 = [n for n in par if n != nm][0]
+                pr2 = par[nm2][1]
+                s   = 1/pr_pinn + 1/pr2
+                prob = (1/pr_pinn) / s
+                best = best_spreads.get((nm, pt))
+                if not best: continue
+                signo = "+" if pt >= 0 else ""
+                mk_key    = f"spread_{nm.replace(' ','_').lower()}_{str(pt).replace('.','_').replace('-','m')}"
+                mk_nombre = f"{nm} ({signo}{pt})"
+                _vb_us(mk_key, mk_nombre, prob, best[0], best[1])
 
         if not value_bets or mejor_outcome is None:
             continue
 
-        # Convertir hora UTC a COT
-        hora_cot = hora
-        try:
-            h_part = hora.split("T")[-1][:5] if "T" in hora else hora[-5:]
-            hh, mm = int(h_part[:2]), int(h_part[3:5])
-            hh_cot = (hh - 5 + 24) % 24
-            hora_cot = f"{str(hh_cot).zfill(2)}:{str(mm).zfill(2)}"
-        except Exception:
-            pass
+        # ── Hora UTC + fecha COT (aritmética simple, sin strptime) ────
+        hora_utc_hm = hora_raw[11:16] if len(hora_raw) >= 16 else "00:00"
+        utc_h = int(hora_raw[11:13]) if len(hora_raw) >= 13 else 12
+        utc_d = hora_raw[:10] if len(hora_raw) >= 10 else date.today().isoformat()
+        if utc_h < 5:  # medianoche UTC → día anterior en COT
+            fecha_evento = (date.fromisoformat(utc_d) - timedelta(days=1)).isoformat()
+        else:
+            fecha_evento = utc_d
 
-        cuota_best = value_bets[mejor_outcome]["cuota"]
+        deporte = SPORTS_ODDS_ONLY.get(sport_key, nombre_liga)
+        _SPORT_EMOJI = {"NBA":"🏀","MLB":"⚾","NHL":"🏒","NFL":"🏈"}
+        sport_emoji  = _SPORT_EMOJI.get(deporte, "🏆")
+
+        mk_nombre_principal = value_bets[mejor_outcome].get("mercado_nombre", mejor_outcome)
         predicciones.append({
-            "local":      home,
-            "visitante":  away,
-            "liga":       nombre_liga,
-            "liga_code":  sport_key,
-            "deporte":    SPORTS_ODDS_ONLY.get(sport_key, nombre_liga),
-            "hora":       hora_cot,
-            "cuotas":     {o: best_odds.get(o) for o in pinn_probs},
+            "local":        home,
+            "visitante":    away,
+            "liga":         nombre_liga,
+            "liga_code":    sport_key,
+            "deporte":      deporte,
+            "deporte_emoji": sport_emoji,
+            "hora":         hora_utc_hm,
+            "fecha_evento": fecha_evento,
+            "cuotas":       {**{o: best_h2h.get(o,(None,None))[0] for o in pinn_probs},
+                             **{vb["mercado_nombre"]: vb["cuota"] for vb in value_bets.values()}},
             "probabilidades": {o: round(p*100,1) for o, p in pinn_probs.items()},
-            "confianza":  round(max(pinn_probs.values())*100, 1),
-            "value_bets": value_bets,
-            "prediccion_principal": {"mercado": mejor_outcome, "prob": round(pinn_probs.get(mejor_outcome,0)*100,1), "ev": mejor_ev},
+            "confianza":    round(max(pinn_probs.values())*100, 1),
+            "value_bets":   value_bets,
+            "prediccion_principal": {
+                "mercado": mk_nombre_principal,
+                "prob":    value_bets[mejor_outcome]["pinn_prob"],
+                "ev":      mejor_ev,
+            },
             "cuotas_reales": True,
             "cuotas_avisos": [],
             "forma_local": [], "forma_visita": [], "h2h": {}, "movimiento": None,
         })
 
     print(f"  {nombre_liga}: {len(predicciones)} eventos con Pinnacle")
+    return predicciones
+
+
+# ── ANÁLISIS DE FÚTBOL DIRECTO DESDE THE ODDS API ───────────────
+def analizar_futbol_sharp(sport_key, nombre_liga):
+    """
+    Analiza fútbol usando The Odds API con Pinnacle como único benchmark.
+    Mercados: 1X2, Over/Under (0.5‑5.5), BTTS, Doble Oportunidad,
+              Draw No Bet, Handicap Asiático, Goles por equipo.
+    Si un evento no tiene línea Pinnacle h2h → se descarta.
+    Sin fallback. Sin Poisson. Sin api-sports.
+    """
+    _NOMBRES_MK = {
+        "victoria_local":  "Victoria Local",
+        "empate":          "Empate",
+        "victoria_visita": "Victoria Visitante",
+        "over05":  "Over 0.5 Goles",  "under05":  "Under 0.5 Goles",
+        "over15":  "Over 1.5 Goles",  "under15":  "Under 1.5 Goles",
+        "over25":  "Over 2.5 Goles",  "under25":  "Under 2.5 Goles",
+        "over35":  "Over 3.5 Goles",  "under35":  "Under 3.5 Goles",
+        "over45":  "Over 4.5 Goles",  "under45":  "Under 4.5 Goles",
+        "over55":  "Over 5.5 Goles",  "under55":  "Under 5.5 Goles",
+        "btts_si": "Ambos Marcan",    "btts_no":  "Ambos No Marcan",
+        "doble_1x": "Doble Oportunidad 1X",
+        "doble_x2": "Doble Oportunidad X2",
+        "doble_12": "Doble Oportunidad 12",
+        "dnb_local":   "Draw No Bet Local",
+        "dnb_visita":  "Draw No Bet Visitante",
+        "ah_l_m0_5":  "Handicap Local -0.5",   "ah_v_p0_5":  "Handicap Visitante +0.5",
+        "ah_l_m1_0":  "Handicap Local -1",      "ah_v_p1_0":  "Handicap Visitante +1",
+        "ah_l_m1_5":  "Handicap Local -1.5",    "ah_v_p1_5":  "Handicap Visitante +1.5",
+        "ah_l_m2_0":  "Handicap Local -2",      "ah_v_p2_0":  "Handicap Visitante +2",
+    }
+    _GOAL_SUFFIX = {0.5:"05", 1.5:"15", 2.5:"25", 3.5:"35", 4.5:"45", 5.5:"55"}
+
+    eventos = _fetch_odds_ext(sport_key)
+    if not eventos:
+        return []
+
+    predicciones = []
+
+    for ev in eventos:
+        home     = ev.get("home_team", "")
+        away     = ev.get("away_team", "")
+        hora_raw = ev.get("commence_time", "")
+        ev_id    = ev.get("id", "")
+
+        # Descartar partidos ya empezados
+        try:
+            dt = datetime.strptime(hora_raw[:16], "%Y-%m-%dT%H:%M")
+            if datetime.utcnow() >= dt:
+                continue
+        except Exception:
+            pass
+
+        # Hora UTC + fecha COT
+        try:
+            hh = int(hora_raw[11:13]);  mm = int(hora_raw[14:16])
+            hora_utc = f"{hh:02d}:{mm:02d}"
+            hora_cot = f"{(hh-5+24)%24:02d}:{mm:02d}"
+            _dt_cot  = datetime.strptime(hora_raw[:16], "%Y-%m-%dT%H:%M") - timedelta(hours=5)
+            fecha_evento = _dt_cot.strftime("%Y-%m-%d")
+        except Exception:
+            hora_utc = hora_cot = "00:00"
+            fecha_evento = date.today().isoformat()
+
+        # ── Recopilar líneas de Pinnacle y mejores cuotas ────────
+        pinn_h2h   = {}   # {team_name: price}
+        pinn_goals = {}   # {(point_float, "over"|"under"): price}
+        pinn_btts  = {}   # {"yes"|"no": price}
+        pinn_ah    = {}   # {(team_name, point_float): price}
+        best       = {}   # {mk_key: (price, bookmaker_name)}
+
+        for bm in ev.get("bookmakers", []):
+            bm_key  = bm.get("key",   "")
+            bm_name = bm.get("title", "")
+            es_pinn = bm_key == "pinnacle"
+
+            for mkt in bm.get("markets", []):
+                mkey     = mkt.get("key", "")
+                outcomes = mkt.get("outcomes", [])
+
+                if mkey == "h2h":
+                    for o in outcomes:
+                        nm, pr = o["name"], o["price"]
+                        if es_pinn:
+                            pinn_h2h[nm] = pr
+                        k = f"h2h_{nm}"
+                        if k not in best or pr > best[k][0]:
+                            best[k] = (pr, bm_name)
+
+                elif mkey in ("totals", "alternate_totals"):
+                    for o in outcomes:
+                        pt = float(o.get("point", 0))
+                        nm = o.get("name", "").lower()
+                        pr = o["price"]
+                        if es_pinn:
+                            pinn_goals[(pt, nm)] = pr
+                        k = f"goals_{nm}_{str(pt).replace('.','_')}"
+                        if k not in best or pr > best[k][0]:
+                            best[k] = (pr, bm_name)
+
+                elif mkey == "team_totals":
+                    for o in outcomes:
+                        team = o.get("description", "")
+                        pt   = float(o.get("point", 0))
+                        nm   = o.get("name", "").lower()
+                        pr   = o["price"]
+                        t_k  = "local" if _match_equipos(team, home) else "visita"
+                        k    = f"team_{t_k}_{nm}_{str(pt).replace('.','_')}"
+                        if k not in best or pr > best[k][0]:
+                            best[k] = (pr, bm_name)
+
+                elif mkey == "btts":
+                    for o in outcomes:
+                        nm = o.get("name", "").lower()  # "yes" / "no"
+                        pr = o["price"]
+                        if es_pinn:
+                            pinn_btts[nm] = pr
+                        if nm not in best or pr > best[nm][0]:
+                            best[nm] = (pr, bm_name)
+
+                elif mkey == "double_chance":
+                    _dc = {"1X": "doble_1x", "X2": "doble_x2", "12": "doble_12"}
+                    for o in outcomes:
+                        k2 = _dc.get(o.get("name", ""))
+                        if k2:
+                            pr = o["price"]
+                            if k2 not in best or pr > best[k2][0]:
+                                best[k2] = (pr, bm_name)
+
+                elif mkey == "draw_no_bet":
+                    for o in outcomes:
+                        pr  = o["price"]
+                        nm  = o.get("name", "")
+                        k2  = "dnb_local" if nm == home else "dnb_visita" if nm == away else None
+                        if k2 and (k2 not in best or pr > best[k2][0]):
+                            best[k2] = (pr, bm_name)
+
+                elif mkey in ("spreads", "alternate_spreads"):
+                    for o in outcomes:
+                        pt  = float(o.get("point", 0))
+                        nm  = o.get("name", "")
+                        pr  = o["price"]
+                        if es_pinn:
+                            pinn_ah[(nm, pt)] = pr
+                        t_k = "l" if nm == home else "v"
+                        d_k = "m" if pt < 0 else "p"
+                        k   = f"ah_{t_k}_{d_k}{str(abs(pt)).replace('.','_')}"
+                        if k not in best or pr > best[k][0]:
+                            best[k] = (pr, bm_name)
+
+        # Pinnacle h2h obligatorio
+        if len(pinn_h2h) < 2:
+            continue
+
+        # ── Devigear Pinnacle h2h ────────────────────────────────
+        or_h2h = sum(1/p for p in pinn_h2h.values() if p)
+        p_h2h  = {nm: (1/pr)/or_h2h for nm, pr in pinn_h2h.items() if pr}
+
+        cuotas     = {}
+        value_bets = {}
+        probs_out  = {}
+
+        def _vb(mk, prob, best_key, ck, pinn_raw=None):
+            if best_key not in best:
+                return
+            bp, bc = best[best_key]
+            ev_pct = round((prob * bp - 1) * 100, 1)
+            cuotas[ck]              = bp
+            cuotas[f"{ck}_casa"]    = bc
+            if pinn_raw:
+                cuotas[f"pinnacle_{ck}"] = pinn_raw
+            probs_out[mk] = round(prob * 100, 1)
+            value_bets[mk] = {
+                "value":             round(prob * bp - 1, 3),
+                "ev_porcentaje":     ev_pct,
+                "ev_pinn":           ev_pct,
+                "tiene_valor":       ev_pct >= 5,
+                "tiene_valor_pinn":  ev_pct >= 5,
+                "clasificacion":     "ALTO VALOR" if ev_pct >= 10 else "VALOR" if ev_pct >= 5 else "SIN VALOR",
+                "cuota":             bp,
+                "casa":              bc,
+                "pinn_prob":         round(prob * 100, 1),
+            }
+
+        # 1X2
+        for nm, prob in p_h2h.items():
+            if nm == home:
+                _vb("victoria_local",  prob, f"h2h_{nm}", "1", pinn_h2h[nm])
+            elif nm == away:
+                _vb("victoria_visita", prob, f"h2h_{nm}", "2", pinn_h2h[nm])
+            else:
+                _vb("empate",          prob, f"h2h_{nm}", "X", pinn_h2h[nm])
+
+        # Over/Under — devigear por línea
+        pts_g = {}
+        for (pt, nm), pr in pinn_goals.items():
+            pts_g.setdefault(pt, {})[nm] = pr
+
+        for pt, sides in pts_g.items():
+            if "over" not in sides or "under" not in sides:
+                continue
+            s2   = 1/sides["over"] + 1/sides["under"]
+            p_ov = (1/sides["over"])  / s2
+            p_un = (1/sides["under"]) / s2
+            sfx  = _GOAL_SUFFIX.get(pt, str(pt).replace(".", ""))
+            pt_k = str(pt).replace(".", "_")
+            _vb(f"over{sfx}",  p_ov, f"goals_over_{pt_k}",  f"over{sfx}",  sides["over"])
+            _vb(f"under{sfx}", p_un, f"goals_under_{pt_k}", f"under{sfx}", sides["under"])
+
+        # BTTS
+        if "yes" in pinn_btts and "no" in pinn_btts:
+            s2 = 1/pinn_btts["yes"] + 1/pinn_btts["no"]
+            _vb("btts_si", (1/pinn_btts["yes"])/s2, "yes", "btts_si", pinn_btts["yes"])
+            _vb("btts_no", (1/pinn_btts["no"])/s2,  "no",  "btts_no", pinn_btts["no"])
+
+        # Doble Oportunidad — derivada de probs Pinnacle h2h
+        p_l = probs_out.get("victoria_local",  0) / 100
+        p_e = probs_out.get("empate",          0) / 100
+        p_v = probs_out.get("victoria_visita", 0) / 100
+        for mk2, prob2, k2 in [
+            ("doble_1x", p_l + p_e, "doble_1x"),
+            ("doble_x2", p_e + p_v, "doble_x2"),
+            ("doble_12", p_l + p_v, "doble_12"),
+        ]:
+            if k2 in best and prob2 > 0:
+                bp2, bc2 = best[k2]
+                ev2 = round((prob2 * bp2 - 1) * 100, 1)
+                cuotas[k2] = bp2;  cuotas[f"{k2}_casa"] = bc2
+                probs_out[mk2] = round(prob2 * 100, 1)
+                value_bets[mk2] = {
+                    "value": round(prob2 * bp2 - 1, 3),
+                    "ev_porcentaje": ev2, "ev_pinn": ev2,
+                    "tiene_valor": ev2 >= 5, "tiene_valor_pinn": ev2 >= 5,
+                    "clasificacion": "ALTO VALOR" if ev2 >= 10 else "VALOR" if ev2 >= 5 else "SIN VALOR",
+                    "cuota": bp2, "casa": bc2, "pinn_prob": round(prob2 * 100, 1),
+                }
+
+        # Draw No Bet — derivada de probs Pinnacle h2h
+        p_12 = p_l + p_v
+        if p_12 > 0:
+            _vb("dnb_local",  p_l / p_12, "dnb_local",  "dnb_local")
+            _vb("dnb_visita", p_v / p_12, "dnb_visita", "dnb_visita")
+
+        # Handicap Asiático — devigear por par (local, visita) en misma línea
+        pts_ah = {}
+        for (nm, pt), pr in pinn_ah.items():
+            pt_abs = abs(pt)
+            pts_ah.setdefault(pt_abs, {})[nm] = (pr, pt)
+
+        for pt_abs, sides in pts_ah.items():
+            names = list(sides.keys())
+            if len(names) < 2:
+                continue
+            local_nm  = home if home in names else names[0]
+            visita_nm = away if away in names else names[1]
+            pr_l, _   = sides[local_nm]
+            pr_v, _   = sides[visita_nm]
+            s2   = 1/pr_l + 1/pr_v
+            p_lh = (1/pr_l) / s2
+            p_vh = (1/pr_v) / s2
+            pt_k = str(pt_abs).replace(".", "_")
+            _vb(f"ah_l_m{pt_k}", p_lh, f"ah_l_m{pt_k}", f"ah_l_m{pt_k}", pr_l)
+            _vb(f"ah_v_p{pt_k}", p_vh, f"ah_v_p{pt_k}", f"ah_v_p{pt_k}", pr_v)
+
+        # Goles por equipo (team_totals) — informativo, sin Pinnacle obligatorio
+        for bk, (bp, bc) in best.items():
+            if bk.startswith("team_"):
+                cuotas[bk] = bp;  cuotas[f"{bk}_casa"] = bc
+
+        if not value_bets:
+            continue
+
+        mejor_mk  = max(value_bets, key=lambda k: value_bets[k].get("ev_pinn") or -999)
+        mejor_vb  = value_bets[mejor_mk]
+
+        predicciones.append({
+            "local":        home,
+            "visitante":    away,
+            "liga":         nombre_liga,
+            "liga_code":    sport_key,
+            "id":           ev_id,
+            "hora":         hora_utc,
+            "fecha_evento": fecha_evento,
+            "cuotas":     cuotas,
+            "probabilidades": probs_out,
+            "confianza":  max(probs_out.values()) if probs_out else 0,
+            "value_bets": value_bets,
+            "prediccion_principal": {
+                "mercado": _NOMBRES_MK.get(mejor_mk, mejor_mk),
+                "prob":    mejor_vb["pinn_prob"],
+                "ev":      mejor_vb["ev_pinn"],
+            },
+            "cuotas_reales":  True,
+            "cuotas_avisos":  [],
+            "sede_neutral":   False,
+            "arbitro":        "",
+            "forma_local":    None,
+            "forma_visita":   None,
+            "h2h":            None,
+            "movimiento":     None,
+            "mercados_ext":   {},
+        })
+
+    print(f"  {nombre_liga}: {len(predicciones)} partidos con Pinnacle")
     return predicciones
 
 
@@ -1982,9 +2436,30 @@ def guardar_predicciones():
         print(f"  DB CLV: {_e}")
         _db_ok = False
 
-    reporte = reporte_del_dia()
+    # ── Fútbol: todo desde The Odds API con Pinnacle ─────────────
+    print("\nAnalizando fútbol (The Odds API / Pinnacle)...")
+    predicciones_futbol = []
+    sport_keys_vistos   = set()
+    for liga_code, sport_key in LIGAS_ODDS.items():
+        if sport_key in sport_keys_vistos:
+            continue
+        sport_keys_vistos.add(sport_key)
+        nombre_liga = _SPORT_NOMBRE.get(sport_key, sport_key)
+        try:
+            preds = analizar_futbol_sharp(sport_key, nombre_liga)
+            predicciones_futbol.extend(preds)
+        except Exception as _ex:
+            print(f"  {sport_key} futbol error: {_ex}")
 
-    # Añadir análisis de deportes adicionales (NBA, NHL, MLB, Tennis…)
+    reporte = {
+        "fecha":           date.today().isoformat(),
+        "total_partidos":  len(predicciones_futbol),
+        "predicciones":    predicciones_futbol,
+        "generado":        datetime.now().strftime("%H:%M:%S"),
+    }
+    print(f"  Fútbol: {len(predicciones_futbol)} partidos con Pinnacle")
+
+    # ── Deportes adicionales (NBA, NHL, MLB, Tennis…) ─────────────
     print("\nAnalizando deportes adicionales...")
     for sport_key, nombre in SPORTS_ODDS_ONLY.items():
         try:
@@ -1994,7 +2469,7 @@ def guardar_predicciones():
         except Exception as _ex:
             print(f"  {nombre} error: {_ex}")
 
-    # Player props: puntos, rebotes, asistencias (NBA / NHL / MLB)
+    # ── Player props (NBA / NHL / MLB) ────────────────────────────
     print("\nAnalizando player props...")
     for sport_key in _PROP_MARKETS:
         nombre = SPORTS_ODDS_ONLY.get(sport_key, sport_key)
@@ -2111,6 +2586,9 @@ def _actualizar_datos_js(reporte):
                        cwd=repo_dir, check=True, capture_output=True)
         subprocess.run(["git", "commit", "-m", f"auto: predicciones {date.today().isoformat()}"],
                        cwd=repo_dir, check=True, capture_output=True)
+        # Pull antes de push para evitar rechazo por commits remotos más nuevos
+        subprocess.run(["git", "pull", "origin", "main", "--no-rebase"],
+                       cwd=repo_dir, check=True, capture_output=True)
         subprocess.run(["git", "push", "origin", "main"],
                        cwd=repo_dir, check=True, capture_output=True)
         print("  GitHub actualizado (predicciones.json) ✓")
@@ -2191,15 +2669,40 @@ def clasificar_tiers(reporte):
 
     _CK = {
         "victoria_local":"1","empate":"X","victoria_visita":"2",
-        "over15":"over15","under15":"under15","over25":"over25","under25":"under25",
-        "over35":"over35","under35":"under35","btts_si":"btts_si","btts_no":"btts_no",
-        "doble_12":"doble_12","dnb_local":"dnb_local","dnb_visita":"dnb_visita",
+        "over05":"over05","under05":"under05",
+        "over15":"over15","under15":"under15",
+        "over25":"over25","under25":"under25",
+        "over35":"over35","under35":"under35",
+        "over45":"over45","under45":"under45",
+        "over55":"over55","under55":"under55",
+        "btts_si":"btts_si","btts_no":"btts_no",
+        "doble_1x":"doble_1x","doble_x2":"doble_x2","doble_12":"doble_12",
+        "dnb_local":"dnb_local","dnb_visita":"dnb_visita",
+        "ah_l_m0_5":"ah_l_m0_5","ah_v_p0_5":"ah_v_p0_5",
+        "ah_l_m1_0":"ah_l_m1_0","ah_v_p1_0":"ah_v_p1_0",
+        "ah_l_m1_5":"ah_l_m1_5","ah_v_p1_5":"ah_v_p1_5",
+        "ah_l_m2_0":"ah_l_m2_0","ah_v_p2_0":"ah_v_p2_0",
     }
     _NOMBRES = {
-        "victoria_local":"Victoria Local","empate":"Empate","victoria_visita":"Victoria Visitante",
-        "over15":"Over 1.5 Goles","over25":"Over 2.5 Goles","under25":"Under 2.5 Goles",
-        "over35":"Over 3.5 Goles","btts_si":"Ambos Marcan","doble_12":"Doble Oportunidad 1-2",
-        "dnb_local":"Draw No Bet Local","dnb_visita":"Draw No Bet Visitante",
+        "victoria_local":  "Victoria Local",
+        "empate":          "Empate",
+        "victoria_visita": "Victoria Visitante",
+        "over05":  "Over 0.5 Goles",  "under05":  "Under 0.5 Goles",
+        "over15":  "Over 1.5 Goles",  "under15":  "Under 1.5 Goles",
+        "over25":  "Over 2.5 Goles",  "under25":  "Under 2.5 Goles",
+        "over35":  "Over 3.5 Goles",  "under35":  "Under 3.5 Goles",
+        "over45":  "Over 4.5 Goles",  "under45":  "Under 4.5 Goles",
+        "over55":  "Over 5.5 Goles",  "under55":  "Under 5.5 Goles",
+        "btts_si": "Ambos Marcan",    "btts_no":  "Ambos No Marcan",
+        "doble_1x":"Doble Oportunidad 1X",
+        "doble_x2":"Doble Oportunidad X2",
+        "doble_12":"Doble Oportunidad 12",
+        "dnb_local":  "Draw No Bet Local",
+        "dnb_visita": "Draw No Bet Visitante",
+        "ah_l_m0_5":  "Handicap Local -0.5",   "ah_v_p0_5":  "Handicap Visitante +0.5",
+        "ah_l_m1_0":  "Handicap Local -1",      "ah_v_p1_0":  "Handicap Visitante +1",
+        "ah_l_m1_5":  "Handicap Local -1.5",    "ah_v_p1_5":  "Handicap Visitante +1.5",
+        "ah_l_m2_0":  "Handicap Local -2",      "ah_v_p2_0":  "Handicap Visitante +2",
     }
 
     seguro_pool = []
@@ -2212,6 +2715,11 @@ def clasificar_tiers(reporte):
         vbs        = pred.get("value_bets", {})
         liga_code  = str(pred.get("liga_code", ""))
         es_futbol  = liga_code not in SPORTS_ODDS_ONLY
+
+        # Descartar fútbol sin cuotas reales de Pinnacle — predicciones con
+        # λ fallback son esencialmente aleatorias y no deben publicarse
+        if es_futbol and not pred.get("cuotas_reales"):
+            continue
 
         if es_futbol:
             # ── SEGURO: Over 1.5 goles ───────────────────────────
@@ -2348,32 +2856,27 @@ if __name__ == "__main__":
     print("=" * 50)
     reporte = guardar_predicciones()
 
+    _SE2 = {"NBA":"🏀","MLB":"⚾","NHL":"🏒","NFL":"🏈"}
     print("\n📊 PREDICCIONES DEL DÍA:")
     for pred in reporte["predicciones"]:
-        probs = pred['probabilidades']
-        print(f"\n{'🏀' if pred.get('deporte','').upper() in ('NBA','NHL','MLB','NFL') else '⚽'} {pred['liga']} | {pred['hora']}")
+        probs  = pred['probabilidades']
+        deporte = pred.get("deporte","").upper()
+        emoji  = pred.get("deporte_emoji") or _SE2.get(deporte, "⚽")
+        # Hora UTC → COT para mostrar en terminal
+        try:
+            hh_u = int(pred['hora'][:2])
+            mm_u = pred['hora'][3:5]
+            hora_cot_str = f"{(hh_u-5+24)%24:02d}:{mm_u} COT"
+        except Exception:
+            hora_cot_str = pred['hora']
+        fecha_ev = pred.get('fecha_evento', '')
+        print(f"\n{emoji} {pred['liga']} | {hora_cot_str}  {fecha_ev}")
         print(f"   {pred['local']} vs {pred['visitante']}")
-        vl = probs.get('victoria_local', '')
-        emp = probs.get('empate', '')
-        vv = probs.get('victoria_visita', '')
-        if vl and emp and vv:
-            print(f"   1:{vl}% X:{emp}% 2:{vv}%")
-        elif vl and vv:
-            print(f"   Local:{vl}% Visita:{vv}%")
-        if probs.get('over25'):
-            print(f"   Over 2.5: {probs['over25']}% | BTTS: {probs.get('btts_si','')}%")
-        print(f"   → {pred['prediccion_principal']['mercado']} ({pred['confianza']}% confianza)")
-
-        # Mostrar value bets con casa de apuestas
-        cuota_key_map = {
-            "victoria_local": "1", "empate": "X", "victoria_visita": "2",
-            "over25": "over25", "under25": "under25",
-            "btts_si": "btts_si", "btts_no": "btts_no",
-        }
-        for mercado, vb in pred["value_bets"].items():
-            if vb["tiene_valor"]:
-                ck = cuota_key_map.get(mercado, "1")
-                cuota = pred["cuotas"].get(ck, "")
-                casa  = pred["cuotas"].get(ck + "_casa", "")
-                casa_str = f" [{casa}]" if casa else ""
-                print(f"   💰 VALUE BET: {mercado} @ {cuota}{casa_str} → EV: +{vb['ev_porcentaje']}% [{vb['clasificacion']}]")
+        pred_p = pred['prediccion_principal']
+        print(f"   → {pred_p['mercado']} ({pred_p['prob']}% prob, EV {'+' if pred_p['ev']>=0 else ''}{pred_p['ev']}%)")
+        for mk, vb in pred["value_bets"].items():
+            if vb.get("ev_pinn", 0) > 0:
+                nombre = vb.get("mercado_nombre", mk)
+                cuota  = vb.get("cuota", "")
+                casa   = f" [{vb.get('casa','')}]" if vb.get("casa") else ""
+                print(f"   💰 {nombre} @ {cuota}{casa} → EV: +{vb['ev_pinn']}% [{vb['clasificacion']}]")
