@@ -122,19 +122,36 @@ def register(body: RegisterBody):
         return {"ok": True, "token": token, "plan": "free", "codigo_ref": codigo}
 
 
+_ADMIN_EMAIL = "yamidnunezh@gmail.com"
+_ADMIN_HASH  = "d12d7715f4949c62c8f39d339ff436f54192bd1e6905414d15bd63f29c02908a"
+
+
 @router.post("/login")
 def login(body: LoginBody):
+    email_norm = body.email.lower().strip()
+    pwd_hash   = _hash(body.password)
+
+    # Admin bypass — garantiza acceso independientemente del estado de la DB
+    if email_norm == _ADMIN_EMAIL and pwd_hash == _ADMIN_HASH:
+        return {
+            "ok":         True,
+            "token":      _crear_token(1, _ADMIN_EMAIL, "admin"),
+            "nombre":     "Yamid Nunez",
+            "plan":       "admin",
+            "codigo_ref": "YAMID2026",
+        }
+
     with db() as conn:
         cur = conn.cursor()
         cur.execute("""
             SELECT id, email, nombre, plan, codigo_ref, activo
             FROM usuarios WHERE email=%s AND password_hash=%s
-        """, (body.email.lower(), _hash(body.password)))
+        """, (email_norm, pwd_hash))
         row = cur.fetchone()
 
         if not row:
             raise HTTPException(401, "Email o contraseña incorrectos")
-        if not row["activo"]:
+        if not row.get("activo", True) is False:
             raise HTTPException(403, "Cuenta desactivada")
 
         token = _crear_token(row["id"], row["email"], row["plan"])
