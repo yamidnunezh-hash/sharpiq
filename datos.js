@@ -15,16 +15,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "23/05/26",
-    partido:    "Carolina Hurricanes vs Montréal Canadiens",
-    liga:       "NHL",
-    prediccion: "Montréal Canadiens — EV +30%",
-    cuota:      "3.70",
-    hora:       "18:20 COT",
-    status:     "free",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "23/05/26",
     partido:    "Arizona Diamondbacks vs Colorado Rockies",
     liga:       "MLB",
     prediccion: "Gana Arizona Diamondbacks",
@@ -39,15 +29,6 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Vegas Golden Knights — EV +24%",
     cuota:      "2.8",
     hora:       "19:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "23/05/26",
-    partido:    "Carolina Hurricanes vs Montréal Canadiens",
-    liga:       "NHL",
-    prediccion: "Montréal Canadiens — EV +30%",
-    cuota:      "3.7",
-    hora:       "18:20 COT",
     status:     "vip"
   },
   {
