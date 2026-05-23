@@ -1,61 +1,61 @@
 {
-  "partido": "San Francisco Giants vs Chicago White Sox",
-  "liga": "MLB",
-  "local": "San Francisco Giants",
-  "visitante": "Chicago White Sox",
-  "prediccion": "San Francisco Giants",
-  "mercado_key": "San Francisco Giants",
+  "partido": "Carolina Hurricanes vs Montréal Canadiens",
+  "liga": "NHL",
+  "local": "Carolina Hurricanes",
+  "visitante": "Montréal Canadiens",
+  "prediccion": "Montréal Canadiens",
+  "mercado_key": "Montréal Canadiens",
   "cuota": "",
   "casa": "",
-  "hora_utc": "21:16",
-  "hora_cot": "16:16 COT",
-  "ev": 332.5,
+  "hora_utc": "18:00",
+  "hora_cot": "13:00 COT",
+  "ev": 27.3,
   "clasificacion": "ALTO VALOR",
-  "confianza": 51.9,
+  "confianza": 65.6,
   "pred_completa": {
-    "local": "San Francisco Giants",
-    "visitante": "Chicago White Sox",
-    "liga": "MLB",
-    "liga_code": "baseball_mlb",
-    "deporte": "MLB",
-    "hora": "21:16",
+    "local": "Carolina Hurricanes",
+    "visitante": "Montréal Canadiens",
+    "liga": "NHL",
+    "liga_code": "icehockey_nhl",
+    "deporte": "NHL",
+    "hora": "18:00",
     "cuotas": {
-      "Chicago White Sox": 1.45,
-      "San Francisco Giants": 9.0
+      "Carolina Hurricanes": 1.79,
+      "Montréal Canadiens": 3.7
     },
     "probabilidades": {
-      "Chicago White Sox": 51.9,
-      "San Francisco Giants": 48.1
+      "Carolina Hurricanes": 65.6,
+      "Montréal Canadiens": 34.4
     },
-    "confianza": 51.9,
+    "confianza": 65.6,
     "value_bets": {
-      "Chicago White Sox": {
-        "value": -0.247,
-        "ev_porcentaje": -24.7,
-        "ev_pinn": -24.7,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.45,
-        "casa": "BetMGM",
-        "pinn_prob": 51.9
-      },
-      "San Francisco Giants": {
-        "value": 3.325,
-        "ev_porcentaje": 332.5,
-        "ev_pinn": 332.5,
+      "Carolina Hurricanes": {
+        "value": 0.174,
+        "ev_porcentaje": 17.4,
+        "ev_pinn": 17.4,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 9.0,
+        "cuota": 1.79,
         "casa": "Unibet",
-        "pinn_prob": 48.1
+        "pinn_prob": 65.6
+      },
+      "Montréal Canadiens": {
+        "value": 0.273,
+        "ev_porcentaje": 27.3,
+        "ev_pinn": 27.3,
+        "tiene_valor": true,
+        "tiene_valor_pinn": true,
+        "clasificacion": "ALTO VALOR",
+        "cuota": 3.7,
+        "casa": "Unibet",
+        "pinn_prob": 34.4
       }
     },
     "prediccion_principal": {
-      "mercado": "San Francisco Giants",
-      "prob": 48.1,
-      "ev": 332.5
+      "mercado": "Montréal Canadiens",
+      "prob": 34.4,
+      "ev": 27.3
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
