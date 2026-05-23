@@ -1084,7 +1084,7 @@ def _fetch_odds_ext(sport_key):
         params = {
             "apiKey":      ODDS_API_KEY,
             "regions":     "eu,uk",
-            "markets":     "h2h,totals,btts,double_chance,draw_no_bet",
+            "markets":     "h2h,totals",
             "oddsFormat":  "decimal",
             "bookmakers":  "pinnacle,bet365,betfair,unibet,williamhill,bwin",
         }
@@ -2482,8 +2482,8 @@ def guardar_predicciones():
 
     with open(JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(reporte, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
-    print(f"✅ Predicciones guardadas: {reporte['total_partidos']} partidos")
-    print(f"📅 Fecha: {reporte['fecha']}")
+    print(f"[OK] Predicciones guardadas: {reporte['total_partidos']} partidos")
+    print(f"[OK] Fecha: {reporte['fecha']}")
 
     guardar_historial_cuotas(reporte)
 
@@ -2491,14 +2491,14 @@ def guardar_predicciones():
     if mejor:
         with open(MEJOR_PATH, "w", encoding="utf-8") as f:
             json.dump(mejor, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
-        print(f"⭐ Mejor prediccion: {mejor['partido']} — {mejor['prediccion']}")
+        print(f"[OK] Mejor prediccion: {mejor['partido']} -- {mejor['prediccion']}")
 
     if TELEGRAM_OK:
         # Control de duplicados: si ya se enviaron alertas hoy, no reenviar
         _sentinel = os.path.join(BASE_DIR, "logs", f"alertas_{reporte['fecha']}.sent")
         _ya_enviado = os.path.exists(_sentinel)
 
-        print("\n📲 Enviando alertas Telegram...")
+        print("\n[OK] Enviando alertas Telegram...")
         alto_valor_enviados = 0
         _mk2ck = {
             "victoria_local":"1","empate":"X","victoria_visita":"2",
