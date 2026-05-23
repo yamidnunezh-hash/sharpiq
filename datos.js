@@ -5,6 +5,16 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "23/05/26",
+    partido:    "Carolina Hurricanes vs Montréal Canadiens",
+    liga:       "NHL",
+    prediccion: "Montréal Canadiens — EV +30%",
+    cuota:      "3.70",
+    hora:       "18:20 COT",
+    status:     "free",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "23/05/26",
     partido:    "Arizona Diamondbacks vs Colorado Rockies",
     liga:       "MLB",
     prediccion: "Gana Arizona Diamondbacks",
