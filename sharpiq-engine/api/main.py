@@ -91,6 +91,11 @@ def publicar_pick(body: PickBody, token=Depends(solo_admin)):
         f'  }},'
     )
 
+    # Verificar si el partido ya está publicado
+    partido_norm = body.partido.lower()[:30]
+    if partido_norm in contenido.lower():
+        raise HTTPException(409, f"El partido '{body.partido}' ya está publicado en datos.js")
+
     nuevo = re.sub(
         r'(const\s+PROXIMOS_EVENTOS\s*=\s*\[)',
         r'\1' + nueva,
