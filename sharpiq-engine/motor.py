@@ -2873,7 +2873,9 @@ if __name__ == "__main__":
         print(f"\n{emoji} {pred['liga']} | {hora_cot_str}  {fecha_ev}")
         print(f"   {pred['local']} vs {pred['visitante']}")
         pred_p = pred['prediccion_principal']
-        print(f"   → {pred_p['mercado']} ({pred_p['prob']}% prob, EV {'+' if pred_p['ev']>=0 else ''}{pred_p['ev']}%)")
+        ev_val = pred_p.get('ev')
+        ev_str = f"EV {'+' if (ev_val or 0)>=0 else ''}{ev_val}%" if ev_val is not None else "sin EV"
+        print(f"   → {pred_p['mercado']} ({pred_p['prob']}% prob, {ev_str})")
         for mk, vb in pred["value_bets"].items():
             if vb.get("ev_pinn", 0) > 0:
                 nombre = vb.get("mercado_nombre", mk)
