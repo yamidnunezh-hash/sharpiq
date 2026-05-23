@@ -234,25 +234,14 @@ def correr():
         from config import TELEGRAM_FREE_ID
         teaser = tiers.get("alto_valor") or tiers.get("seguro") or tiers.get("principal")
         if teaser:
-            p = teaser["pred"]
+            p    = teaser["pred"]
+            prob = round(teaser.get("prob", 0))
             enviar_canal_free(
                 f"{p['local']} vs {p['visitante']}",
                 p.get("liga", ""),
-                _hora_cot(p.get("hora", "00:00"))
-            )
-        total_picks = sum(1 for k in ("seguro", "principal", "alto_valor") if tiers.get(k))
-        if total_picks > 1:
-            partidos_str = "\n".join(
-                f"⚽ {tiers[k]['pred']['local']} vs {tiers[k]['pred']['visitante']}"
-                for k in ("seguro", "principal", "alto_valor") if tiers.get(k)
-            )
-            enviar_mensaje(
-                f"📋 <b>Hoy hay {total_picks} picks en el canal VIP</b>\n\n"
-                f"{partidos_str}\n\n"
-                f"🔒 Mercados y cuotas exactas solo para suscriptores\n"
-                f"👉 <a href=\"https://t.me/sharpiq_alertas_bot\">Activar acceso VIP</a>\n\n"
-                f"<i>SharpIQ — La ventaja inteligente</i>",
-                chat_id=TELEGRAM_FREE_ID
+                _hora_cot(p.get("hora", "00:00")),
+                pick_free=teaser["mercado_nombre"],
+                prob_free=prob
             )
         print("  Canal free enviado")
     except Exception as e:
