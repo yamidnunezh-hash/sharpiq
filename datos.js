@@ -5,6 +5,16 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "23/05/26",
+    partido:    "Flamengo vs Palmeiras",
+    liga:       "Brasileirao",
+    prediccion: "Empate",
+    cuota:      "3.45",
+    hora:       "19:00 COT",
+    status:     "free",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "23/05/26",
     partido:    "Chicago Fire vs Toronto FC",
     liga:       "MLS",
     prediccion: "over325",
