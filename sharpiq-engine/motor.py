@@ -2491,6 +2491,19 @@ def guardar_predicciones():
         except Exception as _ex:
             print(f"  {nombre} props error: {_ex}")
 
+    # Filtrar predicciones: solo hoy y mañana (máximo 36h desde ahora)
+    limite = datetime.utcnow() + timedelta(hours=36)
+    hoy_str = date.today().isoformat()
+    antes = len(reporte["predicciones"])
+    reporte["predicciones"] = [
+        p for p in reporte["predicciones"]
+        if (p.get("fecha_evento") or hoy_str) <= (limite.date().isoformat())
+    ]
+    reporte["total_partidos"] = len(reporte["predicciones"])
+    descartados = antes - reporte["total_partidos"]
+    if descartados:
+        print(f"  Filtro 36h: {descartados} predicciones futuras eliminadas (Copa Lib, Mundial, etc.)")
+
     with open(JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(reporte, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
     print(f"[OK] Predicciones guardadas: {reporte['total_partidos']} partidos")
