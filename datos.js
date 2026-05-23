@@ -4,6 +4,15 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "23/05/26",
+    partido:    "Arizona Diamondbacks vs Colorado Rockies",
+    liga:       "MLB",
+    prediccion: "Gana Arizona Diamondbacks",
+    cuota:      "1.57",
+    hora:       "21:11 COT",
+    status:     "vip"
+  },
+  {
     fecha:      "24/05/26",
     partido:    "Vegas Golden Knights vs Colorado Avalanche",
     liga:       "NHL",
