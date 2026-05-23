@@ -82,9 +82,10 @@ def suscribir(plan_key: str, token=Depends(usuario_activo)):
             raise HTTPException(404, "Usuario no encontrado")
 
     # Crear preferencia de pago (checkout)
+    # payer_email se omite: si se incluye, MP valida el país de la cuenta del comprador
+    # y lanza "Cannot operate between different countries" cuando no coincide con el vendedor.
     payload = {
         "reason":         plan["nombre"],
-        "payer_email":    user["email"],
         "auto_recurring": {
             "frequency":          plan["frecuencia"],
             "frequency_type":     plan["tipo_freq"],
