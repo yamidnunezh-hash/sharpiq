@@ -265,9 +265,9 @@ async function leerDatosJs(){
   return{content:decodeURIComponent(escape(atob(f.content.replace(/\n/g,'')))),sha:f.sha};
 }
 function parsearArr(txt,nombre){
-  const m=txt.match(new RegExp(`const ${nombre}\\s*=\\s*\\[([\\s\\S]*?)\\];`));
+  const m=txt.match(new RegExp(`const ${nombre}\\s*=\\s*(\\[[\\s\\S]*?\\]);`));
   if(!m) return[];
-  try{return JSON.parse('['+m[1].replace(/(\w+):\s*/g,'"$1": ').replace(/,\s*([\]}])/g,'$1')+']');}
+  try{ return new Function('return '+m[1])(); }
   catch(_){return[];}
 }
 function serializarProximos(arr){
