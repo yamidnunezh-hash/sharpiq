@@ -75,11 +75,15 @@
 </div>
 
 <script>
-// ── CLAVES DE ACCESO ─────────────────────────────────────────────
-// Para cambiar: edita estas dos líneas
-const VIP_PASS   = 'sharpvip26';       // ← Clave para suscriptores VIP
-const ADMIN_PASS = 'sharp.admin2026';  // ← Clave de administrador (solo Yamid)
-// ────────────────────────────────────────────────────────────────
+// Hashes SHA-256 — las claves reales nunca aparecen en el código fuente
+// Para cambiar una clave: genera su SHA-256 y reemplaza el hash aquí
+const H_VIP   = '092bd1708770c76f19399cd489941d75b1043a8232ff560485279fd0806aed14';
+const H_ADMIN = '5f2e24b1a2a3df2cd8f8c3f064e5155d39b36d701f543c0ab4b34938d82abc70';
+
+async function sha256(str){
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
 
 function toggleEye(){
   const i=document.getElementById('passInput');
@@ -93,19 +97,19 @@ async function doLogin(){
   if(!pass)return;
 
   btn.disabled=true;
-  btn.textContent='...';
+  btn.textContent='VERIFICANDO...';
   err.style.display='none';
 
-  await new Promise(r=>setTimeout(r,350));
+  const h = await sha256(pass);
 
-  if(pass===ADMIN_PASS){
+  if(h===H_ADMIN){
     localStorage.setItem('sharpiq_role','admin');
     localStorage.setItem('sharpiq_auth',Date.now());
     window.location.href='admin.html';
-  } else if(pass===VIP_PASS){
+  } else if(h===H_VIP){
     localStorage.setItem('sharpiq_role','vip');
     localStorage.setItem('sharpiq_auth',Date.now());
-    window.location.href='index.html#predicciones';
+    window.location.href='predicciones.html';
   } else {
     err.style.display='block';
     btn.disabled=false;
@@ -115,13 +119,11 @@ async function doLogin(){
   }
 }
 
-// Si ya tiene sesión activa, redirigir directamente
 (function(){
   const role=localStorage.getItem('sharpiq_role');
   const auth=parseInt(localStorage.getItem('sharpiq_auth')||'0');
-  const hours24=24*60*60*1000;
-  if(role&&Date.now()-auth<hours24){
-    window.location.href=role==='admin'?'admin.html':'index.html#predicciones';
+  if(role&&Date.now()-auth<24*60*60*1000){
+    window.location.href=role==='admin'?'admin.html':'predicciones.html';
   }
 })();
 </script>

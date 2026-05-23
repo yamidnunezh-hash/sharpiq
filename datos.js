@@ -44,14 +44,6 @@ const PREDICCIONES_HISTORIAL = [
     resultado:  "loss"
   },
   {
-    fecha:      "22/05/26",
-    partido:    "New York Yankees vs Tampa Bay Rays",
-    liga:       "MLB",
-    prediccion: "Tampa Bay Rays",
-    cuota:      "",
-    resultado:  "loss"
-  },
-  {
     fecha:      "21/05/26",
     partido:    "VfL Wolfsburg vs SC Paderborn 07",
     liga:       "Bundesliga",

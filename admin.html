@@ -199,10 +199,12 @@
 
     <div class="card">
       <div class="card-title">Claves de acceso</div>
-      <p style="font-size:13px;color:var(--t2);margin-bottom:14px">Para cambiar las claves edita el archivo <code style="color:var(--gold)">login.html</code> — busca las líneas <code>VIP_PASS</code> y <code>ADMIN_PASS</code>.</p>
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:14px;font-family:'Space Mono',monospace;font-size:12px;color:var(--t2);line-height:2">
-        Suscriptores VIP: <strong style="color:var(--t1)">sharpvip26</strong><br>
-        Administrador: <strong style="color:var(--t1)">sharp.admin2026</strong>
+      <p style="font-size:13px;color:var(--t2);margin-bottom:14px">Las claves están protegidas con <strong style="color:var(--gold)">SHA-256</strong>. Para cambiarlas: genera el hash de la nueva clave y actualiza <code style="color:var(--gold)">H_VIP</code> / <code style="color:var(--gold)">H_ADMIN</code> en <code>login.html</code>.</p>
+      <div style="background:rgba(0,200,255,.04);border:1px solid rgba(0,200,255,.12);border-radius:8px;padding:14px;font-family:'Space Mono',monospace;font-size:12px;color:var(--t2);line-height:1.8">
+        🔒 Las claves nunca se muestran en texto plano.<br>
+        Herramienta para generar SHA-256:<br>
+        <code style="color:var(--gold)">echo -n "tu_clave" | sha256sum</code><br>
+        o usa: <a href="https://emn178.github.io/online-tools/sha256.html" target="_blank" style="color:var(--gold)">sha256 online</a>
       </div>
     </div>
 
@@ -272,7 +274,7 @@ function parsearArr(txt,nombre){
 }
 function serializarProximos(arr){
   if(!arr.length) return'';
-  return arr.map(p=>`  {\n    fecha:      "${p.fecha}",\n    partido:    "${p.partido}",\n    liga:       "${p.liga||''}",\n    prediccion: "${p.prediccion}",\n    cuota:      "${p.cuota}",\n    hora:       "${p.hora||''}",\n    status:     "${p.status||'vip'}"\n  }`).join(',\n');
+  return arr.map(p=>`  {\n    fecha:      "${p.fecha||''}",\n    partido:    "${p.partido||''}",\n    liga:       "${p.liga||''}",\n    prediccion: "${p.prediccion||''}",\n    cuota:      "${p.cuota||''}",\n    hora:       "${p.hora||''}",\n    emoji:      "${p.emoji||''}",\n    status:     "${p.status||'vip'}",\n    resultado:  "${p.resultado||'pendiente'}"\n  }`).join(',\n');
 }
 function serializarHistorial(arr){
   if(!arr.length) return'';
@@ -443,7 +445,7 @@ async function cargarResultados(){
 async function marcarResultado(idx,resultado){
   if(!getToken()){showAlert('alertRes','Configura tu GitHub Token en ⚙️ Config.','err');return;}
   const evento=window._resArr[idx];
-  const row=document.getElementById('res-${idx}');
+  const row=document.getElementById(`res-${idx}`);
   document.querySelectorAll(`#res-${idx} button`).forEach(b=>b.disabled=true);
   try{
     const{content,sha}=await leerDatosJs();

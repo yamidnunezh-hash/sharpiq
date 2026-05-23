@@ -270,7 +270,7 @@
   <div class="stat"><div class="stat-n" id="s-vbet">—</div><div class="stat-l">Value Bets</div></div>
   <div class="stat"><div class="stat-n" id="s-alto">—</div><div class="stat-l">Alto Valor</div></div>
   <div class="stat"><div class="stat-n" id="s-conf">—</div><div class="stat-l">Max Confianza</div></div>
-  <div class="stat"><div class="stat-n" id="s-over">—</div><div class="stat-l">Over2.5 Prom.</div></div>
+  <div class="stat"><div class="stat-n" id="s-over" style="color:#22c55e">—</div><div class="stat-l">Mayor EV</div></div>
   <div class="stat"><div class="stat-n" id="s-gen" style="font-size:0.9rem;">—</div><div class="stat-l">Generado</div></div>
 </div>
 
@@ -350,12 +350,13 @@
   <button class="f-btn on" onclick="setf('todos',this)">Todos</button>
   <button class="f-btn" onclick="setf('value',this)">Value Bets</button>
   <button class="f-btn" onclick="setf('high',this)">Confianza +60%</button>
-  <button class="f-btn" onclick="setf('over',this)">Over2.5 +55%</button>
-  <button class="f-btn" onclick="setf('btts',this)">BTTS +55%</button>
+  <button class="f-btn" onclick="setf('ev',this)">Solo EV+</button>
+  <button class="f-btn" onclick="setf('soccer',this)">Fútbol</button>
+  <button class="f-btn" onclick="setf('us',this)">NBA/MLB/NHL</button>
   <div class="tb-sep"></div>
   <span class="tb-label">Ordenar:</span>
-  <button class="f-btn on" onclick="setord('conf',this)">Confianza</button>
-  <button class="f-btn" onclick="setord('over',this)">Over2.5</button>
+  <button class="f-btn on" onclick="setord('ev',this)">Mayor EV</button>
+  <button class="f-btn" onclick="setord('conf',this)">Confianza</button>
   <button class="f-btn" onclick="setord('hora',this)">Hora</button>
 </div>
 
@@ -398,8 +399,9 @@
 </footer>
 
 <script>
-const MN = {victoria_local:'Victoria Local (1)', empate:'Empate (X)', victoria_visita:'Victoria Visitante (2)'};
-let ALL = [], orden = 'conf', filtro = 'todos', recData = null;
+const GH_REPO = 'yamidnunezh-hash/sharpiq';
+const GH_FILE = 'datos.js';
+let ALL = [], orden = 'ev', filtro = 'todos', recData = null;
 
 async function cargar() {
   const btn = document.getElementById('btn-refresh');
@@ -436,38 +438,49 @@ async function cargar() {
 }
 
 function stats() {
-  let vb = 0, alto = 0, sumOver = 0, maxConf = 0;
+  let vb = 0, alto = 0, maxConf = 0, evMax = 0;
   ALL.forEach(p => {
-    Object.values(p.value_bets).forEach(v => { if(v.tiene_valor) vb++; if(v.clasificacion==='ALTO VALOR') alto++; });
-    sumOver += p.probabilidades.over25;
-    if(p.confianza > maxConf) maxConf = p.confianza;
+    Object.values(p.value_bets||{}).forEach(v => {
+      if(!v) return;
+      if(v.ev_pinn >= 5) vb++;
+      if(v.clasificacion==='ALTO VALOR') alto++;
+      if((v.ev_pinn||0) > evMax) evMax = v.ev_pinn;
+    });
+    if((p.confianza||0) > maxConf) maxConf = p.confianza;
   });
   document.getElementById('s-total').textContent = ALL.length;
-  document.getElementById('s-vbet').textContent = vb;
-  document.getElementById('s-alto').textContent = alto;
-  document.getElementById('s-conf').textContent = maxConf > 0 ? maxConf + '%' : '—';
-  document.getElementById('s-over').textContent = ALL.length ? Math.round(sumOver / ALL.length) + '%' : '—';
+  document.getElementById('s-vbet').textContent  = vb;
+  document.getElementById('s-alto').textContent  = alto;
+  document.getElementById('s-conf').textContent  = maxConf > 0 ? maxConf + '%' : '—';
+  document.getElementById('s-over').textContent  = evMax > 0 ? '+' + evMax + '%' : '—';
 }
 
+function _maxEv(p){ return Math.max(...Object.values(p.value_bets||{}).map(v=>(v&&v.ev_pinn)||0), 0); }
+
 function setf(t, btn) {
-  document.querySelectorAll('.toolbar .f-btn').forEach(b => { if(b.onclick.toString().includes('setf')) b.classList.remove('on'); });
+  document.querySelectorAll('.toolbar .f-btn').forEach(b => { if(b.getAttribute('onclick')&&b.getAttribute('onclick').includes('setf')) b.classList.remove('on'); });
   btn.classList.add('on'); filtro = t; render();
 }
 function setord(t, btn) {
-  document.querySelectorAll('.toolbar .f-btn').forEach(b => { if(b.onclick.toString().includes('setord')) b.classList.remove('on'); });
+  document.querySelectorAll('.toolbar .f-btn').forEach(b => { if(b.getAttribute('onclick')&&b.getAttribute('onclick').includes('setord')) b.classList.remove('on'); });
   btn.classList.add('on'); orden = t; render();
 }
 
 function render() {
   let lista = [...ALL];
-  if (filtro==='value') lista = lista.filter(p => Object.values(p.value_bets).some(v=>v.tiene_valor));
-  else if (filtro==='high') lista = lista.filter(p => p.confianza >= 60);
-  else if (filtro==='over') lista = lista.filter(p => p.probabilidades.over25 >= 55);
-  else if (filtro==='btts') lista = lista.filter(p => p.probabilidades.btts_si >= 55);
+  const esSoccer = p => !!(p.probabilidades||{}).victoria_local;
+  if (filtro==='value') lista = lista.filter(p => _maxEv(p) >= 5);
+  else if (filtro==='high') lista = lista.filter(p => (p.confianza||0) >= 60);
+  else if (filtro==='ev') lista = lista.filter(p => _maxEv(p) >= 5);
+  else if (filtro==='soccer') lista = lista.filter(esSoccer);
+  else if (filtro==='us') lista = lista.filter(p => !esSoccer(p));
 
-  if (orden==='over') lista.sort((a,b) => b.probabilidades.over25 - a.probabilidades.over25);
-  else if (orden==='hora') lista.sort((a,b) => (a.hora||'').localeCompare(b.hora||''));
-  else lista.sort((a,b) => b.confianza - a.confianza);
+  if (orden==='ev') lista.sort((a,b) => _maxEv(b) - _maxEv(a));
+  else if (orden==='hora') lista.sort((a,b) => {
+    const fa = a.fecha_evento||'', fb = b.fecha_evento||'';
+    return fa!==fb ? fa.localeCompare(fb) : (a.hora||'').localeCompare(b.hora||'');
+  });
+  else lista.sort((a,b) => (b.confianza||0) - (a.confianza||0));
 
   const grid = document.getElementById('grid');
   const empty = document.getElementById('empty');
@@ -476,89 +489,114 @@ function render() {
   grid.innerHTML = lista.map(card).join('');
 }
 
-const MN_MOV = {"1":"Local","X":"Empate","2":"Visitante","over25":"Over 2.5","under25":"Under 2.5","btts_si":"BTTS"};
+function _horaCot(horaUtc) {
+  if(!horaUtc) return '—';
+  const [h,m] = horaUtc.split(':').map(Number);
+  return `${String(((h-5)+24)%24).padStart(2,'0')}:${String(m).padStart(2,'0')} COT`;
+}
 
-function movimientoHTML(mov) {
-  if (!mov || !mov.hay_movimiento) return '';
-  const items = Object.entries(mov.mercados)
-    .filter(([,v]) => Math.abs(v.cambio_pct) >= 5)
-    .sort((a,b) => Math.abs(b[1].cambio_pct) - Math.abs(a[1].cambio_pct))
-    .slice(0,3)
-    .map(([m,v]) => {
-      const baja = v.cambio_pct < 0;
-      const color = baja ? '#22c55e' : '#ef4444';
-      const flecha = baja ? '▼' : '▲';
-      const label = baja ? 'Dinero entrando' : 'Dinero saliendo';
-      const steam = v.steam ? ' ⚡ STEAM' : '';
-      return `<div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;">
-        <span style="color:${color};font-weight:800;">${flecha} ${Math.abs(v.cambio_pct)}%</span>
-        <span style="color:#7a90b0;">${MN_MOV[m]||m}</span>
-        <span style="color:#364760;font-size:0.7rem;">${v.apertura} → ${v.actual}</span>
-        <span style="color:${color};font-size:0.7rem;">${label}${steam}</span>
-      </div>`;
-    }).join('');
-  if (!items) return '';
-  return `<div style="background:rgba(240,165,0,0.06);border:1px solid rgba(240,165,0,0.2);border-radius:8px;padding:10px 14px;margin-bottom:10px;">
-    <div style="font-size:0.68rem;font-weight:800;letter-spacing:1px;color:#f0a500;margin-bottom:8px;">📊 MOVIMIENTO DE LÍNEA</div>
-    ${items}
-  </div>`;
+function _fechaLabel(fechaEv) {
+  if(!fechaEv) return '';
+  const hoy = new Date().toISOString().slice(0,10);
+  if(fechaEv === hoy) return '';
+  const diff = Math.round((new Date(fechaEv+'T12:00:00') - new Date(hoy+'T12:00:00')) / 86400000);
+  if(diff === 1) return ' — Mañana';
+  if(diff <= 0) return ' — Hoy';
+  const meses = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  const d = new Date(fechaEv+'T12:00:00');
+  return ` — ${d.getDate()} ${meses[d.getMonth()]}`;
 }
 
 function card(p) {
-  const pr = p.probabilidades, vbs = p.value_bets;
-  const hasVB = Object.values(vbs).some(v=>v.tiene_valor);
-  const vbHTML = Object.entries(vbs).filter(([,v])=>v.tiene_valor).map(([m,v])=>{
-    const pinnBadge = v.ev_pinn != null
-      ? `<span class="vb-pinn ${v.tiene_valor_pinn ? 'pinn-ok' : 'pinn-no'}">PINNACLE ${v.ev_pinn > 0 ? '+' : ''}${v.ev_pinn}%</span>`
-      : '';
-    return `
-    <div class="vb">
-      <span class="vb-m">${MN[m]||m}</span>
-      <span class="vb-ev">EV +${v.ev_porcentaje}%</span>
-      ${pinnBadge}
-      <span class="vb-tag ${v.clasificacion==='ALTO VALOR'?'hi':''}">${v.clasificacion}</span>
+  const pr   = p.probabilidades || {};
+  const vbs  = p.value_bets || {};
+  const pred = p.prediccion_principal || {};
+  const esSoccer = !!pr.victoria_local;
+  const emoji = p.deporte_emoji || (esSoccer ? '⚽' : '🏆');
+  const horaCot = _horaCot(p.hora);
+  const fechaLabel = _fechaLabel(p.fecha_evento);
+
+  // Value bets positivos ordenados
+  const vbsPos = Object.entries(vbs)
+    .filter(([,v]) => v && (v.ev_pinn||0) >= 5)
+    .sort((a,b) => (b[1].ev_pinn||0) - (a[1].ev_pinn||0));
+  const hasVB = vbsPos.length > 0;
+
+  // Barras de probabilidad
+  let probsHTML = '';
+  if(esSoccer) {
+    const vl = pr.victoria_local||0, emp = pr.empate||0, vv = pr.victoria_visita||0;
+    probsHTML = `
+      <div class="pbar-wrap">
+        <div class="pbar-lbls"><span>Local ${vl}%</span><span>Empate ${emp}%</span><span>Visitante ${vv}%</span></div>
+        <div class="pbar">
+          <div class="pbl" style="width:${vl}%"></div>
+          <div class="pbx" style="width:${emp}%"></div>
+          <div class="pbv" style="width:${vv}%"></div>
+        </div>
+      </div>`;
+  } else {
+    const teams = Object.entries(pr).filter(([,v])=>typeof v==='number').slice(0,2);
+    if(teams.length===2) {
+      const [[t1,p1],[t2,p2]] = teams;
+      probsHTML = `
+        <div class="pbar-wrap">
+          <div class="pbar-lbls"><span>${t1} ${p1}%</span><span>${t2} ${p2}%</span></div>
+          <div class="pbar">
+            <div class="pbl" style="width:${p1}%"></div>
+            <div class="pbv" style="width:${p2}%"></div>
+          </div>
+        </div>`;
+    }
+  }
+
+  // Chips fútbol
+  let chipsHTML = '';
+  if(esSoccer) {
+    chipsHTML = `<div class="chips">
+      <div class="chip ${(pr.over25||0)>=55?'hi':''}"><span class="cl">Over 2.5</span><span class="cv">${pr.over25||0}%</span></div>
+      <div class="chip"><span class="cl">Under 2.5</span><span class="cv">${pr.under25||0}%</span></div>
+      <div class="chip ${(pr.btts_si||0)>=55?'hi':''}"><span class="cl">BTTS</span><span class="cv">${pr.btts_si||0}%</span></div>
+      <div class="chip"><span class="cl">Goles esp.</span><span class="cv">${pr.total_goles_esperados||'—'}</span></div>
+    </div>`;
+  }
+
+  // Value bets HTML
+  const vbHTML = vbsPos.map(([mk,vb]) => {
+    const cuota = vb.cuota ? Number(vb.cuota).toFixed(2) : '?';
+    const casa  = vb.casa ? ` [${vb.casa}]` : '';
+    const mk_d  = vb.mercado_nombre || mk;
+    return `<div class="vb">
+      <span class="vb-m">${mk_d}</span>
+      <span class="vb-ev">EV +${vb.ev_pinn}%</span>
+      <span class="vb-tag ${vb.clasificacion==='ALTO VALOR'?'hi':''}">${vb.clasificacion}</span>
+      <span style="color:#94a3b8;font-size:0.72rem;margin-left:auto">@ ${cuota}${casa}</span>
     </div>`;
   }).join('');
+
+  // JSON seguro para onclick
+  const pJson = JSON.stringify(p).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+
   return `
   <div class="card ${hasVB?'vbet':''}">
     <div class="ch">
-      <span class="ch-liga">${p.liga||''}</span>
-      <span class="ch-hora">${p.hora||''} UTC</span>
+      <span class="ch-liga">${emoji} ${p.liga||p.deporte||''}</span>
+      <span class="ch-hora">${horaCot}${fechaLabel}</span>
     </div>
     <div class="cb">
       <div class="equipos">
-        <div class="eq"><div class="eq-n">${p.local}</div><div class="eq-g">${pr.goles_esperados_local}</div></div>
+        <div class="eq"><div class="eq-n">${p.local||'—'}</div></div>
         <div class="vs-txt">VS</div>
-        <div class="eq"><div class="eq-n">${p.visitante}</div><div class="eq-g">${pr.goles_esperados_visita}</div></div>
+        <div class="eq"><div class="eq-n">${p.visitante||'—'}</div></div>
       </div>
-      <div class="pbar-wrap">
-        <div class="pbar-lbls"><span>Local</span><span>Empate</span><span>Visitante</span></div>
-        <div class="pbar">
-          <div class="pbl" style="width:${pr.victoria_local}%"></div>
-          <div class="pbx" style="width:${pr.empate}%"></div>
-          <div class="pbv" style="width:${pr.victoria_visita}%"></div>
-        </div>
-        <div class="pbar-vals">
-          <span class="pv l">${pr.victoria_local}%</span>
-          <span class="pv x">${pr.empate}%</span>
-          <span class="pv v">${pr.victoria_visita}%</span>
-        </div>
-      </div>
-      <div class="chips">
-        <div class="chip ${pr.over25>=55?'hi':''}"><span class="cl">Over2.5</span><span class="cv">${pr.over25}%</span></div>
-        <div class="chip"><span class="cl">Under2.5</span><span class="cv">${pr.under25}%</span></div>
-        <div class="chip ${pr.btts_si>=55?'hi':''}"><span class="cl">BTTS Si</span><span class="cv">${pr.btts_si}%</span></div>
-        <div class="chip"><span class="cl">Goles Esp.</span><span class="cv">${pr.total_goles_esperados}</span></div>
-      </div>
-      <div class="pred-box">
-        <div><div class="pred-lbl">Prediccion principal</div><div class="pred-m">${p.prediccion_principal.mercado}</div></div>
-        <span class="conf">${p.confianza}%</span>
-      </div>
+      ${probsHTML}
+      ${chipsHTML}
+      ${pred.mercado ? `<div class="pred-box">
+        <div><div class="pred-lbl">Mejor pick</div><div class="pred-m">${pred.mercado}</div></div>
+        <span class="conf">${p.confianza||0}%</span>
+      </div>` : ''}
       ${hasVB ? `<div class="vbets">${vbHTML}</div>` : ''}
-      ${movimientoHTML(p.movimiento)}
-      <button class="btn-publicar" id="pub-${p.id}" onclick='abrirModal(${JSON.stringify(p)})'>
-        Publicar en SharpIQ
-      </button>
+      <button class="btn-publicar" onclick="abrirModal('${pJson}')">Publicar en SharpIQ</button>
     </div>
   </div>`;
 }
@@ -566,58 +604,44 @@ function card(p) {
 // ── PUBLICAR ────────────────────────────────────────────────────
 let predActual = null;
 
-function abrirModal(p, prediccionPresel, cuotaPresel) {
-  predActual = p;
+function abrirModal(pStr) {
+  try { predActual = typeof pStr === 'string' ? JSON.parse(pStr.replace(/\\'/g,"'")) : pStr; }
+  catch(e) { alert('Error al abrir el partido: ' + e.message); return; }
+  const p = predActual;
   document.getElementById('m-partido').value = `${p.local} vs ${p.visitante}`;
 
-  // Opciones de mercado: primero value bets, luego todos
   const sel = document.getElementById('m-mercado');
   sel.innerHTML = '';
-  const opciones = [
-    { v: p.prediccion_principal.mercado, label: p.prediccion_principal.mercado + ' (prediccion principal)' },
-    { v: 'Over 2.5 Goles', label: `Over 2.5 Goles (${p.probabilidades.over25}%)` },
-    { v: 'Under 2.5 Goles', label: `Under 2.5 Goles (${p.probabilidades.under25}%)` },
-    { v: 'Ambos Marcan - Si', label: `BTTS Si (${p.probabilidades.btts_si}%)` },
-  ];
-  // Value bets al inicio
-  Object.entries(p.value_bets).forEach(([m, vb]) => {
-    if (vb.tiene_valor) {
-      const pinnStr = vb.ev_pinn != null ? ` | Pinnacle ${vb.ev_pinn > 0 ? '+' : ''}${vb.ev_pinn}%` : '';
-      opciones.unshift({ v: (MN[m]||m) + ` — EV +${vb.ev_porcentaje}%`, label: `VALUE: ${MN[m]||m} EV +${vb.ev_porcentaje}%${pinnStr} [${vb.clasificacion}]` });
-    }
-  });
-  opciones.forEach(o => {
+  // Value bets con EV+ primero
+  const vbsPos = Object.entries(p.value_bets||{})
+    .filter(([,v])=>v&&(v.ev_pinn||0)>=5)
+    .sort((a,b)=>(b[1].ev_pinn||0)-(a[1].ev_pinn||0));
+  vbsPos.forEach(([mk,vb]) => {
     const opt = document.createElement('option');
-    opt.value = o.v; opt.textContent = o.label;
+    const mkD = vb.mercado_nombre || mk;
+    const cuota = vb.cuota ? ` @ ${Number(vb.cuota).toFixed(2)}` : '';
+    opt.value = mkD;
+    opt.textContent = `EV+${vb.ev_pinn}% — ${mkD}${cuota} [${vb.clasificacion}]`;
+    opt.dataset.cuota = vb.cuota || '';
     sel.appendChild(opt);
   });
-
-  // Hora local Colombia (UTC-5)
-  const utcHora = p.hora || '00:00';
-  const [h, m2] = utcHora.split(':').map(Number);
-  const cotH = ((h - 5) + 24) % 24;
-  document.getElementById('m-hora').value = `${String(cotH).padStart(2,'0')}:${String(m2).padStart(2,'0')} COT`;
-
-  // Cuota: usar pre-seleccionada si viene del banner, si no la de la casa
-  if (cuotaPresel) {
-    document.getElementById('m-cuota').value = cuotaPresel;
-  } else {
-    const c = p.cuotas;
-    document.getElementById('m-cuota').value = c && c['1'] ? c['1'] : '';
+  // Opción del prediccion_principal si no está ya
+  const pred = p.prediccion_principal || {};
+  if(pred.mercado && !vbsPos.find(([,v])=>(v.mercado_nombre||'')===pred.mercado)) {
+    const opt = document.createElement('option'); opt.value=pred.mercado;
+    opt.textContent = pred.mercado + (pred.prob ? ` (${pred.prob}% prob)` : '');
+    sel.appendChild(opt);
   }
 
-  // Pre-seleccionar prediccion si viene del banner
-  if (prediccionPresel) {
-    const sel = document.getElementById('m-mercado');
-    for (let opt of sel.options) {
-      if (opt.value.startsWith(prediccionPresel)) { sel.value = opt.value; break; }
-    }
-  }
+  // Auto-rellenar cuota al cambiar mercado
+  sel.onchange = () => {
+    const opt = sel.selectedOptions[0];
+    if(opt && opt.dataset.cuota) document.getElementById('m-cuota').value = Number(opt.dataset.cuota).toFixed(2);
+  };
+  sel.dispatchEvent(new Event('change'));
 
-  // Mostrar aviso si la cuota es alta
-  const cuotaVal = parseFloat(document.getElementById('m-cuota').value);
-  verificarCuota(cuotaVal);
-
+  document.getElementById('m-hora').value = _horaCot(p.hora) + (_fechaLabel(p.fecha_evento)||'');
+  verificarCuota(parseFloat(document.getElementById('m-cuota').value));
   document.getElementById('modal').classList.add('show');
 }
 
@@ -634,37 +658,68 @@ function cerrarModal() {
 async function confirmarPublicar() {
   if (!predActual) return;
   const mercado = document.getElementById('m-mercado').value;
-  const cuota = document.getElementById('m-cuota').value;
-  const hora = document.getElementById('m-hora').value;
-  const status = document.getElementById('m-status').value;
-
+  const cuota   = document.getElementById('m-cuota').value;
+  const hora    = document.getElementById('m-hora').value;
+  const status  = document.getElementById('m-status').value;
   if (!cuota) { alert('Ingresa la cuota de la casa de apuestas'); return; }
 
-  const payload = {
-    ...predActual,
-    mercado,
-    cuota_publicar: cuota,
-    hora_local: hora,
-    status
-  };
+  const token = localStorage.getItem('sharpiq_gh_token');
+  if (!token) {
+    alert('Falta el token de GitHub.\nVe a admin.html -> seccion GitHub -> pega tu token personal.');
+    return;
+  }
+
+  const btn = document.querySelector('.btn-confirmar');
+  btn.textContent = 'Publicando...'; btn.disabled = true;
 
   try {
-    const r = await fetch(_apiBase()+'/api/publicar', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+    const apiUrl = `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`;
+    const readR  = await fetch(apiUrl, {
+      headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
     });
-    const res = await r.json();
-    if (res.ok) {
-      const btn = document.getElementById(`pub-${predActual.id}`);
-      if (btn) { btn.textContent = 'Publicado'; btn.classList.add('ok'); btn.disabled = true; }
-      cerrarModal();
-      alert(`Publicado correctamente.\nAhora recarga sharpiq.co para verlo en el sitio.`);
-    } else {
-      alert('Error: ' + res.error);
-    }
+    if (!readR.ok) throw new Error(`GitHub ${readR.status}: no se pudo leer datos.js`);
+    const fileData  = await readR.json();
+    const contenido = decodeURIComponent(escape(atob(fileData.content.replace(/\n/g,''))));
+
+    const p = predActual;
+    const fechaStr = new Date().toLocaleDateString('es-CO', {day:'numeric', month:'long'});
+    const nueva = [
+      '  {',
+      `    partido: "${p.local} vs ${p.visitante}",`,
+      `    prediccion: "${mercado}",`,
+      `    cuota: "${cuota}",`,
+      `    hora: "${hora}",`,
+      `    liga: "${p.liga||p.deporte||''}",`,
+      `    fecha: "${fechaStr}",`,
+      `    emoji: "${p.deporte_emoji||''}",`,
+      `    status: "${status}",`,
+      `    resultado: "pendiente"`,
+      '  }'
+    ].join('\n');
+
+    const nuevo = contenido.replace(
+      /const PROXIMOS_EVENTOS\s*=\s*\[/,
+      `const PROXIMOS_EVENTOS = [\n${nueva},`
+    );
+    if (nuevo === contenido) throw new Error('No se encontro PROXIMOS_EVENTOS en datos.js');
+
+    const writeR = await fetch(apiUrl, {
+      method: 'PUT',
+      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: `pick: ${p.local} vs ${p.visitante} — ${mercado}`,
+        content: btoa(unescape(encodeURIComponent(nuevo))),
+        sha: fileData.sha
+      })
+    });
+    if (!writeR.ok) { const e = await writeR.json(); throw new Error(e.message || 'Error GitHub'); }
+
+    cerrarModal();
+    alert(`Publicado: ${p.local} vs ${p.visitante}\n${mercado} @ ${cuota}\n\nYa visible en sharpiq.co`);
   } catch(e) {
-    alert('Error al conectar con el servidor.');
+    alert('Error al publicar: ' + e.message);
+  } finally {
+    btn.textContent = 'Publicar ahora'; btn.disabled = false;
   }
 }
 
@@ -796,85 +851,136 @@ function cerrarModalEditar() {
   _partidoEditando = null;
 }
 
+// ── EDITAR / ELIMINAR VIA GITHUB ────────────────────────────────
+async function _ghEditDatosJs(transformFn) {
+  const token = localStorage.getItem('sharpiq_gh_token');
+  if (!token) { alert('Falta token GitHub. Ve a admin.html para configurarlo.'); return false; }
+  const apiUrl = `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`;
+  const readR  = await fetch(apiUrl, { headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'} });
+  if (!readR.ok) throw new Error(`GitHub ${readR.status}`);
+  const fd  = await readR.json();
+  const src = decodeURIComponent(escape(atob(fd.content.replace(/\n/g,''))));
+  const nuevo = transformFn(src);
+  if (nuevo === src) return true; // nada que cambiar
+  const wr = await fetch(apiUrl, {
+    method:'PUT', headers:{'Authorization':`token ${token}`,'Content-Type':'application/json'},
+    body: JSON.stringify({ message:'update: datos.js', content: btoa(unescape(encodeURIComponent(nuevo))), sha: fd.sha })
+  });
+  if (!wr.ok) { const e=await wr.json(); throw new Error(e.message); }
+  return true;
+}
+
 async function confirmarEdicion() {
-  if(!_partidoEditando) return;
+  if (!_partidoEditando) return;
   const prediccion = document.getElementById('editPrediccion').value.trim();
   const cuota      = document.getElementById('editCuota').value.trim();
-  const r = await fetch(_apiBase()+'/api/proximos', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({ partido: _partidoEditando, accion: 'editar', prediccion, cuota })
-  });
-  const res = await r.json();
-  cerrarModalEditar();
-  if(res.ok){ cargarProximos(); cargarPendientes(); }
-  else alert('Error: ' + res.error);
+  try {
+    await _ghEditDatosJs(src => src.replace(
+      new RegExp(`(partido:\\s*"${_partidoEditando.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}"[^}]*?prediccion:\\s*")[^"]*("[^}]*?cuota:\\s*")[^"]*"`),
+      `$1${prediccion}$2${cuota}"`
+    ));
+    cerrarModalEditar(); cargarProximos();
+  } catch(e) { alert('Error: ' + e.message); }
 }
 
 async function confirmarEliminar() {
-  if(!_partidoEditando) return;
-  if(!confirm(`¿Eliminar "${_partidoEditando}" de los próximos eventos?`)) return;
-  const r = await fetch(_apiBase()+'/api/proximos', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({ partido: _partidoEditando, accion: 'eliminar' })
-  });
-  const res = await r.json();
-  cerrarModalEditar();
-  if(res.ok){ cargarProximos(); }
-  else alert('Error: ' + res.error);
-}
-
-// ── AUTH + API BASE ──────────────────────────────────────────────
-const _TK = 'sharpiq_panel_token';
-function _apiBase(){ return window.location.origin.startsWith('file') ? 'http://localhost:8080' : window.location.origin; }
-function _getToken(){ return localStorage.getItem(_TK)||''; }
-
-// Inyectar token en todos los fetch a /api/
-const _fetchOrig = window.fetch;
-window.fetch = function(url, opts={}){
-  const tk = _getToken();
-  if(tk && typeof url==='string' && url.includes('/api/')){
-    opts.headers = Object.assign({}, opts.headers||{}, {'Authorization':'Bearer '+tk});
-  }
-  return _fetchOrig(url, opts);
-};
-
-function doLogin(){
-  const val = document.getElementById('loginInput').value.trim();
-  if(!val) return;
-  // Prueba el token con una llamada real al servidor
-  _fetchOrig(_apiBase()+'/api/pendientes', {headers:{'Authorization':'Bearer '+val}})
-    .then(r=>{
-      if(r.ok){
-        localStorage.setItem(_TK, val);
-        mostrarPanel();
-      } else {
-        document.getElementById('loginErr').style.display='block';
-      }
-    })
-    .catch(()=>{
-      // Si el servidor no responde aún, aceptar si tiene formato válido
-      if(val.length >= 6){ localStorage.setItem(_TK, val); mostrarPanel(); }
-      else document.getElementById('loginErr').style.display='block';
+  if (!_partidoEditando) return;
+  if (!confirm(`¿Eliminar "${_partidoEditando}"?`)) return;
+  try {
+    await _ghEditDatosJs(src => {
+      // Eliminar el bloque completo del partido
+      return src.replace(
+        new RegExp(`\\s*\\{[^}]*?partido:\\s*"${_partidoEditando.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}"[^}]*?\\},?`),
+        ''
+      );
     });
+    cerrarModalEditar(); cargarProximos();
+  } catch(e) { alert('Error: ' + e.message); }
 }
 
-function mostrarPanel(){
-  document.getElementById('loginScreen').style.display='none';
-  document.getElementById('panelWrap').style.display='block';
+// ── CARGAR PROXIMOS Y PENDIENTES DESDE GITHUB ────────────────────
+async function cargarProximos() {
+  try {
+    const url = `https://raw.githubusercontent.com/${GH_REPO}/main/${GH_FILE}?_=${Date.now()}`;
+    const r   = await fetch(url);
+    const txt = await r.text();
+    // Extraer PROXIMOS_EVENTOS con eval seguro
+    const match = txt.match(/const PROXIMOS_EVENTOS\s*=\s*(\[[\s\S]*?\]);/);
+    if (!match) return;
+    const lista = Function('"use strict"; return ' + match[1])();
+    const sec   = document.getElementById('sec-editar');
+    const cont  = document.getElementById('lista-editar');
+    if (!lista.length) { sec.style.display='none'; return; }
+    sec.style.display = 'block';
+    cont.innerHTML = lista.map(p => `
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:9px 13px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:13px;font-weight:600">${p.emoji||''} ${p.partido}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px">${p.prediccion} · Cuota ${p.cuota} · ${p.hora||''} · <span style="color:${p.resultado==='pendiente'?'#f0a500':p.resultado==='win'?'#22c55e':'#ef4444'}">${p.resultado}</span></div>
+        </div>
+        <button onclick="abrirModalEditar('${(p.partido||'').replace(/'/g,"\\'")}','${(p.prediccion||'').replace(/'/g,"\\'")}','${p.cuota||''}')"
+          style="background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.3);color:var(--gold);padding:6px 14px;border-radius:6px;font-weight:700;font-size:12px;cursor:pointer">
+          Editar
+        </button>
+      </div>`).join('');
+  } catch(e) { /* sin conexion */ }
+}
+
+async function cargarPendientes() {
+  try {
+    const url = `https://raw.githubusercontent.com/${GH_REPO}/main/${GH_FILE}?_=${Date.now()}`;
+    const r   = await fetch(url);
+    const txt = await r.text();
+    const match = txt.match(/const PROXIMOS_EVENTOS\s*=\s*(\[[\s\S]*?\]);/);
+    if (!match) return;
+    const lista = Function('"use strict"; return ' + match[1])()
+      .filter(p => p.resultado === 'pendiente');
+    if (!lista.length) return;
+    const sec  = document.getElementById('sec-pendientes');
+    const cont = document.getElementById('lista-pendientes');
+    sec.style.display = 'block';
+    cont.innerHTML = lista.map(p => `
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:9px 13px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:0.82rem;font-weight:700;">${p.emoji||''} ${p.partido}</div>
+          <div style="font-size:0.72rem;color:var(--muted);">${p.prediccion} — Cuota ${p.cuota}</div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button onclick="marcarResultado('${(p.partido||'').replace(/'/g,"\\'")}','win',this)" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.4);color:#22c55e;padding:6px 16px;border-radius:6px;font-weight:700;font-size:0.78rem;cursor:pointer;">WIN</button>
+          <button onclick="marcarResultado('${(p.partido||'').replace(/'/g,"\\'")}','loss',this)" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.35);color:#ef4444;padding:6px 16px;border-radius:6px;font-weight:700;font-size:0.78rem;cursor:pointer;">LOSS</button>
+        </div>
+      </div>`).join('');
+  } catch(e) { /* sin conexion */ }
+}
+
+async function marcarResultado(partido, resultado, btn) {
+  btn.disabled = true;
+  try {
+    await _ghEditDatosJs(src => src.replace(
+      new RegExp(`(partido:\\s*"${partido.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}"[^}]*?resultado:\\s*")[^"]*"`),
+      `$1${resultado}"`
+    ));
+    const fila = btn.closest('div[style*="background"]');
+    const color = resultado==='win'?'#22c55e':'#ef4444';
+    fila.innerHTML = `<span style="font-size:0.82rem;font-weight:700;">${partido}</span><span style="color:${color};font-weight:800;">${resultado.toUpperCase()} registrado</span>`;
+  } catch(e) { btn.disabled=false; alert('Error: '+e.message); }
+}
+
+// ── INICIO: VERIFICAR SESION DE LOGIN.HTML ───────────────────────
+(function(){
+  const role = localStorage.getItem('sharpiq_role');
+  const auth = parseInt(localStorage.getItem('sharpiq_auth')||'0');
+  if (!role || Date.now()-auth > 24*60*60*1000) {
+    window.location.href = 'login.html'; return;
+  }
+  // Ocultar pantalla de login interna, mostrar panel
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('panelWrap').style.display   = 'block';
   document.getElementById('fecha-hdr').textContent = new Date().toLocaleDateString('es-CO',{weekday:'long',day:'numeric',month:'long'});
   cargar();
   cargarRecomendacion();
   cargarPendientes();
   cargarProximos();
-}
-
-// Al cargar
-(function(){
-  const tk = _getToken();
-  if(tk){ mostrarPanel(); }
-  else { setTimeout(()=>{ const i=document.getElementById('loginInput'); if(i) i.focus(); },100); }
 })();
 </script>
 </div><!-- /panelWrap -->
