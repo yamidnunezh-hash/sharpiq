@@ -1,313 +1,51 @@
 {
   "fecha": "2026-05-22",
-  "total_partidos": 35,
+  "total_partidos": 33,
   "predicciones": [
-    {
-      "local": "Nautico Recife",
-      "visitante": "Cuiaba",
-      "probabilidades": {
-        "victoria_local": 39.7,
-        "empate": 29.7,
-        "victoria_visita": 30.6,
-        "over15": 71.5,
-        "under15": 28.5,
-        "over25": 44.4,
-        "under25": 55.6,
-        "over35": 23.2,
-        "under35": 76.8,
-        "over45": 10.2,
-        "under45": 89.8,
-        "btts_si": 50.9,
-        "btts_no": 49.1,
-        "doble_1x": 69.4,
-        "doble_x2": 60.3,
-        "doble_12": 70.3,
-        "dnb_local": 56.5,
-        "dnb_visita": 43.5,
-        "hdc_local_menos1": 18.7,
-        "hdc_visita_mas1": 60.3,
-        "goles_esperados_local": 1.32,
-        "goles_esperados_visita": 1.13,
-        "total_goles_esperados": 2.45
-      },
-      "cuotas": {
-        "1": 2.27,
-        "X": 3.03,
-        "2": 2.94
-      },
-      "value_bets": {
-        "victoria_local": {
-          "value": -0.099,
-          "ev_porcentaje": -9.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR",
-          "ev_pinn": null,
-          "tiene_valor_pinn": null
-        },
-        "empate": {
-          "value": -0.1,
-          "ev_porcentaje": -10.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR",
-          "ev_pinn": null,
-          "tiene_valor_pinn": null
-        },
-        "victoria_visita": {
-          "value": -0.1,
-          "ev_porcentaje": -10.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR",
-          "ev_pinn": null,
-          "tiene_valor_pinn": null
-        }
-      },
-      "kelly": {
-        "stake_porcentaje": 0,
-        "stake_dinero": 0,
-        "recomendacion": "NO APOSTAR"
-      },
-      "prediccion_principal": {
-        "mercado": "Tarjetas Over 4.5",
-        "prob": 67.1,
-        "ev": -4.7
-      },
-      "confianza": 67.1,
-      "mercados_ext": {
-        "corners": {
-          "corners_esperados": 10.8,
-          "corners_over9": 75.1,
-          "corners_under9": 24.9,
-          "corners_over10": 63.9,
-          "corners_under10": 36.1,
-          "corners_over11": 51.7,
-          "corners_under11": 48.3,
-          "corners_over12": 39.8,
-          "corners_under12": 60.2,
-          "corners_over13": 29.1,
-          "corners_under13": 70.9
-        },
-        "tarjetas": {
-          "tarjetas_esperadas": 4.6,
-          "tarjetas_over3": 83.5,
-          "tarjetas_under3": 16.5,
-          "tarjetas_over4": 67.1,
-          "tarjetas_under4": 32.9,
-          "tarjetas_over5": 48.3,
-          "tarjetas_under5": 51.7,
-          "tarjetas_over6": 31.1,
-          "tarjetas_under6": 68.9
-        },
-        "handicap": {
-          "ah_local_menos05": 39.7,
-          "ah_visita_mas05": 60.3,
-          "ah_local_menos1": 18.7,
-          "ah_visita_mas1": 81.3,
-          "ah_local_menos15": 13.1,
-          "ah_visita_mas15": 86.9
-        },
-        "ev_ext": {
-          "corners_over9": {
-            "prob_modelo": 75.1,
-            "cuota_justa": 1.33,
-            "cuota_ref": 1.26,
-            "ev_porcentaje": -5.4,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_under9": {
-            "prob_modelo": 24.9,
-            "cuota_justa": 4.02,
-            "cuota_ref": 3.82,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_over10": {
-            "prob_modelo": 63.9,
-            "cuota_justa": 1.56,
-            "cuota_ref": 1.49,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_under10": {
-            "prob_modelo": 36.1,
-            "cuota_justa": 2.77,
-            "cuota_ref": 2.63,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_over11": {
-            "prob_modelo": 51.7,
-            "cuota_justa": 1.93,
-            "cuota_ref": 1.84,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_under11": {
-            "prob_modelo": 48.3,
-            "cuota_justa": 2.07,
-            "cuota_ref": 1.97,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_over3": {
-            "prob_modelo": 83.5,
-            "cuota_justa": 1.2,
-            "cuota_ref": 1.14,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_under3": {
-            "prob_modelo": 16.5,
-            "cuota_justa": 6.06,
-            "cuota_ref": 5.76,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_over4": {
-            "prob_modelo": 67.1,
-            "cuota_justa": 1.49,
-            "cuota_ref": 1.42,
-            "ev_porcentaje": -4.7,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_under4": {
-            "prob_modelo": 32.9,
-            "cuota_justa": 3.04,
-            "cuota_ref": 2.89,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_over5": {
-            "prob_modelo": 48.3,
-            "cuota_justa": 2.07,
-            "cuota_ref": 1.97,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_under5": {
-            "prob_modelo": 51.7,
-            "cuota_justa": 1.93,
-            "cuota_ref": 1.84,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos05": {
-            "prob_modelo": 39.7,
-            "cuota_justa": 2.52,
-            "cuota_ref": 2.39,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_visita_mas05": {
-            "prob_modelo": 60.3,
-            "cuota_justa": 1.66,
-            "cuota_ref": 1.58,
-            "ev_porcentaje": -4.7,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos1": {
-            "prob_modelo": 18.7,
-            "cuota_justa": 5.35,
-            "cuota_ref": 5.08,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_visita_mas1": {
-            "prob_modelo": 81.3,
-            "cuota_justa": 1.23,
-            "cuota_ref": 1.17,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos15": {
-            "prob_modelo": 13.1,
-            "cuota_justa": 7.63,
-            "cuota_ref": 7.25,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_visita_mas15": {
-            "prob_modelo": 86.9,
-            "cuota_justa": 1.15,
-            "cuota_ref": 1.09,
-            "ev_porcentaje": -5.3,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          }
-        }
-      },
-      "liga": "Brasileirao Serie B",
-      "hora": "22:00",
-      "id": 1520697,
-      "sede_neutral": false,
-      "arbitro": "",
-      "cuotas_reales": false,
-      "cuotas_avisos": [],
-      "forma_local": null,
-      "forma_visita": null,
-      "h2h": null,
-      "movimiento": null
-    },
     {
       "local": "San Antonio Spurs",
       "visitante": "Oklahoma City Thunder",
       "liga": "NBA",
       "liga_code": "basketball_nba",
       "deporte": "NBA",
-      "hora": "19:40",
+      "hora": "19:37",
       "cuotas": {
-        "Oklahoma City Thunder": 2.1,
-        "San Antonio Spurs": 1.83
+        "Oklahoma City Thunder": 1.03,
+        "San Antonio Spurs": 23.0
       },
       "probabilidades": {
-        "Oklahoma City Thunder": 46.9,
-        "San Antonio Spurs": 53.1
+        "Oklahoma City Thunder": 85.7,
+        "San Antonio Spurs": 14.3
       },
-      "confianza": 53.1,
+      "confianza": 85.7,
       "value_bets": {
         "Oklahoma City Thunder": {
-          "value": -0.014,
-          "ev_porcentaje": -1.4,
-          "ev_pinn": -1.4,
+          "value": -0.117,
+          "ev_porcentaje": -11.7,
+          "ev_pinn": -11.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.1,
-          "casa": "BetMGM",
-          "pinn_prob": 46.9
+          "cuota": 1.03,
+          "casa": "FanDuel",
+          "pinn_prob": 85.7
         },
         "San Antonio Spurs": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
-          "casa": "FanDuel",
-          "pinn_prob": 53.1
+          "value": 2.29,
+          "ev_porcentaje": 229.0,
+          "ev_pinn": 229.0,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 23.0,
+          "casa": "DraftKings",
+          "pinn_prob": 14.3
         }
       },
       "prediccion_principal": {
-        "mercado": "Oklahoma City Thunder",
-        "prob": 46.9,
-        "ev": -1.4
+        "mercado": "San Antonio Spurs",
+        "prob": 14.3,
+        "ev": 229.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -325,7 +63,7 @@
       "hora": "19:10",
       "cuotas": {
         "Cleveland Cavaliers": 1.77,
-        "New York Knicks": 2.14
+        "New York Knicks": 2.15
       },
       "probabilidades": {
         "Cleveland Cavaliers": 55.6,
@@ -345,14 +83,14 @@
           "pinn_prob": 55.6
         },
         "New York Knicks": {
-          "value": -0.049,
-          "ev_porcentaje": -4.9,
-          "ev_pinn": -4.9,
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.14,
-          "casa": "DraftKings",
+          "cuota": 2.15,
+          "casa": "BetMGM",
           "pinn_prob": 44.4
         }
       },
@@ -369,474 +107,6 @@
       "movimiento": null
     },
     {
-      "local": "Philadelphia Phillies",
-      "visitante": "Cleveland Guardians",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "hora": "17:41",
-      "cuotas": {
-        "Cleveland Guardians": 2.53,
-        "Philadelphia Phillies": 1.56
-      },
-      "probabilidades": {
-        "Cleveland Guardians": 38.0,
-        "Philadelphia Phillies": 62.0
-      },
-      "confianza": 62.0,
-      "value_bets": {
-        "Cleveland Guardians": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.53,
-          "casa": "DraftKings",
-          "pinn_prob": 38.0
-        },
-        "Philadelphia Phillies": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.56,
-          "casa": "FanDuel",
-          "pinn_prob": 62.0
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Philadelphia Phillies",
-        "prob": 62.0,
-        "ev": -3.2
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "New York Yankees",
-      "visitante": "Tampa Bay Rays",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "hora": "18:06",
-      "cuotas": {
-        "New York Yankees": 1.69,
-        "Tampa Bay Rays": 2.28
-      },
-      "probabilidades": {
-        "New York Yankees": 56.9,
-        "Tampa Bay Rays": 43.1
-      },
-      "confianza": 56.9,
-      "value_bets": {
-        "New York Yankees": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.69,
-          "casa": "BetMGM",
-          "pinn_prob": 56.9
-        },
-        "Tampa Bay Rays": {
-          "value": -0.017,
-          "ev_porcentaje": -1.7,
-          "ev_pinn": -1.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.28,
-          "casa": "DraftKings",
-          "pinn_prob": 43.1
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Tampa Bay Rays",
-        "prob": 43.1,
-        "ev": -1.7
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Toronto Blue Jays",
-      "visitante": "Pittsburgh Pirates",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "hora": "18:08",
-      "cuotas": {
-        "Pittsburgh Pirates": 2.4,
-        "Toronto Blue Jays": 1.61
-      },
-      "probabilidades": {
-        "Pittsburgh Pirates": 40.5,
-        "Toronto Blue Jays": 59.5
-      },
-      "confianza": 59.5,
-      "value_bets": {
-        "Pittsburgh Pirates": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
-          "casa": "Unibet",
-          "pinn_prob": 40.5
-        },
-        "Toronto Blue Jays": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.61,
-          "casa": "FanDuel",
-          "pinn_prob": 59.5
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Pittsburgh Pirates",
-        "prob": 40.5,
-        "ev": -2.7
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Boston Red Sox",
-      "visitante": "Minnesota Twins",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "hora": "18:11",
-      "cuotas": {
-        "Boston Red Sox": 1.68,
-        "Minnesota Twins": 2.29
-      },
-      "probabilidades": {
-        "Boston Red Sox": 58.1,
-        "Minnesota Twins": 41.9
-      },
-      "confianza": 58.1,
-      "value_bets": {
-        "Boston Red Sox": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.68,
-          "casa": "FanDuel",
-          "pinn_prob": 58.1
-        },
-        "Minnesota Twins": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.29,
-          "casa": "DraftKings",
-          "pinn_prob": 41.9
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Boston Red Sox",
-        "prob": 58.1,
-        "ev": -2.5
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Miami Marlins",
-      "visitante": "New York Mets",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "hora": "18:11",
-      "cuotas": {
-        "Miami Marlins": 1.89,
-        "New York Mets": 1.99
-      },
-      "probabilidades": {
-        "Miami Marlins": 50.9,
-        "New York Mets": 49.1
-      },
-      "confianza": 50.9,
-      "value_bets": {
-        "Miami Marlins": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.89,
-          "casa": "FanDuel",
-          "pinn_prob": 50.9
-        },
-        "New York Mets": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.99,
-          "casa": "DraftKings",
-          "pinn_prob": 49.1
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "New York Mets",
-        "prob": 49.1,
-        "ev": -2.3
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Atlanta Braves",
-      "visitante": "Washington Nationals",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "hora": "18:15",
-      "cuotas": {
-        "Atlanta Braves": 1.53,
-        "Washington Nationals": 2.6
-      },
-      "probabilidades": {
-        "Atlanta Braves": 63.5,
-        "Washington Nationals": 36.5
-      },
-      "confianza": 63.5,
-      "value_bets": {
-        "Atlanta Braves": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.53,
-          "casa": "BetMGM",
-          "pinn_prob": 63.5
-        },
-        "Washington Nationals": {
-          "value": -0.051,
-          "ev_porcentaje": -5.1,
-          "ev_pinn": -5.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.6,
-          "casa": "Unibet",
-          "pinn_prob": 36.5
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Atlanta Braves",
-        "prob": 63.5,
-        "ev": -2.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Baltimore Orioles",
-      "visitante": "Detroit Tigers",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "hora": "18:16",
-      "cuotas": {
-        "Baltimore Orioles": 1.77,
-        "Detroit Tigers": 2.23
-      },
-      "probabilidades": {
-        "Baltimore Orioles": 54.2,
-        "Detroit Tigers": 45.8
-      },
-      "confianza": 54.2,
-      "value_bets": {
-        "Baltimore Orioles": {
-          "value": -0.041,
-          "ev_porcentaje": -4.1,
-          "ev_pinn": -4.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.77,
-          "casa": "BetMGM",
-          "pinn_prob": 54.2
-        },
-        "Detroit Tigers": {
-          "value": 0.022,
-          "ev_porcentaje": 2.2,
-          "ev_pinn": 2.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.23,
-          "casa": "Unibet",
-          "pinn_prob": 45.8
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Detroit Tigers",
-        "prob": 45.8,
-        "ev": 2.2
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Kansas City Royals",
-      "visitante": "Seattle Mariners",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "hora": "18:41",
-      "cuotas": {
-        "Kansas City Royals": 2.0,
-        "Seattle Mariners": 1.89
-      },
-      "probabilidades": {
-        "Kansas City Royals": 49.1,
-        "Seattle Mariners": 50.9
-      },
-      "confianza": 50.9,
-      "value_bets": {
-        "Kansas City Royals": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
-          "casa": "FanDuel",
-          "pinn_prob": 49.1
-        },
-        "Seattle Mariners": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.89,
-          "casa": "Unibet",
-          "pinn_prob": 50.9
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Kansas City Royals",
-        "prob": 49.1,
-        "ev": -1.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "local": "Milwaukee Brewers",
-      "visitante": "Los Angeles Dodgers",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "hora": "18:41",
-      "cuotas": {
-        "Los Angeles Dodgers": 1.93,
-        "Milwaukee Brewers": 1.93
-      },
-      "probabilidades": {
-        "Los Angeles Dodgers": 49.1,
-        "Milwaukee Brewers": 50.9
-      },
-      "confianza": 50.9,
-      "value_bets": {
-        "Los Angeles Dodgers": {
-          "value": -0.052,
-          "ev_porcentaje": -5.2,
-          "ev_pinn": -5.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "FanDuel",
-          "pinn_prob": 49.1
-        },
-        "Milwaukee Brewers": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "FanDuel",
-          "pinn_prob": 50.9
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Milwaukee Brewers",
-        "prob": 50.9,
-        "ev": -1.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
       "local": "Los Angeles Angels",
       "visitante": "Texas Rangers",
       "liga": "MLB",
@@ -844,42 +114,42 @@
       "deporte": "MLB",
       "hora": "20:39",
       "cuotas": {
-        "Los Angeles Angels": 2.39,
-        "Texas Rangers": 1.62
+        "Los Angeles Angels": 1.08,
+        "Texas Rangers": 8.9
       },
       "probabilidades": {
-        "Los Angeles Angels": 39.6,
-        "Texas Rangers": 60.4
+        "Los Angeles Angels": 84.0,
+        "Texas Rangers": 16.0
       },
-      "confianza": 60.4,
+      "confianza": 84.0,
       "value_bets": {
         "Los Angeles Angels": {
-          "value": -0.053,
-          "ev_porcentaje": -5.3,
-          "ev_pinn": -5.3,
+          "value": -0.093,
+          "ev_porcentaje": -9.3,
+          "ev_pinn": -9.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.39,
-          "casa": "DraftKings",
-          "pinn_prob": 39.6
+          "cuota": 1.08,
+          "casa": "BetMGM",
+          "pinn_prob": 84.0
         },
         "Texas Rangers": {
-          "value": -0.022,
-          "ev_porcentaje": -2.2,
-          "ev_pinn": -2.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.62,
-          "casa": "FanDuel",
-          "pinn_prob": 60.4
+          "value": 0.425,
+          "ev_porcentaje": 42.5,
+          "ev_pinn": 42.5,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 8.9,
+          "casa": "DraftKings",
+          "pinn_prob": 16.0
         }
       },
       "prediccion_principal": {
         "mercado": "Texas Rangers",
-        "prob": 60.4,
-        "ev": -2.2
+        "prob": 16.0,
+        "ev": 42.5
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -896,42 +166,42 @@
       "deporte": "MLB",
       "hora": "20:41",
       "cuotas": {
-        "Arizona Diamondbacks": 1.48,
-        "Colorado Rockies": 2.8
+        "Arizona Diamondbacks": 1.27,
+        "Colorado Rockies": 4.0
       },
       "probabilidades": {
-        "Arizona Diamondbacks": 66.1,
-        "Colorado Rockies": 33.9
+        "Arizona Diamondbacks": 80.5,
+        "Colorado Rockies": 19.5
       },
-      "confianza": 66.1,
+      "confianza": 80.5,
       "value_bets": {
         "Arizona Diamondbacks": {
-          "value": -0.022,
-          "ev_porcentaje": -2.2,
-          "ev_pinn": -2.2,
+          "value": 0.022,
+          "ev_porcentaje": 2.2,
+          "ev_pinn": 2.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.48,
-          "casa": "FanDuel",
-          "pinn_prob": 66.1
+          "cuota": 1.27,
+          "casa": "DraftKings",
+          "pinn_prob": 80.5
         },
         "Colorado Rockies": {
-          "value": -0.05,
-          "ev_porcentaje": -5.0,
-          "ev_pinn": -5.0,
+          "value": -0.22,
+          "ev_porcentaje": -22.0,
+          "ev_pinn": -22.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.8,
+          "cuota": 4.0,
           "casa": "BetMGM",
-          "pinn_prob": 33.9
+          "pinn_prob": 19.5
         }
       },
       "prediccion_principal": {
         "mercado": "Arizona Diamondbacks",
-        "prob": 66.1,
-        "ev": -2.2
+        "prob": 80.5,
+        "ev": 2.2
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -948,42 +218,42 @@
       "deporte": "MLB",
       "hora": "20:41",
       "cuotas": {
-        "Athletics": 2.1,
-        "San Diego Padres": 1.81
+        "Athletics": 2.35,
+        "San Diego Padres": 1.74
       },
       "probabilidades": {
-        "Athletics": 46.3,
-        "San Diego Padres": 53.7
+        "Athletics": 59.3,
+        "San Diego Padres": 40.7
       },
-      "confianza": 53.7,
+      "confianza": 59.3,
       "value_bets": {
         "Athletics": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.1,
+          "value": 0.395,
+          "ev_porcentaje": 39.5,
+          "ev_pinn": 39.5,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 2.35,
           "casa": "Unibet",
-          "pinn_prob": 46.3
+          "pinn_prob": 59.3
         },
         "San Diego Padres": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
+          "value": -0.293,
+          "ev_porcentaje": -29.3,
+          "ev_pinn": -29.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.81,
-          "casa": "FanDuel",
-          "pinn_prob": 53.7
+          "cuota": 1.74,
+          "casa": "BetMGM",
+          "pinn_prob": 40.7
         }
       },
       "prediccion_principal": {
         "mercado": "Athletics",
-        "prob": 46.3,
-        "ev": -2.7
+        "prob": 59.3,
+        "ev": 39.5
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1000,42 +270,42 @@
       "deporte": "MLB",
       "hora": "21:16",
       "cuotas": {
-        "Chicago White Sox": 1.89,
-        "San Francisco Giants": 1.96
+        "Chicago White Sox": 1.45,
+        "San Francisco Giants": 9.0
       },
       "probabilidades": {
-        "Chicago White Sox": 51.0,
-        "San Francisco Giants": 49.0
+        "Chicago White Sox": 51.9,
+        "San Francisco Giants": 48.1
       },
-      "confianza": 51.0,
+      "confianza": 51.9,
       "value_bets": {
         "Chicago White Sox": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
+          "value": -0.247,
+          "ev_porcentaje": -24.7,
+          "ev_pinn": -24.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.89,
-          "casa": "FanDuel",
-          "pinn_prob": 51.0
+          "cuota": 1.45,
+          "casa": "BetMGM",
+          "pinn_prob": 51.9
         },
         "San Francisco Giants": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.96,
-          "casa": "FanDuel",
-          "pinn_prob": 49.0
+          "value": 3.325,
+          "ev_porcentaje": 332.5,
+          "ev_pinn": 332.5,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 9.0,
+          "casa": "Unibet",
+          "pinn_prob": 48.1
         }
       },
       "prediccion_principal": {
-        "mercado": "Chicago White Sox",
-        "prob": 51.0,
-        "ev": -3.6
+        "mercado": "San Francisco Giants",
+        "prob": 48.1,
+        "ev": 332.5
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1045,49 +315,517 @@
       "movimiento": null
     },
     {
-      "local": "Colorado Avalanche",
-      "visitante": "Vegas Golden Knights",
-      "liga": "NHL",
-      "liga_code": "icehockey_nhl",
-      "deporte": "NHL",
-      "hora": "19:00",
+      "local": "Toronto Blue Jays",
+      "visitante": "Pittsburgh Pirates",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "hora": "14:08",
       "cuotas": {
-        "Colorado Avalanche": 2.0,
-        "Vegas Golden Knights": 3.15
+        "Pittsburgh Pirates": 1.67,
+        "Toronto Blue Jays": 2.3
       },
       "probabilidades": {
-        "Colorado Avalanche": 61.0,
-        "Vegas Golden Knights": 39.0
+        "Pittsburgh Pirates": 57.8,
+        "Toronto Blue Jays": 42.3
+      },
+      "confianza": 57.8,
+      "value_bets": {
+        "Pittsburgh Pirates": {
+          "value": -0.036,
+          "ev_porcentaje": -3.6,
+          "ev_pinn": -3.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.67,
+          "casa": "DraftKings",
+          "pinn_prob": 57.8
+        },
+        "Toronto Blue Jays": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.3,
+          "casa": "FanDuel",
+          "pinn_prob": 42.3
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Toronto Blue Jays",
+        "prob": 42.3,
+        "ev": -2.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Baltimore Orioles",
+      "visitante": "Detroit Tigers",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "hora": "15:06",
+      "cuotas": {
+        "Baltimore Orioles": 1.86,
+        "Detroit Tigers": 2.0
+      },
+      "probabilidades": {
+        "Baltimore Orioles": 52.4,
+        "Detroit Tigers": 47.6
+      },
+      "confianza": 52.4,
+      "value_bets": {
+        "Baltimore Orioles": {
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.86,
+          "casa": "FanDuel",
+          "pinn_prob": 52.4
+        },
+        "Detroit Tigers": {
+          "value": -0.049,
+          "ev_porcentaje": -4.9,
+          "ev_pinn": -4.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "DraftKings",
+          "pinn_prob": 47.6
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Baltimore Orioles",
+        "prob": 52.4,
+        "ev": -2.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "San Francisco Giants",
+      "visitante": "Chicago White Sox",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "hora": "15:06",
+      "cuotas": {
+        "Chicago White Sox": 2.06,
+        "San Francisco Giants": 1.81
+      },
+      "probabilidades": {
+        "Chicago White Sox": 46.6,
+        "San Francisco Giants": 53.4
+      },
+      "confianza": 53.4,
+      "value_bets": {
+        "Chicago White Sox": {
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.06,
+          "casa": "FanDuel",
+          "pinn_prob": 46.6
+        },
+        "San Francisco Giants": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.81,
+          "casa": "FanDuel",
+          "pinn_prob": 53.4
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "San Francisco Giants",
+        "prob": 53.4,
+        "ev": -3.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Philadelphia Phillies",
+      "visitante": "Cleveland Guardians",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "hora": "15:06",
+      "cuotas": {
+        "Cleveland Guardians": 2.72,
+        "Philadelphia Phillies": 1.5
+      },
+      "probabilidades": {
+        "Cleveland Guardians": 35.9,
+        "Philadelphia Phillies": 64.1
+      },
+      "confianza": 64.1,
+      "value_bets": {
+        "Cleveland Guardians": {
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.72,
+          "casa": "FanDuel",
+          "pinn_prob": 35.9
+        },
+        "Philadelphia Phillies": {
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.5,
+          "casa": "DraftKings",
+          "pinn_prob": 64.1
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Cleveland Guardians",
+        "prob": 35.9,
+        "ev": -2.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Atlanta Braves",
+      "visitante": "Washington Nationals",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "hora": "15:11",
+      "cuotas": {
+        "Atlanta Braves": 1.56,
+        "Washington Nationals": 2.65
+      },
+      "probabilidades": {
+        "Atlanta Braves": 63.3,
+        "Washington Nationals": 36.7
+      },
+      "confianza": 63.3,
+      "value_bets": {
+        "Atlanta Braves": {
+          "value": -0.012,
+          "ev_porcentaje": -1.2,
+          "ev_pinn": -1.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.56,
+          "casa": "FanDuel",
+          "pinn_prob": 63.3
+        },
+        "Washington Nationals": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.65,
+          "casa": "BetMGM",
+          "pinn_prob": 36.7
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Atlanta Braves",
+        "prob": 63.3,
+        "ev": -1.2
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Kansas City Royals",
+      "visitante": "Seattle Mariners",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "hora": "15:11",
+      "cuotas": {
+        "Kansas City Royals": 2.2,
+        "Seattle Mariners": 1.7
+      },
+      "probabilidades": {
+        "Kansas City Royals": 43.0,
+        "Seattle Mariners": 57.0
+      },
+      "confianza": 57.0,
+      "value_bets": {
+        "Kansas City Royals": {
+          "value": -0.055,
+          "ev_porcentaje": -5.5,
+          "ev_pinn": -5.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.2,
+          "casa": "FanDuel",
+          "pinn_prob": 43.0
+        },
+        "Seattle Mariners": {
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.7,
+          "casa": "FanDuel",
+          "pinn_prob": 57.0
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Seattle Mariners",
+        "prob": 57.0,
+        "ev": -3.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Milwaukee Brewers",
+      "visitante": "Los Angeles Dodgers",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "hora": "18:16",
+      "cuotas": {
+        "Los Angeles Dodgers": 1.8,
+        "Milwaukee Brewers": 2.08
+      },
+      "probabilidades": {
+        "Los Angeles Dodgers": 53.9,
+        "Milwaukee Brewers": 46.1
+      },
+      "confianza": 53.9,
+      "value_bets": {
+        "Los Angeles Dodgers": {
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.8,
+          "casa": "BetMGM",
+          "pinn_prob": 53.9
+        },
+        "Milwaukee Brewers": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.08,
+          "casa": "FanDuel",
+          "pinn_prob": 46.1
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Los Angeles Dodgers",
+        "prob": 53.9,
+        "ev": -2.9
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "San Diego Padres",
+      "visitante": "Athletics",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "hora": "20:41",
+      "cuotas": {
+        "Athletics": 1.93,
+        "San Diego Padres": 1.93
+      },
+      "probabilidades": {
+        "Athletics": 49.7,
+        "San Diego Padres": 50.3
+      },
+      "confianza": 50.3,
+      "value_bets": {
+        "Athletics": {
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "FanDuel",
+          "pinn_prob": 49.7
+        },
+        "San Diego Padres": {
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "FanDuel",
+          "pinn_prob": 50.3
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "San Diego Padres",
+        "prob": 50.3,
+        "ev": -3.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Los Angeles Angels",
+      "visitante": "Texas Rangers",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "hora": "21:06",
+      "cuotas": {
+        "Los Angeles Angels": 2.15,
+        "Texas Rangers": 1.76
+      },
+      "probabilidades": {
+        "Los Angeles Angels": 45.2,
+        "Texas Rangers": 54.8
+      },
+      "confianza": 54.8,
+      "value_bets": {
+        "Los Angeles Angels": {
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.15,
+          "casa": "BetMGM",
+          "pinn_prob": 45.2
+        },
+        "Texas Rangers": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.76,
+          "casa": "FanDuel",
+          "pinn_prob": 54.8
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Los Angeles Angels",
+        "prob": 45.2,
+        "ev": -2.9
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Arizona Diamondbacks",
+      "visitante": "Colorado Rockies",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "hora": "21:11",
+      "cuotas": {
+        "Arizona Diamondbacks": 1.62,
+        "Colorado Rockies": 2.5
+      },
+      "probabilidades": {
+        "Arizona Diamondbacks": 61.0,
+        "Colorado Rockies": 39.0
       },
       "confianza": 61.0,
       "value_bets": {
-        "Colorado Avalanche": {
-          "value": 0.22,
-          "ev_porcentaje": 22.0,
-          "ev_pinn": 22.0,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "ALTO VALOR",
-          "cuota": 2.0,
-          "casa": "Unibet",
+        "Arizona Diamondbacks": {
+          "value": -0.012,
+          "ev_porcentaje": -1.2,
+          "ev_pinn": -1.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.62,
+          "casa": "FanDuel",
           "pinn_prob": 61.0
         },
-        "Vegas Golden Knights": {
-          "value": 0.229,
-          "ev_porcentaje": 22.9,
-          "ev_pinn": 22.9,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "ALTO VALOR",
-          "cuota": 3.15,
-          "casa": "Unibet",
+        "Colorado Rockies": {
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.5,
+          "casa": "BetMGM",
           "pinn_prob": 39.0
         }
       },
       "prediccion_principal": {
-        "mercado": "Vegas Golden Knights",
-        "prob": 39.0,
-        "ev": 22.9
+        "mercado": "Arizona Diamondbacks",
+        "prob": 61.0,
+        "ev": -1.2
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1108,38 +846,38 @@
         "Montréal Canadiens": 3.7
       },
       "probabilidades": {
-        "Carolina Hurricanes": 64.6,
-        "Montréal Canadiens": 35.4
+        "Carolina Hurricanes": 65.6,
+        "Montréal Canadiens": 34.4
       },
-      "confianza": 64.6,
+      "confianza": 65.6,
       "value_bets": {
         "Carolina Hurricanes": {
-          "value": 0.157,
-          "ev_porcentaje": 15.7,
-          "ev_pinn": 15.7,
+          "value": 0.174,
+          "ev_porcentaje": 17.4,
+          "ev_pinn": 17.4,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
           "cuota": 1.79,
           "casa": "Unibet",
-          "pinn_prob": 64.6
+          "pinn_prob": 65.6
         },
         "Montréal Canadiens": {
-          "value": 0.309,
-          "ev_porcentaje": 30.9,
-          "ev_pinn": 30.9,
+          "value": 0.273,
+          "ev_porcentaje": 27.3,
+          "ev_pinn": 27.3,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
           "cuota": 3.7,
           "casa": "Unibet",
-          "pinn_prob": 35.4
+          "pinn_prob": 34.4
         }
       },
       "prediccion_principal": {
         "mercado": "Montréal Canadiens",
-        "prob": 35.4,
-        "ev": 30.9
+        "prob": 34.4,
+        "ev": 27.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1979,59 +1717,7 @@
       "forma_visita": [],
       "h2h": {},
       "movimiento": null
-    },
-    {
-      "local": "Orlando Storm",
-      "visitante": "DC Defenders",
-      "liga": "UFL",
-      "liga_code": "americanfootball_ufl",
-      "deporte": "UFL",
-      "hora": "19:00",
-      "cuotas": {
-        "DC Defenders": 2.1,
-        "Orlando Storm": 1.83
-      },
-      "probabilidades": {
-        "DC Defenders": 45.1,
-        "Orlando Storm": 54.9
-      },
-      "confianza": 54.9,
-      "value_bets": {
-        "DC Defenders": {
-          "value": -0.053,
-          "ev_porcentaje": -5.3,
-          "ev_pinn": -5.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.1,
-          "casa": "BetMGM",
-          "pinn_prob": 45.1
-        },
-        "Orlando Storm": {
-          "value": 0.005,
-          "ev_porcentaje": 0.5,
-          "ev_pinn": 0.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
-          "casa": "DraftKings",
-          "pinn_prob": 54.9
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Orlando Storm",
-        "prob": 54.9,
-        "ev": 0.5
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
     }
   ],
-  "generado": "21:48:01"
+  "generado": "22:09:32"
 }
