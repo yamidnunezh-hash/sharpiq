@@ -1,8 +1,18 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-24 10:00
+// Actualizado: 2026-05-24 13:30
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
+  {
+    fecha:      "24/05/26",
+    partido:    "AC Milan vs Cagliari",
+    liga:       "Serie A",
+    prediccion: "Gana AC Milan",
+    cuota:      "1.33",
+    hora:       "13:45 COT",
+    status:     "free",
+    resultado:  "pendiente"
+  },
   {
     fecha:      "24/05/26",
     partido:    "Manchester City vs Aston Villa",
