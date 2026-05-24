@@ -5,26 +5,6 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "23/05/26",
-    partido:    "Flamengo vs Palmeiras",
-    liga:       "Brasileirao",
-    prediccion: "Empate",
-    cuota:      "3.45",
-    hora:       "19:00 COT",
-    status:     "free",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "23/05/26",
-    partido:    "Chicago Fire vs Toronto FC",
-    liga:       "MLS",
-    prediccion: "over325",
-    cuota:      "2.18",
-    hora:       "19:30 COT",
-    status:     "free",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "23/05/26",
     partido:    "Carolina Hurricanes vs Montréal Canadiens",
     liga:       "NHL",
     prediccion: "Montréal Canadiens — EV +30%",
@@ -40,15 +20,6 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Arizona Diamondbacks",
     cuota:      "1.57",
     hora:       "21:11 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "24/05/26",
-    partido:    "Vegas Golden Knights vs Colorado Avalanche",
-    liga:       "NHL",
-    prediccion: "Vegas Golden Knights — EV +24%",
-    cuota:      "2.8",
-    hora:       "19:00 COT",
     status:     "vip"
   },
   {
@@ -72,4 +43,28 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "24/05/26",
+    partido:    "Vegas Golden Knights vs Colorado Avalanche",
+    liga:       "NHL",
+    prediccion: "Vegas Golden Knights — EV +24%",
+    cuota:      "2.8",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "23/05/26",
+    partido:    "Chicago Fire vs Toronto FC",
+    liga:       "MLS",
+    prediccion: "over325",
+    cuota:      "2.18",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "23/05/26",
+    partido:    "Flamengo vs Palmeiras",
+    liga:       "Brasileirao",
+    prediccion: "Empate",
+    cuota:      "3.45",
+    resultado:  "loss"
+  },
 ];
