@@ -1054,24 +1054,29 @@ def obtener_cuotas_liga(sport_key):
         return _cache_cuotas[sport_key]
     try:
         url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
-        # Deportes americanos: incluir región us para más casas
+        _SPORTS_SOCCER = {"soccer_epl","soccer_spain_la_liga","soccer_germany_bundesliga",
+                          "soccer_italy_serie_a","soccer_france_ligue_one","soccer_usa_mls",
+                          "soccer_conmebol_copa_libertadores","soccer_conmebol_copa_sudamericana",
+                          "soccer_brazil_campeonato","soccer_argentina_primera_division"}
         if sport_key in _SPORTS_US:
-            regions   = "eu,uk,us"
             bookmakers = "pinnacle,draftkings,fanduel,bet365,betmgm,unibet"
             markets    = "h2h,spreads,totals"
-        else:
-            regions   = "eu,uk"
+        elif sport_key in _SPORTS_SOCCER:
             bookmakers = "pinnacle,bet365,betfair,unibet,williamhill,bwin"
             markets    = "h2h,totals,btts,double_chance,draw_no_bet"
+        else:
+            bookmakers = "pinnacle,bet365,betfair,unibet,williamhill,bwin"
+            markets    = "h2h,totals"
+        # bookmakers y regions son mutuamente exclusivos en The Odds API v4
         params = {
             "apiKey":      ODDS_API_KEY,
-            "regions":     regions,
+            "bookmakers":  bookmakers,
             "markets":     markets,
             "oddsFormat":  "decimal",
-            "bookmakers":  bookmakers,
         }
         r = requests.get(url, params=params, timeout=15)
         if r.status_code != 200:
+            print(f"  Odds API {sport_key}: HTTP {r.status_code} — {r.text[:120]}")
             return []
         data = r.json()
         _cache_cuotas[sport_key] = data
@@ -1092,16 +1097,16 @@ def _fetch_odds_ext(sport_key):
         return _cache_cuotas_ext[sport_key]
     try:
         url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
+        # bookmakers y regions son mutuamente exclusivos en The Odds API v4
         params = {
             "apiKey":      ODDS_API_KEY,
-            "regions":     "eu,uk",
+            "bookmakers":  "pinnacle,bet365,betfair,unibet,williamhill,bwin",
             "markets":     "h2h,totals",
             "oddsFormat":  "decimal",
-            "bookmakers":  "pinnacle,bet365,betfair,unibet,williamhill,bwin",
         }
         r = requests.get(url, params=params, timeout=20)
         if r.status_code != 200:
-            print(f"  Odds ext {sport_key}: HTTP {r.status_code}")
+            print(f"  Odds ext {sport_key}: HTTP {r.status_code} — {r.text[:120]}")
             return []
         data = r.json()
         _cache_cuotas_ext[sport_key] = data

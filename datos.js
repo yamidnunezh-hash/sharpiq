@@ -1,26 +1,17 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-23 10:21
+// Actualizado: 2026-05-24 10:00
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
   {
-    fecha:      "23/05/26",
-    partido:    "Carolina Hurricanes vs Montréal Canadiens",
-    liga:       "NHL",
-    prediccion: "Montréal Canadiens — EV +30%",
-    cuota:      "3.70",
-    hora:       "18:20 COT",
+    fecha:      "24/05/26",
+    partido:    "Manchester City vs Aston Villa",
+    liga:       "Premier League",
+    prediccion: "Over 3.25 Goles",
+    cuota:      "1.85",
+    hora:       "10:00 COT",
     status:     "free",
     resultado:  "pendiente"
-  },
-  {
-    fecha:      "23/05/26",
-    partido:    "Arizona Diamondbacks vs Colorado Rockies",
-    liga:       "MLB",
-    prediccion: "Gana Arizona Diamondbacks",
-    cuota:      "1.57",
-    hora:       "21:11 COT",
-    status:     "vip"
   },
   {
     fecha:      "24/05/26",
@@ -55,8 +46,32 @@ const PREDICCIONES_HISTORIAL = [
     fecha:      "23/05/26",
     partido:    "Chicago Fire vs Toronto FC",
     liga:       "MLS",
-    prediccion: "over325",
+    prediccion: "Over 3.25 Goles",
     cuota:      "2.18",
     resultado:  "loss"
   },
+  {
+    fecha:      "23/05/26",
+    partido:    "Flamengo vs Palmeiras",
+    liga:       "Brasileirao",
+    prediccion: "Empate",
+    cuota:      "3.45",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "23/05/26",
+    partido:    "Carolina Hurricanes vs Montréal Canadiens",
+    liga:       "NHL",
+    prediccion: "Montréal Canadiens — EV +30%",
+    cuota:      "3.70",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "23/05/26",
+    partido:    "Arizona Diamondbacks vs Colorado Rockies",
+    liga:       "MLB",
+    prediccion: "Gana Arizona Diamondbacks",
+    cuota:      "1.57",
+    resultado:  "pendiente"
+  }
 ];
