@@ -1,5 +1,5 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-24 13:30
+// Actualizado: 2026-05-24 15:00
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
@@ -10,16 +10,6 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana AC Milan",
     cuota:      "1.33",
     hora:       "13:45 COT",
-    status:     "free",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "24/05/26",
-    partido:    "Manchester City vs Aston Villa",
-    liga:       "Premier League",
-    prediccion: "Over 3.25 Goles",
-    cuota:      "1.85",
-    hora:       "10:00 COT",
     status:     "free",
     resultado:  "pendiente"
   },
@@ -44,6 +34,14 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "24/05/26",
+    partido:    "Manchester City vs Aston Villa",
+    liga:       "Premier League",
+    prediccion: "Over 3.25 Goles",
+    cuota:      "1.85",
+    resultado:  "win"
+  },
   {
     fecha:      "24/05/26",
     partido:    "Vegas Golden Knights vs Colorado Avalanche",
