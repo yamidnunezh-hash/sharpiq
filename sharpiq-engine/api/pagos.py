@@ -67,6 +67,36 @@ def listar_planes():
     return [{"key": k, **{f: v for f, v in v.items()}} for k, v in PLANES.items()]
 
 
+@router.post("/checkout-publico")
+def checkout_publico():
+    """Checkout sin autenticación — directo desde landing page."""
+    plan = PLANES["vip"]
+    payload = {
+        "items": [{
+            "title":       plan["nombre"],
+            "description": plan["descripcion"],
+            "quantity":    1,
+            "unit_price":  plan["precio"],
+            "currency_id": plan["moneda"],
+        }],
+        "back_urls": {
+            "success": "https://sharpiq.co/bienvenido.html?plan=vip",
+            "failure": "https://sharpiq.co/cuenta.html?error=pago",
+            "pending": "https://sharpiq.co/cuenta.html?pending=1",
+        },
+        "auto_return":      "approved",
+        "notification_url": "https://api.sharpiq.co/pagos/webhook",
+    }
+    r = http.post(f"{MP_BASE}/checkout/preferences", headers=_mp_headers(), json=payload, timeout=15)
+    if r.status_code not in (200, 201):
+        raise HTTPException(500, f"MercadoPago error: {r.text}")
+    data = r.json()
+    return {
+        "ok":           True,
+        "checkout_url": data.get("init_point") or data.get("sandbox_init_point"),
+    }
+
+
 @router.post("/suscribir/{plan_key}")
 def suscribir(plan_key: str, token=Depends(usuario_activo)):
     if plan_key not in PLANES:
