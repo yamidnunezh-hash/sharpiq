@@ -1,8 +1,26 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-24 15:00
+// Actualizado: 2026-05-25 18:00
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
+  {
+    fecha:      "30/05/26",
+    partido:    "PSG vs Arsenal",
+    liga:       "UEFA Champions League Final",
+    prediccion: "Gana Arsenal — EV +22%",
+    cuota:      "2.20",
+    hora:       "11:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "30/05/26",
+    partido:    "PSG vs Arsenal",
+    liga:       "UEFA Champions League Final",
+    prediccion: "Under 2.5 Goles — EV +18%",
+    cuota:      "1.90",
+    hora:       "11:00 COT",
+    status:     "vip"
+  },
   {
     fecha:      "25/05/26",
     partido:    "Racing Club vs Club Independiente Petrolero",
@@ -20,24 +38,17 @@ const PROXIMOS_EVENTOS = [
     cuota:      "1.29",
     hora:       "08:00 COT",
     status:     "vip"
-  },
-  {
-    fecha:      "24/05/26",
-    partido:    "Sao Paulo vs CA Boston River",
-    liga:       "Copa Sudamericana",
-    prediccion: "Victoria Visitante — EV +37%",
-    cuota:      "19.0",
-    hora:       "17:00 COT",
-    status:     "vip"
-  },
+  }
+];
+
+const PREDICCIONES_HISTORIAL = [
   {
     fecha:      "24/05/26",
     partido:    "Vit Kopriva vs Corentin Moutet",
     liga:       "ATP Roland Garros",
     prediccion: "Gana Corentin Moutet",
     cuota:      "1.55",
-    hora:       "04:00 COT",
-    status:     "vip"
+    resultado:  "pendiente"
   },
   {
     fecha:      "24/05/26",
@@ -45,21 +56,8 @@ const PROXIMOS_EVENTOS = [
     liga:       "WTA Roland Garros",
     prediccion: "Gana Liudmila Samsonova",
     cuota:      "1.3",
-    hora:       "04:00 COT",
-    status:     "vip"
+    resultado:  "pendiente"
   },
-  {
-    fecha:      "23/05/26",
-    partido:    "Lech Poznań vs Wisła Płock",
-    liga:       "Ekstraklasa",
-    prediccion: "Victoria Visitante — EV +17%",
-    cuota:      "9.0",
-    hora:       "10:30 COT",
-    status:     "vip"
-  }
-];
-
-const PREDICCIONES_HISTORIAL = [
   {
     fecha:      "24/05/26",
     partido:    "Inter Miami CF vs Philadelphia Union",
