@@ -4,6 +4,24 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "26/05/26",
+    partido:    "Vit Kopriva vs Corentin Moutet",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Corentin Moutet",
+    cuota:      "1.55",
+    hora:       "06:30 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "26/05/26",
+    partido:    "Marin Cilic vs Moise Kouame",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Marin Cilic",
+    cuota:      "1.29",
+    hora:       "04:00 COT",
+    status:     "vip"
+  },
+  {
     fecha:      "30/05/26",
     partido:    "PSG vs Arsenal",
     liga:       "UEFA Champions League Final",
