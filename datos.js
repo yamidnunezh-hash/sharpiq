@@ -14,19 +14,37 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "25/05/26",
+    partido:    "Mariano Navone vs Jenson Brooksby",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Mariano Navone",
+    cuota:      "1.29",
+    hora:       "08:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "24/05/26",
+    partido:    "Sao Paulo vs CA Boston River",
+    liga:       "Copa Sudamericana",
+    prediccion: "Victoria Visitante — EV +37%",
+    cuota:      "19.0",
+    hora:       "17:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "24/05/26",
     partido:    "Vit Kopriva vs Corentin Moutet",
     liga:       "ATP Roland Garros",
     prediccion: "Gana Corentin Moutet",
     cuota:      "1.55",
-    hora:       "06:30 COT",
+    hora:       "04:00 COT",
     status:     "vip"
   },
   {
-    fecha:      "25/05/26",
-    partido:    "Marin Cilic vs Moise Kouame",
-    liga:       "ATP Roland Garros",
-    prediccion: "Gana Marin Cilic",
-    cuota:      "1.29",
+    fecha:      "24/05/26",
+    partido:    "Liudmila Samsonova vs Jil Teichmann",
+    liga:       "WTA Roland Garros",
+    prediccion: "Gana Liudmila Samsonova",
+    cuota:      "1.3",
     hora:       "04:00 COT",
     status:     "vip"
   },

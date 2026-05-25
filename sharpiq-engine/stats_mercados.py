@@ -14,6 +14,21 @@ DB_PATH  = os.path.join(BASE_DIR, "sharpiq.db")
 
 PROMEDIO_CORNERS_LIGA  = 10.5   # corners totales promedio por partido
 PROMEDIO_TARJETAS_LIGA = 3.8    # tarjetas totales promedio por partido
+PROMEDIO_SHOTS_LIGA    = 4.2    # disparos al arco por equipo por partido
+CONVERSION_RATE        = 0.28   # fracción de disparos al arco que terminan en gol
+
+DEFAULTS_SHOTS_LIGA = {
+    "39":  4.8,   # Premier League
+    "140": 4.6,   # La Liga
+    "78":  5.0,   # Bundesliga
+    "135": 4.3,   # Serie A
+    "61":  4.4,   # Ligue 1
+    "2":   4.5,   # Champions League
+    "13":  3.8,   # Copa Libertadores
+    "11":  3.7,   # Copa Sudamericana
+    "71":  4.0,   # Brasileirao
+    "128": 3.6,   # Liga BetPlay
+}
 
 
 # ── CACHÉ PERSISTENTE EN SQLITE ────────────────────────────────────
@@ -220,6 +235,51 @@ def modelo_tarjetas(lambda_local, lambda_visita):
         out[f"tarjetas_under{tag}"] = round(100 - ov, 1)
     return out
 
+def calcular_disparos_visitante_esperados(local, visitante, liga_id):
+    """
+    λ de disparos al arco del equipo visitante.
+    Usa los disparos al arco propios del visitante con descuento de localía (×0.85).
+    """
+    sv  = obtener_stats_ext(visitante, liga_id) or _defaults(liga_id)
+    avg = DEFAULTS_SHOTS_LIGA.get(str(liga_id), PROMEDIO_SHOTS_LIGA)
+
+    # disparos_contra almacena shots on target del equipo (ver obtener_stats_ext)
+    shots_vis = sv.get("disparos_contra") or avg
+    if shots_vis < 0.5:
+        shots_vis = avg
+
+    # Visitante genera ~85% de sus disparos respecto a cuando juega de local
+    return round(shots_vis * 0.85, 2)
+
+
+def calcular_paradas_esperadas(lambda_shots_vis, goles_visita_esperados):
+    """
+    λ de paradas del portero local = disparos al arco visitante - goles esperados visitante.
+    """
+    paradas = lambda_shots_vis - goles_visita_esperados
+    return round(max(paradas, 0.5), 2)
+
+
+def modelo_disparos_al_arco(lambda_shots):
+    """Distribución Poisson para remates al arco del equipo visitante."""
+    out = {"disparos_esperados": round(lambda_shots, 1)}
+    for k in [2, 3, 4, 5]:
+        ov = round((1 - sum(poisson.pmf(i, lambda_shots) for i in range(k))) * 100, 1)
+        out[f"disp_vis_over{k}"]  = ov
+        out[f"disp_vis_under{k}"] = round(100 - ov, 1)
+    return out
+
+
+def modelo_paradas_portero(lambda_paradas):
+    """Distribución Poisson para paradas del portero local."""
+    out = {"paradas_esperadas": round(lambda_paradas, 1)}
+    for k in [2, 3, 4]:
+        ov = round((1 - sum(poisson.pmf(i, lambda_paradas) for i in range(k))) * 100, 1)
+        out[f"paradas_local_over{k}"]  = ov
+        out[f"paradas_local_under{k}"] = round(100 - ov, 1)
+    return out
+
+
 def modelo_handicap_asiatico(probs_poisson):
     """
     Calcula handicap asiático para líneas -0.5, -1, -1.5, -2 del local.
@@ -255,7 +315,8 @@ def modelo_handicap_asiatico(probs_poisson):
 
 # ── EV PARA NUEVOS MERCADOS ───────────────────────────────────────
 
-def calcular_ev_mercados_ext(probs_corners, probs_tarjetas, probs_ah, cuotas_ext=None):
+def calcular_ev_mercados_ext(probs_corners, probs_tarjetas, probs_ah,
+                             probs_disparos=None, probs_paradas=None, cuotas_ext=None):
     """
     Calcula EV para corners/tarjetas/handicap.
     cuotas_ext: dict con cuotas reales de casa de apuestas (opcional).
@@ -306,6 +367,26 @@ def calcular_ev_mercados_ext(probs_corners, probs_tarjetas, probs_ah, cuotas_ext
         c = cuotas_ext.get(mk, round(100 / prob * 0.95, 2) if prob > 0 else None)
         if c: mercados[mk] = _ev(prob, c)
 
+    # Remates al arco del visitante (Over/Under 2.5 – 5.5)
+    if probs_disparos:
+        for k in [2, 3, 4, 5]:
+            for sufijo in ("over", "under"):
+                pk = f"disp_vis_{sufijo}{k}"
+                prob = probs_disparos.get(pk)
+                if prob and prob > 0:
+                    c = cuotas_ext.get(pk, round(100 / prob * 0.95, 2))
+                    mercados[pk] = _ev(prob, c)
+
+    # Paradas del portero local (Over/Under 2.5 – 4.5)
+    if probs_paradas:
+        for k in [2, 3, 4]:
+            for sufijo in ("over", "under"):
+                pk = f"paradas_local_{sufijo}{k}"
+                prob = probs_paradas.get(pk)
+                if prob and prob > 0:
+                    c = cuotas_ext.get(pk, round(100 / prob * 0.95, 2))
+                    mercados[pk] = _ev(prob, c)
+
     return mercados
 
 
@@ -321,15 +402,25 @@ def analizar_mercados_ext(local, visitante, liga_id, probs_poisson):
     cl, cv = calcular_corners_esperados(local, visitante, liga_id)
     tl, tv = calcular_tarjetas_esperadas(local, visitante, liga_id)
 
-    probs_c  = modelo_corners(cl, cv)
-    probs_t  = modelo_tarjetas(tl, tv)
-    probs_ah = modelo_handicap_asiatico(probs_poisson)
+    lambda_disp_vis = calcular_disparos_visitante_esperados(local, visitante, liga_id)
+    goles_visita    = probs_poisson.get("goles_esperados_visita", 1.1)
+    lambda_paradas  = calcular_paradas_esperadas(lambda_disp_vis, goles_visita)
 
-    ev_ext = calcular_ev_mercados_ext(probs_c, probs_t, probs_ah)
+    probs_c    = modelo_corners(cl, cv)
+    probs_t    = modelo_tarjetas(tl, tv)
+    probs_ah   = modelo_handicap_asiatico(probs_poisson)
+    probs_disp = modelo_disparos_al_arco(lambda_disp_vis)
+    probs_par  = modelo_paradas_portero(lambda_paradas)
+
+    print(f"    Disparos vis: λ={lambda_disp_vis} | Paradas GK: λ={lambda_paradas}")
+
+    ev_ext = calcular_ev_mercados_ext(probs_c, probs_t, probs_ah, probs_disp, probs_par)
 
     return {
-        "corners":  probs_c,
-        "tarjetas": probs_t,
-        "handicap": probs_ah,
-        "ev_ext":   ev_ext,
+        "corners":   probs_c,
+        "tarjetas":  probs_t,
+        "handicap":  probs_ah,
+        "disparos":  probs_disp,
+        "paradas":   probs_par,
+        "ev_ext":    ev_ext,
     }
