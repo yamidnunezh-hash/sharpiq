@@ -550,7 +550,7 @@
         "pinnacle_over225": 2.0,
         "under225": 1.84,
         "under225_casa": "Pinnacle",
-        "pinnacle_under225": 1.84
+        "pinnacle_under225": 1.85
       },
       "probabilidades": {
         "victoria_visita": 19.3,
@@ -612,7 +612,7 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.84,
+          "cuota": 1.85,
           "casa": "Pinnacle",
           "pinn_prob": 52.1
         }
@@ -752,8 +752,8 @@
         "2": 5.88,
         "2_casa": "Pinnacle",
         "pinnacle_2": 5.88,
-        "X": 3.72,
-        "X_casa": "Pinnacle",
+        "X": 3.75,
+        "X_casa": "Unibet",
         "pinnacle_X": 3.72,
         "over225": 1.98,
         "over225_casa": "Pinnacle",
@@ -794,14 +794,14 @@
           "pinn_prob": 16.0
         },
         "empate": {
-          "value": -0.057,
-          "ev_porcentaje": -5.7,
-          "ev_pinn": -5.7,
+          "value": -0.049,
+          "ev_porcentaje": -4.9,
+          "ev_pinn": -4.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.72,
-          "casa": "Pinnacle",
+          "cuota": 3.75,
+          "casa": "Unibet",
           "pinn_prob": 25.4
         },
         "over225": {
@@ -2006,7 +2006,7 @@
       "hora": "00:30",
       "fecha_evento": "2026-05-26",
       "cuotas": {
-        "2": 9.5,
+        "2": 10.0,
         "2_casa": "Unibet",
         "pinnacle_2": 8.69,
         "1": 1.36,
@@ -2032,13 +2032,13 @@
       "confianza": 68.2,
       "value_bets": {
         "victoria_visita": {
-          "value": 0.014,
-          "ev_porcentaje": 1.4,
-          "ev_pinn": 1.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 9.5,
+          "value": 0.068,
+          "ev_porcentaje": 6.8,
+          "ev_pinn": 6.8,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "VALOR",
+          "cuota": 10.0,
           "casa": "Unibet",
           "pinn_prob": 10.7
         },
@@ -2090,7 +2090,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Visitante",
         "prob": 10.7,
-        "ev": 1.4
+        "ev": 6.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -2293,6 +2293,951 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.87,
+          "casa": "Pinnacle",
+          "pinn_prob": 50.7
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Victoria Visitante",
+        "prob": 11.9,
+        "ev": 1.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "sede_neutral": false,
+      "arbitro": "",
+      "forma_local": null,
+      "forma_visita": null,
+      "h2h": null,
+      "movimiento": null,
+      "mercados_ext": {}
+    },
+    {
+      "local": "Caracas FC",
+      "visitante": "Botafogo",
+      "liga": "Copa Sudamericana",
+      "liga_code": "soccer_conmebol_copa_sudamericana",
+      "id": "520c3013152f3259be3f3521707f39d9",
+      "hora": "22:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "2": 2.32,
+        "2_casa": "Pinnacle",
+        "pinnacle_2": 2.32,
+        "1": 3.35,
+        "1_casa": "Unibet",
+        "pinnacle_1": 3.34,
+        "X": 3.1,
+        "X_casa": "Unibet",
+        "pinnacle_X": 2.99,
+        "over20": 1.77,
+        "over20_casa": "Pinnacle",
+        "pinnacle_over20": 1.77,
+        "under20": 2.04,
+        "under20_casa": "Pinnacle",
+        "pinnacle_under20": 2.04
+      },
+      "probabilidades": {
+        "victoria_visita": 40.5,
+        "victoria_local": 28.1,
+        "empate": 31.4,
+        "over20": 53.5,
+        "under20": 46.5
+      },
+      "confianza": 53.5,
+      "value_bets": {
+        "victoria_visita": {
+          "value": -0.061,
+          "ev_porcentaje": -6.1,
+          "ev_pinn": -6.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.32,
+          "casa": "Pinnacle",
+          "pinn_prob": 40.5
+        },
+        "victoria_local": {
+          "value": -0.058,
+          "ev_porcentaje": -5.8,
+          "ev_pinn": -5.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.35,
+          "casa": "Unibet",
+          "pinn_prob": 28.1
+        },
+        "empate": {
+          "value": -0.026,
+          "ev_porcentaje": -2.6,
+          "ev_pinn": -2.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.1,
+          "casa": "Unibet",
+          "pinn_prob": 31.4
+        },
+        "over20": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.77,
+          "casa": "Pinnacle",
+          "pinn_prob": 53.5
+        },
+        "under20": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.04,
+          "casa": "Pinnacle",
+          "pinn_prob": 46.5
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Empate",
+        "prob": 31.4,
+        "ev": -2.6
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "sede_neutral": false,
+      "arbitro": "",
+      "forma_local": null,
+      "forma_visita": null,
+      "h2h": null,
+      "movimiento": null,
+      "mercados_ext": {}
+    },
+    {
+      "local": "Club Cienciano",
+      "visitante": "CA Juventud",
+      "liga": "Copa Sudamericana",
+      "liga_code": "soccer_conmebol_copa_sudamericana",
+      "id": "125aad3dffc0581a496bd6369e7721d0",
+      "hora": "22:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "2": 5.2,
+        "2_casa": "Unibet",
+        "pinnacle_2": 5.05,
+        "1": 1.67,
+        "1_casa": "William Hill",
+        "pinnacle_1": 1.62,
+        "X": 3.87,
+        "X_casa": "Pinnacle",
+        "pinnacle_X": 3.87,
+        "over25": 1.8,
+        "over25_casa": "Pinnacle",
+        "pinnacle_over25": 1.8,
+        "under25": 2.0,
+        "under25_casa": "Pinnacle",
+        "pinnacle_under25": 2.0
+      },
+      "probabilidades": {
+        "victoria_visita": 18.4,
+        "victoria_local": 57.5,
+        "empate": 24.1,
+        "over25": 52.6,
+        "under25": 47.4
+      },
+      "confianza": 57.5,
+      "value_bets": {
+        "victoria_visita": {
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 5.2,
+          "casa": "Unibet",
+          "pinn_prob": 18.4
+        },
+        "victoria_local": {
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.67,
+          "casa": "William Hill",
+          "pinn_prob": 57.5
+        },
+        "empate": {
+          "value": -0.069,
+          "ev_porcentaje": -6.9,
+          "ev_pinn": -6.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.87,
+          "casa": "Pinnacle",
+          "pinn_prob": 24.1
+        },
+        "over25": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.8,
+          "casa": "Pinnacle",
+          "pinn_prob": 52.6
+        },
+        "under25": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "Pinnacle",
+          "pinn_prob": 47.4
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Victoria Local",
+        "prob": 57.5,
+        "ev": -4.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "sede_neutral": false,
+      "arbitro": "",
+      "forma_local": null,
+      "forma_visita": null,
+      "h2h": null,
+      "movimiento": null,
+      "mercados_ext": {}
+    },
+    {
+      "local": "Racing Club",
+      "visitante": "Club Independiente Petrolero",
+      "liga": "Copa Sudamericana",
+      "liga_code": "soccer_conmebol_copa_sudamericana",
+      "id": "18822e32af5a8dd6cc5c9df59abf8204",
+      "hora": "22:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "2": 46.0,
+        "2_casa": "William Hill",
+        "pinnacle_2": 21.01,
+        "1": 1.07,
+        "1_casa": "William Hill",
+        "pinnacle_1": 1.07,
+        "X": 11.38,
+        "X_casa": "Pinnacle",
+        "pinnacle_X": 11.38,
+        "over35": 1.83,
+        "over35_casa": "Unibet",
+        "pinnacle_over35": 1.82,
+        "under35": 1.93,
+        "under35_casa": "Pinnacle",
+        "pinnacle_under35": 1.93
+      },
+      "probabilidades": {
+        "victoria_visita": 4.4,
+        "victoria_local": 87.3,
+        "empate": 8.2,
+        "over35": 51.5,
+        "under35": 48.5
+      },
+      "confianza": 87.3,
+      "value_bets": {
+        "victoria_visita": {
+          "value": 1.046,
+          "ev_porcentaje": 104.6,
+          "ev_pinn": 104.6,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 46.0,
+          "casa": "William Hill",
+          "pinn_prob": 4.4
+        },
+        "victoria_local": {
+          "value": -0.072,
+          "ev_porcentaje": -7.2,
+          "ev_pinn": -7.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.36,
+          "casa": "William Hill",
+          "pinn_prob": 68.2
+        },
+        "empate": {
+          "value": -0.051,
+          "ev_porcentaje": -5.1,
+          "ev_pinn": -5.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.5,
+          "casa": "Unibet",
+          "pinn_prob": 21.1
+        },
+        "over225": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.9,
+          "casa": "Pinnacle",
+          "pinn_prob": 50.0
+        },
+        "under225": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.9,
+          "casa": "Pinnacle",
+          "pinn_prob": 48.5
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Victoria Visitante",
+        "prob": 4.4,
+        "ev": 104.6
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "sede_neutral": false,
+      "arbitro": "",
+      "forma_local": null,
+      "forma_visita": null,
+      "h2h": null,
+      "movimiento": null,
+      "mercados_ext": {}
+    },
+    {
+      "local": "Clube Atlético Mineiro",
+      "visitante": "Puerto Cabello",
+      "liga": "Copa Sudamericana",
+      "liga_code": "soccer_conmebol_copa_sudamericana",
+      "id": "db444756ff40c08dc5e2438f3696f580",
+      "hora": "22:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "1": 1.29,
+        "1_casa": "William Hill",
+        "pinnacle_1": 1.26,
+        "2": 12.0,
+        "2_casa": "Unibet",
+        "pinnacle_2": 10.78,
+        "X": 5.34,
+        "X_casa": "Pinnacle",
+        "pinnacle_X": 5.34,
+        "over25": 1.91,
+        "over25_casa": "Pinnacle",
+        "pinnacle_over25": 1.91,
+        "under25": 1.88,
+        "under25_casa": "Pinnacle",
+        "pinnacle_under25": 1.88
+      },
+      "probabilidades": {
+        "victoria_local": 73.9,
+        "victoria_visita": 8.6,
+        "empate": 17.4,
+        "over25": 49.6,
+        "under25": 50.4
+      },
+      "confianza": 73.9,
+      "value_bets": {
+        "victoria_local": {
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.29,
+          "casa": "William Hill",
+          "pinn_prob": 73.9
+        },
+        "victoria_visita": {
+          "value": 0.037,
+          "ev_porcentaje": 3.7,
+          "ev_pinn": 3.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 12.0,
+          "casa": "Unibet",
+          "pinn_prob": 8.6
+        },
+        "empate": {
+          "value": -0.069,
+          "ev_porcentaje": -6.9,
+          "ev_pinn": -6.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 5.34,
+          "casa": "Pinnacle",
+          "pinn_prob": 17.4
+        },
+        "over25": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "Pinnacle",
+          "pinn_prob": 49.6
+        },
+        "under25": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "Pinnacle",
+          "pinn_prob": 50.4
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Victoria Visitante",
+        "prob": 8.6,
+        "ev": 3.7
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "sede_neutral": false,
+      "arbitro": "",
+      "forma_local": null,
+      "forma_visita": null,
+      "h2h": null,
+      "movimiento": null,
+      "mercados_ext": {}
+    },
+    {
+      "local": "River Plate",
+      "visitante": "Blooming",
+      "liga": "Copa Sudamericana",
+      "liga_code": "soccer_conmebol_copa_sudamericana",
+      "id": "1b229e7ce8898ced994d01227d077a55",
+      "hora": "00:30",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "2": 29.0,
+        "2_casa": "William Hill",
+        "pinnacle_2": 21.95,
+        "1": 1.08,
+        "1_casa": "William Hill",
+        "pinnacle_1": 1.07,
+        "X": 11.47,
+        "X_casa": "Pinnacle",
+        "pinnacle_X": 11.47,
+        "over35": 1.85,
+        "over35_casa": "Pinnacle",
+        "pinnacle_over35": 1.85,
+        "under35": 1.91,
+        "under35_casa": "Pinnacle",
+        "pinnacle_under35": 1.91
+      },
+      "probabilidades": {
+        "victoria_visita": 4.3,
+        "victoria_local": 87.6,
+        "empate": 8.2,
+        "over35": 50.8,
+        "under35": 49.2
+      },
+      "confianza": 87.6,
+      "value_bets": {
+        "victoria_visita": {
+          "value": 0.238,
+          "ev_porcentaje": 23.8,
+          "ev_pinn": 23.8,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 29.0,
+          "casa": "William Hill",
+          "pinn_prob": 4.3
+        },
+        "victoria_local": {
+          "value": -0.054,
+          "ev_porcentaje": -5.4,
+          "ev_pinn": -5.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.08,
+          "casa": "William Hill",
+          "pinn_prob": 87.6
+        },
+        "empate": {
+          "value": -0.063,
+          "ev_porcentaje": -6.3,
+          "ev_pinn": -6.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 11.47,
+          "casa": "Pinnacle",
+          "pinn_prob": 8.2
+        },
+        "over35": {
+          "value": -0.06,
+          "ev_porcentaje": -6.0,
+          "ev_pinn": -6.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Pinnacle",
+          "pinn_prob": 50.8
+        },
+        "under35": {
+          "value": -0.06,
+          "ev_porcentaje": -6.0,
+          "ev_pinn": -6.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "Pinnacle",
+          "pinn_prob": 49.2
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Victoria Visitante",
+        "prob": 4.3,
+        "ev": 23.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "sede_neutral": false,
+      "arbitro": "",
+      "forma_local": null,
+      "forma_visita": null,
+      "h2h": null,
+      "movimiento": null,
+      "mercados_ext": {}
+    },
+    {
+      "local": "Bragantino-SP",
+      "visitante": "Carabobo FC",
+      "liga": "Copa Sudamericana",
+      "liga_code": "soccer_conmebol_copa_sudamericana",
+      "id": "7446fc4c1d2a4c258b0e02da39a2e695",
+      "hora": "00:30",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "1": 1.32,
+        "1_casa": "Unibet",
+        "pinnacle_1": 1.28,
+        "2": 11.03,
+        "2_casa": "Pinnacle",
+        "pinnacle_2": 11.03,
+        "X": 4.84,
+        "X_casa": "Pinnacle",
+        "pinnacle_X": 4.84,
+        "over25": 1.92,
+        "over25_casa": "Pinnacle",
+        "pinnacle_over25": 1.92,
+        "under25": 1.87,
+        "under25_casa": "Pinnacle",
+        "pinnacle_under25": 1.87
+      },
+      "probabilidades": {
+        "victoria_local": 72.4,
+        "victoria_visita": 8.4,
+        "empate": 19.2,
+        "over25": 49.3,
+        "under25": 50.7
+      },
+      "confianza": 72.4,
+      "value_bets": {
+        "victoria_local": {
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.32,
+          "casa": "Unibet",
+          "pinn_prob": 72.4
+        },
+        "victoria_visita": {
+          "value": -0.073,
+          "ev_porcentaje": -7.3,
+          "ev_pinn": -7.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 11.03,
+          "casa": "Pinnacle",
+          "pinn_prob": 8.4
+        },
+        "empate": {
+          "value": -0.073,
+          "ev_porcentaje": -7.3,
+          "ev_pinn": -7.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.84,
+          "casa": "Pinnacle",
+          "pinn_prob": 19.2
+        },
+        "over25": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "Pinnacle",
+          "pinn_prob": 49.3
+        },
+        "under25": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "Pinnacle",
+          "pinn_prob": 50.7
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Victoria Local",
+        "prob": 72.4,
+        "ev": -4.4
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "sede_neutral": false,
+      "arbitro": "",
+      "forma_local": null,
+      "forma_visita": null,
+      "h2h": null,
+      "movimiento": null,
+      "mercados_ext": {}
+    },
+    {
+      "local": "Crystal Palace",
+      "visitante": "Rayo Vallecano",
+      "liga": "Conference League",
+      "liga_code": "soccer_uefa_europa_conference_league",
+      "id": "0d0d2abdb564b96cc286e3cf26a75fe2",
+      "hora": "19:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "1": 1.95,
+        "1_casa": "Pinnacle",
+        "pinnacle_1": 1.95,
+        "2": 4.2,
+        "2_casa": "Pinnacle",
+        "pinnacle_2": 4.2,
+        "X": 3.5,
+        "X_casa": "Pinnacle",
+        "pinnacle_X": 3.5,
+        "over225": 1.89,
+        "over225_casa": "Pinnacle",
+        "pinnacle_over225": 1.89,
+        "under225": 2.0,
+        "under225_casa": "Pinnacle",
+        "pinnacle_under225": 2.0
+      },
+      "probabilidades": {
+        "victoria_local": 49.5,
+        "victoria_visita": 23.0,
+        "empate": 27.6,
+        "over225": 51.4,
+        "under225": 48.6
+      },
+      "confianza": 51.4,
+      "value_bets": {
+        "victoria_local": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "Pinnacle",
+          "pinn_prob": 49.5
+        },
+        "victoria_visita": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.2,
+          "casa": "Pinnacle",
+          "pinn_prob": 23.0
+        },
+        "empate": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.5,
+          "casa": "Pinnacle",
+          "pinn_prob": 27.6
+        },
+        "over225": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.89,
+          "casa": "Pinnacle",
+          "pinn_prob": 51.4
+        },
+        "under225": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "Pinnacle",
+          "pinn_prob": 48.6
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "over225",
+        "prob": 51.4,
+        "ev": -2.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "sede_neutral": false,
+      "arbitro": "",
+      "forma_local": null,
+      "forma_visita": null,
+      "h2h": null,
+      "movimiento": null,
+      "mercados_ext": {}
+    },
+    {
+      "local": "Olimpia Asunción",
+      "visitante": "Audax Italiano",
+      "liga": "Copa Sudamericana",
+      "liga_code": "soccer_conmebol_copa_sudamericana",
+      "id": "7bcd721d19153a50ac66ad416fd6054c",
+      "hora": "22:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "2": 5.17,
+        "2_casa": "Pinnacle",
+        "pinnacle_2": 5.17,
+        "1": 1.66,
+        "1_casa": "Unibet",
+        "pinnacle_1": 1.6,
+        "X": 3.95,
+        "X_casa": "Pinnacle",
+        "pinnacle_X": 3.95,
+        "over25": 1.86,
+        "over25_casa": "Unibet",
+        "pinnacle_over25": 1.81,
+        "under25": 1.99,
+        "under25_casa": "Pinnacle",
+        "pinnacle_under25": 1.99
+      },
+      "probabilidades": {
+        "victoria_visita": 18.1,
+        "victoria_local": 58.3,
+        "empate": 23.6,
+        "over25": 52.4,
+        "under25": 47.6
+      },
+      "confianza": 58.3,
+      "value_bets": {
+        "victoria_visita": {
+          "value": -0.067,
+          "ev_porcentaje": -6.7,
+          "ev_pinn": -6.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 5.17,
+          "casa": "Pinnacle",
+          "pinn_prob": 18.1
+        },
+        "victoria_local": {
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.66,
+          "casa": "Unibet",
+          "pinn_prob": 58.3
+        },
+        "empate": {
+          "value": -0.067,
+          "ev_porcentaje": -6.7,
+          "ev_pinn": -6.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.95,
+          "casa": "Pinnacle",
+          "pinn_prob": 23.6
+        },
+        "over25": {
+          "value": -0.026,
+          "ev_porcentaje": -2.6,
+          "ev_pinn": -2.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.86,
+          "casa": "Unibet",
+          "pinn_prob": 52.4
+        },
+        "under25": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.99,
+          "casa": "Pinnacle",
+          "pinn_prob": 47.6
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Over 2.5 Goles",
+        "prob": 52.4,
+        "ev": -2.6
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "sede_neutral": false,
+      "arbitro": "",
+      "forma_local": null,
+      "forma_visita": null,
+      "h2h": null,
+      "movimiento": null,
+      "mercados_ext": {}
+    },
+    {
+      "local": "Vasco da Gama",
+      "visitante": "Barracas Central",
+      "liga": "Copa Sudamericana",
+      "liga_code": "soccer_conmebol_copa_sudamericana",
+      "id": "fdced1442a035b7cc6c4fbe74793d735",
+      "hora": "22:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "2": 8.5,
+        "2_casa": "William Hill",
+        "pinnacle_2": 7.8,
+        "1": 1.37,
+        "1_casa": "Unibet",
+        "pinnacle_1": 1.34,
+        "X": 4.96,
+        "X_casa": "Pinnacle",
+        "pinnacle_X": 4.96,
+        "over275": 1.92,
+        "over275_casa": "Pinnacle",
+        "pinnacle_over275": 1.92,
+        "under275": 1.87,
+        "under275_casa": "Pinnacle",
+        "pinnacle_under275": 1.87
+      },
+      "probabilidades": {
+        "victoria_visita": 11.9,
+        "victoria_local": 69.4,
+        "empate": 18.7,
+        "over275": 49.3,
+        "under275": 50.7
+      },
+      "confianza": 69.4,
+      "value_bets": {
+        "victoria_visita": {
+          "value": 0.013,
+          "ev_porcentaje": 1.3,
+          "ev_pinn": 1.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 8.5,
+          "casa": "William Hill",
+          "pinn_prob": 11.9
+        },
+        "victoria_local": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.37,
+          "casa": "Unibet",
+          "pinn_prob": 69.4
+        },
+        "empate": {
+          "value": -0.071,
+          "ev_porcentaje": -7.1,
+          "ev_pinn": -7.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.96,
+          "casa": "Pinnacle",
+          "pinn_prob": 18.7
+        },
+        "over275": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "Pinnacle",
+          "pinn_prob": 49.3
+        },
+        "under275": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
           "casa": "Pinnacle",
           "pinn_prob": 50.7
         }
@@ -2983,7 +3928,7 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
+          "cuota": 1.84,
           "casa": "Pinnacle",
           "pinn_prob": 49.5
         },
@@ -4444,7 +5389,7 @@
         "over225": 48.6,
         "under225": 51.4
       },
-      "confianza": 51.4,
+      "confianza": 52.3,
       "value_bets": {
         "victoria_local": {
           "value": -0.036,
@@ -4984,7 +5929,7 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.61,
+          "cuota": 2.08,
           "casa": "FanDuel",
           "pinn_prob": 59.4,
           "mercado_nombre": "Pittsburgh Pirates (+1.5)"
@@ -6274,9 +7219,9 @@
           "mercado_nombre": "Carolina Hurricanes (-1.5)"
         },
         "spread_montréal_canadiens_1_5": {
-          "value": -0.016,
-          "ev_porcentaje": -1.6,
-          "ev_pinn": -1.6,
+          "value": -0.036,
+          "ev_porcentaje": -3.6,
+          "ev_pinn": -3.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
@@ -6656,7 +7601,7 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.11,
+          "cuota": 1.13,
           "casa": "Unibet",
           "pinn_prob": 87.7,
           "mercado_nombre": "Casper Ruud"
@@ -7249,7 +8194,9 @@
       "fecha_evento": "2026-05-26",
       "cuotas": {
         "Juan Carlos Prado Angelo": 3.1,
-        "Martin Landaluce": 1.36
+        "Martin Landaluce": 1.36,
+        "Over 35.5": 1.83,
+        "Under 35.5": 1.93
       },
       "probabilidades": {
         "Juan Carlos Prado Angelo": 29.4,
@@ -7280,6 +8227,30 @@
           "casa": "Unibet",
           "pinn_prob": 70.6,
           "mercado_nombre": "Martin Landaluce"
+        },
+        "over_35_5": {
+          "value": -0.068,
+          "ev_porcentaje": -6.8,
+          "ev_pinn": -6.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "Unibet",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Over 35.5"
+        },
+        "under_35_5": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "Unibet",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Under 35.5"
         }
       },
       "prediccion_principal": {
@@ -9231,6 +10202,226 @@
       "movimiento": null
     },
     {
+      "local": "Anhelina Kalinina",
+      "visitante": "Diane Parry",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Anhelina Kalinina": 1.4,
+        "Diane Parry": 3.05,
+        "Over 20.5": 1.91,
+        "Under 20.5": 1.85
+      },
+      "probabilidades": {
+        "Anhelina Kalinina": 69.6,
+        "Diane Parry": 30.4
+      },
+      "confianza": 69.6,
+      "value_bets": {
+        "Anhelina Kalinina": {
+          "value": -0.026,
+          "ev_porcentaje": -2.6,
+          "ev_pinn": -2.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.4,
+          "casa": "William Hill",
+          "pinn_prob": 69.6,
+          "mercado_nombre": "Anhelina Kalinina"
+        },
+        "Diane Parry": {
+          "value": -0.072,
+          "ev_porcentaje": -7.2,
+          "ev_pinn": -7.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.05,
+          "casa": "Unibet",
+          "pinn_prob": 30.4,
+          "mercado_nombre": "Diane Parry"
+        },
+        "over_20_5": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "Unibet",
+          "pinn_prob": 50.4,
+          "mercado_nombre": "Over 20.5"
+        },
+        "under_20_5": {
+          "value": -0.082,
+          "ev_porcentaje": -8.2,
+          "ev_pinn": -8.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Unibet",
+          "pinn_prob": 49.6,
+          "mercado_nombre": "Under 20.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Anhelina Kalinina",
+        "prob": 69.6,
+        "ev": -2.6
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Ann Li",
+      "visitante": "Shuai Zhang",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Ann Li": 1.36,
+        "Shuai Zhang": 3.1,
+        "Over 20.5": 1.88,
+        "Under 20.5": 1.88
+      },
+      "probabilidades": {
+        "Ann Li": 70.8,
+        "Shuai Zhang": 29.2
+      },
+      "confianza": 70.8,
+      "value_bets": {
+        "Ann Li": {
+          "value": -0.037,
+          "ev_porcentaje": -3.7,
+          "ev_pinn": -3.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.36,
+          "casa": "William Hill",
+          "pinn_prob": 70.8,
+          "mercado_nombre": "Ann Li"
+        },
+        "Shuai Zhang": {
+          "value": -0.094,
+          "ev_porcentaje": -9.4,
+          "ev_pinn": -9.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.1,
+          "casa": "William Hill",
+          "pinn_prob": 29.2,
+          "mercado_nombre": "Shuai Zhang"
+        },
+        "over_20_5": {
+          "value": -0.077,
+          "ev_porcentaje": -7.7,
+          "ev_pinn": -7.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "Unibet",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Over 20.5"
+        },
+        "under_20_5": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "Unibet",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Under 20.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Ann Li",
+        "prob": 70.8,
+        "ev": -3.7
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Anna Kalinskaya",
+      "visitante": "Lois Boisson",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Anna Kalinskaya": 1.56,
+        "Lois Boisson": 2.5
+      },
+      "probabilidades": {
+        "Anna Kalinskaya": 62.0,
+        "Lois Boisson": 38.0
+      },
+      "confianza": 62.0,
+      "value_bets": {
+        "Anna Kalinskaya": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.56,
+          "casa": "Unibet",
+          "pinn_prob": 62.0,
+          "mercado_nombre": "Anna Kalinskaya"
+        },
+        "Lois Boisson": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.5,
+          "casa": "William Hill",
+          "pinn_prob": 38.0,
+          "mercado_nombre": "Lois Boisson"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Anna Kalinskaya",
+        "prob": 62.0,
+        "ev": -3.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
       "local": "Antonia Ruzic",
       "visitante": "Ashlyn Krueger",
       "liga": "WTA Roland Garros",
@@ -9313,6 +10504,88 @@
       "movimiento": null
     },
     {
+      "local": "Aryna Sabalenka",
+      "visitante": "Jessica Bouzas Maneiro",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Aryna Sabalenka": 1.03,
+        "Jessica Bouzas Maneiro": 12.0,
+        "Over 17.5": 1.93,
+        "Under 17.5": 1.83
+      },
+      "probabilidades": {
+        "Aryna Sabalenka": 92.5,
+        "Jessica Bouzas Maneiro": 7.5
+      },
+      "confianza": 92.5,
+      "value_bets": {
+        "Aryna Sabalenka": {
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.03,
+          "casa": "Unibet",
+          "pinn_prob": 92.5,
+          "mercado_nombre": "Aryna Sabalenka"
+        },
+        "Jessica Bouzas Maneiro": {
+          "value": -0.104,
+          "ev_porcentaje": -10.4,
+          "ev_pinn": -10.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 12.0,
+          "casa": "Unibet",
+          "pinn_prob": 7.5,
+          "mercado_nombre": "Jessica Bouzas Maneiro"
+        },
+        "over_17_5": {
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "Unibet",
+          "pinn_prob": 50.6,
+          "mercado_nombre": "Over 17.5"
+        },
+        "under_17_5": {
+          "value": -0.097,
+          "ev_porcentaje": -9.7,
+          "ev_pinn": -9.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "Unibet",
+          "pinn_prob": 49.4,
+          "mercado_nombre": "Under 17.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Over 17.5",
+        "prob": 50.6,
+        "ev": -2.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
       "local": "Claire Liu",
       "visitante": "Moyuka Uchijima",
       "liga": "WTA Roland Garros",
@@ -9323,7 +10596,7 @@
       "fecha_evento": "2026-05-26",
       "cuotas": {
         "Claire Liu": 1.75,
-        "Moyuka Uchijima": 2.1
+        "Moyuka Uchijima": 2.08
       },
       "probabilidades": {
         "Claire Liu": 54.2,
@@ -9344,14 +10617,14 @@
           "mercado_nombre": "Claire Liu"
         },
         "Moyuka Uchijima": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.1,
-          "casa": "William Hill",
+          "cuota": 2.08,
+          "casa": "Unibet",
           "pinn_prob": 45.8,
           "mercado_nombre": "Moyuka Uchijima"
         }
@@ -9359,7 +10632,63 @@
       "prediccion_principal": {
         "mercado": "Moyuka Uchijima",
         "prob": 45.8,
-        "ev": -3.9
+        "ev": -4.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Coco Gauff",
+      "visitante": "Taylor Townsend",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Coco Gauff": 1.12,
+        "Taylor Townsend": 6.25
+      },
+      "probabilidades": {
+        "Coco Gauff": 85.3,
+        "Taylor Townsend": 14.7
+      },
+      "confianza": 85.3,
+      "value_bets": {
+        "Coco Gauff": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.12,
+          "casa": "Unibet",
+          "pinn_prob": 85.3,
+          "mercado_nombre": "Coco Gauff"
+        },
+        "Taylor Townsend": {
+          "value": -0.079,
+          "ev_porcentaje": -7.9,
+          "ev_pinn": -7.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 6.25,
+          "casa": "Unibet",
+          "pinn_prob": 14.7,
+          "mercado_nombre": "Taylor Townsend"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Coco Gauff",
+        "prob": 85.3,
+        "ev": -4.5
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
