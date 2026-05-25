@@ -73,10 +73,31 @@
   <div class="links">
     ¿No tienes cuenta? <a href="registro.html">Crear cuenta gratis</a>
   </div>
+
+  <div style="margin-top:20px;text-align:center">
+    <div style="font-family:'Space Mono',monospace;font-size:11px;color:#475569;margin-bottom:12px">— o suscríbete directamente —</div>
+    <button onclick="irAPago(this)" style="width:100%;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:10px;padding:14px;font-family:'Orbitron',monospace;font-size:11px;font-weight:700;cursor:pointer;letter-spacing:2px">
+      ACTIVAR VIP — $15 USD/mes
+    </button>
+  </div>
 </div>
 
 <script>
 const API = 'https://api.sharpiq.co';
+
+async function irAPago(el) {
+  const original = el.innerHTML;
+  try {
+    el.innerHTML = '⏳ Procesando...'; el.disabled = true;
+    const r = await fetch(`${API}/pagos/checkout-publico`, {method:'POST'});
+    const d = await r.json();
+    if(d.checkout_url){ window.location.href = d.checkout_url; }
+    else { throw new Error(d.detail || 'Error'); }
+  } catch(e){
+    el.innerHTML = original; el.disabled = false;
+    alert('Error al conectar con la pasarela. Intenta de nuevo.');
+  }
+}
 
 // Hashes SHA-256 para acceso admin offline (sin API)
 const H_ADMIN = '5f2e24b1a2a3df2cd8f8c3f064e5155d39b36d701f543c0ab4b34938d82abc70';
