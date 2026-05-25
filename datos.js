@@ -31,25 +31,6 @@ const PROXIMOS_EVENTOS = [
     status:     "vip"
   },
   {
-    fecha:      "24/05/26",
-    partido:    "AC Milan vs Cagliari",
-    liga:       "Serie A",
-    prediccion: "Gana AC Milan",
-    cuota:      "1.33",
-    hora:       "13:45 COT",
-    status:     "free",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "24/05/26",
-    partido:    "Inter Miami CF vs Philadelphia Union",
-    liga:       "MLS",
-    prediccion: "Victoria Visitante — EV +9%",
-    cuota:      "6.5",
-    hora:       "18:00 COT",
-    status:     "vip"
-  },
-  {
     fecha:      "23/05/26",
     partido:    "Lech Poznań vs Wisła Płock",
     liga:       "Ekstraklasa",
@@ -61,6 +42,22 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "24/05/26",
+    partido:    "Inter Miami CF vs Philadelphia Union",
+    liga:       "MLS",
+    prediccion: "Victoria Visitante — EV +9%",
+    cuota:      "6.5",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "24/05/26",
+    partido:    "AC Milan vs Cagliari",
+    liga:       "Serie A",
+    prediccion: "Gana AC Milan",
+    cuota:      "1.33",
+    resultado:  "loss"
+  },
   {
     fecha:      "24/05/26",
     partido:    "Manchester City vs Aston Villa",
