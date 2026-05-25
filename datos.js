@@ -4,6 +4,33 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "25/05/26",
+    partido:    "Racing Club vs Club Independiente Petrolero",
+    liga:       "Copa Sudamericana",
+    prediccion: "Victoria Visitante — EV +105%",
+    cuota:      "46.0",
+    hora:       "17:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "25/05/26",
+    partido:    "Vit Kopriva vs Corentin Moutet",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Corentin Moutet",
+    cuota:      "1.55",
+    hora:       "06:30 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "25/05/26",
+    partido:    "Marin Cilic vs Moise Kouame",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Marin Cilic",
+    cuota:      "1.29",
+    hora:       "04:00 COT",
+    status:     "vip"
+  },
+  {
     fecha:      "23/05/26",
     partido:    "Lech Poznań vs Wisła Płock",
     liga:       "Ekstraklasa",
