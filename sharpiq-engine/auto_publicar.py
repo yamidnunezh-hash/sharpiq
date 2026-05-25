@@ -230,6 +230,7 @@ def correr():
             tiers[k]["mercado_nombre"]
             for k in ("seguro", "principal", "alto_valor") if tiers.get(k)
         )
+        subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=repo_dir, capture_output=True)
         subprocess.run(["git", "add", "datos.js"], cwd=repo_dir, check=True)
         subprocess.run(
             ["git", "commit", "-m", f"auto: picks {date.today().isoformat()} — {picks_str}"],

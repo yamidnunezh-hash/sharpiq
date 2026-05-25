@@ -125,6 +125,14 @@ def evaluar(prediccion, gl, gv, local="", visitante=""):
         return 'win' if total <= 1 else 'loss'
     if 'over15'  in p or 'over 1.5'  in p:
         return 'win' if total >= 2 else 'loss'
+    if 'over325' in p or 'over 3.25' in p:
+        return 'win' if total >= 4 else 'loss'
+    if 'under325' in p or 'under 3.25' in p:
+        return 'win' if total <= 3 else 'loss'
+    if 'over175' in p or 'over 1.75' in p:
+        return 'win' if total >= 2 else 'loss'
+    if 'under175' in p or 'under 1.75' in p:
+        return 'win' if total <= 1 else 'loss'
     if 'btts' in p or 'ambos marcan' in p:
         return 'win' if gl > 0 and gv > 0 else 'loss'
     if 'victoria local' in p or '(1)' in p:
@@ -143,9 +151,11 @@ def evaluar(prediccion, gl, gv, local="", visitante=""):
         if 'visitante' in p or 'visita' in p:
             return 'win' if gv > gl else ('push' if gl == gv else 'loss')
 
-    # "Gana [Nombre Equipo]" — picks de NBA/NHL/MLB/NFL
-    if 'gana ' in p and (local or visitante):
-        team_pred = p.replace('gana ', '').split(' —')[0].split(' ev')[0].strip()
+    # "Gana [Equipo]" o bare team name — picks de NBA/NHL/MLB/NFL/fútbol
+    # Limpiar sufijos como " — EV +24%" antes de comparar
+    p_clean = p.split(' —')[0].split(' ev')[0].strip()
+    team_pred = p_clean.replace('gana ', '').strip()
+    if team_pred and (local or visitante):
         if local and (team_pred in local.lower() or local.lower() in team_pred):
             return 'win' if gl > gv else 'loss'
         if visitante and (team_pred in visitante.lower() or visitante.lower() in team_pred):
@@ -294,6 +304,7 @@ def correr():
         # Git push automático
         repo_dir = os.path.join(BASE_DIR, "..")
         try:
+            subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=repo_dir, capture_output=True)
             subprocess.run(["git", "add", "datos.js"], cwd=repo_dir, check=True)
             subprocess.run(["git", "commit", "-m",
                 f"auto: resultados actualizados ({date.today().isoformat()})"],

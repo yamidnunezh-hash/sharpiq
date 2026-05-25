@@ -1063,7 +1063,7 @@ def obtener_cuotas_liga(sport_key):
             markets    = "h2h,spreads,totals"
         elif sport_key in _SPORTS_SOCCER:
             bookmakers = "pinnacle,bet365,betfair,unibet,williamhill,bwin"
-            markets    = "h2h,totals,btts,double_chance,draw_no_bet"
+            markets    = "h2h,totals"
         else:
             bookmakers = "pinnacle,bet365,betfair,unibet,williamhill,bwin"
             markets    = "h2h,totals"
