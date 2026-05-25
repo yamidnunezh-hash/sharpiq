@@ -4,6 +4,24 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "25/05/26",
+    partido:    "Racing Club vs Club Independiente Petrolero",
+    liga:       "Copa Sudamericana",
+    prediccion: "Victoria Visitante — EV +105%",
+    cuota:      "46.0",
+    hora:       "17:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "25/05/26",
+    partido:    "Mariano Navone vs Jenson Brooksby",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Mariano Navone",
+    cuota:      "1.29",
+    hora:       "08:00 COT",
+    status:     "vip"
+  },
+  {
     fecha:      "24/05/26",
     partido:    "Sao Paulo vs CA Boston River",
     liga:       "Copa Sudamericana",
