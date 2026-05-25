@@ -83,6 +83,14 @@
   </div>
 
   <a class="btn" id="mainBtn" href="cuenta.html">VER MIS PICKS →</a>
+
+  <!-- Solo visible si el usuario no tiene cuenta aún -->
+  <div id="sinCuenta" style="display:none;margin-top:28px;background:rgba(0,200,255,.06);border:1px solid rgba(0,200,255,.2);border-radius:14px;padding:24px">
+    <div style="font-family:'Orbitron',monospace;font-size:.85rem;color:var(--gold);margin-bottom:10px">ÚLTIMO PASO — ACTIVA TU ACCESO</div>
+    <p style="font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:18px">Tu pago fue confirmado. Crea tu cuenta gratuita con el <strong style="color:var(--t1)">mismo email que usaste en MercadoPago</strong> para activar el VIP automáticamente.</p>
+    <a href="registro.html?plan=vip" style="display:inline-block;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border-radius:8px;padding:12px 28px;font-family:'Orbitron',monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-decoration:none">CREAR CUENTA GRATIS →</a>
+    <div style="margin-top:14px;font-family:'Space Mono',monospace;font-size:11px;color:var(--t3)">¿Problemas? Escríbenos al <a href="https://wa.me/573144807538" style="color:var(--gold)">WhatsApp</a></div>
+  </div>
 </div>
 
 <script>
@@ -110,11 +118,20 @@
     badge.style.display  = 'none';
     feats.style.display  = 'none';
     btn.textContent      = 'INTENTAR DE NUEVO →';
-    btn.href             = 'cuenta.html';
+    btn.href             = 'login.html';
   }
 
-  // Refrescar plan en localStorage si el pago fue aprobado
   const token = localStorage.getItem('sharpiq_token');
+
+  if(!token && status !== 'failure' && status !== 'rejected'){
+    // Pagó pero no tiene cuenta — mostrar CTA de registro
+    btn.style.display             = 'none';
+    document.getElementById('sinCuenta').style.display = 'block';
+    sub.textContent = 'Tu pago fue procesado con éxito. Crea tu cuenta para activar el acceso VIP.';
+    return;
+  }
+
+  // Usuario logueado — refrescar plan
   if(token && status !== 'failure' && status !== 'rejected'){
     fetch('https://api.sharpiq.co/pagos/mi-suscripcion', {
       headers: {'Authorization': 'Bearer ' + token}
