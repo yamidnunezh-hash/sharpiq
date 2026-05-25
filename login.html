@@ -137,7 +137,8 @@ async function doLogin(){
       localStorage.setItem('sharpiq_auth', Date.now());
       window.location.href = 'predicciones.html';
     } else {
-      window.location.href = 'cuenta.html';
+      const next = new URLSearchParams(location.search).get('next');
+      window.location.href = next === 'upgrade' ? 'cuenta.html?upgrade=1' : 'cuenta.html';
     }
   } catch(e){
     err.textContent = e.message;
@@ -156,7 +157,8 @@ async function doLogin(){
     window.location.href = 'predicciones.html'; return;
   }
   if(token){
-    window.location.href = 'cuenta.html';
+    const next = new URLSearchParams(location.search).get('next');
+    window.location.href = next === 'upgrade' ? 'cuenta.html?upgrade=1' : 'cuenta.html';
   }
 })();
 </script>

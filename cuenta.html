@@ -173,7 +173,11 @@ function showTab(name){
 }
 
 async function cargarDashboard(){
-  if(!token()){ window.location.href='login.html'; return; }
+  if(!token()){
+    const isUpgrade = new URLSearchParams(location.search).get('upgrade')==='1';
+    window.location.href = isUpgrade ? 'login.html?next=upgrade' : 'login.html';
+    return;
+  }
   try {
     const r = await fetch(`${API}/members/dashboard`, {headers: headers()});
     if(r.status===401){ logout(); return; }
