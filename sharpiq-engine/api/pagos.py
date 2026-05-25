@@ -78,8 +78,12 @@ def suscribir(plan_key: str, token=Depends(usuario_activo)):
         cur = conn.cursor()
         cur.execute("SELECT email, nombre FROM usuarios WHERE id=%s", (user_id,))
         user = cur.fetchone()
-        if not user:
+
+    # Admin bypass: el JWT tiene email pero no hay fila en DB con id=1
+    if not user:
+        if not token.get("email"):
             raise HTTPException(404, "Usuario no encontrado")
+        user = {"email": token["email"], "nombre": token.get("plan", "usuario").title()}
 
     # Checkout Pro — pago único mensual (evita restricciones de preapproval cross-country)
     payload = {
