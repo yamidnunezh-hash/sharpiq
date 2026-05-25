@@ -884,6 +884,30 @@ STATS_EQUIPOS = {
     "Fortaleza":                 {"ataque": 1.6, "defensa": 1.1, "forma": 0.72},
     "Fortaleza EC":              {"ataque": 1.6, "defensa": 1.1, "forma": 0.72},
     "Fluminense FC":             {"ataque": 1.5, "defensa": 1.1, "forma": 0.72},
+    # Serie A Betano 2026
+    "Coritiba":                  {"ataque": 1.5, "defensa": 1.2, "forma": 0.70},
+    "Coritiba FC":               {"ataque": 1.5, "defensa": 1.2, "forma": 0.70},
+    # Brasileirao Serie B 2026
+    "Botafogo SP":               {"ataque": 1.1, "defensa": 1.5, "forma": 0.48},
+    "Botafogo Sao Paulo":        {"ataque": 1.1, "defensa": 1.5, "forma": 0.48},
+    "Athletic Club Mineiro":     {"ataque": 1.3, "defensa": 1.3, "forma": 0.62},
+    "Athletic Club":             {"ataque": 1.3, "defensa": 1.3, "forma": 0.62},
+    "Vila Nova":                 {"ataque": 1.3, "defensa": 1.2, "forma": 0.65},
+    "Vila Nova FC":              {"ataque": 1.3, "defensa": 1.2, "forma": 0.65},
+    "CRB":                       {"ataque": 1.2, "defensa": 1.3, "forma": 0.60},
+    "Sport Recife":              {"ataque": 1.4, "defensa": 1.2, "forma": 0.66},
+    "Sport Club do Recife":      {"ataque": 1.4, "defensa": 1.2, "forma": 0.66},
+    "Ceara":                     {"ataque": 1.4, "defensa": 1.2, "forma": 0.66},
+    "Ceara SC":                  {"ataque": 1.4, "defensa": 1.2, "forma": 0.66},
+    "Mirassol":                  {"ataque": 1.4, "defensa": 1.2, "forma": 0.68},
+    "Mirassol FC":               {"ataque": 1.4, "defensa": 1.2, "forma": 0.68},
+    "Goias":                     {"ataque": 1.3, "defensa": 1.3, "forma": 0.63},
+    "Goias EC":                  {"ataque": 1.3, "defensa": 1.3, "forma": 0.63},
+    "Paysandu":                  {"ataque": 1.2, "defensa": 1.3, "forma": 0.60},
+    "Paysandu SC":               {"ataque": 1.2, "defensa": 1.3, "forma": 0.60},
+    "Ituano":                    {"ataque": 1.1, "defensa": 1.4, "forma": 0.55},
+    "Guarani":                   {"ataque": 1.1, "defensa": 1.4, "forma": 0.53},
+    "Guarani FC":                {"ataque": 1.1, "defensa": 1.4, "forma": 0.53},
     # ── Liga MX 2025/26 ──────────────────────────────────────────
     "Club America":              {"ataque": 1.9, "defensa": 0.9, "forma": 0.82},
     "America":                   {"ataque": 1.9, "defensa": 0.9, "forma": 0.82},
@@ -989,7 +1013,8 @@ def calcular_goles_esperados(local, visitante, liga_code="", sede_neutral=False)
         "CL":  1.18,   # Champions League (neutral en muchos casos)
         "CLI": 1.20,   # Copa Libertadores
         "CSA": 1.19,   # Copa Sudamericana
-        "71":  1.22,   # Brasileirao
+        "71":  1.22,   # Brasileirao Serie A
+        "72":  1.20,   # Brasileirao Serie B
         "128": 1.24,   # Liga BetPlay Colombia
         "262": 1.23,   # Liga MX
         "239": 1.22,   # Argentina Primera
@@ -1057,7 +1082,8 @@ def obtener_cuotas_liga(sport_key):
         _SPORTS_SOCCER = {"soccer_epl","soccer_spain_la_liga","soccer_germany_bundesliga",
                           "soccer_italy_serie_a","soccer_france_ligue_one","soccer_usa_mls",
                           "soccer_conmebol_copa_libertadores","soccer_conmebol_copa_sudamericana",
-                          "soccer_brazil_campeonato","soccer_argentina_primera_division"}
+                          "soccer_brazil_campeonato","soccer_brazil_serie_b",
+                          "soccer_argentina_primera_division"}
         if sport_key in _SPORTS_US:
             bookmakers = "pinnacle,draftkings,fanduel,bet365,betmgm,unibet"
             markets    = "h2h,spreads,totals"
