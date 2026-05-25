@@ -49,6 +49,14 @@ def inicializar():
             disparos_contra  REAL,
             actualizado      TEXT
         )""")
+        # Tabla separada para datos reales de disparos/paradas por partido
+        c.execute("""CREATE TABLE IF NOT EXISTS stats_tiros_cache (
+            equipo          TEXT PRIMARY KEY,
+            shots_on_target REAL,
+            saves           REAL,
+            partidos        INTEGER,
+            actualizado     TEXT
+        )""")
 
 def _get_cache(equipo):
     with _db() as c:
@@ -67,6 +75,27 @@ def _get_cache(equipo):
         "tarjetas_favor":  row[2], "tarjetas_contra": row[3],
         "disparos_favor":  row[4], "disparos_contra": row[5],
     }
+
+def _get_tiros_cache(equipo):
+    with _db() as c:
+        row = c.execute(
+            "SELECT shots_on_target, saves, partidos, actualizado FROM stats_tiros_cache WHERE equipo=?",
+            (equipo,)
+        ).fetchone()
+    if not row:
+        return None
+    dias = (datetime.now() - datetime.fromisoformat(row[3])).days
+    if dias > 3:   # datos frescos cada 3 días
+        return None
+    return {"shots_on_target": row[0], "saves": row[1], "partidos": row[2]}
+
+def _guardar_tiros_cache(equipo, stats):
+    with _db() as c:
+        c.execute("""INSERT OR REPLACE INTO stats_tiros_cache
+            (equipo, shots_on_target, saves, partidos, actualizado)
+            VALUES (?,?,?,?,?)""",
+            (equipo, stats["shots_on_target"], stats["saves"],
+             stats["partidos"], datetime.now().isoformat()))
 
 def _guardar_cache(equipo, stats):
     season = date.today().year if date.today().month >= 7 else date.today().year - 1
@@ -235,27 +264,163 @@ def modelo_tarjetas(lambda_local, lambda_visita):
         out[f"tarjetas_under{tag}"] = round(100 - ov, 1)
     return out
 
+def obtener_stats_tiros_reales(equipo, liga_id=None, n=5):
+    """
+    Shots on target y saves reales de los últimos N partidos terminados.
+
+    Plan gratuito api-sports.io: usa season=2024 (soportado) + filtra los N
+    más recientes del lado Python. El parámetro 'last' requiere plan de pago.
+
+    Costo API: 1 req /fixtures (toda la temporada) + N req /fixtures/statistics.
+    Caché SQLite 3 días → en la práctica muy pocos equipos nuevos por día.
+
+    Campos reales de la API:
+      - "Shots on Goal"    → disparos que van entre los tres palos (= shots on target)
+      - "Goalkeeper Saves" → paradas del portero en ese partido
+    """
+    inicializar()
+    cached = _get_tiros_cache(equipo)
+    if cached:
+        return cached
+
+    try:
+        from motor import _apifb, TEAM_IDS, _match_equipos
+    except Exception:
+        return None
+
+    # Resolver team_id
+    team_id = TEAM_IDS.get(equipo)
+    if not team_id:
+        for nombre, tid in TEAM_IDS.items():
+            if _match_equipos(equipo, nombre):
+                team_id = tid
+                break
+    if not team_id:
+        return None
+
+    # Resolver liga_id numérico para la query (usar 2024 = último season accesible
+    # en plan gratuito; si tienen plan de pago se puede cambiar a 2025)
+    _liga_map = {
+        "PL": 39, "PD": 140, "BL1": 78, "SA": 135, "FL1": 61,
+        "CL": 2,  "CLI": 13, "CSA": 11, "39": 39, "140": 140,
+        "78": 78, "135": 135, "61": 61, "13": 13, "11": 11,
+        "71": 71, "128": 128, "253": 253,
+    }
+    liga_int = None
+    if liga_id:
+        try:
+            liga_int = int(liga_id)
+        except (ValueError, TypeError):
+            liga_int = _liga_map.get(str(liga_id))
+
+    # Temporada: preferir la más reciente accesible
+    season = date.today().year if date.today().month >= 7 else date.today().year - 1
+    # Plan free solo soporta hasta 2024; si falla, bajamos un año
+    params_fix = {"team": team_id, "season": season, "status": "FT"}
+    if liga_int:
+        params_fix["league"] = liga_int
+
+    data = _apifb("fixtures", params_fix)
+    # Si falla por restricción de season, intentar con 2024
+    if not data or not data.get("response"):
+        params_fix["season"] = season - 1
+        data = _apifb("fixtures", params_fix)
+    if not data or not data.get("response"):
+        return None
+
+    # Ordenar por fecha descendente y tomar los N más recientes
+    fixtures = sorted(
+        data["response"],
+        key=lambda f: f["fixture"].get("date", ""),
+        reverse=True
+    )[:n]
+
+    total_shots = 0
+    total_saves = 0
+    conteo = 0
+
+    for f in fixtures:
+        fixture_id = f["fixture"]["id"]
+        stats_data = _apifb("fixtures/statistics", {"fixture": fixture_id})
+        if not stats_data or not stats_data.get("response"):
+            continue
+
+        for team_stats in stats_data["response"]:
+            if team_stats.get("team", {}).get("id") != team_id:
+                continue
+            shots_ot = 0
+            saves    = 0
+            for stat in team_stats.get("statistics", []):
+                tipo  = stat.get("type", "")
+                valor = stat.get("value")
+                # La API usa "Shots on Goal" (= disparos entre los tres palos)
+                if tipo in ("Shots on Goal", "Shots on Target"):
+                    try:
+                        shots_ot = int(valor) if valor is not None else 0
+                    except (ValueError, TypeError):
+                        shots_ot = 0
+                elif tipo == "Goalkeeper Saves":
+                    try:
+                        saves = int(valor) if valor is not None else 0
+                    except (ValueError, TypeError):
+                        saves = 0
+            total_shots += shots_ot
+            total_saves += saves
+            conteo += 1
+            break
+
+    if conteo == 0:
+        return None
+
+    result = {
+        "shots_on_target": round(total_shots / conteo, 2),
+        "saves":           round(total_saves / conteo, 2),
+        "partidos":        conteo,
+    }
+    _guardar_tiros_cache(equipo, result)
+    print(f"    Tiros reales {equipo[-16:]}: SoT={result['shots_on_target']}/p "
+          f"| Saves={result['saves']}/p ({conteo}p)")
+    return result
+
+
 def calcular_disparos_visitante_esperados(local, visitante, liga_id):
     """
     λ de disparos al arco del equipo visitante.
-    Usa los disparos al arco propios del visitante con descuento de localía (×0.85).
+    Prioridad: datos reales últimos 5 partidos → promedio de temporada → default de liga.
+    Factor visitante: ×0.85 (el equipo genera menos oportunidades fuera de casa).
     """
-    sv  = obtener_stats_ext(visitante, liga_id) or _defaults(liga_id)
     avg = DEFAULTS_SHOTS_LIGA.get(str(liga_id), PROMEDIO_SHOTS_LIGA)
 
-    # disparos_contra almacena shots on target del equipo (ver obtener_stats_ext)
+    # Datos reales (últimos 5 partidos)
+    stats_vis = obtener_stats_tiros_reales(visitante, liga_id=liga_id)
+    if stats_vis and stats_vis["partidos"] >= 3:
+        lambda_shots = round(stats_vis["shots_on_target"] * 0.85, 2)
+        print(f"    Disparos vis REAL ({visitante[-14:]}): "
+              f"{stats_vis['shots_on_target']:.1f}/p → λ={lambda_shots}")
+        return lambda_shots
+
+    # Fallback: promedio de temporada ya en cache
+    sv = obtener_stats_ext(visitante, liga_id) or _defaults(liga_id)
     shots_vis = sv.get("disparos_contra") or avg
     if shots_vis < 0.5:
         shots_vis = avg
-
-    # Visitante genera ~85% de sus disparos respecto a cuando juega de local
     return round(shots_vis * 0.85, 2)
 
 
-def calcular_paradas_esperadas(lambda_shots_vis, goles_visita_esperados):
+def calcular_paradas_esperadas(lambda_shots_vis, goles_visita_esperados, local=None):
     """
-    λ de paradas del portero local = disparos al arco visitante - goles esperados visitante.
+    λ de paradas del portero local.
+    Prioridad: saves reales del portero local (últimos 5 partidos) →
+               estimado = disparos al arco visitante − goles esperados visitante.
     """
+    if local:
+        stats_local = obtener_stats_tiros_reales(local, liga_id=None)
+        if stats_local and stats_local["partidos"] >= 3:
+            lambda_paradas = round(max(stats_local["saves"], 0.5), 2)
+            print(f"    Paradas GK REAL ({local[-14:]}): {lambda_paradas:.2f}/p")
+            return lambda_paradas
+
+    # Fallback: estimado
     paradas = lambda_shots_vis - goles_visita_esperados
     return round(max(paradas, 0.5), 2)
 
@@ -404,7 +569,7 @@ def analizar_mercados_ext(local, visitante, liga_id, probs_poisson):
 
     lambda_disp_vis = calcular_disparos_visitante_esperados(local, visitante, liga_id)
     goles_visita    = probs_poisson.get("goles_esperados_visita", 1.1)
-    lambda_paradas  = calcular_paradas_esperadas(lambda_disp_vis, goles_visita)
+    lambda_paradas  = calcular_paradas_esperadas(lambda_disp_vis, goles_visita, local=local)
 
     probs_c    = modelo_corners(cl, cv)
     probs_t    = modelo_tarjetas(tl, tv)
