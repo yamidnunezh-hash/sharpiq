@@ -22,7 +22,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip"
   },
   {
-    fecha:      "25/05/26",
+    fecha:      "27/05/26",
     partido:    "Racing Club vs Club Independiente Petrolero",
     liga:       "Copa Sudamericana",
     prediccion: "Victoria Visitante — EV +105%",

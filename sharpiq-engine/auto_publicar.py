@@ -39,13 +39,24 @@ def _hora_cot(hora_utc):
         return hora_utc
 
 
-def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev):
+def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=None):
     with open(DATOS_PATH, encoding="utf-8") as f:
         texto = f.read()
 
+    # Usar la fecha real del partido, no la fecha de publicación
+    if fecha_evento:
+        try:
+            from datetime import date as _date
+            d = _date.fromisoformat(fecha_evento)
+            fecha_str = d.strftime('%d/%m/%y')
+        except Exception:
+            fecha_str = date.today().strftime('%d/%m/%y')
+    else:
+        fecha_str = date.today().strftime('%d/%m/%y')
+
     ev_tag = f" — EV +{ev}%" if ev > 0 else ""
     nueva_entrada = f"""  {{
-    fecha:      "{date.today().strftime('%d/%m/%y')}",
+    fecha:      "{fecha_str}",
     partido:    "{partido}",
     liga:       "{liga}",
     prediccion: "{mercado}{ev_tag}",
@@ -208,7 +219,8 @@ def correr():
         liga     = pred.get("liga", "")
         hora_cot = _hora_cot(pred.get("hora", "00:00"))
         ev_val   = round(t.get("ev_pinn", t.get("ev", 0)) or 0)
-        _agregar_a_datos_js(partido, liga, t["mercado_nombre"], str(t["cuota"]), hora_cot, ev_val)
+        fecha_ev = pred.get("fecha_evento") or pred.get("fecha") or None
+        _agregar_a_datos_js(partido, liga, t["mercado_nombre"], str(t["cuota"]), hora_cot, ev_val, fecha_evento=fecha_ev)
         print(f"  datos.js: {partido} | {t['mercado_nombre']} @{t['cuota']}")
 
     # ── Git push ─────────────────────────────────────────────────
