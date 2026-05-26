@@ -1089,8 +1089,9 @@ def obtener_cuotas_liga(sport_key):
             markets    = "h2h,spreads,totals"
         elif sport_key in _SPORTS_SOCCER:
             bookmakers = "pinnacle,bet365,betfair,unibet,williamhill,bwin"
-            markets    = "h2h,totals"
+            markets    = "h2h,totals,btts,double_chance,draw_no_bet"
         else:
+            # Tenis y otros: solo h2h
             bookmakers = "pinnacle,bet365,betfair,unibet,williamhill,bwin"
             markets    = "h2h,totals"
         # bookmakers y regions son mutuamente exclusivos en The Odds API v4
@@ -1124,10 +1125,12 @@ def _fetch_odds_ext(sport_key):
     try:
         url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
         # bookmakers y regions son mutuamente exclusivos en The Odds API v4
+        _is_soccer_ext = any(x in sport_key for x in ("soccer",))
+        _ext_markets = "h2h,totals,btts,double_chance,draw_no_bet" if _is_soccer_ext else "h2h,totals"
         params = {
             "apiKey":      ODDS_API_KEY,
             "bookmakers":  "pinnacle,bet365,betfair,unibet,williamhill,bwin",
-            "markets":     "h2h,totals",
+            "markets":     _ext_markets,
             "oddsFormat":  "decimal",
         }
         r = requests.get(url, params=params, timeout=20)
@@ -1218,6 +1221,12 @@ def extraer_mejor_cuota(partido):
         "pinnacle_over25": None, "pinnacle_under25": None,
         "pinnacle_over15": None, "pinnacle_under15": None,
         "pinnacle_over35": None, "pinnacle_under35": None,
+        "pinnacle_btts_si": None, "pinnacle_btts_no": None,
+        "pinnacle_doble_1x": None, "pinnacle_doble_x2": None, "pinnacle_doble_12": None,
+        "pinnacle_dnb_local": None, "pinnacle_dnb_visita": None,
+        "pinnacle_spread_local": None, "pinnacle_spread_visita": None,
+        "spread_local": None, "spread_local_linea": None, "spread_local_casa": None,
+        "spread_visita": None, "spread_visita_linea": None, "spread_visita_casa": None,
     }
     home = partido.get("home_team", "")
     away = partido.get("away_team", "")
@@ -1265,25 +1274,54 @@ def extraer_mejor_cuota(partido):
             elif key == "btts":
                 for o in outcomes:
                     if o.get("name") in ("Yes", "Sí"):
+                        if es_pinn:
+                            mejor["pinnacle_btts_si"] = round(o["price"], 2)
                         if mejor["btts_si"] is None or o["price"] > mejor["btts_si"]:
                             mejor["btts_si"] = round(o["price"], 2); mejor["btts_si_casa"] = bm_name
                     elif o.get("name") == "No":
+                        if es_pinn:
+                            mejor["pinnacle_btts_no"] = round(o["price"], 2)
                         if mejor["btts_no"] is None or o["price"] > mejor["btts_no"]:
                             mejor["btts_no"] = round(o["price"], 2); mejor["btts_no_casa"] = bm_name
 
             elif key == "double_chance":
                 dc_map = {"1X": "doble_1x", "X2": "doble_x2", "12": "doble_12"}
+                pinn_dc_map = {"1X": "pinnacle_doble_1x", "X2": "pinnacle_doble_x2", "12": "pinnacle_doble_12"}
                 for o in outcomes:
                     k2 = dc_map.get(o.get("name",""))
-                    if k2 and (mejor[k2] is None or o["price"] > mejor[k2]):
-                        mejor[k2] = round(o["price"], 2); mejor[k2+"_casa"] = bm_name
+                    if k2:
+                        if es_pinn:
+                            mejor[pinn_dc_map[o["name"]]] = round(o["price"], 2)
+                        if mejor[k2] is None or o["price"] > mejor[k2]:
+                            mejor[k2] = round(o["price"], 2); mejor[k2+"_casa"] = bm_name
 
             elif key == "draw_no_bet":
                 for o in outcomes:
-                    if o["name"] == home and (mejor["dnb_local"] is None or o["price"] > mejor["dnb_local"]):
-                        mejor["dnb_local"] = round(o["price"], 2); mejor["dnb_local_casa"] = bm_name
-                    elif o["name"] == away and (mejor["dnb_visita"] is None or o["price"] > mejor["dnb_visita"]):
-                        mejor["dnb_visita"] = round(o["price"], 2); mejor["dnb_visita_casa"] = bm_name
+                    if o["name"] == home:
+                        if es_pinn:
+                            mejor["pinnacle_dnb_local"] = round(o["price"], 2)
+                        if mejor["dnb_local"] is None or o["price"] > mejor["dnb_local"]:
+                            mejor["dnb_local"] = round(o["price"], 2); mejor["dnb_local_casa"] = bm_name
+                    elif o["name"] == away:
+                        if es_pinn:
+                            mejor["pinnacle_dnb_visita"] = round(o["price"], 2)
+                        if mejor["dnb_visita"] is None or o["price"] > mejor["dnb_visita"]:
+                            mejor["dnb_visita"] = round(o["price"], 2); mejor["dnb_visita_casa"] = bm_name
+
+            elif key == "spreads":
+                for o in outcomes:
+                    pt   = o.get("point", 0)
+                    pr   = round(o["price"], 2)
+                    side = "local" if o["name"] == home else "visita" if o["name"] == away else None
+                    if not side:
+                        continue
+                    if es_pinn:
+                        mejor[f"pinnacle_spread_{side}"] = pr
+                    k_price = f"spread_{side}"
+                    if mejor[k_price] is None or pr > mejor[k_price]:
+                        mejor[k_price] = pr
+                        mejor[f"spread_{side}_linea"] = pt
+                        mejor[f"spread_{side}_casa"]  = bm_name
 
     return mejor if mejor["1"] else None
 
@@ -1432,9 +1470,20 @@ def predecir_partido(local, visitante, cuotas=None, liga_code="", sede_neutral=F
         pinn_probs = {}
         if pinn1 and pinnX and pinn2:
             s3 = 1/pinn1 + 1/pinnX + 1/pinn2
-            pinn_probs["victoria_local"]  = (1/pinn1) / s3
-            pinn_probs["empate"]          = (1/pinnX) / s3
-            pinn_probs["victoria_visita"] = (1/pinn2) / s3
+            pl = (1/pinn1) / s3
+            px = (1/pinnX) / s3
+            pv = (1/pinn2) / s3
+            pinn_probs["victoria_local"]  = pl
+            pinn_probs["empate"]          = px
+            pinn_probs["victoria_visita"] = pv
+            # Derivar Double Chance y DNB de Pinnacle 1x2
+            pinn_probs["doble_1x"]   = pl + px
+            pinn_probs["doble_x2"]   = px + pv
+            pinn_probs["doble_12"]   = pl + pv
+            if (pl + pv) > 0:
+                pinn_probs["dnb_local"]  = pl / (pl + pv)
+                pinn_probs["dnb_visita"] = pv / (pl + pv)
+        # Totals: Over/Under a múltiples líneas
         for lim_str in ["15", "25", "35"]:
             po = cuotas.get(f"pinnacle_over{lim_str}")
             pu = cuotas.get(f"pinnacle_under{lim_str}")
@@ -1442,11 +1491,31 @@ def predecir_partido(local, visitante, cuotas=None, liga_code="", sede_neutral=F
                 s2 = 1/po + 1/pu
                 pinn_probs[f"over{lim_str}"]  = (1/po) / s2
                 pinn_probs[f"under{lim_str}"] = (1/pu) / s2
+        # BTTS directo de Pinnacle si está disponible
+        pb_si = cuotas.get("pinnacle_btts_si")
+        pb_no = cuotas.get("pinnacle_btts_no")
+        if pb_si and pb_no:
+            s2 = 1/pb_si + 1/pb_no
+            pinn_probs["btts_si"] = (1/pb_si) / s2
+            pinn_probs["btts_no"] = (1/pb_no) / s2
+        # Double Chance directo de Pinnacle si está disponible
+        for dc in ("doble_1x", "doble_x2", "doble_12"):
+            pdc = cuotas.get(f"pinnacle_{dc}")
+            if pdc and dc not in pinn_probs:
+                pinn_probs[dc] = 1 / pdc  # aprox sin vig para DC
+        # DNB directo de Pinnacle si está disponible
+        for dnb in ("dnb_local", "dnb_visita"):
+            pdnb = cuotas.get(f"pinnacle_{dnb}")
+            if pdnb and dnb not in pinn_probs:
+                pinn_probs[dnb] = 1 / pdnb
         _pinn_ck = {
             "victoria_local": "1", "empate": "X", "victoria_visita": "2",
             "over15": "over15", "under15": "under15",
             "over25": "over25", "under25": "under25",
             "over35": "over35", "under35": "under35",
+            "btts_si": "btts_si", "btts_no": "btts_no",
+            "doble_1x": "doble_1x", "doble_x2": "doble_x2", "doble_12": "doble_12",
+            "dnb_local": "dnb_local", "dnb_visita": "dnb_visita",
         }
         for mk, vb in value_bets.items():
             pp = pinn_probs.get(mk)
