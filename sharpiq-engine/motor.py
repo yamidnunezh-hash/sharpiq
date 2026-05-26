@@ -848,6 +848,8 @@ STATS_EQUIPOS = {
     "River Plate":               {"ataque": 1.9, "defensa": 0.9, "forma": 0.82},
     "Atletico Nacional":         {"ataque": 1.5, "defensa": 1.1, "forma": 0.70},
     "Junior":                    {"ataque": 1.3, "defensa": 1.2, "forma": 0.64},
+    "Junior Barranquilla":       {"ataque": 1.3, "defensa": 1.2, "forma": 0.64},
+    "Club Junior":               {"ataque": 1.3, "defensa": 1.2, "forma": 0.64},
     "Independiente":             {"ataque": 1.4, "defensa": 1.2, "forma": 0.66},
     "Estudiantes":               {"ataque": 1.5, "defensa": 1.1, "forma": 0.70},
     "Palestino":                 {"ataque": 1.2, "defensa": 1.3, "forma": 0.61},
@@ -1102,6 +1104,11 @@ def obtener_cuotas_liga(sport_key):
             "oddsFormat":  "decimal",
         }
         r = requests.get(url, params=params, timeout=15)
+        if r.status_code == 422 and markets != "h2h,totals":
+            # LATAM/CONMEBOL leagues don't support btts/double_chance/draw_no_bet — retry with basic markets
+            print(f"  Odds API {sport_key}: 422 en mercados extendidos, reintentando con h2h,totals")
+            params["markets"] = "h2h,totals"
+            r = requests.get(url, params=params, timeout=15)
         if r.status_code != 200:
             print(f"  Odds API {sport_key}: HTTP {r.status_code} — {r.text[:120]}")
             return []
@@ -1134,13 +1141,17 @@ def _fetch_odds_ext(sport_key):
             "oddsFormat":  "decimal",
         }
         r = requests.get(url, params=params, timeout=20)
+        if r.status_code == 422 and _ext_markets != "h2h,totals":
+            print(f"  Odds ext {sport_key}: 422 mercados extendidos, reintentando con h2h,totals")
+            params["markets"] = "h2h,totals"
+            r = requests.get(url, params=params, timeout=20)
         if r.status_code != 200:
             print(f"  Odds ext {sport_key}: HTTP {r.status_code} — {r.text[:120]}")
             return []
         data = r.json()
         _cache_cuotas_ext[sport_key] = data
         restantes = r.headers.get("x-requests-remaining", "?")
-        print(f"  Odds ext {sport_key}: {len(data)} eventos | Créditos: {restantes}")
+        print(f"  Odds ext {sport_key}: {len(data)} eventos | Creditos: {restantes}")
         return data
     except Exception as e:
         print(f"  Odds ext {sport_key} error: {e}")
