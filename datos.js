@@ -4,6 +4,15 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "27/05/26",
+    partido:    "OKC Thunder vs San Antonio Spurs",
+    liga:       "NBA Playoffs",
+    prediccion: "Gana OKC Thunder — EV +0%",
+    cuota:      "1.54",
+    hora:       "19:40 COT",
+    status:     "free"
+  },
+  {
     fecha:      "26/05/26",
     partido:    "Vit Kopriva vs Corentin Moutet",
     liga:       "ATP Roland Garros",
@@ -59,4 +68,14 @@ const PROXIMOS_EVENTOS = [
   }
 ];
 
-const PREDICCIONES_HISTORIAL = [];
+const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "25/05/26",
+    partido:    "Cleveland Cavaliers vs New York Knicks",
+    liga:       "NBA Playoffs",
+    prediccion: "Gana New York Knicks",
+    cuota:      "1.81",
+    resultado:  "win",
+    score:      "93 - 130"
+  }
+];
