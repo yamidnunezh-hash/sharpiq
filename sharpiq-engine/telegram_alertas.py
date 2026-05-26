@@ -795,13 +795,18 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 ev = round(tier.get("ev_pinn", tier.get("ev", 0)) or 0)
                 ev_extra = f" — EV +{ev}%"
             prob_label = "Prob modelo"
+            if label == "ALTO VALOR":
+                stake_line = "⚠️ <i>Solo si tienes confianza — Stake: 2% del bankroll</i>"
+            else:
+                stake_line = "💰 <i>Stake recomendado: 3% del bankroll</i>"
             return (
                 f"{emoji} <b>{label}</b>\n"
                 f"🏀 <b>{jugador}</b>\n"
                 f"📌 {partido}\n"
                 f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
                 f"{tier['mercado_nombre']} | @{tier['cuota']}{ev_extra}\n"
-                f"<i>{prob_label}: {round(tier['prob'])}%</i>"
+                f"<i>{prob_label}: {round(tier['prob'])}%</i>\n"
+                f"{stake_line}"
             )
         else:
             # Partido normal (fútbol u otro deporte de equipo)
@@ -811,12 +816,17 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 ev_extra = f" — EV +{ev}%"
             prob_label = "Prob DNB" if "dnb" in tier.get("mercado", "") else "Prob modelo"
             sp_emoji = _sport_emoji(p.get("liga", "") or p.get("deporte", ""))
+            if label == "ALTO VALOR":
+                stake_line = "⚠️ <i>Solo si tienes confianza — Stake: 2% del bankroll</i>"
+            else:
+                stake_line = "💰 <i>Stake recomendado: 3% del bankroll</i>"
             return (
                 f"{emoji} <b>{label}</b>\n"
                 f"{sp_emoji} <b>{p['local']} vs {p['visitante']}</b>\n"
                 f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
                 f"{tier['mercado_nombre']} | @{tier['cuota']}{ev_extra}\n"
-                f"<i>{prob_label}: {round(tier['prob'])}%</i>"
+                f"<i>{prob_label}: {round(tier['prob'])}%</i>\n"
+                f"{stake_line}"
             )
 
     bloques = [b for b in [
@@ -833,7 +843,8 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
         f"📊 <b>SharpIQ — Picks del Día</b>\n"
         f"{'─' * 30}\n\n"
         + sep.join(bloques)
-        + "\n\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+        + "\n\n📌 <i>Regla: nunca más del 8% del bankroll en un día</i>"
+        + "\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
     )
     return enviar_mensaje(texto, chat_id=TELEGRAM_CHAT_ID)
 
