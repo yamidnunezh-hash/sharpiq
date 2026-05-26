@@ -447,10 +447,14 @@ def procesar_updates_bot():
 def enviar_saludo_manana_free(partidos_hoy):
     """
     Saludo matutino al canal free — estilo dinámico CampeonesColombia.
-    partidos_hoy: lista de dicts con claves 'local', 'visitante', 'liga', 'hora'
+    partidos_hoy: lista de dicts con claves 'local', 'visitante', 'liga', 'hora', 'fecha'
     """
     from datetime import date
     import random
+
+    # Filtrar solo partidos de HOY
+    hoy_iso = date.today().isoformat()
+    partidos_hoy = [p for p in partidos_hoy if p.get("fecha", hoy_iso) == hoy_iso]
 
     # GIF de análisis antes del texto
     enviar_gif_free(random.choice(GIFS_MANANA))
@@ -806,8 +810,7 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 ev = round(tier.get("ev_pinn", tier.get("ev", 0)) or 0)
                 ev_extra = f" — EV +{ev}%"
             prob_label = "Prob DNB" if "dnb" in tier.get("mercado", "") else "Prob modelo"
-            deporte = p.get("deporte", "").upper()
-            sp_emoji = {"NBA": "🏀", "NHL": "🏒", "MLB": "⚾", "NFL": "🏈", "UFL": "🏈"}.get(deporte, "⚽")
+            sp_emoji = _sport_emoji(p.get("liga", "") or p.get("deporte", ""))
             return (
                 f"{emoji} <b>{label}</b>\n"
                 f"{sp_emoji} <b>{p['local']} vs {p['visitante']}</b>\n"

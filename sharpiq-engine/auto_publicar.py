@@ -105,6 +105,7 @@ def correr():
                     "visitante": p["visitante"],
                     "liga":      p.get("liga", ""),
                     "hora":      _hora_cot_de_pred(p),
+                    "fecha":     p.get("fecha_evento", date.today().isoformat()),
                 }
                 for p in reporte.get("predicciones", [])
             ]
@@ -163,14 +164,18 @@ def correr():
 
     tiene_alguno = any(tiers.get(k) for k in ("seguro", "principal", "alto_valor"))
     if not tiene_alguno:
-        try:
-            from telegram_alertas import enviar_aviso_yamid
-            enviar_aviso_yamid(
-                f"⚠️ SharpIQ {date.today().isoformat()} — "
-                f"Sin condiciones para los 3 tiers hoy (todos ya publicados o sin cuotas DNB/Over1.5)."
-            )
-        except Exception:
-            pass
+        # Solo avisar a Yamid UNA vez al día, no en cada turno
+        _sin_picks_sent = os.path.join(BASE_DIR_AP, "logs", f"sin_picks_{date.today().isoformat()}.sent")
+        if not os.path.exists(_sin_picks_sent):
+            try:
+                from telegram_alertas import enviar_aviso_yamid
+                enviar_aviso_yamid(
+                    f"⚠️ SharpIQ {date.today().isoformat()} — "
+                    f"Sin picks nuevos hoy (todos ya publicados o sin cuotas DNB/Over1.5)."
+                )
+                open(_sin_picks_sent, "w").close()
+            except Exception:
+                pass
         print("  Sin picks nuevos hoy")
         return
 
