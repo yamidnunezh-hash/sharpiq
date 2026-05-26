@@ -301,6 +301,33 @@
   <div id="lista-pendientes" style="display:flex; flex-direction:column; gap:8px;"></div>
 </div>
 
+<!-- WIDGET ROI -->
+<div class="sec-interna" id="sec-roi">
+  <div class="sec-titulo">📈 ROI del mes</div>
+  <div id="roi-cargando" style="color:var(--muted);font-size:13px">Calculando...</div>
+  <div id="roi-contenido" style="display:none">
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 18px;min-width:110px;text-align:center">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:4px">PICKS</div>
+        <div id="roi-picks" style="font-family:monospace;font-size:1.4rem;font-weight:700;color:var(--text)">—</div>
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 18px;min-width:110px;text-align:center">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:4px">WIN RATE</div>
+        <div id="roi-winrate" style="font-family:monospace;font-size:1.4rem;font-weight:700;color:var(--cyan)">—</div>
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 18px;min-width:110px;text-align:center">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:4px">ROI</div>
+        <div id="roi-pct" style="font-family:monospace;font-size:1.4rem;font-weight:700">—</div>
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 18px;min-width:140px;text-align:center">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:4px">GANANCIA NETA</div>
+        <div id="roi-ganancia" style="font-family:monospace;font-size:1.4rem;font-weight:700">—</div>
+      </div>
+    </div>
+    <div id="roi-detalle" style="margin-top:10px;font-size:12px;color:var(--muted)"></div>
+  </div>
+</div>
+
 <!-- WIDGET BANKROLL -->
 <div class="sec-interna">
   <div class="sec-titulo">💰 Mi Bankroll</div>
@@ -841,6 +868,56 @@ async function marcarResultado(partido, resultado, btn) {
     }
   } catch { btn.disabled = false; }
 }
+
+// ── ROI TRACKER ─────────────────────────────────────────────────
+function calcularROI() {
+  const bankroll = parseFloat(localStorage.getItem('sharpiq_bankroll') || '5000000');
+  const mesActual = new Date().toLocaleDateString('es-CO', {month:'2-digit', year:'2-digit'}).replace('/', '/');
+
+  if (typeof PREDICCIONES_HISTORIAL === 'undefined') {
+    document.getElementById('roi-cargando').textContent = 'Sin datos de historial.';
+    return;
+  }
+
+  const picksMes = PREDICCIONES_HISTORIAL.filter(p =>
+    ['win','loss','push'].includes(p.resultado) &&
+    p.fecha && p.fecha.slice(-5) === mesActual
+  );
+
+  if (!picksMes.length) {
+    document.getElementById('roi-cargando').textContent = 'Sin picks registrados este mes aún.';
+    return;
+  }
+
+  let wins = 0, losses = 0, apostado = 0, ganancia = 0;
+  picksMes.forEach(p => {
+    const pct   = parseFloat(p.stake_pct || 3) / 100;
+    const stake = bankroll * pct;
+    const cuota = parseFloat(p.cuota || 1);
+    apostado += stake;
+    if (p.resultado === 'win')  { wins++;   ganancia += stake * (cuota - 1); }
+    if (p.resultado === 'loss') { losses++;  ganancia -= stake; }
+  });
+
+  const roiPct   = apostado > 0 ? (ganancia / apostado * 100) : 0;
+  const winRate  = picksMes.length > 0 ? (wins / picksMes.length * 100) : 0;
+  const positivo = ganancia >= 0;
+
+  document.getElementById('roi-cargando').style.display    = 'none';
+  document.getElementById('roi-contenido').style.display   = 'block';
+  document.getElementById('roi-picks').textContent         = `${wins}W / ${losses}L`;
+  document.getElementById('roi-winrate').textContent       = winRate.toFixed(1) + '%';
+  const roiEl = document.getElementById('roi-pct');
+  roiEl.textContent = (roiPct >= 0 ? '+' : '') + roiPct.toFixed(1) + '%';
+  roiEl.style.color = positivo ? 'var(--green)' : 'var(--red)';
+  const ganEl = document.getElementById('roi-ganancia');
+  ganEl.textContent = (positivo ? '+' : '-') + '$' + Math.abs(ganancia).toLocaleString('es-CO', {maximumFractionDigits:0}) + ' COP';
+  ganEl.style.color = positivo ? 'var(--green)' : 'var(--red)';
+  document.getElementById('roi-detalle').textContent =
+    `${picksMes.length} picks · $${apostado.toLocaleString('es-CO',{maximumFractionDigits:0})} COP apostados · Bankroll: $${bankroll.toLocaleString('es-CO')} COP`;
+}
+// Calcular ROI cuando datos.js esté cargado
+document.addEventListener('DOMContentLoaded', () => setTimeout(calcularROI, 800));
 
 // ── BANKROLL TRACKER ────────────────────────────────────────────
 function calcularStake(){

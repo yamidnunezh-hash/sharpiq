@@ -181,13 +181,15 @@ def mover_a_historial(texto, evento, resultado):
     texto_nuevo = re.sub(patron, '', texto, count=1)
 
     # Construir entrada para HISTORIAL
+    tier_str      = f'\n    tier:       "{evento["tier"]}",'      if evento.get("tier")      else ""
+    stake_pct_str = f'\n    stake_pct:  "{evento["stake_pct"]}",'  if evento.get("stake_pct") else ""
     nueva_entrada = f'''  {{
     fecha:      "{evento.get('fecha', date.today().strftime('%d/%m/%y'))}",
     partido:    "{evento['partido']}",
     liga:       "{evento['liga']}",
     prediccion: "{evento['prediccion']}",
     cuota:      "{evento['cuota']}",
-    resultado:  "{resultado}"
+    resultado:  "{resultado}"{tier_str}{stake_pct_str}
   }},'''
 
     # Insertar al inicio del historial
@@ -319,5 +321,81 @@ def correr():
     return actualizados
 
 
+def calcular_roi(datos_texto, bankroll=5_000_000):
+    """Calcula ROI del mes actual a partir de PREDICCIONES_HISTORIAL en datos.js."""
+    historial = _extraer_array(datos_texto, 'PREDICCIONES_HISTORIAL')
+    mes_actual = date.today().strftime('%m/%y')
+
+    picks_mes = [p for p in historial
+                 if p.get('resultado') in ('win', 'loss', 'push')
+                 and p.get('fecha', '').endswith(mes_actual)]
+
+    if not picks_mes:
+        return None
+
+    total_picks  = len(picks_mes)
+    wins         = sum(1 for p in picks_mes if p.get('resultado') == 'win')
+    losses       = sum(1 for p in picks_mes if p.get('resultado') == 'loss')
+    ganancia_net = 0
+    total_apostado = 0
+
+    for p in picks_mes:
+        pct   = float(p.get('stake_pct') or 3) / 100
+        stake = bankroll * pct
+        total_apostado += stake
+        try:
+            cuota = float(p.get('cuota') or 1)
+        except (ValueError, TypeError):
+            cuota = 1.0
+        if p.get('resultado') == 'win':
+            ganancia_net += stake * (cuota - 1)
+        elif p.get('resultado') == 'loss':
+            ganancia_net -= stake
+
+    roi_pct = (ganancia_net / total_apostado * 100) if total_apostado > 0 else 0
+    win_rate = (wins / total_picks * 100) if total_picks > 0 else 0
+
+    return {
+        "picks":    total_picks,
+        "wins":     wins,
+        "losses":   losses,
+        "win_rate": round(win_rate, 1),
+        "apostado": round(total_apostado),
+        "ganancia": round(ganancia_net),
+        "roi_pct":  round(roi_pct, 1),
+        "mes":      mes_actual,
+    }
+
+
+def enviar_resumen_roi_semanal():
+    """Envía resumen de ROI semanal a Yamid los lunes."""
+    texto = leer_datos()
+    roi = calcular_roi(texto)
+    if not roi:
+        return
+
+    emoji_roi = "🟢" if roi["ganancia"] >= 0 else "🔴"
+    ganancia_fmt = f"+${roi['ganancia']:,.0f}" if roi["ganancia"] >= 0 else f"-${abs(roi['ganancia']):,.0f}"
+
+    msg = (
+        f"📊 <b>SharpIQ — ROI {roi['mes']}</b>\n\n"
+        f"📌 Picks: {roi['picks']} | ✅ {roi['wins']} W / ❌ {roi['losses']} L\n"
+        f"🎯 Win Rate: {roi['win_rate']}%\n"
+        f"💵 Total apostado: ${roi['apostado']:,.0f} COP\n"
+        f"{emoji_roi} Ganancia neta: {ganancia_fmt} COP\n"
+        f"📈 ROI: {roi['roi_pct']:+.1f}%\n\n"
+        f"<i>Bankroll base: $5.000.000 COP · SharpIQ</i>"
+    )
+    try:
+        from telegram_alertas import enviar_aviso_yamid
+        enviar_aviso_yamid(msg)
+        print(f"  ROI {roi['mes']}: {roi['roi_pct']:+.1f}% | {ganancia_fmt} COP")
+    except Exception as e:
+        print(f"  ROI telegram error: {e}")
+
+
 if __name__ == "__main__":
     correr()
+    # Enviar resumen ROI los lunes
+    if date.today().weekday() == 0:
+        enviar_resumen_roi_semanal()

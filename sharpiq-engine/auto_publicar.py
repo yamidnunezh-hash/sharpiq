@@ -39,11 +39,10 @@ def _hora_cot(hora_utc):
         return hora_utc
 
 
-def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=None):
+def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=None, tier="principal", stake_pct=3):
     with open(DATOS_PATH, encoding="utf-8") as f:
         texto = f.read()
 
-    # Usar la fecha real del partido, no la fecha de publicación
     if fecha_evento:
         try:
             from datetime import date as _date
@@ -62,7 +61,9 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
     prediccion: "{mercado}{ev_tag}",
     cuota:      "{cuota}",
     hora:       "{hora}",
-    status:     "vip"
+    status:     "vip",
+    tier:       "{tier}",
+    stake_pct:  "{stake_pct}"
   }},"""
 
     texto_nuevo = re.sub(
@@ -215,17 +216,21 @@ def correr():
         "over35":"over35","under35":"under35","btts_si":"btts_si","btts_no":"btts_no",
         "doble_12":"doble_12","dnb_local":"dnb_local","dnb_visita":"dnb_visita",
     }
+    _STAKE_PCT = {"seguro": 3, "principal": 3, "alto_valor": 2}
     for k in ("seguro", "principal", "alto_valor"):
         t = tiers.get(k)
         if not t:
             continue
-        pred     = t["pred"]
-        partido  = f"{pred['local']} vs {pred['visitante']}"
-        liga     = pred.get("liga", "")
-        hora_cot = _hora_cot(pred.get("hora", "00:00"))
-        ev_val   = round(t.get("ev_pinn", t.get("ev", 0)) or 0)
-        fecha_ev = pred.get("fecha_evento") or pred.get("fecha") or None
-        _agregar_a_datos_js(partido, liga, t["mercado_nombre"], str(t["cuota"]), hora_cot, ev_val, fecha_evento=fecha_ev)
+        pred      = t["pred"]
+        partido   = f"{pred['local']} vs {pred['visitante']}"
+        liga      = pred.get("liga", "")
+        hora_cot  = _hora_cot(pred.get("hora", "00:00"))
+        ev_val    = round(t.get("ev_pinn", t.get("ev", 0)) or 0)
+        fecha_ev  = pred.get("fecha_evento") or pred.get("fecha") or None
+        stake_pct = _STAKE_PCT.get(k, 3)
+        _agregar_a_datos_js(partido, liga, t["mercado_nombre"], str(t["cuota"]),
+                            hora_cot, ev_val, fecha_evento=fecha_ev,
+                            tier=k, stake_pct=stake_pct)
         print(f"  datos.js: {partido} | {t['mercado_nombre']} @{t['cuota']}")
 
     # ── Git push ─────────────────────────────────────────────────
