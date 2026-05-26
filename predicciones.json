@@ -1,6 +1,5253 @@
 {
   "fecha": "2026-05-26",
-  "total_partidos": 0,
-  "predicciones": [],
-  "generado": "15:36:49"
+  "total_partidos": 70,
+  "predicciones": [
+    {
+      "local": "Oklahoma City Thunder",
+      "visitante": "San Antonio Spurs",
+      "liga": "NBA",
+      "liga_code": "basketball_nba",
+      "deporte": "NBA",
+      "deporte_emoji": "🏀",
+      "hora": "00:40",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Oklahoma City Thunder": 1.62,
+        "San Antonio Spurs": 2.43
+      },
+      "probabilidades": {
+        "Oklahoma City Thunder": 59.2,
+        "San Antonio Spurs": 40.8
+      },
+      "confianza": 59.2,
+      "value_bets": {
+        "Oklahoma City Thunder": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.62,
+          "casa": "DraftKings",
+          "pinn_prob": 59.2,
+          "mercado_nombre": "Oklahoma City Thunder"
+        },
+        "San Antonio Spurs": {
+          "value": -0.008,
+          "ev_porcentaje": -0.8,
+          "ev_pinn": -0.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.43,
+          "casa": "Unibet",
+          "pinn_prob": 40.8,
+          "mercado_nombre": "San Antonio Spurs"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "San Antonio Spurs",
+        "prob": 40.8,
+        "ev": -0.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Cleveland Guardians",
+      "visitante": "Washington Nationals",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "22:11",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Cleveland Guardians": 1.77,
+        "Washington Nationals": 2.18,
+        "Over 7.5": 1.96,
+        "Under 7.5": 1.88,
+        "Cleveland Guardians (-1.5)": 2.68,
+        "Washington Nationals (+1.5)": 1.52
+      },
+      "probabilidades": {
+        "Cleveland Guardians": 54.8,
+        "Washington Nationals": 45.2
+      },
+      "confianza": 54.8,
+      "value_bets": {
+        "Cleveland Guardians": {
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.77,
+          "casa": "FanDuel",
+          "pinn_prob": 54.8,
+          "mercado_nombre": "Cleveland Guardians"
+        },
+        "Washington Nationals": {
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.18,
+          "casa": "Unibet",
+          "pinn_prob": 45.2,
+          "mercado_nombre": "Washington Nationals"
+        },
+        "over_7_5": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.96,
+          "casa": "Unibet",
+          "pinn_prob": 48.3,
+          "mercado_nombre": "Over 7.5"
+        },
+        "under_7_5": {
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "FanDuel",
+          "pinn_prob": 51.7,
+          "mercado_nombre": "Under 7.5"
+        },
+        "spread_cleveland_guardians_m1_5": {
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.68,
+          "casa": "FanDuel",
+          "pinn_prob": 36.4,
+          "mercado_nombre": "Cleveland Guardians (-1.5)"
+        },
+        "spread_washington_nationals_1_5": {
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.52,
+          "casa": "DraftKings",
+          "pinn_prob": 63.6,
+          "mercado_nombre": "Washington Nationals (+1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Washington Nationals",
+        "prob": 45.2,
+        "ev": -1.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Baltimore Orioles",
+      "visitante": "Tampa Bay Rays",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "22:36",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Baltimore Orioles": 1.96,
+        "Tampa Bay Rays": 1.89,
+        "Over 8.5": 1.87,
+        "Under 8.5": 2.0
+      },
+      "probabilidades": {
+        "Baltimore Orioles": 49.1,
+        "Tampa Bay Rays": 50.9
+      },
+      "confianza": 50.9,
+      "value_bets": {
+        "Baltimore Orioles": {
+          "value": -0.037,
+          "ev_porcentaje": -3.7,
+          "ev_pinn": -3.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.96,
+          "casa": "FanDuel",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Baltimore Orioles"
+        },
+        "Tampa Bay Rays": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.89,
+          "casa": "FanDuel",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Tampa Bay Rays"
+        },
+        "over_8_5": {
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "FanDuel",
+          "pinn_prob": 51.4,
+          "mercado_nombre": "Over 8.5"
+        },
+        "under_8_5": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "Unibet",
+          "pinn_prob": 48.6,
+          "mercado_nombre": "Under 8.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Under 8.5",
+        "prob": 48.6,
+        "ev": -2.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Pittsburgh Pirates",
+      "visitante": "Chicago Cubs",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "22:41",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Chicago Cubs": 2.19,
+        "Pittsburgh Pirates": 1.75,
+        "Over 8.5": 2.02,
+        "Under 8.5": 1.81,
+        "Chicago Cubs (+1.5)": 1.56,
+        "Pittsburgh Pirates (-1.5)": 2.62
+      },
+      "probabilidades": {
+        "Chicago Cubs": 43.9,
+        "Pittsburgh Pirates": 56.1
+      },
+      "confianza": 56.1,
+      "value_bets": {
+        "Chicago Cubs": {
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.19,
+          "casa": "DraftKings",
+          "pinn_prob": 43.9,
+          "mercado_nombre": "Chicago Cubs"
+        },
+        "Pittsburgh Pirates": {
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.75,
+          "casa": "FanDuel",
+          "pinn_prob": 56.1,
+          "mercado_nombre": "Pittsburgh Pirates"
+        },
+        "over_8_5": {
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.02,
+          "casa": "FanDuel",
+          "pinn_prob": 48.5,
+          "mercado_nombre": "Over 8.5"
+        },
+        "under_8_5": {
+          "value": -0.067,
+          "ev_porcentaje": -6.7,
+          "ev_pinn": -6.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.81,
+          "casa": "FanDuel",
+          "pinn_prob": 51.5,
+          "mercado_nombre": "Under 8.5"
+        },
+        "spread_chicago_cubs_1_5": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.56,
+          "casa": "DraftKings",
+          "pinn_prob": 61.4,
+          "mercado_nombre": "Chicago Cubs (+1.5)"
+        },
+        "spread_pittsburgh_pirates_m1_5": {
+          "value": 0.011,
+          "ev_porcentaje": 1.1,
+          "ev_pinn": 1.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.62,
+          "casa": "FanDuel",
+          "pinn_prob": 38.6,
+          "mercado_nombre": "Pittsburgh Pirates (-1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Pittsburgh Pirates (-1.5)",
+        "prob": 38.6,
+        "ev": 1.1
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Detroit Tigers",
+      "visitante": "Los Angeles Angels",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "22:41",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Detroit Tigers": 1.75,
+        "Los Angeles Angels": 2.19,
+        "Over 9.0": 1.98,
+        "Under 9.0": 1.85,
+        "Detroit Tigers (-1.5)": 2.58,
+        "Los Angeles Angels (+1.5)": 1.56
+      },
+      "probabilidades": {
+        "Detroit Tigers": 55.8,
+        "Los Angeles Angels": 44.2
+      },
+      "confianza": 55.8,
+      "value_bets": {
+        "Detroit Tigers": {
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.75,
+          "casa": "FanDuel",
+          "pinn_prob": 55.8,
+          "mercado_nombre": "Detroit Tigers"
+        },
+        "Los Angeles Angels": {
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.19,
+          "casa": "DraftKings",
+          "pinn_prob": 44.2,
+          "mercado_nombre": "Los Angeles Angels"
+        },
+        "over_9_0": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.98,
+          "casa": "BetMGM",
+          "pinn_prob": 48.3,
+          "mercado_nombre": "Over 9.0"
+        },
+        "under_9_0": {
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "DraftKings",
+          "pinn_prob": 51.7,
+          "mercado_nombre": "Under 9.0"
+        },
+        "spread_detroit_tigers_m1_5": {
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.58,
+          "casa": "FanDuel",
+          "pinn_prob": 38.3,
+          "mercado_nombre": "Detroit Tigers (-1.5)"
+        },
+        "spread_los_angeles_angels_1_5": {
+          "value": -0.037,
+          "ev_porcentaje": -3.7,
+          "ev_pinn": -3.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.56,
+          "casa": "DraftKings",
+          "pinn_prob": 61.7,
+          "mercado_nombre": "Los Angeles Angels (+1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Detroit Tigers (-1.5)",
+        "prob": 38.3,
+        "ev": -1.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Boston Red Sox",
+      "visitante": "Atlanta Braves",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "22:46",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Atlanta Braves": 1.94,
+        "Boston Red Sox": 1.91,
+        "Over 8.0": 1.91,
+        "Under 8.0": 1.96,
+        "Atlanta Braves (-1.5)": 2.6,
+        "Boston Red Sox (+1.5)": 1.57
+      },
+      "probabilidades": {
+        "Atlanta Braves": 49.7,
+        "Boston Red Sox": 50.3
+      },
+      "confianza": 50.3,
+      "value_bets": {
+        "Atlanta Braves": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.94,
+          "casa": "FanDuel",
+          "pinn_prob": 49.7,
+          "mercado_nombre": "Atlanta Braves"
+        },
+        "Boston Red Sox": {
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "FanDuel",
+          "pinn_prob": 50.3,
+          "mercado_nombre": "Boston Red Sox"
+        },
+        "over_8_0": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "DraftKings",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Over 8.0"
+        },
+        "under_8_0": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.96,
+          "casa": "Unibet",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Under 8.0"
+        },
+        "spread_atlanta_braves_m1_5": {
+          "value": -0.005,
+          "ev_porcentaje": -0.5,
+          "ev_pinn": -0.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.6,
+          "casa": "FanDuel",
+          "pinn_prob": 38.3,
+          "mercado_nombre": "Atlanta Braves (-1.5)"
+        },
+        "spread_boston_red_sox_1_5": {
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.57,
+          "casa": "BetMGM",
+          "pinn_prob": 61.7,
+          "mercado_nombre": "Boston Red Sox (+1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Atlanta Braves (-1.5)",
+        "prob": 38.3,
+        "ev": -0.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Toronto Blue Jays",
+      "visitante": "Miami Marlins",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "23:08",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Miami Marlins": 2.1,
+        "Toronto Blue Jays": 1.77,
+        "Over 7.5": 1.89,
+        "Under 7.5": 1.95,
+        "Miami Marlins (+1.5)": 1.51,
+        "Toronto Blue Jays (-1.5)": 2.68
+      },
+      "probabilidades": {
+        "Miami Marlins": 46.1,
+        "Toronto Blue Jays": 53.9
+      },
+      "confianza": 53.9,
+      "value_bets": {
+        "Miami Marlins": {
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.1,
+          "casa": "FanDuel",
+          "pinn_prob": 46.1,
+          "mercado_nombre": "Miami Marlins"
+        },
+        "Toronto Blue Jays": {
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.77,
+          "casa": "FanDuel",
+          "pinn_prob": 53.9,
+          "mercado_nombre": "Toronto Blue Jays"
+        },
+        "over_7_5": {
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.89,
+          "casa": "DraftKings",
+          "pinn_prob": 51.7,
+          "mercado_nombre": "Over 7.5"
+        },
+        "under_7_5": {
+          "value": -0.058,
+          "ev_porcentaje": -5.8,
+          "ev_pinn": -5.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "FanDuel",
+          "pinn_prob": 48.3,
+          "mercado_nombre": "Under 7.5"
+        },
+        "spread_miami_marlins_1_5": {
+          "value": -0.037,
+          "ev_porcentaje": -3.7,
+          "ev_pinn": -3.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.51,
+          "casa": "DraftKings",
+          "pinn_prob": 63.7,
+          "mercado_nombre": "Miami Marlins (+1.5)"
+        },
+        "spread_toronto_blue_jays_m1_5": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.68,
+          "casa": "FanDuel",
+          "pinn_prob": 36.3,
+          "mercado_nombre": "Toronto Blue Jays (-1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Over 7.5",
+        "prob": 51.7,
+        "ev": -2.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "New York Mets",
+      "visitante": "Cincinnati Reds",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "23:11",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Cincinnati Reds": 1.85,
+        "New York Mets": 2.04,
+        "Over 7.5": 2.0,
+        "Under 7.5": 1.87,
+        "Cincinnati Reds (-1.5)": 2.48,
+        "New York Mets (+1.5)": 1.59
+      },
+      "probabilidades": {
+        "Cincinnati Reds": 52.5,
+        "New York Mets": 47.5
+      },
+      "confianza": 52.5,
+      "value_bets": {
+        "Cincinnati Reds": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "FanDuel",
+          "pinn_prob": 52.5,
+          "mercado_nombre": "Cincinnati Reds"
+        },
+        "New York Mets": {
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.04,
+          "casa": "Unibet",
+          "pinn_prob": 47.5,
+          "mercado_nombre": "New York Mets"
+        },
+        "over_7_5": {
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "Unibet",
+          "pinn_prob": 47.9,
+          "mercado_nombre": "Over 7.5"
+        },
+        "under_7_5": {
+          "value": -0.027,
+          "ev_porcentaje": -2.7,
+          "ev_pinn": -2.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "FanDuel",
+          "pinn_prob": 52.1,
+          "mercado_nombre": "Under 7.5"
+        },
+        "spread_cincinnati_reds_m1_5": {
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.48,
+          "casa": "DraftKings",
+          "pinn_prob": 39.1,
+          "mercado_nombre": "Cincinnati Reds (-1.5)"
+        },
+        "spread_new_york_mets_1_5": {
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.59,
+          "casa": "BetMGM",
+          "pinn_prob": 60.9,
+          "mercado_nombre": "New York Mets (+1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Under 7.5",
+        "prob": 52.1,
+        "ev": -2.7
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Chicago White Sox",
+      "visitante": "Minnesota Twins",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "23:41",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Chicago White Sox": 1.98,
+        "Minnesota Twins": 1.87,
+        "Over 7.5": 1.88,
+        "Under 7.5": 1.96,
+        "Chicago White Sox (+1.5)": 1.57,
+        "Minnesota Twins (-1.5)": 2.46
+      },
+      "probabilidades": {
+        "Chicago White Sox": 48.6,
+        "Minnesota Twins": 51.4
+      },
+      "confianza": 51.4,
+      "value_bets": {
+        "Chicago White Sox": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.98,
+          "casa": "FanDuel",
+          "pinn_prob": 48.6,
+          "mercado_nombre": "Chicago White Sox"
+        },
+        "Minnesota Twins": {
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "Unibet",
+          "pinn_prob": 51.4,
+          "mercado_nombre": "Minnesota Twins"
+        },
+        "over_7_5": {
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "DraftKings",
+          "pinn_prob": 50.6,
+          "mercado_nombre": "Over 7.5"
+        },
+        "under_7_5": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.96,
+          "casa": "FanDuel",
+          "pinn_prob": 49.4,
+          "mercado_nombre": "Under 7.5"
+        },
+        "spread_chicago_white_sox_1_5": {
+          "value": -0.037,
+          "ev_porcentaje": -3.7,
+          "ev_pinn": -3.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.57,
+          "casa": "DraftKings",
+          "pinn_prob": 61.3,
+          "mercado_nombre": "Chicago White Sox (+1.5)"
+        },
+        "spread_minnesota_twins_m1_5": {
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.46,
+          "casa": "FanDuel",
+          "pinn_prob": 38.7,
+          "mercado_nombre": "Minnesota Twins (-1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Under 7.5",
+        "prob": 49.4,
+        "ev": -3.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Kansas City Royals",
+      "visitante": "New York Yankees",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "23:41",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Kansas City Royals": 2.68,
+        "New York Yankees": 1.5,
+        "Over 8.5": 1.85,
+        "Under 8.5": 2.0,
+        "Kansas City Royals (+1.5)": 2.05,
+        "New York Yankees (-1.5)": 1.83
+      },
+      "probabilidades": {
+        "Kansas City Royals": 35.6,
+        "New York Yankees": 64.4
+      },
+      "confianza": 64.4,
+      "value_bets": {
+        "Kansas City Royals": {
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.68,
+          "casa": "FanDuel",
+          "pinn_prob": 35.6,
+          "mercado_nombre": "Kansas City Royals"
+        },
+        "New York Yankees": {
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.5,
+          "casa": "FanDuel",
+          "pinn_prob": 64.4,
+          "mercado_nombre": "New York Yankees"
+        },
+        "over_8_5": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "DraftKings",
+          "pinn_prob": 51.8,
+          "mercado_nombre": "Over 8.5"
+        },
+        "under_8_5": {
+          "value": -0.036,
+          "ev_porcentaje": -3.6,
+          "ev_pinn": -3.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "FanDuel",
+          "pinn_prob": 48.2,
+          "mercado_nombre": "Under 8.5"
+        },
+        "spread_kansas_city_royals_1_5": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.05,
+          "casa": "BetMGM",
+          "pinn_prob": 47.2,
+          "mercado_nombre": "Kansas City Royals (+1.5)"
+        },
+        "spread_new_york_yankees_m1_5": {
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "FanDuel",
+          "pinn_prob": 52.8,
+          "mercado_nombre": "New York Yankees (-1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Kansas City Royals (+1.5)",
+        "prob": 47.2,
+        "ev": -3.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Milwaukee Brewers",
+      "visitante": "St. Louis Cardinals",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "23:41",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Milwaukee Brewers": 1.56,
+        "St. Louis Cardinals": 2.6,
+        "Over 8.0": 1.94,
+        "Under 8.0": 1.91,
+        "Milwaukee Brewers (-1.5)": 2.22,
+        "St. Louis Cardinals (+1.5)": 1.73
+      },
+      "probabilidades": {
+        "Milwaukee Brewers": 62.1,
+        "St. Louis Cardinals": 37.9
+      },
+      "confianza": 62.1,
+      "value_bets": {
+        "Milwaukee Brewers": {
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.56,
+          "casa": "FanDuel",
+          "pinn_prob": 62.1,
+          "mercado_nombre": "Milwaukee Brewers"
+        },
+        "St. Louis Cardinals": {
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.6,
+          "casa": "Unibet",
+          "pinn_prob": 37.9,
+          "mercado_nombre": "St. Louis Cardinals"
+        },
+        "over_8_0": {
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.94,
+          "casa": "FanDuel",
+          "pinn_prob": 49.5,
+          "mercado_nombre": "Over 8.0"
+        },
+        "under_8_0": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "BetMGM",
+          "pinn_prob": 50.5,
+          "mercado_nombre": "Under 8.0"
+        },
+        "spread_milwaukee_brewers_m1_5": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.22,
+          "casa": "FanDuel",
+          "pinn_prob": 43.6,
+          "mercado_nombre": "Milwaukee Brewers (-1.5)"
+        },
+        "spread_st._louis_cardinals_1_5": {
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.73,
+          "casa": "DraftKings",
+          "pinn_prob": 56.4,
+          "mercado_nombre": "St. Louis Cardinals (+1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "St. Louis Cardinals",
+        "prob": 37.9,
+        "ev": -1.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Texas Rangers",
+      "visitante": "Houston Astros",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "00:06",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Houston Astros": 2.14,
+        "Texas Rangers": 1.76,
+        "Over 8.0": 1.92,
+        "Under 8.0": 1.94,
+        "Houston Astros (+1.5)": 1.53,
+        "Texas Rangers (-1.5)": 2.58
+      },
+      "probabilidades": {
+        "Houston Astros": 45.3,
+        "Texas Rangers": 54.7
+      },
+      "confianza": 54.7,
+      "value_bets": {
+        "Houston Astros": {
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.14,
+          "casa": "FanDuel",
+          "pinn_prob": 45.3,
+          "mercado_nombre": "Houston Astros"
+        },
+        "Texas Rangers": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.76,
+          "casa": "DraftKings",
+          "pinn_prob": 54.7,
+          "mercado_nombre": "Texas Rangers"
+        },
+        "over_8_0": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "DraftKings",
+          "pinn_prob": 49.4,
+          "mercado_nombre": "Over 8.0"
+        },
+        "under_8_0": {
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.94,
+          "casa": "FanDuel",
+          "pinn_prob": 50.6,
+          "mercado_nombre": "Under 8.0"
+        },
+        "spread_houston_astros_1_5": {
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.53,
+          "casa": "DraftKings",
+          "pinn_prob": 62.8,
+          "mercado_nombre": "Houston Astros (+1.5)"
+        },
+        "spread_texas_rangers_m1_5": {
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.58,
+          "casa": "FanDuel",
+          "pinn_prob": 37.2,
+          "mercado_nombre": "Texas Rangers (-1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Under 8.0",
+        "prob": 50.6,
+        "ev": -1.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Athletics",
+      "visitante": "Seattle Mariners",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "01:41",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Athletics": 1.87,
+        "Seattle Mariners": 2.0,
+        "Over 9.5": 1.95,
+        "Under 9.5": 1.88
+      },
+      "probabilidades": {
+        "Athletics": 51.1,
+        "Seattle Mariners": 48.9
+      },
+      "confianza": 51.1,
+      "value_bets": {
+        "Athletics": {
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "DraftKings",
+          "pinn_prob": 51.1,
+          "mercado_nombre": "Athletics"
+        },
+        "Seattle Mariners": {
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "Unibet",
+          "pinn_prob": 48.9,
+          "mercado_nombre": "Seattle Mariners"
+        },
+        "over_9_5": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "FanDuel",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Over 9.5"
+        },
+        "under_9_5": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "DraftKings",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Under 9.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Seattle Mariners",
+        "prob": 48.9,
+        "ev": -2.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "San Diego Padres",
+      "visitante": "Philadelphia Phillies",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "01:41",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Philadelphia Phillies": 1.96,
+        "San Diego Padres": 1.92,
+        "Over 7.5": 1.93,
+        "Under 7.5": 1.94
+      },
+      "probabilidades": {
+        "Philadelphia Phillies": 50.3,
+        "San Diego Padres": 49.7
+      },
+      "confianza": 50.3,
+      "value_bets": {
+        "Philadelphia Phillies": {
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.96,
+          "casa": "FanDuel",
+          "pinn_prob": 50.3,
+          "mercado_nombre": "Philadelphia Phillies"
+        },
+        "San Diego Padres": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "DraftKings",
+          "pinn_prob": 49.7,
+          "mercado_nombre": "San Diego Padres"
+        },
+        "over_7_5": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "DraftKings",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Over 7.5"
+        },
+        "under_7_5": {
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.94,
+          "casa": "FanDuel",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Under 7.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Philadelphia Phillies",
+        "prob": 50.3,
+        "ev": -1.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "San Francisco Giants",
+      "visitante": "Arizona Diamondbacks",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "01:46",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Arizona Diamondbacks": 1.95,
+        "San Francisco Giants": 1.91,
+        "Over 8.0": 1.87,
+        "Under 8.0": 1.98
+      },
+      "probabilidades": {
+        "Arizona Diamondbacks": 48.6,
+        "San Francisco Giants": 51.4
+      },
+      "confianza": 51.4,
+      "value_bets": {
+        "Arizona Diamondbacks": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "DraftKings",
+          "pinn_prob": 48.6,
+          "mercado_nombre": "Arizona Diamondbacks"
+        },
+        "San Francisco Giants": {
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "FanDuel",
+          "pinn_prob": 51.4,
+          "mercado_nombre": "San Francisco Giants"
+        },
+        "over_8_0": {
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "FanDuel",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Over 8.0"
+        },
+        "under_8_0": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.98,
+          "casa": "BetMGM",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Under 8.0"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "San Francisco Giants",
+        "prob": 51.4,
+        "ev": -1.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Los Angeles Dodgers",
+      "visitante": "Colorado Rockies",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "02:11",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Colorado Rockies": 3.05,
+        "Los Angeles Dodgers": 1.43,
+        "Over 9.0": 1.95,
+        "Under 9.0": 1.92,
+        "Colorado Rockies (+1.5)": 1.95,
+        "Los Angeles Dodgers (-1.5)": 1.92
+      },
+      "probabilidades": {
+        "Colorado Rockies": 32.4,
+        "Los Angeles Dodgers": 67.6
+      },
+      "confianza": 67.6,
+      "value_bets": {
+        "Colorado Rockies": {
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.05,
+          "casa": "Unibet",
+          "pinn_prob": 32.4,
+          "mercado_nombre": "Colorado Rockies"
+        },
+        "Los Angeles Dodgers": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.43,
+          "casa": "FanDuel",
+          "pinn_prob": 67.6,
+          "mercado_nombre": "Los Angeles Dodgers"
+        },
+        "over_9_0": {
+          "value": -0.012,
+          "ev_porcentaje": -1.2,
+          "ev_pinn": -1.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "FanDuel",
+          "pinn_prob": 50.6,
+          "mercado_nombre": "Over 9.0"
+        },
+        "under_9_0": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "DraftKings",
+          "pinn_prob": 49.4,
+          "mercado_nombre": "Under 9.0"
+        },
+        "spread_colorado_rockies_1_5": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "DraftKings",
+          "pinn_prob": 49.5,
+          "mercado_nombre": "Colorado Rockies (+1.5)"
+        },
+        "spread_los_angeles_dodgers_m1_5": {
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "Unibet",
+          "pinn_prob": 50.5,
+          "mercado_nombre": "Los Angeles Dodgers (-1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Over 9.0",
+        "prob": 50.6,
+        "ev": -1.2
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Vegas Golden Knights",
+      "visitante": "Colorado Avalanche",
+      "liga": "NHL",
+      "liga_code": "icehockey_nhl",
+      "deporte": "NHL",
+      "deporte_emoji": "🏒",
+      "hora": "01:20",
+      "fecha_evento": "2026-05-26",
+      "cuotas": {
+        "Colorado Avalanche": 2.33,
+        "Vegas Golden Knights": 2.6,
+        "Over 6.0": 1.87,
+        "Under 6.0": 1.95,
+        "Colorado Avalanche (-1.5)": 3.1,
+        "Vegas Golden Knights (+1.5)": 1.4
+      },
+      "probabilidades": {
+        "Colorado Avalanche": 50.6,
+        "Vegas Golden Knights": 49.4
+      },
+      "confianza": 50.6,
+      "value_bets": {
+        "Colorado Avalanche": {
+          "value": 0.18,
+          "ev_porcentaje": 18.0,
+          "ev_pinn": 18.0,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 2.33,
+          "casa": "Unibet",
+          "pinn_prob": 50.6,
+          "mercado_nombre": "Colorado Avalanche"
+        },
+        "Vegas Golden Knights": {
+          "value": 0.283,
+          "ev_porcentaje": 28.3,
+          "ev_pinn": 28.3,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 2.6,
+          "casa": "Unibet",
+          "pinn_prob": 49.4,
+          "mercado_nombre": "Vegas Golden Knights"
+        },
+        "over_6_0": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "BetMGM",
+          "pinn_prob": 51.2,
+          "mercado_nombre": "Over 6.0"
+        },
+        "under_6_0": {
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "BetMGM",
+          "pinn_prob": 48.8,
+          "mercado_nombre": "Under 6.0"
+        },
+        "spread_colorado_avalanche_m1_5": {
+          "value": -0.072,
+          "ev_porcentaje": -7.2,
+          "ev_pinn": -7.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.1,
+          "casa": "FanDuel",
+          "pinn_prob": 29.9,
+          "mercado_nombre": "Colorado Avalanche (-1.5)"
+        },
+        "spread_vegas_golden_knights_1_5": {
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.4,
+          "casa": "BetMGM",
+          "pinn_prob": 70.1,
+          "mercado_nombre": "Vegas Golden Knights (+1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Vegas Golden Knights",
+        "prob": 49.4,
+        "ev": 28.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Montréal Canadiens",
+      "visitante": "Carolina Hurricanes",
+      "liga": "NHL",
+      "liga_code": "icehockey_nhl",
+      "deporte": "NHL",
+      "deporte_emoji": "🏒",
+      "hora": "00:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Carolina Hurricanes": 2.06,
+        "Montréal Canadiens": 3.0,
+        "Over 5.5": 1.91,
+        "Under 5.5": 1.98,
+        "Carolina Hurricanes (-1.5)": 2.9,
+        "Montréal Canadiens (+1.5)": 1.52
+      },
+      "probabilidades": {
+        "Carolina Hurricanes": 57.4,
+        "Montréal Canadiens": 42.6
+      },
+      "confianza": 57.4,
+      "value_bets": {
+        "Carolina Hurricanes": {
+          "value": 0.183,
+          "ev_porcentaje": 18.3,
+          "ev_pinn": 18.3,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 2.06,
+          "casa": "Unibet",
+          "pinn_prob": 57.4,
+          "mercado_nombre": "Carolina Hurricanes"
+        },
+        "Montréal Canadiens": {
+          "value": 0.277,
+          "ev_porcentaje": 27.7,
+          "ev_pinn": 27.7,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 3.0,
+          "casa": "Unibet",
+          "pinn_prob": 42.6,
+          "mercado_nombre": "Montréal Canadiens"
+        },
+        "over_5_5": {
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "Unibet",
+          "pinn_prob": 51.5,
+          "mercado_nombre": "Over 5.5"
+        },
+        "under_5_5": {
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.98,
+          "casa": "DraftKings",
+          "pinn_prob": 48.5,
+          "mercado_nombre": "Under 5.5"
+        },
+        "spread_carolina_hurricanes_m1_5": {
+          "value": -0.009,
+          "ev_porcentaje": -0.9,
+          "ev_pinn": -0.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.9,
+          "casa": "DraftKings",
+          "pinn_prob": 34.2,
+          "mercado_nombre": "Carolina Hurricanes (-1.5)"
+        },
+        "spread_montréal_canadiens_1_5": {
+          "value": 0.0,
+          "ev_porcentaje": 0.0,
+          "ev_pinn": 0.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.52,
+          "casa": "FanDuel",
+          "pinn_prob": 65.8,
+          "mercado_nombre": "Montréal Canadiens (+1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Montréal Canadiens",
+        "prob": 42.6,
+        "ev": 27.7
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Alejandro Davidovich Fokina",
+      "visitante": "Thiago Agustin Tirante",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Alejandro Davidovich Fokina": 2.1,
+        "Thiago Agustin Tirante": 1.74
+      },
+      "probabilidades": {
+        "Alejandro Davidovich Fokina": 44.6,
+        "Thiago Agustin Tirante": 55.4
+      },
+      "confianza": 55.4,
+      "value_bets": {
+        "Alejandro Davidovich Fokina": {
+          "value": -0.064,
+          "ev_porcentaje": -6.4,
+          "ev_pinn": -6.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.1,
+          "casa": "William Hill",
+          "pinn_prob": 44.6,
+          "mercado_nombre": "Alejandro Davidovich Fokina"
+        },
+        "Thiago Agustin Tirante": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.74,
+          "casa": "Unibet",
+          "pinn_prob": 55.4,
+          "mercado_nombre": "Thiago Agustin Tirante"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Thiago Agustin Tirante",
+        "prob": 55.4,
+        "ev": -3.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Federico Cinà",
+      "visitante": "Jesper De Jong",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Federico Cinà": 2.23,
+        "Jesper De Jong": 1.67
+      },
+      "probabilidades": {
+        "Federico Cinà": 42.6,
+        "Jesper De Jong": 57.4
+      },
+      "confianza": 57.4,
+      "value_bets": {
+        "Federico Cinà": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.23,
+          "casa": "Unibet",
+          "pinn_prob": 42.6,
+          "mercado_nombre": "Federico Cinà"
+        },
+        "Jesper De Jong": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.67,
+          "casa": "William Hill",
+          "pinn_prob": 57.4,
+          "mercado_nombre": "Jesper De Jong"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Jesper De Jong",
+        "prob": 57.4,
+        "ev": -4.2
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Karen Khachanov",
+      "visitante": "Marco Trungelliti",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Karen Khachanov": 1.27,
+        "Marco Trungelliti": 4.2
+      },
+      "probabilidades": {
+        "Karen Khachanov": 75.7,
+        "Marco Trungelliti": 24.3
+      },
+      "confianza": 75.7,
+      "value_bets": {
+        "Karen Khachanov": {
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.27,
+          "casa": "Unibet",
+          "pinn_prob": 75.7,
+          "mercado_nombre": "Karen Khachanov"
+        },
+        "Marco Trungelliti": {
+          "value": 0.02,
+          "ev_porcentaje": 2.0,
+          "ev_pinn": 2.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.2,
+          "casa": "William Hill",
+          "pinn_prob": 24.3,
+          "mercado_nombre": "Marco Trungelliti"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Marco Trungelliti",
+        "prob": 24.3,
+        "ev": 2.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Camilo Ugo Carabelli",
+      "visitante": "Andrey Rublev",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "10:10",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Andrey Rublev": 1.27,
+        "Camilo Ugo Carabelli": 4.0,
+        "Over 36.5": 1.92,
+        "Under 36.5": 1.83
+      },
+      "probabilidades": {
+        "Andrey Rublev": 75.8,
+        "Camilo Ugo Carabelli": 24.2
+      },
+      "confianza": 75.8,
+      "value_bets": {
+        "Andrey Rublev": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.27,
+          "casa": "Unibet",
+          "pinn_prob": 75.8,
+          "mercado_nombre": "Andrey Rublev"
+        },
+        "Camilo Ugo Carabelli": {
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.0,
+          "casa": "William Hill",
+          "pinn_prob": 24.2,
+          "mercado_nombre": "Camilo Ugo Carabelli"
+        },
+        "over_36_5": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "Unibet",
+          "pinn_prob": 49.9,
+          "mercado_nombre": "Over 36.5"
+        },
+        "under_36_5": {
+          "value": -0.083,
+          "ev_porcentaje": -8.3,
+          "ev_pinn": -8.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "Unibet",
+          "pinn_prob": 50.1,
+          "mercado_nombre": "Under 36.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Camilo Ugo Carabelli",
+        "prob": 24.2,
+        "ev": -3.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Mariano Navone",
+      "visitante": "Jakub Mensik",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "10:40",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Jakub Mensik": 1.8,
+        "Mariano Navone": 2.02
+      },
+      "probabilidades": {
+        "Jakub Mensik": 53.2,
+        "Mariano Navone": 46.8
+      },
+      "confianza": 53.2,
+      "value_bets": {
+        "Jakub Mensik": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.8,
+          "casa": "William Hill",
+          "pinn_prob": 53.2,
+          "mercado_nombre": "Jakub Mensik"
+        },
+        "Mariano Navone": {
+          "value": -0.055,
+          "ev_porcentaje": -5.5,
+          "ev_pinn": -5.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.02,
+          "casa": "Unibet",
+          "pinn_prob": 46.8,
+          "mercado_nombre": "Mariano Navone"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Jakub Mensik",
+        "prob": 53.2,
+        "ev": -4.2
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "James Duckworth",
+      "visitante": "Rafael Jodar",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "11:20",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "James Duckworth": 13.0,
+        "Rafael Jodar": 1.03,
+        "Over 28.5": 1.88,
+        "Under 28.5": 1.87
+      },
+      "probabilidades": {
+        "James Duckworth": 6.1,
+        "Rafael Jodar": 93.9
+      },
+      "confianza": 93.9,
+      "value_bets": {
+        "James Duckworth": {
+          "value": -0.201,
+          "ev_porcentaje": -20.1,
+          "ev_pinn": -20.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 13.0,
+          "casa": "Unibet",
+          "pinn_prob": 6.1,
+          "mercado_nombre": "James Duckworth"
+        },
+        "Rafael Jodar": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.03,
+          "casa": "Unibet",
+          "pinn_prob": 93.9,
+          "mercado_nombre": "Rafael Jodar"
+        },
+        "over_28_5": {
+          "value": -0.055,
+          "ev_porcentaje": -5.5,
+          "ev_pinn": -5.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "Unibet",
+          "pinn_prob": 50.3,
+          "mercado_nombre": "Over 28.5"
+        },
+        "under_28_5": {
+          "value": -0.07,
+          "ev_porcentaje": -7.0,
+          "ev_pinn": -7.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "Unibet",
+          "pinn_prob": 49.7,
+          "mercado_nombre": "Under 28.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Rafael Jodar",
+        "prob": 93.9,
+        "ev": -3.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Nuno Borges",
+      "visitante": "Miomir Kecmanovic",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "11:20",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Miomir Kecmanovic": 1.57,
+        "Nuno Borges": 2.43,
+        "Over 38.5": 1.85,
+        "Under 38.5": 1.88
+      },
+      "probabilidades": {
+        "Miomir Kecmanovic": 61.2,
+        "Nuno Borges": 38.8
+      },
+      "confianza": 61.2,
+      "value_bets": {
+        "Miomir Kecmanovic": {
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.57,
+          "casa": "William Hill",
+          "pinn_prob": 61.2,
+          "mercado_nombre": "Miomir Kecmanovic"
+        },
+        "Nuno Borges": {
+          "value": -0.056,
+          "ev_porcentaje": -5.6,
+          "ev_pinn": -5.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.43,
+          "casa": "Unibet",
+          "pinn_prob": 38.8,
+          "mercado_nombre": "Nuno Borges"
+        },
+        "over_38_5": {
+          "value": -0.08,
+          "ev_porcentaje": -8.0,
+          "ev_pinn": -8.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Unibet",
+          "pinn_prob": 49.7,
+          "mercado_nombre": "Over 38.5"
+        },
+        "under_38_5": {
+          "value": -0.055,
+          "ev_porcentaje": -5.5,
+          "ev_pinn": -5.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "Unibet",
+          "pinn_prob": 50.3,
+          "mercado_nombre": "Under 38.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Miomir Kecmanovic",
+        "prob": 61.2,
+        "ev": -4.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Joao Fonseca",
+      "visitante": "Dino Prizmic",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "11:50",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Dino Prizmic": 2.0,
+        "Joao Fonseca": 1.85,
+        "Over 38.5": 1.87,
+        "Under 38.5": 1.91
+      },
+      "probabilidades": {
+        "Dino Prizmic": 49.7,
+        "Joao Fonseca": 50.3
+      },
+      "confianza": 50.3,
+      "value_bets": {
+        "Dino Prizmic": {
+          "value": -0.005,
+          "ev_porcentaje": -0.5,
+          "ev_pinn": -0.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "Unibet",
+          "pinn_prob": 49.7,
+          "mercado_nombre": "Dino Prizmic"
+        },
+        "Joao Fonseca": {
+          "value": -0.07,
+          "ev_porcentaje": -7.0,
+          "ev_pinn": -7.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "William Hill",
+          "pinn_prob": 50.3,
+          "mercado_nombre": "Joao Fonseca"
+        },
+        "over_38_5": {
+          "value": -0.065,
+          "ev_porcentaje": -6.5,
+          "ev_pinn": -6.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "Unibet",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Over 38.5"
+        },
+        "under_38_5": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "Unibet",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Under 38.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Dino Prizmic",
+        "prob": 49.7,
+        "ev": -0.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Ugo Humbert",
+      "visitante": "Quentin Halys",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "11:50",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Quentin Halys": 2.33,
+        "Ugo Humbert": 1.67
+      },
+      "probabilidades": {
+        "Quentin Halys": 43.0,
+        "Ugo Humbert": 57.0
+      },
+      "confianza": 57.0,
+      "value_bets": {
+        "Quentin Halys": {
+          "value": 0.001,
+          "ev_porcentaje": 0.1,
+          "ev_pinn": 0.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.33,
+          "casa": "Unibet",
+          "pinn_prob": 43.0,
+          "mercado_nombre": "Quentin Halys"
+        },
+        "Ugo Humbert": {
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.67,
+          "casa": "William Hill",
+          "pinn_prob": 57.0,
+          "mercado_nombre": "Ugo Humbert"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Quentin Halys",
+        "prob": 43.0,
+        "ev": 0.1
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Nishesh Basavareddy",
+      "visitante": "Alex Michelsen",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "12:50",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Alex Michelsen": 1.5,
+        "Nishesh Basavareddy": 2.6
+      },
+      "probabilidades": {
+        "Alex Michelsen": 63.7,
+        "Nishesh Basavareddy": 36.3
+      },
+      "confianza": 63.7,
+      "value_bets": {
+        "Alex Michelsen": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.5,
+          "casa": "Unibet",
+          "pinn_prob": 63.7,
+          "mercado_nombre": "Alex Michelsen"
+        },
+        "Nishesh Basavareddy": {
+          "value": -0.055,
+          "ev_porcentaje": -5.5,
+          "ev_pinn": -5.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.6,
+          "casa": "Unibet",
+          "pinn_prob": 36.3,
+          "mercado_nombre": "Nishesh Basavareddy"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Alex Michelsen",
+        "prob": 63.7,
+        "ev": -4.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Lorenzo Sonego",
+      "visitante": "Tommy Paul",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "13:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Lorenzo Sonego": 6.0,
+        "Tommy Paul": 1.14
+      },
+      "probabilidades": {
+        "Lorenzo Sonego": 16.6,
+        "Tommy Paul": 83.4
+      },
+      "confianza": 83.4,
+      "value_bets": {
+        "Lorenzo Sonego": {
+          "value": -0.004,
+          "ev_porcentaje": -0.4,
+          "ev_pinn": -0.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 6.0,
+          "casa": "William Hill",
+          "pinn_prob": 16.6,
+          "mercado_nombre": "Lorenzo Sonego"
+        },
+        "Tommy Paul": {
+          "value": -0.049,
+          "ev_porcentaje": -4.9,
+          "ev_pinn": -4.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.14,
+          "casa": "Unibet",
+          "pinn_prob": 83.4,
+          "mercado_nombre": "Tommy Paul"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Lorenzo Sonego",
+        "prob": 16.6,
+        "ev": -0.4
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Thanasi Kokkinakis",
+      "visitante": "Pablo Carreno Busta",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "13:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Pablo Carreno Busta": 1.36,
+        "Thanasi Kokkinakis": 3.15
+      },
+      "probabilidades": {
+        "Pablo Carreno Busta": 70.3,
+        "Thanasi Kokkinakis": 29.7
+      },
+      "confianza": 70.3,
+      "value_bets": {
+        "Pablo Carreno Busta": {
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.36,
+          "casa": "Unibet",
+          "pinn_prob": 70.3,
+          "mercado_nombre": "Pablo Carreno Busta"
+        },
+        "Thanasi Kokkinakis": {
+          "value": -0.065,
+          "ev_porcentaje": -6.5,
+          "ev_pinn": -6.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.15,
+          "casa": "Unibet",
+          "pinn_prob": 29.7,
+          "mercado_nombre": "Thanasi Kokkinakis"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Pablo Carreno Busta",
+        "prob": 70.3,
+        "ev": -4.4
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Valentin Royer",
+      "visitante": "Novak Djokovic",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "14:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Novak Djokovic": 1.1,
+        "Valentin Royer": 7.5,
+        "Over 32.5": 1.83,
+        "Under 32.5": 1.92
+      },
+      "probabilidades": {
+        "Novak Djokovic": 86.4,
+        "Valentin Royer": 13.6
+      },
+      "confianza": 86.4,
+      "value_bets": {
+        "Novak Djokovic": {
+          "value": -0.049,
+          "ev_porcentaje": -4.9,
+          "ev_pinn": -4.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.1,
+          "casa": "Unibet",
+          "pinn_prob": 86.4,
+          "mercado_nombre": "Novak Djokovic"
+        },
+        "Valentin Royer": {
+          "value": 0.017,
+          "ev_porcentaje": 1.7,
+          "ev_pinn": 1.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 7.5,
+          "casa": "William Hill",
+          "pinn_prob": 13.6,
+          "mercado_nombre": "Valentin Royer"
+        },
+        "over_32_5": {
+          "value": -0.078,
+          "ev_porcentaje": -7.8,
+          "ev_pinn": -7.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "Unibet",
+          "pinn_prob": 50.4,
+          "mercado_nombre": "Over 32.5"
+        },
+        "under_32_5": {
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "Unibet",
+          "pinn_prob": 49.6,
+          "mercado_nombre": "Under 32.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Valentin Royer",
+        "prob": 13.6,
+        "ev": 1.7
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Casper Ruud",
+      "visitante": "Hamad Medjedovic",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "15:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Casper Ruud": 1.4,
+        "Hamad Medjedovic": 2.95,
+        "Over 37.5": 1.83,
+        "Under 37.5": 1.93
+      },
+      "probabilidades": {
+        "Casper Ruud": 67.9,
+        "Hamad Medjedovic": 32.1
+      },
+      "confianza": 67.9,
+      "value_bets": {
+        "Casper Ruud": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.4,
+          "casa": "Unibet",
+          "pinn_prob": 67.9,
+          "mercado_nombre": "Casper Ruud"
+        },
+        "Hamad Medjedovic": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.95,
+          "casa": "Unibet",
+          "pinn_prob": 32.1,
+          "mercado_nombre": "Hamad Medjedovic"
+        },
+        "over_37_5": {
+          "value": -0.087,
+          "ev_porcentaje": -8.7,
+          "ev_pinn": -8.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "Unibet",
+          "pinn_prob": 49.9,
+          "mercado_nombre": "Over 37.5"
+        },
+        "under_37_5": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "Unibet",
+          "pinn_prob": 50.1,
+          "mercado_nombre": "Under 37.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Under 37.5",
+        "prob": 50.1,
+        "ev": -3.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Tomas Machac",
+      "visitante": "Alexander Zverev",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "18:15",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Alexander Zverev": 1.17,
+        "Tomas Machac": 5.5
+      },
+      "probabilidades": {
+        "Alexander Zverev": 83.6,
+        "Tomas Machac": 16.4
+      },
+      "confianza": 83.6,
+      "value_bets": {
+        "Alexander Zverev": {
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.17,
+          "casa": "Unibet",
+          "pinn_prob": 83.6,
+          "mercado_nombre": "Alexander Zverev"
+        },
+        "Tomas Machac": {
+          "value": -0.1,
+          "ev_porcentaje": -10.0,
+          "ev_pinn": -10.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 5.5,
+          "casa": "William Hill",
+          "pinn_prob": 16.4,
+          "mercado_nombre": "Tomas Machac"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Alexander Zverev",
+        "prob": 83.6,
+        "ev": -2.1
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Alejandro Tabilo",
+      "visitante": "Valentin Vacherot",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "07:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Alejandro Tabilo": 1.49,
+        "Valentin Vacherot": 2.63
+      },
+      "probabilidades": {
+        "Alejandro Tabilo": 64.4,
+        "Valentin Vacherot": 35.6
+      },
+      "confianza": 64.4,
+      "value_bets": {
+        "Alejandro Tabilo": {
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.49,
+          "casa": "Unibet",
+          "pinn_prob": 64.4,
+          "mercado_nombre": "Alejandro Tabilo"
+        },
+        "Valentin Vacherot": {
+          "value": -0.063,
+          "ev_porcentaje": -6.3,
+          "ev_pinn": -6.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.63,
+          "casa": "Unibet",
+          "pinn_prob": 35.6,
+          "mercado_nombre": "Valentin Vacherot"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Alejandro Tabilo",
+        "prob": 64.4,
+        "ev": -4.1
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Luca Van Assche",
+      "visitante": "Brandon Nakashima",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "07:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Brandon Nakashima": 1.44,
+        "Luca Van Assche": 2.75,
+        "Over 37.5": 1.85,
+        "Under 37.5": 1.91
+      },
+      "probabilidades": {
+        "Brandon Nakashima": 67.6,
+        "Luca Van Assche": 32.4
+      },
+      "confianza": 67.6,
+      "value_bets": {
+        "Brandon Nakashima": {
+          "value": -0.026,
+          "ev_porcentaje": -2.6,
+          "ev_pinn": -2.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.44,
+          "casa": "Unibet",
+          "pinn_prob": 67.6,
+          "mercado_nombre": "Brandon Nakashima"
+        },
+        "Luca Van Assche": {
+          "value": -0.11,
+          "ev_porcentaje": -11.0,
+          "ev_pinn": -11.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.75,
+          "casa": "Unibet",
+          "pinn_prob": 32.4,
+          "mercado_nombre": "Luca Van Assche"
+        },
+        "over_37_5": {
+          "value": -0.08,
+          "ev_porcentaje": -8.0,
+          "ev_pinn": -8.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Unibet",
+          "pinn_prob": 49.7,
+          "mercado_nombre": "Over 37.5"
+        },
+        "under_37_5": {
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "Unibet",
+          "pinn_prob": 50.3,
+          "mercado_nombre": "Under 37.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Brandon Nakashima",
+        "prob": 67.6,
+        "ev": -2.6
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Zachary Svajda",
+      "visitante": "Adam Walton",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Adam Walton": 1.93,
+        "Zachary Svajda": 1.87
+      },
+      "probabilidades": {
+        "Adam Walton": 49.6,
+        "Zachary Svajda": 50.4
+      },
+      "confianza": 50.4,
+      "value_bets": {
+        "Adam Walton": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "Unibet",
+          "pinn_prob": 49.6,
+          "mercado_nombre": "Adam Walton"
+        },
+        "Zachary Svajda": {
+          "value": -0.058,
+          "ev_porcentaje": -5.8,
+          "ev_pinn": -5.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "Unibet",
+          "pinn_prob": 50.4,
+          "mercado_nombre": "Zachary Svajda"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Adam Walton",
+        "prob": 49.6,
+        "ev": -4.2
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Adolfo Daniel Vallejo",
+      "visitante": "Moise Kouame",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Adolfo Daniel Vallejo": 1.29,
+        "Moise Kouame": 3.65
+      },
+      "probabilidades": {
+        "Adolfo Daniel Vallejo": 73.5,
+        "Moise Kouame": 26.5
+      },
+      "confianza": 73.5,
+      "value_bets": {
+        "Adolfo Daniel Vallejo": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.29,
+          "casa": "Unibet",
+          "pinn_prob": 73.5,
+          "mercado_nombre": "Adolfo Daniel Vallejo"
+        },
+        "Moise Kouame": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.65,
+          "casa": "Unibet",
+          "pinn_prob": 26.5,
+          "mercado_nombre": "Moise Kouame"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Moise Kouame",
+        "prob": 26.5,
+        "ev": -3.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Arthur Rinderknech",
+      "visitante": "Matteo Berrettini",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Arthur Rinderknech": 1.97,
+        "Matteo Berrettini": 1.83
+      },
+      "probabilidades": {
+        "Arthur Rinderknech": 47.8,
+        "Matteo Berrettini": 52.2
+      },
+      "confianza": 52.2,
+      "value_bets": {
+        "Arthur Rinderknech": {
+          "value": -0.058,
+          "ev_porcentaje": -5.8,
+          "ev_pinn": -5.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.97,
+          "casa": "Unibet",
+          "pinn_prob": 47.8,
+          "mercado_nombre": "Arthur Rinderknech"
+        },
+        "Matteo Berrettini": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "Unibet",
+          "pinn_prob": 52.2,
+          "mercado_nombre": "Matteo Berrettini"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Matteo Berrettini",
+        "prob": 52.2,
+        "ev": -4.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Raphael Collignon",
+      "visitante": "Ben Shelton",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Ben Shelton": 1.61,
+        "Raphael Collignon": 2.3,
+        "Over 40.5": 1.88,
+        "Under 40.5": 1.88
+      },
+      "probabilidades": {
+        "Ben Shelton": 60.0,
+        "Raphael Collignon": 40.0
+      },
+      "confianza": 60.0,
+      "value_bets": {
+        "Ben Shelton": {
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.61,
+          "casa": "Unibet",
+          "pinn_prob": 60.0,
+          "mercado_nombre": "Ben Shelton"
+        },
+        "Raphael Collignon": {
+          "value": -0.08,
+          "ev_porcentaje": -8.0,
+          "ev_pinn": -8.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.3,
+          "casa": "Unibet",
+          "pinn_prob": 40.0,
+          "mercado_nombre": "Raphael Collignon"
+        },
+        "over_40_5": {
+          "value": -0.067,
+          "ev_porcentaje": -6.7,
+          "ev_pinn": -6.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "Unibet",
+          "pinn_prob": 49.6,
+          "mercado_nombre": "Over 40.5"
+        },
+        "under_40_5": {
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "Unibet",
+          "pinn_prob": 50.4,
+          "mercado_nombre": "Under 40.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Ben Shelton",
+        "prob": 60.0,
+        "ev": -3.4
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Facundo Diaz Acosta",
+      "visitante": "Learner Tien",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Facundo Diaz Acosta": 3.1,
+        "Learner Tien": 1.36
+      },
+      "probabilidades": {
+        "Facundo Diaz Acosta": 29.2,
+        "Learner Tien": 70.8
+      },
+      "confianza": 70.8,
+      "value_bets": {
+        "Facundo Diaz Acosta": {
+          "value": -0.094,
+          "ev_porcentaje": -9.4,
+          "ev_pinn": -9.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.1,
+          "casa": "Unibet",
+          "pinn_prob": 29.2,
+          "mercado_nombre": "Facundo Diaz Acosta"
+        },
+        "Learner Tien": {
+          "value": -0.037,
+          "ev_porcentaje": -3.7,
+          "ev_pinn": -3.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.36,
+          "casa": "Unibet",
+          "pinn_prob": 70.8,
+          "mercado_nombre": "Learner Tien"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Learner Tien",
+        "prob": 70.8,
+        "ev": -3.7
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Flavio Cobolli",
+      "visitante": "Wu Yibing",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Flavio Cobolli": 1.33,
+        "Wu Yibing": 3.5
+      },
+      "probabilidades": {
+        "Flavio Cobolli": 71.9,
+        "Wu Yibing": 28.1
+      },
+      "confianza": 71.9,
+      "value_bets": {
+        "Flavio Cobolli": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.33,
+          "casa": "Unibet",
+          "pinn_prob": 71.9,
+          "mercado_nombre": "Flavio Cobolli"
+        },
+        "Wu Yibing": {
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.5,
+          "casa": "William Hill",
+          "pinn_prob": 28.1,
+          "mercado_nombre": "Wu Yibing"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Wu Yibing",
+        "prob": 28.1,
+        "ev": -1.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Hubert Hurkacz",
+      "visitante": "Frances Tiafoe",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Frances Tiafoe": 2.18,
+        "Hubert Hurkacz": 1.68,
+        "Over 40.5": 1.88,
+        "Under 40.5": 1.88
+      },
+      "probabilidades": {
+        "Frances Tiafoe": 42.2,
+        "Hubert Hurkacz": 57.8
+      },
+      "confianza": 57.8,
+      "value_bets": {
+        "Frances Tiafoe": {
+          "value": -0.08,
+          "ev_porcentaje": -8.0,
+          "ev_pinn": -8.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.18,
+          "casa": "Unibet",
+          "pinn_prob": 42.2,
+          "mercado_nombre": "Frances Tiafoe"
+        },
+        "Hubert Hurkacz": {
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.68,
+          "casa": "Unibet",
+          "pinn_prob": 57.8,
+          "mercado_nombre": "Hubert Hurkacz"
+        },
+        "over_40_5": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "Unibet",
+          "pinn_prob": 50.5,
+          "mercado_nombre": "Over 40.5"
+        },
+        "under_40_5": {
+          "value": -0.07,
+          "ev_porcentaje": -7.0,
+          "ev_pinn": -7.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "Unibet",
+          "pinn_prob": 49.5,
+          "mercado_nombre": "Under 40.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Hubert Hurkacz",
+        "prob": 57.8,
+        "ev": -2.9
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Francisco Cerundolo",
+      "visitante": "Hugo Gaston",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Francisco Cerundolo": 1.1,
+        "Hugo Gaston": 7.5,
+        "Over 31.5": 1.85,
+        "Under 31.5": 1.91
+      },
+      "probabilidades": {
+        "Francisco Cerundolo": 87.6,
+        "Hugo Gaston": 12.4
+      },
+      "confianza": 87.6,
+      "value_bets": {
+        "Francisco Cerundolo": {
+          "value": -0.036,
+          "ev_porcentaje": -3.6,
+          "ev_pinn": -3.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.1,
+          "casa": "Unibet",
+          "pinn_prob": 87.6,
+          "mercado_nombre": "Francisco Cerundolo"
+        },
+        "Hugo Gaston": {
+          "value": -0.073,
+          "ev_porcentaje": -7.3,
+          "ev_pinn": -7.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 7.5,
+          "casa": "William Hill",
+          "pinn_prob": 12.4,
+          "mercado_nombre": "Hugo Gaston"
+        },
+        "over_31_5": {
+          "value": -0.075,
+          "ev_porcentaje": -7.5,
+          "ev_pinn": -7.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Unibet",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Over 31.5"
+        },
+        "under_31_5": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "Unibet",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Under 31.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Francisco Cerundolo",
+        "prob": 87.6,
+        "ev": -3.6
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Matteo Arnaldi",
+      "visitante": "Stefanos Tsitsipas",
+      "liga": "ATP Roland Garros",
+      "liga_code": "tennis_atp_french_open",
+      "deporte": "ATP Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Matteo Arnaldi": 2.8,
+        "Stefanos Tsitsipas": 1.43
+      },
+      "probabilidades": {
+        "Matteo Arnaldi": 35.6,
+        "Stefanos Tsitsipas": 64.4
+      },
+      "confianza": 64.4,
+      "value_bets": {
+        "Matteo Arnaldi": {
+          "value": -0.003,
+          "ev_porcentaje": -0.3,
+          "ev_pinn": -0.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.8,
+          "casa": "Unibet",
+          "pinn_prob": 35.6,
+          "mercado_nombre": "Matteo Arnaldi"
+        },
+        "Stefanos Tsitsipas": {
+          "value": -0.079,
+          "ev_porcentaje": -7.9,
+          "ev_pinn": -7.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.43,
+          "casa": "Unibet",
+          "pinn_prob": 64.4,
+          "mercado_nombre": "Stefanos Tsitsipas"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Matteo Arnaldi",
+        "prob": 35.6,
+        "ev": -0.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Caty McNally",
+      "visitante": "Belinda Bencic",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Belinda Bencic": 1.3,
+        "Caty McNally": 3.5,
+        "Over 20.5": 1.92,
+        "Under 20.5": 1.83
+      },
+      "probabilidades": {
+        "Belinda Bencic": 74.4,
+        "Caty McNally": 25.6
+      },
+      "confianza": 74.4,
+      "value_bets": {
+        "Belinda Bencic": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.3,
+          "casa": "Unibet",
+          "pinn_prob": 74.4,
+          "mercado_nombre": "Belinda Bencic"
+        },
+        "Caty McNally": {
+          "value": -0.104,
+          "ev_porcentaje": -10.4,
+          "ev_pinn": -10.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.5,
+          "casa": "Unibet",
+          "pinn_prob": 25.6,
+          "mercado_nombre": "Caty McNally"
+        },
+        "over_20_5": {
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "Unibet",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Over 20.5"
+        },
+        "under_20_5": {
+          "value": -0.085,
+          "ev_porcentaje": -8.5,
+          "ev_pinn": -8.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "Unibet",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Under 20.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Belinda Bencic",
+        "prob": 74.4,
+        "ev": -3.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Sara Bejlek",
+      "visitante": "Iga Swiatek",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Iga Swiatek": 1.02,
+        "Sara Bejlek": 15.0
+      },
+      "probabilidades": {
+        "Iga Swiatek": 94.2,
+        "Sara Bejlek": 5.8
+      },
+      "confianza": 94.2,
+      "value_bets": {
+        "Iga Swiatek": {
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.02,
+          "casa": "Unibet",
+          "pinn_prob": 94.2,
+          "mercado_nombre": "Iga Swiatek"
+        },
+        "Sara Bejlek": {
+          "value": -0.134,
+          "ev_porcentaje": -13.4,
+          "ev_pinn": -13.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 15.0,
+          "casa": "Unibet",
+          "pinn_prob": 5.8,
+          "mercado_nombre": "Sara Bejlek"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Iga Swiatek",
+        "prob": 94.2,
+        "ev": -3.9
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Tamara Korpatsch",
+      "visitante": "Xinyu Wang",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Tamara Korpatsch": 1.95,
+        "Xinyu Wang": 1.85,
+        "Over 21.5": 1.89,
+        "Under 21.5": 1.87
+      },
+      "probabilidades": {
+        "Tamara Korpatsch": 48.6,
+        "Xinyu Wang": 51.4
+      },
+      "confianza": 51.4,
+      "value_bets": {
+        "Tamara Korpatsch": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "William Hill",
+          "pinn_prob": 48.6,
+          "mercado_nombre": "Tamara Korpatsch"
+        },
+        "Xinyu Wang": {
+          "value": -0.049,
+          "ev_porcentaje": -4.9,
+          "ev_pinn": -4.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Unibet",
+          "pinn_prob": 51.4,
+          "mercado_nombre": "Xinyu Wang"
+        },
+        "over_21_5": {
+          "value": -0.06,
+          "ev_porcentaje": -6.0,
+          "ev_pinn": -6.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.89,
+          "casa": "Unibet",
+          "pinn_prob": 49.7,
+          "mercado_nombre": "Over 21.5"
+        },
+        "under_21_5": {
+          "value": -0.06,
+          "ev_porcentaje": -6.0,
+          "ev_pinn": -6.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "Unibet",
+          "pinn_prob": 50.3,
+          "mercado_nombre": "Under 21.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Xinyu Wang",
+        "prob": 51.4,
+        "ev": -4.9
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Viktorija Golubic",
+      "visitante": "Alycia Parks",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "10:10",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Alycia Parks": 1.94,
+        "Viktorija Golubic": 1.91
+      },
+      "probabilidades": {
+        "Alycia Parks": 50.0,
+        "Viktorija Golubic": 50.0
+      },
+      "confianza": 50.0,
+      "value_bets": {
+        "Alycia Parks": {
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.94,
+          "casa": "Unibet",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Alycia Parks"
+        },
+        "Viktorija Golubic": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "William Hill",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Viktorija Golubic"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Alycia Parks",
+        "prob": 50.0,
+        "ev": -3.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Jelena Ostapenko",
+      "visitante": "Magda Linette",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "10:10",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Jelena Ostapenko": 1.3,
+        "Magda Linette": 3.6,
+        "Over 20.5": 1.96,
+        "Under 20.5": 1.8
+      },
+      "probabilidades": {
+        "Jelena Ostapenko": 76.4,
+        "Magda Linette": 23.6
+      },
+      "confianza": 76.4,
+      "value_bets": {
+        "Jelena Ostapenko": {
+          "value": -0.006,
+          "ev_porcentaje": -0.6,
+          "ev_pinn": -0.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.3,
+          "casa": "Unibet",
+          "pinn_prob": 76.4,
+          "mercado_nombre": "Jelena Ostapenko"
+        },
+        "Magda Linette": {
+          "value": -0.152,
+          "ev_porcentaje": -15.2,
+          "ev_pinn": -15.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.6,
+          "casa": "William Hill",
+          "pinn_prob": 23.6,
+          "mercado_nombre": "Magda Linette"
+        },
+        "over_20_5": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.96,
+          "casa": "Unibet",
+          "pinn_prob": 49.6,
+          "mercado_nombre": "Over 20.5"
+        },
+        "under_20_5": {
+          "value": -0.093,
+          "ev_porcentaje": -9.3,
+          "ev_pinn": -9.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.8,
+          "casa": "Unibet",
+          "pinn_prob": 50.4,
+          "mercado_nombre": "Under 20.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Jelena Ostapenko",
+        "prob": 76.4,
+        "ev": -0.6
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Elina Svitolina",
+      "visitante": "Kaitlin Quevedo",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "11:10",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Elina Svitolina": 1.07,
+        "Kaitlin Quevedo": 10.0
+      },
+      "probabilidades": {
+        "Elina Svitolina": 91.5,
+        "Kaitlin Quevedo": 8.5
+      },
+      "confianza": 91.5,
+      "value_bets": {
+        "Elina Svitolina": {
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.07,
+          "casa": "Unibet",
+          "pinn_prob": 91.5,
+          "mercado_nombre": "Elina Svitolina"
+        },
+        "Kaitlin Quevedo": {
+          "value": -0.147,
+          "ev_porcentaje": -14.7,
+          "ev_pinn": -14.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 10.0,
+          "casa": "William Hill",
+          "pinn_prob": 8.5,
+          "mercado_nombre": "Kaitlin Quevedo"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Elina Svitolina",
+        "prob": 91.5,
+        "ev": -2.1
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Daria Snigur",
+      "visitante": "Peyton Stearns",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "11:30",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Daria Snigur": 2.8,
+        "Peyton Stearns": 1.44
+      },
+      "probabilidades": {
+        "Daria Snigur": 34.0,
+        "Peyton Stearns": 66.0
+      },
+      "confianza": 66.0,
+      "value_bets": {
+        "Daria Snigur": {
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.8,
+          "casa": "Unibet",
+          "pinn_prob": 34.0,
+          "mercado_nombre": "Daria Snigur"
+        },
+        "Peyton Stearns": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.44,
+          "casa": "William Hill",
+          "pinn_prob": 66.0,
+          "mercado_nombre": "Peyton Stearns"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Daria Snigur",
+        "prob": 34.0,
+        "ev": -4.7
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Yuliia Starodubtseva",
+      "visitante": "Elena Rybakina",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "11:30",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Elena Rybakina": 1.07,
+        "Yuliia Starodubtseva": 8.5,
+        "Over 18.5": 1.85,
+        "Under 18.5": 1.91
+      },
+      "probabilidades": {
+        "Elena Rybakina": 89.4,
+        "Yuliia Starodubtseva": 10.6
+      },
+      "confianza": 89.4,
+      "value_bets": {
+        "Elena Rybakina": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.07,
+          "casa": "Unibet",
+          "pinn_prob": 89.4,
+          "mercado_nombre": "Elena Rybakina"
+        },
+        "Yuliia Starodubtseva": {
+          "value": -0.103,
+          "ev_porcentaje": -10.3,
+          "ev_pinn": -10.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 8.5,
+          "casa": "Unibet",
+          "pinn_prob": 10.6,
+          "mercado_nombre": "Yuliia Starodubtseva"
+        },
+        "over_18_5": {
+          "value": -0.07,
+          "ev_porcentaje": -7.0,
+          "ev_pinn": -7.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Unibet",
+          "pinn_prob": 50.3,
+          "mercado_nombre": "Over 18.5"
+        },
+        "under_18_5": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "Unibet",
+          "pinn_prob": 49.7,
+          "mercado_nombre": "Under 18.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Elena Rybakina",
+        "prob": 89.4,
+        "ev": -4.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Marta Kostyuk",
+      "visitante": "Katie Volynets",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "11:30",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Katie Volynets": 5.8,
+        "Marta Kostyuk": 1.14
+      },
+      "probabilidades": {
+        "Katie Volynets": 15.9,
+        "Marta Kostyuk": 84.1
+      },
+      "confianza": 84.1,
+      "value_bets": {
+        "Katie Volynets": {
+          "value": -0.078,
+          "ev_porcentaje": -7.8,
+          "ev_pinn": -7.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 5.8,
+          "casa": "Unibet",
+          "pinn_prob": 15.9,
+          "mercado_nombre": "Katie Volynets"
+        },
+        "Marta Kostyuk": {
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.14,
+          "casa": "Unibet",
+          "pinn_prob": 84.1,
+          "mercado_nombre": "Marta Kostyuk"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Marta Kostyuk",
+        "prob": 84.1,
+        "ev": -4.1
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Jil Teichmann",
+      "visitante": "Magdalena Frech",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "13:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Jil Teichmann": 2.3,
+        "Magdalena Frech": 1.67,
+        "Over 21.5": 1.81,
+        "Under 21.5": 1.93
+      },
+      "probabilidades": {
+        "Jil Teichmann": 40.7,
+        "Magdalena Frech": 59.3
+      },
+      "confianza": 59.3,
+      "value_bets": {
+        "Jil Teichmann": {
+          "value": -0.063,
+          "ev_porcentaje": -6.3,
+          "ev_pinn": -6.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.3,
+          "casa": "William Hill",
+          "pinn_prob": 40.7,
+          "mercado_nombre": "Jil Teichmann"
+        },
+        "Magdalena Frech": {
+          "value": -0.01,
+          "ev_porcentaje": -1.0,
+          "ev_pinn": -1.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.67,
+          "casa": "Unibet",
+          "pinn_prob": 59.3,
+          "mercado_nombre": "Magdalena Frech"
+        },
+        "over_21_5": {
+          "value": -0.088,
+          "ev_porcentaje": -8.8,
+          "ev_pinn": -8.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.81,
+          "casa": "Unibet",
+          "pinn_prob": 50.4,
+          "mercado_nombre": "Over 21.5"
+        },
+        "under_21_5": {
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "Unibet",
+          "pinn_prob": 49.6,
+          "mercado_nombre": "Under 21.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Magdalena Frech",
+        "prob": 59.3,
+        "ev": -1.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Eva Lys",
+      "visitante": "Sorana Cirstea",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "13:30",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Eva Lys": 4.1,
+        "Sorana Cirstea": 1.25
+      },
+      "probabilidades": {
+        "Eva Lys": 22.2,
+        "Sorana Cirstea": 77.8
+      },
+      "confianza": 77.8,
+      "value_bets": {
+        "Eva Lys": {
+          "value": -0.09,
+          "ev_porcentaje": -9.0,
+          "ev_pinn": -9.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.1,
+          "casa": "Unibet",
+          "pinn_prob": 22.2,
+          "mercado_nombre": "Eva Lys"
+        },
+        "Sorana Cirstea": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.25,
+          "casa": "William Hill",
+          "pinn_prob": 77.8,
+          "mercado_nombre": "Sorana Cirstea"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Sorana Cirstea",
+        "prob": 77.8,
+        "ev": -2.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Francesca Jones",
+      "visitante": "Marie Bouzkova",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "13:30",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Francesca Jones": 3.75,
+        "Marie Bouzkova": 1.29
+      },
+      "probabilidades": {
+        "Francesca Jones": 24.5,
+        "Marie Bouzkova": 75.5
+      },
+      "confianza": 75.5,
+      "value_bets": {
+        "Francesca Jones": {
+          "value": -0.082,
+          "ev_porcentaje": -8.2,
+          "ev_pinn": -8.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.75,
+          "casa": "Unibet",
+          "pinn_prob": 24.5,
+          "mercado_nombre": "Francesca Jones"
+        },
+        "Marie Bouzkova": {
+          "value": -0.026,
+          "ev_porcentaje": -2.6,
+          "ev_pinn": -2.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.29,
+          "casa": "William Hill",
+          "pinn_prob": 75.5,
+          "mercado_nombre": "Marie Bouzkova"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Marie Bouzkova",
+        "prob": 75.5,
+        "ev": -2.6
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Jasmine Paolini",
+      "visitante": "Solana Sierra",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "13:30",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Jasmine Paolini": 1.53,
+        "Solana Sierra": 2.6
+      },
+      "probabilidades": {
+        "Jasmine Paolini": 62.5,
+        "Solana Sierra": 37.5
+      },
+      "confianza": 62.5,
+      "value_bets": {
+        "Jasmine Paolini": {
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.53,
+          "casa": "William Hill",
+          "pinn_prob": 62.5,
+          "mercado_nombre": "Jasmine Paolini"
+        },
+        "Solana Sierra": {
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.6,
+          "casa": "Unibet",
+          "pinn_prob": 37.5,
+          "mercado_nombre": "Solana Sierra"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Solana Sierra",
+        "prob": 37.5,
+        "ev": -2.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Kamilla Rakhimova",
+      "visitante": "Karolina Muchova",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "13:30",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Kamilla Rakhimova": 7.5,
+        "Karolina Muchova": 1.09,
+        "Over 18.5": 1.92,
+        "Under 18.5": 1.83
+      },
+      "probabilidades": {
+        "Kamilla Rakhimova": 11.4,
+        "Karolina Muchova": 88.6
+      },
+      "confianza": 88.6,
+      "value_bets": {
+        "Kamilla Rakhimova": {
+          "value": -0.142,
+          "ev_porcentaje": -14.2,
+          "ev_pinn": -14.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 7.5,
+          "casa": "Unibet",
+          "pinn_prob": 11.4,
+          "mercado_nombre": "Kamilla Rakhimova"
+        },
+        "Karolina Muchova": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.09,
+          "casa": "Unibet",
+          "pinn_prob": 88.6,
+          "mercado_nombre": "Karolina Muchova"
+        },
+        "over_18_5": {
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "Unibet",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Over 18.5"
+        },
+        "under_18_5": {
+          "value": -0.085,
+          "ev_porcentaje": -8.5,
+          "ev_pinn": -8.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "Unibet",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "Under 18.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Karolina Muchova",
+        "prob": 88.6,
+        "ev": -3.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Hailey Baptiste",
+      "visitante": "Xiyu Wang",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "14:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Hailey Baptiste": 1.5,
+        "Xiyu Wang": 2.8,
+        "Over 21.5": 1.88,
+        "Under 21.5": 1.85
+      },
+      "probabilidades": {
+        "Hailey Baptiste": 64.8,
+        "Xiyu Wang": 35.2
+      },
+      "confianza": 64.8,
+      "value_bets": {
+        "Hailey Baptiste": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.5,
+          "casa": "William Hill",
+          "pinn_prob": 64.8,
+          "mercado_nombre": "Hailey Baptiste"
+        },
+        "Xiyu Wang": {
+          "value": -0.014,
+          "ev_porcentaje": -1.4,
+          "ev_pinn": -1.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.8,
+          "casa": "Unibet",
+          "pinn_prob": 35.2,
+          "mercado_nombre": "Xiyu Wang"
+        },
+        "over_21_5": {
+          "value": -0.067,
+          "ev_porcentaje": -6.7,
+          "ev_pinn": -6.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "Unibet",
+          "pinn_prob": 49.6,
+          "mercado_nombre": "Over 21.5"
+        },
+        "under_21_5": {
+          "value": -0.068,
+          "ev_porcentaje": -6.8,
+          "ev_pinn": -6.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Unibet",
+          "pinn_prob": 50.4,
+          "mercado_nombre": "Under 21.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Xiyu Wang",
+        "prob": 35.2,
+        "ev": -1.4
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Mirra Andreeva",
+      "visitante": "Marina Bassols Ribera",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "16:00",
+      "fecha_evento": "2026-05-27",
+      "cuotas": {
+        "Marina Bassols Ribera": 13.0,
+        "Mirra Andreeva": 1.03
+      },
+      "probabilidades": {
+        "Marina Bassols Ribera": 5.7,
+        "Mirra Andreeva": 94.3
+      },
+      "confianza": 94.3,
+      "value_bets": {
+        "Marina Bassols Ribera": {
+          "value": -0.255,
+          "ev_porcentaje": -25.5,
+          "ev_pinn": -25.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 13.0,
+          "casa": "William Hill",
+          "pinn_prob": 5.7,
+          "mercado_nombre": "Marina Bassols Ribera"
+        },
+        "Mirra Andreeva": {
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.03,
+          "casa": "Unibet",
+          "pinn_prob": 94.3,
+          "mercado_nombre": "Mirra Andreeva"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Mirra Andreeva",
+        "prob": 94.3,
+        "ev": -2.9
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Daria Kasatkina",
+      "visitante": "Susan Bandecchi",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "07:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Daria Kasatkina": 1.12,
+        "Susan Bandecchi": 7.0,
+        "Over 18.5": 1.83,
+        "Under 18.5": 1.93
+      },
+      "probabilidades": {
+        "Daria Kasatkina": 87.4,
+        "Susan Bandecchi": 12.6
+      },
+      "confianza": 87.4,
+      "value_bets": {
+        "Daria Kasatkina": {
+          "value": -0.022,
+          "ev_porcentaje": -2.2,
+          "ev_pinn": -2.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.12,
+          "casa": "Unibet",
+          "pinn_prob": 87.4,
+          "mercado_nombre": "Daria Kasatkina"
+        },
+        "Susan Bandecchi": {
+          "value": -0.115,
+          "ev_porcentaje": -11.5,
+          "ev_pinn": -11.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 7.0,
+          "casa": "William Hill",
+          "pinn_prob": 12.6,
+          "mercado_nombre": "Susan Bandecchi"
+        },
+        "over_18_5": {
+          "value": -0.059,
+          "ev_porcentaje": -5.9,
+          "ev_pinn": -5.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "Unibet",
+          "pinn_prob": 51.4,
+          "mercado_nombre": "Over 18.5"
+        },
+        "under_18_5": {
+          "value": -0.062,
+          "ev_porcentaje": -6.2,
+          "ev_pinn": -6.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "Unibet",
+          "pinn_prob": 48.6,
+          "mercado_nombre": "Under 18.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Daria Kasatkina",
+        "prob": 87.4,
+        "ev": -2.2
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Julia Grabher",
+      "visitante": "Amanda Anisimova",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Amanda Anisimova": 1.19,
+        "Julia Grabher": 4.7,
+        "Over 19.5": 1.89,
+        "Under 19.5": 1.85
+      },
+      "probabilidades": {
+        "Amanda Anisimova": 80.9,
+        "Julia Grabher": 19.1
+      },
+      "confianza": 80.9,
+      "value_bets": {
+        "Amanda Anisimova": {
+          "value": -0.037,
+          "ev_porcentaje": -3.7,
+          "ev_pinn": -3.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.19,
+          "casa": "Unibet",
+          "pinn_prob": 80.9,
+          "mercado_nombre": "Amanda Anisimova"
+        },
+        "Julia Grabher": {
+          "value": -0.103,
+          "ev_porcentaje": -10.3,
+          "ev_pinn": -10.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.7,
+          "casa": "Unibet",
+          "pinn_prob": 19.1,
+          "mercado_nombre": "Julia Grabher"
+        },
+        "over_19_5": {
+          "value": -0.087,
+          "ev_porcentaje": -8.7,
+          "ev_pinn": -8.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.89,
+          "casa": "Unibet",
+          "pinn_prob": 48.3,
+          "mercado_nombre": "Over 19.5"
+        },
+        "under_19_5": {
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Unibet",
+          "pinn_prob": 51.7,
+          "mercado_nombre": "Under 19.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Amanda Anisimova",
+        "prob": 80.9,
+        "ev": -3.7
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Katie Boulter",
+      "visitante": "Anastasia Potapova",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Anastasia Potapova": 1.2,
+        "Katie Boulter": 4.5
+      },
+      "probabilidades": {
+        "Anastasia Potapova": 77.9,
+        "Katie Boulter": 22.1
+      },
+      "confianza": 77.9,
+      "value_bets": {
+        "Anastasia Potapova": {
+          "value": -0.065,
+          "ev_porcentaje": -6.5,
+          "ev_pinn": -6.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.2,
+          "casa": "Unibet",
+          "pinn_prob": 77.9,
+          "mercado_nombre": "Anastasia Potapova"
+        },
+        "Katie Boulter": {
+          "value": -0.004,
+          "ev_porcentaje": -0.4,
+          "ev_pinn": -0.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.5,
+          "casa": "Unibet",
+          "pinn_prob": 22.1,
+          "mercado_nombre": "Katie Boulter"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Katie Boulter",
+        "prob": 22.1,
+        "ev": -0.4
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Maria Sakkari",
+      "visitante": "Claire Liu",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Claire Liu": 2.6,
+        "Maria Sakkari": 1.5
+      },
+      "probabilidades": {
+        "Claire Liu": 35.7,
+        "Maria Sakkari": 64.3
+      },
+      "confianza": 64.3,
+      "value_bets": {
+        "Claire Liu": {
+          "value": -0.072,
+          "ev_porcentaje": -7.2,
+          "ev_pinn": -7.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.6,
+          "casa": "Unibet",
+          "pinn_prob": 35.7,
+          "mercado_nombre": "Claire Liu"
+        },
+        "Maria Sakkari": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.5,
+          "casa": "Unibet",
+          "pinn_prob": 64.3,
+          "mercado_nombre": "Maria Sakkari"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Maria Sakkari",
+        "prob": 64.3,
+        "ev": -3.5
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Coco Gauff",
+      "visitante": "Mayar Sherif",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Coco Gauff": 1.03,
+        "Mayar Sherif": 12.0,
+        "Over 17.5": 1.93,
+        "Under 17.5": 1.83
+      },
+      "probabilidades": {
+        "Coco Gauff": 93.6,
+        "Mayar Sherif": 6.4
+      },
+      "confianza": 93.6,
+      "value_bets": {
+        "Coco Gauff": {
+          "value": -0.036,
+          "ev_porcentaje": -3.6,
+          "ev_pinn": -3.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.03,
+          "casa": "Unibet",
+          "pinn_prob": 93.6,
+          "mercado_nombre": "Coco Gauff"
+        },
+        "Mayar Sherif": {
+          "value": -0.23,
+          "ev_porcentaje": -23.0,
+          "ev_pinn": -23.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 12.0,
+          "casa": "Unibet",
+          "pinn_prob": 6.4,
+          "mercado_nombre": "Mayar Sherif"
+        },
+        "over_17_5": {
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "Unibet",
+          "pinn_prob": 51.2,
+          "mercado_nombre": "Over 17.5"
+        },
+        "under_17_5": {
+          "value": -0.106,
+          "ev_porcentaje": -10.6,
+          "ev_pinn": -10.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "Unibet",
+          "pinn_prob": 48.8,
+          "mercado_nombre": "Under 17.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Over 17.5",
+        "prob": 51.2,
+        "ev": -1.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Diana Shnaider",
+      "visitante": "McCartney Kessler",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Diana Shnaider": 1.26,
+        "McCartney Kessler": 4.0
+      },
+      "probabilidades": {
+        "Diana Shnaider": 77.1,
+        "McCartney Kessler": 22.9
+      },
+      "confianza": 77.1,
+      "value_bets": {
+        "Diana Shnaider": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.26,
+          "casa": "Unibet",
+          "pinn_prob": 77.1,
+          "mercado_nombre": "Diana Shnaider"
+        },
+        "McCartney Kessler": {
+          "value": -0.085,
+          "ev_porcentaje": -8.5,
+          "ev_pinn": -8.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.0,
+          "casa": "William Hill",
+          "pinn_prob": 22.9,
+          "mercado_nombre": "McCartney Kessler"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Diana Shnaider",
+        "prob": 77.1,
+        "ev": -2.8
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Donna Vekic",
+      "visitante": "Naomi Osaka",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Donna Vekic": 3.5,
+        "Naomi Osaka": 1.3
+      },
+      "probabilidades": {
+        "Donna Vekic": 28.0,
+        "Naomi Osaka": 72.0
+      },
+      "confianza": 72.0,
+      "value_bets": {
+        "Donna Vekic": {
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.5,
+          "casa": "Unibet",
+          "pinn_prob": 28.0,
+          "mercado_nombre": "Donna Vekic"
+        },
+        "Naomi Osaka": {
+          "value": -0.064,
+          "ev_porcentaje": -6.4,
+          "ev_pinn": -6.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.3,
+          "casa": "Unibet",
+          "pinn_prob": 72.0,
+          "mercado_nombre": "Naomi Osaka"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Donna Vekic",
+        "prob": 28.0,
+        "ev": -2.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Maja Chwalinska",
+      "visitante": "Elise Mertens",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Elise Mertens": 1.5,
+        "Maja Chwalinska": 2.75
+      },
+      "probabilidades": {
+        "Elise Mertens": 64.7,
+        "Maja Chwalinska": 35.3
+      },
+      "confianza": 64.7,
+      "value_bets": {
+        "Elise Mertens": {
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.5,
+          "casa": "William Hill",
+          "pinn_prob": 64.7,
+          "mercado_nombre": "Elise Mertens"
+        },
+        "Maja Chwalinska": {
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.75,
+          "casa": "Unibet",
+          "pinn_prob": 35.3,
+          "mercado_nombre": "Maja Chwalinska"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Elise Mertens",
+        "prob": 64.7,
+        "ev": -2.9
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Iva Jović",
+      "visitante": "Emma Navarro",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Emma Navarro": 2.02,
+        "Iva Jović": 1.79,
+        "Over 21.5": 1.89,
+        "Under 21.5": 1.85
+      },
+      "probabilidades": {
+        "Emma Navarro": 46.9,
+        "Iva Jović": 53.1
+      },
+      "confianza": 53.1,
+      "value_bets": {
+        "Emma Navarro": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.02,
+          "casa": "Unibet",
+          "pinn_prob": 46.9,
+          "mercado_nombre": "Emma Navarro"
+        },
+        "Iva Jović": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.79,
+          "casa": "Unibet",
+          "pinn_prob": 53.1,
+          "mercado_nombre": "Iva Jović"
+        },
+        "over_21_5": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.89,
+          "casa": "Unibet",
+          "pinn_prob": 50.6,
+          "mercado_nombre": "Over 21.5"
+        },
+        "under_21_5": {
+          "value": -0.087,
+          "ev_porcentaje": -8.7,
+          "ev_pinn": -8.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Unibet",
+          "pinn_prob": 49.4,
+          "mercado_nombre": "Under 21.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Over 21.5",
+        "prob": 50.6,
+        "ev": -4.3
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "local": "Yulia Putintseva",
+      "visitante": "Maria Camila Osorio Serrano",
+      "liga": "WTA Roland Garros",
+      "liga_code": "tennis_wta_french_open",
+      "deporte": "WTA Roland Garros",
+      "deporte_emoji": "🏆",
+      "hora": "09:00",
+      "fecha_evento": "2026-05-28",
+      "cuotas": {
+        "Maria Camila Osorio Serrano": 1.72,
+        "Yulia Putintseva": 2.2
+      },
+      "probabilidades": {
+        "Maria Camila Osorio Serrano": 57.5,
+        "Yulia Putintseva": 42.5
+      },
+      "confianza": 57.5,
+      "value_bets": {
+        "Maria Camila Osorio Serrano": {
+          "value": -0.01,
+          "ev_porcentaje": -1.0,
+          "ev_pinn": -1.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.72,
+          "casa": "Unibet",
+          "pinn_prob": 57.5,
+          "mercado_nombre": "Maria Camila Osorio Serrano"
+        },
+        "Yulia Putintseva": {
+          "value": -0.066,
+          "ev_porcentaje": -6.6,
+          "ev_pinn": -6.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.2,
+          "casa": "William Hill",
+          "pinn_prob": 42.5,
+          "mercado_nombre": "Yulia Putintseva"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Maria Camila Osorio Serrano",
+        "prob": 57.5,
+        "ev": -1.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    }
+  ],
+  "generado": "15:42:16"
 }
