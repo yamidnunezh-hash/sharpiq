@@ -1,49 +1,6 @@
 {
-  "updated": "2026-05-26T03:05:52Z",
-  "live": [
-    {
-      "id": "522fe470a35764a2541da5b6eac510f5",
-      "sport": "icehockey_nhl",
-      "liga": "NHL",
-      "emoji": "🏒",
-      "home": "Montréal Canadiens",
-      "away": "Carolina Hurricanes",
-      "fecha": "25/05/26",
-      "hora": "19:20 COT",
-      "ts": 1779736800,
-      "completed": false,
-      "score_home": "2",
-      "score_away": "2"
-    },
-    {
-      "id": "664888c720cda0a13b39fa74f0032e0e",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Los Angeles Dodgers",
-      "away": "Colorado Rockies",
-      "fecha": "25/05/26",
-      "hora": "20:11 COT",
-      "ts": 1779739860,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "3"
-    },
-    {
-      "id": "e03d047a725cd7870eb6b6eaf8b23942",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Athletics",
-      "away": "Seattle Mariners",
-      "fecha": "25/05/26",
-      "hora": "20:41 COT",
-      "ts": 1779741660,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "7"
-    }
-  ],
+  "updated": "2026-05-26T14:11:26Z",
+  "live": [],
   "upcoming": [
     {
       "id": "56a2b54de8d26f62f1918a2289575812",
@@ -258,6 +215,48 @@
   ],
   "finished": [
     {
+      "id": "e03d047a725cd7870eb6b6eaf8b23942",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Seattle Mariners",
+      "fecha": "25/05/26",
+      "hora": "20:41 COT",
+      "ts": 1779741660,
+      "completed": true,
+      "score_home": "2",
+      "score_away": "9"
+    },
+    {
+      "id": "664888c720cda0a13b39fa74f0032e0e",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Dodgers",
+      "away": "Colorado Rockies",
+      "fecha": "25/05/26",
+      "hora": "20:11 COT",
+      "ts": 1779739860,
+      "completed": true,
+      "score_home": "5",
+      "score_away": "3"
+    },
+    {
+      "id": "522fe470a35764a2541da5b6eac510f5",
+      "sport": "icehockey_nhl",
+      "liga": "NHL",
+      "emoji": "🏒",
+      "home": "Montréal Canadiens",
+      "away": "Carolina Hurricanes",
+      "fecha": "25/05/26",
+      "hora": "19:20 COT",
+      "ts": 1779736800,
+      "completed": true,
+      "score_home": "2",
+      "score_away": "3"
+    },
+    {
       "id": "a752ca36635e2ccb1bb5a9f387282e1c",
       "sport": "basketball_nba",
       "liga": "NBA",
@@ -354,48 +353,6 @@
       "completed": true,
       "score_home": "1",
       "score_away": "2"
-    },
-    {
-      "id": "bc69f749f6c99f6d4bfe0f276b216404",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Francisco Giants",
-      "away": "Arizona Diamondbacks",
-      "fecha": "25/05/26",
-      "hora": "16:06 COT",
-      "ts": 1779725160,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "6"
-    },
-    {
-      "id": "70d5dc9048e8c374d09b9848b71eeea5",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Mets",
-      "away": "Cincinnati Reds",
-      "fecha": "25/05/26",
-      "hora": "15:11 COT",
-      "ts": 1779721860,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "7"
-    },
-    {
-      "id": "e94284827b5744a1519040f323631cda",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Kansas City Royals",
-      "away": "New York Yankees",
-      "fecha": "25/05/26",
-      "hora": "14:41 COT",
-      "ts": 1779720060,
-      "completed": true,
-      "score_home": "3",
-      "score_away": "4"
     }
   ]
 }
