@@ -1929,33 +1929,108 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     }, 1000);
   }
 
+  // Construye lookup de picks desde datos.js
+  function buildPicksLookup(){
+    const picks = [];
+    const todos = [
+      ...(typeof PROXIMOS_EVENTOS     !== 'undefined' ? PROXIMOS_EVENTOS     : []),
+      ...(typeof PREDICCIONES_HISTORIAL !== 'undefined' ? PREDICCIONES_HISTORIAL : []),
+    ];
+    todos.forEach(e => {
+      const partes = e.partido.toLowerCase().split(' vs ');
+      if(partes.length === 2) picks.push({
+        home: partes[0].trim(),
+        away: partes[1].trim(),
+        prediccion: e.prediccion || '',
+        cuota: e.cuota || '',
+        resultado: e.resultado || null,
+        status: e.status || 'vip',
+        raw: e,
+      });
+    });
+    return picks;
+  }
+
+  // Compara si un equipo del score coincide con un equipo del pick
+  function matchTeam(scoreTeam, pickTeam){
+    const a = scoreTeam.toLowerCase();
+    const b = pickTeam.toLowerCase();
+    if(a.includes(b) || b.includes(a)) return true;
+    // Coincidencia por palabras clave (mínimo 4 caracteres)
+    const words = b.split(' ').filter(w => w.length >= 4);
+    return words.some(w => a.includes(w));
+  }
+
+  function findPick(game, picksLookup){
+    for(const p of picksLookup){
+      const h = game.home, a = game.away;
+      if((matchTeam(h, p.home) && matchTeam(a, p.away)) ||
+         (matchTeam(h, p.away) && matchTeam(a, p.home))){
+        return p;
+      }
+    }
+    return null;
+  }
+
   function render(data){
-    const live = data.live || [];
-    const upcoming = (data.upcoming || []).slice(0, 6);
-    const finished = (data.finished || []).slice(0, 4);
+    const picksLookup = buildPicksLookup();
+
+    // Filtrar solo partidos con pick de SharpIQ
+    function filtrar(arr){
+      return arr.map(g => ({...g, _pick: findPick(g, picksLookup)}))
+                .filter(g => g._pick);
+    }
+
+    const live     = filtrar(data.live     || []);
+    const upcoming = filtrar(data.upcoming || []).slice(0, 6);
+    const finished = filtrar(data.finished || []).slice(0, 6);
+    const total    = live.length + upcoming.length + finished.length;
+
+    if(total === 0){
+      // Sin picks activos — ocultar sección
+      const sec = document.getElementById('liveScoresSection');
+      if(sec) sec.style.display = 'none';
+      return;
+    }
+    const sec = document.getElementById('liveScoresSection');
+    if(sec) sec.style.display = '';
 
     if(live.length){
       badge.style.background = 'rgba(239,68,68,.12)';
       badge.style.borderColor = 'rgba(239,68,68,.4)';
       badgeTxt.textContent = 'EN VIVO';
-      count.textContent = live.length + ' partidos en vivo';
+      count.textContent = live.length + ' picks SharpIQ en vivo';
     } else {
       badge.style.background = 'rgba(0,200,255,.12)';
       badge.style.borderColor = 'rgba(0,200,255,.3)';
-      badgeTxt.textContent = 'PRÓXIMOS';
-      count.textContent = upcoming.length + ' partidos próximos';
+      badgeTxt.textContent = 'SEGUIMIENTO';
+      count.textContent = total + ' picks SharpIQ activos';
     }
 
     const upd = new Date(data.updated);
     updated.textContent = 'Actualizado ' + upd.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'}) + ' COT';
 
+    // Renderizar cards con pick integrado
+    function cardConPick(g, tipo){
+      const p = g._pick;
+      const _isVip = (localStorage.getItem('sharpiq_role')||'') === 'vip' || (localStorage.getItem('sharpiq_role')||'') === 'admin';
+      const mostrarPick = p.status === 'free' || _isVip;
+      const pickBlock = mostrarPick
+        ? `<div style="margin-top:6px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);border-radius:6px;padding:5px 10px;font-family:'Space Mono',monospace;font-size:10px;color:#22c55e">
+             ✅ ${p.prediccion.split('—')[0].trim()} <span style="color:#00C8FF;font-weight:700">@${p.cuota}</span>
+             ${p.resultado==='win'?' <span style="color:#22c55e">WIN ✅</span>':p.resultado==='loss'?' <span style="color:#ef4444">LOSS ❌</span>':''}
+           </div>`
+        : `<div style="margin-top:6px;background:rgba(123,92,240,.08);border:1px solid rgba(123,92,240,.25);border-radius:6px;padding:5px 10px;font-family:'Space Mono',monospace;font-size:10px;color:#7B5CF0">🔒 Pick VIP — <a href="login.html" style="color:#00C8FF">Ver pick</a></div>`;
+      return cardHTML(g, tipo).replace('</div>', pickBlock + '</div>');
+    }
+
     const html = [
-      ...live.map(g => cardHTML(g,'live')),
-      ...upcoming.map(g => cardHTML(g,'upcoming')),
-      ...finished.map(g => cardHTML(g,'finished')),
+      ...live.map(g     => cardConPick(g,'live')),
+      ...upcoming.map(g => cardConPick(g,'upcoming')),
+      ...finished.map(g => cardConPick(g,'finished')),
     ].join('');
 
-    grid.innerHTML = html || '<p style="color:var(--t3);font-size:12px;font-family:Space Mono,monospace">Sin partidos disponibles ahora mismo.</p>';
+    grid.innerHTML = html;
     startCountdowns();
   }
 
