@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-SharpIQ — Monitor de Partidos en Vivo
-Detecta momentos clave durante los partidos publicados y envía
-alertas al canal VIP con análisis actualizado del modelo.
-
-Ejecutar: python live_monitor.py
-Corre cada 5 minutos mientras haya partidos activos.
-Usa ~30-40 requests/día de api-football (dentro del límite gratuito).
+SharpIQ — Monitor de Partidos en Vivo (one-shot)
+Corre una vez, detecta momentos clave en partidos publicados y envía
+alertas al canal VIP. GitHub Actions lo ejecuta cada 5 minutos.
 """
-import os, sys, time, json, sqlite3, math
+import os, sys, math, sqlite3
 from datetime import datetime, date
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -16,22 +12,24 @@ sys.path.insert(0, BASE_DIR)
 from config import APIFOOTBALL_KEY, TELEGRAM_CHAT_ID
 from motor import _apifb, LIGAS_APIFB
 
-DB_PATH = os.path.join(BASE_DIR, "sharpiq.db")
+DB_PATH    = os.path.join(BASE_DIR, "sharpiq.db")
 DATOS_PATH = os.path.join(BASE_DIR, "..", "datos.js")
 
-# ── TRIGGERS — momentos que disparan una alerta ───────────────────
-# (minuto_min, minuto_max, condicion, mensaje_tipo)
+# ── TRIGGERS ─────────────────────────────────────────────────────────
+# (min_min, min_max, condicion, trigger_id)
 TRIGGERS = [
-    (44, 46, "0-0",       "ht_cero"),       # Medio tiempo 0-0
-    (58, 62, "0-0",       "min60_cero"),    # Min 60 sin goles
-    (58, 62, "any",       "min60_update"),  # Min 60 actualización general
-    (73, 77, "0-0",       "min75_cero"),    # Min 75 sin goles — over urgente
-    (73, 77, "any",       "min75_update"),  # Min 75 cualquier marcador
-    (0,   3, "any",       "inicio"),        # Partido iniciado
+    (0,   3,  "any",        "inicio"),        # Partido inicia
+    (44,  46, "0-0",        "ht_cero"),       # HT sin goles
+    (44,  46, "any",        "ht_update"),     # HT actualización
+    (58,  62, "0-0",        "min60_cero"),    # Min 60 sin goles
+    (58,  62, "any",        "min60_update"),  # Min 60 actualización
+    (73,  77, "0-0",        "min75_cero"),    # Min 75 sin goles — over urgente
+    (73,  77, "any",        "min75_update"),  # Min 75 actualización
+    (20,  45, "dominancia", "dominancia"),    # Equipo domina pero no marca
 ]
 
 
-# ── BASE DE DATOS DE ALERTAS YA ENVIADAS ─────────────────────────
+# ── BASE DE DATOS ANTI-SPAM ──────────────────────────────────────────
 
 def _db():
     return sqlite3.connect(DB_PATH)
@@ -57,150 +55,163 @@ def marcar_enviado(fixture_id, trigger):
                   (fixture_id, trigger, datetime.now().isoformat()))
 
 
-# ── LEER PARTIDOS PUBLICADOS HOY ─────────────────────────────────
+# ── LEER PARTIDOS PUBLICADOS ─────────────────────────────────────────
 
 def partidos_publicados_hoy():
-    """Lee PROXIMOS_EVENTOS de datos.js y devuelve lista de partidos."""
     try:
         import re
         with open(DATOS_PATH, encoding='utf-8') as f:
             texto = f.read()
-        patron = r'partido\s*:\s*"([^"]+)"'
-        return re.findall(patron, texto)
+        return re.findall(r'partido\s*:\s*"([^"]+)"', texto)
     except Exception:
         return []
 
 
-# ── MODELO LIVE — probabilidades con tiempo restante ─────────────
+# ── ESTADÍSTICAS EN VIVO (remates a puerta) ──────────────────────────
 
-def probabilidades_live(goles_local_esp, goles_visita_esp, minuto, gl_actual, gv_actual):
-    """
-    Recalcula probabilidades con el estado actual del partido.
-    Ajusta los goles esperados restantes según minuto y marcador.
-    """
-    minutos_restantes = max(90 - minuto, 5)
-    factor_tiempo = minutos_restantes / 90.0
+def obtener_stats_live(fixture_id):
+    """Fetches live shots on target for both teams."""
+    data = _apifb("fixtures/statistics", {"fixture": fixture_id})
+    if not data:
+        return None, None
+    shots_home = shots_away = 0
+    teams = data.get("response", [])
+    for team_stats in teams:
+        is_home = team_stats.get("team", {}).get("id") == teams[0].get("team", {}).get("id") if teams else False
+        for stat in team_stats.get("statistics", []):
+            if stat.get("type") == "Shots on Goal":
+                val = stat.get("value") or 0
+                if not shots_home:
+                    shots_home = int(val)
+                else:
+                    shots_away = int(val)
+    return shots_home, shots_away
 
-    # Goles esperados restantes (ajuste por tiempo)
-    lambda_l = goles_local_esp * factor_tiempo
-    lambda_v = goles_visita_esp * factor_tiempo
 
-    # Si hay goles ya, el ritmo tiende a bajar (equipos más cerrados)
-    goles_totales = gl_actual + gv_actual
-    if goles_totales >= 2:
-        lambda_l *= 0.85
-        lambda_v *= 0.85
-    elif goles_totales == 0 and minuto >= 60:
-        # Sin goles a los 60' → ligero ajuste al alza (partido abierto)
-        lambda_l *= 1.10
-        lambda_v *= 1.10
+# ── MODELO PROBABILIDADES LIVE ───────────────────────────────────────
 
-    lambda_total = lambda_l + lambda_v
+def probabilidades_live(gl_esp, gv_esp, minuto, gl_actual, gv_actual):
+    minutos_rest = max(90 - minuto, 5)
+    factor       = minutos_rest / 90.0
+    lambda_l     = gl_esp * factor
+    lambda_v     = gv_esp * factor
 
-    # P(al menos 1 gol más)
-    p_mas_gol = 1 - math.exp(-lambda_total)
+    goles_tot = gl_actual + gv_actual
+    if goles_tot >= 2:
+        lambda_l *= 0.85; lambda_v *= 0.85
+    elif goles_tot == 0 and minuto >= 60:
+        lambda_l *= 1.10; lambda_v *= 1.10
 
-    # P(victoria final) con estado actual
-    # Simplificado: si va ganando, probabilidad de mantener resultado
+    p_mas_gol = 1 - math.exp(-(lambda_l + lambda_v))
+
     if gl_actual > gv_actual:
-        p_local_gana = 0.55 + (minuto / 90) * 0.30
-        p_visita_gana = max(0.05, 0.25 - (minuto / 90) * 0.20)
+        p_local = 0.55 + (minuto / 90) * 0.30
+        p_visita = max(0.05, 0.25 - (minuto / 90) * 0.20)
     elif gv_actual > gl_actual:
-        p_visita_gana = 0.55 + (minuto / 90) * 0.30
-        p_local_gana = max(0.05, 0.25 - (minuto / 90) * 0.20)
-    else:  # empate
-        p_local_gana = 0.35
-        p_visita_gana = 0.35
-
-    p_empate = max(0.01, 1 - p_local_gana - p_visita_gana)
+        p_visita = 0.55 + (minuto / 90) * 0.30
+        p_local  = max(0.05, 0.25 - (minuto / 90) * 0.20)
+    else:
+        p_local = p_visita = 0.35
 
     return {
-        "lambda_restante": round(lambda_total, 2),
         "p_mas_gol": round(p_mas_gol * 100, 1),
-        "p_local":   round(p_local_gana * 100, 1),
-        "p_empate":  round(p_empate * 100, 1),
-        "p_visita":  round(p_visita_gana * 100, 1),
-        "minutos_restantes": minutos_restantes,
+        "p_local":   round(p_local * 100, 1),
+        "p_empate":  round(max(0.01, 1 - p_local - p_visita) * 100, 1),
+        "p_visita":  round(p_visita * 100, 1),
+        "mins_rest": minutos_rest,
     }
 
 
-# ── CONSTRUIR MENSAJE DE ALERTA ───────────────────────────────────
+# ── CONSTRUIR MENSAJES ───────────────────────────────────────────────
 
-def construir_alerta(fixture, trigger, probs):
-    local   = fixture["teams"]["home"]["name"]
-    visita  = fixture["teams"]["away"]["name"]
-    gl      = fixture["goals"]["home"] or 0
-    gv      = fixture["goals"]["away"] or 0
-    minuto  = fixture["fixture"]["status"]["elapsed"] or 0
-    liga    = fixture["league"]["name"]
+def construir_alerta(fixture, trigger, probs, shots_home=0, shots_away=0):
+    local  = fixture["teams"]["home"]["name"]
+    visita = fixture["teams"]["away"]["name"]
+    gl     = fixture["goals"]["home"] or 0
+    gv     = fixture["goals"]["away"] or 0
+    minuto = fixture["fixture"]["status"]["elapsed"] or 0
+    liga   = fixture["league"]["name"]
+    marc   = f"{gl}-{gv}"
+    mins   = probs["mins_rest"]
+    p_gol  = probs["p_mas_gol"]
 
-    marcador = f"{gl}-{gv}"
-    p_gol    = probs["p_mas_gol"]
-    mins     = probs["minutos_restantes"]
+    stake = "💰 <i>Si apuestas: máx 2% del bankroll en vivo</i>"
 
     if trigger == "inicio":
         return (
-            f"🟢 <b>PARTIDO EN CURSO</b>\n\n"
+            f"🟢 <b>EN CURSO</b> | Min {minuto}'\n\n"
             f"⚽ <b>{local} vs {visita}</b>\n"
-            f"🏆 {liga} | Min {minuto}'\n"
-            f"📊 Marcador: {marcador}\n\n"
-            f"<i>Seguimiento activo — recibirás alertas en momentos clave</i>"
+            f"🏆 {liga} | {marc}\n\n"
+            f"<i>SharpIQ monitoreando — recibirás alertas en momentos clave</i>"
+        )
+
+    if trigger == "dominancia":
+        if shots_home >= 4 and gl == 0:
+            dom_equipo, dom_remates = local, shots_home
+        elif shots_away >= 4 and gv == 0:
+            dom_equipo, dom_remates = visita, shots_away
+        else:
+            return None
+        return (
+            f"🎯 <b>DOMINANCIA SIN GOL | Min {minuto}'</b>\n\n"
+            f"⚽ <b>{local} vs {visita}</b>\n"
+            f"🏆 {liga} | {marc}\n\n"
+            f"📊 <b>{dom_equipo}: {dom_remates} remates a puerta</b> — sin convertir\n"
+            f"🔮 Prob. de anotar: <b>{p_gol}%</b>\n\n"
+            f"💡 <b>Oportunidad:</b> {dom_equipo} siguiente gol / Over 0.5\n"
+            f"🔍 Busca la cuota — el valor suele estar alto aquí\n\n"
+            f"{stake}\n"
+            f"<i>SharpIQ Live — La ventaja inteligente</i>"
         )
 
     if trigger in ("ht_cero", "min60_cero", "min75_cero"):
         urgencia = "🚨 URGENTE" if trigger == "min75_cero" else "⚡ ALERTA LIVE"
+        shots_txt = ""
+        if shots_home or shots_away:
+            shots_txt = f"🎯 Remates a puerta: {local} {shots_home} — {visita} {shots_away}\n"
         return (
             f"{urgencia} — <b>Sin goles | Min {minuto}'</b>\n\n"
             f"⚽ <b>{local} vs {visita}</b>\n"
-            f"🏆 {liga} | {marcador}\n\n"
-            f"📊 <b>Probabilidad de al menos 1 gol más: {p_gol}%</b>\n"
+            f"🏆 {liga} | {marc}\n\n"
+            f"{shots_txt}"
+            f"📊 <b>Prob. al menos 1 gol más: {p_gol}%</b>\n"
             f"⏱ {mins} minutos restantes\n\n"
-            f"💡 <b>Mercado sugerido:</b> Over 0.5 goles restantes\n"
+            f"💡 <b>Mercado:</b> Over 0.5 goles restantes\n"
             f"🔍 Busca la cuota en tu casa de apuestas\n\n"
+            f"{stake}\n"
             f"<i>SharpIQ Live — La ventaja inteligente</i>"
         )
 
-    if trigger in ("min60_update", "min75_update"):
+    if trigger in ("ht_update", "min60_update", "min75_update"):
         if gl > gv:
-            lider, ventaja = local, f"{gl}-{gv}"
-            p_mantiene = probs["p_local"]
-            mercado_sug = f"Victoria {local}"
+            lider = local; p_m = probs["p_local"]; sug = f"Victoria {local}"
         elif gv > gl:
-            lider, ventaja = visita, f"{gl}-{gv}"
-            p_mantiene = probs["p_visita"]
-            mercado_sug = f"Victoria {visita}"
+            lider = visita; p_m = probs["p_visita"]; sug = f"Victoria {visita}"
         else:
-            lider = None
-            p_mantiene = probs["p_empate"]
-            mercado_sug = "Empate"
+            lider = None; p_m = probs["p_empate"]; sug = "Empate"
 
-        if lider:
-            return (
-                f"📡 <b>ACTUALIZACIÓN LIVE | Min {minuto}'</b>\n\n"
-                f"⚽ <b>{local} vs {visita}</b>\n"
-                f"🏆 {liga} | {marcador}\n\n"
-                f"🏆 <b>{lider}</b> va ganando {ventaja}\n"
-                f"📊 Probabilidad de mantener resultado: <b>{p_mantiene}%</b>\n"
-                f"⏱ {mins} minutos restantes\n\n"
-                f"💡 <b>Mercado sugerido:</b> {mercado_sug}\n"
-                f"🔍 Busca la cuota en tu casa de apuestas\n\n"
-                f"<i>SharpIQ Live — La ventaja inteligente</i>"
-            )
-        else:
-            return (
-                f"📡 <b>ACTUALIZACIÓN LIVE | Min {minuto}'</b>\n\n"
-                f"⚽ <b>{local} vs {visita}</b>\n"
-                f"🏆 {liga} | Empate {marcador}\n\n"
-                f"📊 Prob. gol restante: <b>{p_gol}%</b> | "
-                f"Prob. empate final: <b>{p_mantiene}%</b>\n"
-                f"⏱ {mins} minutos restantes\n\n"
-                f"<i>SharpIQ Live — La ventaja inteligente</i>"
-            )
+        shots_txt = ""
+        if shots_home or shots_away:
+            shots_txt = f"🎯 Remates: {local} {shots_home} — {visita} {shots_away}\n"
+
+        header = f"📡 <b>LIVE | Min {minuto}'</b>\n\n"
+        body   = (
+            f"⚽ <b>{local} vs {visita}</b>\n"
+            f"🏆 {liga} | {marc}\n\n"
+            f"{shots_txt}"
+            f"📊 {('Líder ' + lider + ' — prob. mantener: ') if lider else 'Prob. empate final: '}"
+            f"<b>{p_m}%</b>\n"
+            f"⏱ {mins} min restantes\n\n"
+            f"💡 <b>Mercado:</b> {sug}\n\n"
+            f"{stake}\n"
+            f"<i>SharpIQ Live — La ventaja inteligente</i>"
+        )
+        return header + body
 
     return None
 
 
-# ── ENVIAR ALERTA AL CANAL VIP ────────────────────────────────────
+# ── ENVIAR AL CANAL VIP ──────────────────────────────────────────────
 
 def enviar_alerta_live(texto):
     import requests
@@ -212,94 +223,81 @@ def enviar_alerta_live(texto):
     )
 
 
-# ── LOOP PRINCIPAL ────────────────────────────────────────────────
+# ── ONE-SHOT PRINCIPAL ───────────────────────────────────────────────
 
 def correr():
     inicializar_live_db()
-    print(f"\n SharpIQ Live Monitor — {date.today().isoformat()}")
+    hora = datetime.now().strftime('%H:%M')
+    print(f"\n SharpIQ Live Monitor — {date.today().isoformat()} {hora}")
 
     partidos_hoy = partidos_publicados_hoy()
     if not partidos_hoy:
-        print("  Sin partidos publicados hoy — monitor inactivo")
+        print("  Sin partidos publicados — skip")
         return
 
-    print(f"  Partidos monitoreando: {len(partidos_hoy)}")
-
-    # IDs de ligas que seguimos
     liga_ids = ",".join(str(k) for k in LIGAS_APIFB.keys())
+    data     = _apifb("fixtures", {"live": liga_ids})
+    fixtures = data.get("response", []) if data else []
 
-    ciclos_sin_partidos = 0
+    if not fixtures:
+        print("  Sin partidos en vivo ahora")
+        return
 
-    while True:
-        try:
-            # Obtener fixtures en vivo
-            data = _apifb("fixtures", {"live": liga_ids})
-            fixtures_live = data.get("response", []) if data else []
+    alertas = 0
+    for fixture in fixtures:
+        local   = fixture["teams"]["home"]["name"]
+        visita  = fixture["teams"]["away"]["name"]
+        fid     = fixture["fixture"]["id"]
+        minuto  = fixture["fixture"]["status"]["elapsed"] or 0
+        gl      = fixture["goals"]["home"] or 0
+        gv      = fixture["goals"]["away"] or 0
 
-            if not fixtures_live:
-                ciclos_sin_partidos += 1
-                print(f"  [{datetime.now().strftime('%H:%M')}] Sin partidos en vivo ({ciclos_sin_partidos})")
-                # Salir si no hay partidos en 30 minutos
-                if ciclos_sin_partidos >= 6:
-                    print("  Sin actividad — monitor detenido")
-                    break
-                time.sleep(300)
+        # Solo monitorear partidos publicados
+        partido_str = f"{local} vs {visita}"
+        if not any(p.lower()[:15] in partido_str.lower() or
+                   partido_str.lower()[:15] in p.lower()
+                   for p in partidos_hoy):
+            continue
+
+        print(f"  {partido_str} | {gl}-{gv} | Min {minuto}'")
+
+        marc_cond = "0-0" if gl == 0 and gv == 0 else "any"
+
+        # Remates en vivo (1 request por partido, solo si vale la pena)
+        shots_h = shots_a = 0
+        if minuto >= 15:
+            shots_h, shots_a = obtener_stats_live(fid)
+            if shots_h is None:
+                shots_h = shots_a = 0
+
+        # Condición dominancia
+        dom_cond = "dominancia" if (
+            marc_cond == "0-0" and minuto >= 20 and
+            (shots_h >= 4 or shots_a >= 4)
+        ) else None
+
+        from motor import calcular_goles_esperados
+        gl_esp, gv_esp = calcular_goles_esperados(local, visita)
+        probs = probabilidades_live(gl_esp, gv_esp, minuto, gl, gv)
+
+        for (min_min, min_max, cond, trigger) in TRIGGERS:
+            if not (min_min <= minuto <= min_max):
+                continue
+            if cond == "dominancia" and dom_cond != "dominancia":
+                continue
+            if cond not in ("any", "dominancia") and cond != marc_cond:
+                continue
+            if ya_enviado(fid, trigger):
                 continue
 
-            ciclos_sin_partidos = 0
+            texto = construir_alerta(fixture, trigger, probs, shots_h, shots_a)
+            if texto:
+                enviar_alerta_live(texto)
+                marcar_enviado(fid, trigger)
+                print(f"  ✅ Alerta: {trigger} | {partido_str}")
+                alertas += 1
 
-            for fixture in fixtures_live:
-                local  = fixture["teams"]["home"]["name"]
-                visita = fixture["teams"]["away"]["name"]
-                partido_str = f"{local} vs {visita}"
-
-                # Solo monitorear partidos que publicamos
-                es_publicado = any(
-                    p.lower()[:15] in partido_str.lower() or
-                    partido_str.lower()[:15] in p.lower()
-                    for p in partidos_hoy
-                )
-                if not es_publicado:
-                    continue
-
-                fid    = fixture["fixture"]["id"]
-                minuto = fixture["fixture"]["status"]["elapsed"] or 0
-                gl     = fixture["goals"]["home"] or 0
-                gv     = fixture["goals"]["away"] or 0
-                marcador_cond = "0-0" if gl == 0 and gv == 0 else "any"
-
-                print(f"  [{datetime.now().strftime('%H:%M')}] {partido_str} | {gl}-{gv} | Min {minuto}'")
-
-                # Evaluar triggers
-                for (min_min, min_max, cond, trigger) in TRIGGERS:
-                    if not (min_min <= minuto <= min_max):
-                        continue
-                    if cond != "any" and cond != marcador_cond:
-                        continue
-                    if ya_enviado(fid, trigger):
-                        continue
-
-                    # Calcular probabilidades live
-                    from motor import STATS_EQUIPOS, get_stats_equipo, calcular_goles_esperados
-                    stats_l = get_stats_equipo(local)
-                    stats_v = get_stats_equipo(visita)
-                    gl_esp, gv_esp = calcular_goles_esperados(local, visita)
-                    probs = probabilidades_live(gl_esp, gv_esp, minuto, gl, gv)
-
-                    texto = construir_alerta(fixture, trigger, probs)
-                    if texto:
-                        enviar_alerta_live(texto)
-                        marcar_enviado(fid, trigger)
-                        print(f"  ✅ Alerta enviada: {trigger} | {partido_str}")
-
-            time.sleep(300)  # Esperar 5 minutos
-
-        except KeyboardInterrupt:
-            print("\n  Monitor detenido manualmente")
-            break
-        except Exception as e:
-            print(f"  Error: {e}")
-            time.sleep(60)
+    print(f"  Total alertas enviadas: {alertas}")
 
 
 if __name__ == "__main__":
