@@ -4,10 +4,10 @@
 
 const PROXIMOS_EVENTOS = [
   {
-    fecha:      "27/05/26",
+    fecha:      "26/05/26",
     partido:    "OKC Thunder vs San Antonio Spurs",
     liga:       "NBA Playoffs",
-    prediccion: "Gana OKC Thunder — EV +0%",
+    prediccion: "Gana OKC Thunder",
     cuota:      "1.54",
     hora:       "19:40 COT",
     status:     "free"
