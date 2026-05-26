@@ -1,0 +1,73 @@
+name: SharpIQ Live Scores
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'   # cada 10 minutos
+  workflow_dispatch:
+
+jobs:
+  live-scores:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Crear config.py
+        env:
+          ODDS_API_KEY:      ${{ secrets.ODDS_API_KEY }}
+          TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_YAMID_ID: ${{ secrets.TELEGRAM_YAMID_ID }}
+          TELEGRAM_FREE_ID:  ${{ secrets.TELEGRAM_FREE_ID }}
+        run: |
+          python - << 'EOF'
+          import os
+          lines = [
+            f'ODDS_API_KEY       = "{os.environ["ODDS_API_KEY"]}"',
+            f'TELEGRAM_TOKEN     = "{os.environ["TELEGRAM_TOKEN"]}"',
+            f'TELEGRAM_CHAT_ID   = "{os.environ["TELEGRAM_CHAT_ID"]}"',
+            f'TELEGRAM_YAMID_ID  = "{os.environ["TELEGRAM_YAMID_ID"]}"',
+            f'TELEGRAM_FREE_ID   = "{os.environ["TELEGRAM_FREE_ID"]}"',
+            'FOOTBALL_DATA_KEY  = ""',
+            'APIFOOTBALL_KEY    = ""',
+            'DATABASE_URL       = ""',
+            'DATABASE_PUBLIC_URL= ""',
+            'MP_ACCESS_TOKEN    = ""',
+            'MP_PUBLIC_KEY      = ""',
+            'JWT_SECRET         = ""',
+          ]
+          open("sharpiq-engine/config.py", "w").write("\n".join(lines) + "\n")
+          print("config.py OK")
+          EOF
+
+      - name: Configurar git
+        run: |
+          git config user.name  "SharpIQ Live"
+          git config user.email "live@sharpiq.co"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+      - name: Actualizar live scores
+        run: python sharpiq-engine/live_scores_update.py
+
+      - name: Commit y push
+        run: |
+          git add live_scores.json
+          git diff --cached --quiet || (
+            git pull origin main --no-rebase --quiet &&
+            git commit -m "live: scores $(date -u +%H:%M UTC)" &&
+            git push origin main
+          )

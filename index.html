@@ -915,6 +915,22 @@
   </div>
 </div>
 
+<!-- ── LIVE SCORES ── -->
+<div style="padding:40px 0 0" id="liveScoresSection">
+  <div class="wrap">
+    <div class="upcoming-wrap rv">
+      <div class="upcoming-header">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="live-badge" id="liveScoresBadge" style="background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.4)"><div class="hero-dot" style="background:#ef4444"></div><span id="liveScoresBadgeText">EN VIVO</span></div>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--t3)" id="liveScoresCount"></span>
+        </div>
+        <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px" id="liveScoresUpdated"></span>
+      </div>
+      <div id="liveScoresGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:16px"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ── STATS DASHBOARD (estilo Xtera) ── -->
 <div class="stats-dash">
   <div class="wrap">
@@ -1854,6 +1870,102 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     }).join('');}
   };
   window._renderPicks();
+})();
+
+// ── LIVE SCORES ─────────────────────────────────────────────
+(function(){
+  const grid    = document.getElementById('liveScoresGrid');
+  const badge   = document.getElementById('liveScoresBadge');
+  const badgeTxt= document.getElementById('liveScoresBadgeText');
+  const count   = document.getElementById('liveScoresCount');
+  const updated = document.getElementById('liveScoresUpdated');
+  if(!grid) return;
+
+  function countdown(ts){
+    const diff = ts*1000 - Date.now();
+    if(diff <= 0) return 'INICIANDO';
+    const h = Math.floor(diff/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    const s = Math.floor((diff%60000)/1000);
+    if(h > 0) return h+'h '+String(m).padStart(2,'0')+'m';
+    if(m > 0) return m+'m '+String(s).padStart(2,'0')+'s';
+    return String(s)+'s';
+  }
+
+  function cardHTML(g, tipo){
+    const scoreStr = (g.score_home!==null && g.score_away!==null)
+      ? `<span style="font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:900;color:#fff;letter-spacing:2px">${g.score_home} — ${g.score_away}</span>`
+      : '';
+    const topLabel = tipo==='live'
+      ? `<span style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);color:#ef4444;font-size:9px;font-family:'Space Mono',monospace;padding:2px 8px;border-radius:4px;letter-spacing:1px">🔴 EN VIVO</span>`
+      : tipo==='finished'
+      ? `<span style="background:rgba(100,100,100,.15);border:1px solid rgba(255,255,255,.1);color:var(--t2);font-size:9px;font-family:'Space Mono',monospace;padding:2px 8px;border-radius:4px;letter-spacing:1px">✅ FINAL</span>`
+      : `<span style="background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.25);color:var(--gold);font-size:9px;font-family:'Space Mono',monospace;padding:2px 8px;border-radius:4px;letter-spacing:1px" data-ts="${g.ts}" data-cd="1">⏱ <span class="cd-val"></span></span>`;
+
+    return `<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <span style="font-size:11px;color:var(--t2);font-family:'Space Mono',monospace">${g.emoji} ${g.liga}</span>
+        ${topLabel}
+      </div>
+      <div style="font-size:13px;font-weight:600;color:var(--t1);line-height:1.4">${g.home} <span style="color:var(--t3)">vs</span> ${g.away}</div>
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        ${scoreStr || `<span style="font-size:11px;color:var(--t3);font-family:'Space Mono',monospace">${g.hora}</span>`}
+        ${tipo==='upcoming'&&g.ts ? `<span style="font-size:11px;color:var(--gold);font-family:'Space Mono',monospace" data-ts="${g.ts}" data-cd="1"></span>` : ''}
+      </div>
+    </div>`;
+  }
+
+  let cdInterval;
+  function startCountdowns(){
+    if(cdInterval) clearInterval(cdInterval);
+    cdInterval = setInterval(()=>{
+      document.querySelectorAll('[data-cd="1"]').forEach(el=>{
+        const ts = parseInt(el.getAttribute('data-ts'));
+        const cd = el.querySelector('.cd-val') || el;
+        const txt = countdown(ts);
+        if(cd.classList.contains('cd-val')) cd.textContent = txt;
+        else el.textContent = txt;
+      });
+    }, 1000);
+  }
+
+  function render(data){
+    const live = data.live || [];
+    const upcoming = (data.upcoming || []).slice(0, 6);
+    const finished = (data.finished || []).slice(0, 4);
+
+    if(live.length){
+      badge.style.background = 'rgba(239,68,68,.12)';
+      badge.style.borderColor = 'rgba(239,68,68,.4)';
+      badgeTxt.textContent = 'EN VIVO';
+      count.textContent = live.length + ' partidos en vivo';
+    } else {
+      badge.style.background = 'rgba(0,200,255,.12)';
+      badge.style.borderColor = 'rgba(0,200,255,.3)';
+      badgeTxt.textContent = 'PRÓXIMOS';
+      count.textContent = upcoming.length + ' partidos próximos';
+    }
+
+    const upd = new Date(data.updated);
+    updated.textContent = 'Actualizado ' + upd.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'}) + ' COT';
+
+    const html = [
+      ...live.map(g => cardHTML(g,'live')),
+      ...upcoming.map(g => cardHTML(g,'upcoming')),
+      ...finished.map(g => cardHTML(g,'finished')),
+    ].join('');
+
+    grid.innerHTML = html || '<p style="color:var(--t3);font-size:12px;font-family:Space Mono,monospace">Sin partidos disponibles ahora mismo.</p>';
+    startCountdowns();
+  }
+
+  function fetchScores(){
+    fetch('live_scores.json?nc='+Date.now(), {cache:'no-store'})
+      .then(r=>r.json()).then(render).catch(()=>{});
+  }
+
+  fetchScores();
+  setInterval(fetchScores, 60000); // refresca cada 60s
 })();
 
 // 3D NEURAL SPHERE
