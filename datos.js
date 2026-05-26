@@ -57,18 +57,18 @@ const PROXIMOS_EVENTOS = [
     hora:       "17:00 COT",
     status:     "vip"
   },
+];
+
+const PREDICCIONES_HISTORIAL = [
   {
     fecha:      "25/05/26",
     partido:    "Mariano Navone vs Jenson Brooksby",
     liga:       "ATP Roland Garros",
     prediccion: "Gana Mariano Navone",
     cuota:      "1.29",
-    hora:       "08:00 COT",
-    status:     "vip"
-  }
-];
-
-const PREDICCIONES_HISTORIAL = [
+    resultado:  "win",
+    score:      "6-4, 6-4, 6-4"
+  },
   {
     fecha:      "25/05/26",
     partido:    "Cleveland Cavaliers vs New York Knicks",

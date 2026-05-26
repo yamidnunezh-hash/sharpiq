@@ -369,9 +369,9 @@
 <div class="toolbar">
   <span class="tb-label">Filtro:</span>
   <button class="f-btn" onclick="setf('todos',this)">Todos</button>
-  <button class="f-btn" onclick="setf('value',this)">Value Bets</button>
-  <button class="f-btn" onclick="setf('high',this)">Confianza +60%</button>
-  <button class="f-btn on" onclick="setf('ev',this)">Solo EV+8%</button>
+  <button class="f-btn" onclick="setf('hoy',this)">Solo Hoy</button>
+  <button class="f-btn on" onclick="setf('ev',this)">EV +8%</button>
+  <button class="f-btn" onclick="setf('alto',this)">Alto Valor</button>
   <button class="f-btn" onclick="setf('soccer',this)">Fútbol</button>
   <button class="f-btn" onclick="setf('us',this)">NBA/MLB/NHL</button>
   <div class="tb-sep"></div>
@@ -504,9 +504,10 @@ function setord(t, btn) {
 function render() {
   let lista = [...ALL];
   const esSoccer = p => !!(p.probabilidades||{}).victoria_local;
-  if (filtro==='value') lista = lista.filter(p => _maxEv(p) >= 8);
-  else if (filtro==='high') lista = lista.filter(p => (p.confianza||0) >= 60);
-  else if (filtro==='ev') lista = lista.filter(p => _maxEv(p) >= 8);
+  const hoy = new Date().toISOString().slice(0,10);
+  if (filtro==='hoy')   lista = lista.filter(p => !p.fecha_evento || p.fecha_evento === hoy);
+  else if (filtro==='ev')   lista = lista.filter(p => _maxEv(p) >= 8);
+  else if (filtro==='alto') lista = lista.filter(p => Object.values(p.value_bets||{}).some(v=>v&&v.clasificacion==='ALTO VALOR'));
   else if (filtro==='soccer') lista = lista.filter(esSoccer);
   else if (filtro==='us') lista = lista.filter(p => !esSoccer(p));
 
@@ -547,15 +548,15 @@ function _horaCot(horaUtc) {
 }
 
 function _fechaLabel(fechaEv) {
-  if(!fechaEv) return '';
   const hoy = new Date().toISOString().slice(0,10);
-  if(fechaEv === hoy) return '';
+  if(!fechaEv || fechaEv === hoy) return 'Hoy';
   const diff = Math.round((new Date(fechaEv+'T12:00:00') - new Date(hoy+'T12:00:00')) / 86400000);
-  if(diff === 1) return ' — Mañana';
-  if(diff <= 0) return ' — Hoy';
+  if(diff <= 0) return 'Hoy';
+  if(diff === 1) return 'Mañana';
+  const dias  = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
   const meses = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
   const d = new Date(fechaEv+'T12:00:00');
-  return ` — ${d.getDate()} ${meses[d.getMonth()]}`;
+  return `${dias[d.getDay()]} ${d.getDate()} ${meses[d.getMonth()]}`;
 }
 
 function card(p, idx=0) {
@@ -629,7 +630,7 @@ function card(p, idx=0) {
   <div class="card ${hasVB?'vbet':''}">
     <div class="ch">
       <span class="ch-liga">${emoji} ${p.liga||p.deporte||''}</span>
-      <span class="ch-hora">${horaCot}${fechaLabel}</span>
+      <span class="ch-hora"><span style="color:var(--cyan);font-weight:700">${fechaLabel}</span> · ${horaCot}</span>
     </div>
     <div class="cb">
       <div class="equipos">
