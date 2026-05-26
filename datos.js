@@ -4,6 +4,33 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "27/05/26",
+    partido:    "Montréal Canadiens vs Carolina Hurricanes",
+    liga:       "NHL",
+    prediccion: "Gana Montréal Canadiens — EV +33%",
+    cuota:      "3.1",
+    hora:       "19:00 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "26/05/26",
+    partido:    "Milwaukee Brewers vs St. Louis Cardinals",
+    liga:       "MLB",
+    prediccion: "Gana Milwaukee Brewers",
+    cuota:      "1.56",
+    hora:       "18:41 COT",
+    status:     "vip"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Jelena Ostapenko vs Magda Linette",
+    liga:       "WTA Roland Garros",
+    prediccion: "Gana Jelena Ostapenko",
+    cuota:      "1.3",
+    hora:       "05:10 COT",
+    status:     "vip"
+  },
+  {
     fecha:      "26/05/26",
     partido:    "OKC Thunder vs San Antonio Spurs",
     liga:       "NBA Playoffs",
