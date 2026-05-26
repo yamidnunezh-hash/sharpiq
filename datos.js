@@ -9,7 +9,7 @@ const PROXIMOS_EVENTOS = [
     liga:       "NBA Playoffs",
     prediccion: "Gana OKC Thunder",
     cuota:      "1.54",
-    hora:       "19:40 COT",
+    hora:       "19:30 COT",
     status:     "free"
   },
   {
