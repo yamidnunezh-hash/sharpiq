@@ -4,6 +4,28 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "26/05/26",
+    partido:    "Vegas Golden Knights vs Colorado Avalanche",
+    liga:       "NHL",
+    prediccion: "Gana Vegas Golden Knights — EV +33%",
+    cuota:      "2.7",
+    hora:       "20:20 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2"
+  },
+  {
+    fecha:      "26/05/26",
+    partido:    "Oklahoma City Thunder vs San Antonio Spurs",
+    liga:       "NBA",
+    prediccion: "Gana Oklahoma City Thunder",
+    cuota:      "1.62",
+    hora:       "19:40 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3"
+  },
+  {
     fecha:      "27/05/26",
     partido:    "Montréal Canadiens vs Carolina Hurricanes",
     liga:       "NHL",
