@@ -125,8 +125,8 @@ jobs:
 
       - name: Commit y push
         run: |
+          git pull origin main --no-rebase --quiet || true
           git add -f predicciones.json mejor_prediccion.json datos.js 2>/dev/null || true
           git add -f sharpiq-engine/sharpiq.db 2>/dev/null || true
           git diff --cached --quiet || git commit -m "auto: predicciones $(date -u +%Y-%m-%d %H:%M UTC)"
-          git pull origin main --no-rebase --quiet
-          git push origin main
+          git push origin main || (git pull origin main --no-rebase --quiet && git push origin main)
