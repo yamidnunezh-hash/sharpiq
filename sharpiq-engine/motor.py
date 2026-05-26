@@ -2737,6 +2737,8 @@ def clasificar_tiers(reporte):
     PRINC_MIN_CUOTA  = 1.55
     AV_MIN_EV        = 8.0
     AV_MIN_CUOTA     = 1.90
+    AV_MAX_CUOTA     = 10.0   # Longshots > 10.0 no se publican (pierden 90%+ del tiempo)
+    AV_MIN_PROB      = 20.0   # Probabilidad mínima 20% para publicar
 
     _CK = {
         "victoria_local":"1","empate":"X","victoria_visita":"2",
@@ -2885,17 +2887,24 @@ def clasificar_tiers(reporte):
             ev_p = vb.get("ev_pinn")
             if ev_p is None or ev_p < AV_MIN_EV:
                 continue
-            ck = _CK.get(mk, mk)          # fallback: clave = nombre del equipo
+            ck = _CK.get(mk, mk)
             cuota_v = cuotas.get(ck)
-            if not cuota_v or float(cuota_v) < AV_MIN_CUOTA:
+            if not cuota_v:
+                continue
+            cuota_f = float(cuota_v)
+            # Filtrar longshots: cuota > 10 o probabilidad < 20%
+            prob_mk = probs.get(mk, vb.get("pinn_prob", 0))
+            if cuota_f < AV_MIN_CUOTA or cuota_f > AV_MAX_CUOTA:
+                continue
+            if prob_mk < AV_MIN_PROB:
                 continue
             nombre_mk = _NOMBRES.get(mk) or (f"Gana {mk}" if not es_futbol else mk)
             alto_pool.append({
                 "pred":           pred,
                 "mercado":        mk,
                 "mercado_nombre": nombre_mk,
-                "prob":           probs.get(mk, vb.get("pinn_prob", 0)),
-                "cuota":          float(cuota_v),
+                "prob":           prob_mk,
+                "cuota":          cuota_f,
                 "ev_pinn":        ev_p,
                 "score":          ev_p,
             })
