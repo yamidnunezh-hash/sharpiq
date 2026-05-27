@@ -103,7 +103,7 @@
     .nav-mob a:hover{color:var(--gold)}
 
     /* ── HERO V2 — 3D Neural Sphere ── */
-    .hero-v2{position:relative;height:100vh;min-height:640px;overflow:hidden;z-index:1;display:flex;align-items:center;justify-content:center}
+    .hero-v2{position:relative;height:auto;padding:20px 0 8px;overflow:hidden;z-index:1;display:flex;align-items:center;justify-content:center}
     #heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1}
     .hero-ov{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 100% 80% at 50% 50%,transparent 30%,rgba(244,247,251,0.7) 80%,rgba(7,5,26,.95) 100%)}
     .hero-body{
@@ -353,7 +353,7 @@
     .pst strong{color:var(--t1)}
 
     /* ── PREDICCIONES PREVIEW ── */
-    .sec-preds{padding:120px 0;background:var(--bg1);position:relative;z-index:2}
+    .sec-preds{padding:24px 0 60px;background:var(--bg1);position:relative;z-index:2}
     .pred-wrap{position:relative;border-radius:var(--rl);overflow:hidden;border:1px solid var(--border)}
     .pred-header{
       display:flex;align-items:center;justify-content:space-between;
@@ -806,68 +806,15 @@
 
 <!-- ── HERO V2 — 3D Neural Sphere ── -->
 <section class="hero-v2" id="hero">
-  <canvas id="heroCanvas"></canvas>
-  <div class="hero-ov"></div>
-
-  <!-- Floating data badges -->
-  <div class="hf hf1">
-    <span>
-      <span class="hf-val">82%</span>
-      <span class="hf-lbl">Tasa Aciertos</span>
-    </span>
-  </div>
-  <div class="hf hf2">
-    <span>
-      <span class="hf-val">🚀 Lanzamiento</span>
-      <span class="hf-lbl">Plazas limitadas</span>
-    </span>
-  </div>
-  <div class="hf hf3">
-    <span>
-      <span class="hf-val">⚽ Serie A</span>
-      <span class="hf-lbl">Predicción activa</span>
-    </span>
-  </div>
-  <div class="hf hf4">
-    <span>
-      <span class="hf-val">⚽ Champions</span>
-      <span class="hf-lbl">Análisis en proceso</span>
-    </span>
-  </div>
-
-  <div class="hero-body">
-    <div class="hero-pill"><div class="hero-dot"></div>SISTEMA ACTIVO — PREDICCIONES EN PROCESO</div>
-    <h1 class="hero-h1">
-      La Ventaja<br>
-      <em>Inteligente</em>
-    </h1>
-    <p class="hero-sub">
-      Análisis predictivo con inteligencia artificial para deportes, eSports y mercados financieros.
-      Decisiones con respaldo matemático real — no intuición.
-    </p>
-    <div class="hero-acts">
-      <a href="#" onclick="irAPago(this);return false;" class="btn-g">Acceder Ahora — $15 USD/mes</a>
-      <a href="#predicciones" class="btn-o">Ver Predicciones</a>
+  <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div>
+      <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t2);letter-spacing:2px;text-transform:uppercase">La Ventaja Inteligente</span>
     </div>
-    <div style="margin-top:14px">
-      <button id="btnPush" onclick="suscribirPush()" style="display:none;background:transparent;border:1px solid rgba(0,200,255,.4);color:#00C8FF;font-size:12px;padding:7px 16px;border-radius:6px;cursor:pointer;font-family:'Space Mono',monospace;letter-spacing:.5px">
-        🔔 Activar alertas gratis
-      </button>
-      <span id="pushActivo" style="display:none;font-size:12px;color:#22c55e;font-family:'Space Mono',monospace">✓ Alertas activadas</span>
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <span id="heroKpi1" style="font-size:12px;color:var(--t2);font-family:'Space Mono',monospace"></span>
+      <button id="btnPush" onclick="suscribirPush()" style="display:none;background:transparent;border:1px solid var(--borderg);color:var(--gold);font-size:11px;padding:5px 14px;border-radius:6px;cursor:pointer;font-family:'Space Mono',monospace">🔔 Alertas gratis</button>
+      <span id="pushActivo" style="display:none;font-size:11px;color:var(--green);font-family:'Space Mono',monospace">✓ Alertas activadas</span>
     </div>
-    <div class="hero-tags">
-      <span>⚽ Fútbol Internacional</span>
-      <span style="color:var(--t3)">·</span>
-      <span>🏀 NBA</span>
-      <span style="color:var(--t3)">·</span>
-      <span>📊 IA Predictiva</span>
-      <span style="color:var(--t3)">·</span>
-      <span>💸 Red de Referidos</span>
-    </div>
-  </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-arrow"></div>
   </div>
 </section>
 
