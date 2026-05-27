@@ -4,6 +4,61 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "28/05/26",
+    partido:    "Bolívar vs Independiente Rivadavia",
+    liga:       "Copa Libertadores",
+    prediccion: "Gana Bolívar — EV +47% (altitud La Paz 3600m)",
+    cuota:      "2.32",
+    hora:       "19:30 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2"
+  },
+  {
+    fecha:      "28/05/26",
+    partido:    "Corinthians vs Platense",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 goles — EV +46%",
+    cuota:      "1.96",
+    hora:       "19:30 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3"
+  },
+  {
+    fecha:      "28/05/26",
+    partido:    "Cerro Porteño vs Sporting Cristal",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 goles — EV +41%",
+    cuota:      "1.89",
+    hora:       "17:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3"
+  },
+  {
+    fecha:      "28/05/26",
+    partido:    "Peñarol vs Independiente Santa Fe",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 goles — EV +33%",
+    cuota:      "1.79",
+    hora:       "19:30 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3"
+  },
+  {
+    fecha:      "29/05/26",
+    partido:    "Boca Juniors vs U. Católica (Chile)",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 goles — EV +37%",
+    cuota:      "2.01",
+    hora:       "19:30 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3"
+  },
+  {
     fecha:      "26/05/26",
     partido:    "Vegas Golden Knights vs Colorado Avalanche",
     liga:       "NHL",
