@@ -338,8 +338,8 @@
     }
     .ring-scan{
       position:absolute;inset:0;z-index:1;border-radius:50%;
-      background:conic-gradient(from -90deg,rgba(0,200,255,0.1) 0deg,rgba(0,200,255,0.02) 60deg,transparent 90deg,transparent 360deg);
-      animation:ring-scan 4s linear infinite;
+      background:conic-gradient(from -90deg,rgba(230,169,14,0.07) 0deg,rgba(0,200,255,0.04) 40deg,transparent 80deg,transparent 360deg);
+      animation:ring-scan 7s linear infinite;
     }
     @keyframes ring-scan{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
     .ring-center{
@@ -1039,31 +1039,8 @@
           <div class="ring-bg"></div>
           <!-- Scan sweep -->
           <div class="ring-scan"></div>
-          <!-- SVG decorativo: anillos concéntricos + arco de progreso -->
+          <!-- SVG mira francotirador -->
           <svg class="ring-svg-deco" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Anillos decorativos -->
-            <circle cx="180" cy="180" r="170" stroke="rgba(230,169,14,0.06)" stroke-width="1"/>
-            <circle cx="180" cy="180" r="148" stroke="rgba(230,169,14,0.04)" stroke-width="0.5"/>
-            <circle cx="180" cy="180" r="100" stroke="rgba(230,169,14,0.05)" stroke-width="0.8"/>
-            <!-- Arco de progreso dorado al 43% (desde -90° = 1.533 rad de circunferencia) -->
-            <!-- circumference r=148: 2π×148≈929.9 · 43%≈399.9 -->
-            <circle cx="180" cy="180" r="148"
-              stroke="url(#goldArc)" stroke-width="3"
-              stroke-linecap="round" stroke-dasharray="400 930"
-              stroke-dashoffset="0"
-              transform="rotate(-90 180 180)"
-              opacity="0.7"/>
-            <!-- Crucetas en los ejes -->
-            <line x1="180" y1="10" x2="180" y2="24" stroke="rgba(230,169,14,0.3)" stroke-width="1.5"/>
-            <line x1="180" y1="336" x2="180" y2="350" stroke="rgba(230,169,14,0.3)" stroke-width="1.5"/>
-            <line x1="10" y1="180" x2="24" y2="180" stroke="rgba(230,169,14,0.3)" stroke-width="1.5"/>
-            <line x1="336" y1="180" x2="350" y2="180" stroke="rgba(230,169,14,0.3)" stroke-width="1.5"/>
-            <!-- Punto final del arco (43%) -->
-            <circle cx="180" cy="180" r="148" fill="none" opacity="0">
-              <!-- marcador invisible, el dot se posiciona con transform -->
-            </circle>
-            <!-- Punto inicial del arco -->
-            <circle cx="180" cy="32" r="4" fill="#e6a90e" opacity="0.9"/>
             <defs>
               <linearGradient id="goldArc" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#00C8FF"/>
@@ -1071,6 +1048,77 @@
                 <stop offset="100%" stop-color="#7B5CF0"/>
               </linearGradient>
             </defs>
+
+            <!-- Arco de progreso dinámico -->
+            <circle cx="180" cy="180" r="148"
+              stroke="url(#goldArc)" stroke-width="2.5"
+              stroke-linecap="round" stroke-dasharray="400 930"
+              stroke-dashoffset="0"
+              transform="rotate(-90 180 180)"
+              opacity="0.65"/>
+
+            <!-- ── Anillos concéntricos del alcance ── -->
+            <circle cx="180" cy="180" r="170" stroke="rgba(230,169,14,0.13)" stroke-width="1"/>
+            <circle cx="180" cy="180" r="148" stroke="rgba(230,169,14,0.06)" stroke-width="0.5"/>
+            <circle cx="180" cy="180" r="90"  stroke="rgba(230,169,14,0.16)" stroke-width="0.8"/>
+            <!-- Retícula interior de precisión -->
+            <circle cx="180" cy="180" r="22"  stroke="rgba(230,169,14,0.42)" stroke-width="0.9" fill="none"/>
+            <!-- Punto central -->
+            <circle cx="180" cy="180" r="2.5" fill="rgba(230,169,14,0.9)"/>
+
+            <!-- ── Líneas de cruceta (con hueco central de 22px) ── -->
+            <!-- Horizontal izquierda -->
+            <line x1="8"   y1="180" x2="157" y2="180" stroke="rgba(230,169,14,0.52)" stroke-width="0.8"/>
+            <!-- Horizontal derecha -->
+            <line x1="203" y1="180" x2="352" y2="180" stroke="rgba(230,169,14,0.52)" stroke-width="0.8"/>
+            <!-- Vertical arriba -->
+            <line x1="180" y1="8"   x2="180" y2="157" stroke="rgba(230,169,14,0.52)" stroke-width="0.8"/>
+            <!-- Vertical abajo -->
+            <line x1="180" y1="203" x2="180" y2="352" stroke="rgba(230,169,14,0.52)" stroke-width="0.8"/>
+
+            <!-- ── Mil-dots eje horizontal ── -->
+            <circle cx="152" cy="180" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <circle cx="127" cy="180" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <circle cx="102" cy="180" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <circle cx="208" cy="180" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <circle cx="233" cy="180" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <circle cx="258" cy="180" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <!-- ── Mil-dots eje vertical ── -->
+            <circle cx="180" cy="152" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <circle cx="180" cy="127" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <circle cx="180" cy="102" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <circle cx="180" cy="208" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <circle cx="180" cy="233" r="1.8" fill="rgba(230,169,14,0.62)"/>
+            <circle cx="180" cy="258" r="1.8" fill="rgba(230,169,14,0.62)"/>
+
+            <!-- ── Marcas cardinales (largas) ── -->
+            <line x1="180" y1="8"   x2="180" y2="24"  stroke="rgba(230,169,14,0.55)" stroke-width="1.5"/>
+            <line x1="180" y1="336" x2="180" y2="352" stroke="rgba(230,169,14,0.55)" stroke-width="1.5"/>
+            <line x1="8"   y1="180" x2="24"  y2="180" stroke="rgba(230,169,14,0.55)" stroke-width="1.5"/>
+            <line x1="336" y1="180" x2="352" y2="180" stroke="rgba(230,169,14,0.55)" stroke-width="1.5"/>
+
+            <!-- ── Marcas diagonales 45° (medias) ── -->
+            <g transform="rotate(45 180 180)">
+              <line x1="180" y1="8"   x2="180" y2="20"  stroke="rgba(230,169,14,0.32)" stroke-width="1"/>
+              <line x1="180" y1="340" x2="180" y2="352" stroke="rgba(230,169,14,0.32)" stroke-width="1"/>
+            </g>
+            <g transform="rotate(135 180 180)">
+              <line x1="180" y1="8"   x2="180" y2="20"  stroke="rgba(230,169,14,0.32)" stroke-width="1"/>
+              <line x1="180" y1="340" x2="180" y2="352" stroke="rgba(230,169,14,0.32)" stroke-width="1"/>
+            </g>
+
+            <!-- ── Marcas cada 30° (cortas) ── -->
+            <g transform="rotate(30 180 180)"><line x1="180" y1="10" x2="180" y2="19" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/><line x1="180" y1="341" x2="180" y2="350" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/></g>
+            <g transform="rotate(60 180 180)"><line x1="180" y1="10" x2="180" y2="19" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/><line x1="180" y1="341" x2="180" y2="350" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/></g>
+            <g transform="rotate(120 180 180)"><line x1="180" y1="10" x2="180" y2="19" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/><line x1="180" y1="341" x2="180" y2="350" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/></g>
+            <g transform="rotate(150 180 180)"><line x1="180" y1="10" x2="180" y2="19" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/><line x1="180" y1="341" x2="180" y2="350" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/></g>
+            <g transform="rotate(210 180 180)"><line x1="180" y1="10" x2="180" y2="19" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/><line x1="180" y1="341" x2="180" y2="350" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/></g>
+            <g transform="rotate(240 180 180)"><line x1="180" y1="10" x2="180" y2="19" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/><line x1="180" y1="341" x2="180" y2="350" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/></g>
+            <g transform="rotate(300 180 180)"><line x1="180" y1="10" x2="180" y2="19" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/><line x1="180" y1="341" x2="180" y2="350" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/></g>
+            <g transform="rotate(330 180 180)"><line x1="180" y1="10" x2="180" y2="19" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/><line x1="180" y1="341" x2="180" y2="350" stroke="rgba(230,169,14,0.22)" stroke-width="0.8"/></g>
+
+            <!-- Punto inicio arco (arriba) -->
+            <circle cx="180" cy="32" r="4" fill="#e6a90e" opacity="0.9"/>
           </svg>
           <!-- Dots JS -->
           <div class="dot-ring" id="dotRing"></div>
