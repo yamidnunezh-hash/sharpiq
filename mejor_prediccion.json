@@ -5,13 +5,13 @@
   "visitante": "Blooming",
   "prediccion": "Victoria Visitante (2)",
   "mercado_key": "victoria_visita",
-  "cuota": "36.0",
+  "cuota": "46.0",
   "casa": "William Hill",
   "hora_utc": "00:30",
   "hora_cot": "19:30 COT",
-  "ev": 56.3,
+  "ev": 119.3,
   "clasificacion": "ALTO VALOR",
-  "confianza": 87.1,
+  "confianza": 86.2,
   "pred_completa": {
     "local": "River Plate",
     "visitante": "Blooming",
@@ -21,91 +21,91 @@
     "hora": "00:30",
     "fecha_evento": "2026-05-27",
     "cuotas": {
-      "2": 36.0,
+      "2": 46.0,
       "2_casa": "William Hill",
-      "pinnacle_2": 21.67,
+      "pinnacle_2": 19.53,
       "1": 1.08,
       "1_casa": "William Hill",
       "pinnacle_1": 1.08,
-      "X": 11.02,
+      "X": 10.31,
       "X_casa": "Pinnacle",
-      "pinnacle_X": 11.02,
-      "over35": 1.91,
+      "pinnacle_X": 10.31,
+      "over35": 1.93,
       "over35_casa": "Pinnacle",
-      "pinnacle_over35": 1.91,
-      "under35": 1.92,
+      "pinnacle_over35": 1.93,
+      "under35": 1.93,
       "under35_casa": "Unibet",
-      "pinnacle_under35": 1.85
+      "pinnacle_under35": 1.83
     },
     "probabilidades": {
-      "victoria_visita": 4.3,
-      "victoria_local": 87.1,
-      "empate": 8.5,
-      "over35": 49.2,
-      "under35": 50.8
+      "victoria_visita": 4.8,
+      "victoria_local": 86.2,
+      "empate": 9.0,
+      "over35": 48.7,
+      "under35": 51.3
     },
-    "confianza": 87.1,
+    "confianza": 86.2,
     "value_bets": {
       "victoria_visita": {
-        "value": 0.563,
-        "ev_porcentaje": 56.3,
-        "ev_pinn": 56.3,
+        "value": 1.193,
+        "ev_porcentaje": 119.3,
+        "ev_pinn": 119.3,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 36.0,
+        "cuota": 46.0,
         "casa": "William Hill",
-        "pinn_prob": 4.3
+        "pinn_prob": 4.8
       },
       "victoria_local": {
-        "value": -0.059,
-        "ev_porcentaje": -5.9,
-        "ev_pinn": -5.9,
+        "value": -0.069,
+        "ev_porcentaje": -6.9,
+        "ev_pinn": -6.9,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 1.08,
         "casa": "William Hill",
-        "pinn_prob": 87.1
+        "pinn_prob": 86.2
       },
       "empate": {
-        "value": -0.059,
-        "ev_porcentaje": -5.9,
-        "ev_pinn": -5.9,
+        "value": -0.069,
+        "ev_porcentaje": -6.9,
+        "ev_pinn": -6.9,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 11.02,
+        "cuota": 10.31,
         "casa": "Pinnacle",
-        "pinn_prob": 8.5
+        "pinn_prob": 9.0
       },
       "over35": {
-        "value": -0.06,
-        "ev_porcentaje": -6.0,
-        "ev_pinn": -6.0,
+        "value": -0.061,
+        "ev_porcentaje": -6.1,
+        "ev_pinn": -6.1,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.91,
+        "cuota": 1.93,
         "casa": "Pinnacle",
-        "pinn_prob": 49.2
+        "pinn_prob": 48.7
       },
       "under35": {
-        "value": -0.025,
-        "ev_porcentaje": -2.5,
-        "ev_pinn": -2.5,
+        "value": -0.009,
+        "ev_porcentaje": -0.9,
+        "ev_pinn": -0.9,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.92,
+        "cuota": 1.93,
         "casa": "Unibet",
-        "pinn_prob": 50.8
+        "pinn_prob": 51.3
       }
     },
     "prediccion_principal": {
       "mercado": "Victoria Visitante",
-      "prob": 4.3,
-      "ev": 56.3
+      "prob": 4.8,
+      "ev": 119.3
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
