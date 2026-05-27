@@ -2357,7 +2357,8 @@ async function irAPago(el) {
 
   if(valid && role==='admin'){
     area.innerHTML=`
-      <a href="predicciones.html" style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.25);color:#00C8FF;padding:6px 14px;border-radius:6px;text-decoration:none;">⚡ PANEL</a>
+      <a href="predicciones.html" style="font-family:'Space Mono',monospace;font-size:10px;color:#94a3b8;text-decoration:none;padding:6px 12px;border-radius:6px;">Picks</a>
+      <a href="admin.html" style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.25);color:#00C8FF;padding:6px 14px;border-radius:6px;text-decoration:none;">⚙ ADMIN</a>
       <button onclick="cerrarSesion()" style="background:transparent;border:1px solid rgba(239,68,68,.3);color:#ef4444;font-size:11px;font-family:'Space Mono',monospace;padding:6px 12px;border-radius:6px;cursor:pointer;">Salir</button>`;
   } else if(valid && role==='vip'){
     area.innerHTML=`
