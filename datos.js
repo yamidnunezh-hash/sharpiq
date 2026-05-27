@@ -4,6 +4,17 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "29/05/26",
+    partido:    "Elina Svitolina vs Tamara Korpatsch",
+    liga:       "WTA Roland Garros",
+    prediccion: "Gana Elina Svitolina",
+    cuota:      "1.06",
+    hora:       "04:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3"
+  },
+  {
     fecha:      "27/05/26",
     partido:    "Nishesh Basavareddy vs Alex Michelsen",
     liga:       "ATP Roland Garros",
