@@ -880,8 +880,26 @@
 </section>
 
 
+<!-- ── PRÓXIMOS EVENTOS ── -->
+<div style="background:var(--bg);padding:20px 0 0;margin-top:98px">
+  <div class="wrap">
+    <div class="upcoming-wrap rv" id="upcomingWrap">
+      <div class="upcoming-header">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="live-badge" style="background:rgba(0,200,255,.12);border-color:rgba(0,200,255,.3)"><div class="hero-dot"></div>PICKS DE HOY</div>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--t3)" id="upcomingCount"></span>
+        </div>
+        <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px">EXCLUSIVO VIP — SE REVELAN 1h ANTES DEL PARTIDO</span>
+      </div>
+      <div class="upcoming-grid" id="upcomingGrid">
+        <!-- Renderizado por JS desde datos.js -->
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ── BARRA DE LIGAS ── -->
-<div style="margin-top:98px" class="leagues-bar">
+<div class="leagues-bar" style="margin:28px 0">
   <div class="leagues-track-w">
     <div class="leagues-track">
       <div class="league-item"><div class="ldot"></div><span>🇪🇸</span><strong>LaLiga</strong><span>España</span></div>
@@ -906,26 +924,8 @@
   </div>
 </div>
 
-<!-- ── PRÓXIMOS EVENTOS (debajo de ligas) ── -->
-<div style="background:var(--bg);padding:20px 0 0">
-  <div class="wrap">
-    <div class="upcoming-wrap rv" id="upcomingWrap">
-      <div class="upcoming-header">
-        <div style="display:flex;align-items:center;gap:10px">
-          <div class="live-badge" style="background:rgba(0,200,255,.12);border-color:rgba(0,200,255,.3)"><div class="hero-dot"></div>PICKS DE HOY</div>
-          <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--t3)" id="upcomingCount"></span>
-        </div>
-        <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px">EXCLUSIVO VIP — SE REVELAN 1h ANTES DEL PARTIDO</span>
-      </div>
-      <div class="upcoming-grid" id="upcomingGrid">
-        <!-- Renderizado por JS desde datos.js -->
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ── LIVE SCORES ── -->
-<div style="padding:40px 0 0" id="liveScoresSection">
+<div style="padding:0 0 0" id="liveScoresSection">
   <div class="wrap">
     <div class="upcoming-wrap rv">
       <div class="upcoming-header">
