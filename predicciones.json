@@ -4010,57 +4010,57 @@
         "San Antonio Spurs (-3.5)": 1.93
       },
       "probabilidades": {
-        "Oklahoma City Thunder": 41.2,
-        "San Antonio Spurs": 58.8
+        "Oklahoma City Thunder": 41.1,
+        "San Antonio Spurs": 58.9
       },
-      "confianza": 58.8,
+      "confianza": 58.9,
       "value_bets": {
         "Oklahoma City Thunder": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.36,
           "casa": "DraftKings",
-          "pinn_prob": 41.2,
+          "pinn_prob": 41.1,
           "mercado_nombre": "Oklahoma City Thunder"
         },
         "San Antonio Spurs": {
-          "value": -0.031,
-          "ev_porcentaje": -3.1,
-          "ev_pinn": -3.1,
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.65,
           "casa": "FanDuel",
-          "pinn_prob": 58.8,
+          "pinn_prob": 58.9,
           "mercado_nombre": "San Antonio Spurs"
         },
         "over_218_5": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
+          "value": -0.058,
+          "ev_porcentaje": -5.8,
+          "ev_pinn": -5.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.88,
           "casa": "FanDuel",
-          "pinn_prob": 50.9,
+          "pinn_prob": 50.1,
           "mercado_nombre": "Over 218.5"
         },
         "under_218_5": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.95,
           "casa": "DraftKings",
-          "pinn_prob": 49.1,
+          "pinn_prob": 49.9,
           "mercado_nombre": "Under 218.5"
         },
         "spread_oklahoma_city_thunder_3_5": {
@@ -4089,9 +4089,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Oklahoma City Thunder",
-        "prob": 41.2,
-        "ev": -2.7
+        "mercado": "Under 218.5",
+        "prob": 49.9,
+        "ev": -2.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4434,10 +4434,10 @@
       "hora": "20:11",
       "fecha_evento": "2026-05-27",
       "cuotas": {
-        "Philadelphia Phillies": 1.72,
+        "Philadelphia Phillies": 1.7,
         "San Diego Padres": 2.23,
         "Over 7.0": 1.93,
-        "Under 7.0": 1.97,
+        "Under 7.0": 1.96,
         "Philadelphia Phillies (-1.5)": 2.18,
         "San Diego Padres (+1.5)": 1.73
       },
@@ -4448,13 +4448,13 @@
       "confianza": 55.7,
       "value_bets": {
         "Philadelphia Phillies": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
+          "value": -0.054,
+          "ev_porcentaje": -5.4,
+          "ev_pinn": -5.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.72,
+          "cuota": 1.7,
           "casa": "Unibet",
           "pinn_prob": 55.7,
           "mercado_nombre": "Philadelphia Phillies"
@@ -4484,13 +4484,13 @@
           "mercado_nombre": "Over 7.0"
         },
         "under_7_0": {
-          "value": 0.01,
-          "ev_porcentaje": 1.0,
-          "ev_pinn": 1.0,
+          "value": 0.005,
+          "ev_porcentaje": 0.5,
+          "ev_pinn": 0.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.97,
+          "cuota": 1.96,
           "casa": "Unibet",
           "pinn_prob": 51.3,
           "mercado_nombre": "Under 7.0"
@@ -4523,7 +4523,7 @@
       "prediccion_principal": {
         "mercado": "Under 7.0",
         "prob": 51.3,
-        "ev": 1.0
+        "ev": 0.5
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -8135,5 +8135,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:30:12"
+  "generado": "12:31:46"
 }
