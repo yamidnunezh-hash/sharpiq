@@ -472,73 +472,78 @@
       margin:0 1px 1px 0;
     }
     .ev-card:hover{background:var(--cardh);box-shadow:0 4px 20px rgba(0,0,0,.08)}
-    /* top accent bar — color set inline per tier */
-    .ev-card-accent{height:3px;width:100%;flex-shrink:0}
+    /* top accent bar */
+    .ev-card-accent{height:4px;width:100%;flex-shrink:0}
     /* header row */
     .ev-card-head{
-      padding:10px 18px 9px;
+      padding:9px 16px 8px;
       display:flex;align-items:center;justify-content:space-between;gap:8px;
       border-bottom:1px solid var(--border);
+      background:rgba(0,0,0,.018);
     }
     .ev-card-liga{
-      font-size:10px;font-weight:700;color:var(--t2);
-      letter-spacing:.7px;text-transform:uppercase;
+      font-size:9.5px;font-weight:700;color:var(--t3);
+      letter-spacing:1px;text-transform:uppercase;
     }
-    .ev-card-badges{display:flex;align-items:center;gap:5px}
+    .ev-card-badges{display:flex;align-items:center;gap:4px}
     .ev-badge-tier{
-      font-size:9px;font-weight:800;padding:2px 7px;border-radius:3px;
-      letter-spacing:.8px;text-transform:uppercase;
+      font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:3px;
+      letter-spacing:.9px;text-transform:uppercase;
     }
     .ev-badge-status{
-      font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;
+      font-size:8.5px;font-weight:700;padding:2px 6px;border-radius:3px;
       letter-spacing:.6px;text-transform:uppercase;
     }
     /* body */
-    .ev-card-body{padding:14px 18px 12px;flex:1}
-    .ev-card-teams{display:flex;flex-direction:column;gap:1px;margin-bottom:10px}
-    .ev-card-team-a{font-size:15px;font-weight:800;color:var(--t1);line-height:1.25}
-    .ev-card-team-sep{font-size:9px;color:var(--t3);font-family:'Space Mono',monospace;margin:3px 0;letter-spacing:1px}
-    .ev-card-team-b{font-size:15px;font-weight:800;color:var(--t1);line-height:1.25}
+    .ev-card-body{padding:13px 16px 11px;flex:1}
+    .ev-card-teams{display:flex;flex-direction:column;gap:0px;margin-bottom:9px}
+    .ev-card-team-a{font-size:14.5px;font-weight:800;color:var(--t1);line-height:1.3}
+    .ev-card-team-sep{font-size:9px;color:var(--t3);font-family:'Space Mono',monospace;margin:2px 0;letter-spacing:.5px;opacity:.6}
+    .ev-card-team-b{font-size:14.5px;font-weight:800;color:var(--t1);line-height:1.3}
     .ev-card-datetime{
-      display:flex;align-items:center;gap:14px;
-      font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);
-      margin-top:2px;
+      display:flex;align-items:center;gap:12px;
+      font-family:'Space Mono',monospace;font-size:9.5px;color:var(--t3);
+      margin-top:4px;
     }
-    .ev-card-dt-item{display:flex;align-items:center;gap:4px}
+    .ev-card-dt-item{display:flex;align-items:center;gap:3px}
     /* footer */
     .ev-card-foot{
-      padding:12px 18px 14px;
+      padding:11px 16px 13px;
       border-top:1px solid var(--border);
+      background:rgba(0,0,0,.012);
     }
     .ev-card-pred-row{
       display:flex;align-items:center;justify-content:space-between;gap:10px;
-      margin-bottom:8px;
+      margin-bottom:7px;
     }
-    .ev-card-pred-text{font-size:12px;font-weight:600;color:var(--t1);flex:1;line-height:1.35}
+    .ev-card-pred-text{font-size:11.5px;font-weight:600;color:var(--t2);flex:1;line-height:1.35}
     .ev-card-cuota{
-      font-family:'Orbitron',monospace;font-size:20px;font-weight:900;
+      font-family:'Orbitron',monospace;font-size:22px;font-weight:900;
       white-space:nowrap;flex-shrink:0;
+      text-shadow:0 1px 3px rgba(0,0,0,.12);
     }
     .ev-card-ev-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
     .ev-card-ev{
       display:inline-flex;align-items:center;gap:4px;
-      font-family:'Space Mono',monospace;font-size:10px;font-weight:700;
-      padding:3px 9px;border-radius:4px;
+      font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;
+      padding:3px 8px;border-radius:3px;
     }
     .ev-card-ev-high{animation:pulsegold 2s ease-in-out infinite}
-    @keyframes pulsegold{0%,100%{opacity:1}50%{opacity:.65}}
+    @keyframes pulsegold{0%,100%{opacity:1}50%{opacity:.7}}
     .ev-card-stake{display:flex;align-items:center;gap:5px}
-    .ev-stake-dot{width:7px;height:7px;border-radius:50%;display:inline-block;transition:transform .2s}
-    .ev-card:hover .ev-stake-dot{transform:scale(1.2)}
-    .ev-stake-label{font-family:'Space Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.3px}
+    .ev-stake-dot{width:6px;height:6px;border-radius:50%;display:inline-block;transition:transform .15s}
+    .ev-card:hover .ev-stake-dot{transform:scale(1.3)}
+    .ev-stake-label{font-family:'Space Mono',monospace;font-size:8.5px;color:var(--t3);letter-spacing:.3px}
     /* locked */
     .ev-card-locked{
-      display:flex;align-items:center;gap:7px;
-      font-family:'Space Mono',monospace;font-size:11px;font-weight:600;
-      background:rgba(0,200,255,.05);border:1px solid rgba(0,200,255,.18);
-      padding:8px 12px;border-radius:6px;color:var(--gold);
-      margin-bottom:8px;
+      display:flex;align-items:center;gap:8px;
+      font-size:11px;font-weight:600;
+      background:var(--bg1);border:1px solid var(--border);
+      padding:9px 12px;border-radius:6px;color:var(--t2);
+      margin-bottom:7px;
     }
+    .ev-card-locked a{color:var(--gold);text-decoration:none;font-weight:700;margin-left:2px}
+    .ev-card-locked a:hover{text-decoration:underline}
 
     /* ── DEPORTES ── */
     .sec-dep{padding:120px 0;position:relative;z-index:2}
@@ -1863,11 +1868,11 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     } else grid.innerHTML=eventos.map(e=>{
       // tier config
       const tierCfg = {
-        alto_valor: {color:'#F59E0B', bg:'rgba(245,158,11,.12)', label:'ALTO VALOR'},
-        principal:  {color:'#0066CC', bg:'rgba(0,102,204,.12)',  label:'PRINCIPAL'},
-        seguro:     {color:'#22C55E', bg:'rgba(34,197,94,.12)',  label:'SEGURO'},
+        alto_valor: {color:'#F59E0B', dark:'#B45309', bg:'rgba(245,158,11,.12)', label:'ALTO VALOR'},
+        principal:  {color:'#0066CC', dark:'#004FA3', bg:'rgba(0,102,204,.12)',  label:'PRINCIPAL'},
+        seguro:     {color:'#22C55E', dark:'#15803D', bg:'rgba(34,197,94,.12)',  label:'SEGURO'},
       };
-      const tc = tierCfg[e.tier] || {color:'#00C8FF', bg:'rgba(0,200,255,.1)', label:''};
+      const tc = tierCfg[e.tier] || {color:'#0066CC', dark:'#004FA3', bg:'rgba(0,102,204,.12)', label:''};
       // parse teams
       const vsSplit = e.partido.split(' vs ');
       const teamA = vsSplit[0] || e.partido;
@@ -1892,7 +1897,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
         footHTML=`
           <div class="ev-card-pred-row">
             <span class="ev-card-pred-text">${e.status==='vip'?'🔓 ':' ✅ '}${predTexto}</span>
-            <span class="ev-card-cuota" style="color:${tc.color}">@${e.cuota}</span>
+            <span class="ev-card-cuota" style="color:${tc.dark||tc.color}">@${e.cuota}</span>
           </div>
           <div class="ev-card-ev-row">
             ${evPct?`<span class="ev-card-ev${isAlto?' ev-card-ev-high':''}" style="background:${tc.bg};color:${tc.color};border:1px solid ${tc.color}40">⚡ EV +${evPct}%${isAlto?' — ALTO VALOR':''}</span>`:'<span></span>'}
@@ -1900,9 +1905,9 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
           </div>`;
       } else {
         footHTML=`
-          <div class="ev-card-locked">🔒 Predicción VIP — <a href="login.html" style="color:#00C8FF;text-decoration:none;margin-left:4px">Accede aquí</a></div>
+          <div class="ev-card-locked">🔒 Predicción VIP — <a href="login.html" style="color:#0066CC;text-decoration:none;margin-left:4px">Accede aquí</a></div>
           <div class="ev-card-ev-row">
-            ${evPct?`<span class="ev-card-ev" style="background:rgba(0,200,255,.08);color:#00C8FF;border:1px solid rgba(0,200,255,.25)">⚡ EV +${evPct}%${isAlto?' — ALTO VALOR':''}</span>`:'<span></span>'}
+            ${evPct?`<span class="ev-card-ev" style="background:rgba(0,102,204,.08);color:#004FA3;border:1px solid rgba(0,102,204,.25)">⚡ EV +${evPct}%${isAlto?' — ALTO VALOR':''}</span>`:'<span></span>'}
             <div class="ev-card-stake">${dots5}<span class="ev-stake-label">STAKE ${stakeN}%</span></div>
           </div>`;
       }
@@ -1912,7 +1917,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
           <span class="ev-card-liga">${e.liga}</span>
           <div class="ev-card-badges">
             ${tc.label?`<span class="ev-badge-tier" style="background:${tc.bg};color:${tc.color};border:1px solid ${tc.color}40">${tc.label}</span>`:''}
-            <span class="ev-badge-status" style="${e.status==='free'?'background:rgba(34,197,94,.1);color:#22C55E;border:1px solid rgba(34,197,94,.3)':'background:rgba(0,200,255,.08);color:#00C8FF;border:1px solid rgba(0,200,255,.25)'}">${e.status==='free'?'FREE':'VIP'}</span>
+            <span class="ev-badge-status" style="${e.status==='free'?'background:rgba(34,197,94,.1);color:#15803D;border:1px solid rgba(34,197,94,.3)':'background:rgba(0,102,204,.08);color:#004FA3;border:1px solid rgba(0,102,204,.25)'}">${e.status==='free'?'FREE':'VIP'}</span>
           </div>
         </div>
         <div class="ev-card-body">
@@ -1923,7 +1928,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
           </div>
           <div class="ev-card-datetime">
             <span class="ev-card-dt-item">📅 ${e.fecha}</span>
-            ${e.hora?`<span class="ev-card-dt-item" style="color:${tc.color}">⏰ ${e.hora}</span>`:''}
+            ${e.hora?`<span class="ev-card-dt-item" style="color:${tc.dark||tc.color}">⏰ ${e.hora}</span>`:''}
           </div>
         </div>
         <div class="ev-card-foot">${footHTML}</div>

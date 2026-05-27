@@ -32,8 +32,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +39% (altitud Cusco 3400m)",
     cuota:      "1.81",
     hora:       "17:00 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
     resultado:  "pendiente"
   },
   {
@@ -43,8 +44,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +21%",
     cuota:      "1.75",
     hora:       "17:00 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3",
     resultado:  "pendiente"
   },
   {
@@ -54,8 +56,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +32%",
     cuota:      "1.82",
     hora:       "19:30 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3",
     resultado:  "pendiente"
   },
   {
@@ -65,8 +68,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Bolívar — EV +47% (altitud La Paz 3600m)",
     cuota:      "2.32",
     hora:       "19:30 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
     resultado:  "pendiente"
   },
   {
@@ -76,8 +80,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +46%",
     cuota:      "1.96",
     hora:       "19:30 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
     resultado:  "pendiente"
   },
   {
@@ -87,8 +92,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +41%",
     cuota:      "1.89",
     hora:       "17:00 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
     resultado:  "pendiente"
   },
   {
@@ -98,8 +104,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +33%",
     cuota:      "1.79",
     hora:       "19:30 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3",
     resultado:  "pendiente"
   },
   {
@@ -109,8 +116,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +37%",
     cuota:      "2.01",
     hora:       "19:30 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
     resultado:  "pendiente"
   },
   {
@@ -120,8 +128,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Vegas Golden Knights — EV +33%",
     cuota:      "2.7",
     hora:       "20:20 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
     resultado:  "pendiente"
   },
   {
@@ -131,8 +140,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Arsenal — EV +22%",
     cuota:      "2.20",
     hora:       "11:00 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3",
     resultado:  "pendiente"
   },
   {
@@ -142,8 +152,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles — EV +18%",
     cuota:      "1.90",
     hora:       "11:00 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
     resultado:  "pendiente"
   }
 ];
