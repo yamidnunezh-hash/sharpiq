@@ -1,5 +1,5 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-27 — Vegas WIN confirmado
+// Actualizado: 2026-05-27 — picks Copa Lib/Suda semana + UCL Final
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
@@ -148,6 +148,38 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "27/05/26",
+    partido:    "Nishesh Basavareddy vs Alex Michelsen",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Alex Michelsen",
+    cuota:      "1.56",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Francesca Jones vs Marie Bouzkova",
+    liga:       "WTA Roland Garros",
+    prediccion: "Gana Marie Bouzkova",
+    cuota:      "1.29",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Cienciano vs CA Juventud",
+    liga:       "Copa Sudamericana",
+    prediccion: "Under 2.5 goles — EV +39%",
+    cuota:      "1.81",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Caracas FC vs Botafogo",
+    liga:       "Copa Sudamericana",
+    prediccion: "Under 2.5 goles — EV +21%",
+    cuota:      "1.75",
+    resultado:  "pendiente"
+  },
   {
     fecha:      "26/05/26",
     partido:    "Vegas Golden Knights vs Colorado Avalanche",
