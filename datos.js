@@ -5,6 +5,28 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "27/05/26",
+    partido:    "Nishesh Basavareddy vs Alex Michelsen",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Alex Michelsen",
+    cuota:      "1.56",
+    hora:       "08:30 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Francesca Jones vs Marie Bouzkova",
+    liga:       "WTA Roland Garros",
+    prediccion: "Gana Marie Bouzkova",
+    cuota:      "1.29",
+    hora:       "08:30 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3"
+  },
+  {
+    fecha:      "27/05/26",
     partido:    "Cienciano vs CA Juventud",
     liga:       "Copa Sudamericana",
     prediccion: "Under 2.5 goles — EV +39% (altitud Cusco 3400m)",
