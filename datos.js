@@ -1,19 +1,8 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-26 — Copa Sudamericana análisis real Pinnacle
+// Actualizado: 2026-05-27 — resultados confirmados
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
-  {
-    fecha:      "27/05/26",
-    partido:    "Olimpia Asunción vs Audax Italiano",
-    liga:       "Copa Sudamericana",
-    prediccion: "Under 2.5 goles — EV +43%",
-    cuota:      "2.01",
-    hora:       "17:00 COT",
-    emoji:      "",
-    status:     "vip",
-    resultado:  "pendiente"
-  },
   {
     fecha:      "27/05/26",
     partido:    "Cienciano vs CA Juventud",
@@ -114,72 +103,6 @@ const PROXIMOS_EVENTOS = [
     resultado:  "pendiente"
   },
   {
-    fecha:      "27/05/26",
-    partido:    "Montréal Canadiens vs Carolina Hurricanes",
-    liga:       "NHL",
-    prediccion: "Gana Montréal Canadiens — EV +33%",
-    cuota:      "3.1",
-    hora:       "19:00 COT",
-    emoji:      "",
-    status:     "vip",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "26/05/26",
-    partido:    "Milwaukee Brewers vs St. Louis Cardinals",
-    liga:       "MLB",
-    prediccion: "Gana Milwaukee Brewers",
-    cuota:      "1.56",
-    hora:       "18:41 COT",
-    emoji:      "",
-    status:     "vip",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "27/05/26",
-    partido:    "Jelena Ostapenko vs Magda Linette",
-    liga:       "WTA Roland Garros",
-    prediccion: "Gana Jelena Ostapenko",
-    cuota:      "1.3",
-    hora:       "05:10 COT",
-    emoji:      "",
-    status:     "vip",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "26/05/26",
-    partido:    "OKC Thunder vs San Antonio Spurs",
-    liga:       "NBA Playoffs",
-    prediccion: "Gana OKC Thunder",
-    cuota:      "1.54",
-    hora:       "19:30 COT",
-    emoji:      "",
-    status:     "free",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "26/05/26",
-    partido:    "Vit Kopriva vs Corentin Moutet",
-    liga:       "ATP Roland Garros",
-    prediccion: "Gana Corentin Moutet",
-    cuota:      "1.55",
-    hora:       "06:30 COT",
-    emoji:      "",
-    status:     "vip",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "26/05/26",
-    partido:    "Marin Cilic vs Moise Kouame",
-    liga:       "ATP Roland Garros",
-    prediccion: "Gana Marin Cilic",
-    cuota:      "1.29",
-    hora:       "04:00 COT",
-    emoji:      "",
-    status:     "vip",
-    resultado:  "pendiente"
-  },
-  {
     fecha:      "30/05/26",
     partido:    "PSG vs Arsenal",
     liga:       "UEFA Champions League Final",
@@ -204,6 +127,54 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "27/05/26",
+    partido:    "Olimpia Asunción vs Audax Italiano",
+    liga:       "Copa Sudamericana",
+    prediccion: "Under 2.5 goles — EV +43%",
+    cuota:      "2.01",
+    resultado:  "win"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Montréal Canadiens vs Carolina Hurricanes",
+    liga:       "NHL",
+    prediccion: "Gana Montréal Canadiens — EV +33%",
+    cuota:      "3.1",
+    resultado:  "win"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Jelena Ostapenko vs Magda Linette",
+    liga:       "WTA Roland Garros",
+    prediccion: "Gana Jelena Ostapenko",
+    cuota:      "1.3",
+    resultado:  "win"
+  },
+  {
+    fecha:      "26/05/26",
+    partido:    "Milwaukee Brewers vs St. Louis Cardinals",
+    liga:       "MLB",
+    prediccion: "Gana Milwaukee Brewers",
+    cuota:      "1.56",
+    resultado:  "win"
+  },
+  {
+    fecha:      "26/05/26",
+    partido:    "Vit Kopriva vs Corentin Moutet",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Corentin Moutet",
+    cuota:      "1.55",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "26/05/26",
+    partido:    "Marin Cilic vs Moise Kouame",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Marin Cilic",
+    cuota:      "1.29",
+    resultado:  "loss"
+  },
   {
     fecha:      "26/05/26",
     partido:    "Oklahoma City Thunder vs San Antonio Spurs",
