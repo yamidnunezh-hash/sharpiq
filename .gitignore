@@ -2,3 +2,10 @@ sharpiq-engine/config.py
 predicciones.json
 mejor_prediccion.json
 sharpiq-engine/__pycache__/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
