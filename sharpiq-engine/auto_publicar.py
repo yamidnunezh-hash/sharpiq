@@ -246,7 +246,10 @@ def correr():
             ["git", "commit", "-m", f"auto: picks {date.today().isoformat()} — {picks_str}"],
             cwd=repo_dir, check=True
         )
-        subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=True)
+        push = subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, capture_output=True)
+        if push.returncode != 0:
+            subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=repo_dir, check=True)
+            subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=True)
         print("  GitHub actualizado")
     except subprocess.CalledProcessError as e:
         print(f"  Git error: {e}")
