@@ -459,25 +459,86 @@
       background:rgba(0,200,255,.04);
     }
     .upcoming-grid{
-      display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
       gap:0;
+      background:var(--border);
     }
     .ev-card{
-      padding:20px 24px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);
-      position:relative;overflow:hidden;transition:background .2s;
+      background:var(--card);
+      position:relative;overflow:hidden;
+      display:flex;flex-direction:column;
+      transition:background .2s, box-shadow .2s;
+      margin:0 1px 1px 0;
     }
-    .ev-card:hover{background:rgba(0,200,255,.04)}
-    .ev-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--gold),#7B5CF0)}
-    .ev-date{font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);margin-bottom:6px;display:flex;align-items:center;gap:8px}
-    .ev-match{font-size:14px;font-weight:700;color:var(--t1);margin-bottom:6px}
-    .ev-liga{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--blued);color:var(--blue);border:1px solid rgba(59,130,246,.25);margin-bottom:10px}
-    .ev-pred-locked{
+    .ev-card:hover{background:var(--cardh);box-shadow:0 4px 20px rgba(0,0,0,.08)}
+    /* top accent bar — color set inline per tier */
+    .ev-card-accent{height:3px;width:100%;flex-shrink:0}
+    /* header row */
+    .ev-card-head{
+      padding:10px 18px 9px;
+      display:flex;align-items:center;justify-content:space-between;gap:8px;
+      border-bottom:1px solid var(--border);
+    }
+    .ev-card-liga{
+      font-size:10px;font-weight:700;color:var(--t2);
+      letter-spacing:.7px;text-transform:uppercase;
+    }
+    .ev-card-badges{display:flex;align-items:center;gap:5px}
+    .ev-badge-tier{
+      font-size:9px;font-weight:800;padding:2px 7px;border-radius:3px;
+      letter-spacing:.8px;text-transform:uppercase;
+    }
+    .ev-badge-status{
+      font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;
+      letter-spacing:.6px;text-transform:uppercase;
+    }
+    /* body */
+    .ev-card-body{padding:14px 18px 12px;flex:1}
+    .ev-card-teams{display:flex;flex-direction:column;gap:1px;margin-bottom:10px}
+    .ev-card-team-a{font-size:15px;font-weight:800;color:var(--t1);line-height:1.25}
+    .ev-card-team-sep{font-size:9px;color:var(--t3);font-family:'Space Mono',monospace;margin:3px 0;letter-spacing:1px}
+    .ev-card-team-b{font-size:15px;font-weight:800;color:var(--t1);line-height:1.25}
+    .ev-card-datetime{
+      display:flex;align-items:center;gap:14px;
+      font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);
+      margin-top:2px;
+    }
+    .ev-card-dt-item{display:flex;align-items:center;gap:4px}
+    /* footer */
+    .ev-card-foot{
+      padding:12px 18px 14px;
+      border-top:1px solid var(--border);
+    }
+    .ev-card-pred-row{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      margin-bottom:8px;
+    }
+    .ev-card-pred-text{font-size:12px;font-weight:600;color:var(--t1);flex:1;line-height:1.35}
+    .ev-card-cuota{
+      font-family:'Orbitron',monospace;font-size:20px;font-weight:900;
+      white-space:nowrap;flex-shrink:0;
+    }
+    .ev-card-ev-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .ev-card-ev{
+      display:inline-flex;align-items:center;gap:4px;
+      font-family:'Space Mono',monospace;font-size:10px;font-weight:700;
+      padding:3px 9px;border-radius:4px;
+    }
+    .ev-card-ev-high{animation:pulsegold 2s ease-in-out infinite}
+    @keyframes pulsegold{0%,100%{opacity:1}50%{opacity:.65}}
+    .ev-card-stake{display:flex;align-items:center;gap:5px}
+    .ev-stake-dot{width:7px;height:7px;border-radius:50%;display:inline-block;transition:transform .2s}
+    .ev-card:hover .ev-stake-dot{transform:scale(1.2)}
+    .ev-stake-label{font-family:'Space Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.3px}
+    /* locked */
+    .ev-card-locked{
       display:flex;align-items:center;gap:7px;
-      font-family:'Space Mono',monospace;font-size:11px;
-      background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.2);
-      padding:6px 12px;border-radius:6px;color:var(--gold);
+      font-family:'Space Mono',monospace;font-size:11px;font-weight:600;
+      background:rgba(0,200,255,.05);border:1px solid rgba(0,200,255,.18);
+      padding:8px 12px;border-radius:6px;color:var(--gold);
+      margin-bottom:8px;
     }
-    .ev-hora{color:var(--t2);font-size:10px;margin-top:8px;font-family:'Space Mono',monospace}
 
     /* ── DEPORTES ── */
     .sec-dep{padding:120px 0;position:relative;z-index:2}
@@ -1786,34 +1847,72 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
         </div>
       </div>`;
     } else grid.innerHTML=PROXIMOS_EVENTOS.map(e=>{
+      // tier config
+      const tierCfg = {
+        alto_valor: {color:'#F59E0B', bg:'rgba(245,158,11,.12)', label:'ALTO VALOR'},
+        principal:  {color:'#0066CC', bg:'rgba(0,102,204,.12)',  label:'PRINCIPAL'},
+        seguro:     {color:'#22C55E', bg:'rgba(34,197,94,.12)',  label:'SEGURO'},
+      };
+      const tc = tierCfg[e.tier] || {color:'#00C8FF', bg:'rgba(0,200,255,.1)', label:''};
+      // parse teams
+      const vsSplit = e.partido.split(' vs ');
+      const teamA = vsSplit[0] || e.partido;
+      const teamB = vsSplit[1] || '';
+      // stake dots (max 5)
+      const stakeN = parseInt(e.stake_pct||0);
+      const dots5 = Array.from({length:5},(_,i)=>
+        `<span class="ev-stake-dot" style="background:${i<stakeN?tc.color:'var(--border)'}"></span>`
+      ).join('');
+      // EV
       const evMatch=e.prediccion.match(/EV\s*\+?([\d.]+)%/i);
       const evPct=evMatch?parseFloat(evMatch[1]):null;
-      const isAlto=evPct&&evPct>=15;
+      const isAlto=evPct&&evPct>=25;
       const _role=localStorage.getItem('sharpiq_role');
       const _isVip=_role==='vip'||_role==='admin';
-      let predBlock='';
-      if(e.status==='free'||_isVip){
-        predBlock=`<div style="display:flex;align-items:center;gap:7px;font-family:'Space Mono',monospace;font-size:11px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);padding:6px 12px;border-radius:6px;color:#22c55e;flex-wrap:wrap;">${e.status==='vip'?'🔓':' ✅'} ${e.prediccion.split('—')[0].trim()} &nbsp;<span style="color:#00C8FF;font-weight:700;">${e.cuota}</span></div>
-          ${evPct?`<div class="ev-badge-val${isAlto?' ev-badge-high':''}">⚡ EV +${evPct}%${isAlto?' — ALTO VALOR':''}</div>`:''}`;
+      const unlocked = e.status==='free'||_isVip;
+      // prediction text (strip EV part for cleaner display)
+      const predTexto = e.prediccion.replace(/\s*—\s*EV\s*\+?[\d.]+%/i,'').replace(/\s*\(.*?\)/,'').trim();
+      // foot content
+      let footHTML='';
+      if(unlocked){
+        footHTML=`
+          <div class="ev-card-pred-row">
+            <span class="ev-card-pred-text">${e.status==='vip'?'🔓 ':' ✅ '}${predTexto}</span>
+            <span class="ev-card-cuota" style="color:${tc.color}">@${e.cuota}</span>
+          </div>
+          <div class="ev-card-ev-row">
+            ${evPct?`<span class="ev-card-ev${isAlto?' ev-card-ev-high':''}" style="background:${tc.bg};color:${tc.color};border:1px solid ${tc.color}40">⚡ EV +${evPct}%${isAlto?' — ALTO VALOR':''}</span>`:'<span></span>'}
+            <div class="ev-card-stake">${dots5}<span class="ev-stake-label">STAKE ${stakeN}%</span></div>
+          </div>`;
       } else {
-        predBlock=`<div class="ev-pred-locked">🔒 Predicción VIP — <a href="login.html" style="color:#00C8FF;text-decoration:none">Accede aquí</a></div>
-          ${evPct?`<div class="ev-badge-val${isAlto?' ev-badge-high':''}">⚡ EV +${evPct}%${isAlto?' — ALTO VALOR':''}</div>`:''}`;
+        footHTML=`
+          <div class="ev-card-locked">🔒 Predicción VIP — <a href="login.html" style="color:#00C8FF;text-decoration:none;margin-left:4px">Accede aquí</a></div>
+          <div class="ev-card-ev-row">
+            ${evPct?`<span class="ev-card-ev" style="background:rgba(0,200,255,.08);color:#00C8FF;border:1px solid rgba(0,200,255,.25)">⚡ EV +${evPct}%${isAlto?' — ALTO VALOR':''}</span>`:'<span></span>'}
+            <div class="ev-card-stake">${dots5}<span class="ev-stake-label">STAKE ${stakeN}%</span></div>
+          </div>`;
       }
-      const textoWA = e.status==='free'
-        ? `⚽ *SharpIQ — Predicción gratuita*\n\n${e.partido}\n🏆 ${e.liga} | ${e.hora||''}\n📊 ${e.prediccion.split('—')[0].trim()} @ ${e.cuota}\n\n🔒 Predicciones VIP completas:\nhttps://sharpiq.co`
-        : `🔥 *SharpIQ — Predicción VIP*\n\n⚽ ${e.partido}\n🏆 ${e.liga}\n\n🔒 Accede al canal VIP para ver la predicción completa:\nhttps://sharpiq.co`;
-      const urlWA = `https://wa.me/?text=${encodeURIComponent(textoWA)}`;
       return`<div class="ev-card">
-        <div class="ev-date"><span>${e.fecha}</span>${e.hora?`<span style="color:var(--gold)">${e.hora}</span>`:''}</div>
-        <div class="ev-match">${e.partido}</div>
-        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-          <span class="ev-liga">${e.liga}</span>
-          <a href="${urlWA}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.3);color:#25d366;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(37,211,102,0.22)'" onmouseout="this.style.background='rgba(37,211,102,0.12)'">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Compartir
-          </a>
+        <div class="ev-card-accent" style="background:${tc.color}"></div>
+        <div class="ev-card-head">
+          <span class="ev-card-liga">${e.liga}</span>
+          <div class="ev-card-badges">
+            ${tc.label?`<span class="ev-badge-tier" style="background:${tc.bg};color:${tc.color};border:1px solid ${tc.color}40">${tc.label}</span>`:''}
+            <span class="ev-badge-status" style="${e.status==='free'?'background:rgba(34,197,94,.1);color:#22C55E;border:1px solid rgba(34,197,94,.3)':'background:rgba(0,200,255,.08);color:#00C8FF;border:1px solid rgba(0,200,255,.25)'}">${e.status==='free'?'FREE':'VIP'}</span>
+          </div>
         </div>
-        ${predBlock}
+        <div class="ev-card-body">
+          <div class="ev-card-teams">
+            <div class="ev-card-team-a">${teamA}</div>
+            <div class="ev-card-team-sep">— VS —</div>
+            <div class="ev-card-team-b">${teamB}</div>
+          </div>
+          <div class="ev-card-datetime">
+            <span class="ev-card-dt-item">📅 ${e.fecha}</span>
+            ${e.hora?`<span class="ev-card-dt-item" style="color:${tc.color}">⏰ ${e.hora}</span>`:''}
+          </div>
+        </div>
+        <div class="ev-card-foot">${footHTML}</div>
       </div>`;
     }).join('');}
   };
