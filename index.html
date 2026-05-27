@@ -1828,13 +1828,27 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     }
   })();
 
+  // Filtra picks cuyo partido ya terminó (fecha+hora COT + 4h buffer)
+  function _pickVigente(e){
+    try{
+      const p=e.fecha.split('/');
+      const y=2000+parseInt(p[2]), mo=parseInt(p[1])-1, d=parseInt(p[0]);
+      let h=23,m=59;
+      if(e.hora){const t=e.hora.replace(/[^0-9:]/g,'').split(':');h=parseInt(t[0]);m=parseInt(t[1]||0);}
+      // COT = UTC-5 → sumar 5h para convertir a UTC
+      const matchUTC=Date.UTC(y,mo,d,h+5,m);
+      return Date.now() < matchUTC + 4*3600*1000; // vigente hasta 4h después del partido
+    }catch(err){return true;}
+  }
+
   // Próximos Eventos grid
   window._renderPicks=function(){
   const grid=document.getElementById('upcomingGrid');
   const cnt=document.getElementById('upcomingCount');
   if(grid&&typeof PROXIMOS_EVENTOS!=='undefined'){
-    if(cnt) cnt.textContent=PROXIMOS_EVENTOS.length?PROXIMOS_EVENTOS.length+' picks disponibles':'Próximos picks: 8am COT';
-    if(PROXIMOS_EVENTOS.length===0){
+    const eventos=PROXIMOS_EVENTOS.filter(_pickVigente);
+    if(cnt) cnt.textContent=eventos.length?eventos.length+' picks disponibles':'Próximos picks: 8am COT';
+    if(eventos.length===0){
       grid.innerHTML=`<div style="padding:48px 24px;text-align:center;width:100%;">
         <div style="font-size:32px;margin-bottom:16px;">⚙️</div>
         <div style="font-family:'Orbitron',monospace;font-size:13px;font-weight:700;color:var(--gold);margin-bottom:8px;letter-spacing:1px">MOTOR EN PROCESO</div>
@@ -1846,7 +1860,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
           <div class="hero-dot"></div>Sistema activo — resultados verificados en historial
         </div>
       </div>`;
-    } else grid.innerHTML=PROXIMOS_EVENTOS.map(e=>{
+    } else grid.innerHTML=eventos.map(e=>{
       // tier config
       const tierCfg = {
         alto_valor: {color:'#F59E0B', bg:'rgba(245,158,11,.12)', label:'ALTO VALOR'},
