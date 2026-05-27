@@ -1,0 +1,134 @@
+C:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\motor.py:1960: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  ahora_utc = datetime.utcnow()
+🔮 SharpIQ — Motor de Predicciones
+==================================================
+  DB CLV: psycopg2 no instalado — pip install psycopg2-binary
+
+Analizando fútbol (The Odds API / Pinnacle)...
+  Odds ext soccer_epl: HTTP 422
+  Odds ext soccer_spain_la_liga: HTTP 422
+  Odds ext soccer_germany_bundesliga: HTTP 422
+  Odds ext soccer_italy_serie_a: HTTP 422
+  Odds ext soccer_france_ligue_one: HTTP 422
+  Odds ext soccer_uefa_champs_league: HTTP 422
+  Odds ext soccer_conmebol_copa_libertadores: HTTP 422
+  Odds ext soccer_conmebol_copa_sudamericana: HTTP 422
+  Odds ext soccer_uefa_europa_league: HTTP 422
+  Odds ext soccer_uefa_europa_conference_league: HTTP 422
+  Odds ext soccer_fifa_world_cup: HTTP 422
+  Odds ext soccer_efl_champ: HTTP 422
+  Odds ext soccer_england_league1: HTTP 422
+  Odds ext soccer_england_league2: HTTP 422
+  Odds ext soccer_germany_bundesliga2: HTTP 422
+  Odds ext soccer_italy_serie_b: HTTP 422
+  Odds ext soccer_spain_segunda_division: HTTP 422
+  Odds ext soccer_austria_bundesliga: HTTP 422
+  Odds ext soccer_belgium_first_div: HTTP 422
+  Odds ext soccer_brazil_campeonato: HTTP 422
+  Odds ext soccer_brazil_serie_b: HTTP 422
+  Odds ext soccer_argentina_primera_division: HTTP 422
+  Odds ext soccer_mexico_ligamx: HTTP 422
+  Odds ext soccer_usa_mls: HTTP 422
+  Odds ext soccer_chile_campeonato: HTTP 422
+  Odds ext soccer_japan_j_league: HTTP 422
+  Odds ext soccer_china_superleague: HTTP 422
+  Odds ext soccer_norway_eliteserien: HTTP 422
+  Odds ext soccer_sweden_allsvenskan: HTTP 422
+  Odds ext soccer_sweden_superettan: HTTP 422
+  Odds ext soccer_poland_ekstraklasa: HTTP 422
+  Odds ext soccer_finland_veikkausliiga: HTTP 422
+  Odds ext soccer_league_of_ireland: HTTP 422
+  Fútbol: 0 partidos con Pinnacle
+
+Analizando deportes adicionales...
+  Odds API: 2 partidos | Creditos restantes: 99879
+  NBA: 2 eventos con Pinnacle
+  Odds API: 20 partidos | Creditos restantes: 99876
+  MLB: 10 eventos con Pinnacle
+  Odds API: 2 partidos | Creditos restantes: 99873
+  NHL: 2 eventos con Pinnacle
+  Odds API: 75 partidos | Creditos restantes: 99870
+  NFL: 0 eventos con Pinnacle
+  Odds API: 3 partidos | Creditos restantes: 99867
+  UFL: 0 eventos con Pinnacle
+
+Analizando player props...
+  Player props basketball_nba: HTTP 422
+  Player props icehockey_nhl: HTTP 422
+  Player props baseball_mlb: HTTP 422
+✅ Predicciones guardadas: 14 partidos
+📅 Fecha: 2026-05-22
+  Historial cuotas: 14 partidos → historial_cuotas.csv
+⭐ Mejor prediccion: Carolina Hurricanes vs Montréal Canadiens — Montréal Canadiens
+
+📲 Enviando alertas Telegram...
+  Alertas de hoy ya enviadas — skip
+  📋 Resumen del día enviado
+
+🌐 Actualizando web...
+  GitHub actualizado (predicciones.json) ✓
+  Sin steam moves significativos
+
+📊 PREDICCIONES DEL DÍA:
+
+🏀 NBA | 19:10 COT  2026-05-23
+   Cleveland Cavaliers vs New York Knicks
+   → Over 213.5 (52.3% prob, EV +-0.0%)
+
+🏀 NBA | 19:00 COT  2026-05-24
+   San Antonio Spurs vs Oklahoma City Thunder
+   → Oklahoma City Thunder (+1.5) (49.4% prob, EV -2.3%)
+
+⚾ MLB | 14:08 COT  2026-05-23
+   Toronto Blue Jays vs Pittsburgh Pirates
+   → Toronto Blue Jays (+1.5) (55.8% prob, EV -2.3%)
+
+⚾ MLB | 15:06 COT  2026-05-23
+   Baltimore Orioles vs Detroit Tigers
+   → Baltimore Orioles (52.4% prob, EV -2.5%)
+
+⚾ MLB | 15:06 COT  2026-05-23
+   San Francisco Giants vs Chicago White Sox
+   → San Francisco Giants (-1.5) (36.2% prob, EV -1.6%)
+
+⚾ MLB | 15:06 COT  2026-05-23
+   Philadelphia Phillies vs Cleveland Guardians
+   → Cleveland Guardians (+1.5) (55.5% prob, EV -0.7%)
+
+⚾ MLB | 15:11 COT  2026-05-23
+   Atlanta Braves vs Washington Nationals
+   → Under 9.0 (51.4% prob, EV +0.3%)
+   💰 Under 9.0 @ 1.95 [BetMGM] → EV: +0.3% [SIN VALOR]
+
+⚾ MLB | 15:11 COT  2026-05-23
+   Kansas City Royals vs Seattle Mariners
+   → Over 8.5 (52.2% prob, EV -1.9%)
+
+⚾ MLB | 18:16 COT  2026-05-23
+   Milwaukee Brewers vs Los Angeles Dodgers
+   → Los Angeles Dodgers (-1.5) (42.2% prob, EV -1.2%)
+
+⚾ MLB | 20:41 COT  2026-05-23
+   San Diego Padres vs Athletics
+   → Under 8.0 (51.0% prob, EV -2.5%)
+
+⚾ MLB | 21:06 COT  2026-05-23
+   Los Angeles Angels vs Texas Rangers
+   → Over 8.0 (50.9% prob, EV -2.8%)
+
+⚾ MLB | 21:11 COT  2026-05-23
+   Arizona Diamondbacks vs Colorado Rockies
+   → Arizona Diamondbacks (61.0% prob, EV -1.2%)
+
+🏒 NHL | 18:00 COT  2026-05-23
+   Carolina Hurricanes vs Montréal Canadiens
+   → Montréal Canadiens (34.3% prob, EV +27.1%)
+   💰 Carolina Hurricanes @ 1.79 [Unibet] → EV: +17.5% [ALTO VALOR]
+   💰 Montréal Canadiens @ 3.7 [Unibet] → EV: +27.1% [ALTO VALOR]
+
+🏒 NHL | 19:00 COT  2026-05-24
+   Vegas Golden Knights vs Colorado Avalanche
+   → Colorado Avalanche (55.6% prob, EV +24.0%)
+   💰 Colorado Avalanche @ 2.23 [Unibet] → EV: +24.0% [ALTO VALOR]
+   💰 Vegas Golden Knights @ 2.75 [Unibet] → EV: +22.1% [ALTO VALOR]
+   💰 Vegas Golden Knights (+1.5) @ 1.51 [FanDuel] → EV: +0.6% [SIN VALOR]

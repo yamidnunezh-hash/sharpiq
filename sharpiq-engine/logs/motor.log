@@ -1,0 +1,1164 @@
+[vie 22/05/2026  9:06:43,56] ===== SharpIQ Motor arrancando ===== 
+[vie 22/05/2026  9:06:43,59] Paso 1: referidos bot 
+[vie 22/05/2026  9:06:50,16] Paso 1 OK (exit 0) 
+[vie 22/05/2026  9:06:50,17] Paso 2: auto_resultados 
+"cho" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+"ho" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+"ho" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+"ho" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+"ho" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+"ho" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+"ho" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+[vie 22/05/2026  9:31:15,57] Paso 4: motor.py 
+🔮 SharpIQ — Motor de Predicciones
+==================================================
+  DB CLV: psycopg2 no instalado — pip install psycopg2-binary
+    API-Football /fixtures | Restantes: 80
+  Allsvenskan: 1 partidos
+  Austrian Bundesliga: 1 partidos
+  Brasileirao Serie B: 1 partidos
+  Bundesliga 2: 1 partidos
+  League of Ireland: 5 partidos
+  Primera División Chile: 1 partidos
+  Serie A: 1 partidos
+  Serie B: 1 partidos
+  Veikkausliiga: 1 partidos
+
+Cargando stats reales de equipos...
+  Stats reales cargadas: PL (20 equipos)
+  Stats reales cargadas: PD (20 equipos)
+  Stats reales cargadas: BL1 (18 equipos)
+  Stats reales cargadas: SA (20 equipos)
+  Stats reales cargadas: FL1 (18 equipos)
+  Stats reales cargadas: CLI (4 equipos)
+
+Obteniendo cuotas reales...
+
+  Snapshot de cuotas: apertura (9h)
+  DB lista: C:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\sharpiq.db
+  Sin cuotas: VPS vs HJK Helsinki (soccer_finland_veikkausliiga) — usando fallback
+    xG VPS: sot=4.5 xG=1.49 λ 1.27→1.32
+    xG HJK Helsinki: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Djurgardens IF vs IF Brommapojkarna (soccer_sweden_allsvenskan) — usando fallback
+    xG Djurgardens IF: sot=4.5 xG=1.49 λ 1.27→1.32
+    xG Brommapojkarna: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Ried vs Rapid Vienna (soccer_austria_bundesliga) — usando fallback
+  Sede neutral detectada: Ried vs Rapid Vienna (Austrian Bundesliga)
+    xG Ried: sot=4.5 xG=1.49 λ 1.01→1.13
+    xG Rapid Vienna: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Sudtirol vs Bari (soccer_italy_serie_b) — usando fallback
+  Sede neutral detectada: Sudtirol vs Bari (Serie B)
+    xG Sudtirol: sot=4.5 xG=1.49 λ 1.01→1.13
+    xG Bari: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Rot-Weiß Essen vs SpVgg Greuther Fürth (soccer_germany_bundesliga2) — usando fallback
+  Sede neutral detectada: Rot-Weiß Essen vs SpVgg Greuther Fürth (Bundesliga 2)
+    xG Rot-Weiß Essen: sot=4.5 xG=1.49 λ 1.01→1.13
+    xG Greuther Fürth: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Fiorentina vs Atalanta (soccer_italy_serie_a) — usando fallback
+    API-Football /fixtures | Restantes: ?
+    API-Football /injuries | Restantes: ?
+    API-Football /teams/statistics | Restantes: ?
+    xG Fiorentina: sot=4.5 xG=1.49 λ 1.27→1.32
+    xG Atalanta: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Derry City vs St Patrick's Athl. (soccer_league_of_ireland) — usando fallback
+    xG Derry City: sot=4.5 xG=1.49 λ 1.27→1.32
+    xG atrick's Athl.: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Galway United vs Bohemians (soccer_league_of_ireland) — usando fallback
+    xG Galway United: sot=4.5 xG=1.49 λ 1.27→1.32
+    xG Bohemians: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Shelbourne vs Waterford (soccer_league_of_ireland) — usando fallback
+    xG Shelbourne: sot=4.5 xG=1.49 λ 1.27→1.32
+    xG Waterford: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Drogheda United vs Dundalk (soccer_league_of_ireland) — usando fallback
+    xG rogheda United: sot=4.5 xG=1.49 λ 1.27→1.32
+    xG Dundalk: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Shamrock Rovers vs Sligo Rovers (soccer_league_of_ireland) — usando fallback
+    xG hamrock Rovers: sot=4.5 xG=1.49 λ 1.27→1.32
+    xG Sligo Rovers: sot=4.5 xG=1.49 λ 1.01→1.13
+  Sin cuotas: Everton de Vina vs Coquimbo Unido (soccer_chile_campeonato) — usando fallback
+    API-Football /teams/statistics | Restantes: ?
+    xG verton de Vina: sot=4.5 xG=1.49 λ 1.18→1.26
+    xG Coquimbo Unido: sot=4.5 xG=1.49 λ 0.74→0.93
+  Sin cuotas: Nautico Recife vs Cuiaba (soccer_brazil_serie_b) — usando fallback
+    API-Football /fixtures | Restantes: ?
+    API-Football /injuries | Restantes: ?
+    API-Football /teams/statistics | Restantes: ?
+    API-Football /teams/statistics | Restantes: ?
+    xG Nautico Recife: sot=4.5 xG=1.49 λ 1.27→1.32
+    xG Cuiaba: sot=4.5 xG=1.49 λ 1.01→1.13
+  Arbitraje: sin oportunidades hoy
+
+Analizando deportes adicionales...
+  Odds API: 2 partidos | Creditos restantes: 99958
+  NBA: 2 eventos con Pinnacle
+  Odds API: 15 partidos | Creditos restantes: 99956
+  MLB: 15 eventos con Pinnacle
+  Odds API: 2 partidos | Creditos restantes: 99954
+  NHL: 2 eventos con Pinnacle
+  Odds API: 75 partidos | Creditos restantes: 99952
+  NFL: 16 eventos con Pinnacle
+  Odds API: 4 partidos | Creditos restantes: 99950
+  UFL: 1 eventos con Pinnacle
+
+Analizando player props...
+  Player props basketball_nba: HTTP 422
+  Player props icehockey_nhl: HTTP 422
+  Player props baseball_mlb: HTTP 422
+✅ Predicciones guardadas: 49 partidos
+📅 Fecha: 2026-05-22
+  Historial cuotas: 36 partidos → historial_cuotas.csv
+⭐ Mejor prediccion: Colorado Avalanche vs Vegas Golden Knights — Vegas Golden Knights
+
+📲 Enviando alertas Telegram...
+  🔥 4 alertas ALTO VALOR enviadas
+  📋 Resumen del día enviado
+
+🌐 Actualizando web...
+  datos.js actualizado (49 predicciones)
+  Git error: Command '['git', 'pull', '--rebase', 'origin', 'main']' returned non-zero exit status 128.
+  Player props error: invalid literal for int() with base 10: 'basketball_nba'
+
+📊 PREDICCIONES DEL DÍA:
+
+⚽ Serie A | 18:45
+   Fiorentina vs Atalanta
+   1:39.7% X:29.7% 2:30.6%
+   Over 2.5: 44.4% | BTTS: 50.9%
+   → Tarjetas Over 3.5 (89.1% confianza)
+
+⚽ Veikkausliiga | 16:00
+   VPS vs HJK Helsinki
+   1:39.7% X:29.7% 2:30.6%
+   Over 2.5: 44.4% | BTTS: 50.9%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ Allsvenskan | 17:00
+   Djurgardens IF vs IF Brommapojkarna
+   1:39.7% X:29.7% 2:30.6%
+   Over 2.5: 44.4% | BTTS: 50.9%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ Austrian Bundesliga | 17:30
+   Ried vs Rapid Vienna
+   1:34.3% X:31.3% 2:34.3%
+   Over 2.5: 39.4% | BTTS: 47.2%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ Serie B | 18:00
+   Sudtirol vs Bari
+   1:34.3% X:31.3% 2:34.3%
+   Over 2.5: 39.4% | BTTS: 47.2%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ Bundesliga 2 | 18:30
+   Rot-Weiß Essen vs SpVgg Greuther Fürth
+   1:34.3% X:31.3% 2:34.3%
+   Over 2.5: 39.4% | BTTS: 47.2%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ League of Ireland | 18:45
+   Derry City vs St Patrick's Athl.
+   1:39.7% X:29.7% 2:30.6%
+   Over 2.5: 44.4% | BTTS: 50.9%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ League of Ireland | 18:45
+   Galway United vs Bohemians
+   1:39.7% X:29.7% 2:30.6%
+   Over 2.5: 44.4% | BTTS: 50.9%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ League of Ireland | 18:45
+   Shelbourne vs Waterford
+   1:39.7% X:29.7% 2:30.6%
+   Over 2.5: 44.4% | BTTS: 50.9%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ League of Ireland | 19:00
+   Drogheda United vs Dundalk
+   1:39.7% X:29.7% 2:30.6%
+   Over 2.5: 44.4% | BTTS: 50.9%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ League of Ireland | 19:00
+   Shamrock Rovers vs Sligo Rovers
+   1:39.7% X:29.7% 2:30.6%
+   Over 2.5: 44.4% | BTTS: 50.9%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ Primera División Chile | 19:00
+   Everton de Vina vs Coquimbo Unido
+   1:42.5% X:31.4% 2:26.1%
+   Over 2.5: 37.3% | BTTS: 44.6%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ Brasileirao Serie B | 22:00
+   Nautico Recife vs Cuiaba
+   1:39.7% X:29.7% 2:30.6%
+   Over 2.5: 44.4% | BTTS: 50.9%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+🏀 NBA | 19:40
+   San Antonio Spurs vs Oklahoma City Thunder
+   → San Antonio Spurs (54.8% confianza)
+
+🏀 NBA | 19:10
+   Cleveland Cavaliers vs New York Knicks
+   → Cleveland Cavaliers (55.5% confianza)
+
+🏀 MLB | 13:21
+   Chicago Cubs vs Houston Astros
+   → Houston Astros (56.6% confianza)
+
+🏀 MLB | 17:41
+   Cincinnati Reds vs St. Louis Cardinals
+   → Cincinnati Reds (53.3% confianza)
+
+🏀 MLB | 17:41
+   Philadelphia Phillies vs Cleveland Guardians
+   → Philadelphia Phillies (62.8% confianza)
+
+🏀 MLB | 18:06
+   New York Yankees vs Tampa Bay Rays
+   → Tampa Bay Rays (58.4% confianza)
+
+🏀 MLB | 18:08
+   Toronto Blue Jays vs Pittsburgh Pirates
+   → Toronto Blue Jays (60.1% confianza)
+
+🏀 MLB | 18:11
+   Boston Red Sox vs Minnesota Twins
+   → Boston Red Sox (58.7% confianza)
+
+🏀 MLB | 18:11
+   Miami Marlins vs New York Mets
+   → New York Mets (50.9% confianza)
+
+🏀 MLB | 18:15
+   Atlanta Braves vs Washington Nationals
+   → Washington Nationals (66.5% confianza)
+
+🏀 MLB | 18:16
+   Baltimore Orioles vs Detroit Tigers
+   → Baltimore Orioles (56.1% confianza)
+
+🏀 MLB | 18:41
+   Kansas City Royals vs Seattle Mariners
+   → Kansas City Royals (51.5% confianza)
+
+🏀 MLB | 18:41
+   Milwaukee Brewers vs Los Angeles Dodgers
+   → Milwaukee Brewers (50.4% confianza)
+
+🏀 MLB | 20:39
+   Los Angeles Angels vs Texas Rangers
+   → Los Angeles Angels (59.8% confianza)
+
+🏀 MLB | 20:41
+   Arizona Diamondbacks vs Colorado Rockies
+   → Colorado Rockies (65.4% confianza)
+
+🏀 MLB | 20:41
+   San Diego Padres vs Athletics
+   → San Diego Padres (54.4% confianza)
+
+🏀 MLB | 21:16
+   San Francisco Giants vs Chicago White Sox
+   → Chicago White Sox (50.9% confianza)
+
+🏀 NHL | 19:00
+   Colorado Avalanche vs Vegas Golden Knights
+   → Vegas Golden Knights (64.2% confianza)
+   💰 VALUE BET: Colorado Avalanche @  → EV: +13.7% [ALTO VALOR]
+   💰 VALUE BET: Vegas Golden Knights @  → EV: +30.5% [ALTO VALOR]
+
+🏀 NHL | 18:00
+   Carolina Hurricanes vs Montréal Canadiens
+   → Montréal Canadiens (65.1% confianza)
+   💰 VALUE BET: Carolina Hurricanes @  → EV: +18.5% [ALTO VALOR]
+   💰 VALUE BET: Montréal Canadiens @  → EV: +25.6% [ALTO VALOR]
+
+🏀 NFL | 19:15
+   Seattle Seahawks vs New England Patriots
+   → Seattle Seahawks (68.0% confianza)
+
+🏀 NFL | 19:35
+   Los Angeles Rams vs San Francisco 49ers
+   → Los Angeles Rams (60.1% confianza)
+
+🏀 NFL | 12:00
+   Pittsburgh Steelers vs Atlanta Falcons
+   → Pittsburgh Steelers (60.3% confianza)
+
+🏀 NFL | 12:00
+   Indianapolis Colts vs Baltimore Ravens
+   → Indianapolis Colts (62.9% confianza)
+
+🏀 NFL | 12:00
+   Houston Texans vs Buffalo Bills
+   → Houston Texans (50.4% confianza)
+
+🏀 NFL | 12:00
+   Carolina Panthers vs Chicago Bears
+   → Chicago Bears (57.8% confianza)
+
+🏀 NFL | 12:00
+   Cincinnati Bengals vs Tampa Bay Buccaneers
+   → Tampa Bay Buccaneers (62.6% confianza)
+
+🏀 NFL | 12:00
+   Jacksonville Jaguars vs Cleveland Browns
+   → Jacksonville Jaguars (75.2% confianza)
+
+🏀 NFL | 12:00
+   Detroit Lions vs New Orleans Saints
+   → New Orleans Saints (74.2% confianza)
+   💰 VALUE BET: New Orleans Saints @  → EV: +6.0% [VALOR]
+
+🏀 NFL | 12:00
+   Tennessee Titans vs New York Jets
+   → New York Jets (57.8% confianza)
+
+🏀 NFL | 15:25
+   Los Angeles Chargers vs Arizona Cardinals
+   → Arizona Cardinals (81.0% confianza)
+   💰 VALUE BET: Arizona Cardinals @  → EV: +9.1% [VALOR]
+
+🏀 NFL | 15:25
+   Minnesota Vikings vs Green Bay Packers
+   → Minnesota Vikings (51.7% confianza)
+
+🏀 NFL | 15:25
+   Las Vegas Raiders vs Miami Dolphins
+   → Miami Dolphins (62.6% confianza)
+
+🏀 NFL | 15:25
+   Philadelphia Eagles vs Washington Commanders
+   → Washington Commanders (65.5% confianza)
+
+🏀 NFL | 19:20
+   New York Giants vs Dallas Cowboys
+   → New York Giants (55.2% confianza)
+
+🏀 NFL | 19:15
+   Kansas City Chiefs vs Denver Broncos
+   → Kansas City Chiefs (59.2% confianza)
+
+⚽ UFL | 19:00
+   Orlando Storm vs DC Defenders
+   → DC Defenders (55.4% confianza)
+[vie 22/05/2026  9:32:19,60] Paso 4 OK (exit 0) 
+[vie 22/05/2026  9:32:19,62] Paso 5: auto_publicar 
+[vie 22/05/2026  9:32:24,77] Paso 5 OK (exit 0) 
+[vie 22/05/2026  9:32:24,77] ===== SharpIQ Motor COMPLETADO ===== 
+🔮 SharpIQ — Motor de Predicciones
+==================================================
+  DB CLV: psycopg2 no instalado — pip install psycopg2-binary
+  api-sports sin resultados, usando football-data.org...
+  Serie A: 1 partidos
+  Copa Libertadores: 2 partidos
+
+Cargando stats reales de equipos...
+  Stats reales cargadas: PL (20 equipos)
+  Stats reales cargadas: PD (20 equipos)
+  Stats reales cargadas: BL1 (18 equipos)
+
+Obteniendo cuotas reales...
+
+  Snapshot de cuotas: apertura (9h)
+  DB lista: c:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\sharpiq.db
+  Sin cuotas: ACF Fiorentina vs Atalanta BC (soccer_italy_serie_a) — usando fallback
+    API-Football /fixtures | Restantes: ?
+    API-Football /injuries | Restantes: ?
+    API-Football /teams/statistics | Restantes: ?
+    xG ACF Fiorentina: sot=4.5 xG=1.49 λ 0.85→1.01
+    xG Atalanta BC: sot=4.5 xG=1.49 λ 1.64→1.60
+  Sin cuotas: CD Universidad Católica vs Barcelona SC (soccer_conmebol_copa_libertadores) — usando fallback
+    API-Football /fixtures | Restantes: ?
+    API-Football /injuries | Restantes: ?
+    API-Football /teams/statistics | Restantes: ?
+    API-Football /teams/statistics | Restantes: ?
+    xG sidad Católica: sot=4.5 xG=1.49 λ 0.99→1.11
+    xG Barcelona SC: sot=4.5 xG=1.49 λ 0.98→1.11
+  Sin cuotas: CA Peñarol vs SC Corinthians Paulista (soccer_conmebol_copa_libertadores) — usando fallback
+    API-Football /teams/statistics | Restantes: ?
+    API-Football /teams/statistics | Restantes: ?
+    xG CA Peñarol: sot=4.5 xG=1.49 λ 1.22→1.28
+    xG hians Paulista: sot=4.5 xG=1.49 λ 1.01→1.13
+  Arbitraje: sin oportunidades hoy
+
+Analizando deportes adicionales...
+  Odds API: 2 partidos | Creditos restantes: 99948
+  NBA: 2 eventos con Pinnacle
+  Odds API: 15 partidos | Creditos restantes: 99946
+  MLB: 15 eventos con Pinnacle
+  Odds API: 2 partidos | Creditos restantes: 99944
+  NHL: 2 eventos con Pinnacle
+  Error Odds API: HTTPSConnectionPool(host='api.the-odds-api.com', port=443): Read timed out. (read timeout=15)
+  Odds API: 4 partidos | Creditos restantes: 99942
+  UFL: 1 eventos con Pinnacle
+
+Analizando player props...
+  Player props basketball_nba: HTTP 422
+  Player props icehockey_nhl: HTTP 422
+  Player props baseball_mlb: HTTP 422
+✅ Predicciones guardadas: 23 partidos
+📅 Fecha: 2026-05-22
+  Historial cuotas: 20 partidos → historial_cuotas.csv
+⭐ Mejor prediccion: Colorado Avalanche vs Vegas Golden Knights — Vegas Golden Knights
+
+📲 Enviando alertas Telegram...
+  🔥 4 alertas ALTO VALOR enviadas
+  📋 Resumen del día enviado
+
+🌐 Actualizando web...
+  datos.js actualizado (23 predicciones)
+  GitHub actualizado (predicciones + web) ✓
+  Player props error: invalid literal for int() with base 10: 'basketball_nba'
+
+📊 PREDICCIONES DEL DÍA:
+
+⚽ Copa Libertadores | 00:30
+   CA Peñarol vs SC Corinthians Paulista
+   1:38.6% X:30.1% 2:31.3%
+   Over 2.5: 43.4% | BTTS: 50.3%
+   → Handicap Visitante +1.5 (87.5% confianza)
+
+⚽ Copa Libertadores | 00:30
+   CD Universidad Católica vs Barcelona SC
+   1:34.4% X:31.7% 2:34.0%
+   Over 2.5: 38.3% | BTTS: 46.3%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+⚽ Serie A | 18:45
+   ACF Fiorentina vs Atalanta BC
+   1:22.7% X:27.4% 2:50.0%
+   Over 2.5: 48.4% | BTTS: 51.9%
+   → Tarjetas Over 4.5 (67.1% confianza)
+
+🏀 NBA | 19:40
+   San Antonio Spurs vs Oklahoma City Thunder
+   → San Antonio Spurs (54.8% confianza)
+
+🏀 NBA | 19:10
+   Cleveland Cavaliers vs New York Knicks
+   → Cleveland Cavaliers (55.5% confianza)
+
+🏀 MLB | 13:21
+   Chicago Cubs vs Houston Astros
+   → Houston Astros (56.6% confianza)
+
+🏀 MLB | 17:41
+   Cincinnati Reds vs St. Louis Cardinals
+   → Cincinnati Reds (53.0% confianza)
+
+🏀 MLB | 17:41
+   Philadelphia Phillies vs Cleveland Guardians
+   → Philadelphia Phillies (62.4% confianza)
+
+🏀 MLB | 18:06
+   New York Yankees vs Tampa Bay Rays
+   → Tampa Bay Rays (58.3% confianza)
+
+🏀 MLB | 18:08
+   Toronto Blue Jays vs Pittsburgh Pirates
+   → Toronto Blue Jays (60.1% confianza)
+
+🏀 MLB | 18:11
+   Boston Red Sox vs Minnesota Twins
+   → Boston Red Sox (58.4% confianza)
+
+🏀 MLB | 18:11
+   Miami Marlins vs New York Mets
+   → New York Mets (50.9% confianza)
+
+🏀 MLB | 18:15
+   Atlanta Braves vs Washington Nationals
+   → Washington Nationals (66.3% confianza)
+
+🏀 MLB | 18:16
+   Baltimore Orioles vs Detroit Tigers
+   → Baltimore Orioles (56.1% confianza)
+
+🏀 MLB | 18:41
+   Kansas City Royals vs Seattle Mariners
+   → Kansas City Royals (51.7% confianza)
+
+🏀 MLB | 18:41
+   Milwaukee Brewers vs Los Angeles Dodgers
+   → Milwaukee Brewers (50.8% confianza)
+
+🏀 MLB | 20:39
+   Los Angeles Angels vs Texas Rangers
+   → Los Angeles Angels (58.1% confianza)
+
+🏀 MLB | 20:41
+   Arizona Diamondbacks vs Colorado Rockies
+   → Colorado Rockies (65.4% confianza)
+
+🏀 MLB | 20:41
+   San Diego Padres vs Athletics
+   → San Diego Padres (54.3% confianza)
+
+🏀 MLB | 21:16
+   San Francisco Giants vs Chicago White Sox
+   → Chicago White Sox (50.8% confianza)
+
+🏀 NHL | 19:00
+   Colorado Avalanche vs Vegas Golden Knights
+   → Vegas Golden Knights (64.2% confianza)
+   💰 VALUE BET: Colorado Avalanche @  → EV: +13.7% [ALTO VALOR]
+   💰 VALUE BET: Vegas Golden Knights @  → EV: +30.5% [ALTO VALOR]
+
+🏀 NHL | 18:00
+   Carolina Hurricanes vs Montréal Canadiens
+   → Montréal Canadiens (65.1% confianza)
+   💰 VALUE BET: Carolina Hurricanes @  → EV: +18.5% [ALTO VALOR]
+   💰 VALUE BET: Montréal Canadiens @  → EV: +25.6% [ALTO VALOR]
+
+⚽ UFL | 19:00
+   Orlando Storm vs DC Defenders
+   → DC Defenders (55.4% confianza)
+c:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\motor.py:2181: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  if datetime.utcnow() >= dt:
+^Cc:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\motor.py:2186: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  if datetime.utcnow() >= dt:
+c:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\motor.py:1976: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  ahora_utc = datetime.utcnow()
+c:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\motor.py:2500: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  limite = datetime.utcnow() + timedelta(hours=36)
+🔮 SharpIQ — Motor de Predicciones
+==================================================
+  DB inicializada OK
+
+Analizando fútbol (The Odds API / Pinnacle)...
+  Odds ext soccer_epl: 0 eventos | Créditos: 99077
+  Odds ext soccer_spain_la_liga: 0 eventos | Créditos: 99077
+  Odds ext soccer_germany_bundesliga: 1 eventos | Créditos: 99075
+  Bundesliga: 1 partidos con Pinnacle
+  Odds ext soccer_italy_serie_a: 0 eventos | Créditos: 99075
+  Odds ext soccer_france_ligue_one: 1 eventos | Créditos: 99073
+  Ligue 1: 1 partidos con Pinnacle
+  Odds ext soccer_uefa_champs_league: 1 eventos | Créditos: 99071
+  Champions League: 1 partidos con Pinnacle
+  Odds ext soccer_conmebol_copa_libertadores: 16 eventos | Créditos: 99069
+  Copa Libertadores: 16 partidos con Pinnacle
+  Odds ext soccer_conmebol_copa_sudamericana: 16 eventos | Créditos: 99067
+  Copa Sudamericana: 16 partidos con Pinnacle
+  Odds ext soccer_uefa_europa_league: 0 eventos | Créditos: 99067
+  Odds ext soccer_uefa_europa_conference_league: 1 eventos | Créditos: 99065
+  Conference League: 1 partidos con Pinnacle
+  Odds ext soccer_fifa_world_cup: 72 eventos | Créditos: 99063
+  FIFA World Cup: 69 partidos con Pinnacle
+  Odds ext soccer_efl_champ: 0 eventos | Créditos: 99063
+  Odds ext soccer_england_league1: 0 eventos | Créditos: 99063
+  Odds ext soccer_england_league2: 1 eventos | Créditos: 99061
+  League Two: 0 partidos con Pinnacle
+  Odds ext soccer_germany_bundesliga2: 1 eventos | Créditos: 99059
+  2. Bundesliga: 1 partidos con Pinnacle
+  Odds ext soccer_italy_serie_b: 1 eventos | Créditos: 99057
+  Serie B: 1 partidos con Pinnacle
+  Odds ext soccer_spain_segunda_division: 11 eventos | Créditos: 99055
+  Segunda División: 11 partidos con Pinnacle
+  Odds ext soccer_austria_bundesliga: 1 eventos | Créditos: 99053
+  Austria Bundesliga: 1 partidos con Pinnacle
+  Odds ext soccer_belgium_first_div: 0 eventos | Créditos: 99053
+  Odds ext soccer_brazil_campeonato: 11 eventos | Créditos: 99051
+  Brasileirao: 9 partidos con Pinnacle
+  Odds ext soccer_brazil_serie_b: 11 eventos | Créditos: 99049
+  Brasileirao B: 9 partidos con Pinnacle
+  Odds ext soccer_argentina_primera_division: 0 eventos | Créditos: 99049
+  Odds ext soccer_mexico_ligamx: 0 eventos | Créditos: 99049
+  Odds ext soccer_usa_mls: 0 eventos | Créditos: 99049
+  Odds ext soccer_chile_campeonato: 10 eventos | Créditos: 99047
+  Campeonato Chileno: 8 partidos con Pinnacle
+  Odds ext soccer_japan_j_league: 8 eventos | Créditos: 99045
+  J-League: 8 partidos con Pinnacle
+  Odds ext soccer_china_superleague: 8 eventos | Créditos: 99043
+  Super Liga China: 8 partidos con Pinnacle
+  Odds ext soccer_norway_eliteserien: 16 eventos | Créditos: 99041
+  Eliteserien: 5 partidos con Pinnacle
+  Odds ext soccer_sweden_allsvenskan: 10 eventos | Créditos: 99039
+  Allsvenskan: 6 partidos con Pinnacle
+  Odds ext soccer_sweden_superettan: 10 eventos | Créditos: 99037
+  Superettan: 6 partidos con Pinnacle
+  Odds ext soccer_poland_ekstraklasa: 0 eventos | Créditos: 99037
+  Odds ext soccer_finland_veikkausliiga: 6 eventos | Créditos: 99035
+  Veikkausliiga: 6 partidos con Pinnacle
+  Odds ext soccer_league_of_ireland: 7 eventos | Créditos: 99033
+  League of Ireland: 3 partidos con Pinnacle
+  Fútbol: 187 partidos con Pinnacle
+
+Analizando deportes adicionales...
+  Odds API: 2 partidos | Creditos restantes: 99030
+  NBA: 2 eventos con Pinnacle
+  Odds API: 0 partidos | Creditos restantes: 99030
+  Odds API: 13 partidos | Creditos restantes: 99027
+  MLB: 13 eventos con Pinnacle
+  Odds API: 2 partidos | Creditos restantes: 99024
+  NHL: 2 eventos con Pinnacle
+  Odds API: 44 partidos | Creditos restantes: 99022
+  ATP Roland Garros: 32 eventos con Pinnacle
+  Odds API: 40 partidos | Creditos restantes: 99020
+  WTA Roland Garros: 33 eventos con Pinnacle
+  Odds API: 75 partidos | Creditos restantes: 99017
+  NFL: 0 eventos con Pinnacle
+  Odds API: 4 partidos | Creditos restantes: 99014
+  UFL: 0 eventos con Pinnacle
+
+Analizando player props...
+  Player props basketball_nba: HTTP 422
+  Player props icehockey_nhl: HTTP 422
+  Player props baseball_mlb: HTTP 422
+  Filtro 36h: 143 predicciones futuras eliminadas (Copa Lib, Mundial, etc.)
+[OK] Predicciones guardadas: 126 partidos
+[OK] Fecha: 2026-05-25
+  Historial cuotas: 126 partidos → historial_cuotas.csv
+[OK] Mejor prediccion: Racing Club vs Club Independiente Petrolero -- Victoria Visitante (2)
+
+[OK] Enviando alertas Telegram...
+  🔥 9 alertas ALTO VALOR enviadas
+  📋 Resumen del día enviado
+
+🌐 Actualizando web...
+  Git error: Command '['git', 'pull', 'origin', 'main', '--no-rebase']' returned non-zero exit status 2.
+
+📊 PREDICCIONES DEL DÍA:
+
+⚽ Bundesliga | 13:30 COT  2026-05-25
+   SC Paderborn vs VfL Wolfsburg
+   → Over 2.5 Goles (47.6% prob, EV -3.0%)
+
+⚽ Ligue 1 | 13:45 COT  2026-05-26
+   Saint Etienne vs Nice
+   → over275 (51.0% prob, EV -4.0%)
+
+⚽ Copa Libertadores | 17:00 COT  2026-05-26
+   LDU Quito vs Club Always Ready
+   → over30 (46.8% prob, EV -4.2%)
+
+⚽ Copa Libertadores | 17:00 COT  2026-05-26
+   Lanus vs Mirassol
+   → Empate (29.1% prob, EV +0.5%)
+   💰 empate @ 3.45 [Unibet] → EV: +0.5% [SIN VALOR]
+
+⚽ Copa Libertadores | 19:30 COT  2026-05-26
+   Club Universitario de Deportes vs Deportes Tolima
+   → Victoria Visitante (22.7% prob, EV +2.0%)
+   💰 victoria_visita @ 4.5 [Unibet] → EV: +2.0% [SIN VALOR]
+
+⚽ Copa Libertadores | 19:30 COT  2026-05-26
+   Nacional de Montevideo vs Coquimbo Unido
+   → Victoria Local (53.3% prob, EV -4.0%)
+
+⚽ Copa Libertadores | 19:30 COT  2026-05-26
+   Flamengo-RJ vs Cusco FC
+   → Victoria Visitante (4.6% prob, EV +20.6%)
+   💰 victoria_visita @ 26.0 [Unibet] → EV: +20.6% [ALTO VALOR]
+
+⚽ Copa Libertadores | 19:30 COT  2026-05-26
+   Estudiantes La Plata vs Independiente Medellín
+   → over225 (48.3% prob, EV -4.4%)
+
+⚽ Copa Libertadores | 17:00 COT  2026-05-27
+   Independiente del Valle vs Rosario Central
+   → Victoria Visitante (22.8% prob, EV +2.6%)
+   💰 victoria_visita @ 4.5 [Unibet] → EV: +2.6% [SIN VALOR]
+
+⚽ Copa Libertadores | 17:00 COT  2026-05-27
+   Libertad Asuncion vs UCV FC
+   → Victoria Visitante (13.2% prob, EV +12.3%)
+   💰 victoria_visita @ 8.5 [Unibet] → EV: +12.3% [ALTO VALOR]
+
+⚽ Copa Libertadores | 19:30 COT  2026-05-27
+   Club Bolívar vs Independiente Rivadavia
+   → Victoria Visitante (34.4% prob, EV -1.1%)
+
+⚽ Copa Libertadores | 19:30 COT  2026-05-27
+   Corinthians-SP vs Platense
+   → over20 (51.6% prob, EV -4.6%)
+
+⚽ Copa Libertadores | 19:30 COT  2026-05-27
+   Fluminense-RJ vs Deportivo La Guaira
+   → Victoria Visitante (6.5% prob, EV +48.4%)
+   💰 victoria_visita @ 23.0 [Unibet] → EV: +48.4% [ALTO VALOR]
+
+⚽ Copa Libertadores | 19:30 COT  2026-05-27
+   Peñarol Montevideo vs Independiente Santa Fe
+   → Victoria Visitante (21.4% prob, EV +0.4%)
+   💰 victoria_visita @ 4.7 [Unibet] → EV: +0.4% [SIN VALOR]
+
+⚽ Copa Sudamericana | 17:00 COT  2026-05-26
+   Sao Paulo vs CA Boston River
+   → Victoria Visitante (7.2% prob, EV +29.6%)
+   💰 victoria_visita @ 18.0 [Unibet] → EV: +29.6% [ALTO VALOR]
+
+⚽ Copa Sudamericana | 17:00 COT  2026-05-26
+   Palestino vs Deportivo Riestra
+   → Victoria Visitante (29.8% prob, EV -0.2%)
+
+⚽ Copa Sudamericana | 17:00 COT  2026-05-26
+   Grêmio vs Montevideo City Torque
+   → Victoria Visitante (14.9% prob, EV -3.2%)
+
+⚽ Copa Sudamericana | 17:00 COT  2026-05-26
+   Millonarios vs O'Higgins
+   → Victoria Visitante (17.4% prob, EV +0.6%)
+   💰 victoria_visita @ 5.8 [Unibet] → EV: +0.6% [SIN VALOR]
+
+⚽ Copa Sudamericana | 19:30 COT  2026-05-26
+   Santos vs C.D. Cuenca
+   → Victoria Visitante (11.6% prob, EV +9.8%)
+   💰 victoria_visita @ 9.5 [Unibet] → EV: +9.8% [VALOR]
+
+⚽ Copa Sudamericana | 19:30 COT  2026-05-26
+   San Lorenzo vs Recoleta FC
+   → Victoria Visitante (10.7% prob, EV +1.4%)
+   💰 victoria_visita @ 9.5 [Unibet] → EV: +1.4% [SIN VALOR]
+
+⚽ Copa Sudamericana | 17:00 COT  2026-05-27
+   Olimpia Asunción vs Audax Italiano
+   → Over 2.5 Goles (52.4% prob, EV -2.6%)
+
+⚽ Copa Sudamericana | 17:00 COT  2026-05-27
+   Vasco da Gama vs Barracas Central
+   → Victoria Visitante (11.9% prob, EV +1.3%)
+   💰 victoria_visita @ 8.5 [William Hill] → EV: +1.3% [SIN VALOR]
+
+⚽ Copa Sudamericana | 17:00 COT  2026-05-27
+   Caracas FC vs Botafogo
+   → Empate (31.4% prob, EV -2.6%)
+
+⚽ Copa Sudamericana | 17:00 COT  2026-05-27
+   Club Cienciano vs CA Juventud
+   → Victoria Visitante (18.4% prob, EV -4.1%)
+
+⚽ Copa Sudamericana | 17:00 COT  2026-05-27
+   Racing Club vs Club Independiente Petrolero
+   → Victoria Visitante (4.4% prob, EV +104.6%)
+   💰 victoria_visita @ 46.0 [William Hill] → EV: +104.6% [ALTO VALOR]
+
+⚽ Copa Sudamericana | 17:00 COT  2026-05-27
+   Clube Atlético Mineiro vs Puerto Cabello
+   → Victoria Visitante (8.6% prob, EV +3.7%)
+   💰 victoria_visita @ 12.0 [Unibet] → EV: +3.7% [SIN VALOR]
+
+⚽ Copa Sudamericana | 19:30 COT  2026-05-27
+   River Plate vs Blooming
+   → Victoria Visitante (4.3% prob, EV +23.9%)
+   💰 victoria_visita @ 29.0 [William Hill] → EV: +23.9% [ALTO VALOR]
+
+⚽ Copa Sudamericana | 19:30 COT  2026-05-27
+   Bragantino-SP vs Carabobo FC
+   → Victoria Local (72.4% prob, EV -4.4%)
+
+⚽ Conference League | 14:00 COT  2026-05-27
+   Crystal Palace vs Rayo Vallecano
+   → over225 (51.4% prob, EV -2.8%)
+
+⚽ 2. Bundesliga | 13:30 COT  2026-05-26
+   Greuther Fürth vs Rot-Weiss Essen
+   → Victoria Visitante (23.5% prob, EV -3.6%)
+
+⚽ Austria Bundesliga | 10:00 COT  2026-05-25
+   Rapid Wien vs Ried
+   → Over 2.5 Goles (48.8% prob, EV -2.8%)
+
+⚽ Brasileirao | 18:00 COT  2026-05-25
+   Coritiba vs Bahia
+   → Over 2.5 Goles (47.8% prob, EV -1.0%)
+
+⚽ Brasileirao B | 17:00 COT  2026-05-25
+   Botafogo vs Athletic Club (MG)
+   → over20 (50.0% prob, EV -3.5%)
+
+⚽ Eliteserien | 10:00 COT  2026-05-25
+   Tromso vs Aalesund
+   → Victoria Visitante (16.5% prob, EV +11.1%)
+   💰 victoria_visita @ 6.75 [Unibet] → EV: +11.1% [ALTO VALOR]
+
+⚽ Eliteserien | 10:00 COT  2026-05-25
+   HamKam vs Lillestrom
+   → over275 (51.3% prob, EV -3.1%)
+
+⚽ Eliteserien | 10:00 COT  2026-05-25
+   KFUM vs Rosenborg
+   → Victoria Local (41.8% prob, EV +1.5%)
+   💰 victoria_local @ 2.43 [Unibet] → EV: +1.5% [SIN VALOR]
+
+⚽ Eliteserien | 10:00 COT  2026-05-25
+   Sarpsborg FK vs Molde
+   → over30 (51.0% prob, EV -3.0%)
+
+⚽ Eliteserien | 12:15 COT  2026-05-25
+   Sandefjord vs Fredrikstad FK
+   → Victoria Visitante (27.3% prob, EV +2.2%)
+   💰 victoria_visita @ 3.75 [Unibet] → EV: +2.2% [SIN VALOR]
+
+⚽ Allsvenskan | 12:00 COT  2026-05-25
+   IF Elfsborg vs BK Hacken
+   → over275 (50.0% prob, EV -3.5%)
+
+⚽ Allsvenskan | 12:00 COT  2026-05-25
+   IFK Goteborg vs Mjällby AIF
+   → Over 2.5 Goles (50.9% prob, EV -0.7%)
+
+⚽ Superettan | 12:05 COT  2026-05-25
+   IFK Norrkoping vs Östers IF
+   → Victoria Local (59.8% prob, EV -4.3%)
+
+⚽ Superettan | 12:00 COT  2026-05-26
+   Örebro SK vs Helsingborgs IF
+   → Over 2.5 Goles (52.0% prob, EV -4.9%)
+
+⚽ League of Ireland | 13:45 COT  2026-05-25
+   Derry City vs Shelbourne Dublin
+   → over225 (48.6% prob, EV -3.3%)
+
+⚽ League of Ireland | 14:00 COT  2026-05-25
+   Bohemians vs Shamrock Rovers
+   → over225 (50.6% prob, EV -3.3%)
+
+🏀 NBA | 19:10 COT  2026-05-25
+   Cleveland Cavaliers vs New York Knicks
+   → Cleveland Cavaliers (+2.5) (50.6% prob, EV -1.3%)
+
+🏀 NBA | 19:40 COT  2026-05-26
+   Oklahoma City Thunder vs San Antonio Spurs
+   → San Antonio Spurs (+5.5) (51.2% prob, EV -1.3%)
+
+⚾ MLB | 12:36 COT  2026-05-25
+   Baltimore Orioles vs Tampa Bay Rays
+   → Under 7.5 (50.0% prob, EV +0.0%)
+
+⚾ MLB | 12:36 COT  2026-05-25
+   Pittsburgh Pirates vs Chicago Cubs
+   → Pittsburgh Pirates (46.7% prob, EV -1.9%)
+
+⚾ MLB | 13:11 COT  2026-05-25
+   Chicago White Sox vs Minnesota Twins
+   → Minnesota Twins (51.3% prob, EV -2.1%)
+
+⚾ MLB | 13:11 COT  2026-05-25
+   Milwaukee Brewers vs St. Louis Cardinals
+   → Under 7.5 (51.7% prob, EV +1.3%)
+   💰 Under 7.5 @ 1.96 [Unibet] → EV: +1.3% [SIN VALOR]
+
+⚾ MLB | 14:41 COT  2026-05-25
+   Kansas City Royals vs New York Yankees
+   → Kansas City Royals (46.3% prob, EV +1.9%)
+   💰 Kansas City Royals @ 2.2 [Unibet] → EV: +1.9% [SIN VALOR]
+
+⚾ MLB | 15:11 COT  2026-05-25
+   New York Mets vs Cincinnati Reds
+   → Cincinnati Reds (41.6% prob, EV -1.9%)
+
+⚾ MLB | 16:06 COT  2026-05-25
+   San Francisco Giants vs Arizona Diamondbacks
+   → Arizona Diamondbacks (44.6% prob, EV -1.9%)
+
+⚾ MLB | 17:11 COT  2026-05-25
+   Cleveland Guardians vs Washington Nationals
+   → Over 8.0 (51.8% prob, EV -3.1%)
+
+⚾ MLB | 17:41 COT  2026-05-25
+   San Diego Padres vs Philadelphia Phillies
+   → San Diego Padres (47.0% prob, EV -2.3%)
+
+⚾ MLB | 18:06 COT  2026-05-25
+   Texas Rangers vs Houston Astros
+   → Houston Astros (+1.5) (64.1% prob, EV -0.1%)
+
+⚾ MLB | 18:08 COT  2026-05-25
+   Toronto Blue Jays vs Miami Marlins
+   → Under 7.5 (51.2% prob, EV -1.3%)
+
+⚾ MLB | 20:11 COT  2026-05-25
+   Los Angeles Dodgers vs Colorado Rockies
+   → Colorado Rockies (+1.5) (43.0% prob, EV -2.9%)
+
+⚾ MLB | 20:41 COT  2026-05-25
+   Athletics vs Seattle Mariners
+   → Seattle Mariners (51.8% prob, EV -2.6%)
+
+🏒 NHL | 19:20 COT  2026-05-25
+   Montréal Canadiens vs Carolina Hurricanes
+   → Carolina Hurricanes (56.1% prob, EV +23.3%)
+   💰 Carolina Hurricanes @ 2.2 [Unibet] → EV: +23.3% [ALTO VALOR]
+   💰 Montréal Canadiens @ 2.75 [Unibet] → EV: +20.8% [ALTO VALOR]
+   💰 Under 6.0 @ 1.91 [BetMGM] → EV: +0.2% [SIN VALOR]
+
+🏒 NHL | 20:00 COT  2026-05-26
+   Vegas Golden Knights vs Colorado Avalanche
+   → Vegas Golden Knights (47.9% prob, EV +26.1%)
+   💰 Colorado Avalanche @ 2.32 [Unibet] → EV: +20.8% [ALTO VALOR]
+   💰 Vegas Golden Knights @ 2.63 [Unibet] → EV: +26.1% [ALTO VALOR]
+
+🏆 ATP Roland Garros | 10:30 COT  2026-05-25
+   Raphael Collignon vs Aleksandar Vukic
+   → Raphael Collignon (89.5% prob, EV -5.1%)
+
+🏆 ATP Roland Garros | 10:30 COT  2026-05-25
+   Flavio Cobolli vs Andrea Pellegrino
+   → Flavio Cobolli (73.1% prob, EV -2.8%)
+
+🏆 ATP Roland Garros | 10:30 COT  2026-05-25
+   Daniel Merida Aguilar vs Ben Shelton
+   → Ben Shelton (77.6% prob, EV -3.0%)
+
+🏆 ATP Roland Garros | 10:30 COT  2026-05-25
+   Francisco Cerundolo vs Botic van de Zandschulp
+   → Francisco Cerundolo (84.3% prob, EV -2.2%)
+
+🏆 ATP Roland Garros | 10:30 COT  2026-05-25
+   Casper Ruud vs Roman Safiullin
+   → Casper Ruud (87.7% prob, EV -2.7%)
+
+🏆 ATP Roland Garros | 10:30 COT  2026-05-25
+   Wu Yibing vs Marcos Giron
+   → Marcos Giron (55.0% prob, EV -1.6%)
+
+🏆 ATP Roland Garros | 13:15 COT  2026-05-25
+   Hugo Gaston vs Gael Monfils
+   → Hugo Gaston (48.1% prob, EV -3.9%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-26
+   Adam Walton vs Daniil Medvedev
+   → Adam Walton (7.4% prob, EV -3.3%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-26
+   Alejandro Tabilo vs Kamil Majchrzak
+   → Alejandro Tabilo (78.4% prob, EV -3.6%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-26
+   Alexei Popyrin vs Zachary Svajda
+   → Alexei Popyrin (86.3% prob, EV -4.3%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-26
+   Marin Cilic vs Moise Kouame
+   → Marin Cilic (75.4% prob, EV -2.7%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-26
+   Tallon Griekspoor vs Matteo Arnaldi
+   → Over 39.5 (49.4% prob, EV -4.3%)
+
+🏆 ATP Roland Garros | 06:00 COT  2026-05-26
+   Facundo Diaz Acosta vs Zhizhen Zhang
+   → Facundo Diaz Acosta (66.7% prob, EV -2.0%)
+
+🏆 ATP Roland Garros | 06:00 COT  2026-05-26
+   Martin Landaluce vs Juan Carlos Prado Angelo
+   → Martin Landaluce (70.6% prob, EV -4.0%)
+
+🏆 ATP Roland Garros | 06:00 COT  2026-05-26
+   Thomas Faurel vs Valentin Vacherot
+   → Valentin Vacherot (85.1% prob, EV -3.9%)
+
+🏆 ATP Roland Garros | 06:30 COT  2026-05-26
+   Cameron Norrie vs Adolfo Daniel Vallejo
+   → Adolfo Daniel Vallejo (53.3% prob, EV -3.5%)
+
+🏆 ATP Roland Garros | 06:30 COT  2026-05-26
+   Vit Kopriva vs Corentin Moutet
+   → Corentin Moutet (62.7% prob, EV -2.9%)
+
+🏆 ATP Roland Garros | 07:00 COT  2026-05-26
+   Alexandre Muller vs Stefanos Tsitsipas
+   → Alexandre Muller (16.6% prob, EV -4.7%)
+
+🏆 ATP Roland Garros | 08:00 COT  2026-05-26
+   Cristian Garin vs Learner Tien
+   → Cristian Garin (39.7% prob, EV -0.9%)
+
+🏆 ATP Roland Garros | 08:00 COT  2026-05-26
+   Sebastian Baez vs Roman Andres Burruchaga
+   → Sebastian Baez (55.0% prob, EV -4.4%)
+
+🏆 ATP Roland Garros | 08:30 COT  2026-05-26
+   Alexander Bublik vs Jan-Lennard Struff
+   → Alexander Bublik (75.3% prob, EV -2.9%)
+
+🏆 ATP Roland Garros | 10:00 COT  2026-05-26
+   Jacob Fearnley vs Juan Manuel Cerundolo
+   → Jacob Fearnley (23.4% prob, EV -3.9%)
+
+🏆 ATP Roland Garros | 10:30 COT  2026-05-26
+   Felix Auger-Aliassime vs Daniel Altmaier
+   → Felix Auger-Aliassime (75.2% prob, EV -2.3%)
+
+🏆 ATP Roland Garros | 10:30 COT  2026-05-26
+   Jaime Faria vs Denis Shapovalov
+   → Jaime Faria (59.0% prob, EV -1.0%)
+
+🏆 ATP Roland Garros | 10:30 COT  2026-05-26
+   Ethan Quinn vs Francisco Comesana
+   → Francisco Comesana (56.8% prob, EV -1.1%)
+
+🏆 ATP Roland Garros | 10:30 COT  2026-05-26
+   Sebastian Ofner vs Luciano Darderi
+   → Luciano Darderi (73.5% prob, EV -1.5%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-27
+   Alejandro Davidovich Fokina vs Thiago Agustin Tirante
+   → Thiago Agustin Tirante (54.0% prob, EV -1.2%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-27
+   Tomas Machac vs Alexander Zverev
+   → Alexander Zverev (82.7% prob, EV -3.2%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-27
+   Joao Fonseca vs Dino Prizmic
+   → Dino Prizmic (48.1% prob, EV -1.0%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-27
+   Karen Khachanov vs Marco Trungelliti
+   → Karen Khachanov (75.5% prob, EV -4.1%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-27
+   Nuno Borges vs Miomir Kecmanovic
+   → Nuno Borges (37.3% prob, EV -5.0%)
+
+🏆 ATP Roland Garros | 04:00 COT  2026-05-27
+   Valentin Royer vs Novak Djokovic
+   → Novak Djokovic (87.7% prob, EV -4.4%)
+
+🏆 WTA Roland Garros | 10:00 COT  2026-05-25
+   Akasha Urhobo vs Katie Boulter
+   → Under 20.5 (51.3% prob, EV -3.6%)
+
+🏆 WTA Roland Garros | 10:00 COT  2026-05-25
+   Jelena Ostapenko vs Ella Seidel
+   → Jelena Ostapenko (79.0% prob, EV -3.7%)
+
+🏆 WTA Roland Garros | 11:00 COT  2026-05-25
+   Alycia Parks vs Leylah Fernandez
+   → Alycia Parks (24.1% prob, EV -1.4%)
+
+🏆 WTA Roland Garros | 11:00 COT  2026-05-25
+   Anastasia Zakharova vs Karolina Muchova
+   → Anastasia Zakharova (15.7% prob, EV -1.7%)
+
+🏆 WTA Roland Garros | 11:00 COT  2026-05-25
+   Diana Shnaider vs Renata Zarazua
+   → Renata Zarazua (16.1% prob, EV -3.5%)
+
+🏆 WTA Roland Garros | 11:00 COT  2026-05-25
+   Maria Camila Osorio Serrano vs Ekaterina Alexandrova
+   → Ekaterina Alexandrova (45.0% prob, EV -1.8%)
+
+🏆 WTA Roland Garros | 11:00 COT  2026-05-25
+   Guo Hanyu vs McCartney Kessler
+   → McCartney Kessler (69.5% prob, EV -2.7%)
+
+🏆 WTA Roland Garros | 11:00 COT  2026-05-25
+   Kamilla Rakhimova vs Jaqueline Cristian
+   → Kamilla Rakhimova (26.8% prob, EV -3.5%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-26
+   Iva Jović vs Alexandra Eala
+   → Over 20.5 (50.6% prob, EV -4.3%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-26
+   Donna Vekic vs Alice Tubello
+   → Under 20.5 (51.4% prob, EV -3.8%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-26
+   Alina Korneeva vs Elisabetta Cocciaretto
+   → Elisabetta Cocciaretto (64.9% prob, EV -2.7%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-26
+   Antonia Ruzic vs Ashlyn Krueger
+   → Antonia Ruzic (38.9% prob, EV -0.9%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-26
+   Claire Liu vs Moyuka Uchijima
+   → Moyuka Uchijima (45.8% prob, EV -3.9%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-26
+   Dalma Galfi vs Mayar Sherif
+   → Mayar Sherif (43.3% prob, EV -4.8%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-26
+   Linda Fruhvirtova vs Elsa Jacquemot
+   → Elsa Jacquemot (54.0% prob, EV -4.5%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-26
+   Emma Navarro vs Janice Tjen
+   → Emma Navarro (73.0% prob, EV -3.7%)
+
+🏆 WTA Roland Garros | 05:00 COT  2026-05-26
+   Aryna Sabalenka vs Jessica Bouzas Maneiro
+   → Over 17.5 (50.6% prob, EV -2.3%)
+
+🏆 WTA Roland Garros | 06:00 COT  2026-05-26
+   Ann Li vs Shuai Zhang
+   → Ann Li (70.8% prob, EV -3.7%)
+
+🏆 WTA Roland Garros | 06:00 COT  2026-05-26
+   Linda Noskova vs Maria Sakkari
+   → Maria Sakkari (31.1% prob, EV -3.5%)
+
+🏆 WTA Roland Garros | 06:30 COT  2026-05-26
+   Laura Siegemund vs Naomi Osaka
+   → Laura Siegemund (26.0% prob, EV -4.9%)
+
+🏆 WTA Roland Garros | 08:30 COT  2026-05-26
+   Anhelina Kalinina vs Diane Parry
+   → Anhelina Kalinina (69.6% prob, EV -2.6%)
+
+🏆 WTA Roland Garros | 08:30 COT  2026-05-26
+   Anna Kalinskaya vs Lois Boisson
+   → Anna Kalinskaya (62.0% prob, EV -3.3%)
+
+🏆 WTA Roland Garros | 09:00 COT  2026-05-26
+   Hanne Vandewinkel vs Madison Keys
+   → Hanne Vandewinkel (14.2% prob, EV +6.6%)
+   💰 Hanne Vandewinkel @ 7.5 [Unibet] → EV: +6.6% [VALOR]
+
+🏆 WTA Roland Garros | 09:30 COT  2026-05-26
+   Coco Gauff vs Taylor Townsend
+   → Coco Gauff (85.3% prob, EV -4.5%)
+
+🏆 WTA Roland Garros | 10:00 COT  2026-05-26
+   Elena Pridankina vs Oleksandra Oliynykova
+   → Oleksandra Oliynykova (64.5% prob, EV -0.7%)
+
+🏆 WTA Roland Garros | 11:00 COT  2026-05-26
+   Kimberly Birrell vs Jessica Pegula
+   → Jessica Pegula (94.8% prob, EV -2.3%)
+
+🏆 WTA Roland Garros | 11:00 COT  2026-05-26
+   Simona Waltert vs Katerina Siniakova
+   → Under 20.5 (50.6% prob, EV -2.8%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-27
+   Caty McNally vs Belinda Bencic
+   → Belinda Bencic (74.5% prob, EV -3.1%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-27
+   Daria Snigur vs Peyton Stearns
+   → Daria Snigur (34.0% prob, EV +2.1%)
+   💰 Daria Snigur @ 3.0 [Unibet] → EV: +2.1% [SIN VALOR]
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-27
+   Francesca Jones vs Marie Bouzkova
+   → Marie Bouzkova (75.3% prob, EV -3.6%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-27
+   Hailey Baptiste vs Xiyu Wang
+   → Xiyu Wang (35.6% prob, EV -2.1%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-27
+   Marta Kostyuk vs Katie Volynets
+   → Marta Kostyuk (84.6% prob, EV -3.6%)
+
+🏆 WTA Roland Garros | 04:00 COT  2026-05-27
+   Mirra Andreeva vs Marina Bassols Ribera
+   → Mirra Andreeva (94.0% prob, EV -1.3%)

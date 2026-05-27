@@ -1,0 +1,46 @@
+
+ SharpIQ — Auto Publicar (3 tiers)
+  Saludo matutino enviado al canal free
+  Tier seguro ya publicado: Jacksonville Jaguars
+  Tier principal ya publicado: Carolina Hurricanes
+  Tier alto_valor ya publicado: Colorado Avalanche
+  Sin picks nuevos hoy
+
+ SharpIQ — Auto Publicar (3 tiers)
+  Saludo matutino enviado al canal free
+  Tier principal ya publicado: Carolina Hurricanes
+  Tier alto_valor ya publicado: Colorado Avalanche
+  Sin picks nuevos hoy
+c:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\auto_publicar.py:118: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  ahora_cot = datetime.utcnow().replace(tzinfo=None)
+c:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\auto_publicar.py:120: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  hour=(datetime.utcnow().hour - 5) % 24,
+c:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\auto_publicar.py:121: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  minute=datetime.utcnow().minute
+c:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\auto_publicar.py:138: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  ahora_cot_h = (datetime.utcnow().hour - 5) % 24
+c:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\auto_publicar.py:139: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  ahora_cot_m = datetime.utcnow().minute
+[main 7ddd70c] auto: picks 2026-05-25 — Gana Marin Cilic | Gana Corentin Moutet | Victoria Visitante
+ 1 file changed, 27 insertions(+)
+To https://github.com/yamidnunezh-hash/sharpiq.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/yamidnunezh-hash/sharpiq.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+ SharpIQ — Auto Publicar (3 tiers)
+  Saludo matutino enviado al canal free
+  Tiers VIP enviados
+  datos.js: Marin Cilic vs Moise Kouame | Gana Marin Cilic @1.29
+  datos.js: Vit Kopriva vs Corentin Moutet | Gana Corentin Moutet @1.55
+  datos.js: Racing Club vs Club Independiente Petrolero | Victoria Visitante @46.0
+  Git error: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+  Canal free enviado
+  DB lista: c:\Users\INGENIERO\Documents\Documentos Yamid Nuñez 2026\Divisual Project\10 SKILLS ADRI Y JUANPE\__MACOSX\10 SKILLS ADRI Y JUANPE\kit-web-scrolling\sharpiq-engine\sharpiq.db
+  CLV snapshot apertura guardado
+  Mercados extendidos enviados (VIP)
+  Sin suscriptores push
+  Monitor en vivo iniciado
