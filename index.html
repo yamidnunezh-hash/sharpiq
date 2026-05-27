@@ -1566,7 +1566,7 @@
   </div>
 </footer>
 
-<script src="datos.js?v=20260527-4"></script>
+<script src="datos.js?v=20260527-5"></script>
 <script>
 // Fallback: si datos.js no cargó (caché rota), recargar vía fetch
 if(typeof PROXIMOS_EVENTOS==='undefined'){
@@ -1716,10 +1716,10 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
           kRac=document.getElementById('kpi-racha'),kRoi=document.getElementById('kpi-roi'),
           kOdds=document.getElementById('kpi-odds'),
           kSign=document.getElementById('kpi-roi-sign'),kPct=document.getElementById('kpi-roi-pct');
-    if(kW){kW.dataset.target=wins.length;kW.textContent=0;}
+    if(kW){kW.dataset.target=wins.length;kW.textContent=wins.length;}
     if(kT) kT.textContent='/'+resolved.length;
-    if(kRac){if(racha===0){var kRacEl=kRac.parentElement;if(kRacEl)kRacEl.innerHTML='<span style="font-family:Bebas Neue,cursive;font-size:40px;color:var(--t3);letter-spacing:1px">SIN RACHA</span>';}else{kRac.dataset.target=racha;kRac.textContent=0;}}
-    if(kRoi){kRoi.dataset.target=Math.abs(yieldPct);kRoi.textContent=0;}
+    if(kRac){if(racha===0){var kRacEl=kRac.parentElement;if(kRacEl)kRacEl.innerHTML='<span style="font-family:Bebas Neue,cursive;font-size:40px;color:var(--t3);letter-spacing:1px">SIN RACHA</span>';}else{kRac.dataset.target=racha;kRac.textContent=racha;}}
+    if(kRoi){kRoi.dataset.target=Math.abs(yieldPct);kRoi.textContent=Math.abs(yieldPct);}
     if(kSign) kSign.textContent=yieldPct>=0?'+':'−';
     if(kPct) kPct.style.color=yieldPct>=0?'var(--gold)':'var(--red)';
     if(kRoi) kRoi.style.color=yieldPct>=0?'var(--t1)':'var(--red)';
@@ -1731,12 +1731,12 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     const dW=document.getElementById('dash-wins'),dT=document.getElementById('dash-total'),
           dT2=document.getElementById('dash-total2'),dRoi=document.getElementById('dash-roi'),
           dRac=document.getElementById('dash-racha'),dTasa=document.getElementById('dash-tasa');
-    if(dW){dW.dataset.target=wins.length;dW.textContent=0;}
+    if(dW){dW.dataset.target=wins.length;dW.textContent=wins.length;}
     if(dT) dT.textContent=' / '+resolved.length;
-    if(dT2){dT2.dataset.target=PREDICCIONES_HISTORIAL.length;dT2.textContent=0;}
-    if(dRoi){dRoi.dataset.target=Math.abs(yieldPct);dRoi.textContent=0;}
-    if(dRac){if(racha===0){dRac.textContent='—';dRac.style.fontSize='58px';const ds=document.getElementById('dc-racha-sub');if(ds)ds.textContent='Próximo pick puede iniciar racha';}else{dRac.dataset.target=racha;dRac.textContent=0;}}
-    if(dTasa){dTasa.dataset.target=tasa;dTasa.textContent=0;}
+    if(dT2){dT2.dataset.target=PREDICCIONES_HISTORIAL.length;dT2.textContent=PREDICCIONES_HISTORIAL.length;}
+    if(dRoi){dRoi.dataset.target=Math.abs(yieldPct);dRoi.textContent=Math.abs(yieldPct);}
+    if(dRac){if(racha===0){dRac.textContent='—';dRac.style.fontSize='58px';const ds=document.getElementById('dc-racha-sub');if(ds)ds.textContent='Próximo pick puede iniciar racha';}else{dRac.dataset.target=racha;dRac.textContent=racha;}}
+    if(dTasa){dTasa.dataset.target=tasa;dTasa.textContent=tasa;}
     // Color yield dashboard card
     const dRoiEl=document.getElementById('dash-roi');
     if(dRoiEl){
