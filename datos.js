@@ -50,6 +50,17 @@ const PROXIMOS_EVENTOS = [
     resultado:  "pendiente"
   },
   {
+    fecha:      "27/05/26",
+    partido:    "Montréal Canadiens vs Carolina Hurricanes",
+    liga:       "NHL",
+    prediccion: "Gana Montréal Canadiens — EV +28%",
+    cuota:      "3.05",
+    hora:       "19:15 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3"
+  },
+  {
     fecha:      "28/05/26",
     partido:    "América de Cali vs Macará",
     liga:       "Copa Sudamericana",
@@ -178,6 +189,14 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Copa Sudamericana",
     prediccion: "Under 2.5 goles — EV +21%",
     cuota:      "1.75",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Montréal Canadiens vs Carolina Hurricanes",
+    liga:       "NHL",
+    prediccion: "Gana Montréal Canadiens — EV +28%",
+    cuota:      "3.05",
     resultado:  "pendiente"
   },
   {
