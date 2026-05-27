@@ -1,8 +1,52 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-25 — RESET estadísticas (arranque limpio)
+// Actualizado: 2026-05-26 — Copa Sudamericana análisis real Pinnacle
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
+  {
+    fecha:      "27/05/26",
+    partido:    "Olimpia Asunción vs Audax Italiano",
+    liga:       "Copa Sudamericana",
+    prediccion: "Under 2.5 goles — EV +43%",
+    cuota:      "2.01",
+    hora:       "17:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Cienciano vs CA Juventud",
+    liga:       "Copa Sudamericana",
+    prediccion: "Under 2.5 goles — EV +39% (altitud Cusco 3400m)",
+    cuota:      "1.81",
+    hora:       "17:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Caracas FC vs Botafogo",
+    liga:       "Copa Sudamericana",
+    prediccion: "Under 2.5 goles — EV +21%",
+    cuota:      "1.75",
+    hora:       "17:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "2"
+  },
+  {
+    fecha:      "28/05/26",
+    partido:    "América de Cali vs Macará",
+    liga:       "Copa Sudamericana",
+    prediccion: "Under 2.5 goles — EV +32%",
+    cuota:      "1.82",
+    hora:       "19:30 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3"
+  },
   {
     fecha:      "28/05/26",
     partido:    "Bolívar vs Independiente Rivadavia",
@@ -150,15 +194,6 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles — EV +18%",
     cuota:      "1.90",
     hora:       "11:00 COT",
-    status:     "vip"
-  },
-  {
-    fecha:      "27/05/26",
-    partido:    "Racing Club vs Club Independiente Petrolero",
-    liga:       "Copa Sudamericana",
-    prediccion: "Victoria Visitante — EV +105%",
-    cuota:      "46.0",
-    hora:       "17:00 COT",
     status:     "vip"
   },
 ];
