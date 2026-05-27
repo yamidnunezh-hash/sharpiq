@@ -10,9 +10,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +43%",
     cuota:      "2.01",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "3"
+    resultado:  "pendiente"
   },
   {
     fecha:      "27/05/26",
@@ -21,9 +21,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +39% (altitud Cusco 3400m)",
     cuota:      "1.81",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3"
+    resultado:  "pendiente"
   },
   {
     fecha:      "27/05/26",
@@ -32,9 +32,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +21%",
     cuota:      "1.75",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "2"
+    resultado:  "pendiente"
   },
   {
     fecha:      "28/05/26",
@@ -43,9 +43,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +32%",
     cuota:      "1.82",
     hora:       "19:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3"
+    resultado:  "pendiente"
   },
   {
     fecha:      "28/05/26",
@@ -54,9 +54,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Bolívar — EV +47% (altitud La Paz 3600m)",
     cuota:      "2.32",
     hora:       "19:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2"
+    resultado:  "pendiente"
   },
   {
     fecha:      "28/05/26",
@@ -65,9 +65,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +46%",
     cuota:      "1.96",
     hora:       "19:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "3"
+    resultado:  "pendiente"
   },
   {
     fecha:      "28/05/26",
@@ -76,9 +76,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +41%",
     cuota:      "1.89",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3"
+    resultado:  "pendiente"
   },
   {
     fecha:      "28/05/26",
@@ -87,9 +87,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +33%",
     cuota:      "1.79",
     hora:       "19:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3"
+    resultado:  "pendiente"
   },
   {
     fecha:      "29/05/26",
@@ -98,9 +98,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +37%",
     cuota:      "2.01",
     hora:       "19:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "3"
+    resultado:  "pendiente"
   },
   {
     fecha:      "26/05/26",
@@ -109,20 +109,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Vegas Golden Knights — EV +33%",
     cuota:      "2.7",
     hora:       "20:20 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2"
-  },
-  {
-    fecha:      "26/05/26",
-    partido:    "Oklahoma City Thunder vs San Antonio Spurs",
-    liga:       "NBA",
-    prediccion: "Gana Oklahoma City Thunder",
-    cuota:      "1.62",
-    hora:       "19:40 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "3"
+    resultado:  "pendiente"
   },
   {
     fecha:      "27/05/26",
@@ -131,7 +120,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Montréal Canadiens — EV +33%",
     cuota:      "3.1",
     hora:       "19:00 COT",
-    status:     "vip"
+    emoji:      "",
+    status:     "vip",
+    resultado:  "pendiente"
   },
   {
     fecha:      "26/05/26",
@@ -140,7 +131,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Milwaukee Brewers",
     cuota:      "1.56",
     hora:       "18:41 COT",
-    status:     "vip"
+    emoji:      "",
+    status:     "vip",
+    resultado:  "pendiente"
   },
   {
     fecha:      "27/05/26",
@@ -149,7 +142,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Jelena Ostapenko",
     cuota:      "1.3",
     hora:       "05:10 COT",
-    status:     "vip"
+    emoji:      "",
+    status:     "vip",
+    resultado:  "pendiente"
   },
   {
     fecha:      "26/05/26",
@@ -158,7 +153,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana OKC Thunder",
     cuota:      "1.54",
     hora:       "19:30 COT",
-    status:     "free"
+    emoji:      "",
+    status:     "free",
+    resultado:  "pendiente"
   },
   {
     fecha:      "26/05/26",
@@ -167,7 +164,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Corentin Moutet",
     cuota:      "1.55",
     hora:       "06:30 COT",
-    status:     "vip"
+    emoji:      "",
+    status:     "vip",
+    resultado:  "pendiente"
   },
   {
     fecha:      "26/05/26",
@@ -176,7 +175,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Marin Cilic",
     cuota:      "1.29",
     hora:       "04:00 COT",
-    status:     "vip"
+    emoji:      "",
+    status:     "vip",
+    resultado:  "pendiente"
   },
   {
     fecha:      "30/05/26",
@@ -185,7 +186,9 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Arsenal — EV +22%",
     cuota:      "2.20",
     hora:       "11:00 COT",
-    status:     "vip"
+    emoji:      "",
+    status:     "vip",
+    resultado:  "pendiente"
   },
   {
     fecha:      "30/05/26",
@@ -194,19 +197,28 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles — EV +18%",
     cuota:      "1.90",
     hora:       "11:00 COT",
-    status:     "vip"
-  },
+    emoji:      "",
+    status:     "vip",
+    resultado:  "pendiente"
+  }
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "26/05/26",
+    partido:    "Oklahoma City Thunder vs San Antonio Spurs",
+    liga:       "NBA",
+    prediccion: "Gana Oklahoma City Thunder",
+    cuota:      "1.62",
+    resultado:  "win"
+  },
   {
     fecha:      "25/05/26",
     partido:    "Mariano Navone vs Jenson Brooksby",
     liga:       "ATP Roland Garros",
     prediccion: "Gana Mariano Navone",
     cuota:      "1.29",
-    resultado:  "win",
-    score:      "6-4, 6-4, 6-4"
+    resultado:  "win"
   },
   {
     fecha:      "25/05/26",
@@ -214,7 +226,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "NBA Playoffs",
     prediccion: "Gana New York Knicks",
     cuota:      "1.81",
-    resultado:  "win",
-    score:      "93 - 130"
+    resultado:  "win"
   }
 ];
