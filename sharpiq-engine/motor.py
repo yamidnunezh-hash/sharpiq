@@ -1201,7 +1201,13 @@ def _fetch_odds_ext(sport_key):
         url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
         # bookmakers y regions son mutuamente exclusivos en The Odds API v4
         _is_soccer_ext = any(x in sport_key for x in ("soccer",))
-        _ext_markets = "h2h,totals,btts,double_chance,draw_no_bet" if _is_soccer_ext else "h2h,totals"
+        # Pedimos todos los mercados disponibles para fútbol:
+        # alternate_totals → over/under 0.5 / 4.5 / 5.5
+        # spreads → hándicap asiático (así lo llama The Odds API para fútbol)
+        _ext_markets = (
+            "h2h,totals,alternate_totals,spreads,btts,double_chance,draw_no_bet"
+            if _is_soccer_ext else "h2h,totals,spreads"
+        )
         params = {
             "apiKey":      ODDS_API_KEY,
             "bookmakers":  "pinnacle,bet365,betfair,unibet,williamhill,bwin",
@@ -1209,7 +1215,12 @@ def _fetch_odds_ext(sport_key):
             "oddsFormat":  "decimal",
         }
         r = requests.get(url, params=params, timeout=20)
-        if r.status_code == 422 and _ext_markets != "h2h,totals":
+        # Fallback 1: sin alternate_totals/spreads (ligas con soporte limitado)
+        if r.status_code == 422 and "alternate_totals" in _ext_markets:
+            params["markets"] = "h2h,totals,btts,double_chance,draw_no_bet" if _is_soccer_ext else "h2h,totals"
+            r = requests.get(url, params=params, timeout=20)
+        # Fallback 2: solo básicos
+        if r.status_code == 422:
             print(f"  Odds ext {sport_key}: 422 mercados extendidos, reintentando con h2h,totals")
             params["markets"] = "h2h,totals"
             r = requests.get(url, params=params, timeout=20)
@@ -2873,37 +2884,31 @@ def _alertar_steam(reporte):
 
 def clasificar_tiers(reporte):
     """
-    Selecciona los 3 picks del día según jerarquía de tiers.
-    SEGURO:     Over 1.5 goles, prob >= 68%, cuota >= 1.28
-    PRINCIPAL:  Draw No Bet local o visitante, prob >= 58%, cuota >= 1.55
-    ALTO VALOR: EV vs Pinnacle >= 8%, cuota >= 1.90
-    Nunca repite partido entre tiers.
-    """
-    SEGURO_MIN_PROB  = 68.0
-    SEGURO_MIN_CUOTA = 1.28
-    PRINC_MIN_PROB   = 58.0
-    PRINC_MIN_CUOTA  = 1.55
-    AV_MIN_EV        = 8.0
-    AV_MIN_CUOTA     = 1.90
-    AV_MAX_CUOTA     = 10.0   # Longshots > 10.0 no se publican (pierden 90%+ del tiempo)
-    AV_MIN_PROB      = 20.0   # Probabilidad mínima 20% para publicar
+    Selecciona los 3 picks del día evaluando TODOS los mercados disponibles.
+    Los tiers se asignan por perfil de riesgo (prob + EV + cuota), no por tipo de mercado.
 
-    _CK = {
-        "victoria_local":"1","empate":"X","victoria_visita":"2",
-        "over05":"over05","under05":"under05",
-        "over15":"over15","under15":"under15",
-        "over25":"over25","under25":"under25",
-        "over35":"over35","under35":"under35",
-        "over45":"over45","under45":"under45",
-        "over55":"over55","under55":"under55",
-        "btts_si":"btts_si","btts_no":"btts_no",
-        "doble_1x":"doble_1x","doble_x2":"doble_x2","doble_12":"doble_12",
-        "dnb_local":"dnb_local","dnb_visita":"dnb_visita",
-        "ah_l_m0_5":"ah_l_m0_5","ah_v_p0_5":"ah_v_p0_5",
-        "ah_l_m1_0":"ah_l_m1_0","ah_v_p1_0":"ah_v_p1_0",
-        "ah_l_m1_5":"ah_l_m1_5","ah_v_p1_5":"ah_v_p1_5",
-        "ah_l_m2_0":"ah_l_m2_0","ah_v_p2_0":"ah_v_p2_0",
-    }
+    SEGURO:     prob >= 65%, EV >= 0% vs Pinnacle, cuota <= 1.95
+    PRINCIPAL:  prob >= 50%, EV >= 2% vs Pinnacle, cuota 1.55-3.00
+    ALTO VALOR: EV >= 7% vs Pinnacle, cuota 1.75-10.0, prob >= 20%
+
+    Mercados elegibles: 1X2, Over/Under 0.5-5.5, BTTS, DC, DNB,
+                        Hándicap Asiático, cualquier mercado con línea Pinnacle.
+    Nunca repite el mismo partido entre tiers.
+    """
+    SEGURO_MIN_PROB  = 65.0
+    SEGURO_MAX_CUOTA = 1.95
+    SEGURO_MIN_EV    = 0.0     # EV debe ser positivo vs Pinnacle
+
+    PRINC_MIN_PROB   = 50.0
+    PRINC_MIN_CUOTA  = 1.55
+    PRINC_MAX_CUOTA  = 3.00
+    PRINC_MIN_EV     = 2.0
+
+    AV_MIN_EV        = 7.0
+    AV_MIN_CUOTA     = 1.75
+    AV_MAX_CUOTA     = 10.0
+    AV_MIN_PROB      = 20.0
+
     _NOMBRES = {
         "victoria_local":  "Victoria Local",
         "empate":          "Empate",
@@ -2914,148 +2919,136 @@ def clasificar_tiers(reporte):
         "over35":  "Over 3.5 Goles",  "under35":  "Under 3.5 Goles",
         "over45":  "Over 4.5 Goles",  "under45":  "Under 4.5 Goles",
         "over55":  "Over 5.5 Goles",  "under55":  "Under 5.5 Goles",
-        "btts_si": "Ambos Marcan",    "btts_no":  "Ambos No Marcan",
-        "doble_1x":"Doble Oportunidad 1X",
-        "doble_x2":"Doble Oportunidad X2",
-        "doble_12":"Doble Oportunidad 12",
+        "btts_si": "Ambos Marcan — Sí", "btts_no": "Ambos No Marcan",
+        "doble_1x": "Doble Oportunidad 1X",
+        "doble_x2": "Doble Oportunidad X2",
+        "doble_12": "Doble Oportunidad 12",
         "dnb_local":  "Draw No Bet Local",
         "dnb_visita": "Draw No Bet Visitante",
-        "ah_l_m0_5":  "Handicap Local -0.5",   "ah_v_p0_5":  "Handicap Visitante +0.5",
-        "ah_l_m1_0":  "Handicap Local -1",      "ah_v_p1_0":  "Handicap Visitante +1",
-        "ah_l_m1_5":  "Handicap Local -1.5",    "ah_v_p1_5":  "Handicap Visitante +1.5",
-        "ah_l_m2_0":  "Handicap Local -2",      "ah_v_p2_0":  "Handicap Visitante +2",
+        "ah_l_m0_5":  "Hándicap Asiático Local -0.5",
+        "ah_v_p0_5":  "Hándicap Asiático Visitante +0.5",
+        "ah_l_m1_0":  "Hándicap Asiático Local -1",
+        "ah_v_p1_0":  "Hándicap Asiático Visitante +1",
+        "ah_l_m1_5":  "Hándicap Asiático Local -1.5",
+        "ah_v_p1_5":  "Hándicap Asiático Visitante +1.5",
+        "ah_l_m2_0":  "Hándicap Asiático Local -2",
+        "ah_v_p2_0":  "Hándicap Asiático Visitante +2",
     }
 
-    seguro_pool = []
+    seguro_pool    = []
     principal_pool = []
-    alto_pool = []
+    alto_pool      = []
 
     for pred in reporte.get("predicciones", []):
-        probs      = pred.get("probabilidades", {})
-        cuotas     = pred.get("cuotas", {})
-        vbs        = pred.get("value_bets", {})
-        liga_code  = str(pred.get("liga_code", ""))
-        es_futbol  = liga_code not in SPORTS_ODDS_ONLY
+        probs     = pred.get("probabilidades", {})
+        vbs       = pred.get("value_bets", {})
+        liga_code = str(pred.get("liga_code", ""))
+        es_futbol = liga_code not in SPORTS_ODDS_ONLY
 
-        # Descartar fútbol sin cuotas reales de Pinnacle — predicciones con
-        # λ fallback son esencialmente aleatorias y no deben publicarse
+        # Fútbol sin cuotas reales de Pinnacle = fallback estadístico → no publicar
         if es_futbol and not pred.get("cuotas_reales"):
             continue
 
         if es_futbol:
-            # ── SEGURO: Over 1.5 goles ───────────────────────────
-            prob_o15  = probs.get("over15", 0)
-            cuota_o15 = cuotas.get("over15")
-            if prob_o15 >= SEGURO_MIN_PROB and cuota_o15 and float(cuota_o15) >= SEGURO_MIN_CUOTA:
-                seguro_pool.append({
-                    "pred":           pred,
-                    "mercado":        "over15",
-                    "mercado_nombre": "Over 1.5 Goles",
-                    "prob":           prob_o15,
-                    "cuota":          float(cuota_o15),
-                    "score":          prob_o15 + float(cuota_o15) * 5,
-                })
+            # ── Evaluar TODOS los mercados con línea Pinnacle ────────
+            for mk, vb in vbs.items():
+                if not vb:
+                    continue
+                ev_p = vb.get("ev_pinn")
+                if ev_p is None:
+                    continue   # solo mercados con referencia Pinnacle
 
-            # ── PICK PRINCIPAL: Draw No Bet ──────────────────────
-            for dnb_k in ("dnb_local", "dnb_visita"):
-                prob_dnb  = probs.get(dnb_k, 0)
-                cuota_dnb = cuotas.get(dnb_k)
-                if prob_dnb >= PRINC_MIN_PROB and cuota_dnb and float(cuota_dnb) >= PRINC_MIN_CUOTA:
-                    principal_pool.append({
-                        "pred":           pred,
-                        "mercado":        dnb_k,
-                        "mercado_nombre": _NOMBRES[dnb_k],
-                        "prob":           prob_dnb,
-                        "cuota":          float(cuota_dnb),
-                        "score":          prob_dnb + float(cuota_dnb) * 10,
-                    })
+                # La probabilidad y cuota vienen del value_bet (ya devigada)
+                prob    = float(vb.get("pinn_prob") or probs.get(mk) or 0)
+                cuota_f = float(vb.get("cuota") or 0)
+                if not prob or cuota_f < 1.05:
+                    continue
+
+                nombre = _NOMBRES.get(mk) or vb.get("mercado_nombre") or mk
+                c = {
+                    "pred":           pred,
+                    "mercado":        mk,
+                    "mercado_nombre": nombre,
+                    "prob":           prob,
+                    "cuota":          cuota_f,
+                    "ev_pinn":        ev_p,
+                    "ev":             ev_p,
+                }
+
+                # SEGURO: máxima probabilidad con EV positivo
+                if (prob >= SEGURO_MIN_PROB
+                        and cuota_f <= SEGURO_MAX_CUOTA
+                        and ev_p >= SEGURO_MIN_EV):
+                    # Score: combina probabilidad y EV para diferenciar picks igualados
+                    seguro_pool.append({**c, "score": prob * (1 + ev_p / 200)})
+
+                # PRINCIPAL: mejor balance EV × probabilidad
+                if (prob >= PRINC_MIN_PROB
+                        and PRINC_MIN_CUOTA <= cuota_f <= PRINC_MAX_CUOTA
+                        and ev_p >= PRINC_MIN_EV):
+                    principal_pool.append({**c, "score": ev_p * (prob / 100)})
+
+                # ALTO VALOR: máximo EV absoluto
+                if (ev_p >= AV_MIN_EV
+                        and AV_MIN_CUOTA <= cuota_f <= AV_MAX_CUOTA
+                        and prob >= AV_MIN_PROB):
+                    alto_pool.append({**c, "score": ev_p})
 
         elif pred.get("es_player_prop"):
-            # ── Player props: Over con alta probabilidad ──────────
+            # ── Player props ─────────────────────────────────────────
             for direction in ("over", "under"):
-                prob_val  = probs.get(direction, 0)
-                cuota_val = cuotas.get(direction)
-                if not cuota_val:
+                vb_val = vbs.get(direction, {})
+                if not vb_val:
+                    continue
+                prob_val  = float(vb_val.get("pinn_prob") or probs.get(direction) or 0)
+                cuota_val = float(vb_val.get("cuota") or 0)
+                ev_v      = vb_val.get("ev_pinn", 0) or 0
+                if not cuota_val or not prob_val:
                     continue
                 mercado_nombre = pred["prediccion_principal"]["mercado"]
-                if prob_val >= SEGURO_MIN_PROB and float(cuota_val) >= SEGURO_MIN_CUOTA:
-                    seguro_pool.append({
-                        "pred":           pred,
-                        "mercado":        direction,
-                        "mercado_nombre": mercado_nombre,
-                        "prob":           prob_val,
-                        "cuota":          float(cuota_val),
-                        "score":          prob_val + float(cuota_val) * 5,
-                    })
-                if prob_val >= PRINC_MIN_PROB and float(cuota_val) >= PRINC_MIN_CUOTA:
-                    principal_pool.append({
-                        "pred":           pred,
-                        "mercado":        direction,
-                        "mercado_nombre": mercado_nombre,
-                        "prob":           prob_val,
-                        "cuota":          float(cuota_val),
-                        "score":          prob_val + float(cuota_val) * 10,
-                    })
+                c = {
+                    "pred":           pred,
+                    "mercado":        direction,
+                    "mercado_nombre": mercado_nombre,
+                    "prob":           prob_val,
+                    "cuota":          cuota_val,
+                    "ev_pinn":        ev_v,
+                    "ev":             ev_v,
+                }
+                if prob_val >= SEGURO_MIN_PROB and cuota_val <= SEGURO_MAX_CUOTA:
+                    seguro_pool.append({**c, "score": prob_val})
+                if prob_val >= PRINC_MIN_PROB and PRINC_MIN_CUOTA <= cuota_val <= PRINC_MAX_CUOTA:
+                    principal_pool.append({**c, "score": prob_val * cuota_val})
 
         else:
-            # ── SEGURO otros deportes: favorito moneyline ≥ 68% ──
-            for team, prob_val in probs.items():
-                cuota_val = cuotas.get(team)
-                if not cuota_val:
+            # ── Otros deportes (NBA / MLB / NHL / Tennis…) ───────────
+            for mk, vb in vbs.items():
+                if not vb:
                     continue
-                if prob_val >= SEGURO_MIN_PROB and float(cuota_val) >= SEGURO_MIN_CUOTA:
-                    seguro_pool.append({
-                        "pred":           pred,
-                        "mercado":        team,
-                        "mercado_nombre": f"Gana {team}",
-                        "prob":           prob_val,
-                        "cuota":          float(cuota_val),
-                        "score":          prob_val + float(cuota_val) * 5,
-                    })
-
-            # ── PRINCIPAL otros deportes: moneyline ≥ 58% ────────
-            for team, prob_val in probs.items():
-                cuota_val = cuotas.get(team)
-                if not cuota_val:
+                ev_p     = vb.get("ev_pinn") or vb.get("ev_porcentaje", 0) or 0
+                prob_val  = float(vb.get("pinn_prob") or probs.get(mk) or 0)
+                cuota_val = float(vb.get("cuota") or 0)
+                if not prob_val or cuota_val < 1.05:
                     continue
-                if prob_val >= PRINC_MIN_PROB and float(cuota_val) >= PRINC_MIN_CUOTA:
-                    principal_pool.append({
-                        "pred":           pred,
-                        "mercado":        team,
-                        "mercado_nombre": f"Gana {team}",
-                        "prob":           prob_val,
-                        "cuota":          float(cuota_val),
-                        "score":          prob_val + float(cuota_val) * 10,
-                    })
-
-        # ── ALTO VALOR: EV vs Pinnacle >= 8% (todos los deportes)
-        for mk, vb in vbs.items():
-            if not vb:
-                continue
-            ev_p = vb.get("ev_pinn")
-            if ev_p is None or ev_p < AV_MIN_EV:
-                continue
-            ck = _CK.get(mk, mk)
-            cuota_v = cuotas.get(ck)
-            if not cuota_v:
-                continue
-            cuota_f = float(cuota_v)
-            # Filtrar longshots: cuota > 10 o probabilidad < 20%
-            prob_mk = probs.get(mk, vb.get("pinn_prob", 0))
-            if cuota_f < AV_MIN_CUOTA or cuota_f > AV_MAX_CUOTA:
-                continue
-            if prob_mk < AV_MIN_PROB:
-                continue
-            nombre_mk = _NOMBRES.get(mk) or (f"Gana {mk}" if not es_futbol else mk)
-            alto_pool.append({
-                "pred":           pred,
-                "mercado":        mk,
-                "mercado_nombre": nombre_mk,
-                "prob":           prob_mk,
-                "cuota":          cuota_f,
-                "ev_pinn":        ev_p,
-                "score":          ev_p,
-            })
+                # Si el key es nombre de equipo (moneyline) → "Gana X"
+                mk_nombre = vb.get("mercado_nombre") or mk
+                if mk in (pred.get("local", ""), pred.get("visitante", "")):
+                    mk_nombre = f"Gana {mk}"
+                c = {
+                    "pred":           pred,
+                    "mercado":        mk,
+                    "mercado_nombre": mk_nombre,
+                    "prob":           prob_val,
+                    "cuota":          cuota_val,
+                    "ev_pinn":        ev_p,
+                    "ev":             ev_p,
+                }
+                if prob_val >= SEGURO_MIN_PROB and cuota_val <= SEGURO_MAX_CUOTA:
+                    seguro_pool.append({**c, "score": prob_val * (1 + ev_p / 200)})
+                if prob_val >= PRINC_MIN_PROB and PRINC_MIN_CUOTA <= cuota_val <= PRINC_MAX_CUOTA and ev_p >= PRINC_MIN_EV:
+                    principal_pool.append({**c, "score": ev_p * (prob_val / 100)})
+                if ev_p >= AV_MIN_EV and AV_MIN_CUOTA <= cuota_val <= AV_MAX_CUOTA and prob_val >= AV_MIN_PROB:
+                    alto_pool.append({**c, "score": ev_p})
 
     seguro_pool.sort(key=lambda x: x["score"], reverse=True)
     principal_pool.sort(key=lambda x: x["score"], reverse=True)
@@ -3071,7 +3064,7 @@ def clasificar_tiers(reporte):
                 return c
         return None
 
-    # Orden: ALTO VALOR primero para no "desperdiciar" el mejor partido
+    # Orden: ALTO VALOR primero para reservar el partido con mayor EV
     alto_valor = _pick(alto_pool)
     principal  = _pick(principal_pool)
     seguro     = _pick(seguro_pool)
