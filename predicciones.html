@@ -9,13 +9,13 @@
   :root {
     --cyan:   #00C8FF;
     --purple: #7B5CF0;
-    --bg:     #0D1B2E;
-    --bg2:    #122338;
-    --bg3:    #162B44;
+    --bg:     #ffffff;
+    --bg2:    #f4f7fb;
+    --bg3:    #eaf0f8;
     --border: rgba(0,200,255,0.15);
-    --text:   #e2e8f0;
-    --muted:  #7B9CBF;
-    --dim:    #2E4060;
+    --text:   #0f172a;
+    --muted:  #64748b;
+    --dim:    #94a3b8;
     --green:  #22c55e;
     --red:    #ef4444;
   }
@@ -57,7 +57,7 @@
   #btn-refresh:disabled { opacity: 0.4; cursor: not-allowed; }
 
   .stats-bar {
-    background: rgba(13,11,42,0.7);
+    background: rgba(248,250,252,0.7);
     border-bottom: 1px solid var(--border);
     padding: 12px 24px;
     display: flex; gap: 28px; overflow-x: auto;
@@ -86,7 +86,7 @@
   #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
 
   .card {
-    background: rgba(13,11,42,0.85); border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(248,250,252,0.85); border: 1px solid rgba(255,255,255,0.07);
     border-radius: 12px; overflow: hidden;
     transition: transform 0.2s, border-color 0.2s;
     backdrop-filter: blur(8px);
@@ -229,7 +229,7 @@
   /* SECCIONES INTERNAS */
   .sec-interna {
     margin: 14px 24px 0;
-    background: rgba(13,11,42,0.8);
+    background: rgba(248,250,252,0.8);
     border: 1px solid var(--border);
     border-radius: 12px; padding: 14px 18px;
     position: relative; z-index: 1;
@@ -273,7 +273,7 @@
 <header>
   <a class="logo" href="index.html">
     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="32,2 58,17 58,47 32,62 6,47 6,17" fill="#0D1B2E" stroke="#00C8FF" stroke-width="2.5"/>
+      <polygon points="32,2 58,17 58,47 32,62 6,47 6,17" fill="#ffffff" stroke="#00C8FF" stroke-width="2.5"/>
       <text x="32" y="44" font-family="Arial Black,sans-serif" font-size="28" font-weight="900" fill="#00C8FF" text-anchor="middle">S</text>
     </svg>
     <div class="logo-text">SHARP<span>IQ</span></div>
