@@ -438,7 +438,7 @@
         "1_casa": "William Hill",
         "pinnacle_1": 1.14,
         "X": 7.5,
-        "X_casa": "Unibet",
+        "X_casa": "William Hill",
         "pinnacle_X": 7.24,
         "over325": 1.94,
         "over325_casa": "Pinnacle",
@@ -486,7 +486,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 7.5,
-          "casa": "Unibet",
+          "casa": "William Hill",
           "pinn_prob": 12.7
         },
         "over325": {
@@ -5597,7 +5597,7 @@
       "liga_code": "tennis_atp_french_open",
       "deporte": "ATP Roland Garros",
       "deporte_emoji": "🏆",
-      "hora": "17:40",
+      "hora": "17:50",
       "fecha_evento": "2026-05-27",
       "cuotas": {
         "Lorenzo Sonego": 6.5,
@@ -7731,7 +7731,7 @@
       "fecha_evento": "2026-05-28",
       "cuotas": {
         "Daria Kasatkina": 1.1,
-        "Susan Bandecchi": 6.75,
+        "Susan Bandecchi": 7.0,
         "Over 18.5": 1.85,
         "Under 18.5": 1.88
       },
@@ -7754,14 +7754,14 @@
           "mercado_nombre": "Daria Kasatkina"
         },
         "Susan Bandecchi": {
-          "value": -0.147,
-          "ev_porcentaje": -14.7,
-          "ev_pinn": -14.7,
+          "value": -0.115,
+          "ev_porcentaje": -11.5,
+          "ev_pinn": -11.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 6.75,
-          "casa": "Unibet",
+          "cuota": 7.0,
+          "casa": "William Hill",
           "pinn_prob": 12.6,
           "mercado_nombre": "Susan Bandecchi"
         },
@@ -8135,5 +8135,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:31:46"
+  "generado": "12:33:08"
 }
