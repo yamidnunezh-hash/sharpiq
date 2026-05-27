@@ -388,12 +388,17 @@ def _apifb(endpoint, params):
         print(f"    API-Football error: {e}")
         return None
 
-def obtener_forma_reciente(equipo, n=5):
-    """Últimos N partidos: devuelve forma, ataque y defensa recientes."""
+def obtener_forma_reciente(equipo, n=5, liga_id=None):
+    """Últimos N partidos: devuelve forma, ataque y defensa recientes.
+    Si liga_id se especifica, filtra solo partidos de esa competición."""
     team_id = TEAM_IDS.get(equipo)
     if not team_id:
         return None
-    data = _apifb("fixtures", {"team": team_id, "last": n, "status": "FT"})
+    params = {"team": team_id, "last": n, "status": "FT"}
+    if liga_id:
+        params["league"] = liga_id
+        params["season"] = date.today().year if date.today().month >= 6 else date.today().year - 1
+    data = _apifb("fixtures", params)
     if not data or not data.get("response"):
         return None
     fixtures = data["response"]
@@ -987,14 +992,68 @@ STATS_EQUIPOS = {
 
 PROMEDIO_LIGA = {"ataque": 1.35, "defensa": 1.35}
 
+# Factores de corrección por liga basados en datos reales API-Football
+# Metodología: se calcula el output promedio del modelo para equipos típicos de cada liga
+# y se ajusta para que coincida con el promedio real de goles de la competición.
+# NO es real_avg/1.35 — es real_avg_por_partido / modelo_promedio_por_partido.
+#
+# Datos reales (últimos 20 partidos por liga, API-Football):
+#   Copa Libertadores:  1.90g/partido | Over2.5=35% | Under2.5=65%
+#   Copa Sudamericana:  2.15g/partido | Over2.5=35% | Under2.5=65%
+#   Brasileirao A:      3.25g/partido | Over2.5=70%  <-- modelo subestima mucho
+#   Argentina Primera:  2.15g/partido | Over2.5=50%
+#   Premier League:     2.80g/partido | Over2.5=55%
+ESCALA_GOLES_LIGA = {
+    # CONMEBOL copas: modelo sin escala da ~1.90-2.0g de promedio → alineado ✓
+    # Solo se aplica corrección LEVE para partidos extremos
+    "13":   0.95,   # Copa Libertadores:  real 1.90g → ajuste -5%
+    "CLI":  0.95,
+    "11":   1.05,   # Copa Sudamericana:  real 2.15g → ajuste +5%
+    "CSA":  1.05,
+    # Brasileirao: modelo sin escala da ~2.70g pero real es 3.25g → +20%
+    "71":   1.20,
+    "72":   1.05,
+    # Otras LATAM
+    "239":  0.95,   # Argentina Primera:  similar a Copa Lib
+    "128":  1.00,   # Liga BetPlay Colombia
+    "262":  1.00,   # Liga MX
+    "265":  0.95,   # Chile Primera
+    "253":  1.00,   # MLS
+    # Europa — ya calibrado con PROMEDIO=1.35
+    "39":  1.05, "PL":  1.05,   # Premier League ligeramente más goles
+    "78":  1.10, "BL1": 1.10,   # Bundesliga alta anotación
+    "135": 0.95, "SA":  0.95,
+    "140": 0.95, "PD":  0.95,
+    "61":  0.95, "FL1": 0.95,
+    "2":   1.00, "CL":  1.00,
+    "3":   1.00,
+    "103": 1.10, "113": 1.10,
+}
+
+# Liga IDs CONMEBOL para filtrar forma por competición específica
+_LIGAS_CONMEBOL_IDS = {"13", "11", "CLI", "CSA"}
+_LIGA_CODE_TO_APIFB_ID = {
+    "13": 13, "CLI": 13,
+    "11": 11, "CSA": 11,
+    "71": 71, "72": 72,
+    "128": 128, "239": 239, "262": 262, "265": 265,
+}
+
 def calcular_goles_esperados(local, visitante, liga_code="", sede_neutral=False):
     stats_l = dict(get_stats_equipo(local))
     stats_v = dict(get_stats_equipo(visitante))
 
     # ── Enriquecer con forma reciente (API-Football) ────────────
+    # Para Copa Lib/Suda y ligas LATAM: filtra por la competición específica
+    # para usar estadísticas del equipo EN ESA copa, no en su liga doméstica.
     if APIFOOTBALL_KEY:
-        forma_l = obtener_forma_reciente(local)
-        forma_v = obtener_forma_reciente(visitante)
+        liga_apifb_id = _LIGA_CODE_TO_APIFB_ID.get(liga_code)
+        forma_l = obtener_forma_reciente(local,  liga_id=liga_apifb_id)
+        forma_v = obtener_forma_reciente(visitante, liga_id=liga_apifb_id)
+        if not forma_l:  # fallback a todos los partidos si no hay suficientes en esa copa
+            forma_l = obtener_forma_reciente(local)
+        if not forma_v:
+            forma_v = obtener_forma_reciente(visitante)
         # Blend: 40% temporada + 60% últimos 5 partidos
         if forma_l:
             stats_l["ataque"]  = round(stats_l["ataque"]  * 0.4 + forma_l["ataque_reciente"]  * 0.6, 3)
@@ -1063,6 +1122,15 @@ def calcular_goles_esperados(local, visitante, liga_code="", sede_neutral=False)
                 local, visitante, liga_code, goles_local, goles_visita)
         except Exception:
             pass
+
+    # ── Escala por liga: corrige con promedios reales de la competición ─
+    # Evita que el modelo use stats domésticas sin ajustar para torneos
+    # donde el promedio de goles es muy diferente (Copa Lib: 1.90g, Brasileirao: 3.25g)
+    escala = ESCALA_GOLES_LIGA.get(liga_code, 1.0)
+    if escala != 1.0:
+        goles_local  = round(goles_local  * escala, 3)
+        goles_visita = round(goles_visita * escala, 3)
+        print(f"    Escala liga {liga_code}: x{escala:.3f} → {goles_local:.2f}g / {goles_visita:.2f}g")
 
     return goles_local, goles_visita
 
