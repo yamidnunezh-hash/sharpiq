@@ -1,5 +1,5 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-27 — resultados confirmados
+// Actualizado: 2026-05-27 — Vegas WIN confirmado
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
@@ -122,18 +122,6 @@ const PROXIMOS_EVENTOS = [
     resultado:  "pendiente"
   },
   {
-    fecha:      "26/05/26",
-    partido:    "Vegas Golden Knights vs Colorado Avalanche",
-    liga:       "NHL",
-    prediccion: "Gana Vegas Golden Knights — EV +33%",
-    cuota:      "2.7",
-    hora:       "20:20 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    resultado:  "pendiente"
-  },
-  {
     fecha:      "30/05/26",
     partido:    "PSG vs Arsenal",
     liga:       "UEFA Champions League Final",
@@ -160,6 +148,14 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "26/05/26",
+    partido:    "Vegas Golden Knights vs Colorado Avalanche",
+    liga:       "NHL",
+    prediccion: "Gana Vegas Golden Knights — EV +33%",
+    cuota:      "2.7",
+    resultado:  "win"
+  },
   {
     fecha:      "27/05/26",
     partido:    "Olimpia Asunción vs Audax Italiano",
