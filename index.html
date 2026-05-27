@@ -406,7 +406,7 @@
     .liga-filters{display:flex;gap:8px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.01)}
     .liga-btn{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;padding:5px 12px;border-radius:5px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s}
     .liga-btn:hover{color:var(--t1);border-color:var(--t2)}
-    .liga-btn.active{background:rgba(0,200,255,.12);border-color:rgba(0,200,255,.4);color:var(--gold)}
+    .liga-btn.active{background:rgba(0,102,204,.1);border-color:rgba(0,102,204,.4);color:#004FA3;font-weight:700}
     /* P&L column */
     .pl-pos{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--green)}
     .pl-neg{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--red)}
@@ -450,13 +450,13 @@
 
     /* ── PRÓXIMOS EVENTOS ── */
     .upcoming-wrap{
-      background:var(--bg1);border:1px solid rgba(0,200,255,.2);
+      background:var(--bg1);border:1px solid rgba(0,102,204,.18);
       border-radius:16px;overflow:hidden;margin-bottom:0;
     }
     .upcoming-header{
-      padding:16px 24px;border-bottom:1px solid rgba(0,200,255,.15);
+      padding:16px 24px;border-bottom:1px solid rgba(0,102,204,.12);
       display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
-      background:rgba(0,200,255,.04);
+      background:rgba(0,102,204,.03);
     }
     .upcoming-grid{
       display:grid;
@@ -1966,7 +1966,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
       ? `<span style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);color:#ef4444;font-size:9px;font-family:'Space Mono',monospace;padding:2px 8px;border-radius:4px;letter-spacing:1px">🔴 EN VIVO</span>`
       : tipo==='finished'
       ? `<span style="background:rgba(100,100,100,.15);border:1px solid rgba(255,255,255,.1);color:var(--t2);font-size:9px;font-family:'Space Mono',monospace;padding:2px 8px;border-radius:4px;letter-spacing:1px">✅ FINAL</span>`
-      : `<span style="background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.25);color:var(--gold);font-size:9px;font-family:'Space Mono',monospace;padding:2px 8px;border-radius:4px;letter-spacing:1px" data-ts="${g.ts}" data-cd="1">⏱ <span class="cd-val"></span></span>`;
+      : `<span style="background:rgba(0,102,204,.08);border:1px solid rgba(0,102,204,.3);color:#004FA3;font-size:9px;font-family:'Space Mono',monospace;padding:2px 8px;border-radius:4px;letter-spacing:1px;font-weight:700" data-ts="${g.ts}" data-cd="1">⏱ <span class="cd-val"></span></span>`;
 
     return `<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;">
       <div style="display:flex;align-items:center;justify-content:space-between">
@@ -2067,8 +2067,8 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
       badgeTxt.textContent = 'EN VIVO';
       count.textContent = live.length + ' picks SharpIQ en vivo';
     } else {
-      badge.style.background = 'rgba(0,200,255,.12)';
-      badge.style.borderColor = 'rgba(0,200,255,.3)';
+      badge.style.background = 'rgba(0,102,204,.12)';
+      badge.style.borderColor = 'rgba(0,102,204,.35)';
       badgeTxt.textContent = 'SEGUIMIENTO';
       count.textContent = total + ' picks SharpIQ activos';
     }
@@ -2082,11 +2082,11 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
       const _isVip = (localStorage.getItem('sharpiq_role')||'') === 'vip' || (localStorage.getItem('sharpiq_role')||'') === 'admin';
       const mostrarPick = p.status === 'free' || _isVip;
       const pickBlock = mostrarPick
-        ? `<div style="margin-top:6px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);border-radius:6px;padding:5px 10px;font-family:'Space Mono',monospace;font-size:10px;color:#22c55e">
-             ✅ ${p.prediccion.split('—')[0].trim()} <span style="color:#00C8FF;font-weight:700">@${p.cuota}</span>
-             ${p.resultado==='win'?' <span style="color:#22c55e">WIN ✅</span>':p.resultado==='loss'?' <span style="color:#ef4444">LOSS ❌</span>':''}
+        ? `<div style="margin-top:6px;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.3);border-radius:6px;padding:5px 10px;font-family:'Space Mono',monospace;font-size:10px;color:#15803D">
+             ✅ ${p.prediccion.split('—')[0].trim()} <span style="color:#004FA3;font-weight:700">@${p.cuota}</span>
+             ${p.resultado==='win'?' <span style="color:#15803D;font-weight:700">WIN ✅</span>':p.resultado==='loss'?' <span style="color:#dc2626;font-weight:700">LOSS ❌</span>':''}
            </div>`
-        : `<div style="margin-top:6px;background:rgba(123,92,240,.08);border:1px solid rgba(123,92,240,.25);border-radius:6px;padding:5px 10px;font-family:'Space Mono',monospace;font-size:10px;color:#7B5CF0">🔒 Pick VIP — <a href="login.html" style="color:#00C8FF">Ver pick</a></div>`;
+        : `<div style="margin-top:6px;background:rgba(0,102,204,.07);border:1px solid rgba(0,102,204,.3);border-radius:6px;padding:5px 10px;font-family:'Space Mono',monospace;font-size:10px;color:#004FA3;font-weight:600">🔒 Pick VIP — <a href="login.html" style="color:#0066CC;font-weight:700">Accede aquí</a></div>`;
       return cardHTML(g, tipo).replace('</div>', pickBlock + '</div>');
     }
 
