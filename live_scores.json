@@ -1,7 +1,6 @@
 {
-  "updated": "2026-05-27T08:54:54Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-05-27T18:14:55Z",
+  "live": [
     {
       "id": "6dd8c66f2fcc65059e5f099901f4a42b",
       "sport": "baseball_mlb",
@@ -13,8 +12,8 @@
       "hora": "12:08 COT",
       "ts": 1779883680,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "0320eab1e5e078823858b2f7f29d919a",
@@ -27,8 +26,8 @@
       "hora": "12:11 COT",
       "ts": 1779883860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "08f2eded5b37b8a80dd09b88ff5a13bc",
@@ -38,12 +37,14 @@
       "home": "Milwaukee Brewers",
       "away": "St. Louis Cardinals",
       "fecha": "27/05/26",
-      "hora": "12:41 COT",
-      "ts": 1779885660,
+      "hora": "12:43 COT",
+      "ts": 1779885780,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "adfc9cd4529fc7b4ed6fb31e0e3d714c",
       "sport": "baseball_mlb",
@@ -208,6 +209,48 @@
       "fecha": "27/05/26",
       "hora": "17:35 COT",
       "ts": 1779903300,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "2b326f001d0f02dd0d2032f5291d9966",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Pittsburgh Pirates",
+      "away": "Chicago Cubs",
+      "fecha": "27/05/26",
+      "hora": "17:41 COT",
+      "ts": 1779903660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "22b2c62258204f36738be815101ba92b",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Detroit Tigers",
+      "away": "Los Angeles Angels",
+      "fecha": "27/05/26",
+      "hora": "17:41 COT",
+      "ts": 1779903660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "880e1e94ed3cbd5f07937fd05887eb09",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Boston Red Sox",
+      "away": "Atlanta Braves",
+      "fecha": "27/05/26",
+      "hora": "17:46 COT",
+      "ts": 1779903960,
       "completed": false,
       "score_home": null,
       "score_away": null
