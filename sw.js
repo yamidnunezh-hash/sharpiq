@@ -1,6 +1,6 @@
 // SharpIQ Service Worker — actualización automática garantizada
 // Cambia CACHE_VERSION en cada deploy importante para forzar recarga global
-const CACHE_VERSION = 'sharpiq-v11';
+const CACHE_VERSION = 'sharpiq-v12';
 const STATIC_ASSETS = [
   '/assets/icon-192.png',
   '/assets/icon-512.png',
@@ -39,6 +39,15 @@ self.addEventListener('fetch', e => {
 
   // Ignorar peticiones externas (APIs, CDNs)
   if (url.origin !== self.location.origin) return;
+
+  // datos.js NUNCA se cachea — siempre fresco del servidor
+  if (path.includes('datos.js')) {
+    e.respondWith(
+      fetch(e.request, {cache: 'no-store'})
+        .catch(() => new Response('const PROXIMOS_EVENTOS=[];const PREDICCIONES_HISTORIAL=[];', {headers:{'Content-Type':'application/javascript'}}))
+    );
+    return;
+  }
 
   const esNetworkFirst = NETWORK_FIRST.some(p => path === p || path.endsWith(p))
     || path.endsWith('.html')
