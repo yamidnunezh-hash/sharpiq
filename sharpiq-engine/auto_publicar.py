@@ -254,11 +254,12 @@ def correr():
         hora_cot  = _hora_cot(pred.get("hora", "00:00"))
         ev_val    = round(t.get("ev_pinn", t.get("ev", 0)) or 0)
         fecha_ev  = pred.get("fecha_evento") or pred.get("fecha") or None
-        stake_pct = _STAKE_PCT.get(k, 3)
+        # Kelly dinámico — si no hay kelly_pct cae al tope del tier (seguro/principal=3%, alto_valor=2%)
+        stake_pct = t.get("kelly_pct") or _STAKE_PCT.get(k, 3)
         _agregar_a_datos_js(partido, liga, t["mercado_nombre"], str(t["cuota"]),
                             hora_cot, ev_val, fecha_evento=fecha_ev,
                             tier=k, stake_pct=stake_pct)
-        LOG.info(f"datos.js [{k}]: {partido} | {t['mercado_nombre']} @{t['cuota']}")
+        LOG.info(f"datos.js [{k}]: {partido} | {t['mercado_nombre']} @{t['cuota']} | Kelly {stake_pct}%")
 
     # ── Git push ─────────────────────────────────────────────────
     repo_dir = os.path.join(BASE_DIR, "..")
@@ -339,6 +340,13 @@ def correr():
         except Exception as e:
             print(f"  Push error: {e}")
 
+    # ── Auto-resultados: actualizar picks pendientes de días anteriores ──
+    try:
+        from auto_resultados import correr as _correr_resultados
+        _correr_resultados()
+    except Exception as e:
+        LOG.error(f"Auto-resultados error: {e}")
+
     # ── Monitor en vivo ──────────────────────────────────────────
     try:
         monitor_path = os.path.join(BASE_DIR, "live_monitor.py")
@@ -346,9 +354,9 @@ def correr():
             [sys.executable, monitor_path],
             creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
         )
-        print("  Monitor en vivo iniciado")
+        LOG.info("Monitor en vivo iniciado")
     except Exception as e:
-        print(f"  Monitor en vivo error: {e}")
+        LOG.error(f"Monitor en vivo error: {e}")
 
     return tiers
 

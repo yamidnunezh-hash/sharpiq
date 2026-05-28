@@ -4,13 +4,13 @@ SharpIQ — Auto Resultados
 Detecta partidos publicados que ya terminaron, evalúa la predicción
 y actualiza datos.js automáticamente con win/loss + push a GitHub.
 """
-import os, sys, re, json, subprocess
+import os, sys, re, json, subprocess, logging
 from datetime import date, timedelta
 
 BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
 from config import APIFOOTBALL_KEY
-from motor import _apifb, LIGAS_APIFB
+from motor import _apifb, LIGAS_APIFB, LOG
 
 # Mapeo predicción (display) → clave de mercado en DB
 _PRED_TO_MERCADO = {
@@ -167,68 +167,85 @@ def evaluar(prediccion, gl, gv, local="", visitante=""):
 
 # ── ACTUALIZAR datos.js ──────────────────────────────────────────
 
-def mover_a_historial(texto, evento, resultado):
-    """Quita el evento de PROXIMOS_EVENTOS y lo agrega al inicio de HISTORIAL."""
-    # Construir el bloque del evento para buscarlo y eliminarlo
-    # Buscamos el bloque que contenga el partido exacto
-    patron_bloque = r'\{\s*' + ''.join(
-        rf'\s*{k}\s*:\s*"{re.escape(v)}"\s*,' for k, v in evento.items() if k != 'status'
+def _actualizar_en_proximos(texto, partido, resultado):
+    """
+    Actualiza resultado:"pendiente" → win/loss/push en PROXIMOS_EVENTOS (in-place).
+    La entrada se mantiene visible en la web con el resultado correcto.
+    """
+    partido_esc = re.escape(partido)
+    # Reemplaza solo el campo resultado del bloque que contiene este partido
+    patron = re.compile(
+        r'(partido:\s*"' + partido_esc + r'"[^}]*?resultado:\s*")(pendiente)(")',
+        re.DOTALL,
     )
-    # Búsqueda más simple: por el campo 'partido'
-    partido_esc = re.escape(evento['partido'])
-    # Eliminar el bloque completo del evento de PROXIMOS_EVENTOS
-    patron = r'\s*\{[^}]*partido\s*:\s*"' + partido_esc + r'"[^}]*\},?'
-    texto_nuevo = re.sub(patron, '', texto, count=1)
+    nuevo, n = patron.subn(r'\g<1>' + resultado + r'\g<3>', texto)
+    return nuevo, n
 
-    # Construir entrada para HISTORIAL
-    tier_str      = f'\n    tier:       "{evento["tier"]}",'      if evento.get("tier")      else ""
-    stake_pct_str = f'\n    stake_pct:  "{evento["stake_pct"]}",'  if evento.get("stake_pct") else ""
+
+def _agregar_a_historial(texto, evento, resultado):
+    """
+    Añade la entrada al inicio de PREDICCIONES_HISTORIAL si aún no existe.
+    Evita duplicados buscando el partido antes de insertar.
+    """
+    partido_esc = re.escape(evento['partido'])
+    if re.search(r'partido:\s*"' + partido_esc + r'"', texto):
+        # ya existe en historial (puede estar en PROXIMOS o en HISTORIAL)
+        # Verificar si YA está en PREDICCIONES_HISTORIAL específicamente
+        hist_match = re.search(
+            r'PREDICCIONES_HISTORIAL\s*=\s*\[(.*)',
+            texto, re.DOTALL
+        )
+        if hist_match and partido_esc.replace(r'\ ', ' ') in hist_match.group(1).replace('\\', ''):
+            return texto  # ya está en historial, no duplicar
+
     nueva_entrada = f'''  {{
     fecha:      "{evento.get('fecha', date.today().strftime('%d/%m/%y'))}",
     partido:    "{evento['partido']}",
-    liga:       "{evento['liga']}",
-    prediccion: "{evento['prediccion']}",
-    cuota:      "{evento['cuota']}",
-    resultado:  "{resultado}"{tier_str}{stake_pct_str}
+    liga:       "{evento.get('liga', '')}",
+    prediccion: "{evento.get('prediccion', '')}",
+    cuota:      "{evento.get('cuota', '')}",
+    resultado:  "{resultado}"
   }},'''
 
-    # Insertar al inicio del historial
-    texto_nuevo = re.sub(
+    return re.sub(
         r'(const\s+PREDICCIONES_HISTORIAL\s*=\s*\[)',
         r'\1\n' + nueva_entrada,
-        texto_nuevo
+        texto
     )
-    return texto_nuevo
 
 
 # ── MAIN ─────────────────────────────────────────────────────────
 
 def correr():
-    print("\n SharpIQ — Auto Resultados")
+    LOG.info("=== SharpIQ Auto Resultados START ===")
 
     texto = leer_datos()
     proximos = _extraer_array(texto, 'PROXIMOS_EVENTOS')
 
-    if not proximos:
-        print("  Sin eventos pendientes en datos.js")
+    pendientes = [e for e in proximos if e.get('resultado') == 'pendiente']
+    if not pendientes:
+        LOG.info("Auto-resultados: no hay picks pendientes")
         return 0
 
-    print(f"  Eventos pendientes: {len(proximos)}")
+    LOG.info(f"Auto-resultados: {len(pendientes)} picks pendientes")
 
-    # Obtener partidos finalizados de hoy y ayer
-    fechas = [date.today().isoformat(), (date.today() - timedelta(days=1)).isoformat()]
+    # Buscar partidos finalizados en los últimos 3 días (cubre fines de semana)
+    fechas = [
+        (date.today() - timedelta(days=i)).isoformat()
+        for i in range(3)
+    ]
     fixtures_ft = []
-    for fecha in fechas:
-        data = _apifb("fixtures", {"date": fecha})
+    for fecha_iso in fechas:
+        data = _apifb("fixtures", {"date": fecha_iso})
         if data and data.get("response"):
             for f in data["response"]:
-                if f["fixture"]["status"]["short"] == "FT":
+                if f["fixture"]["status"]["short"] in ("FT", "AET", "PEN"):
                     fixtures_ft.append(f)
 
-    print(f"  Partidos FT encontrados en API: {len(fixtures_ft)}")
+    LOG.info(f"Partidos FT en API (últimos 3 días): {len(fixtures_ft)}")
 
     actualizados = 0
-    for evento in proximos:
+    for evento in pendientes:
         partido = evento.get('partido', '')
         partes  = partido.split(' vs ')
         if len(partes) != 2:
@@ -237,86 +254,90 @@ def correr():
 
         fixture = buscar_fixture(local_js, visita_js, fixtures_ft)
         if not fixture:
-            print(f"  ⏳ Sin resultado aún: {partido}")
+            LOG.info(f"  Sin resultado aún: {partido}")
             continue
 
         gl = fixture["score"]["fulltime"]["home"] or 0
         gv = fixture["score"]["fulltime"]["away"] or 0
         resultado = evaluar(evento.get('prediccion', ''), gl, gv, local_js, visita_js)
 
-        emoji = "✅" if resultado == 'win' else "❌"
-        print(f"  {emoji} {partido} | {gl}-{gv} | {evento.get('prediccion','')} → {resultado.upper()}")
+        emoji = "✅" if resultado == 'win' else ("➖" if resultado == 'push' else "❌")
+        LOG.info(f"  {emoji} {partido} [{gl}-{gv}] → {resultado.upper()}")
 
-        texto = mover_a_historial(texto, evento, resultado)
+        # Actualizar in-place en PROXIMOS_EVENTOS (mantiene la entry visible en web)
+        texto, n_upd = _actualizar_en_proximos(texto, partido, resultado)
+        if not n_upd:
+            LOG.warning(f"  No se pudo actualizar resultado en PROXIMOS: {partido}")
+
+        # Agregar al historial si no está ya
+        texto = _agregar_a_historial(texto, evento, resultado)
         actualizados += 1
 
-        # Registrar resultado en PostgreSQL (CLV tracking)
+        # Registrar en DB CLV
         try:
             from db_clv import actualizar_resultado as _db_resultado
             mercado_key = _pred_to_mercado_key(evento.get('prediccion', ''))
             _db_resultado(partido, mercado_key, resultado)
         except Exception as _dbe:
-            print(f"  DB CLV resultado: {_dbe}")
+            LOG.debug(f"DB CLV resultado: {_dbe}")
 
-        # Guardar snapshot de cierre y calcular CLV
+        # Snapshot de cierre + CLV
         clv_texto = ""
         try:
-            from motor import buscar_cuotas_partido, LIGAS_ODDS
+            from motor import LIGAS_ODDS
             from database import inicializar, guardar_snapshot, get_movimiento
             inicializar()
-            fid = fixture.get("fixture", {}).get("id")
+            fid     = fixture.get("fixture", {}).get("id")
             liga_id = str(fixture.get("league", {}).get("id", ""))
             sport_key = LIGAS_ODDS.get(liga_id)
             if fid and sport_key:
-                cuotas_cierre = buscar_cuotas_partido(local_js, visita_js, sport_key)
-                if cuotas_cierre:
-                    guardar_snapshot(fid, local_js, visita_js,
-                                     date.today().isoformat(), "tarde", cuotas_cierre)
-                    mov = get_movimiento(fid)
-                    if mov and mov.get("mercados"):
-                        mercados = mov["mercados"]
-                        lineas_clv = []
-                        for m, datos in mercados.items():
-                            pct = datos.get("cambio_pct", 0)
-                            if abs(pct) >= 3:
-                                dir = "▼" if pct < 0 else "▲"
-                                lineas_clv.append(f"{m}: {datos['apertura']} → {datos['actual']} ({dir}{abs(pct)}%)")
-                        if lineas_clv:
-                            clv_texto = "\n📊 <b>CLV:</b> " + " | ".join(lineas_clv)
-                            print(f"  CLV: {' | '.join(lineas_clv)}")
+                guardar_snapshot(fid, local_js, visita_js,
+                                 date.today().isoformat(), "cierre", {})
+                mov = get_movimiento(fid)
+                if mov and mov.get("mercados"):
+                    lineas_clv = []
+                    for mk, d in mov["mercados"].items():
+                        pct = d.get("cambio_pct", 0)
+                        if abs(pct) >= 3:
+                            dir_arrow = "▼" if pct < 0 else "▲"
+                            lineas_clv.append(f"{mk}: {d['apertura']} → {d['actual']} ({dir_arrow}{abs(pct)}%)")
+                    if lineas_clv:
+                        clv_texto = " | ".join(lineas_clv)
+                        LOG.info(f"  CLV: {clv_texto}")
         except Exception as clv_e:
-            print(f"  CLV error: {clv_e}")
+            LOG.debug(f"CLV snapshot: {clv_e}")
 
-        # Notificar resultado — free + VIP
+        # Notificar en Telegram
         try:
             from telegram_alertas import enviar_resultado_free, enviar_resultado_vip, enviar_aviso_yamid
-            resultado_texto = f"WIN ✅  {gl}-{gv}" if resultado == 'win' else f"LOSS ❌  {gl}-{gv}"
+            resultado_texto = f"WIN ✅  {gl}-{gv}" if resultado == 'win' else (
+                f"PUSH ➖  {gl}-{gv}" if resultado == 'push' else f"LOSS ❌  {gl}-{gv}"
+            )
             enviar_resultado_free(partido, resultado_texto, emoji)
             enviar_resultado_vip(partido, resultado_texto, emoji)
-            # Reporte CLV privado a Yamid
             if clv_texto:
-                enviar_aviso_yamid(f"📈 CLV {partido}\n{resultado_texto}{clv_texto}")
+                enviar_aviso_yamid(f"📈 CLV {partido}\n{resultado_texto}\n📊 {clv_texto}")
         except Exception as te:
-            print(f"  Telegram resultado error: {te}")
+            LOG.error(f"Telegram resultado: {te}")
 
     if actualizados > 0:
         escribir_datos(texto)
-        print(f"\n  datos.js actualizado ({actualizados} resultado/s)")
+        LOG.info(f"datos.js actualizado — {actualizados} resultado/s")
 
-        # Git push automático
         repo_dir = os.path.join(BASE_DIR, "..")
         try:
             subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=repo_dir, capture_output=True)
             subprocess.run(["git", "add", "datos.js"], cwd=repo_dir, check=True)
-            subprocess.run(["git", "commit", "-m",
-                f"auto: resultados actualizados ({date.today().isoformat()})"],
-                cwd=repo_dir, check=True)
+            subprocess.run(
+                ["git", "commit", "-m", f"auto: resultados {date.today().isoformat()}"],
+                cwd=repo_dir, check=True,
+            )
             subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=True)
-            print("  GitHub actualizado ✓")
+            LOG.info("GitHub actualizado")
         except subprocess.CalledProcessError as e:
-            print(f"  Git error: {e}")
+            LOG.error(f"Git error: {e}")
     else:
-        print("  Sin nuevos resultados disponibles")
+        LOG.info("Auto-resultados: sin nuevos resultados disponibles")
 
     return actualizados
 
@@ -389,9 +410,9 @@ def enviar_resumen_roi_semanal():
     try:
         from telegram_alertas import enviar_aviso_yamid
         enviar_aviso_yamid(msg)
-        print(f"  ROI {roi['mes']}: {roi['roi_pct']:+.1f}% | {ganancia_fmt} COP")
+        LOG.info(f"ROI {roi['mes']}: {roi['roi_pct']:+.1f}% | {ganancia_fmt} COP")
     except Exception as e:
-        print(f"  ROI telegram error: {e}")
+        LOG.error(f"ROI telegram error: {e}")
 
 
 if __name__ == "__main__":

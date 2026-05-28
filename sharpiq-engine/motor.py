@@ -2998,6 +2998,25 @@ def _alertar_steam(reporte):
     ok = enviar_aviso_yamid(texto)
     print(f"  Steam alert: {'OK' if ok else 'FALLO'} ({len(alertas)} partido/s)")
 
+def kelly_stake(prob_pct, cuota, fraccion=0.5, min_pct=1.0, max_pct=5.0):
+    """
+    Half-Kelly Criterion: fracción óptima del bankroll.
+    prob_pct : probabilidad en porcentaje (0-100)
+    cuota    : cuota decimal (ej. 2.10)
+    fraccion : 0.5 = half-Kelly (recomendado para reducir varianza)
+    Devuelve el stake recomendado en porcentaje del bankroll, acotado entre min_pct y max_pct.
+    """
+    p = prob_pct / 100.0
+    if p <= 0 or cuota <= 1.0:
+        return min_pct
+    b = cuota - 1.0
+    kelly_full = (b * p - (1 - p)) / b
+    if kelly_full <= 0:
+        return min_pct
+    stake = kelly_full * fraccion * 100   # en porcentaje
+    return round(min(max(stake, min_pct), max_pct), 1)
+
+
 def clasificar_tiers(reporte):
     """
     Selecciona los 3 picks del día evaluando TODOS los mercados disponibles.
@@ -3089,6 +3108,7 @@ def clasificar_tiers(reporte):
                     "cuota":          cuota_f,
                     "ev_pinn":        ev_p,
                     "ev":             ev_p,
+                    "kelly_pct":      kelly_stake(prob, cuota_f),
                 }
 
                 # SEGURO: máxima probabilidad con EV positivo
@@ -3130,6 +3150,7 @@ def clasificar_tiers(reporte):
                     "cuota":          cuota_val,
                     "ev_pinn":        ev_v,
                     "ev":             ev_v,
+                    "kelly_pct":      kelly_stake(prob_val, cuota_val),
                 }
                 if prob_val >= SEGURO_MIN_PROB and cuota_val <= SEGURO_MAX_CUOTA:
                     seguro_pool.append({**c, "score": prob_val})
@@ -3158,6 +3179,7 @@ def clasificar_tiers(reporte):
                     "cuota":          cuota_val,
                     "ev_pinn":        ev_p,
                     "ev":             ev_p,
+                    "kelly_pct":      kelly_stake(prob_val, cuota_val),
                 }
                 if prob_val >= SEGURO_MIN_PROB and cuota_val <= SEGURO_MAX_CUOTA:
                     seguro_pool.append({**c, "score": prob_val * (1 + ev_p / 200)})
