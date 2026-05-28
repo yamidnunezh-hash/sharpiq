@@ -626,11 +626,17 @@ def enviar_mercados_ext_vip(pred):
     if not ext:
         return False
 
-    local    = pred["local"]
+    local     = pred["local"]
     visitante = pred["visitante"]
-    corners  = ext.get("corners",  {})
-    tarjetas = ext.get("tarjetas", {})
-    handicap = ext.get("handicap", {})
+    corners   = ext.get("corners",  {})
+    tarjetas  = ext.get("tarjetas", {})
+    handicap  = ext.get("handicap", {})
+
+    # No enviar si los datos son todos cero (equipo sin stats en API-Football)
+    c_esp = corners.get("corners_esperados", 0)
+    t_esp = tarjetas.get("tarjetas_esperadas", 0)
+    if (not c_esp or float(c_esp) == 0.0) and (not t_esp or float(t_esp) == 0.0):
+        return False
 
     # ── Corners ──────────────────────────────────────────────────
     c_esp = corners.get("corners_esperados", "?")

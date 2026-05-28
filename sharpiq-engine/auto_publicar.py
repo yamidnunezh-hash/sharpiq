@@ -40,12 +40,16 @@ def _leer_predicciones():
         return json.load(f)
 
 
-def _ya_publicado(partido):
-    """Verifica si el partido ya está en PROXIMOS_EVENTOS de datos.js."""
+def _ya_publicado(local, visitante=""):
+    """Verifica si el partido (local vs visitante) ya está en PROXIMOS_EVENTOS."""
     try:
         with open(DATOS_PATH, encoding="utf-8") as f:
-            contenido = f.read()
-        return partido.lower()[:20] in contenido.lower()
+            contenido = f.read().lower()
+        # Verificar partido completo "local vs visitante" para evitar falsos positivos
+        # cuando un equipo aparece como visitante en un pick anterior
+        partido_str = f"{local} vs {visitante}".lower() if visitante else local.lower()
+        # Buscar el string completo (mínimo 25 chars para evitar matches parciales)
+        return partido_str[:30] in contenido
     except Exception:
         return False
 
@@ -175,8 +179,8 @@ def correr():
         t = tiers.get(k)
         if not t:
             continue
-        if _ya_publicado(t["pred"]["local"]):
-            LOG.info(f"Tier {k} ya publicado: {t['pred']['local']}")
+        if _ya_publicado(t["pred"]["local"], t["pred"].get("visitante", "")):
+            LOG.info(f"Tier {k} ya publicado: {t['pred']['local']} vs {t['pred'].get('visitante','')}")
             tiers[k] = None
             continue
         # Descartar si el partido ya empezó o si está fuera de la ventana horaria
