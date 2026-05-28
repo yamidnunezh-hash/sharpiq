@@ -3,18 +3,7 @@
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
-  {
-    fecha:      "29/05/26",
-    partido:    "Quentin Halys vs Alexander Zverev",
-    liga:       "ATP Roland Garros",
-    prediccion: "Gana Alexander Zverev",
-    cuota:      "1.06",
-    hora:       "13:15 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0"
-  },
-  {
+{
     fecha:      "29/05/26",
     partido:    "Elina Svitolina vs Tamara Korpatsch",
     liga:       "WTA Roland Garros",
@@ -25,65 +14,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3"
   },
-  {
-    fecha:      "27/05/26",
-    partido:    "Nishesh Basavareddy vs Alex Michelsen",
-    liga:       "ATP Roland Garros",
-    prediccion: "Gana Alex Michelsen",
-    cuota:      "1.56",
-    hora:       "08:30 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "3"
-  },
-  {
-    fecha:      "27/05/26",
-    partido:    "Francesca Jones vs Marie Bouzkova",
-    liga:       "WTA Roland Garros",
-    prediccion: "Gana Marie Bouzkova",
-    cuota:      "1.29",
-    hora:       "08:30 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3"
-  },
-  {
-    fecha:      "27/05/26",
-    partido:    "Cienciano vs CA Juventud",
-    liga:       "Copa Sudamericana",
-    prediccion: "Under 2.5 goles — EV +39% (altitud Cusco 3400m)",
-    cuota:      "1.81",
-    hora:       "17:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    resultado:  "win"
-  },
-  {
-    fecha:      "27/05/26",
-    partido:    "Caracas FC vs Botafogo",
-    liga:       "Copa Sudamericana",
-    prediccion: "Under 2.5 goles — EV +21%",
-    cuota:      "1.75",
-    hora:       "17:00 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "3",
-    resultado:  "loss"
-  },
-  {
-    fecha:      "27/05/26",
-    partido:    "Montréal Canadiens vs Carolina Hurricanes",
-    liga:       "NHL",
-    prediccion: "Gana Montréal Canadiens — EV +28%",
-    cuota:      "3.05",
-    hora:       "19:15 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "3",
-    resultado:  "loss"
-  },
-  {
+{
     fecha:      "28/05/26",
     partido:    "América de Cali vs Macará",
     liga:       "Copa Sudamericana",
@@ -95,7 +26,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     resultado:  "pendiente"
   },
-  {
+{
     fecha:      "28/05/26",
     partido:    "Bolívar vs Independiente Rivadavia",
     liga:       "Copa Libertadores",
@@ -107,7 +38,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     resultado:  "loss"
   },
-  {
+{
     fecha:      "28/05/26",
     partido:    "Corinthians vs Platense",
     liga:       "Copa Libertadores",
@@ -119,7 +50,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     resultado:  "win"
   },
-  {
+{
     fecha:      "28/05/26",
     partido:    "Cerro Porteño vs Sporting Cristal",
     liga:       "Copa Libertadores",
@@ -131,7 +62,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     resultado:  "pendiente"
   },
-  {
+{
     fecha:      "28/05/26",
     partido:    "Peñarol vs Independiente Santa Fe",
     liga:       "Copa Libertadores",
@@ -143,7 +74,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     resultado:  "win"
   },
-  {
+{
     fecha:      "29/05/26",
     partido:    "Boca Juniors vs U. Católica (Chile)",
     liga:       "Copa Libertadores",
@@ -155,7 +86,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     resultado:  "pendiente"
   },
-  {
+{
     fecha:      "30/05/26",
     partido:    "PSG vs Arsenal",
     liga:       "UEFA Champions League Final",
@@ -164,18 +95,6 @@ const PROXIMOS_EVENTOS = [
     hora:       "11:00 COT",
     status:     "vip",
     tier:       "principal",
-    stake_pct:  "3",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "30/05/26",
-    partido:    "PSG vs Arsenal",
-    liga:       "UEFA Champions League Final",
-    prediccion: "Under 2.5 Goles — EV +18%",
-    cuota:      "1.90",
-    hora:       "11:00 COT",
-    status:     "vip",
-    tier:       "seguro",
     stake_pct:  "3",
     resultado:  "pendiente"
   }

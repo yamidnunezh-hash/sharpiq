@@ -2773,13 +2773,6 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
 # ── GUARDAR JSON PARA EL PANEL ──────────────────────────────────
 def guardar_predicciones():
     LOG.info("=== SharpIQ Motor START ===")
-    try:
-        from db_clv import guardar_pick as _db_pick, inicializar as _db_init
-        _db_init()
-        _db_ok = True
-    except Exception as _e:
-        LOG.warning(f"DB CLV no disponible: {_e}")
-        _db_ok = False
 
     # ── Fútbol: todo desde The Odds API con Pinnacle ─────────────
     LOG.info("Analizando fútbol (The Odds API / Pinnacle)...")
@@ -2836,7 +2829,7 @@ def guardar_predicciones():
     reporte["total_partidos"] = len(reporte["predicciones"])
     descartados = antes - reporte["total_partidos"]
     if descartados:
-        LOG.info(f"Filtro 36h: {descartados} predicciones futuras eliminadas")
+        LOG.info(f"Filtro 48h: {descartados} predicciones futuras eliminadas")
 
     with open(JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(reporte, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
@@ -2850,64 +2843,13 @@ def guardar_predicciones():
             json.dump(mejor, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
         LOG.info(f"Mejor prediccion: {mejor['partido']} -- {mejor['prediccion']}")
 
+    # Telegram: solo resumen privado a Yamid (sin picks crudos al canal VIP)
+    # Los picks del canal VIP los gestiona exclusivamente auto_publicar.py → clasificar_tiers()
     if TELEGRAM_OK:
-        # Control de duplicados: si ya se enviaron alertas hoy, no reenviar
-        _sentinel = os.path.join(BASE_DIR, "logs", f"alertas_{reporte['fecha']}.sent")
-        _ya_enviado = os.path.exists(_sentinel)
-
-        LOG.info("Enviando alertas Telegram...")
-        alto_valor_enviados = 0
-        _mk2ck = {
-            "victoria_local":"1","empate":"X","victoria_visita":"2",
-            "over15":"over15","under15":"under15",
-            "over25":"over25","under25":"under25",
-            "over35":"over35","under35":"under35",
-            "btts_si":"btts_si","btts_no":"btts_no",
-        }
-
-        if _ya_enviado:
-            print("  Alertas de hoy ya enviadas — skip")
-        else:
-            # Por partido: solo enviar el mercado con mayor EV (no ambos equipos)
-            for pred in reporte["predicciones"]:
-                mejor_mk, mejor_vb, mejor_ev = None, None, -999
-                for mercado, vb in pred["value_bets"].items():
-                    if vb["clasificacion"] == "ALTO VALOR":
-                        ev_pinn = vb.get("ev_pinn", vb.get("ev_porcentaje", 0)) or 0
-                        if ev_pinn > mejor_ev:
-                            mejor_ev = ev_pinn
-                            mejor_mk, mejor_vb = mercado, vb
-
-                if mejor_mk is None:
-                    continue
-                if mejor_ev <= 0:
-                    continue
-
-                ok = enviar_alerta_value_bet(pred, mejor_mk, mejor_vb)
-                if ok:
-                    alto_valor_enviados += 1
-                    if _db_ok:
-                        _ck = _mk2ck.get(mejor_mk, mejor_mk)
-                        try:
-                            _db_pick(
-                                fecha=reporte["fecha"],
-                                partido=f"{pred['local']} vs {pred['visitante']}",
-                                liga=pred.get("liga", ""),
-                                mercado=mejor_mk,
-                                prob_modelo=pred["probabilidades"].get(mejor_mk, 50),
-                                cuota_apertura=float(pred["cuotas"].get(_ck) or 0),
-                                cuota_pinnacle=pred["cuotas"].get(f"pinnacle_{_ck}"),
-                            )
-                        except Exception:
-                            pass
-
-            if alto_valor_enviados:
-                print(f"  🔥 {alto_valor_enviados} alertas ALTO VALOR enviadas")
-                # Marcar como enviado para no duplicar
-                open(_sentinel, "w").close()
-
-        enviar_resumen_dia(reporte)
-        print("  📋 Resumen del día enviado")
+        try:
+            enviar_resumen_dia(reporte)
+        except Exception as _te:
+            LOG.warning(f"Resumen Telegram: {_te}")
 
     # Actualizar web con predicciones del día
     print("\n🌐 Actualizando web...")
@@ -3209,9 +3151,9 @@ def clasificar_tiers(reporte):
                     "ev":             ev_v,
                     "kelly_pct":      kelly_stake(prob_val, cuota_val),
                 }
-                if prob_val >= SEGURO_MIN_PROB and cuota_val <= SEGURO_MAX_CUOTA:
+                if prob_val >= SEGURO_MIN_PROB and cuota_val <= SEGURO_MAX_CUOTA and ev_v >= SEGURO_MIN_EV:
                     seguro_pool.append({**c, "score": prob_val})
-                if prob_val >= PRINC_MIN_PROB and PRINC_MIN_CUOTA <= cuota_val <= PRINC_MAX_CUOTA:
+                if prob_val >= PRINC_MIN_PROB and PRINC_MIN_CUOTA <= cuota_val <= PRINC_MAX_CUOTA and ev_v >= PRINC_MIN_EV:
                     principal_pool.append({**c, "score": prob_val * cuota_val})
 
         else:
@@ -3238,7 +3180,7 @@ def clasificar_tiers(reporte):
                     "ev":             ev_p,
                     "kelly_pct":      kelly_stake(prob_val, cuota_val),
                 }
-                if prob_val >= SEGURO_MIN_PROB and cuota_val <= SEGURO_MAX_CUOTA:
+                if prob_val >= SEGURO_MIN_PROB and cuota_val <= SEGURO_MAX_CUOTA and ev_p >= SEGURO_MIN_EV:
                     seguro_pool.append({**c, "score": prob_val * (1 + ev_p / 200)})
                 if prob_val >= PRINC_MIN_PROB and PRINC_MIN_CUOTA <= cuota_val <= PRINC_MAX_CUOTA and ev_p >= PRINC_MIN_EV:
                     principal_pool.append({**c, "score": ev_p * (prob_val / 100)})
