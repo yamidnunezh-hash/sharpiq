@@ -5,6 +5,17 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "29/05/26",
+    partido:    "Nice vs Saint Etienne",
+    liga:       "Ligue 1",
+    prediccion: "Under 2.5 Goles — EV +40%",
+    cuota:      "1.62",
+    hora:       "13:45 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "5.0"
+  },
+  {
+    fecha:      "29/05/26",
     partido:    "Carolina Hurricanes vs Montréal Canadiens",
     liga:       "NHL",
     prediccion: "Gana Carolina Hurricanes — EV +16%",
