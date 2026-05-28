@@ -1614,7 +1614,7 @@
   </div>
 </footer>
 
-<script src="datos.js?v=20260529-1"></script>
+<script src="datos.js?v=20260529-2"></script>
 <script>
 // Fallback: si datos.js no cargó (caché rota), recargar vía fetch
 if(typeof PROXIMOS_EVENTOS==='undefined'){
@@ -1719,7 +1719,11 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
 
   // Historial table + filters
   if(typeof PREDICCIONES_HISTORIAL!=='undefined'){
-    renderHistorial(PREDICCIONES_HISTORIAL);
+    // Combinar picks de PROXIMOS con resultado + historial completo
+    const _proxResueltos=(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS:[])
+      .filter(p=>p.resultado&&p.resultado!=='pendiente'&&p.resultado!=='pending');
+    const _historialCompleto=[..._proxResueltos,...PREDICCIONES_HISTORIAL];
+    renderHistorial(_historialCompleto);
 
     // Liga filter buttons
     const filters=document.getElementById('ligaFilters');
@@ -1749,11 +1753,16 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
 
     // Live stats from data
     const _isPending=r=>!r||r==='pending'||r==='pendiente';
-    const resolved=PREDICCIONES_HISTORIAL.filter(p=>!_isPending(p.resultado));
+    // Combinar historial + picks de proximos que ya tienen resultado
+    const _allPicks=[
+      ...(typeof PREDICCIONES_HISTORIAL!=='undefined'?PREDICCIONES_HISTORIAL:[]),
+      ...(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS.filter(p=>!_isPending(p.resultado)):[])
+    ];
+    const resolved=_allPicks.filter(p=>!_isPending(p.resultado));
     const wins=resolved.filter(p=>p.resultado==='win');
     const losses=resolved.filter(p=>p.resultado==='loss');
     let racha=0;
-    for(const p of PREDICCIONES_HISTORIAL){
+    for(const p of _allPicks){
       if(_isPending(p.resultado)) continue;
       if(p.resultado==='win') racha++; else break;
     }
@@ -2013,6 +2022,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
           <span class="ev-card-liga">${e.liga}</span>
           <div class="ev-card-badges">
             ${tc.label?`<span class="ev-badge-tier" style="background:${tc.bg};color:${tc.color};border:1px solid ${tc.color}40">${tc.label}</span>`:''}
+            ${e.resultado==='win'?'<span style="background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.4);padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700;font-family:Space Mono,monospace;letter-spacing:.5px">✓ ACIERTO</span>':e.resultado==='loss'?'<span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700;font-family:Space Mono,monospace;letter-spacing:.5px">✗ FALLO</span>':'<span style="background:rgba(148,163,184,.06);color:var(--t3);border:1px solid var(--border);padding:2px 8px;border-radius:20px;font-size:10px;font-family:Space Mono,monospace">⏳ EN CURSO</span>'}
             <span class="ev-badge-status" style="${e.status==='free'?'background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.35)':'background:rgba(0,102,204,.12);color:var(--gold);border:1px solid rgba(0,102,204,.35)'}">${e.status==='free'?'FREE':'VIP'}</span>
           </div>
         </div>
