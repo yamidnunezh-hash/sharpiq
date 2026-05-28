@@ -7,10 +7,15 @@ Solo publica si tiene cuota REAL de la API (no estimada) y EV >= 15%.
 import os, sys, re, json, subprocess, logging
 from datetime import date
 
-BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
-DATOS_PATH = os.path.join(BASE_DIR, "..", "datos.js")
-JSON_PATH  = os.path.join(BASE_DIR, "..", "predicciones.json")
+DATOS_PATH  = os.path.join(BASE_DIR, "..", "datos.js")
+INDEX_PATH  = os.path.join(BASE_DIR, "..", "index.html")
+JSON_PATH   = os.path.join(BASE_DIR, "..", "predicciones.json")
+
+# Marcadores para el bloque de datos inline en index.html
+_DATA_START = "<!-- SHARPIQ_DATA_START -->"
+_DATA_END   = "<!-- SHARPIQ_DATA_END -->"
 
 
 def _get_log():
@@ -64,9 +69,6 @@ def _hora_cot(hora_utc):
 
 
 def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=None, tier="principal", stake_pct=3):
-    with open(DATOS_PATH, encoding="utf-8") as f:
-        texto = f.read()
-
     if fecha_evento:
         try:
             from datetime import date as _date
@@ -90,24 +92,37 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
     stake_pct:  "{stake_pct}"
   }},"""
 
-    texto_nuevo = re.sub(
-        r'(const\s+PROXIMOS_EVENTOS\s*=\s*\[)',
-        r'\1\n' + nueva_entrada,
-        texto
-    )
-    # Actualizar versión del script tag en index.html para forzar recarga en browsers
-    INDEX_PATH = os.path.join(BASE_DIR, "..", "index.html")
-    try:
-        with open(INDEX_PATH, encoding="utf-8") as f:
-            idx_html = f.read()
-        nueva_v = f"datos.js?v={date.today().strftime('%Y%m%d')}-1"
-        idx_html = re.sub(r'datos\.js\?v=[\w\-]+', nueva_v, idx_html)
-        with open(INDEX_PATH, "w", encoding="utf-8") as f:
-            f.write(idx_html)
-    except Exception:
-        pass
+    patron = r'(const\s+PROXIMOS_EVENTOS\s*=\s*\[)'
+
+    # Actualizar datos.js (backup)
+    with open(DATOS_PATH, encoding="utf-8") as f:
+        texto = f.read()
+    texto_nuevo = re.sub(patron, r'\1\n' + nueva_entrada, texto)
     with open(DATOS_PATH, "w", encoding="utf-8") as f:
         f.write(texto_nuevo)
+
+    # Actualizar TAMBIÉN el bloque inline de index.html (fuente real)
+    try:
+        with open(INDEX_PATH, encoding="utf-8") as f:
+            html = f.read()
+        # Reemplazar el bloque de datos inline completo con la versión actualizada de datos.js
+        nuevo_bloque = (
+            f"{_DATA_START}\n"
+            f"<script id=\"sharpiq-data\">\n"
+            f"{texto_nuevo.strip()}\n"
+            f"</script>\n"
+            f"{_DATA_END}"
+        )
+        html = re.sub(
+            rf"{re.escape(_DATA_START)}.*?{re.escape(_DATA_END)}",
+            nuevo_bloque,
+            html,
+            flags=re.DOTALL
+        )
+        with open(INDEX_PATH, "w", encoding="utf-8") as f:
+            f.write(html)
+    except Exception as ex:
+        LOG.warning(f"No se pudo actualizar inline data en index.html: {ex}")
 
 
 def _hora_cot_de_pred(pred):
