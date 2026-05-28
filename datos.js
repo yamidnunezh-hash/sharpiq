@@ -5,6 +5,17 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "29/05/26",
+    partido:    "Quentin Halys vs Alexander Zverev",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Alexander Zverev",
+    cuota:      "1.06",
+    hora:       "13:15 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "1.0"
+  },
+  {
+    fecha:      "29/05/26",
     partido:    "Elina Svitolina vs Tamara Korpatsch",
     liga:       "WTA Roland Garros",
     prediccion: "Gana Elina Svitolina",
