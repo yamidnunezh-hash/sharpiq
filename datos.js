@@ -1,5 +1,5 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-27 — picks Copa Lib/Suda semana + UCL Final
+// Actualizado: 2026-05-27 — resultados completos semana (Copa Suda/Lib + NHL + tenis)
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
@@ -171,6 +171,30 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "27/05/26",
+    partido:    "RB Bragantino vs Carabobo FC",
+    liga:       "Copa Sudamericana",
+    prediccion: "Over 2.5 goles",
+    cuota:      "1.89",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Atlético Mineiro vs Academia Puerto Cabello",
+    liga:       "Copa Sudamericana",
+    prediccion: "Over 2.5 goles",
+    cuota:      "1.86",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "27/05/26",
+    partido:    "Libertad Asuncion vs UCV FC",
+    liga:       "Copa Sudamericana",
+    prediccion: "Gana Libertad Asuncion",
+    cuota:      "1.43",
+    resultado:  "loss"
+  },
   {
     fecha:      "28/05/26",
     partido:    "Corinthians vs Platense",
