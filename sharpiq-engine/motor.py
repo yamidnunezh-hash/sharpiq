@@ -342,6 +342,38 @@ _SPORT_NOMBRE = {
     "soccer_fifa_world_cup":                   "FIFA Mundial 2026",
 }
 
+# Mapeo sport_key (The Odds API) → liga_code (API-Football) para el modelo Poisson
+_SPORT_KEY_TO_LIGA_CODE = {
+    "soccer_epl":                        "39",
+    "soccer_spain_la_liga":              "140",
+    "soccer_germany_bundesliga":         "78",
+    "soccer_italy_serie_a":              "135",
+    "soccer_france_ligue_one":           "61",
+    "soccer_efl_champ":                  "40",
+    "soccer_england_league1":            "41",
+    "soccer_italy_serie_b":              "136",
+    "soccer_spain_segunda_division":     "141",
+    "soccer_germany_bundesliga2":        "79",
+    "soccer_belgium_first_div":          "144",
+    "soccer_austria_bundesliga":         "218",
+    "soccer_uefa_champs_league":         "2",
+    "soccer_uefa_europa_league":         "3",
+    "soccer_conmebol_copa_libertadores": "13",
+    "soccer_conmebol_copa_sudamericana": "11",
+    "soccer_brazil_campeonato":          "71",
+    "soccer_brazil_serie_b":             "72",
+    "soccer_argentina_primera_division": "239",
+    "soccer_mexico_ligamx":              "262",
+    "soccer_chile_campeonato":           "265",
+    "soccer_norway_eliteserien":         "103",
+    "soccer_sweden_allsvenskan":         "113",
+    "soccer_sweden_superettan":          "114",
+    "soccer_japan_j_league":             "98",
+    "soccer_china_superleague":          "169",
+    "soccer_finland_veikkausliiga":      "244",
+    "soccer_league_of_ireland":          "357",
+}
+
 # Deportes adicionales cubiertos por The Odds API (no requieren API-Football)
 # El motor los analiza directo con EV vs Pinnacle.
 # Claves de tenis: tournament-specific (solo la activa devolverá datos — las inactivas retornan vacío y se ignoran)
@@ -2708,6 +2740,51 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         for bk, (bp, bc) in best.items():
             if bk.startswith("team_"):
                 cuotas[bk] = bp;  cuotas[f"{bk}_casa"] = bc
+
+        # ── Modelo Poisson: segunda opinión para Over/Under y BTTS ──────
+        # Pinnacle es muy eficiente en 1X2 → no tocamos esos mercados.
+        # Para totales y BTTS el modelo propio puede detectar valor donde
+        # el mercado está menos afinado (altitud CONMEBOL, equipos poco líquidos).
+        # Solo actualiza si el EV blend es MAYOR al EV Pinnacle puro.
+        try:
+            liga_c = _SPORT_KEY_TO_LIGA_CODE.get(sport_key, "")
+            if liga_c and APIFOOTBALL_KEY:
+                gl, gv = calcular_goles_esperados(home, away, liga_c)
+                mp = modelo_poisson(gl, gv)
+                _MODEL_MK = [
+                    ("over15",  mp["over15"] /100, "goals_over_1_5",  "over15"),
+                    ("under15", mp["under15"]/100, "goals_under_1_5", "under15"),
+                    ("over25",  mp["over25"] /100, "goals_over_2_5",  "over25"),
+                    ("under25", mp["under25"]/100, "goals_under_2_5", "under25"),
+                    ("over35",  mp["over35"] /100, "goals_over_3_5",  "over35"),
+                    ("under35", mp["under35"]/100, "goals_under_3_5", "under35"),
+                    ("btts_si", mp["btts_si"]/100, "yes",             "btts_si"),
+                    ("btts_no", mp["btts_no"]/100, "no",              "btts_no"),
+                ]
+                for mk_m, model_p, bk_m, ck_m in _MODEL_MK:
+                    if bk_m not in best:
+                        continue
+                    bp_m, bc_m = best[bk_m]
+                    # Blend: 40% Pinnacle + 60% modelo (modelo aporta más señal en totales)
+                    pinn_p_raw = probs_out.get(mk_m, 0) / 100
+                    blend_p = round(pinn_p_raw * 0.4 + model_p * 0.6, 4) if pinn_p_raw > 0 else model_p
+                    ev_blend = round((blend_p * bp_m - 1) * 100, 1)
+                    current_ev = (value_bets.get(mk_m) or {}).get("ev_pinn") or -999
+                    if ev_blend > current_ev:
+                        value_bets[mk_m] = {
+                            "value":             round(blend_p * bp_m - 1, 3),
+                            "ev_porcentaje":     ev_blend,
+                            "ev_pinn":           ev_blend,
+                            "tiene_valor":       ev_blend >= 5,
+                            "tiene_valor_pinn":  ev_blend >= 5,
+                            "clasificacion":     "ALTO VALOR" if ev_blend >= 10 else "VALOR" if ev_blend >= 5 else "SIN VALOR",
+                            "cuota":             bp_m,
+                            "casa":              bc_m,
+                            "pinn_prob":         round(blend_p * 100, 1),
+                        }
+                        probs_out[mk_m] = round(blend_p * 100, 1)
+        except Exception:
+            pass  # falla silenciosamente — no rompe el pipeline Pinnacle
 
         if not value_bets:
             continue
