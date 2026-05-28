@@ -2642,6 +2642,28 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         mejor_mk  = max(value_bets, key=lambda k: value_bets[k].get("ev_pinn") or -999)
         mejor_vb  = value_bets[mejor_mk]
 
+        # Mercados extendidos: corners, tarjetas, remates (API-Football)
+        mercados_ext = {}
+        if MERCADOS_EXT_OK and APIFOOTBALL_KEY:
+            try:
+                mercados_ext = analizar_mercados_ext(home, away, sport_key, probs_out)
+                # Agregar EV de mercados ext a value_bets para que clasificar_tiers los vea
+                for mk_ext, ev_data in (mercados_ext.get("ev_ext") or {}).items():
+                    if ev_data.get("tiene_valor"):
+                        value_bets[mk_ext] = {
+                            "ev_porcentaje":    ev_data["ev_porcentaje"],
+                            "ev_pinn":          ev_data["ev_porcentaje"],
+                            "tiene_valor":      True,
+                            "tiene_valor_pinn": True,
+                            "clasificacion":    ev_data["clasificacion"],
+                            "cuota":            ev_data["cuota_ref"],
+                            "casa":             "API-Football model",
+                            "pinn_prob":        ev_data["prob_modelo"],
+                            "mercado_nombre":   mk_ext.replace("_", " ").title(),
+                        }
+            except Exception as _e:
+                print(f"  Mercados ext {home}: {_e}")
+
         predicciones.append({
             "local":        home,
             "visitante":    away,
@@ -2668,7 +2690,7 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
             "forma_visita":   None,
             "h2h":            None,
             "movimiento":     None,
-            "mercados_ext":   {},
+            "mercados_ext":   mercados_ext,
         })
 
     print(f"  {nombre_liga}: {len(predicciones)} partidos con Pinnacle")
@@ -3086,14 +3108,44 @@ def clasificar_tiers(reporte):
     principal_pool.sort(key=lambda x: x["score"], reverse=True)
     alto_pool.sort(key=lambda x: x["score"], reverse=True)
 
-    usados = set()
+    usados_partidos  = set()
+    usados_ligas     = set()
+    usados_mercados  = []   # lista para contar tipos de mercado
 
-    def _pick(pool):
+    def _mercado_tipo(mk):
+        if mk in ("under25", "under15", "under35", "over25", "over15", "over35"):
+            return "totals"
+        if mk in ("victoria_local", "victoria_visita", "empate"):
+            return "1x2"
+        if mk.startswith("ah_"):
+            return "handicap"
+        if mk.startswith("corners_"):
+            return "corners"
+        if mk.startswith("tarjetas_"):
+            return "tarjetas"
+        return "otro"
+
+    def _pick(pool, permitir_mismo_tipo=False):
         for c in pool:
-            k = f"{c['pred']['local']} vs {c['pred']['visitante']}"
-            if k not in usados:
-                usados.add(k)
-                return c
+            k     = f"{c['pred']['local']} vs {c['pred']['visitante']}"
+            liga  = c['pred'].get('liga_code', '')
+            tipo  = _mercado_tipo(c['mercado'])
+            # No repetir partido
+            if k in usados_partidos:
+                continue
+            # No repetir liga (máximo 1 pick por competición)
+            if liga in usados_ligas:
+                continue
+            # Máximo 1 pick de tipo "totals" entre los 3 picks del día
+            if not permitir_mismo_tipo and tipo == "totals" and usados_mercados.count("totals") >= 1:
+                continue
+            usados_partidos.add(k)
+            usados_ligas.add(liga)
+            usados_mercados.append(tipo)
+            return c
+        # Si el filtro de diversidad deja el tier vacío, relajar restricción de tipo
+        if not permitir_mismo_tipo:
+            return _pick(pool, permitir_mismo_tipo=True)
         return None
 
     # Orden: ALTO VALOR primero para reservar el partido con mayor EV
