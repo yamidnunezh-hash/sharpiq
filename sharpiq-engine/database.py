@@ -338,6 +338,131 @@ def get_movimiento(fixture_id):
         conn.close()
 
 
+# ── CLV CALCULATION ─────────────────────────────────────────────
+def calcular_clv(fixture_id, mercado, cuota_apostada=None):
+    """
+    Closing Line Value: mide si apostaste a mejor precio que el cierre del mercado.
+
+    CLV > 0  → apostaste mejor que el mercado al cierre → buena apuesta (proceso ✅)
+    CLV = 0  → tomaste exactamente el precio de cierre
+    CLV < 0  → el mercado cerró mejor que tu cuota → proceso mejorable
+
+    Parámetros:
+        fixture_id    : ID del fixture en API-Football
+        mercado       : columna del mercado (e.g. "cuota_over25", "cuota_1")
+        cuota_apostada: cuota que tomaste al publicar; si None usa la apertura
+
+    Devuelve dict con apertura, cierre, clv_pct o None si faltan snapshots.
+    """
+    conn = conectar()
+    try:
+        apertura = conn.execute(
+            "SELECT * FROM movimientos_cuotas WHERE fixture_id=? AND snapshot='apertura'",
+            (fixture_id,)
+        ).fetchone()
+        cierre = conn.execute(
+            "SELECT * FROM movimientos_cuotas WHERE fixture_id=? AND snapshot IN ('cierre','tarde') ORDER BY hora_consulta DESC LIMIT 1",
+            (fixture_id,)
+        ).fetchone()
+
+        if not apertura or not cierre:
+            return None
+
+        c_apertura = cuota_apostada or apertura[mercado]
+        c_cierre   = cierre[mercado]
+
+        if not c_apertura or not c_cierre or c_cierre <= 1.0:
+            return None
+
+        # CLV = (cuota apostada / cuota cierre) - 1  → expresado en %
+        clv_pct = round((c_apertura / c_cierre - 1) * 100, 2)
+
+        return {
+            "apertura":  round(c_apertura, 3),
+            "cierre":    round(c_cierre, 3),
+            "clv_pct":   clv_pct,
+            "positivo":  clv_pct > 0,
+        }
+    finally:
+        conn.close()
+
+
+def guardar_picks_clv(fixture_id, local, visitante, fecha, mercado_key, cuota_pick,
+                      resultado=None):
+    """
+    Tabla dedicada para rastrear cada pick publicado con su CLV.
+    Crea la tabla si no existe.
+    """
+    conn = conectar()
+    try:
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS picks_clv (
+                id             INTEGER PRIMARY KEY AUTOINCREMENT,
+                fixture_id     INTEGER,
+                local          TEXT,
+                visitante      TEXT,
+                fecha          TEXT,
+                mercado        TEXT,
+                cuota_pick     REAL,
+                cuota_cierre   REAL,
+                clv_pct        REAL,
+                resultado      TEXT,
+                guardado_en    TEXT DEFAULT (datetime('now')),
+                UNIQUE(fixture_id, mercado)
+            )
+        """)
+        conn.execute("""
+            INSERT OR IGNORE INTO picks_clv
+            (fixture_id, local, visitante, fecha, mercado, cuota_pick, resultado)
+            VALUES (?,?,?,?,?,?,?)
+        """, (fixture_id, local, visitante, fecha, mercado_key, cuota_pick, resultado))
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def actualizar_clv_pick(fixture_id, mercado_key, cuota_cierre, clv_pct):
+    """Actualiza cuota_cierre y clv_pct en picks_clv una vez obtenidas las cuotas de cierre."""
+    conn = conectar()
+    try:
+        conn.execute("""
+            UPDATE picks_clv
+            SET cuota_cierre=?, clv_pct=?
+            WHERE fixture_id=? AND mercado=?
+        """, (cuota_cierre, clv_pct, fixture_id, mercado_key))
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def resumen_clv(n_picks=30):
+    """
+    Resumen de CLV de los últimos n_picks.
+    Devuelve dict con clv_promedio, picks_con_clv_positivo, total.
+    """
+    conn = conectar()
+    try:
+        try:
+            rows = conn.execute(
+                "SELECT clv_pct, resultado FROM picks_clv WHERE clv_pct IS NOT NULL ORDER BY guardado_en DESC LIMIT ?",
+                (n_picks,)
+            ).fetchall()
+        except Exception:
+            return None
+        if not rows:
+            return None
+        clvs     = [r["clv_pct"] for r in rows]
+        positivos = sum(1 for c in clvs if c > 0)
+        return {
+            "total":       len(clvs),
+            "clv_promedio": round(sum(clvs) / len(clvs), 2),
+            "positivos":   positivos,
+            "pct_positivo": round(positivos / len(clvs) * 100, 1),
+        }
+    finally:
+        conn.close()
+
+
 if __name__ == "__main__":
     inicializar()
     resumen()

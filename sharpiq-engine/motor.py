@@ -278,11 +278,15 @@ LIGAS_ODDS = {
     "11":  "soccer_conmebol_copa_sudamericana",
     "71":  "soccer_brazil_campeonato",
     "72":  "soccer_brazil_serie_b",
-    # "128": "soccer_colombia_primera_a",  # 404 en The Odds API — liga no disponible
     "239": "soccer_argentina_primera_division",
     "262": "soccer_mexico_ligamx",
     "253": "soccer_usa_mls",
     "265": "soccer_chile_campeonato",
+    "242": "soccer_colombia_primera_a",          # Liga BetPlay (disponible en odds API 2026)
+    "268": "soccer_peru_primera_division",
+    "240": "soccer_ecuador_liga_pro",
+    "341": "soccer_uruguay_primera_division",
+    "1":   "soccer_fifa_world_cup",              # FIFA Mundial 2026 (junio-julio)
     # api-sports IDs — Asia / Pacífico / Europa norte
     "98":  "soccer_japan_j_league",
     "169": "soccer_china_superleague",
@@ -329,6 +333,11 @@ _SPORT_NOMBRE = {
     "soccer_poland_ekstraklasa":               "Ekstraklasa",
     "soccer_finland_veikkausliiga":            "Veikkausliiga",
     "soccer_league_of_ireland":                "League of Ireland",
+    "soccer_colombia_primera_a":               "Liga BetPlay",
+    "soccer_peru_primera_division":            "Liga 1 Perú",
+    "soccer_ecuador_liga_pro":                 "LigaPro Ecuador",
+    "soccer_uruguay_primera_division":         "Torneo Apertura Uruguay",
+    "soccer_fifa_world_cup":                   "FIFA Mundial 2026",
 }
 
 # Deportes adicionales cubiertos por The Odds API (no requieren API-Football)
@@ -1222,7 +1231,10 @@ def obtener_cuotas_liga(sport_key):
                           "soccer_italy_serie_a","soccer_france_ligue_one","soccer_usa_mls",
                           "soccer_conmebol_copa_libertadores","soccer_conmebol_copa_sudamericana",
                           "soccer_brazil_campeonato","soccer_brazil_serie_b",
-                          "soccer_argentina_primera_division"}
+                          "soccer_argentina_primera_division","soccer_mexico_ligamx",
+                          "soccer_colombia_primera_a","soccer_peru_primera_division",
+                          "soccer_ecuador_liga_pro","soccer_uruguay_primera_division",
+                          "soccer_chile_campeonato","soccer_fifa_world_cup"}
         if sport_key in _SPORTS_US:
             bookmakers = "pinnacle,draftkings,fanduel,bet365,betmgm,unibet"
             markets    = "h2h,spreads,totals"
@@ -2942,8 +2954,21 @@ def _actualizar_datos_js(reporte):
         print(f"  Git error: {e}")
 
 
+_STEAM_UMBRAL = 5.0   # % de caída de cuota para considerar steam
+
+# Caché en memoria: fixture_id → dict de steam por mercado
+# Se llena en _alertar_steam y se consume en clasificar_tiers
+_steam_cache: dict = {}
+
+
 def _alertar_steam(reporte):
-    """Detecta steam moves y RLM, avisa a Yamid por Telegram."""
+    """
+    Detecta steam moves (cuota cae ≥5% vs apertura) y guarda en _steam_cache
+    para que clasificar_tiers pueda usarlo como bonus de convicción.
+    """
+    global _steam_cache
+    _steam_cache = {}
+
     try:
         from database import get_movimiento
         from telegram_alertas import enviar_aviso_yamid
@@ -2956,6 +2981,14 @@ def _alertar_steam(reporte):
         "over25": "Over 2.5", "under25": "Under 2.5",
         "over15": "Over 1.5", "under15": "Under 1.5", "btts_si": "Ambos Marcan",
     }
+    # Mapa movimientos_cuotas columna → clave value_bets
+    _col_to_mk = {
+        "1": "victoria_local", "2": "victoria_visita", "X": "empate",
+        "over25": "over25", "under25": "under25",
+        "over15": "over15", "under15": "under15",
+        "btts_si": "btts_si",
+    }
+
     for pred in reporte.get("predicciones", []):
         fid = pred.get("id")
         if not fid:
@@ -2968,35 +3001,52 @@ def _alertar_steam(reporte):
             continue
 
         partido = f"{pred['local']} vs {pred['visitante']}"
+        steam_por_partido = {}
         lineas = []
-        for mk, info in mov.items():
+
+        for mk, info in (mov.get("mercados") or {}).items():
             if not isinstance(info, dict):
                 continue
             cambio = info.get("cambio_pct", 0)
-            if abs(cambio) < 8:
+            if abs(cambio) < _STEAM_UMBRAL:
                 continue
-            tipo = info.get("tipo", "")
-            emoji = "⚡ STEAM" if tipo == "steam" else ("🔄 RLM" if tipo == "rlm" else "📉")
+
+            tipo   = "steam" if cambio <= -_STEAM_UMBRAL else "rlm"
+            emoji  = "⚡ STEAM" if tipo == "steam" else "🔄 RLM"
             nombre = nombres_mercado.get(mk, mk)
-            ap = info.get("apertura", "?")
-            ta = info.get("tarde", "?")
+            ap, ta = info.get("apertura", "?"), info.get("actual", "?")
             lineas.append(f"  {emoji} {nombre}: {ap} → {ta} ({cambio:+.1f}%)")
+
+            # Cachear: steam = cuota bajó (mercado comprado) → señal de valor
+            mk_vb = _col_to_mk.get(mk, mk)
+            steam_por_partido[mk_vb] = {
+                "tipo":    tipo,
+                "cambio":  cambio,
+                "apertura": ap,
+                "actual":   ta,
+            }
+
+        if steam_por_partido:
+            _steam_cache[fid] = steam_por_partido
 
         if lineas:
             alertas.append(f"⚽ <b>{partido}</b>\n" + "\n".join(lineas))
 
     if not alertas:
-        print("  Sin steam moves significativos")
+        LOG.info("Steam moves: ninguno significativo (umbral ≥5%)")
         return
 
     texto = (
         f"⚡ <b>SharpIQ — Movimiento de Línea</b>\n"
         f"🕐 Pasada de tarde — {date.today().isoformat()}\n\n"
         + "\n\n".join(alertas) +
-        "\n\n<i>Cuotas que cayeron ≥8% = dinero profesional entrando</i>"
+        "\n\n<i>Cuotas que caen ≥5% = dinero profesional entrando (steam)</i>"
     )
-    ok = enviar_aviso_yamid(texto)
-    print(f"  Steam alert: {'OK' if ok else 'FALLO'} ({len(alertas)} partido/s)")
+    try:
+        ok = enviar_aviso_yamid(texto)
+        LOG.info(f"Steam alert: {'OK' if ok else 'FALLO'} ({len(alertas)} partido/s)")
+    except Exception as _e:
+        LOG.error(f"Steam telegram: {_e}")
 
 def kelly_stake(prob_pct, cuota, fraccion=0.5, min_pct=1.0, max_pct=5.0):
     """
@@ -3100,6 +3150,13 @@ def clasificar_tiers(reporte):
                     continue
 
                 nombre = _NOMBRES.get(mk) or vb.get("mercado_nombre") or mk
+
+                # Steam bonus: si el mercado se movió a favor del pick +5%
+                fid_steam  = pred.get("id")
+                steam_info = (_steam_cache.get(fid_steam) or {}).get(mk, {})
+                steam_ok   = steam_info.get("tipo") == "steam"  # cuota bajó → valor confirmado
+                steam_bonus = abs(steam_info.get("cambio", 0)) if steam_ok else 0
+
                 c = {
                     "pred":           pred,
                     "mercado":        mk,
@@ -3109,26 +3166,27 @@ def clasificar_tiers(reporte):
                     "ev_pinn":        ev_p,
                     "ev":             ev_p,
                     "kelly_pct":      kelly_stake(prob, cuota_f),
+                    "steam":          steam_ok,
+                    "steam_bonus":    steam_bonus,
                 }
 
                 # SEGURO: máxima probabilidad con EV positivo
                 if (prob >= SEGURO_MIN_PROB
                         and cuota_f <= SEGURO_MAX_CUOTA
                         and ev_p >= SEGURO_MIN_EV):
-                    # Score: combina probabilidad y EV para diferenciar picks igualados
-                    seguro_pool.append({**c, "score": prob * (1 + ev_p / 200)})
+                    seguro_pool.append({**c, "score": prob * (1 + ev_p / 200) + steam_bonus})
 
                 # PRINCIPAL: mejor balance EV × probabilidad
                 if (prob >= PRINC_MIN_PROB
                         and PRINC_MIN_CUOTA <= cuota_f <= PRINC_MAX_CUOTA
                         and ev_p >= PRINC_MIN_EV):
-                    principal_pool.append({**c, "score": ev_p * (prob / 100)})
+                    principal_pool.append({**c, "score": ev_p * (prob / 100) + steam_bonus})
 
-                # ALTO VALOR: máximo EV absoluto
+                # ALTO VALOR: máximo EV absoluto (steam bonus x2 aquí por ser pick de riesgo)
                 if (ev_p >= AV_MIN_EV
                         and AV_MIN_CUOTA <= cuota_f <= AV_MAX_CUOTA
                         and prob >= AV_MIN_PROB):
-                    alto_pool.append({**c, "score": ev_p})
+                    alto_pool.append({**c, "score": ev_p + steam_bonus * 2})
 
         elif pred.get("es_player_prop"):
             # ── Player props ─────────────────────────────────────────

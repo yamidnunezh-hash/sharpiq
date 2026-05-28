@@ -224,9 +224,11 @@ def correr():
         for k, emoji in [("seguro", "🛡️"), ("principal", "⭐"), ("alto_valor", "🔥")]:
             t = tiers.get(k)
             if t:
+                steam_tag = " ⚡steam" if t.get("steam") else ""
+                kelly_tag = f" | Kelly {t.get('kelly_pct', '')}%" if t.get("kelly_pct") else ""
                 lineas.append(
                     f"{emoji} {t['pred']['local']} vs {t['pred']['visitante']} "
-                    f"— {t['mercado_nombre']} @{t['cuota']}"
+                    f"— {t['mercado_nombre']} @{t['cuota']}{steam_tag}{kelly_tag}"
                 )
         enviar_aviso_yamid(
             f"🤖 <b>SharpIQ — 3 Tiers publicados</b>\n\n"
@@ -306,9 +308,9 @@ def correr():
 
     if mejor_tier:
         try:
-            from database import inicializar, guardar_snapshot
+            from database import inicializar, guardar_snapshot, guardar_picks_clv
             inicializar()
-            pred = mejor_tier["pred"]
+            pred       = mejor_tier["pred"]
             fixture_id = pred.get("id")
             if fixture_id:
                 guardar_snapshot(
@@ -316,16 +318,24 @@ def correr():
                     date.today().isoformat(), "apertura",
                     pred.get("cuotas", {})
                 )
-                print("  CLV snapshot apertura guardado")
+                # Registrar pick en picks_clv para tracking de CLV
+                guardar_picks_clv(
+                    fixture_id,
+                    pred["local"], pred["visitante"],
+                    date.today().isoformat(),
+                    mejor_tier.get("mercado", ""),
+                    float(mejor_tier.get("cuota", 0)),
+                )
+                LOG.info(f"CLV snapshot apertura guardado — fixture {fixture_id}")
         except Exception as e:
-            print(f"  CLV snapshot error: {e}")
+            LOG.error(f"CLV snapshot error: {e}")
 
         try:
             from telegram_alertas import enviar_mercados_ext_vip
             enviar_mercados_ext_vip(mejor_tier["pred"])
-            print("  Mercados extendidos enviados (VIP)")
+            LOG.info("Mercados extendidos enviados (VIP)")
         except Exception as e:
-            print(f"  Mercados ext error: {e}")
+            LOG.error(f"Mercados ext error: {e}")
 
         try:
             from push_notifications import enviar_push_prediccion

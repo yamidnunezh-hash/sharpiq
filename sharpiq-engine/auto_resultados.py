@@ -281,29 +281,71 @@ def correr():
         except Exception as _dbe:
             LOG.debug(f"DB CLV resultado: {_dbe}")
 
-        # Snapshot de cierre + CLV
+        # Snapshot de cierre + cálculo CLV
         clv_texto = ""
         try:
             from motor import LIGAS_ODDS
-            from database import inicializar, guardar_snapshot, get_movimiento
+            from database import inicializar, guardar_snapshot, calcular_clv, actualizar_clv_pick
+            from config import ODDS_API_KEY
+            import requests as _req
             inicializar()
             fid     = fixture.get("fixture", {}).get("id")
             liga_id = str(fixture.get("league", {}).get("id", ""))
             sport_key = LIGAS_ODDS.get(liga_id)
-            if fid and sport_key:
-                guardar_snapshot(fid, local_js, visita_js,
-                                 date.today().isoformat(), "cierre", {})
-                mov = get_movimiento(fid)
-                if mov and mov.get("mercados"):
-                    lineas_clv = []
-                    for mk, d in mov["mercados"].items():
-                        pct = d.get("cambio_pct", 0)
-                        if abs(pct) >= 3:
-                            dir_arrow = "▼" if pct < 0 else "▲"
-                            lineas_clv.append(f"{mk}: {d['apertura']} → {d['actual']} ({dir_arrow}{abs(pct)}%)")
-                    if lineas_clv:
-                        clv_texto = " | ".join(lineas_clv)
-                        LOG.info(f"  CLV: {clv_texto}")
+
+            if fid and sport_key and ODDS_API_KEY:
+                # Pedir cuotas actuales (≈ cierre del mercado)
+                _col_map = {
+                    "h2h":    {"1": "cuota_1", "X": "cuota_x", "2": "cuota_2"},
+                    "totals": {"Over 2.5": "cuota_over25", "Under 2.5": "cuota_under25",
+                               "Over 1.5": "cuota_over15", "Under 1.5": "cuota_under15"},
+                }
+                cuotas_cierre = {}
+                try:
+                    _r = _req.get(
+                        "https://api.the-odds-api.com/v4/sports/{}/odds".format(sport_key),
+                        params={"apiKey": ODDS_API_KEY, "regions": "eu", "markets": "h2h,totals",
+                                "bookmakers": "pinnacle,betcris"},
+                        timeout=10,
+                    )
+                    if _r.status_code == 200:
+                        for ev in _r.json():
+                            h = ev.get("home_team", ""); a = ev.get("away_team", "")
+                            if local_js.lower()[:8] in h.lower() or h.lower()[:8] in local_js.lower():
+                                for bm in ev.get("bookmakers", []):
+                                    if bm["key"] == "pinnacle":
+                                        for mkt in bm.get("markets", []):
+                                            for out in mkt.get("outcomes", []):
+                                                nm, pr = out["name"], out["price"]
+                                                if mkt["key"] == "h2h":
+                                                    if nm == h: cuotas_cierre["1"] = pr
+                                                    elif nm == a: cuotas_cierre["2"] = pr
+                                                    else: cuotas_cierre["X"] = pr
+                                                elif mkt["key"] == "totals":
+                                                    if "Over" in nm: cuotas_cierre[f"over{nm.split()[-1].replace('.','').replace('5','5')}"] = pr
+                                                    else: cuotas_cierre[f"under{nm.split()[-1].replace('.','').replace('5','5')}"] = pr
+                except Exception:
+                    pass
+
+                if cuotas_cierre:
+                    guardar_snapshot(fid, local_js, visita_js,
+                                     date.today().isoformat(), "cierre", cuotas_cierre)
+
+                # Calcular CLV para mercados estándar
+                _mk_cols = {"over25": "cuota_over25", "under25": "cuota_under25",
+                            "over15": "cuota_over15", "under15": "cuota_under15",
+                            "victoria_local": "cuota_1", "victoria_visita": "cuota_2"}
+                for mk_key, col in _mk_cols.items():
+                    clv = calcular_clv(fid, col)
+                    if clv:
+                        dir_arrow = "▲" if clv["clv_pct"] > 0 else "▼"
+                        linea = f"{mk_key}: {clv['apertura']}→{clv['cierre']} CLV{dir_arrow}{abs(clv['clv_pct'])}%"
+                        actualizar_clv_pick(fid, mk_key, clv["cierre"], clv["clv_pct"])
+                        clv_texto += linea + " | "
+
+                if clv_texto:
+                    clv_texto = clv_texto.rstrip(" | ")
+                    LOG.info(f"  CLV: {clv_texto}")
         except Exception as clv_e:
             LOG.debug(f"CLV snapshot: {clv_e}")
 
