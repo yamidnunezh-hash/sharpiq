@@ -1,91 +1,21 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-28
+// Actualizado: 2026-05-29
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
   {
-    fecha:      "30/05/26",
-    partido:    "Athletic Club (MG) vs Fortaleza",
-    liga:       "Brasileirao B",
-    prediccion: "Over 2.5 Goles — EV +80%",
-    cuota:      "2.4",
-    hora:       "16:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "5.0"
-  },
-{
     fecha:      "29/05/26",
-    partido:    "Elina Svitolina vs Tamara Korpatsch",
-    liga:       "WTA Roland Garros",
-    prediccion: "Gana Elina Svitolina",
-    cuota:      "1.06",
-    hora:       "04:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3"
-  },
-{
-    fecha:      "28/05/26",
-    partido:    "América de Cali vs Macará",
-    liga:       "Copa Sudamericana",
-    prediccion: "Under 2.5 goles — EV +32%",
-    cuota:      "1.82",
-    hora:       "19:30 COT",
+    partido:    "Carolina Hurricanes vs Montréal Canadiens",
+    liga:       "NHL",
+    prediccion: "Gana Carolina Hurricanes — EV +16%",
+    cuota:      "1.70",
+    hora:       "19:15 COT",
     status:     "vip",
     tier:       "principal",
-    stake_pct:  "3",
+    stake_pct:  "5",
     resultado:  "pendiente"
   },
-{
-    fecha:      "28/05/26",
-    partido:    "Bolívar vs Independiente Rivadavia",
-    liga:       "Copa Libertadores",
-    prediccion: "Gana Bolívar — EV +47% (altitud La Paz 3600m)",
-    cuota:      "2.32",
-    hora:       "19:30 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    resultado:  "loss"
-  },
-{
-    fecha:      "28/05/26",
-    partido:    "Corinthians vs Platense",
-    liga:       "Copa Libertadores",
-    prediccion: "Under 2.5 goles — EV +46%",
-    cuota:      "1.96",
-    hora:       "19:30 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    resultado:  "win"
-  },
-{
-    fecha:      "28/05/26",
-    partido:    "Cerro Porteño vs Sporting Cristal",
-    liga:       "Copa Libertadores",
-    prediccion: "Under 2.5 goles — EV +41%",
-    cuota:      "1.89",
-    hora:       "17:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    resultado:  "pendiente"
-  },
-{
-    fecha:      "28/05/26",
-    partido:    "Peñarol vs Independiente Santa Fe",
-    liga:       "Copa Libertadores",
-    prediccion: "Under 2.5 goles — EV +33%",
-    cuota:      "1.79",
-    hora:       "19:30 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "3",
-    resultado:  "win"
-  },
-{
+  {
     fecha:      "29/05/26",
     partido:    "Boca Juniors vs U. Católica (Chile)",
     liga:       "Copa Libertadores",
@@ -93,11 +23,23 @@ const PROXIMOS_EVENTOS = [
     cuota:      "2.01",
     hora:       "19:30 COT",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
+    tier:       "seguro",
+    stake_pct:  "5",
     resultado:  "pendiente"
   },
-{
+  {
+    fecha:      "30/05/26",
+    partido:    "Athletic Club (MG) vs Fortaleza",
+    liga:       "Brasileirao B",
+    prediccion: "Over 2.5 goles — EV +80%",
+    cuota:      "2.40",
+    hora:       "16:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "5",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "30/05/26",
     partido:    "PSG vs Arsenal",
     liga:       "UEFA Champions League Final",
@@ -112,6 +54,12 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {fecha:'28/05/26', partido:'Cerro Porteño vs Sporting Cristal',     liga:'Copa Libertadores', prediccion:'Under 2.5 goles', cuota:'1.89', resultado:'win'},
+  {fecha:'28/05/26', partido:'América de Cali vs Macará',              liga:'Copa Sudamericana',  prediccion:'Under 2.5 goles', cuota:'1.82', resultado:'loss'},
+  {fecha:'28/05/26', partido:'Bolívar vs Independiente Rivadavia',     liga:'Copa Libertadores', prediccion:'Gana Bolívar',    cuota:'2.32', resultado:'loss'},
+  {fecha:'28/05/26', partido:'Corinthians vs Platense',                liga:'Copa Libertadores', prediccion:'Under 2.5 goles', cuota:'1.96', resultado:'win'},
+  {fecha:'28/05/26', partido:'Peñarol vs Independiente Santa Fe',      liga:'Copa Libertadores', prediccion:'Under 2.5 goles', cuota:'1.79', resultado:'win'},
+
   {
     fecha:      "27/05/26",
     partido:    "RB Bragantino vs Carabobo FC",
