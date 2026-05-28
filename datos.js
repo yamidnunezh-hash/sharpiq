@@ -1,5 +1,5 @@
 // SharpIQ — ARCHIVO DE DATOS
-// Actualizado: 2026-05-27 — resultados completos semana (Copa Suda/Lib + NHL + tenis)
+// Actualizado: 2026-05-28
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [

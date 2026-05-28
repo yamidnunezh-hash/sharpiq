@@ -91,6 +91,17 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
         r'\1\n' + nueva_entrada,
         texto
     )
+    # Actualizar versión del script tag en index.html para forzar recarga en browsers
+    INDEX_PATH = os.path.join(BASE_DIR, "..", "index.html")
+    try:
+        with open(INDEX_PATH, encoding="utf-8") as f:
+            idx_html = f.read()
+        nueva_v = f"datos.js?v={date.today().strftime('%Y%m%d')}-1"
+        idx_html = re.sub(r'datos\.js\?v=[\w\-]+', nueva_v, idx_html)
+        with open(INDEX_PATH, "w", encoding="utf-8") as f:
+            f.write(idx_html)
+    except Exception:
+        pass
     with open(DATOS_PATH, "w", encoding="utf-8") as f:
         f.write(texto_nuevo)
 
