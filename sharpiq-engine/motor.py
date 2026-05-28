@@ -2093,18 +2093,43 @@ def guardar_historial_cuotas(reporte):
 
 # ── PLAYER PROPS (NBA / NHL / MLB) ──────────────────────────────
 # Mercados de props por deporte — The Odds API market keys
+# ── Player props — requiere The Odds API Pro ($19/mes, activa 2026-06-08) ──
+# Actualmente retorna HTTP 422 con el plan básico.
+# Al contratar Pro, estos mercados se activarán automáticamente.
 _PROP_MARKETS = {
-    "basketball_nba": ["player_points", "player_rebounds", "player_assists"],
-    "icehockey_nhl":  ["player_points", "player_shots_on_target"],
-    "baseball_mlb":   ["batter_hits",   "pitcher_strikeouts"],
+    "basketball_nba": [
+        "player_points",           # Puntos totales
+        "player_rebounds",         # Rebotes
+        "player_assists",          # Asistencias
+        "player_threes",           # Triples anotados
+        "player_points_rebounds_assists",  # Combo PRA
+        "player_first_basket",     # Primer anotador
+    ],
+    "icehockey_nhl":  [
+        "player_points",
+        "player_shots_on_target",
+        "player_goals",
+    ],
+    "baseball_mlb":   [
+        "batter_hits",
+        "batter_home_runs",
+        "pitcher_strikeouts",
+        "pitcher_outs",
+    ],
 }
 _PROP_NOMBRES = {
-    "player_points":          "Puntos",
-    "player_rebounds":        "Rebotes",
-    "player_assists":         "Asistencias",
-    "player_shots_on_target": "Tiros al Arco",
-    "batter_hits":            "Hits",
-    "pitcher_strikeouts":     "Strikeouts",
+    "player_points":                   "Puntos",
+    "player_rebounds":                 "Rebotes",
+    "player_assists":                  "Asistencias",
+    "player_threes":                   "Triples",
+    "player_points_rebounds_assists":  "PRA Combo",
+    "player_first_basket":             "Primer Anotador",
+    "player_shots_on_target":          "Tiros al Arco",
+    "player_goals":                    "Goles",
+    "batter_hits":                     "Hits",
+    "batter_home_runs":                "Home Runs",
+    "pitcher_strikeouts":              "Strikeouts",
+    "pitcher_outs":                    "Outs Lanzados",
 }
 
 

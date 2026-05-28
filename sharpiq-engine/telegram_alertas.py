@@ -194,46 +194,51 @@ def enviar_alerta_value_bet(pred, mercado, vb):
 
 
 def enviar_resumen_dia(reporte):
+    """
+    Resumen privado para Yamid: solo muestra los 3 picks clasificados del día
+    (no todos los value bets crudos que incluían longshots @13-34).
+    """
+    from datetime import date as _d
     total = reporte["total_partidos"]
-    preds = reporte["predicciones"]
-    value_bets = sum(1 for p in preds for v in p["value_bets"].values() if v["tiene_valor"])
-    alto_valor = sum(1 for p in preds for v in p["value_bets"].values() if v["clasificacion"] == "ALTO VALOR")
 
-    texto = f"""📋 <b>SharpIQ — Resumen del dia</b>
-📅 {reporte['fecha']}
+    # Clasificar tiers para mostrar solo los picks reales del día
+    try:
+        from motor import clasificar_tiers
+        tiers = clasificar_tiers(reporte)
+    except Exception:
+        tiers = {}
 
-⚽ Partidos analizados: {total}
-💰 Value Bets detectados: {value_bets}
-🔥 Alto Valor: {alto_valor}
+    _TIER_EMOJI = {"seguro": "🛡️ SEGURO", "principal": "⭐ PRINCIPAL", "alto_valor": "🔥 ALTO VALOR"}
+    _SP_EMOJI   = {"NHL":"🏒","NBA":"🏀","MLB":"⚾","ATP":"🎾","WTA":"🎾","Boxeo":"🥊","UFC":"🥋"}
 
-"""
-    nombres = {
-        "victoria_local":"Local (1)","empate":"Empate (X)","victoria_visita":"Visitante (2)",
-        "over25":"Over 2.5","under25":"Under 2.5","btts_si":"BTTS Sí","btts_no":"BTTS No",
-    }
-    cuota_map = {
-        "victoria_local":"1","empate":"X","victoria_visita":"2",
-        "over25":"over25","under25":"under25","btts_si":"btts_si","btts_no":"btts_no",
-    }
-    for pred in preds:
-        tiene_vb = any(v["tiene_valor"] for v in pred["value_bets"].values() if v)
-        if tiene_vb:
-            texto += f"• {pred['local']} vs {pred['visitante']}\n"
-            for m, vb in pred["value_bets"].items():
-                if vb and vb["tiene_valor"]:
-                    ck    = cuota_map.get(m, "1")
-                    cuota = (vb.get("cuota") or
-                             pred["cuotas"].get(ck) or
-                             pred["cuotas"].get(m) or None)
-                    try:
-                        cuota_str2 = f"{float(cuota):.2f}" if cuota else "—"
-                    except (ValueError, TypeError):
-                        cuota_str2 = str(cuota) if cuota else "—"
-                    casa  = vb.get("casa") or pred["cuotas"].get(ck + "_casa", "") or ""
-                    casa_str = f" [{casa}]" if casa else ""
-                    texto += f"  → {nombres.get(m,m)} @ {cuota_str2}{casa_str}: EV +{vb['ev_porcentaje']}%\n"
+    picks_lines = []
+    for k in ("seguro", "principal", "alto_valor"):
+        t = tiers.get(k)
+        if not t:
+            continue
+        p      = t["pred"]
+        liga   = p.get("liga", "")
+        emoji  = next((v for kw, v in _SP_EMOJI.items() if kw in liga.upper()), "⚽")
+        hora_u = p.get("hora", "00:00")
+        hh     = (int(hora_u[:2]) - 5 + 24) % 24
+        hora_c = f"{hh:02d}:{hora_u[3:5]} COT"
+        picks_lines.append(
+            f"{_TIER_EMOJI[k]}\n"
+            f"{emoji} {p['local']} vs {p['visitante']}\n"
+            f"🏆 {liga} | {hora_c}\n"
+            f"📊 {t['mercado_nombre']} @{t['cuota']} — EV +{t['ev_pinn']}% | Prob {t['prob']}% | Kelly {t['kelly_pct']}%"
+        )
 
-    texto += "\n<i>sharpiq.co — La ventaja inteligente</i>"
+    sep = "\n" + "─" * 28 + "\n"
+    cuerpo = sep.join(picks_lines) if picks_lines else "Sin picks calificados hoy (EV insuficiente)"
+
+    texto = (
+        f"🤖 <b>SharpIQ — Resumen Motor</b>\n"
+        f"📅 {reporte['fecha']} | {total} partidos analizados\n"
+        f"{'─' * 28}\n\n"
+        f"{cuerpo}\n\n"
+        f"<i>sharpiq.co — La ventaja inteligente</i>"
+    )
     return enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
 
 
