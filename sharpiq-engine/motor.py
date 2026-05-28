@@ -2206,10 +2206,14 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
         best_totals  = {}   # {("Over"|"Under", punto): (precio, casa)}
         best_spreads = {}   # {(equipo, punto): (precio, casa)}
 
+        sharp_fb_h2h_us = {}
+        _SHARP_FB_US    = {"bet365", "betfair_ex", "betfair", "betfair_ex_uk"}
+
         for bm in ev.get("bookmakers", []):
             bm_key  = bm.get("key", "")
             bm_name = bm.get("title", "")
             es_pinn = bm_key == "pinnacle"
+            es_fb   = bm_key in _SHARP_FB_US
             for mkt in bm.get("markets", []):
                 mk = mkt.get("key", "")
                 if mk == "h2h":
@@ -2218,6 +2222,8 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
                         if not pr: continue
                         if es_pinn:
                             pinn_h2h[nm] = pr
+                        if es_fb and nm not in sharp_fb_h2h_us:
+                            sharp_fb_h2h_us[nm] = pr
                         elif nm not in best_h2h or pr > best_h2h[nm][0]:
                             best_h2h[nm] = (pr, bm_name)
                 elif mk == "totals":
@@ -2243,8 +2249,11 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
                         elif k not in best_spreads or pr > best_spreads[k][0]:
                             best_spreads[k] = (pr, bm_name)
 
+        # Benchmark: Pinnacle preferido; fallback a bet365/betfair
         if len(pinn_h2h) < 2:
-            continue  # sin Pinnacle moneyline no hay base de EV
+            if len(sharp_fb_h2h_us) < 2:
+                continue
+            pinn_h2h = sharp_fb_h2h_us
 
         # ── Devigear h2h → probabilidades reales ─────────────────────
         overround  = sum(1/p for p in pinn_h2h.values() if p)
@@ -2686,9 +2695,9 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
             "cuotas_avisos":  [],
             "sede_neutral":   False,
             "arbitro":        "",
-            "forma_local":    None,
-            "forma_visita":   None,
-            "h2h":            None,
+            "forma_local":    obtener_forma_reciente(home)  if APIFOOTBALL_KEY else None,
+            "forma_visita":   obtener_forma_reciente(away)  if APIFOOTBALL_KEY else None,
+            "h2h":            obtener_h2h(home, away)       if APIFOOTBALL_KEY else None,
             "movimiento":     None,
             "mercados_ext":   mercados_ext,
         })

@@ -85,12 +85,19 @@ def correr():
     print("\n SharpIQ — Auto Publicar (3 tiers)")
 
     # Ventana horaria en COT: solo picks con hora de inicio <= HASTA_HORA_COT
-    # Se pasa como variable de entorno desde GitHub Actions en cada turno
     HASTA_HORA_COT = int(os.environ.get("HASTA_HORA_COT", "23"))
+
+    # Siempre correr el motor primero para tener predicciones frescas
+    print("  Corriendo motor...")
+    try:
+        from motor import guardar_predicciones
+        guardar_predicciones()
+    except Exception as e:
+        print(f"  Motor error: {e} — intentando con predicciones.json existente")
 
     reporte = _leer_predicciones()
     if not reporte:
-        print("  Sin predicciones.json — corre motor.py primero")
+        print("  Sin predicciones.json — motor no pudo generar datos")
         return
 
     # Saludo matutino al canal free — solo una vez por día
