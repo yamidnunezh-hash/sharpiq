@@ -2422,11 +2422,16 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         pinn_btts  = {}   # {"yes"|"no": price}
         pinn_ah    = {}   # {(team_name, point_float): price}
         best       = {}   # {mk_key: (price, bookmaker_name)}
+        # Fallback sharp: bet365/betfair cuando Pinnacle no tiene línea
+        sharp_fb_h2h   = {}
+        sharp_fb_goals = {}
+        _SHARP_FB = {"bet365", "betfair_ex", "betfair", "betfair_ex_uk"}
 
         for bm in ev.get("bookmakers", []):
             bm_key  = bm.get("key",   "")
             bm_name = bm.get("title", "")
             es_pinn = bm_key == "pinnacle"
+            es_fb   = bm_key in _SHARP_FB
 
             for mkt in bm.get("markets", []):
                 mkey     = mkt.get("key", "")
@@ -2437,6 +2442,8 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
                         nm, pr = o["name"], o["price"]
                         if es_pinn:
                             pinn_h2h[nm] = pr
+                        if es_fb and nm not in sharp_fb_h2h:
+                            sharp_fb_h2h[nm] = pr
                         k = f"h2h_{nm}"
                         if k not in best or pr > best[k][0]:
                             best[k] = (pr, bm_name)
@@ -2448,6 +2455,8 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
                         pr = o["price"]
                         if es_pinn:
                             pinn_goals[(pt, nm)] = pr
+                        if es_fb and (pt, nm) not in sharp_fb_goals:
+                            sharp_fb_goals[(pt, nm)] = pr
                         k = f"goals_{nm}_{str(pt).replace('.','_')}"
                         if k not in best or pr > best[k][0]:
                             best[k] = (pr, bm_name)
@@ -2502,11 +2511,17 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
                         if k not in best or pr > best[k][0]:
                             best[k] = (pr, bm_name)
 
-        # Pinnacle h2h obligatorio
+        # Benchmark: Pinnacle preferido; fallback a bet365/betfair
+        sin_pinnacle = False
         if len(pinn_h2h) < 2:
-            continue
+            if len(sharp_fb_h2h) < 2:
+                continue  # sin ningún benchmark sharp → descartar
+            pinn_h2h   = sharp_fb_h2h
+            pinn_goals = sharp_fb_goals
+            sin_pinnacle = True
+            print(f"  Fallback bet365/betfair: {home} vs {away}")
 
-        # ── Devigear Pinnacle h2h ────────────────────────────────
+        # ── Devigear benchmark h2h ───────────────────────────────
         or_h2h = sum(1/p for p in pinn_h2h.values() if p)
         p_h2h  = {nm: (1/pr)/or_h2h for nm, pr in pinn_h2h.items() if pr}
 
@@ -2645,6 +2660,7 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
                 "ev":      mejor_vb["ev_pinn"],
             },
             "cuotas_reales":  True,
+            "sin_pinnacle":   sin_pinnacle,
             "cuotas_avisos":  [],
             "sede_neutral":   False,
             "arbitro":        "",
