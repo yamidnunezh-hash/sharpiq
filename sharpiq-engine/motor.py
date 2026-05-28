@@ -9,6 +9,7 @@ import math
 import os
 import sys
 import csv
+import logging
 import numpy as np
 
 class _NpEncoder(json.JSONEncoder):
@@ -47,6 +48,28 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_PATH       = os.path.join(BASE_DIR, "..", "predicciones.json")
 MEJOR_PATH      = os.path.join(BASE_DIR, "..", "mejor_prediccion.json")
 HISTORIAL_PATH  = os.path.join(BASE_DIR, "historial_cuotas.csv")
+
+
+def _setup_logger():
+    """Logger que escribe en logs/motor_YYYY-MM-DD.log y en consola simultáneamente."""
+    from datetime import date as _d
+    log_dir  = os.path.join(BASE_DIR, "logs")
+    os.makedirs(log_dir, exist_ok=True)
+    log_file = os.path.join(log_dir, f"motor_{_d.today().isoformat()}.log")
+    lg = logging.getLogger("sharpiq.motor")
+    if not lg.handlers:  # evitar duplicar handlers si se reimporta el módulo
+        lg.setLevel(logging.DEBUG)
+        fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s", "%H:%M:%S")
+        fh = logging.FileHandler(log_file, encoding="utf-8")
+        fh.setFormatter(fmt)
+        ch = logging.StreamHandler(sys.stdout)
+        ch.setFormatter(fmt)
+        lg.addHandler(fh)
+        lg.addHandler(ch)
+    return lg
+
+LOG = _setup_logger()
+
 
 # Dixon-Coles: correlación negativa entre goles local/visita en marcadores bajos
 RHO = -0.10
@@ -309,16 +332,46 @@ _SPORT_NOMBRE = {
 }
 
 # Deportes adicionales cubiertos por The Odds API (no requieren API-Football)
-# El motor los analiza directo con EV vs Pinnacle
+# El motor los analiza directo con EV vs Pinnacle.
+# Claves de tenis: tournament-specific (solo la activa devolverá datos — las inactivas retornan vacío y se ignoran)
 SPORTS_ODDS_ONLY = {
-    "basketball_nba":           "NBA",
-    "basketball_euroleague":    "Euroleague",
-    "baseball_mlb":             "MLB",
-    "icehockey_nhl":            "NHL",
-    "tennis_atp_french_open":   "ATP Roland Garros",
-    "tennis_wta_french_open":   "WTA Roland Garros",
-    "americanfootball_nfl":     "NFL",
-    "americanfootball_ufl":     "UFL",
+    # ── Basketball ───────────────────────────────────────────────
+    "basketball_nba":               "NBA",
+    "basketball_euroleague":        "Euroleague",
+    "basketball_nba_preseason":     "NBA Preseason",
+    # ── Baseball ─────────────────────────────────────────────────
+    "baseball_mlb":                 "MLB",
+    # ── Hockey sobre hielo ────────────────────────────────────────
+    "icehockey_nhl":                "NHL",
+    # ── Fútbol americano ─────────────────────────────────────────
+    "americanfootball_nfl":         "NFL",
+    "americanfootball_ncaaf":       "NCAA Football",
+    "americanfootball_ufl":         "UFL",
+    # ── Tenis ATP — Grand Slams + Masters 1000 ───────────────────
+    "tennis_atp_french_open":       "ATP Roland Garros",     # mayo-junio
+    "tennis_atp_wimbledon":         "ATP Wimbledon",          # junio-julio
+    "tennis_atp_us_open":           "ATP US Open",            # agosto-septiembre
+    "tennis_atp_australian_open":   "ATP Australian Open",    # enero
+    "tennis_atp_madrid_open":       "ATP Madrid Open",
+    "tennis_atp_rome_open":         "ATP Roma",
+    # ── Tenis WTA — Grand Slams + Premier ────────────────────────
+    "tennis_wta_french_open":       "WTA Roland Garros",
+    "tennis_wta_wimbledon":         "WTA Wimbledon",
+    "tennis_wta_us_open":           "WTA US Open",
+    "tennis_wta_australian_open":   "WTA Australian Open",
+    # ── MMA / Boxeo ───────────────────────────────────────────────
+    "mma_mixed_martial_arts":       "UFC / MMA",
+    "boxing_boxing":                "Boxeo",
+    # ── Rugby ─────────────────────────────────────────────────────
+    "rugbyleague_nrl":              "NRL Rugby League",
+    "rugbyunion_super_rugby":       "Super Rugby",
+    # ── Cricket ──────────────────────────────────────────────────
+    "cricket_ipl":                  "IPL Cricket",
+    "cricket_big_bash":             "Big Bash Cricket",
+    # ── Golf ─────────────────────────────────────────────────────
+    "golf_pga_tour":                "PGA Tour",
+    # ── Dardos ───────────────────────────────────────────────────
+    "darts_betway_premier_league":  "PDC Darts Premier League",
 }
 
 # Casas de apuestas preferidas (europeas, disponibles en Colombia)
@@ -2708,16 +2761,17 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
 
 # ── GUARDAR JSON PARA EL PANEL ──────────────────────────────────
 def guardar_predicciones():
+    LOG.info("=== SharpIQ Motor START ===")
     try:
         from db_clv import guardar_pick as _db_pick, inicializar as _db_init
         _db_init()
         _db_ok = True
     except Exception as _e:
-        print(f"  DB CLV: {_e}")
+        LOG.warning(f"DB CLV no disponible: {_e}")
         _db_ok = False
 
     # ── Fútbol: todo desde The Odds API con Pinnacle ─────────────
-    print("\nAnalizando fútbol (The Odds API / Pinnacle)...")
+    LOG.info("Analizando fútbol (The Odds API / Pinnacle)...")
     predicciones_futbol = []
     sport_keys_vistos   = set()
     for liga_code, sport_key in LIGAS_ODDS.items():
@@ -2729,7 +2783,7 @@ def guardar_predicciones():
             preds = analizar_futbol_sharp(sport_key, nombre_liga)
             predicciones_futbol.extend(preds)
         except Exception as _ex:
-            print(f"  {sport_key} futbol error: {_ex}")
+            LOG.error(f"{sport_key} futbol error: {_ex}")
 
     reporte = {
         "fecha":           date.today().isoformat(),
@@ -2737,20 +2791,20 @@ def guardar_predicciones():
         "predicciones":    predicciones_futbol,
         "generado":        datetime.now().strftime("%H:%M:%S"),
     }
-    print(f"  Fútbol: {len(predicciones_futbol)} partidos con Pinnacle")
+    LOG.info(f"Fútbol: {len(predicciones_futbol)} partidos con Pinnacle")
 
     # ── Deportes adicionales (NBA, NHL, MLB, Tennis…) ─────────────
-    print("\nAnalizando deportes adicionales...")
+    LOG.info("Analizando deportes adicionales...")
     for sport_key, nombre in SPORTS_ODDS_ONLY.items():
         try:
             preds_extra = analizar_deporte_sharp(sport_key, nombre)
             reporte["predicciones"].extend(preds_extra)
             reporte["total_partidos"] += len(preds_extra)
         except Exception as _ex:
-            print(f"  {nombre} error: {_ex}")
+            LOG.error(f"{nombre} error: {_ex}")
 
     # ── Player props (NBA / NHL / MLB) ────────────────────────────
-    print("\nAnalizando player props...")
+    LOG.info("Analizando player props...")
     for sport_key in _PROP_MARKETS:
         nombre = SPORTS_ODDS_ONLY.get(sport_key, sport_key)
         try:
@@ -2758,7 +2812,7 @@ def guardar_predicciones():
             reporte["predicciones"].extend(props)
             reporte["total_partidos"] += len(props)
         except Exception as _ex:
-            print(f"  {nombre} props error: {_ex}")
+            LOG.error(f"{nombre} props error: {_ex}")
 
     # Filtrar predicciones: solo hoy y mañana (máximo 36h desde ahora)
     limite = datetime.utcnow() + timedelta(hours=36)
@@ -2771,12 +2825,11 @@ def guardar_predicciones():
     reporte["total_partidos"] = len(reporte["predicciones"])
     descartados = antes - reporte["total_partidos"]
     if descartados:
-        print(f"  Filtro 36h: {descartados} predicciones futuras eliminadas (Copa Lib, Mundial, etc.)")
+        LOG.info(f"Filtro 36h: {descartados} predicciones futuras eliminadas")
 
     with open(JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(reporte, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
-    print(f"[OK] Predicciones guardadas: {reporte['total_partidos']} partidos")
-    print(f"[OK] Fecha: {reporte['fecha']}")
+    LOG.info(f"Predicciones guardadas: {reporte['total_partidos']} partidos — {reporte['fecha']}")
 
     guardar_historial_cuotas(reporte)
 
@@ -2784,14 +2837,14 @@ def guardar_predicciones():
     if mejor:
         with open(MEJOR_PATH, "w", encoding="utf-8") as f:
             json.dump(mejor, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
-        print(f"[OK] Mejor prediccion: {mejor['partido']} -- {mejor['prediccion']}")
+        LOG.info(f"Mejor prediccion: {mejor['partido']} -- {mejor['prediccion']}")
 
     if TELEGRAM_OK:
         # Control de duplicados: si ya se enviaron alertas hoy, no reenviar
         _sentinel = os.path.join(BASE_DIR, "logs", f"alertas_{reporte['fecha']}.sent")
         _ya_enviado = os.path.exists(_sentinel)
 
-        print("\n[OK] Enviando alertas Telegram...")
+        LOG.info("Enviando alertas Telegram...")
         alto_valor_enviados = 0
         _mk2ck = {
             "victoria_local":"1","empate":"X","victoria_visita":"2",
@@ -2950,7 +3003,7 @@ def clasificar_tiers(reporte):
     Selecciona los 3 picks del día evaluando TODOS los mercados disponibles.
     Los tiers se asignan por perfil de riesgo (prob + EV + cuota), no por tipo de mercado.
 
-    SEGURO:     prob >= 65%, EV >= 0% vs Pinnacle, cuota <= 1.95
+    SEGURO:     prob >= 65%, EV >= 2% vs Pinnacle, cuota <= 1.95
     PRINCIPAL:  prob >= 50%, EV >= 2% vs Pinnacle, cuota 1.55-3.00
     ALTO VALOR: EV >= 7% vs Pinnacle, cuota 1.75-10.0, prob >= 20%
 
@@ -2960,7 +3013,7 @@ def clasificar_tiers(reporte):
     """
     SEGURO_MIN_PROB  = 65.0
     SEGURO_MAX_CUOTA = 1.95
-    SEGURO_MIN_EV    = 0.0     # EV debe ser positivo vs Pinnacle
+    SEGURO_MIN_EV    = 2.0     # Mínimo 2% de edge real vs Pinnacle
 
     PRINC_MIN_PROB   = 50.0
     PRINC_MIN_CUOTA  = 1.55

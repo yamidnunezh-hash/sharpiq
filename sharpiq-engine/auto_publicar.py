@@ -4,13 +4,33 @@ SharpIQ — Auto Publicar
 Toma la mejor predicción del día y la publica en datos.js + push + Telegram.
 Solo publica si tiene cuota REAL de la API (no estimada) y EV >= 15%.
 """
-import os, sys, re, json, subprocess
+import os, sys, re, json, subprocess, logging
 from datetime import date
 
 BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
 DATOS_PATH = os.path.join(BASE_DIR, "..", "datos.js")
 JSON_PATH  = os.path.join(BASE_DIR, "..", "predicciones.json")
+
+
+def _get_log():
+    """Reutiliza el logger del motor si ya fue inicializado, o crea uno propio."""
+    lg = logging.getLogger("sharpiq.motor")
+    if not lg.handlers:
+        log_dir  = os.path.join(BASE_DIR, "logs")
+        os.makedirs(log_dir, exist_ok=True)
+        log_file = os.path.join(log_dir, f"motor_{date.today().isoformat()}.log")
+        lg.setLevel(logging.DEBUG)
+        fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s", "%H:%M:%S")
+        fh  = logging.FileHandler(log_file, encoding="utf-8")
+        fh.setFormatter(fmt)
+        ch  = logging.StreamHandler(sys.stdout)
+        ch.setFormatter(fmt)
+        lg.addHandler(fh)
+        lg.addHandler(ch)
+    return lg
+
+LOG = _get_log()
 
 
 def _leer_predicciones():
@@ -82,22 +102,22 @@ def _hora_cot_de_pred(pred):
 
 
 def correr():
-    print("\n SharpIQ — Auto Publicar (3 tiers)")
+    LOG.info("=== SharpIQ Auto Publicar START (3 tiers) ===")
 
     # Ventana horaria en COT: solo picks con hora de inicio <= HASTA_HORA_COT
     HASTA_HORA_COT = int(os.environ.get("HASTA_HORA_COT", "23"))
 
     # Siempre correr el motor primero para tener predicciones frescas
-    print("  Corriendo motor...")
+    LOG.info("Corriendo motor...")
     try:
         from motor import guardar_predicciones
         guardar_predicciones()
     except Exception as e:
-        print(f"  Motor error: {e} — intentando con predicciones.json existente")
+        LOG.error(f"Motor error: {e} — intentando con predicciones.json existente")
 
     reporte = _leer_predicciones()
     if not reporte:
-        print("  Sin predicciones.json — motor no pudo generar datos")
+        LOG.error("Sin predicciones.json — motor no pudo generar datos")
         return
 
     # Saludo matutino al canal free — solo una vez por día
@@ -119,18 +139,18 @@ def correr():
             ]
             enviar_saludo_manana_free(partidos_hoy)
             open(_saludo_sent, "w").close()
-            print("  Saludo matutino enviado al canal free")
+            LOG.info("Saludo matutino enviado al canal free")
         except Exception as e:
-            print(f"  Saludo free error: {e}")
+            LOG.error(f"Saludo free error: {e}")
     else:
-        print("  Saludo de hoy ya enviado — skip")
+        LOG.info("Saludo de hoy ya enviado — skip")
 
     # ── Clasificar picks en 3 tiers ─────────────────────────────
     try:
         from motor import clasificar_tiers
         tiers = clasificar_tiers(reporte)
     except Exception as e:
-        print(f"  Error clasificar_tiers: {e}")
+        LOG.error(f"Error clasificar_tiers: {e}")
         tiers = {"seguro": None, "principal": None, "alto_valor": None}
 
     # Filtrar ya-publicados y partidos ya comenzados
@@ -145,7 +165,7 @@ def correr():
         if not t:
             continue
         if _ya_publicado(t["pred"]["local"]):
-            print(f"  Tier {k} ya publicado: {t['pred']['local']}")
+            LOG.info(f"Tier {k} ya publicado: {t['pred']['local']}")
             tiers[k] = None
             continue
         # Descartar si el partido ya empezó o si está fuera de la ventana horaria
@@ -162,10 +182,10 @@ def correr():
                 # Solo descartar si el partido es HOY en COT y ya pasó la hora
                 fecha_ev = t["pred"].get("fecha_evento", date.today().isoformat())
                 if fecha_ev == date.today().isoformat() and ahora_cot_mins >= partido_cot_mins:
-                    print(f"  Tier {k} descartado — {t['pred']['local']} ya empezó ({cot_h:02d}:{m} COT)")
+                    LOG.warning(f"Tier {k} descartado — {t['pred']['local']} ya empezó ({cot_h:02d}:{m} COT)")
                     tiers[k] = None
                 elif cot_h > HASTA_HORA_COT and fecha_ev == date.today().isoformat():
-                    print(f"  Tier {k} fuera de ventana — {t['pred']['local']} a las {cot_h:02d}:{m} COT (ventana hasta {HASTA_HORA_COT:02d}:00)")
+                    LOG.warning(f"Tier {k} fuera de ventana — {t['pred']['local']} a las {cot_h:02d}:{m} COT (ventana hasta {HASTA_HORA_COT:02d}:00)")
                     tiers[k] = None
         except Exception:
             pass
@@ -184,7 +204,7 @@ def correr():
                 open(_sin_picks_sent, "w").close()
             except Exception:
                 pass
-        print("  Sin picks nuevos hoy")
+        LOG.info("Sin picks nuevos hoy — fin")
         return
 
     # ── GIF + Mensaje VIP con los 3 tiers en un solo mensaje ────
@@ -193,9 +213,9 @@ def correr():
         import random
         enviar_gif_vip(random.choice(GIFS_MANANA))
         enviar_tiers_vip(tiers["seguro"], tiers["principal"], tiers["alto_valor"])
-        print("  Tiers VIP enviados")
+        LOG.info("Tiers VIP enviados a Telegram")
     except Exception as e:
-        print(f"  Telegram tiers error: {e}")
+        LOG.error(f"Telegram tiers error: {e}")
 
     # ── Aviso privado a Yamid ────────────────────────────────────
     try:
@@ -214,7 +234,7 @@ def correr():
             + "\n\n✅ Canal VIP + sharpiq.co actualizados"
         )
     except Exception as e:
-        print(f"  Yamid aviso error: {e}")
+        LOG.error(f"Yamid aviso error: {e}")
 
     # ── Actualizar datos.js con los 3 tiers ──────────────────────
     _CK_MAP = {
@@ -238,7 +258,7 @@ def correr():
         _agregar_a_datos_js(partido, liga, t["mercado_nombre"], str(t["cuota"]),
                             hora_cot, ev_val, fecha_evento=fecha_ev,
                             tier=k, stake_pct=stake_pct)
-        print(f"  datos.js: {partido} | {t['mercado_nombre']} @{t['cuota']}")
+        LOG.info(f"datos.js [{k}]: {partido} | {t['mercado_nombre']} @{t['cuota']}")
 
     # ── Git push ─────────────────────────────────────────────────
     repo_dir = os.path.join(BASE_DIR, "..")
@@ -257,9 +277,9 @@ def correr():
         if push.returncode != 0:
             subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=repo_dir, check=True)
             subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=True)
-        print("  GitHub actualizado")
+        LOG.info("GitHub actualizado")
     except subprocess.CalledProcessError as e:
-        print(f"  Git error: {e}")
+        LOG.error(f"Git error: {e}")
 
     # ── Canal free: teaser partido + aviso de picks VIP ──────────
     try:
