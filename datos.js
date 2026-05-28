@@ -46,7 +46,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "alto_valor",
     stake_pct:  "2",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "27/05/26",
@@ -58,7 +58,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "principal",
     stake_pct:  "3",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "27/05/26",
@@ -241,7 +241,7 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Copa Sudamericana",
     prediccion: "Under 2.5 goles — EV +39%",
     cuota:      "1.81",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "27/05/26",
@@ -249,7 +249,7 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Copa Sudamericana",
     prediccion: "Under 2.5 goles — EV +21%",
     cuota:      "1.75",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "27/05/26",
