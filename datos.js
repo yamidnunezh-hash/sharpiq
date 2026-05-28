@@ -93,7 +93,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "alto_valor",
     stake_pct:  "2",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "28/05/26",
@@ -105,7 +105,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "alto_valor",
     stake_pct:  "2",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "28/05/26",
@@ -129,7 +129,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "principal",
     stake_pct:  "3",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "29/05/26",
@@ -170,6 +170,30 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "28/05/26",
+    partido:    "Corinthians vs Platense",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 goles — EV +46%",
+    cuota:      "1.96",
+    resultado:  "win"
+  },
+  {
+    fecha:      "28/05/26",
+    partido:    "Peñarol vs Independiente Santa Fe",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 goles — EV +33%",
+    cuota:      "1.79",
+    resultado:  "win"
+  },
+  {
+    fecha:      "28/05/26",
+    partido:    "Bolívar vs Independiente Rivadavia",
+    liga:       "Copa Libertadores",
+    prediccion: "Gana Bolívar — EV +47%",
+    cuota:      "2.32",
+    resultado:  "loss"
+  },
   {
     fecha:      "27/05/26",
     partido:    "Nishesh Basavareddy vs Alex Michelsen",
