@@ -282,10 +282,12 @@ LIGAS_ODDS = {
     "262": "soccer_mexico_ligamx",
     "253": "soccer_usa_mls",
     "265": "soccer_chile_campeonato",
-    "242": "soccer_colombia_primera_a",          # Liga BetPlay (disponible en odds API 2026)
-    "268": "soccer_peru_primera_division",
-    "240": "soccer_ecuador_liga_pro",
-    "341": "soccer_uruguay_primera_division",
+    # Liga BetPlay / Perú / Ecuador / Uruguay: no disponibles aún en The Odds API (404)
+    # Se activarán cuando The Odds API los añada
+    # "242": "soccer_colombia_primera_a",
+    # "268": "soccer_peru_primera_division",
+    # "240": "soccer_ecuador_liga_pro",
+    # "341": "soccer_uruguay_primera_division",
     "1":   "soccer_fifa_world_cup",              # FIFA Mundial 2026 (junio-julio)
     # api-sports IDs — Asia / Pacífico / Europa norte
     "98":  "soccer_japan_j_league",
@@ -377,10 +379,7 @@ SPORTS_ODDS_ONLY = {
     # ── Cricket ──────────────────────────────────────────────────
     "cricket_ipl":                  "IPL Cricket",
     "cricket_big_bash":             "Big Bash Cricket",
-    # ── Golf ─────────────────────────────────────────────────────
-    "golf_pga_tour":                "PGA Tour",
-    # ── Dardos ───────────────────────────────────────────────────
-    "darts_betway_premier_league":  "PDC Darts Premier League",
+    # golf_pga_tour / darts_betway_premier_league → HTTP 404 en The Odds API
 }
 
 # Casas de apuestas preferidas (europeas, disponibles en Colombia)
@@ -581,8 +580,8 @@ def obtener_partidos_hoy_apifb():
         return []
     partidos = []
     conteo = {}
-    # Solo aceptar fixtures dentro de las próximas 36h (filtra Mundial TBD y Copa Lib futura)
-    limite_utc = datetime.utcnow() + timedelta(hours=36)
+    # Solo aceptar fixtures dentro de las próximas 48h (cubre finales/partidos 2 días adelante)
+    limite_utc = datetime.utcnow() + timedelta(hours=48)
     for f in data["response"]:
         lid = f["league"]["id"]
         if lid not in LIGAS_APIFB:
@@ -2826,8 +2825,8 @@ def guardar_predicciones():
         except Exception as _ex:
             LOG.error(f"{nombre} props error: {_ex}")
 
-    # Filtrar predicciones: solo hoy y mañana (máximo 36h desde ahora)
-    limite = datetime.utcnow() + timedelta(hours=36)
+    # Filtrar predicciones: máximo 48h desde ahora (cubre finales 2 días adelante)
+    limite = datetime.utcnow() + timedelta(hours=48)
     hoy_str = date.today().isoformat()
     antes = len(reporte["predicciones"])
     reporte["predicciones"] = [
