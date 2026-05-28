@@ -3,6 +3,17 @@
 // NO editar manualmente
 
 const PROXIMOS_EVENTOS = [
+  {
+    fecha:      "30/05/26",
+    partido:    "Athletic Club (MG) vs Fortaleza",
+    liga:       "Brasileirao B",
+    prediccion: "Over 2.5 Goles — EV +80%",
+    cuota:      "2.4",
+    hora:       "16:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "5.0"
+  },
 {
     fecha:      "29/05/26",
     partido:    "Elina Svitolina vs Tamara Korpatsch",
