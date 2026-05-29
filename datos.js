@@ -4,6 +4,17 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "30/05/26",
+    partido:    "Stephanie Han vs Holly Holm",
+    liga:       "Boxeo",
+    prediccion: "Gana Stephanie Han — EV +2%",
+    cuota:      "1.25",
+    hora:       "16:55 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "4.3"
+  },
+  {
     fecha:      "29/05/26",
     partido:    "Nice vs Saint Etienne",
     liga:       "Ligue 1",
