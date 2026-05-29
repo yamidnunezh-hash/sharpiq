@@ -1311,15 +1311,13 @@ def _fetch_odds_ext(sport_key):
         return _cache_cuotas_ext[sport_key]
     try:
         url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
-        # bookmakers y regions son mutuamente exclusivos en The Odds API v4
-        _is_soccer_ext = any(x in sport_key for x in ("soccer",))
-        # Pedimos todos los mercados disponibles para fútbol:
-        # alternate_totals → over/under 0.5 / 4.5 / 5.5
-        # spreads → hándicap asiático (así lo llama The Odds API para fútbol)
-        _ext_markets = (
-            "h2h,totals,alternate_totals,spreads,btts,double_chance,draw_no_bet"
-            if _is_soccer_ext else "h2h,totals,spreads"
-        )
+        # IMPORTANTE: el endpoint a nivel de LIGA solo soporta los mercados
+        # "featured": h2h, spreads, totals. Los mercados btts/double_chance/
+        # draw_no_bet/alternate_totals SOLO existen en el endpoint por-evento
+        # (/events/{id}/odds) → pedirlos aquí devuelve 422 SIEMPRE y desperdicia
+        # 2 peticiones por liga. spreads = hándicap asiático para fútbol.
+        # TODO: para btts/dc/dnb/alt_totals usar el endpoint por-evento (más créditos).
+        _ext_markets = "h2h,totals,spreads"
         params = {
             "apiKey":      ODDS_API_KEY,
             "bookmakers":  "pinnacle,bet365,betfair,unibet,williamhill,bwin",
@@ -1327,13 +1325,9 @@ def _fetch_odds_ext(sport_key):
             "oddsFormat":  "decimal",
         }
         r = requests.get(url, params=params, timeout=20)
-        # Fallback 1: sin alternate_totals/spreads (ligas con soporte limitado)
-        if r.status_code == 422 and "alternate_totals" in _ext_markets:
-            params["markets"] = "h2h,totals,btts,double_chance,draw_no_bet" if _is_soccer_ext else "h2h,totals"
-            r = requests.get(url, params=params, timeout=20)
-        # Fallback 2: solo básicos
+        # Fallback: alguna liga sin spreads → usar solo básicos
         if r.status_code == 422:
-            print(f"  Odds ext {sport_key}: 422 mercados extendidos, reintentando con h2h,totals")
+            print(f"  Odds ext {sport_key}: spreads no disponible, usando h2h,totals")
             params["markets"] = "h2h,totals"
             r = requests.get(url, params=params, timeout=20)
         if r.status_code != 200:
@@ -2527,10 +2521,15 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         hora_raw = ev.get("commence_time", "")
         ev_id    = ev.get("id", "")
 
-        # Descartar partidos ya empezados
+        # Descartar partidos ya empezados o demasiado lejanos (>48h).
+        # El corte va ANTES del análisis para no gastar llamadas a API-Football
+        # en partidos (Mundial, finales futuras) que luego se descartan igual.
         try:
             dt = datetime.strptime(hora_raw[:16], "%Y-%m-%dT%H:%M")
-            if datetime.utcnow() >= dt:
+            ahora_utc = datetime.utcnow()
+            if ahora_utc >= dt:
+                continue
+            if dt > ahora_utc + timedelta(hours=48):
                 continue
         except Exception:
             pass
@@ -3117,7 +3116,7 @@ def clasificar_tiers(reporte):
 
     SEGURO:     prob >= 65%, EV >= 2% vs Pinnacle, cuota <= 1.95
     PRINCIPAL:  prob >= 50%, EV >= 2% vs Pinnacle, cuota 1.55-3.00
-    ALTO VALOR: EV >= 7% vs Pinnacle, cuota 1.75-10.0, prob >= 20%
+    ALTO VALOR: EV >= 7% vs Pinnacle, cuota 1.75-5.5, prob >= 30%
 
     Mercados elegibles: 1X2, Over/Under 0.5-5.5, BTTS, DC, DNB,
                         Hándicap Asiático, cualquier mercado con línea Pinnacle.
@@ -3134,8 +3133,8 @@ def clasificar_tiers(reporte):
 
     AV_MIN_EV        = 7.0
     AV_MIN_CUOTA     = 1.75
-    AV_MAX_CUOTA     = 10.0
-    AV_MIN_PROB      = 20.0
+    AV_MAX_CUOTA     = 5.5     # Política: nunca publicar cuota > 5.5
+    AV_MIN_PROB      = 30.0    # Política: nunca publicar prob < 30%
 
     _NOMBRES = {
         "victoria_local":  "Victoria Local",

@@ -163,6 +163,16 @@ def obtener_stats_ext(equipo, liga_id):
         cf = sum(v for v in c_for.values()  if isinstance(v, (int, float))) / pj
         ca = sum(v for v in c_agt.values()  if isinstance(v, (int, float))) / pj
 
+        # /teams/statistics NO incluye corners en muchos planes → cf/ca quedan en 0.
+        # Sin este fallback, calcular_corners_esperados da λ≈0 y el modelo predice
+        # Under al 100%. Usar el promedio de la liga cuando no hay dato real.
+        if cf <= 0 or ca <= 0:
+            d = DEFAULTS_LIGA.get(str(liga_int), _DEFAULT)
+            if cf <= 0:
+                cf = d["cf"]
+            if ca <= 0:
+                ca = d["ca"]
+
         # ── Tarjetas ─────────────────────────────────────────────
         cards  = r.get("cards", {})
         yf = sum((v.get("total") or 0) for v in cards.get("yellow", {}).values())

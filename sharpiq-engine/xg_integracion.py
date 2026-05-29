@@ -19,8 +19,13 @@ def ajustar_con_xg(local, visitante, liga_id, lambda_local, lambda_visita):
     try:
         from stats_mercados import obtener_stats_ext, _defaults
 
-        sl = obtener_stats_ext(local,     liga_id) or _defaults(liga_id)
-        sv = obtener_stats_ext(visitante, liga_id) or _defaults(liga_id)
+        # SIN _defaults aquí: el xG solo debe aplicarse con disparos REALES.
+        # Con datos default (sot=4.5 para todos) el "ajuste" es un empujón uniforme
+        # idéntico para cada equipo — ruido disfrazado de dato. Mejor no tocar λ.
+        sl = obtener_stats_ext(local,     liga_id)
+        sv = obtener_stats_ext(visitante, liga_id)
+        if not sl or not sv:
+            return lambda_local, lambda_visita
 
         # disparos_contra = shots on target propios del equipo (campo de stats_mercados)
         sot_l = sl.get("disparos_contra", 0)

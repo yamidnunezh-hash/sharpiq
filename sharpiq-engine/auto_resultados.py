@@ -367,16 +367,34 @@ def correr():
         LOG.info(f"datos.js actualizado — {actualizados} resultado/s")
 
         repo_dir = os.path.join(BASE_DIR, "..")
+
+        def _git(*args):
+            return subprocess.run(["git", *args], cwd=repo_dir,
+                                  capture_output=True, text=True)
         try:
-            subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=repo_dir, capture_output=True)
-            subprocess.run(["git", "add", "datos.js"], cwd=repo_dir, check=True)
-            subprocess.run(
-                ["git", "commit", "-m", f"auto: resultados {date.today().isoformat()}"],
-                cwd=repo_dir, check=True,
-            )
-            subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=True)
-            LOG.info("GitHub actualizado")
-        except subprocess.CalledProcessError as e:
+            # Abortar cualquier rebase a medias de una corrida previa (evita exit 128)
+            _git("rebase", "--abort")
+            _git("add", "datos.js", "index.html")
+            commit = _git("commit", "-m", f"auto: resultados {date.today().isoformat()}")
+            sin_cambios = "nothing to commit" in (commit.stdout + commit.stderr)
+
+            pushed = False
+            for intento in range(3):
+                push = _git("push", "origin", "main")
+                if push.returncode == 0:
+                    pushed = True
+                    break
+                pull = _git("pull", "--rebase", "origin", "main")
+                if pull.returncode != 0:
+                    _git("rebase", "--abort")
+                    LOG.error(f"Git: conflicto de rebase (intento {intento+1}/3): "
+                              f"{(pull.stderr or pull.stdout).strip()[:200]}")
+                    break
+            if pushed:
+                LOG.info("GitHub actualizado")
+            elif not sin_cambios:
+                LOG.error("Git: no se pudo hacer push tras 3 intentos")
+        except Exception as e:
             LOG.error(f"Git error: {e}")
     else:
         LOG.info("Auto-resultados: sin nuevos resultados disponibles")
