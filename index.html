@@ -2064,6 +2064,8 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   // ── FLOATING BADGES DINÁMICOS ──────────────────────────────
   (function(){
     if(typeof PREDICCIONES_HISTORIAL==='undefined') return;
+    // _isPending se define en otro IIFE; redefinir aquí (este es scope distinto)
+    const _isPending=r=>!r||r==='pending'||r==='pendiente';
     const resolved=PREDICCIONES_HISTORIAL.filter(p=>!_isPending(p.resultado));
     const wins=resolved.filter(p=>p.resultado==='win');
     const losses=resolved.filter(p=>p.resultado==='loss');
