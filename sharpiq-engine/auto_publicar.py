@@ -33,6 +33,7 @@ def _get_log():
         ch.setFormatter(fmt)
         lg.addHandler(fh)
         lg.addHandler(ch)
+        lg.propagate = False
     return lg
 
 LOG = _get_log()
@@ -184,11 +185,11 @@ def correr():
         tiers = {"seguro": None, "principal": None, "alto_valor": None}
 
     # Filtrar ya-publicados y partidos ya comenzados
-    from datetime import datetime
-    ahora_cot = datetime.utcnow().replace(tzinfo=None)
+    from datetime import datetime, timezone
+    ahora_cot = datetime.now(timezone.utc).replace(tzinfo=None)
     ahora_cot = ahora_cot.replace(
-        hour=(datetime.utcnow().hour - 5) % 24,
-        minute=datetime.utcnow().minute
+        hour=(datetime.now(timezone.utc).replace(tzinfo=None).hour - 5) % 24,
+        minute=datetime.now(timezone.utc).replace(tzinfo=None).minute
     )
     for k in ("seguro", "principal", "alto_valor"):
         t = tiers.get(k)
@@ -205,8 +206,8 @@ def correr():
                 h, m  = hora_str.split(":")
                 cot_h = (int(h) - 5 + 24) % 24
                 # Comparar en COT: hora actual COT vs hora del partido COT
-                ahora_cot_h = (datetime.utcnow().hour - 5) % 24
-                ahora_cot_m = datetime.utcnow().minute
+                ahora_cot_h = (datetime.now(timezone.utc).replace(tzinfo=None).hour - 5) % 24
+                ahora_cot_m = datetime.now(timezone.utc).replace(tzinfo=None).minute
                 ahora_cot_mins  = ahora_cot_h * 60 + ahora_cot_m
                 partido_cot_mins = cot_h * 60 + int(m)
                 # Solo descartar si el partido es HOY en COT y ya pasó la hora

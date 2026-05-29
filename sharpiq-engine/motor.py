@@ -20,7 +20,7 @@ class _NpEncoder(json.JSONEncoder):
         if isinstance(obj, np.ndarray):     return obj.tolist()
         return super().default(obj)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from datetime import datetime, date, timedelta
+from datetime import datetime, date, timedelta, timezone
 from scipy.stats import poisson
 from scipy.optimize import minimize
 import numpy as np
@@ -66,6 +66,7 @@ def _setup_logger():
         ch.setFormatter(fmt)
         lg.addHandler(fh)
         lg.addHandler(ch)
+        lg.propagate = False
     return lg
 
 LOG = _setup_logger()
@@ -613,7 +614,7 @@ def obtener_partidos_hoy_apifb():
     partidos = []
     conteo = {}
     # Solo aceptar fixtures dentro de las próximas 48h (cubre finales/partidos 2 días adelante)
-    limite_utc = datetime.utcnow() + timedelta(hours=48)
+    limite_utc = datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=48)
     for f in data["response"]:
         lid = f["league"]["id"]
         if lid not in LIGAS_APIFB:
@@ -2305,7 +2306,7 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
         # ── Filtro temporal: solo próximas 48 horas ─────────────────
         try:
             dt = datetime.strptime(hora_raw[:16], "%Y-%m-%dT%H:%M")
-            ahora_utc = datetime.utcnow()
+            ahora_utc = datetime.now(timezone.utc).replace(tzinfo=None)
             if ahora_utc >= dt:
                 continue  # partido ya empezó
             if dt > ahora_utc + timedelta(hours=48):
@@ -2526,7 +2527,7 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         # en partidos (Mundial, finales futuras) que luego se descartan igual.
         try:
             dt = datetime.strptime(hora_raw[:16], "%Y-%m-%dT%H:%M")
-            ahora_utc = datetime.utcnow()
+            ahora_utc = datetime.now(timezone.utc).replace(tzinfo=None)
             if ahora_utc >= dt:
                 continue
             if dt > ahora_utc + timedelta(hours=48):
@@ -2920,7 +2921,7 @@ def guardar_predicciones():
             LOG.error(f"{nombre} props error: {_ex}")
 
     # Filtrar predicciones: máximo 48h desde ahora (cubre finales 2 días adelante)
-    limite = datetime.utcnow() + timedelta(hours=48)
+    limite = datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=48)
     hoy_str = date.today().isoformat()
     antes = len(reporte["predicciones"])
     reporte["predicciones"] = [
