@@ -30,12 +30,12 @@
       "X": 3.05,
       "X_casa": "Unibet",
       "pinnacle_X": 2.96,
-      "over20": 1.91,
+      "over20": 1.92,
       "over20_casa": "Pinnacle",
-      "pinnacle_over20": 1.91,
-      "under20": 1.91,
+      "pinnacle_over20": 1.92,
+      "under20": 1.92,
       "under20_casa": "Pinnacle",
-      "pinnacle_under20": 1.91
+      "pinnacle_under20": 1.92
     },
     "probabilidades": {
       "victoria_local": 31.4,
@@ -82,24 +82,24 @@
         "pinn_prob": 32.0
       },
       "over20": {
-        "value": -0.045,
-        "ev_porcentaje": -4.5,
-        "ev_pinn": -4.5,
+        "value": -0.04,
+        "ev_porcentaje": -4.0,
+        "ev_pinn": -4.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.91,
+        "cuota": 1.92,
         "casa": "Pinnacle",
         "pinn_prob": 50.0
       },
       "under20": {
-        "value": -0.045,
-        "ev_porcentaje": -4.5,
-        "ev_pinn": -4.5,
+        "value": -0.04,
+        "ev_porcentaje": -4.0,
+        "ev_pinn": -4.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.91,
+        "cuota": 1.92,
         "casa": "Pinnacle",
         "pinn_prob": 50.0
       },
