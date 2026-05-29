@@ -2383,15 +2383,14 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   function render(data){
     const picksLookup = buildPicksLookup();
 
-    // Filtrar solo partidos con pick de SharpIQ
-    function filtrar(arr){
-      return arr.map(g => ({...g, _pick: findPick(g, picksLookup)}))
-                .filter(g => g._pick);
+    // Anota cada partido con su pick SharpIQ (si lo tiene) y muestra TODOS los marcadores
+    function anotar(arr){
+      return (arr || []).map(g => ({...g, _pick: findPick(g, picksLookup)}));
     }
 
-    const live     = filtrar(data.live     || []);
-    const upcoming = filtrar(data.upcoming || []).slice(0, 6);
-    const finished = filtrar(data.finished || []).slice(0, 6);
+    const live     = anotar(data.live);
+    const upcoming = anotar(data.upcoming).slice(0, 8);
+    const finished = anotar(data.finished).slice(0, 6);
     const total    = live.length + upcoming.length + finished.length;
 
     if(total === 0){
@@ -2403,16 +2402,17 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     const sec = document.getElementById('liveScoresSection');
     if(sec) sec.style.display = '';
 
+    const conPick = [...live, ...upcoming, ...finished].filter(g => g._pick).length;
     if(live.length){
       badge.style.background = 'rgba(239,68,68,.12)';
       badge.style.borderColor = 'rgba(239,68,68,.4)';
       badgeTxt.textContent = 'EN VIVO';
-      count.textContent = live.length + ' picks SharpIQ en vivo';
+      count.textContent = live.length + (live.length===1?' partido en vivo':' partidos en vivo') + (conPick?` · ${conPick} con pick`:'');
     } else {
       badge.style.background = 'rgba(0,102,204,.12)';
       badge.style.borderColor = 'rgba(0,102,204,.35)';
-      badgeTxt.textContent = 'SEGUIMIENTO';
-      count.textContent = total + ' picks SharpIQ activos';
+      badgeTxt.textContent = 'MARCADORES';
+      count.textContent = total + ' partidos' + (conPick?` · ${conPick} con pick SharpIQ`:'');
     }
 
     const upd = new Date(data.updated);
@@ -2421,6 +2421,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     // Renderizar cards con pick integrado
     function cardConPick(g, tipo){
       const p = g._pick;
+      if(!p) return cardHTML(g, tipo);   // partido sin pick: mostrar solo el marcador
       const _isVip = (localStorage.getItem('sharpiq_role')||'') === 'vip' || (localStorage.getItem('sharpiq_role')||'') === 'admin';
       const mostrarPick = p.status === 'free' || _isVip;
       const pickBlock = mostrarPick
