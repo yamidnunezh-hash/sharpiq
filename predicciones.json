@@ -40516,7 +40516,7 @@
         "Over 10.5": 1.87,
         "Under 10.5": 1.97,
         "Colorado Rockies (+1.5)": 1.92,
-        "San Francisco Giants (-1.5)": 1.95
+        "San Francisco Giants (-1.5)": 1.94
       },
       "probabilidades": {
         "Colorado Rockies": 39.4,
@@ -40585,13 +40585,13 @@
           "mercado_nombre": "Colorado Rockies (+1.5)"
         },
         "spread_san_francisco_giants_m1_5": {
-          "value": -0.017,
-          "ev_porcentaje": -1.7,
-          "ev_pinn": -1.7,
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
+          "cuota": 1.94,
           "casa": "FanDuel",
           "pinn_prob": 50.4,
           "mercado_nombre": "San Francisco Giants (-1.5)"
@@ -40600,7 +40600,7 @@
       "prediccion_principal": {
         "mercado": "San Francisco Giants (-1.5)",
         "prob": 50.4,
-        "ev": -1.7
+        "ev": -2.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -44300,5 +44300,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:01:00"
+  "generado": "12:01:34"
 }
