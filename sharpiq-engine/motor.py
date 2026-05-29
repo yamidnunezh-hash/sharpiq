@@ -394,14 +394,14 @@ SPORTS_ODDS_ONLY = {
     "tennis_atp_french_open":       "ATP Roland Garros",     # mayo-junio
     "tennis_atp_wimbledon":         "ATP Wimbledon",          # junio-julio
     "tennis_atp_us_open":           "ATP US Open",            # agosto-septiembre
-    "tennis_atp_australian_open":   "ATP Australian Open",    # enero
     "tennis_atp_madrid_open":       "ATP Madrid Open",
-    "tennis_atp_rome_open":         "ATP Roma",
+    # NOTA: tennis_atp_australian_open y tennis_atp_rome_open NO son keys válidas
+    # en The Odds API (devuelven 404 "Unknown sport"). Si se reactivan, verificar
+    # el key correcto en https://the-odds-api.com/sports antes de añadirlas.
     # ── Tenis WTA — Grand Slams + Premier ────────────────────────
     "tennis_wta_french_open":       "WTA Roland Garros",
     "tennis_wta_wimbledon":         "WTA Wimbledon",
     "tennis_wta_us_open":           "WTA US Open",
-    "tennis_wta_australian_open":   "WTA Australian Open",
     # ── MMA / Boxeo ───────────────────────────────────────────────
     "mma_mixed_martial_arts":       "UFC / MMA",
     "boxing_boxing":                "Boxeo",
