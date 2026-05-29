@@ -3114,19 +3114,19 @@ def clasificar_tiers(reporte):
     Selecciona los 3 picks del día evaluando TODOS los mercados disponibles.
     Los tiers se asignan por perfil de riesgo (prob + EV + cuota), no por tipo de mercado.
 
-    SEGURO:     prob >= 65%, EV >= 2% vs Pinnacle, cuota <= 1.95
-    PRINCIPAL:  prob >= 50%, EV >= 2% vs Pinnacle, cuota 1.55-3.00
+    SEGURO:     prob >= 62%, EV >= 2% vs Pinnacle, cuota <= 2.10
+    PRINCIPAL:  prob >= 45%, EV >= 2% vs Pinnacle, cuota 1.55-3.00
     ALTO VALOR: EV >= 7% vs Pinnacle, cuota 1.75-5.5, prob >= 30%
 
     Mercados elegibles: 1X2, Over/Under 0.5-5.5, BTTS, DC, DNB,
                         Hándicap Asiático, cualquier mercado con línea Pinnacle.
     Nunca repite el mismo partido entre tiers.
     """
-    SEGURO_MIN_PROB  = 65.0
-    SEGURO_MAX_CUOTA = 1.95
+    SEGURO_MIN_PROB  = 62.0
+    SEGURO_MAX_CUOTA = 2.10
     SEGURO_MIN_EV    = 2.0     # Mínimo 2% de edge real vs Pinnacle
 
-    PRINC_MIN_PROB   = 50.0
+    PRINC_MIN_PROB   = 45.0
     PRINC_MIN_CUOTA  = 1.55
     PRINC_MAX_CUOTA  = 3.00
     PRINC_MIN_EV     = 2.0
