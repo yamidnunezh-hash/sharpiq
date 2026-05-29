@@ -604,6 +604,21 @@ def obtener_lesiones(equipo):
         print(f"    Lesiones {equipo[-12:]}: {len(lesionados)} activa(s) → {', '.join(l['nombre'] for l in lesionados[:3])}")
     return lesionados
 
+# ── CONVERSIÓN UTC → COT (fuente única de verdad) ───────────────
+def _commence_a_cot(commence_iso):
+    """The Odds API entrega commence_time en UTC ("2026-05-30T21:55:00Z").
+    Devuelve un datetime NAIVE en hora de Colombia (COT = UTC-5), ajustando la
+    FECHA correctamente al cruzar medianoche. None si no se puede parsear.
+
+    Es la fuente única para hora_cot y fecha_evento: evita el bug histórico de
+    convertir solo la hora con (hh-5)%24 sin mover el día."""
+    try:
+        dt_utc = datetime.strptime((commence_iso or "")[:16], "%Y-%m-%dT%H:%M")
+        return dt_utc - timedelta(hours=5)
+    except Exception:
+        return None
+
+
 # ── OBTENER PARTIDOS DEL DÍA ────────────────────────────────────
 def obtener_partidos_hoy_apifb():
     """Una sola llamada trae todos los partidos del día de todas las ligas configuradas."""
@@ -2169,12 +2184,11 @@ def analizar_player_props_sharp(sport_key, nombre_liga):
         home = ev.get("home_team", "")
         away = ev.get("away_team", "")
         hora_raw = ev.get("commence_time", "")
-        try:
-            hh = int(hora_raw[11:13])
-            mm = int(hora_raw[14:16])
-            hora_cot = f"{str((hh-5+24)%24).zfill(2)}:{str(mm).zfill(2)}"
-        except Exception:
-            hora_cot = "00:00"
+        # Guardar hora en UTC (convención única; el display resta 5 al mostrar)
+        # + fecha_evento ya en COT desde el helper, para que nunca se desfase el día.
+        hora_utc = hora_raw[11:16] if len(hora_raw) >= 16 else "00:00"
+        _dt_cot  = _commence_a_cot(hora_raw)
+        fecha_ev = _dt_cot.strftime("%Y-%m-%d") if _dt_cot else date.today().isoformat()
 
         # Recopilar líneas de Pinnacle y mejor cuota disponible por jugador+tipo+dirección
         pinn_lines = {}   # {(jugador, tipo, dir): (linea, precio)}
@@ -2261,7 +2275,8 @@ def analizar_player_props_sharp(sport_key, nombre_liga):
                 "visitante":  f"{home} vs {away}",
                 "liga":       f"{nombre_liga} — Props",
                 "liga_code":  sport_key,
-                "hora":       hora_cot,
+                "hora":       hora_utc,
+                "fecha_evento": fecha_ev,
                 "partido":    f"{home} vs {away}",
                 "es_player_prop": True,
                 "prop_tipo":  tipo,
@@ -2436,14 +2451,10 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
         if not value_bets or mejor_outcome is None:
             continue
 
-        # ── Hora UTC + fecha COT (aritmética simple, sin strptime) ────
-        hora_utc_hm = hora_raw[11:16] if len(hora_raw) >= 16 else "00:00"
-        utc_h = int(hora_raw[11:13]) if len(hora_raw) >= 13 else 12
-        utc_d = hora_raw[:10] if len(hora_raw) >= 10 else date.today().isoformat()
-        if utc_h < 5:  # medianoche UTC → día anterior en COT
-            fecha_evento = (date.fromisoformat(utc_d) - timedelta(days=1)).isoformat()
-        else:
-            fecha_evento = utc_d
+        # ── Hora UTC + fecha COT (vía helper, robusto al cruzar medianoche) ──
+        hora_utc_hm  = hora_raw[11:16] if len(hora_raw) >= 16 else "00:00"
+        _dt_cot      = _commence_a_cot(hora_raw)
+        fecha_evento = _dt_cot.strftime("%Y-%m-%d") if _dt_cot else date.today().isoformat()
 
         deporte = SPORTS_ODDS_ONLY.get(sport_key, nombre_liga)
         _SPORT_EMOJI = {"NBA":"🏀","MLB":"⚾","NHL":"🏒","NFL":"🏈"}
