@@ -36,7 +36,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "5",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "30/05/26",
@@ -65,6 +65,14 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "29/05/26",
+    partido:    "Boca Juniors vs U. Católica (Chile)",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 goles — EV +37%",
+    cuota:      "2.01",
+    resultado:  "win"
+  },
   {fecha:'28/05/26', partido:'Cerro Porteño vs Sporting Cristal',     liga:'Copa Libertadores', prediccion:'Under 2.5 goles', cuota:'1.89', resultado:'win'},
   {fecha:'28/05/26', partido:'América de Cali vs Macará',              liga:'Copa Sudamericana',  prediccion:'Under 2.5 goles', cuota:'1.82', resultado:'loss'},
   {fecha:'28/05/26', partido:'Bolívar vs Independiente Rivadavia',     liga:'Copa Libertadores', prediccion:'Gana Bolívar',    cuota:'2.32', resultado:'loss'},
