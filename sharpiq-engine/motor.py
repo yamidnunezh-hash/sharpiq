@@ -2801,9 +2801,19 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
                     if bk_m not in best:
                         continue
                     bp_m, bc_m = best[bk_m]
-                    # Blend: 40% Pinnacle + 60% modelo (modelo aporta más señal en totales)
+                    # Blend ponderado por LIQUIDEZ del mercado: en partidos muy liquidos
+                    # (Champions, top-5 europeas, Mundial) Pinnacle es casi insuperable, asi
+                    # que el modelo pesa poco (evita que el blend se despegue del precio justo).
+                    # En ligas poco liquidas el modelo aporta mas senal donde el mercado es blando.
+                    _sk = sport_key or ""
+                    if any(h in _sk for h in ("uefa_champs_league","uefa_europa_league","uefa_europa_conference","epl","spain_la_liga","germany_bundesliga","italy_serie_a","france_ligue_one","fifa_world_cup")):
+                        _peso_pinn = 0.78
+                    elif any(mq in _sk for mq in ("brazil_campeonato","argentina_primera","conmebol_copa_libertadores","conmebol_copa_sudamericana","usa_mls","mexico_ligamx","efl_champ","netherlands_eredivisie","portugal_primeira")):
+                        _peso_pinn = 0.55
+                    else:
+                        _peso_pinn = 0.38
                     pinn_p_raw = probs_out.get(mk_m, 0) / 100
-                    blend_p = round(pinn_p_raw * 0.4 + model_p * 0.6, 4) if pinn_p_raw > 0 else model_p
+                    blend_p = round(pinn_p_raw * _peso_pinn + model_p * (1 - _peso_pinn), 4) if pinn_p_raw > 0 else model_p
                     ev_blend = round((blend_p * bp_m - 1) * 100, 1)
                     current_ev = (value_bets.get(mk_m) or {}).get("ev_pinn") or -999
                     if ev_blend > current_ev:
