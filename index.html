@@ -1216,6 +1216,15 @@ E html>
           <div class="dc-sub" id="dc-racha-sub" style="color:rgba(255,255,255,0.55)">Aciertos consecutivos</div>
         </div>
 
+        <div class="dc dark-card rv" style="grid-column:1/-1;padding:18px 22px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+            <span class="dc-pill dp">📈 Curva de Bankroll</span>
+            <span id="bankrollVal" class="snum" style="font-size:26px">0 u</span>
+          </div>
+          <div id="bankrollCurve"></div>
+          <div class="dc-sub" style="margin-top:6px">Unidades netas acumuladas · cada pick = 1u · ganancia = cuota−1</div>
+        </div>
+
       </div>
 
       <!-- Anillo de puntos hero -->
@@ -1994,6 +2003,28 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
       const pre=dRoiEl.previousElementSibling;
       if(pre&&pre.classList.contains('dc-pre')) pre.textContent=yieldPct>=0?'+':'−';
     }
+
+    // Curva de bankroll (sparkline trading-panel)
+    (function(){
+      const bc=document.getElementById('bankrollCurve'); if(!bc) return;
+      const seq=[...resolved].reverse();
+      let u=0; const pts=[0];
+      seq.forEach(p=>{ u += p.resultado==='win' ? (parseFloat(p.cuota)-1) : -1; pts.push(+u.toFixed(3)); });
+      const W=600,H=120,pad=10;
+      const mn=Math.min(0,...pts), mx=Math.max(0,...pts), rng=(mx-mn)||1;
+      const X=i=>pad+(i/((pts.length-1)||1))*(W-2*pad);
+      const Y=v=>H-pad-((v-mn)/rng)*(H-2*pad);
+      const line=pts.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+','+Y(v).toFixed(1)).join(' ');
+      const area=line+' L'+X(pts.length-1).toFixed(1)+','+(H-pad)+' L'+X(0).toFixed(1)+','+(H-pad)+' Z';
+      const col=u>=0?'#00E68A':'#ff4d4d'; const zy=Y(0).toFixed(1);
+      bc.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" style="width:100%;height:120px;display:block">'+
+        '<defs><linearGradient id="bcg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+col+'" stop-opacity="0.28"/><stop offset="1" stop-color="'+col+'" stop-opacity="0"/></linearGradient></defs>'+
+        '<line x1="'+pad+'" y1="'+zy+'" x2="'+(W-pad)+'" y2="'+zy+'" stroke="rgba(255,255,255,.12)" stroke-dasharray="3 4"/>'+
+        '<path d="'+area+'" fill="url(#bcg)"/>'+
+        '<path d="'+line+'" fill="none" stroke="'+col+'" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" style="filter:drop-shadow(0 0 6px '+col+'88)"/>'+
+        '</svg>';
+      const lbl=document.getElementById('bankrollVal'); if(lbl){ lbl.textContent=(u>=0?'+':'')+u.toFixed(2)+' u'; lbl.style.color=col; }
+    })();
 
     // Barra visual de resultados
     const strip=document.getElementById('strip-bloques');
