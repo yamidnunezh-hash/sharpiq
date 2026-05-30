@@ -9,9 +9,9 @@
   "casa": "",
   "hora_utc": "16:30",
   "hora_cot": "11:30 COT",
-  "ev": 85.3,
+  "ev": 95.3,
   "clasificacion": "ALTO VALOR",
-  "confianza": 97.5,
+  "confianza": 90.4,
   "pred_completa": {
     "local": "Gent",
     "visitante": "Genk",
@@ -44,11 +44,9 @@
       "over275": 49.9,
       "under275": 50.1,
       "over25": 9.6,
-      "under25": 90.4,
-      "over35": 2.5,
-      "under35": 97.5
+      "under25": 90.4
     },
-    "confianza": 97.5,
+    "confianza": 90.4,
     "value_bets": {
       "victoria_visita": {
         "value": -0.047,
@@ -117,43 +115,21 @@
         "pinn_prob": 9.6
       },
       "under25": {
-        "value": 0.853,
-        "ev_porcentaje": 85.3,
-        "ev_pinn": 85.3,
+        "value": 0.953,
+        "ev_porcentaje": 95.3,
+        "ev_pinn": 95.3,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 2.05,
-        "casa": "William Hill",
+        "cuota": 2.16,
+        "casa": "Unibet",
         "pinn_prob": 90.4
-      },
-      "over35": {
-        "value": -0.934,
-        "ev_porcentaje": -93.4,
-        "ev_pinn": -93.4,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 2.65,
-        "casa": "Unibet",
-        "pinn_prob": 2.5
-      },
-      "under35": {
-        "value": 0.414,
-        "ev_porcentaje": 41.4,
-        "ev_pinn": 41.4,
-        "tiene_valor": true,
-        "tiene_valor_pinn": true,
-        "clasificacion": "ALTO VALOR",
-        "cuota": 1.45,
-        "casa": "Unibet",
-        "pinn_prob": 97.5
       }
     },
     "prediccion_principal": {
       "mercado": "Under 2.5 Goles",
       "prob": 90.4,
-      "ev": 85.3
+      "ev": 95.3
     },
     "cuotas_reales": true,
     "confiable": true,
