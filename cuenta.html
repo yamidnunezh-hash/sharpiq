@@ -110,12 +110,12 @@
       <div class="kpi-row" id="refKpis">
         <div class="kpi"><div class="kpi-val" id="refTotal">0</div><div class="kpi-lbl">Referidos</div></div>
         <div class="kpi"><div class="kpi-val" id="refVip">0</div><div class="kpi-lbl">VIP activos</div></div>
-        <div class="kpi"><div class="kpi-val" id="refComision">$0</div><div class="kpi-lbl">Comisión total</div></div>
-        <div class="kpi"><div class="kpi-val" id="refPend">$0</div><div class="kpi-lbl">Por cobrar</div></div>
+        <div class="kpi"><div class="kpi-val" id="refComision">0</div><div class="kpi-lbl">Meses ganados</div></div>
+        <div class="kpi"><div class="kpi-val" id="refPend">0</div><div class="kpi-lbl">Meses pendientes</div></div>
       </div>
       <div class="ref-box">
         <div class="section-title">Tu enlace de referido</div>
-        <p style="font-size:13px;color:var(--t2);line-height:1.7">Ganas el <strong style="color:var(--gold)">20%</strong> del primer mes de cada persona que se suscriba con tu enlace. Sin límite de referidos.</p>
+        <p style="font-size:13px;color:var(--t2);line-height:1.7">Ganas <strong style="color:var(--gold)">1 mes gratis</strong> de VIP por cada persona que se suscriba con tu enlace. Se suma automáticamente a tu suscripción. Sin límite de referidos.</p>
         <div class="ref-link">
           <input type="text" id="refInput" readonly>
           <button class="btn-copy" onclick="copiarRef()">COPIAR</button>
@@ -205,11 +205,10 @@ async function cargarDashboard(){
       document.getElementById('planBadge').parentElement.appendChild(btn);
     }
 
-    // Referidos
+    // Referidos (los meses gratis se cargan en cargarReferidos al abrir el tab)
     document.getElementById('refInput').value = d.link_ref || '';
-    document.getElementById('refTotal').textContent   = d.referidos.total;
-    document.getElementById('refVip').textContent     = d.referidos.activos;
-    document.getElementById('refComision').textContent = '$'+d.referidos.comision.toFixed(2);
+    document.getElementById('refTotal').textContent   = (d.referidos && d.referidos.total)   || 0;
+    document.getElementById('refVip').textContent     = (d.referidos && d.referidos.activos) || 0;
 
     document.getElementById('loadingState').style.display = 'none';
     document.getElementById('mainContent').style.display  = 'block';
@@ -269,13 +268,13 @@ async function cargarReferidos(){
     const d = await r.json();
     document.getElementById('refTotal').textContent    = d.total_referidos;
     document.getElementById('refVip').textContent      = d.referidos_vip;
-    document.getElementById('refComision').textContent = '$'+d.comision_total.toFixed(2);
-    document.getElementById('refPend').textContent     = '$'+d.comision_pendiente.toFixed(2);
+    document.getElementById('refComision').textContent = d.meses_ganados;
+    document.getElementById('refPend').textContent     = d.meses_pendientes;
     document.getElementById('refInput').value          = d.link_referido;
 
     if(d.lista && d.lista.length){
       document.getElementById('refLista').innerHTML = '<div style="margin-top:8px">'+
-        d.lista.map(r=>`<div style="padding:8px 0;border-bottom:1px solid var(--border)">${r.nombre} — ${r.plan==='vip'?'<span style=\'color:var(--gold)\'>VIP</span>':'Free'} · $${(r.comision_usd||0).toFixed(2)}</div>`).join('')+
+        d.lista.map(r=>{const m=r.meses_gratis_ganados||0;return `<div style="padding:8px 0;border-bottom:1px solid var(--border)">${r.nombre} — ${r.plan==='vip'?'<span style=\'color:var(--gold)\'>VIP</span>':'Free'} · ${m} mes${m===1?'':'es'} gratis</div>`;}).join('')+
       '</div>';
     }
   } catch(e){}

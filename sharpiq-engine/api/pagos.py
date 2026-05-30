@@ -191,7 +191,26 @@ async def webhook(request: Request):
 def _activar_vip(user_id: int, sub_id: str, email: str):
     with db() as conn:
         cur = conn.cursor()
-        fecha_fin = datetime.utcnow() + timedelta(days=32)
+        # Base: extiende desde la fecha_fin vigente si aún no vence; si no, desde ahora.
+        cur.execute("""SELECT fecha_fin FROM suscripciones
+                       WHERE usuario_id=%s AND estado='active'""", (user_id,))
+        row  = cur.fetchone()
+        base = datetime.utcnow()
+        if row and row.get("fecha_fin") and row["fecha_fin"] > base:
+            base = row["fecha_fin"]
+        dias = 30  # mes pagado
+
+        # Aplicar MESES GRATIS PENDIENTES que este usuario tenga como referidor (opción a).
+        cur.execute("""SELECT COALESCE(SUM(meses_gratis_ganados - meses_gratis_aplicados),0) AS pend
+                       FROM referidos WHERE referidor_id=%s""", (user_id,))
+        pend = int((cur.fetchone() or {}).get("pend") or 0)
+        if pend > 0:
+            dias += 30 * pend
+            cur.execute("""UPDATE referidos SET meses_gratis_aplicados = meses_gratis_ganados
+                           WHERE referidor_id=%s AND meses_gratis_ganados > meses_gratis_aplicados""",
+                        (user_id,))
+
+        fecha_fin = base + timedelta(days=dias)
         cur.execute("""
             INSERT INTO suscripciones (usuario_id, plan, precio_usd, fecha_fin,
                                        mp_subscription_id, mp_payer_email, estado)
@@ -200,15 +219,35 @@ def _activar_vip(user_id: int, sub_id: str, email: str):
             SET fecha_fin=%s, mp_subscription_id=%s, mp_payer_email=%s
         """, (user_id, fecha_fin, sub_id, email, fecha_fin, sub_id, email))
         cur.execute("UPDATE usuarios SET plan='vip' WHERE id=%s", (user_id,))
-        # Registrar comisión para quien lo refirió (20%)
-        cur.execute("SELECT referidor_id FROM referidos WHERE referido_id=%s", (user_id,))
-        ref = cur.fetchone()
-        if ref:
-            comision = round(15.00 * 0.20, 2)
-            cur.execute("""
-                UPDATE referidos SET comision_usd=comision_usd+%s
-                WHERE referido_id=%s
-            """, (comision, user_id))
+
+        # Recompensar a quien refirió a este usuario: 1 MES GRATIS (antes: $3).
+        _recompensar_referidor(cur, user_id)
+
+
+def _recompensar_referidor(cur, referido_id: int):
+    """Otorga 1 mes gratis a quien refirió a `referido_id`. Idempotente.
+    Si el referidor tiene VIP vigente se aplica al instante (+30d a su fecha_fin);
+    si no, queda pendiente y se aplica cuando reactive (en _activar_vip)."""
+    cur.execute("""SELECT referidor_id, meses_gratis_aplicados
+                   FROM referidos WHERE referido_id=%s""", (referido_id,))
+    ref = cur.fetchone()
+    if not ref:
+        return
+    # 1 mes ganado por este referido (set a 1, no acumula por renovaciones del referido).
+    cur.execute("UPDATE referidos SET meses_gratis_ganados=1 WHERE referido_id=%s", (referido_id,))
+    if (ref.get("meses_gratis_aplicados") or 0) >= 1:
+        return  # ya se aplicó antes → no duplicar
+    referidor_id = ref["referidor_id"]
+    cur.execute("""SELECT id FROM suscripciones
+                   WHERE usuario_id=%s AND estado='active' AND fecha_fin > NOW()""",
+                (referidor_id,))
+    sub = cur.fetchone()
+    if sub:
+        cur.execute("""UPDATE suscripciones SET fecha_fin = fecha_fin + INTERVAL '30 days'
+                       WHERE id=%s""", (sub["id"],))
+        cur.execute("UPDATE referidos SET meses_gratis_aplicados=1 WHERE referido_id=%s",
+                    (referido_id,))
+    # else: queda pendiente (aplicados=0); se suma a fecha_fin cuando el referidor reactive.
 
 
 def _desactivar_vip(user_id: int):
@@ -227,10 +266,20 @@ def _registrar_pago(user_id: int, pago: dict):
         cur.execute("""
             INSERT INTO pagos (usuario_id, monto, moneda, mp_payment_id, mp_status, concepto)
             VALUES (%s,%s,%s,%s,%s,'VIP SharpIQ')
-            ON CONFLICT DO NOTHING
+            ON CONFLICT (mp_payment_id) DO NOTHING
+            RETURNING id
         """, (user_id, pago.get("transaction_amount", 0),
               pago.get("currency_id", "USD"),
               str(pago.get("id")), pago.get("status")))
+        es_nuevo = cur.fetchone() is not None
+
+    # ── Este es el flujo REAL (Checkout Pro de pago único): el evento 'payment'
+    #    llega aquí. Antes solo se registraba el pago y NO se activaba el VIP ni
+    #    se acreditaba al referidor. Ahora sí: activar VIP en DB + recompensa.
+    #    Solo si el pago es NUEVO → idempotente ante webhooks duplicados de MP.
+    if es_nuevo and pago.get("status") == "approved":
+        email = (pago.get("payer") or {}).get("email", "")
+        _activar_vip(user_id, str(pago.get("id")), email)
 
 
 @router.get("/mi-suscripcion")

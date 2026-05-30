@@ -1,6 +1,8 @@
 """
 SharpIQ — Sistema de Referidos
-Comisión: 20% del primer mes de cada referido que pague VIP
+Recompensa: 1 mes gratis de VIP por cada referido que active VIP.
+Se aplica extendiendo fecha_fin del referidor (+30d). Si no tiene VIP activo,
+queda pendiente y se aplica en su próxima activación.
 """
 from fastapi import APIRouter, Depends, HTTPException
 from .auth import usuario_activo
@@ -19,21 +21,24 @@ def mis_referidos(token=Depends(usuario_activo)):
         row = cur.fetchone()
         codigo = row["codigo_ref"] if row else ""
 
-        # Referidos totales
+        # Referidos totales — recompensa en MESES GRATIS (antes: $ comisión)
         cur.execute("""
             SELECT COUNT(*) as total,
                    SUM(CASE WHEN u.plan='vip' THEN 1 ELSE 0 END) as activos,
-                   SUM(r.comision_usd) as comision_total,
-                   SUM(CASE WHEN r.pagado THEN r.comision_usd ELSE 0 END) as cobrado
+                   COALESCE(SUM(r.meses_gratis_ganados),0)   as meses_ganados,
+                   COALESCE(SUM(r.meses_gratis_aplicados),0) as meses_aplicados
             FROM referidos r
             JOIN usuarios u ON u.id = r.referido_id
             WHERE r.referidor_id = %s
         """, (user_id,))
         stats = cur.fetchone()
+        ganados   = int(stats["meses_ganados"] or 0)
+        aplicados = int(stats["meses_aplicados"] or 0)
 
         # Lista últimos 20
         cur.execute("""
-            SELECT u.nombre, u.email, u.plan, r.comision_usd, r.pagado, r.fecha
+            SELECT u.nombre, u.email, u.plan,
+                   r.meses_gratis_ganados, r.meses_gratis_aplicados, r.fecha
             FROM referidos r
             JOIN usuarios u ON u.id = r.referido_id
             WHERE r.referidor_id = %s
@@ -42,15 +47,15 @@ def mis_referidos(token=Depends(usuario_activo)):
         lista = cur.fetchall()
 
         return {
-            "codigo_ref":      codigo,
-            "link_referido":   f"https://sharpiq.co/registro.html?ref={codigo}",
-            "total_referidos": int(stats["total"] or 0),
-            "referidos_vip":   int(stats["activos"] or 0),
-            "comision_total":  float(stats["comision_total"] or 0),
-            "comision_cobrada":float(stats["cobrado"] or 0),
-            "comision_pendiente": float((stats["comision_total"] or 0) - (stats["cobrado"] or 0)),
-            "porcentaje":      20,
-            "lista":           [dict(r) for r in lista],
+            "codigo_ref":       codigo,
+            "link_referido":    f"https://sharpiq.co/registro.html?ref={codigo}",
+            "total_referidos":  int(stats["total"] or 0),
+            "referidos_vip":    int(stats["activos"] or 0),
+            "meses_ganados":    ganados,
+            "meses_aplicados":  aplicados,
+            "meses_pendientes": ganados - aplicados,
+            "recompensa":       "1 mes gratis por cada referido VIP",
+            "lista":            [dict(r) for r in lista],
         }
 
 
@@ -60,7 +65,8 @@ def ranking_referidos(token=Depends(usuario_activo)):
     with db() as conn:
         cur = conn.cursor()
         cur.execute("""
-            SELECT u.nombre, COUNT(r.id) as referidos, SUM(r.comision_usd) as comision
+            SELECT u.nombre, COUNT(r.id) as referidos,
+                   COALESCE(SUM(r.meses_gratis_ganados),0) as meses_gratis
             FROM referidos r
             JOIN usuarios u ON u.id = r.referidor_id
             WHERE r.fecha >= NOW() - INTERVAL '30 days'

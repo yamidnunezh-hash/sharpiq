@@ -78,11 +78,18 @@ def inicializar_db():
             id              SERIAL PRIMARY KEY,
             referidor_id    INTEGER REFERENCES usuarios(id),
             referido_id     INTEGER REFERENCES usuarios(id),
-            comision_usd    NUMERIC(10,2) DEFAULT 0,
-            pagado          BOOLEAN DEFAULT FALSE,
+            meses_gratis_ganados    INTEGER DEFAULT 0,
+            meses_gratis_aplicados  INTEGER DEFAULT 0,
             fecha           TIMESTAMP DEFAULT NOW(),
             UNIQUE(referido_id)
         );
+        -- Migracion defensiva: si la tabla ya existia con el esquema viejo ($ comision),
+        -- agrega las columnas nuevas sin tocar las viejas (no hay saldos que migrar).
+        ALTER TABLE referidos ADD COLUMN IF NOT EXISTS meses_gratis_ganados   INTEGER DEFAULT 0;
+        ALTER TABLE referidos ADD COLUMN IF NOT EXISTS meses_gratis_aplicados INTEGER DEFAULT 0;
+        -- Idempotencia de pagos: evita doble activación/recompensa si MercadoPago
+        -- reenvía el mismo webhook (mismo mp_payment_id).
+        CREATE UNIQUE INDEX IF NOT EXISTS pagos_mp_payment_id_uniq ON pagos (mp_payment_id);
 
         CREATE TABLE IF NOT EXISTS picks_publicados (
             id              SERIAL PRIMARY KEY,
