@@ -702,6 +702,93 @@ def enviar_mercados_ext_vip(pred):
     return enviar_mensaje(texto, chat_id=get_chat_id())
 
 
+def _justificacion_pick(p, tier, mercado):
+    """Lectura cualitativa del pick: contexto (final/altitud) + mercado + forma."""
+    liga = (p.get("liga") or "")
+    fl = p.get("forma_local") or {}
+    fv = p.get("forma_visita") or {}
+    bits = []
+    if "final" in liga.lower() or p.get("sede_neutral"):
+        bits.append("final a partido unico, suele ser cerrada y tactica")
+    nombre = ((p.get("local") or "") + " " + (p.get("visitante") or "")).lower()
+    for ciudad, alt in (("la paz","3600m"),("bolivar","3600m"),("cusco","3400m"),("cienciano","3400m"),("quito","2800m"),("bogota","2600m")):
+        if ciudad in nombre:
+            bits.append("factor altitud (" + alt + ") reduce ritmo y goles")
+            break
+    m = mercado
+    if "under" in m:
+        dl = fl.get("defensa_reciente"); dv = fv.get("defensa_reciente")
+        if isinstance(dl,(int,float)) and isinstance(dv,(int,float)) and (dl+dv)/2 <= 1.1:
+            bits.append("ambas defensas vienen firmes")
+        bits.append("el modelo proyecta pocos goles")
+    elif "over" in m:
+        bits.append("se esperan goles por el poder ofensivo / defensas fragiles")
+    elif "ambos" in m or "btts" in m:
+        bits.append("ambos equipos generan y conceden con regularidad")
+    elif any(k in m for k in ("gana","victoria","no bet","dnb","ndicap","handicap","doble")):
+        bits.append("favorito con diferencia de nivel y mejor forma reciente")
+    if not bits:
+        return ""
+    s = "; ".join(bits)
+    return s[0].upper() + s[1:] + "."
+
+
+def _analisis_experto(tier):
+    """Bloque de analisis nivel analista: probabilidades, valor, forma, H2H y lectura."""
+    try:
+        p = tier.get("pred", {}) or {}
+        probs = p.get("probabilidades", {}) or {}
+        local = (p.get("local") or "").strip()
+        visit = (p.get("visitante") or "").strip()
+        mercado = (tier.get("mercado_nombre") or "").lower()
+        cuota = tier.get("cuota", "")
+        ev = round(tier.get("ev_pinn", tier.get("ev", 0)) or 0)
+        kelly = tier.get("kelly_pct")
+        L = ((local.split(" ")[0] if local else "Local"))[:11]
+        V = ((visit.split(" ")[0] if visit else "Visita"))[:11]
+        out = []
+        vl = probs.get("victoria_local"); vv = probs.get("victoria_visita"); em = probs.get("empate")
+        if vl is not None and vv is not None and em is not None:
+            out.append("\U0001f4ca <b>Prob 1X2:</b> " + L + " " + format(vl, ".0f") + "% \u00b7 X " + format(em, ".0f") + "% \u00b7 " + V + " " + format(vv, ".0f") + "%")
+        tot = []
+        if probs.get("over25") is not None: tot.append("O2.5 " + str(round(probs["over25"])) + "%")
+        if probs.get("under25") is not None: tot.append("U2.5 " + str(round(probs["under25"])) + "%")
+        if probs.get("btts_si") is not None: tot.append("BTTS " + str(round(probs["btts_si"])) + "%")
+        if tot:
+            out.append("\U0001f4c8 <b>Goles:</b> " + " \u00b7 ".join(tot))
+        ev_txt = ("+" + str(ev) + "%") if ev >= 0 else (str(ev) + "%")
+        linea = "\U0001f48e <b>Valor:</b> @" + str(cuota) + " \u00b7 EV " + ev_txt
+        if kelly: linea += " \u00b7 Kelly " + str(kelly) + "%"
+        out.append(linea)
+        def _f(f):
+            if not isinstance(f, dict): return None
+            af = f.get("ataque_reciente"); de = f.get("defensa_reciente"); fr = f.get("forma")
+            if af is None or de is None: return None
+            pts = (" \u00b7 " + str(round(fr*15)) + "/15") if isinstance(fr,(int,float)) else ""
+            return format(af, ".1f") + " GF / " + format(de, ".1f") + " GC" + pts
+        f1 = _f(p.get("forma_local")); f2 = _f(p.get("forma_visita"))
+        if f1 or f2:
+            parts = []
+            if f1: parts.append(L + " " + f1)
+            if f2: parts.append(V + " " + f2)
+            out.append("\U0001f504 <b>Forma (ult.5):</b> " + " | ".join(parts))
+        h = p.get("h2h")
+        if isinstance(h, dict) and h.get("partidos"):
+            n = h["partidos"]
+            vlh = round(h.get("victorias_local", 0) * n)
+            emh = round(h.get("empates", 0) * n)
+            vvh = round(h.get("victorias_visita", 0) * n)
+            gpp = h.get("goles_por_partido")
+            gtxt = (" \u00b7 " + format(gpp, ".1f") + " goles/p") if isinstance(gpp,(int,float)) else ""
+            out.append("\u2694\ufe0f <b>H2H (" + str(n) + "):</b> " + str(vlh) + "-" + str(emh) + "-" + str(vvh) + gtxt)
+        just = _justificacion_pick(p, tier, mercado)
+        if just:
+            out.append("\U0001f9e0 <b>Lectura:</b> " + just)
+        return "\n".join(out)
+    except Exception:
+        return "<i>Prob modelo: " + str(round(tier.get("prob", 0))) + "%</i>"
+
+
 def enviar_tiers_vip(seguro, principal, alto_valor):
     """
     Mensaje único al canal VIP con los 3 picks del día en formato de tiers.
@@ -737,8 +824,8 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 f"🏀 <b>{jugador}</b>\n"
                 f"📌 {partido}\n"
                 f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
-                f"{tier['mercado_nombre']} | @{tier['cuota']}{ev_extra}\n"
-                f"<i>{prob_label}: {round(tier['prob'])}%</i>\n"
+                f"\U0001f3af <b>{tier['mercado_nombre']}</b> @{tier['cuota']}{ev_extra}\n"
+                f"{_analisis_experto(tier)}\n"
                 f"{stake_line}"
             )
         else:
@@ -757,8 +844,8 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 f"{emoji} <b>{label}</b>\n"
                 f"{sp_emoji} <b>{p['local']} vs {p['visitante']}</b>\n"
                 f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
-                f"{tier['mercado_nombre']} | @{tier['cuota']}{ev_extra}\n"
-                f"<i>{prob_label}: {round(tier['prob'])}%</i>\n"
+                f"\U0001f3af <b>{tier['mercado_nombre']}</b> @{tier['cuota']}{ev_extra}\n"
+                f"{_analisis_experto(tier)}\n"
                 f"{stake_line}"
             )
 
