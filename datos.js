@@ -116,11 +116,19 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "2",
     analisis:   "Final a partido unico + Arsenal con defensa de elite (0.2 goles encajados/partido en sus ultimos 5) -> se proyectan pocos goles. Modelo recalibrado vs Pinnacle (78% peso al mercado en Champions): ~54% Under 2.5. Valor SOLO a cuota >=1.90 (a 1.67 no hay valor). Stake reducido 2%: el edge es modesto, NO es alto valor.",
-    resultado:  "pendiente"
+    resultado:  "win"
   }
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "30/05/26",
+    partido:    "PSG vs Arsenal",
+    liga:       "UEFA Champions League Final",
+    prediccion: "Under 2.5 goles — EV +3% (a >=1.90)",
+    cuota:      "1.90",
+    resultado:  "win"
+  },
   {
     fecha:      "30/05/26",
     partido:    "Athletic Club (MG) vs Fortaleza",
