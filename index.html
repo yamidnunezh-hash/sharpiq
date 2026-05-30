@@ -47,12 +47,13 @@ const PROXIMOS_EVENTOS = [
     fecha:      "30/05/26",
     partido:    "PSG vs Arsenal",
     liga:       "UEFA Champions League Final",
-    prediccion: "Gana Arsenal — EV +22%",
-    cuota:      "2.20",
+    prediccion: "Under 2.5 goles — EV +3% (a >=1.90)",
+    cuota:      "1.90",
     hora:       "11:00 COT",
     status:     "vip",
     tier:       "principal",
-    stake_pct:  "3",
+    stake_pct:  "2",
+    analisis:   "Final a partido unico + Arsenal con defensa de elite (0.2 goles encajados/partido en sus ultimos 5) -> se proyectan pocos goles. Modelo recalibrado vs Pinnacle (78% peso al mercado en Champions): ~54% Under 2.5. Valor SOLO a cuota >=1.90 (a 1.67 no hay valor). Stake reducido 2%: el edge es modesto, NO es alto valor.",
     resultado:  "pendiente"
   }
 ];
@@ -741,6 +742,7 @@ E html>
     .ev-card-locked{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;background:var(--bg1);border:1px dashed var(--borderg);padding:10px 12px;border-radius:8px;color:var(--t2);margin-bottom:10px}
     .ev-card-locked a{color:var(--gold);text-decoration:none;font-weight:700;margin-left:2px}
     .ev-card-locked a:hover{text-decoration:underline}
+    .ev-card-analisis{margin-top:10px;padding:9px 11px;background:rgba(0,200,255,.05);border:1px solid rgba(0,200,255,.16);border-left:3px solid var(--tier,#00A6FF);border-radius:8px;font-size:11.5px;line-height:1.5;color:var(--t2)}
 
     /* EN VIVO (Sofascore) */
     .ls-group{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.35)}
@@ -2232,6 +2234,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
             <span class="ev-card-dt-item">📅 ${e.fecha}</span>
             ${e.hora?`<span class="ev-card-dt-item" style="color:${tc.color}">⏰ ${e.hora}</span>`:''}
           </div>
+          ${e.analisis?`<div class="ev-card-analisis">🧠 ${e.analisis}</div>`:''}
         </div>
         <div class="ev-card-foot">${footHTML}</div>
       </div>`;
