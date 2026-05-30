@@ -300,6 +300,32 @@ Veredicto: [PUBLICAR / ESPERAR / DESCARTAR]
 
 ---
 
+## CAMBIOS RECIENTES — sesión 2026-05-29 (todo en `origin/main`)
+
+### Motor (`sharpiq-engine/`)
+- **6 fallas corregidas**: git push robusto (commit primero, reintentos, aborta rebase en conflicto, incluye `index.html`) en `auto_publicar.py` y `auto_resultados.py`; umbrales ALTO VALOR alineados a política (`AV_MAX_CUOTA` 10→5.5, `AV_MIN_PROB` 20→30); **corners** ya no devuelve 0 (cae al promedio de liga cuando la API no trae corners); **xG** solo se aplica con disparos reales (no empujón uniforme); **corte 48h ANTES** del análisis (no gasta API en partidos lejanos tipo Mundial); `_fetch_odds_ext` pide solo `h2h,totals,spreads` (evita 422 por liga, gana hándicap asiático).
+- **Umbrales SEGURO/PRINCIPAL** recuperados (se habían perdido): SEGURO 62%/cuota≤2.10, PRINCIPAL 45%.
+- **`datetime.utcnow()` migrado** a `datetime.now(timezone.utc)` en motor.py y auto_publicar.py; `propagate=False` en loggers.
+- **3 claves de tenis inválidas** eliminadas (daban 404 "Unknown sport").
+- **Zona horaria**: helper único `_commence_a_cot()` (UTC→COT ajustando fecha al cruzar medianoche); player props guardaba `hora` en COT y duplicaba conversión → ahora UTC + `fecha_evento` COT. Ver [[web-index-arquitectura]].
+- **Blend Poisson/mercado recalibrado por LIQUIDEZ**: Champions/top-5/Mundial 78% Pinnacle (el modelo no se despega del precio sharp), ligas medias 55%, poco líquidas 38%. Corrige el sobre-EV en partidos de alta liquidez (la final PSG-Arsenal pasó de "+17% inflado" a ~−9%@1.67 / +3%@1.90).
+
+### Telegram (`telegram_alertas.py`)
+- Cada pick de `enviar_tiers_vip` ahora incluye **análisis experto automático** (`_analisis_experto`): prob 1X2 + goles, EV+Kelly, forma reciente (GF/GC+pts), H2H, y lectura cualitativa (contexto final/altitud + mercado). Ya no es "Gana X @1.70".
+
+### Web (`index.html`, `sw.js`) — bug crítico + rediseño completo
+- **BUG CRÍTICO resuelto** (picks/EN VIVO salían vacíos): (1) DOCTYPE truncado `<!DOCTYP`→`<!DOCTYPE html>` causaba quirks mode (grids colapsaban); (2) **`_isPending` usado fuera de scope** lanzaba ReferenceError que detenía todo el JS → `_renderPicks` nunca corría. Ambos corregidos. Técnica de diagnóstico en [[web-index-arquitectura]].
+- **Tema OSCURO forzado** (paleta navy `#0a0e1a`, anula preferencia `light` vieja).
+- **Rediseño completo Sofascore/Flashscore (5 bloques)**:
+  1. Navbar premium dark (blur, logo glow, links neón, botón VIP gradiente, barra de ligas).
+  2. Tarjetas de picks: borde **neón por tier** (AV=verde, SEGURO=azul, PRINCIPAL=dorado), equipos lado a lado con **escudos reales** (API-Football vía `TEAM_IDS` embebido como `window.SHARPIQ_TEAM_IDS` + `sharpiqTeamLogo()`, fallback a iniciales), cuota como botón-pill, campo `analisis` renderizado.
+  3. EN VIVO: agrupado por liga, score grande centrado, countdown animado, estados (EN VIVO pulsante/INICIANDO/FINAL), borde verde en grupos con pick.
+  4. Estadísticas: curva de bankroll (sparkline SVG) en el dashboard.
+  5. Predicciones: filtros combinados liga + resultado (Ganados/Perdidos/Pendientes), tabla premium.
+- **Service Worker** (`sw.js`): `CACHE_VERSION` se bumpea en cada deploy para forzar recarga (va por **v22**). Importante seguir bumpeándolo.
+
+---
+
 ## ESTADO ACTUAL DEL PROYECTO (29 mayo 2026)
 
 ### Última ejecución del motor (2026-05-29, 7:31 AM COT) — ✅ FUNCIONAL
@@ -315,7 +341,7 @@ Veredicto: [PUBLICAR / ESPERAR / DESCARTAR]
 - Copa Lib 28/05: Cerro Porteño vs Sporting Cristal — Under 2.5 @ 1.89
 - Copa Lib 28/05: Peñarol vs Independiente Santa Fe — Under 2.5 @ 1.79
 - Copa Lib 29/05: Boca Juniors vs U. Católica — Under 2.5 @ 2.01
-- Champions League Final 30/05: PSG vs Arsenal — Gana Arsenal @ 2.20 + Under 2.5 @ 1.90
+- Champions League Final 30/05: PSG vs Arsenal — **Under 2.5 @ 1.90** (PRINCIPAL, stake 2%; corregido tras recalibrar blend)
 
 ### Historial reciente (últimos 10): 8W / 2L
 OKC Thunder ✓ · Vegas Golden Knights ✓ · Jelena Ostapenko ✓ · Mariano Navone ✓ · Cleveland Cavaliers ✓ · Milwaukee Brewers ✓ · Olimpia Asunción Under ✓ · Montréal Canadiens ✓ · Moutet ✗ · Marin Cilic ✗
@@ -327,15 +353,14 @@ OKC Thunder ✓ · Vegas Golden Knights ✓ · Jelena Ostapenko ✓ · Mariano N
 | Publicación Telegram | ✅ | 3 tiers (seguro/principal/alto_valor) |
 | Live scores / monitor | ✅ | Update 10 min / alertas 5 min |
 | Backend API (Railway) | ✅ | auth, pagos, picks, referidos |
-| Git push desde Actions | ⚠️ | Conflictos intermitentes (exit 128/1, rama detrás del remote) |
+| Git push (motor) | ✅ | Robusto: commit primero, reintentos, aborta rebase en conflicto |
+| Web sharpiq.co | ✅ | Rediseño Sofascore completo (5 bloques), tema oscuro, escudos reales, EN VIVO, bankroll |
 
 ---
 
 ## QUÉ FALTA / PENDIENTES
 
 ### Bugs / deuda técnica conocida
-- **Git push desde GitHub Actions falla intermitentemente** (exit 128 en `git add`/`pull --rebase`, exit 1 en `push`): la rama queda detrás del remote cuando varios workflows escriben a la vez. Falta serializar o hacer `pull --rebase` robusto antes del push en `auto_publicar.py` / workflows.
-- **`datetime.utcnow()` deprecado** en `auto_resultados.py` (warnings, no bloqueante) → migrar a `datetime.now(datetime.UTC)`.
 - **Scripts `fix_*.py` sueltos en raíz** (`fix_data_inline.py`, `fix_data_inline2.py`, `fix_loader.py`): parches puntuales sin commitear; revisar si siguen siendo necesarios o eliminarlos.
 
 ### Roadmap / mejoras planificadas
