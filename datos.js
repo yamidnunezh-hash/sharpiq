@@ -59,7 +59,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "alto_valor",
     stake_pct:  "5",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "30/05/26",
@@ -77,6 +77,14 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "30/05/26",
+    partido:    "Athletic Club (MG) vs Fortaleza",
+    liga:       "Brasileirao B",
+    prediccion: "Over 2.5 goles — EV +80%",
+    cuota:      "2.40",
+    resultado:  "loss"
+  },
   {
     fecha:      "29/05/26",
     partido:    "Boca Juniors vs U. Católica (Chile)",
