@@ -4,6 +4,28 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "31/05/26",
+    partido:    "Gent vs Genk",
+    liga:       "Belgian First Div",
+    prediccion: "Under 2.5 Goles — EV +85%",
+    cuota:      "2.05",
+    hora:       "11:30 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "5.0"
+  },
+  {
+    fecha:      "31/05/26",
+    partido:    "Penrith Panthers vs New Zealand Warriors",
+    liga:       "NRL Rugby League",
+    prediccion: "Gana Penrith Panthers — EV +2%",
+    cuota:      "1.77",
+    hora:       "03:15 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.5"
+  },
+  {
     fecha:      "30/05/26",
     partido:    "Stephanie Han vs Holly Holm",
     liga:       "Boxeo",
