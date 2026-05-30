@@ -387,6 +387,29 @@ def correr():
         except Exception as e:
             LOG.error(f"CLV snapshot error: {e}")
 
+        # ── CLV tracking PostgreSQL (db_clv) — registra el pick en apertura.
+        #    Usa la MISMA clave de mercado que auto_resultados (_pred_to_mercado_key)
+        #    para que actualizar_cierre / actualizar_resultado casen por (partido, mercado).
+        try:
+            from db_clv import guardar_pick as _clv_guardar_pick, inicializar as _clv_init
+            from auto_resultados import _pred_to_mercado_key
+            _clv_init()  # idempotente: CREATE TABLE IF NOT EXISTS
+            pred       = mejor_tier["pred"]
+            partido    = f"{pred['local']} vs {pred['visitante']}"
+            mercado_k  = _pred_to_mercado_key(mejor_tier.get("mercado_nombre", ""))
+            _clv_guardar_pick(
+                date.today().isoformat(),
+                partido,
+                pred.get("liga", ""),
+                mercado_k,
+                float(mejor_tier.get("prob", 0) or 0),
+                float(mejor_tier.get("cuota", 0) or 0),
+            )
+            LOG.info(f"CLV (PostgreSQL) pick registrado — {mercado_k} @ {mejor_tier.get('cuota')}")
+        except Exception as e:
+            # No-op si DATABASE_PUBLIC_URL/psycopg2 no están configurados (no rompe el flujo).
+            LOG.debug(f"CLV PostgreSQL guardar_pick: {e}")
+
         try:
             from telegram_alertas import enviar_mercados_ext_vip
             enviar_mercados_ext_vip(mejor_tier["pred"])

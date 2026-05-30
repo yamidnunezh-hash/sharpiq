@@ -361,13 +361,15 @@ OKC Thunder ✓ · Vegas Golden Knights ✓ · Jelena Ostapenko ✓ · Mariano N
 ## QUÉ FALTA / PENDIENTES
 
 ### Bugs / deuda técnica conocida
-- **Scripts `fix_*.py` sueltos en raíz** (`fix_data_inline.py`, `fix_data_inline2.py`, `fix_loader.py`): parches puntuales sin commitear; revisar si siguen siendo necesarios o eliminarlos.
+- _(resuelto 29/05)_ ~~Scripts `fix_*.py` sueltos en raíz~~ — eliminados; eran parches de migración de un solo uso ya aplicados (el bloque inline `SHARPIQ_DATA` ya vive en `index.html`).
 
 ### Roadmap / mejoras planificadas
 - **2026-06-08**: contratar **API-NBA Pro $19/mes** para player props NBA (puntos, rebotes, asistencias).
-- **CLV tracking** (`db_clv.py` + PostgreSQL): infraestructura lista pero el cierre de cuotas (`actualizar_cierre`) aún no está integrado al flujo automático.
-- Limpieza: `INSTRUCCIONES.md` es genérico de la plantilla "kit web" y no documenta SharpIQ.
 - Expansión futura del negocio: eSports → crypto → forex.
+
+### Cerrado en la sesión 29/05 (segunda tanda)
+- **CLV tracking (`db_clv.py` + PostgreSQL) integrado al flujo automático**: `auto_publicar.py` inserta el mejor pick en apertura (`guardar_pick`, con `inicializar()` idempotente) y `auto_resultados.py` registra el cierre (`actualizar_cierre`) y el resultado (`actualizar_resultado`). Las 3 escrituras casan por `(partido, mercado)` usando la misma clave canónica de `_pred_to_mercado_key` (`over25`, `victoria_local`, …). Todo envuelto en try/except → no-op silencioso si `DATABASE_PUBLIC_URL`/psycopg2 no están configurados (no rompe el flujo de producción). Convive con el CLV en SQLite (`database.py`), que sigue siendo la fuente que alimenta la web. Ver [[project-motor-estado]].
+- **`INSTRUCCIONES.md` reescrito**: ahora documenta SharpIQ (las 3 piezas, operación diaria, workflows, config.py, seguridad, recordatorios de frontend) en vez de la plantilla genérica "kit web". Apunta a `CLAUDE.md` para el detalle técnico.
 
 ---
 

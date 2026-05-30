@@ -1829,23 +1829,9 @@ E html>
   </div>
 </footer>
 
-<script>
-(function(){
-  var RAW = 'https://raw.githubusercontent.com/yamidnunezh-hash/sharpiq/main/datos.js?t=' + Date.now();
-  fetch(RAW, {cache: 'no-store'})
-    .then(function(r){ return r.text(); })
-    .then(function(code){
-      try{ eval(code); }catch(e){}
-      if(typeof window._renderPicks==='function') window._renderPicks();
-    })
-    .catch(function(){
-      // Fallback: carga local
-      var s = document.createElement('script');
-      s.src = 'datos.js?nc=' + Date.now();
-      document.head.appendChild(s);
-    });
-})();
-</script>
+<!-- Los datos (PROXIMOS_EVENTOS / PREDICCIONES_HISTORIAL) van INLINE arriba en
+     el bloque SHARPIQ_DATA; _renderPicks() se invoca directamente más abajo.
+     Se eliminó el antiguo loader raw.githubusercontent (redundante + dependencia externa). -->
 <script>
 // CANVAS PARTICLES
 (function(){

@@ -331,6 +331,25 @@ def correr():
                     guardar_snapshot(fid, local_js, visita_js,
                                      date.today().isoformat(), "cierre", cuotas_cierre)
 
+                    # ── CLV tracking PostgreSQL (db_clv): registra la cuota de cierre
+                    #    del mercado del pick → calcula CLV (cierre - apertura) sobre la
+                    #    fila insertada por db_clv.guardar_pick en auto_publicar.
+                    try:
+                        from db_clv import actualizar_cierre as _db_cierre
+                        # mercado_key (over25/victoria_local/...) → clave en cuotas_cierre
+                        _mk_to_cierre = {
+                            "victoria_local": "1", "victoria_visita": "2", "empate": "X",
+                            "over25": "over25", "under25": "under25",
+                            "over15": "over15", "under15": "under15",
+                        }
+                        _cierre_key = _mk_to_cierre.get(mercado_key, mercado_key)
+                        _cuota_cierre = cuotas_cierre.get(_cierre_key)
+                        if _cuota_cierre:
+                            _db_cierre(partido, mercado_key, float(_cuota_cierre))
+                            LOG.info(f"  CLV (PostgreSQL) cierre — {mercado_key} @ {_cuota_cierre}")
+                    except Exception as _ce:
+                        LOG.debug(f"CLV PostgreSQL actualizar_cierre: {_ce}")
+
                 # Calcular CLV para mercados estándar
                 _mk_cols = {"over25": "cuota_over25", "under25": "cuota_under25",
                             "over15": "cuota_over15", "under15": "cuota_under15",
