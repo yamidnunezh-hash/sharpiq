@@ -1109,23 +1109,62 @@ E html>
   💎 <b>Acceso especial</b> — Un amigo de la comunidad SharpIQ te invitó. <span style="color:#94a3b8">El primer mes tienes acceso con beneficio de bienvenida.</span>
 </div>
 
-<!-- ── HERO V2 — 3D Neural Sphere ── -->
-<section class="hero-v2" id="hero">
-  <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
-    <div>
-      <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t2);letter-spacing:2px;text-transform:uppercase">La Ventaja Inteligente</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <span id="heroKpi1" style="font-size:12px;color:var(--t2);font-family:'Space Mono',monospace"></span>
-      <button id="btnPush" onclick="suscribirPush()" style="display:none;background:transparent;border:1px solid var(--borderg);color:var(--gold);font-size:11px;padding:5px 14px;border-radius:6px;cursor:pointer;font-family:'Space Mono',monospace">🔔 Alertas gratis</button>
-      <span id="pushActivo" style="display:none;font-size:11px;color:var(--green);font-family:'Space Mono',monospace">✓ Alertas activadas</span>
-    </div>
+<!-- ── HERO PRINCIPAL ── -->
+<style>
+.hero-main{position:relative;z-index:2;padding:118px 20px 38px;text-align:center;overflow:hidden}
+.hero-main::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(820px 400px at 50% -12%,rgba(0,200,255,.17),transparent 62%),
+  radial-gradient(560px 300px at 82% 18%,rgba(123,92,240,.13),transparent 60%)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7dd3fc;background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.25);padding:7px 16px;border-radius:100px;margin-bottom:22px}
+.hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e;animation:hpulse 1.6s infinite}
+@keyframes hpulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero-h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(30px,6vw,58px);line-height:1.06;color:#f1f5f9;letter-spacing:-1px;margin:0 auto 16px;max-width:15ch}
+.hero-h1 .g{background:linear-gradient(90deg,#00C8FF,#22d3a0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-p{font-size:clamp(15px,2.4vw,19px);color:#cbd5e1;max-width:660px;margin:0 auto 34px;line-height:1.5}
+.hero-p b{color:#22d3a0;font-weight:800}
+.hero-stats{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.hero-stat{min-width:150px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px 24px;position:relative;overflow:hidden}
+.hero-stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#00C8FF,#7B5CF0)}
+.hero-stat .v{font-family:'Orbitron',sans-serif;font-weight:900;font-size:30px;color:#fff;line-height:1}
+.hero-stat .v.pos{color:#22d3a0}
+.hero-stat .l{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#94a3b8;margin-top:9px;font-family:'Space Mono',monospace}
+.hero-cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn-hero{font-family:'Inter',sans-serif;font-weight:700;font-size:15px;padding:15px 30px;border-radius:12px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s,box-shadow .15s;border:none}
+.btn-hero:hover{transform:translateY(-2px)}
+.btn-hero-ghost{background:rgba(255,255,255,.05);color:#e2e8f0;border:1px solid rgba(0,200,255,.4)}
+.btn-hero-ghost:hover{background:rgba(0,200,255,.1);box-shadow:0 6px 24px rgba(0,200,255,.2)}
+.btn-hero-gold{background:linear-gradient(90deg,#00C8FF,#22d3a0);color:#04121f;box-shadow:0 6px 24px rgba(0,200,255,.35)}
+.btn-hero-gold:hover{box-shadow:0 10px 32px rgba(0,200,255,.5)}
+.hero-extra{margin-top:22px;display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;min-height:24px}
+#floatCTA{position:fixed;right:20px;bottom:20px;z-index:120;display:none;align-items:center;gap:13px;background:rgba(10,14,26,.93);backdrop-filter:blur(10px);border:1px solid rgba(0,200,255,.3);border-radius:14px;padding:12px 16px;box-shadow:0 12px 44px rgba(0,0,0,.55)}
+#floatCTA .fc-txt{font-size:12px;color:#cbd5e1;font-family:'Space Mono',monospace}
+#floatCTA .fc-txt b{color:#22d3a0}
+#floatCTA a{background:linear-gradient(90deg,#00C8FF,#22d3a0);color:#04121f;font-weight:800;font-size:13px;padding:10px 18px;border-radius:10px;text-decoration:none;white-space:nowrap;cursor:pointer}
+@media(max-width:560px){#floatCTA{left:12px;right:12px;bottom:12px;justify-content:space-between}.hero-main{padding-top:104px}}
+</style>
+<section class="hero-main" id="hero">
+  <div class="hero-eyebrow"><span class="dot"></span> La Ventaja Inteligente · IA en tiempo real</div>
+  <h1 class="hero-h1">La ventaja <span class="g">matemática</span> en cada apuesta</h1>
+  <p class="hero-p"><b id="heroWR">—</b> de aciertos verificados · Análisis de IA en tiempo real</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="v" id="hmAciertos">—</div><div class="l">Aciertos</div></div>
+    <div class="hero-stat"><div class="v pos" id="hmYield">—</div><div class="l">Yield</div></div>
+    <div class="hero-stat"><div class="v" id="hmHoy">—</div><div class="l">Picks hoy</div></div>
+  </div>
+  <div class="hero-cta">
+    <a href="#picks" class="btn-hero btn-hero-ghost">Ver picks gratis</a>
+    <a href="#" onclick="irAPago(this);return false;" class="btn-hero btn-hero-gold">Únete VIP — $15 USD</a>
+  </div>
+  <div class="hero-extra">
+    <span id="heroKpi1" style="font-size:12px;color:#64748b;font-family:'Space Mono',monospace"></span>
+    <button id="btnPush" onclick="suscribirPush()" style="display:none;background:transparent;border:1px solid rgba(0,200,255,.3);color:#7dd3fc;font-size:11px;padding:6px 14px;border-radius:6px;cursor:pointer;font-family:'Space Mono',monospace">🔔 Alertas gratis</button>
+    <span id="pushActivo" style="display:none;font-size:11px;color:#22c55e;font-family:'Space Mono',monospace">✓ Alertas activadas</span>
   </div>
 </section>
 
 
 <!-- ── PRÓXIMOS EVENTOS ── -->
-<div style="background:var(--bg);padding:20px 0 0;margin-top:104px">
+<div id="picks" style="background:var(--bg);padding:20px 0 0;margin-top:8px;scroll-margin-top:110px">
   <div class="wrap">
     <div class="upcoming-wrap rv" id="upcomingWrap">
       <div class="upcoming-header">
@@ -2685,6 +2724,50 @@ function toggleTheme(){
   const t = localStorage.getItem('sharpiq_theme') || 'dark';
   const btn = document.getElementById('themeToggle');
   if(btn) btn.textContent = t === 'dark' ? '☀️' : '🌙';
+})();
+</script>
+
+<!-- ── CTA FLOTANTE + MÉTRICAS DEL HERO (reales, desde datos.js) ── -->
+<div id="floatCTA">
+  <span class="fc-txt"><b id="fcWR">—</b> aciertos verificados · 3 tiers diarios</span>
+  <a href="#" onclick="irAPago(this);return false;">Únete VIP — $15</a>
+</div>
+<script>
+(function(){
+  function calc(){
+    var H = (typeof PREDICCIONES_HISTORIAL !== 'undefined') ? PREDICCIONES_HISTORIAL : [];
+    var P = (typeof PROXIMOS_EVENTOS !== 'undefined') ? PROXIMOS_EVENTOS : [];
+    var res = H.filter(function(p){ return p.resultado === 'win' || p.resultado === 'loss'; });
+    var w   = res.filter(function(p){ return p.resultado === 'win'; }).length;
+    var pl  = res.reduce(function(s,p){ return s + (p.resultado === 'win' ? (parseFloat(p.cuota) - 1) : -1); }, 0);
+    var wr  = res.length ? Math.round(w / res.length * 100) : 0;
+    var yld = res.length ? (pl / res.length * 100) : 0;
+    var hoy = P.filter(function(p){ return !p.resultado || p.resultado === 'pendiente' || p.resultado === ''; }).length;
+    return { wr: wr, w: w, n: res.length, yld: yld, hoy: hoy };
+  }
+  function pinta(){
+    var d = calc();
+    var set = function(id, v){ var e = document.getElementById(id); if(e) e.textContent = v; };
+    set('heroWR',    d.n ? d.wr + '%' : '—');
+    set('hmAciertos', d.n ? (d.w + '/' + d.n) : '—');
+    set('hmYield',   d.n ? ((d.yld >= 0 ? '+' : '') + d.yld.toFixed(1) + '%') : '—');
+    set('hmHoy',     d.hoy);
+    set('fcWR',      d.n ? d.wr + '%' : '—');
+  }
+  pinta();
+  // Re-pintar tras render de picks (por si los datos llegan async)
+  document.addEventListener('DOMContentLoaded', pinta);
+  setTimeout(pinta, 1200);
+
+  // CTA flotante: visible al hacer scroll; oculto para VIP/admin
+  var role = localStorage.getItem('sharpiq_role') || '';
+  var fc = document.getElementById('floatCTA');
+  if(fc && (role === 'vip' || role === 'admin')){ fc.remove(); fc = null; }
+  if(fc){
+    var onScroll = function(){ fc.style.display = (window.scrollY > 380) ? 'flex' : 'none'; };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
 })();
 </script>
 </body>
