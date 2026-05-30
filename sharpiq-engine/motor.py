@@ -88,6 +88,11 @@ APIFB_URL     = "https://v3.football.api-sports.io"
 
 # ── TEAM IDs para api-football ──────────────────────────────────
 TEAM_IDS = {
+    "Macara": 1155,
+    "UCV": 2840,
+    "UCV FC": 2840,
+    "CA Juventud": 2353,
+    "Juventud": 2353,
     "1. FC Heidenheim": 180,
     "1. FC Köln": 192,
     "1899 Hoffenheim": 167,
