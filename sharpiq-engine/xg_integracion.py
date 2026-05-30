@@ -2,8 +2,8 @@
 """
 SharpIQ — xG Integration
 Ajusta los lambdas de Poisson usando datos reales de disparos a puerta.
-xG proxy = shots_on_target × 0.35 (ratio histórico internacional)
-Blending: 60% modelo base + 40% xG proxy
+xG proxy = shots_on_target × 0.33 (ratio histórico internacional, Europa 2020-25)
+Blending: 75% modelo base + 25% xG proxy (peso conservador del proxy)
 """
 
 XG_CONV_RATE = 0.33   # ~33% de disparos a puerta terminan en gol (calibrado Europa 2020-25)
@@ -27,9 +27,9 @@ def ajustar_con_xg(local, visitante, liga_id, lambda_local, lambda_visita):
         if not sl or not sv:
             return lambda_local, lambda_visita
 
-        # disparos_contra = shots on target propios del equipo (campo de stats_mercados)
-        sot_l = sl.get("disparos_contra", 0)
-        sot_v = sv.get("disparos_contra", 0)
+        # disparos_puerta = shots on target propios del equipo (campo de stats_mercados)
+        sot_l = sl.get("disparos_puerta", 0)
+        sot_v = sv.get("disparos_puerta", 0)
 
         if sot_l <= 0 or sot_v <= 0:
             return lambda_local, lambda_visita
@@ -60,10 +60,10 @@ def xg_resumen(local, visitante, liga_id):
         sl = obtener_stats_ext(local,     liga_id) or _defaults(liga_id)
         sv = obtener_stats_ext(visitante, liga_id) or _defaults(liga_id)
         return {
-            "xg_local":   round(sl.get("disparos_contra", 0) * XG_CONV_RATE, 2),
-            "xg_visita":  round(sv.get("disparos_contra", 0) * XG_CONV_RATE, 2),
-            "sot_local":  sl.get("disparos_contra", 0),
-            "sot_visita": sv.get("disparos_contra", 0),
+            "xg_local":   round(sl.get("disparos_puerta", 0) * XG_CONV_RATE, 2),
+            "xg_visita":  round(sv.get("disparos_puerta", 0) * XG_CONV_RATE, 2),
+            "sot_local":  sl.get("disparos_puerta", 0),
+            "sot_visita": sv.get("disparos_puerta", 0),
         }
     except Exception:
         return {}

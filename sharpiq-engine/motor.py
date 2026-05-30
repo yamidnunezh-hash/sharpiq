@@ -744,7 +744,11 @@ def get_stats_equipo(nombre):
             }
     except Exception:
         pass
-    return {"ataque": 1.35, "defensa": 1.35, "forma": 0.75}
+    # Sin datos reales (ni tabla, ni DB local). NO inventar stats en silencio:
+    # se devuelven defaults marcados con _sin_datos para que el pick derivado
+    # quede etiquetado NO CONFIABLE y no se publique. Ver _factor_altitud / clasificar_tiers.
+    print(f"  ⚠ Sin stats reales para '{nombre}' — picks de este equipo quedan NO CONFIABLES")
+    return {"ataque": 1.35, "defensa": 1.35, "forma": 0.75, "_sin_datos": True}
 
 def obtener_partidos_hoy():
     # Primero intentar api-sports.io (cubre todas las ligas del mundo)
@@ -1164,10 +1168,78 @@ _LIGA_CODE_TO_APIFB_ID = {
     "128": 128, "239": 239, "262": 262, "265": 265,
 }
 
+# Confiabilidad de la última estimación por par (local, visitante): la pone
+# calcular_goles_esperados y la lee predecir_partido para etiquetar el pick.
+_CONF_CACHE = {}
+
+# ── ALTITUD (CONMEBOL) ──────────────────────────────────────────
+# El estadio LOCAL en altura reduce los goles, sobre todo del visitante de
+# tierra baja, que no se aclimata en 24-48h de viaje. Bandas calibradas con
+# los efectos documentados sobre el total de goles (ver CLAUDE.md):
+#   La Paz 3600m -25% · Cusco 3400m -20% · Quito 2850m -12% ·
+#   Bogotá 2640m -8% · Medellín 1500m -2%.
+# Se carga la mayor parte de la reducción sobre el visitante (el local vive ahí).
+_ALTITUD_EQUIPOS = {
+    # La Paz / El Alto / Potosí (~3600-4000m)
+    "bolivar": 3600, "the strongest": 3600, "always ready": 4000,
+    "nacional potosi": 3900,
+    # Cusco (~3400m)
+    "cienciano": 3400, "cusco": 3400,
+    # Quito y valle de los Chillos (~2500-3200m)
+    "ldu": 2850, "liga de quito": 2850, "liga deportiva universitaria": 2850,
+    "el nacional": 2850, "aucas": 2850, "universidad catolica del ecuador": 2850,
+    "deportivo quito": 2850, "mushuc runa": 3200,
+    "independiente del valle": 2500,
+    # Bogotá / Pasto (~2600-2900m)
+    "millonarios": 2640, "santa fe": 2640, "la equidad": 2640, "bogota": 2640,
+    "tigres fc": 2640, "deportivo pasto": 2900,
+    # Tunja / Manizales (~2150-2820m)
+    "patriotas": 2820, "boyaca chico": 2560, "once caldas": 2150,
+    # Medellín (~1500m) — efecto leve
+    "atletico nacional": 1500, "independiente medellin": 1500,
+}
+
+def _altitud_m(nombre):
+    """Altitud del estadio del equipo (0 si no es equipo de altura conocido)."""
+    n = nombre.lower()
+    for a, b in (("á","a"),("é","e"),("í","i"),("ó","o"),("ú","u"),("ü","u"),("ñ","n")):
+        n = n.replace(a, b)
+    for frag, metros in _ALTITUD_EQUIPOS.items():
+        if frag in n:
+            return metros
+    return 0
+
+def _factor_altitud(local, visitante, sede_neutral=False):
+    """
+    Factores multiplicativos (factor_local, factor_visita) por la altura del
+    estadio LOCAL. El visitante de tierra baja recibe la mayor penalización;
+    si el visitante también es de altura, se considera aclimatado y se suaviza.
+    """
+    if sede_neutral:
+        return 1.0, 1.0
+    alt = _altitud_m(local)
+    if alt < 1200:
+        return 1.0, 1.0
+    if   alt >= 3500: fl, fv = 0.90, 0.62   # La Paz/Potosí  ≈ -25% total
+    elif alt >= 3200: fl, fv = 0.92, 0.70   # Cusco          ≈ -20%
+    elif alt >= 2750: fl, fv = 0.95, 0.80   # Quito/Pasto    ≈ -12%
+    elif alt >= 2300: fl, fv = 0.97, 0.86   # Bogotá         ≈ -8%
+    else:             fl, fv = 0.99, 0.96   # 1200-2300m     ≈ -2%
+    # Visitante también de altura (≤800m de diferencia) → aclimatado, sufre menos
+    alt_v = _altitud_m(visitante)
+    if alt_v >= 2000 and (alt - alt_v) <= 800:
+        fv = round(1 - (1 - fv) * 0.30, 3)
+    return fl, fv
+
+
 def calcular_goles_esperados(local, visitante, liga_code="", sede_neutral=False):
     stats_l = dict(get_stats_equipo(local))
     stats_v = dict(get_stats_equipo(visitante))
+    # Marca de "sin datos reales": base default sin tabla ni DB local.
+    sin_datos_l = stats_l.pop("_sin_datos", False)
+    sin_datos_v = stats_v.pop("_sin_datos", False)
 
+    forma_l = forma_v = None
     # ── Enriquecer con forma reciente (API-Football) ────────────
     # Para Copa Lib/Suda y ligas LATAM: filtra por la competición específica
     # para usar estadísticas del equipo EN ESA copa, no en su liga doméstica.
@@ -1248,6 +1320,16 @@ def calcular_goles_esperados(local, visitante, liga_code="", sede_neutral=False)
         except Exception:
             pass
 
+    # ── Ajuste por ALTITUD (estadio local en altura, CONMEBOL) ─────
+    # Reduce los goles según la altura del estadio local; pega más al
+    # visitante de tierra baja. No aplica si la sede es neutral (final).
+    fa_l, fa_v = _factor_altitud(local, visitante, sede_neutral)
+    if fa_l != 1.0 or fa_v != 1.0:
+        goles_local  = round(goles_local  * fa_l, 3)
+        goles_visita = round(goles_visita * fa_v, 3)
+        print(f"    Altitud {_altitud_m(local)}m {local[-14:]}: "
+              f"x{fa_l:.2f} local / x{fa_v:.2f} visita → {goles_local:.2f}g / {goles_visita:.2f}g")
+
     # ── Escala por liga: corrige con promedios reales de la competición ─
     # Evita que el modelo use stats domésticas sin ajustar para torneos
     # donde el promedio de goles es muy diferente (Copa Lib: 1.90g, Brasileirao: 3.25g)
@@ -1256,6 +1338,18 @@ def calcular_goles_esperados(local, visitante, liga_code="", sede_neutral=False)
         goles_local  = round(goles_local  * escala, 3)
         goles_visita = round(goles_visita * escala, 3)
         print(f"    Escala liga {liga_code}: x{escala:.3f} → {goles_local:.2f}g / {goles_visita:.2f}g")
+
+    # ── Confiabilidad: un equipo es NO CONFIABLE si su base fue default
+    #    (sin tabla ni DB) Y la forma reciente de la API tampoco lo enriqueció.
+    #    En ese caso el pick descansa sobre stats inventadas → no se publica.
+    no_confiable = (sin_datos_l and not forma_l) or (sin_datos_v and not forma_v)
+    if no_confiable:
+        faltan = [t for t, sd, fm in
+                  ((local, sin_datos_l, forma_l), (visitante, sin_datos_v, forma_v))
+                  if sd and not fm]
+        print(f"    ⚠ NO CONFIABLE {local[-12:]} vs {visitante[-12:]}: "
+              f"sin datos reales para {', '.join(faltan)}")
+    _CONF_CACHE[(local, visitante)] = not no_confiable
 
     return goles_local, goles_visita
 
@@ -1854,6 +1948,8 @@ def predecir_partido(local, visitante, cuotas=None, liga_code="", sede_neutral=F
         "prediccion_principal": prediccion_principal,
         "confianza":  prediccion_principal["prob"],
         "mercados_ext": mercados_ext,
+        # NO CONFIABLE si la estimación se apoyó en stats default (API sin datos).
+        "confiable":  _CONF_CACHE.get((local, visitante), True),
     }
 
 # ── GENERAR REPORTE DEL DÍA ─────────────────────────────────────
@@ -1986,6 +2082,8 @@ def seleccionar_mejor_prediccion(reporte):
     mejor_ev = -999
 
     for pred in reporte["predicciones"]:
+        if pred.get("confiable") is False:
+            continue  # stats default (API sin datos) → no es el mejor pick del día
         for mercado, vb in pred["value_bets"].items():
             if not vb["tiene_valor"]:
                 continue
@@ -2036,9 +2134,10 @@ def seleccionar_mejor_prediccion(reporte):
                     "pred_completa": pred,
                 }
 
-    # Si no hay value bets, tomar la de mayor confianza
-    if not mejor and reporte["predicciones"]:
-        pred = reporte["predicciones"][0]
+    # Si no hay value bets, tomar la de mayor confianza (que sea CONFIABLE)
+    _confiables = [p for p in reporte["predicciones"] if p.get("confiable") is not False]
+    if not mejor and _confiables:
+        pred = _confiables[0]
         utc_hora = pred.get("hora", "00:00")
         h, m2 = (int(x) for x in utc_hora.split(":"))
         cot_h = ((h - 5) + 24) % 24
@@ -2878,6 +2977,9 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
                 "ev":      mejor_vb["ev_pinn"],
             },
             "cuotas_reales":  True,
+            # NO CONFIABLE solo si el modelo de fútbol corrió sobre stats default;
+            # en no-fútbol (sin entrada en _CONF_CACHE) queda confiable por defecto.
+            "confiable":      _CONF_CACHE.get((home, away), True),
             "sin_pinnacle":   sin_pinnacle,
             "cuotas_avisos":  [],
             "sede_neutral":   False,
@@ -3189,6 +3291,9 @@ def clasificar_tiers(reporte):
     alto_pool      = []
 
     for pred in reporte.get("predicciones", []):
+        # Stats default (API sin datos del equipo) → pick NO CONFIABLE, no publicar
+        if pred.get("confiable") is False:
+            continue
         probs     = pred.get("probabilidades", {})
         vbs       = pred.get("value_bets", {})
         liga_code = str(pred.get("liga_code", ""))

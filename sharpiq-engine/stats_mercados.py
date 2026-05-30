@@ -38,6 +38,12 @@ def _db():
 
 def inicializar():
     with _db() as c:
+        # Migración: el esquema viejo nombraba 'disparos_contra' a los disparos
+        # A PUERTA del propio equipo (nombre engañoso: no eran disparos en contra).
+        # Si existe el esquema viejo, se descarta — es un caché regenerable (TTL 7d).
+        cols = [r[1] for r in c.execute("PRAGMA table_info(stats_ext_cache)").fetchall()]
+        if cols and "disparos_contra" in cols:
+            c.execute("DROP TABLE stats_ext_cache")
         c.execute("""CREATE TABLE IF NOT EXISTS stats_ext_cache (
             equipo           TEXT PRIMARY KEY,
             season           INTEGER,
@@ -45,8 +51,8 @@ def inicializar():
             corners_contra   REAL,
             tarjetas_favor   REAL,
             tarjetas_contra  REAL,
-            disparos_favor   REAL,
-            disparos_contra  REAL,
+            disparos_totales REAL,
+            disparos_puerta  REAL,
             actualizado      TEXT
         )""")
         # Tabla separada para datos reales de disparos/paradas por partido
@@ -62,7 +68,7 @@ def _get_cache(equipo):
     with _db() as c:
         row = c.execute(
             "SELECT corners_favor, corners_contra, tarjetas_favor, tarjetas_contra, "
-            "disparos_favor, disparos_contra, actualizado FROM stats_ext_cache WHERE equipo=?",
+            "disparos_totales, disparos_puerta, actualizado FROM stats_ext_cache WHERE equipo=?",
             (equipo,)
         ).fetchone()
     if not row:
@@ -73,7 +79,7 @@ def _get_cache(equipo):
     return {
         "corners_favor":   row[0], "corners_contra":  row[1],
         "tarjetas_favor":  row[2], "tarjetas_contra": row[3],
-        "disparos_favor":  row[4], "disparos_contra": row[5],
+        "disparos_totales": row[4], "disparos_puerta": row[5],
     }
 
 def _get_tiros_cache(equipo):
@@ -102,12 +108,12 @@ def _guardar_cache(equipo, stats):
     with _db() as c:
         c.execute("""INSERT OR REPLACE INTO stats_ext_cache
             (equipo, season, corners_favor, corners_contra, tarjetas_favor,
-             tarjetas_contra, disparos_favor, disparos_contra, actualizado)
+             tarjetas_contra, disparos_totales, disparos_puerta, actualizado)
             VALUES (?,?,?,?,?,?,?,?,?)""",
             (equipo, season,
              stats["corners_favor"],   stats["corners_contra"],
              stats["tarjetas_favor"],  stats["tarjetas_contra"],
-             stats["disparos_favor"],  stats["disparos_contra"],
+             stats["disparos_totales"], stats["disparos_puerta"],
              datetime.now().isoformat()))
 
 
@@ -179,18 +185,18 @@ def obtener_stats_ext(equipo, liga_id):
         rf = sum((v.get("total") or 0) for v in cards.get("red",    {}).values())
         tf = (yf + rf * 2) / pj   # peso: amarilla=1 pt, roja=2 pts
 
-        # ── Disparos ─────────────────────────────────────────────
-        shots  = r.get("shots", {})
-        disp_f = (shots.get("total", {}).get("total") or 0) / pj
-        disp_c = (shots.get("on",    {}).get("total") or 0) / pj
+        # ── Disparos (ambos son del PROPIO equipo, no en contra) ──
+        shots     = r.get("shots", {})
+        disp_tot  = (shots.get("total", {}).get("total") or 0) / pj   # disparos totales
+        disp_pta  = (shots.get("on",    {}).get("total") or 0) / pj   # disparos a puerta (SOT)
 
         stats = {
             "corners_favor":   round(cf,    2),
             "corners_contra":  round(ca,    2),
             "tarjetas_favor":  round(tf,    2),
             "tarjetas_contra": round(tf,    2),   # simétrico como proxy
-            "disparos_favor":  round(disp_f, 2),
-            "disparos_contra": round(disp_c, 2),
+            "disparos_totales": round(disp_tot, 2),
+            "disparos_puerta":  round(disp_pta, 2),
         }
         _guardar_cache(equipo, stats)
         print(f"    Stats ext {equipo[-14:]}: corners {cf:.1f}/{ca:.1f} | tarjetas {tf:.1f}")
@@ -221,7 +227,7 @@ def _defaults(liga_id):
     return {
         "corners_favor":   d["cf"], "corners_contra":  d["ca"],
         "tarjetas_favor":  d["tf"], "tarjetas_contra": d["tf"],
-        "disparos_favor":  12.0,    "disparos_contra": 4.5,
+        "disparos_totales": 12.0,   "disparos_puerta": 4.5,
     }
 
 
@@ -411,7 +417,7 @@ def calcular_disparos_visitante_esperados(local, visitante, liga_id):
 
     # Fallback: promedio de temporada ya en cache
     sv = obtener_stats_ext(visitante, liga_id) or _defaults(liga_id)
-    shots_vis = sv.get("disparos_contra") or avg
+    shots_vis = sv.get("disparos_puerta") or avg
     if shots_vis < 0.5:
         shots_vis = avg
     return round(shots_vis * 0.85, 2)
