@@ -624,7 +624,7 @@ E html>
     }
     .pred-title{font-family:'Orbitron',monospace;font-size:13px;font-weight:700;color:var(--t1)}
     .pred-table{width:100%;border-collapse:collapse}
-    .pred-table thead tr{background:var(--bg2);border-bottom:1px solid var(--border)}
+    .pred-table thead tr{background:linear-gradient(180deg,rgba(0,200,255,.06),transparent);border-bottom:1px solid var(--borderg)}
     .pred-table th{
       font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1.5px;
       text-transform:uppercase;color:var(--t3);padding:14px 20px;text-align:left;
@@ -632,7 +632,7 @@ E html>
     .pred-table td{padding:16px 20px;font-size:14px;color:var(--t2);border-bottom:1px solid var(--border);vertical-align:middle}
     .pred-table tr:last-child td{border-bottom:none}
     .pred-table tr.locked td{filter:blur(5px);user-select:none;pointer-events:none}
-    .pred-table tr:not(.locked):hover td{background:rgba(255,255,255,.02)}
+    .pred-table tr:not(.locked):hover td{background:rgba(0,200,255,.04)}
     .match-name{color:var(--t1);font-weight:600;font-size:14px}
     .match-date{font-family:'Space Mono',monospace;font-size:11px;color:var(--t2)}
     .league-badge{
@@ -660,9 +660,16 @@ E html>
     .lock-sub{font-size:15px;color:var(--t2);text-align:center;max-width:400px;line-height:1.6}
     /* Liga filter tabs */
     .liga-filters{display:flex;gap:8px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.01)}
-    .liga-btn{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;padding:5px 12px;border-radius:5px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s}
+    .liga-btn{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;padding:5px 13px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s}
+    .liga-btn:hover{color:var(--t1);border-color:var(--borderg)}
     .liga-btn:hover{color:var(--t1);border-color:var(--t2)}
-    .liga-btn.active{background:rgba(0,102,204,.1);border-color:rgba(0,102,204,.4);color:#004FA3;font-weight:700}
+    .liga-btn.active{background:rgba(0,200,255,.12);border-color:rgba(0,200,255,.45);color:#00C8FF;font-weight:700}
+    .res-filters{display:flex;gap:8px;flex-wrap:wrap;padding:12px 20px;border-bottom:1px solid var(--border)}
+    .res-btn{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;padding:5px 13px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s}
+    .res-btn:hover{color:var(--t1);border-color:var(--borderg)}
+    .res-btn.active{background:rgba(0,200,255,.12);border-color:rgba(0,200,255,.45);color:#00C8FF;font-weight:700}
+    .res-btn.r-win.active{background:rgba(0,230,138,.14);border-color:rgba(0,230,138,.5);color:#00E68A}
+    .res-btn.r-loss.active{background:rgba(239,68,68,.14);border-color:rgba(239,68,68,.5);color:#ff6b6b}
     html[data-theme="dark"] .liga-btn.active{background:rgba(0,102,204,.18);border-color:rgba(0,102,204,.55);color:var(--gold)}
     /* P&L column */
     .pl-pos{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--green)}
@@ -1408,6 +1415,12 @@ E html>
         <button class="liga-btn active" data-liga="todas">Todas</button>
         <!-- Botones de liga generados dinámicamente por JS -->
       </div>
+      <div class="res-filters" id="resFilters">
+        <button class="res-btn active" data-res="todos">Todos</button>
+        <button class="res-btn r-win" data-res="win">✓ Ganados</button>
+        <button class="res-btn r-loss" data-res="loss">✗ Perdidos</button>
+        <button class="res-btn r-pend" data-res="pend">⏳ Pendientes</button>
+      </div>
       <div style="overflow-x:auto">
         <table class="pred-table">
           <thead>
@@ -1934,11 +1947,18 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     const _historialCompleto=[..._proxResueltos,...PREDICCIONES_HISTORIAL];
     renderHistorial(_historialCompleto);
 
-    // Liga filter buttons
+    // Filtros combinados: liga + resultado
+    const _estadoF={liga:'todas',res:'todos'};
+    function _aplicarFiltros(){
+      let data=_historialCompleto;
+      if(_estadoF.liga!=='todas') data=data.filter(p=>p.liga===_estadoF.liga);
+      if(_estadoF.res!=='todos') data=data.filter(p=>{const r=p.resultado||'pendiente';return _estadoF.res==='win'?r==='win':_estadoF.res==='loss'?r==='loss':(r!=='win'&&r!=='loss');});
+      renderHistorial(data);
+    }
     const filters=document.getElementById('ligaFilters');
     if(filters){
       // Generar botones dinámicamente desde las ligas reales del historial
-      const ligas=[...new Set(PREDICCIONES_HISTORIAL.map(p=>p.liga).filter(Boolean))];
+      const ligas=[...new Set(_historialCompleto.map(p=>p.liga).filter(Boolean))];
       ligas.forEach(liga=>{
         const btn=document.createElement('button');
         btn.className='liga-btn';
@@ -1954,9 +1974,16 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
         if(!btn)return;
         filters.querySelectorAll('.liga-btn').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
-        const liga=btn.dataset.liga;
-        const data=liga==='todas'?PREDICCIONES_HISTORIAL:PREDICCIONES_HISTORIAL.filter(p=>p.liga===liga);
-        renderHistorial(data);
+        _estadoF.liga=btn.dataset.liga;
+        _aplicarFiltros();
+      });
+    }
+    const resF=document.getElementById('resFilters');
+    if(resF){
+      resF.addEventListener('click',e=>{
+        const btn=e.target.closest('.res-btn'); if(!btn)return;
+        resF.querySelectorAll('.res-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active'); _estadoF.res=btn.dataset.res; _aplicarFiltros();
       });
     }
 
