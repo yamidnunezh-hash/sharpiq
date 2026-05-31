@@ -114,9 +114,11 @@ jobs:
       - name: Log turno
         run: echo "Turno → ${{ steps.turno.outputs.label }} | Ventana hasta ${{ steps.turno.outputs.hasta_hora }}:00 COT"
 
-      # Turno mañana: genera TODAS las predicciones del día + envía picks de mañana
-      - name: Generar predicciones del día (solo turno mañana)
-        if: steps.turno.outputs.turno == 'manana'
+      # Genera TODAS las predicciones del día. Corre en el turno mañana O en
+      # cualquier disparo manual (workflow_dispatch) — asi tienes un boton de
+      # recuperacion: si un dia se quedo sin picks, le das "Run workflow" y los regenera.
+      - name: Generar predicciones del día
+        if: steps.turno.outputs.turno == 'manana' || github.event_name == 'workflow_dispatch'
         working-directory: sharpiq-engine
         run: |
           python auto_resultados.py 2>&1 | tail -15
