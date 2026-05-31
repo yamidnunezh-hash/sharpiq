@@ -83,22 +83,25 @@ jobs:
       - name: Detectar turno y ventana horaria
         id: turno
         run: |
-          HOUR=$(date -u +%H)
+          HOUR=$((10#$(date -u +%H)))   # base 10 (evita que 08/09 rompan la comparacion)
           MANUAL_HASTA="${{ github.event.inputs.hasta_hora }}"
 
-          if [ "$HOUR" = "12" ]; then
-            echo "turno=manana"    >> $GITHUB_OUTPUT
+          # Turno por RANGO de horas, NO por hora exacta. GitHub Actions retrasa los
+          # crons 1-3h; con hora exacta, un run retrasado caia en 'manual' y motor.py
+          # (que genera las predicciones del dia) NO corria -> el dia entero sin picks.
+          if   [ "$HOUR" -ge 12 ] && [ "$HOUR" -le 15 ]; then
+            echo "turno=manana"   >> $GITHUB_OUTPUT
             echo "hasta_hora=11"  >> $GITHUB_OUTPUT
             echo "label=Mañana (7-11 AM COT)" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "16" ]; then
+          elif [ "$HOUR" -ge 16 ] && [ "$HOUR" -le 19 ]; then
             echo "turno=mediodia" >> $GITHUB_OUTPUT
             echo "hasta_hora=15"  >> $GITHUB_OUTPUT
             echo "label=Mediodía (11 AM-3 PM COT)" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "20" ]; then
+          elif [ "$HOUR" -ge 20 ] && [ "$HOUR" -le 23 ]; then
             echo "turno=tarde"    >> $GITHUB_OUTPUT
             echo "hasta_hora=19"  >> $GITHUB_OUTPUT
             echo "label=Tarde (3-7 PM COT)" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "00" ]; then
+          elif [ "$HOUR" -ge 0 ] && [ "$HOUR" -le 4 ]; then
             echo "turno=noche"    >> $GITHUB_OUTPUT
             echo "hasta_hora=23"  >> $GITHUB_OUTPUT
             echo "label=Noche (7 PM-medianoche COT)" >> $GITHUB_OUTPUT
