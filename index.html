@@ -775,7 +775,7 @@ E html>
     .ls-side{display:flex;align-items:center;gap:7px;min-width:0}
     .ls-home{justify-content:flex-end;text-align:right}
     .ls-away{justify-content:flex-start;text-align:left}
-    .ls-logo{position:relative;overflow:hidden;width:20px;height:20px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2a3550,#1a2238);border:1px solid rgba(255,255,255,.1);font-family:'Orbitron',monospace;font-size:7.5px;font-weight:900;color:#cdd8e8}
+    .ls-logo{position:relative;overflow:hidden;width:20px;height:20px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2a3550,#1a2238);border:1px solid rgba(255,255,255,.1);font-family:'Orbitron',monospace;font-size:7.5px;font-weight:900;color:#fff}
     .ls-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:2px}
     .ls-name{min-width:0;font-size:12px;color:var(--t1);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .ls-center{flex-shrink:0;text-align:center;font-family:'Orbitron',monospace;font-weight:900;min-width:46px}
@@ -2167,13 +2167,10 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     if(!track) return;
     const items=[];
     if(typeof PROXIMOS_EVENTOS!=='undefined' && PROXIMOS_EVENTOS.length){
-      PROXIMOS_EVENTOS.forEach(e=>items.push(`⚽ ${e.liga} · ${e.partido} · <strong>${e.hora||''} — PICK HOY</strong>`));
-    }
-    if(typeof PREDICCIONES_HISTORIAL!=='undefined'){
-      PREDICCIONES_HISTORIAL.slice(0,6).forEach(p=>{
-        const r=p.resultado==='win'?'✓ ACIERTO':(p.resultado==='loss'?'✗ FALLO':'⏳ PENDIENTE');
-        const pred=p.prediccion.split('—')[0].trim();
-        items.push(`⚽ ${p.liga||''} · ${p.partido} · <strong>${pred} @${p.cuota} — ${r}</strong>`);
+      // SOLO eventos con pick SharpIQ (con prediccion); sin cola de resultados historicos
+      PROXIMOS_EVENTOS.filter(e=>e.prediccion).forEach(e=>{
+        const pred=e.prediccion.split('—')[0].trim();
+        items.push(`⚽ ${e.liga} · ${e.partido} · <strong>${pred}${e.cuota?` @${e.cuota}`:''} — PICK HOY</strong>`);
       });
     }
     if(items.length===0) return;
@@ -2360,7 +2357,8 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   let cdInterval;
   function startCountdowns(){if(cdInterval)clearInterval(cdInterval);cdInterval=setInterval(()=>{document.querySelectorAll('[data-cd="1"]').forEach(el=>{el.textContent=countdown(parseInt(el.getAttribute('data-ts')));});},1000);}
   function _ini(n){return ((n||'').replace(/[^A-Za-zÀ-ÿ ]/g,'').trim().split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('')||'?').toUpperCase();}
-  function _logo(n){const lg=window.sharpiqTeamLogo?window.sharpiqTeamLogo(n):null;return `<span class="ls-logo">${_ini(n)}${lg?`<img src="${lg}" alt="" loading="lazy" onerror="this.remove()">`:''}</span>`;}
+  function _hue(n){n=n||'';let hh=0;for(let i=0;i<n.length;i++)hh=(hh*31+n.charCodeAt(i))%360;return hh;}
+  function _logo(n){const lg=window.sharpiqTeamLogo?window.sharpiqTeamLogo(n):null;return `<span class="ls-logo" style="background:linear-gradient(135deg,hsl(${_hue(n)},60%,42%),hsl(${(_hue(n)+38)%360},62%,28%))">${_ini(n)}${lg?`<img src="${lg}" alt="" loading="lazy" onerror="this.remove()">`:''}</span>`;}
   function buildPicksLookup(){const picks=[];const todos=[...(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS:[]),...(typeof PREDICCIONES_HISTORIAL!=='undefined'?PREDICCIONES_HISTORIAL:[])];todos.forEach(e=>{const p=(e.partido||'').toLowerCase().split(' vs ');if(p.length===2)picks.push({home:p[0].trim(),away:p[1].trim(),prediccion:e.prediccion||'',cuota:e.cuota||'',resultado:e.resultado||null,status:e.status||'vip'});});return picks;}
   function matchTeam(a,b){a=a.toLowerCase();b=b.toLowerCase();if(a.includes(b)||b.includes(a))return true;return b.split(' ').filter(w=>w.length>=4).some(w=>a.includes(w));}
   function findPick(g,L){for(const p of L){if((matchTeam(g.home,p.home)&&matchTeam(g.away,p.away))||(matchTeam(g.home,p.away)&&matchTeam(g.away,p.home)))return p;}return null;}
