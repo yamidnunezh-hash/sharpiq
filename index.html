@@ -760,6 +760,10 @@ E html>
     .ls-row+.ls-row{border-top:1px solid rgba(255,255,255,.045)}
     .ls-row:hover{background:rgba(255,255,255,.035)}
     .ls-row.ls-haspick{background:rgba(0,230,138,.045)}
+    .ls-toggle{display:inline-flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;flex-shrink:0}
+    .ls-tg{background:transparent;border:none;cursor:pointer;padding:5px 11px;font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.5px;color:var(--t3);transition:background .15s,color .15s;white-space:nowrap}
+    .ls-tg+.ls-tg{border-left:1px solid var(--border)}
+    .ls-tg-on{background:rgba(0,200,255,.14);color:#00C8FF}
     .ls-state{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.5px;align-self:center}
     .ls-live{color:#ff4d4d}
     .ls-dot{width:7px;height:7px;border-radius:50%;background:#ff4d4d;box-shadow:0 0 8px #ff4d4d;animation:lsPulse 1.1s infinite}
@@ -1215,6 +1219,10 @@ E html>
         <div style="display:flex;align-items:center;gap:10px">
           <div class="live-badge" id="liveScoresBadge" style="background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.4)"><div class="hero-dot" style="background:#ef4444"></div><span id="liveScoresBadgeText">EN VIVO</span></div>
           <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--t3)" id="liveScoresCount"></span>
+          <div class="ls-toggle" id="liveScoresToggle">
+            <button type="button" class="ls-tg ls-tg-on" data-lsf="pick">Solo con pick</button>
+            <button type="button" class="ls-tg" data-lsf="all">Todos</button>
+          </div>
         </div>
         <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px" id="liveScoresUpdated"></span>
       </div>
@@ -2342,6 +2350,12 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   const count=document.getElementById('liveScoresCount');
   const updated=document.getElementById('liveScoresUpdated');
   if(!grid) return;
+  const toggle=document.getElementById('liveScoresToggle');
+  let lastData=null;
+  let soloConPick=(localStorage.getItem('sharpiq_ls_filter')||'pick')!=='all';   // default: solo con pick
+  function syncToggleUI(){if(!toggle)return;toggle.querySelectorAll('.ls-tg').forEach(b=>b.classList.toggle('ls-tg-on',(b.dataset.lsf==='pick')===soloConPick));}
+  if(toggle)toggle.addEventListener('click',e=>{const b=e.target.closest('.ls-tg');if(!b)return;soloConPick=b.dataset.lsf==='pick';localStorage.setItem('sharpiq_ls_filter',soloConPick?'pick':'all');syncToggleUI();if(lastData)render(lastData);});
+  syncToggleUI();
   function countdown(ts){const diff=ts*1000-Date.now();if(diff<=0)return 'INICIANDO';const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);if(d>0)return d+'d '+h+'h';if(h>0)return h+'h '+String(m).padStart(2,'0')+'m';if(m>0)return m+'m '+String(s).padStart(2,'0')+'s';return s+'s';}
   let cdInterval;
   function startCountdowns(){if(cdInterval)clearInterval(cdInterval);cdInterval=setInterval(()=>{document.querySelectorAll('[data-cd="1"]').forEach(el=>{el.textContent=countdown(parseInt(el.getAttribute('data-ts')));});},1000);}
@@ -2355,19 +2369,23 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   function sideHTML(name,side){return side==='home'?`<div class="ls-side ls-home"><span class="ls-name">${name}</span>${_logo(name)}</div>`:`<div class="ls-side ls-away">${_logo(name)}<span class="ls-name">${name}</span></div>`;}
   function rowHTML(g,tipo){const p=g._pick;let chip='';if(p){const vip=(localStorage.getItem('sharpiq_role')||'')==='vip'||(localStorage.getItem('sharpiq_role')||'')==='admin';if(p.status==='free'||vip){const res=p.resultado==='win'?' · WIN ✅':p.resultado==='loss'?' · LOSS ❌':'';chip=`<div class="ls-pick">⭐ ${p.prediccion.split('—')[0].trim()} <b>@${p.cuota}</b>${res}</div>`;}else{chip=`<div class="ls-pick ls-pick-lock">🔒 Pick VIP — <a href="login.html">Accede</a></div>`;}}return `<div class="ls-row${p?' ls-haspick':''}">${stateHTML(g,tipo)}<div class="ls-match">${sideHTML(g.home,'home')}${centerHTML(g,tipo)}${sideHTML(g.away,'away')}</div>${chip}</div>`;}
   function render(data){
+    lastData=data;
     const L=buildPicksLookup();
     const anot=(arr,tipo)=>(arr||[]).map(g=>({...g,_tipo:tipo,_pick:findPick(g,L)}));
     const all=[...anot(data.live,'live'),...anot(data.upcoming,'upcoming').slice(0,12),...anot(data.finished,'finished').slice(0,10)];
-    const conPickArr=all.filter(g=>g._pick);   // SOLO eventos con pick SharpIQ
+    const conPickArr=all.filter(g=>g._pick);   // eventos con pick SharpIQ
     const sec=document.getElementById('liveScoresSection');
-    if(!conPickArr.length){if(sec)sec.style.display='none';return;}   // sin picks hoy -> oculta la seccion
+    if(!all.length){if(sec)sec.style.display='none';return;}   // sin partidos del todo -> oculta
     if(sec)sec.style.display='';
-    const liveN=conPickArr.filter(g=>g._tipo==='live').length;
-    if(liveN){badge.style.background='rgba(239,68,68,.14)';badge.style.borderColor='rgba(239,68,68,.45)';badgeTxt.textContent='EN VIVO';count.textContent=liveN+(liveN===1?' pick en vivo':' picks en vivo');}
-    else{badge.style.background='rgba(0,200,255,.12)';badge.style.borderColor='rgba(0,200,255,.35)';badgeTxt.textContent='MARCADORES';count.textContent=conPickArr.length+(conPickArr.length===1?' evento con pick SharpIQ':' eventos con pick SharpIQ');}
+    const view=soloConPick?conPickArr:all;   // toggle: solo-con-pick (default) o todos
+    const liveN=view.filter(g=>g._tipo==='live').length;
+    const conPick=conPickArr.length;
+    if(liveN){badge.style.background='rgba(239,68,68,.14)';badge.style.borderColor='rgba(239,68,68,.45)';badgeTxt.textContent='EN VIVO';count.textContent=soloConPick?(liveN+(liveN===1?' pick en vivo':' picks en vivo')):(liveN+(liveN===1?' partido en vivo':' partidos en vivo')+(conPick?` · ${conPick} con pick`:''));}
+    else{badge.style.background='rgba(0,200,255,.12)';badge.style.borderColor='rgba(0,200,255,.35)';badgeTxt.textContent='MARCADORES';count.textContent=soloConPick?(conPick+(conPick===1?' evento con pick SharpIQ':' eventos con pick SharpIQ')):(all.length+' partidos'+(conPick?` · ${conPick} con pick SharpIQ`:''));}
     const upd=new Date(data.updated);updated.textContent='Actualizado '+upd.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'})+' COT';
+    if(!view.length){grid.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:22px;color:var(--t3);font-family:'Space Mono',monospace;font-size:12px">Sin eventos con pick en vivo ahora · usa <b>Todos</b> para ver todos los marcadores.</div>`;startCountdowns();return;}
     const groups=[];const idx={};
-    conPickArr.forEach(g=>{const k=(g.emoji||'')+' '+(g.liga||'Otros');if(idx[k]===undefined){idx[k]=groups.length;groups.push({head:k,games:[]});}groups[idx[k]].games.push(g);});
+    view.forEach(g=>{const k=(g.emoji||'')+' '+(g.liga||'Otros');if(idx[k]===undefined){idx[k]=groups.length;groups.push({head:k,games:[]});}groups[idx[k]].games.push(g);});
     grid.innerHTML=groups.map(gr=>{const hp=gr.games.some(g=>g._pick);return `<div class="ls-group${hp?' ls-group-pick':''}"><div class="ls-group-head">${gr.head}</div>${gr.games.map(g=>rowHTML(g,g._tipo)).join('')}</div>`;}).join('');
     startCountdowns();
   }
