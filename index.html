@@ -2358,16 +2358,16 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     const L=buildPicksLookup();
     const anot=(arr,tipo)=>(arr||[]).map(g=>({...g,_tipo:tipo,_pick:findPick(g,L)}));
     const all=[...anot(data.live,'live'),...anot(data.upcoming,'upcoming').slice(0,12),...anot(data.finished,'finished').slice(0,10)];
+    const conPickArr=all.filter(g=>g._pick);   // SOLO eventos con pick SharpIQ
     const sec=document.getElementById('liveScoresSection');
-    if(!all.length){if(sec)sec.style.display='none';return;}
+    if(!conPickArr.length){if(sec)sec.style.display='none';return;}   // sin picks hoy -> oculta la seccion
     if(sec)sec.style.display='';
-    const liveN=all.filter(g=>g._tipo==='live').length;
-    const conPick=all.filter(g=>g._pick).length;
-    if(liveN){badge.style.background='rgba(239,68,68,.14)';badge.style.borderColor='rgba(239,68,68,.45)';badgeTxt.textContent='EN VIVO';count.textContent=liveN+(liveN===1?' partido en vivo':' partidos en vivo')+(conPick?` · ${conPick} con pick`:'');}
-    else{badge.style.background='rgba(0,200,255,.12)';badge.style.borderColor='rgba(0,200,255,.35)';badgeTxt.textContent='MARCADORES';count.textContent=all.length+' partidos'+(conPick?` · ${conPick} con pick SharpIQ`:'');}
+    const liveN=conPickArr.filter(g=>g._tipo==='live').length;
+    if(liveN){badge.style.background='rgba(239,68,68,.14)';badge.style.borderColor='rgba(239,68,68,.45)';badgeTxt.textContent='EN VIVO';count.textContent=liveN+(liveN===1?' pick en vivo':' picks en vivo');}
+    else{badge.style.background='rgba(0,200,255,.12)';badge.style.borderColor='rgba(0,200,255,.35)';badgeTxt.textContent='MARCADORES';count.textContent=conPickArr.length+(conPickArr.length===1?' evento con pick SharpIQ':' eventos con pick SharpIQ');}
     const upd=new Date(data.updated);updated.textContent='Actualizado '+upd.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'})+' COT';
     const groups=[];const idx={};
-    all.forEach(g=>{const k=(g.emoji||'')+' '+(g.liga||'Otros');if(idx[k]===undefined){idx[k]=groups.length;groups.push({head:k,games:[]});}groups[idx[k]].games.push(g);});
+    conPickArr.forEach(g=>{const k=(g.emoji||'')+' '+(g.liga||'Otros');if(idx[k]===undefined){idx[k]=groups.length;groups.push({head:k,games:[]});}groups[idx[k]].games.push(g);});
     grid.innerHTML=groups.map(gr=>{const hp=gr.games.some(g=>g._pick);return `<div class="ls-group${hp?' ls-group-pick':''}"><div class="ls-group-head">${gr.head}</div>${gr.games.map(g=>rowHTML(g,g._tipo)).join('')}</div>`;}).join('');
     startCountdowns();
   }
