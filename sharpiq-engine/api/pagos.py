@@ -1,6 +1,6 @@
 """
 SharpIQ — Pagos MercadoPago
-Suscripción recurrente VIP: $15 USD/mes
+Suscripción VIP: 60.000 COP/mes
 """
 import os, sys, json
 from datetime import datetime, timedelta
@@ -26,8 +26,8 @@ MP_BASE = "https://api.mercadopago.com"
 PLANES = {
     "vip": {
         "nombre":      "SharpIQ VIP",
-        "precio":      15.00,
-        "moneda":      "USD",
+        "precio":      60000,
+        "moneda":      "COP",
         "descripcion": "Acceso completo a picks EV+ diarios con análisis Sharp",
         "frecuencia":  1,
         "tipo_freq":   "months",
@@ -214,7 +214,7 @@ def _activar_vip(user_id: int, sub_id: str, email: str):
         cur.execute("""
             INSERT INTO suscripciones (usuario_id, plan, precio_usd, fecha_fin,
                                        mp_subscription_id, mp_payer_email, estado)
-            VALUES (%s,'vip',15.00,%s,%s,%s,'active')
+            VALUES (%s,'vip',60000,%s,%s,%s,'active')
             ON CONFLICT (usuario_id, estado) DO UPDATE
             SET fecha_fin=%s, mp_subscription_id=%s, mp_payer_email=%s
         """, (user_id, fecha_fin, sub_id, email, fecha_fin, sub_id, email))
@@ -269,7 +269,7 @@ def _registrar_pago(user_id: int, pago: dict):
             ON CONFLICT (mp_payment_id) DO NOTHING
             RETURNING id
         """, (user_id, pago.get("transaction_amount", 0),
-              pago.get("currency_id", "USD"),
+              pago.get("currency_id", "COP"),
               str(pago.get("id")), pago.get("status")))
         es_nuevo = cur.fetchone() is not None
 

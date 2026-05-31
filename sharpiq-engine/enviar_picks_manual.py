@@ -47,7 +47,7 @@ def enviar_free():
         "⬇️ ⬇️ ⬇️\n"
         "🚀 <b>¿Quieres ver este pick completo?</b>\n"
         "Con cuota exacta, probabilidades del modelo y análisis completo.\n\n"
-        "👉 <b>Únete al canal VIP por solo $15 USD/mes:</b>\n"
+        "👉 <b>Únete al canal VIP por solo $60.000 COP/mes:</b>\n"
         "🔗 https://sharpiq.co\n\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"

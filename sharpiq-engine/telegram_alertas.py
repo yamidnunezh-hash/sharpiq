@@ -37,7 +37,7 @@ TELEGRAM_ALERTAS_ID = _cfg("TELEGRAM_ALERTAS_ID")  # Canal SharpIQ Alertas (avis
 # El canal VIP (TELEGRAM_CHAT_ID) se lee on-demand en get_chat_id().
 
 # Precio mostrado en el bot. TODO(Yamid): confirmar precio final (lo definimos aparte).
-PRECIO_VIP = "$42.000 COP/mes"
+PRECIO_VIP = "$60.000 COP/mes"
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.py")
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
