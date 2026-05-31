@@ -2,7 +2,7 @@ name: SharpIQ Resultados
 
 on:
   schedule:
-    - cron: '0 4 * * *'   # 11:00 PM Colombia (UTC-5) — después de los partidos
+    - cron: '23 4 * * *'   # 11:23 PM Colombia (UTC-5) — minuto :23 (no :00) por fiabilidad del cron
   workflow_dispatch:
 
 permissions:

@@ -8,10 +8,12 @@ name: SharpIQ Motor
 
 on:
   schedule:
-    - cron: '0 12 * * *'    # 7:00 AM COT
-    - cron: '0 16 * * *'    # 11:00 AM COT
-    - cron: '0 20 * * *'    # 3:00 PM COT
-    - cron: '0 0 * * *'     # 7:00 PM COT (00:00 UTC siguiente)
+    # Minuto :23 (NO :00) — GitHub retrasa/descarta los crons en la hora en punto
+    # por congestion global. Offset recomendado por GitHub para mayor fiabilidad.
+    - cron: '23 12 * * *'   # 7:23 AM COT
+    - cron: '23 16 * * *'   # 11:23 AM COT
+    - cron: '23 20 * * *'   # 3:23 PM COT
+    - cron: '23 0 * * *'    # 7:23 PM COT (00:23 UTC siguiente)
   workflow_dispatch:
     inputs:
       hasta_hora:
