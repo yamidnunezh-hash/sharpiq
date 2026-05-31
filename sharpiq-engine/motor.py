@@ -3494,23 +3494,53 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
                         _peso_pinn = 0.55
                     else:
                         _peso_pinn = 0.38
+                    _EV_TOPE = 10.0  # techo de cordura: con Pinnacle, un edge real rara vez pasa de +10%
                     pinn_p_raw = probs_out.get(mk_m, 0) / 100
-                    blend_p = round(pinn_p_raw * _peso_pinn + model_p * (1 - _peso_pinn), 4) if pinn_p_raw > 0 else model_p
-                    ev_blend = round((blend_p * bp_m - 1) * 100, 1)
-                    current_ev = (value_bets.get(mk_m) or {}).get("ev_pinn") or -999
-                    if ev_blend > current_ev:
+
+                    if pinn_p_raw <= 0:
+                        # ── REGLA 2: sin línea de Pinnacle = sin ancla de mercado.
+                        #    Se publica el pick SIN EV (prob del modelo, ev_pinn=None) en vez
+                        #    de inventar un EV con el modelo puro sin validar contra el mercado.
                         value_bets[mk_m] = {
-                            "value":             round(blend_p * bp_m - 1, 3),
-                            "ev_porcentaje":     ev_blend,
-                            "ev_pinn":           ev_blend,
-                            "tiene_valor":       ev_blend >= 5,
-                            "tiene_valor_pinn":  ev_blend >= 5,
-                            "clasificacion":     "ALTO VALOR" if ev_blend >= 10 else "VALOR" if ev_blend >= 5 else "SIN VALOR",
-                            "cuota":             bp_m,
-                            "casa":              bc_m,
-                            "pinn_prob":         round(blend_p * 100, 1),
+                            "value":            None,
+                            "ev_porcentaje":    None,
+                            "ev_pinn":          None,
+                            "tiene_valor":      False,
+                            "tiene_valor_pinn": False,
+                            "clasificacion":    "SIN EV",
+                            "cuota":            bp_m,
+                            "casa":             bc_m,
+                            "pinn_prob":        round(model_p * 100, 1),
+                            "sin_mercado":      True,
                         }
-                        probs_out[mk_m] = round(blend_p * 100, 1)
+                        probs_out[mk_m] = round(model_p * 100, 1)
+                        continue
+
+                    # ── REGLA 1: SIEMPRE usar el blend mezclado con el mercado (ya no el
+                    #    máximo vs el Pinnacle puro, que sesgaba hacia el EV más inflado).
+                    blend_p  = round(pinn_p_raw * _peso_pinn + model_p * (1 - _peso_pinn), 4)
+                    ev_blend = round((blend_p * bp_m - 1) * 100, 1)
+
+                    # ── REGLA 3: techo de cordura. Si tras el blend el EV sigue > +10%, el
+                    #    modelo contradice al mercado de forma sospechosa → NO se publica.
+                    if ev_blend > _EV_TOPE:
+                        value_bets.pop(mk_m, None)
+                        print(f"    ⚠ EV sospechoso descartado: {home[-12:]} vs {away[-12:]} "
+                              f"{mk_m} +{ev_blend}% (modelo {round(model_p*100)}% vs mercado {round(pinn_p_raw*100)}%)")
+                        continue
+
+                    value_bets[mk_m] = {
+                        "value":             round(blend_p * bp_m - 1, 3),
+                        "ev_porcentaje":     ev_blend,
+                        "ev_pinn":           ev_blend,
+                        "tiene_valor":       ev_blend >= 5,
+                        "tiene_valor_pinn":  ev_blend >= 5,
+                        "clasificacion":     "ALTO VALOR" if ev_blend >= 7 else "VALOR" if ev_blend >= 5 else "SIN VALOR",
+                        "cuota":             bp_m,
+                        "casa":              bc_m,
+                        "pinn_prob":         round(blend_p * 100, 1),
+                    }
+                    probs_out[mk_m] = round(blend_p * 100, 1)
         except Exception:
             pass  # falla silenciosamente — no rompe el pipeline Pinnacle
 
@@ -3892,8 +3922,9 @@ def clasificar_tiers(reporte):
                 if not vb:
                     continue
                 ev_p = vb.get("ev_pinn")
-                if ev_p is None:
-                    continue   # solo mercados con referencia Pinnacle
+                # ev_p None = pick SIN ancla de mercado (regla 2). Puede ser SEGURO/PRINCIPAL
+                # por PROBABILIDAD, pero NUNCA ALTO VALOR (ese tier exige EV real verificado).
+                sin_ev = ev_p is None
 
                 # La probabilidad y cuota vienen del value_bet (ya devigada)
                 prob    = float(vb.get("pinn_prob") or probs.get(mk) or 0)
@@ -3922,20 +3953,23 @@ def clasificar_tiers(reporte):
                     "steam_bonus":    steam_bonus,
                 }
 
-                # SEGURO: máxima probabilidad con EV positivo
+                _ev = ev_p or 0  # para los scores cuando ev_p es None (pick sin EV)
+
+                # SEGURO: alta probabilidad. Con mercado exige EV≥2; sin mercado, solo prob+cuota.
                 if (prob >= SEGURO_MIN_PROB
                         and cuota_f <= SEGURO_MAX_CUOTA
-                        and ev_p >= SEGURO_MIN_EV):
-                    seguro_pool.append({**c, "score": prob * (1 + ev_p / 200) + steam_bonus})
+                        and (sin_ev or ev_p >= SEGURO_MIN_EV)):
+                    seguro_pool.append({**c, "score": prob * (1 + _ev / 200) + steam_bonus})
 
-                # PRINCIPAL: mejor balance EV × probabilidad
+                # PRINCIPAL: balance EV × probabilidad (sin mercado, califica por prob).
                 if (prob >= PRINC_MIN_PROB
                         and PRINC_MIN_CUOTA <= cuota_f <= PRINC_MAX_CUOTA
-                        and ev_p >= PRINC_MIN_EV):
-                    principal_pool.append({**c, "score": ev_p * (prob / 100) + steam_bonus})
+                        and (sin_ev or ev_p >= PRINC_MIN_EV)):
+                    principal_pool.append({**c, "score": _ev * (prob / 100) + steam_bonus})
 
-                # ALTO VALOR: máximo EV absoluto (steam bonus x2 aquí por ser pick de riesgo)
-                if (ev_p >= AV_MIN_EV
+                # ALTO VALOR: SOLO con EV real (jamás sin ancla de mercado).
+                if (not sin_ev
+                        and ev_p >= AV_MIN_EV
                         and AV_MIN_CUOTA <= cuota_f <= AV_MAX_CUOTA
                         and prob >= AV_MIN_PROB):
                     alto_pool.append({**c, "score": ev_p + steam_bonus * 2})

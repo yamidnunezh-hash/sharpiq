@@ -7,16 +7,37 @@ import requests
 import json
 import os
 import sys
+import html as _html
 sys.path.insert(0, os.path.dirname(__file__))
-from config import TELEGRAM_TOKEN
-try:
-    from config import TELEGRAM_YAMID_ID
-except ImportError:
-    TELEGRAM_YAMID_ID = None
-try:
-    from config import TELEGRAM_FREE_ID
-except ImportError:
-    TELEGRAM_FREE_ID = None
+
+
+def _cfg(nombre, default=None):
+    """Lee una config: variable de entorno PRIMERO, luego config.py, luego default.
+    Permite cambiar los chat_id de los canales sin tocar código (env vars / Secrets)."""
+    v = os.environ.get(nombre)
+    if v:
+        return v
+    try:
+        import config
+        return getattr(config, nombre, default)
+    except ImportError:
+        return default
+
+
+def esc(s):
+    """Escapa & < > para que un nombre (equipo/liga/jugador) con esos caracteres
+    no rompa el HTML de Telegram (que descarta el mensaje entero en silencio)."""
+    return _html.escape(str(s if s is not None else ""), quote=False)
+
+
+TELEGRAM_TOKEN      = _cfg("TELEGRAM_TOKEN")
+TELEGRAM_FREE_ID    = _cfg("TELEGRAM_FREE_ID")     # Canal SharpIQ (gratis)
+TELEGRAM_YAMID_ID   = _cfg("TELEGRAM_YAMID_ID")    # DM privado Yamid (todo lo interno)
+TELEGRAM_ALERTAS_ID = _cfg("TELEGRAM_ALERTAS_ID")  # Canal SharpIQ Alertas (avisos de servicio)
+# El canal VIP (TELEGRAM_CHAT_ID) se lee on-demand en get_chat_id().
+
+# Precio mostrado en el bot. TODO(Yamid): confirmar precio final (lo definimos aparte).
+PRECIO_VIP = "$42.000 COP/mes"
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.py")
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
@@ -35,9 +56,8 @@ GIFS_MANANA = [
 
 
 def get_chat_id():
-    """Lee el chat_id guardado en config.py"""
-    from config import TELEGRAM_CHAT_ID
-    return TELEGRAM_CHAT_ID
+    """Canal VIP. env var TELEGRAM_CHAT_ID primero, luego config.py."""
+    return _cfg("TELEGRAM_CHAT_ID")
 
 
 def guardar_chat_id(chat_id):
@@ -173,15 +193,15 @@ def enviar_alerta_value_bet(pred, mercado, vb):
     h, m2 = pred.get("hora", "00:00").split(":")
     hora_cot = f"{str((int(h)-5+24)%24).zfill(2)}:{m2} COT"
 
-    casa_linea = f"\n🏠 <b>Casa recomendada:</b> {casa}" if casa else ""
+    casa_linea = f"\n🏠 <b>Casa recomendada:</b> {esc(casa)}" if casa else ""
 
     deporte = pred.get("deporte", "").upper()
     sport_emoji = pred.get("deporte_emoji") or {"NBA":"🏀","NHL":"🏒","MLB":"⚾","NFL":"🏈"}.get(deporte, "⚽")
 
     texto = f"""{emoji} <b>SharpIQ — {vb['clasificacion']}</b>
 
-{sport_emoji} <b>{pred['local']} vs {pred['visitante']}</b>
-🏆 {pred.get('liga', '')} | {hora_cot}
+{sport_emoji} <b>{esc(pred['local'])} vs {esc(pred['visitante'])}</b>
+🏆 {esc(pred.get('liga', ''))} | {hora_cot}
 
 📊 <b>Mercado:</b> {nombres_mercado.get(mercado, mercado)}
 📈 <b>Probabilidad modelo:</b> {prob}%
@@ -224,9 +244,11 @@ def enviar_resumen_dia(reporte):
         hora_c = f"{hh:02d}:{hora_u[3:5]} COT"
         picks_lines.append(
             f"{_TIER_EMOJI[k]}\n"
-            f"{emoji} {p['local']} vs {p['visitante']}\n"
-            f"🏆 {liga} | {hora_c}\n"
-            f"📊 {t['mercado_nombre']} @{t['cuota']} — EV +{t['ev_pinn']}% | Prob {t['prob']}% | Kelly {t['kelly_pct']}%"
+            f"{emoji} {esc(p['local'])} vs {esc(p['visitante'])}\n"
+            f"🏆 {esc(liga)} | {hora_c}\n"
+            f"📊 {t['mercado_nombre']} @{t['cuota']} — "
+            + (f"EV +{t['ev_pinn']}%" if t.get('ev_pinn') is not None else "sin EV")
+            + f" | Prob {t['prob']}% | Kelly {t['kelly_pct']}%"
         )
 
     sep = "\n" + "─" * 28 + "\n"
@@ -243,8 +265,18 @@ def enviar_resumen_dia(reporte):
 
 
 def enviar_aviso_yamid(texto):
-    """Mensaje privado a Yamid — alertas del motor, auto-publicaciones, errores."""
+    """Mensaje privado a Yamid (DM) — TODO lo interno: errores, debug, CLV, steam,
+    confirmaciones de auto-publicado, nuevo referido. NUNCA va al canal Alertas."""
     return enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
+
+
+def enviar_alerta_servicio(texto):
+    """Canal público 'SharpIQ Alertas' — SOLO avisos de servicio que el suscriptor
+    debe ver: 'sin picks hoy', 'picks publicados', estado del servicio. Nada interno.
+    Si no hay TELEGRAM_ALERTAS_ID configurado, no envía (no rompe el flujo)."""
+    if not TELEGRAM_ALERTAS_ID:
+        return False
+    return enviar_mensaje(texto, chat_id=TELEGRAM_ALERTAS_ID)
 
 
 def _sport_emoji(liga: str) -> str:
@@ -262,9 +294,9 @@ def enviar_canal_free(partido, liga, hora, pick_free=None, prob_free=None):
     sp = _sport_emoji(liga)
     if pick_free:
         texto = (
-            f"{sp} <b>{partido}</b>\n"
-            f"📅 {liga} | {hora}\n\n"
-            f"📊 <b>Pick FREE:</b> <b>{pick_free}</b>\n"
+            f"{sp} <b>{esc(partido)}</b>\n"
+            f"📅 {esc(liga)} | {esc(hora)}\n\n"
+            f"📊 <b>Pick FREE:</b> <b>{esc(pick_free)}</b>\n"
             f"📈 Probabilidad estimada: {prob_free}%\n\n"
             f"💡 <i>Cuota exacta + 2 picks VIP adicionales con EV vs Pinnacle</i>\n"
             f"🔒 Acceso VIP → https://sharpiq.co\n\n"
@@ -272,8 +304,8 @@ def enviar_canal_free(partido, liga, hora, pick_free=None, prob_free=None):
         )
     else:
         texto = (
-            f"{sp} <b>{partido}</b>\n"
-            f"📅 {liga} | {hora}\n\n"
+            f"{sp} <b>{esc(partido)}</b>\n"
+            f"📅 {esc(liga)} | {esc(hora)}\n\n"
             f"🔎 El motor detectó valor en este partido.\n"
             f"📊 Predicción completa + cuota EV+ → solo en canal VIP\n\n"
             f"🔒 Únete → https://sharpiq.co\n\n"
@@ -301,10 +333,10 @@ def notificar_referido(codigo_ref, telegram_usuario="desconocido"):
     """Avisa a Yamid cuando alguien registra un referido vía /referido CODIGO."""
     texto = (
         f"🎁 <b>SharpIQ — Nuevo Referido</b>\n\n"
-        f"👤 <b>Nuevo suscriptor:</b> @{telegram_usuario}\n"
-        f"🔗 <b>Código referidor:</b> <code>{codigo_ref}</code>\n\n"
-        f"✅ Acción: dar <b>7 días extra</b> al suscriptor con código {codigo_ref}\n"
-        f"<i>Verifica el pago en MercadoPago antes de aplicar el beneficio</i>"
+        f"👤 <b>Nuevo suscriptor:</b> @{esc(telegram_usuario)}\n"
+        f"🔗 <b>Código referidor:</b> <code>{esc(codigo_ref)}</code>\n\n"
+        f"✅ Recompensa: <b>1 mes gratis</b> para el referidor con código {esc(codigo_ref)}\n"
+        f"<i>Se aplica automáticamente al confirmarse el pago VIP del referido.</i>"
     )
     return enviar_aviso_yamid(texto)
 
@@ -319,10 +351,13 @@ def procesar_updates_bot():
         if r.status_code != 200:
             return
         updates = r.json().get("result", [])
-        ultimo_id = None
+    except Exception as e:
+        print(f"procesar_updates_bot getUpdates error: {e}")
+        return
 
-        for upd in updates:
-            ultimo_id = upd["update_id"]
+    for upd in updates:
+        uid = upd["update_id"]
+        try:
             msg = upd.get("message", {})
             texto = msg.get("text", "").strip()
             usuario = msg.get("from", {}).get("username", "desconocido")
@@ -331,16 +366,14 @@ def procesar_updates_bot():
             if texto.startswith("/start"):
                 enviar_mensaje(
                     "👋 <b>Bienvenido a SharpIQ</b>\n\n"
-                    "Somos el sistema de predicciones deportivas con inteligencia artificial "
-                    "más preciso de Colombia. 🧠⚽🏀\n\n"
-                    "🔒 <b>Acceso VIP — $42.000 COP/mes</b>\n"
+                    "Predicciones deportivas con inteligencia artificial y EV vs Pinnacle. 🧠⚽🏀\n\n"
+                    f"🔒 <b>Acceso VIP — {PRECIO_VIP}</b>\n"
                     "✅ 3 picks diarios con análisis completo\n"
                     "✅ Corners, tarjetas, handicap asiático\n"
                     "✅ EV vs Pinnacle en tiempo real\n\n"
-                    "👇 <b>Suscríbete aquí:</b>\n"
-                    "https://www.mercadopago.com.co/subscriptions/checkout"
-                    "?preapproval_plan_id=79abf20272b64347b16a901055c89d8c\n\n"
-                    "Después de pagar, escríbele a @YamidNH para activar tu acceso. 🚀",
+                    "👇 <b>Suscríbete aquí (pago automático, acceso al instante):</b>\n"
+                    "https://sharpiq.co\n\n"
+                    "Tu acceso VIP se activa solo al confirmarse el pago. 🚀",
                     chat_id=chat_id_usuario
                 )
 
@@ -351,8 +384,8 @@ def procesar_updates_bot():
                     notificar_referido(codigo, usuario)
                     enviar_mensaje(
                         f"✅ Referido registrado correctamente.\n"
-                        f"Código: <code>{codigo}</code>\n\n"
-                        f"Tu amigo recibirá 7 días extra en su suscripción. "
+                        f"Código: <code>{esc(codigo)}</code>\n\n"
+                        f"Tu referidor recibirá <b>1 mes gratis</b> de VIP al confirmarse tu pago. "
                         f"¡Gracias por hacer crecer la comunidad SharpIQ! 🔥",
                         chat_id=chat_id_usuario
                     )
@@ -361,14 +394,16 @@ def procesar_updates_bot():
                         "Uso: <code>/referido CODIGO</code>\nEjemplo: /referido ABC123",
                         chat_id=chat_id_usuario
                     )
-
-        # Marcar updates como leídos
-        if ultimo_id is not None:
-            requests.get(f"{TELEGRAM_API}/getUpdates",
-                         params={"offset": ultimo_id + 1}, timeout=10)
-
-    except Exception as e:
-        print(f"procesar_updates_bot error: {e}")
+        except Exception as e:
+            print(f"procesar_updates_bot handle {uid}: {e}")
+        finally:
+            # Marca ESTE update como leído de inmediato → si algo falla, no se
+            # reprocesa /start ni /referido en la siguiente corrida (idempotente).
+            try:
+                requests.get(f"{TELEGRAM_API}/getUpdates",
+                             params={"offset": uid + 1, "timeout": 0}, timeout=10)
+            except Exception:
+                pass
 
 
 def enviar_saludo_manana_free(partidos_hoy):
@@ -382,9 +417,6 @@ def enviar_saludo_manana_free(partidos_hoy):
     # Filtrar solo partidos de HOY
     hoy_iso = date.today().isoformat()
     partidos_hoy = [p for p in partidos_hoy if p.get("fecha", hoy_iso) == hoy_iso]
-
-    # GIF de análisis antes del texto
-    enviar_gif_free(random.choice(GIFS_MANANA))
 
     dias = {0:"Lunes",1:"Martes",2:"Miércoles",3:"Jueves",4:"Viernes",5:"Sábado",6:"Domingo"}
     meses = {1:"enero",2:"febrero",3:"marzo",4:"abril",5:"mayo",6:"junio",
@@ -408,10 +440,12 @@ def enviar_saludo_manana_free(partidos_hoy):
     )
 
     if partidos_hoy:
+        # GIF de análisis SOLO si hay partidos (evita GIF en días vacíos)
+        enviar_gif_free(random.choice(GIFS_MANANA))
         for p in partidos_hoy[:6]:  # máximo 6 partidos
-            texto += f"• {p['local']} vs {p['visitante']} — {p.get('hora','')}\n"
+            texto += f"• {esc(p['local'])} vs {esc(p['visitante'])} — {esc(p.get('hora',''))}\n"
             if p.get('liga'):
-                texto += f"  🏆 {p['liga']}\n"
+                texto += f"  🏆 {esc(p['liga'])}\n"
     else:
         texto += "• Jornada tranquila hoy — analizando opciones\n"
 
@@ -449,7 +483,7 @@ def enviar_resultado_free(partido, resultado_texto, emoji_resultado):
         enviar_gif_free(random.choice(GIFS_WIN))
 
     texto = (
-        f"{emoji_resultado} <b>Resultado — {partido}</b>\n\n"
+        f"{emoji_resultado} <b>Resultado — {esc(partido)}</b>\n\n"
         f"<b>{resultado_texto}</b>\n\n"
         f"{comentario}\n\n"
         f"🔒 Ver predicciones de mañana → https://sharpiq.co\n"
@@ -463,8 +497,8 @@ def _construir_narrativa(pred, mercado, vb, canal):
     Genera texto de análisis narrativo a partir de los datos de la predicción.
     canal: 'free' (incluye CTA a VIP) | 'vip' (más detallado, sin CTA)
     """
-    local     = pred["local"]
-    visitante = pred["visitante"]
+    local     = esc(pred["local"])
+    visitante = esc(pred["visitante"])
     probs     = pred.get("probabilidades", {})
     cuotas    = pred.get("cuotas", {})
     forma_l   = pred.get("forma_local")  or {}
@@ -581,7 +615,7 @@ def _construir_narrativa(pred, mercado, vb, canal):
 
     # ── Árbitro y sede neutral ────────────────────────────────────
     linea_contexto = ""
-    arbitro = pred.get("arbitro", "")
+    arbitro = esc(pred.get("arbitro", ""))
     if arbitro:
         linea_contexto += f"👮 <b>Árbitro:</b> {arbitro}\n"
     if pred.get("sede_neutral"):
@@ -631,8 +665,8 @@ def enviar_mercados_ext_vip(pred):
     if not ext:
         return False
 
-    local     = pred["local"]
-    visitante = pred["visitante"]
+    local     = esc(pred["local"])
+    visitante = esc(pred["visitante"])
     corners   = ext.get("corners",  {})
     tarjetas  = ext.get("tarjetas", {})
     handicap  = ext.get("handicap", {})
@@ -742,10 +776,11 @@ def _analisis_experto(tier):
         visit = (p.get("visitante") or "").strip()
         mercado = (tier.get("mercado_nombre") or "").lower()
         cuota = tier.get("cuota", "")
-        ev = round(tier.get("ev_pinn", tier.get("ev", 0)) or 0)
+        _ev_raw = tier.get("ev_pinn", tier.get("ev", None))   # None = pick sin ancla de mercado
+        ev = round(_ev_raw or 0)
         kelly = tier.get("kelly_pct")
-        L = ((local.split(" ")[0] if local else "Local"))[:11]
-        V = ((visit.split(" ")[0] if visit else "Visita"))[:11]
+        L = esc(((local.split(" ")[0] if local else "Local"))[:11])
+        V = esc(((visit.split(" ")[0] if visit else "Visita"))[:11])
         out = []
         vl = probs.get("victoria_local"); vv = probs.get("victoria_visita"); em = probs.get("empate")
         if vl is not None and vv is not None and em is not None:
@@ -756,8 +791,11 @@ def _analisis_experto(tier):
         if probs.get("btts_si") is not None: tot.append("BTTS " + str(round(probs["btts_si"])) + "%")
         if tot:
             out.append("\U0001f4c8 <b>Goles:</b> " + " \u00b7 ".join(tot))
-        ev_txt = ("+" + str(ev) + "%") if ev >= 0 else (str(ev) + "%")
-        linea = "\U0001f48e <b>Valor:</b> @" + str(cuota) + " \u00b7 EV " + ev_txt
+        if _ev_raw is None:
+            linea = "\U0001f48e <b>Valor:</b> @" + str(cuota) + " \u00b7 sin EV (sin l\u00ednea de mercado)"
+        else:
+            ev_txt = ("+" + str(ev) + "%") if ev >= 0 else (str(ev) + "%")
+            linea = "\U0001f48e <b>Valor:</b> @" + str(cuota) + " \u00b7 EV " + ev_txt
         if kelly: linea += " \u00b7 Kelly " + str(kelly) + "%"
         out.append(linea)
         def _f(f):
@@ -794,8 +832,6 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
     Mensaje único al canal VIP con los 3 picks del día en formato de tiers.
     Formato: 🛡️ SEGURO / ⭐ PICK PRINCIPAL / 🔥 ALTO VALOR
     """
-    from config import TELEGRAM_CHAT_ID
-
     def _hcot(pred):
         h, m = pred.get("hora", "00:00").split(":")
         return f"{str((int(h)-5+24)%24).zfill(2)}:{m} COT"
@@ -808,8 +844,8 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
 
         if es_prop:
             # Player prop: mostrar jugador + partido de contexto
-            jugador  = p.get("prop_jugador", p["local"])
-            partido  = p.get("partido", p["visitante"])
+            jugador  = esc(p.get("prop_jugador", p["local"]))
+            partido  = esc(p.get("partido", p["visitante"]))
             ev_extra = ""
             if label == "ALTO VALOR":
                 ev = round(tier.get("ev_pinn", tier.get("ev", 0)) or 0)
@@ -823,7 +859,7 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 f"{emoji} <b>{label}</b>\n"
                 f"🏀 <b>{jugador}</b>\n"
                 f"📌 {partido}\n"
-                f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
+                f"🏆 {esc(p.get('liga',''))} | {_hcot(p)}\n"
                 f"\U0001f3af <b>{tier['mercado_nombre']}</b> @{tier['cuota']}{ev_extra}\n"
                 f"{_analisis_experto(tier)}\n"
                 f"{stake_line}"
@@ -842,8 +878,8 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 stake_line = "💰 <i>Stake recomendado: 3% del bankroll</i>"
             return (
                 f"{emoji} <b>{label}</b>\n"
-                f"{sp_emoji} <b>{p['local']} vs {p['visitante']}</b>\n"
-                f"🏆 {p.get('liga','')} | {_hcot(p)}\n"
+                f"{sp_emoji} <b>{esc(p['local'])} vs {esc(p['visitante'])}</b>\n"
+                f"🏆 {esc(p.get('liga',''))} | {_hcot(p)}\n"
                 f"\U0001f3af <b>{tier['mercado_nombre']}</b> @{tier['cuota']}{ev_extra}\n"
                 f"{_analisis_experto(tier)}\n"
                 f"{stake_line}"
@@ -866,7 +902,7 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
         + "\n\n📌 <i>Regla: nunca más del 8% del bankroll en un día</i>"
         + "\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
     )
-    return enviar_mensaje(texto, chat_id=TELEGRAM_CHAT_ID)
+    return enviar_mensaje(texto, chat_id=get_chat_id())
 
 
 def enviar_resultado_vip(partido, resultado_texto, emoji_resultado):
@@ -892,7 +928,7 @@ def enviar_resultado_vip(partido, resultado_texto, emoji_resultado):
     comentario = random.choice(wins_vip if es_win else losses_vip)
 
     texto = (
-        f"{emoji_resultado} <b>Resultado VIP — {partido}</b>\n\n"
+        f"{emoji_resultado} <b>Resultado VIP — {esc(partido)}</b>\n\n"
         f"<b>{resultado_texto}</b>\n\n"
         f"{comentario}\n\n"
         f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
