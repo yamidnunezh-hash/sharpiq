@@ -9,7 +9,7 @@
   "casa": "",
   "hora_utc": "16:30",
   "hora_cot": "11:30 COT",
-  "ev": 91.6,
+  "ev": 96.2,
   "clasificacion": "ALTO VALOR",
   "confianza": 90.4,
   "pred_completa": {
@@ -21,82 +21,75 @@
     "hora": "16:30",
     "fecha_evento": "2026-05-31",
     "cuotas": {
-      "2": 2.85,
+      "2": 3.57,
       "2_casa": "Pinnacle",
-      "pinnacle_2": 2.85,
-      "1": 2.5,
+      "pinnacle_2": 3.57,
+      "1": 2.07,
       "1_casa": "Pinnacle",
-      "pinnacle_1": 2.5,
-      "X": 3.55,
+      "pinnacle_1": 2.07,
+      "X": 3.68,
       "X_casa": "Pinnacle",
-      "pinnacle_X": 3.55,
-      "over275": 1.95,
+      "pinnacle_X": 3.68,
+      "over275": 1.93,
       "over275_casa": "Pinnacle",
-      "pinnacle_over275": 1.95,
-      "under275": 1.93,
+      "pinnacle_over275": 1.93,
+      "under275": 1.95,
       "under275_casa": "Pinnacle",
-      "pinnacle_under275": 1.93,
-      "ah_v_p0_0": 2.09,
-      "ah_v_p0_0_casa": "Pinnacle",
-      "pinnacle_ah_v_p0_0": 2.09
+      "pinnacle_under275": 1.95,
+      "ah_l_m0_5": 2.08,
+      "ah_l_m0_5_casa": "Pinnacle",
+      "pinnacle_ah_l_m0_5": 2.08,
+      "ah_v_p0_5": 1.84,
+      "ah_v_p0_5_casa": "Pinnacle",
+      "pinnacle_ah_v_p0_5": 1.84
     },
     "probabilidades": {
-      "victoria_visita": 34.0,
-      "victoria_local": 38.7,
-      "empate": 27.3,
-      "over275": 49.7,
-      "under275": 50.3,
-      "ah_v_p0_0": 46.7,
+      "victoria_visita": 27.1,
+      "victoria_local": 46.7,
+      "empate": 26.3,
+      "over275": 50.3,
+      "under275": 49.7,
+      "ah_l_m0_5": 46.9,
+      "ah_v_p0_5": 53.1,
       "over25": 9.6,
       "under25": 90.4
     },
     "confianza": 90.4,
     "value_bets": {
       "victoria_visita": {
-        "value": -0.032,
-        "ev_porcentaje": -3.2,
-        "ev_pinn": -3.2,
+        "value": -0.034,
+        "ev_porcentaje": -3.4,
+        "ev_pinn": -3.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.85,
+        "cuota": 3.57,
         "casa": "Pinnacle",
-        "pinn_prob": 34.0
+        "pinn_prob": 27.1
       },
       "victoria_local": {
-        "value": -0.032,
-        "ev_porcentaje": -3.2,
-        "ev_pinn": -3.2,
+        "value": -0.034,
+        "ev_porcentaje": -3.4,
+        "ev_pinn": -3.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.5,
+        "cuota": 2.07,
         "casa": "Pinnacle",
-        "pinn_prob": 38.7
+        "pinn_prob": 46.7
       },
       "empate": {
-        "value": -0.032,
-        "ev_porcentaje": -3.2,
-        "ev_pinn": -3.2,
+        "value": -0.034,
+        "ev_porcentaje": -3.4,
+        "ev_pinn": -3.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 3.55,
+        "cuota": 3.68,
         "casa": "Pinnacle",
-        "pinn_prob": 27.3
+        "pinn_prob": 26.3
       },
       "over275": {
-        "value": -0.03,
-        "ev_porcentaje": -3.0,
-        "ev_pinn": -3.0,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.95,
-        "casa": "Pinnacle",
-        "pinn_prob": 49.7
-      },
-      "under275": {
         "value": -0.03,
         "ev_porcentaje": -3.0,
         "ev_pinn": -3.0,
@@ -107,16 +100,38 @@
         "casa": "Pinnacle",
         "pinn_prob": 50.3
       },
-      "ah_v_p0_0": {
+      "under275": {
+        "value": -0.03,
+        "ev_porcentaje": -3.0,
+        "ev_pinn": -3.0,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.95,
+        "casa": "Pinnacle",
+        "pinn_prob": 49.7
+      },
+      "ah_l_m0_5": {
         "value": -0.024,
         "ev_porcentaje": -2.4,
         "ev_pinn": -2.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.09,
+        "cuota": 2.08,
         "casa": "Pinnacle",
-        "pinn_prob": 46.7
+        "pinn_prob": 46.9
+      },
+      "ah_v_p0_5": {
+        "value": -0.024,
+        "ev_porcentaje": -2.4,
+        "ev_pinn": -2.4,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.84,
+        "casa": "Pinnacle",
+        "pinn_prob": 53.1
       },
       "over25": {
         "value": -0.837,
@@ -130,13 +145,13 @@
         "pinn_prob": 9.6
       },
       "under25": {
-        "value": 0.916,
-        "ev_porcentaje": 91.6,
-        "ev_pinn": 91.6,
+        "value": 0.962,
+        "ev_porcentaje": 96.2,
+        "ev_pinn": 96.2,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 2.12,
+        "cuota": 2.17,
         "casa": "Unibet",
         "pinn_prob": 90.4
       }
@@ -144,7 +159,7 @@
     "prediccion_principal": {
       "mercado": "Under 2.5 Goles",
       "prob": 90.4,
-      "ev": 91.6
+      "ev": 96.2
     },
     "cuotas_reales": true,
     "confiable": true,
@@ -198,12 +213,12 @@
         "tarjetas_under6": 84.7
       },
       "handicap": {
-        "ah_local_menos05": 38.7,
-        "ah_visita_mas05": 61.3,
-        "ah_local_menos1": 25.2,
-        "ah_visita_mas1": 74.8,
-        "ah_local_menos15": 17.6,
-        "ah_visita_mas15": 82.4
+        "ah_local_menos05": 46.7,
+        "ah_visita_mas05": 53.4,
+        "ah_local_menos1": 30.4,
+        "ah_visita_mas1": 69.6,
+        "ah_local_menos15": 21.3,
+        "ah_visita_mas15": 78.7
       },
       "disparos": {
         "disparos_esperados": 5.3,
@@ -323,50 +338,50 @@
           "clasificacion": "SIN VALOR"
         },
         "ah_local_menos05": {
-          "prob_modelo": 38.7,
-          "cuota_justa": 2.58,
-          "cuota_ref": 2.45,
+          "prob_modelo": 46.7,
+          "cuota_justa": 2.14,
+          "cuota_ref": 2.03,
           "ev_porcentaje": -5.2,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
         "ah_visita_mas05": {
-          "prob_modelo": 61.3,
-          "cuota_justa": 1.63,
-          "cuota_ref": 1.55,
-          "ev_porcentaje": -5.0,
+          "prob_modelo": 53.4,
+          "cuota_justa": 1.87,
+          "cuota_ref": 1.78,
+          "ev_porcentaje": -4.9,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
         "ah_local_menos1": {
-          "prob_modelo": 25.2,
-          "cuota_justa": 3.97,
-          "cuota_ref": 3.77,
-          "ev_porcentaje": -5.0,
+          "prob_modelo": 30.4,
+          "cuota_justa": 3.29,
+          "cuota_ref": 3.12,
+          "ev_porcentaje": -5.2,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
         "ah_visita_mas1": {
-          "prob_modelo": 74.8,
-          "cuota_justa": 1.34,
-          "cuota_ref": 1.27,
-          "ev_porcentaje": -5.0,
+          "prob_modelo": 69.6,
+          "cuota_justa": 1.44,
+          "cuota_ref": 1.36,
+          "ev_porcentaje": -5.3,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
         "ah_local_menos15": {
-          "prob_modelo": 17.6,
-          "cuota_justa": 5.68,
-          "cuota_ref": 5.4,
+          "prob_modelo": 21.3,
+          "cuota_justa": 4.69,
+          "cuota_ref": 4.46,
           "ev_porcentaje": -5.0,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
         "ah_visita_mas15": {
-          "prob_modelo": 82.4,
-          "cuota_justa": 1.21,
-          "cuota_ref": 1.15,
-          "ev_porcentaje": -5.2,
+          "prob_modelo": 78.7,
+          "cuota_justa": 1.27,
+          "cuota_ref": 1.21,
+          "ev_porcentaje": -4.8,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
