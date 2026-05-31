@@ -227,10 +227,13 @@ def correr():
         _sin_picks_sent = os.path.join(BASE_DIR_AP, "logs", f"sin_picks_{date.today().isoformat()}.sent")
         if not os.path.exists(_sin_picks_sent):
             try:
-                from telegram_alertas import enviar_aviso_yamid
-                enviar_aviso_yamid(
-                    f"⚠️ SharpIQ {date.today().isoformat()} — "
-                    f"Sin picks nuevos hoy (todos ya publicados o sin cuotas DNB/Over1.5)."
+                # Aviso de SERVICIO (lo ve el suscriptor) → canal Alertas
+                from telegram_alertas import enviar_alerta_servicio
+                enviar_alerta_servicio(
+                    f"📭 <b>SharpIQ — Sin picks hoy</b>\n\n"
+                    f"El motor no encontró valor suficiente para publicar hoy. "
+                    f"Preferimos no apostar antes que forzar una jugada sin ventaja.\n\n"
+                    f"<i>Mañana seguimos. La disciplina es parte del sistema.</i>"
                 )
                 open(_sin_picks_sent, "w").close()
             except Exception:
@@ -245,6 +248,17 @@ def correr():
         enviar_gif_vip(random.choice(GIFS_MANANA))
         enviar_tiers_vip(tiers["seguro"], tiers["principal"], tiers["alto_valor"])
         LOG.info("Tiers VIP enviados a Telegram")
+        # Aviso de SERVICIO al canal Alertas (sin revelar los picks, eso es perk VIP)
+        try:
+            from telegram_alertas import enviar_alerta_servicio
+            _n = sum(1 for k in ("seguro", "principal", "alto_valor") if tiers.get(k))
+            enviar_alerta_servicio(
+                f"✅ <b>SharpIQ — Picks de hoy publicados</b>\n\n"
+                f"Ya hay {_n} pick(s) del día disponibles para suscriptores VIP.\n"
+                f"🔒 Accede → https://sharpiq.co"
+            )
+        except Exception:
+            pass
     except Exception as e:
         LOG.error(f"Telegram tiers error: {e}")
 

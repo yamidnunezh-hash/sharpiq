@@ -36,6 +36,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_YAMID_ID: ${{ secrets.TELEGRAM_YAMID_ID }}
           TELEGRAM_FREE_ID: ${{ secrets.TELEGRAM_FREE_ID }}
+          TELEGRAM_ALERTAS_ID: ${{ secrets.TELEGRAM_ALERTAS_ID }}
           MP_ACCESS_TOKEN: ${{ secrets.MP_ACCESS_TOKEN }}
           MP_PUBLIC_KEY: ${{ secrets.MP_PUBLIC_KEY }}
           MP_CLIENT_ID: ${{ secrets.MP_CLIENT_ID }}
@@ -55,6 +56,7 @@ jobs:
               f"TELEGRAM_CHAT_ID    = {os.environ['TELEGRAM_CHAT_ID']!r}\n"
               f"TELEGRAM_YAMID_ID   = {os.environ['TELEGRAM_YAMID_ID']!r}\n"
               f"TELEGRAM_FREE_ID    = {os.environ['TELEGRAM_FREE_ID']!r}\n"
+              f"TELEGRAM_ALERTAS_ID = {os.environ.get('TELEGRAM_ALERTAS_ID','')!r}\n"
               f"PANEL_TOKEN         = 'sharpiq2026'\n"
               f"VAPID_PUBLIC_KEY    = ''\n"
               f"VAPID_PRIVATE_PEM   = ''\n"

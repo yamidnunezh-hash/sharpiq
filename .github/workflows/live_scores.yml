@@ -33,6 +33,7 @@ jobs:
           TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_YAMID_ID: ${{ secrets.TELEGRAM_YAMID_ID }}
           TELEGRAM_FREE_ID:  ${{ secrets.TELEGRAM_FREE_ID }}
+          TELEGRAM_ALERTAS_ID: ${{ secrets.TELEGRAM_ALERTAS_ID }}
         run: |
           python - << 'EOF'
           import os
@@ -42,6 +43,7 @@ jobs:
             f'TELEGRAM_CHAT_ID   = "{os.environ["TELEGRAM_CHAT_ID"]}"',
             f'TELEGRAM_YAMID_ID  = "{os.environ["TELEGRAM_YAMID_ID"]}"',
             f'TELEGRAM_FREE_ID   = "{os.environ["TELEGRAM_FREE_ID"]}"',
+            f'TELEGRAM_ALERTAS_ID = "{os.environ.get("TELEGRAM_ALERTAS_ID", "")}"',
             'FOOTBALL_DATA_KEY  = ""',
             'APIFOOTBALL_KEY    = ""',
             'DATABASE_URL       = ""',

@@ -10,7 +10,7 @@ from datetime import datetime, date
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
-from config import APIFOOTBALL_KEY, TELEGRAM_CHAT_ID
+from config import APIFOOTBALL_KEY
 from motor import _apifb, LIGAS_APIFB
 
 DB_PATH         = os.path.join(BASE_DIR, "sharpiq.db")
@@ -277,13 +277,9 @@ def construir_alerta(fixture, trigger, probs, shots_h=0, shots_a=0, ev=0, cj=0, 
 # ── ENVIAR AL CANAL VIP ──────────────────────────────────────────────
 
 def enviar_alerta_live(texto):
-    import requests
-    from config import TELEGRAM_TOKEN
-    requests.post(
-        f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
-        json={"chat_id": TELEGRAM_CHAT_ID, "text": texto, "parse_mode": "HTML"},
-        timeout=10
-    )
+    # Alertas en vivo = perk VIP → canal VIP (get_chat_id lee env var con fallback a config.py).
+    from telegram_alertas import enviar_mensaje, get_chat_id
+    return enviar_mensaje(texto, chat_id=get_chat_id())
 
 
 # ── ONE-SHOT PRINCIPAL ───────────────────────────────────────────────

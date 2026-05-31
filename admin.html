@@ -105,7 +105,7 @@
 
 <div class="tabs">
   <button class="tab active" data-tab="picks" onclick="showTab(this,'picks')">📋 Picks de hoy</button>
-  <button class="tab" data-tab="motor" onclick="showTab(this,'motor')">🧠 Motor IA</button>
+  <button class="tab" data-tab="motor" onclick="showTab(this,'motor')">🧠 Motor</button>
   <button class="tab" data-tab="resultados" onclick="showTab(this,'resultados')">✅ Resultados</button>
   <button class="tab" data-tab="historial" onclick="showTab(this,'historial')">📊 Historial</button>
   <button class="tab" data-tab="config" onclick="showTab(this,'config')">⚙️ Config</button>
@@ -152,11 +152,11 @@
     </button>
   </div>
 
-  <!-- ══ MOTOR IA ═══════════════════════════════════════════════ -->
+  <!-- ══ MOTOR ═══════════════════════════════════════════════ -->
   <div id="panel-motor" class="panel">
     <div class="card">
       <div class="card-title">Predicciones del motor — hoy</div>
-      <p style="font-size:13px;color:var(--t2);margin-bottom:16px">Análisis completo del motor IA. Haz clic en <strong style="color:var(--gold)">+ Agregar</strong> para publicar en el sitio.</p>
+      <p style="font-size:13px;color:var(--t2);margin-bottom:16px">Análisis completo del motor. Haz clic en <strong style="color:var(--gold)">+ Agregar</strong> para publicar en el sitio.</p>
       <div id="alertMotor" class="alert"></div>
       <div id="motorContainer"><div class="empty">Selecciona esta pestaña para cargar...</div></div>
     </div>
@@ -351,7 +351,7 @@ async function publicarCambios(){
   btn.disabled=false;btn.textContent='🚀 Publicar en sharpiq.co';
 }
 
-// ── MOTOR IA ────────────────────────────────────────────────────
+// ── MOTOR ────────────────────────────────────────────────────
 const MK={victoria_local:'Victoria Local (1)',empate:'Empate (X)',victoria_visita:'Victoria Visitante (2)',over15:'Over 1.5',under15:'Under 1.5',over25:'Over 2.5',under25:'Under 2.5',over35:'Over 3.5',btts_si:'Ambos Anotan (Sí)',btts_no:'Ambos Anotan (No)',dnb_local:'DNB Local',dnb_visita:'DNB Visitante'};
 let _motorLoaded=false;
 async function cargarMotor(){
