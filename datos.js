@@ -5,6 +5,17 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "03/06/26",
+    partido:    "Felix Auger-Aliassime vs Flavio Cobolli",
+    liga:       "ATP Roland Garros",
+    prediccion: "Gana Flavio Cobolli — EV +2%",
+    cuota:      "2.0",
+    hora:       "04:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.0"
+  },
+  {
+    fecha:      "03/06/26",
     partido:    "Anna Kalinskaya vs Maja Chwalinska",
     liga:       "WTA Roland Garros",
     prediccion: "Gana Maja Chwalinska — EV +2%",
