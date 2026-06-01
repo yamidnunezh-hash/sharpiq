@@ -1,503 +1,123 @@
 {
-  "partido": "Gent vs Genk",
-  "liga": "Belgian First Div",
-  "local": "Gent",
-  "visitante": "Genk",
-  "prediccion": "Under 2.5",
-  "mercado_key": "under25",
+  "partido": "Carolina Hurricanes vs Vegas Golden Knights",
+  "liga": "NHL",
+  "local": "Carolina Hurricanes",
+  "visitante": "Vegas Golden Knights",
+  "prediccion": "Vegas Golden Knights",
+  "mercado_key": "Vegas Golden Knights",
   "cuota": "",
   "casa": "",
-  "hora_utc": "16:30",
-  "hora_cot": "11:30 COT",
-  "ev": 96.2,
+  "hora_utc": "00:00",
+  "hora_cot": "19:00 COT",
+  "ev": 23.7,
   "clasificacion": "ALTO VALOR",
-  "confianza": 90.4,
+  "confianza": 58.8,
   "pred_completa": {
-    "local": "Gent",
-    "visitante": "Genk",
-    "liga": "Belgian First Div",
-    "liga_code": "soccer_belgium_first_div",
-    "id": "ea30e9681a6618720cae67524b78b985",
-    "hora": "16:30",
-    "fecha_evento": "2026-05-31",
+    "local": "Carolina Hurricanes",
+    "visitante": "Vegas Golden Knights",
+    "liga": "NHL",
+    "liga_code": "icehockey_nhl",
+    "deporte": "NHL",
+    "deporte_emoji": "🏒",
+    "hora": "00:00",
+    "fecha_evento": "2026-06-02",
     "cuotas": {
-      "2": 3.57,
-      "2_casa": "Pinnacle",
-      "pinnacle_2": 3.57,
-      "1": 2.07,
-      "1_casa": "Pinnacle",
-      "pinnacle_1": 2.07,
-      "X": 3.68,
-      "X_casa": "Pinnacle",
-      "pinnacle_X": 3.68,
-      "over275": 1.93,
-      "over275_casa": "Pinnacle",
-      "pinnacle_over275": 1.93,
-      "under275": 1.95,
-      "under275_casa": "Pinnacle",
-      "pinnacle_under275": 1.95,
-      "ah_l_m0_5": 2.08,
-      "ah_l_m0_5_casa": "Pinnacle",
-      "pinnacle_ah_l_m0_5": 2.08,
-      "ah_v_p0_5": 1.84,
-      "ah_v_p0_5_casa": "Pinnacle",
-      "pinnacle_ah_v_p0_5": 1.84
+      "Carolina Hurricanes": 2.07,
+      "Vegas Golden Knights": 3.0,
+      "Over 5.5": 1.85,
+      "Under 5.5": 2.0,
+      "Carolina Hurricanes (-1.5)": 2.7,
+      "Vegas Golden Knights (+1.5)": 1.51
     },
     "probabilidades": {
-      "victoria_visita": 27.1,
-      "victoria_local": 46.7,
-      "empate": 26.3,
-      "over275": 50.3,
-      "under275": 49.7,
-      "ah_l_m0_5": 46.9,
-      "ah_v_p0_5": 53.1,
-      "over25": 9.6,
-      "under25": 90.4
+      "Carolina Hurricanes": 58.8,
+      "Vegas Golden Knights": 41.2
     },
-    "confianza": 90.4,
+    "confianza": 58.8,
     "value_bets": {
-      "victoria_visita": {
-        "value": -0.034,
-        "ev_porcentaje": -3.4,
-        "ev_pinn": -3.4,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 3.57,
-        "casa": "Pinnacle",
-        "pinn_prob": 27.1
-      },
-      "victoria_local": {
-        "value": -0.034,
-        "ev_porcentaje": -3.4,
-        "ev_pinn": -3.4,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 2.07,
-        "casa": "Pinnacle",
-        "pinn_prob": 46.7
-      },
-      "empate": {
-        "value": -0.034,
-        "ev_porcentaje": -3.4,
-        "ev_pinn": -3.4,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 3.68,
-        "casa": "Pinnacle",
-        "pinn_prob": 26.3
-      },
-      "over275": {
-        "value": -0.03,
-        "ev_porcentaje": -3.0,
-        "ev_pinn": -3.0,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.93,
-        "casa": "Pinnacle",
-        "pinn_prob": 50.3
-      },
-      "under275": {
-        "value": -0.03,
-        "ev_porcentaje": -3.0,
-        "ev_pinn": -3.0,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.95,
-        "casa": "Pinnacle",
-        "pinn_prob": 49.7
-      },
-      "ah_l_m0_5": {
-        "value": -0.024,
-        "ev_porcentaje": -2.4,
-        "ev_pinn": -2.4,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 2.08,
-        "casa": "Pinnacle",
-        "pinn_prob": 46.9
-      },
-      "ah_v_p0_5": {
-        "value": -0.024,
-        "ev_porcentaje": -2.4,
-        "ev_pinn": -2.4,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.84,
-        "casa": "Pinnacle",
-        "pinn_prob": 53.1
-      },
-      "over25": {
-        "value": -0.837,
-        "ev_porcentaje": -83.7,
-        "ev_pinn": -83.7,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.7,
-        "casa": "William Hill",
-        "pinn_prob": 9.6
-      },
-      "under25": {
-        "value": 0.962,
-        "ev_porcentaje": 96.2,
-        "ev_pinn": 96.2,
+      "Carolina Hurricanes": {
+        "value": 0.216,
+        "ev_porcentaje": 21.6,
+        "ev_pinn": 21.6,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 2.17,
+        "cuota": 2.07,
         "casa": "Unibet",
-        "pinn_prob": 90.4
+        "pinn_prob": 58.8,
+        "mercado_nombre": "Carolina Hurricanes"
+      },
+      "Vegas Golden Knights": {
+        "value": 0.237,
+        "ev_porcentaje": 23.7,
+        "ev_pinn": 23.7,
+        "tiene_valor": true,
+        "tiene_valor_pinn": true,
+        "clasificacion": "ALTO VALOR",
+        "cuota": 3.0,
+        "casa": "Unibet",
+        "pinn_prob": 41.2,
+        "mercado_nombre": "Vegas Golden Knights"
+      },
+      "over_5_5": {
+        "value": -0.049,
+        "ev_porcentaje": -4.9,
+        "ev_pinn": -4.9,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.85,
+        "casa": "BetMGM",
+        "pinn_prob": 51.4,
+        "mercado_nombre": "Over 5.5"
+      },
+      "under_5_5": {
+        "value": -0.028,
+        "ev_porcentaje": -2.8,
+        "ev_pinn": -2.8,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 2.0,
+        "casa": "FanDuel",
+        "pinn_prob": 48.6,
+        "mercado_nombre": "Under 5.5"
+      },
+      "spread_carolina_hurricanes_m1_5": {
+        "value": -0.036,
+        "ev_porcentaje": -3.6,
+        "ev_pinn": -3.6,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 2.7,
+        "casa": "DraftKings",
+        "pinn_prob": 35.7,
+        "mercado_nombre": "Carolina Hurricanes (-1.5)"
+      },
+      "spread_vegas_golden_knights_1_5": {
+        "value": -0.029,
+        "ev_porcentaje": -2.9,
+        "ev_pinn": -2.9,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.51,
+        "casa": "FanDuel",
+        "pinn_prob": 64.3,
+        "mercado_nombre": "Vegas Golden Knights (+1.5)"
       }
     },
     "prediccion_principal": {
-      "mercado": "Under 2.5 Goles",
-      "prob": 90.4,
-      "ev": 96.2
+      "mercado": "Vegas Golden Knights",
+      "prob": 41.2,
+      "ev": 23.7
     },
     "cuotas_reales": true,
-    "confiable": true,
-    "sin_pinnacle": false,
     "cuotas_avisos": [],
-    "sede_neutral": false,
-    "arbitro": "",
-    "forma_local": {
-      "forma": 0.2,
-      "ataque_reciente": 0.4,
-      "defensa_reciente": 1.6,
-      "partidos": 5
-    },
-    "forma_visita": {
-      "forma": 0.533,
-      "ataque_reciente": 1.0,
-      "defensa_reciente": 0.4,
-      "partidos": 5
-    },
-    "h2h": {
-      "victorias_local": 0.1,
-      "empates": 0.4,
-      "victorias_visita": 0.5,
-      "goles_por_partido": 2.8,
-      "partidos": 10
-    },
-    "movimiento": null,
-    "mercados_ext": {
-      "corners": {
-        "corners_esperados": 10.8,
-        "corners_over9": 75.1,
-        "corners_under9": 24.9,
-        "corners_over10": 63.9,
-        "corners_under10": 36.1,
-        "corners_over11": 51.7,
-        "corners_under11": 48.3,
-        "corners_over12": 39.8,
-        "corners_under12": 60.2,
-        "corners_over13": 29.1,
-        "corners_under13": 70.9
-      },
-      "tarjetas": {
-        "tarjetas_esperadas": 3.6,
-        "tarjetas_over3": 69.4,
-        "tarjetas_under3": 30.6,
-        "tarjetas_over4": 48.1,
-        "tarjetas_under4": 51.9,
-        "tarjetas_over5": 29.0,
-        "tarjetas_under5": 71.0,
-        "tarjetas_over6": 15.3,
-        "tarjetas_under6": 84.7
-      },
-      "handicap": {
-        "ah_local_menos05": 46.7,
-        "ah_visita_mas05": 53.4,
-        "ah_local_menos1": 30.4,
-        "ah_visita_mas1": 69.6,
-        "ah_local_menos15": 21.3,
-        "ah_visita_mas15": 78.7
-      },
-      "disparos": {
-        "disparos_esperados": 5.3,
-        "disp_vis_over2": 96.8,
-        "disp_vis_under2": 3.2,
-        "disp_vis_over3": 89.6,
-        "disp_vis_under3": 10.4,
-        "disp_vis_over4": 77.1,
-        "disp_vis_under4": 22.9,
-        "disp_vis_over5": 60.6,
-        "disp_vis_under5": 39.4
-      },
-      "paradas": {
-        "paradas_esperadas": 4.8,
-        "paradas_local_over2": 95.2,
-        "paradas_local_under2": 4.8,
-        "paradas_local_over3": 85.7,
-        "paradas_local_under3": 14.3,
-        "paradas_local_over4": 70.6,
-        "paradas_local_under4": 29.4
-      },
-      "ev_ext": {
-        "corners_over9": {
-          "prob_modelo": 75.1,
-          "cuota_justa": 1.33,
-          "cuota_ref": 1.26,
-          "ev_porcentaje": -5.4,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "corners_under9": {
-          "prob_modelo": 24.9,
-          "cuota_justa": 4.02,
-          "cuota_ref": 3.82,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "corners_over10": {
-          "prob_modelo": 63.9,
-          "cuota_justa": 1.56,
-          "cuota_ref": 1.49,
-          "ev_porcentaje": -4.8,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "corners_under10": {
-          "prob_modelo": 36.1,
-          "cuota_justa": 2.77,
-          "cuota_ref": 2.63,
-          "ev_porcentaje": -5.1,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "corners_over11": {
-          "prob_modelo": 51.7,
-          "cuota_justa": 1.93,
-          "cuota_ref": 1.84,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "corners_under11": {
-          "prob_modelo": 48.3,
-          "cuota_justa": 2.07,
-          "cuota_ref": 1.97,
-          "ev_porcentaje": -4.8,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_over3": {
-          "prob_modelo": 69.4,
-          "cuota_justa": 1.44,
-          "cuota_ref": 1.37,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_under3": {
-          "prob_modelo": 30.6,
-          "cuota_justa": 3.27,
-          "cuota_ref": 3.1,
-          "ev_porcentaje": -5.1,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_over4": {
-          "prob_modelo": 48.1,
-          "cuota_justa": 2.08,
-          "cuota_ref": 1.98,
-          "ev_porcentaje": -4.8,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_under4": {
-          "prob_modelo": 51.9,
-          "cuota_justa": 1.93,
-          "cuota_ref": 1.83,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_over5": {
-          "prob_modelo": 29.0,
-          "cuota_justa": 3.45,
-          "cuota_ref": 3.28,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "tarjetas_under5": {
-          "prob_modelo": 71.0,
-          "cuota_justa": 1.41,
-          "cuota_ref": 1.34,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_local_menos05": {
-          "prob_modelo": 46.7,
-          "cuota_justa": 2.14,
-          "cuota_ref": 2.03,
-          "ev_porcentaje": -5.2,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_visita_mas05": {
-          "prob_modelo": 53.4,
-          "cuota_justa": 1.87,
-          "cuota_ref": 1.78,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_local_menos1": {
-          "prob_modelo": 30.4,
-          "cuota_justa": 3.29,
-          "cuota_ref": 3.12,
-          "ev_porcentaje": -5.2,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_visita_mas1": {
-          "prob_modelo": 69.6,
-          "cuota_justa": 1.44,
-          "cuota_ref": 1.36,
-          "ev_porcentaje": -5.3,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_local_menos15": {
-          "prob_modelo": 21.3,
-          "cuota_justa": 4.69,
-          "cuota_ref": 4.46,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "ah_visita_mas15": {
-          "prob_modelo": 78.7,
-          "cuota_justa": 1.27,
-          "cuota_ref": 1.21,
-          "ev_porcentaje": -4.8,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "disp_vis_over2": {
-          "prob_modelo": 96.8,
-          "cuota_justa": 1.03,
-          "cuota_ref": 0.98,
-          "ev_porcentaje": -5.1,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "disp_vis_under2": {
-          "prob_modelo": 3.2,
-          "cuota_justa": 31.25,
-          "cuota_ref": 29.69,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "disp_vis_over3": {
-          "prob_modelo": 89.6,
-          "cuota_justa": 1.12,
-          "cuota_ref": 1.06,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "disp_vis_under3": {
-          "prob_modelo": 10.4,
-          "cuota_justa": 9.62,
-          "cuota_ref": 9.13,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "disp_vis_over4": {
-          "prob_modelo": 77.1,
-          "cuota_justa": 1.3,
-          "cuota_ref": 1.23,
-          "ev_porcentaje": -5.2,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "disp_vis_under4": {
-          "prob_modelo": 22.9,
-          "cuota_justa": 4.37,
-          "cuota_ref": 4.15,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "disp_vis_over5": {
-          "prob_modelo": 60.6,
-          "cuota_justa": 1.65,
-          "cuota_ref": 1.57,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "disp_vis_under5": {
-          "prob_modelo": 39.4,
-          "cuota_justa": 2.54,
-          "cuota_ref": 2.41,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "paradas_local_over2": {
-          "prob_modelo": 95.2,
-          "cuota_justa": 1.05,
-          "cuota_ref": 1.0,
-          "ev_porcentaje": -4.8,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "paradas_local_under2": {
-          "prob_modelo": 4.8,
-          "cuota_justa": 20.83,
-          "cuota_ref": 19.79,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "paradas_local_over3": {
-          "prob_modelo": 85.7,
-          "cuota_justa": 1.17,
-          "cuota_ref": 1.11,
-          "ev_porcentaje": -4.9,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "paradas_local_under3": {
-          "prob_modelo": 14.3,
-          "cuota_justa": 6.99,
-          "cuota_ref": 6.64,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "paradas_local_over4": {
-          "prob_modelo": 70.6,
-          "cuota_justa": 1.42,
-          "cuota_ref": 1.35,
-          "ev_porcentaje": -4.7,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "paradas_local_under4": {
-          "prob_modelo": 29.4,
-          "cuota_justa": 3.4,
-          "cuota_ref": 3.23,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        }
-      }
-    }
+    "forma_local": [],
+    "forma_visita": [],
+    "h2h": {},
+    "movimiento": null
   }
 }
