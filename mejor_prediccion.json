@@ -24,7 +24,7 @@
     "cuotas": {
       "Carolina Hurricanes": 2.02,
       "Vegas Golden Knights": 3.1,
-      "Over 5.5": 1.87,
+      "Over 5.5": 1.91,
       "Under 5.5": 2.0,
       "Carolina Hurricanes (-1.5)": 2.7,
       "Vegas Golden Knights (+1.5)": 1.5
@@ -60,13 +60,13 @@
         "mercado_nombre": "Vegas Golden Knights"
       },
       "over_5_5": {
-        "value": -0.026,
-        "ev_porcentaje": -2.6,
-        "ev_pinn": -2.6,
+        "value": -0.006,
+        "ev_porcentaje": -0.6,
+        "ev_pinn": -0.6,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.87,
+        "cuota": 1.91,
         "casa": "Unibet",
         "pinn_prob": 52.1,
         "mercado_nombre": "Over 5.5"
