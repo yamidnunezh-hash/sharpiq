@@ -4,6 +4,17 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "02/06/26",
+    partido:    "Carolina Hurricanes vs Vegas Golden Knights",
+    liga:       "NHL",
+    prediccion: "Gana Vegas Golden Knights — EV +24%",
+    cuota:      "3.0",
+    hora:       "19:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "5.0"
+  },
+  {
     fecha:      "31/05/26",
     partido:    "Palmeiras vs Chapecoense",
     liga:       "Brasileirao Serie A",
