@@ -75,6 +75,11 @@ LOG = _setup_logger()
 # Dixon-Coles: correlación negativa entre goles local/visita en marcadores bajos
 RHO = -0.10
 
+# Ventana de publicacion: cuantas horas antes del evento se analiza/publica un pick.
+# 24h = la linea esta mas asentada y el EV mas confiable (menos drift que a 48h). Un
+# solo lugar para ajustarlo (traida de fixtures + filtro de analisis + filtro al guardar).
+LOOKAHEAD_HORAS = 24
+
 # ── CONFIGURACIÓN ──────────────────────────────────────────────
 from config import FOOTBALL_DATA_KEY as API_KEY, ODDS_API_KEY
 try:
@@ -1211,8 +1216,8 @@ def obtener_partidos_hoy_apifb():
         return []
     partidos = []
     conteo = {}
-    # Solo aceptar fixtures dentro de las próximas 48h (cubre finales/partidos 2 días adelante)
-    limite_utc = datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=48)
+    # Solo aceptar fixtures dentro de la ventana de publicacion (LOOKAHEAD_HORAS)
+    limite_utc = datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=LOOKAHEAD_HORAS)
     for f in data["response"]:
         lid = f["league"]["id"]
         if lid not in LIGAS_APIFB:
@@ -3000,13 +3005,13 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
         hora_raw = ev.get("commence_time", "")
         hora     = hora_raw[:16].replace("T", " ")
 
-        # ── Filtro temporal: solo próximas 48 horas ─────────────────
+        # ── Filtro temporal: solo dentro de LOOKAHEAD_HORAS ──────────
         try:
             dt = datetime.strptime(hora_raw[:16], "%Y-%m-%dT%H:%M")
             ahora_utc = datetime.now(timezone.utc).replace(tzinfo=None)
             if ahora_utc >= dt:
                 continue  # partido ya empezó
-            if dt > ahora_utc + timedelta(hours=48):
+            if dt > ahora_utc + timedelta(hours=LOOKAHEAD_HORAS):
                 continue  # partido demasiado lejos (NFL septiembre, etc.)
         except Exception:
             pass
@@ -3221,7 +3226,7 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         hora_raw = ev.get("commence_time", "")
         ev_id    = ev.get("id", "")
 
-        # Descartar partidos ya empezados o demasiado lejanos (>48h).
+        # Descartar partidos ya empezados o demasiado lejanos (> LOOKAHEAD_HORAS).
         # El corte va ANTES del análisis para no gastar llamadas a API-Football
         # en partidos (Mundial, finales futuras) que luego se descartan igual.
         try:
@@ -3229,7 +3234,7 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
             ahora_utc = datetime.now(timezone.utc).replace(tzinfo=None)
             if ahora_utc >= dt:
                 continue
-            if dt > ahora_utc + timedelta(hours=48):
+            if dt > ahora_utc + timedelta(hours=LOOKAHEAD_HORAS):
                 continue
         except Exception:
             pass
@@ -3662,8 +3667,8 @@ def guardar_predicciones():
         except Exception as _ex:
             LOG.error(f"{nombre} props error: {_ex}")
 
-    # Filtrar predicciones: máximo 48h desde ahora (cubre finales 2 días adelante)
-    limite = datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=48)
+    # Filtrar predicciones: solo dentro de la ventana LOOKAHEAD_HORAS desde ahora
+    limite = datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=LOOKAHEAD_HORAS)
     hoy_str = date.today().isoformat()
     antes = len(reporte["predicciones"])
     reporte["predicciones"] = [
@@ -3673,7 +3678,7 @@ def guardar_predicciones():
     reporte["total_partidos"] = len(reporte["predicciones"])
     descartados = antes - reporte["total_partidos"]
     if descartados:
-        LOG.info(f"Filtro 48h: {descartados} predicciones futuras eliminadas")
+        LOG.info(f"Filtro {LOOKAHEAD_HORAS}h: {descartados} predicciones futuras eliminadas")
 
     with open(JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(reporte, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
