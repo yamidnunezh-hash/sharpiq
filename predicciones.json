@@ -945,8 +945,8 @@
         "Milwaukee Brewers": 1.5,
         "San Francisco Giants": 2.88,
         "Over 7.5": 2.05,
-        "Under 7.5": 1.83,
-        "Milwaukee Brewers (-1.5)": 2.08,
+        "Under 7.5": 1.85,
+        "Milwaukee Brewers (-1.5)": 2.06,
         "San Francisco Giants (+1.5)": 1.87
       },
       "probabilidades": {
@@ -992,25 +992,25 @@
           "mercado_nombre": "Over 7.5"
         },
         "under_7_5": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
-          "casa": "Unibet",
+          "cuota": 1.85,
+          "casa": "FanDuel",
           "pinn_prob": 52.6,
           "mercado_nombre": "Under 7.5"
         },
         "spread_milwaukee_brewers_m1_5": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.08,
+          "cuota": 2.06,
           "casa": "FanDuel",
           "pinn_prob": 47.2,
           "mercado_nombre": "Milwaukee Brewers (-1.5)"
@@ -1357,7 +1357,7 @@
         "Over 8.5": 1.85,
         "Under 8.5": 2.02,
         "Colorado Rockies (+1.5)": 1.67,
-        "Los Angeles Angels (-1.5)": 2.38
+        "Los Angeles Angels (-1.5)": 2.36
       },
       "probabilidades": {
         "Colorado Rockies": 40.3,
@@ -1426,13 +1426,13 @@
           "mercado_nombre": "Colorado Rockies (+1.5)"
         },
         "spread_los_angeles_angels_m1_5": {
-          "value": -0.003,
-          "ev_porcentaje": -0.3,
-          "ev_pinn": -0.3,
+          "value": -0.011,
+          "ev_porcentaje": -1.1,
+          "ev_pinn": -1.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.38,
+          "cuota": 2.36,
           "casa": "FanDuel",
           "pinn_prob": 41.9,
           "mercado_nombre": "Los Angeles Angels (-1.5)"
@@ -1441,7 +1441,7 @@
       "prediccion_principal": {
         "mercado": "Los Angeles Angels (-1.5)",
         "prob": 41.9,
-        "ev": -0.3
+        "ev": -1.1
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1466,7 +1466,7 @@
         "Over 9.5": 2.0,
         "Under 9.5": 1.91,
         "Arizona Diamondbacks (+1.5)": 1.68,
-        "Los Angeles Dodgers (-1.5)": 2.29
+        "Los Angeles Dodgers (-1.5)": 2.35
       },
       "probabilidades": {
         "Arizona Diamondbacks": 47.6,
@@ -1535,14 +1535,14 @@
           "mercado_nombre": "Arizona Diamondbacks (+1.5)"
         },
         "spread_los_angeles_dodgers_m1_5": {
-          "value": -0.054,
-          "ev_porcentaje": -5.4,
-          "ev_pinn": -5.4,
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.29,
-          "casa": "DraftKings",
+          "cuota": 2.35,
+          "casa": "BetMGM",
           "pinn_prob": 41.3,
           "mercado_nombre": "Los Angeles Dodgers (-1.5)"
         }
@@ -2198,5 +2198,5 @@
       "movimiento": null
     }
   ],
-  "generado": "09:00:32"
+  "generado": "09:01:03"
 }
