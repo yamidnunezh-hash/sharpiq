@@ -3144,6 +3144,7 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
 
         mk_nombre_principal = value_bets[mejor_outcome].get("mercado_nombre", mejor_outcome)
         predicciones.append({
+            "id":           ev.get("id", ""),
             "local":        home,
             "visitante":    away,
             "liga":         nombre_liga,
