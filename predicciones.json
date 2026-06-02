@@ -94,7 +94,7 @@
       "hora": "22:41",
       "fecha_evento": "2026-06-02",
       "cuotas": {
-        "Detroit Tigers": 2.3,
+        "Detroit Tigers": 2.26,
         "Tampa Bay Rays": 1.73,
         "Over 8.5": 1.96,
         "Under 8.5": 1.88,
@@ -108,14 +108,14 @@
       "confianza": 56.6,
       "value_bets": {
         "Detroit Tigers": {
-          "value": -0.003,
-          "ev_porcentaje": -0.3,
-          "ev_pinn": -0.3,
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.3,
-          "casa": "DraftKings",
+          "cuota": 2.26,
+          "casa": "Pinnacle",
           "pinn_prob": 43.4,
           "mercado_nombre": "Detroit Tigers"
         },
@@ -183,7 +183,7 @@
       "prediccion_principal": {
         "mercado": "Detroit Tigers",
         "prob": 43.4,
-        "ev": -0.3
+        "ev": -2.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -530,7 +530,7 @@
         "Kansas City Royals": 2.1,
         "Over 9.0": 1.94,
         "Under 9.0": 1.91,
-        "Cincinnati Reds (-1.5)": 2.55,
+        "Cincinnati Reds (-1.5)": 2.53,
         "Kansas City Royals (+1.5)": 1.54
       },
       "probabilidades": {
@@ -588,14 +588,14 @@
           "mercado_nombre": "Under 9.0"
         },
         "spread_cincinnati_reds_m1_5": {
-          "value": -0.073,
-          "ev_porcentaje": -7.3,
-          "ev_pinn": -7.3,
+          "value": -0.081,
+          "ev_porcentaje": -8.1,
+          "ev_pinn": -8.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.55,
-          "casa": "BetMGM",
+          "cuota": 2.53,
+          "casa": "DraftKings",
           "pinn_prob": 36.3,
           "mercado_nombre": "Cincinnati Reds (-1.5)"
         },
@@ -638,8 +638,8 @@
         "Toronto Blue Jays": 2.15,
         "Over 7.5": 1.87,
         "Under 7.5": 2.0,
-        "Atlanta Braves (-1.5)": 2.68,
-        "Toronto Blue Jays (+1.5)": 1.53
+        "Atlanta Braves (-1.5)": 2.7,
+        "Toronto Blue Jays (+1.5)": 1.51
       },
       "probabilidades": {
         "Atlanta Braves": 54.4,
@@ -696,34 +696,34 @@
           "mercado_nombre": "Under 7.5"
         },
         "spread_atlanta_braves_m1_5": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.68,
-          "casa": "FanDuel",
+          "cuota": 2.7,
+          "casa": "BetMGM",
           "pinn_prob": 36.3,
           "mercado_nombre": "Atlanta Braves (-1.5)"
         },
         "spread_toronto_blue_jays_1_5": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.53,
-          "casa": "BetMGM",
+          "cuota": 1.51,
+          "casa": "DraftKings",
           "pinn_prob": 63.7,
           "mercado_nombre": "Toronto Blue Jays (+1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Atlanta Braves",
-        "prob": 54.4,
-        "ev": -2.0
+        "mercado": "Atlanta Braves (-1.5)",
+        "prob": 36.3,
+        "ev": -1.9
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -853,7 +853,7 @@
         "Milwaukee Brewers": 1.54,
         "San Francisco Giants": 2.81,
         "Over 7.5": 2.05,
-        "Under 7.5": 1.92,
+        "Under 7.5": 1.91,
         "Milwaukee Brewers (-1.5)": 2.12,
         "San Francisco Giants (+1.5)": 1.81
       },
@@ -900,13 +900,13 @@
           "mercado_nombre": "Over 7.5"
         },
         "under_7_5": {
-          "value": 0.009,
-          "ev_porcentaje": 0.9,
-          "ev_pinn": 0.9,
+          "value": 0.004,
+          "ev_porcentaje": 0.4,
+          "ev_pinn": 0.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.92,
+          "cuota": 1.91,
           "casa": "Unibet",
           "pinn_prob": 52.6,
           "mercado_nombre": "Under 7.5"
@@ -937,9 +937,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Under 7.5",
-        "prob": 52.6,
-        "ev": 0.9
+        "mercado": "Milwaukee Brewers",
+        "prob": 65.2,
+        "ev": 0.4
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -2015,5 +2015,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:14:46"
+  "generado": "12:14:54"
 }
