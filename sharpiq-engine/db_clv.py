@@ -57,9 +57,11 @@ def inicializar():
         cur.execute("""
         CREATE TABLE IF NOT EXISTS odds_history (
             id          SERIAL PRIMARY KEY,
-            partido     TEXT NOT NULL,
-            mercado     TEXT NOT NULL,
-            bookmaker   TEXT NOT NULL,
+            pick_uid    TEXT,                 -- a que pick pertenece este snapshot (match sin nombres)
+            evento_id   TEXT,
+            partido     TEXT,
+            mercado     TEXT,
+            bookmaker   TEXT,
             cuota       FLOAT,
             ts          TIMESTAMP DEFAULT NOW()
         );
@@ -90,20 +92,19 @@ def guardar_pick(pick_uid, evento_id, fecha_evento, comienzo, partido, liga, lig
     return row[0] if row else None
 
 
-def actualizar_cierre(partido, mercado, cuota_cierre):
-    """Registra la cuota de cierre y calcula CLV."""
+def actualizar_cierre(pick_uid, cuota_cierre):
+    """Registra la cuota de cierre y calcula CLV. Matchea por pick_uid (no nombres)."""
     with _conn() as c:
         cur = c.cursor()
         cur.execute("""
             SELECT id, prob_modelo, cuota_apertura
-            FROM picks WHERE partido=%s AND mercado=%s
-            ORDER BY creado DESC LIMIT 1
-        """, (partido, mercado))
+            FROM picks WHERE pick_uid=%s
+        """, (pick_uid,))
         row = cur.fetchone()
         if not row:
             return
         pick_id, prob, q_open = row
-        ev_cierre = round((prob / 100) * cuota_cierre - 1, 4) if cuota_cierre else None
+        ev_cierre = round((prob / 100) * cuota_cierre - 1, 4) if (cuota_cierre and prob) else None
         clv = round(cuota_cierre - q_open, 4) if (cuota_cierre and q_open) else None
         cur.execute("""
             UPDATE picks SET cuota_cierre=%s, ev_cierre=%s, clv=%s
@@ -141,13 +142,14 @@ def resumen_clv(dias=30):
         return cur.fetchone()
 
 
-def guardar_odds_history(partido, mercado, bookmaker, cuota):
+def guardar_odds_history(pick_uid, evento_id, partido, mercado, bookmaker, cuota):
+    """Un snapshot del movimiento de la cuota. pick_uid lo ata a su pick (sin nombres)."""
     with _conn() as c:
         cur = c.cursor()
         cur.execute("""
-            INSERT INTO odds_history (partido, mercado, bookmaker, cuota)
-            VALUES (%s,%s,%s,%s)
-        """, (partido, mercado, bookmaker, cuota))
+            INSERT INTO odds_history (pick_uid, evento_id, partido, mercado, bookmaker, cuota)
+            VALUES (%s,%s,%s,%s,%s,%s)
+        """, (pick_uid, evento_id, partido, mercado, bookmaker, cuota))
         c.commit()
 
 
