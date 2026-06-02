@@ -3080,11 +3080,17 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
             nonlocal mejor_ev, mejor_outcome
             if not cuota: return
             ev_pct = round((prob * cuota - 1) * 100, 1)
+            # REGLA 3 (techo de cordura, igual que en futbol/analizar_futbol_sharp): un edge
+            # real vs la linea sharp (Pinnacle) rara vez supera +10%. Si lo supera, la cuota
+            # es sospechosa (stale/error) -> NO se publica. Cierra el hueco del "Vegas EV +24%".
+            if ev_pct > 10.0:
+                print(f"    [EV>10%] descartado (US/tenis): {mk_nombre} +{ev_pct}% (sharp {round(prob*100)}% @ {cuota})")
+                return
             value_bets[mk_key] = {
                 "value": round(prob*cuota-1, 3), "ev_porcentaje": ev_pct,
                 "ev_pinn": ev_pct, "tiene_valor": ev_pct >= 5,
                 "tiene_valor_pinn": ev_pct >= 5,
-                "clasificacion": "ALTO VALOR" if ev_pct >= 10 else "VALOR" if ev_pct >= 5 else "SIN VALOR",
+                "clasificacion": "ALTO VALOR" if ev_pct >= 7 else "VALOR" if ev_pct >= 5 else "SIN VALOR",
                 "cuota": cuota, "casa": casa,
                 "pinn_prob": round(prob*100, 1), "mercado_nombre": mk_nombre,
             }

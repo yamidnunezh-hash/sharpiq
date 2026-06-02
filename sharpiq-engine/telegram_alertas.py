@@ -30,6 +30,15 @@ def esc(s):
     return _html.escape(str(s if s is not None else ""), quote=False)
 
 
+def _fmt_fecha(fecha_iso):
+    """'2026-06-03' -> '03/06/26 · ' (para anteponer a la hora). '' si no hay fecha."""
+    try:
+        y, m, d = (fecha_iso or "").split("-")
+        return f"{d}/{m}/{y[2:]} · "
+    except Exception:
+        return ""
+
+
 TELEGRAM_TOKEN      = _cfg("TELEGRAM_TOKEN")
 TELEGRAM_FREE_ID    = _cfg("TELEGRAM_FREE_ID")     # Canal SharpIQ (gratis)
 TELEGRAM_YAMID_ID   = _cfg("TELEGRAM_YAMID_ID")    # DM privado Yamid (todo lo interno)
@@ -201,7 +210,7 @@ def enviar_alerta_value_bet(pred, mercado, vb):
     texto = f"""{emoji} <b>SharpIQ — {vb['clasificacion']}</b>
 
 {sport_emoji} <b>{esc(pred['local'])} vs {esc(pred['visitante'])}</b>
-🏆 {esc(pred.get('liga', ''))} | {hora_cot}
+🏆 {esc(pred.get('liga', ''))} | {_fmt_fecha(pred.get('fecha_evento',''))}{hora_cot}
 
 📊 <b>Mercado:</b> {nombres_mercado.get(mercado, mercado)}
 📈 <b>Probabilidad modelo:</b> {prob}%
@@ -245,7 +254,7 @@ def enviar_resumen_dia(reporte):
         picks_lines.append(
             f"{_TIER_EMOJI[k]}\n"
             f"{emoji} {esc(p['local'])} vs {esc(p['visitante'])}\n"
-            f"🏆 {esc(liga)} | {hora_c}\n"
+            f"🏆 {esc(liga)} | {_fmt_fecha(p.get('fecha_evento',''))}{hora_c}\n"
             f"📊 {t['mercado_nombre']} @{t['cuota']} — "
             + (f"EV +{t['ev_pinn']}%" if t.get('ev_pinn') is not None else "sin EV")
             + f" | Prob {t['prob']}% | Kelly {t['kelly_pct']}%"
@@ -859,7 +868,7 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 f"{emoji} <b>{label}</b>\n"
                 f"🏀 <b>{jugador}</b>\n"
                 f"📌 {partido}\n"
-                f"🏆 {esc(p.get('liga',''))} | {_hcot(p)}\n"
+                f"🏆 {esc(p.get('liga',''))} | {_fmt_fecha(p.get('fecha_evento',''))}{_hcot(p)}\n"
                 f"\U0001f3af <b>{tier['mercado_nombre']}</b> @{tier['cuota']}{ev_extra}\n"
                 f"{_analisis_experto(tier)}\n"
                 f"{stake_line}"
@@ -879,7 +888,7 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
             return (
                 f"{emoji} <b>{label}</b>\n"
                 f"{sp_emoji} <b>{esc(p['local'])} vs {esc(p['visitante'])}</b>\n"
-                f"🏆 {esc(p.get('liga',''))} | {_hcot(p)}\n"
+                f"🏆 {esc(p.get('liga',''))} | {_fmt_fecha(p.get('fecha_evento',''))}{_hcot(p)}\n"
                 f"\U0001f3af <b>{tier['mercado_nombre']}</b> @{tier['cuota']}{ev_extra}\n"
                 f"{_analisis_experto(tier)}\n"
                 f"{stake_line}"
