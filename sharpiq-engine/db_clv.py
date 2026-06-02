@@ -33,19 +33,23 @@ def inicializar():
         cur.execute("""
         CREATE TABLE IF NOT EXISTS picks (
             id              SERIAL PRIMARY KEY,
-            fecha           DATE NOT NULL,
+            pick_uid        TEXT UNIQUE,          -- ID unico (evento_id+mercado): dedup + match sin nombres fragiles
+            evento_id       TEXT,                 -- id del evento en The Odds API (re-consultar en Fase 2)
+            fecha_evento    DATE,                 -- fecha del PARTIDO (no la de registro)
             partido         TEXT NOT NULL,
             liga            TEXT,
-            mercado         TEXT,
+            liga_code       TEXT,                 -- sport_key (re-consultar la cuota en Fase 2)
+            mercado         TEXT,                 -- key canonica consistente (todos los deportes)
+            tier            TEXT,                 -- seguro | principal | alto_valor
+            casa            TEXT,                 -- bookmaker de la cuota de apertura
             prob_modelo     FLOAT,
             cuota_apertura  FLOAT,
             cuota_pinnacle  FLOAT,
-            ev_apertura     FLOAT,
-            cuota_cierre    FLOAT,
+            ev_apertura     FLOAT,                -- EV REAL del motor (blended/capped), NO recalculado
+            cuota_cierre    FLOAT,                -- la llena la Fase 2 (ultima captura antes del kickoff)
             ev_cierre       FLOAT,
             clv             FLOAT,
             resultado       TEXT,
-            publicado       BOOLEAN DEFAULT TRUE,
             creado          TIMESTAMP DEFAULT NOW()
         );
         """)
@@ -63,21 +67,26 @@ def inicializar():
     print("  DB inicializada OK")
 
 
-def guardar_pick(fecha, partido, liga, mercado, prob_modelo,
-                 cuota_apertura, cuota_pinnacle=None):
-    ev = round((prob_modelo / 100) * cuota_apertura - 1, 4) if cuota_apertura else None
+def guardar_pick(pick_uid, evento_id, fecha_evento, partido, liga, liga_code,
+                 mercado, tier, casa, prob_modelo, cuota_apertura, ev_apertura,
+                 cuota_pinnacle=None):
+    """Registra un pick en apertura. `ev_apertura` es el EV REAL del motor
+    (blended/capped) — NO se recalcula aqui. `pick_uid` hace dedup (ON CONFLICT)."""
     with _conn() as c:
         cur = c.cursor()
         cur.execute("""
-            INSERT INTO picks (fecha, partido, liga, mercado, prob_modelo,
-                               cuota_apertura, cuota_pinnacle, ev_apertura)
-            VALUES (%s,%s,%s,%s,%s,%s,%s,%s)
+            INSERT INTO picks (pick_uid, evento_id, fecha_evento, partido, liga,
+                               liga_code, mercado, tier, casa, prob_modelo,
+                               cuota_apertura, ev_apertura, cuota_pinnacle)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            ON CONFLICT (pick_uid) DO NOTHING
             RETURNING id
-        """, (fecha, partido, liga, mercado, prob_modelo,
-              cuota_apertura, cuota_pinnacle, ev))
-        pick_id = cur.fetchone()[0]
+        """, (pick_uid, evento_id, fecha_evento, partido, liga, liga_code,
+              mercado, tier, casa, prob_modelo, cuota_apertura, ev_apertura,
+              cuota_pinnacle))
+        row = cur.fetchone()
         c.commit()
-    return pick_id
+    return row[0] if row else None
 
 
 def actualizar_cierre(partido, mercado, cuota_cierre):
@@ -125,7 +134,7 @@ def resumen_clv(dias=30):
                 SUM(CASE WHEN resultado='win' THEN 1 ELSE 0 END) AS wins,
                 SUM(CASE WHEN resultado='loss' THEN 1 ELSE 0 END) AS losses
             FROM picks
-            WHERE fecha >= NOW() - INTERVAL '%s days'
+            WHERE fecha_evento >= NOW() - INTERVAL '%s days'
               AND resultado IS NOT NULL
         """, (dias,))
         return cur.fetchone()
