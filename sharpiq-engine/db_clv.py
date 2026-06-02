@@ -105,7 +105,7 @@ def actualizar_cierre(pick_uid, cuota_cierre):
             return
         pick_id, prob, q_open = row
         ev_cierre = round((prob / 100) * cuota_cierre - 1, 4) if (cuota_cierre and prob) else None
-        clv = round(cuota_cierre - q_open, 4) if (cuota_cierre and q_open) else None
+        clv = round((q_open / cuota_cierre - 1) * 100, 2) if (cuota_cierre and q_open) else None  # CLV%: + = mejor precio que el cierre
         cur.execute("""
             UPDATE picks SET cuota_cierre=%s, ev_cierre=%s, clv=%s
             WHERE id=%s
@@ -124,22 +124,36 @@ def actualizar_resultado(partido, mercado, resultado):
         c.commit()
 
 
-def resumen_clv(dias=30):
-    """Retorna métricas de CLV de los últimos N días."""
+def resumen_clv():
+    """Metricas ACUMULADAS de CLV desde el inicio de la medicion. El CLV se mide
+    sobre picks con cierre (clv NOT NULL); el yield sobre resueltos (win/loss)."""
     with _conn() as c:
         cur = c.cursor(cursor_factory=RealDictCursor)
         cur.execute("""
             SELECT
-                COUNT(*) AS total,
-                ROUND(AVG(ev_apertura)::numeric, 3) AS ev_promedio,
-                ROUND(AVG(clv)::numeric, 3)         AS clv_promedio,
-                SUM(CASE WHEN resultado='win' THEN 1 ELSE 0 END) AS wins,
-                SUM(CASE WHEN resultado='loss' THEN 1 ELSE 0 END) AS losses
+                MIN(creado)::date                                    AS fecha_inicio,
+                COUNT(*) FILTER (WHERE clv IS NOT NULL)              AS n_cierre,
+                ROUND(AVG(clv) FILTER (WHERE clv IS NOT NULL)::numeric, 2)  AS clv_promedio,
+                COUNT(*) FILTER (WHERE clv > 0)                      AS batieron,
+                COUNT(*) FILTER (WHERE resultado='win')              AS wins,
+                COUNT(*) FILTER (WHERE resultado='loss')             AS losses,
+                COUNT(*) FILTER (WHERE resultado IN ('win','loss'))  AS n_resueltos,
+                ROUND((SUM(CASE WHEN resultado='win'  THEN cuota_apertura-1
+                                WHEN resultado='loss' THEN -1 ELSE 0 END)
+                       / NULLIF(COUNT(*) FILTER (WHERE resultado IN ('win','loss')),0) * 100)::numeric, 2) AS yield_pct
             FROM picks
-            WHERE fecha_evento >= NOW() - INTERVAL '%s days'
-              AND resultado IS NOT NULL
-        """, (dias,))
-        return cur.fetchone()
+        """)
+        r = dict(cur.fetchone() or {})
+        nc = r.get("n_cierre") or 0
+        r["pct_batio"] = round(100.0 * (r.get("batieron") or 0) / nc, 1) if nc else None
+        cur.execute("""
+            SELECT tier,
+                   COUNT(*) FILTER (WHERE clv IS NOT NULL) AS n,
+                   ROUND(AVG(clv) FILTER (WHERE clv IS NOT NULL)::numeric, 2) AS clv
+            FROM picks WHERE tier IS NOT NULL GROUP BY tier
+        """)
+        r["por_tier"] = {x["tier"]: {"n": x["n"], "clv": x["clv"]} for x in cur.fetchall()}
+        return r
 
 
 def guardar_odds_history(pick_uid, evento_id, partido, mercado, bookmaker, cuota):
