@@ -9,7 +9,7 @@
   "casa": "",
   "hora_utc": "00:10",
   "hora_cot": "19:10 COT",
-  "ev": 27.7,
+  "ev": 23.6,
   "clasificacion": "ALTO VALOR",
   "confianza": 58.8,
   "pred_completa": {
@@ -22,12 +22,12 @@
     "hora": "00:10",
     "fecha_evento": "2026-06-02",
     "cuotas": {
-      "Carolina Hurricanes": 2.04,
-      "Vegas Golden Knights": 3.1,
-      "Over 5.5": 1.9,
-      "Under 5.5": 1.98,
+      "Carolina Hurricanes": 2.1,
+      "Vegas Golden Knights": 3.0,
+      "Over 5.5": 1.83,
+      "Under 5.5": 2.02,
       "Carolina Hurricanes (-1.5)": 2.7,
-      "Vegas Golden Knights (+1.5)": 1.5
+      "Vegas Golden Knights (+1.5)": 1.52
     },
     "probabilidades": {
       "Carolina Hurricanes": 58.8,
@@ -36,50 +36,50 @@
     "confianza": 58.8,
     "value_bets": {
       "Carolina Hurricanes": {
-        "value": 0.2,
-        "ev_porcentaje": 20.0,
-        "ev_pinn": 20.0,
+        "value": 0.235,
+        "ev_porcentaje": 23.5,
+        "ev_pinn": 23.5,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 2.04,
+        "cuota": 2.1,
         "casa": "Unibet",
         "pinn_prob": 58.8,
         "mercado_nombre": "Carolina Hurricanes"
       },
       "Vegas Golden Knights": {
-        "value": 0.277,
-        "ev_porcentaje": 27.7,
-        "ev_pinn": 27.7,
+        "value": 0.236,
+        "ev_porcentaje": 23.6,
+        "ev_pinn": 23.6,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 3.1,
+        "cuota": 3.0,
         "casa": "Unibet",
         "pinn_prob": 41.2,
         "mercado_nombre": "Vegas Golden Knights"
       },
       "over_5_5": {
-        "value": -0.018,
-        "ev_porcentaje": -1.8,
-        "ev_pinn": -1.8,
+        "value": -0.054,
+        "ev_porcentaje": -5.4,
+        "ev_pinn": -5.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.9,
-        "casa": "Unibet",
+        "cuota": 1.83,
+        "casa": "FanDuel",
         "pinn_prob": 51.7,
         "mercado_nombre": "Over 5.5"
       },
       "under_5_5": {
-        "value": -0.043,
-        "ev_porcentaje": -4.3,
-        "ev_pinn": -4.3,
+        "value": -0.024,
+        "ev_porcentaje": -2.4,
+        "ev_pinn": -2.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.98,
-        "casa": "FanDuel",
+        "cuota": 2.02,
+        "casa": "DraftKings",
         "pinn_prob": 48.3,
         "mercado_nombre": "Under 5.5"
       },
@@ -96,14 +96,14 @@
         "mercado_nombre": "Carolina Hurricanes (-1.5)"
       },
       "spread_vegas_golden_knights_1_5": {
-        "value": -0.037,
-        "ev_porcentaje": -3.7,
-        "ev_pinn": -3.7,
+        "value": -0.024,
+        "ev_porcentaje": -2.4,
+        "ev_pinn": -2.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.5,
-        "casa": "BetMGM",
+        "cuota": 1.52,
+        "casa": "FanDuel",
         "pinn_prob": 64.2,
         "mercado_nombre": "Vegas Golden Knights (+1.5)"
       }
@@ -111,7 +111,7 @@
     "prediccion_principal": {
       "mercado": "Vegas Golden Knights",
       "prob": 41.2,
-      "ev": 27.7
+      "ev": 23.6
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
