@@ -2957,6 +2957,7 @@ def analizar_player_props_sharp(sport_key, nombre_liga):
                 "visitante":  f"{home} vs {away}",
                 "liga":       f"{nombre_liga} — Props",
                 "liga_code":  sport_key,
+                "comienzo":   hora_raw,
                 "hora":       hora_utc,
                 "fecha_evento": fecha_ev,
                 "partido":    f"{home} vs {away}",
@@ -3145,6 +3146,7 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
         mk_nombre_principal = value_bets[mejor_outcome].get("mercado_nombre", mejor_outcome)
         predicciones.append({
             "id":           ev.get("id", ""),
+            "comienzo":     hora_raw,
             "local":        home,
             "visitante":    away,
             "liga":         nombre_liga,
@@ -3579,6 +3581,7 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
             "liga":         nombre_liga,
             "liga_code":    sport_key,
             "id":           ev_id,
+            "comienzo":     hora_raw,
             "hora":         hora_utc,
             "fecha_evento": fecha_evento,
             "cuotas":     cuotas,

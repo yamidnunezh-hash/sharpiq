@@ -36,6 +36,7 @@ def inicializar():
             pick_uid        TEXT UNIQUE,          -- ID unico (evento_id+mercado): dedup + match sin nombres fragiles
             evento_id       TEXT,                 -- id del evento en The Odds API (re-consultar en Fase 2)
             fecha_evento    DATE,                 -- fecha del PARTIDO (no la de registro)
+            comienzo        TIMESTAMP,            -- hora UTC exacta del kickoff (open/close de Fase 2)
             partido         TEXT NOT NULL,
             liga            TEXT,
             liga_code       TEXT,                 -- sport_key (re-consultar la cuota en Fase 2)
@@ -67,7 +68,7 @@ def inicializar():
     print("  DB inicializada OK")
 
 
-def guardar_pick(pick_uid, evento_id, fecha_evento, partido, liga, liga_code,
+def guardar_pick(pick_uid, evento_id, fecha_evento, comienzo, partido, liga, liga_code,
                  mercado, tier, casa, prob_modelo, cuota_apertura, ev_apertura,
                  cuota_pinnacle=None):
     """Registra un pick en apertura. `ev_apertura` es el EV REAL del motor
@@ -75,13 +76,13 @@ def guardar_pick(pick_uid, evento_id, fecha_evento, partido, liga, liga_code,
     with _conn() as c:
         cur = c.cursor()
         cur.execute("""
-            INSERT INTO picks (pick_uid, evento_id, fecha_evento, partido, liga,
+            INSERT INTO picks (pick_uid, evento_id, fecha_evento, comienzo, partido, liga,
                                liga_code, mercado, tier, casa, prob_modelo,
                                cuota_apertura, ev_apertura, cuota_pinnacle)
-            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
             ON CONFLICT (pick_uid) DO NOTHING
             RETURNING id
-        """, (pick_uid, evento_id, fecha_evento, partido, liga, liga_code,
+        """, (pick_uid, evento_id, fecha_evento, comienzo, partido, liga, liga_code,
               mercado, tier, casa, prob_modelo, cuota_apertura, ev_apertura,
               cuota_pinnacle))
         row = cur.fetchone()

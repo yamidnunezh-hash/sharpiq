@@ -64,6 +64,7 @@ def registrar_tiers_clv(tiers):
                 pick_uid       = _uid,
                 evento_id      = _eid,
                 fecha_evento   = _p.get("fecha_evento") or date.today().isoformat(),
+                comienzo       = _p.get("comienzo"),
                 partido        = _partido,
                 liga           = _p.get("liga", ""),
                 liga_code      = str(_p.get("liga_code", "")),
