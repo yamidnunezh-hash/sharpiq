@@ -270,6 +270,65 @@ def enviar_aviso_yamid(texto):
     return enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
 
 
+def _formato_reporte_clv(r):
+    """Texto (HTML) del reporte diario de CLV a partir de db_clv.resumen_clv().
+    Función PURA: solo arma el string, no envía. + en CLV = le ganamos al cierre."""
+    nc = (r or {}).get("n_cierre") or 0
+    if not r or not nc:
+        return ("📊 <b>SharpIQ — CLV</b>\n"
+                "Aún no hay picks con cierre para medir. El reporte arranca cuando "
+                "el primer pick llegue a su kickoff y congele su cierre.")
+
+    def _sg(x):                      # signo + (Decimal/float/None -> str)
+        if x is None:
+            return "—"
+        x = float(x)
+        return f"+{x:.2f}" if x >= 0 else f"{x:.2f}"
+
+    clv   = r.get("clv_promedio")
+    pct   = r.get("pct_batio")
+    bat   = r.get("batieron") or 0
+    ini   = r.get("fecha_inicio")
+    yld   = r.get("yield_pct")
+    nres  = r.get("n_resueltos") or 0
+    w, l  = r.get("wins") or 0, r.get("losses") or 0
+    tiers = r.get("por_tier") or {}
+
+    _TN = {"seguro": "🛡️ Seguro", "principal": "⭐ Principal", "alto_valor": "🔥 Alto valor"}
+    lineas = [f"  {_TN[k]}: {_sg(t.get('clv'))}%  ({t['n']})"
+              for k in ("seguro", "principal", "alto_valor")
+              for t in (tiers.get(k),) if t and t.get("n")]
+    bloque_tier = "\n".join(lineas) if lineas else "  (sin desglose aún)"
+
+    return (
+        f"📊 <b>SharpIQ — CLV (Closing Line Value)</b>\n"
+        f"<i>El test que de verdad predice si ganamos a la larga.</i>\n"
+        f"━━━━━━━━━━━━━━━━━━━━\n"
+        f"📈 <b>CLV promedio:</b> {_sg(clv)}%\n"
+        f"   <i>(&gt;0 = cogimos mejor precio que el cierre)</i>\n"
+        f"🎯 <b>Batieron el cierre:</b> {pct if pct is not None else '—'}%  ({bat}/{nc})\n"
+        f"📦 <b>Muestra:</b> {nc} picks con cierre\n\n"
+        f"<b>Por tier:</b>\n{bloque_tier}\n\n"
+        f"💰 <b>Yield (resueltos):</b> {_sg(yld)}%  —  W{w}/L{l} ({nres})\n"
+        f"   <i>ruidoso con pocos picks; el CLV manda</i>\n"
+        f"📅 <b>Desde:</b> {ini}\n"
+        f"━━━━━━━━━━━━━━━━━━━━\n"
+        f"<i>Muestra chica = no concluyente. Se vuelve fiable hacia ~100+ picks con cierre.</i>"
+    )
+
+
+def enviar_reporte_clv():
+    """Calcula el resumen de CLV y lo manda al DM de Yamid. Devuelve True si envió.
+    No-op silencioso si la DB no está configurada (no rompe el flujo nocturno)."""
+    try:
+        from db_clv import resumen_clv
+        r = resumen_clv()
+    except Exception as e:
+        print(f"  CLV reporte: sin DB ({e})")
+        return False
+    return enviar_aviso_yamid(_formato_reporte_clv(r))
+
+
 def enviar_alerta_servicio(texto):
     """Canal público 'SharpIQ Alertas' — SOLO avisos de servicio que el suscriptor
     debe ver: 'sin picks hoy', 'picks publicados', estado del servicio. Nada interno.
