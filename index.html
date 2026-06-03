@@ -2382,7 +2382,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   const grid=document.getElementById('upcomingGrid');
   const cnt=document.getElementById('upcomingCount');
   if(grid&&typeof PROXIMOS_EVENTOS!=='undefined'){
-    const eventos=PROXIMOS_EVENTOS.filter(_pickVigente);
+    const eventos=PROXIMOS_EVENTOS.filter(_pickVigente); window.__picksHoy=eventos.length;
     if(cnt) cnt.textContent=eventos.length?eventos.length+' picks disponibles':'Próximos picks: 8am COT';
     if(eventos.length===0){
       grid.innerHTML=`<div style="padding:48px 24px;text-align:center;width:100%;">
@@ -2896,7 +2896,7 @@ function toggleTheme(){
     var pl  = res.reduce(function(s,p){ return s + (p.resultado === 'win' ? (parseFloat(p.cuota) - 1) : -1); }, 0);
     var wr  = res.length ? Math.round(w / res.length * 100) : 0;
     var yld = res.length ? (pl / res.length * 100) : 0;
-    var hoy = P.filter(function(p){ return p.resultado === 'pendiente'; }).length;
+    var hoy = (typeof window.__picksHoy==='number') ? window.__picksHoy : P.filter(function(p){ return p.resultado === 'pendiente'; }).length;
     return { wr: wr, w: w, n: res.length, yld: yld, hoy: hoy };
   }
   function pinta(){
