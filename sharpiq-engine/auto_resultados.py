@@ -273,14 +273,6 @@ def correr():
         texto = _agregar_a_historial(texto, evento, resultado)
         actualizados += 1
 
-        # Registrar en DB CLV
-        try:
-            from db_clv import actualizar_resultado as _db_resultado
-            mercado_key = _pred_to_mercado_key(evento.get('prediccion', ''))
-            _db_resultado(partido, mercado_key, resultado)
-        except Exception as _dbe:
-            LOG.debug(f"DB CLV resultado: {_dbe}")
-
         # Snapshot de cierre + cálculo CLV
         clv_texto = ""
         try:
