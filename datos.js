@@ -124,7 +124,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "principal",
     stake_pct:  "5",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "29/05/26",
@@ -166,6 +166,14 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "29/05/26",
+    partido:    "Carolina Hurricanes vs Montréal Canadiens",
+    liga:       "NHL",
+    prediccion: "Gana Carolina Hurricanes — EV +16%",
+    cuota:      "1.70",
+    resultado:  "loss"
+  },
   {
     fecha:      "30/05/26",
     partido:    "PSG vs Arsenal",
