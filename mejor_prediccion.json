@@ -10,7 +10,7 @@
   "hora_cot": "19:30 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 63.7,
+  "confianza": 63.3,
   "pred_completa": {
     "local": "San Antonio Spurs",
     "visitante": "New York Knicks",
@@ -21,45 +21,45 @@
     "hora": "00:30",
     "fecha_evento": "2026-06-03",
     "cuotas": {
-      "New York Knicks": 2.67,
+      "New York Knicks": 2.66,
       "San Antonio Spurs": 1.54,
       "New York Knicks (+4.5)": 1.95,
-      "San Antonio Spurs (-4.5)": 1.91
+      "San Antonio Spurs (-4.5)": 1.94
     },
     "probabilidades": {
-      "New York Knicks": 36.3,
-      "San Antonio Spurs": 63.7
+      "New York Knicks": 36.7,
+      "San Antonio Spurs": 63.3
     },
-    "confianza": 63.7,
+    "confianza": 63.3,
     "value_bets": {
       "New York Knicks": {
-        "value": -0.031,
-        "ev_porcentaje": -3.1,
-        "ev_pinn": -3.1,
+        "value": -0.025,
+        "ev_porcentaje": -2.5,
+        "ev_pinn": -2.5,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.67,
+        "cuota": 2.66,
         "casa": "Pinnacle",
-        "pinn_prob": 36.3,
+        "pinn_prob": 36.7,
         "mercado_nombre": "New York Knicks"
       },
       "San Antonio Spurs": {
-        "value": -0.019,
-        "ev_porcentaje": -1.9,
-        "ev_pinn": -1.9,
+        "value": -0.025,
+        "ev_porcentaje": -2.5,
+        "ev_pinn": -2.5,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 1.54,
-        "casa": "FanDuel",
-        "pinn_prob": 63.7,
+        "casa": "DraftKings",
+        "pinn_prob": 63.3,
         "mercado_nombre": "San Antonio Spurs"
       },
       "spread_new_york_knicks_4_5": {
-        "value": -0.053,
-        "ev_porcentaje": -5.3,
-        "ev_pinn": -5.3,
+        "value": -0.052,
+        "ev_porcentaje": -5.2,
+        "ev_pinn": -5.2,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
@@ -69,14 +69,14 @@
         "mercado_nombre": "New York Knicks (+4.5)"
       },
       "spread_san_antonio_spurs_m4_5": {
-        "value": -0.018,
-        "ev_porcentaje": -1.8,
-        "ev_pinn": -1.8,
+        "value": -0.003,
+        "ev_porcentaje": -0.3,
+        "ev_pinn": -0.3,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.91,
-        "casa": "DraftKings",
+        "cuota": 1.94,
+        "casa": "Unibet",
         "pinn_prob": 51.4,
         "mercado_nombre": "San Antonio Spurs (-4.5)"
       }
@@ -84,7 +84,7 @@
     "prediccion_principal": {
       "mercado": "San Antonio Spurs (-4.5)",
       "prob": 51.4,
-      "ev": -1.8
+      "ev": -0.3
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
