@@ -214,6 +214,90 @@ def _agregar_a_historial(texto, evento, resultado):
     )
 
 
+# ── RESOLVER NO-FÚTBOL (NBA/NHL/MLB/NFL/tenis) vía The Odds API /scores ──
+# auto_resultados clásico solo resuelve fútbol (API-Football). Esto cierra los
+# picks de deportes US y tenis por marcador real (mismo /scores del sistema CLV).
+import requests as _rq
+try:
+    from config import ODDS_API_KEY as _ODDS_KEY
+except Exception:
+    _ODDS_KEY = None
+
+_LIGA_SPORT = [(("nhl", "hockey"), "icehockey_nhl"), (("nba",), "basketball_nba"),
+               (("wnba",), "basketball_wnba"), (("mlb", "baseball"), "baseball_mlb"),
+               (("nfl",), "americanfootball_nfl"), (("ufl",), "americanfootball_ufl"),
+               (("ncaa",), "americanfootball_ncaaf")]
+_TENIS_KW = ("atp", "wta", "tenis", "roland", "garros", "wimbledon", "open", "masters")
+_scores_cache = {}
+_tenis_keys_cache = None
+
+def _odds_scores(sport_key):
+    if sport_key in _scores_cache:
+        return _scores_cache[sport_key]
+    out = []
+    try:
+        r = _rq.get(f"https://api.the-odds-api.com/v4/sports/{sport_key}/scores/",
+                    params={"apiKey": _ODDS_KEY, "daysFrom": 3}, timeout=15)
+        if r.status_code == 200:
+            out = r.json()
+    except Exception:
+        out = []
+    _scores_cache[sport_key] = out
+    return out
+
+def _tenis_sport_keys():
+    global _tenis_keys_cache
+    if _tenis_keys_cache is None:
+        try:
+            r = _rq.get("https://api.the-odds-api.com/v4/sports",
+                        params={"apiKey": _ODDS_KEY}, timeout=15)
+            _tenis_keys_cache = [s["key"] for s in r.json()
+                                 if s.get("key", "").startswith("tennis")] if r.status_code == 200 else []
+        except Exception:
+            _tenis_keys_cache = []
+    return _tenis_keys_cache
+
+def _sport_keys_de_liga(liga):
+    u = (liga or "").lower()
+    for kws, key in _LIGA_SPORT:
+        if any(k in u for k in kws):
+            return [key]
+    if any(t in u for t in _TENIS_KW):
+        return _tenis_sport_keys()
+    return []
+
+def _goles_odds(ev):
+    home, away = ev.get("home_team"), ev.get("away_team")
+    gl = gv = None
+    for sc in (ev.get("scores") or []):
+        try:
+            val = int(float(sc.get("score")))
+        except (TypeError, ValueError):
+            continue
+        if sc.get("name") == home: gl = val
+        elif sc.get("name") == away: gv = val
+    return gl, gv
+
+def resolver_no_futbol(liga, local_js, visita_js):
+    """(gl, gv) de un pick US/tenis ya FINALIZADO vía Odds API /scores, o None."""
+    if not _ODDS_KEY:
+        return None
+    for key in _sport_keys_de_liga(liga):
+        best, bs = None, 0.4
+        for s in _odds_scores(key):
+            if not s.get("completed"):
+                continue
+            sc = (_similitud(local_js, s.get("home_team", "")) +
+                  _similitud(visita_js, s.get("away_team", ""))) / 2
+            if sc > bs:
+                bs, best = sc, s
+        if best:
+            gl, gv = _goles_odds(best)
+            if gl is not None and gv is not None:
+                return gl, gv
+    return None
+
+
 # ── MAIN ─────────────────────────────────────────────────────────
 
 def correr():
@@ -253,12 +337,16 @@ def correr():
         local_js, visita_js = partes[0].strip(), partes[1].strip()
 
         fixture = buscar_fixture(local_js, visita_js, fixtures_ft)
-        if not fixture:
-            LOG.info(f"  Sin resultado aún: {partido}")
-            continue
-
-        gl = fixture["score"]["fulltime"]["home"] or 0
-        gv = fixture["score"]["fulltime"]["away"] or 0
+        if fixture:
+            gl = fixture["score"]["fulltime"]["home"] or 0
+            gv = fixture["score"]["fulltime"]["away"] or 0
+        else:
+            # No es fútbol (o no encontrado) → resolver US/tenis por marcador real
+            goles = resolver_no_futbol(evento.get('liga', ''), local_js, visita_js)
+            if not goles:
+                LOG.info(f"  Sin resultado aún: {partido}")
+                continue
+            gl, gv = goles
         resultado = evaluar(evento.get('prediccion', ''), gl, gv, local_js, visita_js)
 
         emoji = "✅" if resultado == 'win' else ("➖" if resultado == 'push' else "❌")
