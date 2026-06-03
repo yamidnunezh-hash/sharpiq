@@ -377,8 +377,10 @@ def correr():
             from config import ODDS_API_KEY
             import requests as _req
             inicializar()
-            fid     = fixture.get("fixture", {}).get("id")
-            liga_id = str(fixture.get("league", {}).get("id", ""))
+            # CLV-SQLite es solo fútbol (usa el fixture de API-Football). Para picks
+            # US/tenis fixture es None → fid queda None y el bloque de abajo se salta limpio.
+            fid     = (fixture or {}).get("fixture", {}).get("id")
+            liga_id = str((fixture or {}).get("league", {}).get("id", ""))
             sport_key = LIGAS_ODDS.get(liga_id)
 
             if fid and sport_key and ODDS_API_KEY:
