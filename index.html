@@ -2896,7 +2896,7 @@ function toggleTheme(){
     var pl  = res.reduce(function(s,p){ return s + (p.resultado === 'win' ? (parseFloat(p.cuota) - 1) : -1); }, 0);
     var wr  = res.length ? Math.round(w / res.length * 100) : 0;
     var yld = res.length ? (pl / res.length * 100) : 0;
-    var hoy = P.filter(function(p){ return !p.resultado || p.resultado === 'pendiente' || p.resultado === ''; }).length;
+    var hoy = P.filter(function(p){ return p.resultado === 'pendiente'; }).length;
     return { wr: wr, w: w, n: res.length, yld: yld, hoy: hoy };
   }
   function pinta(){
