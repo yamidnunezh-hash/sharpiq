@@ -49,11 +49,68 @@ def _best_cuota(evento, mercado, home, away):
     return (best_pr or None, best_casa)
 
 
-def correr(fetch_odds=None, ahora=None):
-    """fetch_odds(liga_code)->[eventos] (default motor.obtener_cuotas_liga).
-    ahora: datetime UTC (default now). Ambos inyectables para pruebas."""
+
+def _goles(ev):
+    """(goles_local, goles_visita) de un evento de /scores."""
+    home, away = ev.get("home_team"), ev.get("away_team")
+    gl = gv = None
+    for sc in (ev.get("scores") or []):
+        try:
+            val = int(float(sc.get("score")))
+        except (TypeError, ValueError):
+            continue
+        if sc.get("name") == home:
+            gl = val
+        elif sc.get("name") == away:
+            gv = val
+    return gl, gv
+
+
+def _evaluar(mercado, gl, gv, home, away):
+    """win|loss|push|None. 1X2 (futbol): empate = loss. Moneyline (nombre): empate = push."""
+    if gl is None or gv is None:
+        return None
+    m = (mercado or "").lower()
+    if m == "victoria_local":  return "win" if gl > gv else "loss"
+    if m == "victoria_visita": return "win" if gv > gl else "loss"
+    if m in ("empate", "draw"): return "win" if gl == gv else "loss"
+    if mercado == home: return "win" if gl > gv else ("loss" if gl < gv else "push")
+    if mercado == away: return "win" if gv > gl else ("loss" if gv < gl else "push")
+    if m.startswith("over") or m.startswith("under"):
+        num = m.replace("over", "").replace("under", "").strip("_")
+        if "_" in num:
+            pt = float(num.replace("_", "."))
+        elif num.isdigit() and len(num) >= 2:
+            pt = float(num[:-1] + "." + num[-1])
+        else:
+            return None
+        total = gl + gv
+        if total == pt:
+            return "push"
+        if m.startswith("over"):
+            return "win" if total > pt else "loss"
+        return "win" if total < pt else "loss"
+    return None   # mercado exotico -> no se evalua
+
+
+def _fetch_scores_real(sport_key):
+    """Marcadores de The Odds API /scores (keyed por el MISMO evento_id de las cuotas)."""
+    import requests
+    from config import ODDS_API_KEY
+    try:
+        r = requests.get(f"https://api.the-odds-api.com/v4/sports/{sport_key}/scores/",
+                         params={"apiKey": ODDS_API_KEY, "daysFrom": 3}, timeout=15)
+        return r.json() if r.status_code == 200 else []
+    except Exception:
+        return []
+
+
+def correr(fetch_odds=None, fetch_scores=None, ahora=None):
+    """fetch_odds/fetch_scores(liga_code) (default Odds API). ahora UTC. Inyectables."""
     if fetch_odds is None:
         from motor import obtener_cuotas_liga as fetch_odds
+    if fetch_scores is None:
+        fetch_scores = _fetch_scores_real
     if ahora is None:
         ahora = datetime.now(timezone.utc).replace(tzinfo=None)
 
@@ -96,9 +153,32 @@ def correr(fetch_odds=None, ahora=None):
         db_clv.actualizar_cierre(p["pick_uid"], cierre)
         n_cierre += 1
 
+    # 3) RESULTADO — picks terminados sin resultado: /scores por evento_id -> W/L
+    cur.execute("""SELECT pick_uid, evento_id, mercado, liga_code FROM picks
+                   WHERE resultado IS NULL AND clv IS NOT NULL AND comienzo <= %s""", (ahora,))
+    por_liga_r = {}
+    for p in cur.fetchall():
+        por_liga_r.setdefault(p["liga_code"], []).append(p)
+    n_res = 0
+    for liga_code, picks in por_liga_r.items():
+        try:
+            scores = fetch_scores(liga_code) or []
+        except Exception:
+            scores = []
+        sc_by_id = {str(sc.get("id")): sc for sc in scores}
+        for p in picks:
+            sc = sc_by_id.get(str(p["evento_id"]))
+            if not sc or not sc.get("completed"):
+                continue
+            gl, gv = _goles(sc)
+            res = _evaluar(p["mercado"], gl, gv, sc.get("home_team", ""), sc.get("away_team", ""))
+            if res:
+                db_clv.actualizar_resultado(p["pick_uid"], res)
+                n_res += 1
+
     conn.close()
-    print(f"CLV snapshot: {n_snap} capturas, {n_cierre} cierres")
-    return n_snap, n_cierre
+    print(f"CLV snapshot: {n_snap} capturas, {n_cierre} cierres, {n_res} resultados")
+    return n_snap, n_cierre, n_res
 
 
 if __name__ == "__main__":

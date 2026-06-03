@@ -113,14 +113,14 @@ def actualizar_cierre(pick_uid, cuota_cierre):
         c.commit()
 
 
-def actualizar_resultado(partido, mercado, resultado):
-    """win | loss | push"""
+def actualizar_resultado(pick_uid, resultado):
+    """win | loss | push. Matchea por pick_uid (no nombres)."""
     with _conn() as c:
         cur = c.cursor()
         cur.execute("""
             UPDATE picks SET resultado=%s
-            WHERE partido=%s AND mercado=%s AND resultado IS NULL
-        """, (resultado, partido, mercado))
+            WHERE pick_uid=%s AND resultado IS NULL
+        """, (resultado, pick_uid))
         c.commit()
 
 
