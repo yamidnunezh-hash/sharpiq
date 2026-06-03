@@ -10,7 +10,7 @@
   "hora_cot": "19:30 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 62.5,
+  "confianza": 62.9,
   "pred_completa": {
     "local": "San Antonio Spurs",
     "visitante": "New York Knicks",
@@ -21,14 +21,14 @@
     "hora": "00:30",
     "fecha_evento": "2026-06-03",
     "cuotas": {
-      "New York Knicks": 2.6,
-      "San Antonio Spurs": 1.56
+      "New York Knicks": 2.63,
+      "San Antonio Spurs": 1.55
     },
     "probabilidades": {
-      "New York Knicks": 37.5,
-      "San Antonio Spurs": 62.5
+      "New York Knicks": 37.1,
+      "San Antonio Spurs": 62.9
     },
-    "confianza": 62.5,
+    "confianza": 62.9,
     "value_bets": {
       "New York Knicks": {
         "value": -0.025,
@@ -37,9 +37,9 @@
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.6,
-        "casa": "FanDuel",
-        "pinn_prob": 37.5,
+        "cuota": 2.63,
+        "casa": "Pinnacle",
+        "pinn_prob": 37.1,
         "mercado_nombre": "New York Knicks"
       },
       "San Antonio Spurs": {
@@ -49,15 +49,15 @@
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.56,
+        "cuota": 1.55,
         "casa": "Pinnacle",
-        "pinn_prob": 62.5,
+        "pinn_prob": 62.9,
         "mercado_nombre": "San Antonio Spurs"
       }
     },
     "prediccion_principal": {
       "mercado": "New York Knicks",
-      "prob": 37.5,
+      "prob": 37.1,
       "ev": -2.5
     },
     "cuotas_reales": true,
