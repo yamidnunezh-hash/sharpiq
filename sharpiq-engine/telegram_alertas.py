@@ -238,7 +238,6 @@ def enviar_resumen_dia(reporte):
         tiers = {}
 
     _TIER_EMOJI = {"seguro": "🛡️ SEGURO", "principal": "⭐ PRINCIPAL", "alto_valor": "🔥 ALTO VALOR"}
-    _SP_EMOJI   = {"NHL":"🏒","NBA":"🏀","MLB":"⚾","ATP":"🎾","WTA":"🎾","Boxeo":"🥊","UFC":"🥋"}
 
     picks_lines = []
     for k in ("seguro", "principal", "alto_valor"):
@@ -247,7 +246,7 @@ def enviar_resumen_dia(reporte):
             continue
         p      = t["pred"]
         liga   = p.get("liga", "")
-        emoji  = next((v for kw, v in _SP_EMOJI.items() if kw in liga.upper()), "⚽")
+        emoji  = _sport_emoji(liga)
         hora_u = p.get("hora", "00:00")
         hh     = (int(hora_u[:2]) - 5 + 24) % 24
         hora_c = f"{hh:02d}:{hora_u[3:5]} COT"
@@ -352,12 +351,18 @@ def enviar_alerta_servicio(texto):
 
 
 def _sport_emoji(liga: str) -> str:
-    liga_up = liga.upper()
-    if any(x in liga_up for x in ("NHL", "HOCKEY")):       return "🏒"
-    if any(x in liga_up for x in ("NBA", "BASKET")):       return "🏀"
-    if any(x in liga_up for x in ("MLB", "BASEBALL")):     return "⚾"
-    if any(x in liga_up for x in ("NFL", "UFL")):          return "🏈"
-    if any(x in liga_up for x in ("TENIS", "ATP", "WTA")): return "🎾"
+    u = (liga or "").upper()
+    if any(x in u for x in ("NHL", "HOCKEY")):                          return "🏒"
+    if any(x in u for x in ("NBA", "WNBA", "BASKET", "EUROLEAGUE")):    return "🏀"
+    if any(x in u for x in ("MLB", "BASEBALL", "KBO", "NPB")):          return "⚾"
+    if any(x in u for x in ("NFL", "UFL", "CFL", "NCAA FOOT")):         return "🏈"
+    if any(x in u for x in ("TENIS", "ATP", "WTA")):                    return "🎾"
+    if any(x in u for x in ("BALONMANO", "HANDBALL")):                  return "🤾"
+    if any(x in u for x in ("CRICKET", "T20", "BLAST", "BASH", "IPL", "ODI")): return "🏏"
+    if any(x in u for x in ("LACROSSE", "PLL")):                        return "🥍"
+    if any(x in u for x in ("RUGBY", "NRL", "AFL", "ORIGIN")):          return "🏉"
+    if any(x in u for x in ("MMA", "UFC")):                             return "🥋"
+    if any(x in u for x in ("BOXEO", "BOXING")):                        return "🥊"
     return "⚽"
 
 
