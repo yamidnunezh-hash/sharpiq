@@ -4,6 +4,17 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "04/06/26",
+    partido:    "HSV Hamburg vs HSG Wetzlar",
+    liga:       "Balonmano Bundesliga",
+    prediccion: "Gana HSV Hamburg — EV +6%",
+    cuota:      "1.77",
+    hora:       "12:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3.6"
+  },
+  {
     fecha:      "03/06/26",
     partido:    "Felix Auger-Aliassime vs Flavio Cobolli",
     liga:       "ATP Roland Garros",
