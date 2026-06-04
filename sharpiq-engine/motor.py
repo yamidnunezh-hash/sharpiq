@@ -26,7 +26,7 @@ from scipy.optimize import minimize
 import numpy as np
 
 try:
-    from telegram_alertas import enviar_alerta_value_bet, enviar_resumen_dia
+    from telegram_alertas import enviar_resumen_dia
     TELEGRAM_OK = True
 except Exception:
     TELEGRAM_OK = False
