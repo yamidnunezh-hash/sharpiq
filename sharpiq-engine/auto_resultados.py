@@ -361,14 +361,6 @@ def correr():
         texto = _agregar_a_historial(texto, evento, resultado)
         actualizados += 1
 
-        # Registrar en DB CLV
-        try:
-            from db_clv import actualizar_resultado as _db_resultado
-            mercado_key = _pred_to_mercado_key(evento.get('prediccion', ''))
-            _db_resultado(partido, mercado_key, resultado)
-        except Exception as _dbe:
-            LOG.debug(f"DB CLV resultado: {_dbe}")
-
         # Snapshot de cierre + cálculo CLV
         clv_texto = ""
         try:
@@ -420,25 +412,8 @@ def correr():
                 if cuotas_cierre:
                     guardar_snapshot(fid, local_js, visita_js,
                                      date.today().isoformat(), "cierre", cuotas_cierre)
-
-                    # ── CLV tracking PostgreSQL (db_clv): registra la cuota de cierre
-                    #    del mercado del pick → calcula CLV (cierre - apertura) sobre la
-                    #    fila insertada por db_clv.guardar_pick en auto_publicar.
-                    try:
-                        from db_clv import actualizar_cierre as _db_cierre
-                        # mercado_key (over25/victoria_local/...) → clave en cuotas_cierre
-                        _mk_to_cierre = {
-                            "victoria_local": "1", "victoria_visita": "2", "empate": "X",
-                            "over25": "over25", "under25": "under25",
-                            "over15": "over15", "under15": "under15",
-                        }
-                        _cierre_key = _mk_to_cierre.get(mercado_key, mercado_key)
-                        _cuota_cierre = cuotas_cierre.get(_cierre_key)
-                        if _cuota_cierre:
-                            _db_cierre(partido, mercado_key, float(_cuota_cierre))
-                            LOG.info(f"  CLV (PostgreSQL) cierre — {mercado_key} @ {_cuota_cierre}")
-                    except Exception as _ce:
-                        LOG.debug(f"CLV PostgreSQL actualizar_cierre: {_ce}")
+                    # CLV (db_clv): el cierre lo registra la Fase 2 (ultima captura ANTES del
+                    # kickoff), NO aqui -- esto corre DESPUES del partido y el cierre real ya paso.
 
                 # Calcular CLV para mercados estándar
                 _mk_cols = {"over25": "cuota_over25", "under25": "cuota_under25",

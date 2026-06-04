@@ -39,6 +39,47 @@ def _get_log():
 LOG = _get_log()
 
 
+def registrar_tiers_clv(tiers):
+    """Registra los 3 tiers (seguro/principal/alto_valor) en la tabla picks del CLV.
+    Guarda el EV REAL del motor (ev_pinn, NO recalcula prob*cuota). pick_uid =
+    evento_id:mercado (dedup + match en Fase 2 sin depender de nombres fragiles)."""
+    try:
+        from db_clv import guardar_pick, inicializar
+        inicializar()  # idempotente
+    except Exception as e:
+        LOG.debug(f"CLV init: {e}")
+        return
+    for _tname in ("seguro", "principal", "alto_valor"):
+        _tier = (tiers or {}).get(_tname)
+        if not _tier:
+            continue
+        try:
+            _p   = _tier["pred"]
+            _mk  = _tier.get("mercado", "")
+            _eid = str(_p.get("id", "") or "")
+            _partido = f"{_p['local']} vs {_p['visitante']}"
+            _uid = f"{_eid}:{_mk}" if _eid else f"{_p.get('fecha_evento','')}|{_partido}|{_mk}"
+            _casa = ((_p.get("value_bets", {}) or {}).get(_mk, {}) or {}).get("casa", "")
+            guardar_pick(
+                pick_uid       = _uid,
+                evento_id      = _eid,
+                fecha_evento   = _p.get("fecha_evento") or date.today().isoformat(),
+                comienzo       = _p.get("comienzo"),
+                partido        = _partido,
+                liga           = _p.get("liga", ""),
+                liga_code      = str(_p.get("liga_code", "")),
+                mercado        = _mk,
+                tier           = _tname,
+                casa           = _casa,
+                prob_modelo    = float(_tier.get("prob", 0) or 0),
+                cuota_apertura = float(_tier.get("cuota", 0) or 0),
+                ev_apertura    = _tier.get("ev_pinn", _tier.get("ev")),
+            )
+            LOG.info(f"CLV registrado [{_tname}] {_mk} @ {_tier.get('cuota')} EV {_tier.get('ev_pinn')}")
+        except Exception as e:
+            LOG.debug(f"CLV guardar_pick [{_tname}]: {e}")
+
+
 def _leer_predicciones():
     if not os.path.exists(JSON_PATH):
         return None
@@ -407,28 +448,8 @@ def correr():
         except Exception as e:
             LOG.error(f"CLV snapshot error: {e}")
 
-        # ── CLV tracking PostgreSQL (db_clv) — registra el pick en apertura.
-        #    Usa la MISMA clave de mercado que auto_resultados (_pred_to_mercado_key)
-        #    para que actualizar_cierre / actualizar_resultado casen por (partido, mercado).
-        try:
-            from db_clv import guardar_pick as _clv_guardar_pick, inicializar as _clv_init
-            from auto_resultados import _pred_to_mercado_key
-            _clv_init()  # idempotente: CREATE TABLE IF NOT EXISTS
-            pred       = mejor_tier["pred"]
-            partido    = f"{pred['local']} vs {pred['visitante']}"
-            mercado_k  = _pred_to_mercado_key(mejor_tier.get("mercado_nombre", ""))
-            _clv_guardar_pick(
-                date.today().isoformat(),
-                partido,
-                pred.get("liga", ""),
-                mercado_k,
-                float(mejor_tier.get("prob", 0) or 0),
-                float(mejor_tier.get("cuota", 0) or 0),
-            )
-            LOG.info(f"CLV (PostgreSQL) pick registrado — {mercado_k} @ {mejor_tier.get('cuota')}")
-        except Exception as e:
-            # No-op si DATABASE_PUBLIC_URL/psycopg2 no están configurados (no rompe el flujo).
-            LOG.debug(f"CLV PostgreSQL guardar_pick: {e}")
+        # ── CLV tracking PostgreSQL (db_clv): registra los 3 tiers en apertura.
+        registrar_tiers_clv(tiers)
 
         try:
             from telegram_alertas import enviar_mercados_ext_vip

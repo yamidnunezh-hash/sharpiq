@@ -1,0 +1,66 @@
+name: SharpIQ CLV Snapshot
+
+# Captura el movimiento de la linea de cada pick abierto (-> odds_history) y
+# congela el cierre antes del kickoff (-> CLV). Solo lee/escribe la DB Postgres;
+# NO commitea al repo (no ensucia ramas).
+on:
+  schedule:
+    - cron: '38 * * * *'   # cada hora al minuto :38 (evita :00 y el :23 del motor)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: pip install requests numpy scipy psycopg2-binary
+
+      - name: Crear config.py desde secrets
+        env:
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+          ODDS_API_KEY:      ${{ secrets.ODDS_API_KEY }}
+          APIFOOTBALL_KEY:   ${{ secrets.APIFOOTBALL_KEY }}
+          TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_YAMID_ID: ${{ secrets.TELEGRAM_YAMID_ID }}
+          TELEGRAM_FREE_ID:  ${{ secrets.TELEGRAM_FREE_ID }}
+          TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_ALERTAS_ID: ${{ secrets.TELEGRAM_ALERTAS_ID }}
+          DATABASE_PUBLIC_URL: ${{ secrets.DATABASE_PUBLIC_URL }}
+        run: |
+          python - << 'PYEOF'
+          import os
+          lines = [
+            f'FOOTBALL_DATA_KEY  = "{os.environ["FOOTBALL_DATA_KEY"]}"',
+            f'ODDS_API_KEY       = "{os.environ["ODDS_API_KEY"]}"',
+            f'APIFOOTBALL_KEY    = "{os.environ["APIFOOTBALL_KEY"]}"',
+            f'TELEGRAM_TOKEN     = "{os.environ["TELEGRAM_TOKEN"]}"',
+            f'TELEGRAM_YAMID_ID  = "{os.environ["TELEGRAM_YAMID_ID"]}"',
+            f'TELEGRAM_FREE_ID   = "{os.environ["TELEGRAM_FREE_ID"]}"',
+            f'TELEGRAM_CHAT_ID   = "{os.environ["TELEGRAM_CHAT_ID"]}"',
+            f'TELEGRAM_ALERTAS_ID = "{os.environ.get("TELEGRAM_ALERTAS_ID", "")}"',
+            f'DATABASE_PUBLIC_URL = "{os.environ.get("DATABASE_PUBLIC_URL", "")}"',
+            'MP_ACCESS_TOKEN     = ""',
+            'MP_PUBLIC_KEY       = ""',
+            'JWT_SECRET          = ""',
+          ]
+          with open("sharpiq-engine/config.py", "w") as f:
+              f.write("\n".join(lines) + "\n")
+          print("config.py OK")
+          PYEOF
+
+      - name: Correr CLV snapshot
+        working-directory: sharpiq-engine
+        run: python clv_snapshot.py 2>&1 | tail -20
