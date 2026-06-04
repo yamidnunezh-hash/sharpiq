@@ -4,6 +4,17 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "05/06/26",
+    partido:    "Sussex vs Leicestershire",
+    liga:       "T20 Blast",
+    prediccion: "Gana Leicestershire — EV +2%",
+    cuota:      "2.0",
+    hora:       "13:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.1"
+  },
+  {
     fecha:      "04/06/26",
     partido:    "HSV Hamburg vs HSG Wetzlar",
     liga:       "Balonmano Bundesliga",
