@@ -1000,7 +1000,19 @@ SPORTS_ODDS_ONLY = {
     # ── Cricket ──────────────────────────────────────────────────
     "cricket_ipl":                  "IPL Cricket",
     "cricket_big_bash":             "Big Bash Cricket",
+    "cricket_odi":                  "Cricket ODI",
+    "cricket_t20_blast":            "T20 Blast",
+    # ── Más deportes (agregados 2026-06-03 — "todos los deportes") ──
+    "handball_germany_bundesliga":  "Balonmano Bundesliga",
+    "aussierules_afl":              "AFL",
+    "basketball_wnba":              "WNBA",
+    "baseball_kbo":                 "KBO",
+    "baseball_npb":                 "NPB",
+    "americanfootball_cfl":         "CFL",
+    "lacrosse_pll":                 "PLL Lacrosse",
+    "rugbyleague_nrl_state_of_origin": "NRL State of Origin",
     # golf_pga_tour / darts_betway_premier_league → HTTP 404 en The Odds API
+    # NO agregar los "_winner" (futuros de temporada) ni politics (no son partidos)
 }
 
 # Casas de apuestas preferidas (europeas, disponibles en Colombia)
