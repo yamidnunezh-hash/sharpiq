@@ -225,8 +225,9 @@ Arranque: `uvicorn sharpiq-engine.api.main:app` (ver Procfile). CORS: `sharpiq.c
 **Regla dura (feedback del usuario):** no publicar prob < 30% ni cuota > 5.5. Calidad > cantidad.
 
 ## SEGURIDAD CRÍTICA
-- **NUNCA** hacer git push de `config.py` ni de `vapid_private.pem`. Contienen claves reales. Verificar `.gitignore` SIEMPRE antes de commitear.
-- `predicciones.json` y `mejor_prediccion.json` están gitignored (se regeneran).
+- **NUNCA** hacer git push de `config.py` ni de `vapid_private.pem`. Contienen claves reales. Verificar `.gitignore` SIEMPRE antes de commitear. (Ambos están en `.gitignore` desde 2026-06-03; `vapid_private.pem` se había filtrado y se ROTÓ.)
+- ⚠️ **OJO doc histórico:** `predicciones.json` y `mejor_prediccion.json` **SÍ están trackeados** (force-add `git add -f` en `motor.yml`), NO gitignored — la API de Railway los necesita. No contienen secretos. (El `.gitignore` los lista pero el `-f` los fuerza.)
+- **JWT_SECRET** debe estar puesto en Railway (env var); si falta, el default público de `auth.py` permite forjar tokens. Verificar.
 - No exponer API keys al frontend: las cuotas/scores se sirven via JSON pre-generado.
 
 ---
