@@ -227,14 +227,20 @@ def correr():
         _sin_picks_sent = os.path.join(BASE_DIR_AP, "logs", f"sin_picks_{date.today().isoformat()}.sent")
         if not os.path.exists(_sin_picks_sent):
             try:
-                # Aviso de SERVICIO (lo ve el suscriptor) → canal Alertas
-                from telegram_alertas import enviar_alerta_servicio
-                enviar_alerta_servicio(
+                from telegram_alertas import enviar_alerta_servicio, enviar_mensaje, get_chat_id
+                _msg_sin = (
                     f"📭 <b>SharpIQ — Sin picks hoy</b>\n\n"
                     f"El motor no encontró valor suficiente para publicar hoy. "
                     f"Preferimos no apostar antes que forzar una jugada sin ventaja.\n\n"
                     f"<i>Mañana seguimos. La disciplina es parte del sistema.</i>"
                 )
+                # Aviso de SERVICIO → canal Alertas
+                enviar_alerta_servicio(_msg_sin)
+                # También al VIP, para que el suscriptor vea que el sistema funciona (no caído)
+                try:
+                    enviar_mensaje(_msg_sin, chat_id=get_chat_id())
+                except Exception:
+                    pass
                 open(_sin_picks_sent, "w").close()
             except Exception:
                 pass

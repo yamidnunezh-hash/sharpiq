@@ -459,9 +459,10 @@ def enviar_saludo_manana_free(partidos_hoy):
         texto += "• Jornada tranquila hoy — analizando opciones\n"
 
     texto += (
-        f"\n🔒 <b>Las predicciones VIP ya están listas</b>\n"
-        f"¿Quieres las cuotas y mercados exactos?\n"
-        f"👉 Únete al canal VIP → https://sharpiq.co\n\n"
+        f"\n📊 <b>Los picks con valor del día van al VIP</b>\n"
+        f"Solo publicamos con <b>EV positivo vs Pinnacle</b> — calidad sobre cantidad. "
+        f"Si un día no hay valor, no forzamos picks.\n"
+        f"👉 Cuotas y mercados exactos en el VIP → https://sharpiq.co\n\n"
         f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
     )
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
