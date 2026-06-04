@@ -84,3 +84,9 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
         run: python sharpiq-engine/auto_resultados.py
+
+      - name: Reporte CLV nocturno (al DM privado de Yamid)
+        working-directory: sharpiq-engine
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python -c "from telegram_alertas import enviar_reporte_clv; enviar_reporte_clv()"

@@ -335,6 +335,10 @@ def enviar_reporte_clv():
     except Exception as e:
         print(f"  CLV reporte: sin DB ({e})")
         return False
+    # Solo enviar cuando ya haya datos reales (evita spam nocturno "aún sin datos")
+    if not (r and (r.get("n_cierre") or r.get("n_resueltos"))):
+        print("  CLV reporte: aún sin datos con cierre — no se envía")
+        return False
     return enviar_aviso_yamid(_formato_reporte_clv(r))
 
 
