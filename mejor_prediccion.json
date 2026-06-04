@@ -1,64 +1,67 @@
 {
-  "partido": "San Antonio Spurs vs New York Knicks",
-  "liga": "NBA",
-  "local": "San Antonio Spurs",
-  "visitante": "New York Knicks",
-  "prediccion": "New York Knicks",
-  "mercado_key": null,
+  "partido": "HSV Hamburg vs HSG Wetzlar",
+  "liga": "Balonmano Bundesliga",
+  "local": "HSV Hamburg",
+  "visitante": "HSG Wetzlar",
+  "prediccion": "HSV Hamburg",
+  "mercado_key": "HSV Hamburg",
   "cuota": "",
-  "hora_utc": "00:30",
-  "hora_cot": "19:30 COT",
-  "ev": null,
-  "clasificacion": null,
-  "confianza": 62.9,
+  "casa": "",
+  "hora_utc": "17:00",
+  "hora_cot": "12:00 COT",
+  "ev": 5.6,
+  "clasificacion": "VALOR",
+  "confianza": 59.6,
   "pred_completa": {
-    "local": "San Antonio Spurs",
-    "visitante": "New York Knicks",
-    "liga": "NBA",
-    "liga_code": "basketball_nba",
-    "deporte": "NBA",
-    "deporte_emoji": "🏀",
-    "hora": "00:30",
-    "fecha_evento": "2026-06-03",
+    "id": "05db23b82d06c7b5a49c0b8be8bed745",
+    "comienzo": "2026-06-04T17:00:00Z",
+    "local": "HSV Hamburg",
+    "visitante": "HSG Wetzlar",
+    "liga": "Balonmano Bundesliga",
+    "liga_code": "handball_germany_bundesliga",
+    "deporte": "Balonmano Bundesliga",
+    "deporte_emoji": "🏆",
+    "hora": "17:00",
+    "fecha_evento": "2026-06-04",
     "cuotas": {
-      "New York Knicks": 2.63,
-      "San Antonio Spurs": 1.55
+      "HSG Wetzlar": 2.55,
+      "HSV Hamburg": 1.77
     },
     "probabilidades": {
-      "New York Knicks": 37.1,
-      "San Antonio Spurs": 62.9
+      "HSG Wetzlar": 40.4,
+      "HSV Hamburg": 59.6
     },
-    "confianza": 62.9,
+    "confianza": 59.6,
     "value_bets": {
-      "New York Knicks": {
-        "value": -0.025,
-        "ev_porcentaje": -2.5,
-        "ev_pinn": -2.5,
+      "HSG Wetzlar": {
+        "value": 0.029,
+        "ev_porcentaje": 2.9,
+        "ev_pinn": 2.9,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.63,
-        "casa": "Pinnacle",
-        "pinn_prob": 37.1,
-        "mercado_nombre": "New York Knicks"
+        "cuota": 2.55,
+        "casa": "Unibet",
+        "pinn_prob": 40.4,
+        "mercado_nombre": "HSG Wetzlar"
       },
-      "San Antonio Spurs": {
-        "value": -0.025,
-        "ev_porcentaje": -2.5,
-        "ev_pinn": -2.5,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.55,
-        "casa": "Pinnacle",
-        "pinn_prob": 62.9,
-        "mercado_nombre": "San Antonio Spurs"
+      "HSV Hamburg": {
+        "value": 0.056,
+        "ev_porcentaje": 5.6,
+        "ev_pinn": 5.6,
+        "tiene_valor": true,
+        "tiene_valor_pinn": true,
+        "clasificacion": "VALOR",
+        "cuota": 1.77,
+        "casa": "Unibet",
+        "pinn_prob": 59.6,
+        "mercado_nombre": "HSV Hamburg"
       }
     },
     "prediccion_principal": {
-      "mercado": "New York Knicks",
-      "prob": 37.1,
-      "ev": -2.5
+      "mercado": "HSV Hamburg",
+      "prob": 59.6,
+      "ev": 5.6
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
