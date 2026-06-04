@@ -3696,13 +3696,11 @@ def guardar_predicciones():
             json.dump(mejor, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
         LOG.info(f"Mejor prediccion: {mejor['partido']} -- {mejor['prediccion']}")
 
-    # El "Resumen Motor" es DIAGNÓSTICO INTERNO (EV crudo, Kelly, nº de partidos).
-    # Estaba saliendo a un canal de SUSCRIPTORES porque TELEGRAM_YAMID_ID apunta a un
-    # canal y no al DM privado de Yamid → se filtraba info interna. Desactivado por
-    # defecto. Para recibirlo en privado: define TELEGRAM_DM_PRIVADO (tu chat_id personal)
-    # y exporta SHARPIQ_RESUMEN_DM=1. Los picks reales del canal VIP los gestiona
-    # auto_publicar.py → clasificar_tiers() (eso NO cambia).
-    if TELEGRAM_OK and os.environ.get("SHARPIQ_RESUMEN_DM"):
+    # Resumen del día (DIAGNÓSTICO INTERNO: EV/Kelly/nº partidos) al DM PRIVADO de Yamid.
+    # TELEGRAM_YAMID_ID = 8802028554 = su user_id (ID positivo = chat privado con el bot,
+    # NO un canal de suscriptores → no se filtra nada). Los picks del canal VIP los
+    # gestiona auto_publicar.py → clasificar_tiers() (eso NO cambia).
+    if TELEGRAM_OK:
         try:
             enviar_resumen_dia(reporte)
         except Exception as _te:
