@@ -258,13 +258,32 @@ def _tenis_sport_keys():
     return _tenis_keys_cache
 
 def _sport_keys_de_liga(liga):
-    u = (liga or "").lower()
-    for kws, key in _LIGA_SPORT:
-        if any(k in u for k in kws):
-            return [key]
+    """Nombre de liga (display en datos.js) -> sport_key(s) de The Odds API.
+    Usa SPORTS_ODDS_ONLY del motor → cubre AUTOMÁTICAMENTE todos los deportes que el
+    motor publica (NBA, NHL, NFL, MLB, Euroleague, tenis, MMA/UFC, boxeo, rugby,
+    cricket...). Si se agrega un deporte nuevo a SPORTS_ODDS_ONLY, el resolver lo
+    cubre solo, sin tocar este archivo."""
+    u = (liga or "").strip().lower()
+    if not u:
+        return []
+    keys = []
+    try:
+        from motor import SPORTS_ODDS_ONLY
+        keys = [sk for sk, nombre in SPORTS_ODDS_ONLY.items()
+                if nombre and (u == nombre.lower() or nombre.lower() in u)]
+    except Exception:
+        pass
+    if not keys:  # respaldo si falla el import del motor
+        for kws, key in _LIGA_SPORT:
+            if any(k in u for k in kws):
+                keys = [key]
+                break
+    # Tenis: añade los torneos activos (robustez si una key hardcodeada está inactiva)
     if any(t in u for t in _TENIS_KW):
-        return _tenis_sport_keys()
-    return []
+        for k in _tenis_sport_keys():
+            if k not in keys:
+                keys.append(k)
+    return keys
 
 def _goles_odds(ev):
     home, away = ev.get("home_team"), ev.get("away_team")
