@@ -72,8 +72,11 @@ jobs:
       - name: Guardar DB con alertas enviadas
         run: |
           git add sharpiq-engine/sharpiq.db
-          git diff --cached --quiet || (
-            git pull origin main --no-rebase --quiet &&
-            git commit -m "live: alertas $(date -u +%H:%M UTC)" &&
-            git push origin main
-          )
+          git diff --cached --quiet && exit 0
+          git commit -m "live: alertas $(date -u +%H:%M UTC)"
+          for i in 1 2 3; do
+            git pull origin main --no-rebase --quiet || true
+            git push origin main && exit 0
+            sleep 3
+          done
+          echo "push fallo tras 3 intentos — el proximo ciclo reintenta"

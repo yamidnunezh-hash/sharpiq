@@ -5,7 +5,7 @@ name: SharpIQ CLV Snapshot
 # NO commitea al repo (no ensucia ramas).
 on:
   schedule:
-    - cron: '38 * * * *'   # cada hora al minuto :38 (evita :00 y el :23 del motor)
+    - cron: '8,38 * * * *'   # cada 30 min (:08 y :38) - menos viejo el cierre capturado; evita :00 y el :23 del motor
   workflow_dispatch:
 
 permissions:

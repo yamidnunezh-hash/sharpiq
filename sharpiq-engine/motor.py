@@ -50,6 +50,18 @@ MEJOR_PATH      = os.path.join(BASE_DIR, "..", "mejor_prediccion.json")
 HISTORIAL_PATH  = os.path.join(BASE_DIR, "historial_cuotas.csv")
 
 
+def _escribir_json_atomico(path, data):
+    """Escribe JSON de forma ATOMICA (a un .tmp y luego os.replace). Si el proceso
+    muere a media escritura, el original queda intacto en vez de truncado. Critico:
+    predicciones.json lo consumen la web Y la API; un JSON corrupto los rompe."""
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, path)
+
+
 def _setup_logger():
     """Logger que escribe en logs/motor_YYYY-MM-DD.log y en consola simultáneamente."""
     from datetime import date as _d
@@ -3696,16 +3708,14 @@ def guardar_predicciones():
     if descartados:
         LOG.info(f"Filtro {LOOKAHEAD_HORAS}h: {descartados} predicciones futuras eliminadas")
 
-    with open(JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump(reporte, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
+    _escribir_json_atomico(JSON_PATH, reporte)
     LOG.info(f"Predicciones guardadas: {reporte['total_partidos']} partidos — {reporte['fecha']}")
 
     guardar_historial_cuotas(reporte)
 
     mejor = seleccionar_mejor_prediccion(reporte)
     if mejor:
-        with open(MEJOR_PATH, "w", encoding="utf-8") as f:
-            json.dump(mejor, f, ensure_ascii=False, indent=2, cls=_NpEncoder)
+        _escribir_json_atomico(MEJOR_PATH, mejor)
         LOG.info(f"Mejor prediccion: {mejor['partido']} -- {mejor['prediccion']}")
 
     # Resumen del día (DIAGNÓSTICO INTERNO: EV/Kelly/nº partidos) al DM PRIVADO de Yamid.
