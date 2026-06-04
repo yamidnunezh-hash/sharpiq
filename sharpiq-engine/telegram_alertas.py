@@ -254,7 +254,7 @@ def enviar_resumen_dia(reporte):
             f"{_TIER_EMOJI[k]}\n"
             f"{emoji} {esc(p['local'])} vs {esc(p['visitante'])}\n"
             f"🏆 {esc(liga)} | {_fmt_fecha(p.get('fecha_evento',''))}{hora_c}\n"
-            f"📊 {t['mercado_nombre']} @{t['cuota']} — "
+            f"📊 {esc(t['mercado_nombre'])} @{t['cuota']} — "
             + (f"EV +{t['ev_pinn']}%" if t.get('ev_pinn') is not None else "sin EV")
             + f" | Prob {t['prob']}% | Kelly {t['kelly_pct']}%"
         )
@@ -938,7 +938,7 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 f"🏀 <b>{jugador}</b>\n"
                 f"📌 {partido}\n"
                 f"🏆 {esc(p.get('liga',''))} | {_fmt_fecha(p.get('fecha_evento',''))}{_hcot(p)}\n"
-                f"\U0001f3af <b>{tier['mercado_nombre']}</b> @{tier['cuota']}{ev_extra}\n"
+                f"\U0001f3af <b>{esc(tier['mercado_nombre'])}</b> @{tier['cuota']}{ev_extra}\n"
                 f"{_analisis_experto(tier)}\n"
                 f"{stake_line}"
             )
@@ -958,7 +958,7 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
                 f"{emoji} <b>{label}</b>\n"
                 f"{sp_emoji} <b>{esc(p['local'])} vs {esc(p['visitante'])}</b>\n"
                 f"🏆 {esc(p.get('liga',''))} | {_fmt_fecha(p.get('fecha_evento',''))}{_hcot(p)}\n"
-                f"\U0001f3af <b>{tier['mercado_nombre']}</b> @{tier['cuota']}{ev_extra}\n"
+                f"\U0001f3af <b>{esc(tier['mercado_nombre'])}</b> @{tier['cuota']}{ev_extra}\n"
                 f"{_analisis_experto(tier)}\n"
                 f"{stake_line}"
             )

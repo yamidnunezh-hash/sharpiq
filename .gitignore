@@ -1,4 +1,6 @@
 sharpiq-engine/config.py
+sharpiq-engine/vapid_private.pem
+sharpiq-engine/_vapid_public_new.txt
 predicciones.json
 mejor_prediccion.json
 sharpiq-engine/__pycache__/

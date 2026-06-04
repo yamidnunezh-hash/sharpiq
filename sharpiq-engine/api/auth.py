@@ -151,7 +151,7 @@ def login(body: LoginBody):
 
         if not row:
             raise HTTPException(401, "Email o contraseña incorrectos")
-        if not row.get("activo", True) is False:
+        if not row.get("activo", True):
             raise HTTPException(403, "Cuenta desactivada")
 
         token = _crear_token(row["id"], row["email"], row["plan"])
