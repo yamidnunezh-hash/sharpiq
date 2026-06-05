@@ -1,67 +1,67 @@
 {
-  "partido": "Aaron Bowen vs Troy Coleman",
-  "liga": "Boxeo",
-  "local": "Aaron Bowen",
-  "visitante": "Troy Coleman",
-  "prediccion": "Troy Coleman",
-  "mercado_key": "Troy Coleman",
+  "partido": "Jeisla Chaves vs Yuneisy Duben",
+  "liga": "UFC / MMA",
+  "local": "Jeisla Chaves",
+  "visitante": "Yuneisy Duben",
+  "prediccion": "Yuneisy Duben",
+  "mercado_key": "Yuneisy Duben",
   "cuota": "",
   "casa": "",
-  "hora_utc": "18:00",
-  "hora_cot": "13:00 COT",
-  "ev": 6.1,
-  "clasificacion": "VALOR",
-  "confianza": 77.9,
+  "hora_utc": "21:00",
+  "hora_cot": "16:00 COT",
+  "ev": 7.4,
+  "clasificacion": "ALTO VALOR",
+  "confianza": 73.8,
   "pred_completa": {
-    "id": "1b2ba990352e1855979d183947fb9880",
-    "comienzo": "2026-06-06T18:00:00Z",
-    "local": "Aaron Bowen",
-    "visitante": "Troy Coleman",
-    "liga": "Boxeo",
-    "liga_code": "boxing_boxing",
-    "deporte": "Boxeo",
+    "id": "f62a5567bcb87d778dd662328d9662fb",
+    "comienzo": "2026-06-06T21:00:00Z",
+    "local": "Jeisla Chaves",
+    "visitante": "Yuneisy Duben",
+    "liga": "UFC / MMA",
+    "liga_code": "mma_mixed_martial_arts",
+    "deporte": "UFC / MMA",
     "deporte_emoji": "🏆",
-    "hora": "18:00",
+    "hora": "21:00",
     "fecha_evento": "2026-06-06",
     "cuotas": {
-      "Aaron Bowen": 1.24,
-      "Troy Coleman": 4.8
+      "Jeisla Chaves": 1.31,
+      "Yuneisy Duben": 4.1
     },
     "probabilidades": {
-      "Aaron Bowen": 77.9,
-      "Troy Coleman": 22.1
+      "Jeisla Chaves": 73.8,
+      "Yuneisy Duben": 26.2
     },
-    "confianza": 77.9,
+    "confianza": 73.8,
     "value_bets": {
-      "Aaron Bowen": {
-        "value": -0.034,
-        "ev_porcentaje": -3.4,
-        "ev_pinn": -3.4,
+      "Jeisla Chaves": {
+        "value": -0.033,
+        "ev_porcentaje": -3.3,
+        "ev_pinn": -3.3,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.24,
+        "cuota": 1.31,
         "casa": "Pinnacle",
-        "pinn_prob": 77.9,
-        "mercado_nombre": "Aaron Bowen"
+        "pinn_prob": 73.8,
+        "mercado_nombre": "Jeisla Chaves"
       },
-      "Troy Coleman": {
-        "value": 0.061,
-        "ev_porcentaje": 6.1,
-        "ev_pinn": 6.1,
+      "Yuneisy Duben": {
+        "value": 0.074,
+        "ev_porcentaje": 7.4,
+        "ev_pinn": 7.4,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
-        "clasificacion": "VALOR",
-        "cuota": 4.8,
+        "clasificacion": "ALTO VALOR",
+        "cuota": 4.1,
         "casa": "Unibet",
-        "pinn_prob": 22.1,
-        "mercado_nombre": "Troy Coleman"
+        "pinn_prob": 26.2,
+        "mercado_nombre": "Yuneisy Duben"
       }
     },
     "prediccion_principal": {
-      "mercado": "Troy Coleman",
-      "prob": 22.1,
-      "ev": 6.1
+      "mercado": "Yuneisy Duben",
+      "prob": 26.2,
+      "ev": 7.4
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
