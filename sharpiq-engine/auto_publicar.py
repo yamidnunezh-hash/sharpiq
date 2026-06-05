@@ -406,7 +406,8 @@ def correr():
     try:
         from telegram_alertas import enviar_canal_free, enviar_mensaje
         from config import TELEGRAM_FREE_ID
-        teaser = tiers.get("alto_valor") or tiers.get("seguro") or tiers.get("principal")
+        teaser_key = next((k for k in ("alto_valor", "seguro", "principal") if tiers.get(k)), None)
+        teaser = tiers.get(teaser_key) if teaser_key else None
         if teaser:
             p    = teaser["pred"]
             prob = round(teaser.get("prob", 0))
@@ -415,7 +416,11 @@ def correr():
                 p.get("liga", ""),
                 _hora_cot(p.get("hora", "00:00")),
                 pick_free=teaser["mercado_nombre"],
-                prob_free=prob
+                prob_free=prob,
+                cuota=teaser.get("cuota"),
+                ev=teaser.get("ev_pinn", teaser.get("ev")),
+                fecha=p.get("fecha_evento"),
+                tier=teaser_key,
             )
         print("  Canal free enviado")
     except Exception as e:

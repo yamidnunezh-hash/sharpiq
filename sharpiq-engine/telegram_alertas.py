@@ -366,27 +366,50 @@ def _sport_emoji(liga: str) -> str:
     return "⚽"
 
 
-def enviar_canal_free(partido, liga, hora, pick_free=None, prob_free=None):
-    """Publica en el canal público: un pick real de baja complejidad + teaser VIP."""
+def enviar_canal_free(partido, liga, hora, pick_free=None, prob_free=None, cuota=None, ev=None, fecha=None, tier=None):
+    """Canal FREE: el pick del día TAPADO. Muestra el partido, el tier y que el valor es
+    REAL, pero CUBRE el pick y la cuota con 🔒 para crear antojo → suscripción VIP.
+    No revela la respuesta: eso es el perk del VIP."""
     sp = _sport_emoji(liga)
+    fcha = _fmt_fecha(fecha) if fecha else ""
+    _TB = {"seguro": "🛡️ SEGURO", "principal": "⭐ PRINCIPAL", "alto_valor": "🔥 ALTO VALOR"}
+    tier_badge = (" · " + _TB[tier]) if tier in _TB else ""
     if pick_free:
+        # Muestra el EV solo si es FUERTE (>=5%); si no, confirma el valor sin número
+        # (no vende de menos en días flojos, no miente). Nunca revela el pick ni la cuota.
+        try:
+            _e = round(float(ev)) if ev is not None else None
+        except Exception:
+            _e = None
+        if _e is not None and _e >= 5:
+            valor_line = f"✅ <b>EV +{_e}% vs Pinnacle</b> — valor fuerte"
+        else:
+            valor_line = "✅ <b>Valor EV+ vs Pinnacle</b> confirmado"
         texto = (
-            f"{sp} <b>{esc(partido)}</b>\n"
-            f"📅 {esc(liga)} | {esc(hora)}\n\n"
-            f"📊 <b>Pick FREE:</b> <b>{esc(pick_free)}</b>\n"
-            f"📈 Probabilidad estimada: {prob_free}%\n\n"
-            f"💡 <i>Cuota exacta + 2 picks VIP adicionales con EV vs Pinnacle</i>\n"
-            f"🔒 Acceso VIP → https://sharpiq.co\n\n"
-            f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+            f"🔥 <b>SharpIQ — Pick del Día</b>\n"
+            f"{sp} {esc(liga)}{tier_badge}\n"
+            f"<b>{esc(partido)}</b>\n"
+            f"📅 {fcha}{esc(hora)}\n"
+            f"{'─' * 22}\n"
+            f"🎯 <b>Pick:</b> 🔒 ▓▓▓▓▓▓▓▓\n"
+            f"💰 <b>Cuota:</b> 🔒 ▓.▓▓\n"
+            f"{valor_line}\n"
+            f"{'─' * 22}\n"
+            f"🔓 <i>Desbloquea el pick exacto + la cuota en el VIP</i>\n"
+            f"👉 https://sharpiq.co\n"
+            f"<i>SharpIQ — La ventaja inteligente</i>"
         )
     else:
         texto = (
-            f"{sp} <b>{esc(partido)}</b>\n"
-            f"📅 {esc(liga)} | {esc(hora)}\n\n"
-            f"🔎 El motor detectó valor en este partido.\n"
-            f"📊 Predicción completa + cuota EV+ → solo en canal VIP\n\n"
-            f"🔒 Únete → https://sharpiq.co\n\n"
-            f"<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
+            f"🔥 <b>SharpIQ — Pick del Día</b>\n"
+            f"{sp} {esc(liga)}\n"
+            f"<b>{esc(partido)}</b>\n"
+            f"📅 {fcha}{esc(hora)}\n"
+            f"{'─' * 22}\n"
+            f"🔎 El motor detectó <b>valor</b> en este partido.\n"
+            f"🔒 Pick + cuota exacta → solo en el VIP\n\n"
+            f"👉 https://sharpiq.co\n"
+            f"<i>SharpIQ — La ventaja inteligente</i>"
         )
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
 
@@ -506,23 +529,24 @@ def enviar_saludo_manana_free(partidos_hoy):
         "¡Buenos días comunidad! ☀️",
         "¡Arriba la comunidad SharpIQ! 🔥",
         "¡Feliz día a todos! Aquí empieza la jornada ⚡",
-        "¡Buenos días! El fútbol no para y nosotros tampoco 💪",
+        "¡Buenos días! El motor ya analizó la jornada 💪",
     ]
     saludo = random.choice(saludos)
 
     texto = (
         f"{saludo}\n\n"
         f"📅 <b>{dia_nombre} {hoy.day} de {mes_nombre}</b>\n\n"
-        f"⚽ <b>Partidos de hoy:</b>\n"
+        f"📋 <b>Partidos de hoy:</b>\n"
     )
 
     if partidos_hoy:
         # GIF de análisis SOLO si hay partidos (evita GIF en días vacíos)
         enviar_gif_free(random.choice(GIFS_MANANA))
         for p in partidos_hoy[:6]:  # máximo 6 partidos
-            texto += f"• {esc(p['local'])} vs {esc(p['visitante'])} — {esc(p.get('hora',''))}\n"
+            _sp = _sport_emoji(p.get('liga', ''))
+            texto += f"{_sp} <b>{esc(p['local'])} vs {esc(p['visitante'])}</b> — {esc(p.get('hora',''))}\n"
             if p.get('liga'):
-                texto += f"  🏆 {esc(p['liga'])}\n"
+                texto += f"   {esc(p['liga'])}\n"
     else:
         texto += "• Jornada tranquila hoy — analizando opciones\n"
 
