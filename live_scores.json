@@ -1,21 +1,6 @@
 {
-  "updated": "2026-06-05T18:26:35Z",
-  "live": [],
-  "upcoming": [
-    {
-      "id": "c482750265f6c9f18fd75cadd8a212f7",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Chicago Cubs",
-      "away": "San Francisco Giants",
-      "fecha": "05/06/26",
-      "hora": "13:51 COT",
-      "ts": 1780667460,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+  "updated": "2026-06-05T22:45:17Z",
+  "live": [
     {
       "id": "66ea890e18af0833c92b1b73b4f70b31",
       "sport": "baseball_mlb",
@@ -27,8 +12,8 @@
       "hora": "17:41 COT",
       "ts": 1780681260,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "61be630678b155cf69cedc7df6691776",
@@ -41,9 +26,11 @@
       "hora": "17:41 COT",
       "ts": 1780681260,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "5f53708f98ace903914ecddca6a9fcc3",
       "sport": "soccer_brazil_serie_b",
@@ -211,9 +198,65 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "b84d12d6466a2f541ef74605bc5f53c6",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Diego Padres",
+      "away": "New York Mets",
+      "fecha": "05/06/26",
+      "hora": "20:41 COT",
+      "ts": 1780692060,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "ae2f29fce3de0447b7b9642b09c76d58",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Dodgers",
+      "away": "Los Angeles Angels",
+      "fecha": "05/06/26",
+      "hora": "21:11 COT",
+      "ts": 1780693860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "468d40850db8507bc33dcc0acc63239a",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Criciuma",
+      "away": "Londrina",
+      "fecha": "06/06/26",
+      "hora": "09:00 COT",
+      "ts": 1780736400,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "c482750265f6c9f18fd75cadd8a212f7",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago Cubs",
+      "away": "San Francisco Giants",
+      "fecha": "05/06/26",
+      "hora": "14:21 COT",
+      "ts": 1780669260,
+      "completed": true,
+      "score_home": "3",
+      "score_away": "18"
+    },
     {
       "id": "2acc5473be6d726025c973a3d148e6b0",
       "sport": "baseball_mlb",
