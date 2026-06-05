@@ -5,6 +5,17 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "06/06/26",
+    partido:    "Bryce Mitchell vs Santiago Luna",
+    liga:       "UFC / MMA",
+    prediccion: "Gana Santiago Luna — EV +3%",
+    cuota:      "2.16",
+    hora:       "16:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.3"
+  },
+  {
+    fecha:      "06/06/26",
     partido:    "FC Tokyo vs Cerezo Osaka",
     liga:       "J-League",
     prediccion: "Over 2.5 Goles",
