@@ -844,6 +844,66 @@ TEAM_IDS = {
     "Žilina": 3554,
 }
 
+# ── Selecciones nacionales — Mundial FIFA 2026 ───────────
+# IDs de API-Football; claves con el nombre EXACTO que envia The Odds API (lo que
+# recibe el motor). Sin esto las selecciones no tienen forma/H2H/lesiones y los picks
+# del Mundial se marcan "no confiable" y NO se publican. (Anadido 2026-06-05.)
+_SELECCIONES_MUNDIAL_2026 = {
+    "Algeria": 1532,
+    "Argentina": 26,
+    "Australia": 20,
+    "Austria": 775,
+    "Belgium": 1,
+    "Bosnia & Herzegovina": 1113,
+    "Brazil": 6,
+    "Canada": 5529,
+    "Cape Verde": 1533,
+    "Cape Verde Islands": 1533,
+    "Colombia": 8,
+    "Congo DR": 1508,
+    "Croatia": 3,
+    "Curaçao": 5530,
+    "Czech Republic": 770,
+    "DR Congo": 1508,
+    "Ecuador": 2382,
+    "Egypt": 32,
+    "England": 10,
+    "France": 2,
+    "Germany": 25,
+    "Ghana": 1504,
+    "Haiti": 2386,
+    "Iran": 22,
+    "Iraq": 1567,
+    "Ivory Coast": 1501,
+    "Japan": 12,
+    "Jordan": 1548,
+    "Mexico": 16,
+    "Morocco": 31,
+    "Netherlands": 1118,
+    "New Zealand": 4673,
+    "Norway": 1090,
+    "Panama": 11,
+    "Paraguay": 2380,
+    "Portugal": 27,
+    "Qatar": 1569,
+    "Saudi Arabia": 23,
+    "Scotland": 1108,
+    "Senegal": 13,
+    "South Africa": 1531,
+    "South Korea": 17,
+    "Spain": 9,
+    "Sweden": 5,
+    "Switzerland": 15,
+    "Tunisia": 28,
+    "Turkey": 777,
+    "Türkiye": 777,
+    "Uruguay": 7,
+    "USA": 2384,
+    "Uzbekistan": 1568,
+}
+TEAM_IDS.update(_SELECCIONES_MUNDIAL_2026)
+
+
 # Mapeo ligas football-data.org / api-sports → the-odds-api.com
 LIGAS_ODDS = {
     # football-data.org codes
