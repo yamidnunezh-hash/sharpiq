@@ -290,9 +290,8 @@ def correr():
 
     # ── GIF + Mensaje VIP con los 3 tiers en un solo mensaje ────
     try:
-        from telegram_alertas import enviar_gif_vip, enviar_tiers_vip, GIFS_MANANA
-        import random
-        enviar_gif_vip(random.choice(GIFS_MANANA))
+        from telegram_alertas import enviar_gif_vip, enviar_tiers_vip, GIFS_MANANA, _gif_rotado
+        enviar_gif_vip(_gif_rotado(GIFS_MANANA))
         enviar_tiers_vip(tiers["seguro"], tiers["principal"], tiers["alto_valor"])
         LOG.info("Tiers VIP enviados a Telegram")
         # Aviso de SERVICIO al canal Alertas (sin revelar los picks, eso es perk VIP)
@@ -402,27 +401,16 @@ def correr():
     except Exception as e:
         LOG.error(f"Git error: {e}")
 
-    # ── Canal free: teaser partido + aviso de picks VIP ──────────
+    # ── Canal free: TODOS los picks del día (1 gratis descubierto + resto tapados) ──
     try:
-        from telegram_alertas import enviar_canal_free, enviar_mensaje
-        from config import TELEGRAM_FREE_ID
-        teaser_key = next((k for k in ("alto_valor", "seguro", "principal") if tiers.get(k)), None)
-        teaser = tiers.get(teaser_key) if teaser_key else None
-        if teaser:
-            p    = teaser["pred"]
-            prob = round(teaser.get("prob", 0))
-            enviar_canal_free(
-                f"{p['local']} vs {p['visitante']}",
-                p.get("liga", ""),
-                _hora_cot(p.get("hora", "00:00")),
-                pick_free=teaser["mercado_nombre"],
-                prob_free=prob,
-                cuota=teaser.get("cuota"),
-                ev=teaser.get("ev_pinn", teaser.get("ev")),
-                fecha=p.get("fecha_evento"),
-                tier=teaser_key,
-            )
-        print("  Canal free enviado")
+        from telegram_alertas import enviar_picks_free
+        _fecha_free = None
+        for _k in ("seguro", "principal", "alto_valor"):
+            if tiers.get(_k):
+                _fecha_free = tiers[_k]["pred"].get("fecha_evento")
+                break
+        enviar_picks_free(tiers, fecha=_fecha_free)
+        print("  Canal free (todos los picks) enviado")
     except Exception as e:
         print(f"  Free canal error: {e}")
 

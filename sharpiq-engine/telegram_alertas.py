@@ -59,7 +59,6 @@ GIFS_WIN = [
 ]
 GIFS_MANANA = [
     "https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif",
-    "https://media.giphy.com/media/l0HlMZrXA0mL9OHLU/giphy.gif",
     "https://media.giphy.com/media/WoD6JZnwap6s8/giphy.gif",
 ]
 
@@ -414,6 +413,68 @@ def enviar_canal_free(partido, liga, hora, pick_free=None, prob_free=None, cuota
     return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
 
 
+def _gif_rotado(lista):
+    """GIF que ROTA por día (no aleatorio): no repite en días consecutivos."""
+    from datetime import date
+    return lista[date.today().toordinal() % len(lista)] if lista else None
+
+
+def enviar_picks_free(tiers, fecha=None):
+    """Canal FREE: TODOS los picks del día — UNO descubierto (gratis) y el resto TAPADOS
+    (🔒) para crear antojo → VIP. El descubierto es el SEGURO (o PRINCIPAL); el ALTO VALOR
+    nunca se regala. Si solo hay 1 pick, va tapado (no se regala el único)."""
+    _TB = {"seguro": "🛡️ SEGURO", "principal": "⭐ PRINCIPAL", "alto_valor": "🔥 ALTO VALOR"}
+    orden = [k for k in ("seguro", "principal", "alto_valor") if (tiers or {}).get(k)]
+    if not orden:
+        return False
+    revelar = "seguro" if "seguro" in orden else ("principal" if "principal" in orden else None)
+    if len(orden) == 1:
+        revelar = None  # si solo hay 1 pick, no se regala
+    fcha = (_fmt_fecha(fecha) if fecha else "").strip(" ·")
+
+    def _ev(t):
+        try:
+            v = t.get("ev_pinn", t.get("ev"))
+            v = round(float(v)) if v is not None else None
+            return f" · EV +{v}%" if (v and v > 0) else ""
+        except Exception:
+            return ""
+
+    bloques = []
+    for k in orden:
+        t = tiers[k]
+        p = t.get("pred", {}) or {}
+        sp = _sport_emoji(p.get("liga", "") or p.get("deporte", ""))
+        nombre = esc(p["jugador"]) if p.get("jugador") else f"{esc(p.get('local',''))} vs {esc(p.get('visitante',''))}"
+        if k == revelar:
+            bloques.append(
+                f"🎁 <b>GRATIS</b> · {_TB[k]}\n"
+                f"{sp} <b>{nombre}</b>\n"
+                f"✅ <b>{esc(t.get('mercado_nombre',''))}</b> @{t.get('cuota','')}{_ev(t)}"
+            )
+        else:
+            bloques.append(
+                f"🔒 <b>VIP</b> · {_TB[k]}\n"
+                f"{sp} <b>{nombre}</b>\n"
+                f"🎯 🔒 ▓▓▓▓  💰 🔒 ▓.▓▓{_ev(t)} ✅"
+            )
+    n_lock = sum(1 for k in orden if k != revelar)
+    cta = (f"🔓 Desbloquea {'el pick' if n_lock == 1 else f'los {n_lock} picks'} 🔒 + cuotas → VIP"
+           if n_lock else "💎 Más valor + análisis completo en el VIP")
+    sep = "\n" + "─" * 22 + "\n"
+    texto = (
+        f"🔥 <b>SharpIQ — Picks del Día</b>\n"
+        f"📅 {fcha or 'hoy'}\n"
+        f"{'─' * 22}\n"
+        + sep.join(bloques) +
+        f"\n{'─' * 22}\n"
+        f"{cta}\n"
+        f"👉 https://sharpiq.co\n"
+        f"<i>Solo publicamos con EV+ vs Pinnacle · sharpiq.co</i>"
+    )
+    return enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
+
+
 def enviar_autopublicacion(partido, liga, mercado, cuota, hora, ev):
     """Avisa a Yamid cuando el motor auto-publicó una predicción."""
     texto = (
@@ -541,7 +602,7 @@ def enviar_saludo_manana_free(partidos_hoy):
 
     if partidos_hoy:
         # GIF de análisis SOLO si hay partidos (evita GIF en días vacíos)
-        enviar_gif_free(random.choice(GIFS_MANANA))
+        enviar_gif_free(_gif_rotado(GIFS_MANANA))
         for p in partidos_hoy[:6]:  # máximo 6 partidos
             _sp = _sport_emoji(p.get('liga', ''))
             texto += f"{_sp} <b>{esc(p['local'])} vs {esc(p['visitante'])}</b> — {esc(p.get('hora',''))}\n"
@@ -582,7 +643,7 @@ def enviar_resultado_free(partido, resultado_texto, emoji_resultado):
 
     # GIF celebratorio solo en WIN
     if es_win:
-        enviar_gif_free(random.choice(GIFS_WIN))
+        enviar_gif_free(_gif_rotado(GIFS_WIN))
 
     texto = (
         f"{emoji_resultado} <b>Resultado — {esc(partido)}</b>\n\n"
@@ -1015,7 +1076,7 @@ def enviar_resultado_vip(partido, resultado_texto, emoji_resultado):
     es_win = emoji_resultado == "✅"
 
     if es_win:
-        enviar_gif_vip(random.choice(GIFS_WIN))
+        enviar_gif_vip(_gif_rotado(GIFS_WIN))
 
     wins_vip = [
         "¡Predicción acertada! 🤖🔥 Así se trabaja con datos.",
