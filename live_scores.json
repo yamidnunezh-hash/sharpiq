@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-05T11:40:04Z",
+  "updated": "2026-06-05T18:26:35Z",
   "live": [],
   "upcoming": [
     {
@@ -10,8 +10,8 @@
       "home": "Chicago Cubs",
       "away": "San Francisco Giants",
       "fecha": "05/06/26",
-      "hora": "13:21 COT",
-      "ts": 1780665660,
+      "hora": "13:51 COT",
+      "ts": 1780667460,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -297,62 +297,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "7"
-    },
-    {
-      "id": "21eff9bb5b8451ea2abb9e638ed600e3",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Milwaukee Brewers",
-      "away": "San Francisco Giants",
-      "fecha": "04/06/26",
-      "hora": "13:11 COT",
-      "ts": 1780578660,
-      "completed": true,
-      "score_home": "9",
-      "score_away": "12"
-    },
-    {
-      "id": "8ba83a5fb0f9d2b93807e073204a5850",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Boston Red Sox",
-      "away": "Baltimore Orioles",
-      "fecha": "04/06/26",
-      "hora": "12:36 COT",
-      "ts": 1780576560,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "8"
-    },
-    {
-      "id": "a0dbb7bbd28b837d0732bfad7f975e9f",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Yankees",
-      "away": "Cleveland Guardians",
-      "fecha": "04/06/26",
-      "hora": "12:36 COT",
-      "ts": 1780576560,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "1"
-    },
-    {
-      "id": "8f76a0f8197d7420bf1e1eb9f5d94159",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Philadelphia Phillies",
-      "away": "San Diego Padres",
-      "fecha": "04/06/26",
-      "hora": "12:06 COT",
-      "ts": 1780574760,
-      "completed": true,
-      "score_home": "6",
-      "score_away": "4"
     }
   ]
 }
