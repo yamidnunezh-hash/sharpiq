@@ -1114,6 +1114,11 @@ async function marcarResultado(partido, resultado, btn) {
 }
 
 // ── INICIO: VERIFICAR SESION DE LOGIN.HTML ───────────────────────
+// El overlay de login interno es vestigial — el login real es login.html (JWT). Si
+// alguien alcanza a hacer clic "ENTRAR" antes de que el IIFE redirija, lo mandamos al
+// login real (antes 'doLogin' no existía y tiraba ReferenceError).
+function doLogin(){ window.location.href = 'login.html'; }
+
 (function(){
   const role = localStorage.getItem('sharpiq_role');
   const auth = parseInt(localStorage.getItem('sharpiq_auth')||'0');

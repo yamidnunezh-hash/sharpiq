@@ -148,6 +148,38 @@ def suscribir(plan_key: str, token=Depends(usuario_activo)):
     }
 
 
+def _firma_mp_valida(request, data_id):
+    """Verifica la firma x-signature de MercadoPago. SEGURO POR DEFECTO:
+    - Sin MP_WEBHOOK_SECRET configurado → NO verifica (no bloquea ningún pago).
+    - Con secret pero sin MP_WEBHOOK_ENFORCE=1 → solo LOGUEA si no cuadra (no bloquea).
+    - Solo bloquea con secret + MP_WEBHOOK_ENFORCE=1.
+    Así nunca se tumba un pago real por una verificación mal configurada."""
+    import os, hashlib, hmac
+    secret = os.environ.get("MP_WEBHOOK_SECRET", "")
+    try:
+        from config import MP_WEBHOOK_SECRET as _s
+        secret = secret or (_s or "")
+    except Exception:
+        pass
+    if not secret:
+        return True
+    try:
+        sig    = request.headers.get("x-signature", "")
+        req_id = request.headers.get("x-request-id", "")
+        partes = dict(p.strip().split("=", 1) for p in sig.split(",") if "=" in p)
+        ts, v1 = partes.get("ts", ""), partes.get("v1", "")
+        manifest = f"id:{str(data_id).lower()};request-id:{req_id};ts:{ts};"
+        calc = hmac.new(secret.encode(), manifest.encode(), hashlib.sha256).hexdigest()
+        ok = bool(ts and v1) and hmac.compare_digest(calc, v1)
+    except Exception:
+        ok = False
+    if not ok:
+        print(f"[MP webhook] firma NO valida (data_id={data_id})")
+        if os.environ.get("MP_WEBHOOK_ENFORCE") == "1":
+            return False
+    return True
+
+
 @router.post("/webhook")
 async def webhook(request: Request):
     """Recibe notificaciones de pago de MercadoPago."""
@@ -159,6 +191,10 @@ async def webhook(request: Request):
     topic = body.get("type") or request.query_params.get("topic", "")
     resource_id = (body.get("data", {}).get("id") or
                    request.query_params.get("id", ""))
+
+    # Verificación de firma (defensa en profundidad; segura por defecto — ver helper)
+    if not _firma_mp_valida(request, resource_id):
+        return {"ok": False, "error": "firma_invalida"}
 
     if topic in ("subscription_preapproval", "preapproval") and resource_id:
         r = http.get(f"{MP_BASE}/preapproval/{resource_id}",
