@@ -2217,7 +2217,8 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     // Combinar picks de PROXIMOS con resultado + historial completo
     const _proxResueltos=(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS:[])
       .filter(p=>p.resultado&&p.resultado!=='pendiente'&&p.resultado!=='pending');
-    const _historialCompleto=[..._proxResueltos,...PREDICCIONES_HISTORIAL];
+    const _hcDedup={};[..._proxResueltos,...PREDICCIONES_HISTORIAL].forEach(function(p){var k=(p.partido||'')+'|'+(p.fecha||'');if(!_hcDedup[k])_hcDedup[k]=p;});
+    const _historialCompleto=Object.values(_hcDedup);  // dedup: un pick resuelto vive en proximos Y en historial
     renderHistorial(_historialCompleto);
 
     // Filtros combinados: liga + resultado
