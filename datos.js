@@ -4,6 +4,18 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "07/06/26",
+    partido:    "Bergischer HC vs Frisch Auf Göppingen",
+    liga:       "Balonmano Bundesliga",
+    prediccion: "Gana Frisch Auf Göppingen — EV +6%",
+    cuota:      "1.92",
+    hora:       "08:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "3.6",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "06/06/26",
     partido:    "Joshua Padley vs Aqib Fiaz",
     liga:       "Boxeo",
