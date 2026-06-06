@@ -1,128 +1,128 @@
 {
   "fecha": "2026-06-06",
-  "total_partidos": 71,
+  "total_partidos": 32,
   "predicciones": [
     {
-      "local": "CD Castellón",
-      "visitante": "Almería",
+      "local": "Las Palmas",
+      "visitante": "Málaga",
       "liga": "Segunda División",
       "liga_code": "soccer_spain_segunda_division",
-      "id": "c8486564e402714866628d13fb394279",
-      "comienzo": "2026-06-06T19:00:00Z",
+      "id": "fa6b4f34b8a9c4f9566b4d029118b972",
+      "comienzo": "2026-06-07T19:00:00Z",
       "hora": "19:00",
-      "fecha_evento": "2026-06-06",
+      "fecha_evento": "2026-06-07",
       "cuotas": {
-        "2": 4.3,
-        "2_casa": "Pinnacle",
-        "pinnacle_2": 4.3,
-        "1": 1.84,
+        "1": 2.17,
         "1_casa": "Pinnacle",
-        "pinnacle_1": 1.84,
-        "X": 3.95,
+        "pinnacle_1": 2.17,
+        "2": 3.97,
+        "2_casa": "Pinnacle",
+        "pinnacle_2": 3.97,
+        "X": 3.2,
         "X_casa": "Unibet",
-        "pinnacle_X": 3.85,
-        "over30": 2.0,
-        "over30_casa": "Pinnacle",
-        "pinnacle_over30": 2.0,
-        "under30": 1.88,
-        "under30_casa": "Pinnacle",
-        "pinnacle_under30": 1.88,
-        "ah_l_m0_5": 1.85,
-        "ah_l_m0_5_casa": "Pinnacle",
-        "pinnacle_ah_l_m0_5": 1.85,
-        "ah_v_p0_5": 2.07,
-        "ah_v_p0_5_casa": "Pinnacle",
-        "pinnacle_ah_v_p0_5": 2.07
+        "pinnacle_X": 3.06,
+        "over225": 1.94,
+        "over225_casa": "Pinnacle",
+        "pinnacle_over225": 1.94,
+        "under225": 1.93,
+        "under225_casa": "Pinnacle",
+        "pinnacle_under225": 1.93,
+        "ah_l_m0_25": 1.83,
+        "ah_l_m0_25_casa": "Pinnacle",
+        "pinnacle_ah_l_m0_25": 1.83,
+        "ah_v_p0_25": 2.06,
+        "ah_v_p0_25_casa": "Pinnacle",
+        "pinnacle_ah_v_p0_25": 2.06
       },
       "probabilidades": {
-        "victoria_visita": 22.5,
-        "victoria_local": 52.5,
-        "empate": 25.1,
-        "over30": 48.5,
-        "under30": 51.5,
-        "ah_l_m0_5": 52.8,
-        "ah_v_p0_5": 47.2,
-        "over25": 39.8,
-        "under25": 60.2
+        "victoria_local": 44.3,
+        "victoria_visita": 24.2,
+        "empate": 31.4,
+        "over225": 49.9,
+        "under225": 50.1,
+        "ah_l_m0_25": 53.0,
+        "ah_v_p0_25": 47.0,
+        "over25": 46.3,
+        "under25": 53.7
       },
-      "confianza": 60.2,
+      "confianza": 53.7,
       "value_bets": {
-        "victoria_visita": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.3,
-          "casa": "Pinnacle",
-          "pinn_prob": 22.5
-        },
         "victoria_local": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.84,
+          "cuota": 2.17,
           "casa": "Pinnacle",
-          "pinn_prob": 52.5
+          "pinn_prob": 44.3
+        },
+        "victoria_visita": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.97,
+          "casa": "Pinnacle",
+          "pinn_prob": 24.2
         },
         "empate": {
-          "value": -0.009,
-          "ev_porcentaje": -0.9,
-          "ev_pinn": -0.9,
+          "value": 0.006,
+          "ev_porcentaje": 0.6,
+          "ev_pinn": 0.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.95,
+          "cuota": 3.2,
           "casa": "Unibet",
-          "pinn_prob": 25.1
+          "pinn_prob": 31.4
         },
-        "over30": {
+        "over225": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.94,
+          "casa": "Pinnacle",
+          "pinn_prob": 49.9
+        },
+        "under225": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "Pinnacle",
+          "pinn_prob": 50.1
+        },
+        "ah_l_m0_25": {
           "value": -0.031,
           "ev_porcentaje": -3.1,
           "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
+          "cuota": 1.83,
           "casa": "Pinnacle",
-          "pinn_prob": 48.5
+          "pinn_prob": 53.0
         },
-        "under30": {
+        "ah_v_p0_25": {
           "value": -0.031,
           "ev_porcentaje": -3.1,
           "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.88,
+          "cuota": 2.06,
           "casa": "Pinnacle",
-          "pinn_prob": 51.5
-        },
-        "ah_l_m0_5": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.85,
-          "casa": "Pinnacle",
-          "pinn_prob": 52.8
-        },
-        "ah_v_p0_5": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.07,
-          "casa": "Pinnacle",
-          "pinn_prob": 47.2
+          "pinn_prob": 47.0
         },
         "over25": {
           "value": null,
@@ -131,9 +131,9 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN EV",
-          "cuota": 1.62,
+          "cuota": 2.15,
           "casa": "William Hill",
-          "pinn_prob": 39.8,
+          "pinn_prob": 46.3,
           "sin_mercado": true
         },
         "under25": {
@@ -143,16 +143,496 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN EV",
-          "cuota": 2.32,
+          "cuota": 1.7,
           "casa": "Unibet",
-          "pinn_prob": 60.2,
+          "pinn_prob": 53.7,
           "sin_mercado": true
         }
       },
       "prediccion_principal": {
         "mercado": "Empate",
-        "prob": 25.1,
-        "ev": -0.9
+        "prob": 31.4,
+        "ev": 0.6
+      },
+      "cuotas_reales": true,
+      "confiable": false,
+      "sin_pinnacle": false,
+      "cuotas_avisos": [],
+      "sede_neutral": false,
+      "arbitro": "",
+      "forma_local": {
+        "forma": 0.667,
+        "ataque_reciente": 1.6,
+        "defensa_reciente": 1.8,
+        "partidos": 5
+      },
+      "forma_visita": null,
+      "h2h": null,
+      "movimiento": null,
+      "mercados_ext": {
+        "corners": {
+          "corners_esperados": 10.8,
+          "corners_over9": 75.1,
+          "corners_under9": 24.9,
+          "corners_over10": 63.9,
+          "corners_under10": 36.1,
+          "corners_over11": 51.7,
+          "corners_under11": 48.3,
+          "corners_over12": 39.8,
+          "corners_under12": 60.2,
+          "corners_over13": 29.1,
+          "corners_under13": 70.9
+        },
+        "tarjetas": {
+          "tarjetas_esperadas": 4.4,
+          "tarjetas_over3": 82.0,
+          "tarjetas_under3": 18.0,
+          "tarjetas_over4": 64.7,
+          "tarjetas_under4": 35.3,
+          "tarjetas_over5": 45.6,
+          "tarjetas_under5": 54.4,
+          "tarjetas_over6": 28.7,
+          "tarjetas_under6": 71.3
+        },
+        "handicap": {
+          "ah_local_menos05": 44.3,
+          "ah_visita_mas05": 55.6,
+          "ah_local_menos1": 28.8,
+          "ah_visita_mas1": 71.2,
+          "ah_local_menos15": 20.2,
+          "ah_visita_mas15": 79.8
+        },
+        "disparos": {
+          "disparos_esperados": 3.8,
+          "disp_vis_over2": 89.4,
+          "disp_vis_under2": 10.6,
+          "disp_vis_over3": 73.4,
+          "disp_vis_under3": 26.6,
+          "disp_vis_over4": 53.1,
+          "disp_vis_under4": 46.9,
+          "disp_vis_over5": 33.6,
+          "disp_vis_under5": 66.4
+        },
+        "paradas": {
+          "paradas_esperadas": 2.4,
+          "paradas_local_over2": 69.2,
+          "paradas_local_under2": 30.8,
+          "paradas_local_over3": 43.0,
+          "paradas_local_under3": 57.0,
+          "paradas_local_over4": 22.1,
+          "paradas_local_under4": 77.9
+        },
+        "ev_ext": {
+          "corners_over9": {
+            "prob_modelo": 75.1,
+            "cuota_justa": 1.33,
+            "cuota_ref": 1.26,
+            "ev_porcentaje": -5.4,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "corners_under9": {
+            "prob_modelo": 24.9,
+            "cuota_justa": 4.02,
+            "cuota_ref": 3.82,
+            "ev_porcentaje": -4.9,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "corners_over10": {
+            "prob_modelo": 63.9,
+            "cuota_justa": 1.56,
+            "cuota_ref": 1.49,
+            "ev_porcentaje": -4.8,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "corners_under10": {
+            "prob_modelo": 36.1,
+            "cuota_justa": 2.77,
+            "cuota_ref": 2.63,
+            "ev_porcentaje": -5.1,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "corners_over11": {
+            "prob_modelo": 51.7,
+            "cuota_justa": 1.93,
+            "cuota_ref": 1.84,
+            "ev_porcentaje": -4.9,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "corners_under11": {
+            "prob_modelo": 48.3,
+            "cuota_justa": 2.07,
+            "cuota_ref": 1.97,
+            "ev_porcentaje": -4.8,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "tarjetas_over3": {
+            "prob_modelo": 82.0,
+            "cuota_justa": 1.22,
+            "cuota_ref": 1.16,
+            "ev_porcentaje": -4.9,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "tarjetas_under3": {
+            "prob_modelo": 18.0,
+            "cuota_justa": 5.56,
+            "cuota_ref": 5.28,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "tarjetas_over4": {
+            "prob_modelo": 64.7,
+            "cuota_justa": 1.55,
+            "cuota_ref": 1.47,
+            "ev_porcentaje": -4.9,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "tarjetas_under4": {
+            "prob_modelo": 35.3,
+            "cuota_justa": 2.83,
+            "cuota_ref": 2.69,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "tarjetas_over5": {
+            "prob_modelo": 45.6,
+            "cuota_justa": 2.19,
+            "cuota_ref": 2.08,
+            "ev_porcentaje": -5.2,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "tarjetas_under5": {
+            "prob_modelo": 54.4,
+            "cuota_justa": 1.84,
+            "cuota_ref": 1.75,
+            "ev_porcentaje": -4.8,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "ah_local_menos05": {
+            "prob_modelo": 44.3,
+            "cuota_justa": 2.26,
+            "cuota_ref": 2.14,
+            "ev_porcentaje": -5.2,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "ah_visita_mas05": {
+            "prob_modelo": 55.6,
+            "cuota_justa": 1.8,
+            "cuota_ref": 1.71,
+            "ev_porcentaje": -4.9,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "ah_local_menos1": {
+            "prob_modelo": 28.8,
+            "cuota_justa": 3.47,
+            "cuota_ref": 3.3,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "ah_visita_mas1": {
+            "prob_modelo": 71.2,
+            "cuota_justa": 1.4,
+            "cuota_ref": 1.33,
+            "ev_porcentaje": -5.3,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "ah_local_menos15": {
+            "prob_modelo": 20.2,
+            "cuota_justa": 4.95,
+            "cuota_ref": 4.7,
+            "ev_porcentaje": -5.1,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "ah_visita_mas15": {
+            "prob_modelo": 79.8,
+            "cuota_justa": 1.25,
+            "cuota_ref": 1.19,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_over2": {
+            "prob_modelo": 89.4,
+            "cuota_justa": 1.12,
+            "cuota_ref": 1.06,
+            "ev_porcentaje": -5.2,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_under2": {
+            "prob_modelo": 10.6,
+            "cuota_justa": 9.43,
+            "cuota_ref": 8.96,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_over3": {
+            "prob_modelo": 73.4,
+            "cuota_justa": 1.36,
+            "cuota_ref": 1.29,
+            "ev_porcentaje": -5.3,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_under3": {
+            "prob_modelo": 26.6,
+            "cuota_justa": 3.76,
+            "cuota_ref": 3.57,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_over4": {
+            "prob_modelo": 53.1,
+            "cuota_justa": 1.88,
+            "cuota_ref": 1.79,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_under4": {
+            "prob_modelo": 46.9,
+            "cuota_justa": 2.13,
+            "cuota_ref": 2.03,
+            "ev_porcentaje": -4.8,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_over5": {
+            "prob_modelo": 33.6,
+            "cuota_justa": 2.98,
+            "cuota_ref": 2.83,
+            "ev_porcentaje": -4.9,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_under5": {
+            "prob_modelo": 66.4,
+            "cuota_justa": 1.51,
+            "cuota_ref": 1.43,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "paradas_local_over2": {
+            "prob_modelo": 69.2,
+            "cuota_justa": 1.45,
+            "cuota_ref": 1.37,
+            "ev_porcentaje": -5.2,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "paradas_local_under2": {
+            "prob_modelo": 30.8,
+            "cuota_justa": 3.25,
+            "cuota_ref": 3.08,
+            "ev_porcentaje": -5.1,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "paradas_local_over3": {
+            "prob_modelo": 43.0,
+            "cuota_justa": 2.33,
+            "cuota_ref": 2.21,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "paradas_local_under3": {
+            "prob_modelo": 57.0,
+            "cuota_justa": 1.75,
+            "cuota_ref": 1.67,
+            "ev_porcentaje": -4.8,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "paradas_local_over4": {
+            "prob_modelo": 22.1,
+            "cuota_justa": 4.52,
+            "cuota_ref": 4.3,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "paradas_local_under4": {
+            "prob_modelo": 77.9,
+            "cuota_justa": 1.28,
+            "cuota_ref": 1.22,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          }
+        }
+      }
+    },
+    {
+      "local": "Clube de Regatas Brasil",
+      "visitante": "São Bernardo",
+      "liga": "Brasileirao B",
+      "liga_code": "soccer_brazil_serie_b",
+      "id": "1dc3962b3ca1dca43a24dde2dffd68d8",
+      "comienzo": "2026-06-07T19:00:00Z",
+      "hora": "19:00",
+      "fecha_evento": "2026-06-07",
+      "cuotas": {
+        "1": 1.86,
+        "1_casa": "Pinnacle",
+        "pinnacle_1": 1.86,
+        "2": 4.6,
+        "2_casa": "Unibet",
+        "pinnacle_2": 4.54,
+        "X": 3.6,
+        "X_casa": "Unibet",
+        "pinnacle_X": 3.46,
+        "over225": 1.85,
+        "over225_casa": "Pinnacle",
+        "pinnacle_over225": 1.85,
+        "under225": 2.02,
+        "under225_casa": "Pinnacle",
+        "pinnacle_under225": 2.02,
+        "ah_l_m0_5": 1.87,
+        "ah_l_m0_5_casa": "Pinnacle",
+        "pinnacle_ah_l_m0_5": 1.87,
+        "ah_v_p0_5": 2.01,
+        "ah_v_p0_5_casa": "Pinnacle",
+        "pinnacle_ah_v_p0_5": 2.01
+      },
+      "probabilidades": {
+        "victoria_local": 51.4,
+        "victoria_visita": 21.0,
+        "empate": 27.6,
+        "over225": 52.2,
+        "under225": 47.8,
+        "ah_l_m0_5": 51.8,
+        "ah_v_p0_5": 48.2,
+        "over25": 41.4,
+        "under25": 58.6
+      },
+      "confianza": 58.6,
+      "value_bets": {
+        "victoria_local": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.86,
+          "casa": "Pinnacle",
+          "pinn_prob": 51.4
+        },
+        "victoria_visita": {
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.6,
+          "casa": "Unibet",
+          "pinn_prob": 21.0
+        },
+        "empate": {
+          "value": -0.006,
+          "ev_porcentaje": -0.6,
+          "ev_pinn": -0.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.6,
+          "casa": "Unibet",
+          "pinn_prob": 27.6
+        },
+        "over225": {
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "Pinnacle",
+          "pinn_prob": 52.2
+        },
+        "under225": {
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.02,
+          "casa": "Pinnacle",
+          "pinn_prob": 47.8
+        },
+        "ah_l_m0_5": {
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "Pinnacle",
+          "pinn_prob": 51.8
+        },
+        "ah_v_p0_5": {
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.01,
+          "casa": "Pinnacle",
+          "pinn_prob": 48.2
+        },
+        "over25": {
+          "value": null,
+          "ev_porcentaje": null,
+          "ev_pinn": null,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN EV",
+          "cuota": 1.95,
+          "casa": "William Hill",
+          "pinn_prob": 41.4,
+          "sin_mercado": true
+        },
+        "under25": {
+          "value": null,
+          "ev_porcentaje": null,
+          "ev_pinn": null,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN EV",
+          "cuota": 1.81,
+          "casa": "Unibet",
+          "pinn_prob": 58.6,
+          "sin_mercado": true
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Empate",
+        "prob": 27.6,
+        "ev": -0.6
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -190,12 +670,12 @@
           "tarjetas_under6": 68.9
         },
         "handicap": {
-          "ah_local_menos05": 52.5,
-          "ah_visita_mas05": 47.6,
-          "ah_local_menos1": 34.1,
-          "ah_visita_mas1": 65.9,
-          "ah_local_menos15": 23.9,
-          "ah_visita_mas15": 76.1
+          "ah_local_menos05": 51.4,
+          "ah_visita_mas05": 48.6,
+          "ah_local_menos1": 33.4,
+          "ah_visita_mas1": 66.6,
+          "ah_local_menos15": 23.4,
+          "ah_visita_mas15": 76.6
         },
         "disparos": {
           "disparos_esperados": 3.8,
@@ -315,50 +795,50 @@
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos05": {
-            "prob_modelo": 52.5,
-            "cuota_justa": 1.9,
-            "cuota_ref": 1.81,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 51.4,
+            "cuota_justa": 1.95,
+            "cuota_ref": 1.85,
+            "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas05": {
-            "prob_modelo": 47.6,
-            "cuota_justa": 2.1,
-            "cuota_ref": 2.0,
-            "ev_porcentaje": -4.8,
+            "prob_modelo": 48.6,
+            "cuota_justa": 2.06,
+            "cuota_ref": 1.95,
+            "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos1": {
-            "prob_modelo": 34.1,
-            "cuota_justa": 2.93,
-            "cuota_ref": 2.79,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 33.4,
+            "cuota_justa": 2.99,
+            "cuota_ref": 2.84,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas1": {
-            "prob_modelo": 65.9,
-            "cuota_justa": 1.52,
-            "cuota_ref": 1.44,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 66.6,
+            "cuota_justa": 1.5,
+            "cuota_ref": 1.43,
+            "ev_porcentaje": -4.8,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos15": {
-            "prob_modelo": 23.9,
-            "cuota_justa": 4.18,
-            "cuota_ref": 3.97,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 23.4,
+            "cuota_justa": 4.27,
+            "cuota_ref": 4.06,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas15": {
-            "prob_modelo": 76.1,
+            "prob_modelo": 76.6,
             "cuota_justa": 1.31,
-            "cuota_ref": 1.25,
-            "ev_porcentaje": -4.9,
+            "cuota_ref": 1.24,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
@@ -478,1080 +958,6 @@
       }
     },
     {
-      "id": "5d56d7bc8e07f9dd9a440c554bcaba58",
-      "comienzo": "2026-06-06T17:11:00Z",
-      "local": "Detroit Tigers",
-      "visitante": "Seattle Mariners",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "17:11",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Detroit Tigers": 2.12,
-        "Seattle Mariners": 1.83,
-        "Over 9.0": 2.0,
-        "Under 9.0": 1.87,
-        "Detroit Tigers (+1.5)": 1.66,
-        "Seattle Mariners (-1.5)": 2.28
-      },
-      "probabilidades": {
-        "Detroit Tigers": 46.3,
-        "Seattle Mariners": 53.7
-      },
-      "confianza": 53.7,
-      "value_bets": {
-        "Detroit Tigers": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.12,
-          "casa": "FanDuel",
-          "pinn_prob": 46.3,
-          "mercado_nombre": "Detroit Tigers"
-        },
-        "Seattle Mariners": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
-          "casa": "Pinnacle",
-          "pinn_prob": 53.7,
-          "mercado_nombre": "Seattle Mariners"
-        },
-        "over_9_0": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
-          "casa": "BetMGM",
-          "pinn_prob": 48.1,
-          "mercado_nombre": "Over 9.0"
-        },
-        "under_9_0": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.87,
-          "casa": "DraftKings",
-          "pinn_prob": 51.9,
-          "mercado_nombre": "Under 9.0"
-        },
-        "spread_detroit_tigers_1_5": {
-          "value": -0.031,
-          "ev_porcentaje": -3.1,
-          "ev_pinn": -3.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.66,
-          "casa": "FanDuel",
-          "pinn_prob": 58.4,
-          "mercado_nombre": "Detroit Tigers (+1.5)"
-        },
-        "spread_seattle_mariners_m1_5": {
-          "value": -0.05,
-          "ev_porcentaje": -5.0,
-          "ev_pinn": -5.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.28,
-          "casa": "DraftKings",
-          "pinn_prob": 41.6,
-          "mercado_nombre": "Seattle Mariners (-1.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Detroit Tigers",
-        "prob": 46.3,
-        "ev": -1.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "ed237b95b2bcbe6bc050a75bcf54cf3b",
-      "comienzo": "2026-06-06T18:10:00Z",
-      "local": "Minnesota Twins",
-      "visitante": "Kansas City Royals",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "18:10",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Kansas City Royals": 2.28,
-        "Minnesota Twins": 1.72,
-        "Over 8.5": 1.95,
-        "Under 8.5": 1.92,
-        "Kansas City Royals (+1.5)": 1.6,
-        "Minnesota Twins (-1.5)": 2.4
-      },
-      "probabilidades": {
-        "Kansas City Royals": 43.0,
-        "Minnesota Twins": 57.0
-      },
-      "confianza": 57.0,
-      "value_bets": {
-        "Kansas City Royals": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.28,
-          "casa": "Pinnacle",
-          "pinn_prob": 43.0,
-          "mercado_nombre": "Kansas City Royals"
-        },
-        "Minnesota Twins": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.72,
-          "casa": "Pinnacle",
-          "pinn_prob": 57.0,
-          "mercado_nombre": "Minnesota Twins"
-        },
-        "over_8_5": {
-          "value": -0.055,
-          "ev_porcentaje": -5.5,
-          "ev_pinn": -5.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
-          "casa": "FanDuel",
-          "pinn_prob": 48.5,
-          "mercado_nombre": "Over 8.5"
-        },
-        "under_8_5": {
-          "value": -0.01,
-          "ev_porcentaje": -1.0,
-          "ev_pinn": -1.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.92,
-          "casa": "Unibet",
-          "pinn_prob": 51.5,
-          "mercado_nombre": "Under 8.5"
-        },
-        "spread_kansas_city_royals_1_5": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.6,
-          "casa": "FanDuel",
-          "pinn_prob": 60.4,
-          "mercado_nombre": "Kansas City Royals (+1.5)"
-        },
-        "spread_minnesota_twins_m1_5": {
-          "value": -0.051,
-          "ev_porcentaje": -5.1,
-          "ev_pinn": -5.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
-          "casa": "BetMGM",
-          "pinn_prob": 39.6,
-          "mercado_nombre": "Minnesota Twins (-1.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Under 8.5",
-        "prob": 51.5,
-        "ev": -1.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "c516931bbaf1d49406d58e749625e96a",
-      "comienzo": "2026-06-06T18:16:00Z",
-      "local": "St. Louis Cardinals",
-      "visitante": "Cincinnati Reds",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "18:16",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Cincinnati Reds": 2.12,
-        "St. Louis Cardinals": 1.83,
-        "Over 9.0": 1.94,
-        "Under 9.0": 1.96,
-        "Cincinnati Reds (+1.5)": 1.53,
-        "St. Louis Cardinals (-1.5)": 2.6
-      },
-      "probabilidades": {
-        "Cincinnati Reds": 46.3,
-        "St. Louis Cardinals": 53.7
-      },
-      "confianza": 53.7,
-      "value_bets": {
-        "Cincinnati Reds": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.12,
-          "casa": "Pinnacle",
-          "pinn_prob": 46.3,
-          "mercado_nombre": "Cincinnati Reds"
-        },
-        "St. Louis Cardinals": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
-          "casa": "Pinnacle",
-          "pinn_prob": 53.7,
-          "mercado_nombre": "St. Louis Cardinals"
-        },
-        "over_9_0": {
-          "value": -0.003,
-          "ev_porcentaje": -0.3,
-          "ev_pinn": -0.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.94,
-          "casa": "Unibet",
-          "pinn_prob": 51.4,
-          "mercado_nombre": "Over 9.0"
-        },
-        "under_9_0": {
-          "value": -0.048,
-          "ev_porcentaje": -4.8,
-          "ev_pinn": -4.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.96,
-          "casa": "FanDuel",
-          "pinn_prob": 48.6,
-          "mercado_nombre": "Under 9.0"
-        },
-        "spread_cincinnati_reds_1_5": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.53,
-          "casa": "BetMGM",
-          "pinn_prob": 63.0,
-          "mercado_nombre": "Cincinnati Reds (+1.5)"
-        },
-        "spread_st._louis_cardinals_m1_5": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.6,
-          "casa": "FanDuel",
-          "pinn_prob": 37.0,
-          "mercado_nombre": "St. Louis Cardinals (-1.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Over 9.0",
-        "prob": 51.4,
-        "ev": -0.3
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "bad30008f1838625ea9ec0604b8cf654",
-      "comienzo": "2026-06-06T18:21:00Z",
-      "local": "Chicago Cubs",
-      "visitante": "San Francisco Giants",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "18:21",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Chicago Cubs": 1.68,
-        "San Francisco Giants": 2.39,
-        "Over 7.5": 1.93,
-        "Under 7.5": 1.93,
-        "Chicago Cubs (-1.5)": 2.4,
-        "San Francisco Giants (+1.5)": 1.6
-      },
-      "probabilidades": {
-        "Chicago Cubs": 59.0,
-        "San Francisco Giants": 41.0
-      },
-      "confianza": 59.0,
-      "value_bets": {
-        "Chicago Cubs": {
-          "value": -0.009,
-          "ev_porcentaje": -0.9,
-          "ev_pinn": -0.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.68,
-          "casa": "FanDuel",
-          "pinn_prob": 59.0,
-          "mercado_nombre": "Chicago Cubs"
-        },
-        "San Francisco Giants": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.39,
-          "casa": "Pinnacle",
-          "pinn_prob": 41.0,
-          "mercado_nombre": "San Francisco Giants"
-        },
-        "over_7_5": {
-          "value": -0.013,
-          "ev_porcentaje": -1.3,
-          "ev_pinn": -1.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "Unibet",
-          "pinn_prob": 51.2,
-          "mercado_nombre": "Over 7.5"
-        },
-        "under_7_5": {
-          "value": -0.057,
-          "ev_porcentaje": -5.7,
-          "ev_pinn": -5.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "DraftKings",
-          "pinn_prob": 48.8,
-          "mercado_nombre": "Under 7.5"
-        },
-        "spread_chicago_cubs_m1_5": {
-          "value": -0.034,
-          "ev_porcentaje": -3.4,
-          "ev_pinn": -3.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
-          "casa": "BetMGM",
-          "pinn_prob": 40.2,
-          "mercado_nombre": "Chicago Cubs (-1.5)"
-        },
-        "spread_san_francisco_giants_1_5": {
-          "value": -0.044,
-          "ev_porcentaje": -4.4,
-          "ev_pinn": -4.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.6,
-          "casa": "FanDuel",
-          "pinn_prob": 59.8,
-          "mercado_nombre": "San Francisco Giants (+1.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Chicago Cubs",
-        "prob": 59.0,
-        "ev": -0.9
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "04cfcf1a98897aadad3afc57427fa4e6",
-      "comienzo": "2026-06-06T19:08:00Z",
-      "local": "Toronto Blue Jays",
-      "visitante": "Baltimore Orioles",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "19:08",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Baltimore Orioles": 1.96,
-        "Toronto Blue Jays": 1.96,
-        "Over 8.5": 2.0,
-        "Under 8.5": 1.87,
-        "Baltimore Orioles (-1.5)": 2.52,
-        "Toronto Blue Jays (+1.5)": 1.56
-      },
-      "probabilidades": {
-        "Baltimore Orioles": 50.0,
-        "Toronto Blue Jays": 50.0
-      },
-      "confianza": 50.0,
-      "value_bets": {
-        "Baltimore Orioles": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.96,
-          "casa": "Pinnacle",
-          "pinn_prob": 50.0,
-          "mercado_nombre": "Baltimore Orioles"
-        },
-        "Toronto Blue Jays": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.96,
-          "casa": "Pinnacle",
-          "pinn_prob": 50.0,
-          "mercado_nombre": "Toronto Blue Jays"
-        },
-        "over_8_5": {
-          "value": -0.031,
-          "ev_porcentaje": -3.1,
-          "ev_pinn": -3.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
-          "casa": "FanDuel",
-          "pinn_prob": 48.5,
-          "mercado_nombre": "Over 8.5"
-        },
-        "under_8_5": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.87,
-          "casa": "DraftKings",
-          "pinn_prob": 51.5,
-          "mercado_nombre": "Under 8.5"
-        },
-        "spread_baltimore_orioles_m1_5": {
-          "value": -0.044,
-          "ev_porcentaje": -4.4,
-          "ev_pinn": -4.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.52,
-          "casa": "FanDuel",
-          "pinn_prob": 37.9,
-          "mercado_nombre": "Baltimore Orioles (-1.5)"
-        },
-        "spread_toronto_blue_jays_1_5": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.56,
-          "casa": "BetMGM",
-          "pinn_prob": 62.1,
-          "mercado_nombre": "Toronto Blue Jays (+1.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Baltimore Orioles",
-        "prob": 50.0,
-        "ev": -2.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "3cc24e5cbd47294ce618f37fb85b6a6b",
-      "comienzo": "2026-06-06T20:06:00Z",
-      "local": "Philadelphia Phillies",
-      "visitante": "Chicago White Sox",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "20:06",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Chicago White Sox": 2.19,
-        "Philadelphia Phillies": 1.78,
-        "Over 10.0": 1.93,
-        "Under 10.0": 1.91,
-        "Chicago White Sox (+1.5)": 1.59,
-        "Philadelphia Phillies (-1.5)": 2.44
-      },
-      "probabilidades": {
-        "Chicago White Sox": 44.8,
-        "Philadelphia Phillies": 55.2
-      },
-      "confianza": 55.2,
-      "value_bets": {
-        "Chicago White Sox": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.19,
-          "casa": "Pinnacle",
-          "pinn_prob": 44.8,
-          "mercado_nombre": "Chicago White Sox"
-        },
-        "Philadelphia Phillies": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.78,
-          "casa": "Pinnacle",
-          "pinn_prob": 55.2,
-          "mercado_nombre": "Philadelphia Phillies"
-        },
-        "over_10_0": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "DraftKings",
-          "pinn_prob": 50.3,
-          "mercado_nombre": "Over 10.0"
-        },
-        "under_10_0": {
-          "value": -0.05,
-          "ev_porcentaje": -5.0,
-          "ev_pinn": -5.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
-          "casa": "BetMGM",
-          "pinn_prob": 49.7,
-          "mercado_nombre": "Under 10.0"
-        },
-        "spread_chicago_white_sox_1_5": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.59,
-          "casa": "FanDuel",
-          "pinn_prob": 61.3,
-          "mercado_nombre": "Chicago White Sox (+1.5)"
-        },
-        "spread_philadelphia_phillies_m1_5": {
-          "value": -0.056,
-          "ev_porcentaje": -5.6,
-          "ev_pinn": -5.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.44,
-          "casa": "DraftKings",
-          "pinn_prob": 38.7,
-          "mercado_nombre": "Philadelphia Phillies (-1.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Chicago White Sox",
-        "prob": 44.8,
-        "ev": -1.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "12e9673a50b71007f4d04bea97e64990",
-      "comienzo": "2026-06-06T20:11:00Z",
-      "local": "Arizona Diamondbacks",
-      "visitante": "Washington Nationals",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "20:11",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Arizona Diamondbacks": 1.7,
-        "Washington Nationals": 2.31,
-        "Over 9.0": 1.83,
-        "Under 9.0": 2.0,
-        "Arizona Diamondbacks (-1.5)": 2.36,
-        "Washington Nationals (+1.5)": 1.62
-      },
-      "probabilidades": {
-        "Arizona Diamondbacks": 57.6,
-        "Washington Nationals": 42.4
-      },
-      "confianza": 57.6,
-      "value_bets": {
-        "Arizona Diamondbacks": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.7,
-          "casa": "Pinnacle",
-          "pinn_prob": 57.6,
-          "mercado_nombre": "Arizona Diamondbacks"
-        },
-        "Washington Nationals": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.31,
-          "casa": "Pinnacle",
-          "pinn_prob": 42.4,
-          "mercado_nombre": "Washington Nationals"
-        },
-        "over_9_0": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
-          "casa": "Unibet",
-          "pinn_prob": 52.6,
-          "mercado_nombre": "Over 9.0"
-        },
-        "under_9_0": {
-          "value": -0.051,
-          "ev_porcentaje": -5.1,
-          "ev_pinn": -5.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
-          "casa": "FanDuel",
-          "pinn_prob": 47.4,
-          "mercado_nombre": "Under 9.0"
-        },
-        "spread_arizona_diamondbacks_m1_5": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.36,
-          "casa": "FanDuel",
-          "pinn_prob": 41.2,
-          "mercado_nombre": "Arizona Diamondbacks (-1.5)"
-        },
-        "spread_washington_nationals_1_5": {
-          "value": -0.047,
-          "ev_porcentaje": -4.7,
-          "ev_pinn": -4.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.62,
-          "casa": "DraftKings",
-          "pinn_prob": 58.8,
-          "mercado_nombre": "Washington Nationals (+1.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Arizona Diamondbacks",
-        "prob": 57.6,
-        "ev": -2.1
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "783be51e9db5eba2f77fc312ba878c7e",
-      "comienzo": "2026-06-06T20:11:00Z",
-      "local": "Houston Astros",
-      "visitante": "Athletics",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "20:11",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Athletics": 2.09,
-        "Houston Astros": 1.85,
-        "Over 9.5": 2.0,
-        "Under 9.5": 1.87,
-        "Athletics (+1.5)": 1.54,
-        "Houston Astros (-1.5)": 2.5
-      },
-      "probabilidades": {
-        "Athletics": 47.0,
-        "Houston Astros": 53.0
-      },
-      "confianza": 53.0,
-      "value_bets": {
-        "Athletics": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.09,
-          "casa": "Pinnacle",
-          "pinn_prob": 47.0,
-          "mercado_nombre": "Athletics"
-        },
-        "Houston Astros": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.85,
-          "casa": "Pinnacle",
-          "pinn_prob": 53.0,
-          "mercado_nombre": "Houston Astros"
-        },
-        "over_9_5": {
-          "value": -0.013,
-          "ev_porcentaje": -1.3,
-          "ev_pinn": -1.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
-          "casa": "Unibet",
-          "pinn_prob": 49.4,
-          "mercado_nombre": "Over 9.5"
-        },
-        "under_9_5": {
-          "value": -0.053,
-          "ev_porcentaje": -5.3,
-          "ev_pinn": -5.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.87,
-          "casa": "BetMGM",
-          "pinn_prob": 50.6,
-          "mercado_nombre": "Under 9.5"
-        },
-        "spread_athletics_1_5": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.54,
-          "casa": "BetMGM",
-          "pinn_prob": 63.7,
-          "mercado_nombre": "Athletics (+1.5)"
-        },
-        "spread_houston_astros_m1_5": {
-          "value": -0.094,
-          "ev_porcentaje": -9.4,
-          "ev_pinn": -9.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.5,
-          "casa": "BetMGM",
-          "pinn_prob": 36.3,
-          "mercado_nombre": "Houston Astros (-1.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Over 9.5",
-        "prob": 49.4,
-        "ev": -1.3
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "aaa4e34cd89fc75466e96cf44f14850e",
-      "comienzo": "2026-06-06T20:11:00Z",
-      "local": "Atlanta Braves",
-      "visitante": "Pittsburgh Pirates",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "20:11",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Atlanta Braves": 1.91,
-        "Pittsburgh Pirates": 2.02,
-        "Over 8.0": 1.96,
-        "Under 8.0": 1.88
-      },
-      "probabilidades": {
-        "Atlanta Braves": 51.4,
-        "Pittsburgh Pirates": 48.6
-      },
-      "confianza": 51.4,
-      "value_bets": {
-        "Atlanta Braves": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
-          "casa": "Pinnacle",
-          "pinn_prob": 51.4,
-          "mercado_nombre": "Atlanta Braves"
-        },
-        "Pittsburgh Pirates": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.02,
-          "casa": "Pinnacle",
-          "pinn_prob": 48.6,
-          "mercado_nombre": "Pittsburgh Pirates"
-        },
-        "over_8_0": {
-          "value": -0.05,
-          "ev_porcentaje": -5.0,
-          "ev_pinn": -5.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.96,
-          "casa": "DraftKings",
-          "pinn_prob": 48.5,
-          "mercado_nombre": "Over 8.0"
-        },
-        "under_8_0": {
-          "value": -0.031,
-          "ev_porcentaje": -3.1,
-          "ev_pinn": -3.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.88,
-          "casa": "FanDuel",
-          "pinn_prob": 51.5,
-          "mercado_nombre": "Under 8.0"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Atlanta Braves",
-        "prob": 51.4,
-        "ev": -1.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "69038edf917dfe72c5e20312decc16b1",
-      "comienzo": "2026-06-06T20:11:00Z",
-      "local": "Miami Marlins",
-      "visitante": "Tampa Bay Rays",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "20:11",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Miami Marlins": 2.15,
-        "Tampa Bay Rays": 1.8,
-        "Over 7.5": 1.91,
-        "Under 7.5": 1.97,
-        "Miami Marlins (+1.5)": 1.66,
-        "Tampa Bay Rays (-1.5)": 2.35
-      },
-      "probabilidades": {
-        "Miami Marlins": 45.6,
-        "Tampa Bay Rays": 54.4
-      },
-      "confianza": 54.4,
-      "value_bets": {
-        "Miami Marlins": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.15,
-          "casa": "Pinnacle",
-          "pinn_prob": 45.6,
-          "mercado_nombre": "Miami Marlins"
-        },
-        "Tampa Bay Rays": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.8,
-          "casa": "Pinnacle",
-          "pinn_prob": 54.4,
-          "mercado_nombre": "Tampa Bay Rays"
-        },
-        "over_7_5": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
-          "casa": "BetMGM",
-          "pinn_prob": 51.4,
-          "mercado_nombre": "Over 7.5"
-        },
-        "under_7_5": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.97,
-          "casa": "Unibet",
-          "pinn_prob": 48.6,
-          "mercado_nombre": "Under 7.5"
-        },
-        "spread_miami_marlins_1_5": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.66,
-          "casa": "FanDuel",
-          "pinn_prob": 58.0,
-          "mercado_nombre": "Miami Marlins (+1.5)"
-        },
-        "spread_tampa_bay_rays_m1_5": {
-          "value": -0.013,
-          "ev_porcentaje": -1.3,
-          "ev_pinn": -1.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.35,
-          "casa": "BetMGM",
-          "pinn_prob": 42.0,
-          "mercado_nombre": "Tampa Bay Rays (-1.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Tampa Bay Rays (-1.5)",
-        "prob": 42.0,
-        "ev": -1.3
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
       "id": "5b241f4b94bf0db775608f15ddea4fc2",
       "comienzo": "2026-06-06T23:36:00Z",
       "local": "New York Yankees",
@@ -1563,70 +969,70 @@
       "hora": "23:36",
       "fecha_evento": "2026-06-06",
       "cuotas": {
-        "Boston Red Sox": 2.06,
-        "New York Yankees": 1.87,
-        "Over 8.5": 1.92,
-        "Under 8.5": 1.93
+        "Boston Red Sox": 2.02,
+        "New York Yankees": 1.91,
+        "Boston Red Sox (+1.5)": 1.48,
+        "New York Yankees (-1.5)": 2.72
       },
       "probabilidades": {
-        "Boston Red Sox": 47.6,
-        "New York Yankees": 52.4
+        "Boston Red Sox": 48.6,
+        "New York Yankees": 51.4
       },
-      "confianza": 52.4,
+      "confianza": 51.4,
       "value_bets": {
         "Boston Red Sox": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.06,
-          "casa": "Pinnacle",
-          "pinn_prob": 47.6,
+          "cuota": 2.02,
+          "casa": "FanDuel",
+          "pinn_prob": 48.6,
           "mercado_nombre": "Boston Red Sox"
         },
         "New York Yankees": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.87,
+          "cuota": 1.91,
           "casa": "Pinnacle",
-          "pinn_prob": 52.4,
+          "pinn_prob": 51.4,
           "mercado_nombre": "New York Yankees"
         },
-        "over_8_5": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+        "spread_boston_red_sox_1_5": {
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.92,
-          "casa": "Unibet",
-          "pinn_prob": 50.3,
-          "mercado_nombre": "Over 8.5"
-        },
-        "under_8_5": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
+          "cuota": 1.48,
           "casa": "FanDuel",
-          "pinn_prob": 49.7,
-          "mercado_nombre": "Under 8.5"
+          "pinn_prob": 65.0,
+          "mercado_nombre": "Boston Red Sox (+1.5)"
+        },
+        "spread_new_york_yankees_m1_5": {
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.72,
+          "casa": "FanDuel",
+          "pinn_prob": 35.0,
+          "mercado_nombre": "New York Yankees (-1.5)"
         }
       },
       "prediccion_principal": {
         "mercado": "Boston Red Sox",
-        "prob": 47.6,
-        "ev": -2.0
+        "prob": 48.6,
+        "ev": -1.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1647,52 +1053,52 @@
       "hora": "23:36",
       "fecha_evento": "2026-06-06",
       "cuotas": {
-        "Cleveland Guardians": 2.05,
-        "Texas Rangers": 1.88,
-        "Over 7.5": 1.9,
+        "Cleveland Guardians": 2.08,
+        "Texas Rangers": 1.85,
+        "Over 7.5": 1.95,
         "Under 7.5": 1.95,
-        "Cleveland Guardians (+1.5)": 1.45,
-        "Texas Rangers (-1.5)": 2.65
+        "Cleveland Guardians (+1.5)": 1.48,
+        "Texas Rangers (-1.5)": 2.69
       },
       "probabilidades": {
-        "Cleveland Guardians": 47.8,
-        "Texas Rangers": 52.2
+        "Cleveland Guardians": 47.1,
+        "Texas Rangers": 52.9
       },
-      "confianza": 52.2,
+      "confianza": 52.9,
       "value_bets": {
         "Cleveland Guardians": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.05,
+          "cuota": 2.08,
           "casa": "Pinnacle",
-          "pinn_prob": 47.8,
+          "pinn_prob": 47.1,
           "mercado_nombre": "Cleveland Guardians"
         },
         "Texas Rangers": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.88,
-          "casa": "Pinnacle",
-          "pinn_prob": 52.2,
+          "cuota": 1.85,
+          "casa": "FanDuel",
+          "pinn_prob": 52.9,
           "mercado_nombre": "Texas Rangers"
         },
         "over_7_5": {
-          "value": -0.045,
-          "ev_porcentaje": -4.5,
-          "ev_pinn": -4.5,
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.9,
-          "casa": "DraftKings",
+          "cuota": 1.95,
+          "casa": "Unibet",
           "pinn_prob": 50.3,
           "mercado_nombre": "Over 7.5"
         },
@@ -1709,34 +1115,34 @@
           "mercado_nombre": "Under 7.5"
         },
         "spread_cleveland_guardians_1_5": {
-          "value": -0.046,
-          "ev_porcentaje": -4.6,
-          "ev_pinn": -4.6,
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.45,
-          "casa": "BetMGM",
-          "pinn_prob": 65.8,
+          "cuota": 1.48,
+          "casa": "DraftKings",
+          "pinn_prob": 65.4,
           "mercado_nombre": "Cleveland Guardians (+1.5)"
         },
         "spread_texas_rangers_m1_5": {
-          "value": -0.094,
-          "ev_porcentaje": -9.4,
-          "ev_pinn": -9.4,
+          "value": -0.07,
+          "ev_porcentaje": -7.0,
+          "ev_pinn": -7.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.65,
-          "casa": "BetMGM",
-          "pinn_prob": 34.2,
+          "cuota": 2.69,
+          "casa": "DraftKings",
+          "pinn_prob": 34.6,
           "mercado_nombre": "Texas Rangers (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Cleveland Guardians",
-        "prob": 47.8,
-        "ev": -1.9
+        "mercado": "Over 7.5",
+        "prob": 50.3,
+        "ev": -2.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1757,29 +1163,29 @@
       "hora": "01:10",
       "fecha_evento": "2026-06-06",
       "cuotas": {
-        "Colorado Rockies": 3.3,
-        "Milwaukee Brewers": 1.39,
-        "Over 10.5": 1.91,
+        "Colorado Rockies": 3.35,
+        "Milwaukee Brewers": 1.38,
+        "Over 10.5": 1.92,
         "Under 10.5": 1.95,
-        "Colorado Rockies (+1.5)": 2.4,
-        "Milwaukee Brewers (-1.5)": 1.62
+        "Colorado Rockies (+1.5)": 2.43,
+        "Milwaukee Brewers (-1.5)": 1.61
       },
       "probabilidades": {
-        "Colorado Rockies": 29.7,
-        "Milwaukee Brewers": 70.3
+        "Colorado Rockies": 29.2,
+        "Milwaukee Brewers": 70.8
       },
-      "confianza": 70.3,
+      "confianza": 70.8,
       "value_bets": {
         "Colorado Rockies": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.3,
+          "cuota": 3.35,
           "casa": "Unibet",
-          "pinn_prob": 29.7,
+          "pinn_prob": 29.2,
           "mercado_nombre": "Colorado Rockies"
         },
         "Milwaukee Brewers": {
@@ -1789,9 +1195,9 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.39,
+          "cuota": 1.38,
           "casa": "Pinnacle",
-          "pinn_prob": 70.3,
+          "pinn_prob": 70.8,
           "mercado_nombre": "Milwaukee Brewers"
         },
         "over_10_5": {
@@ -1801,52 +1207,52 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
+          "cuota": 1.92,
           "casa": "Unibet",
-          "pinn_prob": 50.6,
+          "pinn_prob": 50.4,
           "mercado_nombre": "Over 10.5"
         },
         "under_10_5": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.95,
           "casa": "FanDuel",
-          "pinn_prob": 49.4,
+          "pinn_prob": 49.6,
           "mercado_nombre": "Under 10.5"
         },
         "spread_colorado_rockies_1_5": {
-          "value": -0.045,
-          "ev_porcentaje": -4.5,
-          "ev_pinn": -4.5,
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
+          "cuota": 2.43,
           "casa": "DraftKings",
-          "pinn_prob": 39.8,
+          "pinn_prob": 39.4,
           "mercado_nombre": "Colorado Rockies (+1.5)"
         },
         "spread_milwaukee_brewers_m1_5": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.62,
+          "cuota": 1.61,
           "casa": "FanDuel",
-          "pinn_prob": 60.2,
+          "pinn_prob": 60.6,
           "mercado_nombre": "Milwaukee Brewers (-1.5)"
         }
       },
       "prediccion_principal": {
         "mercado": "Colorado Rockies",
-        "prob": 29.7,
-        "ev": -2.0
+        "prob": 29.2,
+        "ev": -2.1
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1867,96 +1273,96 @@
       "hora": "02:11",
       "fecha_evento": "2026-06-06",
       "cuotas": {
-        "Los Angeles Angels": 4.0,
-        "Los Angeles Dodgers": 1.29,
+        "Los Angeles Angels": 4.06,
+        "Los Angeles Dodgers": 1.28,
         "Over 8.5": 1.85,
-        "Under 8.5": 2.02,
-        "Los Angeles Angels (+1.5)": 2.34,
-        "Los Angeles Dodgers (-1.5)": 1.62
+        "Under 8.5": 2.0,
+        "Los Angeles Angels (+1.5)": 2.4,
+        "Los Angeles Dodgers (-1.5)": 1.61
       },
       "probabilidades": {
-        "Los Angeles Angels": 24.4,
-        "Los Angeles Dodgers": 75.6
+        "Los Angeles Angels": 24.0,
+        "Los Angeles Dodgers": 76.0
       },
-      "confianza": 75.6,
+      "confianza": 76.0,
       "value_bets": {
         "Los Angeles Angels": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.027,
+          "ev_porcentaje": -2.7,
+          "ev_pinn": -2.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.0,
+          "cuota": 4.06,
           "casa": "Pinnacle",
-          "pinn_prob": 24.4,
+          "pinn_prob": 24.0,
           "mercado_nombre": "Los Angeles Angels"
         },
         "Los Angeles Dodgers": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.027,
+          "ev_porcentaje": -2.7,
+          "ev_pinn": -2.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.29,
-          "casa": "Pinnacle",
-          "pinn_prob": 75.6,
+          "cuota": 1.28,
+          "casa": "FanDuel",
+          "pinn_prob": 76.0,
           "mercado_nombre": "Los Angeles Dodgers"
         },
         "over_8_5": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.85,
-          "casa": "BetMGM",
-          "pinn_prob": 51.9,
+          "casa": "DraftKings",
+          "pinn_prob": 52.3,
           "mercado_nombre": "Over 8.5"
         },
         "under_8_5": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.02,
-          "casa": "Unibet",
-          "pinn_prob": 48.1,
+          "cuota": 2.0,
+          "casa": "FanDuel",
+          "pinn_prob": 47.7,
           "mercado_nombre": "Under 8.5"
         },
         "spread_los_angeles_angels_1_5": {
-          "value": -0.044,
-          "ev_porcentaje": -4.4,
-          "ev_pinn": -4.4,
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.34,
+          "cuota": 2.4,
           "casa": "DraftKings",
-          "pinn_prob": 40.8,
+          "pinn_prob": 40.2,
           "mercado_nombre": "Los Angeles Angels (+1.5)"
         },
         "spread_los_angeles_dodgers_m1_5": {
-          "value": -0.042,
-          "ev_porcentaje": -4.2,
-          "ev_pinn": -4.2,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.62,
+          "cuota": 1.61,
           "casa": "FanDuel",
-          "pinn_prob": 59.2,
+          "pinn_prob": 59.8,
           "mercado_nombre": "Los Angeles Dodgers (-1.5)"
         }
       },
       "prediccion_principal": {
         "mercado": "Los Angeles Angels",
-        "prob": 24.4,
-        "ev": -2.5
+        "prob": 24.0,
+        "ev": -2.7
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -1978,51 +1384,51 @@
       "fecha_evento": "2026-06-06",
       "cuotas": {
         "New York Mets": 1.85,
-        "San Diego Padres": 2.08,
-        "Over 7.5": 1.92,
+        "San Diego Padres": 2.09,
+        "Over 7.5": 1.98,
         "Under 7.5": 1.95,
         "New York Mets (-1.5)": 2.4,
-        "San Diego Padres (+1.5)": 1.62
+        "San Diego Padres (+1.5)": 1.61
       },
       "probabilidades": {
-        "New York Mets": 52.9,
-        "San Diego Padres": 47.1
+        "New York Mets": 53.0,
+        "San Diego Padres": 47.0
       },
-      "confianza": 52.9,
+      "confianza": 53.0,
       "value_bets": {
         "New York Mets": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.85,
           "casa": "Pinnacle",
-          "pinn_prob": 52.9,
+          "pinn_prob": 53.0,
           "mercado_nombre": "New York Mets"
         },
         "San Diego Padres": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.08,
+          "cuota": 2.09,
           "casa": "Pinnacle",
-          "pinn_prob": 47.1,
+          "pinn_prob": 47.0,
           "mercado_nombre": "San Diego Padres"
         },
         "over_7_5": {
-          "value": -0.047,
-          "ev_porcentaje": -4.7,
-          "ev_pinn": -4.7,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.92,
-          "casa": "DraftKings",
+          "cuota": 1.98,
+          "casa": "BetMGM",
           "pinn_prob": 49.6,
           "mercado_nombre": "Over 7.5"
         },
@@ -2034,32 +1440,32 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.95,
-          "casa": "FanDuel",
+          "casa": "Unibet",
           "pinn_prob": 50.4,
           "mercado_nombre": "Under 7.5"
         },
         "spread_new_york_mets_m1_5": {
-          "value": -0.053,
-          "ev_porcentaje": -5.3,
-          "ev_pinn": -5.3,
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.4,
           "casa": "BetMGM",
-          "pinn_prob": 39.5,
+          "pinn_prob": 39.8,
           "mercado_nombre": "New York Mets (-1.5)"
         },
         "spread_san_diego_padres_1_5": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.62,
+          "cuota": 1.61,
           "casa": "FanDuel",
-          "pinn_prob": 60.5,
+          "pinn_prob": 60.2,
           "mercado_nombre": "San Diego Padres (+1.5)"
         }
       },
@@ -2067,6 +1473,66 @@
         "mercado": "Under 7.5",
         "prob": 50.4,
         "ev": -1.7
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "id": "33c14afc1c11682959f3089d5f7fa4e3",
+      "comienzo": "2026-06-07T00:10:00Z",
+      "local": "Vegas Golden Knights",
+      "visitante": "Carolina Hurricanes",
+      "liga": "NHL",
+      "liga_code": "icehockey_nhl",
+      "deporte": "NHL",
+      "deporte_emoji": "🏒",
+      "hora": "00:10",
+      "fecha_evento": "2026-06-06",
+      "cuotas": {
+        "Carolina Hurricanes": 2.5,
+        "Vegas Golden Knights": 2.48,
+        "Carolina Hurricanes (-1.5)": 3.3,
+        "Vegas Golden Knights (+1.5)": 1.36
+      },
+      "probabilidades": {
+        "Carolina Hurricanes": 50.9,
+        "Vegas Golden Knights": 49.1
+      },
+      "confianza": 50.9,
+      "value_bets": {
+        "spread_carolina_hurricanes_m1_5": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.3,
+          "casa": "DraftKings",
+          "pinn_prob": 29.0,
+          "mercado_nombre": "Carolina Hurricanes (-1.5)"
+        },
+        "spread_vegas_golden_knights_1_5": {
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.36,
+          "casa": "FanDuel",
+          "pinn_prob": 71.0,
+          "mercado_nombre": "Vegas Golden Knights (+1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Vegas Golden Knights (+1.5)",
+        "prob": 71.0,
+        "ev": -3.4
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -2087,1610 +1553,44 @@
       "hora": "13:00",
       "fecha_evento": "2026-06-07",
       "cuotas": {
-        "Alexander Zverev": 1.26,
-        "Flavio Cobolli": 4.46
+        "Alexander Zverev": 1.25,
+        "Flavio Cobolli": 4.44
       },
       "probabilidades": {
-        "Alexander Zverev": 78.1,
-        "Flavio Cobolli": 21.9
+        "Alexander Zverev": 78.0,
+        "Flavio Cobolli": 22.0
       },
-      "confianza": 78.1,
+      "confianza": 78.0,
       "value_bets": {
         "Alexander Zverev": {
-          "value": -0.016,
-          "ev_porcentaje": -1.6,
-          "ev_pinn": -1.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.26,
-          "casa": "Unibet",
-          "pinn_prob": 78.1,
-          "mercado_nombre": "Alexander Zverev"
-        },
-        "Flavio Cobolli": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.46,
-          "casa": "Pinnacle",
-          "pinn_prob": 21.9,
-          "mercado_nombre": "Flavio Cobolli"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Alexander Zverev",
-        "prob": 78.1,
-        "ev": -1.6
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "20ed97f62101fe382c07288a90f4be6d",
-      "comienzo": "2026-06-06T21:10:00Z",
-      "local": "Ketlen Souza",
-      "visitante": "Ariane Carnelossi",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "21:10",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Ariane Carnelossi": 3.77,
-        "Ketlen Souza": 1.31
-      },
-      "probabilidades": {
-        "Ariane Carnelossi": 25.8,
-        "Ketlen Souza": 74.2
-      },
-      "confianza": 74.2,
-      "value_bets": {
-        "Ariane Carnelossi": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.77,
-          "casa": "Pinnacle",
-          "pinn_prob": 25.8,
-          "mercado_nombre": "Ariane Carnelossi"
-        },
-        "Ketlen Souza": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.31,
-          "casa": "Pinnacle",
-          "pinn_prob": 74.2,
-          "mercado_nombre": "Ketlen Souza"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Ariane Carnelossi",
-        "prob": 25.8,
-        "ev": -2.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "f62a5567bcb87d778dd662328d9662fb",
-      "comienzo": "2026-06-06T21:35:00Z",
-      "local": "Jeisla Chaves",
-      "visitante": "Yuneisy Duben",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "21:35",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Jeisla Chaves": 1.39,
-        "Yuneisy Duben": 3.25
-      },
-      "probabilidades": {
-        "Jeisla Chaves": 70.0,
-        "Yuneisy Duben": 30.0
-      },
-      "confianza": 70.0,
-      "value_bets": {
-        "Jeisla Chaves": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.39,
-          "casa": "Pinnacle",
-          "pinn_prob": 70.0,
-          "mercado_nombre": "Jeisla Chaves"
-        },
-        "Yuneisy Duben": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.25,
-          "casa": "Unibet",
-          "pinn_prob": 30.0,
-          "mercado_nombre": "Yuneisy Duben"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Yuneisy Duben",
-        "prob": 30.0,
-        "ev": -2.4
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "c224e8fe285ab0d16fdb574234f6dec8",
-      "comienzo": "2026-06-06T22:00:00Z",
-      "local": "Jordan Leavitt",
-      "visitante": "Joanderson Brito",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "22:00",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Joanderson Brito": 1.6,
-        "Jordan Leavitt": 2.48
-      },
-      "probabilidades": {
-        "Joanderson Brito": 60.8,
-        "Jordan Leavitt": 39.2
-      },
-      "confianza": 60.8,
-      "value_bets": {
-        "Joanderson Brito": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.6,
-          "casa": "Pinnacle",
-          "pinn_prob": 60.8,
-          "mercado_nombre": "Joanderson Brito"
-        },
-        "Jordan Leavitt": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.48,
-          "casa": "Pinnacle",
-          "pinn_prob": 39.2,
-          "mercado_nombre": "Jordan Leavitt"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Joanderson Brito",
-        "prob": 60.8,
-        "ev": -2.7
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "c2be3a28c6eddb533967d1ce14a4bcd5",
-      "comienzo": "2026-06-06T22:25:00Z",
-      "local": "Priscila Cachoeira",
-      "visitante": "Chelsea Chandler",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "22:25",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Chelsea Chandler": 1.8,
-        "Priscila Cachoeira": 2.11
-      },
-      "probabilidades": {
-        "Chelsea Chandler": 54.0,
-        "Priscila Cachoeira": 46.0
-      },
-      "confianza": 54.0,
-      "value_bets": {
-        "Chelsea Chandler": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.8,
-          "casa": "Pinnacle",
-          "pinn_prob": 54.0,
-          "mercado_nombre": "Chelsea Chandler"
-        },
-        "Priscila Cachoeira": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.11,
-          "casa": "Pinnacle",
-          "pinn_prob": 46.0,
-          "mercado_nombre": "Priscila Cachoeira"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Chelsea Chandler",
-        "prob": 54.0,
-        "ev": -2.9
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "4dce7e416a60d1f8ddf8862c6c1bd10c",
-      "comienzo": "2026-06-06T22:50:00Z",
-      "local": "Bruno Silva",
-      "visitante": "Edgar Chairez",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "22:50",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Bruno Silva": 1.85,
-        "Edgar Chairez": 2.04
-      },
-      "probabilidades": {
-        "Bruno Silva": 52.4,
-        "Edgar Chairez": 47.6
-      },
-      "confianza": 52.4,
-      "value_bets": {
-        "Bruno Silva": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.85,
-          "casa": "Pinnacle",
-          "pinn_prob": 52.4,
-          "mercado_nombre": "Bruno Silva"
-        },
-        "Edgar Chairez": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.04,
-          "casa": "Pinnacle",
-          "pinn_prob": 47.6,
-          "mercado_nombre": "Edgar Chairez"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Bruno Silva",
-        "prob": 52.4,
-        "ev": -3.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "25554ee7fbb7765f77c910d20b453f0f",
-      "comienzo": "2026-06-06T23:15:00Z",
-      "local": "Marcus McGhee",
-      "visitante": "John Yannis",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "23:15",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "John Yannis": 4.6,
-        "Marcus McGhee": 1.26
-      },
-      "probabilidades": {
-        "John Yannis": 22.8,
-        "Marcus McGhee": 77.2
-      },
-      "confianza": 77.2,
-      "value_bets": {
-        "John Yannis": {
-          "value": 0.048,
-          "ev_porcentaje": 4.8,
-          "ev_pinn": 4.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.6,
-          "casa": "Unibet",
-          "pinn_prob": 22.8,
-          "mercado_nombre": "John Yannis"
-        },
-        "Marcus McGhee": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.26,
-          "casa": "Pinnacle",
-          "pinn_prob": 77.2,
-          "mercado_nombre": "Marcus McGhee"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "John Yannis",
-        "prob": 22.8,
-        "ev": 4.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "064ee15869be68bc9acbf2dec5843842",
-      "comienzo": "2026-06-06T23:40:00Z",
-      "local": "Matt Schnell",
-      "visitante": "Alessandro Costa",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "23:40",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Alessandro Costa": 1.25,
-        "Matt Schnell": 4.6
-      },
-      "probabilidades": {
-        "Alessandro Costa": 77.7,
-        "Matt Schnell": 22.3
-      },
-      "confianza": 77.7,
-      "value_bets": {
-        "Alessandro Costa": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.25,
-          "casa": "Pinnacle",
-          "pinn_prob": 77.7,
-          "mercado_nombre": "Alessandro Costa"
-        },
-        "Matt Schnell": {
-          "value": 0.027,
-          "ev_porcentaje": 2.7,
-          "ev_pinn": 2.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.6,
-          "casa": "Unibet",
-          "pinn_prob": 22.3,
-          "mercado_nombre": "Matt Schnell"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Matt Schnell",
-        "prob": 22.3,
-        "ev": 2.7
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "f6fe7579a793a51263060d78854c4cde",
-      "comienzo": "2026-06-07T00:15:00Z",
-      "local": "Iwo Baraniewski",
-      "visitante": "Junior Tafa",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "00:15",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Iwo Baraniewski": 1.24,
-        "Junior Tafa": 4.47
-      },
-      "probabilidades": {
-        "Iwo Baraniewski": 78.3,
-        "Junior Tafa": 21.7
-      },
-      "confianza": 78.3,
-      "value_bets": {
-        "Iwo Baraniewski": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.24,
-          "casa": "Pinnacle",
-          "pinn_prob": 78.3,
-          "mercado_nombre": "Iwo Baraniewski"
-        },
-        "Junior Tafa": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.47,
-          "casa": "Pinnacle",
-          "pinn_prob": 21.7,
-          "mercado_nombre": "Junior Tafa"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Iwo Baraniewski",
-        "prob": 78.3,
-        "ev": -2.9
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "08679385015009982654f6d225a8c702",
-      "comienzo": "2026-06-07T00:45:00Z",
-      "local": "Bryce Mitchell",
-      "visitante": "Santiago Luna",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "00:45",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Bryce Mitchell": 1.85,
-        "Santiago Luna": 2.04
-      },
-      "probabilidades": {
-        "Bryce Mitchell": 52.4,
-        "Santiago Luna": 47.6
-      },
-      "confianza": 52.4,
-      "value_bets": {
-        "Bryce Mitchell": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.85,
-          "casa": "Pinnacle",
-          "pinn_prob": 52.4,
-          "mercado_nombre": "Bryce Mitchell"
-        },
-        "Santiago Luna": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.04,
-          "casa": "Pinnacle",
-          "pinn_prob": 47.6,
-          "mercado_nombre": "Santiago Luna"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Bryce Mitchell",
-        "prob": 52.4,
-        "ev": -3.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "b25817c43f87ecf68e3c7f8f42324100",
-      "comienzo": "2026-06-07T01:15:00Z",
-      "local": "Fares Ziam",
-      "visitante": "Tom Nolan",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "01:15",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Fares Ziam": 1.33,
-        "Tom Nolan": 3.58
-      },
-      "probabilidades": {
-        "Fares Ziam": 72.9,
-        "Tom Nolan": 27.1
-      },
-      "confianza": 72.9,
-      "value_bets": {
-        "Fares Ziam": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.33,
-          "casa": "Pinnacle",
-          "pinn_prob": 72.9,
-          "mercado_nombre": "Fares Ziam"
-        },
-        "Tom Nolan": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.58,
-          "casa": "Pinnacle",
-          "pinn_prob": 27.1,
-          "mercado_nombre": "Tom Nolan"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Fares Ziam",
-        "prob": 72.9,
-        "ev": -3.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "0c94edba010c216c1f1c254aa1976365",
-      "comienzo": "2026-06-07T01:45:00Z",
-      "local": "Brendan Allen",
-      "visitante": "Edmen Shahbazyan",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "01:45",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Brendan Allen": 1.6,
-        "Edmen Shahbazyan": 2.55
-      },
-      "probabilidades": {
-        "Brendan Allen": 60.8,
-        "Edmen Shahbazyan": 39.2
-      },
-      "confianza": 60.8,
-      "value_bets": {
-        "Brendan Allen": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.6,
-          "casa": "Pinnacle",
-          "pinn_prob": 60.8,
-          "mercado_nombre": "Brendan Allen"
-        },
-        "Edmen Shahbazyan": {
-          "value": -0.0,
-          "ev_porcentaje": -0.0,
-          "ev_pinn": -0.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.55,
-          "casa": "Unibet",
-          "pinn_prob": 39.2,
-          "mercado_nombre": "Edmen Shahbazyan"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Edmen Shahbazyan",
-        "prob": 39.2,
-        "ev": -0.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "357b754688bbb0e3c6c8db405d85ab86",
-      "comienzo": "2026-06-07T02:15:00Z",
-      "local": "Belal Muhammad",
-      "visitante": "Gabriel Bonfim",
-      "liga": "UFC / MMA",
-      "liga_code": "mma_mixed_martial_arts",
-      "deporte": "UFC / MMA",
-      "deporte_emoji": "🏆",
-      "hora": "02:15",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Belal Muhammad": 1.95,
-        "Gabriel Bonfim": 1.97
-      },
-      "probabilidades": {
-        "Belal Muhammad": 49.7,
-        "Gabriel Bonfim": 50.3
-      },
-      "confianza": 50.3,
-      "value_bets": {
-        "Belal Muhammad": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
-          "casa": "Pinnacle",
-          "pinn_prob": 49.7,
-          "mercado_nombre": "Belal Muhammad"
-        },
-        "Gabriel Bonfim": {
-          "value": -0.01,
-          "ev_porcentaje": -1.0,
-          "ev_pinn": -1.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.97,
-          "casa": "Unibet",
-          "pinn_prob": 50.3,
-          "mercado_nombre": "Gabriel Bonfim"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Gabriel Bonfim",
-        "prob": 50.3,
-        "ev": -1.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "1b2ba990352e1855979d183947fb9880",
-      "comienzo": "2026-06-06T18:00:00Z",
-      "local": "Aaron Bowen",
-      "visitante": "Troy Coleman",
-      "liga": "Boxeo",
-      "liga_code": "boxing_boxing",
-      "deporte": "Boxeo",
-      "deporte_emoji": "🏆",
-      "hora": "18:00",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Aaron Bowen": 1.22,
-        "Troy Coleman": 4.8
-      },
-      "probabilidades": {
-        "Aaron Bowen": 79.1,
-        "Troy Coleman": 20.9
-      },
-      "confianza": 79.1,
-      "value_bets": {
-        "Aaron Bowen": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.22,
-          "casa": "Pinnacle",
-          "pinn_prob": 79.1,
-          "mercado_nombre": "Aaron Bowen"
-        },
-        "Troy Coleman": {
-          "value": 0.003,
-          "ev_porcentaje": 0.3,
-          "ev_pinn": 0.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.8,
-          "casa": "Unibet",
-          "pinn_prob": 20.9,
-          "mercado_nombre": "Troy Coleman"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Troy Coleman",
-        "prob": 20.9,
-        "ev": 0.3
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "115bb017b0d5e5e9add2ab6597a73c9a",
-      "comienzo": "2026-06-06T18:45:00Z",
-      "local": "Stephen Mckenna",
-      "visitante": "Casey James Streeter",
-      "liga": "Boxeo",
-      "liga_code": "boxing_boxing",
-      "deporte": "Boxeo",
-      "deporte_emoji": "🏆",
-      "hora": "18:45",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Casey James Streeter": 7.22,
-        "Stephen Mckenna": 1.12
-      },
-      "probabilidades": {
-        "Casey James Streeter": 13.4,
-        "Stephen Mckenna": 86.6
-      },
-      "confianza": 86.6,
-      "value_bets": {
-        "Casey James Streeter": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 7.22,
-          "casa": "Pinnacle",
-          "pinn_prob": 13.4,
-          "mercado_nombre": "Casey James Streeter"
-        },
-        "Stephen Mckenna": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.12,
-          "casa": "Pinnacle",
-          "pinn_prob": 86.6,
-          "mercado_nombre": "Stephen Mckenna"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Casey James Streeter",
-        "prob": 13.4,
-        "ev": -3.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "bac92cf03d5dd0beb33d9165bf29ea22",
-      "comienzo": "2026-06-06T19:15:00Z",
-      "local": "Lee Cutler",
-      "visitante": "Aaron Sutton",
-      "liga": "Boxeo",
-      "liga_code": "boxing_boxing",
-      "deporte": "Boxeo",
-      "deporte_emoji": "🏆",
-      "hora": "19:15",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Aaron Sutton": 5.17,
-        "Lee Cutler": 1.19
-      },
-      "probabilidades": {
-        "Aaron Sutton": 18.7,
-        "Lee Cutler": 81.3
-      },
-      "confianza": 81.3,
-      "value_bets": {
-        "Aaron Sutton": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 5.17,
-          "casa": "Pinnacle",
-          "pinn_prob": 18.7,
-          "mercado_nombre": "Aaron Sutton"
-        },
-        "Lee Cutler": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.19,
-          "casa": "Pinnacle",
-          "pinn_prob": 81.3,
-          "mercado_nombre": "Lee Cutler"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Aaron Sutton",
-        "prob": 18.7,
-        "ev": -3.3
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "ff89a7584cb3e003e90f0e04d6131cee",
-      "comienzo": "2026-06-06T20:10:00Z",
-      "local": "Jack Massey",
-      "visitante": "Cheavon Clarke",
-      "liga": "Boxeo",
-      "liga_code": "boxing_boxing",
-      "deporte": "Boxeo",
-      "deporte_emoji": "🏆",
-      "hora": "20:10",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Cheavon Clarke": 2.26,
-        "Jack Massey": 1.75
-      },
-      "probabilidades": {
-        "Cheavon Clarke": 42.2,
-        "Jack Massey": 57.8
-      },
-      "confianza": 57.8,
-      "value_bets": {
-        "Cheavon Clarke": {
-          "value": -0.046,
-          "ev_porcentaje": -4.6,
-          "ev_pinn": -4.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.26,
-          "casa": "Pinnacle",
-          "pinn_prob": 42.2,
-          "mercado_nombre": "Cheavon Clarke"
-        },
-        "Jack Massey": {
-          "value": 0.012,
-          "ev_porcentaje": 1.2,
-          "ev_pinn": 1.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.75,
-          "casa": "Unibet",
-          "pinn_prob": 57.8,
-          "mercado_nombre": "Jack Massey"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Jack Massey",
-        "prob": 57.8,
-        "ev": 1.2
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "cf31ea20e37ce8863d283b7d1b295725",
-      "comienzo": "2026-06-06T20:45:00Z",
-      "local": "Joshua Padley",
-      "visitante": "Aqib Fiaz",
-      "liga": "Boxeo",
-      "liga_code": "boxing_boxing",
-      "deporte": "Boxeo",
-      "deporte_emoji": "🏆",
-      "hora": "20:45",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Aqib Fiaz": 4.85,
-        "Joshua Padley": 1.25
-      },
-      "probabilidades": {
-        "Aqib Fiaz": 20.0,
-        "Joshua Padley": 80.0
-      },
-      "confianza": 80.0,
-      "value_bets": {
-        "Aqib Fiaz": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.85,
-          "casa": "Pinnacle",
-          "pinn_prob": 20.0,
-          "mercado_nombre": "Aqib Fiaz"
-        },
-        "Joshua Padley": {
-          "value": 0.0,
-          "ev_porcentaje": 0.0,
-          "ev_pinn": 0.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.25,
-          "casa": "Unibet",
-          "pinn_prob": 80.0,
-          "mercado_nombre": "Joshua Padley"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Joshua Padley",
-        "prob": 80.0,
-        "ev": 0.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "293da61a310a99b2f5914b088a70a2a0",
-      "comienzo": "2026-06-07T04:00:00Z",
-      "local": "Wests Tigers",
-      "visitante": "Penrith Panthers",
-      "liga": "NRL Rugby League",
-      "liga_code": "rugbyleague_nrl",
-      "deporte": "NRL Rugby League",
-      "deporte_emoji": "🏆",
-      "hora": "04:00",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Penrith Panthers": 1.18,
-        "Wests Tigers": 4.75
-      },
-      "probabilidades": {
-        "Penrith Panthers": 79.8,
-        "Wests Tigers": 20.2
-      },
-      "confianza": 79.8,
-      "value_bets": {
-        "Penrith Panthers": {
-          "value": -0.058,
-          "ev_porcentaje": -5.8,
-          "ev_pinn": -5.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.18,
-          "casa": "Unibet",
-          "pinn_prob": 79.8,
-          "mercado_nombre": "Penrith Panthers"
-        },
-        "Wests Tigers": {
-          "value": -0.042,
-          "ev_porcentaje": -4.2,
-          "ev_pinn": -4.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.75,
-          "casa": "Unibet",
-          "pinn_prob": 20.2,
-          "mercado_nombre": "Wests Tigers"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Wests Tigers",
-        "prob": 20.2,
-        "ev": -4.2
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "6cead10b1cba778653b6b5aa7abce098",
-      "comienzo": "2026-06-07T06:05:00Z",
-      "local": "Cronulla Sutherland Sharks",
-      "visitante": "St George Illawarra Dragons",
-      "liga": "NRL Rugby League",
-      "liga_code": "rugbyleague_nrl",
-      "deporte": "NRL Rugby League",
-      "deporte_emoji": "🏆",
-      "hora": "06:05",
-      "fecha_evento": "2026-06-07",
-      "cuotas": {
-        "Cronulla Sutherland Sharks": 1.33,
-        "St George Illawarra Dragons": 3.5
-      },
-      "probabilidades": {
-        "Cronulla Sutherland Sharks": 71.3,
-        "St George Illawarra Dragons": 28.7
-      },
-      "confianza": 71.3,
-      "value_bets": {
-        "Cronulla Sutherland Sharks": {
-          "value": -0.052,
-          "ev_porcentaje": -5.2,
-          "ev_pinn": -5.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.33,
-          "casa": "Pinnacle",
-          "pinn_prob": 71.3,
-          "mercado_nombre": "Cronulla Sutherland Sharks"
-        },
-        "St George Illawarra Dragons": {
-          "value": 0.005,
-          "ev_porcentaje": 0.5,
-          "ev_pinn": 0.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.5,
-          "casa": "Unibet",
-          "pinn_prob": 28.7,
-          "mercado_nombre": "St George Illawarra Dragons"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "St George Illawarra Dragons",
-        "prob": 28.7,
-        "ev": 0.5
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "58322a6164a328c6a3db0278542d6803",
-      "comienzo": "2026-06-06T19:30:00Z",
-      "local": "West Indies",
-      "visitante": "Sri Lanka",
-      "liga": "Cricket ODI",
-      "liga_code": "cricket_odi",
-      "deporte": "Cricket ODI",
-      "deporte_emoji": "🏆",
-      "hora": "19:30",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Sri Lanka": 1.73,
-        "West Indies": 2.21
-      },
-      "probabilidades": {
-        "Sri Lanka": 56.4,
-        "West Indies": 43.6
-      },
-      "confianza": 56.4,
-      "value_bets": {
-        "Sri Lanka": {
           "value": -0.025,
           "ev_porcentaje": -2.5,
           "ev_pinn": -2.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.73,
-          "casa": "William Hill",
-          "pinn_prob": 56.4,
-          "mercado_nombre": "Sri Lanka"
+          "cuota": 1.25,
+          "casa": "Pinnacle",
+          "pinn_prob": 78.0,
+          "mercado_nombre": "Alexander Zverev"
         },
-        "West Indies": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
+        "Flavio Cobolli": {
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.21,
+          "cuota": 4.44,
           "casa": "Pinnacle",
-          "pinn_prob": 43.6,
-          "mercado_nombre": "West Indies"
+          "pinn_prob": 22.0,
+          "mercado_nombre": "Flavio Cobolli"
         }
       },
       "prediccion_principal": {
-        "mercado": "Sri Lanka",
-        "prob": 56.4,
+        "mercado": "Alexander Zverev",
+        "prob": 78.0,
         "ev": -2.5
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "3f55bbc0bb0b771f14a1eb341ff8229f",
-      "comienzo": "2026-06-06T18:00:00Z",
-      "local": "Durham",
-      "visitante": "Northamptonshire",
-      "liga": "T20 Blast",
-      "liga_code": "cricket_t20_blast",
-      "deporte": "T20 Blast",
-      "deporte_emoji": "🏆",
-      "hora": "18:00",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Durham": 2.23,
-        "Northamptonshire": 1.7
-      },
-      "probabilidades": {
-        "Durham": 41.8,
-        "Northamptonshire": 58.2
-      },
-      "confianza": 58.2,
-      "value_bets": {
-        "Durham": {
-          "value": -0.068,
-          "ev_porcentaje": -6.8,
-          "ev_pinn": -6.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.23,
-          "casa": "Pinnacle",
-          "pinn_prob": 41.8,
-          "mercado_nombre": "Durham"
-        },
-        "Northamptonshire": {
-          "value": -0.01,
-          "ev_porcentaje": -1.0,
-          "ev_pinn": -1.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.7,
-          "casa": "Unibet",
-          "pinn_prob": 58.2,
-          "mercado_nombre": "Northamptonshire"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Northamptonshire",
-        "prob": 58.2,
-        "ev": -1.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "3cd78ccbc6b754a6ff00d628953ecf7d",
-      "comienzo": "2026-06-07T13:30:00Z",
-      "local": "Lancashire",
-      "visitante": "Glamorgan",
-      "liga": "T20 Blast",
-      "liga_code": "cricket_t20_blast",
-      "deporte": "T20 Blast",
-      "deporte_emoji": "🏆",
-      "hora": "13:30",
-      "fecha_evento": "2026-06-07",
-      "cuotas": {
-        "Glamorgan": 2.35,
-        "Lancashire": 1.71
-      },
-      "probabilidades": {
-        "Glamorgan": 45.2,
-        "Lancashire": 54.8
-      },
-      "confianza": 54.8,
-      "value_bets": {
-        "Glamorgan": {
-          "value": 0.063,
-          "ev_porcentaje": 6.3,
-          "ev_pinn": 6.3,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "VALOR",
-          "cuota": 2.35,
-          "casa": "Unibet",
-          "pinn_prob": 45.2,
-          "mercado_nombre": "Glamorgan"
-        },
-        "Lancashire": {
-          "value": -0.064,
-          "ev_porcentaje": -6.4,
-          "ev_pinn": -6.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.71,
-          "casa": "Pinnacle",
-          "pinn_prob": 54.8,
-          "mercado_nombre": "Lancashire"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Glamorgan",
-        "prob": 45.2,
-        "ev": 6.3
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "267369846af73bab0e5cabb091a39d6e",
-      "comienzo": "2026-06-07T13:30:00Z",
-      "local": "Gloucestershire",
-      "visitante": "Worcestershire",
-      "liga": "T20 Blast",
-      "liga_code": "cricket_t20_blast",
-      "deporte": "T20 Blast",
-      "deporte_emoji": "🏆",
-      "hora": "13:30",
-      "fecha_evento": "2026-06-07",
-      "cuotas": {
-        "Gloucestershire": 2.0,
-        "Worcestershire": 1.88
-      },
-      "probabilidades": {
-        "Gloucestershire": 50.0,
-        "Worcestershire": 50.0
-      },
-      "confianza": 50.0,
-      "value_bets": {
-        "Gloucestershire": {
-          "value": 0.0,
-          "ev_porcentaje": 0.0,
-          "ev_pinn": 0.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
-          "casa": "William Hill",
-          "pinn_prob": 50.0,
-          "mercado_nombre": "Gloucestershire"
-        },
-        "Worcestershire": {
-          "value": -0.06,
-          "ev_porcentaje": -6.0,
-          "ev_pinn": -6.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.88,
-          "casa": "Unibet",
-          "pinn_prob": 50.0,
-          "mercado_nombre": "Worcestershire"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Gloucestershire",
-        "prob": 50.0,
-        "ev": 0.0
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "5c5b8132faf65159f936b8a30200b019",
-      "comienzo": "2026-06-07T13:30:00Z",
-      "local": "Sussex",
-      "visitante": "Kent",
-      "liga": "T20 Blast",
-      "liga_code": "cricket_t20_blast",
-      "deporte": "T20 Blast",
-      "deporte_emoji": "🏆",
-      "hora": "13:30",
-      "fecha_evento": "2026-06-07",
-      "cuotas": {
-        "Kent": 1.65,
-        "Sussex": 2.3
-      },
-      "probabilidades": {
-        "Kent": 56.7,
-        "Sussex": 43.3
-      },
-      "confianza": 56.7,
-      "value_bets": {
-        "Kent": {
-          "value": -0.065,
-          "ev_porcentaje": -6.5,
-          "ev_pinn": -6.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.65,
-          "casa": "Pinnacle",
-          "pinn_prob": 56.7,
-          "mercado_nombre": "Kent"
-        },
-        "Sussex": {
-          "value": -0.004,
-          "ev_porcentaje": -0.4,
-          "ev_pinn": -0.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.3,
-          "casa": "William Hill",
-          "pinn_prob": 43.3,
-          "mercado_nombre": "Sussex"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Sussex",
-        "prob": 43.3,
-        "ev": -0.4
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "fca2f98d9da1890fece20db2276adcf0",
-      "comienzo": "2026-06-07T13:30:00Z",
-      "local": "Leicestershire",
-      "visitante": "Yorkshire",
-      "liga": "T20 Blast",
-      "liga_code": "cricket_t20_blast",
-      "deporte": "T20 Blast",
-      "deporte_emoji": "🏆",
-      "hora": "13:30",
-      "fecha_evento": "2026-06-07",
-      "cuotas": {
-        "Leicestershire": 2.5,
-        "Yorkshire": 1.59
-      },
-      "probabilidades": {
-        "Leicestershire": 40.4,
-        "Yorkshire": 59.6
-      },
-      "confianza": 59.6,
-      "value_bets": {
-        "Leicestershire": {
-          "value": 0.009,
-          "ev_porcentaje": 0.9,
-          "ev_pinn": 0.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.5,
-          "casa": "William Hill",
-          "pinn_prob": 40.4,
-          "mercado_nombre": "Leicestershire"
-        },
-        "Yorkshire": {
-          "value": -0.052,
-          "ev_porcentaje": -5.2,
-          "ev_pinn": -5.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.59,
-          "casa": "Unibet",
-          "pinn_prob": 59.6,
-          "mercado_nombre": "Yorkshire"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Leicestershire",
-        "prob": 40.4,
-        "ev": 0.9
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "ab6c68b25624162fa5dbc35a910b729a",
-      "comienzo": "2026-06-07T14:00:00Z",
-      "local": "Nottinghamshire",
-      "visitante": "Derbyshire",
-      "liga": "T20 Blast",
-      "liga_code": "cricket_t20_blast",
-      "deporte": "T20 Blast",
-      "deporte_emoji": "🏆",
-      "hora": "14:00",
-      "fecha_evento": "2026-06-07",
-      "cuotas": {
-        "Derbyshire": 2.2,
-        "Nottinghamshire": 1.69
-      },
-      "probabilidades": {
-        "Derbyshire": 44.8,
-        "Nottinghamshire": 55.2
-      },
-      "confianza": 55.2,
-      "value_bets": {
-        "Derbyshire": {
-          "value": -0.014,
-          "ev_porcentaje": -1.4,
-          "ev_pinn": -1.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.2,
-          "casa": "William Hill",
-          "pinn_prob": 44.8,
-          "mercado_nombre": "Derbyshire"
-        },
-        "Nottinghamshire": {
-          "value": -0.068,
-          "ev_porcentaje": -6.8,
-          "ev_pinn": -6.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.69,
-          "casa": "Pinnacle",
-          "pinn_prob": 55.2,
-          "mercado_nombre": "Nottinghamshire"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Derbyshire",
-        "prob": 44.8,
-        "ev": -1.4
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "9439483f2eaad94bba894f3642b13de9",
-      "comienzo": "2026-06-07T14:30:00Z",
-      "local": "Somerset",
-      "visitante": "Birmingham Bears",
-      "liga": "T20 Blast",
-      "liga_code": "cricket_t20_blast",
-      "deporte": "T20 Blast",
-      "deporte_emoji": "🏆",
-      "hora": "14:30",
-      "fecha_evento": "2026-06-07",
-      "cuotas": {
-        "Birmingham Bears": 2.5,
-        "Somerset": 1.67
-      },
-      "probabilidades": {
-        "Birmingham Bears": 40.8,
-        "Somerset": 59.2
-      },
-      "confianza": 59.2,
-      "value_bets": {
-        "Birmingham Bears": {
-          "value": 0.019,
-          "ev_porcentaje": 1.9,
-          "ev_pinn": 1.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.5,
-          "casa": "Unibet",
-          "pinn_prob": 40.8,
-          "mercado_nombre": "Birmingham Bears"
-        },
-        "Somerset": {
-          "value": -0.011,
-          "ev_porcentaje": -1.1,
-          "ev_pinn": -1.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.67,
-          "casa": "William Hill",
-          "pinn_prob": 59.2,
-          "mercado_nombre": "Somerset"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Birmingham Bears",
-        "prob": 40.8,
-        "ev": 1.9
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4109,28 +2009,40 @@
         "VfL Gummersbach": 1.29
       },
       "probabilidades": {
-        "Rhein-Neckar Löwen": 23.2,
-        "VfL Gummersbach": 76.8
+        "Rhein-Neckar Löwen": 22.7,
+        "VfL Gummersbach": 77.3
       },
-      "confianza": 76.8,
+      "confianza": 77.3,
       "value_bets": {
+        "Rhein-Neckar Löwen": {
+          "value": 0.08,
+          "ev_porcentaje": 8.0,
+          "ev_pinn": 8.0,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 4.75,
+          "casa": "Unibet",
+          "pinn_prob": 22.7,
+          "mercado_nombre": "Rhein-Neckar Löwen"
+        },
         "VfL Gummersbach": {
-          "value": -0.01,
-          "ev_porcentaje": -1.0,
-          "ev_pinn": -1.0,
+          "value": -0.003,
+          "ev_porcentaje": -0.3,
+          "ev_pinn": -0.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.29,
           "casa": "Unibet",
-          "pinn_prob": 76.8,
+          "pinn_prob": 77.3,
           "mercado_nombre": "VfL Gummersbach"
         }
       },
       "prediccion_principal": {
-        "mercado": "VfL Gummersbach",
-        "prob": 76.8,
-        "ev": -1.0
+        "mercado": "Rhein-Neckar Löwen",
+        "prob": 22.7,
+        "ev": 8.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4198,316 +2110,6 @@
       "movimiento": null
     },
     {
-      "id": "d35e2da67794aaadd64b607c11fc9387",
-      "comienzo": "2026-06-07T05:15:32Z",
-      "local": "Sydney Swans",
-      "visitante": "St Kilda Saints",
-      "liga": "AFL",
-      "liga_code": "aussierules_afl",
-      "deporte": "AFL",
-      "deporte_emoji": "🏆",
-      "hora": "05:15",
-      "fecha_evento": "2026-06-07",
-      "cuotas": {
-        "St Kilda Saints": 4.55,
-        "Sydney Swans": 1.2
-      },
-      "probabilidades": {
-        "St Kilda Saints": 20.6,
-        "Sydney Swans": 79.4
-      },
-      "confianza": 79.4,
-      "value_bets": {
-        "St Kilda Saints": {
-          "value": -0.063,
-          "ev_porcentaje": -6.3,
-          "ev_pinn": -6.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.55,
-          "casa": "Pinnacle",
-          "pinn_prob": 20.6,
-          "mercado_nombre": "St Kilda Saints"
-        },
-        "Sydney Swans": {
-          "value": -0.047,
-          "ev_porcentaje": -4.7,
-          "ev_pinn": -4.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.2,
-          "casa": "Unibet",
-          "pinn_prob": 79.4,
-          "mercado_nombre": "Sydney Swans"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Sydney Swans",
-        "prob": 79.4,
-        "ev": -4.7
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "87916d1c0805a3f57417d6e474ebd18d",
-      "comienzo": "2026-06-07T09:20:02Z",
-      "local": "Essendon Bombers",
-      "visitante": "Carlton Blues",
-      "liga": "AFL",
-      "liga_code": "aussierules_afl",
-      "deporte": "AFL",
-      "deporte_emoji": "🏆",
-      "hora": "09:20",
-      "fecha_evento": "2026-06-07",
-      "cuotas": {
-        "Carlton Blues": 1.17,
-        "Essendon Bombers": 4.99
-      },
-      "probabilidades": {
-        "Carlton Blues": 81.3,
-        "Essendon Bombers": 18.7
-      },
-      "confianza": 81.3,
-      "value_bets": {
-        "Carlton Blues": {
-          "value": -0.049,
-          "ev_porcentaje": -4.9,
-          "ev_pinn": -4.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.17,
-          "casa": "Unibet",
-          "pinn_prob": 81.3,
-          "mercado_nombre": "Carlton Blues"
-        },
-        "Essendon Bombers": {
-          "value": -0.065,
-          "ev_porcentaje": -6.5,
-          "ev_pinn": -6.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.99,
-          "casa": "Pinnacle",
-          "pinn_prob": 18.7,
-          "mercado_nombre": "Essendon Bombers"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Carlton Blues",
-        "prob": 81.3,
-        "ev": -4.9
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "95b032dd2f7f1df3880db49f2dc690ec",
-      "comienzo": "2026-06-06T17:00:00Z",
-      "local": "Minnesota Lynx",
-      "visitante": "Seattle Storm",
-      "liga": "WNBA",
-      "liga_code": "basketball_wnba",
-      "deporte": "WNBA",
-      "deporte_emoji": "🏆",
-      "hora": "17:00",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Minnesota Lynx": 1.13,
-        "Seattle Storm": 7.88,
-        "Over 162.5": 1.93,
-        "Under 162.5": 1.93,
-        "Minnesota Lynx (-14.0)": 1.91,
-        "Seattle Storm (+14.0)": 1.91
-      },
-      "probabilidades": {
-        "Minnesota Lynx": 87.8,
-        "Seattle Storm": 12.2
-      },
-      "confianza": 87.8,
-      "value_bets": {
-        "Minnesota Lynx": {
-          "value": -0.008,
-          "ev_porcentaje": -0.8,
-          "ev_pinn": -0.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.13,
-          "casa": "Unibet",
-          "pinn_prob": 87.8,
-          "mercado_nombre": "Minnesota Lynx"
-        },
-        "Seattle Storm": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 7.88,
-          "casa": "Pinnacle",
-          "pinn_prob": 12.2,
-          "mercado_nombre": "Seattle Storm"
-        },
-        "over_162_5": {
-          "value": -0.065,
-          "ev_porcentaje": -6.5,
-          "ev_pinn": -6.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "FanDuel",
-          "pinn_prob": 48.4,
-          "mercado_nombre": "Over 162.5"
-        },
-        "under_162_5": {
-          "value": -0.005,
-          "ev_porcentaje": -0.5,
-          "ev_pinn": -0.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "DraftKings",
-          "pinn_prob": 51.6,
-          "mercado_nombre": "Under 162.5"
-        },
-        "spread_minnesota_lynx_m14_0": {
-          "value": -0.062,
-          "ev_porcentaje": -6.2,
-          "ev_pinn": -6.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
-          "casa": "Unibet",
-          "pinn_prob": 49.1,
-          "mercado_nombre": "Minnesota Lynx (-14.0)"
-        },
-        "spread_seattle_storm_14_0": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
-          "casa": "Unibet",
-          "pinn_prob": 50.9,
-          "mercado_nombre": "Seattle Storm (+14.0)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Under 162.5",
-        "prob": 51.6,
-        "ev": -0.5
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "671f742dce8199155aaf82f48eb11ddf",
-      "comienzo": "2026-06-06T19:00:00Z",
-      "local": "Las Vegas Aces",
-      "visitante": "Golden State Valkyries",
-      "liga": "WNBA",
-      "liga_code": "basketball_wnba",
-      "deporte": "WNBA",
-      "deporte_emoji": "🏆",
-      "hora": "19:00",
-      "fecha_evento": "2026-06-06",
-      "cuotas": {
-        "Golden State Valkyries": 2.41,
-        "Las Vegas Aces": 1.65,
-        "Golden State Valkyries (+3.5)": 1.89,
-        "Las Vegas Aces (-3.5)": 1.95
-      },
-      "probabilidades": {
-        "Golden State Valkyries": 39.9,
-        "Las Vegas Aces": 60.1
-      },
-      "confianza": 60.1,
-      "value_bets": {
-        "Golden State Valkyries": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.41,
-          "casa": "Pinnacle",
-          "pinn_prob": 39.9,
-          "mercado_nombre": "Golden State Valkyries"
-        },
-        "Las Vegas Aces": {
-          "value": -0.008,
-          "ev_porcentaje": -0.8,
-          "ev_pinn": -0.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.65,
-          "casa": "BetMGM",
-          "pinn_prob": 60.1,
-          "mercado_nombre": "Las Vegas Aces"
-        },
-        "spread_golden_state_valkyries_3_5": {
-          "value": -0.057,
-          "ev_porcentaje": -5.7,
-          "ev_pinn": -5.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.89,
-          "casa": "FanDuel",
-          "pinn_prob": 49.9,
-          "mercado_nombre": "Golden State Valkyries (+3.5)"
-        },
-        "spread_las_vegas_aces_m3_5": {
-          "value": -0.022,
-          "ev_porcentaje": -2.2,
-          "ev_pinn": -2.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
-          "casa": "DraftKings",
-          "pinn_prob": 50.1,
-          "mercado_nombre": "Las Vegas Aces (-3.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Las Vegas Aces",
-        "prob": 60.1,
-        "ev": -0.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
       "id": "2b03307a033929ff8b8ede417737231d",
       "comienzo": "2026-06-06T22:00:00Z",
       "local": "Atlanta Dream",
@@ -4519,44 +2121,70 @@
       "hora": "22:00",
       "fecha_evento": "2026-06-06",
       "cuotas": {
-        "Atlanta Dream": 1.2,
-        "Washington Mystics": 5.16
+        "Atlanta Dream": 1.21,
+        "Washington Mystics": 5.0,
+        "Atlanta Dream (-10.5)": 1.92,
+        "Washington Mystics (+10.5)": 1.93
       },
       "probabilidades": {
-        "Atlanta Dream": 81.3,
-        "Washington Mystics": 18.7
+        "Atlanta Dream": 79.8,
+        "Washington Mystics": 20.2
       },
-      "confianza": 81.3,
+      "confianza": 79.8,
       "value_bets": {
         "Atlanta Dream": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.2,
-          "casa": "Unibet",
-          "pinn_prob": 81.3,
+          "cuota": 1.21,
+          "casa": "Pinnacle",
+          "pinn_prob": 79.8,
           "mercado_nombre": "Atlanta Dream"
         },
         "Washington Mystics": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": 0.008,
+          "ev_porcentaje": 0.8,
+          "ev_pinn": 0.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.16,
-          "casa": "Pinnacle",
-          "pinn_prob": 18.7,
+          "cuota": 5.0,
+          "casa": "BetMGM",
+          "pinn_prob": 20.2,
           "mercado_nombre": "Washington Mystics"
+        },
+        "spread_atlanta_dream_m10_5": {
+          "value": -0.07,
+          "ev_porcentaje": -7.0,
+          "ev_pinn": -7.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "Unibet",
+          "pinn_prob": 48.4,
+          "mercado_nombre": "Atlanta Dream (-10.5)"
+        },
+        "spread_washington_mystics_10_5": {
+          "value": -0.005,
+          "ev_porcentaje": -0.5,
+          "ev_pinn": -0.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "FanDuel",
+          "pinn_prob": 51.6,
+          "mercado_nombre": "Washington Mystics (+10.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Atlanta Dream",
-        "prob": 81.3,
-        "ev": -2.5
+        "mercado": "Washington Mystics",
+        "prob": 20.2,
+        "ev": 0.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4577,70 +2205,70 @@
       "hora": "00:00",
       "fecha_evento": "2026-06-06",
       "cuotas": {
-        "Indiana Fever": 2.38,
-        "New York Liberty": 1.65,
-        "Indiana Fever (+3.5)": 1.91,
-        "New York Liberty (-3.5)": 1.95
+        "Indiana Fever": 2.26,
+        "New York Liberty": 1.7,
+        "Over 174.5": 1.89,
+        "Under 174.5": 1.94
       },
       "probabilidades": {
-        "Indiana Fever": 41.0,
-        "New York Liberty": 59.0
+        "Indiana Fever": 42.6,
+        "New York Liberty": 57.4
       },
-      "confianza": 59.0,
+      "confianza": 57.4,
       "value_bets": {
         "Indiana Fever": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.036,
+          "ev_porcentaje": -3.6,
+          "ev_pinn": -3.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.38,
-          "casa": "Unibet",
-          "pinn_prob": 41.0,
+          "cuota": 2.26,
+          "casa": "Pinnacle",
+          "pinn_prob": 42.6,
           "mercado_nombre": "Indiana Fever"
         },
         "New York Liberty": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.65,
-          "casa": "DraftKings",
-          "pinn_prob": 59.0,
-          "mercado_nombre": "New York Liberty"
-        },
-        "spread_indiana_fever_3_5": {
-          "value": -0.045,
-          "ev_porcentaje": -4.5,
-          "ev_pinn": -4.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
-          "casa": "Unibet",
-          "pinn_prob": 50.0,
-          "mercado_nombre": "Indiana Fever (+3.5)"
-        },
-        "spread_new_york_liberty_m3_5": {
           "value": -0.025,
           "ev_porcentaje": -2.5,
           "ev_pinn": -2.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
-          "casa": "BetMGM",
-          "pinn_prob": 50.0,
-          "mercado_nombre": "New York Liberty (-3.5)"
+          "cuota": 1.7,
+          "casa": "FanDuel",
+          "pinn_prob": 57.4,
+          "mercado_nombre": "New York Liberty"
+        },
+        "over_174_5": {
+          "value": -0.065,
+          "ev_porcentaje": -6.5,
+          "ev_pinn": -6.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.89,
+          "casa": "DraftKings",
+          "pinn_prob": 49.5,
+          "mercado_nombre": "Over 174.5"
+        },
+        "under_174_5": {
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.94,
+          "casa": "FanDuel",
+          "pinn_prob": 50.5,
+          "mercado_nombre": "Under 174.5"
         }
       },
       "prediccion_principal": {
-        "mercado": "Indiana Fever",
-        "prob": 41.0,
-        "ev": -2.5
+        "mercado": "Under 174.5",
+        "prob": 50.5,
+        "ev": -2.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4661,7 +2289,7 @@
       "hora": "08:00",
       "fecha_evento": "2026-06-07",
       "cuotas": {
-        "Doosan Bears": 1.67,
+        "Doosan Bears": 1.61,
         "Kiwoom Heroes": 2.35
       },
       "probabilidades": {
@@ -4671,14 +2299,14 @@
       "confianza": 59.3,
       "value_bets": {
         "Doosan Bears": {
-          "value": -0.009,
-          "ev_porcentaje": -0.9,
-          "ev_pinn": -0.9,
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.67,
-          "casa": "William Hill",
+          "cuota": 1.61,
+          "casa": "Pinnacle",
           "pinn_prob": 59.3,
           "mercado_nombre": "Doosan Bears"
         },
@@ -4698,7 +2326,7 @@
       "prediccion_principal": {
         "mercado": "Doosan Bears",
         "prob": 59.3,
-        "ev": -0.9
+        "ev": -4.5
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4719,7 +2347,7 @@
       "hora": "08:00",
       "fecha_evento": "2026-06-07",
       "cuotas": {
-        "Hanwha Eagles": 2.05,
+        "Hanwha Eagles": 2.01,
         "Lotte Giants": 1.82
       },
       "probabilidades": {
@@ -4729,14 +2357,14 @@
       "confianza": 52.5,
       "value_bets": {
         "Hanwha Eagles": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.05,
-          "casa": "William Hill",
+          "cuota": 2.01,
+          "casa": "Pinnacle",
           "pinn_prob": 47.5,
           "mercado_nombre": "Hanwha Eagles"
         },
@@ -4756,7 +2384,7 @@
       "prediccion_principal": {
         "mercado": "Hanwha Eagles",
         "prob": 47.5,
-        "ev": -2.6
+        "ev": -4.5
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4777,44 +2405,44 @@
       "hora": "08:00",
       "fecha_evento": "2026-06-07",
       "cuotas": {
-        "KT Wiz": 1.91,
-        "SSG Landers": 1.93
+        "KT Wiz": 1.92,
+        "SSG Landers": 1.91
       },
       "probabilidades": {
-        "KT Wiz": 50.7,
-        "SSG Landers": 49.3
+        "KT Wiz": 50.0,
+        "SSG Landers": 50.0
       },
-      "confianza": 50.7,
+      "confianza": 50.0,
       "value_bets": {
         "KT Wiz": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "Unibet",
+          "pinn_prob": 50.0,
+          "mercado_nombre": "KT Wiz"
+        },
+        "SSG Landers": {
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.91,
-          "casa": "William Hill",
-          "pinn_prob": 50.7,
-          "mercado_nombre": "KT Wiz"
-        },
-        "SSG Landers": {
-          "value": -0.048,
-          "ev_porcentaje": -4.8,
-          "ev_pinn": -4.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
           "casa": "Pinnacle",
-          "pinn_prob": 49.3,
+          "pinn_prob": 50.0,
           "mercado_nombre": "SSG Landers"
         }
       },
       "prediccion_principal": {
         "mercado": "KT Wiz",
-        "prob": 50.7,
-        "ev": -3.2
+        "prob": 50.0,
+        "ev": -4.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4836,7 +2464,7 @@
       "fecha_evento": "2026-06-07",
       "cuotas": {
         "Kia Tigers": 1.57,
-        "Samsung Lions": 2.5
+        "Samsung Lions": 2.42
       },
       "probabilidades": {
         "Kia Tigers": 60.7,
@@ -4857,22 +2485,22 @@
           "mercado_nombre": "Kia Tigers"
         },
         "Samsung Lions": {
-          "value": -0.016,
-          "ev_porcentaje": -1.6,
-          "ev_pinn": -1.6,
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.5,
-          "casa": "William Hill",
+          "cuota": 2.42,
+          "casa": "Pinnacle",
           "pinn_prob": 39.3,
           "mercado_nombre": "Samsung Lions"
         }
       },
       "prediccion_principal": {
-        "mercado": "Samsung Lions",
-        "prob": 39.3,
-        "ev": -1.6
+        "mercado": "Kia Tigers",
+        "prob": 60.7,
+        "ev": -4.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4894,43 +2522,43 @@
       "fecha_evento": "2026-06-07",
       "cuotas": {
         "LG Twins": 1.6,
-        "NC Dinos": 2.4
+        "NC Dinos": 2.39
       },
       "probabilidades": {
-        "LG Twins": 60.3,
-        "NC Dinos": 39.7
+        "LG Twins": 60.1,
+        "NC Dinos": 39.9
       },
-      "confianza": 60.3,
+      "confianza": 60.1,
       "value_bets": {
         "LG Twins": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.6,
-          "casa": "William Hill",
-          "pinn_prob": 60.3,
+          "casa": "Unibet",
+          "pinn_prob": 60.1,
           "mercado_nombre": "LG Twins"
         },
         "NC Dinos": {
-          "value": -0.047,
-          "ev_porcentaje": -4.7,
-          "ev_pinn": -4.7,
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
+          "cuota": 2.39,
           "casa": "Pinnacle",
-          "pinn_prob": 39.7,
+          "pinn_prob": 39.9,
           "mercado_nombre": "NC Dinos"
         }
       },
       "prediccion_principal": {
         "mercado": "LG Twins",
-        "prob": 60.3,
-        "ev": -3.5
+        "prob": 60.1,
+        "ev": -3.9
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4951,14 +2579,14 @@
       "hora": "04:30",
       "fecha_evento": "2026-06-06",
       "cuotas": {
-        "Chunichi Dragons": 2.02,
-        "Saitama Seibu Lions": 1.87
+        "Chunichi Dragons": 2.07,
+        "Saitama Seibu Lions": 1.85
       },
       "probabilidades": {
-        "Chunichi Dragons": 48.1,
-        "Saitama Seibu Lions": 51.9
+        "Chunichi Dragons": 46.9,
+        "Saitama Seibu Lions": 53.1
       },
-      "confianza": 51.9,
+      "confianza": 53.1,
       "value_bets": {
         "Chunichi Dragons": {
           "value": -0.029,
@@ -4967,28 +2595,28 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.02,
+          "cuota": 2.07,
           "casa": "Pinnacle",
-          "pinn_prob": 48.1,
+          "pinn_prob": 46.9,
           "mercado_nombre": "Chunichi Dragons"
         },
         "Saitama Seibu Lions": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.87,
-          "casa": "Pinnacle",
-          "pinn_prob": 51.9,
+          "cuota": 1.85,
+          "casa": "William Hill",
+          "pinn_prob": 53.1,
           "mercado_nombre": "Saitama Seibu Lions"
         }
       },
       "prediccion_principal": {
-        "mercado": "Chunichi Dragons",
-        "prob": 48.1,
-        "ev": -2.9
+        "mercado": "Saitama Seibu Lions",
+        "prob": 53.1,
+        "ev": -1.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -5125,44 +2753,44 @@
       "hora": "05:00",
       "fecha_evento": "2026-06-07",
       "cuotas": {
-        "Fukuoka SoftBank Hawks": 1.7,
+        "Fukuoka SoftBank Hawks": 1.71,
         "Yokohama DeNA BayStars": 2.28
       },
       "probabilidades": {
-        "Fukuoka SoftBank Hawks": 57.0,
-        "Yokohama DeNA BayStars": 43.0
+        "Fukuoka SoftBank Hawks": 56.7,
+        "Yokohama DeNA BayStars": 43.3
       },
-      "confianza": 57.0,
+      "confianza": 56.7,
       "value_bets": {
         "Fukuoka SoftBank Hawks": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.7,
+          "cuota": 1.71,
           "casa": "Pinnacle",
-          "pinn_prob": 57.0,
+          "pinn_prob": 56.7,
           "mercado_nombre": "Fukuoka SoftBank Hawks"
         },
         "Yokohama DeNA BayStars": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.28,
           "casa": "William Hill",
-          "pinn_prob": 43.0,
+          "pinn_prob": 43.3,
           "mercado_nombre": "Yokohama DeNA BayStars"
         }
       },
       "prediccion_principal": {
         "mercado": "Yokohama DeNA BayStars",
-        "prob": 43.0,
-        "ev": -1.9
+        "prob": 43.3,
+        "ev": -1.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -5183,44 +2811,44 @@
       "hora": "05:00",
       "fecha_evento": "2026-06-07",
       "cuotas": {
-        "Hanshin Tigers": 1.48,
-        "Tohoku Rakuten Golden Eagles": 2.79
+        "Hanshin Tigers": 1.5,
+        "Tohoku Rakuten Golden Eagles": 2.75
       },
       "probabilidades": {
-        "Hanshin Tigers": 65.3,
-        "Tohoku Rakuten Golden Eagles": 34.7
+        "Hanshin Tigers": 64.7,
+        "Tohoku Rakuten Golden Eagles": 35.3
       },
-      "confianza": 65.3,
+      "confianza": 64.7,
       "value_bets": {
         "Hanshin Tigers": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.48,
+          "cuota": 1.5,
           "casa": "Pinnacle",
-          "pinn_prob": 65.3,
+          "pinn_prob": 64.7,
           "mercado_nombre": "Hanshin Tigers"
         },
         "Tohoku Rakuten Golden Eagles": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.79,
+          "cuota": 2.75,
           "casa": "Pinnacle",
-          "pinn_prob": 34.7,
+          "pinn_prob": 35.3,
           "mercado_nombre": "Tohoku Rakuten Golden Eagles"
         }
       },
       "prediccion_principal": {
         "mercado": "Hanshin Tigers",
-        "prob": 65.3,
-        "ev": -3.3
+        "prob": 64.7,
+        "ev": -2.9
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -5245,40 +2873,40 @@
         "Tokyo Yakult Swallows": 2.48
       },
       "probabilidades": {
-        "Hokkaido Nippon-Ham Fighters": 60.7,
-        "Tokyo Yakult Swallows": 39.3
+        "Hokkaido Nippon-Ham Fighters": 60.6,
+        "Tokyo Yakult Swallows": 39.4
       },
-      "confianza": 60.7,
+      "confianza": 60.6,
       "value_bets": {
         "Hokkaido Nippon-Ham Fighters": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.6,
           "casa": "Pinnacle",
-          "pinn_prob": 60.7,
+          "pinn_prob": 60.6,
           "mercado_nombre": "Hokkaido Nippon-Ham Fighters"
         },
         "Tokyo Yakult Swallows": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.48,
           "casa": "William Hill",
-          "pinn_prob": 39.3,
+          "pinn_prob": 39.4,
           "mercado_nombre": "Tokyo Yakult Swallows"
         }
       },
       "prediccion_principal": {
         "mercado": "Tokyo Yakult Swallows",
-        "prob": 39.3,
-        "ev": -2.5
+        "prob": 39.4,
+        "ev": -2.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -5299,44 +2927,44 @@
       "hora": "23:00",
       "fecha_evento": "2026-06-06",
       "cuotas": {
-        "Edmonton Elks": 2.25,
+        "Edmonton Elks": 2.24,
         "Ottawa Redblacks": 1.7
       },
       "probabilidades": {
-        "Edmonton Elks": 43.0,
-        "Ottawa Redblacks": 57.0
+        "Edmonton Elks": 43.1,
+        "Ottawa Redblacks": 56.9
       },
-      "confianza": 57.0,
+      "confianza": 56.9,
       "value_bets": {
         "Edmonton Elks": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.25,
+          "cuota": 2.24,
           "casa": "Pinnacle",
-          "pinn_prob": 43.0,
+          "pinn_prob": 43.1,
           "mercado_nombre": "Edmonton Elks"
         },
         "Ottawa Redblacks": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.7,
           "casa": "Pinnacle",
-          "pinn_prob": 57.0,
+          "pinn_prob": 56.9,
           "mercado_nombre": "Ottawa Redblacks"
         }
       },
       "prediccion_principal": {
         "mercado": "Edmonton Elks",
-        "prob": 43.0,
-        "ev": -3.2
+        "prob": 43.1,
+        "ev": -3.4
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -5346,5 +2974,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:20:04"
+  "generado": "20:42:17"
 }
