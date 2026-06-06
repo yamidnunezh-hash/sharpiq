@@ -1,67 +1,67 @@
 {
-  "partido": "Jeisla Chaves vs Yuneisy Duben",
-  "liga": "UFC / MMA",
-  "local": "Jeisla Chaves",
-  "visitante": "Yuneisy Duben",
-  "prediccion": "Yuneisy Duben",
-  "mercado_key": "Yuneisy Duben",
+  "partido": "Joshua Padley vs Aqib Fiaz",
+  "liga": "Boxeo",
+  "local": "Joshua Padley",
+  "visitante": "Aqib Fiaz",
+  "prediccion": "Joshua Padley",
+  "mercado_key": "Joshua Padley",
   "cuota": "",
   "casa": "",
   "hora_utc": "21:00",
   "hora_cot": "16:00 COT",
-  "ev": 7.4,
-  "clasificacion": "ALTO VALOR",
-  "confianza": 73.8,
+  "ev": 5.3,
+  "clasificacion": "VALOR",
+  "confianza": 82.2,
   "pred_completa": {
-    "id": "f62a5567bcb87d778dd662328d9662fb",
+    "id": "cf31ea20e37ce8863d283b7d1b295725",
     "comienzo": "2026-06-06T21:00:00Z",
-    "local": "Jeisla Chaves",
-    "visitante": "Yuneisy Duben",
-    "liga": "UFC / MMA",
-    "liga_code": "mma_mixed_martial_arts",
-    "deporte": "UFC / MMA",
+    "local": "Joshua Padley",
+    "visitante": "Aqib Fiaz",
+    "liga": "Boxeo",
+    "liga_code": "boxing_boxing",
+    "deporte": "Boxeo",
     "deporte_emoji": "🏆",
     "hora": "21:00",
     "fecha_evento": "2026-06-06",
     "cuotas": {
-      "Jeisla Chaves": 1.31,
-      "Yuneisy Duben": 4.1
+      "Aqib Fiaz": 5.46,
+      "Joshua Padley": 1.28
     },
     "probabilidades": {
-      "Jeisla Chaves": 73.8,
-      "Yuneisy Duben": 26.2
+      "Aqib Fiaz": 17.8,
+      "Joshua Padley": 82.2
     },
-    "confianza": 73.8,
+    "confianza": 82.2,
     "value_bets": {
-      "Jeisla Chaves": {
-        "value": -0.033,
-        "ev_porcentaje": -3.3,
-        "ev_pinn": -3.3,
+      "Aqib Fiaz": {
+        "value": -0.03,
+        "ev_porcentaje": -3.0,
+        "ev_pinn": -3.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.31,
+        "cuota": 5.46,
         "casa": "Pinnacle",
-        "pinn_prob": 73.8,
-        "mercado_nombre": "Jeisla Chaves"
+        "pinn_prob": 17.8,
+        "mercado_nombre": "Aqib Fiaz"
       },
-      "Yuneisy Duben": {
-        "value": 0.074,
-        "ev_porcentaje": 7.4,
-        "ev_pinn": 7.4,
+      "Joshua Padley": {
+        "value": 0.053,
+        "ev_porcentaje": 5.3,
+        "ev_pinn": 5.3,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
-        "clasificacion": "ALTO VALOR",
-        "cuota": 4.1,
+        "clasificacion": "VALOR",
+        "cuota": 1.28,
         "casa": "Unibet",
-        "pinn_prob": 26.2,
-        "mercado_nombre": "Yuneisy Duben"
+        "pinn_prob": 82.2,
+        "mercado_nombre": "Joshua Padley"
       }
     },
     "prediccion_principal": {
-      "mercado": "Yuneisy Duben",
-      "prob": 26.2,
-      "ev": 7.4
+      "mercado": "Joshua Padley",
+      "prob": 82.2,
+      "ev": 5.3
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
