@@ -1,67 +1,67 @@
 {
-  "partido": "Joshua Padley vs Aqib Fiaz",
-  "liga": "Boxeo",
-  "local": "Joshua Padley",
-  "visitante": "Aqib Fiaz",
-  "prediccion": "Joshua Padley",
-  "mercado_key": "Joshua Padley",
+  "partido": "Brisbane Broncos vs Gold Coast Titans",
+  "liga": "NRL Rugby League",
+  "local": "Brisbane Broncos",
+  "visitante": "Gold Coast Titans",
+  "prediccion": "Gold Coast Titans",
+  "mercado_key": "Gold Coast Titans",
   "cuota": "",
   "casa": "",
-  "hora_utc": "21:00",
-  "hora_cot": "16:00 COT",
-  "ev": 5.3,
+  "hora_utc": "09:35",
+  "hora_cot": "04:35 COT",
+  "ev": 6.1,
   "clasificacion": "VALOR",
-  "confianza": 82.2,
+  "confianza": 67.4,
   "pred_completa": {
-    "id": "cf31ea20e37ce8863d283b7d1b295725",
-    "comienzo": "2026-06-06T21:00:00Z",
-    "local": "Joshua Padley",
-    "visitante": "Aqib Fiaz",
-    "liga": "Boxeo",
-    "liga_code": "boxing_boxing",
-    "deporte": "Boxeo",
+    "id": "15f4c93f6011a4fe44b609972bbe5485",
+    "comienzo": "2026-06-06T09:35:00Z",
+    "local": "Brisbane Broncos",
+    "visitante": "Gold Coast Titans",
+    "liga": "NRL Rugby League",
+    "liga_code": "rugbyleague_nrl",
+    "deporte": "NRL Rugby League",
     "deporte_emoji": "🏆",
-    "hora": "21:00",
+    "hora": "09:35",
     "fecha_evento": "2026-06-06",
     "cuotas": {
-      "Aqib Fiaz": 5.46,
-      "Joshua Padley": 1.28
+      "Brisbane Broncos": 1.42,
+      "Gold Coast Titans": 3.25
     },
     "probabilidades": {
-      "Aqib Fiaz": 17.8,
-      "Joshua Padley": 82.2
+      "Brisbane Broncos": 67.4,
+      "Gold Coast Titans": 32.6
     },
-    "confianza": 82.2,
+    "confianza": 67.4,
     "value_bets": {
-      "Aqib Fiaz": {
-        "value": -0.03,
-        "ev_porcentaje": -3.0,
-        "ev_pinn": -3.0,
+      "Brisbane Broncos": {
+        "value": -0.044,
+        "ev_porcentaje": -4.4,
+        "ev_pinn": -4.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 5.46,
+        "cuota": 1.42,
         "casa": "Pinnacle",
-        "pinn_prob": 17.8,
-        "mercado_nombre": "Aqib Fiaz"
+        "pinn_prob": 67.4,
+        "mercado_nombre": "Brisbane Broncos"
       },
-      "Joshua Padley": {
-        "value": 0.053,
-        "ev_porcentaje": 5.3,
-        "ev_pinn": 5.3,
+      "Gold Coast Titans": {
+        "value": 0.061,
+        "ev_porcentaje": 6.1,
+        "ev_pinn": 6.1,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "VALOR",
-        "cuota": 1.28,
+        "cuota": 3.25,
         "casa": "Unibet",
-        "pinn_prob": 82.2,
-        "mercado_nombre": "Joshua Padley"
+        "pinn_prob": 32.6,
+        "mercado_nombre": "Gold Coast Titans"
       }
     },
     "prediccion_principal": {
-      "mercado": "Joshua Padley",
-      "prob": 82.2,
-      "ev": 5.3
+      "mercado": "Gold Coast Titans",
+      "prob": 32.6,
+      "ev": 6.1
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
