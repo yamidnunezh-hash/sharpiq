@@ -884,16 +884,50 @@ def enviar_mercados_ext_vip(pred):
             cj = round(100 / prob, 2) if prob > 0 else "—"
             lineas_ah.append(f"• {nombre}: {prob}% → cuota justa <b>{cj}</b>")
 
+    # ── RECOMENDACIÓN: mejor lectura de cada mercado (lean claro + cuota útil) ──
+    _REC_MIN, _REC_MAX = 55, 80  # banda de prob: ignora parejas (<55) y triviales (>80)
+    def _cj(pr):
+        return round(100 / pr, 2) if pr and pr > 0 else None
+    def _mejor(pairs):
+        cands = [(lbl, pr) for (lbl, pr) in pairs if pr is not None and _REC_MIN <= pr <= _REC_MAX]
+        return max(cands, key=lambda c: c[1]) if cands else None
+    _rec_corners = _mejor([
+        (f"{s} {int(k)-0.5}", corners.get(f"corners_{pf}{k}"))
+        for k in ("10", "11", "12")
+        for s, pf in (("Over", "over"), ("Under", "under"))
+    ])
+    _rec_tarjetas = _mejor([
+        (f"{s} {int(k)-0.5}", tarjetas.get(f"tarjetas_{pf}{k}"))
+        for k in ("3", "4", "5")
+        for s, pf in (("Over", "over"), ("Under", "under"))
+    ])
+    _rec_handicap = _mejor([(nombre, handicap.get(key)) for key, nombre in ah_map])
+    _rec_lineas = []
+    for _emoji, _nombre, _b in (("🚩", "Corners", _rec_corners),
+                                ("🟨", "Tarjetas", _rec_tarjetas),
+                                ("🔢", "Hándicap", _rec_handicap)):
+        if _b:
+            _rec_lineas.append(f"{_emoji} <b>{_nombre}:</b> {_b[0]}  ({round(_b[1])}% · justa {_cj(_b[1])})")
+    _bloque_rec = ""
+    if _rec_lineas:
+        _bloque_rec = (
+            "🎯 <b>RECOMENDACIÓN SharpIQ</b>\n"
+            + "\n".join(_rec_lineas) + "\n"
+            + "👉 <i>Apuesta solo si tu casa paga MÁS que la cuota justa.</i>\n"
+            + ("─" * 14) + "\n\n"
+        )
+
     texto = (
         f"📊 <b>Análisis Extendido — SharpIQ</b>\n\n"
         f"⚽ <b>{local} vs {visitante}</b>\n\n"
-        f"🚩 <b>CORNERS</b>\n"
+        + _bloque_rec
+        + f"🚩 <b>CORNERS</b>\n"
         + "\n".join(lineas_c) + "\n\n"
         f"🟨 <b>TARJETAS</b>\n"
         + "\n".join(lineas_t) + "\n\n"
         f"🔢 <b>HANDICAP ASIÁTICO</b>\n"
         + "\n".join(lineas_ah) + "\n\n"
-        f"💡 <i>Si encuentras una cuota mayor a la justa → tienes ventaja matemática</i>\n\n"
+        f"💡 <i>La cuota justa = sin ganancia de la casa. Por encima de ella, tienes ventaja.</i>\n\n"
         f"<i>SharpIQ — La ventaja inteligente</i>"
     )
     return enviar_mensaje(texto, chat_id=get_chat_id())
