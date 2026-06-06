@@ -68,6 +68,40 @@ def escribir_datos(texto):
     with open(DATOS_PATH, 'w', encoding='utf-8') as f:
         f.write(texto)
 
+INDEX_PATH  = os.path.join(BASE_DIR, "..", "index.html")
+_DATA_START = "<!-- SHARPIQ_DATA_START -->"
+_DATA_END   = "<!-- SHARPIQ_DATA_END -->"
+
+def sincronizar_index_html(texto_datos):
+    """Refleja datos.js dentro del bloque inline de index.html (lo que lee la home).
+    Sin esto los resultados entran a datos.js pero la web no los muestra."""
+    try:
+        with open(INDEX_PATH, encoding="utf-8") as f:
+            html = f.read()
+        nuevo = (_DATA_START + "\n" + '<script id="sharpiq-data">' + "\n"
+                 + texto_datos.strip() + "\n" + "</script>" + "\n" + _DATA_END)
+        html = re.sub(re.escape(_DATA_START) + r".*?" + re.escape(_DATA_END),
+                      lambda _m: nuevo, html, flags=re.DOTALL)
+        with open(INDEX_PATH, "w", encoding="utf-8") as f:
+            f.write(html)
+        return True
+    except Exception as ex:
+        LOG.warning(f"No se pudo sincronizar index.html: {ex}")
+        return False
+
+def _fecha_pick_iso(fecha_str):
+    """'dd/mm/yy' -> 'YYYY-MM-DD' (o None)."""
+    try:
+        d, m, y = fecha_str.strip().split("/")
+        return f"20{y}-{m.zfill(2)}-{d.zfill(2)}"
+    except Exception:
+        return None
+
+def _eliminar_de_proximos(texto, partido):
+    """Quita un objeto completo de PROXIMOS_EVENTOS por su 'partido'."""
+    patron = re.compile(r'\s*\{[^{}]*?partido:\s*"' + re.escape(partido) + r'"[^{}]*?\}\s*,?', re.DOTALL)
+    return patron.subn("\n", texto, count=1)
+
 
 # ── NORMALIZACIÓN DE NOMBRES ─────────────────────────────────────
 
@@ -169,18 +203,28 @@ def evaluar(prediccion, gl, gv, local="", visitante=""):
 
 def _actualizar_en_proximos(texto, partido, resultado):
     """
-    Actualiza resultado:"pendiente" → win/loss/push en PROXIMOS_EVENTOS (in-place).
-    La entrada se mantiene visible en la web con el resultado correcto.
+    Marca el resultado de un pick en PROXIMOS_EVENTOS (in-place), exista o NO
+    el campo "resultado" en el objeto. Asi la entrada queda visible con W/L.
     """
     partido_esc = re.escape(partido)
-    # Reemplaza solo el campo resultado del bloque que contiene este partido
-    patron = re.compile(
-        r'(partido:\s*"' + partido_esc + r'"[^}]*?resultado:\s*")(pendiente)(")',
+    # Caso A: el objeto YA tiene resultado:"pendiente" -> reemplazar el valor
+    patA = re.compile(
+        r'(partido:\s*"' + partido_esc + r'"[^{}]*?resultado:\s*")pendiente(")',
         re.DOTALL,
     )
-    nuevo, n = patron.subn(r'\g<1>' + resultado + r'\g<3>', texto)
+    nuevo, n = patA.subn(r"\g<1>" + resultado + r"\g<2>", texto)
+    if n:
+        return nuevo, n
+    # Caso B: el objeto NO tiene campo "resultado" -> insertarlo antes del cierre "}"
+    patB = re.compile(
+        r'(\{[^{}]*?partido:\s*"' + partido_esc + r'"[^{}]*?)(\s*\})',
+        re.DOTALL,
+    )
+    def _ins(m):
+        cuerpo = m.group(1).rstrip().rstrip(",")
+        return cuerpo + ',\n    resultado:  "' + resultado + '"' + m.group(2)
+    nuevo, n = patB.subn(_ins, texto)
     return nuevo, n
-
 
 def _agregar_a_historial(texto, evento, resultado):
     """
@@ -325,7 +369,7 @@ def correr():
     texto = leer_datos()
     proximos = _extraer_array(texto, 'PROXIMOS_EVENTOS')
 
-    pendientes = [e for e in proximos if e.get('resultado') == 'pendiente']
+    pendientes = [e for e in proximos if e.get('resultado') in (None, '', 'pendiente')]
     if not pendientes:
         LOG.info("Auto-resultados: no hay picks pendientes")
         return 0
@@ -333,10 +377,14 @@ def correr():
     LOG.info(f"Auto-resultados: {len(pendientes)} picks pendientes")
 
     # Buscar partidos finalizados en los últimos 3 días (cubre fines de semana)
-    fechas = [
-        (date.today() - timedelta(days=i)).isoformat()
-        for i in range(3)
-    ]
+    # Fechas a consultar: ultimos 3 dias + la fecha real de cada pick pendiente
+    # (asi el futbol viejo tambien se resuelve, no solo lo de los ultimos 3 dias).
+    _fset = {(date.today() - timedelta(days=i)).isoformat() for i in range(3)}
+    for _e in pendientes:
+        _fi = _fecha_pick_iso(_e.get("fecha", ""))
+        if _fi:
+            _fset.add(_fi)
+    fechas = sorted(_fset)
     fixtures_ft = []
     for fecha_iso in fechas:
         data = _apifb("fixtures", {"date": fecha_iso})
@@ -465,10 +513,31 @@ def correr():
         except Exception as te:
             LOG.error(f"Telegram resultado: {te}")
 
-    if actualizados > 0:
-        escribir_datos(texto)
-        LOG.info(f"datos.js actualizado — {actualizados} resultado/s")
+    # Limpieza honesta: picks ya jugados que NO se pudieron resolver (sin fuente de
+    # resultado, p.ej. boxeo/MMA) se retiran para no congelar las estadisticas.
+    GRACIA_DIAS = 3
+    limpiados = 0
+    _hoy = date.today()
+    for _ev in _extraer_array(texto, "PROXIMOS_EVENTOS"):
+        if _ev.get("resultado") not in (None, "", "pendiente"):
+            continue
+        _fi = _fecha_pick_iso(_ev.get("fecha", ""))
+        if not _fi:
+            continue
+        try:
+            _fp = date.fromisoformat(_fi)
+        except Exception:
+            continue
+        if (_hoy - _fp).days >= GRACIA_DIAS:
+            texto, _nr = _eliminar_de_proximos(texto, _ev.get("partido", ""))
+            if _nr:
+                limpiados += 1
+                LOG.info(f"  Sin fuente de resultado, retirado: {_ev.get('partido','')} ({_ev.get('liga','')})")
 
+    if actualizados > 0 or limpiados > 0:
+        escribir_datos(texto)
+        sincronizar_index_html(texto)
+        LOG.info(f"datos.js + index.html actualizados — {actualizados} resultado/s, {limpiados} retirado/s")
         repo_dir = os.path.join(BASE_DIR, "..")
 
         def _git(*args):

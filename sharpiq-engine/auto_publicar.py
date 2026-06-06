@@ -131,7 +131,8 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
     hora:       "{hora}",
     status:     "vip",
     tier:       "{tier}",
-    stake_pct:  "{stake_pct}"
+    stake_pct:  "{stake_pct}",
+    resultado:  "pendiente"
   }},"""
 
     patron = r'(const\s+PROXIMOS_EVENTOS\s*=\s*\[)'

@@ -34,7 +34,8 @@ const PROXIMOS_EVENTOS = [
     hora:       "00:00 COT",
     status:     "vip",
     tier:       "principal",
-    stake_pct:  "1.0"
+    stake_pct:  "1.0",
+    resultado:  "win"
   },
   {
     fecha:      "05/06/26",
@@ -45,7 +46,8 @@ const PROXIMOS_EVENTOS = [
     hora:       "19:16 COT",
     status:     "vip",
     tier:       "principal",
-    stake_pct:  "1.4"
+    stake_pct:  "1.4",
+    resultado:  "win"
   },
   {
     fecha:      "06/06/26",
@@ -56,7 +58,8 @@ const PROXIMOS_EVENTOS = [
     hora:       "02:00 COT",
     status:     "vip",
     tier:       "seguro",
-    stake_pct:  "5.0"
+    stake_pct:  "5.0",
+    resultado:  "loss"
   },
   {
     fecha:      "05/06/26",
@@ -78,30 +81,10 @@ const PROXIMOS_EVENTOS = [
     hora:       "12:00 COT",
     status:     "vip",
     tier:       "principal",
-    stake_pct:  "3.6"
+    stake_pct:  "3.6",
+    resultado:  "win"
   },
-  {
-    fecha:      "03/06/26",
-    partido:    "Felix Auger-Aliassime vs Flavio Cobolli",
-    liga:       "ATP Roland Garros",
-    prediccion: "Gana Flavio Cobolli — EV +2%",
-    cuota:      "2.0",
-    hora:       "04:00 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.0"
-  },
-  {
-    fecha:      "03/06/26",
-    partido:    "Anna Kalinskaya vs Maja Chwalinska",
-    liga:       "WTA Roland Garros",
-    prediccion: "Gana Maja Chwalinska — EV +2%",
-    cuota:      "2.05",
-    hora:       "04:00 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.2"
-  },
+
   {
     fecha:      "02/06/26",
     partido:    "Carolina Hurricanes vs Vegas Golden Knights",
@@ -111,7 +94,8 @@ const PROXIMOS_EVENTOS = [
     hora:       "19:00 COT",
     status:     "vip",
     tier:       "alto_valor",
-    stake_pct:  "5.0"
+    stake_pct:  "5.0",
+    resultado:  "loss"
   },
   {
     fecha:      "31/05/26",
@@ -123,30 +107,10 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "2",
-    analisis:   "Palmeiras (local) en gran forma: viene de ganar 3-0 a Flamengo de visita, GF 2.4/GC 0.8 por partido, sin bajas. Calidad muy superior a Chapecoense. A cuota 1.37 el valor es ajustado (prob ~75% vs 73% de equilibrio = EV +3%): pick SEGURO de bajo riesgo, stake reducido 2%. No es un valorazo, entra por calidad, forma y localia."
+    analisis:   "Palmeiras (local) en gran forma: viene de ganar 3-0 a Flamengo de visita, GF 2.4/GC 0.8 por partido, sin bajas. Calidad muy superior a Chapecoense. A cuota 1.37 el valor es ajustado (prob ~75% vs 73% de equilibrio = EV +3%): pick SEGURO de bajo riesgo, stake reducido 2%. No es un valorazo, entra por calidad, forma y localia.",
+    resultado:  "win"
   },
-  {
-    fecha:      "31/05/26",
-    partido:    "Palestino vs Audax Italiano",
-    liga:       "Campeonato Chileno",
-    prediccion: "Under 2.5 Goles — EV +28%",
-    cuota:      "1.9",
-    hora:       "19:00 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "5.0"
-  },
-  {
-    fecha:      "30/05/26",
-    partido:    "Kevin Lerena vs Ryad Merhy",
-    liga:       "Boxeo",
-    prediccion: "Gana Ryad Merhy — EV +4%",
-    cuota:      "2.3",
-    hora:       "13:00 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.7"
-  },
+
   {
     fecha:      "31/05/26",
     partido:    "Gent vs Genk",
@@ -156,30 +120,10 @@ const PROXIMOS_EVENTOS = [
     hora:       "11:30 COT",
     status:     "vip",
     tier:       "alto_valor",
-    stake_pct:  "5.0"
+    stake_pct:  "5.0",
+    resultado:  "win"
   },
-  {
-    fecha:      "31/05/26",
-    partido:    "Penrith Panthers vs New Zealand Warriors",
-    liga:       "NRL Rugby League",
-    prediccion: "Gana Penrith Panthers — EV +2%",
-    cuota:      "1.77",
-    hora:       "03:15 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.5"
-  },
-  {
-    fecha:      "30/05/26",
-    partido:    "Stephanie Han vs Holly Holm",
-    liga:       "Boxeo",
-    prediccion: "Gana Stephanie Han — EV +2%",
-    cuota:      "1.25",
-    hora:       "16:55 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "4.3"
-  },
+
   {
     fecha:      "29/05/26",
     partido:    "Nice vs Saint Etienne",
@@ -189,7 +133,8 @@ const PROXIMOS_EVENTOS = [
     hora:       "13:45 COT",
     status:     "vip",
     tier:       "seguro",
-    stake_pct:  "5.0"
+    stake_pct:  "5.0",
+    resultado:  "loss"
   },
   {
     fecha:      "29/05/26",
@@ -243,6 +188,70 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "29/05/26",
+    partido:    "Nice vs Saint Etienne",
+    liga:       "Ligue 1",
+    prediccion: "Under 2.5 Goles — EV +40%",
+    cuota:      "1.62",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "31/05/26",
+    partido:    "Gent vs Genk",
+    liga:       "Belgian First Div",
+    prediccion: "Under 2.5 Goles — EV +85%",
+    cuota:      "2.05",
+    resultado:  "win"
+  },
+  {
+    fecha:      "31/05/26",
+    partido:    "Palmeiras vs Chapecoense",
+    liga:       "Brasileirao Serie A",
+    prediccion: "Gana Palmeiras — EV +3%",
+    cuota:      "1.37",
+    resultado:  "win"
+  },
+  {
+    fecha:      "02/06/26",
+    partido:    "Carolina Hurricanes vs Vegas Golden Knights",
+    liga:       "NHL",
+    prediccion: "Gana Vegas Golden Knights — EV +24%",
+    cuota:      "3.0",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "04/06/26",
+    partido:    "HSV Hamburg vs HSG Wetzlar",
+    liga:       "Balonmano Bundesliga",
+    prediccion: "Gana HSV Hamburg — EV +6%",
+    cuota:      "1.77",
+    resultado:  "win"
+  },
+  {
+    fecha:      "06/06/26",
+    partido:    "Tokyo Verdy vs Gamba Osaka",
+    liga:       "J-League",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.5",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "05/06/26",
+    partido:    "Texas Rangers vs Cleveland Guardians",
+    liga:       "MLB",
+    prediccion: "Gana Texas Rangers — EV +3%",
+    cuota:      "2.24",
+    resultado:  "win"
+  },
+  {
+    fecha:      "06/06/26",
+    partido:    "FC Tokyo vs Cerezo Osaka",
+    liga:       "J-League",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.7",
+    resultado:  "win"
+  },
   {
     fecha:      "29/05/26",
     partido:    "Carolina Hurricanes vs Montréal Canadiens",
