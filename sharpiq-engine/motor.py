@@ -4180,7 +4180,33 @@ def clasificar_tiers(reporte):
     principal  = _pick(principal_pool)
     seguro     = _pick(seguro_pool)
 
-    return {"seguro": seguro, "principal": principal, "alto_valor": alto_valor}
+    # ── EXTRAS: picks adicionales de calidad (mas valor cuando el mercado lo amerite)
+    # Mismo filtro de los pools (ya pasaron umbrales). Tope total del dia = MAX_TOTAL.
+    # No repite partido. Cada extra conserva su tier real (seguro/principal/alto_valor).
+    MAX_TOTAL = 5
+    MAX_POR_LIGA = 2   # diversificacion: no concentrar el dia en una sola competicion
+    _base = [t for t in (seguro, principal, alto_valor) if t]
+    _liga_cnt = {}
+    for _t in _base:
+        _lg = str(_t["pred"].get("liga_code", ""))
+        _liga_cnt[_lg] = _liga_cnt.get(_lg, 0) + 1
+    extra = []
+    for _tn, _pool in (("alto_valor", alto_pool), ("principal", principal_pool), ("seguro", seguro_pool)):
+        for c in _pool:
+            if len(_base) + len(extra) >= MAX_TOTAL:
+                break
+            _k = c["pred"]["local"] + " vs " + c["pred"]["visitante"]
+            _lg = str(c["pred"].get("liga_code", ""))
+            if _k in usados_partidos:
+                continue
+            if _liga_cnt.get(_lg, 0) >= MAX_POR_LIGA:
+                continue
+            usados_partidos.add(_k)
+            _liga_cnt[_lg] = _liga_cnt.get(_lg, 0) + 1
+            extra.append({**c, "tier": _tn})
+    if extra:
+        LOG.info(f"Tiers: 3 base + {len(extra)} extra(s) = {len(_base)+len(extra)} picks (tope {MAX_TOTAL})")
+    return {"seguro": seguro, "principal": principal, "alto_valor": alto_valor, "extra": extra}
 
 
 if __name__ == "__main__":

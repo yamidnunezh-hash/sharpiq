@@ -1024,7 +1024,7 @@ def _analisis_experto(tier):
         return "<i>Prob modelo: " + str(round(tier.get("prob", 0))) + "%</i>"
 
 
-def enviar_tiers_vip(seguro, principal, alto_valor):
+def enviar_tiers_vip(seguro, principal, alto_valor, extras=None):
     """
     Mensaje único al canal VIP con los 3 picks del día en formato de tiers.
     Formato: 🛡️ SEGURO / ⭐ PICK PRINCIPAL / 🔥 ALTO VALOR
@@ -1087,6 +1087,12 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
         _bloque(principal,   "⭐", "PICK PRINCIPAL"),
         _bloque(alto_valor,  "🔥", "ALTO VALOR"),
     ] if b]
+    _EL = {"seguro": ("🛡️", "SEGURO"), "principal": ("⭐", "PICK PRINCIPAL"), "alto_valor": ("🔥", "ALTO VALOR")}
+    for _ex in (extras or []):
+        _em, _lb = _EL.get(_ex.get("tier"), ("⭐", "PICK"))
+        _bx = _bloque(_ex, _em, _lb)
+        if _bx:
+            bloques.append(_bx)
 
     if not bloques:
         return False
@@ -1096,7 +1102,11 @@ def enviar_tiers_vip(seguro, principal, alto_valor):
         f"📊 <b>SharpIQ — Picks del Día</b>\n"
         f"{'─' * 30}\n\n"
         + sep.join(bloques)
-        + "\n\n📌 <i>Regla: nunca más del 8% del bankroll en un día</i>"
+        + (
+            "\n\n📌 <i>Regla: máx 8% del bankroll al día"
+            + (f" — con {len(bloques)} picks, reparte (~{round(8/len(bloques),1)}% c/u)" if len(bloques) > 1 else "")
+            + "</i>"
+        )
         + "\n<i>SharpIQ — La ventaja inteligente · sharpiq.co</i>"
     )
     return enviar_mensaje(texto, chat_id=get_chat_id())

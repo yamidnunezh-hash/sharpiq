@@ -271,6 +271,7 @@ def correr():
         if not os.path.exists(_sin_picks_sent):
             try:
                 from telegram_alertas import enviar_alerta_servicio, enviar_mensaje, get_chat_id
+                from config import TELEGRAM_FREE_ID
                 _msg_sin = (
                     f"📭 <b>SharpIQ — Sin picks hoy</b>\n\n"
                     f"El motor no encontró valor suficiente para publicar hoy. "
@@ -281,7 +282,8 @@ def correr():
                 enviar_alerta_servicio(_msg_sin)
                 # También al VIP, para que el suscriptor vea que el sistema funciona (no caído)
                 try:
-                    enviar_mensaje(_msg_sin, chat_id=get_chat_id())
+                    enviar_mensaje(_msg_sin, chat_id=get_chat_id())      # VIP
+                    enviar_mensaje(_msg_sin, chat_id=TELEGRAM_FREE_ID)   # Free: cierra el saludo de la manana
                 except Exception:
                     pass
                 open(_sin_picks_sent, "w").close()
@@ -294,12 +296,12 @@ def correr():
     try:
         from telegram_alertas import enviar_gif_vip, enviar_tiers_vip, GIFS_MANANA, _gif_rotado
         enviar_gif_vip(_gif_rotado(GIFS_MANANA))
-        enviar_tiers_vip(tiers["seguro"], tiers["principal"], tiers["alto_valor"])
+        enviar_tiers_vip(tiers["seguro"], tiers["principal"], tiers["alto_valor"], extras=tiers.get("extra"))
         LOG.info("Tiers VIP enviados a Telegram")
         # Aviso de SERVICIO al canal Alertas (sin revelar los picks, eso es perk VIP)
         try:
             from telegram_alertas import enviar_alerta_servicio
-            _n = sum(1 for k in ("seguro", "principal", "alto_valor") if tiers.get(k))
+            _n = len([x for x in (tiers.get("seguro"), tiers.get("principal"), tiers.get("alto_valor")) if x]) + len(tiers.get("extra") or [])
             enviar_alerta_servicio(
                 f"✅ <b>SharpIQ — Picks de hoy publicados</b>\n\n"
                 f"Ya hay {_n} pick(s) del día disponibles para suscriptores VIP.\n"
@@ -339,8 +341,9 @@ def correr():
         "doble_12":"doble_12","dnb_local":"dnb_local","dnb_visita":"dnb_visita",
     }
     _STAKE_PCT = {"seguro": 3, "principal": 3, "alto_valor": 2}
-    for k in ("seguro", "principal", "alto_valor"):
-        t = tiers.get(k)
+    _items = [(_k, tiers.get(_k)) for _k in ("seguro", "principal", "alto_valor")]
+    _items += [(_t.get("tier", "principal"), _t) for _t in (tiers.get("extra") or [])]
+    for k, t in _items:
         if not t:
             continue
         pred      = t["pred"]
