@@ -110,7 +110,7 @@ def _hora_cot(hora_utc):
         return hora_utc
 
 
-def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=None, tier="principal", stake_pct=3):
+def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=None, tier="principal", stake_pct=3, prob=""):
     if fecha_evento:
         try:
             from datetime import date as _date
@@ -132,6 +132,7 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
     status:     "vip",
     tier:       "{tier}",
     stake_pct:  "{stake_pct}",
+    prob:       "{prob}",
     resultado:  "pendiente"
   }},"""
 
@@ -350,9 +351,10 @@ def correr():
         fecha_ev  = pred.get("fecha_evento") or pred.get("fecha") or None
         # Kelly dinámico — si no hay kelly_pct cae al tope del tier (seguro/principal=3%, alto_valor=2%)
         stake_pct = t.get("kelly_pct") or _STAKE_PCT.get(k, 3)
+        prob_modelo = round(t.get("pinn_prob") or t.get("prob") or 0)
         _agregar_a_datos_js(partido, liga, t["mercado_nombre"], str(t["cuota"]),
                             hora_cot, ev_val, fecha_evento=fecha_ev,
-                            tier=k, stake_pct=stake_pct)
+                            tier=k, stake_pct=stake_pct, prob=prob_modelo)
         LOG.info(f"datos.js [{k}]: {partido} | {t['mercado_nombre']} @{t['cuota']} | Kelly {stake_pct}%")
 
     # ── Git push (robusto ante carreras/conflictos entre workflows) ──

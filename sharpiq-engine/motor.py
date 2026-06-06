@@ -1064,25 +1064,25 @@ SPORTS_ODDS_ONLY = {
     "tennis_wta_wimbledon":         "WTA Wimbledon",
     "tennis_wta_us_open":           "WTA US Open",
     # ── MMA / Boxeo ───────────────────────────────────────────────
-    "mma_mixed_martial_arts":       "UFC / MMA",
-    "boxing_boxing":                "Boxeo",
+    # "mma_mixed_martial_arts":       "UFC / MMA",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
+    # "boxing_boxing":                "Boxeo",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
     # ── Rugby ─────────────────────────────────────────────────────
-    "rugbyleague_nrl":              "NRL Rugby League",
-    "rugbyunion_super_rugby":       "Super Rugby",
+    # "rugbyleague_nrl":              "NRL Rugby League",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
+    # "rugbyunion_super_rugby":       "Super Rugby",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
     # ── Cricket ──────────────────────────────────────────────────
-    "cricket_ipl":                  "IPL Cricket",
-    "cricket_big_bash":             "Big Bash Cricket",
-    "cricket_odi":                  "Cricket ODI",
-    "cricket_t20_blast":            "T20 Blast",
+    # "cricket_ipl":                  "IPL Cricket",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
+    # "cricket_big_bash":             "Big Bash Cricket",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
+    # "cricket_odi":                  "Cricket ODI",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
+    # "cricket_t20_blast":            "T20 Blast",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
     # ── Más deportes (agregados 2026-06-03 — "todos los deportes") ──
     "handball_germany_bundesliga":  "Balonmano Bundesliga",
-    "aussierules_afl":              "AFL",
+    # "aussierules_afl":              "AFL",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
     "basketball_wnba":              "WNBA",
     "baseball_kbo":                 "KBO",
     "baseball_npb":                 "NPB",
     "americanfootball_cfl":         "CFL",
-    "lacrosse_pll":                 "PLL Lacrosse",
-    "rugbyleague_nrl_state_of_origin": "NRL State of Origin",
+    # "lacrosse_pll":                 "PLL Lacrosse",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
+    # "rugbyleague_nrl_state_of_origin": "NRL State of Origin",   # CORTADO 2026-06-06 (efectividad: sin modelo predictivo + resultado no verificable)
     # golf_pga_tour / darts_betway_premier_league → HTTP 404 en The Odds API
     # NO agregar los "_winner" (futuros de temporada) ni politics (no son partidos)
 }

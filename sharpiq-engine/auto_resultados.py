@@ -248,6 +248,7 @@ def _agregar_a_historial(texto, evento, resultado):
     liga:       "{evento.get('liga', '')}",
     prediccion: "{evento.get('prediccion', '')}",
     cuota:      "{evento.get('cuota', '')}",
+    prob:       "{evento.get('prob', '')}",
     resultado:  "{resultado}"
   }},'''
 
