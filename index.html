@@ -2263,10 +2263,10 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     // Live stats from data
     const _isPending=r=>!r||r==='pending'||r==='pendiente';
     // Combinar historial + picks de proximos que ya tienen resultado
-    const _allPicks=[
-      ...(typeof PREDICCIONES_HISTORIAL!=='undefined'?PREDICCIONES_HISTORIAL:[]),
-      ...(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS.filter(p=>!_isPending(p.resultado)):[])
-    ];
+    // Base unica deduplicada: un pick resuelto vive en historial Y en proximos -> contar 1 vez
+    const _dedup={};
+    [...(typeof PREDICCIONES_HISTORIAL!=='undefined'?PREDICCIONES_HISTORIAL:[]),...(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS:[])].forEach(function(p){var k=(p.partido||'')+'|'+(p.fecha||'');if(!_dedup[k]||(_isPending(_dedup[k].resultado)&&!_isPending(p.resultado)))_dedup[k]=p;});
+    const _allPicks=Object.values(_dedup);
     const resolved=_allPicks.filter(p=>!_isPending(p.resultado));
     const wins=resolved.filter(p=>p.resultado==='win');
     const losses=resolved.filter(p=>p.resultado==='loss');
@@ -2299,7 +2299,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
           dRac=document.getElementById('dash-racha'),dTasa=document.getElementById('dash-tasa');
     if(dW){dW.dataset.target=wins.length;dW.textContent=wins.length;}
     if(dT) dT.textContent=' / '+resolved.length;
-    if(dT2){dT2.dataset.target=PREDICCIONES_HISTORIAL.length;dT2.textContent=PREDICCIONES_HISTORIAL.length;}
+    if(dT2){dT2.dataset.target=resolved.length;dT2.textContent=resolved.length;}
     if(dRoi){dRoi.dataset.target=Math.abs(yieldPct);dRoi.textContent=Math.abs(yieldPct);}
     if(dRac){if(racha===0){dRac.textContent='—';dRac.style.fontSize='58px';const ds=document.getElementById('dc-racha-sub');if(ds)ds.textContent='Próximo pick puede iniciar racha';}else{dRac.dataset.target=racha;dRac.textContent=racha;}}
     if(dTasa){dTasa.dataset.target=tasa;dTasa.textContent=tasa;}

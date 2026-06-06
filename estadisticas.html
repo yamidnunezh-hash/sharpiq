@@ -269,7 +269,12 @@ function pl(p){
 }
 
 // ── CALCULAR STATS ──────────────────────────────────────────────
-const todos    = (typeof PREDICCIONES_HISTORIAL !== 'undefined') ? PREDICCIONES_HISTORIAL : [];
+const _pend = r => !r || r==='pending' || r==='pendiente';
+const _hist = (typeof PREDICCIONES_HISTORIAL !== 'undefined') ? PREDICCIONES_HISTORIAL : [];
+const _prox = (typeof PROXIMOS_EVENTOS !== 'undefined') ? PROXIMOS_EVENTOS : [];
+const _dedup = {};
+[..._hist, ..._prox].forEach(function(p){ var k=(p.partido||'')+'|'+(p.fecha||''); if(!_dedup[k] || (_pend(_dedup[k].resultado) && !_pend(p.resultado))) _dedup[k]=p; });
+const todos    = Object.values(_dedup);
 const resueltos = todos.filter(p=>p.resultado==='win'||p.resultado==='loss');
 const wins      = resueltos.filter(p=>p.resultado==='win');
 const losses    = resueltos.filter(p=>p.resultado==='loss');
