@@ -5,6 +5,17 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "06/06/26",
+    partido:    "Joshua Padley vs Aqib Fiaz",
+    liga:       "Boxeo",
+    prediccion: "Gana Joshua Padley — EV +4%",
+    cuota:      "1.28",
+    hora:       "16:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "5.0"
+  },
+  {
+    fecha:      "06/06/26",
     partido:    "Bryce Mitchell vs Santiago Luna",
     liga:       "UFC / MMA",
     prediccion: "Gana Santiago Luna — EV +3%",
