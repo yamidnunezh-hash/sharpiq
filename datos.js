@@ -5,6 +5,32 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "07/06/26",
+    partido:    "ThSV Eisenach vs HSV Hamburg",
+    liga:       "Balonmano Bundesliga",
+    prediccion: "Gana ThSV Eisenach — EV +6%",
+    cuota:      "1.67",
+    hora:       "08:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "4.4",
+    prob:       "63",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "07/06/26",
+    partido:    "THW Kiel vs TBV Lemgo",
+    liga:       "Balonmano Bundesliga",
+    prediccion: "Gana THW Kiel — EV +9%",
+    cuota:      "1.71",
+    hora:       "08:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "5.0",
+    prob:       "64",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "07/06/26",
     partido:    "Bergischer HC vs Frisch Auf Göppingen",
     liga:       "Balonmano Bundesliga",
     prediccion: "Gana Frisch Auf Göppingen — EV +6%",
