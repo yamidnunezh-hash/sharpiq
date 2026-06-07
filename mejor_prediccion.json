@@ -1,22 +1,22 @@
 {
-  "partido": "VfL Gummersbach vs Rhein-Neckar Löwen",
+  "partido": "THW Kiel vs TBV Lemgo",
   "liga": "Balonmano Bundesliga",
-  "local": "VfL Gummersbach",
-  "visitante": "Rhein-Neckar Löwen",
-  "prediccion": "Rhein-Neckar Löwen",
-  "mercado_key": "Rhein-Neckar Löwen",
+  "local": "THW Kiel",
+  "visitante": "TBV Lemgo",
+  "prediccion": "THW Kiel",
+  "mercado_key": "THW Kiel",
   "cuota": "",
   "casa": "",
   "hora_utc": "13:00",
   "hora_cot": "08:00 COT",
-  "ev": 8.0,
+  "ev": 8.7,
   "clasificacion": "ALTO VALOR",
-  "confianza": 77.3,
+  "confianza": 63.6,
   "pred_completa": {
-    "id": "2b7cbf846b377c066512e380630c61bb",
+    "id": "df554d8a7c1673557a32e906961514a8",
     "comienzo": "2026-06-07T13:00:00Z",
-    "local": "VfL Gummersbach",
-    "visitante": "Rhein-Neckar Löwen",
+    "local": "THW Kiel",
+    "visitante": "TBV Lemgo",
     "liga": "Balonmano Bundesliga",
     "liga_code": "handball_germany_bundesliga",
     "deporte": "Balonmano Bundesliga",
@@ -24,44 +24,44 @@
     "hora": "13:00",
     "fecha_evento": "2026-06-07",
     "cuotas": {
-      "Rhein-Neckar Löwen": 4.75,
-      "VfL Gummersbach": 1.29
+      "TBV Lemgo": 2.65,
+      "THW Kiel": 1.71
     },
     "probabilidades": {
-      "Rhein-Neckar Löwen": 22.7,
-      "VfL Gummersbach": 77.3
+      "TBV Lemgo": 36.4,
+      "THW Kiel": 63.6
     },
-    "confianza": 77.3,
+    "confianza": 63.6,
     "value_bets": {
-      "Rhein-Neckar Löwen": {
-        "value": 0.08,
-        "ev_porcentaje": 8.0,
-        "ev_pinn": 8.0,
-        "tiene_valor": true,
-        "tiene_valor_pinn": true,
-        "clasificacion": "ALTO VALOR",
-        "cuota": 4.75,
-        "casa": "Unibet",
-        "pinn_prob": 22.7,
-        "mercado_nombre": "Rhein-Neckar Löwen"
-      },
-      "VfL Gummersbach": {
-        "value": -0.003,
-        "ev_porcentaje": -0.3,
-        "ev_pinn": -0.3,
+      "TBV Lemgo": {
+        "value": -0.035,
+        "ev_porcentaje": -3.5,
+        "ev_pinn": -3.5,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.29,
+        "cuota": 2.65,
         "casa": "Unibet",
-        "pinn_prob": 77.3,
-        "mercado_nombre": "VfL Gummersbach"
+        "pinn_prob": 36.4,
+        "mercado_nombre": "TBV Lemgo"
+      },
+      "THW Kiel": {
+        "value": 0.087,
+        "ev_porcentaje": 8.7,
+        "ev_pinn": 8.7,
+        "tiene_valor": true,
+        "tiene_valor_pinn": true,
+        "clasificacion": "ALTO VALOR",
+        "cuota": 1.71,
+        "casa": "Unibet",
+        "pinn_prob": 63.6,
+        "mercado_nombre": "THW Kiel"
       }
     },
     "prediccion_principal": {
-      "mercado": "Rhein-Neckar Löwen",
-      "prob": 22.7,
-      "ev": 8.0
+      "mercado": "THW Kiel",
+      "prob": 63.6,
+      "ev": 8.7
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
