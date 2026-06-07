@@ -1,66 +1,66 @@
 {
-  "partido": "Atlanta Braves vs Pittsburgh Pirates",
+  "partido": "Chicago Cubs vs San Francisco Giants",
   "liga": "MLB",
-  "local": "Atlanta Braves",
-  "visitante": "Pittsburgh Pirates",
-  "prediccion": "Pittsburgh Pirates (+1.5)",
+  "local": "Chicago Cubs",
+  "visitante": "San Francisco Giants",
+  "prediccion": "Chicago Cubs",
   "mercado_key": null,
   "cuota": "",
-  "hora_utc": "17:36",
-  "hora_cot": "12:36 COT",
+  "hora_utc": "00:31",
+  "hora_cot": "19:31 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 58.0,
+  "confianza": 54.2,
   "pred_completa": {
-    "id": "2fa5ef491316d397d3641327715fc999",
-    "comienzo": "2026-06-07T17:36:00Z",
-    "local": "Atlanta Braves",
-    "visitante": "Pittsburgh Pirates",
+    "id": "9e3c4b483a958d796d22ec1a44585e9d",
+    "comienzo": "2026-06-08T00:31:00Z",
+    "local": "Chicago Cubs",
+    "visitante": "San Francisco Giants",
     "liga": "MLB",
     "liga_code": "baseball_mlb",
     "deporte": "MLB",
     "deporte_emoji": "⚾",
-    "hora": "17:36",
+    "hora": "00:31",
     "fecha_evento": "2026-06-07",
     "cuotas": {
-      "Atlanta Braves": 1.69,
-      "Pittsburgh Pirates": 2.33,
-      "Over 8.5": 1.96,
-      "Under 8.5": 1.93,
-      "Atlanta Braves (-1.5)": 2.34,
-      "Pittsburgh Pirates (+1.5)": 1.67
+      "Chicago Cubs": 1.81,
+      "San Francisco Giants": 2.14,
+      "Over 8.0": 1.96,
+      "Under 8.0": 1.88,
+      "Chicago Cubs (-1.5)": 2.65,
+      "San Francisco Giants (+1.5)": 1.5
     },
     "probabilidades": {
-      "Atlanta Braves": 58.0,
-      "Pittsburgh Pirates": 42.0
+      "Chicago Cubs": 54.2,
+      "San Francisco Giants": 45.8
     },
-    "confianza": 58.0,
+    "confianza": 54.2,
     "value_bets": {
-      "Atlanta Braves": {
-        "value": -0.02,
-        "ev_porcentaje": -2.0,
-        "ev_pinn": -2.0,
+      "Chicago Cubs": {
+        "value": -0.019,
+        "ev_porcentaje": -1.9,
+        "ev_pinn": -1.9,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.69,
+        "cuota": 1.81,
         "casa": "Pinnacle",
-        "pinn_prob": 58.0,
-        "mercado_nombre": "Atlanta Braves"
+        "pinn_prob": 54.2,
+        "mercado_nombre": "Chicago Cubs"
       },
-      "Pittsburgh Pirates": {
-        "value": -0.02,
-        "ev_porcentaje": -2.0,
-        "ev_pinn": -2.0,
+      "San Francisco Giants": {
+        "value": -0.019,
+        "ev_porcentaje": -1.9,
+        "ev_pinn": -1.9,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.33,
-        "casa": "DraftKings",
-        "pinn_prob": 42.0,
-        "mercado_nombre": "Pittsburgh Pirates"
+        "cuota": 2.14,
+        "casa": "Pinnacle",
+        "pinn_prob": 45.8,
+        "mercado_nombre": "San Francisco Giants"
       },
-      "over_8_5": {
+      "over_8_0": {
         "value": -0.033,
         "ev_porcentaje": -3.3,
         "ev_pinn": -3.3,
@@ -70,49 +70,49 @@
         "cuota": 1.96,
         "casa": "Unibet",
         "pinn_prob": 49.4,
-        "mercado_nombre": "Over 8.5"
+        "mercado_nombre": "Over 8.0"
       },
-      "under_8_5": {
-        "value": -0.023,
-        "ev_porcentaje": -2.3,
-        "ev_pinn": -2.3,
+      "under_8_0": {
+        "value": -0.048,
+        "ev_porcentaje": -4.8,
+        "ev_pinn": -4.8,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.93,
+        "cuota": 1.88,
         "casa": "DraftKings",
         "pinn_prob": 50.6,
-        "mercado_nombre": "Under 8.5"
+        "mercado_nombre": "Under 8.0"
       },
-      "spread_atlanta_braves_m1_5": {
-        "value": -0.036,
-        "ev_porcentaje": -3.6,
-        "ev_pinn": -3.6,
+      "spread_chicago_cubs_m1_5": {
+        "value": -0.05,
+        "ev_porcentaje": -5.0,
+        "ev_pinn": -5.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.34,
+        "cuota": 2.65,
+        "casa": "BetMGM",
+        "pinn_prob": 35.8,
+        "mercado_nombre": "Chicago Cubs (-1.5)"
+      },
+      "spread_san_francisco_giants_1_5": {
+        "value": -0.038,
+        "ev_porcentaje": -3.8,
+        "ev_pinn": -3.8,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.5,
         "casa": "FanDuel",
-        "pinn_prob": 41.2,
-        "mercado_nombre": "Atlanta Braves (-1.5)"
-      },
-      "spread_pittsburgh_pirates_1_5": {
-        "value": -0.018,
-        "ev_porcentaje": -1.8,
-        "ev_pinn": -1.8,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.67,
-        "casa": "DraftKings",
-        "pinn_prob": 58.8,
-        "mercado_nombre": "Pittsburgh Pirates (+1.5)"
+        "pinn_prob": 64.2,
+        "mercado_nombre": "San Francisco Giants (+1.5)"
       }
     },
     "prediccion_principal": {
-      "mercado": "Pittsburgh Pirates (+1.5)",
-      "prob": 58.8,
-      "ev": -1.8
+      "mercado": "Chicago Cubs",
+      "prob": 54.2,
+      "ev": -1.9
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
