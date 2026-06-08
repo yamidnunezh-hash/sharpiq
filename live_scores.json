@@ -1,36 +1,7 @@
 {
-  "updated": "2026-06-07T23:53:24Z",
-  "live": [
-    {
-      "id": "5b241f4b94bf0db775608f15ddea4fc2",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Yankees",
-      "away": "Boston Red Sox",
-      "fecha": "06/06/26",
-      "hora": "19:06 COT",
-      "ts": 1780772760,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    }
-  ],
+  "updated": "2026-06-08T14:51:17Z",
+  "live": [],
   "upcoming": [
-    {
-      "id": "9e3c4b483a958d796d22ec1a44585e9d",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Chicago Cubs",
-      "away": "San Francisco Giants",
-      "fecha": "07/06/26",
-      "hora": "19:31 COT",
-      "ts": 1780860660,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
     {
       "id": "b0255c634de25907419670a9c90426df",
       "sport": "baseball_mlb",
@@ -221,14 +192,42 @@
       "home": "Vegas Golden Knights",
       "away": "Carolina Hurricanes",
       "fecha": "09/06/26",
-      "hora": "19:00 COT",
-      "ts": 1781031600,
+      "hora": "19:20 COT",
+      "ts": 1781032800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "7007236eb20a4822c122db2ce4804d5a",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Ceará",
+      "away": "Avai",
+      "fecha": "10/06/26",
+      "hora": "18:00 COT",
+      "ts": 1781114400,
       "completed": false,
       "score_home": null,
       "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "9e3c4b483a958d796d22ec1a44585e9d",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago Cubs",
+      "away": "San Francisco Giants",
+      "fecha": "07/06/26",
+      "hora": "19:31 COT",
+      "ts": 1780860660,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "2"
+    },
     {
       "id": "9ee9abd5a130bbc1df0aa293e85fa86f",
       "sport": "baseball_mlb",
@@ -354,20 +353,6 @@
       "completed": true,
       "score_home": "5",
       "score_away": "6"
-    },
-    {
-      "id": "d8f8c8a1937664863c010e3ed30af57c",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Yankees",
-      "away": "Boston Red Sox",
-      "fecha": "07/06/26",
-      "hora": "13:00 COT",
-      "ts": 1780837200,
-      "completed": true,
-      "score_home": "6",
-      "score_away": "1"
     }
   ]
 }
