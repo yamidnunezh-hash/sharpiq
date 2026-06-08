@@ -1,124 +1,499 @@
 {
-  "partido": "Chicago Cubs vs San Francisco Giants",
-  "liga": "MLB",
-  "local": "Chicago Cubs",
-  "visitante": "San Francisco Giants",
-  "prediccion": "Chicago Cubs",
+  "partido": "Vila Nova vs Botafogo",
+  "liga": "Brasileirao B",
+  "local": "Vila Nova",
+  "visitante": "Botafogo",
+  "prediccion": "Handicap Local -0.5",
   "mercado_key": null,
-  "cuota": "",
-  "hora_utc": "00:31",
-  "hora_cot": "19:31 COT",
+  "cuota": "2.04",
+  "hora_utc": "23:00",
+  "hora_cot": "18:00 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 54.2,
+  "confianza": 75.7,
   "pred_completa": {
-    "id": "9e3c4b483a958d796d22ec1a44585e9d",
-    "comienzo": "2026-06-08T00:31:00Z",
-    "local": "Chicago Cubs",
-    "visitante": "San Francisco Giants",
-    "liga": "MLB",
-    "liga_code": "baseball_mlb",
-    "deporte": "MLB",
-    "deporte_emoji": "⚾",
-    "hora": "00:31",
-    "fecha_evento": "2026-06-07",
+    "local": "Vila Nova",
+    "visitante": "Botafogo",
+    "liga": "Brasileirao B",
+    "liga_code": "soccer_brazil_serie_b",
+    "id": "3acf202e1b7e37a33ad88dcb0076e95b",
+    "comienzo": "2026-06-08T23:00:00Z",
+    "hora": "23:00",
+    "fecha_evento": "2026-06-08",
     "cuotas": {
-      "Chicago Cubs": 1.81,
-      "San Francisco Giants": 2.14,
-      "Over 8.0": 1.96,
-      "Under 8.0": 1.88,
-      "Chicago Cubs (-1.5)": 2.65,
-      "San Francisco Giants (+1.5)": 1.5
+      "2": 4.33,
+      "2_casa": "Pinnacle",
+      "pinnacle_2": 4.33,
+      "1": 2.04,
+      "1_casa": "Pinnacle",
+      "pinnacle_1": 2.04,
+      "X": 3.14,
+      "X_casa": "Pinnacle",
+      "pinnacle_X": 3.14,
+      "over20": 1.94,
+      "over20_casa": "Pinnacle",
+      "pinnacle_over20": 1.94,
+      "under20": 1.93,
+      "under20_casa": "Pinnacle",
+      "pinnacle_under20": 1.93,
+      "ah_l_m0_5": 2.05,
+      "ah_l_m0_5_casa": "Pinnacle",
+      "pinnacle_ah_l_m0_5": 2.05,
+      "ah_v_p0_5": 1.85,
+      "ah_v_p0_5_casa": "Pinnacle",
+      "pinnacle_ah_v_p0_5": 1.85
     },
     "probabilidades": {
-      "Chicago Cubs": 54.2,
-      "San Francisco Giants": 45.8
+      "victoria_visita": 22.2,
+      "victoria_local": 47.2,
+      "empate": 30.6,
+      "over20": 49.9,
+      "under20": 50.1,
+      "ah_l_m0_5": 47.4,
+      "ah_v_p0_5": 52.6,
+      "over25": 24.3,
+      "under25": 75.7
     },
-    "confianza": 54.2,
+    "confianza": 75.7,
     "value_bets": {
-      "Chicago Cubs": {
-        "value": -0.019,
-        "ev_porcentaje": -1.9,
-        "ev_pinn": -1.9,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.81,
-        "casa": "Pinnacle",
-        "pinn_prob": 54.2,
-        "mercado_nombre": "Chicago Cubs"
-      },
-      "San Francisco Giants": {
-        "value": -0.019,
-        "ev_porcentaje": -1.9,
-        "ev_pinn": -1.9,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 2.14,
-        "casa": "Pinnacle",
-        "pinn_prob": 45.8,
-        "mercado_nombre": "San Francisco Giants"
-      },
-      "over_8_0": {
-        "value": -0.033,
-        "ev_porcentaje": -3.3,
-        "ev_pinn": -3.3,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.96,
-        "casa": "Unibet",
-        "pinn_prob": 49.4,
-        "mercado_nombre": "Over 8.0"
-      },
-      "under_8_0": {
-        "value": -0.048,
-        "ev_porcentaje": -4.8,
-        "ev_pinn": -4.8,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.88,
-        "casa": "DraftKings",
-        "pinn_prob": 50.6,
-        "mercado_nombre": "Under 8.0"
-      },
-      "spread_chicago_cubs_m1_5": {
-        "value": -0.05,
-        "ev_porcentaje": -5.0,
-        "ev_pinn": -5.0,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 2.65,
-        "casa": "BetMGM",
-        "pinn_prob": 35.8,
-        "mercado_nombre": "Chicago Cubs (-1.5)"
-      },
-      "spread_san_francisco_giants_1_5": {
+      "victoria_visita": {
         "value": -0.038,
         "ev_porcentaje": -3.8,
         "ev_pinn": -3.8,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.5,
-        "casa": "FanDuel",
-        "pinn_prob": 64.2,
-        "mercado_nombre": "San Francisco Giants (+1.5)"
+        "cuota": 4.33,
+        "casa": "Pinnacle",
+        "pinn_prob": 22.2
+      },
+      "victoria_local": {
+        "value": -0.038,
+        "ev_porcentaje": -3.8,
+        "ev_pinn": -3.8,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 2.04,
+        "casa": "Pinnacle",
+        "pinn_prob": 47.2
+      },
+      "empate": {
+        "value": -0.038,
+        "ev_porcentaje": -3.8,
+        "ev_pinn": -3.8,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 3.14,
+        "casa": "Pinnacle",
+        "pinn_prob": 30.6
+      },
+      "over20": {
+        "value": -0.033,
+        "ev_porcentaje": -3.3,
+        "ev_pinn": -3.3,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.94,
+        "casa": "Pinnacle",
+        "pinn_prob": 49.9
+      },
+      "under20": {
+        "value": -0.033,
+        "ev_porcentaje": -3.3,
+        "ev_pinn": -3.3,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.93,
+        "casa": "Pinnacle",
+        "pinn_prob": 50.1
+      },
+      "ah_l_m0_5": {
+        "value": -0.028,
+        "ev_porcentaje": -2.8,
+        "ev_pinn": -2.8,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 2.05,
+        "casa": "Pinnacle",
+        "pinn_prob": 47.4
+      },
+      "ah_v_p0_5": {
+        "value": -0.028,
+        "ev_porcentaje": -2.8,
+        "ev_pinn": -2.8,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.85,
+        "casa": "Pinnacle",
+        "pinn_prob": 52.6
+      },
+      "over25": {
+        "value": null,
+        "ev_porcentaje": null,
+        "ev_pinn": null,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN EV",
+        "cuota": 2.5,
+        "casa": "William Hill",
+        "pinn_prob": 24.3,
+        "sin_mercado": true
+      },
+      "under25": {
+        "value": null,
+        "ev_porcentaje": null,
+        "ev_pinn": null,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN EV",
+        "cuota": 1.55,
+        "casa": "Unibet",
+        "pinn_prob": 75.7,
+        "sin_mercado": true
       }
     },
     "prediccion_principal": {
-      "mercado": "Chicago Cubs",
-      "prob": 54.2,
-      "ev": -1.9
+      "mercado": "Handicap Local -0.5",
+      "prob": 47.4,
+      "ev": -2.8
     },
     "cuotas_reales": true,
+    "confiable": true,
+    "sin_pinnacle": false,
     "cuotas_avisos": [],
-    "forma_local": [],
-    "forma_visita": [],
-    "h2h": {},
-    "movimiento": null
+    "sede_neutral": false,
+    "arbitro": "",
+    "forma_local": {
+      "forma": 0.667,
+      "ataque_reciente": 1.2,
+      "defensa_reciente": 0.6,
+      "partidos": 5
+    },
+    "forma_visita": {
+      "forma": 0.667,
+      "ataque_reciente": 2.2,
+      "defensa_reciente": 1.0,
+      "partidos": 5
+    },
+    "h2h": null,
+    "movimiento": null,
+    "mercados_ext": {
+      "corners": {
+        "corners_esperados": 10.8,
+        "corners_over9": 75.1,
+        "corners_under9": 24.9,
+        "corners_over10": 63.9,
+        "corners_under10": 36.1,
+        "corners_over11": 51.7,
+        "corners_under11": 48.3,
+        "corners_over12": 39.8,
+        "corners_under12": 60.2,
+        "corners_over13": 29.1,
+        "corners_under13": 70.9
+      },
+      "tarjetas": {
+        "tarjetas_esperadas": 3.6,
+        "tarjetas_over3": 69.9,
+        "tarjetas_under3": 30.1,
+        "tarjetas_over4": 48.7,
+        "tarjetas_under4": 51.3,
+        "tarjetas_over5": 29.5,
+        "tarjetas_under5": 70.5,
+        "tarjetas_over6": 15.7,
+        "tarjetas_under6": 84.3
+      },
+      "handicap": {
+        "ah_local_menos05": 47.2,
+        "ah_visita_mas05": 52.8,
+        "ah_local_menos1": 30.7,
+        "ah_visita_mas1": 69.3,
+        "ah_local_menos15": 21.5,
+        "ah_visita_mas15": 78.5
+      },
+      "disparos": {
+        "disparos_esperados": 4.9,
+        "disp_vis_over2": 95.7,
+        "disp_vis_under2": 4.3,
+        "disp_vis_over3": 86.9,
+        "disp_vis_under3": 13.1,
+        "disp_vis_over4": 72.5,
+        "disp_vis_under4": 27.5,
+        "disp_vis_over5": 54.7,
+        "disp_vis_under5": 45.3
+      },
+      "paradas": {
+        "paradas_esperadas": 3.6,
+        "paradas_local_over2": 87.4,
+        "paradas_local_under2": 12.6,
+        "paradas_local_over3": 69.7,
+        "paradas_local_under3": 30.3,
+        "paradas_local_over4": 48.5,
+        "paradas_local_under4": 51.5
+      },
+      "ev_ext": {
+        "corners_over9": {
+          "prob_modelo": 75.1,
+          "cuota_justa": 1.33,
+          "cuota_ref": 1.26,
+          "ev_porcentaje": -5.4,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "corners_under9": {
+          "prob_modelo": 24.9,
+          "cuota_justa": 4.02,
+          "cuota_ref": 3.82,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "corners_over10": {
+          "prob_modelo": 63.9,
+          "cuota_justa": 1.56,
+          "cuota_ref": 1.49,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "corners_under10": {
+          "prob_modelo": 36.1,
+          "cuota_justa": 2.77,
+          "cuota_ref": 2.63,
+          "ev_porcentaje": -5.1,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "corners_over11": {
+          "prob_modelo": 51.7,
+          "cuota_justa": 1.93,
+          "cuota_ref": 1.84,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "corners_under11": {
+          "prob_modelo": 48.3,
+          "cuota_justa": 2.07,
+          "cuota_ref": 1.97,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_over3": {
+          "prob_modelo": 69.9,
+          "cuota_justa": 1.43,
+          "cuota_ref": 1.36,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_under3": {
+          "prob_modelo": 30.1,
+          "cuota_justa": 3.32,
+          "cuota_ref": 3.16,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_over4": {
+          "prob_modelo": 48.7,
+          "cuota_justa": 2.05,
+          "cuota_ref": 1.95,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_under4": {
+          "prob_modelo": 51.3,
+          "cuota_justa": 1.95,
+          "cuota_ref": 1.85,
+          "ev_porcentaje": -5.1,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_over5": {
+          "prob_modelo": 29.5,
+          "cuota_justa": 3.39,
+          "cuota_ref": 3.22,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_under5": {
+          "prob_modelo": 70.5,
+          "cuota_justa": 1.42,
+          "cuota_ref": 1.35,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_local_menos05": {
+          "prob_modelo": 47.2,
+          "cuota_justa": 2.12,
+          "cuota_ref": 2.01,
+          "ev_porcentaje": -5.1,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_visita_mas05": {
+          "prob_modelo": 52.8,
+          "cuota_justa": 1.89,
+          "cuota_ref": 1.8,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_local_menos1": {
+          "prob_modelo": 30.7,
+          "cuota_justa": 3.26,
+          "cuota_ref": 3.09,
+          "ev_porcentaje": -5.1,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_visita_mas1": {
+          "prob_modelo": 69.3,
+          "cuota_justa": 1.44,
+          "cuota_ref": 1.37,
+          "ev_porcentaje": -5.1,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_local_menos15": {
+          "prob_modelo": 21.5,
+          "cuota_justa": 4.65,
+          "cuota_ref": 4.42,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_visita_mas15": {
+          "prob_modelo": 78.5,
+          "cuota_justa": 1.27,
+          "cuota_ref": 1.21,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_over2": {
+          "prob_modelo": 95.7,
+          "cuota_justa": 1.04,
+          "cuota_ref": 0.99,
+          "ev_porcentaje": -5.3,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_under2": {
+          "prob_modelo": 4.3,
+          "cuota_justa": 23.26,
+          "cuota_ref": 22.09,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_over3": {
+          "prob_modelo": 86.9,
+          "cuota_justa": 1.15,
+          "cuota_ref": 1.09,
+          "ev_porcentaje": -5.3,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_under3": {
+          "prob_modelo": 13.1,
+          "cuota_justa": 7.63,
+          "cuota_ref": 7.25,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_over4": {
+          "prob_modelo": 72.5,
+          "cuota_justa": 1.38,
+          "cuota_ref": 1.31,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_under4": {
+          "prob_modelo": 27.5,
+          "cuota_justa": 3.64,
+          "cuota_ref": 3.45,
+          "ev_porcentaje": -5.1,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_over5": {
+          "prob_modelo": 54.7,
+          "cuota_justa": 1.83,
+          "cuota_ref": 1.74,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_under5": {
+          "prob_modelo": 45.3,
+          "cuota_justa": 2.21,
+          "cuota_ref": 2.1,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_over2": {
+          "prob_modelo": 87.4,
+          "cuota_justa": 1.14,
+          "cuota_ref": 1.09,
+          "ev_porcentaje": -4.7,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_under2": {
+          "prob_modelo": 12.6,
+          "cuota_justa": 7.94,
+          "cuota_ref": 7.54,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_over3": {
+          "prob_modelo": 69.7,
+          "cuota_justa": 1.43,
+          "cuota_ref": 1.36,
+          "ev_porcentaje": -5.2,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_under3": {
+          "prob_modelo": 30.3,
+          "cuota_justa": 3.3,
+          "cuota_ref": 3.14,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_over4": {
+          "prob_modelo": 48.5,
+          "cuota_justa": 2.06,
+          "cuota_ref": 1.96,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_under4": {
+          "prob_modelo": 51.5,
+          "cuota_justa": 1.94,
+          "cuota_ref": 1.84,
+          "ev_porcentaje": -5.2,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        }
+      }
+    }
   }
 }
