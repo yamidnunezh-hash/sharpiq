@@ -14,7 +14,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "4.4",
     prob:       "63",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "07/06/26",
@@ -27,7 +27,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "5.0",
     prob:       "64",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "07/06/26",
@@ -39,7 +39,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "principal",
     stake_pct:  "3.6",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "06/06/26",
@@ -99,17 +99,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "5.0",
     resultado:  "loss"
   },
-  {
-    fecha:      "05/06/26",
-    partido:    "Sussex vs Leicestershire",
-    liga:       "T20 Blast",
-    prediccion: "Gana Leicestershire — EV +2%",
-    cuota:      "2.0",
-    hora:       "13:00 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.1"
-  },
+
   {
     fecha:      "04/06/26",
     partido:    "HSV Hamburg vs HSG Wetzlar",
@@ -226,6 +216,33 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "07/06/26",
+    partido:    "Bergischer HC vs Frisch Auf Göppingen",
+    liga:       "Balonmano Bundesliga",
+    prediccion: "Gana Frisch Auf Göppingen — EV +6%",
+    cuota:      "1.92",
+    prob:       "",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "07/06/26",
+    partido:    "THW Kiel vs TBV Lemgo",
+    liga:       "Balonmano Bundesliga",
+    prediccion: "Gana THW Kiel — EV +9%",
+    cuota:      "1.71",
+    prob:       "64",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "07/06/26",
+    partido:    "ThSV Eisenach vs HSV Hamburg",
+    liga:       "Balonmano Bundesliga",
+    prediccion: "Gana ThSV Eisenach — EV +6%",
+    cuota:      "1.67",
+    prob:       "63",
+    resultado:  "loss"
+  },
   {
     fecha:      "29/05/26",
     partido:    "Nice vs Saint Etienne",
