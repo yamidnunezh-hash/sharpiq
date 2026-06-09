@@ -4131,6 +4131,13 @@ def clasificar_tiers(reporte):
                 if ev_p >= AV_MIN_EV and AV_MIN_CUOTA <= cuota_val <= AV_MAX_CUOTA and prob_val >= AV_MIN_PROB:
                     alto_pool.append({**c, "score": ev_p})
 
+    # Techo de cordura +10%: con Pinnacle, un edge real rara vez pasa de +10% (Vegas inflado).
+    # Cierra el hueco en TODAS las ramas (1X2/handicap/DNB/DC futbol, totales, no-futbol, props).
+    # Los sin_ev (ev_pinn=0) quedan exentos: no tienen EV que inflar.
+    _EV_TOPE_PUB = 10.0
+    seguro_pool    = [c for c in seguro_pool    if (c.get("ev_pinn") or 0) <= _EV_TOPE_PUB]
+    principal_pool = [c for c in principal_pool if (c.get("ev_pinn") or 0) <= _EV_TOPE_PUB]
+    alto_pool      = [c for c in alto_pool      if (c.get("ev_pinn") or 0) <= _EV_TOPE_PUB]
     seguro_pool.sort(key=lambda x: x["score"], reverse=True)
     principal_pool.sort(key=lambda x: x["score"], reverse=True)
     alto_pool.sort(key=lambda x: x["score"], reverse=True)

@@ -38,7 +38,7 @@ def dashboard(token=Depends(usuario_activo)):
         cur.execute("""
             SELECT COUNT(*) as total,
                    SUM(CASE WHEN u2.plan='vip' THEN 1 ELSE 0 END) as activos,
-                   SUM(r.comision_usd) as comision
+                   COALESCE(SUM(r.meses_gratis_ganados),0) as meses_gratis
             FROM referidos r
             JOIN usuarios u2 ON u2.id=r.referido_id
             WHERE r.referidor_id=%s
@@ -51,7 +51,7 @@ def dashboard(token=Depends(usuario_activo)):
         "referidos": {
             "total":   int(ref_stats.get("total") or 0),
             "activos": int(ref_stats.get("activos") or 0),
-            "comision":float(ref_stats.get("comision") or 0),
+            "meses_gratis":int(ref_stats.get("meses_gratis") or 0),
         },
         "link_ref": f"https://sharpiq.co/registro.html?ref={perfil.get('codigo_ref','')}",
     }
