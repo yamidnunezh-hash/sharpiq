@@ -258,15 +258,52 @@ def enviar_resumen_dia(reporte):
             + f" | Prob {t['prob']}% | Kelly {t['kelly_pct']}%"
         )
 
-    sep = "\n" + "─" * 28 + "\n"
-    cuerpo = sep.join(picks_lines) if picks_lines else "Sin picks calificados hoy (EV insuficiente)"
+    # Candidatos para criterio manual: mejores value_bets que NO calificaron auto
+    _usados = set()
+    for _k in ("seguro", "principal", "alto_valor"):
+        _tk = tiers.get(_k)
+        if _tk:
+            _usados.add(_tk["pred"]["local"] + " vs " + _tk["pred"]["visitante"])
+    _cands = []
+    for _p in reporte.get("predicciones", []):
+        if _p.get("confiable") is False:
+            continue
+        if (_p.get("local", "") + " vs " + _p.get("visitante", "")) in _usados:
+            continue
+        _best = None
+        for _vb in (_p.get("value_bets") or {}).values():
+            if not _vb:
+                continue
+            if _best is None or (_vb.get("ev_pinn") or 0) > (_best.get("ev_pinn") or 0):
+                _best = _vb
+        if _best and (_best.get("ev_pinn") or 0) > 0:
+            _cands.append((_p, _best))
+    _cands.sort(key=lambda x: x[1].get("ev_pinn") or 0, reverse=True)
+    _cl = []
+    for _p, _vb in _cands[:6]:
+        _ce = _sport_emoji(_p.get("liga", ""))
+        _loc = esc(_p.get("local", ""))
+        _vis = esc(_p.get("visitante", ""))
+        _mn = esc(_vb.get("mercado_nombre", ""))
+        _pr = round(float(_vb.get("pinn_prob") or 0))
+        _cu = _vb.get("cuota", "")
+        _ev = _vb.get("ev_pinn", 0)
+        _cl.append(f"{_ce} {_loc} vs {_vis}\n   {_mn} @{_cu} | Prob {_pr}% | EV +{_ev}%")
 
+    sep = "\n" + ("─" * 28) + "\n"
+    cuerpo = sep.join(picks_lines) if picks_lines else "Sin picks calificados hoy (EV insuficiente)"
+    _cand_block = ""
+    if _cl:
+        _cand_block = "\n\n📋 <b>Candidatos para tu criterio</b> <i>(elige y publica en el panel)</i>\n" + "\n".join(_cl)
+
+    _fecha = reporte.get("fecha", "")
     texto = (
-        f"🤖 <b>SharpIQ — Resumen Motor</b>\n"
-        f"📅 {reporte['fecha']} | {total} partidos analizados\n"
-        f"{'─' * 28}\n\n"
-        f"{cuerpo}\n\n"
-        f"<i>sharpiq.co — La ventaja inteligente</i>"
+        "🤖 <b>SharpIQ — Resumen Motor</b>\n"
+        + "📅 " + str(_fecha) + " | " + str(total) + " partidos analizados\n"
+        + ("─" * 28) + "\n\n"
+        + cuerpo
+        + _cand_block
+        + "\n\n<i>sharpiq.co — La ventaja inteligente</i>"
     )
     return enviar_mensaje(texto, chat_id=TELEGRAM_YAMID_ID)
 
