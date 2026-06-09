@@ -368,9 +368,9 @@ async function cargarMotor(){
     c.innerHTML=preds.map((p,pi)=>{
       const probs=p.probabilidades||{};
       const vbs=p.value_bets||{};
-      const p1=Math.round((probs.victoria_local||probs.gana_local||0)*100);
-      const px=Math.round((probs.empate||0)*100);
-      const p2=Math.round((probs.victoria_visita||probs.gana_visita||0)*100);
+      const p1=Math.round(probs.victoria_local||probs.gana_local||0);
+      const px=Math.round(probs.empate||0);
+      const p2=Math.round(probs.victoria_visita||probs.gana_visita||0);
       const hora=p.hora?(()=>{try{const[h,m]=p.hora.split(':');return`${String((parseInt(h)-5+24)%24).padStart(2,'0')}:${m} COT`;}catch(_){return p.hora;}})():'';
       // Fecha del evento — puede diferir de hoy (NFL meses adelante)
       const fechaEv=p.fecha_evento||'';
@@ -388,8 +388,8 @@ async function cargarMotor(){
         const ev=Math.round(vb.ev_pinn||vb.ev_porcentaje||0);
         const cuota=vb.cuota?Number(vb.cuota).toFixed(2):'?';
         const horaCOT=hora;
-        const pred_str=`${nombre} — EV +${ev}%`;
-        return `<span class="vb-tag ${cls}">${nombre} @${cuota} EV+${ev}%
+        const pred_str=`${nombre} — EV ${ev>=0?'+':''}${ev}%`;
+        return `<span class="vb-tag ${cls}">${nombre} @${cuota} EV ${ev>=0?'+':''}${ev}%
           <button class="btn btn-success" style="font-size:9px;padding:2px 8px" onclick="importarDesdeMotor('${(p.local+' vs '+p.visitante).replace(/'/g,"\\'")}','${(p.liga||'').replace(/'/g,"\\'")}','${pred_str.replace(/'/g,"\\'")}','${cuota}','${horaCOT}')">+ Agregar</button>
         </span>`;
       }).join('');
