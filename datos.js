@@ -14,7 +14,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "5.0",
     prob:       "76",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "07/06/26",
@@ -54,28 +54,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3.6",
     resultado:  "loss"
   },
-  {
-    fecha:      "06/06/26",
-    partido:    "Joshua Padley vs Aqib Fiaz",
-    liga:       "Boxeo",
-    prediccion: "Gana Joshua Padley — EV +4%",
-    cuota:      "1.28",
-    hora:       "16:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "5.0"
-  },
-  {
-    fecha:      "06/06/26",
-    partido:    "Bryce Mitchell vs Santiago Luna",
-    liga:       "UFC / MMA",
-    prediccion: "Gana Santiago Luna — EV +3%",
-    cuota:      "2.16",
-    hora:       "16:00 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.3"
-  },
+
   {
     fecha:      "06/06/26",
     partido:    "FC Tokyo vs Cerezo Osaka",
@@ -229,6 +208,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "08/06/26",
+    partido:    "Vila Nova vs Botafogo",
+    liga:       "Brasileirao B",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.49",
+    prob:       "76",
+    resultado:  "win"
+  },
   {
     fecha:      "07/06/26",
     partido:    "Bergischer HC vs Frisch Auf Göppingen",
