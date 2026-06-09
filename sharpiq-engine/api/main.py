@@ -51,6 +51,42 @@ GH_REPO  = "yamidnunezh-hash/sharpiq"
 GH_FILE  = "datos.js"
 GH_TOKEN = os.environ.get("GH_TOKEN", "")
 
+# ── Telegram: enviar el pick al publicar manualmente (canal segun status) ──
+import html as _html
+try:
+    from config import TELEGRAM_TOKEN as _TG_TOKEN, TELEGRAM_CHAT_ID as _TG_VIP, TELEGRAM_FREE_ID as _TG_FREE
+except Exception:
+    _TG_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
+    _TG_VIP   = os.environ.get("TELEGRAM_CHAT_ID", "")
+    _TG_FREE  = os.environ.get("TELEGRAM_FREE_ID", "")
+
+def _esc(x):
+    return _html.escape(str(x or ""), quote=False)
+
+def _tg_send(chat_id, texto):
+    if not (_TG_TOKEN and chat_id):
+        return False
+    try:
+        rr = _req.post("https://api.telegram.org/bot" + _TG_TOKEN + "/sendMessage",
+                       json={"chat_id": chat_id, "text": texto, "parse_mode": "HTML",
+                             "disable_web_page_preview": True}, timeout=10)
+        return bool(rr.ok)
+    except Exception:
+        return False
+
+def _msg_pick(body, tapado=False):
+    sp = body.emoji or "⚽"
+    ev_txt = (" — EV +" + str(round(body.ev)) + "%") if body.ev >= 1 else ""
+    cab = "🔥 <b>SharpIQ — Pick del Día (VIP)</b>" if tapado else "📊 <b>SharpIQ — Pick del Día</b>"
+    if tapado:
+        linea = "🎯 <b>🔒 ▓▓▓▓▓▓▓▓</b>  <i>(pick tapado)</i>\n\n👉 Desbloquealo en el VIP: https://sharpiq.co"
+    else:
+        linea = "🎯 <b>" + _esc(body.prediccion) + "</b> @" + _esc(body.cuota) + ev_txt + "\n\n💰 <i>Stake recomendado: 3% del bankroll</i>"
+    return (cab + "\n" + ("─" * 26) + "\n\n"
+            + sp + " <b>" + _esc(body.partido) + "</b>\n"
+            + "🏆 " + _esc(body.liga) + " | " + _esc(body.hora) + "\n"
+            + linea + "\n\n<i>SharpIQ — La ventaja inteligente</i>")
+
 class PickBody(BaseModel):
     partido:    str
     prediccion: str
@@ -113,7 +149,17 @@ def publicar_pick(body: PickBody, token=Depends(solo_admin)):
     if not wr.ok:
         raise HTTPException(502, f"GitHub error: {wr.json().get('message','')}")
 
-    return {"ok": True, "partido": body.partido, "prediccion": body.prediccion}
+    # Enviar a Telegram segun el canal elegido (no rompe el publish si Telegram falla)
+    tg_ok = False
+    try:
+        if body.status == "free":
+            tg_ok = _tg_send(_TG_FREE, _msg_pick(body, tapado=True))
+        else:
+            tg_ok = _tg_send(_TG_VIP, _msg_pick(body, tapado=False))
+    except Exception:
+        tg_ok = False
+
+    return {"ok": True, "partido": body.partido, "prediccion": body.prediccion, "telegram": bool(tg_ok)}
 
 
 app.include_router(auth_router,      prefix="/auth",      tags=["auth"])
