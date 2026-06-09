@@ -1,6 +1,6 @@
 {
   "fecha": "2026-06-09",
-  "total_partidos": 35,
+  "total_partidos": 36,
   "predicciones": [
     {
       "local": "Málaga",
@@ -12,71 +12,71 @@
       "hora": "19:00",
       "fecha_evento": "2026-06-10",
       "cuotas": {
-        "2": 3.4,
-        "2_casa": "Unibet",
-        "pinnacle_2": 3.39,
-        "1": 2.24,
+        "2": 3.48,
+        "2_casa": "Pinnacle",
+        "pinnacle_2": 3.48,
+        "1": 2.2,
         "1_casa": "Pinnacle",
-        "pinnacle_1": 2.24,
+        "pinnacle_1": 2.2,
         "X": 3.4,
         "X_casa": "Unibet",
-        "pinnacle_X": 3.36,
+        "pinnacle_X": 3.35,
         "over25": 2.03,
         "over25_casa": "Pinnacle",
         "pinnacle_over25": 2.03,
         "under25": 1.85,
         "under25_casa": "Pinnacle",
         "pinnacle_under25": 1.85,
-        "ah_l_m0_25": 1.93,
+        "ah_l_m0_25": 1.9,
         "ah_l_m0_25_casa": "Pinnacle",
-        "pinnacle_ah_l_m0_25": 1.93,
-        "ah_v_p0_25": 1.95,
+        "pinnacle_ah_l_m0_25": 1.9,
+        "ah_v_p0_25": 1.99,
         "ah_v_p0_25_casa": "Pinnacle",
-        "pinnacle_ah_v_p0_25": 1.95
+        "pinnacle_ah_v_p0_25": 1.99
       },
       "probabilidades": {
-        "victoria_visita": 28.4,
-        "victoria_local": 43.0,
-        "empate": 28.6,
+        "victoria_visita": 27.6,
+        "victoria_local": 43.7,
+        "empate": 28.7,
         "over25": 42.3,
         "under25": 57.7,
-        "ah_l_m0_25": 50.3,
-        "ah_v_p0_25": 49.7
+        "ah_l_m0_25": 51.2,
+        "ah_v_p0_25": 48.8
       },
       "confianza": 57.7,
       "value_bets": {
         "victoria_visita": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.4,
-          "casa": "Unibet",
-          "pinn_prob": 28.4
+          "cuota": 3.48,
+          "casa": "Pinnacle",
+          "pinn_prob": 27.6
         },
         "victoria_local": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.24,
+          "cuota": 2.2,
           "casa": "Pinnacle",
-          "pinn_prob": 43.0
+          "pinn_prob": 43.7
         },
         "empate": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 3.4,
           "casa": "Unibet",
-          "pinn_prob": 28.6
+          "pinn_prob": 28.7
         },
         "over25": {
           "value": -0.141,
@@ -101,26 +101,26 @@
           "pinn_prob": 57.7
         },
         "ah_l_m0_25": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
+          "cuota": 1.9,
           "casa": "Pinnacle",
-          "pinn_prob": 50.3
+          "pinn_prob": 51.2
         },
         "ah_v_p0_25": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
+          "cuota": 1.99,
           "casa": "Pinnacle",
-          "pinn_prob": 49.7
+          "pinn_prob": 48.8
         }
       },
       "prediccion_principal": {
@@ -169,12 +169,12 @@
           "tarjetas_under6": 72.0
         },
         "handicap": {
-          "ah_local_menos05": 43.0,
-          "ah_visita_mas05": 57.0,
-          "ah_local_menos1": 28.0,
-          "ah_visita_mas1": 72.0,
-          "ah_local_menos15": 19.6,
-          "ah_visita_mas15": 80.4
+          "ah_local_menos05": 43.7,
+          "ah_visita_mas05": 56.3,
+          "ah_local_menos1": 28.4,
+          "ah_visita_mas1": 71.6,
+          "ah_local_menos15": 19.9,
+          "ah_visita_mas15": 80.1
         },
         "disparos": {
           "disparos_esperados": 3.7,
@@ -294,50 +294,50 @@
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos05": {
-            "prob_modelo": 43.0,
-            "cuota_justa": 2.33,
-            "cuota_ref": 2.21,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 43.7,
+            "cuota_justa": 2.29,
+            "cuota_ref": 2.17,
+            "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas05": {
-            "prob_modelo": 57.0,
-            "cuota_justa": 1.75,
-            "cuota_ref": 1.67,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos1": {
-            "prob_modelo": 28.0,
-            "cuota_justa": 3.57,
-            "cuota_ref": 3.39,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_visita_mas1": {
-            "prob_modelo": 72.0,
-            "cuota_justa": 1.39,
-            "cuota_ref": 1.32,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos15": {
-            "prob_modelo": 19.6,
-            "cuota_justa": 5.1,
-            "cuota_ref": 4.85,
+            "prob_modelo": 56.3,
+            "cuota_justa": 1.78,
+            "cuota_ref": 1.69,
             "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
-          "ah_visita_mas15": {
-            "prob_modelo": 80.4,
-            "cuota_justa": 1.24,
-            "cuota_ref": 1.18,
+          "ah_local_menos1": {
+            "prob_modelo": 28.4,
+            "cuota_justa": 3.52,
+            "cuota_ref": 3.35,
+            "ev_porcentaje": -4.9,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "ah_visita_mas1": {
+            "prob_modelo": 71.6,
+            "cuota_justa": 1.4,
+            "cuota_ref": 1.33,
+            "ev_porcentaje": -4.8,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "ah_local_menos15": {
+            "prob_modelo": 19.9,
+            "cuota_justa": 5.03,
+            "cuota_ref": 4.77,
             "ev_porcentaje": -5.1,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "ah_visita_mas15": {
+            "prob_modelo": 80.1,
+            "cuota_justa": 1.25,
+            "cuota_ref": 1.19,
+            "ev_porcentaje": -4.7,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
@@ -457,962 +457,6 @@
       }
     },
     {
-      "local": "Ponte Preta",
-      "visitante": "Cuiabá",
-      "liga": "Brasileirao B",
-      "liga_code": "soccer_brazil_serie_b",
-      "id": "6a05d1cdde0f4b3e56a40af59b04ec25",
-      "comienzo": "2026-06-09T22:00:00Z",
-      "hora": "22:00",
-      "fecha_evento": "2026-06-09",
-      "cuotas": {
-        "2": 2.48,
-        "2_casa": "Pinnacle",
-        "pinnacle_2": 2.48,
-        "1": 3.66,
-        "1_casa": "Pinnacle",
-        "pinnacle_1": 3.66,
-        "X": 2.9,
-        "X_casa": "Unibet",
-        "pinnacle_X": 2.76,
-        "over175": 1.89,
-        "over175_casa": "Pinnacle",
-        "pinnacle_over175": 1.89,
-        "under175": 1.98,
-        "under175_casa": "Pinnacle",
-        "pinnacle_under175": 1.98
-      },
-      "probabilidades": {
-        "victoria_visita": 38.8,
-        "victoria_local": 26.3,
-        "empate": 34.9,
-        "over175": 51.2,
-        "under175": 48.8,
-        "over15": 65.0,
-        "under15": 35.0,
-        "over25": 37.3,
-        "under25": 62.7
-      },
-      "confianza": 65.0,
-      "value_bets": {
-        "victoria_visita": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.48,
-          "casa": "Pinnacle",
-          "pinn_prob": 38.8
-        },
-        "victoria_local": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.66,
-          "casa": "Pinnacle",
-          "pinn_prob": 26.3
-        },
-        "empate": {
-          "value": 0.012,
-          "ev_porcentaje": 1.2,
-          "ev_pinn": 1.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.9,
-          "casa": "Unibet",
-          "pinn_prob": 34.9
-        },
-        "over175": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.89,
-          "casa": "Pinnacle",
-          "pinn_prob": 51.2
-        },
-        "under175": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.98,
-          "casa": "Pinnacle",
-          "pinn_prob": 48.8
-        },
-        "over15": {
-          "value": null,
-          "ev_porcentaje": null,
-          "ev_pinn": null,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN EV",
-          "cuota": 1.55,
-          "casa": "Unibet",
-          "pinn_prob": 65.0,
-          "sin_mercado": true
-        },
-        "under15": {
-          "value": null,
-          "ev_porcentaje": null,
-          "ev_pinn": null,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN EV",
-          "cuota": 2.32,
-          "casa": "Unibet",
-          "pinn_prob": 35.0,
-          "sin_mercado": true
-        },
-        "over25": {
-          "value": null,
-          "ev_porcentaje": null,
-          "ev_pinn": null,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN EV",
-          "cuota": 2.9,
-          "casa": "William Hill",
-          "pinn_prob": 37.3,
-          "sin_mercado": true
-        },
-        "under25": {
-          "value": null,
-          "ev_porcentaje": null,
-          "ev_pinn": null,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN EV",
-          "cuota": 1.36,
-          "casa": "William Hill",
-          "pinn_prob": 62.7,
-          "sin_mercado": true
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Empate",
-        "prob": 34.9,
-        "ev": 1.2
-      },
-      "cuotas_reales": true,
-      "confiable": false,
-      "sin_pinnacle": false,
-      "cuotas_avisos": [],
-      "sede_neutral": false,
-      "arbitro": "",
-      "forma_local": {
-        "forma": 0.067,
-        "ataque_reciente": 0.8,
-        "defensa_reciente": 2.8,
-        "partidos": 5
-      },
-      "forma_visita": null,
-      "h2h": null,
-      "movimiento": null,
-      "mercados_ext": {
-        "corners": {
-          "corners_esperados": 10.8,
-          "corners_over9": 75.1,
-          "corners_under9": 24.9,
-          "corners_over10": 63.9,
-          "corners_under10": 36.1,
-          "corners_over11": 51.7,
-          "corners_under11": 48.3,
-          "corners_over12": 39.8,
-          "corners_under12": 60.2,
-          "corners_over13": 29.1,
-          "corners_under13": 70.9
-        },
-        "tarjetas": {
-          "tarjetas_esperadas": 2.8,
-          "tarjetas_over3": 52.8,
-          "tarjetas_under3": 47.2,
-          "tarjetas_over4": 30.6,
-          "tarjetas_under4": 69.4,
-          "tarjetas_over5": 15.1,
-          "tarjetas_under5": 84.9,
-          "tarjetas_over6": 6.4,
-          "tarjetas_under6": 93.6
-        },
-        "handicap": {
-          "ah_local_menos05": 26.3,
-          "ah_visita_mas05": 73.7,
-          "ah_local_menos1": 17.1,
-          "ah_visita_mas1": 82.9,
-          "ah_local_menos15": 12.0,
-          "ah_visita_mas15": 88.0
-        },
-        "disparos": {
-          "disparos_esperados": 2.5,
-          "disp_vis_over2": 72.3,
-          "disp_vis_under2": 27.7,
-          "disp_vis_over3": 46.9,
-          "disp_vis_under3": 53.1,
-          "disp_vis_over4": 25.3,
-          "disp_vis_under4": 74.7,
-          "disp_vis_over5": 11.6,
-          "disp_vis_under5": 88.4
-        },
-        "paradas": {
-          "paradas_esperadas": 1.4,
-          "paradas_local_over2": 42.5,
-          "paradas_local_under2": 57.5,
-          "paradas_local_over3": 17.9,
-          "paradas_local_under3": 82.1,
-          "paradas_local_over4": 6.0,
-          "paradas_local_under4": 94.0
-        },
-        "ev_ext": {
-          "corners_over9": {
-            "prob_modelo": 75.1,
-            "cuota_justa": 1.33,
-            "cuota_ref": 1.26,
-            "ev_porcentaje": -5.4,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_under9": {
-            "prob_modelo": 24.9,
-            "cuota_justa": 4.02,
-            "cuota_ref": 3.82,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_over10": {
-            "prob_modelo": 63.9,
-            "cuota_justa": 1.56,
-            "cuota_ref": 1.49,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_under10": {
-            "prob_modelo": 36.1,
-            "cuota_justa": 2.77,
-            "cuota_ref": 2.63,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_over11": {
-            "prob_modelo": 51.7,
-            "cuota_justa": 1.93,
-            "cuota_ref": 1.84,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_under11": {
-            "prob_modelo": 48.3,
-            "cuota_justa": 2.07,
-            "cuota_ref": 1.97,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_over3": {
-            "prob_modelo": 52.8,
-            "cuota_justa": 1.89,
-            "cuota_ref": 1.8,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_under3": {
-            "prob_modelo": 47.2,
-            "cuota_justa": 2.12,
-            "cuota_ref": 2.01,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_over4": {
-            "prob_modelo": 30.6,
-            "cuota_justa": 3.27,
-            "cuota_ref": 3.1,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_under4": {
-            "prob_modelo": 69.4,
-            "cuota_justa": 1.44,
-            "cuota_ref": 1.37,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_over5": {
-            "prob_modelo": 15.1,
-            "cuota_justa": 6.62,
-            "cuota_ref": 6.29,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_under5": {
-            "prob_modelo": 84.9,
-            "cuota_justa": 1.18,
-            "cuota_ref": 1.12,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos05": {
-            "prob_modelo": 26.3,
-            "cuota_justa": 3.8,
-            "cuota_ref": 3.61,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_visita_mas05": {
-            "prob_modelo": 73.7,
-            "cuota_justa": 1.36,
-            "cuota_ref": 1.29,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos1": {
-            "prob_modelo": 17.1,
-            "cuota_justa": 5.85,
-            "cuota_ref": 5.56,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_visita_mas1": {
-            "prob_modelo": 82.9,
-            "cuota_justa": 1.21,
-            "cuota_ref": 1.15,
-            "ev_porcentaje": -4.7,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos15": {
-            "prob_modelo": 12.0,
-            "cuota_justa": 8.33,
-            "cuota_ref": 7.92,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_visita_mas15": {
-            "prob_modelo": 88.0,
-            "cuota_justa": 1.14,
-            "cuota_ref": 1.08,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_over2": {
-            "prob_modelo": 72.3,
-            "cuota_justa": 1.38,
-            "cuota_ref": 1.31,
-            "ev_porcentaje": -5.3,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under2": {
-            "prob_modelo": 27.7,
-            "cuota_justa": 3.61,
-            "cuota_ref": 3.43,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_over3": {
-            "prob_modelo": 46.9,
-            "cuota_justa": 2.13,
-            "cuota_ref": 2.03,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under3": {
-            "prob_modelo": 53.1,
-            "cuota_justa": 1.88,
-            "cuota_ref": 1.79,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_over4": {
-            "prob_modelo": 25.3,
-            "cuota_justa": 3.95,
-            "cuota_ref": 3.75,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under4": {
-            "prob_modelo": 74.7,
-            "cuota_justa": 1.34,
-            "cuota_ref": 1.27,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_over5": {
-            "prob_modelo": 11.6,
-            "cuota_justa": 8.62,
-            "cuota_ref": 8.19,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under5": {
-            "prob_modelo": 88.4,
-            "cuota_justa": 1.13,
-            "cuota_ref": 1.07,
-            "ev_porcentaje": -5.4,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_over2": {
-            "prob_modelo": 42.5,
-            "cuota_justa": 2.35,
-            "cuota_ref": 2.24,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_under2": {
-            "prob_modelo": 57.5,
-            "cuota_justa": 1.74,
-            "cuota_ref": 1.65,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_over3": {
-            "prob_modelo": 17.9,
-            "cuota_justa": 5.59,
-            "cuota_ref": 5.31,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_under3": {
-            "prob_modelo": 82.1,
-            "cuota_justa": 1.22,
-            "cuota_ref": 1.16,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_over4": {
-            "prob_modelo": 6.0,
-            "cuota_justa": 16.67,
-            "cuota_ref": 15.83,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_under4": {
-            "prob_modelo": 94.0,
-            "cuota_justa": 1.06,
-            "cuota_ref": 1.01,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          }
-        }
-      }
-    },
-    {
-      "local": "Nautico PE",
-      "visitante": "Fortaleza",
-      "liga": "Brasileirao B",
-      "liga_code": "soccer_brazil_serie_b",
-      "id": "54e430dfd6622d6fcad84f9e439ad2a0",
-      "comienzo": "2026-06-09T22:00:00Z",
-      "hora": "22:00",
-      "fecha_evento": "2026-06-09",
-      "cuotas": {
-        "2": 3.34,
-        "2_casa": "Pinnacle",
-        "pinnacle_2": 3.34,
-        "1": 2.41,
-        "1_casa": "Pinnacle",
-        "pinnacle_1": 2.41,
-        "X": 3.15,
-        "X_casa": "Unibet",
-        "pinnacle_X": 3.09,
-        "over225": 2.08,
-        "over225_casa": "Pinnacle",
-        "pinnacle_over225": 2.08,
-        "under225": 1.81,
-        "under225_casa": "Pinnacle",
-        "pinnacle_under225": 1.81,
-        "ah_l_m0_25": 2.05,
-        "ah_l_m0_25_casa": "Pinnacle",
-        "pinnacle_ah_l_m0_25": 2.05,
-        "ah_v_p0_25": 1.85,
-        "ah_v_p0_25_casa": "Pinnacle",
-        "pinnacle_ah_v_p0_25": 1.85
-      },
-      "probabilidades": {
-        "victoria_visita": 28.8,
-        "victoria_local": 40.0,
-        "empate": 31.2,
-        "over225": 46.5,
-        "under225": 53.5,
-        "ah_l_m0_25": 47.4,
-        "ah_v_p0_25": 52.6,
-        "over25": 27.6,
-        "under25": 72.4
-      },
-      "confianza": 72.4,
-      "value_bets": {
-        "victoria_visita": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.34,
-          "casa": "Pinnacle",
-          "pinn_prob": 28.8
-        },
-        "victoria_local": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.41,
-          "casa": "Pinnacle",
-          "pinn_prob": 40.0
-        },
-        "empate": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.15,
-          "casa": "Unibet",
-          "pinn_prob": 31.2
-        },
-        "over225": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.08,
-          "casa": "Pinnacle",
-          "pinn_prob": 46.5
-        },
-        "under225": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.81,
-          "casa": "Pinnacle",
-          "pinn_prob": 53.5
-        },
-        "ah_l_m0_25": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.05,
-          "casa": "Pinnacle",
-          "pinn_prob": 47.4
-        },
-        "ah_v_p0_25": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.85,
-          "casa": "Pinnacle",
-          "pinn_prob": 52.6
-        },
-        "over25": {
-          "value": null,
-          "ev_porcentaje": null,
-          "ev_pinn": null,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN EV",
-          "cuota": 2.25,
-          "casa": "William Hill",
-          "pinn_prob": 27.6,
-          "sin_mercado": true
-        },
-        "under25": {
-          "value": null,
-          "ev_porcentaje": null,
-          "ev_pinn": null,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN EV",
-          "cuota": 1.62,
-          "casa": "Unibet",
-          "pinn_prob": 72.4,
-          "sin_mercado": true
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Empate",
-        "prob": 31.2,
-        "ev": -1.8
-      },
-      "cuotas_reales": true,
-      "confiable": false,
-      "sin_pinnacle": false,
-      "cuotas_avisos": [],
-      "sede_neutral": false,
-      "arbitro": "",
-      "forma_local": null,
-      "forma_visita": {
-        "forma": 0.4,
-        "ataque_reciente": 1.4,
-        "defensa_reciente": 1.0,
-        "partidos": 5
-      },
-      "h2h": null,
-      "movimiento": null,
-      "mercados_ext": {
-        "corners": {
-          "corners_esperados": 10.8,
-          "corners_over9": 75.1,
-          "corners_under9": 24.9,
-          "corners_over10": 63.9,
-          "corners_under10": 36.1,
-          "corners_over11": 51.7,
-          "corners_under11": 48.3,
-          "corners_over12": 39.8,
-          "corners_under12": 60.2,
-          "corners_over13": 29.1,
-          "corners_under13": 70.9
-        },
-        "tarjetas": {
-          "tarjetas_esperadas": 2.4,
-          "tarjetas_over3": 42.5,
-          "tarjetas_under3": 57.5,
-          "tarjetas_over4": 21.7,
-          "tarjetas_under4": 78.3,
-          "tarjetas_over5": 9.3,
-          "tarjetas_under5": 90.7,
-          "tarjetas_over6": 3.4,
-          "tarjetas_under6": 96.6
-        },
-        "handicap": {
-          "ah_local_menos05": 40.0,
-          "ah_visita_mas05": 60.0,
-          "ah_local_menos1": 26.0,
-          "ah_visita_mas1": 74.0,
-          "ah_local_menos15": 18.2,
-          "ah_visita_mas15": 81.8
-        },
-        "disparos": {
-          "disparos_esperados": 3.1,
-          "disp_vis_over2": 81.0,
-          "disp_vis_under2": 19.0,
-          "disp_vis_over3": 59.0,
-          "disp_vis_under3": 41.0,
-          "disp_vis_over4": 36.6,
-          "disp_vis_under4": 63.4,
-          "disp_vis_over5": 19.5,
-          "disp_vis_under5": 80.5
-        },
-        "paradas": {
-          "paradas_esperadas": 2.0,
-          "paradas_local_over2": 58.3,
-          "paradas_local_under2": 41.7,
-          "paradas_local_over3": 31.2,
-          "paradas_local_under3": 68.8,
-          "paradas_local_over4": 13.6,
-          "paradas_local_under4": 86.4
-        },
-        "ev_ext": {
-          "corners_over9": {
-            "prob_modelo": 75.1,
-            "cuota_justa": 1.33,
-            "cuota_ref": 1.26,
-            "ev_porcentaje": -5.4,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_under9": {
-            "prob_modelo": 24.9,
-            "cuota_justa": 4.02,
-            "cuota_ref": 3.82,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_over10": {
-            "prob_modelo": 63.9,
-            "cuota_justa": 1.56,
-            "cuota_ref": 1.49,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_under10": {
-            "prob_modelo": 36.1,
-            "cuota_justa": 2.77,
-            "cuota_ref": 2.63,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_over11": {
-            "prob_modelo": 51.7,
-            "cuota_justa": 1.93,
-            "cuota_ref": 1.84,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "corners_under11": {
-            "prob_modelo": 48.3,
-            "cuota_justa": 2.07,
-            "cuota_ref": 1.97,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_over3": {
-            "prob_modelo": 42.5,
-            "cuota_justa": 2.35,
-            "cuota_ref": 2.24,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_under3": {
-            "prob_modelo": 57.5,
-            "cuota_justa": 1.74,
-            "cuota_ref": 1.65,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_over4": {
-            "prob_modelo": 21.7,
-            "cuota_justa": 4.61,
-            "cuota_ref": 4.38,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_under4": {
-            "prob_modelo": 78.3,
-            "cuota_justa": 1.28,
-            "cuota_ref": 1.21,
-            "ev_porcentaje": -5.3,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_over5": {
-            "prob_modelo": 9.3,
-            "cuota_justa": 10.75,
-            "cuota_ref": 10.22,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "tarjetas_under5": {
-            "prob_modelo": 90.7,
-            "cuota_justa": 1.1,
-            "cuota_ref": 1.05,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos05": {
-            "prob_modelo": 40.0,
-            "cuota_justa": 2.5,
-            "cuota_ref": 2.38,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_visita_mas05": {
-            "prob_modelo": 60.0,
-            "cuota_justa": 1.67,
-            "cuota_ref": 1.58,
-            "ev_porcentaje": -5.2,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos1": {
-            "prob_modelo": 26.0,
-            "cuota_justa": 3.85,
-            "cuota_ref": 3.65,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_visita_mas1": {
-            "prob_modelo": 74.0,
-            "cuota_justa": 1.35,
-            "cuota_ref": 1.28,
-            "ev_porcentaje": -5.3,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_local_menos15": {
-            "prob_modelo": 18.2,
-            "cuota_justa": 5.49,
-            "cuota_ref": 5.22,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "ah_visita_mas15": {
-            "prob_modelo": 81.8,
-            "cuota_justa": 1.22,
-            "cuota_ref": 1.16,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_over2": {
-            "prob_modelo": 81.0,
-            "cuota_justa": 1.23,
-            "cuota_ref": 1.17,
-            "ev_porcentaje": -5.2,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under2": {
-            "prob_modelo": 19.0,
-            "cuota_justa": 5.26,
-            "cuota_ref": 5.0,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_over3": {
-            "prob_modelo": 59.0,
-            "cuota_justa": 1.69,
-            "cuota_ref": 1.61,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under3": {
-            "prob_modelo": 41.0,
-            "cuota_justa": 2.44,
-            "cuota_ref": 2.32,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_over4": {
-            "prob_modelo": 36.6,
-            "cuota_justa": 2.73,
-            "cuota_ref": 2.6,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under4": {
-            "prob_modelo": 63.4,
-            "cuota_justa": 1.58,
-            "cuota_ref": 1.5,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_over5": {
-            "prob_modelo": 19.5,
-            "cuota_justa": 5.13,
-            "cuota_ref": 4.87,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under5": {
-            "prob_modelo": 80.5,
-            "cuota_justa": 1.24,
-            "cuota_ref": 1.18,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_over2": {
-            "prob_modelo": 58.3,
-            "cuota_justa": 1.72,
-            "cuota_ref": 1.63,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_under2": {
-            "prob_modelo": 41.7,
-            "cuota_justa": 2.4,
-            "cuota_ref": 2.28,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_over3": {
-            "prob_modelo": 31.2,
-            "cuota_justa": 3.21,
-            "cuota_ref": 3.04,
-            "ev_porcentaje": -5.2,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_under3": {
-            "prob_modelo": 68.8,
-            "cuota_justa": 1.45,
-            "cuota_ref": 1.38,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_over4": {
-            "prob_modelo": 13.6,
-            "cuota_justa": 7.35,
-            "cuota_ref": 6.99,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_under4": {
-            "prob_modelo": 86.4,
-            "cuota_justa": 1.16,
-            "cuota_ref": 1.1,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          }
-        }
-      }
-    },
-    {
       "local": "Örebro SK",
       "visitante": "GIF Sundsvall",
       "liga": "Superettan",
@@ -1422,121 +466,121 @@
       "hora": "17:00",
       "fecha_evento": "2026-06-10",
       "cuotas": {
-        "2": 4.08,
-        "2_casa": "Pinnacle",
-        "pinnacle_2": 4.08,
-        "1": 1.99,
-        "1_casa": "Pinnacle",
-        "pinnacle_1": 1.99,
-        "X": 3.5,
+        "2": 4.25,
+        "2_casa": "Unibet",
+        "pinnacle_2": 4.19,
+        "1": 1.95,
+        "1_casa": "William Hill",
+        "pinnacle_1": 1.95,
+        "X": 3.55,
         "X_casa": "Unibet",
-        "pinnacle_X": 3.26,
-        "over25": 1.98,
+        "pinnacle_X": 3.29,
+        "over25": 1.97,
         "over25_casa": "Pinnacle",
-        "pinnacle_over25": 1.98,
+        "pinnacle_over25": 1.97,
         "under25": 1.88,
         "under25_casa": "Unibet",
         "pinnacle_under25": 1.85,
-        "ah_l_m0_5": 2.0,
+        "ah_l_m0_5": 1.96,
         "ah_l_m0_5_casa": "Pinnacle",
-        "pinnacle_ah_l_m0_5": 2.0,
-        "ah_v_p0_5": 1.84,
+        "pinnacle_ah_l_m0_5": 1.96,
+        "ah_v_p0_5": 1.88,
         "ah_v_p0_5_casa": "Pinnacle",
-        "pinnacle_ah_v_p0_5": 1.84
+        "pinnacle_ah_v_p0_5": 1.88
       },
       "probabilidades": {
-        "victoria_visita": 23.2,
-        "victoria_local": 47.7,
-        "empate": 29.1,
-        "over25": 43.0,
-        "under25": 57.0,
-        "ah_l_m0_5": 47.9,
-        "ah_v_p0_5": 52.1
+        "victoria_visita": 22.6,
+        "victoria_local": 48.6,
+        "empate": 28.8,
+        "over25": 43.1,
+        "under25": 56.9,
+        "ah_l_m0_5": 49.0,
+        "ah_v_p0_5": 51.0
       },
-      "confianza": 57.0,
+      "confianza": 56.9,
       "value_bets": {
         "victoria_visita": {
-          "value": -0.052,
-          "ev_porcentaje": -5.2,
-          "ev_pinn": -5.2,
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.08,
-          "casa": "Pinnacle",
-          "pinn_prob": 23.2
+          "cuota": 4.25,
+          "casa": "Unibet",
+          "pinn_prob": 22.6
         },
         "victoria_local": {
-          "value": -0.052,
-          "ev_porcentaje": -5.2,
-          "ev_pinn": -5.2,
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.99,
-          "casa": "Pinnacle",
-          "pinn_prob": 47.7
+          "cuota": 1.95,
+          "casa": "William Hill",
+          "pinn_prob": 48.6
         },
         "empate": {
-          "value": 0.018,
-          "ev_porcentaje": 1.8,
-          "ev_pinn": 1.8,
+          "value": 0.022,
+          "ev_porcentaje": 2.2,
+          "ev_pinn": 2.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.5,
+          "cuota": 3.55,
           "casa": "Unibet",
-          "pinn_prob": 29.1
+          "pinn_prob": 28.8
         },
         "over25": {
-          "value": -0.148,
-          "ev_porcentaje": -14.8,
-          "ev_pinn": -14.8,
+          "value": -0.152,
+          "ev_porcentaje": -15.2,
+          "ev_pinn": -15.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.98,
+          "cuota": 1.97,
           "casa": "Pinnacle",
-          "pinn_prob": 43.0
+          "pinn_prob": 43.1
         },
         "under25": {
-          "value": 0.071,
-          "ev_porcentaje": 7.1,
-          "ev_pinn": 7.1,
+          "value": 0.07,
+          "ev_porcentaje": 7.0,
+          "ev_pinn": 7.0,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
           "cuota": 1.88,
           "casa": "Unibet",
-          "pinn_prob": 57.0
+          "pinn_prob": 56.9
         },
         "ah_l_m0_5": {
-          "value": -0.042,
-          "ev_porcentaje": -4.2,
-          "ev_pinn": -4.2,
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
+          "cuota": 1.96,
           "casa": "Pinnacle",
-          "pinn_prob": 47.9
+          "pinn_prob": 49.0
         },
         "ah_v_p0_5": {
-          "value": -0.042,
-          "ev_porcentaje": -4.2,
-          "ev_pinn": -4.2,
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.84,
+          "cuota": 1.88,
           "casa": "Pinnacle",
-          "pinn_prob": 52.1
+          "pinn_prob": 51.0
         }
       },
       "prediccion_principal": {
         "mercado": "Under 2.5 Goles",
-        "prob": 57.0,
-        "ev": 7.1
+        "prob": 56.9,
+        "ev": 7.0
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -1574,12 +618,12 @@
           "tarjetas_under6": 68.9
         },
         "handicap": {
-          "ah_local_menos05": 47.7,
-          "ah_visita_mas05": 52.3,
-          "ah_local_menos1": 31.0,
-          "ah_visita_mas1": 69.0,
-          "ah_local_menos15": 21.7,
-          "ah_visita_mas15": 78.3
+          "ah_local_menos05": 48.6,
+          "ah_visita_mas05": 51.4,
+          "ah_local_menos1": 31.6,
+          "ah_visita_mas1": 68.4,
+          "ah_local_menos15": 22.1,
+          "ah_visita_mas15": 77.9
         },
         "disparos": {
           "disparos_esperados": 3.8,
@@ -1699,50 +743,50 @@
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos05": {
-            "prob_modelo": 47.7,
-            "cuota_justa": 2.1,
-            "cuota_ref": 1.99,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 48.6,
+            "cuota_justa": 2.06,
+            "cuota_ref": 1.95,
+            "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas05": {
-            "prob_modelo": 52.3,
-            "cuota_justa": 1.91,
-            "cuota_ref": 1.82,
-            "ev_porcentaje": -4.8,
+            "prob_modelo": 51.4,
+            "cuota_justa": 1.95,
+            "cuota_ref": 1.85,
+            "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos1": {
-            "prob_modelo": 31.0,
-            "cuota_justa": 3.23,
-            "cuota_ref": 3.06,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 31.6,
+            "cuota_justa": 3.16,
+            "cuota_ref": 3.01,
+            "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas1": {
-            "prob_modelo": 69.0,
-            "cuota_justa": 1.45,
-            "cuota_ref": 1.38,
-            "ev_porcentaje": -4.8,
+            "prob_modelo": 68.4,
+            "cuota_justa": 1.46,
+            "cuota_ref": 1.39,
+            "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos15": {
-            "prob_modelo": 21.7,
-            "cuota_justa": 4.61,
-            "cuota_ref": 4.38,
+            "prob_modelo": 22.1,
+            "cuota_justa": 4.52,
+            "cuota_ref": 4.3,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas15": {
-            "prob_modelo": 78.3,
+            "prob_modelo": 77.9,
             "cuota_justa": 1.28,
-            "cuota_ref": 1.21,
-            "ev_porcentaje": -5.3,
+            "cuota_ref": 1.22,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
@@ -1871,36 +915,36 @@
       "hora": "17:00",
       "fecha_evento": "2026-06-10",
       "cuotas": {
-        "2": 4.78,
+        "2": 4.83,
         "2_casa": "Pinnacle",
-        "pinnacle_2": 4.78,
-        "1": 1.68,
+        "pinnacle_2": 4.83,
+        "1": 1.67,
         "1_casa": "Pinnacle",
-        "pinnacle_1": 1.68,
-        "X": 3.98,
+        "pinnacle_1": 1.67,
+        "X": 4.0,
         "X_casa": "Pinnacle",
-        "pinnacle_X": 3.98,
-        "over275": 1.94,
+        "pinnacle_X": 4.0,
+        "over275": 1.93,
         "over275_casa": "Pinnacle",
-        "pinnacle_over275": 1.94,
+        "pinnacle_over275": 1.93,
         "under275": 1.88,
         "under275_casa": "Pinnacle",
         "pinnacle_under275": 1.88,
-        "ah_l_m0_75": 1.87,
+        "ah_l_m0_75": 1.86,
         "ah_l_m0_75_casa": "Pinnacle",
-        "pinnacle_ah_l_m0_75": 1.87,
-        "ah_v_p0_75": 1.96,
+        "pinnacle_ah_l_m0_75": 1.86,
+        "ah_v_p0_75": 1.98,
         "ah_v_p0_75_casa": "Pinnacle",
-        "pinnacle_ah_v_p0_75": 1.96
+        "pinnacle_ah_v_p0_75": 1.98
       },
       "probabilidades": {
-        "victoria_visita": 19.8,
-        "victoria_local": 56.4,
-        "empate": 23.8,
-        "over275": 49.2,
-        "under275": 50.8,
-        "ah_l_m0_75": 51.2,
-        "ah_v_p0_75": 48.8,
+        "victoria_visita": 19.6,
+        "victoria_local": 56.7,
+        "empate": 23.7,
+        "over275": 49.3,
+        "under275": 50.7,
+        "ah_l_m0_75": 51.6,
+        "ah_v_p0_75": 48.4,
         "over25": 39.8,
         "under25": 60.2
       },
@@ -1913,9 +957,9 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.78,
+          "cuota": 4.83,
           "casa": "Pinnacle",
-          "pinn_prob": 19.8
+          "pinn_prob": 19.6
         },
         "victoria_local": {
           "value": -0.053,
@@ -1924,9 +968,9 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.68,
+          "cuota": 1.67,
           "casa": "Pinnacle",
-          "pinn_prob": 56.4
+          "pinn_prob": 56.7
         },
         "empate": {
           "value": -0.053,
@@ -1935,53 +979,53 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.98,
+          "cuota": 4.0,
           "casa": "Pinnacle",
-          "pinn_prob": 23.8
+          "pinn_prob": 23.7
         },
         "over275": {
-          "value": -0.045,
-          "ev_porcentaje": -4.5,
-          "ev_pinn": -4.5,
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.94,
+          "cuota": 1.93,
           "casa": "Pinnacle",
-          "pinn_prob": 49.2
+          "pinn_prob": 49.3
         },
         "under275": {
-          "value": -0.045,
-          "ev_porcentaje": -4.5,
-          "ev_pinn": -4.5,
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.88,
           "casa": "Pinnacle",
-          "pinn_prob": 50.8
+          "pinn_prob": 50.7
         },
         "ah_l_m0_75": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.87,
+          "cuota": 1.86,
           "casa": "Pinnacle",
-          "pinn_prob": 51.2
+          "pinn_prob": 51.6
         },
         "ah_v_p0_75": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.96,
+          "cuota": 1.98,
           "casa": "Pinnacle",
-          "pinn_prob": 48.8
+          "pinn_prob": 48.4
         },
         "over25": {
           "value": null,
@@ -2010,8 +1054,8 @@
       },
       "prediccion_principal": {
         "mercado": "ah_l_m0_75",
-        "prob": 51.2,
-        "ev": -4.3
+        "prob": 51.6,
+        "ev": -4.1
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -2049,12 +1093,12 @@
           "tarjetas_under6": 68.9
         },
         "handicap": {
-          "ah_local_menos05": 56.4,
-          "ah_visita_mas05": 43.6,
-          "ah_local_menos1": 36.7,
-          "ah_visita_mas1": 63.3,
-          "ah_local_menos15": 25.7,
-          "ah_visita_mas15": 74.3
+          "ah_local_menos05": 56.7,
+          "ah_visita_mas05": 43.3,
+          "ah_local_menos1": 36.9,
+          "ah_visita_mas1": 63.1,
+          "ah_local_menos15": 25.8,
+          "ah_visita_mas15": 74.2
         },
         "disparos": {
           "disparos_esperados": 3.8,
@@ -2174,50 +1218,50 @@
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos05": {
-            "prob_modelo": 56.4,
-            "cuota_justa": 1.77,
+            "prob_modelo": 56.7,
+            "cuota_justa": 1.76,
             "cuota_ref": 1.68,
-            "ev_porcentaje": -5.2,
+            "ev_porcentaje": -4.7,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas05": {
-            "prob_modelo": 43.6,
-            "cuota_justa": 2.29,
-            "cuota_ref": 2.18,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 43.3,
+            "cuota_justa": 2.31,
+            "cuota_ref": 2.19,
+            "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos1": {
-            "prob_modelo": 36.7,
-            "cuota_justa": 2.72,
-            "cuota_ref": 2.59,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 36.9,
+            "cuota_justa": 2.71,
+            "cuota_ref": 2.57,
+            "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas1": {
-            "prob_modelo": 63.3,
+            "prob_modelo": 63.1,
             "cuota_justa": 1.58,
-            "cuota_ref": 1.5,
-            "ev_porcentaje": -5.0,
+            "cuota_ref": 1.51,
+            "ev_porcentaje": -4.7,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos15": {
-            "prob_modelo": 25.7,
-            "cuota_justa": 3.89,
-            "cuota_ref": 3.7,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 25.8,
+            "cuota_justa": 3.88,
+            "cuota_ref": 3.68,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas15": {
-            "prob_modelo": 74.3,
+            "prob_modelo": 74.2,
             "cuota_justa": 1.35,
             "cuota_ref": 1.28,
-            "ev_porcentaje": -4.9,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
@@ -2348,18 +1392,18 @@
       "hora": "22:36",
       "fecha_evento": "2026-06-09",
       "cuotas": {
-        "Baltimore Orioles": 2.09,
-        "Seattle Mariners": 1.85,
-        "Over 8.5": 1.83,
+        "Baltimore Orioles": 2.05,
+        "Seattle Mariners": 1.88,
+        "Over 8.5": 1.87,
         "Under 8.5": 2.0,
-        "Baltimore Orioles (+1.5)": 1.65,
-        "Seattle Mariners (-1.5)": 2.35
+        "Baltimore Orioles (+1.5)": 1.62,
+        "Seattle Mariners (-1.5)": 2.37
       },
       "probabilidades": {
-        "Baltimore Orioles": 47.0,
-        "Seattle Mariners": 53.0
+        "Baltimore Orioles": 47.8,
+        "Seattle Mariners": 52.2
       },
-      "confianza": 53.0,
+      "confianza": 52.2,
       "value_bets": {
         "Baltimore Orioles": {
           "value": -0.019,
@@ -2368,9 +1412,9 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.09,
+          "cuota": 2.05,
           "casa": "Pinnacle",
-          "pinn_prob": 47.0,
+          "pinn_prob": 47.8,
           "mercado_nombre": "Baltimore Orioles"
         },
         "Seattle Mariners": {
@@ -2380,64 +1424,64 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.85,
+          "cuota": 1.88,
           "casa": "Pinnacle",
-          "pinn_prob": 53.0,
+          "pinn_prob": 52.2,
           "mercado_nombre": "Seattle Mariners"
         },
         "over_8_5": {
-          "value": -0.054,
-          "ev_porcentaje": -5.4,
-          "ev_pinn": -5.4,
+          "value": -0.058,
+          "ev_porcentaje": -5.8,
+          "ev_pinn": -5.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
+          "cuota": 1.87,
           "casa": "DraftKings",
-          "pinn_prob": 51.7,
+          "pinn_prob": 50.4,
           "mercado_nombre": "Over 8.5"
         },
         "under_8_5": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": -0.008,
+          "ev_porcentaje": -0.8,
+          "ev_pinn": -0.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.0,
-          "casa": "FanDuel",
-          "pinn_prob": 48.3,
+          "casa": "Unibet",
+          "pinn_prob": 49.6,
           "mercado_nombre": "Under 8.5"
         },
         "spread_baltimore_orioles_1_5": {
-          "value": -0.031,
-          "ev_porcentaje": -3.1,
-          "ev_pinn": -3.1,
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.65,
+          "cuota": 1.62,
           "casa": "FanDuel",
-          "pinn_prob": 58.7,
+          "pinn_prob": 60.2,
           "mercado_nombre": "Baltimore Orioles (+1.5)"
         },
         "spread_seattle_mariners_m1_5": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
+          "value": -0.057,
+          "ev_porcentaje": -5.7,
+          "ev_pinn": -5.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.35,
+          "cuota": 2.37,
           "casa": "DraftKings",
-          "pinn_prob": 41.3,
+          "pinn_prob": 39.8,
           "mercado_nombre": "Seattle Mariners (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Baltimore Orioles",
-        "prob": 47.0,
-        "ev": -1.9
+        "mercado": "Under 8.5",
+        "prob": 49.6,
+        "ev": -0.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -2460,9 +1504,9 @@
       "cuotas": {
         "Arizona Diamondbacks": 2.24,
         "Miami Marlins": 1.76,
-        "Over 7.5": 1.81,
+        "Over 7.5": 1.85,
         "Under 7.5": 2.02,
-        "Arizona Diamondbacks (+1.5)": 1.53,
+        "Arizona Diamondbacks (+1.5)": 1.54,
         "Miami Marlins (-1.5)": 2.63
       },
       "probabilidades": {
@@ -2496,37 +1540,37 @@
           "mercado_nombre": "Miami Marlins"
         },
         "over_7_5": {
-          "value": -0.065,
-          "ev_porcentaje": -6.5,
-          "ev_pinn": -6.5,
+          "value": -0.049,
+          "ev_porcentaje": -4.9,
+          "ev_pinn": -4.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.81,
-          "casa": "FanDuel",
-          "pinn_prob": 51.7,
+          "cuota": 1.85,
+          "casa": "Unibet",
+          "pinn_prob": 51.4,
           "mercado_nombre": "Over 7.5"
         },
         "under_7_5": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.02,
           "casa": "FanDuel",
-          "pinn_prob": 48.3,
+          "pinn_prob": 48.6,
           "mercado_nombre": "Under 7.5"
         },
         "spread_arizona_diamondbacks_1_5": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.53,
+          "cuota": 1.54,
           "casa": "FanDuel",
           "pinn_prob": 62.8,
           "mercado_nombre": "Arizona Diamondbacks (+1.5)"
@@ -2573,7 +1617,7 @@
         "Over 7.5": 2.0,
         "Under 7.5": 1.88,
         "Boston Red Sox (-1.5)": 2.48,
-        "Tampa Bay Rays (+1.5)": 1.57
+        "Tampa Bay Rays (+1.5)": 1.58
       },
       "probabilidades": {
         "Boston Red Sox": 52.4,
@@ -2606,51 +1650,51 @@
           "mercado_nombre": "Tampa Bay Rays"
         },
         "over_7_5": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.0,
           "casa": "FanDuel",
-          "pinn_prob": 48.6,
+          "pinn_prob": 48.5,
           "mercado_nombre": "Over 7.5"
         },
         "under_7_5": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.88,
           "casa": "Unibet",
-          "pinn_prob": 51.4,
+          "pinn_prob": 51.5,
           "mercado_nombre": "Under 7.5"
         },
         "spread_boston_red_sox_m1_5": {
-          "value": -0.049,
-          "ev_porcentaje": -4.9,
-          "ev_pinn": -4.9,
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.48,
           "casa": "DraftKings",
-          "pinn_prob": 38.3,
+          "pinn_prob": 38.4,
           "mercado_nombre": "Boston Red Sox (-1.5)"
         },
         "spread_tampa_bay_rays_1_5": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
+          "value": -0.027,
+          "ev_porcentaje": -2.7,
+          "ev_pinn": -2.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.57,
-          "casa": "BetMGM",
-          "pinn_prob": 61.7,
+          "cuota": 1.58,
+          "casa": "FanDuel",
+          "pinn_prob": 61.6,
           "mercado_nombre": "Tampa Bay Rays (+1.5)"
         }
       },
@@ -2680,10 +1724,10 @@
       "cuotas": {
         "Cleveland Guardians": 2.07,
         "New York Yankees": 1.86,
-        "Over 8.5": 1.88,
-        "Under 8.5": 1.98,
+        "Over 8.5": 1.85,
+        "Under 8.5": 1.99,
         "Cleveland Guardians (+1.5)": 1.65,
-        "New York Yankees (-1.5)": 2.3
+        "New York Yankees (-1.5)": 2.29
       },
       "probabilidades": {
         "Cleveland Guardians": 47.3,
@@ -2716,27 +1760,27 @@
           "mercado_nombre": "New York Yankees"
         },
         "over_8_5": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.88,
-          "casa": "Unibet",
-          "pinn_prob": 52.2,
+          "cuota": 1.85,
+          "casa": "FanDuel",
+          "pinn_prob": 51.7,
           "mercado_nombre": "Over 8.5"
         },
         "under_8_5": {
-          "value": -0.053,
-          "ev_porcentaje": -5.3,
-          "ev_pinn": -5.3,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.98,
+          "cuota": 1.99,
           "casa": "DraftKings",
-          "pinn_prob": 47.8,
+          "pinn_prob": 48.3,
           "mercado_nombre": "Under 8.5"
         },
         "spread_cleveland_guardians_1_5": {
@@ -2747,137 +1791,27 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.65,
-          "casa": "BetMGM",
+          "casa": "FanDuel",
           "pinn_prob": 58.7,
           "mercado_nombre": "Cleveland Guardians (+1.5)"
         },
         "spread_new_york_yankees_m1_5": {
-          "value": -0.05,
-          "ev_porcentaje": -5.0,
-          "ev_pinn": -5.0,
+          "value": -0.054,
+          "ev_porcentaje": -5.4,
+          "ev_pinn": -5.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.3,
-          "casa": "FanDuel",
+          "cuota": 2.29,
+          "casa": "DraftKings",
           "pinn_prob": 41.3,
           "mercado_nombre": "New York Yankees (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Over 8.5",
-        "prob": 52.2,
-        "ev": -1.9
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "f03156629a6e1e4d346ffc42fb0c0bdf",
-      "comienzo": "2026-06-09T22:41:00Z",
-      "local": "Detroit Tigers",
-      "visitante": "Minnesota Twins",
-      "liga": "MLB",
-      "liga_code": "baseball_mlb",
-      "deporte": "MLB",
-      "deporte_emoji": "⚾",
-      "hora": "22:41",
-      "fecha_evento": "2026-06-09",
-      "cuotas": {
-        "Detroit Tigers": 1.79,
-        "Minnesota Twins": 2.17,
-        "Over 8.5": 1.93,
-        "Under 8.5": 1.93,
-        "Detroit Tigers (-1.5)": 2.62,
-        "Minnesota Twins (+1.5)": 1.52
-      },
-      "probabilidades": {
-        "Detroit Tigers": 54.8,
-        "Minnesota Twins": 45.2
-      },
-      "confianza": 54.8,
-      "value_bets": {
-        "Detroit Tigers": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.79,
-          "casa": "Pinnacle",
-          "pinn_prob": 54.8,
-          "mercado_nombre": "Detroit Tigers"
-        },
-        "Minnesota Twins": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.17,
-          "casa": "Pinnacle",
-          "pinn_prob": 45.2,
-          "mercado_nombre": "Minnesota Twins"
-        },
-        "over_8_5": {
-          "value": -0.047,
-          "ev_porcentaje": -4.7,
-          "ev_pinn": -4.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "Unibet",
-          "pinn_prob": 49.4,
-          "mercado_nombre": "Over 8.5"
-        },
-        "under_8_5": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "DraftKings",
-          "pinn_prob": 50.6,
-          "mercado_nombre": "Under 8.5"
-        },
-        "spread_detroit_tigers_m1_5": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.62,
-          "casa": "FanDuel",
-          "pinn_prob": 36.8,
-          "mercado_nombre": "Detroit Tigers (-1.5)"
-        },
-        "spread_minnesota_twins_1_5": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.52,
-          "casa": "DraftKings",
-          "pinn_prob": 63.2,
-          "mercado_nombre": "Minnesota Twins (+1.5)"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Detroit Tigers",
-        "prob": 54.8,
-        "ev": -1.9
+        "mercado": "Cleveland Guardians",
+        "prob": 47.3,
+        "ev": -2.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -2898,96 +1832,96 @@
       "hora": "22:41",
       "fecha_evento": "2026-06-09",
       "cuotas": {
-        "Los Angeles Dodgers": 2.04,
+        "Los Angeles Dodgers": 2.07,
         "Pittsburgh Pirates": 1.89,
-        "Over 8.5": 1.97,
+        "Over 8.5": 2.0,
         "Under 8.5": 1.91,
-        "Los Angeles Dodgers (-1.5)": 2.65,
-        "Pittsburgh Pirates (+1.5)": 1.51
+        "Los Angeles Dodgers (+1.5)": 1.49,
+        "Pittsburgh Pirates (-1.5)": 2.68
       },
       "probabilidades": {
-        "Los Angeles Dodgers": 48.1,
-        "Pittsburgh Pirates": 51.9
+        "Los Angeles Dodgers": 47.5,
+        "Pittsburgh Pirates": 52.5
       },
-      "confianza": 51.9,
+      "confianza": 52.5,
       "value_bets": {
         "Los Angeles Dodgers": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.04,
+          "cuota": 2.07,
           "casa": "Pinnacle",
-          "pinn_prob": 48.1,
+          "pinn_prob": 47.5,
           "mercado_nombre": "Los Angeles Dodgers"
         },
         "Pittsburgh Pirates": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
+          "value": -0.007,
+          "ev_porcentaje": -0.7,
+          "ev_pinn": -0.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.89,
-          "casa": "Pinnacle",
-          "pinn_prob": 51.9,
+          "casa": "Unibet",
+          "pinn_prob": 52.5,
           "mercado_nombre": "Pittsburgh Pirates"
         },
         "over_8_5": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.97,
+          "cuota": 2.0,
           "casa": "Unibet",
-          "pinn_prob": 48.8,
+          "pinn_prob": 49.4,
           "mercado_nombre": "Over 8.5"
         },
         "under_8_5": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.91,
           "casa": "BetMGM",
-          "pinn_prob": 51.2,
+          "pinn_prob": 50.6,
           "mercado_nombre": "Under 8.5"
         },
-        "spread_los_angeles_dodgers_m1_5": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+        "spread_los_angeles_dodgers_1_5": {
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.65,
-          "casa": "BetMGM",
-          "pinn_prob": 36.8,
-          "mercado_nombre": "Los Angeles Dodgers (-1.5)"
+          "cuota": 1.49,
+          "casa": "FanDuel",
+          "pinn_prob": 65.7,
+          "mercado_nombre": "Los Angeles Dodgers (+1.5)"
         },
-        "spread_pittsburgh_pirates_1_5": {
-          "value": -0.045,
-          "ev_porcentaje": -4.5,
-          "ev_pinn": -4.5,
+        "spread_pittsburgh_pirates_m1_5": {
+          "value": -0.082,
+          "ev_porcentaje": -8.2,
+          "ev_pinn": -8.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.51,
-          "casa": "DraftKings",
-          "pinn_prob": 63.2,
-          "mercado_nombre": "Pittsburgh Pirates (+1.5)"
+          "cuota": 2.68,
+          "casa": "FanDuel",
+          "pinn_prob": 34.3,
+          "mercado_nombre": "Pittsburgh Pirates (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Los Angeles Dodgers",
-        "prob": 48.1,
-        "ev": -1.9
+        "mercado": "Pittsburgh Pirates",
+        "prob": 52.5,
+        "ev": -0.7
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3008,18 +1942,18 @@
       "hora": "23:08",
       "fecha_evento": "2026-06-09",
       "cuotas": {
-        "Philadelphia Phillies": 1.99,
-        "Toronto Blue Jays": 1.93,
-        "Over 7.5": 2.0,
-        "Under 7.5": 1.85,
-        "Philadelphia Phillies (-1.5)": 2.62,
+        "Philadelphia Phillies": 1.98,
+        "Toronto Blue Jays": 1.94,
+        "Over 7.0": 1.88,
+        "Under 7.0": 2.0,
+        "Philadelphia Phillies (-1.5)": 2.64,
         "Toronto Blue Jays (+1.5)": 1.53
       },
       "probabilidades": {
-        "Philadelphia Phillies": 49.2,
-        "Toronto Blue Jays": 50.8
+        "Philadelphia Phillies": 49.5,
+        "Toronto Blue Jays": 50.5
       },
-      "confianza": 50.8,
+      "confianza": 50.5,
       "value_bets": {
         "Philadelphia Phillies": {
           "value": -0.02,
@@ -3028,9 +1962,9 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.99,
+          "cuota": 1.98,
           "casa": "Pinnacle",
-          "pinn_prob": 49.2,
+          "pinn_prob": 49.5,
           "mercado_nombre": "Philadelphia Phillies"
         },
         "Toronto Blue Jays": {
@@ -3040,63 +1974,63 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "Unibet",
-          "pinn_prob": 50.8,
+          "cuota": 1.94,
+          "casa": "Pinnacle",
+          "pinn_prob": 50.5,
           "mercado_nombre": "Toronto Blue Jays"
         },
-        "over_7_5": {
-          "value": -0.051,
-          "ev_porcentaje": -5.1,
-          "ev_pinn": -5.1,
+        "over_7_0": {
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.88,
+          "casa": "DraftKings",
+          "pinn_prob": 51.5,
+          "mercado_nombre": "Over 7.0"
+        },
+        "under_7_0": {
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.0,
           "casa": "BetMGM",
-          "pinn_prob": 47.4,
-          "mercado_nombre": "Over 7.5"
-        },
-        "under_7_5": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.85,
-          "casa": "Unibet",
-          "pinn_prob": 52.6,
-          "mercado_nombre": "Under 7.5"
+          "pinn_prob": 48.5,
+          "mercado_nombre": "Under 7.0"
         },
         "spread_philadelphia_phillies_m1_5": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.62,
-          "casa": "FanDuel",
-          "pinn_prob": 36.8,
-          "mercado_nombre": "Philadelphia Phillies (-1.5)"
-        },
-        "spread_toronto_blue_jays_1_5": {
           "value": -0.032,
           "ev_porcentaje": -3.2,
           "ev_pinn": -3.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
+          "cuota": 2.64,
+          "casa": "FanDuel",
+          "pinn_prob": 36.7,
+          "mercado_nombre": "Philadelphia Phillies (-1.5)"
+        },
+        "spread_toronto_blue_jays_1_5": {
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
           "cuota": 1.53,
           "casa": "BetMGM",
-          "pinn_prob": 63.2,
+          "pinn_prob": 63.3,
           "mercado_nombre": "Toronto Blue Jays (+1.5)"
         }
       },
       "prediccion_principal": {
         "mercado": "Philadelphia Phillies",
-        "prob": 49.2,
+        "prob": 49.5,
         "ev": -2.0
       },
       "cuotas_reales": true,
@@ -3118,18 +2052,18 @@
       "hora": "23:11",
       "fecha_evento": "2026-06-09",
       "cuotas": {
-        "New York Mets": 1.83,
-        "St. Louis Cardinals": 2.14,
-        "Over 7.5": 1.82,
-        "Under 7.5": 2.0,
+        "New York Mets": 1.8,
+        "St. Louis Cardinals": 2.16,
+        "Over 8.0": 1.98,
+        "Under 8.0": 1.87,
         "New York Mets (-1.5)": 2.65,
         "St. Louis Cardinals (+1.5)": 1.52
       },
       "probabilidades": {
-        "New York Mets": 53.7,
-        "St. Louis Cardinals": 46.3
+        "New York Mets": 54.5,
+        "St. Louis Cardinals": 45.5
       },
-      "confianza": 53.7,
+      "confianza": 54.5,
       "value_bets": {
         "New York Mets": {
           "value": -0.018,
@@ -3138,76 +2072,76 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
+          "cuota": 1.8,
           "casa": "Pinnacle",
-          "pinn_prob": 53.7,
+          "pinn_prob": 54.5,
           "mercado_nombre": "New York Mets"
         },
         "St. Louis Cardinals": {
-          "value": -0.009,
-          "ev_porcentaje": -0.9,
-          "ev_pinn": -0.9,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.14,
-          "casa": "Unibet",
-          "pinn_prob": 46.3,
+          "cuota": 2.16,
+          "casa": "Pinnacle",
+          "pinn_prob": 45.5,
           "mercado_nombre": "St. Louis Cardinals"
         },
-        "over_7_5": {
-          "value": -0.057,
-          "ev_porcentaje": -5.7,
-          "ev_pinn": -5.7,
+        "over_8_0": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.82,
-          "casa": "FanDuel",
-          "pinn_prob": 51.8,
-          "mercado_nombre": "Over 7.5"
+          "cuota": 1.98,
+          "casa": "DraftKings",
+          "pinn_prob": 48.8,
+          "mercado_nombre": "Over 8.0"
         },
-        "under_7_5": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
+        "under_8_0": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
-          "casa": "FanDuel",
-          "pinn_prob": 48.2,
-          "mercado_nombre": "Under 7.5"
+          "cuota": 1.87,
+          "casa": "BetMGM",
+          "pinn_prob": 51.2,
+          "mercado_nombre": "Under 8.0"
         },
         "spread_new_york_mets_m1_5": {
-          "value": -0.05,
-          "ev_porcentaje": -5.0,
-          "ev_pinn": -5.0,
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.65,
           "casa": "BetMGM",
-          "pinn_prob": 35.8,
+          "pinn_prob": 36.4,
           "mercado_nombre": "New York Mets (-1.5)"
         },
         "spread_st._louis_cardinals_1_5": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.52,
-          "casa": "FanDuel",
-          "pinn_prob": 64.2,
+          "casa": "DraftKings",
+          "pinn_prob": 63.6,
           "mercado_nombre": "St. Louis Cardinals (+1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "St. Louis Cardinals",
-        "prob": 46.3,
-        "ev": -0.9
+        "mercado": "New York Mets",
+        "prob": 54.5,
+        "ev": -1.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3229,95 +2163,205 @@
       "fecha_evento": "2026-06-09",
       "cuotas": {
         "Atlanta Braves": 1.66,
-        "Chicago White Sox": 2.4,
-        "Over 9.5": 2.02,
-        "Under 9.5": 1.85,
-        "Atlanta Braves (-1.5)": 2.05,
+        "Chicago White Sox": 2.43,
+        "Over 9.0": 1.83,
+        "Under 9.0": 2.0,
+        "Atlanta Braves (-1.5)": 2.02,
         "Chicago White Sox (+1.5)": 1.85
       },
       "probabilidades": {
-        "Atlanta Braves": 59.1,
-        "Chicago White Sox": 40.9
+        "Atlanta Braves": 59.0,
+        "Chicago White Sox": 41.0
       },
-      "confianza": 59.1,
+      "confianza": 59.0,
       "value_bets": {
         "Atlanta Braves": {
-          "value": -0.019,
-          "ev_porcentaje": -1.9,
-          "ev_pinn": -1.9,
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.66,
           "casa": "FanDuel",
-          "pinn_prob": 59.1,
+          "pinn_prob": 59.0,
           "mercado_nombre": "Atlanta Braves"
         },
         "Chicago White Sox": {
+          "value": -0.004,
+          "ev_porcentaje": -0.4,
+          "ev_pinn": -0.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.43,
+          "casa": "Unibet",
+          "pinn_prob": 41.0,
+          "mercado_nombre": "Chicago White Sox"
+        },
+        "over_9_0": {
+          "value": -0.054,
+          "ev_porcentaje": -5.4,
+          "ev_pinn": -5.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "DraftKings",
+          "pinn_prob": 51.7,
+          "mercado_nombre": "Over 9.0"
+        },
+        "under_9_0": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "DraftKings",
+          "pinn_prob": 48.3,
+          "mercado_nombre": "Under 9.0"
+        },
+        "spread_atlanta_braves_m1_5": {
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.02,
+          "casa": "FanDuel",
+          "pinn_prob": 48.1,
+          "mercado_nombre": "Atlanta Braves (-1.5)"
+        },
+        "spread_chicago_white_sox_1_5": {
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.85,
+          "casa": "DraftKings",
+          "pinn_prob": 51.9,
+          "mercado_nombre": "Chicago White Sox (+1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Chicago White Sox",
+        "prob": 41.0,
+        "ev": -0.4
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "id": "f03156629a6e1e4d346ffc42fb0c0bdf",
+      "comienzo": "2026-06-09T23:41:00Z",
+      "local": "Detroit Tigers",
+      "visitante": "Minnesota Twins",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "23:41",
+      "fecha_evento": "2026-06-09",
+      "cuotas": {
+        "Detroit Tigers": 1.82,
+        "Minnesota Twins": 2.13,
+        "Over 8.5": 1.93,
+        "Under 8.5": 1.98,
+        "Detroit Tigers (-1.5)": 2.62,
+        "Minnesota Twins (+1.5)": 1.52
+      },
+      "probabilidades": {
+        "Detroit Tigers": 53.9,
+        "Minnesota Twins": 46.1
+      },
+      "confianza": 53.9,
+      "value_bets": {
+        "Detroit Tigers": {
           "value": -0.019,
           "ev_porcentaje": -1.9,
           "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
+          "cuota": 1.82,
           "casa": "Pinnacle",
-          "pinn_prob": 40.9,
-          "mercado_nombre": "Chicago White Sox"
+          "pinn_prob": 53.9,
+          "mercado_nombre": "Detroit Tigers"
         },
-        "over_9_5": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
+        "Minnesota Twins": {
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.02,
-          "casa": "FanDuel",
-          "pinn_prob": 47.6,
-          "mercado_nombre": "Over 9.5"
+          "cuota": 2.13,
+          "casa": "Pinnacle",
+          "pinn_prob": 46.1,
+          "mercado_nombre": "Minnesota Twins"
         },
-        "under_9_5": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
+        "over_8_5": {
+          "value": 0.002,
+          "ev_porcentaje": 0.2,
+          "ev_pinn": 0.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.85,
-          "casa": "BetMGM",
-          "pinn_prob": 52.4,
-          "mercado_nombre": "Under 9.5"
-        },
-        "spread_atlanta_braves_m1_5": {
-          "value": -0.012,
-          "ev_porcentaje": -1.2,
-          "ev_pinn": -1.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.05,
+          "cuota": 1.93,
           "casa": "Unibet",
-          "pinn_prob": 48.2,
-          "mercado_nombre": "Atlanta Braves (-1.5)"
+          "pinn_prob": 51.9,
+          "mercado_nombre": "Over 8.5"
         },
-        "spread_chicago_white_sox_1_5": {
-          "value": -0.042,
-          "ev_porcentaje": -4.2,
-          "ev_pinn": -4.2,
+        "under_8_5": {
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.85,
-          "casa": "BetMGM",
-          "pinn_prob": 51.8,
-          "mercado_nombre": "Chicago White Sox (+1.5)"
+          "cuota": 1.98,
+          "casa": "DraftKings",
+          "pinn_prob": 48.1,
+          "mercado_nombre": "Under 8.5"
+        },
+        "spread_detroit_tigers_m1_5": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.62,
+          "casa": "FanDuel",
+          "pinn_prob": 36.3,
+          "mercado_nombre": "Detroit Tigers (-1.5)"
+        },
+        "spread_minnesota_twins_1_5": {
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.52,
+          "casa": "DraftKings",
+          "pinn_prob": 63.7,
+          "mercado_nombre": "Minnesota Twins (+1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Atlanta Braves (-1.5)",
-        "prob": 48.2,
-        "ev": -1.2
+        "mercado": "Over 8.5",
+        "prob": 51.9,
+        "ev": 0.2
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3338,18 +2382,18 @@
       "hora": "23:41",
       "fecha_evento": "2026-06-09",
       "cuotas": {
-        "Kansas City Royals": 2.1,
-        "Texas Rangers": 1.84,
-        "Over 9.5": 1.99,
-        "Under 9.5": 1.87,
-        "Kansas City Royals (+1.5)": 1.65,
-        "Texas Rangers (-1.5)": 2.3
+        "Kansas City Royals": 2.14,
+        "Texas Rangers": 1.81,
+        "Over 9.5": 1.95,
+        "Under 9.5": 1.9,
+        "Kansas City Royals (+1.5)": 1.67,
+        "Texas Rangers (-1.5)": 2.26
       },
       "probabilidades": {
-        "Kansas City Royals": 46.7,
-        "Texas Rangers": 53.3
+        "Kansas City Royals": 45.8,
+        "Texas Rangers": 54.2
       },
-      "confianza": 53.3,
+      "confianza": 54.2,
       "value_bets": {
         "Kansas City Royals": {
           "value": -0.019,
@@ -3358,9 +2402,9 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.1,
+          "cuota": 2.14,
           "casa": "Pinnacle",
-          "pinn_prob": 46.7,
+          "pinn_prob": 45.8,
           "mercado_nombre": "Kansas City Royals"
         },
         "Texas Rangers": {
@@ -3370,64 +2414,64 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.84,
-          "casa": "Pinnacle",
-          "pinn_prob": 53.3,
+          "cuota": 1.81,
+          "casa": "FanDuel",
+          "pinn_prob": 54.2,
           "mercado_nombre": "Texas Rangers"
         },
         "over_9_5": {
-          "value": -0.056,
-          "ev_porcentaje": -5.6,
-          "ev_pinn": -5.6,
+          "value": -0.01,
+          "ev_porcentaje": -1.0,
+          "ev_pinn": -1.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.99,
-          "casa": "DraftKings",
-          "pinn_prob": 47.4,
+          "cuota": 1.95,
+          "casa": "FanDuel",
+          "pinn_prob": 50.8,
           "mercado_nombre": "Over 9.5"
         },
         "under_9_5": {
-          "value": -0.017,
-          "ev_porcentaje": -1.7,
-          "ev_pinn": -1.7,
+          "value": -0.065,
+          "ev_porcentaje": -6.5,
+          "ev_pinn": -6.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.87,
-          "casa": "FanDuel",
-          "pinn_prob": 52.6,
+          "cuota": 1.9,
+          "casa": "DraftKings",
+          "pinn_prob": 49.2,
           "mercado_nombre": "Under 9.5"
         },
         "spread_kansas_city_royals_1_5": {
-          "value": -0.041,
-          "ev_porcentaje": -4.1,
-          "ev_pinn": -4.1,
+          "value": -0.062,
+          "ev_porcentaje": -6.2,
+          "ev_pinn": -6.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.65,
-          "casa": "FanDuel",
-          "pinn_prob": 58.1,
+          "cuota": 1.67,
+          "casa": "DraftKings",
+          "pinn_prob": 56.2,
           "mercado_nombre": "Kansas City Royals (+1.5)"
         },
         "spread_texas_rangers_m1_5": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
+          "value": -0.009,
+          "ev_porcentaje": -0.9,
+          "ev_pinn": -0.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.3,
-          "casa": "DraftKings",
-          "pinn_prob": 41.9,
+          "cuota": 2.26,
+          "casa": "FanDuel",
+          "pinn_prob": 43.8,
           "mercado_nombre": "Texas Rangers (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Under 9.5",
-        "prob": 52.6,
-        "ev": -1.7
+        "mercado": "Texas Rangers (-1.5)",
+        "prob": 43.8,
+        "ev": -0.9
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3448,96 +2492,96 @@
       "hora": "00:41",
       "fecha_evento": "2026-06-09",
       "cuotas": {
-        "Chicago Cubs": 1.66,
-        "Colorado Rockies": 2.38,
-        "Over 12.5": 1.95,
-        "Under 12.5": 1.91,
+        "Chicago Cubs": 1.65,
+        "Colorado Rockies": 2.41,
+        "Over 12.5": 1.91,
+        "Under 12.5": 1.95,
         "Chicago Cubs (-1.5)": 1.98,
         "Colorado Rockies (+1.5)": 1.91
       },
       "probabilidades": {
-        "Chicago Cubs": 58.9,
-        "Colorado Rockies": 41.1
+        "Chicago Cubs": 59.4,
+        "Colorado Rockies": 40.6
       },
-      "confianza": 58.9,
+      "confianza": 59.4,
       "value_bets": {
         "Chicago Cubs": {
-          "value": -0.022,
-          "ev_porcentaje": -2.2,
-          "ev_pinn": -2.2,
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.66,
-          "casa": "Pinnacle",
-          "pinn_prob": 58.9,
+          "cuota": 1.65,
+          "casa": "FanDuel",
+          "pinn_prob": 59.4,
           "mercado_nombre": "Chicago Cubs"
         },
         "Colorado Rockies": {
-          "value": -0.022,
-          "ev_porcentaje": -2.2,
-          "ev_pinn": -2.2,
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.38,
+          "cuota": 2.41,
           "casa": "Pinnacle",
-          "pinn_prob": 41.1,
+          "pinn_prob": 40.6,
           "mercado_nombre": "Colorado Rockies"
         },
         "over_12_5": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
-          "casa": "FanDuel",
-          "pinn_prob": 49.7,
-          "mercado_nombre": "Over 12.5"
-        },
-        "under_12_5": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.91,
+          "casa": "FanDuel",
+          "pinn_prob": 50.4,
+          "mercado_nombre": "Over 12.5"
+        },
+        "under_12_5": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
           "casa": "BetMGM",
-          "pinn_prob": 50.3,
+          "pinn_prob": 49.6,
           "mercado_nombre": "Under 12.5"
         },
         "spread_chicago_cubs_m1_5": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.01,
+          "ev_porcentaje": -1.0,
+          "ev_pinn": -1.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.98,
           "casa": "FanDuel",
-          "pinn_prob": 49.5,
+          "pinn_prob": 50.0,
           "mercado_nombre": "Chicago Cubs (-1.5)"
         },
         "spread_colorado_rockies_1_5": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.91,
-          "casa": "DraftKings",
-          "pinn_prob": 50.5,
+          "casa": "BetMGM",
+          "pinn_prob": 50.0,
           "mercado_nombre": "Colorado Rockies (+1.5)"
         }
       },
       "prediccion_principal": {
         "mercado": "Chicago Cubs (-1.5)",
-        "prob": 49.5,
-        "ev": -2.0
+        "prob": 50.0,
+        "ev": -1.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3562,7 +2606,7 @@
         "Los Angeles Angels": 2.11,
         "Over 8.5": 1.85,
         "Under 8.5": 2.0,
-        "Houston Astros (-1.5)": 2.35,
+        "Houston Astros (-1.5)": 2.38,
         "Los Angeles Angels (+1.5)": 1.62
       },
       "probabilidades": {
@@ -3615,19 +2659,19 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.0,
-          "casa": "Unibet",
+          "casa": "BetMGM",
           "pinn_prob": 48.1,
           "mercado_nombre": "Under 8.5"
         },
         "spread_houston_astros_m1_5": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
+          "value": -0.017,
+          "ev_porcentaje": -1.7,
+          "ev_pinn": -1.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.35,
-          "casa": "BetMGM",
+          "cuota": 2.38,
+          "casa": "FanDuel",
           "pinn_prob": 41.3,
           "mercado_nombre": "Houston Astros (-1.5)"
         },
@@ -3639,15 +2683,15 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.62,
-          "casa": "FanDuel",
+          "casa": "DraftKings",
           "pinn_prob": 58.7,
           "mercado_nombre": "Los Angeles Angels (+1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Houston Astros",
-        "prob": 53.6,
-        "ev": -2.0
+        "mercado": "Houston Astros (-1.5)",
+        "prob": 41.3,
+        "ev": -1.7
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3668,41 +2712,41 @@
       "hora": "01:41",
       "fecha_evento": "2026-06-09",
       "cuotas": {
-        "Cincinnati Reds": 1.83,
-        "San Diego Padres": 2.11,
+        "Cincinnati Reds": 1.81,
+        "San Diego Padres": 2.14,
         "Over 7.5": 2.05,
         "Under 7.5": 1.82,
-        "Cincinnati Reds (-1.5)": 2.44,
-        "San Diego Padres (+1.5)": 1.61
+        "Cincinnati Reds (-1.5)": 2.39,
+        "San Diego Padres (+1.5)": 1.65
       },
       "probabilidades": {
-        "Cincinnati Reds": 53.6,
-        "San Diego Padres": 46.4
+        "Cincinnati Reds": 54.2,
+        "San Diego Padres": 45.8
       },
-      "confianza": 53.6,
+      "confianza": 54.2,
       "value_bets": {
         "Cincinnati Reds": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
+          "cuota": 1.81,
           "casa": "Pinnacle",
-          "pinn_prob": 53.6,
+          "pinn_prob": 54.2,
           "mercado_nombre": "Cincinnati Reds"
         },
         "San Diego Padres": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.11,
+          "cuota": 2.14,
           "casa": "Pinnacle",
-          "pinn_prob": 46.4,
+          "pinn_prob": 45.8,
           "mercado_nombre": "San Diego Padres"
         },
         "over_7_5": {
@@ -3730,34 +2774,34 @@
           "mercado_nombre": "Under 7.5"
         },
         "spread_cincinnati_reds_m1_5": {
-          "value": -0.037,
-          "ev_porcentaje": -3.7,
-          "ev_pinn": -3.7,
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.44,
+          "cuota": 2.39,
           "casa": "DraftKings",
-          "pinn_prob": 39.5,
+          "pinn_prob": 39.9,
           "mercado_nombre": "Cincinnati Reds (-1.5)"
         },
         "spread_san_diego_padres_1_5": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.008,
+          "ev_porcentaje": -0.8,
+          "ev_pinn": -0.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.61,
+          "cuota": 1.65,
           "casa": "FanDuel",
-          "pinn_prob": 60.5,
+          "pinn_prob": 60.1,
           "mercado_nombre": "San Diego Padres (+1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Cincinnati Reds",
-        "prob": 53.6,
-        "ev": -2.0
+        "mercado": "San Diego Padres (+1.5)",
+        "prob": 60.1,
+        "ev": -0.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3780,8 +2824,8 @@
       "cuotas": {
         "San Francisco Giants": 1.96,
         "Washington Nationals": 1.96,
-        "Over 8.5": 1.96,
-        "Under 8.5": 1.88
+        "Over 8.5": 1.92,
+        "Under 8.5": 1.96
       },
       "probabilidades": {
         "San Francisco Giants": 50.0,
@@ -3814,27 +2858,27 @@
           "mercado_nombre": "Washington Nationals"
         },
         "over_8_5": {
-          "value": -0.05,
-          "ev_porcentaje": -5.0,
-          "ev_pinn": -5.0,
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.92,
+          "casa": "Unibet",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Over 8.5"
+        },
+        "under_8_5": {
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.96,
-          "casa": "FanDuel",
-          "pinn_prob": 48.5,
-          "mercado_nombre": "Over 8.5"
-        },
-        "under_8_5": {
-          "value": -0.031,
-          "ev_porcentaje": -3.1,
-          "ev_pinn": -3.1,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.88,
-          "casa": "Unibet",
-          "pinn_prob": 51.5,
+          "casa": "DraftKings",
+          "pinn_prob": 49.1,
           "mercado_nombre": "Under 8.5"
         }
       },
@@ -3862,18 +2906,18 @@
       "hora": "02:06",
       "fecha_evento": "2026-06-09",
       "cuotas": {
-        "Athletics": 1.93,
-        "Milwaukee Brewers": 1.99,
-        "Over 13.0": 1.87,
-        "Under 13.0": 1.98,
+        "Athletics": 1.94,
+        "Milwaukee Brewers": 1.98,
+        "Over 13.5": 2.0,
+        "Under 13.5": 1.87,
         "Athletics (+1.5)": 1.62,
         "Milwaukee Brewers (-1.5)": 2.35
       },
       "probabilidades": {
-        "Athletics": 50.8,
-        "Milwaukee Brewers": 49.2
+        "Athletics": 50.5,
+        "Milwaukee Brewers": 49.5
       },
-      "confianza": 50.8,
+      "confianza": 50.5,
       "value_bets": {
         "Athletics": {
           "value": -0.02,
@@ -3882,9 +2926,9 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
+          "cuota": 1.94,
           "casa": "Pinnacle",
-          "pinn_prob": 50.8,
+          "pinn_prob": 50.5,
           "mercado_nombre": "Athletics"
         },
         "Milwaukee Brewers": {
@@ -3894,64 +2938,342 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.99,
+          "cuota": 1.98,
           "casa": "Pinnacle",
-          "pinn_prob": 49.2,
+          "pinn_prob": 49.5,
           "mercado_nombre": "Milwaukee Brewers"
         },
-        "over_13_0": {
-          "value": -0.058,
-          "ev_porcentaje": -5.8,
-          "ev_pinn": -5.8,
+        "over_13_5": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "FanDuel",
+          "pinn_prob": 48.6,
+          "mercado_nombre": "Over 13.5"
+        },
+        "under_13_5": {
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.87,
-          "casa": "Unibet",
-          "pinn_prob": 50.4,
-          "mercado_nombre": "Over 13.0"
+          "casa": "DraftKings",
+          "pinn_prob": 51.4,
+          "mercado_nombre": "Under 13.5"
         },
-        "under_13_0": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
+        "spread_athletics_1_5": {
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.98,
-          "casa": "BetMGM",
-          "pinn_prob": 49.6,
-          "mercado_nombre": "Under 13.0"
+          "cuota": 1.62,
+          "casa": "FanDuel",
+          "pinn_prob": 59.1,
+          "mercado_nombre": "Athletics (+1.5)"
         },
-        "spread_athletics_1_5": {
+        "spread_milwaukee_brewers_m1_5": {
           "value": -0.038,
           "ev_porcentaje": -3.8,
           "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.62,
-          "casa": "FanDuel",
-          "pinn_prob": 59.4,
-          "mercado_nombre": "Athletics (+1.5)"
-        },
-        "spread_milwaukee_brewers_m1_5": {
-          "value": -0.046,
-          "ev_porcentaje": -4.6,
-          "ev_pinn": -4.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
           "cuota": 2.35,
-          "casa": "DraftKings",
-          "pinn_prob": 40.6,
+          "casa": "BetMGM",
+          "pinn_prob": 40.9,
           "mercado_nombre": "Milwaukee Brewers (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Under 13.0",
-        "prob": 49.6,
-        "ev": -1.8
+        "mercado": "Athletics",
+        "prob": 50.5,
+        "ev": -2.0
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "id": "4c66d2e13ce50dd60d19e8cff8bbd7c8",
+      "comienzo": "2026-06-10T17:11:00Z",
+      "local": "Cleveland Guardians",
+      "visitante": "New York Yankees",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "17:11",
+      "fecha_evento": "2026-06-10",
+      "cuotas": {
+        "Cleveland Guardians": 1.89,
+        "New York Yankees": 2.02,
+        "Over 8.0": 1.98,
+        "Under 8.0": 1.84
+      },
+      "probabilidades": {
+        "Cleveland Guardians": 51.8,
+        "New York Yankees": 48.2
+      },
+      "confianza": 51.8,
+      "value_bets": {
+        "Cleveland Guardians": {
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.89,
+          "casa": "FanDuel",
+          "pinn_prob": 51.8,
+          "mercado_nombre": "Cleveland Guardians"
+        },
+        "New York Yankees": {
+          "value": -0.026,
+          "ev_porcentaje": -2.6,
+          "ev_pinn": -2.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.02,
+          "casa": "Pinnacle",
+          "pinn_prob": 48.2,
+          "mercado_nombre": "New York Yankees"
+        },
+        "over_8_0": {
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.98,
+          "casa": "DraftKings",
+          "pinn_prob": 48.5,
+          "mercado_nombre": "Over 8.0"
+        },
+        "under_8_0": {
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.84,
+          "casa": "DraftKings",
+          "pinn_prob": 51.5,
+          "mercado_nombre": "Under 8.0"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Cleveland Guardians",
+        "prob": 51.8,
+        "ev": -2.1
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "id": "c36bdb8231822ee0f1da32b6be40b9b0",
+      "comienzo": "2026-06-10T19:46:00Z",
+      "local": "San Francisco Giants",
+      "visitante": "Washington Nationals",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "19:46",
+      "fecha_evento": "2026-06-10",
+      "cuotas": {
+        "San Francisco Giants": 1.87,
+        "Washington Nationals": 2.04,
+        "Over 8.5": 1.95,
+        "Under 8.5": 1.96
+      },
+      "probabilidades": {
+        "San Francisco Giants": 52.2,
+        "Washington Nationals": 47.8
+      },
+      "confianza": 52.2,
+      "value_bets": {
+        "San Francisco Giants": {
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.87,
+          "casa": "Pinnacle",
+          "pinn_prob": 52.2,
+          "mercado_nombre": "San Francisco Giants"
+        },
+        "Washington Nationals": {
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.04,
+          "casa": "Pinnacle",
+          "pinn_prob": 47.8,
+          "mercado_nombre": "Washington Nationals"
+        },
+        "over_8_5": {
+          "value": -0.022,
+          "ev_porcentaje": -2.2,
+          "ev_pinn": -2.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.95,
+          "casa": "FanDuel",
+          "pinn_prob": 50.1,
+          "mercado_nombre": "Over 8.5"
+        },
+        "under_8_5": {
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.96,
+          "casa": "DraftKings",
+          "pinn_prob": 49.9,
+          "mercado_nombre": "Under 8.5"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Over 8.5",
+        "prob": 50.1,
+        "ev": -2.2
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
+      "id": "05b5c7cee311b071b85433bf42dc4612",
+      "comienzo": "2026-06-10T20:11:00Z",
+      "local": "San Diego Padres",
+      "visitante": "Cincinnati Reds",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "20:11",
+      "fecha_evento": "2026-06-10",
+      "cuotas": {
+        "Cincinnati Reds": 2.4,
+        "San Diego Padres": 1.64,
+        "Over 8.0": 1.91,
+        "Under 8.0": 1.98,
+        "Cincinnati Reds (+1.5)": 1.64,
+        "San Diego Padres (-1.5)": 2.3
+      },
+      "probabilidades": {
+        "Cincinnati Reds": 40.6,
+        "San Diego Padres": 59.4
+      },
+      "confianza": 59.4,
+      "value_bets": {
+        "Cincinnati Reds": {
+          "value": -0.026,
+          "ev_porcentaje": -2.6,
+          "ev_pinn": -2.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.4,
+          "casa": "Pinnacle",
+          "pinn_prob": 40.6,
+          "mercado_nombre": "Cincinnati Reds"
+        },
+        "San Diego Padres": {
+          "value": -0.026,
+          "ev_porcentaje": -2.6,
+          "ev_pinn": -2.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.64,
+          "casa": "Pinnacle",
+          "pinn_prob": 59.4,
+          "mercado_nombre": "San Diego Padres"
+        },
+        "over_8_0": {
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "DraftKings",
+          "pinn_prob": 49.9,
+          "mercado_nombre": "Over 8.0"
+        },
+        "under_8_0": {
+          "value": -0.007,
+          "ev_porcentaje": -0.7,
+          "ev_pinn": -0.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.98,
+          "casa": "FanDuel",
+          "pinn_prob": 50.1,
+          "mercado_nombre": "Under 8.0"
+        },
+        "spread_cincinnati_reds_1_5": {
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.64,
+          "casa": "DraftKings",
+          "pinn_prob": 58.9,
+          "mercado_nombre": "Cincinnati Reds (+1.5)"
+        },
+        "spread_san_diego_padres_m1_5": {
+          "value": -0.054,
+          "ev_porcentaje": -5.4,
+          "ev_pinn": -5.4,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.3,
+          "casa": "FanDuel",
+          "pinn_prob": 41.1,
+          "mercado_nombre": "San Diego Padres (-1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Under 8.0",
+        "prob": 50.1,
+        "ev": -0.7
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -3980,64 +3302,64 @@
         "Vegas Golden Knights (+1.5)": 1.38
       },
       "probabilidades": {
-        "Carolina Hurricanes": 51.2,
-        "Vegas Golden Knights": 48.8
+        "Carolina Hurricanes": 50.9,
+        "Vegas Golden Knights": 49.1
       },
-      "confianza": 51.2,
+      "confianza": 50.9,
       "value_bets": {
         "over_6_0": {
-          "value": -0.055,
-          "ev_porcentaje": -5.5,
-          "ev_pinn": -5.5,
+          "value": -0.053,
+          "ev_porcentaje": -5.3,
+          "ev_pinn": -5.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.95,
           "casa": "BetMGM",
-          "pinn_prob": 48.5,
+          "pinn_prob": 48.6,
           "mercado_nombre": "Over 6.0"
         },
         "under_6_0": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.87,
           "casa": "BetMGM",
-          "pinn_prob": 51.5,
+          "pinn_prob": 51.4,
           "mercado_nombre": "Under 6.0"
         },
         "spread_carolina_hurricanes_m1_5": {
-          "value": -0.049,
-          "ev_porcentaje": -4.9,
-          "ev_pinn": -4.9,
+          "value": -0.051,
+          "ev_porcentaje": -5.1,
+          "ev_pinn": -5.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 3.25,
           "casa": "DraftKings",
-          "pinn_prob": 29.3,
+          "pinn_prob": 29.2,
           "mercado_nombre": "Carolina Hurricanes (-1.5)"
         },
         "spread_vegas_golden_knights_1_5": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.38,
           "casa": "FanDuel",
-          "pinn_prob": 70.7,
+          "pinn_prob": 70.8,
           "mercado_nombre": "Vegas Golden Knights (+1.5)"
         }
       },
       "prediccion_principal": {
         "mercado": "Vegas Golden Knights (+1.5)",
-        "prob": 70.7,
-        "ev": -2.4
+        "prob": 70.8,
+        "ev": -2.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4060,94 +3382,68 @@
       "cuotas": {
         "Atlanta Dream": 1.27,
         "Chicago Sky": 4.2,
-        "Over 165.5": 1.95,
-        "Under 165.5": 1.91,
-        "Atlanta Dream (-9.0)": 1.92,
-        "Chicago Sky (+9.0)": 1.89
+        "Over 165.5": 1.93,
+        "Under 165.5": 1.91
       },
       "probabilidades": {
-        "Atlanta Dream": 76.4,
-        "Chicago Sky": 23.6
+        "Atlanta Dream": 76.9,
+        "Chicago Sky": 23.1
       },
-      "confianza": 76.4,
+      "confianza": 76.9,
       "value_bets": {
         "Atlanta Dream": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.27,
           "casa": "Unibet",
-          "pinn_prob": 76.4,
+          "pinn_prob": 76.9,
           "mercado_nombre": "Atlanta Dream"
         },
         "Chicago Sky": {
-          "value": -0.007,
-          "ev_porcentaje": -0.7,
-          "ev_pinn": -0.7,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 4.2,
-          "casa": "BetMGM",
-          "pinn_prob": 23.6,
+          "casa": "DraftKings",
+          "pinn_prob": 23.1,
           "mercado_nombre": "Chicago Sky"
         },
         "over_165_5": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
-          "casa": "BetMGM",
-          "pinn_prob": 49.1,
-          "mercado_nombre": "Over 165.5"
-        },
-        "under_165_5": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
-          "casa": "FanDuel",
-          "pinn_prob": 50.9,
-          "mercado_nombre": "Under 165.5"
-        },
-        "spread_atlanta_dream_m9_0": {
-          "value": -0.047,
-          "ev_porcentaje": -4.7,
-          "ev_pinn": -4.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.92,
-          "casa": "Unibet",
-          "pinn_prob": 49.6,
-          "mercado_nombre": "Atlanta Dream (-9.0)"
-        },
-        "spread_chicago_sky_9_0": {
           "value": -0.048,
           "ev_porcentaje": -4.8,
           "ev_pinn": -4.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.89,
-          "casa": "Unibet",
-          "pinn_prob": 50.4,
-          "mercado_nombre": "Chicago Sky (+9.0)"
+          "cuota": 1.93,
+          "casa": "DraftKings",
+          "pinn_prob": 49.4,
+          "mercado_nombre": "Over 165.5"
+        },
+        "under_165_5": {
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.91,
+          "casa": "FanDuel",
+          "pinn_prob": 50.6,
+          "mercado_nombre": "Under 165.5"
         }
       },
       "prediccion_principal": {
-        "mercado": "Chicago Sky",
-        "prob": 23.6,
-        "ev": -0.7
+        "mercado": "Atlanta Dream",
+        "prob": 76.9,
+        "ev": -2.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4169,69 +3465,69 @@
       "fecha_evento": "2026-06-09",
       "cuotas": {
         "Dallas Wings": 2.6,
-        "Minnesota Lynx": 1.54,
-        "Dallas Wings (+4.5)": 1.95,
-        "Minnesota Lynx (-4.5)": 1.91
+        "Minnesota Lynx": 1.53,
+        "Dallas Wings (+4.5)": 1.96,
+        "Minnesota Lynx (-4.5)": 1.89
       },
       "probabilidades": {
-        "Dallas Wings": 37.2,
-        "Minnesota Lynx": 62.8
+        "Dallas Wings": 37.1,
+        "Minnesota Lynx": 62.9
       },
-      "confianza": 62.8,
+      "confianza": 62.9,
       "value_bets": {
         "Dallas Wings": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.6,
           "casa": "DraftKings",
-          "pinn_prob": 37.2,
+          "pinn_prob": 37.1,
           "mercado_nombre": "Dallas Wings"
         },
         "Minnesota Lynx": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.54,
+          "cuota": 1.53,
           "casa": "FanDuel",
-          "pinn_prob": 62.8,
+          "pinn_prob": 62.9,
           "mercado_nombre": "Minnesota Lynx"
         },
         "spread_dallas_wings_4_5": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
-          "casa": "BetMGM",
-          "pinn_prob": 49.5,
+          "cuota": 1.96,
+          "casa": "FanDuel",
+          "pinn_prob": 49.1,
           "mercado_nombre": "Dallas Wings (+4.5)"
         },
         "spread_minnesota_lynx_m4_5": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
-          "casa": "Unibet",
-          "pinn_prob": 50.5,
+          "cuota": 1.89,
+          "casa": "DraftKings",
+          "pinn_prob": 50.9,
           "mercado_nombre": "Minnesota Lynx (-4.5)"
         }
       },
       "prediccion_principal": {
         "mercado": "Dallas Wings",
-        "prob": 37.2,
-        "ev": -3.2
+        "prob": 37.1,
+        "ev": -3.4
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4252,70 +3548,70 @@
       "hora": "02:10",
       "fecha_evento": "2026-06-09",
       "cuotas": {
-        "Golden State Valkyries": 1.29,
-        "Phoenix Mercury": 4.01,
-        "Golden State Valkyries (-8.5)": 1.94,
-        "Phoenix Mercury (+8.5)": 1.93
+        "Golden State Valkyries": 1.3,
+        "Phoenix Mercury": 3.77,
+        "Over 162.0": 1.91,
+        "Under 162.0": 1.91
       },
       "probabilidades": {
-        "Golden State Valkyries": 75.9,
-        "Phoenix Mercury": 24.1
+        "Golden State Valkyries": 74.5,
+        "Phoenix Mercury": 25.5
       },
-      "confianza": 75.9,
+      "confianza": 74.5,
       "value_bets": {
         "Golden State Valkyries": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.29,
-          "casa": "FanDuel",
-          "pinn_prob": 75.9,
+          "cuota": 1.3,
+          "casa": "Unibet",
+          "pinn_prob": 74.5,
           "mercado_nombre": "Golden State Valkyries"
         },
         "Phoenix Mercury": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.01,
+          "cuota": 3.77,
           "casa": "Pinnacle",
-          "pinn_prob": 24.1,
+          "pinn_prob": 25.5,
           "mercado_nombre": "Phoenix Mercury"
         },
-        "spread_golden_state_valkyries_m8_5": {
-          "value": -0.007,
-          "ev_porcentaje": -0.7,
-          "ev_pinn": -0.7,
+        "over_162_0": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.94,
-          "casa": "FanDuel",
-          "pinn_prob": 51.2,
-          "mercado_nombre": "Golden State Valkyries (-8.5)"
+          "cuota": 1.91,
+          "casa": "Unibet",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Over 162.0"
         },
-        "spread_phoenix_mercury_8_5": {
-          "value": -0.058,
-          "ev_porcentaje": -5.8,
-          "ev_pinn": -5.8,
+        "under_162_0": {
+          "value": -0.062,
+          "ev_porcentaje": -6.2,
+          "ev_pinn": -6.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "DraftKings",
-          "pinn_prob": 48.8,
-          "mercado_nombre": "Phoenix Mercury (+8.5)"
+          "cuota": 1.91,
+          "casa": "Unibet",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Under 162.0"
         }
       },
       "prediccion_principal": {
-        "mercado": "Golden State Valkyries (-8.5)",
-        "prob": 51.2,
-        "ev": -0.7
+        "mercado": "Over 162.0",
+        "prob": 50.9,
+        "ev": -2.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4336,44 +3632,44 @@
       "hora": "09:30",
       "fecha_evento": "2026-06-10",
       "cuotas": {
-        "Doosan Bears": 1.51,
-        "Lotte Giants": 2.6
+        "Doosan Bears": 1.52,
+        "Lotte Giants": 2.56
       },
       "probabilidades": {
-        "Doosan Bears": 63.3,
-        "Lotte Giants": 36.7
+        "Doosan Bears": 62.7,
+        "Lotte Giants": 37.3
       },
-      "confianza": 63.3,
+      "confianza": 62.7,
       "value_bets": {
         "Doosan Bears": {
-          "value": -0.045,
-          "ev_porcentaje": -4.5,
-          "ev_pinn": -4.5,
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.51,
+          "cuota": 1.52,
           "casa": "Pinnacle",
-          "pinn_prob": 63.3,
+          "pinn_prob": 62.7,
           "mercado_nombre": "Doosan Bears"
         },
         "Lotte Giants": {
-          "value": -0.045,
-          "ev_porcentaje": -4.5,
-          "ev_pinn": -4.5,
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.6,
+          "cuota": 2.56,
           "casa": "Pinnacle",
-          "pinn_prob": 36.7,
+          "pinn_prob": 37.3,
           "mercado_nombre": "Lotte Giants"
         }
       },
       "prediccion_principal": {
         "mercado": "Doosan Bears",
-        "prob": 63.3,
-        "ev": -4.5
+        "prob": 62.7,
+        "ev": -4.6
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4453,43 +3749,43 @@
       "fecha_evento": "2026-06-10",
       "cuotas": {
         "KT Wiz": 2.43,
-        "Samsung Lions": 1.6
+        "Samsung Lions": 1.61
       },
       "probabilidades": {
-        "KT Wiz": 40.3,
-        "Samsung Lions": 59.7
+        "KT Wiz": 40.8,
+        "Samsung Lions": 59.2
       },
-      "confianza": 59.7,
+      "confianza": 59.2,
       "value_bets": {
         "KT Wiz": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
+          "value": -0.01,
+          "ev_porcentaje": -1.0,
+          "ev_pinn": -1.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.43,
           "casa": "Unibet",
-          "pinn_prob": 40.3,
+          "pinn_prob": 40.8,
           "mercado_nombre": "KT Wiz"
         },
         "Samsung Lions": {
-          "value": -0.045,
-          "ev_porcentaje": -4.5,
-          "ev_pinn": -4.5,
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.6,
+          "cuota": 1.61,
           "casa": "Pinnacle",
-          "pinn_prob": 59.7,
+          "pinn_prob": 59.2,
           "mercado_nombre": "Samsung Lions"
         }
       },
       "prediccion_principal": {
         "mercado": "KT Wiz",
-        "prob": 40.3,
-        "ev": -2.1
+        "prob": 40.8,
+        "ev": -1.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4626,44 +3922,44 @@
       "hora": "09:00",
       "fecha_evento": "2026-06-10",
       "cuotas": {
-        "Chiba Lotte Marines": 1.76,
-        "Chunichi Dragons": 2.17
+        "Chiba Lotte Marines": 1.74,
+        "Chunichi Dragons": 2.23
       },
       "probabilidades": {
-        "Chiba Lotte Marines": 55.2,
-        "Chunichi Dragons": 44.8
+        "Chiba Lotte Marines": 56.5,
+        "Chunichi Dragons": 43.5
       },
-      "confianza": 55.2,
+      "confianza": 56.5,
       "value_bets": {
         "Chiba Lotte Marines": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.76,
-          "casa": "Pinnacle",
-          "pinn_prob": 55.2,
+          "cuota": 1.74,
+          "casa": "Unibet",
+          "pinn_prob": 56.5,
           "mercado_nombre": "Chiba Lotte Marines"
         },
         "Chunichi Dragons": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.17,
+          "cuota": 2.23,
           "casa": "Pinnacle",
-          "pinn_prob": 44.8,
+          "pinn_prob": 43.5,
           "mercado_nombre": "Chunichi Dragons"
         }
       },
       "prediccion_principal": {
         "mercado": "Chiba Lotte Marines",
-        "prob": 55.2,
-        "ev": -2.8
+        "prob": 56.5,
+        "ev": -1.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4685,43 +3981,43 @@
       "fecha_evento": "2026-06-10",
       "cuotas": {
         "Fukuoka SoftBank Hawks": 1.83,
-        "Hanshin Tigers": 2.08
+        "Hanshin Tigers": 2.09
       },
       "probabilidades": {
-        "Fukuoka SoftBank Hawks": 53.2,
-        "Hanshin Tigers": 46.8
+        "Fukuoka SoftBank Hawks": 53.6,
+        "Hanshin Tigers": 46.4
       },
-      "confianza": 53.2,
+      "confianza": 53.6,
       "value_bets": {
         "Fukuoka SoftBank Hawks": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.83,
-          "casa": "Pinnacle",
-          "pinn_prob": 53.2,
+          "casa": "Unibet",
+          "pinn_prob": 53.6,
           "mercado_nombre": "Fukuoka SoftBank Hawks"
         },
         "Hanshin Tigers": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.08,
+          "cuota": 2.09,
           "casa": "Pinnacle",
-          "pinn_prob": 46.8,
+          "pinn_prob": 46.4,
           "mercado_nombre": "Hanshin Tigers"
         }
       },
       "prediccion_principal": {
         "mercado": "Fukuoka SoftBank Hawks",
-        "prob": 53.2,
-        "ev": -2.6
+        "prob": 53.6,
+        "ev": -1.9
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4801,43 +4097,43 @@
       "fecha_evento": "2026-06-10",
       "cuotas": {
         "Hokkaido Nippon-Ham Fighters": 1.71,
-        "Yokohama DeNA BayStars": 2.25
+        "Yokohama DeNA BayStars": 2.26
       },
       "probabilidades": {
-        "Hokkaido Nippon-Ham Fighters": 56.8,
-        "Yokohama DeNA BayStars": 43.2
+        "Hokkaido Nippon-Ham Fighters": 57.1,
+        "Yokohama DeNA BayStars": 42.9
       },
-      "confianza": 56.8,
+      "confianza": 57.1,
       "value_bets": {
         "Hokkaido Nippon-Ham Fighters": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.71,
-          "casa": "Pinnacle",
-          "pinn_prob": 56.8,
+          "casa": "William Hill",
+          "pinn_prob": 57.1,
           "mercado_nombre": "Hokkaido Nippon-Ham Fighters"
         },
         "Yokohama DeNA BayStars": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.25,
+          "cuota": 2.26,
           "casa": "Pinnacle",
-          "pinn_prob": 43.2,
+          "pinn_prob": 42.9,
           "mercado_nombre": "Yokohama DeNA BayStars"
         }
       },
       "prediccion_principal": {
         "mercado": "Hokkaido Nippon-Ham Fighters",
-        "prob": 56.8,
-        "ev": -2.8
+        "prob": 57.1,
+        "ev": -2.4
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -4963,5 +4259,5 @@
       "movimiento": null
     }
   ],
-  "generado": "19:50:54"
+  "generado": "22:12:57"
 }
