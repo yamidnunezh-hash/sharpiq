@@ -10,7 +10,7 @@
   "hora_cot": "14:00 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 67.2,
+  "confianza": 67.3,
   "pred_completa": {
     "local": "Mexico",
     "visitante": "South Africa",
@@ -26,10 +26,10 @@
       "pinnacle_1": 1.43,
       "2": 9.0,
       "2_casa": "Unibet",
-      "pinnacle_2": 8.83,
+      "pinnacle_2": 8.85,
       "X": 4.6,
       "X_casa": "Unibet",
-      "pinnacle_X": 4.39,
+      "pinnacle_X": 4.4,
       "over225": 2.0,
       "over225_casa": "Pinnacle",
       "pinnacle_over225": 2.0,
@@ -44,7 +44,7 @@
       "pinnacle_ah_v_p1_25": 1.84
     },
     "probabilidades": {
-      "victoria_local": 67.2,
+      "victoria_local": 67.3,
       "victoria_visita": 10.9,
       "empate": 21.9,
       "over225": 48.6,
@@ -52,23 +52,23 @@
       "ah_l_m1_25": 46.9,
       "ah_v_p1_25": 53.1
     },
-    "confianza": 67.2,
+    "confianza": 67.3,
     "value_bets": {
       "victoria_local": {
-        "value": -0.039,
-        "ev_porcentaje": -3.9,
-        "ev_pinn": -3.9,
+        "value": -0.038,
+        "ev_porcentaje": -3.8,
+        "ev_pinn": -3.8,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 1.43,
         "casa": "Pinnacle",
-        "pinn_prob": 67.2
+        "pinn_prob": 67.3
       },
       "victoria_visita": {
-        "value": -0.02,
-        "ev_porcentaje": -2.0,
-        "ev_pinn": -2.0,
+        "value": -0.022,
+        "ev_porcentaje": -2.2,
+        "ev_pinn": -2.2,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
@@ -77,9 +77,9 @@
         "pinn_prob": 10.9
       },
       "empate": {
-        "value": 0.007,
-        "ev_porcentaje": 0.7,
-        "ev_pinn": 0.7,
+        "value": 0.006,
+        "ev_porcentaje": 0.6,
+        "ev_pinn": 0.6,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
@@ -135,7 +135,7 @@
     "prediccion_principal": {
       "mercado": "Empate",
       "prob": 21.9,
-      "ev": 0.7
+      "ev": 0.6
     },
     "cuotas_reales": true,
     "confiable": true,
@@ -183,7 +183,7 @@
         "tarjetas_under6": 68.9
       },
       "handicap": {
-        "ah_local_menos05": 67.2,
+        "ah_local_menos05": 67.3,
         "ah_visita_mas05": 32.8,
         "ah_local_menos1": 43.7,
         "ah_visita_mas1": 56.3,
@@ -308,10 +308,10 @@
           "clasificacion": "SIN VALOR"
         },
         "ah_local_menos05": {
-          "prob_modelo": 67.2,
+          "prob_modelo": 67.3,
           "cuota_justa": 1.49,
           "cuota_ref": 1.41,
-          "ev_porcentaje": -5.2,
+          "ev_porcentaje": -5.1,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
