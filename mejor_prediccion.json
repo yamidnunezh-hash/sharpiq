@@ -1,124 +1,499 @@
 {
-  "partido": "Baltimore Orioles vs Seattle Mariners",
-  "liga": "MLB",
-  "local": "Baltimore Orioles",
-  "visitante": "Seattle Mariners",
-  "prediccion": "Under 8.5",
+  "partido": "Sport Recife vs Athletic Club (MG)",
+  "liga": "Brasileirao B",
+  "local": "Sport Recife",
+  "visitante": "Athletic Club (MG)",
+  "prediccion": "Empate",
   "mercado_key": null,
-  "cuota": "",
-  "hora_utc": "22:36",
-  "hora_cot": "17:36 COT",
+  "cuota": "1.79",
+  "hora_utc": "00:00",
+  "hora_cot": "19:00 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 52.2,
+  "confianza": 80.5,
   "pred_completa": {
-    "id": "1ca04df3ce70b1f02075d8e4a5b2cb52",
-    "comienzo": "2026-06-09T22:36:00Z",
-    "local": "Baltimore Orioles",
-    "visitante": "Seattle Mariners",
-    "liga": "MLB",
-    "liga_code": "baseball_mlb",
-    "deporte": "MLB",
-    "deporte_emoji": "⚾",
-    "hora": "22:36",
-    "fecha_evento": "2026-06-09",
+    "local": "Sport Recife",
+    "visitante": "Athletic Club (MG)",
+    "liga": "Brasileirao B",
+    "liga_code": "soccer_brazil_serie_b",
+    "id": "58c45c4094e355835444bbd2c6548d51",
+    "comienzo": "2026-06-11T00:00:00Z",
+    "hora": "00:00",
+    "fecha_evento": "2026-06-10",
     "cuotas": {
-      "Baltimore Orioles": 2.05,
-      "Seattle Mariners": 1.88,
-      "Over 8.5": 1.87,
-      "Under 8.5": 2.0,
-      "Baltimore Orioles (+1.5)": 1.62,
-      "Seattle Mariners (-1.5)": 2.37
+      "2": 5.02,
+      "2_casa": "Pinnacle",
+      "pinnacle_2": 5.02,
+      "1": 1.79,
+      "1_casa": "Pinnacle",
+      "pinnacle_1": 1.79,
+      "X": 3.55,
+      "X_casa": "Unibet",
+      "pinnacle_X": 3.43,
+      "over225": 2.0,
+      "over225_casa": "Pinnacle",
+      "pinnacle_over225": 2.0,
+      "under225": 1.86,
+      "under225_casa": "Pinnacle",
+      "pinnacle_under225": 1.86,
+      "ah_l_m0_75": 2.06,
+      "ah_l_m0_75_casa": "Pinnacle",
+      "pinnacle_ah_l_m0_75": 2.06,
+      "ah_v_p0_75": 1.82,
+      "ah_v_p0_75_casa": "Pinnacle",
+      "pinnacle_ah_v_p0_75": 1.82
     },
     "probabilidades": {
-      "Baltimore Orioles": 47.8,
-      "Seattle Mariners": 52.2
+      "victoria_visita": 19.0,
+      "victoria_local": 53.2,
+      "empate": 27.8,
+      "over225": 48.2,
+      "under225": 51.8,
+      "ah_l_m0_75": 46.9,
+      "ah_v_p0_75": 53.1,
+      "over25": 19.5,
+      "under25": 80.5
     },
-    "confianza": 52.2,
+    "confianza": 80.5,
     "value_bets": {
-      "Baltimore Orioles": {
-        "value": -0.019,
-        "ev_porcentaje": -1.9,
-        "ev_pinn": -1.9,
+      "victoria_visita": {
+        "value": -0.047,
+        "ev_porcentaje": -4.7,
+        "ev_pinn": -4.7,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.05,
+        "cuota": 5.02,
         "casa": "Pinnacle",
-        "pinn_prob": 47.8,
-        "mercado_nombre": "Baltimore Orioles"
+        "pinn_prob": 19.0
       },
-      "Seattle Mariners": {
-        "value": -0.019,
-        "ev_porcentaje": -1.9,
-        "ev_pinn": -1.9,
+      "victoria_local": {
+        "value": -0.047,
+        "ev_porcentaje": -4.7,
+        "ev_pinn": -4.7,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.88,
+        "cuota": 1.79,
         "casa": "Pinnacle",
-        "pinn_prob": 52.2,
-        "mercado_nombre": "Seattle Mariners"
+        "pinn_prob": 53.2
       },
-      "over_8_5": {
-        "value": -0.058,
-        "ev_porcentaje": -5.8,
-        "ev_pinn": -5.8,
+      "empate": {
+        "value": -0.014,
+        "ev_porcentaje": -1.4,
+        "ev_pinn": -1.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.87,
-        "casa": "DraftKings",
-        "pinn_prob": 50.4,
-        "mercado_nombre": "Over 8.5"
+        "cuota": 3.55,
+        "casa": "Unibet",
+        "pinn_prob": 27.8
       },
-      "under_8_5": {
-        "value": -0.008,
-        "ev_porcentaje": -0.8,
-        "ev_pinn": -0.8,
+      "over225": {
+        "value": -0.036,
+        "ev_porcentaje": -3.6,
+        "ev_pinn": -3.6,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 2.0,
+        "casa": "Pinnacle",
+        "pinn_prob": 48.2
+      },
+      "under225": {
+        "value": -0.036,
+        "ev_porcentaje": -3.6,
+        "ev_pinn": -3.6,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.86,
+        "casa": "Pinnacle",
+        "pinn_prob": 51.8
+      },
+      "ah_l_m0_75": {
+        "value": -0.034,
+        "ev_porcentaje": -3.4,
+        "ev_pinn": -3.4,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 2.06,
+        "casa": "Pinnacle",
+        "pinn_prob": 46.9
+      },
+      "ah_v_p0_75": {
+        "value": -0.034,
+        "ev_porcentaje": -3.4,
+        "ev_pinn": -3.4,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.82,
+        "casa": "Pinnacle",
+        "pinn_prob": 53.1
+      },
+      "over25": {
+        "value": null,
+        "ev_porcentaje": null,
+        "ev_pinn": null,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN EV",
+        "cuota": 2.2,
+        "casa": "William Hill",
+        "pinn_prob": 19.5,
+        "sin_mercado": true
+      },
+      "under25": {
+        "value": null,
+        "ev_porcentaje": null,
+        "ev_pinn": null,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN EV",
+        "cuota": 1.75,
         "casa": "Unibet",
-        "pinn_prob": 49.6,
-        "mercado_nombre": "Under 8.5"
-      },
-      "spread_baltimore_orioles_1_5": {
-        "value": -0.025,
-        "ev_porcentaje": -2.5,
-        "ev_pinn": -2.5,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.62,
-        "casa": "FanDuel",
-        "pinn_prob": 60.2,
-        "mercado_nombre": "Baltimore Orioles (+1.5)"
-      },
-      "spread_seattle_mariners_m1_5": {
-        "value": -0.057,
-        "ev_porcentaje": -5.7,
-        "ev_pinn": -5.7,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 2.37,
-        "casa": "DraftKings",
-        "pinn_prob": 39.8,
-        "mercado_nombre": "Seattle Mariners (-1.5)"
+        "pinn_prob": 80.5,
+        "sin_mercado": true
       }
     },
     "prediccion_principal": {
-      "mercado": "Under 8.5",
-      "prob": 49.6,
-      "ev": -0.8
+      "mercado": "Empate",
+      "prob": 27.8,
+      "ev": -1.4
     },
     "cuotas_reales": true,
+    "confiable": true,
+    "sin_pinnacle": false,
     "cuotas_avisos": [],
-    "forma_local": [],
-    "forma_visita": [],
-    "h2h": {},
-    "movimiento": null
+    "sede_neutral": false,
+    "arbitro": "",
+    "forma_local": {
+      "forma": 0.6,
+      "ataque_reciente": 1.2,
+      "defensa_reciente": 1.0,
+      "partidos": 5
+    },
+    "forma_visita": {
+      "forma": 0.533,
+      "ataque_reciente": 1.2,
+      "defensa_reciente": 1.0,
+      "partidos": 5
+    },
+    "h2h": null,
+    "movimiento": null,
+    "mercados_ext": {
+      "corners": {
+        "corners_esperados": 10.8,
+        "corners_over9": 75.1,
+        "corners_under9": 24.9,
+        "corners_over10": 63.9,
+        "corners_under10": 36.1,
+        "corners_over11": 51.7,
+        "corners_under11": 48.3,
+        "corners_over12": 39.8,
+        "corners_under12": 60.2,
+        "corners_over13": 29.1,
+        "corners_under13": 70.9
+      },
+      "tarjetas": {
+        "tarjetas_esperadas": 3.1,
+        "tarjetas_over3": 60.5,
+        "tarjetas_under3": 39.5,
+        "tarjetas_over4": 38.2,
+        "tarjetas_under4": 61.8,
+        "tarjetas_over5": 20.7,
+        "tarjetas_under5": 79.3,
+        "tarjetas_over6": 9.8,
+        "tarjetas_under6": 90.2
+      },
+      "handicap": {
+        "ah_local_menos05": 53.2,
+        "ah_visita_mas05": 46.8,
+        "ah_local_menos1": 34.6,
+        "ah_visita_mas1": 65.4,
+        "ah_local_menos15": 24.2,
+        "ah_visita_mas15": 75.8
+      },
+      "disparos": {
+        "disparos_esperados": 2.9,
+        "disp_vis_over2": 78.4,
+        "disp_vis_under2": 21.6,
+        "disp_vis_over3": 55.2,
+        "disp_vis_under3": 44.8,
+        "disp_vis_over4": 32.8,
+        "disp_vis_under4": 67.2,
+        "disp_vis_over5": 16.7,
+        "disp_vis_under5": 83.3
+      },
+      "paradas": {
+        "paradas_esperadas": 6.0,
+        "paradas_local_over2": 98.3,
+        "paradas_local_under2": 1.7,
+        "paradas_local_over3": 93.8,
+        "paradas_local_under3": 6.2,
+        "paradas_local_over4": 84.9,
+        "paradas_local_under4": 15.1
+      },
+      "ev_ext": {
+        "corners_over9": {
+          "prob_modelo": 75.1,
+          "cuota_justa": 1.33,
+          "cuota_ref": 1.26,
+          "ev_porcentaje": -5.4,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "corners_under9": {
+          "prob_modelo": 24.9,
+          "cuota_justa": 4.02,
+          "cuota_ref": 3.82,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "corners_over10": {
+          "prob_modelo": 63.9,
+          "cuota_justa": 1.56,
+          "cuota_ref": 1.49,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "corners_under10": {
+          "prob_modelo": 36.1,
+          "cuota_justa": 2.77,
+          "cuota_ref": 2.63,
+          "ev_porcentaje": -5.1,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "corners_over11": {
+          "prob_modelo": 51.7,
+          "cuota_justa": 1.93,
+          "cuota_ref": 1.84,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "corners_under11": {
+          "prob_modelo": 48.3,
+          "cuota_justa": 2.07,
+          "cuota_ref": 1.97,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_over3": {
+          "prob_modelo": 60.5,
+          "cuota_justa": 1.65,
+          "cuota_ref": 1.57,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_under3": {
+          "prob_modelo": 39.5,
+          "cuota_justa": 2.53,
+          "cuota_ref": 2.41,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_over4": {
+          "prob_modelo": 38.2,
+          "cuota_justa": 2.62,
+          "cuota_ref": 2.49,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_under4": {
+          "prob_modelo": 61.8,
+          "cuota_justa": 1.62,
+          "cuota_ref": 1.54,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_over5": {
+          "prob_modelo": 20.7,
+          "cuota_justa": 4.83,
+          "cuota_ref": 4.59,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "tarjetas_under5": {
+          "prob_modelo": 79.3,
+          "cuota_justa": 1.26,
+          "cuota_ref": 1.2,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_local_menos05": {
+          "prob_modelo": 53.2,
+          "cuota_justa": 1.88,
+          "cuota_ref": 1.79,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_visita_mas05": {
+          "prob_modelo": 46.8,
+          "cuota_justa": 2.14,
+          "cuota_ref": 2.03,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_local_menos1": {
+          "prob_modelo": 34.6,
+          "cuota_justa": 2.89,
+          "cuota_ref": 2.75,
+          "ev_porcentaje": -4.8,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_visita_mas1": {
+          "prob_modelo": 65.4,
+          "cuota_justa": 1.53,
+          "cuota_ref": 1.45,
+          "ev_porcentaje": -5.2,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_local_menos15": {
+          "prob_modelo": 24.2,
+          "cuota_justa": 4.13,
+          "cuota_ref": 3.93,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "ah_visita_mas15": {
+          "prob_modelo": 75.8,
+          "cuota_justa": 1.32,
+          "cuota_ref": 1.25,
+          "ev_porcentaje": -5.2,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_over2": {
+          "prob_modelo": 78.4,
+          "cuota_justa": 1.28,
+          "cuota_ref": 1.21,
+          "ev_porcentaje": -5.1,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_under2": {
+          "prob_modelo": 21.6,
+          "cuota_justa": 4.63,
+          "cuota_ref": 4.4,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_over3": {
+          "prob_modelo": 55.2,
+          "cuota_justa": 1.81,
+          "cuota_ref": 1.72,
+          "ev_porcentaje": -5.1,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_under3": {
+          "prob_modelo": 44.8,
+          "cuota_justa": 2.23,
+          "cuota_ref": 2.12,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_over4": {
+          "prob_modelo": 32.8,
+          "cuota_justa": 3.05,
+          "cuota_ref": 2.9,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_under4": {
+          "prob_modelo": 67.2,
+          "cuota_justa": 1.49,
+          "cuota_ref": 1.41,
+          "ev_porcentaje": -5.2,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_over5": {
+          "prob_modelo": 16.7,
+          "cuota_justa": 5.99,
+          "cuota_ref": 5.69,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_under5": {
+          "prob_modelo": 83.3,
+          "cuota_justa": 1.2,
+          "cuota_ref": 1.14,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_over2": {
+          "prob_modelo": 98.3,
+          "cuota_justa": 1.02,
+          "cuota_ref": 0.97,
+          "ev_porcentaje": -4.6,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_under2": {
+          "prob_modelo": 1.7,
+          "cuota_justa": 58.82,
+          "cuota_ref": 55.88,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_over3": {
+          "prob_modelo": 93.8,
+          "cuota_justa": 1.07,
+          "cuota_ref": 1.01,
+          "ev_porcentaje": -5.3,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_under3": {
+          "prob_modelo": 6.2,
+          "cuota_justa": 16.13,
+          "cuota_ref": 15.32,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_over4": {
+          "prob_modelo": 84.9,
+          "cuota_justa": 1.18,
+          "cuota_ref": 1.12,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "paradas_local_under4": {
+          "prob_modelo": 15.1,
+          "cuota_justa": 6.62,
+          "cuota_ref": 6.29,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        }
+      }
+    }
   }
 }
