@@ -14,7 +14,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "5.0",
     prob:       "80",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "08/06/26",
@@ -221,6 +221,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "10/06/26",
+    partido:    "Sport Recife vs Athletic Club (MG)",
+    liga:       "Brasileirao B",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.75",
+    prob:       "80",
+    resultado:  "win"
+  },
   {
     fecha:      "08/06/26",
     partido:    "Vila Nova vs Botafogo",
