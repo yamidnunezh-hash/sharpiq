@@ -461,12 +461,21 @@ def enviar_picks_free(tiers, fecha=None):
     (🔒) para crear antojo → VIP. El descubierto es el SEGURO (o PRINCIPAL); el ALTO VALOR
     nunca se regala. Si solo hay 1 pick, va tapado (no se regala el único)."""
     _TB = {"seguro": "🛡️ SEGURO", "principal": "⭐ PRINCIPAL", "alto_valor": "🔥 ALTO VALOR"}
-    orden = [k for k in ("seguro", "principal", "alto_valor") if (tiers or {}).get(k)]
-    if not orden:
+    _base = [(k, tiers[k]) for k in ("seguro", "principal", "alto_valor") if (tiers or {}).get(k)]
+    _items = _base + [(t.get("tier", "principal"), t) for t in (tiers.get("extra") or [])]
+    if not _items:
         return False
-    revelar = "seguro" if "seguro" in orden else ("principal" if "principal" in orden else None)
-    if len(orden) == 1:
-        revelar = None  # si solo hay 1 pick, no se regala
+    # Revelar UN pick base (seguro preferido, si no principal); extras y resto, tapados.
+    revelar_i = None
+    for _i, (_k, _t) in enumerate(_base):
+        if _k == "seguro":
+            revelar_i = _i; break
+    if revelar_i is None:
+        for _i, (_k, _t) in enumerate(_base):
+            if _k == "principal":
+                revelar_i = _i; break
+    if len(_items) == 1:
+        revelar_i = None  # si solo hay 1 pick, no se regala
     fcha = (_fmt_fecha(fecha) if fecha else "").strip(" ·")
 
     def _ev(t):
@@ -478,12 +487,11 @@ def enviar_picks_free(tiers, fecha=None):
             return ""
 
     bloques = []
-    for k in orden:
-        t = tiers[k]
+    for _idx, (k, t) in enumerate(_items):
         p = t.get("pred", {}) or {}
         sp = _sport_emoji(p.get("liga", "") or p.get("deporte", ""))
         nombre = esc(p["jugador"]) if p.get("jugador") else f"{esc(p.get('local',''))} vs {esc(p.get('visitante',''))}"
-        if k == revelar:
+        if _idx == revelar_i:
             bloques.append(
                 f"🎁 <b>GRATIS</b> · {_TB[k]}\n"
                 f"{sp} <b>{nombre}</b>\n"
@@ -495,7 +503,7 @@ def enviar_picks_free(tiers, fecha=None):
                 f"{sp} <b>{nombre}</b>\n"
                 f"🎯 🔒 ▓▓▓▓  💰 🔒 ▓.▓▓{_ev(t)} ✅"
             )
-    n_lock = sum(1 for k in orden if k != revelar)
+    n_lock = len(_items) - (1 if revelar_i is not None else 0)
     cta = (f"🔓 Desbloquea {'el pick' if n_lock == 1 else f'los {n_lock} picks'} 🔒 + cuotas → VIP"
            if n_lock else "💎 Más valor + análisis completo en el VIP")
     sep = "\n" + "─" * 22 + "\n"
