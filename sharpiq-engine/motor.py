@@ -2124,6 +2124,57 @@ def _fetch_odds_ext(sport_key):
         print(f"  Odds ext {sport_key} error: {e}")
         return []
 
+# Ligas donde traemos TODOS los mercados via endpoint POR-EVENTO (BTTS, doble
+# oportunidad, DNB, todas las lineas O/U y handicap). El endpoint por-liga solo
+# da los 'featured' (1X2, totales 2.5, handicap). Cuesta ~8 creditos/partido,
+# por eso se limita a competiciones estrella de alta liquidez/interes. Extensible.
+_LIGAS_MERCADO_COMPLETO = {
+    "soccer_fifa_world_cup",
+    "soccer_uefa_champs_league", "soccer_uefa_europa_league",
+    "soccer_uefa_europa_conference_league", "soccer_uefa_nations_league",
+    "soccer_epl", "soccer_spain_la_liga", "soccer_germany_bundesliga",
+    "soccer_italy_serie_a", "soccer_france_ligue_one",
+    "soccer_conmebol_copa_libertadores", "soccer_conmebol_copa_sudamericana",
+}
+_cache_odds_evento = {}
+
+def _fetch_odds_evento(sport_key, event_id):
+    """
+    Cuotas POR-EVENTO: trae los mercados ricos que el endpoint por-liga NO da
+    (BTTS, doble oportunidad, DNB, alternate_totals = todas las lineas O/U,
+    alternate_spreads = todas las lineas de handicap), con cuota real de Pinnacle.
+    Cuesta ~1 credito por mercado: usar SOLO en partidos dentro de la ventana.
+    Devuelve la lista de bookmakers del evento (o [] si falla -> se usa la de liga).
+    """
+    ck = sport_key + ':' + str(event_id)
+    if ck in _cache_odds_evento:
+        return _cache_odds_evento[ck]
+    try:
+        url = f"{ODDS_API_URL}/sports/{sport_key}/events/{event_id}/odds"
+        params = {
+            "apiKey":      ODDS_API_KEY,
+            "bookmakers":  "pinnacle,bet365,betfair,betfair_ex_uk,unibet,williamhill,bwin,livescorebet,virginbet",
+            "markets":     "h2h,totals,spreads,alternate_totals,alternate_spreads,btts,double_chance,draw_no_bet,alternate_totals_corners,alternate_totals_cards",
+            "oddsFormat":  "decimal",
+        }
+        r = requests.get(url, params=params, timeout=20)
+        if r.status_code == 422:
+            # alguna liga no soporta el set completo -> reintento basico (igual mejora)
+            params["markets"] = "h2h,totals,spreads,alternate_totals,alternate_spreads,btts,double_chance,draw_no_bet"
+            r = requests.get(url, params=params, timeout=20)
+        if r.status_code != 200:
+            print(f"  Odds evento {sport_key}: HTTP {r.status_code}")
+            return []
+        data = r.json()
+        bms = data.get("bookmakers", []) if isinstance(data, dict) else []
+        _cache_odds_evento[ck] = bms
+        restantes = r.headers.get("x-requests-remaining", "?")
+        print(f"  Odds evento {sport_key}: {len(bms)} casas | Creditos: {restantes}")
+        return bms
+    except Exception as e:
+        print(f"  Odds evento {sport_key} error: {e}")
+        return []
+
 
 _STOPWORDS_EQUIPO = {
     # Sufijos genéricos
@@ -3326,6 +3377,16 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         except Exception:
             pass
 
+        # Mercados completos (BTTS, DC, DNB, todas las lineas O/U y handicap) solo
+        # existen en el endpoint POR-EVENTO. Para competiciones estrella (Mundial,
+        # Champions, top-5...) traemos esas cuotas reales aqui -> el motor analiza
+        # TODOS los mercados, no solo 1X2/totales/handicap principal. Si falla, se
+        # mantienen las cuotas por-liga ya presentes en ev (no rompe el flujo).
+        if ev_id and sport_key in _LIGAS_MERCADO_COMPLETO:
+            _bm_rico = _fetch_odds_evento(sport_key, ev_id)
+            if _bm_rico:
+                ev["bookmakers"] = _bm_rico
+
         # Hora UTC + fecha COT
         try:
             hh = int(hora_raw[11:13]);  mm = int(hora_raw[14:16])
@@ -3342,6 +3403,8 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         pinn_goals = {}   # {(point_float, "over"|"under"): price}
         pinn_btts  = {}   # {"yes"|"no": price}
         pinn_ah    = {}   # {(team_name, point_float): price}
+        pinn_corners = {} # {(point_float, "over"|"under"): price}
+        pinn_cards   = {} # {(point_float, "over"|"under"): price}
         best       = {}   # {mk_key: (price, bookmaker_name)}
         # Fallback sharp: bet365/betfair cuando Pinnacle no tiene línea
         sharp_fb_h2h   = {}
@@ -3401,6 +3464,23 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
                             pinn_btts[nm] = pr
                         if nm not in best or pr > best[nm][0]:
                             best[nm] = (pr, bm_name)
+                elif mkey == "alternate_totals_corners":
+                    for o in outcomes:
+                        pt = float(o.get("point", 0)); nm = o.get("name", "").lower(); pr = o["price"]
+                        if es_pinn:
+                            pinn_corners[(pt, nm)] = pr
+                        k = f"corners_{nm}_{str(pt).replace(chr(46), chr(95))}"
+                        if k not in best or pr > best[k][0]:
+                            best[k] = (pr, bm_name)
+
+                elif mkey == "alternate_totals_cards":
+                    for o in outcomes:
+                        pt = float(o.get("point", 0)); nm = o.get("name", "").lower(); pr = o["price"]
+                        if es_pinn:
+                            pinn_cards[(pt, nm)] = pr
+                        k = f"cards_{nm}_{str(pt).replace(chr(46), chr(95))}"
+                        if k not in best or pr > best[k][0]:
+                            best[k] = (pr, bm_name)
 
                 elif mkey == "double_chance":
                     _dc = {"1X": "doble_1x", "X2": "doble_x2", "12": "doble_12"}
@@ -3496,6 +3576,39 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
             pt_k = str(pt).replace(".", "_")
             _vb(f"over{sfx}",  p_ov, f"goals_over_{pt_k}",  f"over{sfx}",  sides["over"])
             _vb(f"under{sfx}", p_un, f"goals_under_{pt_k}", f"under{sfx}", sides["under"])
+
+        # ── Corners — cuota REAL de Pinnacle (devig por linea) ────
+        def _fmt_pt(pt):
+            return str(int(pt)) if float(pt) == int(pt) else str(pt)
+        pts_c = {}
+        for (pt, nm), pr in pinn_corners.items():
+            pts_c.setdefault(pt, {})[nm] = pr
+        for pt, sides in pts_c.items():
+            if "over" not in sides or "under" not in sides:
+                continue
+            s2 = 1/sides["over"] + 1/sides["under"]
+            pt_k = str(pt).replace(".", "_")
+            _vb(f"corners_over_{pt_k}",  (1/sides["over"])/s2,  f"corners_over_{pt_k}",  f"corners_over_{pt_k}",  sides["over"])
+            _vb(f"corners_under_{pt_k}", (1/sides["under"])/s2, f"corners_under_{pt_k}", f"corners_under_{pt_k}", sides["under"])
+            if f"corners_over_{pt_k}" in value_bets:
+                value_bets[f"corners_over_{pt_k}"]["mercado_nombre"]  = f"Corners Over {_fmt_pt(pt)}"
+            if f"corners_under_{pt_k}" in value_bets:
+                value_bets[f"corners_under_{pt_k}"]["mercado_nombre"] = f"Corners Under {_fmt_pt(pt)}"
+        # ── Tarjetas — cuota REAL de Pinnacle (devig por linea) ───
+        pts_t = {}
+        for (pt, nm), pr in pinn_cards.items():
+            pts_t.setdefault(pt, {})[nm] = pr
+        for pt, sides in pts_t.items():
+            if "over" not in sides or "under" not in sides:
+                continue
+            s2 = 1/sides["over"] + 1/sides["under"]
+            pt_k = str(pt).replace(".", "_")
+            _vb(f"cards_over_{pt_k}",  (1/sides["over"])/s2,  f"cards_over_{pt_k}",  f"cards_over_{pt_k}",  sides["over"])
+            _vb(f"cards_under_{pt_k}", (1/sides["under"])/s2, f"cards_under_{pt_k}", f"cards_under_{pt_k}", sides["under"])
+            if f"cards_over_{pt_k}" in value_bets:
+                value_bets[f"cards_over_{pt_k}"]["mercado_nombre"]  = f"Tarjetas Over {_fmt_pt(pt)}"
+            if f"cards_under_{pt_k}" in value_bets:
+                value_bets[f"cards_under_{pt_k}"]["mercado_nombre"] = f"Tarjetas Under {_fmt_pt(pt)}"
 
         # BTTS
         if "yes" in pinn_btts and "no" in pinn_btts:
@@ -3972,6 +4085,19 @@ def clasificar_tiers(reporte):
     AV_MAX_CUOTA     = 5.5     # Política: nunca publicar cuota > 5.5
     AV_MIN_PROB      = 30.0    # Política: nunca publicar prob < 30%
 
+    # -- MUNDIAL: tier SEGURO de alta confianza (evento estrella) --------
+    # El Mundial es mercado eficiente (alta liquidez) -> casi nunca hay +EV.
+    # Para no dejar el VIP vacio en el evento estrella, SEGURO acepta FAVORITOS
+    # claros aunque el EV sea ~breakeven (el margen de la casa). Solo Mundial;
+    # el resto del anio mantiene la disciplina +EV. Aprobado por Yamid 2026-06-11.
+    MUND_SEGURO_MIN_PROB  = 65.0    # favorito claro (mas exigente que el 62 normal)
+    MUND_SEGURO_MAX_CUOTA = 1.95
+    MUND_SEGURO_MIN_CUOTA = 1.40    # piso: evita picks triviales (@1.13) sin upside
+    MUND_SEGURO_MIN_EV    = -3.0    # tolera el margen de la casa en favoritos solidos
+    def _es_mundial(lc):
+        lc = str(lc).lower()
+        return "world_cup" in lc or "fifa_world" in lc
+
     _NOMBRES = {
         "victoria_local":  "Victoria Local",
         "empate":          "Empate",
@@ -4059,6 +4185,13 @@ def clasificar_tiers(reporte):
                         and cuota_f <= SEGURO_MAX_CUOTA
                         and (sin_ev or ev_p >= SEGURO_MIN_EV)):
                     seguro_pool.append({**c, "score": prob * (1 + _ev / 200) + steam_bonus})
+                # SEGURO Mundial: favorito de alta confianza aunque el EV sea ~breakeven.
+                elif (_es_mundial(liga_code)
+                        and prob >= MUND_SEGURO_MIN_PROB
+                        and MUND_SEGURO_MIN_CUOTA <= cuota_f <= MUND_SEGURO_MAX_CUOTA
+                        and (sin_ev or ev_p >= MUND_SEGURO_MIN_EV)):
+                    seguro_pool.append({**c, "score": prob * (1 + _ev / 200) + steam_bonus,
+                                        "alta_confianza": True})
 
                 # PRINCIPAL: balance EV × probabilidad (sin mercado, califica por prob).
                 if (prob >= PRINC_MIN_PROB
@@ -4155,7 +4288,7 @@ def clasificar_tiers(reporte):
             return "handicap"
         if mk.startswith("corners_"):
             return "corners"
-        if mk.startswith("tarjetas_"):
+        if mk.startswith("tarjetas_") or mk.startswith("cards_"):
             return "tarjetas"
         return "otro"
 
@@ -4167,8 +4300,9 @@ def clasificar_tiers(reporte):
             # No repetir partido
             if k in usados_partidos:
                 continue
-            # No repetir liga (máximo 1 pick por competición)
-            if liga in usados_ligas:
+            # No repetir liga (máximo 1 pick por competición) — salvo torneos
+            # estrella (Mundial...), donde queremos el mejor pick de CADA partido.
+            if liga in usados_ligas and liga not in _LIGAS_MERCADO_COMPLETO:
                 continue
             # Máximo 1 pick de tipo "totals" entre los 3 picks del día
             if not permitir_mismo_tipo and tipo == "totals" and usados_mercados.count("totals") >= 1:
@@ -4187,23 +4321,52 @@ def clasificar_tiers(reporte):
     principal  = _pick(principal_pool)
     seguro     = _pick(seguro_pool)
 
-    # ── EXTRAS: picks adicionales de calidad (mas valor cuando el mercado lo amerite)
-    # Mismo filtro de los pools (ya pasaron umbrales). Tope total del dia = MAX_TOTAL.
-    # No repite partido. Cada extra conserva su tier real (seguro/principal/alto_valor).
-    MAX_TOTAL = 5
-    MAX_POR_LIGA = 2   # diversificacion: no concentrar el dia en una sola competicion
+    # ── EXTRAS: mas picks de calidad cuando el mercado lo amerite ─────────
+    # (a) Torneos estrella (Mundial...): el MEJOR pick de CADA partido -> cobertura
+    #     y datos para stats. (b) Resto de ligas: extras normales, max 2 por liga.
+    MAX_TOTAL    = 5    # tope de extras en ligas normales
+    MAX_ESTRELLA = 8    # tope total cuando hay torneos estrella (1 por partido)
+    MAX_POR_LIGA = 2    # diversificacion en ligas normales
     _base = [t for t in (seguro, principal, alto_valor) if t]
     _liga_cnt = {}
     for _t in _base:
         _lg = str(_t["pred"].get("liga_code", ""))
         _liga_cnt[_lg] = _liga_cnt.get(_lg, 0) + 1
     extra = []
+    def _tier_por_ev(_ev):
+        return "alto_valor" if _ev >= AV_MIN_EV else "principal" if _ev >= PRINC_MIN_EV else "seguro"
+
+    # (a) Mejor candidato por partido en torneos estrella (mayor EV; desempata prob)
+    _mejor_estrella = {}
+    for _pool in (alto_pool, principal_pool, seguro_pool):
+        for c in _pool:
+            _lg = str(c["pred"].get("liga_code", ""))
+            if _lg not in _LIGAS_MERCADO_COMPLETO:
+                continue
+            _k = c["pred"]["local"] + " vs " + c["pred"]["visitante"]
+            _sc = ((c.get("ev_pinn") or -99), (c.get("prob") or 0))
+            if _k not in _mejor_estrella or _sc > _mejor_estrella[_k][0]:
+                _mejor_estrella[_k] = (_sc, c)
+    for _k, (_sc, c) in sorted(_mejor_estrella.items(), key=lambda x: (-x[1][0][0], -x[1][0][1])):
+        if len(_base) + len(extra) >= MAX_ESTRELLA:
+            break
+        if _k in usados_partidos:
+            continue
+        usados_partidos.add(_k)
+        _lg = str(c["pred"].get("liga_code", ""))
+        _liga_cnt[_lg] = _liga_cnt.get(_lg, 0) + 1
+        extra.append({**c, "tier": _tier_por_ev(c.get("ev_pinn") or 0)})
+
+    # (b) Extras normales en ligas no-estrella (hasta MAX_TOTAL, max 2 por liga)
+    _tope_b = max(MAX_TOTAL, len(_base) + len(extra))
     for _tn, _pool in (("alto_valor", alto_pool), ("principal", principal_pool), ("seguro", seguro_pool)):
         for c in _pool:
-            if len(_base) + len(extra) >= MAX_TOTAL:
+            if len(_base) + len(extra) >= _tope_b:
                 break
-            _k = c["pred"]["local"] + " vs " + c["pred"]["visitante"]
             _lg = str(c["pred"].get("liga_code", ""))
+            if _lg in _LIGAS_MERCADO_COMPLETO:
+                continue   # ya cubierto en (a)
+            _k = c["pred"]["local"] + " vs " + c["pred"]["visitante"]
             if _k in usados_partidos:
                 continue
             if _liga_cnt.get(_lg, 0) >= MAX_POR_LIGA:
@@ -4212,7 +4375,7 @@ def clasificar_tiers(reporte):
             _liga_cnt[_lg] = _liga_cnt.get(_lg, 0) + 1
             extra.append({**c, "tier": _tn})
     if extra:
-        LOG.info(f"Tiers: 3 base + {len(extra)} extra(s) = {len(_base)+len(extra)} picks (tope {MAX_TOTAL})")
+        LOG.info(f"Tiers: {len(_base)} base + {len(extra)} extra(s) = {len(_base)+len(extra)} picks")
     return {"seguro": seguro, "principal": principal, "alto_valor": alto_valor, "extra": extra}
 
 

@@ -984,7 +984,22 @@ def _justificacion_pick(p, tier, mercado):
             bits.append("factor altitud (" + alt + ") reduce ritmo y goles")
             break
     m = mercado
-    if "under" in m:
+    me = p.get("mercados_ext") or {}
+    if "tarjeta" in m or "card" in m:
+        te = (me.get("tarjetas") or {}).get("tarjetas_esperadas")
+        if isinstance(te,(int,float)):
+            bits.append("el modelo proyecta ~" + format(te,".1f") + " tarjetas")
+        else:
+            bits.append("partido con roce y faltas, arbitraje exigente")
+    elif "corner" in m:
+        ce = (me.get("corners") or {}).get("corners_esperados")
+        if isinstance(ce,(int,float)):
+            bits.append("el modelo proyecta ~" + format(ce,".1f") + " corners")
+        else:
+            bits.append("volumen de corners segun el estilo de ataque")
+    elif "disparo" in m or "remate" in m or "shot" in m:
+        bits.append("volumen de remates por el dominio ofensivo esperado")
+    elif "under" in m:
         dl = fl.get("defensa_reciente"); dv = fv.get("defensa_reciente")
         if isinstance(dl,(int,float)) and isinstance(dv,(int,float)) and (dl+dv)/2 <= 1.1:
             bits.append("ambas defensas vienen firmes")
@@ -1025,12 +1040,15 @@ def _analisis_experto(tier):
         if probs.get("btts_si") is not None: tot.append("BTTS " + str(round(probs["btts_si"])) + "%")
         if tot:
             out.append("\U0001f4c8 <b>Goles:</b> " + " \u00b7 ".join(tot))
-        if _ev_raw is None:
+        if tier.get("alta_confianza"):
+            _pb = round(tier.get("prob", 0))
+            linea = "\U0001f3af <b>Alta confianza:</b> @" + str(cuota) + " \u00b7 favorito claro (" + str(_pb) + "% prob)"
+        elif _ev_raw is None:
             linea = "\U0001f48e <b>Valor:</b> @" + str(cuota) + " \u00b7 sin EV (sin l\u00ednea de mercado)"
         else:
             ev_txt = ("+" + str(ev) + "%") if ev >= 0 else (str(ev) + "%")
             linea = "\U0001f48e <b>Valor:</b> @" + str(cuota) + " \u00b7 EV " + ev_txt
-        if kelly: linea += " \u00b7 Kelly " + str(kelly) + "%"
+        if kelly and not tier.get("alta_confianza"): linea += " \u00b7 Kelly " + str(kelly) + "%"
         out.append(linea)
         def _f(f):
             if not isinstance(f, dict): return None
