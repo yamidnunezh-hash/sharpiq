@@ -2044,9 +2044,46 @@ _SPORTS_US = {
     "lacrosse_pll", "lacrosse_ncaa",
 }
 
+_cache_eventos = {}  # cache del chequeo /events (gratis) por sport_key
+
+def _hay_eventos_en_ventana(sport_key, horas=None):
+    """El endpoint /events de The Odds API es GRATIS (0 creditos): dice si hay
+    partidos proximos SIN pagar por las cuotas. Asi NO pedimos /odds (de pago) en
+    ligas vacias. Ante error o duda devuelve True (mejor pagar que perder un pick)."""
+    if sport_key in _cache_eventos:
+        return _cache_eventos[sport_key]
+    h = horas if horas is not None else LOOKAHEAD_HORAS
+    try:
+        r = requests.get(f"{ODDS_API_URL}/sports/{sport_key}/events",
+                         params={"apiKey": ODDS_API_KEY}, timeout=12)
+        if r.status_code != 200:
+            _cache_eventos[sport_key] = True
+            return True
+        ahora = datetime.now(timezone.utc).replace(tzinfo=None)
+        tope  = ahora + timedelta(hours=h)
+        hay = False
+        for ev in (r.json() or []):
+            try:
+                dt = datetime.strptime(ev.get("commence_time", "")[:16], "%Y-%m-%dT%H:%M")
+            except Exception:
+                continue
+            if ahora <= dt <= tope:
+                hay = True
+                break
+        _cache_eventos[sport_key] = hay
+        if not hay:
+            print(f"  {sport_key}: 0 partidos en ventana ({h}h) -> sin gastar creditos")
+        return hay
+    except Exception:
+        _cache_eventos[sport_key] = True
+        return True
+
 def obtener_cuotas_liga(sport_key):
     if sport_key in _cache_cuotas:
         return _cache_cuotas[sport_key]
+    if not _hay_eventos_en_ventana(sport_key):
+        _cache_cuotas[sport_key] = []
+        return []
     try:
         url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
         _SPORTS_SOCCER = {"soccer_epl","soccer_spain_la_liga","soccer_germany_bundesliga",
@@ -2100,6 +2137,9 @@ def _fetch_odds_ext(sport_key):
     """
     if sport_key in _cache_cuotas_ext:
         return _cache_cuotas_ext[sport_key]
+    if not _hay_eventos_en_ventana(sport_key):
+        _cache_cuotas_ext[sport_key] = []
+        return []
     try:
         url = f"{ODDS_API_URL}/sports/{sport_key}/odds"
         # IMPORTANTE: el endpoint a nivel de LIGA solo soporta los mercados
