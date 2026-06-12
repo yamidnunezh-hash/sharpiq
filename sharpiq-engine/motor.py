@@ -3644,26 +3644,40 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
             _vb("dnb_local",  p_l / p_12, "dnb_local",  "dnb_local")
             _vb("dnb_visita", p_v / p_12, "dnb_visita", "dnb_visita")
 
-        # Handicap Asiático — devigear por par (local, visita) en misma línea
-        pts_ah = {}
-        for (nm, pt), pr in pinn_ah.items():
-            pt_abs = abs(pt)
-            pts_ah.setdefault(pt_abs, {})[nm] = (pr, pt)
-
-        for pt_abs, sides in pts_ah.items():
-            names = list(sides.keys())
-            if len(names) < 2:
+        # Handicap Asiático — devigear cada línea: local@pt vs visita@(-pt).
+        # OJO: con alternate_spreads cada equipo tiene varias líneas (±0.25, ±0.5...);
+        # NO agrupar por abs (colisiona +X y -X del mismo equipo -> empareja líneas
+        # distintas -> prob basura, EV inflado). El par real es local@pt / visita@-pt.
+        _ah_done = set()
+        for (nm, pt), pr_l in list(pinn_ah.items()):
+            if nm != home:
                 continue
-            local_nm  = home if home in names else names[0]
-            visita_nm = away if away in names else names[1]
-            pr_l, _   = sides[local_nm]
-            pr_v, _   = sides[visita_nm]
+            pr_v = pinn_ah.get((away, -pt))
+            if not pr_v or pr_v < 1.01 or pr_l < 1.01:
+                continue
+            _key = round(pt, 2)
+            if _key in _ah_done:
+                continue
+            _ah_done.add(_key)
             s2   = 1/pr_l + 1/pr_v
             p_lh = (1/pr_l) / s2
             p_vh = (1/pr_v) / s2
-            pt_k = str(pt_abs).replace(".", "_")
-            _vb(f"ah_l_m{pt_k}", p_lh, f"ah_l_m{pt_k}", f"ah_l_m{pt_k}", pr_l)
-            _vb(f"ah_v_p{pt_k}", p_vh, f"ah_v_p{pt_k}", f"ah_v_p{pt_k}", pr_v)
+            pt_k = str(abs(pt)).replace(".", "_")
+            _pa  = str(int(abs(pt))) if abs(pt) == int(abs(pt)) else str(abs(pt))
+            if pt <= 0:   # local favorito da -X ; visita recibe +X
+                _vb(f"ah_l_m{pt_k}", p_lh, f"ah_l_m{pt_k}", f"ah_l_m{pt_k}", pr_l)
+                _vb(f"ah_v_p{pt_k}", p_vh, f"ah_v_p{pt_k}", f"ah_v_p{pt_k}", pr_v)
+                if f"ah_l_m{pt_k}" in value_bets:
+                    value_bets[f"ah_l_m{pt_k}"]["mercado_nombre"] = f"Hándicap Local -{_pa}"
+                if f"ah_v_p{pt_k}" in value_bets:
+                    value_bets[f"ah_v_p{pt_k}"]["mercado_nombre"] = f"Hándicap Visitante +{_pa}"
+            else:         # local recibe +X ; visita favorita da -X
+                _vb(f"ah_l_p{pt_k}", p_lh, f"ah_l_p{pt_k}", f"ah_l_p{pt_k}", pr_l)
+                _vb(f"ah_v_m{pt_k}", p_vh, f"ah_v_m{pt_k}", f"ah_v_m{pt_k}", pr_v)
+                if f"ah_l_p{pt_k}" in value_bets:
+                    value_bets[f"ah_l_p{pt_k}"]["mercado_nombre"] = f"Hándicap Local +{_pa}"
+                if f"ah_v_m{pt_k}" in value_bets:
+                    value_bets[f"ah_v_m{pt_k}"]["mercado_nombre"] = f"Hándicap Visitante -{_pa}"
 
         # Goles por equipo (team_totals) — informativo, sin Pinnacle obligatorio
         for bk, (bp, bc) in best.items():
