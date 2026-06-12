@@ -1111,10 +1111,11 @@ def enviar_tiers_vip(seguro, principal, alto_valor, extras=None):
                 ev = round(tier.get("ev_pinn", tier.get("ev", 0)) or 0)
                 ev_extra = f" — EV +{ev}%"
             prob_label = "Prob modelo"
+            _stk = round(tier.get("kelly_pct") or (2 if label == "ALTO VALOR" else 3))
             if label == "ALTO VALOR":
-                stake_line = "⚠️ <i>Solo si tienes confianza — Stake: 2% del bankroll</i>"
+                stake_line = f"⚠️ <i>Solo si tienes confianza — Stake: {_stk}% del bankroll</i>"
             else:
-                stake_line = "💰 <i>Stake recomendado: 3% del bankroll</i>"
+                stake_line = f"💰 <i>Stake recomendado: {_stk}% del bankroll</i>"
             return (
                 f"{emoji} <b>{label}</b>\n"
                 f"🏀 <b>{jugador}</b>\n"
@@ -1132,10 +1133,11 @@ def enviar_tiers_vip(seguro, principal, alto_valor, extras=None):
                 ev_extra = f" — EV +{ev}%"
             prob_label = "Prob DNB" if "dnb" in tier.get("mercado", "") else "Prob modelo"
             sp_emoji = _sport_emoji(p.get("liga", "") or p.get("deporte", ""))
+            _stk = round(tier.get("kelly_pct") or (2 if label == "ALTO VALOR" else 3))
             if label == "ALTO VALOR":
-                stake_line = "⚠️ <i>Solo si tienes confianza — Stake: 2% del bankroll</i>"
+                stake_line = f"⚠️ <i>Solo si tienes confianza — Stake: {_stk}% del bankroll</i>"
             else:
-                stake_line = "💰 <i>Stake recomendado: 3% del bankroll</i>"
+                stake_line = f"💰 <i>Stake recomendado: {_stk}% del bankroll</i>"
             return (
                 f"{emoji} <b>{label}</b>\n"
                 f"{sp_emoji} <b>{esc(p['local'])} vs {esc(p['visitante'])}</b>\n"
