@@ -194,11 +194,16 @@ def correr():
         LOG.error("Sin predicciones.json — motor no pudo generar datos")
         return
 
-    # Saludo matutino al canal free — solo una vez por día
+    # Saludo matutino al canal free — solo en la MAÑANA (5-11 COT) y una vez por día.
+    # Antes solo miraba el marcador; sin chequeo de hora mandaba "Buenos días" en
+    # corridas de tarde/noche (crons retrasados + logs/ no persiste entre runs).
     import os as _os
+    from datetime import datetime as _dtap, timezone as _tzap, timedelta as _tdap
     BASE_DIR_AP = _os.path.dirname(_os.path.abspath(__file__))
     _saludo_sent = _os.path.join(BASE_DIR_AP, "logs", f"saludo_{date.today().isoformat()}.sent")
-    if not _os.path.exists(_saludo_sent):
+    _hcot_ap = (_dtap.now(_tzap.utc) - _tdap(hours=5)).hour
+    _es_manana_ap = 5 <= _hcot_ap < 11
+    if _es_manana_ap and not _os.path.exists(_saludo_sent):
         try:
             from telegram_alertas import enviar_saludo_manana_free
             partidos_hoy = [
@@ -216,6 +221,8 @@ def correr():
             LOG.info("Saludo matutino enviado al canal free")
         except Exception as e:
             LOG.error(f"Saludo free error: {e}")
+    elif not _es_manana_ap:
+        LOG.info(f"Saludo matutino: skip (hora COT {_hcot_ap}h — solo en la mañana)")
     else:
         LOG.info("Saludo de hoy ya enviado — skip")
 
