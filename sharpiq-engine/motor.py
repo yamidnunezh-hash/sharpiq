@@ -2186,6 +2186,8 @@ _LIGAS_MERCADO_COMPLETO = {
     "soccer_conmebol_copa_libertadores", "soccer_conmebol_copa_sudamericana",
 }
 _cache_odds_evento = {}
+_evento_rico_usados = [0]   # fetches por-evento en esta corrida (proceso fresco c/run)
+_MAX_EVENTO_RICO_RUN = 60   # backstop de creditos: tope de fetches por-evento por corrida
 
 def _fetch_odds_evento(sport_key, event_id):
     """
@@ -3426,13 +3428,18 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         except Exception:
             pass
 
-        # Mercados completos (BTTS, DC, DNB, todas las lineas O/U y handicap) solo
-        # existen en el endpoint POR-EVENTO. Para competiciones estrella (Mundial,
-        # Champions, top-5...) traemos esas cuotas reales aqui -> el motor analiza
-        # TODOS los mercados, no solo 1X2/totales/handicap principal. Si falla, se
-        # mantienen las cuotas por-liga ya presentes en ev (no rompe el flujo).
-        if ev_id and sport_key in _LIGAS_MERCADO_COMPLETO:
+        # Mercados completos (BTTS, DC, DNB, todas las lineas O/U y handicap, corners
+        # y tarjetas) solo existen en el endpoint POR-EVENTO. Los traemos para TODO
+        # partido de futbol en ventana (el /events ya confirmo que la liga tiene
+        # partidos; si una liga no soporta corners/cards, el 422 cae a un set basico).
+        # Mas mercados = mas +EV real (el valor vive en corners/tarjetas, menos
+        # eficientes). Plan 100K -> sobran creditos; igual hay tope por corrida. Si
+        # falla, se mantienen las cuotas por-liga ya presentes en ev (no rompe el flujo).
+        if ev_id and _evento_rico_usados[0] < _MAX_EVENTO_RICO_RUN:
             _bm_rico = _fetch_odds_evento(sport_key, ev_id)
+            _evento_rico_usados[0] += 1
+            if _evento_rico_usados[0] == _MAX_EVENTO_RICO_RUN:
+                LOG.info(f"Mercados ricos: tope de {_MAX_EVENTO_RICO_RUN} por corrida alcanzado")
             if _bm_rico:
                 ev["bookmakers"] = _bm_rico
 
