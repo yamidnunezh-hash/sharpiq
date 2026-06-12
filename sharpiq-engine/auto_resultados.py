@@ -142,10 +142,34 @@ def buscar_fixture(local_js, visita_js, fixtures_api):
 
 # ── EVALUADOR DE PREDICCIONES ────────────────────────────────────
 
-def evaluar(prediccion, gl, gv, local="", visitante=""):
-    """Devuelve 'win', 'loss' según la predicción y marcador real."""
+def evaluar(prediccion, gl, gv, local="", visitante="", tarjetas=None, corners=None):
+    """Devuelve 'win'/'loss'/'push', o None si falta el dato (queda pendiente)."""
+    import re as _re
     p = prediccion.lower()
     total = gl + gv
+
+    # ── Mercados que NO son goles — resolver ANTES de las reglas over/under goles
+    #    (ojo: "Tarjetas Over 3.5" contiene "over 3.5"). Sin dato -> None (pendiente).
+    if 'tarjeta' in p or 'card' in p:
+        if tarjetas is None:
+            return None
+        _m = _re.search(r'(\d+\.?\d*)', p); _ln = float(_m.group(1)) if _m else 0
+        if tarjetas == _ln: return 'push'
+        if 'under' in p: return 'win' if tarjetas < _ln else 'loss'
+        return 'win' if tarjetas > _ln else 'loss'
+    if 'corner' in p:
+        if corners is None:
+            return None
+        _m = _re.search(r'(\d+\.?\d*)', p); _ln = float(_m.group(1)) if _m else 0
+        if corners == _ln: return 'push'
+        if 'under' in p: return 'win' if corners < _ln else 'loss'
+        return 'win' if corners > _ln else 'loss'
+    if 'ndicap' in p or 'handicap' in p:
+        _m = _re.search(r'([+-]\s*\d+\.?\d*)', p)
+        _h = float(_m.group(1).replace(' ', '')) if _m else 0.0
+        _margin = (gv + _h) - gl if ('visitante' in p or 'visita' in p) else (gl + _h) - gv
+        if abs(_margin) < 0.001: return 'push'
+        return 'win' if _margin > 0 else 'loss'
 
     if 'under25' in p or 'under 2.5' in p:
         return 'win' if total <= 2 else 'loss'
@@ -197,6 +221,33 @@ def evaluar(prediccion, gl, gv, local="", visitante=""):
 
     print(f"  ⚠ No reconozco predicción: '{prediccion}' — marcada como loss")
     return 'loss'
+
+
+def _stats_tarjetas_corners(fixture_id):
+    """Conteo real de tarjetas (amarillas+rojas) y corners (ambos equipos) de un
+    fixture, via API-Football /fixtures/statistics. Devuelve (tarjetas, corners)
+    o (None, None) si aun no hay stats."""
+    try:
+        data = _apifb("fixtures/statistics", {"fixture": fixture_id})
+        if not data or not data.get("response"):
+            return None, None
+        tarjetas = 0; corners = 0; visto = False
+        for team in data["response"]:
+            for s in team.get("statistics", []):
+                _t = (s.get("type") or "").lower(); _v = s.get("value")
+                if _v is None:
+                    continue
+                try:
+                    _v = int(_v)
+                except Exception:
+                    continue
+                if "corner" in _t:
+                    corners += _v; visto = True
+                elif "yellow" in _t or "red" in _t:
+                    tarjetas += _v; visto = True
+        return (tarjetas, corners) if visto else (None, None)
+    except Exception:
+        return None, None
 
 
 # ── ACTUALIZAR datos.js ──────────────────────────────────────────
@@ -415,7 +466,18 @@ def correr():
                 LOG.info(f"  Sin resultado aún: {partido}")
                 continue
             gl, gv = goles
-        resultado = evaluar(evento.get('prediccion', ''), gl, gv, local_js, visita_js)
+        # Tarjetas/corners necesitan el conteo real del partido (no goles).
+        _predl = (evento.get('prediccion', '') or '').lower()
+        _tarj = _corn = None
+        if fixture and ('tarjeta' in _predl or 'corner' in _predl):
+            _fid = fixture.get("fixture", {}).get("id")
+            if _fid:
+                _tarj, _corn = _stats_tarjetas_corners(_fid)
+        resultado = evaluar(evento.get('prediccion', ''), gl, gv, local_js, visita_js,
+                            tarjetas=_tarj, corners=_corn)
+        if resultado is None:
+            LOG.info(f"  Sin stats tarjetas/corners aun (queda pendiente): {partido}")
+            continue
 
         emoji = "✅" if resultado == 'win' else ("➖" if resultado == 'push' else "❌")
         LOG.info(f"  {emoji} {partido} [{gl}-{gv}] → {resultado.upper()}")
