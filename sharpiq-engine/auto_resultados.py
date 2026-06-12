@@ -221,8 +221,8 @@ def evaluar(prediccion, gl, gv, local="", visitante="", tarjetas=None, corners=N
         if visitante and (team_pred in visitante.lower() or visitante.lower() in team_pred):
             return 'win' if gv > gl else 'loss'
 
-    print(f"  ⚠ No reconozco predicción: '{prediccion}' — marcada como loss")
-    return 'loss'
+    print(f"  ⚠ No reconozco predicción: '{prediccion}' — queda pendiente (no se inventa W/L)")
+    return None
 
 
 def _stats_tarjetas_corners(fixture_id):
