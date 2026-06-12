@@ -191,8 +191,10 @@ def evaluar(prediccion, gl, gv, local="", visitante="", tarjetas=None, corners=N
         return 'win' if total >= 2 else 'loss'
     if 'under175' in p or 'under 1.75' in p:
         return 'win' if total <= 1 else 'loss'
+    if 'ambos no marcan' in p or 'btts_no' in p or 'btts no' in p:
+        return 'win' if not (gl > 0 and gv > 0) else 'loss'   # BTTS No: gana si UNO no marca
     if 'btts' in p or 'ambos marcan' in p:
-        return 'win' if gl > 0 and gv > 0 else 'loss'
+        return 'win' if gl > 0 and gv > 0 else 'loss'          # BTTS Si: ambos marcan
     if 'victoria local' in p or '(1)' in p:
         return 'win' if gl > gv else 'loss'
     if 'victoria visitante' in p or '(2)' in p:
