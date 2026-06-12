@@ -2011,6 +2011,15 @@ def calcular_goles_esperados(local, visitante, liga_code="", sede_neutral=False)
         goles_visita = round(goles_visita * escala, 3)
         print(f"    Escala liga {liga_code}: x{escala:.3f} → {goles_local:.2f}g / {goles_visita:.2f}g")
 
+    # ── Termostato de goles (PROVISIONAL, reversible) ───────────────────
+    # El historial muestra que el modelo corre CALIENTE en goles: Under gana
+    # ~70%, Over ~33%. Enfriamos un poco el goleo del modelo para alinear hacia
+    # el lado que gana. Solo pesa donde el MODELO maneja (baja liquidez / segunda
+    # opinion); en alta liquidez manda Pinnacle. Re-calibrar con datos del Mundial.
+    _GOLES_COOLDOWN = 0.96   # -4%
+    goles_local  = round(goles_local  * _GOLES_COOLDOWN, 3)
+    goles_visita = round(goles_visita * _GOLES_COOLDOWN, 3)
+
     # ── Confiabilidad: un equipo es NO CONFIABLE si su base fue default
     #    (sin tabla ni DB) Y la forma reciente de la API tampoco lo enriqueció.
     #    En ese caso el pick descansa sobre stats inventadas → no se publica.
