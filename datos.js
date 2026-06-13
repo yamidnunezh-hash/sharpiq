@@ -40,7 +40,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "1.9",
     prob:       "49",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "loss"
   },
   {
     fecha:      "13/06/26",
@@ -92,7 +93,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "1.3",
     prob:       "49",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "loss"
   },
   {
     fecha:      "12/06/26",
@@ -325,6 +327,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "12/06/26",
+    partido:    "USA vs Paraguay",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Tarjetas Under 3.5 — EV +4%",
+    cuota:      "2.12",
+    prob:       "49",
+    resultado:  "loss",
+    resultado:  "loss"
+  },
   {
     fecha:      "12/06/26",
     partido:    "Canada vs Bosnia & Herzegovina",
