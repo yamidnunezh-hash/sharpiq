@@ -1,7 +1,6 @@
 {
-  "updated": "2026-06-13T15:52:45Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-06-13T20:49:35Z",
+  "live": [
     {
       "id": "247fa6e552058ec5ec90e09c8767b80d",
       "sport": "baseball_mlb",
@@ -13,8 +12,8 @@
       "hora": "13:11 COT",
       "ts": 1781356260,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "5",
+      "score_away": "9"
     },
     {
       "id": "26634922d3f78c146440816023e40de8",
@@ -24,11 +23,11 @@
       "home": "Qatar",
       "away": "Switzerland",
       "fecha": "13/06/26",
-      "hora": "14:00 COT",
-      "ts": 1781359200,
+      "hora": "14:04 COT",
+      "ts": 1781359440,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "a6e9a8c8f97ca039bc3b7b562fe18bab",
@@ -41,22 +40,8 @@
       "hora": "14:08 COT",
       "ts": 1781359680,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "4abb993b47a532760ffc38de1dabfac4",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Washington Nationals",
-      "away": "Seattle Mariners",
-      "fecha": "13/06/26",
-      "hora": "15:05 COT",
-      "ts": 1781363100,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "1",
+      "score_away": "1"
     },
     {
       "id": "fadfb2b20f21e61c059a0af585bff1a4",
@@ -69,8 +54,8 @@
       "hora": "15:06 COT",
       "ts": 1781363160,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "2",
+      "score_away": "4"
     },
     {
       "id": "53d3be31566c2fefadd8c1b39e6dc788",
@@ -83,8 +68,22 @@
       "hora": "15:06 COT",
       "ts": 1781363160,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "1",
+      "score_away": "1"
+    },
+    {
+      "id": "4abb993b47a532760ffc38de1dabfac4",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Washington Nationals",
+      "away": "Seattle Mariners",
+      "fecha": "13/06/26",
+      "hora": "15:06 COT",
+      "ts": 1781363160,
+      "completed": false,
+      "score_home": "3",
+      "score_away": "0"
     },
     {
       "id": "c74f3242dd3557ee537e505c3e092143",
@@ -95,24 +94,10 @@
       "away": "Atlanta Braves",
       "fecha": "13/06/26",
       "hora": "15:10 COT",
-      "ts": 1781363400,
+      "ts": 1781363434,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "13a2225a2fcc3ccd5362b1f8f663c1f1",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Chicago White Sox",
-      "away": "Los Angeles Dodgers",
-      "fecha": "13/06/26",
-      "hora": "15:10 COT",
-      "ts": 1781363400,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "b4cc6ccb74628bd6a3264a9fd198bd6b",
@@ -125,8 +110,8 @@
       "hora": "15:11 COT",
       "ts": 1781363460,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "283a2198e9279b2d70ddfa898345b601",
@@ -139,8 +124,8 @@
       "hora": "15:11 COT",
       "ts": 1781363460,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "b577f758aaccd486b96b1a218e4f830d",
@@ -153,9 +138,11 @@
       "hora": "15:11 COT",
       "ts": 1781363460,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "1"
+    }
+  ],
+  "upcoming": [
     {
       "id": "f6c8748a16516e0998f95de14235432a",
       "sport": "soccer_fifa_world_cup",
@@ -208,6 +195,160 @@
       "fecha": "13/06/26",
       "hora": "19:40 COT",
       "ts": 1781379600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "5ae41a06735c926eeb7f74006933adce",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Haiti",
+      "away": "Scotland",
+      "fecha": "13/06/26",
+      "hora": "20:00 COT",
+      "ts": 1781380800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "197b2f8add16733591617503dd702d8f",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Colorado Rockies",
+      "fecha": "13/06/26",
+      "hora": "21:06 COT",
+      "ts": 1781384760,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "d259bb716cd52554224d80732ac65232",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Francisco Giants",
+      "away": "Chicago Cubs",
+      "fecha": "13/06/26",
+      "hora": "21:06 COT",
+      "ts": 1781384760,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "020b5bffb5a1d101be8c6d61b9e29572",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Angels",
+      "away": "Tampa Bay Rays",
+      "fecha": "13/06/26",
+      "hora": "21:08 COT",
+      "ts": 1781384880,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "564084f52cc9f1abcc18187c168a7cdc",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Australia",
+      "away": "Turkey",
+      "fecha": "13/06/26",
+      "hora": "23:00 COT",
+      "ts": 1781391600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "8aad81cff6d92efa90229081dec104a4",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Juventude",
+      "away": "Ponte Preta",
+      "fecha": "14/06/26",
+      "hora": "09:00 COT",
+      "ts": 1781427600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "1dd9a1633b427527286e2eaaf9d78964",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "São Bernardo",
+      "away": "Sport Recife",
+      "fecha": "14/06/26",
+      "hora": "09:00 COT",
+      "ts": 1781427600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "5db8a5b07bca4c3b2486bb503bbe96fc",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Pittsburgh Pirates",
+      "away": "Miami Marlins",
+      "fecha": "14/06/26",
+      "hora": "11:16 COT",
+      "ts": 1781435760,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "d79edbd6aaeb578d33e313446b18d333",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Germany",
+      "away": "Curaçao",
+      "fecha": "14/06/26",
+      "hora": "12:00 COT",
+      "ts": 1781438400,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "86eea2ec9bfbee886592a41c15f3ef1d",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Baltimore Orioles",
+      "away": "San Diego Padres",
+      "fecha": "14/06/26",
+      "hora": "12:36 COT",
+      "ts": 1781440560,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "4dc6f4564ea243d6ca214685828ba83f",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Washington Nationals",
+      "away": "Seattle Mariners",
+      "fecha": "14/06/26",
+      "hora": "12:36 COT",
+      "ts": 1781440560,
       "completed": false,
       "score_home": null,
       "score_away": null
