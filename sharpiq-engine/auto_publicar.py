@@ -110,6 +110,39 @@ def _hora_cot(hora_utc):
         return hora_utc
 
 
+def _dedup_proximos_texto(texto):
+    """Quita entradas duplicadas de PROXIMOS_EVENTOS por (partido, fecha).
+    Conserva la PRIMERA (la mas reciente, que se prepende) o la que tenga
+    resultado win/loss si existe. Evita picks repetidos en la web."""
+    try:
+        m = re.search(r'(const\s+PROXIMOS_EVENTOS\s*=\s*\[)(.*?)(\];)', texto, re.S)
+        if not m:
+            return texto
+        head, body, tail = m.group(1), m.group(2), m.group(3)
+        objs = re.findall(r'\{[^{}]*\}', body)
+        def _campo(o, k):
+            mm = re.search(k + r'\s*:\s*["\']([^"\']*)["\']', o)
+            return mm.group(1) if mm else ""
+        best = {}; orden = []
+        for o in objs:
+            part = _campo(o, 'partido')
+            if not part:
+                continue
+            key = (part, _campo(o, 'fecha'))
+            res = _campo(o, 'resultado')
+            if key not in best:
+                best[key] = o; orden.append(key)
+            elif res in ('win', 'loss') and _campo(best[key], 'resultado') not in ('win', 'loss'):
+                best[key] = o
+        kept = [best[k] for k in orden]
+        if len(kept) == len(objs):
+            return texto   # sin duplicados, no tocar
+        nuevo_body = "\n  " + ",\n  ".join(kept) + "\n"
+        return texto[:m.start()] + head + nuevo_body + tail + texto[m.end():]
+    except Exception:
+        return texto
+
+
 def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=None, tier="principal", stake_pct=3, prob=""):
     if fecha_evento:
         try:
@@ -142,6 +175,7 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
     with open(DATOS_PATH, encoding="utf-8") as f:
         texto = f.read()
     texto_nuevo = re.sub(patron, r'\1\n' + nueva_entrada, texto)
+    texto_nuevo = _dedup_proximos_texto(texto_nuevo)
     with open(DATOS_PATH, "w", encoding="utf-8") as f:
         f.write(texto_nuevo)
 
