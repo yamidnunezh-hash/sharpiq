@@ -1,21 +1,6 @@
 {
-  "updated": "2026-06-14T08:55:32Z",
-  "live": [],
-  "upcoming": [
-    {
-      "id": "8aad81cff6d92efa90229081dec104a4",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Juventude",
-      "away": "Ponte Preta",
-      "fecha": "14/06/26",
-      "hora": "09:00 COT",
-      "ts": 1781427600,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+  "updated": "2026-06-14T15:28:45Z",
+  "live": [
     {
       "id": "1dd9a1633b427527286e2eaaf9d78964",
       "sport": "soccer_brazil_serie_b",
@@ -27,9 +12,25 @@
       "hora": "09:00 COT",
       "ts": 1781427600,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
+    {
+      "id": "8aad81cff6d92efa90229081dec104a4",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Juventude",
+      "away": "Ponte Preta",
+      "fecha": "14/06/26",
+      "hora": "09:01 COT",
+      "ts": 1781427660,
+      "completed": false,
+      "score_home": "3",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "5db8a5b07bca4c3b2486bb503bbe96fc",
       "sport": "baseball_mlb",
@@ -208,6 +209,34 @@
       "fecha": "14/06/26",
       "hora": "14:00 COT",
       "ts": 1781445600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "0b9c33238f79994bad3620ba35498d00",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Colorado Rockies",
+      "fecha": "14/06/26",
+      "hora": "14:06 COT",
+      "ts": 1781445960,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "69adbbbdb66c7af4b714b9edccc840af",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Francisco Giants",
+      "away": "Chicago Cubs",
+      "fecha": "14/06/26",
+      "hora": "14:11 COT",
+      "ts": 1781446260,
       "completed": false,
       "score_home": null,
       "score_away": null
