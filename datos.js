@@ -66,7 +66,9 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "66",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "13/06/26",
@@ -79,7 +81,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "66",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "14/06/26",
@@ -118,7 +121,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "70",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "13/06/26",
@@ -131,7 +135,9 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "66",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "12/06/26",
@@ -158,7 +164,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "2.5",
     prob:       "52",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "13/06/26",
@@ -171,7 +177,9 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "67",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "13/06/26",
@@ -184,7 +192,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "5.0",
     prob:       "64",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "12/06/26",
@@ -431,6 +439,45 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "13/06/26",
+    partido:    "Coquimbo Unido vs O'Higgins",
+    liga:       "Campeonato Chileno",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.83",
+    prob:       "64",
+    resultado:  "win"
+  },
+  {
+    fecha:      "13/06/26",
+    partido:    "Louisville Kings vs DC Defenders",
+    liga:       "UFL",
+    prediccion: "Gana Louisville Kings — EV +5%",
+    cuota:      "2.0",
+    prob:       "52",
+    resultado:  "win"
+  },
+  {
+    fecha:      "13/06/26",
+    partido:    "Brazil vs Morocco",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Local -0.25",
+    cuota:      "1.48",
+    prob:       "66",
+    resultado:  "loss",
+    resultado:  "win"
+  },
+  {
+    fecha:      "13/06/26",
+    partido:    "Qatar vs Switzerland",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Local +2.5",
+    cuota:      "1.48",
+    prob:       "66",
+    resultado:  "win",
+    resultado:  "win",
+    resultado:  "win"
+  },
   {
     fecha:      "12/06/26",
     partido:    "USA vs Paraguay",
