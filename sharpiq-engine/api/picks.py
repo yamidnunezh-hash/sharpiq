@@ -3,7 +3,7 @@ SharpIQ — Endpoint de Picks
 Free: 2 picks gratis por día (sin EV, solo vista previa)
 VIP:  todos los picks con EV+ en tiempo real desde predicciones.json
 """
-import os, sys, json
+import os, sys, json, re
 from datetime import date
 from typing import Optional
 
@@ -28,6 +28,56 @@ def _cargar_predicciones():
             return json.load(f)
     except Exception:
         return {"predicciones": [], "fecha": str(date.today())}
+
+
+# ── Fuente REAL de resultados: datos.js (lo mismo que ve la web) ──────────
+# El motor escribe los resultados en datos.js, NO en la tabla SQL picks_publicados
+# (que queda vacia). Para que el API muestre historial/stats reales sin depender
+# de esa tabla, leemos datos.js directamente: una sola fuente de verdad.
+_DATOS_JS = os.path.join(_BASE, "..", "datos.js")
+
+
+def _leer_resueltos():
+    """Picks de datos.js deduplicados por partido+fecha (prefiere win/loss)."""
+    try:
+        with open(_DATOS_JS, encoding="utf-8", errors="replace") as f:
+            t = f.read()
+    except Exception:
+        return []
+
+    def campo(o, k):
+        m = re.search(k + r'\s*:\s*["\']([^"\']*)["\']', o)
+        return m.group(1) if m else ""
+
+    vistos = {}
+    for o in re.findall(r'\{[^{}]*\}', t):
+        part = campo(o, 'partido')
+        if not part:
+            continue
+        rec = {
+            "fecha":      campo(o, 'fecha'),
+            "partido":    part,
+            "liga":       campo(o, 'liga'),
+            "prediccion": campo(o, 'prediccion'),
+            "cuota":      campo(o, 'cuota'),
+            "tier":       campo(o, 'tier'),
+            "emoji":      campo(o, 'emoji') or "⚽",
+            "resultado":  campo(o, 'resultado'),
+        }
+        key = (part, rec["fecha"])
+        cur = vistos.get(key)
+        if cur is None or (rec["resultado"] in ("win", "loss")
+                           and cur["resultado"] not in ("win", "loss")):
+            vistos[key] = rec
+    return list(vistos.values())
+
+
+def _fecha_key(p):
+    try:
+        d, m, y = p.get("fecha", "").split("/")
+        return (int("20" + y), int(m), int(d))
+    except Exception:
+        return (0, 0, 0)
 
 
 def _filtrar_vip(pred: dict) -> dict:
@@ -91,58 +141,43 @@ def picks_hoy(token=Depends(usuario_activo)):
 
 @router.get("/historial")
 def historial(token=Depends(usuario_activo), limite: int = Query(50, le=200)):
-    """Historial de picks publicados con resultado."""
-    plan = token.get("plan", "free")
-    with db() as conn:
-        cur = conn.cursor()
-        if plan in ("vip", "admin"):
-            cur.execute("""
-                SELECT fecha, partido, liga, prediccion, cuota, emoji,
-                       resultado, ev_pinn, publicado_en
-                FROM picks_publicados
-                ORDER BY publicado_en DESC LIMIT %s
-            """, (limite,))
-        else:
-            # Free: solo los últimos 5 y sin EV
-            cur.execute("""
-                SELECT fecha, partido, liga, prediccion, cuota, emoji,
-                       resultado, publicado_en
-                FROM picks_publicados
-                WHERE plan_requerido='free'
-                ORDER BY publicado_en DESC LIMIT 5
-            """)
-        rows = cur.fetchall()
-        return [dict(r) for r in rows]
+    """Historial de picks resueltos (desde datos.js, misma fuente que la web)."""
+    plan  = token.get("plan", "free")
+    picks = [p for p in _leer_resueltos() if p["resultado"] in ("win", "loss")]
+    picks.sort(key=_fecha_key, reverse=True)
+    if plan not in ("vip", "admin"):
+        picks = picks[:5]
+        for p in picks:
+            p.pop("cuota", None)
+    return picks[:limite]
 
 
 @router.get("/stats")
 def stats_publicas():
-    """Estadísticas públicas: win rate, ROI, total picks. Sin auth requerida."""
-    with db() as conn:
-        cur = conn.cursor()
-        cur.execute("""
-            SELECT
-                COUNT(*) FILTER (WHERE resultado IN ('win','loss')) as resueltos,
-                COUNT(*) FILTER (WHERE resultado='win') as wins,
-                COUNT(*) FILTER (WHERE resultado='loss') as losses,
-                ROUND(AVG(CASE WHEN resultado='win' AND cuota != '' AND cuota IS NOT NULL
-                          THEN CAST(cuota AS NUMERIC) - 1 ELSE NULL END)::NUMERIC, 3) as roi_win,
-                COUNT(*) as total_picks
-            FROM picks_publicados
-        """)
-        row = cur.fetchone()
-        wins     = int(row["wins"] or 0)
-        losses   = int(row["losses"] or 0)
-        resueltos = wins + losses
-        win_rate = round(wins / resueltos * 100, 1) if resueltos else 0
-        return {
-            "total_picks":  int(row["total_picks"] or 0),
-            "resueltos":    resueltos,
-            "wins":         wins,
-            "losses":       losses,
-            "win_rate":     win_rate,
-            "fecha_inicio": "2026-05-23",
-        }
+    """Estadísticas públicas (win rate, yield) desde datos.js. Sin auth."""
+    picks     = _leer_resueltos()
+    resueltos = [p for p in picks if p["resultado"] in ("win", "loss")]
+    wins   = sum(1 for p in resueltos if p["resultado"] == "win")
+    losses = sum(1 for p in resueltos if p["resultado"] == "loss")
+    n      = wins + losses
+    win_rate = round(wins / n * 100, 1) if n else 0
+    ganancia = 0.0
+    for p in resueltos:
+        try:
+            c = float(str(p["cuota"]).replace(",", "."))
+        except Exception:
+            c = 0
+        ganancia += (c - 1) if p["resultado"] == "win" else -1
+    yield_pct = round(ganancia / n * 100, 1) if n else 0
+    return {
+        "total_picks":  len(picks),
+        "resueltos":    n,
+        "wins":         wins,
+        "losses":       losses,
+        "win_rate":     win_rate,
+        "yield":        yield_pct,
+        "fecha_inicio": "2026-05-23",
+    }
 
 
 @router.post("/publicar")
