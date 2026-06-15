@@ -8,10 +8,25 @@ const PROXIMOS_EVENTOS = [
     partido:    "Iran vs New Zealand",
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
-    cuota:      "1.51",
+    cuota:      "1.52",
     hora:       "20:00 COT",
-    emoji:      "",
     status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "1.0",
+    prob:       "66",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "16/06/26",
+    partido:    "France vs Senegal",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Visitante +1.75",
+    cuota:      "1.48",
+    hora:       "14:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "1.0",
+    prob:       "68",
     resultado:  "pendiente"
   },
   {
