@@ -27,17 +27,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "14/06/26",
-    partido:    "Netherlands vs Japan",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Hándicap Asiático Visitante +1",
-    cuota:      "1.41",
-    hora:       "15:00 COT",
-    emoji:      "",
-    status:     "vip",
-    resultado:  "win"
-  },
-  {
-    fecha:      "14/06/26",
     partido:    "Sweden vs Tunisia",
     liga:       "FIFA Mundial 2026",
     prediccion: "Tarjetas Under 4.5",
@@ -347,6 +336,14 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "14/06/26",
+    partido:    "Netherlands vs Japan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Asiático Visitante +1",
+    cuota:      "1.41",
+    resultado:  "win"
+  },
   {
     fecha:      "14/06/26",
     partido:    "Ivory Coast vs Ecuador",
