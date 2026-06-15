@@ -39,10 +39,10 @@
         "under125": 3.66,
         "under125_casa": "Pinnacle",
         "pinnacle_under125": 3.66,
-        "over15": 1.51,
+        "over15": 1.52,
         "over15_casa": "Betfair",
         "pinnacle_over15": 1.47,
-        "under15": 2.92,
+        "under15": 2.9,
         "under15_casa": "Betfair",
         "pinnacle_under15": 2.79,
         "over175": 1.6,
@@ -165,9 +165,9 @@
         "btts_no": 1.73,
         "btts_no_casa": "Betfair",
         "pinnacle_btts_no": 1.68,
-        "dnb_local": 1.34,
+        "dnb_local": 1.33,
         "dnb_local_casa": "Betfair",
-        "dnb_visita": 3.8,
+        "dnb_visita": 3.85,
         "dnb_visita_casa": "Betfair",
         "ah_l_m0_75": 2.1,
         "ah_l_m0_75_casa": "Pinnacle",
@@ -395,24 +395,24 @@
           "pinn_prob": 26.2
         },
         "over15": {
-          "value": -0.011,
-          "ev_porcentaje": -1.1,
-          "ev_pinn": -1.1,
+          "value": -0.005,
+          "ev_porcentaje": -0.5,
+          "ev_pinn": -0.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.51,
+          "cuota": 1.52,
           "casa": "Betfair",
           "pinn_prob": 65.5
         },
         "under15": {
-          "value": 0.008,
-          "ev_porcentaje": 0.8,
-          "ev_pinn": 0.8,
+          "value": 0.001,
+          "ev_porcentaje": 0.1,
+          "ev_pinn": 0.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.92,
+          "cuota": 2.9,
           "casa": "Betfair",
           "pinn_prob": 34.5
         },
@@ -885,24 +885,24 @@
           "pinn_prob": 57.6
         },
         "dnb_local": {
-          "value": -0.013,
-          "ev_porcentaje": -1.3,
-          "ev_pinn": -1.3,
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.34,
+          "cuota": 1.33,
           "casa": "Betfair",
           "pinn_prob": 73.7
         },
         "dnb_visita": {
-          "value": 0.001,
-          "ev_porcentaje": 0.1,
-          "ev_pinn": 0.1,
+          "value": 0.014,
+          "ev_porcentaje": 1.4,
+          "ev_pinn": 1.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.8,
+          "cuota": 3.85,
           "casa": "Betfair",
           "pinn_prob": 26.3
         },
@@ -1112,9 +1112,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Over 2.5 Goles",
-        "prob": 39.5,
-        "ev": 1.0
+        "mercado": "Draw No Bet Visitante",
+        "prob": 26.3,
+        "ev": 1.4
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -1477,7 +1477,7 @@
         "over15": 1.32,
         "over15_casa": "Betfair",
         "pinnacle_over15": 1.3,
-        "under15": 3.95,
+        "under15": 3.9,
         "under15_casa": "Betfair",
         "pinnacle_under15": 3.67,
         "over175": 1.36,
@@ -1609,7 +1609,7 @@
         "btts_si": 2.1,
         "btts_si_casa": "Pinnacle",
         "pinnacle_btts_si": 2.1,
-        "btts_no": 1.86,
+        "btts_no": 1.85,
         "btts_no_casa": "Betfair",
         "pinnacle_btts_no": 1.78,
         "dnb_local": 1.18,
@@ -1809,13 +1809,13 @@
           "pinn_prob": 73.8
         },
         "under15": {
-          "value": 0.033,
-          "ev_porcentaje": 3.3,
-          "ev_pinn": 3.3,
+          "value": 0.02,
+          "ev_porcentaje": 2.0,
+          "ev_pinn": 2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.95,
+          "cuota": 3.9,
           "casa": "Betfair",
           "pinn_prob": 26.2
         },
@@ -2321,13 +2321,13 @@
           "pinn_prob": 45.9
         },
         "btts_no": {
-          "value": 0.007,
-          "ev_porcentaje": 0.7,
-          "ev_pinn": 0.7,
+          "value": 0.001,
+          "ev_porcentaje": 0.1,
+          "ev_pinn": 0.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.86,
+          "cuota": 1.85,
           "casa": "Betfair",
           "pinn_prob": 54.1
         },
@@ -3014,7 +3014,7 @@
         "corners_over_10_5": 3.05,
         "corners_over_10_5_casa": "LiveScore Bet",
         "pinnacle_corners_over_10_5": 2.85,
-        "corners_under_10_5": 1.4,
+        "corners_under_10_5": 1.41,
         "corners_under_10_5_casa": "Betfair",
         "pinnacle_corners_under_10_5": 1.37,
         "corners_over_11_0": 3.46,
@@ -3605,13 +3605,13 @@
           "mercado_nombre": "Corners Over 10.5"
         },
         "corners_under_10_5": {
-          "value": -0.055,
-          "ev_porcentaje": -5.5,
-          "ev_pinn": -5.5,
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.4,
+          "cuota": 1.41,
           "casa": "Betfair",
           "pinn_prob": 67.5,
           "mercado_nombre": "Corners Under 10.5"
@@ -10388,5 +10388,5 @@
       "movimiento": null
     }
   ],
-  "generado": "23:12:30"
+  "generado": "23:12:41"
 }
