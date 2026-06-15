@@ -10,10 +10,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.51",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "66",
     resultado:  "pendiente"
   },
   {
@@ -23,10 +21,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Tarjetas Over 3.5 — EV +3%",
     cuota:      "2.08",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.4",
-    prob:       "50",
     resultado:  "pendiente"
   },
   {
@@ -36,23 +32,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Asiático Visitante +1",
     cuota:      "1.41",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "69",
-    resultado:  "win"
-  },
-  {
-    fecha:      "14/06/26",
-    partido:    "Ivory Coast vs Ecuador",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 2.5 Goles",
-    cuota:      "1.44",
-    hora:       "18:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "69",
     resultado:  "win"
   },
   {
@@ -62,10 +43,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Tarjetas Under 4.5",
     cuota:      "1.47",
     hora:       "21:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "68",
     resultado:  "win"
   },
   {
@@ -75,10 +54,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.87",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "5.0",
-    prob:       "86",
     resultado:  "loss"
   },
   {
@@ -88,10 +65,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 7.0 — EV +5%",
     cuota:      "2.0",
     hora:       "11:16 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "2.3",
-    prob:       "52",
     resultado:  "pendiente"
   },
   {
@@ -101,12 +76,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Local +2.5",
     cuota:      "1.48",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "66",
-    resultado:  "win",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -116,11 +87,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Local -0.25",
     cuota:      "1.48",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "66",
-    resultado:  "loss",
     resultado:  "win"
   },
   {
@@ -130,10 +98,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.44",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "68",
     resultado:  "loss"
   },
   {
@@ -143,10 +109,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.65",
     hora:       "09:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "5.0",
-    prob:       "82",
     resultado:  "win"
   },
   {
@@ -156,11 +120,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Tarjetas Under 3.5 — EV +4%",
     cuota:      "2.12",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.9",
-    prob:       "49",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -170,10 +131,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Louisville Kings — EV +5%",
     cuota:      "2.0",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "2.5",
-    prob:       "52",
     resultado:  "win"
   },
   {
@@ -183,10 +142,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.83",
     hora:       "11:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "5.0",
-    prob:       "64",
     resultado:  "win"
   },
   {
@@ -196,10 +153,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.43",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "69",
     resultado:  "win"
   },
   {
@@ -209,10 +164,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles",
     cuota:      "1.75",
     hora:       "19:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "5.0",
-    prob:       "80",
     resultado:  "win"
   },
   {
@@ -222,10 +175,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles",
     cuota:      "1.49",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "5.0",
-    prob:       "76",
     resultado:  "win"
   },
   {
@@ -235,10 +186,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana ThSV Eisenach — EV +6%",
     cuota:      "1.67",
     hora:       "08:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "4.4",
-    prob:       "63",
     resultado:  "loss"
   },
   {
@@ -248,10 +197,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana THW Kiel — EV +9%",
     cuota:      "1.71",
     hora:       "08:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "5.0",
-    prob:       "64",
     resultado:  "loss"
   },
   {
@@ -261,9 +208,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Frisch Auf Göppingen — EV +6%",
     cuota:      "1.92",
     hora:       "08:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "3.6",
     resultado:  "loss"
   },
   {
@@ -273,9 +219,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 2.5 Goles",
     cuota:      "1.7",
     hora:       "00:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.0",
     resultado:  "win"
   },
   {
@@ -285,9 +230,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Texas Rangers — EV +3%",
     cuota:      "2.24",
     hora:       "19:16 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.4",
     resultado:  "win"
   },
   {
@@ -297,9 +241,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles",
     cuota:      "1.5",
     hora:       "02:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "5.0",
     resultado:  "loss"
   },
   {
@@ -309,9 +252,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana HSV Hamburg — EV +6%",
     cuota:      "1.77",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "3.6",
     resultado:  "win"
   },
   {
@@ -321,9 +263,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Vegas Golden Knights — EV +24%",
     cuota:      "3.0",
     hora:       "19:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "5.0",
     resultado:  "loss"
   },
   {
@@ -333,10 +274,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Palmeiras — EV +3%",
     cuota:      "1.37",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "2",
-    analisis:   "Palmeiras (local) en gran forma: viene de ganar 3-0 a Flamengo de visita, GF 2.4/GC 0.8 por partido, sin bajas. Calidad muy superior a Chapecoense. A cuota 1.37 el valor es ajustado (prob ~75% vs 73% de equilibrio = EV +3%): pick SEGURO de bajo riesgo, stake reducido 2%. No es un valorazo, entra por calidad, forma y localia.",
     resultado:  "win"
   },
   {
@@ -346,9 +285,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles — EV +85%",
     cuota:      "2.05",
     hora:       "11:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "5.0",
     resultado:  "win"
   },
   {
@@ -358,9 +296,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles — EV +40%",
     cuota:      "1.62",
     hora:       "13:45 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "5.0",
     resultado:  "loss"
   },
   {
@@ -370,9 +307,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Carolina Hurricanes — EV +16%",
     cuota:      "1.70",
     hora:       "19:15 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "5",
     resultado:  "loss"
   },
   {
@@ -382,9 +318,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +37%",
     cuota:      "2.01",
     hora:       "19:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "5",
     resultado:  "win"
   },
   {
@@ -394,9 +329,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 2.5 goles — EV +80%",
     cuota:      "2.40",
     hora:       "16:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "5",
     resultado:  "loss"
   },
   {
@@ -406,10 +340,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 goles — EV +3% (a >=1.90)",
     cuota:      "1.90",
     hora:       "11:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "2",
-    analisis:   "Final a partido unico + Arsenal con defensa de elite (0.2 goles encajados/partido en sus ultimos 5) -> se proyectan pocos goles. Modelo recalibrado vs Pinnacle (78% peso al mercado en Champions): ~54% Under 2.5. Valor SOLO a cuota >=1.90 (a 1.67 no hay valor). Stake reducido 2%: el edge es modesto, NO es alto valor.",
     resultado:  "win"
   }
 ];
@@ -417,11 +349,18 @@ const PROXIMOS_EVENTOS = [
 const PREDICCIONES_HISTORIAL = [
   {
     fecha:      "14/06/26",
+    partido:    "Ivory Coast vs Ecuador",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.44",
+    resultado:  "win"
+  },
+  {
+    fecha:      "14/06/26",
     partido:    "Juventude vs Ponte Preta",
     liga:       "Brasileirao B",
     prediccion: "Ambos No Marcan",
     cuota:      "1.65",
-    prob:       "82",
     resultado:  "win"
   },
   {
@@ -430,7 +369,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Ambos No Marcan",
     cuota:      "1.44",
-    prob:       "68",
     resultado:  "loss"
   },
   {
@@ -439,7 +377,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Campeonato Chileno",
     prediccion: "Ambos No Marcan",
     cuota:      "1.87",
-    prob:       "86",
     resultado:  "loss"
   },
   {
@@ -448,7 +385,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Tarjetas Under 4.5",
     cuota:      "1.47",
-    prob:       "68",
     resultado:  "win"
   },
   {
@@ -457,7 +393,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 2.5 Goles",
     cuota:      "1.44",
-    prob:       "69",
     resultado:  "win"
   },
   {
@@ -466,7 +401,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Asiático Visitante +1",
     cuota:      "1.41",
-    prob:       "69",
     resultado:  "win"
   },
   {
@@ -475,7 +409,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Campeonato Chileno",
     prediccion: "Ambos No Marcan",
     cuota:      "1.83",
-    prob:       "64",
     resultado:  "win"
   },
   {
@@ -484,7 +417,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "UFL",
     prediccion: "Gana Louisville Kings — EV +5%",
     cuota:      "2.0",
-    prob:       "52",
     resultado:  "win"
   },
   {
@@ -493,8 +425,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Local -0.25",
     cuota:      "1.48",
-    prob:       "66",
-    resultado:  "loss",
     resultado:  "win"
   },
   {
@@ -503,9 +433,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Local +2.5",
     cuota:      "1.48",
-    prob:       "66",
-    resultado:  "win",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -514,8 +441,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Tarjetas Under 3.5 — EV +4%",
     cuota:      "2.12",
-    prob:       "49",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -524,7 +449,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.43",
-    prob:       "69",
     resultado:  "win"
   },
   {
@@ -533,7 +457,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Brasileirao B",
     prediccion: "Under 2.5 Goles",
     cuota:      "1.75",
-    prob:       "80",
     resultado:  "win"
   },
   {
@@ -542,7 +465,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Brasileirao B",
     prediccion: "Under 2.5 Goles",
     cuota:      "1.49",
-    prob:       "76",
     resultado:  "win"
   },
   {
@@ -551,7 +473,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Balonmano Bundesliga",
     prediccion: "Gana Frisch Auf Göppingen — EV +6%",
     cuota:      "1.92",
-    prob:       "",
     resultado:  "loss"
   },
   {
@@ -560,7 +481,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Balonmano Bundesliga",
     prediccion: "Gana THW Kiel — EV +9%",
     cuota:      "1.71",
-    prob:       "64",
     resultado:  "loss"
   },
   {
@@ -569,7 +489,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Balonmano Bundesliga",
     prediccion: "Gana ThSV Eisenach — EV +6%",
     cuota:      "1.67",
-    prob:       "63",
     resultado:  "loss"
   },
   {
@@ -668,12 +587,46 @@ const PREDICCIONES_HISTORIAL = [
     cuota:      "2.01",
     resultado:  "win"
   },
-  {fecha:'28/05/26', partido:'Cerro Porteño vs Sporting Cristal',     liga:'Copa Libertadores', prediccion:'Under 2.5 goles', cuota:'1.89', resultado:'win'},
-  {fecha:'28/05/26', partido:'América de Cali vs Macará',              liga:'Copa Sudamericana',  prediccion:'Under 2.5 goles', cuota:'1.82', resultado:'loss'},
-  {fecha:'28/05/26', partido:'Bolívar vs Independiente Rivadavia',     liga:'Copa Libertadores', prediccion:'Gana Bolívar',    cuota:'2.32', resultado:'loss'},
-  {fecha:'28/05/26', partido:'Corinthians vs Platense',                liga:'Copa Libertadores', prediccion:'Under 2.5 goles', cuota:'1.96', resultado:'win'},
-  {fecha:'28/05/26', partido:'Peñarol vs Independiente Santa Fe',      liga:'Copa Libertadores', prediccion:'Under 2.5 goles', cuota:'1.79', resultado:'win'},
-
+  {
+    fecha:      "28/05/26",
+    partido:    "Cerro Porteño vs Sporting Cristal",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 goles",
+    cuota:      "1.89",
+    resultado:  "win"
+  },
+  {
+    fecha:      "28/05/26",
+    partido:    "América de Cali vs Macará",
+    liga:       "Copa Sudamericana",
+    prediccion: "Under 2.5 goles",
+    cuota:      "1.82",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "28/05/26",
+    partido:    "Bolívar vs Independiente Rivadavia",
+    liga:       "Copa Libertadores",
+    prediccion: "Gana Bolívar",
+    cuota:      "2.32",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "28/05/26",
+    partido:    "Corinthians vs Platense",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 goles",
+    cuota:      "1.96",
+    resultado:  "win"
+  },
+  {
+    fecha:      "28/05/26",
+    partido:    "Peñarol vs Independiente Santa Fe",
+    liga:       "Copa Libertadores",
+    prediccion: "Under 2.5 goles",
+    cuota:      "1.79",
+    resultado:  "win"
+  },
   {
     fecha:      "27/05/26",
     partido:    "RB Bragantino vs Carabobo FC",
