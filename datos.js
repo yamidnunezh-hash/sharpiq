@@ -14,7 +14,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "69",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "14/06/26",
@@ -27,7 +27,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "69",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "14/06/26",
@@ -40,7 +40,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "68",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "14/06/26",
@@ -53,7 +53,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "5.0",
     prob:       "86",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "14/06/26",
@@ -108,7 +108,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "68",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "14/06/26",
@@ -121,7 +121,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "5.0",
     prob:       "82",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "12/06/26",
@@ -389,6 +389,60 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "14/06/26",
+    partido:    "Juventude vs Ponte Preta",
+    liga:       "Brasileirao B",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.65",
+    prob:       "82",
+    resultado:  "win"
+  },
+  {
+    fecha:      "14/06/26",
+    partido:    "Germany vs Curaçao",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.44",
+    prob:       "68",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "14/06/26",
+    partido:    "Union La Calera vs Universidad de Chile",
+    liga:       "Campeonato Chileno",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.87",
+    prob:       "86",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "14/06/26",
+    partido:    "Sweden vs Tunisia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Tarjetas Under 4.5",
+    cuota:      "1.47",
+    prob:       "68",
+    resultado:  "win"
+  },
+  {
+    fecha:      "14/06/26",
+    partido:    "Ivory Coast vs Ecuador",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.44",
+    prob:       "69",
+    resultado:  "win"
+  },
+  {
+    fecha:      "14/06/26",
+    partido:    "Netherlands vs Japan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Asiático Visitante +1",
+    cuota:      "1.41",
+    prob:       "69",
+    resultado:  "win"
+  },
   {
     fecha:      "13/06/26",
     partido:    "Coquimbo Unido vs O'Higgins",
