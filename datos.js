@@ -15,17 +15,6 @@ const PROXIMOS_EVENTOS = [
     resultado:  "pendiente"
   },
   {
-    fecha:      "15/06/26",
-    partido:    "Belgium vs Egypt",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Tarjetas Over 3.5 — EV +3%",
-    cuota:      "2.08",
-    hora:       "14:00 COT",
-    emoji:      "",
-    status:     "vip",
-    resultado:  "pendiente"
-  },
-  {
     fecha:      "14/06/26",
     partido:    "Sweden vs Tunisia",
     liga:       "FIFA Mundial 2026",
@@ -325,6 +314,14 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "15/06/26",
+    partido:    "Belgium vs Egypt",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Tarjetas Over 3.5 — EV +3%",
+    cuota:      "2.08",
+    resultado:  "win"
+  },
   {
     fecha:      "14/06/26",
     partido:    "Sweden vs Tunisia",
