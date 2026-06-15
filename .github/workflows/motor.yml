@@ -140,3 +140,14 @@ jobs:
           git add -f sharpiq-engine/sharpiq.db 2>/dev/null || true
           git diff --cached --quiet || git commit -m "auto: predicciones $(date -u +%Y-%m-%d %H:%M UTC)"
           git push origin main || (git pull origin main --no-rebase --quiet && git push origin main)
+
+      - name: Latido al watchdog (dead-man switch)
+        if: success()
+        run: |
+          if [ -n "${{ secrets.HEALTHCHECK_URL }}" ]; then
+            curl -fsS -m 10 --retry 3 "${{ secrets.HEALTHCHECK_URL }}" \
+              && echo "Latido enviado: el motor corrio OK" \
+              || echo "No se pudo enviar el latido (no critico)"
+          else
+            echo "HEALTHCHECK_URL no configurado todavia - sin latido"
+          fi
