@@ -38,17 +38,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "14/06/26",
-    partido:    "Union La Calera vs Universidad de Chile",
-    liga:       "Campeonato Chileno",
-    prediccion: "Ambos No Marcan",
-    cuota:      "1.87",
-    hora:       "14:00 COT",
-    emoji:      "",
-    status:     "vip",
-    resultado:  "loss"
-  },
-  {
-    fecha:      "14/06/26",
     partido:    "Pittsburgh Pirates vs Miami Marlins",
     liga:       "MLB",
     prediccion: "Under 7.0 — EV +5%",
@@ -336,6 +325,14 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "14/06/26",
+    partido:    "Sweden vs Tunisia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Tarjetas Under 4.5",
+    cuota:      "1.47",
+    resultado:  "win"
+  },
   {
     fecha:      "14/06/26",
     partido:    "Netherlands vs Japan",
