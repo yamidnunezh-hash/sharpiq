@@ -599,22 +599,30 @@ def correr():
                 limpiados += 1
                 LOG.info(f"  Sin fuente de resultado, retirado: {_ev.get('partido','')} ({_ev.get('liga','')})")
 
+    # Siempre escribir datos.js y SINCRONIZAR index.html con su contenido —
+    # aunque no haya nuevos resueltos. Asi se reflejan las marcas MANUALES del
+    # panel (que solo tocan datos.js) y se cura cualquier desfase web/datos.js.
+    # El commit es no-op si no hay cambios reales (no spamea el repo).
+    escribir_datos(texto)
+    sincronizar_index_html(texto)
     if actualizados > 0 or limpiados > 0:
-        escribir_datos(texto)
-        sincronizar_index_html(texto)
         LOG.info(f"datos.js + index.html actualizados — {actualizados} resultado/s, {limpiados} retirado/s")
-        repo_dir = os.path.join(BASE_DIR, "..")
+    else:
+        LOG.info("Auto-resultados: sin nuevos resueltos; verificando sync web/datos.js")
 
-        def _git(*args):
-            return subprocess.run(["git", *args], cwd=repo_dir,
-                                  capture_output=True, text=True)
-        try:
-            # Abortar cualquier rebase a medias de una corrida previa (evita exit 128)
-            _git("rebase", "--abort")
-            _git("add", "datos.js", "index.html")
-            commit = _git("commit", "-m", f"auto: resultados {_hoy_cot().isoformat()}")
-            sin_cambios = "nothing to commit" in (commit.stdout + commit.stderr)
+    repo_dir = os.path.join(BASE_DIR, "..")
 
+    def _git(*args):
+        return subprocess.run(["git", *args], cwd=repo_dir,
+                              capture_output=True, text=True)
+    try:
+        # Abortar cualquier rebase a medias de una corrida previa (evita exit 128)
+        _git("rebase", "--abort")
+        _git("add", "datos.js", "index.html")
+        commit = _git("commit", "-m", f"auto: resultados {_hoy_cot().isoformat()}")
+        sin_cambios = "nothing to commit" in (commit.stdout + commit.stderr)
+
+        if not sin_cambios:
             pushed = False
             for intento in range(3):
                 push = _git("push", "origin", "main")
@@ -628,13 +636,11 @@ def correr():
                               f"{(pull.stderr or pull.stdout).strip()[:200]}")
                     break
             if pushed:
-                LOG.info("GitHub actualizado")
-            elif not sin_cambios:
+                LOG.info("GitHub actualizado (web sincronizada con datos.js)")
+            else:
                 LOG.error("Git: no se pudo hacer push tras 3 intentos")
-        except Exception as e:
-            LOG.error(f"Git error: {e}")
-    else:
-        LOG.info("Auto-resultados: sin nuevos resultados disponibles")
+    except Exception as e:
+        LOG.error(f"Git error: {e}")
 
     return actualizados
 
