@@ -93,7 +93,7 @@
         "corners_under_8_0": 3.0,
         "corners_under_8_0_casa": "Pinnacle",
         "pinnacle_corners_under_8_0": 3.0,
-        "corners_over_8_5": 1.63,
+        "corners_over_8_5": 1.62,
         "corners_over_8_5_casa": "Betfair",
         "pinnacle_corners_over_8_5": 1.51,
         "corners_under_8_5": 2.5,
@@ -603,13 +603,13 @@
           "mercado_nombre": "Corners Under 8"
         },
         "corners_over_8_5": {
-          "value": 0.01,
-          "ev_porcentaje": 1.0,
-          "ev_pinn": 1.0,
+          "value": 0.004,
+          "ev_porcentaje": 0.4,
+          "ev_pinn": 0.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.63,
+          "cuota": 1.62,
           "casa": "Betfair",
           "pinn_prob": 62.0,
           "mercado_nombre": "Corners Over 8.5"
@@ -1556,7 +1556,7 @@
         "corners_under_8_0": 2.75,
         "corners_under_8_0_casa": "Pinnacle",
         "pinnacle_corners_under_8_0": 2.75,
-        "corners_over_8_5": 1.74,
+        "corners_over_8_5": 1.73,
         "corners_over_8_5_casa": "Betfair",
         "pinnacle_corners_over_8_5": 1.56,
         "corners_under_8_5": 2.34,
@@ -2066,13 +2066,13 @@
           "mercado_nombre": "Corners Under 8"
         },
         "corners_over_8_5": {
-          "value": 0.044,
-          "ev_porcentaje": 4.4,
-          "ev_pinn": 4.4,
+          "value": 0.038,
+          "ev_porcentaje": 3.8,
+          "ev_pinn": 3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.74,
+          "cuota": 1.73,
           "casa": "Betfair",
           "pinn_prob": 60.0,
           "mercado_nombre": "Corners Over 8.5"
@@ -3031,7 +3031,7 @@
         "corners_under_7_5": 2.15,
         "corners_under_7_5_casa": "LiveScore Bet",
         "pinnacle_corners_under_7_5": 2.14,
-        "corners_over_8_5": 2.24,
+        "corners_over_8_5": 2.16,
         "corners_over_8_5_casa": "Betfair",
         "pinnacle_corners_over_8_5": 2.15,
         "corners_under_8_5": 1.74,
@@ -3577,13 +3577,13 @@
           "mercado_nombre": "Corners Under 7.5"
         },
         "corners_over_8_5": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
+          "value": -0.062,
+          "ev_porcentaje": -6.2,
+          "ev_pinn": -6.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.24,
+          "cuota": 2.16,
           "casa": "Betfair",
           "pinn_prob": 43.4,
           "mercado_nombre": "Corners Over 8.5"
@@ -6770,7 +6770,7 @@
         "2": 3.15,
         "2_casa": "Betfair",
         "pinnacle_2": 2.95,
-        "1": 2.36,
+        "1": 2.34,
         "1_casa": "Betfair",
         "pinnacle_1": 2.3,
         "X": 3.75,
@@ -6928,13 +6928,13 @@
           "pinn_prob": 32.3
         },
         "victoria_local": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.36,
+          "cuota": 2.34,
           "casa": "Betfair",
           "pinn_prob": 41.5
         },
@@ -12148,7 +12148,7 @@
       "cuotas": {
         "San Diego Padres": 2.04,
         "St. Louis Cardinals": 1.89,
-        "Over 8.0": 1.91,
+        "Over 8.0": 1.92,
         "Under 8.0": 1.93
       },
       "probabilidades": {
@@ -12182,14 +12182,14 @@
           "mercado_nombre": "St. Louis Cardinals"
         },
         "over_8_0": {
-          "value": -0.052,
-          "ev_porcentaje": -5.2,
-          "ev_pinn": -5.2,
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
-          "casa": "FanDuel",
+          "cuota": 1.92,
+          "casa": "DraftKings",
           "pinn_prob": 49.6,
           "mercado_nombre": "Over 8.0"
         },
@@ -13421,5 +13421,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:39:25"
+  "generado": "16:39:43"
 }
