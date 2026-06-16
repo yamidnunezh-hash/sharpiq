@@ -45,6 +45,14 @@ except Exception:
 
 # Ruta siempre correcta sin importar desde donde se ejecute
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+def _hoy_cot():
+    """Fecha de HOY en hora de Colombia (UTC-5).
+    En GitHub Actions el reloj es UTC; la corrida de las 7 PM COT se ejecuta a
+    las 00:23 UTC (ya es el dia siguiente en UTC) -> _hoy_cot() daria la fecha
+    de MANANA. Esto la corrige a la fecha real de Colombia. Usar SIEMPRE esto."""
+    return (datetime.now(timezone.utc) - timedelta(hours=5)).date()
 JSON_PATH       = os.path.join(BASE_DIR, "..", "predicciones.json")
 MEJOR_PATH      = os.path.join(BASE_DIR, "..", "mejor_prediccion.json")
 HISTORIAL_PATH  = os.path.join(BASE_DIR, "historial_cuotas.csv")
@@ -1179,7 +1187,7 @@ def obtener_forma_reciente(equipo, n=5, liga_id=None):
     params = {"team": team_id, "last": n, "status": "FT"}
     if liga_id:
         params["league"] = liga_id
-        params["season"] = date.today().year if date.today().month >= 6 else date.today().year - 1
+        params["season"] = _hoy_cot().year if _hoy_cot().month >= 6 else _hoy_cot().year - 1
     data = _apifb("fixtures", params)
     if not data or not data.get("response"):
         return None
@@ -1244,12 +1252,12 @@ def obtener_lesiones(equipo):
     if not team_id:
         return []
     # Temporada actual: 2025 = temporada 2025/26
-    temporada = date.today().year if date.today().month >= 7 else date.today().year - 1
+    temporada = _hoy_cot().year if _hoy_cot().month >= 7 else _hoy_cot().year - 1
     data = _apifb("injuries", {"team": team_id, "season": temporada})
     if not data or not data.get("response"):
         return []
 
-    hoy = date.today()
+    hoy = _hoy_cot()
     lesionados = []
     vistos = set()  # evitar duplicados por nombre
 
@@ -1294,7 +1302,7 @@ def _commence_a_cot(commence_iso):
 # ── OBTENER PARTIDOS DEL DÍA ────────────────────────────────────
 def obtener_partidos_hoy_apifb():
     """Una sola llamada trae todos los partidos del día de todas las ligas configuradas."""
-    hoy = date.today().isoformat()
+    hoy = _hoy_cot().isoformat()
     data = _apifb("fixtures", {"date": hoy})
     if not data or not data.get("response"):
         return []
@@ -1430,7 +1438,7 @@ def obtener_partidos_hoy():
             return partidos
         print("  api-sports sin resultados, usando football-data.org...")
     # Fallback: football-data.org (solo ligas europeas)
-    hoy = date.today().isoformat()
+    hoy = _hoy_cot().isoformat()
     todos = []
     for codigo in LIGAS.keys():
         partidos = obtener_partidos_liga(codigo, hoy)
@@ -2768,7 +2776,7 @@ def reporte_del_dia():
         if db_ok and cuotas_reales and p.get("id"):
             try:
                 guardar_snapshot(p["id"], p["local"], p["visitante"],
-                                 date.today().isoformat(), snapshot_tipo, cuotas_reales)
+                                 _hoy_cot().isoformat(), snapshot_tipo, cuotas_reales)
             except Exception:
                 pass
 
@@ -2844,7 +2852,7 @@ def reporte_del_dia():
         print(f"  Arbitraje scan error: {e}")
 
     return {
-        "fecha": date.today().isoformat(),
+        "fecha": _hoy_cot().isoformat(),
         "total_partidos": len(predicciones),
         "predicciones": predicciones,
         "generado": datetime.now().strftime("%H:%M:%S")
@@ -3061,7 +3069,7 @@ def analizar_player_props_sharp(sport_key, nombre_liga):
         # + fecha_evento ya en COT desde el helper, para que nunca se desfase el día.
         hora_utc = hora_raw[11:16] if len(hora_raw) >= 16 else "00:00"
         _dt_cot  = _commence_a_cot(hora_raw)
-        fecha_ev = _dt_cot.strftime("%Y-%m-%d") if _dt_cot else date.today().isoformat()
+        fecha_ev = _dt_cot.strftime("%Y-%m-%d") if _dt_cot else _hoy_cot().isoformat()
 
         # Recopilar líneas de Pinnacle y mejor cuota disponible por jugador+tipo+dirección
         pinn_lines = {}   # {(jugador, tipo, dir): (linea, precio)}
@@ -3334,7 +3342,7 @@ def analizar_deporte_sharp(sport_key, nombre_liga):
         # ── Hora UTC + fecha COT (vía helper, robusto al cruzar medianoche) ──
         hora_utc_hm  = hora_raw[11:16] if len(hora_raw) >= 16 else "00:00"
         _dt_cot      = _commence_a_cot(hora_raw)
-        fecha_evento = _dt_cot.strftime("%Y-%m-%d") if _dt_cot else date.today().isoformat()
+        fecha_evento = _dt_cot.strftime("%Y-%m-%d") if _dt_cot else _hoy_cot().isoformat()
 
         deporte = SPORTS_ODDS_ONLY.get(sport_key, nombre_liga)
         _SPORT_EMOJI = {"NBA":"🏀","MLB":"⚾","NHL":"🏒","NFL":"🏈"}
@@ -3452,7 +3460,7 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
             fecha_evento = _dt_cot.strftime("%Y-%m-%d")
         except Exception:
             hora_utc = hora_cot = "00:00"
-            fecha_evento = date.today().isoformat()
+            fecha_evento = _hoy_cot().isoformat()
 
         # ── Recopilar líneas de Pinnacle y mejores cuotas ────────
         pinn_h2h   = {}   # {team_name: price}
@@ -3910,7 +3918,7 @@ def guardar_predicciones():
             LOG.error(f"{sport_key} futbol error: {_ex}")
 
     reporte = {
-        "fecha":           date.today().isoformat(),
+        "fecha":           _hoy_cot().isoformat(),
         "total_partidos":  len(predicciones_futbol),
         "predicciones":    predicciones_futbol,
         "generado":        datetime.now().strftime("%H:%M:%S"),
@@ -3940,7 +3948,7 @@ def guardar_predicciones():
 
     # Filtrar predicciones: solo dentro de la ventana LOOKAHEAD_HORAS desde ahora
     limite = datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=LOOKAHEAD_HORAS)
-    hoy_str = date.today().isoformat()
+    hoy_str = _hoy_cot().isoformat()
     antes = len(reporte["predicciones"])
     reporte["predicciones"] = [
         p for p in reporte["predicciones"]
@@ -4003,7 +4011,7 @@ def _actualizar_datos_js(reporte):
     try:
         subprocess.run(["git", "add", "-f", "predicciones.json", "mejor_prediccion.json"],
                        cwd=repo_dir, check=True, capture_output=True)
-        subprocess.run(["git", "commit", "-m", f"auto: predicciones {date.today().isoformat()}"],
+        subprocess.run(["git", "commit", "-m", f"auto: predicciones {_hoy_cot().isoformat()}"],
                        cwd=repo_dir, check=True, capture_output=True)
         # Pull antes de push para evitar rechazo por commits remotos más nuevos
         subprocess.run(["git", "pull", "origin", "main", "--no-rebase"],
@@ -4099,7 +4107,7 @@ def _alertar_steam(reporte):
 
     texto = (
         f"⚡ <b>SharpIQ — Movimiento de Línea</b>\n"
-        f"🕐 Pasada de tarde — {date.today().isoformat()}\n\n"
+        f"🕐 Pasada de tarde — {_hoy_cot().isoformat()}\n\n"
         + "\n\n".join(alertas) +
         "\n\n<i>Cuotas que caen ≥5% = dinero profesional entrando (steam)</i>"
     )

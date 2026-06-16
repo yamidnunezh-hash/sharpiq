@@ -10,7 +10,7 @@ from datetime import date, timedelta
 BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
 from config import APIFOOTBALL_KEY
-from motor import _apifb, LIGAS_APIFB, LOG
+from motor import _apifb, LIGAS_APIFB, LOG, _hoy_cot
 
 # Mapeo predicción (display) → clave de mercado en DB
 _PRED_TO_MERCADO = {
@@ -296,7 +296,7 @@ def _agregar_a_historial(texto, evento, resultado):
             return texto  # ya está en historial, no duplicar
 
     nueva_entrada = f'''  {{
-    fecha:      "{evento.get('fecha', date.today().strftime('%d/%m/%y'))}",
+    fecha:      "{evento.get('fecha', _hoy_cot().strftime('%d/%m/%y'))}",
     partido:    "{evento['partido']}",
     liga:       "{evento.get('liga', '')}",
     prediccion: "{evento.get('prediccion', '')}",
@@ -433,7 +433,7 @@ def correr():
     # Buscar partidos finalizados en los últimos 3 días (cubre fines de semana)
     # Fechas a consultar: ultimos 3 dias + la fecha real de cada pick pendiente
     # (asi el futbol viejo tambien se resuelve, no solo lo de los ultimos 3 dias).
-    _fset = {(date.today() - timedelta(days=i)).isoformat() for i in range(3)}
+    _fset = {(_hoy_cot() - timedelta(days=i)).isoformat() for i in range(3)}
     for _e in pendientes:
         _fi = _fecha_pick_iso(_e.get("fecha", ""))
         if _fi:
@@ -543,7 +543,7 @@ def correr():
 
                 if cuotas_cierre:
                     guardar_snapshot(fid, local_js, visita_js,
-                                     date.today().isoformat(), "cierre", cuotas_cierre)
+                                     _hoy_cot().isoformat(), "cierre", cuotas_cierre)
                     # CLV (db_clv): el cierre lo registra la Fase 2 (ultima captura ANTES del
                     # kickoff), NO aqui -- esto corre DESPUES del partido y el cierre real ya paso.
 
@@ -582,7 +582,7 @@ def correr():
     # resultado, p.ej. boxeo/MMA) se retiran para no congelar las estadisticas.
     GRACIA_DIAS = 3
     limpiados = 0
-    _hoy = date.today()
+    _hoy = _hoy_cot()
     for _ev in _extraer_array(texto, "PROXIMOS_EVENTOS"):
         if _ev.get("resultado") not in (None, "", "pendiente"):
             continue
@@ -612,7 +612,7 @@ def correr():
             # Abortar cualquier rebase a medias de una corrida previa (evita exit 128)
             _git("rebase", "--abort")
             _git("add", "datos.js", "index.html")
-            commit = _git("commit", "-m", f"auto: resultados {date.today().isoformat()}")
+            commit = _git("commit", "-m", f"auto: resultados {_hoy_cot().isoformat()}")
             sin_cambios = "nothing to commit" in (commit.stdout + commit.stderr)
 
             pushed = False
@@ -642,7 +642,7 @@ def correr():
 def calcular_roi(datos_texto, bankroll=5_000_000):
     """Calcula ROI del mes actual a partir de PREDICCIONES_HISTORIAL en datos.js."""
     historial = _extraer_array(datos_texto, 'PREDICCIONES_HISTORIAL')
-    mes_actual = date.today().strftime('%m/%y')
+    mes_actual = _hoy_cot().strftime('%m/%y')
 
     picks_mes = [p for p in historial
                  if p.get('resultado') in ('win', 'loss', 'push')
@@ -715,5 +715,5 @@ def enviar_resumen_roi_semanal():
 if __name__ == "__main__":
     correr()
     # Enviar resumen ROI los lunes
-    if date.today().weekday() == 0:
+    if _hoy_cot().weekday() == 0:
         enviar_resumen_roi_semanal()

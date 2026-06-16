@@ -5,7 +5,7 @@ Toma la mejor predicción del día y la publica en datos.js + push + Telegram.
 Solo publica si tiene cuota REAL de la API (no estimada) y EV >= 15%.
 """
 import os, sys, re, json, subprocess, logging
-from datetime import date
+from datetime import date, datetime, timezone, timedelta
 
 BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
@@ -18,13 +18,22 @@ _DATA_START = "<!-- SHARPIQ_DATA_START -->"
 _DATA_END   = "<!-- SHARPIQ_DATA_END -->"
 
 
+def _hoy_cot():
+    """Fecha de HOY en hora de Colombia (UTC-5).
+    OJO: en GitHub Actions el reloj del servidor es UTC. La corrida de las
+    7 PM COT se ejecuta a las 00:23 UTC (ya es el dia siguiente en UTC), asi
+    que _hoy_cot() daria la fecha de MANANA. Esto la corrige a la fecha real
+    de Colombia. Usar SIEMPRE esto en vez de _hoy_cot() para fechas de picks."""
+    return (datetime.now(timezone.utc) - timedelta(hours=5)).date()
+
+
 def _get_log():
     """Reutiliza el logger del motor si ya fue inicializado, o crea uno propio."""
     lg = logging.getLogger("sharpiq.motor")
     if not lg.handlers:
         log_dir  = os.path.join(BASE_DIR, "logs")
         os.makedirs(log_dir, exist_ok=True)
-        log_file = os.path.join(log_dir, f"motor_{date.today().isoformat()}.log")
+        log_file = os.path.join(log_dir, f"motor_{_hoy_cot().isoformat()}.log")
         lg.setLevel(logging.DEBUG)
         fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s", "%H:%M:%S")
         fh  = logging.FileHandler(log_file, encoding="utf-8")
@@ -63,7 +72,7 @@ def registrar_tiers_clv(tiers):
             guardar_pick(
                 pick_uid       = _uid,
                 evento_id      = _eid,
-                fecha_evento   = _p.get("fecha_evento") or date.today().isoformat(),
+                fecha_evento   = _p.get("fecha_evento") or _hoy_cot().isoformat(),
                 comienzo       = _p.get("comienzo"),
                 partido        = _partido,
                 liga           = _p.get("liga", ""),
@@ -150,9 +159,9 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
             d = _date.fromisoformat(fecha_evento)
             fecha_str = d.strftime('%d/%m/%y')
         except Exception:
-            fecha_str = date.today().strftime('%d/%m/%y')
+            fecha_str = _hoy_cot().strftime('%d/%m/%y')
     else:
-        fecha_str = date.today().strftime('%d/%m/%y')
+        fecha_str = _hoy_cot().strftime('%d/%m/%y')
 
     ev_tag = f" — EV +{ev}%" if ev > 0 else ""
     nueva_entrada = f"""  {{
@@ -234,7 +243,7 @@ def correr():
     import os as _os
     from datetime import datetime as _dtap, timezone as _tzap, timedelta as _tdap
     BASE_DIR_AP = _os.path.dirname(_os.path.abspath(__file__))
-    _saludo_sent = _os.path.join(BASE_DIR_AP, "logs", f"saludo_{date.today().isoformat()}.sent")
+    _saludo_sent = _os.path.join(BASE_DIR_AP, "logs", f"saludo_{_hoy_cot().isoformat()}.sent")
     _hcot_ap = (_dtap.now(_tzap.utc) - _tdap(hours=5)).hour
     _es_manana_ap = 5 <= _hcot_ap < 11
     if _es_manana_ap and not _os.path.exists(_saludo_sent):
@@ -246,7 +255,7 @@ def correr():
                     "visitante": p["visitante"],
                     "liga":      p.get("liga", ""),
                     "hora":      _hora_cot_de_pred(p),
-                    "fecha":     p.get("fecha_evento", date.today().isoformat()),
+                    "fecha":     p.get("fecha_evento", _hoy_cot().isoformat()),
                 }
                 for p in reporte.get("predicciones", [])
             ]
@@ -295,11 +304,11 @@ def correr():
                 ahora_cot_mins  = ahora_cot_h * 60 + ahora_cot_m
                 partido_cot_mins = cot_h * 60 + int(m)
                 # Solo descartar si el partido es HOY en COT y ya pasó la hora
-                fecha_ev = t["pred"].get("fecha_evento", date.today().isoformat())
-                if fecha_ev == date.today().isoformat() and ahora_cot_mins >= partido_cot_mins:
+                fecha_ev = t["pred"].get("fecha_evento", _hoy_cot().isoformat())
+                if fecha_ev == _hoy_cot().isoformat() and ahora_cot_mins >= partido_cot_mins:
                     LOG.warning(f"Tier {k} descartado — {t['pred']['local']} ya empezó ({cot_h:02d}:{m} COT)")
                     tiers[k] = None
-                elif cot_h > HASTA_HORA_COT and fecha_ev == date.today().isoformat():
+                elif cot_h > HASTA_HORA_COT and fecha_ev == _hoy_cot().isoformat():
                     LOG.warning(f"Tier {k} fuera de ventana — {t['pred']['local']} a las {cot_h:02d}:{m} COT (ventana hasta {HASTA_HORA_COT:02d}:00)")
                     tiers[k] = None
         except Exception:
@@ -308,7 +317,7 @@ def correr():
     tiene_alguno = any(tiers.get(k) for k in ("seguro", "principal", "alto_valor"))
     if not tiene_alguno:
         # Solo avisar a Yamid UNA vez al día, no en cada turno
-        _sin_picks_sent = os.path.join(BASE_DIR_AP, "logs", f"sin_picks_{date.today().isoformat()}.sent")
+        _sin_picks_sent = os.path.join(BASE_DIR_AP, "logs", f"sin_picks_{_hoy_cot().isoformat()}.sent")
         if not os.path.exists(_sin_picks_sent):
             try:
                 from telegram_alertas import enviar_alerta_servicio, enviar_mensaje, get_chat_id
@@ -420,7 +429,7 @@ def correr():
         # 1) Commitear primero los cambios locales (datos.js + bloque inline de index.html)
         _git("add", "datos.js", "index.html")
         commit = _git("commit", "-m",
-                      f"auto: picks {date.today().isoformat()} — {picks_str}")
+                      f"auto: picks {_hoy_cot().isoformat()} — {picks_str}")
         sin_cambios = "nothing to commit" in (commit.stdout + commit.stderr)
         if sin_cambios:
             LOG.info("Git: sin cambios locales para commitear")
@@ -473,14 +482,14 @@ def correr():
             if fixture_id:
                 guardar_snapshot(
                     fixture_id, pred["local"], pred["visitante"],
-                    date.today().isoformat(), "apertura",
+                    _hoy_cot().isoformat(), "apertura",
                     pred.get("cuotas", {})
                 )
                 # Registrar pick en picks_clv para tracking de CLV
                 guardar_picks_clv(
                     fixture_id,
                     pred["local"], pred["visitante"],
-                    date.today().isoformat(),
+                    _hoy_cot().isoformat(),
                     mejor_tier.get("mercado", ""),
                     float(mejor_tier.get("cuota", 0)),
                 )
