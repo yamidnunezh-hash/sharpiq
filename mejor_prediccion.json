@@ -5,13 +5,13 @@
   "visitante": "Jordan",
   "prediccion": "under15",
   "mercado_key": "under15",
-  "cuota": "1.39",
+  "cuota": "1.4",
   "casa": "Betfair",
   "hora_utc": "04:00",
   "hora_cot": "23:00 COT",
   "ev": 6.2,
   "clasificacion": "VALOR",
-  "confianza": 86.9,
+  "confianza": 87.0,
   "pred_completa": {
     "local": "Austria",
     "visitante": "Jordan",
@@ -22,22 +22,22 @@
     "hora": "04:00",
     "fecha_evento": "2026-06-16",
     "cuotas": {
-      "1": 1.39,
+      "1": 1.4,
       "1_casa": "Betfair",
       "pinnacle_1": 1.38,
       "2": 9.6,
       "2_casa": "Betfair",
-      "pinnacle_2": 9.1,
+      "pinnacle_2": 9.25,
       "X": 5.4,
       "X_casa": "Betfair",
-      "pinnacle_X": 5.3,
+      "pinnacle_X": 5.25,
       "over25": 1.89,
       "over25_casa": "Betfair",
       "pinnacle_over25": 1.86,
       "under25": 2.1,
       "under25_casa": "Betfair",
       "pinnacle_under25": 2.05,
-      "over15": 1.29,
+      "over15": 1.3,
       "over15_casa": "Betfair",
       "pinnacle_over15": 1.27,
       "under15": 4.3,
@@ -236,8 +236,8 @@
     },
     "probabilidades": {
       "victoria_local": 70.8,
-      "victoria_visita": 10.7,
-      "empate": 18.4,
+      "victoria_visita": 10.6,
+      "empate": 18.6,
       "over25": 52.4,
       "under25": 47.6,
       "over15": 75.3,
@@ -286,8 +286,8 @@
       "cards_under_4_0": 70.9,
       "btts_si": 43.4,
       "btts_no": 56.6,
-      "dnb_local": 86.9,
-      "dnb_visita": 13.1,
+      "dnb_local": 87.0,
+      "dnb_visita": 13.0,
       "ah_l_m1_25": 52.5,
       "ah_v_p1_25": 47.5,
       "ah_l_m2_25": 27.3,
@@ -307,40 +307,40 @@
       "ah_l_m0_25": 77.9,
       "ah_v_p0_25": 22.1
     },
-    "confianza": 86.9,
+    "confianza": 87.0,
     "value_bets": {
       "victoria_local": {
-        "value": -0.016,
-        "ev_porcentaje": -1.6,
-        "ev_pinn": -1.6,
+        "value": -0.009,
+        "ev_porcentaje": -0.9,
+        "ev_pinn": -0.9,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.39,
+        "cuota": 1.4,
         "casa": "Betfair",
         "pinn_prob": 70.8
       },
       "victoria_visita": {
-        "value": 0.031,
-        "ev_porcentaje": 3.1,
-        "ev_pinn": 3.1,
+        "value": 0.014,
+        "ev_porcentaje": 1.4,
+        "ev_pinn": 1.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 9.6,
         "casa": "Betfair",
-        "pinn_prob": 10.7
+        "pinn_prob": 10.6
       },
       "empate": {
-        "value": -0.004,
-        "ev_porcentaje": -0.4,
-        "ev_pinn": -0.4,
+        "value": 0.005,
+        "ev_porcentaje": 0.5,
+        "ev_pinn": 0.5,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 5.4,
         "casa": "Betfair",
-        "pinn_prob": 18.4
+        "pinn_prob": 18.6
       },
       "over25": {
         "value": -0.009,
@@ -365,13 +365,13 @@
         "pinn_prob": 47.6
       },
       "over15": {
-        "value": -0.029,
-        "ev_porcentaje": -2.9,
-        "ev_pinn": -2.9,
+        "value": -0.021,
+        "ev_porcentaje": -2.1,
+        "ev_pinn": -2.1,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.29,
+        "cuota": 1.3,
         "casa": "Betfair",
         "pinn_prob": 75.3
       },
@@ -899,26 +899,26 @@
         "pinn_prob": 56.6
       },
       "dnb_local": {
-        "value": -0.01,
-        "ev_porcentaje": -1.0,
-        "ev_pinn": -1.0,
+        "value": -0.008,
+        "ev_porcentaje": -0.8,
+        "ev_pinn": -0.8,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 1.14,
         "casa": "Betfair",
-        "pinn_prob": 86.9
+        "pinn_prob": 87.0
       },
       "dnb_visita": {
-        "value": 0.024,
-        "ev_porcentaje": 2.4,
-        "ev_pinn": 2.4,
+        "value": 0.016,
+        "ev_porcentaje": 1.6,
+        "ev_pinn": 1.6,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 7.8,
         "casa": "Betfair",
-        "pinn_prob": 13.1
+        "pinn_prob": 13.0
       },
       "ah_l_m1_25": {
         "value": -0.018,
@@ -1140,7 +1140,7 @@
     "prediccion_principal": {
       "mercado": "Victoria Local",
       "prob": 70.8,
-      "ev": -1.6
+      "ev": -0.9
     },
     "cuotas_reales": true,
     "confiable": true,
@@ -1189,7 +1189,7 @@
       },
       "handicap": {
         "ah_local_menos05": 70.8,
-        "ah_visita_mas05": 29.1,
+        "ah_visita_mas05": 29.2,
         "ah_local_menos1": 46.0,
         "ah_visita_mas1": 54.0,
         "ah_local_menos15": 32.2,
@@ -1321,9 +1321,9 @@
           "clasificacion": "SIN VALOR"
         },
         "ah_visita_mas05": {
-          "prob_modelo": 29.1,
-          "cuota_justa": 3.44,
-          "cuota_ref": 3.26,
+          "prob_modelo": 29.2,
+          "cuota_justa": 3.42,
+          "cuota_ref": 3.25,
           "ev_porcentaje": -5.1,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
