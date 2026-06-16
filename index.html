@@ -3358,5 +3358,38 @@ function toggleTheme(){
   }
 })();
 </script>
+
+<!-- SharpIQ — Boton flotante Instalar App (PWA) -->
+<button id="sqInstallBtn" style="display:none;position:fixed;bottom:20px;right:20px;z-index:9998;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:30px;padding:13px 22px;font-family:'Orbitron',monospace;font-size:13px;font-weight:700;letter-spacing:.5px;cursor:pointer;box-shadow:0 6px 26px rgba(0,200,255,.45);">&#128241; Instalar App</button>
+
+<div id="sqIosHelp" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(3,6,16,.78);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#111a2e;border:1px solid rgba(0,200,255,.3);border-radius:18px;max-width:340px;padding:26px;text-align:center;font-family:'Inter',sans-serif;color:#eef3fb;box-shadow:0 10px 40px rgba(0,0,0,.5);">
+    <img src="/assets/icon-192.png" alt="SharpIQ" style="width:64px;height:64px;border-radius:14px;margin-bottom:12px;">
+    <h3 style="color:#00C8FF;font-family:'Orbitron',monospace;font-size:15px;margin:0 0 14px;">Instala SharpIQ en tu iPhone</h3>
+    <p style="font-size:14px;line-height:1.7;color:#97a6bd;margin:0;">
+      1) Toca <b style="color:#eef3fb;">Compartir</b> (el cuadro con flecha, abajo en Safari)<br>
+      2) Baja y toca <b style="color:#eef3fb;">&quot;Agregar a inicio&quot;</b><br>
+      3) Toca <b style="color:#eef3fb;">&quot;Agregar&quot;</b>
+    </p>
+    <button onclick="document.getElementById('sqIosHelp').style.display='none'" style="margin-top:18px;background:rgba(0,200,255,.12);border:1px solid rgba(0,200,255,.35);color:#00C8FF;border-radius:9px;padding:10px 22px;font-family:'Orbitron',monospace;font-size:11px;font-weight:700;cursor:pointer;">ENTENDIDO</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('sqInstallBtn'), ios=document.getElementById('sqIosHelp'), deferred=null;
+  if(!btn) return;
+  var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
+  if(standalone) return;                       // ya instalada -> no mostrar boton
+  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred=e; btn.style.display='block'; });
+  if(isIOS) btn.style.display='block';         // iOS no dispara el evento -> mostrar siempre (instrucciones)
+  btn.addEventListener('click', function(){
+    if(deferred){ deferred.prompt(); deferred.userChoice.then(function(){ deferred=null; btn.style.display='none'; }); }
+    else { ios.style.display='flex'; }
+  });
+  window.addEventListener('appinstalled', function(){ btn.style.display='none'; });
+})();
+</script>
 </body>
 </html>
