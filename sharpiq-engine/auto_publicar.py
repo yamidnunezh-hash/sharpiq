@@ -137,7 +137,7 @@ def _dedup_proximos_texto(texto):
             part = _campo(o, 'partido')
             if not part:
                 continue
-            key = (part, _campo(o, 'fecha'))
+            key = (part, _campo(o, 'fecha'), _campo(o, 'prediccion'))
             res = _campo(o, 'resultado')
             if key not in best:
                 best[key] = o; orden.append(key)
@@ -314,8 +314,98 @@ def correr():
         except Exception:
             pass
 
+    # ── DOS PICKS POR PARTIDO DE FUTBOL: SEGURO + RECOMENDADO (sin limite/ventana) ──
+    # Para CADA partido de futbol de HOY que aun no empieza, publica DOS picks:
+    #   - SEGURO      -> mayor probabilidad (la banca, cuota baja)
+    #   - RECOMENDADO -> mejor valor/EV real (mas upside, cuota un poco mas alta)
+    # Sin filtro de ventana ni limite de 3. El producto nunca queda vacio con futbol.
+    # Bloque AUTONOMO y a prueba de fallos: si algo revienta, NO afecta los 3 tiers.
+    _mundial_publicados = 0
+    try:
+        def _dos_picks(_p):
+            _cands = []
+            for _mk, _vb in (_p.get("value_bets") or {}).items():
+                if not _vb:
+                    continue
+                _pr = float(_vb.get("pinn_prob") or 0)
+                _cu = float(_vb.get("cuota") or 0)
+                _e  = _vb.get("ev_pinn")
+                _e  = _e if _e is not None else 0.0
+                if _pr < 40 or _cu < 1.30 or _cu > 3.0:
+                    continue
+                _cands.append((_mk, _vb, _pr, _cu, _e))
+            # SEGURO: mayor probabilidad (banca; cuota <=1.95, EV no muy negativo)
+            _segs = [c for c in _cands if c[2] >= 58 and c[3] <= 1.95 and c[4] >= -2]
+            _seg  = max(_segs, key=lambda c: c[2]) if _segs else None
+            # RECOMENDADO: mejor valor real (EV>=1), distinto mercado al seguro
+            _recs = [c for c in _cands if c[4] >= 1 and c[2] >= 48 and 1.55 <= c[3] <= 2.80]
+            if _seg:
+                _recs = [c for c in _recs if c[0] != _seg[0]]
+            _rec  = max(_recs, key=lambda c: c[4] + c[2] / 100.0) if _recs else None
+            return _seg, _rec
+        _mund_list = []
+        for _p in reporte.get("predicciones", []):
+            if _p.get("confiable") is False:
+                continue
+            if "soccer" not in str(_p.get("liga_code", "")).lower():
+                continue   # solo futbol (excluye NHL/MLB/balonmano)
+            if not _p.get("cuotas_reales"):
+                continue
+            _lg = _p.get("liga", "")
+            if (_p.get("fecha_evento") or _hoy_cot().isoformat()) != _hoy_cot().isoformat():
+                continue
+            if _ya_publicado(_p["local"], _p.get("visitante", "")):
+                continue
+            try:  # descartar si el partido ya empezo (COT)
+                _hh, _mm = (_p.get("hora", "00:00")).split(":")
+                _coth = (int(_hh) - 5 + 24) % 24
+                _ah = datetime.now(timezone.utc).replace(tzinfo=None)
+                if (((_ah.hour - 5) % 24) * 60 + _ah.minute) >= _coth * 60 + int(_mm):
+                    continue
+            except Exception:
+                pass
+            _seg, _rec = _dos_picks(_p)
+            _part = f"{_p['local']} vs {_p['visitante']}"
+            _hcot = _hora_cot(_p.get("hora", "00:00"))
+            _fev  = _p.get("fecha_evento") or _hoy_cot().isoformat()
+            for _et, _tier, _stk in ((_seg, "seguro", 3), (_rec, "alto_valor", 2)):
+                if not _et:
+                    continue
+                _mk2, _vb2 = _et[0], _et[1]
+                _agregar_a_datos_js(
+                    _part, _lg, _vb2.get("mercado_nombre", _mk2), str(_vb2.get("cuota")),
+                    _hcot, round(_vb2.get("ev_pinn") or 0), fecha_evento=_fev,
+                    tier=_tier, stake_pct=_stk, prob=round(_vb2.get("pinn_prob") or 0))
+                _mund_list.append(f"{_part} — {_vb2.get('mercado_nombre', _mk2)} ({_tier})")
+                _mundial_publicados += 1
+                LOG.info(f"datos.js [{_tier}]: {_part} | {_vb2.get('mercado_nombre', _mk2)} @{_vb2.get('cuota')}")
+        if _mundial_publicados:
+            _rd = os.path.join(BASE_DIR, "..")
+            def _gm(*a):
+                return subprocess.run(["git", *a], cwd=_rd, capture_output=True, text=True)
+            _gm("rebase", "--abort")
+            _gm("add", "datos.js", "index.html")
+            _cm = _gm("commit", "-m", f"auto: picks por partido {_hoy_cot().isoformat()}")
+            if "nothing to commit" not in (_cm.stdout + _cm.stderr):
+                for _i in range(3):
+                    if _gm("push", "origin", "main").returncode == 0:
+                        break
+                    if _gm("pull", "--rebase", "origin", "main").returncode != 0:
+                        _gm("rebase", "--abort")
+                        break
+            LOG.info(f"Mundial: {_mundial_publicados} pick(s) publicados a la web")
+            try:
+                from telegram_alertas import enviar_aviso_yamid
+                enviar_aviso_yamid("🌍 <b>Picks de hoy publicados (seguro + recomendado)</b>\n\n"
+                                   + "\n".join(f"• {x}" for x in _mund_list)
+                                   + "\n\n✅ sharpiq.co actualizado")
+            except Exception:
+                pass
+    except Exception as _eM:
+        LOG.error(f"Bloque Mundial error (NO afecta los tiers): {_eM}")
+
     tiene_alguno = any(tiers.get(k) for k in ("seguro", "principal", "alto_valor"))
-    if not tiene_alguno:
+    if not tiene_alguno and not _mundial_publicados:
         # Solo avisar a Yamid UNA vez al día, no en cada turno
         _sin_picks_sent = os.path.join(BASE_DIR_AP, "logs", f"sin_picks_{_hoy_cot().isoformat()}.sent")
         if not os.path.exists(_sin_picks_sent):
