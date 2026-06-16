@@ -322,6 +322,16 @@ def correr():
     # Bloque AUTONOMO y a prueba de fallos: si algo revienta, NO afecta los 3 tiers.
     _mundial_publicados = 0
     try:
+        _NOM = {
+            "victoria_local": "Victoria Local", "empate": "Empate", "victoria_visita": "Victoria Visitante",
+            "over05": "Over 0.5 Goles", "under05": "Under 0.5 Goles", "over15": "Over 1.5 Goles", "under15": "Under 1.5 Goles",
+            "over25": "Over 2.5 Goles", "under25": "Under 2.5 Goles", "over35": "Over 3.5 Goles", "under35": "Under 3.5 Goles",
+            "over45": "Over 4.5 Goles", "under45": "Under 4.5 Goles", "btts_si": "Ambos Marcan", "btts_no": "Ambos No Marcan",
+            "doble_1x": "Doble Oportunidad 1X", "doble_x2": "Doble Oportunidad X2", "doble_12": "Doble Oportunidad 12",
+            "dnb_local": "Draw No Bet Local", "dnb_visita": "Draw No Bet Visitante",
+        }
+        def _nombre(_mk, _vb):
+            return _vb.get("mercado_nombre") or _NOM.get(_mk) or _mk.replace("_", " ").title()
         def _dos_picks(_p):
             _cands = []
             for _mk, _vb in (_p.get("value_bets") or {}).items():
@@ -354,8 +364,8 @@ def correr():
             _lg = _p.get("liga", "")
             if (_p.get("fecha_evento") or _hoy_cot().isoformat()) != _hoy_cot().isoformat():
                 continue
-            if _ya_publicado(_p["local"], _p.get("visitante", "")):
-                continue
+            # (sin filtro _ya_publicado: la dedup por (partido,fecha,prediccion)
+            #  evita repetidos y permite actualizar/completar los 2 picks por partido)
             try:  # descartar si el partido ya empezo (COT)
                 _hh, _mm = (_p.get("hora", "00:00")).split(":")
                 _coth = (int(_hh) - 5 + 24) % 24
@@ -373,7 +383,7 @@ def correr():
                     continue
                 _mk2, _vb2 = _et[0], _et[1]
                 _agregar_a_datos_js(
-                    _part, _lg, _vb2.get("mercado_nombre", _mk2), str(_vb2.get("cuota")),
+                    _part, _lg, _nombre(_mk2, _vb2), str(_vb2.get("cuota")),
                     _hcot, round(_vb2.get("ev_pinn") or 0), fecha_evento=_fev,
                     tier=_tier, stake_pct=_stk, prob=round(_vb2.get("pinn_prob") or 0))
                 _mund_list.append(f"{_part} — {_vb2.get('mercado_nombre', _mk2)} ({_tier})")
