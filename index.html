@@ -1230,8 +1230,9 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
     .lock-title{font-family:'Orbitron',monospace;font-size:18px;font-weight:700;color:var(--t1)}
     .lock-sub{font-size:15px;color:var(--t2);text-align:center;max-width:400px;line-height:1.6}
     /* Liga filter tabs */
-    .liga-filters{display:flex;gap:8px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.01)}
-    .liga-btn{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;padding:5px 13px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s}
+    .liga-filters{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.01)}
+    .liga-filters::-webkit-scrollbar{display:none}
+    .liga-btn{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;padding:5px 13px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s;flex-shrink:0;white-space:nowrap}
     .liga-btn:hover{color:var(--t1);border-color:var(--borderg)}
     .liga-btn:hover{color:var(--t1);border-color:var(--t2)}
     .liga-btn.active{background:rgba(0,200,255,.12);border-color:rgba(0,200,255,.45);color:#00C8FF;font-weight:700}
@@ -1286,7 +1287,7 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
     /* ── PRÓXIMOS EVENTOS ── */
     .upcoming-wrap{background:transparent;border:none;border-radius:16px;overflow:visible;margin-bottom:0}
     .upcoming-header{padding:2px 4px 18px;border-bottom:none;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:transparent}
-    .upcoming-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;background:transparent}
+    .upcoming-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:16px;background:transparent}
     .ev-card{background:var(--card);position:relative;overflow:hidden;display:flex;flex-direction:column;border:1px solid color-mix(in srgb,var(--tier,#00A6FF) 42%,var(--border));border-radius:14px;box-shadow:0 0 0 1px color-mix(in srgb,var(--tier,#00A6FF) 16%,transparent),0 10px 30px rgba(0,0,0,.5);transition:transform .18s ease,box-shadow .18s ease;margin:0}
     .ev-card:hover{transform:translateY(-5px);box-shadow:0 0 26px color-mix(in srgb,var(--tier,#00A6FF) 50%,transparent),0 16px 40px rgba(0,0,0,.6)}
     .ev-card-accent{height:4px;width:100%;flex-shrink:0}
