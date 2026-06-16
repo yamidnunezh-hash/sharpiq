@@ -167,7 +167,7 @@
         "pinnacle_btts_no": 1.89,
         "dnb_local": 1.18,
         "dnb_local_casa": "Pinnacle",
-        "dnb_visita": 6.2,
+        "dnb_visita": 6.0,
         "dnb_visita_casa": "Betfair",
         "ah_l_m1_25": 2.1,
         "ah_l_m1_25_casa": "Pinnacle",
@@ -900,13 +900,13 @@
           "pinn_prob": 83.8
         },
         "dnb_visita": {
-          "value": 0.002,
-          "ev_porcentaje": 0.2,
-          "ev_pinn": 0.2,
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 6.2,
+          "cuota": 6.0,
           "casa": "Betfair",
           "pinn_prob": 16.2
         },
@@ -3001,7 +3001,7 @@
         "under35": 1.36,
         "under35_casa": "Betfair",
         "pinnacle_under35": 1.33,
-        "corners_over_8_5": 2.04,
+        "corners_over_8_5": 2.02,
         "corners_over_8_5_casa": "Betfair",
         "pinnacle_corners_over_8_5": 2.01,
         "corners_under_8_5": 1.85,
@@ -3457,13 +3457,13 @@
           "pinn_prob": 72.2
         },
         "corners_over_8_5": {
-          "value": -0.042,
-          "ev_porcentaje": -4.2,
-          "ev_pinn": -4.2,
+          "value": -0.051,
+          "ev_porcentaje": -5.1,
+          "ev_pinn": -5.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.04,
+          "cuota": 2.02,
           "casa": "Betfair",
           "pinn_prob": 47.0,
           "mercado_nombre": "Corners Over 8.5"
@@ -6767,10 +6767,10 @@
       "hora": "17:00",
       "fecha_evento": "2026-06-16",
       "cuotas": {
-        "2": 3.2,
-        "2_casa": "Betfair",
+        "2": 3.15,
+        "2_casa": "Pinnacle",
         "pinnacle_2": 3.15,
-        "1": 2.26,
+        "1": 2.28,
         "1_casa": "Betfair",
         "pinnacle_1": 2.17,
         "X": 3.85,
@@ -6917,24 +6917,24 @@
       "confianza": 79.5,
       "value_bets": {
         "victoria_visita": {
-          "value": -0.031,
-          "ev_porcentaje": -3.1,
-          "ev_pinn": -3.1,
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.2,
-          "casa": "Betfair",
+          "cuota": 3.15,
+          "casa": "Pinnacle",
           "pinn_prob": 30.3
         },
         "victoria_local": {
-          "value": -0.007,
-          "ev_porcentaje": -0.7,
-          "ev_pinn": -0.7,
+          "value": 0.002,
+          "ev_porcentaje": 0.2,
+          "ev_pinn": 0.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.26,
+          "cuota": 2.28,
           "casa": "Betfair",
           "pinn_prob": 43.9
         },
@@ -9661,7 +9661,7 @@
         "Houston Astros": 1.66,
         "Over 8.0": 1.88,
         "Under 8.0": 1.96,
-        "Detroit Tigers (+1.5)": 1.61,
+        "Detroit Tigers (+1.5)": 1.62,
         "Houston Astros (-1.5)": 2.5
       },
       "probabilidades": {
@@ -9719,14 +9719,14 @@
           "mercado_nombre": "Under 8.0"
         },
         "spread_detroit_tigers_1_5": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.61,
-          "casa": "DraftKings",
+          "cuota": 1.62,
+          "casa": "BetMGM",
           "pinn_prob": 59.8,
           "mercado_nombre": "Detroit Tigers (+1.5)"
         },
@@ -10280,5 +10280,5 @@
       "movimiento": null
     }
   ],
-  "generado": "14:09:58"
+  "generado": "14:10:10"
 }
