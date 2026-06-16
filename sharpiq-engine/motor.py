@@ -3836,7 +3836,23 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         if not value_bets:
             continue
 
-        mejor_mk  = max(value_bets, key=lambda k: value_bets[k].get("ev_pinn") or -999)
+        # Pick principal BALANCEADO (no el longshot de mayor EV).
+        # Antes: max(ev_pinn) -> elegia picks de baja prob (ej. Corners @4.0 al 28%)
+        # que casi siempre pierden. Ahora prioriza picks SOLIDOS: probabilidad alta
+        # (>=50%) + cuota razonable + valor real, premiando el +EV sin que un
+        # longshot gane. Si ninguno es solido, cae al de mayor EV (siempre hay pick).
+        def _score_bal(k):
+            vb = value_bets[k]
+            p  = vb.get("pinn_prob") or 0
+            e  = vb.get("ev_pinn")
+            e  = e if e is not None else 0.0
+            cu = vb.get("cuota") or 0
+            if p < 50 or not (1.35 <= cu <= 2.60) or e < -2:
+                return -999.0
+            return p + max(0.0, e) * 2.0          # prob manda; +EV real da bonus
+        mejor_mk = max(value_bets, key=_score_bal)
+        if _score_bal(mejor_mk) <= -900:          # ningun pick solido -> mejor EV
+            mejor_mk = max(value_bets, key=lambda k: value_bets[k].get("ev_pinn") or -999)
         mejor_vb  = value_bets[mejor_mk]
 
         # Mercados extendidos: corners, tarjetas, remates (API-Football)
