@@ -1,0 +1,97 @@
+name: SharpIQ Resolver (resultados frecuentes)
+
+# Resuelve resultados (W/L) y sincroniza la web (datos.js + index.html)
+# cada 30 minutos -> la tabla publica se actualiza casi al instante tras
+# terminar un evento. Es auto_resultados.py (mismo script probado), NO genera
+# picks nuevos ni manda Telegram. Si no hay nada que resolver, no hace nada.
+
+on:
+  schedule:
+    # Cada 30 min en minutos :07 y :37 (offset, no :00, por fiabilidad del cron)
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Evita que dos resolvedores corran a la vez pisandose
+concurrency:
+  group: sharpiq-resolver
+  cancel-in-progress: false
+
+jobs:
+  resolver:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: pip install requests numpy scipy psycopg2-binary
+
+      - name: Generar config.py
+        env:
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_YAMID_ID: ${{ secrets.TELEGRAM_YAMID_ID }}
+          TELEGRAM_FREE_ID: ${{ secrets.TELEGRAM_FREE_ID }}
+          TELEGRAM_ALERTAS_ID: ${{ secrets.TELEGRAM_ALERTAS_ID }}
+          MP_ACCESS_TOKEN: ${{ secrets.MP_ACCESS_TOKEN }}
+          MP_PUBLIC_KEY: ${{ secrets.MP_PUBLIC_KEY }}
+          MP_CLIENT_ID: ${{ secrets.MP_CLIENT_ID }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_KV_NAMESPACE: ${{ secrets.CF_KV_NAMESPACE }}
+          DATABASE_PUBLIC_URL: ${{ secrets.DATABASE_PUBLIC_URL }}
+        run: |
+          python - << 'EOF'
+          import os
+          cfg = (
+              "import os\n"
+              f"FOOTBALL_DATA_KEY   = {os.environ['FOOTBALL_DATA_KEY']!r}\n"
+              f"ODDS_API_KEY        = {os.environ['ODDS_API_KEY']!r}\n"
+              f"APIFOOTBALL_KEY     = {os.environ['APIFOOTBALL_KEY']!r}\n"
+              f"TELEGRAM_TOKEN      = {os.environ['TELEGRAM_TOKEN']!r}\n"
+              f"TELEGRAM_CHAT_ID    = {os.environ['TELEGRAM_CHAT_ID']!r}\n"
+              f"TELEGRAM_YAMID_ID   = {os.environ['TELEGRAM_YAMID_ID']!r}\n"
+              f"TELEGRAM_FREE_ID    = {os.environ['TELEGRAM_FREE_ID']!r}\n"
+              f"TELEGRAM_ALERTAS_ID = {os.environ.get('TELEGRAM_ALERTAS_ID','')!r}\n"
+              f"PANEL_TOKEN         = 'sharpiq2026'\n"
+              f"VAPID_PUBLIC_KEY    = ''\n"
+              f"VAPID_PRIVATE_PEM   = ''\n"
+              f"VAPID_CLAIMS        = {{'sub': 'mailto:yamidnunezh@gmail.com'}}\n"
+              f"MP_PUBLIC_KEY       = {os.environ['MP_PUBLIC_KEY']!r}\n"
+              f"MP_ACCESS_TOKEN     = {os.environ['MP_ACCESS_TOKEN']!r}\n"
+              f"MP_CLIENT_ID        = {os.environ['MP_CLIENT_ID']!r}\n"
+              f"CF_ACCOUNT_ID       = {os.environ['CF_ACCOUNT_ID']!r}\n"
+              f"CF_API_TOKEN        = {os.environ['CF_API_TOKEN']!r}\n"
+              f"CF_KV_NAMESPACE     = {os.environ['CF_KV_NAMESPACE']!r}\n"
+              f"DATABASE_URL        = {os.environ['DATABASE_PUBLIC_URL']!r}\n"
+              f"DATABASE_PUBLIC_URL = {os.environ['DATABASE_PUBLIC_URL']!r}\n"
+          )
+          open('sharpiq-engine/config.py', 'w').write(cfg)
+          print("config.py generado OK")
+          EOF
+
+      - name: Configurar git
+        run: |
+          git config user.name "SharpIQ Bot"
+          git config user.email "yamidnunezh@gmail.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+      - name: Resolver resultados (datos.js + index.html)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python sharpiq-engine/auto_resultados.py
