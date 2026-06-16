@@ -2621,10 +2621,13 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   // Historial table + filters
   if(typeof PREDICCIONES_HISTORIAL!=='undefined'){
     // Combinar picks de PROXIMOS con resultado + historial completo
-    const _proxResueltos=(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS:[])
-      .filter(p=>p.resultado&&p.resultado!=='pendiente'&&p.resultado!=='pending');
-    const _hcDedup={};[..._proxResueltos,...PREDICCIONES_HISTORIAL].forEach(function(p){var k=(p.partido||'')+'|'+(p.fecha||'');if(!_hcDedup[k])_hcDedup[k]=p;});
-    const _historialCompleto=Object.values(_hcDedup);  // dedup: un pick resuelto vive en proximos Y en historial
+    // Incluir TODOS los picks de proximos (incluidos los de HOY pendientes) + historial.
+    // Dedup por (partido,fecha,prediccion) para que los 2 picks por partido coexistan;
+    // prefiere la version RESUELTA sobre la pendiente.
+    const _proxTodos=(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS:[]);
+    const _isPend0=r=>!r||r==='pending'||r==='pendiente';
+    const _hcDedup={};[..._proxTodos,...PREDICCIONES_HISTORIAL].forEach(function(p){var k=(p.partido||'')+'|'+(p.fecha||'')+'|'+(p.prediccion||'');if(!_hcDedup[k]||(_isPend0(_hcDedup[k].resultado)&&!_isPend0(p.resultado)))_hcDedup[k]=p;});
+    const _historialCompleto=Object.values(_hcDedup);
     renderHistorial(_historialCompleto);
 
     // Filtros combinados: liga + resultado
