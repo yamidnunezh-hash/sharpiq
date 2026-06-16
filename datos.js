@@ -5,6 +5,71 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "16/06/26",
+    partido:    "Austria vs Jordan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.39",
+    hora:       "23:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "71",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "16/06/26",
+    partido:    "Argentina vs Algeria",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Under 8.5 — EV +7%",
+    cuota:      "1.83",
+    hora:       "20:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "58",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "16/06/26",
+    partido:    "Argentina vs Algeria",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.36",
+    hora:       "20:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "72",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "16/06/26",
+    partido:    "Iraq vs Norway",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Tarjetas Under 2.5 — EV +8%",
+    cuota:      "2.2",
+    hora:       "17:05 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "49",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "16/06/26",
+    partido:    "Iraq vs Norway",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Tarjetas Under 3.5",
+    cuota:      "1.51",
+    hora:       "17:05 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "67",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "16/06/26",
     partido:    "Argentina vs Algeria",
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
@@ -40,19 +105,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "1.7",
     prob:       "62",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "16/06/26",
-    partido:    "Austria vs Jordan",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Victoria Local",
-    cuota:      "1.39",
-    hora:       "23:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
     resultado:  "pendiente"
   },
   {
@@ -109,19 +161,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "16/06/26",
-    partido:    "Iraq vs Norway",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Tarjetas Under 3.5",
-    cuota:      "1.54",
-    hora:       "17:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "65",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "16/06/26",
     partido:    "France vs Senegal",
     liga:       "FIFA Mundial 2026",
     prediccion: "Corners Over 8.5 — EV +2%",
@@ -157,19 +196,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "1.8",
     prob:       "58",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "16/06/26",
-    partido:    "Argentina vs Algeria",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 3.5 Goles",
-    cuota:      "1.36",
-    hora:       "20:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
     resultado:  "pendiente"
   },
   {
