@@ -7,6 +7,32 @@ const PROXIMOS_EVENTOS = [
     fecha:      "16/06/26",
     partido:    "Austria vs Jordan",
     liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.4",
+    hora:       "23:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "1.0",
+    prob:       "71",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "16/06/26",
+    partido:    "Iraq vs Norway",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Over 8.5 — EV +3%",
+    cuota:      "1.74",
+    hora:       "17:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.8",
+    prob:       "59",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "16/06/26",
+    partido:    "Austria vs Jordan",
+    liga:       "FIFA Mundial 2026",
     prediccion: "victoria_local",
     cuota:      "1.4",
     hora:       "23:00 COT",
@@ -40,19 +66,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "16/06/26",
-    partido:    "Iraq vs Norway",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Corners Over 8.5 — EV +3%",
-    cuota:      "1.74",
-    hora:       "17:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "59",
     resultado:  "pendiente"
   },
   {
