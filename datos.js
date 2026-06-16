@@ -4,6 +4,32 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "17/06/26",
+    partido:    "Portugal vs DR Congo",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Visitante +2.25",
+    cuota:      "1.44",
+    hora:       "12:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "1.0",
+    prob:       "68",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "16/06/26",
+    partido:    "Austria vs Jordan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.43",
+    hora:       "23:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "1.0",
+    prob:       "69",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "16/06/26",
     partido:    "Austria vs Jordan",
     liga:       "FIFA Mundial 2026",
@@ -40,32 +66,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "67",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "17/06/26",
-    partido:    "Portugal vs DR Congo",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Hándicap Visitante +2.25",
-    cuota:      "1.44",
-    hora:       "12:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "68",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "16/06/26",
-    partido:    "Austria vs Jordan",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 3.5 Goles",
-    cuota:      "1.43",
-    hora:       "23:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "69",
     resultado:  "pendiente"
   },
   {
