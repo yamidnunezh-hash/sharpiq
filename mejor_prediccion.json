@@ -5,7 +5,7 @@
   "visitante": "Jordan",
   "prediccion": "under15",
   "mercado_key": "under15",
-  "cuota": "1.4",
+  "cuota": "1.39",
   "casa": "Betfair",
   "hora_utc": "04:00",
   "hora_cot": "23:00 COT",
@@ -22,7 +22,7 @@
     "hora": "04:00",
     "fecha_evento": "2026-06-16",
     "cuotas": {
-      "1": 1.4,
+      "1": 1.39,
       "1_casa": "Betfair",
       "pinnacle_1": 1.38,
       "2": 9.6,
@@ -310,13 +310,13 @@
     "confianza": 86.9,
     "value_bets": {
       "victoria_local": {
-        "value": -0.009,
-        "ev_porcentaje": -0.9,
-        "ev_pinn": -0.9,
+        "value": -0.016,
+        "ev_porcentaje": -1.6,
+        "ev_pinn": -1.6,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.4,
+        "cuota": 1.39,
         "casa": "Betfair",
         "pinn_prob": 70.8
       },
@@ -1140,7 +1140,7 @@
     "prediccion_principal": {
       "mercado": "Victoria Local",
       "prob": 70.8,
-      "ev": -0.9
+      "ev": -1.6
     },
     "cuotas_reales": true,
     "confiable": true,
