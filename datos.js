@@ -14,7 +14,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "1.0",
     prob:       "46",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "17/06/26",
@@ -792,6 +792,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "17/06/26",
+    partido:    "Connecticut Sun vs Washington Mystics",
+    liga:       "WNBA",
+    prediccion: "Gana Connecticut Sun — EV +2%",
+    cuota:      "2.25",
+    prob:       "46",
+    resultado:  "win"
+  },
   {
     fecha:      "16/06/26",
     partido:    "Iraq vs Norway",
