@@ -1,22 +1,6 @@
 {
-  "updated": "2026-06-17T13:02:20Z",
+  "updated": "2026-06-17T16:42:44Z",
   "live": [
-    {
-      "id": "4437949903758512e22e061e7d49dc48",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Atlanta Braves",
-      "away": "San Francisco Giants",
-      "fecha": "16/06/26",
-      "hora": "18:16 COT",
-      "ts": 1781633805,
-      "completed": false,
-      "score_home": "2",
-      "score_away": "3"
-    }
-  ],
-  "upcoming": [
     {
       "id": "93a412d9ba2735490b741d924fea7ef1",
       "sport": "baseball_mlb",
@@ -28,9 +12,11 @@
       "hora": "11:41 COT",
       "ts": 1781696460,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "6cc871c121a1869b4612d3fb22fa9d55",
       "sport": "soccer_fifa_world_cup",
@@ -223,6 +209,20 @@
       "fecha": "17/06/26",
       "hora": "18:41 COT",
       "ts": 1781721660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "3c667b5e84c7e18c7697c0f83852679a",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago Cubs",
+      "away": "Colorado Rockies",
+      "fecha": "17/06/26",
+      "hora": "19:06 COT",
+      "ts": 1781723160,
       "completed": false,
       "score_home": null,
       "score_away": null
