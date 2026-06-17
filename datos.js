@@ -105,7 +105,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "75",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "17/06/26",
@@ -118,7 +119,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "68",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "17/06/26",
@@ -711,6 +713,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "17/06/26",
+    partido:    "Portugal vs DR Congo",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.31",
+    prob:       "75",
+    resultado:  "loss",
+    resultado:  "win"
+  },
   {
     fecha:      "17/06/26",
     partido:    "Connecticut Sun vs Washington Mystics",
