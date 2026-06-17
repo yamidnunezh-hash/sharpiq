@@ -5,6 +5,45 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "17/06/26",
+    partido:    "Uzbekistan vs Colombia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.39",
+    hora:       "21:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "71",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "17/06/26",
+    partido:    "Ghana vs Panama",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos Marcan — EV +1%",
+    cuota:      "2.06",
+    hora:       "18:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "49",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "17/06/26",
+    partido:    "Ghana vs Panama",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.48",
+    hora:       "18:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "66",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "17/06/26",
     partido:    "England vs Croatia",
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Asiático Visitante +1.5",
@@ -30,19 +69,6 @@ const PROXIMOS_EVENTOS = [
     resultado:  "pendiente"
   },
   {
-    fecha:      "17/06/26",
-    partido:    "Ghana vs Panama",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Corners Over 10.5 — EV +9%",
-    cuota:      "3.5",
-    hora:       "18:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "1.8",
-    prob:       "31",
-    resultado:  "pendiente"
-  },
-  {
     fecha:      "18/06/26",
     partido:    "Czech Republic vs South Africa",
     liga:       "FIFA Mundial 2026",
@@ -53,32 +79,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "71",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "17/06/26",
-    partido:    "Uzbekistan vs Colombia",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 3.5 Goles",
-    cuota:      "1.39",
-    hora:       "21:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "17/06/26",
-    partido:    "Ghana vs Panama",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Over 1.5 Goles",
-    cuota:      "1.48",
-    hora:       "18:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "66",
     resultado:  "pendiente"
   },
   {
