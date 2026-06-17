@@ -120,9 +120,12 @@ def _hora_cot(hora_utc):
 
 
 def _dedup_proximos_texto(texto):
-    """Quita entradas duplicadas de PROXIMOS_EVENTOS por (partido, fecha).
-    Conserva la PRIMERA (la mas reciente, que se prepende) o la que tenga
-    resultado win/loss si existe. Evita picks repetidos en la web."""
+    """Dedup + limpieza de PROXIMOS_EVENTOS. Solo afecta PENDIENTES; los
+    resueltos (win/loss) se conservan intactos para el historial. Reglas:
+      - colapsa el MISMO mercado aunque cambie el sufijo '— EV +X%'
+      - tarjetas FUERA (mercado demasiado volatil; decision de producto)
+      - maximo 2 picks por (partido, fecha): 1 SEGURO + 1 RECOMENDADO
+    Evita picks repetidos/saturados en la web."""
     try:
         m = re.search(r'(const\s+PROXIMOS_EVENTOS\s*=\s*\[)(.*?)(\];)', texto, re.S)
         if not m:
@@ -132,20 +135,43 @@ def _dedup_proximos_texto(texto):
         def _campo(o, k):
             mm = re.search(k + r'\s*:\s*["\']([^"\']*)["\']', o)
             return mm.group(1) if mm else ""
+        def _norm_pred(o):
+            # quita ' — EV +X%' para que el mismo mercado no se duplique entre corridas
+            return re.sub(r'\s*[-—]\s*EV\s*[+\-]?[0-9.]+%', '',
+                          _campo(o, 'prediccion')).strip().lower()
+        def _es_pend(o):
+            return _campo(o, 'resultado') in ('', 'pendiente', 'pending')
+        # 1) dedup por (partido, fecha, mercado-normalizado); prefiere el resuelto
         best = {}; orden = []
         for o in objs:
             part = _campo(o, 'partido')
             if not part:
                 continue
-            key = (part, _campo(o, 'fecha'), _campo(o, 'prediccion'))
+            key = (part, _campo(o, 'fecha'), _norm_pred(o))
             res = _campo(o, 'resultado')
             if key not in best:
                 best[key] = o; orden.append(key)
             elif res in ('win', 'loss') and _campo(best[key], 'resultado') not in ('win', 'loss'):
                 best[key] = o
-        kept = [best[k] for k in orden]
+        objs2 = [best[k] for k in orden]
+        # 2) tarjetas FUERA (solo pendientes; los resueltos se quedan por integridad)
+        objs2 = [o for o in objs2
+                 if not (_es_pend(o) and 'tarjeta' in _campo(o, 'prediccion').lower())]
+        # 3) maximo 2 PENDIENTES por (partido, fecha): SEGURO + RECOMENDADO(alto_valor)
+        _TIER_ORD = {'seguro': 0, 'alto_valor': 1, 'principal': 2}
+        _pend_grp = {}
+        for i, o in enumerate(objs2):
+            if _es_pend(o):
+                g = (_campo(o, 'partido'), _campo(o, 'fecha'))
+                _pend_grp.setdefault(g, []).append(i)
+        _keep = set()
+        for g, idxs in _pend_grp.items():
+            idxs.sort(key=lambda i: (_TIER_ORD.get(_campo(objs2[i], 'tier'), 9), i))
+            for i in idxs[:2]:
+                _keep.add(i)
+        kept = [o for i, o in enumerate(objs2) if (not _es_pend(o)) or (i in _keep)]
         if len(kept) == len(objs):
-            return texto   # sin duplicados, no tocar
+            return texto   # nada que limpiar
         nuevo_body = "\n  " + ",\n  ".join(kept) + "\n"
         return texto[:m.start()] + head + nuevo_body + tail + texto[m.end():]
     except Exception:
@@ -337,6 +363,8 @@ def correr():
             for _mk, _vb in (_p.get("value_bets") or {}).items():
                 if not _vb:
                     continue
+                if _mk.startswith("cards_"):
+                    continue   # tarjetas FUERA: mercado volatil, no se puede prever
                 _pr = float(_vb.get("pinn_prob") or 0)
                 _cu = float(_vb.get("cuota") or 0)
                 _e  = _vb.get("ev_pinn")
@@ -344,8 +372,10 @@ def correr():
                 if _pr < 40 or _cu < 1.30 or _cu > 3.0:
                     continue
                 _cands.append((_mk, _vb, _pr, _cu, _e))
-            # SEGURO: mayor probabilidad (banca; cuota <=1.95, EV no muy negativo)
-            _segs = [c for c in _cands if c[2] >= 58 and c[3] <= 1.95 and c[4] >= -2]
+            # SEGURO: mayor probabilidad (banca; cuota <=1.95, EV no muy negativo).
+            # Nunca corners como SEGURO (mercado menos predecible) -> solo mercados solidos.
+            _segs = [c for c in _cands if c[2] >= 58 and c[3] <= 1.95 and c[4] >= -2
+                     and not c[0].startswith("corners_")]
             _seg  = max(_segs, key=lambda c: c[2]) if _segs else None
             # RECOMENDADO: mejor valor real (EV>=1), distinto mercado al seguro
             _recs = [c for c in _cands if c[4] >= 1 and c[2] >= 48 and 1.55 <= c[3] <= 2.80]
@@ -413,6 +443,15 @@ def correr():
                 pass
     except Exception as _eM:
         LOG.error(f"Bloque Mundial error (NO afecta los tiers): {_eM}")
+
+    # Tarjetas FUERA tambien del VIP de Telegram (mercado volatil, decision de producto)
+    for _k in ("seguro", "principal", "alto_valor"):
+        _t = tiers.get(_k)
+        if _t and "tarjeta" in str(_t.get("mercado_nombre", "")).lower():
+            tiers[_k] = None
+    if tiers.get("extra"):
+        tiers["extra"] = [x for x in tiers["extra"]
+                          if "tarjeta" not in str(x.get("mercado_nombre", "")).lower()]
 
     tiene_alguno = any(tiers.get(k) for k in ("seguro", "principal", "alto_valor"))
     if not tiene_alguno and not _mundial_publicados:
@@ -495,6 +534,10 @@ def correr():
     _items += [(_t.get("tier", "principal"), _t) for _t in (tiers.get("extra") or [])]
     for k, t in _items:
         if not t:
+            continue
+        # El futbol lo publica el bloque de 2 picks por partido (fuente unica) ->
+        # aqui solo van los NO-futbol (NHL/MLB/etc), para no duplicar picks en la web.
+        if "soccer" in str(t.get("pred", {}).get("liga_code", "")).lower():
             continue
         pred      = t["pred"]
         partido   = f"{pred['local']} vs {pred['visitante']}"
