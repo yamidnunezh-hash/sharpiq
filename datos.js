@@ -5,6 +5,19 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "17/06/26",
+    partido:    "Portugal vs DR Congo",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.45",
+    hora:       "12:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "1.0",
+    prob:       "68",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "17/06/26",
     partido:    "Uzbekistan vs Colombia",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
@@ -93,19 +106,6 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "1.0",
     prob:       "46",
     resultado:  "win"
-  },
-  {
-    fecha:      "17/06/26",
-    partido:    "Portugal vs DR Congo",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 3.5 Goles",
-    cuota:      "1.44",
-    hora:       "12:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "69",
-    resultado:  "pendiente"
   },
   {
     fecha:      "17/06/26",
