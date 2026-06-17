@@ -20,13 +20,13 @@ const PROXIMOS_EVENTOS = [
     fecha:      "17/06/26",
     partido:    "Ghana vs Panama",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Ambos Marcan — EV +1%",
-    cuota:      "2.06",
+    prediccion: "Hándicap Visitante +0.75",
+    cuota:      "1.46",
     hora:       "18:00 COT",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "49",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "67",
     resultado:  "pendiente"
   },
   {
