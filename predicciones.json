@@ -132,7 +132,7 @@
         "cards_over_2_5": 2.04,
         "cards_over_2_5_casa": "Betfair",
         "pinnacle_cards_over_2_5": 1.91,
-        "cards_under_2_5": 1.95,
+        "cards_under_2_5": 1.91,
         "cards_under_2_5_casa": "Betfair",
         "pinnacle_cards_under_2_5": 1.91,
         "cards_over_1_5": 1.29,
@@ -167,7 +167,7 @@
         "pinnacle_btts_no": 1.65,
         "dnb_local": 1.09,
         "dnb_local_casa": "Betfair",
-        "dnb_visita": 12.0,
+        "dnb_visita": 11.5,
         "dnb_visita_casa": "Betfair",
         "ah_l_m1_5": 1.88,
         "ah_l_m1_5_casa": "Pinnacle",
@@ -759,13 +759,13 @@
           "mercado_nombre": "Tarjetas Over 2.5"
         },
         "cards_under_2_5": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.045,
+          "ev_porcentaje": -4.5,
+          "ev_pinn": -4.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
+          "cuota": 1.91,
           "casa": "Betfair",
           "pinn_prob": 50.0,
           "mercado_nombre": "Tarjetas Under 2.5"
@@ -900,13 +900,13 @@
           "pinn_prob": 91.0
         },
         "dnb_visita": {
-          "value": 0.086,
-          "ev_porcentaje": 8.6,
-          "ev_pinn": 8.6,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "VALOR",
-          "cuota": 12.0,
+          "value": 0.04,
+          "ev_porcentaje": 4.0,
+          "ev_pinn": 4.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 11.5,
           "casa": "Betfair",
           "pinn_prob": 9.0
         },
@@ -1625,7 +1625,7 @@
         "btts_si": 2.08,
         "btts_si_casa": "Betfair",
         "pinnacle_btts_si": 1.97,
-        "btts_no": 1.91,
+        "btts_no": 1.9,
         "btts_no_casa": "Betfair",
         "pinnacle_btts_no": 1.85,
         "dnb_local": 1.3,
@@ -2337,13 +2337,13 @@
           "pinn_prob": 48.4
         },
         "btts_no": {
-          "value": -0.015,
-          "ev_porcentaje": -1.5,
-          "ev_pinn": -1.5,
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
+          "cuota": 1.9,
           "casa": "Betfair",
           "pinn_prob": 51.6
         },
@@ -8218,7 +8218,7 @@
       "hora": "18:00",
       "fecha_evento": "2026-06-17",
       "cuotas": {
-        "1": 2.52,
+        "1": 2.5,
         "1_casa": "Betfair",
         "pinnacle_1": 2.45,
         "2": 2.94,
@@ -8376,13 +8376,13 @@
       "confianza": 84.3,
       "value_bets": {
         "victoria_local": {
-          "value": -0.004,
-          "ev_porcentaje": -0.4,
-          "ev_pinn": -0.4,
+          "value": -0.012,
+          "ev_porcentaje": -1.2,
+          "ev_pinn": -1.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.52,
+          "cuota": 2.5,
           "casa": "Betfair",
           "pinn_prob": 39.5
         },
@@ -12161,5 +12161,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:00:52"
+  "generado": "16:01:02"
 }
