@@ -53,7 +53,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "69",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "17/06/26",
@@ -92,7 +93,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "17/06/26",
@@ -713,6 +715,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "17/06/26",
+    partido:    "England vs Croatia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Asiático Visitante +1.5",
+    cuota:      "1.41",
+    prob:       "69",
+    resultado:  "loss",
+    resultado:  "win"
+  },
   {
     fecha:      "17/06/26",
     partido:    "Portugal vs DR Congo",
