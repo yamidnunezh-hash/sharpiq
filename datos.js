@@ -4,6 +4,32 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "17/06/26",
+    partido:    "Ghana vs Panama",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.5",
+    hora:       "18:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "1.0",
+    prob:       "66",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "17/06/26",
+    partido:    "England vs Croatia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Under 10.5 — EV +2%",
+    cuota:      "1.5",
+    hora:       "15:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "2.4",
+    prob:       "68",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "16/06/26",
     partido:    "Austria vs Jordan",
     liga:       "FIFA Mundial 2026",
