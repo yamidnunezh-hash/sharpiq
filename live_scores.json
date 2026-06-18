@@ -1,22 +1,6 @@
 {
-  "updated": "2026-06-17T22:57:29Z",
+  "updated": "2026-06-18T00:19:32Z",
   "live": [
-    {
-      "id": "1b3b5ac473b471165355ca855853dbb2",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Boston Red Sox",
-      "away": "Toronto Blue Jays",
-      "fecha": "17/06/26",
-      "hora": "17:56 COT",
-      "ts": 1781718960,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    }
-  ],
-  "upcoming": [
     {
       "id": "87afdb85c977b451e1c00f5e3e632601",
       "sport": "soccer_fifa_world_cup",
@@ -28,8 +12,22 @@
       "hora": "18:00 COT",
       "ts": 1781719200,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
+    },
+    {
+      "id": "1b3b5ac473b471165355ca855853dbb2",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Boston Red Sox",
+      "away": "Toronto Blue Jays",
+      "fecha": "17/06/26",
+      "hora": "18:01 COT",
+      "ts": 1781719260,
+      "completed": false,
+      "score_home": "0",
+      "score_away": "2"
     },
     {
       "id": "9cfb18a4e0091ae6c9ccb03c48deb277",
@@ -39,11 +37,11 @@
       "home": "New York Yankees",
       "away": "Chicago White Sox",
       "fecha": "17/06/26",
-      "hora": "18:06 COT",
-      "ts": 1781719560,
+      "hora": "18:08 COT",
+      "ts": 1781719680,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "4",
+      "score_away": "3"
     },
     {
       "id": "a834545628bda1d53eb52e89728b336f",
@@ -53,11 +51,11 @@
       "home": "Atlanta Braves",
       "away": "San Francisco Giants",
       "fecha": "17/06/26",
-      "hora": "18:15 COT",
-      "ts": 1781720100,
+      "hora": "18:16 COT",
+      "ts": 1781720203,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "5"
     },
     {
       "id": "4d8279537f3ea7c4d1d53160da26d2c6",
@@ -70,8 +68,8 @@
       "hora": "18:41 COT",
       "ts": 1781721660,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "5",
+      "score_away": "0"
     },
     {
       "id": "3c667b5e84c7e18c7697c0f83852679a",
@@ -84,9 +82,11 @@
       "hora": "19:06 COT",
       "ts": 1781723160,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "ab9ae62c321b17a5d765118cc9bb3fbf",
       "sport": "baseball_mlb",
@@ -223,6 +223,76 @@
       "fecha": "18/06/26",
       "hora": "17:00 COT",
       "ts": 1781802000,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "7fc018ccf3790baea15d29b581f9d0ce",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Philadelphia Phillies",
+      "away": "New York Mets",
+      "fecha": "18/06/26",
+      "hora": "17:41 COT",
+      "ts": 1781804460,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "adfa73cc70f5a62d6d0bb903eaa0f24b",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "New York Yankees",
+      "away": "Chicago White Sox",
+      "fecha": "18/06/26",
+      "hora": "18:06 COT",
+      "ts": 1781805960,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "e92122c8f905eb41a57faabf21daf468",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Atlanta Braves",
+      "away": "San Francisco Giants",
+      "fecha": "18/06/26",
+      "hora": "18:16 COT",
+      "ts": 1781806560,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "13234b203ca4ea57ec2f1381b3e6a046",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Kansas City Royals",
+      "away": "St. Louis Cardinals",
+      "fecha": "18/06/26",
+      "hora": "18:41 COT",
+      "ts": 1781808060,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "7e790e388d816ec864b87ea7d0bf140d",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Sport Recife",
+      "away": "Atletico Goianiense",
+      "fecha": "18/06/26",
+      "hora": "19:00 COT",
+      "ts": 1781809200,
       "completed": false,
       "score_home": null,
       "score_away": null
