@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SharpIQ — Iniciar sesión</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root{--bg:#0a0e1a;--card:#111a2e;--gold:#00C8FF;--purple:#7B5CF0;--border:rgba(0,200,255,.18);--t1:#eef3fb;--t2:#97a6bd;--t3:#94a3b8;--green:#22c55e;--red:#ef4444}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -14,28 +14,28 @@
     body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 80% 80%,rgba(123,92,240,.05) 0%,transparent 50%);pointer-events:none}
     .wrap{width:100%;max-width:420px;position:relative;z-index:1}
     .logo{text-align:center;margin-bottom:44px}
-    .logo-text{font-family:'Orbitron',monospace;font-size:2.2rem;font-weight:900;letter-spacing:4px;color:#fff}
+    .logo-text{font-family:'Inter',sans-serif;font-size:2.2rem;font-weight:900;letter-spacing:4px;color:#fff}
     .logo-text span{color:var(--gold)}
-    .logo-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-top:8px}
+    .logo-tag{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-top:8px}
     .card{background:rgba(8,15,28,.85);border:1px solid var(--border);border-radius:16px;padding:36px 32px;backdrop-filter:blur(20px)}
-    .card-title{font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:700;text-align:center;margin-bottom:6px}
-    .card-sub{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);text-align:center;margin-bottom:32px}
+    .card-title{font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:700;text-align:center;margin-bottom:6px}
+    .card-sub{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);text-align:center;margin-bottom:32px}
     .field{margin-bottom:16px}
-    .field label{display:block;font-size:11px;font-family:'Space Mono',monospace;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+    .field label{display:block;font-size:11px;font-family:'Inter',sans-serif;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
     .input-wrap{position:relative}
     .input-wrap input{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:14px 48px 14px 18px;font-size:15px;color:var(--t1);font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
     .input-wrap input:focus{border-color:rgba(0,200,255,.45);background:rgba(0,200,255,.03)}
     .eye{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--t3);padding:4px;line-height:1;font-size:16px}
-    .btn{width:100%;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:10px;padding:15px;font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:opacity .2s,transform .1s;margin-top:8px}
+    .btn{width:100%;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:10px;padding:15px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:opacity .2s,transform .1s;margin-top:8px}
     .btn:hover{opacity:.92}
     .btn:active{transform:scale(.98)}
     .btn:disabled{opacity:.5;cursor:not-allowed}
-    .err{color:var(--red);font-size:12px;font-family:'Space Mono',monospace;text-align:center;margin-top:14px;display:none;padding:10px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px}
-    .links{text-align:center;margin-top:24px;font-family:'Space Mono',monospace;font-size:11px;color:var(--t3)}
+    .err{color:var(--red);font-size:12px;font-family:'Inter',sans-serif;text-align:center;margin-top:14px;display:none;padding:10px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px}
+    .links{text-align:center;margin-top:24px;font-family:'Inter',sans-serif;font-size:11px;color:var(--t3)}
     .links a{color:var(--gold);text-decoration:none}
     .divider{display:flex;align-items:center;gap:12px;margin:20px 0}
     .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
-    .divider span{font-family:'Space Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px}
+    .divider span{font-family:'Inter',sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px}
   </style>
 </head>
 <body>
@@ -75,8 +75,8 @@
   </div>
 
   <div style="margin-top:20px;text-align:center">
-    <div style="font-family:'Space Mono',monospace;font-size:11px;color:#475569;margin-bottom:12px">— o suscríbete directamente —</div>
-    <button onclick="irAPago(this)" style="width:100%;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:10px;padding:14px;font-family:'Orbitron',monospace;font-size:11px;font-weight:700;cursor:pointer;letter-spacing:2px">
+    <div style="font-family:'Inter',sans-serif;font-size:11px;color:#475569;margin-bottom:12px">— o suscríbete directamente —</div>
+    <button onclick="irAPago(this)" style="width:100%;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:10px;padding:14px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;cursor:pointer;letter-spacing:2px">
       ACTIVAR VIP — $60.000 COP/mes
     </button>
   </div>

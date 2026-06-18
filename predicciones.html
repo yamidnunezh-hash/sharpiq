@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SharpIQ — Motor de Predicciones</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --cyan:   #00C8FF;
@@ -39,18 +39,18 @@
     backdrop-filter: blur(12px);
   }
   .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .logo-text { font-family:'Orbitron',monospace; font-size:1.2rem; font-weight:900; color:#fff; letter-spacing:3px; }
+  .logo-text { font-family:'Inter',sans-serif; font-size:1.2rem; font-weight:900; color:#fff; letter-spacing:3px; }
   .logo-text span { color: var(--cyan); }
   .header-right { display: flex; align-items: center; gap: 12px; }
   .badge-engine {
     background: rgba(0,200,255,0.1); border: 1px solid rgba(0,200,255,0.3);
     color: var(--cyan); padding: 4px 10px; border-radius: 20px;
-    font-family:'Space Mono',monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px;
+    font-family:'Inter',sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px;
   }
   #btn-refresh {
     background: linear-gradient(135deg, var(--cyan), var(--purple));
     color: #fff; border: none; padding: 7px 18px; border-radius: 8px;
-    font-family:'Orbitron',monospace; font-weight: 700; cursor: pointer;
+    font-family:'Inter',sans-serif; font-weight: 700; cursor: pointer;
     font-size: 0.72rem; letter-spacing: 1px; transition: opacity 0.2s;
   }
   #btn-refresh:hover { opacity: 0.85; }
@@ -65,7 +65,7 @@
   }
   .stat { text-align: center; white-space: nowrap; }
   .stat-n { font-size: 1.4rem; font-weight: 800; color: var(--cyan); }
-  .stat-l { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; font-family:'Space Mono',monospace; }
+  .stat-l { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; font-family:'Inter',sans-serif; }
 
   .toolbar {
     padding: 12px 24px;
@@ -73,7 +73,7 @@
     border-bottom: 1px solid rgba(255,255,255,0.04);
     position: relative; z-index: 1;
   }
-  .tb-label { color: var(--dim); font-size: 0.75rem; font-family:'Space Mono',monospace; }
+  .tb-label { color: var(--dim); font-size: 0.75rem; font-family:'Inter',sans-serif; }
   .f-btn {
     background: var(--bg3); border: 1px solid rgba(255,255,255,0.08);
     color: var(--muted); padding: 5px 14px; border-radius: 20px;
@@ -99,8 +99,8 @@
     display: flex; justify-content: space-between; align-items: center;
     border-bottom: 1px solid var(--border);
   }
-  .ch-liga { font-size: 0.7rem; font-weight: 700; color: var(--cyan); text-transform: uppercase; letter-spacing: 1px; font-family:'Space Mono',monospace; }
-  .ch-hora { color: var(--muted); font-size: 0.7rem; font-family:'Space Mono',monospace; }
+  .ch-liga { font-size: 0.7rem; font-weight: 700; color: var(--cyan); text-transform: uppercase; letter-spacing: 1px; font-family:'Inter',sans-serif; }
+  .ch-hora { color: var(--muted); font-size: 0.7rem; font-family:'Inter',sans-serif; }
 
   .cb { padding: 14px; }
 
@@ -110,7 +110,7 @@
   }
   .eq { text-align: center; flex: 1; }
   .eq-n { font-size: 0.8rem; font-weight: 600; line-height: 1.3; }
-  .vs-txt { color: var(--dim); font-size: 0.72rem; font-weight: 700; flex-shrink: 0; font-family:'Space Mono',monospace; }
+  .vs-txt { color: var(--dim); font-size: 0.72rem; font-weight: 700; flex-shrink: 0; font-family:'Inter',sans-serif; }
 
   .pbar-wrap { margin-bottom: 12px; }
   .pbar-lbls { display: flex; justify-content: space-between; font-size: 0.66rem; color: var(--muted); margin-bottom: 4px; }
@@ -135,9 +135,9 @@
     border-radius: 7px; padding: 7px 11px;
     display: flex; justify-content: space-between; align-items: center; margin-bottom: 9px;
   }
-  .pred-lbl { font-size: 0.66rem; color: var(--muted); font-family:'Space Mono',monospace; }
+  .pred-lbl { font-size: 0.66rem; color: var(--muted); font-family:'Inter',sans-serif; }
   .pred-m { font-size: 0.82rem; font-weight: 700; }
-  .conf { background: rgba(0,200,255,0.1); color: var(--cyan); border: 1px solid rgba(0,200,255,0.25); border-radius: 5px; padding: 2px 9px; font-size: 0.7rem; font-weight: 700; font-family:'Space Mono',monospace; }
+  .conf { background: rgba(0,200,255,0.1); color: var(--cyan); border: 1px solid rgba(0,200,255,0.25); border-radius: 5px; padding: 2px 9px; font-size: 0.7rem; font-weight: 700; font-family:'Inter',sans-serif; }
 
   .vbets { display: flex; flex-direction: column; gap: 5px; }
   .vb {
@@ -158,7 +158,7 @@
     width: 100%; margin-top: 10px; padding: 9px;
     background: linear-gradient(135deg, var(--cyan), var(--purple));
     color: #fff; border: none; border-radius: 8px;
-    font-family:'Orbitron',monospace; font-weight: 700; font-size: 0.72rem;
+    font-family:'Inter',sans-serif; font-weight: 700; font-size: 0.72rem;
     cursor: pointer; letter-spacing: 1px; transition: opacity 0.2s, transform 0.1s;
   }
   .btn-publicar:hover { opacity: 0.85; transform: translateY(-1px); }
@@ -177,8 +177,8 @@
     border-radius: 16px; padding: 24px; width: 420px; max-width: 95vw;
     backdrop-filter: blur(20px);
   }
-  .modal h3 { font-family:'Orbitron',monospace; color: var(--cyan); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 1px; }
-  .modal label { display: block; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-family:'Space Mono',monospace; margin-bottom: 4px; margin-top: 12px; }
+  .modal h3 { font-family:'Inter',sans-serif; color: var(--cyan); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 1px; }
+  .modal label { display: block; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-family:'Inter',sans-serif; margin-bottom: 4px; margin-top: 12px; }
   .modal input, .modal select {
     width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border);
     border-radius: 8px; padding: 9px 12px; color: var(--text); font-size: 0.85rem; font-family:'Inter',sans-serif;
@@ -186,7 +186,7 @@
   .modal input:focus, .modal select:focus { outline: none; border-color: rgba(0,200,255,0.5); }
   .modal-btns { display: flex; gap: 10px; margin-top: 20px; }
   .modal-btns button { flex: 1; padding: 10px; border-radius: 8px; font-weight: 700; cursor: pointer; border: none; font-size: 0.85rem; }
-  .btn-confirmar { background: linear-gradient(135deg,var(--cyan),var(--purple)); color:#fff; font-family:'Orbitron',monospace; font-size:0.72rem; letter-spacing:1px; }
+  .btn-confirmar { background: linear-gradient(135deg,var(--cyan),var(--purple)); color:#fff; font-family:'Inter',sans-serif; font-size:0.72rem; letter-spacing:1px; }
   .btn-cancelar { background: rgba(255,255,255,0.06); color: var(--muted); border: 1px solid rgba(255,255,255,0.1) !important; }
 
   #loading { display:none; text-align:center; padding:50px; color:var(--muted); position:relative;z-index:1; }
@@ -198,7 +198,7 @@
     border-top: 1px solid rgba(0,200,255,0.08);
     padding: 14px 24px; color: var(--dim); font-size: 0.7rem;
     display: flex; justify-content: space-between; align-items: center;
-    font-family:'Space Mono',monospace; position:relative;z-index:1;
+    font-family:'Inter',sans-serif; position:relative;z-index:1;
   }
 
   /* BANNER RECOMENDACIÓN */
@@ -212,14 +212,14 @@
     gap: 14px; flex-wrap: wrap; position:relative;z-index:1;
   }
   #banner-rec .rec-left { display: flex; flex-direction: column; gap: 4px; }
-  #banner-rec .rec-tag { font-size: 0.62rem; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 1.5px; font-family:'Space Mono',monospace; }
+  #banner-rec .rec-tag { font-size: 0.62rem; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 1.5px; font-family:'Inter',sans-serif; }
   #banner-rec .rec-partido { font-size: 0.95rem; font-weight: 700; color: #fff; }
   #banner-rec .rec-det { font-size: 0.78rem; color: var(--muted); }
   #banner-rec .rec-det strong { color: var(--green); }
   #banner-rec .btn-rec {
     background: linear-gradient(135deg, var(--cyan), var(--purple));
     color: #fff; border: none; border-radius: 8px;
-    padding: 10px 22px; font-family:'Orbitron',monospace; font-weight: 700; font-size: 0.72rem;
+    padding: 10px 22px; font-family:'Inter',sans-serif; font-weight: 700; font-size: 0.72rem;
     cursor: pointer; white-space: nowrap; transition: opacity 0.2s;
     flex-shrink: 0; letter-spacing: 1px;
   }
@@ -237,7 +237,7 @@
   .sec-titulo {
     font-size: 0.65rem; font-weight: 800; color: var(--cyan);
     text-transform: uppercase; letter-spacing: 1.5px;
-    font-family:'Space Mono',monospace; margin-bottom: 12px;
+    font-family:'Inter',sans-serif; margin-bottom: 12px;
   }
 
   @media(max-width:600px){
@@ -254,7 +254,7 @@
 
 <!-- LOGIN -->
 <div id="loginScreen" style="position:fixed;inset:0;background:#020509;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:24px">
-  <div style="font-family:'Orbitron',monospace;font-size:1.4rem;font-weight:900;color:#f0a500;letter-spacing:2px">SHARP<span style="color:#fff">IQ</span></div>
+  <div style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900;color:#f0a500;letter-spacing:2px">SHARP<span style="color:#fff">IQ</span></div>
   <div style="font-size:12px;color:#64748b;font-family:monospace;letter-spacing:1px">PANEL DE ADMINISTRACIÓN</div>
   <div style="width:100%;max-width:320px;display:flex;flex-direction:column;gap:10px">
     <input id="loginInput" type="password" placeholder="Clave de acceso"
@@ -279,7 +279,7 @@
     <div class="logo-text">SHARP<span>IQ</span></div>
   </a>
   <div class="header-right">
-    <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.25);color:#00C8FF;padding:7px 14px;border-radius:7px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-decoration:none;letter-spacing:1px" onmouseover="this.style.background='rgba(0,200,255,.18)'" onmouseout="this.style.background='rgba(0,200,255,.08)'">← WEB</a>
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.25);color:#00C8FF;padding:7px 14px;border-radius:7px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;text-decoration:none;letter-spacing:1px" onmouseover="this.style.background='rgba(0,200,255,.18)'" onmouseout="this.style.background='rgba(0,200,255,.08)'">← WEB</a>
     <span class="badge-engine">MOTOR</span>
     <span id="fecha-hdr" style="color:var(--muted);font-size:0.8rem;"></span>
     <button id="btn-refresh" onclick="cargar()">Actualizar</button>

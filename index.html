@@ -2334,7 +2334,7 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
       <li><a href="#estrategia">Estrategia</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Cambiar tema" title="Modo oscuro / claro">🌙</button>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Cambiar tema" title="Modo oscuro / claro" style="display:none">🌙</button>
     <div id="navAuthArea" style="display:flex;align-items:center;gap:10px">
       <a href="#" onclick="irAPago(this);return false;" class="nav-cta" id="navCta">Únete — $60.000 COP</a>
     </div>
@@ -3398,7 +3398,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
             <div class="anal-item-num" style="color:var(--gold)">%</div>
             <div class="anal-item-body">
               <div class="anal-item-cat" style="color:var(--t2)">TASA DE ACIERTOS</div>
-              <div class="anal-item-title" style="color:var(--gold);font-size:22px;font-family:'Bebas Neue',cursive">${winPct}% — ${resueltos.filter(p=>p.resultado==='win').length}W / ${resueltos.filter(p=>p.resultado==='loss').length}L</div>
+              <div class="anal-item-title" style="color:var(--gold);font-size:22px;font-family:'Bebas Neue',sans-serif">${winPct}% — ${resueltos.filter(p=>p.resultado==='win').length}W / ${resueltos.filter(p=>p.resultado==='loss').length}L</div>
               <div class="anal-item-meta">
                 <a href="#predicciones" style="font-family:'Inter',sans-serif;font-size:11px;color:var(--gold)">Ver historial completo →</a>
               </div>
@@ -3978,12 +3978,10 @@ function cerrarSesion(){
 
 // ── DARK MODE TOGGLE ─────────────────────────────────────────
 function toggleTheme(){
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  const newTheme = isDark ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('sharpiq_theme', newTheme);
-  const btn = document.getElementById('themeToggle');
-  if(btn) btn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+  // SharpIQ es SOLO-OSCURO (look sportsbook premium). El modo claro se retiro
+  // porque quedaba ilegible. Pase lo que pase, la pagina se queda en oscuro.
+  document.documentElement.setAttribute('data-theme', 'dark');
+  try{ localStorage.setItem('sharpiq_theme', 'dark'); }catch(e){}
 }
 // Sincronizar icono al cargar
 (function(){
