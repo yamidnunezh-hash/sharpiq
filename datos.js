@@ -66,7 +66,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "70",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "18/06/26",
@@ -119,7 +120,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "18/06/26",
@@ -851,6 +853,25 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "18/06/26",
+    partido:    "Switzerland vs Bosnia & Herzegovina",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.6",
+    prob:       "62",
+    resultado:  "win"
+  },
+  {
+    fecha:      "18/06/26",
+    partido:    "Switzerland vs Bosnia & Herzegovina",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.4",
+    prob:       "70",
+    resultado:  "loss",
+    resultado:  "win"
+  },
   {
     fecha:      "18/06/26",
     partido:    "Czech Republic vs South Africa",
