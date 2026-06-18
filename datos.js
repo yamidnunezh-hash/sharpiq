@@ -34,7 +34,7 @@ const PROXIMOS_EVENTOS = [
     partido:    "Mexico vs South Korea",
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
-    cuota:      "1.45",
+    cuota:      "1.46",
     hora:       "20:00 COT",
     status:     "vip",
     tier:       "seguro",
@@ -47,12 +47,38 @@ const PROXIMOS_EVENTOS = [
     partido:    "Canada vs Qatar",
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
-    cuota:      "1.31",
+    cuota:      "1.33",
     hora:       "17:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "75",
+    prob:       "74",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "18/06/26",
+    partido:    "Switzerland vs Bosnia & Herzegovina",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.37",
+    hora:       "14:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "72",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "18/06/26",
+    partido:    "Czech Republic vs South Africa",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.41",
+    hora:       "11:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "71",
     resultado:  "pendiente"
   },
   {
@@ -66,19 +92,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "18/06/26",
-    partido:    "Czech Republic vs South Africa",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Draw No Bet Local",
-    cuota:      "1.37",
-    hora:       "11:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
     resultado:  "pendiente"
   },
   {
@@ -105,19 +118,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "66",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "18/06/26",
-    partido:    "Switzerland vs Bosnia & Herzegovina",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 3.5 Goles",
-    cuota:      "1.34",
-    hora:       "14:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
     resultado:  "pendiente"
   },
   {
