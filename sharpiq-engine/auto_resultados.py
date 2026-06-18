@@ -417,6 +417,53 @@ def resolver_no_futbol(liga, local_js, visita_js):
 
 # ── MAIN ─────────────────────────────────────────────────────────
 
+def _auto_verificar_resueltos(texto, fixtures_ft):
+    """Re-chequea picks de FUTBOL ya resueltos (win/loss/push) contra el marcador
+    REAL del fixture y corrige marcas erroneas (incluidas las MANUALES). La tabla
+    queda auto-honesta para los clientes. Seguro por diseno:
+      - solo mercados de GOLES/resultado/handicap/BTTS (usan el marcador que ya
+        trae fixtures_ft -> CERO API extra). Tarjetas/corners NO se re-chequean.
+      - solo corrige si hay UN fixture que casa con alta similitud (>=0.8 en ambos
+        equipos) -> nunca daña una marca correcta por un match dudoso.
+    Devuelve (texto, n_corregidos, detalles)."""
+    detalles = []
+    def gf(o, k):
+        m = re.search(k + r'\s*:\s*["\']([^"\']*)', o)
+        return m.group(1) if m else ''
+    def _fix(mo):
+        o = mo.group(0)
+        res = gf(o, 'resultado').lower()
+        if res not in ('win', 'loss', 'push'):
+            return o
+        predl = gf(o, 'prediccion').lower()
+        if 'tarjeta' in predl or 'corner' in predl or 'card' in predl:
+            return o   # mercados de stats: se resuelven bien al cierre, no malgastar API
+        partido = gf(o, 'partido'); partes = partido.split(' vs ')
+        if len(partes) != 2:
+            return o
+        local_js, visita_js = partes[0].strip(), partes[1].strip()
+        cand = [f for f in fixtures_ft
+                if _similitud(local_js, f['teams']['home']['name']) >= 0.8
+                and _similitud(visita_js, f['teams']['away']['name']) >= 0.8]
+        fpick = _fecha_pick_iso(gf(o, 'fecha'))
+        if fpick:
+            cand_f = [f for f in cand if (f['fixture'].get('date') or '')[:10] == fpick]
+            if cand_f:
+                cand = cand_f
+        if len(cand) != 1:
+            return o   # ambiguo o no encontrado -> no tocar (seguro)
+        f = cand[0]
+        gl = f['score']['fulltime']['home'] or 0
+        gv = f['score']['fulltime']['away'] or 0
+        nuevo = evaluar(gf(o, 'prediccion'), gl, gv, local_js, visita_js)
+        if not nuevo or nuevo == res:
+            return o
+        detalles.append(f"{partido} | {gf(o, 'prediccion')}: {res} -> {nuevo} ({gl}-{gv})")
+        return re.sub(r'(resultado\s*:\s*["\'])[^"\']*(["\'])',
+                      r'\g<1>' + nuevo + r'\g<2>', o)
+    return re.sub(r'\{[^{}]*\}', _fix, texto), len(detalles), detalles
+
+
 def correr():
     LOG.info("=== SharpIQ Auto Resultados START ===")
 
@@ -598,6 +645,17 @@ def correr():
             if _nr:
                 limpiados += 1
                 LOG.info(f"  Sin fuente de resultado, retirado: {_ev.get('partido','')} ({_ev.get('liga','')})")
+
+    # AUTO-VERIFICACION: re-chequea picks de futbol ya resueltos contra el marcador
+    # real y corrige marcas erroneas (manuales o desfasadas). Tabla auto-honesta.
+    try:
+        texto, _ncorr, _det = _auto_verificar_resueltos(texto, fixtures_ft)
+        if _ncorr:
+            LOG.warning(f"AUTO-VERIFICA: {_ncorr} marca(s) corregida(s) vs resultado real:")
+            for _d in _det:
+                LOG.warning(f"  ↻ {_d}")
+    except Exception as _ave:
+        LOG.error(f"Auto-verificacion (no afecta el resto): {_ave}")
 
     # Siempre escribir datos.js y SINCRONIZAR index.html con su contenido —
     # aunque no haya nuevos resueltos. Asi se reflejan las marcas MANUALES del
