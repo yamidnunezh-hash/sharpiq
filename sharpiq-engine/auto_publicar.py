@@ -430,7 +430,7 @@ def correr():
                 for _i in range(3):
                     if _gm("push", "origin", "main").returncode == 0:
                         break
-                    if _gm("pull", "--rebase", "origin", "main").returncode != 0:
+                    if _gm("pull", "--rebase", "--autostash", "origin", "main").returncode != 0:
                         _gm("rebase", "--abort")
                         break
             LOG.info(f"Mundial: {_mundial_publicados} pick(s) publicados a la web")
@@ -584,7 +584,7 @@ def correr():
             if push.returncode == 0:
                 pushed = True
                 break
-            pull = _git("pull", "--rebase", "origin", "main")
+            pull = _git("pull", "--rebase", "--autostash", "origin", "main")
             if pull.returncode != 0:
                 # Conflicto irreconciliable: abortar para dejar el repo limpio.
                 # datos.js se regenera la próxima corrida, así no se corrompe nada.

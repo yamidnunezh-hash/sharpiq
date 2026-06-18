@@ -687,7 +687,7 @@ def correr():
                 if push.returncode == 0:
                     pushed = True
                     break
-                pull = _git("pull", "--rebase", "origin", "main")
+                pull = _git("pull", "--rebase", "--autostash", "origin", "main")
                 if pull.returncode != 0:
                     _git("rebase", "--abort")
                     LOG.error(f"Git: conflicto de rebase (intento {intento+1}/3): "
