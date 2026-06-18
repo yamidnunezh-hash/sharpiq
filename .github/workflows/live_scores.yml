@@ -2,7 +2,7 @@ name: SharpIQ Live Scores
 
 on:
   schedule:
-    - cron: '*/10 * * * *'   # cada 10 minutos
+    - cron: '*/20 * * * *'   # cada 20 min (bajado de 10 el 2026-06-18 para ahorrar API)
   workflow_dispatch:
 
 jobs:
