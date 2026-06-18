@@ -105,7 +105,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "push",
+    resultado:  "win"
   },
   {
     fecha:      "18/06/26",
@@ -144,7 +145,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "70",
-    resultado:  "pendiente"
+    resultado:  "push",
+    resultado:  "win"
   },
   {
     fecha:      "17/06/26",
@@ -849,6 +851,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "18/06/26",
+    partido:    "Czech Republic vs South Africa",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.41",
+    prob:       "71",
+    resultado:  "push",
+    resultado:  "win"
+  },
   {
     fecha:      "18/06/26",
     partido:    "Indiana Fever vs Atlanta Dream",
