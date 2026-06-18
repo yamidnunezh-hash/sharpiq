@@ -189,7 +189,8 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
     else:
         fecha_str = _hoy_cot().strftime('%d/%m/%y')
 
-    ev_tag = f" — EV +{ev}%" if ev > 0 else ""
+    # El EV es metrica INTERNA (se mueve con la cuota) -> NO se muestra al cliente.
+    ev_tag = ""
     nueva_entrada = f"""  {{
     fecha:      "{fecha_str}",
     partido:    "{partido}",
