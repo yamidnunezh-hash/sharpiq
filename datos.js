@@ -131,7 +131,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "push"
   },
   {
     fecha:      "17/06/26",
@@ -144,7 +145,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "67",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "loss"
   },
   {
     fecha:      "17/06/26",
@@ -157,7 +159,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "66",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "loss"
   },
   {
     fecha:      "17/06/26",
@@ -184,7 +187,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "70",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "push"
   },
   {
     fecha:      "17/06/26",
@@ -819,6 +823,26 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "17/06/26",
+    partido:    "Ghana vs Panama",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Visitante +0.75",
+    cuota:      "1.46",
+    prob:       "67",
+    resultado:  "loss",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "17/06/26",
+    partido:    "Uzbekistan vs Colombia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.38",
+    prob:       "72",
+    resultado:  "loss",
+    resultado:  "push"
+  },
   {
     fecha:      "17/06/26",
     partido:    "England vs Croatia",
