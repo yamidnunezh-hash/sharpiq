@@ -1,7 +1,6 @@
 {
-  "updated": "2026-06-18T12:42:26Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-06-18T16:18:36Z",
+  "live": [
     {
       "id": "66ebb9e3f949caded535d97ce686ca09",
       "sport": "soccer_fifa_world_cup",
@@ -13,9 +12,11 @@
       "hora": "11:00 COT",
       "ts": 1781780400,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "10b797abe19952451af8a428ab530deb",
       "sport": "baseball_mlb",
@@ -208,6 +209,20 @@
       "fecha": "19/06/26",
       "hora": "14:00 COT",
       "ts": 1781877600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "4cd769aa7bae0ad9762bd69b80ef2903",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Scotland",
+      "away": "Morocco",
+      "fecha": "19/06/26",
+      "hora": "17:00 COT",
+      "ts": 1781888400,
       "completed": false,
       "score_home": null,
       "score_away": null
