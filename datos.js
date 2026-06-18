@@ -39,7 +39,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "70",
+    prob:       "69",
     resultado:  "pendiente"
   },
   {
@@ -47,7 +47,7 @@ const PROXIMOS_EVENTOS = [
     partido:    "Canada vs Qatar",
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
-    cuota:      "1.34",
+    cuota:      "1.33",
     hora:       "17:00 COT",
     status:     "vip",
     tier:       "seguro",
