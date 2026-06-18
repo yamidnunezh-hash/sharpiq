@@ -200,7 +200,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "70",
-    resultado:  "loss",
+    resultado:  "push",
     resultado:  "push"
   },
   {
@@ -214,7 +214,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "loss",
+    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -242,7 +242,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "68",
-    resultado:  "loss",
+    resultado:  "win",
     resultado:  "win"
   },
   {
