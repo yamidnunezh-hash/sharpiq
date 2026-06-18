@@ -9,34 +9,34 @@
   <style>
     :root{--bg:#0a0e1a;--card:#111a2e;--gold:#00C8FF;--purple:#7B5CF0;--border:rgba(0,200,255,.18);--t1:#eef3fb;--t2:#97a6bd;--t3:#94a3b8;--green:#22c55e;--red:#ef4444}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    body{background:var(--bg);color:var(--t1);font-family:Inter,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
     body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,200,255,.07) 0%,transparent 65%);pointer-events:none}
     .wrap{width:100%;max-width:440px;position:relative;z-index:1}
     .logo{text-align:center;margin-bottom:36px}
-    .logo-text{font-family:'Inter',sans-serif;font-size:2rem;font-weight:900;letter-spacing:4px;color:#fff}
+    .logo-text{font-family:Inter,sans-serif;font-size:2rem;font-weight:900;letter-spacing:4px;color:#fff}
     .logo-text span{color:var(--gold)}
-    .logo-tag{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-top:6px}
+    .logo-tag{font-family:Inter,sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-top:6px}
     .card{background:rgba(8,15,28,.9);border:1px solid var(--border);border-radius:16px;padding:36px 32px;backdrop-filter:blur(20px)}
-    .card-title{font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:700;text-align:center;margin-bottom:4px}
-    .card-sub{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);text-align:center;margin-bottom:28px}
+    .card-title{font-family:Inter,sans-serif;font-size:1.1rem;font-weight:700;text-align:center;margin-bottom:4px}
+    .card-sub{font-family:Inter,sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);text-align:center;margin-bottom:28px}
     .field{margin-bottom:16px}
-    .field label{display:block;font-size:11px;font-family:'Inter',sans-serif;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-    .field input{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:13px 16px;font-size:15px;color:var(--t1);font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
+    .field label{display:block;font-size:11px;font-family:Inter,sans-serif;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+    .field input{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:13px 16px;font-size:15px;color:var(--t1);font-family:Inter,sans-serif;outline:none;transition:border-color .2s}
     .field input:focus{border-color:rgba(0,200,255,.45)}
-    .ref-badge{font-size:11px;color:var(--green);font-family:'Inter',sans-serif;margin-top:6px;display:none}
-    .btn{width:100%;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:10px;padding:15px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:opacity .2s,transform .1s;margin-top:8px}
+    .ref-badge{font-size:11px;color:var(--green);font-family:Inter,sans-serif;margin-top:6px;display:none}
+    .btn{width:100%;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;border:none;border-radius:10px;padding:15px;font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:opacity .2s,transform .1s;margin-top:8px}
     .btn:hover{opacity:.92}
     .btn:active{transform:scale(.98)}
     .btn:disabled{opacity:.5;cursor:not-allowed}
-    .err{color:var(--red);font-size:12px;font-family:'Inter',sans-serif;text-align:center;margin-top:12px;display:none;padding:10px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px}
-    .ok{color:var(--green);font-size:12px;font-family:'Inter',sans-serif;text-align:center;margin-top:12px;display:none;padding:10px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px}
-    .links{text-align:center;margin-top:24px;font-family:'Inter',sans-serif;font-size:11px;color:var(--t3)}
+    .err{color:var(--red);font-size:12px;font-family:Inter,sans-serif;text-align:center;margin-top:12px;display:none;padding:10px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px}
+    .ok{color:var(--green);font-size:12px;font-family:Inter,sans-serif;text-align:center;margin-top:12px;display:none;padding:10px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px}
+    .links{text-align:center;margin-top:24px;font-family:Inter,sans-serif;font-size:11px;color:var(--t3)}
     .links a{color:var(--gold);text-decoration:none}
     .planes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
     .plan-card{border:1px solid var(--border);border-radius:10px;padding:16px 12px;text-align:center;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.03)}
     .plan-card.sel{border-color:var(--gold);background:rgba(0,200,255,.06)}
-    .plan-precio{font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900;color:var(--gold)}
-    .plan-nombre{font-size:11px;font-family:'Inter',sans-serif;color:var(--t3);margin-top:4px;text-transform:uppercase}
+    .plan-precio{font-family:Inter,sans-serif;font-size:1.4rem;font-weight:900;color:var(--gold)}
+    .plan-nombre{font-size:11px;font-family:Inter,sans-serif;color:var(--t3);margin-top:4px;text-transform:uppercase}
     .plan-desc{font-size:11px;color:var(--t2);margin-top:6px;line-height:1.5}
   </style>
 </head>
@@ -111,7 +111,7 @@ function selPlan(p){
     selPlan('vip');
     // Mostrar banner de pago confirmado
     const banner = document.createElement('div');
-    banner.style.cssText = 'background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);border-radius:10px;padding:12px 16px;margin-bottom:16px;font-family:'Inter',sans-serif;font-size:11px;color:#22c55e;text-align:center';
+    banner.style.cssText = 'background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);border-radius:10px;padding:12px 16px;margin-bottom:16px;font-family:Inter,sans-serif;font-size:11px;color:#22c55e;text-align:center';
     banner.textContent = '✅ Pago confirmado — crea tu cuenta para activar el VIP';
     document.querySelector('.box').insertBefore(banner, document.querySelector('.field'));
   }

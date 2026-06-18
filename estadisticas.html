@@ -98,7 +98,7 @@
     .footer p { color: var(--t3); font-size: 13px; margin-top: 8px; }
 
     /* SIMULADOR */
-    .stake-btn { font-family:'Inter',sans-serif;font-size:11px;padding:8px 14px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s; }
+    .stake-btn { font-family:Inter,sans-serif;font-size:11px;padding:8px 14px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s; }
     .stake-btn:hover { color:var(--t1);border-color:var(--t2); }
     .stake-btn.active { background:rgba(0,200,255,.1);border-color:rgba(0,200,255,.4);color:var(--gold); }
     #simCapital:focus { border-color:rgba(0,200,255,.4); }
@@ -197,16 +197,16 @@
 
     <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:28px">
       <div>
-        <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Mi capital inicial</div>
+        <div style="font-family:Inter,sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Mi capital inicial</div>
         <div style="display:flex;align-items:center;gap:8px">
           <input id="simCapital" type="number" value="100000" min="1000" step="10000"
-            style="background:#05101c;border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--t1);font-size:15px;font-family:'Inter',sans-serif;width:160px;outline:none"
+            style="background:#05101c;border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--t1);font-size:15px;font-family:Inter,sans-serif;width:160px;outline:none"
             oninput="simularBankroll()">
           <span style="color:var(--t3);font-size:13px">COP</span>
         </div>
       </div>
       <div>
-        <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Stake por apuesta</div>
+        <div style="font-family:Inter,sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Stake por apuesta</div>
         <div style="display:flex;gap:6px">
           <button class="stake-btn active" data-pct="3" onclick="setStake(this,3)">3%</button>
           <button class="stake-btn" data-pct="5" onclick="setStake(this,5)">5%</button>
@@ -218,20 +218,20 @@
     <!-- Resultados -->
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px">
       <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
-        <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Capital Final</div>
-        <div id="simFinal" style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900;color:var(--gold)">—</div>
+        <div style="font-family:Inter,sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Capital Final</div>
+        <div id="simFinal" style="font-family:Inter,sans-serif;font-size:1.4rem;font-weight:900;color:var(--gold)">—</div>
       </div>
       <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
-        <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Ganancia / Pérdida</div>
-        <div id="simGanancia" style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900">—</div>
+        <div style="font-family:Inter,sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Ganancia / Pérdida</div>
+        <div id="simGanancia" style="font-family:Inter,sans-serif;font-size:1.4rem;font-weight:900">—</div>
       </div>
       <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
-        <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">ROI Real</div>
-        <div id="simROI" style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900">—</div>
+        <div style="font-family:Inter,sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">ROI Real</div>
+        <div id="simROI" style="font-family:Inter,sans-serif;font-size:1.4rem;font-weight:900">—</div>
       </div>
       <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
-        <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Próxima apuesta</div>
-        <div id="simSiguiente" style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900;color:var(--gold)">—</div>
+        <div style="font-family:Inter,sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Próxima apuesta</div>
+        <div id="simSiguiente" style="font-family:Inter,sans-serif;font-size:1.4rem;font-weight:900;color:var(--gold)">—</div>
       </div>
     </div>
 
@@ -240,7 +240,7 @@
       <canvas id="chartSim"></canvas>
     </div>
 
-    <p style="margin-top:14px;font-size:11px;color:var(--t3);text-align:center;font-family:'Inter',sans-serif">
+    <p style="margin-top:14px;font-size:11px;color:var(--t3);text-align:center;font-family:Inter,sans-serif">
       Simulación basada en historial real · Stake compuesto (se recalcula cada apuesta)
     </p>
   </div>
@@ -456,7 +456,7 @@ function renderTabla(data){
       <td><span class="match-name">${p.partido}</span></td>
       <td><span class="liga-tag">${p.liga||'—'}</span></td>
       <td style="color:var(--t2)">${p.prediccion}</td>
-      <td style="font-family:'Inter',sans-serif;font-size:12px">${p.cuota}</td>
+      <td style="font-family:Inter,sans-serif;font-size:12px">${p.cuota}</td>
       <td>${plVal}</td>
       <td>${badge}</td>
     </tr>`;
