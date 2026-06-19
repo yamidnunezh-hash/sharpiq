@@ -7,6 +7,19 @@ const PROXIMOS_EVENTOS = [
     fecha:      "19/06/26",
     partido:    "Turkey vs Paraguay",
     liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos Marcan",
+    cuota:      "1.94",
+    hora:       "22:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "52",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "19/06/26",
+    partido:    "Turkey vs Paraguay",
+    liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.38",
     hora:       "22:00 COT",
@@ -14,6 +27,32 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "19/06/26",
+    partido:    "Brazil vs Haiti",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Local -1.75",
+    cuota:      "1.42",
+    hora:       "19:30 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "69",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "19/06/26",
+    partido:    "Scotland vs Morocco",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.47",
+    hora:       "17:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "67",
     resultado:  "pendiente"
   },
   {
@@ -53,45 +92,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "76",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "19/06/26",
-    partido:    "Turkey vs Paraguay",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Ambos Marcan",
-    cuota:      "1.95",
-    hora:       "22:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "52",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "19/06/26",
-    partido:    "Scotland vs Morocco",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Over 1.5 Goles",
-    cuota:      "1.45",
-    hora:       "17:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "68",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "19/06/26",
-    partido:    "Brazil vs Haiti",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Over 2.5 Goles",
-    cuota:      "1.35",
-    hora:       "19:30 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
     resultado:  "pendiente"
   },
   {
