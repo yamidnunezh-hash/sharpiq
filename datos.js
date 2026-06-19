@@ -27,7 +27,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "76",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "18/06/26",
@@ -53,7 +53,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "79",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "18/06/26",
@@ -79,7 +79,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "74",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "loss"
   },
   {
     fecha:      "18/06/26",
@@ -147,7 +148,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "66",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "loss"
   },
   {
     fecha:      "18/06/26",
@@ -866,6 +868,34 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "18/06/26",
+    partido:    "Canada vs Qatar",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.33",
+    prob:       "74",
+    resultado:  "win",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "18/06/26",
+    partido:    "Universidad de Chile vs O'Higgins",
+    liga:       "Campeonato Chileno",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.79",
+    prob:       "79",
+    resultado:  "win"
+  },
+  {
+    fecha:      "18/06/26",
+    partido:    "Sport Recife vs Atletico Goianiense",
+    liga:       "Brasileirao B",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.91",
+    prob:       "76",
+    resultado:  "loss"
+  },
   {
     fecha:      "18/06/26",
     partido:    "Switzerland vs Bosnia & Herzegovina",
