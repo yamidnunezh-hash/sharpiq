@@ -1122,7 +1122,7 @@ function doLogin(){ window.location.href = 'login.html'; }
 (function(){
   const role = localStorage.getItem('sharpiq_role');
   const auth = parseInt(localStorage.getItem('sharpiq_auth')||'0');
-  if (!role || Date.now()-auth > 24*60*60*1000) {
+  if (!role || Date.now()-auth > 30*24*60*60*1000) {
     window.location.href = 'login.html'; return;
   }
   // Ocultar pantalla de login interna, mostrar panel

@@ -229,7 +229,7 @@ const API=`https://api.github.com/repos/${GH.owner}/${GH.repo}/contents`;
 (function(){
   const role=localStorage.getItem('sharpiq_role');
   const auth=parseInt(localStorage.getItem('sharpiq_auth')||'0');
-  if(role!=='admin'||Date.now()-auth>7*24*3600*1000) window.location.href='login.html';
+  if(role!=='admin'||Date.now()-auth>30*24*3600*1000) window.location.href='login.html';
   if(!getToken()) document.getElementById('tokenWarning').style.display='block';
 })();
 
