@@ -15,7 +15,7 @@
         "2": 5.3,
         "2_casa": "Betfair",
         "pinnacle_2": 5.2,
-        "1": 1.66,
+        "1": 1.65,
         "1_casa": "Betfair",
         "pinnacle_1": 1.64,
         "X": 4.7,
@@ -291,13 +291,13 @@
           "pinn_prob": 18.8
         },
         "victoria_local": {
-          "value": -0.009,
-          "ev_porcentaje": -0.9,
-          "ev_pinn": -0.9,
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.66,
+          "cuota": 1.65,
           "casa": "Betfair",
           "pinn_prob": 59.7
         },
@@ -13300,5 +13300,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:00:52"
+  "generado": "16:01:09"
 }
