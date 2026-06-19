@@ -5,6 +5,32 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "18/06/26",
+    partido:    "Sport Recife vs Atletico Goianiense",
+    liga:       "Brasileirao B",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.91",
+    hora:       "19:02 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "76",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "18/06/26",
+    partido:    "Mexico vs South Korea",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.48",
+    hora:       "20:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "67",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "18/06/26",
     partido:    "Universidad de Chile vs O'Higgins",
     liga:       "Campeonato Chileno",
     prediccion: "Ambos No Marcan",
@@ -14,19 +40,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "79",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "18/06/26",
-    partido:    "Sport Recife vs Atletico Goianiense",
-    liga:       "Brasileirao B",
-    prediccion: "Ambos No Marcan",
-    cuota:      "1.91",
-    hora:       "19:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "76",
     resultado:  "pendiente"
   },
   {
@@ -81,19 +94,6 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "1.4",
     prob:       "51",
     resultado:  "win"
-  },
-  {
-    fecha:      "18/06/26",
-    partido:    "Mexico vs South Korea",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Draw No Bet Local",
-    cuota:      "1.5",
-    hora:       "20:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "66",
-    resultado:  "pendiente"
   },
   {
     fecha:      "18/06/26",
