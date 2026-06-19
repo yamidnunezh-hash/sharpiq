@@ -12,7 +12,7 @@
       "hora": "01:00",
       "fecha_evento": "2026-06-18",
       "cuotas": {
-        "1": 2.1,
+        "1": 2.08,
         "1_casa": "Betfair",
         "pinnacle_1": 2.07,
         "2": 4.3,
@@ -84,7 +84,7 @@
         "corners_over_6_5": 1.28,
         "corners_over_6_5_casa": "Pinnacle",
         "pinnacle_corners_over_6_5": 1.28,
-        "corners_under_6_5": 3.6,
+        "corners_under_6_5": 3.55,
         "corners_under_6_5_casa": "LiveScore Bet",
         "pinnacle_corners_under_6_5": 3.23,
         "corners_over_7_0": 1.36,
@@ -114,7 +114,7 @@
         "corners_over_9_5": 2.51,
         "corners_over_9_5_casa": "Pinnacle",
         "pinnacle_corners_over_9_5": 2.51,
-        "corners_under_9_5": 1.57,
+        "corners_under_9_5": 1.58,
         "corners_under_9_5_casa": "LiveScore Bet",
         "pinnacle_corners_under_9_5": 1.48,
         "corners_over_10_0": 2.99,
@@ -280,13 +280,13 @@
       "confianza": 77.5,
       "value_bets": {
         "victoria_local": {
-          "value": -0.009,
-          "ev_porcentaje": -0.9,
-          "ev_pinn": -0.9,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.1,
+          "cuota": 2.08,
           "casa": "Betfair",
           "pinn_prob": 47.2
         },
@@ -547,13 +547,13 @@
           "mercado_nombre": "Corners Over 6.5"
         },
         "corners_under_6_5": {
-          "value": 0.022,
-          "ev_porcentaje": 2.2,
-          "ev_pinn": 2.2,
+          "value": 0.008,
+          "ev_porcentaje": 0.8,
+          "ev_pinn": 0.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.6,
+          "cuota": 3.55,
           "casa": "LiveScore Bet",
           "pinn_prob": 28.4,
           "mercado_nombre": "Corners Under 6.5"
@@ -667,13 +667,13 @@
           "mercado_nombre": "Corners Over 9.5"
         },
         "corners_under_9_5": {
-          "value": -0.012,
-          "ev_porcentaje": -1.2,
-          "ev_pinn": -1.2,
+          "value": -0.006,
+          "ev_porcentaje": -0.6,
+          "ev_pinn": -0.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.57,
+          "cuota": 1.58,
           "casa": "LiveScore Bet",
           "pinn_prob": 62.9,
           "mercado_nombre": "Corners Under 9.5"
@@ -9773,7 +9773,7 @@
         "Over 10.0": 1.91,
         "Under 10.0": 1.95,
         "Athletics (-1.5)": 2.15,
-        "Los Angeles Angels (+1.5)": 1.78
+        "Los Angeles Angels (+1.5)": 1.79
       },
       "probabilidades": {
         "Athletics": 60.9,
@@ -9842,13 +9842,13 @@
           "mercado_nombre": "Athletics (-1.5)"
         },
         "spread_los_angeles_angels_1_5": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.78,
+          "cuota": 1.79,
           "casa": "FanDuel",
           "pinn_prob": 54.8,
           "mercado_nombre": "Los Angeles Angels (+1.5)"
@@ -11061,5 +11061,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:00:47"
+  "generado": "00:00:59"
 }
