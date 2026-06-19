@@ -92,7 +92,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "76",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "19/06/26",
@@ -118,7 +119,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "19/06/26",
@@ -987,6 +989,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "19/06/26",
+    partido:    "USA vs Australia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.3",
+    prob:       "76",
+    resultado:  "win",
+    resultado:  "win"
+  },
   {
     fecha:      "18/06/26",
     partido:    "Mexico vs South Korea",
