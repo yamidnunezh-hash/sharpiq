@@ -7,6 +7,23 @@ import json, os, re
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def _pick(lst, i): return lst[i % len(lst)]
+TRAD = {
+ 'Mexico':'México','South Korea':'Corea del Sur','Korea Republic':'Corea del Sur',
+ 'USA':'Estados Unidos','United States':'Estados Unidos','Morocco':'Marruecos',
+ 'Scotland':'Escocia','South Africa':'Sudáfrica','Czech Republic':'República Checa',
+ 'Czechia':'República Checa','Bosnia & Herzegovina':'Bosnia y Herzegovina',
+ 'Switzerland':'Suiza','Canada':'Canadá','Qatar':'Catar','England':'Inglaterra',
+ 'Croatia':'Croacia','France':'Francia','DR Congo':'RD Congo','Congo DR':'RD Congo',
+ 'Algeria':'Argelia','Jordan':'Jordania','Iraq':'Irak','Norway':'Noruega','Iran':'Irán',
+ 'New Zealand':'Nueva Zelanda','Sweden':'Suecia','Tunisia':'Túnez','Spain':'España',
+ 'Cape Verde':'Cabo Verde','Belgium':'Bélgica','Egypt':'Egipto','Saudi Arabia':'Arabia Saudita',
+ 'Panama':'Panamá','Uzbekistan':'Uzbekistán','Brazil':'Brasil','Japan':'Japón',
+ 'Germany':'Alemania','Italy':'Italia','Netherlands':'Países Bajos','Poland':'Polonia',
+ 'Denmark':'Dinamarca','Cameroon':'Camerún','Peru':'Perú','Wales':'Gales','Turkey':'Turquía',
+ 'Greece':'Grecia','Ireland':'Irlanda','Serbia':'Serbia','Ukraine':'Ucrania','Nigeria':'Nigeria',
+}
+def _trad(n): return TRAD.get((n or '').strip(), n)
+
 def _esc(s): return (s or "").replace("\\", "\\\\").replace('"', '\\"')
 
 def _forma_adj(v, i):
@@ -15,7 +32,7 @@ def _forma_adj(v, i):
     return _pick(["atraviesa una mala racha", "llega tocado de confianza", "viene de capa caida", "necesita reaccionar"], i)
 
 def _generar(p, i):
-    loc, vis = p.get('local'), p.get('visitante')
+    loc, vis = _trad(p.get('local')), _trad(p.get('visitante'))
     liga = p.get('liga', ''); pr = p.get('probabilidades') or {}
     fl, fv = p.get('forma_local', {}) or {}, p.get('forma_visita', {}) or {}
     pp = p.get('prediccion_principal', {}) or {}
