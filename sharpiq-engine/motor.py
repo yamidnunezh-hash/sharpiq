@@ -1194,23 +1194,31 @@ def obtener_forma_reciente(equipo, n=5, liga_id=None):
     fixtures = data["response"]
     if not fixtures:
         return None
-    puntos = goles_favor = goles_contra = 0
-    for f in fixtures:
+    # Forma PONDERADA: los amistosos pesan menos que los oficiales (Mundial/liga/copa)
+    # y los partidos mas recientes pesan mas (decaimiento suave). Antes un amistoso
+    # vs Belgica contaba igual que el Mundial -> distorsionaba la forma.
+    PESO_AMISTOSO = 0.4   # amistoso vale 0.4 de un partido oficial
+    w_pts = w_max = w_gf = w_gc = w_sum = 0.0
+    for idx, f in enumerate(fixtures):   # idx 0 = mas reciente
         es_local = f["teams"]["home"]["id"] == team_id
         sh = f["score"]["fulltime"]["home"] or 0
         sa = f["score"]["fulltime"]["away"] or 0
         gf, gc = (sh, sa) if es_local else (sa, sh)
-        goles_favor += gf
-        goles_contra += gc
-        if gf > gc:    puntos += 3
-        elif gf == gc: puntos += 1
+        pts = 3 if gf > gc else (1 if gf == gc else 0)
+        _ln = (f.get("league", {}).get("name") or "").lower()
+        w_comp = PESO_AMISTOSO if ("friendl" in _ln or "amistos" in _ln) else 1.0
+        w = w_comp * (0.85 ** idx)       # recencia: 1, .85, .72, .61, .52...
+        w_pts += w * pts; w_max += w * 3
+        w_gf  += w * gf;  w_gc  += w * gc; w_sum += w
     total = len(fixtures)
-    forma = round(puntos / (total * 3), 3)
-    print(f"    Forma {equipo[-12:]}: {puntos}/{total*3}pts | Gf:{round(goles_favor/total,2)} Gc:{round(goles_contra/total,2)}")
+    forma   = round(w_pts / w_max, 3) if w_max else 0.0
+    ataque  = round(w_gf  / w_sum, 3) if w_sum else 0.0
+    defensa = round(w_gc  / w_sum, 3) if w_sum else 0.0
+    print(f"    Forma {equipo[-12:]}: {forma} (ponderada, amistosos x{PESO_AMISTOSO}) | Gf:{ataque} Gc:{defensa}")
     return {
         "forma":            forma,
-        "ataque_reciente":  round(goles_favor  / total, 3),
-        "defensa_reciente": round(goles_contra / total, 3),
+        "ataque_reciente":  ataque,
+        "defensa_reciente": defensa,
         "partidos":         total,
     }
 
