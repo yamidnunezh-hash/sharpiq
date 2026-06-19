@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T05:37:21Z",
+  "updated": "2026-06-19T10:05:29Z",
   "live": [
     {
       "id": "e92122c8f905eb41a57faabf21daf468",
@@ -83,6 +83,20 @@
       "fecha": "19/06/26",
       "hora": "18:06 COT",
       "ts": 1781892360,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "6bb329abaf86e99a6c742250c3251cec",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Miami Marlins",
+      "away": "San Francisco Giants",
+      "fecha": "19/06/26",
+      "hora": "18:11 COT",
+      "ts": 1781892660,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -209,20 +223,6 @@
       "fecha": "19/06/26",
       "hora": "20:46 COT",
       "ts": 1781901960,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "150da5f2fa6db9e963e0b56fc2863769",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Los Angeles Dodgers",
-      "away": "Baltimore Orioles",
-      "fecha": "19/06/26",
-      "hora": "21:11 COT",
-      "ts": 1781903460,
       "completed": false,
       "score_home": null,
       "score_away": null
