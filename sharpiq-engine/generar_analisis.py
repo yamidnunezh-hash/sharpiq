@@ -99,7 +99,7 @@ def _generar(p, i):
                           f"Ambos vienen con cifras goleadoras discretas."], i)
 
     return {"partido": f"{loc} vs {vis}", "liga": liga, "titulo": titulo,
-            "cuerpo": c, "pick": pp.get('mercado', ''), "prob": pp.get('prob', ''),
+            "cuerpo": c, 
             "hora": p.get('hora', '')}
 
 def generar_items(preds):
