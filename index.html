@@ -1511,6 +1511,16 @@ const PREDICCIONES_HISTORIAL = [
     resultado:  "win"
   }
 ];
+const ANALISIS_DIA = [
+  { partido: "Mexico vs South Korea", liga: "FIFA Mundial 2026", titulo: "Mexico vs South Korea: duelo parejo", cuerpo: "Mexico llega en gran forma, con un ataque de 2.2 goles por partido. South Korea viene en forma regular (promedia 1.6). El modelo SharpIQ proyecta 47.2% de victoria local y 43.9% de Over 2.5 goles.", pick: "Draw No Bet Local", prob: "67.0", hora: "01:00" },
+  { partido: "USA vs Australia", liga: "FIFA Mundial 2026", titulo: "USA parte como favorito ante Australia", cuerpo: "USA atraviesa una racha irregular, con un ataque de 2.0 goles por partido. Australia viene en forma regular (promedia 1.8). El modelo SharpIQ proyecta 59.9% de victoria local y 48.3% de Over 2.5 goles.", pick: "Under 3.5 Goles", prob: "73.0", hora: "19:00" },
+  { partido: "Scotland vs Morocco", liga: "FIFA Mundial 2026", titulo: "Morocco parte como favorito ante Scotland", cuerpo: "Scotland viene en forma regular, con un ataque de 1.8 goles por partido. Morocco llega en gran forma (promedia 2.6). El modelo SharpIQ proyecta 18.4% de victoria local y 41.6% de Over 2.5 goles.", pick: "Over 1.5 Goles", prob: "67.1", hora: "22:00" },
+  { partido: "Sport Recife vs Atletico Goianiense", liga: "Brasileirao B", titulo: "Sport Recife vs Atletico Goianiense: duelo parejo", cuerpo: "Sport Recife viene en forma regular, con un ataque de 0.8 goles por partido. Atletico Goianiense atraviesa una racha irregular (promedia 1.4). El modelo SharpIQ proyecta 48.1% de victoria local y 27.0% de Over 2.5 goles.", pick: "Ambos No Marcan", prob: "75.9", hora: "00:02" },
+  { partido: "Galway United vs Derry City", liga: "League of Ireland", titulo: "Galway United vs Derry City: duelo parejo", cuerpo: "Galway United atraviesa una racha irregular. Derry City atraviesa una racha irregular (promedia 1.4). El modelo SharpIQ proyecta 30.2% de victoria local y 33.5% de Over 2.5 goles.", pick: "Ambos No Marcan", prob: "65.9", hora: "18:45" },
+  { partido: "Drogheda United vs Shelbourne Dublin", liga: "League of Ireland", titulo: "Drogheda United vs Shelbourne Dublin: duelo parejo", cuerpo: "Drogheda United atraviesa una racha irregular. Shelbourne Dublin atraviesa una racha irregular. El modelo SharpIQ proyecta 24.7% de victoria local y 41.4% de Over 2.5 goles.", pick: "Under 2.5 Goles", prob: "58.6", hora: "18:45" },
+  { partido: "Waterford FC vs Shamrock Rovers", liga: "League of Ireland", titulo: "Shamrock Rovers parte como favorito ante Waterford FC", cuerpo: "Waterford FC atraviesa una racha irregular. Shamrock Rovers atraviesa una racha irregular (promedia 1.0). El modelo SharpIQ proyecta 18.7% de victoria local y 36.4% de Over 2.5 goles.", pick: "Ambos No Marcan", prob: "68.5", hora: "18:45" },
+  { partido: "St Patricks Athletic vs Sligo Rovers", liga: "League of Ireland", titulo: "St Patricks Athletic parte como favorito ante Sligo Rovers", cuerpo: "St Patricks Athletic atraviesa una racha irregular. Sligo Rovers atraviesa una racha irregular. El modelo SharpIQ proyecta 75.5% de victoria local y 44.9% de Over 2.5 goles.", pick: "Ambos No Marcan", prob: "55.0", hora: "18:45" }
+];
 </script>
 <!-- SHARPIQ_DATA_END -->
 <script id="sharpiq-team-ids">
@@ -2366,7 +2376,7 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
     </a>
     <ul class="nav-ul">
       <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#predicciones">Predicciones</a></li>
+      <li><a href="#predicciones">Predicciones</a></li><li><a href="#analisis">Análisis</a></li>
       <li><a href="estadisticas.html">Estadísticas</a></li>
       <li><a href="#planes">Planes</a></li>
       <li><a href="#estrategia">Estrategia</a></li>
@@ -2382,6 +2392,7 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
 <div class="nav-mob" id="navMob">
   <a href="#nosotros"     onclick="closeNav()">Nosotros</a>
   <a href="#predicciones"    onclick="closeNav()">Predicciones</a>
+  <a href="#analisis" onclick="closeNav()">Análisis</a>
   <a href="estadisticas.html" onclick="closeNav()">Estadísticas</a>
   <a href="#planes"          onclick="closeNav()">Planes</a>
   <a href="#estrategia"   onclick="closeNav()">Estrategia</a>
@@ -2677,6 +2688,35 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
     </div>
   </div>
 </div>
+
+<!-- ── ANÁLISIS DEL DÍA ── -->
+<section class="sec-analisis" id="analisis" style="padding:64px 0;background:var(--bg1)">
+  <div style="max-width:1200px;margin:0 auto;padding:0 20px">
+    <div style="text-align:center;margin-bottom:38px">
+      <div class="live-badge" style="display:inline-flex;align-items:center;gap:7px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.28);color:#22c55e;padding:6px 14px;border-radius:20px;font-size:11px;letter-spacing:1px;font-weight:700"><div class="hero-dot" style="background:var(--green)"></div>ANÁLISIS DEL DÍA</div>
+      <h2 style="font-family:Bebas Neue,sans-serif;font-size:44px;color:var(--t1);margin:16px 0 8px;letter-spacing:.5px">Lo que dicen los datos, partido por partido</h2>
+      <p style="color:var(--t2);font-size:15px;max-width:620px;margin:0 auto">Previa de cada partido generada por nuestro modelo: forma, ataque y la lectura del sistema. Sin opiniones — solo datos.</p>
+    </div>
+    <div id="analisisGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:20px"></div>
+  </div>
+</section>
+<script>
+(function(){
+  var grid=document.getElementById('analisisGrid');
+  var sec=document.getElementById('analisis');
+  if(!grid||typeof ANALISIS_DIA==='undefined'||!ANALISIS_DIA.length){if(sec)sec.style.display='none';return;}
+  grid.innerHTML=ANALISIS_DIA.map(function(a){
+    var pick=a.pick?'<div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:13px;color:var(--t2)">Lectura del modelo: <strong style="color:var(--green)">'+a.pick+'</strong>'+(a.prob?' &middot; '+a.prob+'%':'')+'</div>':'';
+    return '<article style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column">'
+      +'<div style="font-size:11px;letter-spacing:1px;color:var(--t3);text-transform:uppercase;margin-bottom:10px">'+(a.liga||'')+(a.hora?' &middot; '+a.hora+' COT':'')+'</div>'
+      +'<h3 style="font-family:Bebas Neue,sans-serif;font-size:23px;color:var(--t1);margin:0 0 10px;letter-spacing:.4px">'+a.titulo+'</h3>'
+      +'<p style="color:var(--t2);font-size:14px;line-height:1.6;margin:0;flex:1">'+a.cuerpo+'</p>'
+      +pick
+      +'<a href="#predicciones" style="margin-top:14px;color:var(--green);font-size:13px;font-weight:700;text-decoration:none">Ver pick del día &rarr;</a>'
+      +'</article>';
+  }).join('');
+})();
+</script>
 
 <!-- ── NOSOTROS ── -->
 <section class="sec-nos" id="nosotros">
@@ -3134,7 +3174,7 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
         <h4>Navegación</h4>
         <ul class="ft-links">
           <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#predicciones">Predicciones</a></li>
+          <li><a href="#predicciones">Predicciones</a></li><li><a href="#analisis">Análisis</a></li>
           <li><a href="#analisis">Análisis</a></li>
           <li><a href="#planes">Planes</a></li>
           <li><a href="#estrategia">Estrategia</a></li>
