@@ -5,6 +5,19 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "19/06/26",
+    partido:    "NC Dinos vs SSG Landers",
+    liga:       "KBO",
+    prediccion: "Gana NC Dinos",
+    cuota:      "2.1",
+    hora:       "04:30 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.3",
+    prob:       "49",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "19/06/26",
     partido:    "Turkey vs Paraguay",
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
