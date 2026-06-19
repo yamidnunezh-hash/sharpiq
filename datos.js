@@ -7,26 +7,13 @@ const PROXIMOS_EVENTOS = [
     fecha:      "19/06/26",
     partido:    "Turkey vs Paraguay",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Ambos Marcan",
-    cuota:      "1.95",
-    hora:       "22:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "52",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "19/06/26",
-    partido:    "Turkey vs Paraguay",
-    liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.38",
     hora:       "22:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "71",
+    prob:       "72",
     resultado:  "pendiente"
   },
   {
@@ -34,25 +21,25 @@ const PROXIMOS_EVENTOS = [
     partido:    "Brazil vs Haiti",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 4.5 Goles",
-    cuota:      "1.49",
+    cuota:      "1.5",
     hora:       "19:30 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "68",
+    prob:       "67",
     resultado:  "pendiente"
   },
   {
     fecha:      "19/06/26",
     partido:    "Scotland vs Morocco",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Over 1.5 Goles",
-    cuota:      "1.45",
+    prediccion: "Hándicap Local +1.75",
+    cuota:      "1.32",
     hora:       "17:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "68",
+    prob:       "75",
     resultado:  "pendiente"
   },
   {
@@ -66,6 +53,32 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "76",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "19/06/26",
+    partido:    "Turkey vs Paraguay",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos Marcan",
+    cuota:      "1.95",
+    hora:       "22:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "52",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "19/06/26",
+    partido:    "Scotland vs Morocco",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.45",
+    hora:       "17:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "68",
     resultado:  "pendiente"
   },
   {
@@ -92,19 +105,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "1.3",
     prob:       "49",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "19/06/26",
-    partido:    "Scotland vs Morocco",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Hándicap Local +1",
-    cuota:      "1.63",
-    hora:       "17:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "61",
     resultado:  "pendiente"
   },
   {
