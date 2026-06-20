@@ -39,7 +39,7 @@
         "under225": 2.84,
         "under225_casa": "Pinnacle",
         "pinnacle_under225": 2.84,
-        "over25": 1.66,
+        "over25": 1.67,
         "over25_casa": "Betfair",
         "pinnacle_over25": 1.63,
         "under25": 2.48,
@@ -379,13 +379,13 @@
           "pinn_prob": 33.8
         },
         "over25": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
+          "value": -0.012,
+          "ev_porcentaje": -1.2,
+          "ev_pinn": -1.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.66,
+          "cuota": 1.67,
           "casa": "Betfair",
           "pinn_prob": 59.1
         },
@@ -7372,7 +7372,7 @@
         "2": 3.55,
         "2_casa": "Betfair",
         "pinnacle_2": 3.39,
-        "1": 2.4,
+        "1": 2.38,
         "1_casa": "Betfair",
         "pinnacle_1": 2.34,
         "X": 3.25,
@@ -7530,13 +7530,13 @@
           "pinn_prob": 28.4
         },
         "victoria_local": {
-          "value": -0.013,
-          "ev_porcentaje": -1.3,
-          "ev_pinn": -1.3,
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
+          "cuota": 2.38,
           "casa": "Betfair",
           "pinn_prob": 41.1
         },
@@ -12189,10 +12189,10 @@
       "cuotas": {
         "Chicago Cubs": 1.79,
         "Toronto Blue Jays": 2.16,
-        "Over 9.5": 2.01,
+        "Over 9.5": 2.0,
         "Under 9.5": 1.85,
         "Chicago Cubs (-1.5)": 2.6,
-        "Toronto Blue Jays (+1.5)": 1.55
+        "Toronto Blue Jays (+1.5)": 1.54
       },
       "probabilidades": {
         "Chicago Cubs": 54.7,
@@ -12225,13 +12225,13 @@
           "mercado_nombre": "Toronto Blue Jays"
         },
         "over_9_5": {
-          "value": -0.047,
-          "ev_porcentaje": -4.7,
-          "ev_pinn": -4.7,
+          "value": -0.051,
+          "ev_porcentaje": -5.1,
+          "ev_pinn": -5.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.01,
+          "cuota": 2.0,
           "casa": "DraftKings",
           "pinn_prob": 47.4,
           "mercado_nombre": "Over 9.5"
@@ -12261,13 +12261,13 @@
           "mercado_nombre": "Chicago Cubs (-1.5)"
         },
         "spread_toronto_blue_jays_1_5": {
-          "value": -0.034,
-          "ev_porcentaje": -3.4,
-          "ev_pinn": -3.4,
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.55,
+          "cuota": 1.54,
           "casa": "DraftKings",
           "pinn_prob": 62.3,
           "mercado_nombre": "Toronto Blue Jays (+1.5)"
@@ -14586,5 +14586,5 @@
       "movimiento": null
     }
   ],
-  "generado": "14:35:43"
+  "generado": "14:35:55"
 }
