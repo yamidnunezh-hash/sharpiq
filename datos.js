@@ -79,7 +79,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "20/06/26",
@@ -92,7 +93,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "74",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "20/06/26",
@@ -1123,6 +1125,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "20/06/26",
+    partido:    "Netherlands vs Sweden",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.58",
+    prob:       "62",
+    resultado:  "loss",
+    resultado:  "win"
+  },
   {
     fecha:      "19/06/26",
     partido:    "Turkey vs Paraguay",
