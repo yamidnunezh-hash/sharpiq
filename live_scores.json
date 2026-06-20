@@ -1,21 +1,6 @@
 {
-  "updated": "2026-06-20T14:33:56Z",
-  "live": [
-    {
-      "id": "84ce50c95b2d7df76ab9d8c38485be7f",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Londrina",
-      "away": "Athletic Club (MG)",
-      "fecha": "20/06/26",
-      "hora": "09:01 COT",
-      "ts": 1781946060,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    }
-  ],
+  "updated": "2026-06-20T16:04:20Z",
+  "live": [],
   "upcoming": [
     {
       "id": "4f0c518545b0096c68326daf25bffc1e",
@@ -230,6 +215,20 @@
   ],
   "finished": [
     {
+      "id": "84ce50c95b2d7df76ab9d8c38485be7f",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Londrina",
+      "away": "Athletic Club (MG)",
+      "fecha": "20/06/26",
+      "hora": "09:01 COT",
+      "ts": 1781946060,
+      "completed": true,
+      "score_home": "2",
+      "score_away": "0"
+    },
+    {
       "id": "f955d4b3395ce6e3b5ac1031ca52ca4e",
       "sport": "soccer_fifa_world_cup",
       "liga": "Mundial FIFA",
@@ -354,20 +353,6 @@
       "completed": true,
       "score_home": "9",
       "score_away": "3"
-    },
-    {
-      "id": "a072cb316f0d887f1c0251b417b34317",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Texas Rangers",
-      "away": "San Diego Padres",
-      "fecha": "19/06/26",
-      "hora": "19:06 COT",
-      "ts": 1781895960,
-      "completed": true,
-      "score_home": "9",
-      "score_away": "7"
     }
   ]
 }
