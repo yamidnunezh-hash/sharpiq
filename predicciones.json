@@ -1476,7 +1476,7 @@
         "corners_under_8_0": 3.0,
         "corners_under_8_0_casa": "Pinnacle",
         "pinnacle_corners_under_8_0": 3.0,
-        "corners_over_8_5": 1.53,
+        "corners_over_8_5": 1.56,
         "corners_over_8_5_casa": "Betfair",
         "pinnacle_corners_over_8_5": 1.5,
         "corners_under_8_5": 2.54,
@@ -1966,13 +1966,13 @@
           "mercado_nombre": "Corners Under 8"
         },
         "corners_over_8_5": {
-          "value": -0.054,
-          "ev_porcentaje": -5.4,
-          "ev_pinn": -5.4,
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.53,
+          "cuota": 1.56,
           "casa": "Betfair",
           "pinn_prob": 61.8,
           "mercado_nombre": "Corners Over 8.5"
@@ -6493,7 +6493,7 @@
       "hora": "14:00",
       "fecha_evento": "2026-06-20",
       "cuotas": {
-        "2": 3.05,
+        "2": 3.1,
         "2_casa": "Betfair",
         "pinnacle_2": 2.95,
         "1": 2.74,
@@ -6643,13 +6643,13 @@
       "confianza": 86.6,
       "value_bets": {
         "victoria_visita": {
-          "value": -0.005,
-          "ev_porcentaje": -0.5,
-          "ev_pinn": -0.5,
+          "value": 0.011,
+          "ev_porcentaje": 1.1,
+          "ev_pinn": 1.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.05,
+          "cuota": 3.1,
           "casa": "Betfair",
           "pinn_prob": 32.6
         },
@@ -11017,5 +11017,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:00:52"
+  "generado": "12:01:10"
 }
