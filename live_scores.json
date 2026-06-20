@@ -1,7 +1,6 @@
 {
-  "updated": "2026-06-20T12:12:01Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-06-20T14:33:56Z",
+  "live": [
     {
       "id": "84ce50c95b2d7df76ab9d8c38485be7f",
       "sport": "soccer_brazil_serie_b",
@@ -10,12 +9,14 @@
       "home": "Londrina",
       "away": "Athletic Club (MG)",
       "fecha": "20/06/26",
-      "hora": "09:00 COT",
-      "ts": 1781946000,
+      "hora": "09:01 COT",
+      "ts": 1781946060,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "4f0c518545b0096c68326daf25bffc1e",
       "sport": "soccer_fifa_world_cup",
@@ -208,6 +209,20 @@
       "fecha": "20/06/26",
       "hora": "19:00 COT",
       "ts": 1781982000,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "4bb2c510f37ac3221423f6fe96d81822",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Colorado Rockies",
+      "away": "Pittsburgh Pirates",
+      "fecha": "20/06/26",
+      "hora": "20:11 COT",
+      "ts": 1781986260,
       "completed": false,
       "score_home": null,
       "score_away": null
