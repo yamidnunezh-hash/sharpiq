@@ -27,7 +27,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "52",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "loss"
   },
   {
     fecha:      "19/06/26",
@@ -40,7 +41,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "loss"
   },
   {
     fecha:      "19/06/26",
@@ -1017,6 +1019,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "19/06/26",
+    partido:    "Turkey vs Paraguay",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos Marcan",
+    cuota:      "1.94",
+    prob:       "52",
+    resultado:  "loss",
+    resultado:  "loss"
+  },
   {
     fecha:      "19/06/26",
     partido:    "Brazil vs Haiti",
