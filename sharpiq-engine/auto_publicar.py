@@ -687,3 +687,24 @@ def correr():
 
 if __name__ == "__main__":
     correr()
+    # ── "Analisis del Dia": regenerar (auto, cada corrida) + publicar a la web ──
+    # AISLADO: si algo revienta aqui, NO afecta la publicacion de picks (ya hecha).
+    try:
+        import sys as _sys, subprocess as _sp
+        _eng = os.path.dirname(os.path.abspath(__file__))
+        _rd  = os.path.join(_eng, "..")
+        _sp.run([_sys.executable, "generar_analisis.py"], cwd=_eng,
+                capture_output=True, text=True, timeout=120)
+        def _gA(*a):
+            return _sp.run(["git", *a], cwd=_rd, capture_output=True, text=True)
+        _gA("add", "datos.js", "index.html")
+        _cmA = _gA("commit", "-m", "auto: analisis del dia")
+        if "nothing to commit" not in (_cmA.stdout + _cmA.stderr):
+            for _iA in range(3):
+                if _gA("push", "origin", "main").returncode == 0:
+                    LOG.info("Analisis del Dia publicado a la web")
+                    break
+                if _gA("pull", "--rebase", "--autostash", "origin", "main").returncode != 0:
+                    _gA("rebase", "--abort"); break
+    except Exception as _eA:
+        LOG.error(f"Analisis del Dia (no afecta picks): {_eA}")
