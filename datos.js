@@ -148,7 +148,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "2.2",
     prob:       "56",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "18/06/26",
@@ -1004,6 +1004,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "19/06/26",
+    partido:    "Hamilton Tiger-Cats vs BC Lions",
+    liga:       "CFL",
+    prediccion: "Gana Hamilton Tiger-Cats",
+    cuota:      "1.87",
+    prob:       "56",
+    resultado:  "win"
+  },
   {
     fecha:      "19/06/26",
     partido:    "Scotland vs Morocco",
