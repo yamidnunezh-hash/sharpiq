@@ -1,7 +1,6 @@
 {
-  "updated": "2026-06-20T16:04:20Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-06-20T17:50:01Z",
+  "live": [
     {
       "id": "4f0c518545b0096c68326daf25bffc1e",
       "sport": "soccer_fifa_world_cup",
@@ -13,8 +12,8 @@
       "hora": "12:00 COT",
       "ts": 1781956800,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "2",
+      "score_away": "0"
     },
     {
       "id": "f70f37528d3c150e17d2fb8ccfe42892",
@@ -27,8 +26,8 @@
       "hora": "12:11 COT",
       "ts": 1781957460,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "f34c6b3b5d4542734f725cdbf1200188",
@@ -41,9 +40,11 @@
       "hora": "12:36 COT",
       "ts": 1781958960,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "afc026eb30e790d723cc4d99d1551154",
       "sport": "baseball_mlb",
@@ -208,6 +209,48 @@
       "fecha": "20/06/26",
       "hora": "20:11 COT",
       "ts": 1781986260,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "11f0aee64edb29086a8ca3368f0fe44f",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Los Angeles Angels",
+      "fecha": "20/06/26",
+      "hora": "21:06 COT",
+      "ts": 1781989560,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "bc0eb3e2abd5d0ddb3e22dc71abf652a",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Arizona Diamondbacks",
+      "away": "Minnesota Twins",
+      "fecha": "20/06/26",
+      "hora": "21:11 COT",
+      "ts": 1781989860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "8e059160b850333f99e5414be7fede74",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Dodgers",
+      "away": "Baltimore Orioles",
+      "fecha": "20/06/26",
+      "hora": "21:11 COT",
+      "ts": 1781989860,
       "completed": false,
       "score_home": null,
       "score_away": null
