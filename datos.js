@@ -53,7 +53,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "19/06/26",
@@ -79,7 +79,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "66",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "19/06/26",
@@ -1017,6 +1017,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "19/06/26",
+    partido:    "Brazil vs Haiti",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.36",
+    prob:       "72",
+    resultado:  "win"
+  },
   {
     fecha:      "19/06/26",
     partido:    "Hamilton Tiger-Cats vs BC Lions",
