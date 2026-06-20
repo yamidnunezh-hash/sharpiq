@@ -4,6 +4,19 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "20/06/26",
+    partido:    "Orix Buffaloes vs Saitama Seibu Lions",
+    liga:       "NPB",
+    prediccion: "Gana Orix Buffaloes",
+    cuota:      "2.19",
+    hora:       "00:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.0",
+    prob:       "47",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "19/06/26",
     partido:    "Turkey vs Paraguay",
     liga:       "FIFA Mundial 2026",
