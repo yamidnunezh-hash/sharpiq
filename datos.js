@@ -1843,12 +1843,12 @@ const PREDICCIONES_HISTORIAL = [
   }
 ];
 const ANALISIS_DIA = [
-  { partido: "Ecuador vs Curaçao", liga: "FIFA Mundial 2026", titulo: "Ecuador parte con ventaja sobre Curaçao", cuerpo: "El modelo ve a Ecuador como claro favorito (82.0%) en este cruce. Ninguno de los dos llega especialmente fino en ataque.", hora: "00:00" },
+  { partido: "Ecuador vs Curaçao", liga: "FIFA Mundial 2026", titulo: "Ecuador parte con ventaja sobre Curaçao", cuerpo: "El modelo ve a Ecuador como claro favorito (82.3%) en este cruce. Ninguno de los dos llega especialmente fino en ataque.", hora: "00:00" },
   { partido: "Túnez vs Japón", liga: "FIFA Mundial 2026", titulo: "Japón, favorito para imponerse a Túnez", cuerpo: "Los numeros respaldan a Japón, con un 66.1% de probabilidad de ganar. Ambos vienen con cifras goleadoras discretas.", hora: "04:00" },
   { partido: "España vs Arabia Saudita", liga: "FIFA Mundial 2026", titulo: "España buscara dominar a Arabia Saudita", cuerpo: "España llega como el equipo a batir, con 86.9% segun el modelo. Ninguno de los dos llega especialmente fino en ataque.", hora: "16:00" },
   { partido: "Bélgica vs Irán", liga: "FIFA Mundial 2026", titulo: "Bélgica parte con ventaja sobre Irán", cuerpo: "El modelo ve a Bélgica como claro favorito (67.3%) en este cruce. Irán llega goleador, con 2.392 tantos por encuentro.", hora: "19:00" },
-  { partido: "Ceará vs Botafogo", liga: "Brasileirao B", titulo: "Ceará vs Botafogo apunta a ser cerrado", cuerpo: "El modelo proyecta un duelo tactico, con 60.5% de Under 2.5 goles. Ojo con Botafogo, que llega con altibajos y promedia 2.071 goles.", hora: "22:00" },
-  { partido: "Vila Nova vs Nautico PE", liga: "Brasileirao B", titulo: "Duelo tactico entre Vila Nova y Nautico PE", cuerpo: "No se esperan muchos goles: 56.7% de chance de quedar bajo los 2.5. Ambos vienen con cifras goleadoras discretas.", hora: "22:00" },
+  { partido: "Ceará vs Botafogo", liga: "Brasileirao B", titulo: "Ceará vs Botafogo apunta a ser cerrado", cuerpo: "El modelo proyecta un duelo tactico, con 60.6% de Under 2.5 goles. Ojo con Botafogo, que llega con altibajos y promedia 2.071 goles.", hora: "22:00" },
+  { partido: "Vila Nova vs Nautico PE", liga: "Brasileirao B", titulo: "Duelo tactico entre Vila Nova y Nautico PE", cuerpo: "No se esperan muchos goles: 57.7% de chance de quedar bajo los 2.5. Ambos vienen con cifras goleadoras discretas.", hora: "22:00" },
   { partido: "Avai vs Cuiabá", liga: "Brasileirao B", titulo: "Avai vs Cuiabá, partido de pocos goles", cuerpo: "Pinta cerrado y de pocos goles: 69.3% de probabilidad de Under 2.5. Avai viene de capa caida y promedia 1.941 goles por partido.", hora: "14:00" },
   { partido: "Clube de Regatas Brasil vs Fortaleza", liga: "Brasileirao B", titulo: "Clube de Regatas Brasil vs Fortaleza apunta a ser cerrado", cuerpo: "El modelo proyecta un duelo tactico, con 57.1% de Under 2.5 goles. Ambos vienen con cifras goleadoras discretas.", hora: "19:00" }
 ];
