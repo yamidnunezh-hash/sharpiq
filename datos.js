@@ -66,7 +66,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "58",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "loss"
   },
   {
     fecha:      "19/06/26",
@@ -92,7 +93,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "67",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "loss"
   },
   {
     fecha:      "19/06/26",
@@ -1002,6 +1004,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "19/06/26",
+    partido:    "Scotland vs Morocco",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.81",
+    prob:       "58",
+    resultado:  "win",
+    resultado:  "loss"
+  },
   {
     fecha:      "19/06/26",
     partido:    "Connecticut Sun vs Toronto Tempo",
