@@ -7,13 +7,13 @@ const PROXIMOS_EVENTOS = [
     fecha:      "20/06/26",
     partido:    "Tunisia vs Japan",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Victoria Visitante",
-    cuota:      "1.57",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.39",
     hora:       "23:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "63",
+    prob:       "71",
     resultado:  "pendiente"
   },
   {
@@ -27,6 +27,32 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "20/06/26",
+    partido:    "Germany vs Ivory Coast",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Visitante +2.25",
+    cuota:      "1.32",
+    hora:       "15:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "75",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "20/06/26",
+    partido:    "Tunisia vs Japan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Visitante",
+    cuota:      "1.57",
+    hora:       "23:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "63",
     resultado:  "pendiente"
   },
   {
@@ -57,19 +83,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "20/06/26",
-    partido:    "Germany vs Ivory Coast",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Victoria Local",
-    cuota:      "1.52",
-    hora:       "15:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "65",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "20/06/26",
     partido:    "Netherlands vs Sweden",
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Local",
@@ -79,19 +92,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "74",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "20/06/26",
-    partido:    "Tunisia vs Japan",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Over 1.5 Goles",
-    cuota:      "1.39",
-    hora:       "23:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "pendiente"
   },
   {
