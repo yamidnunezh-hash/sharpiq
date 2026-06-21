@@ -92,7 +92,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "20/06/26",
@@ -161,7 +162,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "68",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "20/06/26",
@@ -1179,6 +1181,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "20/06/26",
+    partido:    "Ecuador vs Curaçao",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.58",
+    prob:       "62",
+    resultado:  "win",
+    resultado:  "win"
+  },
   {
     fecha:      "20/06/26",
     partido:    "Germany vs Ivory Coast",
