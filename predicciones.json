@@ -1074,12 +1074,7 @@
       "cuotas_avisos": [],
       "sede_neutral": false,
       "arbitro": "",
-      "forma_local": {
-        "forma": 0.294,
-        "ataque_reciente": 0.737,
-        "defensa_reciente": 1.208,
-        "partidos": 5
-      },
+      "forma_local": null,
       "forma_visita": {
         "forma": 0.537,
         "ataque_reciente": 1.693,
@@ -9723,7 +9718,7 @@
         "Los Angeles Angels": 2.19,
         "Over 9.0": 1.89,
         "Under 9.0": 2.0,
-        "Athletics (-1.5)": 2.64,
+        "Athletics (-1.5)": 2.55,
         "Los Angeles Angels (+1.5)": 1.54
       },
       "probabilidades": {
@@ -9781,14 +9776,14 @@
           "mercado_nombre": "Under 9.0"
         },
         "spread_athletics_m1_5": {
-          "value": 0.001,
-          "ev_porcentaje": 0.1,
-          "ev_pinn": 0.1,
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.64,
-          "casa": "FanDuel",
+          "cuota": 2.55,
+          "casa": "BetMGM",
           "pinn_prob": 37.9,
           "mercado_nombre": "Athletics (-1.5)"
         },
@@ -9806,9 +9801,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Athletics (-1.5)",
-        "prob": 37.9,
-        "ev": 0.1
+        "mercado": "Athletics",
+        "prob": 55.2,
+        "ev": -1.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -10027,7 +10022,7 @@
         "Philadelphia Phillies": 1.59,
         "Over 8.0": 1.89,
         "Under 8.0": 1.95,
-        "New York Mets (+1.5)": 1.77,
+        "New York Mets (+1.5)": 1.76,
         "Philadelphia Phillies (-1.5)": 2.15
       },
       "probabilidades": {
@@ -10085,13 +10080,13 @@
           "mercado_nombre": "Under 8.0"
         },
         "spread_new_york_mets_1_5": {
-          "value": -0.012,
-          "ev_porcentaje": -1.2,
-          "ev_pinn": -1.2,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.77,
+          "cuota": 1.76,
           "casa": "FanDuel",
           "pinn_prob": 55.8,
           "mercado_nombre": "New York Mets (+1.5)"
@@ -13042,5 +13037,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:00:50"
+  "generado": "20:01:21"
 }
