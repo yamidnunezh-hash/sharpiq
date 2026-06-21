@@ -1,22 +1,6 @@
 {
-  "updated": "2026-06-21T15:18:29Z",
+  "updated": "2026-06-21T16:56:48Z",
   "live": [
-    {
-      "id": "7bc9ee717604abf4d7f6abfb15bea4c1",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Avai",
-      "away": "Cuiabá",
-      "fecha": "21/06/26",
-      "hora": "09:02 COT",
-      "ts": 1782032520,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "0"
-    }
-  ],
-  "upcoming": [
     {
       "id": "73529a242e319a86bf3d00ddb4accc37",
       "sport": "soccer_fifa_world_cup",
@@ -28,9 +12,11 @@
       "hora": "11:00 COT",
       "ts": 1782039600,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "3",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "3385f13848d741d7dbed13f55c4e5406",
       "sport": "baseball_mlb",
@@ -130,20 +116,6 @@
       "score_away": null
     },
     {
-      "id": "79c9ee89726e9d404bcade277b077b42",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Chicago Cubs",
-      "away": "Toronto Blue Jays",
-      "fecha": "21/06/26",
-      "hora": "13:21 COT",
-      "ts": 1782048060,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
       "id": "af71fc71bb598645a13d40236b310307",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -226,9 +198,51 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "69ef7f2129dac23a729038e1ae0119f7",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Los Angeles Angels",
+      "fecha": "21/06/26",
+      "hora": "15:06 COT",
+      "ts": 1782054360,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "cf85c204537d496410ae11148df91af4",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Dodgers",
+      "away": "Baltimore Orioles",
+      "fecha": "21/06/26",
+      "hora": "15:11 COT",
+      "ts": 1782054660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "7bc9ee717604abf4d7f6abfb15bea4c1",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Avai",
+      "away": "Cuiabá",
+      "fecha": "21/06/26",
+      "hora": "09:02 COT",
+      "ts": 1782032520,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "0"
+    },
     {
       "id": "dfc5202cf1b8ae002cf952cd04f235b9",
       "sport": "soccer_fifa_world_cup",
@@ -353,20 +367,6 @@
       "ts": 1781979360,
       "completed": true,
       "score_home": "15",
-      "score_away": "3"
-    },
-    {
-      "id": "305f009b26829d0052c0a6c1ec145e76",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Vila Nova",
-      "away": "Nautico PE",
-      "fecha": "20/06/26",
-      "hora": "17:00 COT",
-      "ts": 1781974800,
-      "completed": true,
-      "score_home": "4",
       "score_away": "3"
     }
   ]
