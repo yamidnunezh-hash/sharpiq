@@ -24,6 +24,11 @@ TRAD = {
 }
 def _trad(n): return TRAD.get((n or '').strip(), n)
 
+import unicodedata as _ud
+def _slug(s):
+    s = _ud.normalize('NFKD', s or '').encode('ascii', 'ignore').decode()
+    return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
+
 def _esc(s): return (s or "").replace("\\", "\\\\").replace('"', '\\"')
 
 def _forma_adj(v, i):
@@ -98,9 +103,24 @@ def _generar(p, i):
         c += " " + _pick([f"Ninguno de los dos llega especialmente fino en ataque.",
                           f"Ambos vienen con cifras goleadoras discretas."], i)
 
+    # --- CUERPO LARGO (para la pagina de detalle): suma el panorama 1X2 + goles ---
+    ve = pr.get('empate') or 0
+    c_largo = c + " " + _pick([
+        f"En el 1X2, el modelo da {vl}% a {loc}, {ve}% al empate y {vv}% a {vis}.",
+        f"La probabilidad de resultado queda asi: {vl}% local, {ve}% empate, {vv}% visitante.",
+    ], i)
+    if o25 is not None:
+        c_largo += " " + _pick([
+            f"De cara al gol, hay un {o25}% de chance de superar los 2.5 tantos.",
+            f"En goles, el modelo proyecta un {o25}% de Over 2.5.",
+        ], i)
+
     return {"partido": f"{loc} vs {vis}", "liga": liga, "titulo": titulo,
-            "cuerpo": c, 
-            "hora": p.get('hora', '')}
+            "cuerpo": c, "cuerpo_largo": c_largo, "hora": p.get('hora', ''),
+            "slug": _slug(f"{loc}-vs-{vis}"),
+            "fL": flv, "aL": atk_l, "dL": fl.get('defensa_reciente') or 0,
+            "fV": fvv, "aV": atk_v, "dV": fv.get('defensa_reciente') or 0,
+            "vl": vl, "ve": ve, "vv": vv, "o25": o25 or 0, "u25": u25 or 0}
 
 def generar_items(preds):
     out = []; i = 0

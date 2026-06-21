@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Previa y Análisis del Partido — SharpIQ</title>
+<meta name="description" id="metaDesc" content="Previa y análisis del partido con datos del modelo estadístico de SharpIQ: forma, ataque, defensa y proyección.">
+<link rel="canonical" href="https://sharpiq.co/pronostico.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root{--bg0:#0a0e1a;--bg1:#0e1424;--card:#111a2e;--border:#1c2740;--t1:#eef3fb;--t2:#97a6bd;--t3:#5b6b84;--green:#22c55e;--cyan:#00C8FF}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg0);color:var(--t1);font-family:Inter,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--border);background:rgba(9,9,15,.85);position:sticky;top:0;backdrop-filter:blur(8px);z-index:10}
+  .logo{font-weight:800;font-size:20px;letter-spacing:.5px}
+  .logo span{color:var(--cyan)}
+  .back{font-size:12px;color:var(--t2);border:1px solid var(--border);padding:7px 14px;border-radius:8px;transition:border-color .2s}
+  .back:hover{border-color:var(--cyan)}
+  .wrap{max-width:780px;margin:0 auto;padding:34px 20px 64px}
+  .crumb{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+  h1{font-family:Bebas Neue,sans-serif;font-size:clamp(30px,6.5vw,48px);letter-spacing:.5px;line-height:1.04;margin-bottom:10px}
+  .meta{color:var(--t2);font-size:13px;margin-bottom:28px}
+  .lead{font-size:16px;color:var(--t2);line-height:1.75;margin-bottom:30px}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin-bottom:22px}
+  .panel h2{font-family:Bebas Neue,sans-serif;font-size:21px;letter-spacing:.6px;margin-bottom:18px;color:var(--t1)}
+  .prow{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+  .plab{width:90px;font-size:13px;color:var(--t2);flex-shrink:0}
+  .pbar{flex:1;height:9px;background:var(--bg1);border-radius:6px;overflow:hidden}
+  .pbar i{display:block;height:100%;border-radius:6px}
+  .pval{width:46px;text-align:right;font-family:Bebas Neue,sans-serif;font-size:19px;color:var(--t1)}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fcol{background:var(--bg1);border:1px solid var(--border);border-radius:10px;padding:16px}
+  .fcol .ft{font-size:13px;font-weight:700;color:var(--t1);margin-bottom:12px}
+  .fstat{display:flex;justify-content:space-between;font-size:12px;color:var(--t2);margin-bottom:7px}
+  .fstat b{font-family:Bebas Neue,sans-serif;font-size:16px;color:var(--cyan)}
+  .cta{background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:14px;padding:28px 24px;text-align:center;margin-top:6px}
+  .cta .lk{font-size:13px;color:rgba(255,255,255,.9);margin-bottom:14px;font-weight:600}
+  .cta a{display:inline-block;background:#fff;color:#0a1428;font-weight:800;padding:13px 30px;border-radius:10px;font-size:14px;letter-spacing:.3px}
+  .nf{text-align:center;padding:70px 20px;color:var(--t2)}
+  .nf a{color:var(--green);font-weight:700}
+  .disc{font-size:11px;color:var(--t3);text-align:center;margin-top:26px;line-height:1.6}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="logo">Sharp <span>IQ</span></a>
+  <a href="index.html#analisis" class="back">← Análisis del día</a>
+</nav>
+<div class="wrap" id="content">
+  <div class="nf">Cargando análisis…</div>
+</div>
+
+<script src="datos.js"></script>
+<script>
+(function(){
+  var slug = (new URLSearchParams(location.search).get('p') || '').toLowerCase();
+  var arr  = (typeof ANALISIS_DIA !== 'undefined') ? ANALISIS_DIA : [];
+  var a = null;
+  for (var k = 0; k < arr.length; k++){ if (arr[k].slug === slug){ a = arr[k]; break; } }
+  var content = document.getElementById('content');
+  if (!a){
+    content.innerHTML = '<div class="nf">No encontramos ese análisis (puede que el partido ya pasó).<br><br><a href="index.html#analisis">Ver los análisis de hoy &rarr;</a></div>';
+    return;
+  }
+  document.title = a.partido + ' — Previa y Análisis | SharpIQ';
+  var md = document.getElementById('metaDesc'); if (md) md.setAttribute('content', a.cuerpo || '');
+  var teams = (a.partido || '').split(' vs ');
+  var loc = teams[0] || 'Local', vis = teams[1] || 'Visitante';
+  var n = function(v){ return (v === undefined || v === null || v === '') ? '—' : v; };
+
+  // Barras 1X2
+  var vl = parseFloat(a.vl) || 0, ve = parseFloat(a.ve) || 0, vv = parseFloat(a.vv) || 0;
+  function proj(lab, val, col){
+    return '<div class="prow"><div class="plab">' + lab + '</div>'
+      + '<div class="pbar"><i style="width:' + Math.min(100, val) + '%;background:' + col + '"></i></div>'
+      + '<div class="pval">' + val + '%</div></div>';
+  }
+
+  content.innerHTML =
+    '<div class="crumb">' + n(a.liga) + (a.hora ? ' &middot; ' + a.hora + ' COT' : '') + '</div>'
+    + '<h1>' + a.titulo + '</h1>'
+    + '<div class="meta">Previa generada por el modelo estadístico de SharpIQ</div>'
+    + '<p class="lead">' + (a.cuerpo_largo || a.cuerpo || '') + '</p>'
+    + '<div class="panel"><h2>Probabilidad del modelo (1X2)</h2>'
+      + proj('Gana ' + loc, vl, '#22c55e')
+      + proj('Empate', ve, '#a78bfa')
+      + proj('Gana ' + vis, vv, '#00C8FF')
+    + '</div>'
+    + '<div class="panel"><h2>Forma reciente</h2><div class="fgrid">'
+      + '<div class="fcol"><div class="ft">' + loc + '</div>'
+        + '<div class="fstat"><span>Forma</span><b>' + Math.round((parseFloat(a.fL)||0)*100) + '%</b></div>'
+        + '<div class="fstat"><span>Ataque</span><b>' + n(a.aL) + '</b></div>'
+        + '<div class="fstat"><span>Recibe</span><b>' + n(a.dL) + '</b></div></div>'
+      + '<div class="fcol"><div class="ft">' + vis + '</div>'
+        + '<div class="fstat"><span>Forma</span><b>' + Math.round((parseFloat(a.fV)||0)*100) + '%</b></div>'
+        + '<div class="fstat"><span>Ataque</span><b>' + n(a.aV) + '</b></div>'
+        + '<div class="fstat"><span>Recibe</span><b>' + n(a.dV) + '</b></div></div>'
+    + '</div></div>'
+    + '<div class="cta"><div class="lk">🔒 El pick recomendado de este partido es exclusivo VIP</div>'
+      + '<a href="index.html#planes">Ver la jugada del modelo &rarr;</a></div>'
+    + '<div class="disc">Análisis informativo basado en datos estadísticos. No es una garantía de resultados. Apuesta con responsabilidad.</div>';
+})();
+</script>
+</body>
+</html>
