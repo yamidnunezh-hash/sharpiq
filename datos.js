@@ -13,7 +13,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "71",
+    prob:       "72",
     resultado:  "pendiente"
   },
   {
@@ -21,7 +21,7 @@ const PROXIMOS_EVENTOS = [
     partido:    "Uruguay vs Cape Verde",
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
-    cuota:      "1.47",
+    cuota:      "1.48",
     hora:       "17:00 COT",
     status:     "vip",
     tier:       "seguro",
