@@ -9250,7 +9250,7 @@
         "1": 2.95,
         "1_casa": "Unibet",
         "pinnacle_1": 2.92,
-        "X": 3.7,
+        "X": 3.65,
         "X_casa": "Betfair",
         "pinnacle_X": 3.57,
         "over275": 1.84,
@@ -9424,13 +9424,13 @@
           "pinn_prob": 32.7
         },
         "empate": {
-          "value": -0.011,
-          "ev_porcentaje": -1.1,
-          "ev_pinn": -1.1,
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.7,
+          "cuota": 3.65,
           "casa": "Betfair",
           "pinn_prob": 26.7
         },
@@ -12013,5 +12013,5 @@
       "movimiento": null
     }
   ],
-  "generado": "14:35:46"
+  "generado": "14:35:58"
 }
