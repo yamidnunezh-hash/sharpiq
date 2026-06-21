@@ -7,13 +7,13 @@ const PROXIMOS_EVENTOS = [
     fecha:      "21/06/26",
     partido:    "New Zealand vs Egypt",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Over 1.5 Goles",
-    cuota:      "1.38",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.33",
     hora:       "20:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "72",
+    prob:       "74",
     resultado:  "pendiente"
   },
   {
@@ -27,6 +27,19 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "68",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "21/06/26",
+    partido:    "New Zealand vs Egypt",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.38",
+    hora:       "20:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "72",
     resultado:  "pendiente"
   },
   {
@@ -82,19 +95,6 @@ const PROXIMOS_EVENTOS = [
     prob:       "71",
     resultado:  "win",
     resultado:  "win"
-  },
-  {
-    fecha:      "21/06/26",
-    partido:    "New Zealand vs Egypt",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Victoria Visitante",
-    cuota:      "1.65",
-    hora:       "20:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "60",
-    resultado:  "pendiente"
   },
   {
     fecha:      "20/06/26",
