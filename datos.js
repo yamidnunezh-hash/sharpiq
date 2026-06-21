@@ -4,6 +4,58 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "21/06/26",
+    partido:    "New Zealand vs Egypt",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Visitante",
+    cuota:      "1.65",
+    hora:       "20:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "60",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "21/06/26",
+    partido:    "Uruguay vs Cape Verde",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.5",
+    hora:       "17:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "66",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "21/06/26",
+    partido:    "Belgium vs Iran",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.48",
+    hora:       "14:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "67",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "21/06/26",
+    partido:    "Spain vs Saudi Arabia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.47",
+    hora:       "11:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "68",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "20/06/26",
     partido:    "Tunisia vs Japan",
     liga:       "FIFA Mundial 2026",
