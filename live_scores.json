@@ -1,7 +1,6 @@
 {
-  "updated": "2026-06-21T13:03:22Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-06-21T15:18:29Z",
+  "live": [
     {
       "id": "7bc9ee717604abf4d7f6abfb15bea4c1",
       "sport": "soccer_brazil_serie_b",
@@ -10,12 +9,14 @@
       "home": "Avai",
       "away": "Cuiabá",
       "fecha": "21/06/26",
-      "hora": "09:00 COT",
-      "ts": 1782032400,
+      "hora": "09:02 COT",
+      "ts": 1782032520,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "73529a242e319a86bf3d00ddb4accc37",
       "sport": "soccer_fifa_world_cup",
@@ -208,6 +209,20 @@
       "fecha": "21/06/26",
       "hora": "14:16 COT",
       "ts": 1782051360,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "74c51b95f6775559a7050dbaeb0ca318",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "São Bernardo",
+      "away": "Juventude",
+      "fecha": "21/06/26",
+      "hora": "15:00 COT",
+      "ts": 1782054000,
       "completed": false,
       "score_home": null,
       "score_away": null
