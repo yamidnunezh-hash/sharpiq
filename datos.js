@@ -66,7 +66,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "58",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "21/06/26",
@@ -79,7 +80,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "21/06/26",
@@ -1222,6 +1224,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "21/06/26",
+    partido:    "Spain vs Saudi Arabia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Under 10.5",
+    cuota:      "1.76",
+    prob:       "58",
+    resultado:  "win",
+    resultado:  "win"
+  },
   {
     fecha:      "20/06/26",
     partido:    "Tunisia vs Japan",
