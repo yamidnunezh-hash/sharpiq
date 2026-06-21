@@ -7,6 +7,19 @@ const PROXIMOS_EVENTOS = [
     fecha:      "20/06/26",
     partido:    "Tunisia vs Japan",
     liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.37",
+    hora:       "23:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "72",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "20/06/26",
+    partido:    "Tunisia vs Japan",
+    liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Visitante",
     cuota:      "1.51",
     hora:       "23:00 COT",
@@ -27,19 +40,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "20/06/26",
-    partido:    "Tunisia vs Japan",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Over 1.5 Goles",
-    cuota:      "1.39",
-    hora:       "23:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "pendiente"
   },
   {
