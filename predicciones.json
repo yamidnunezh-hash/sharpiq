@@ -2479,12 +2479,7 @@
         "defensa_reciente": 1.208,
         "partidos": 5
       },
-      "forma_visita": {
-        "forma": 0.537,
-        "ataque_reciente": 1.693,
-        "defensa_reciente": 0.888,
-        "partidos": 5
-      },
+      "forma_visita": null,
       "h2h": null,
       "movimiento": null,
       "mercados_ext": {
@@ -8801,5 +8796,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:00:50"
+  "generado": "16:01:22"
 }
