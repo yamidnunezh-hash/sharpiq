@@ -20,9 +20,61 @@ const PROXIMOS_EVENTOS = [
     fecha:      "22/06/26",
     partido:    "Jordan vs Algeria",
     liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Visitante",
+    cuota:      "1.56",
+    hora:       "22:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "64",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "22/06/26",
+    partido:    "Norway vs Senegal",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "2.04",
+    hora:       "19:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "50",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "22/06/26",
+    partido:    "Norway vs Senegal",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.31",
+    hora:       "19:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "75",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "22/06/26",
+    partido:    "France vs Iraq",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.35",
+    hora:       "16:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "73",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "22/06/26",
+    partido:    "Argentina vs Austria",
+    liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.33",
-    hora:       "22:00 COT",
+    hora:       "12:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
@@ -31,15 +83,15 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "22/06/26",
-    partido:    "Norway vs Senegal",
+    partido:    "Jordan vs Algeria",
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
-    cuota:      "1.32",
-    hora:       "19:00 COT",
+    cuota:      "1.33",
+    hora:       "22:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "75",
+    prob:       "74",
     resultado:  "pendiente"
   },
   {
@@ -53,19 +105,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "52",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "22/06/26",
-    partido:    "France vs Iraq",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Over 2.5 Goles",
-    cuota:      "1.37",
-    hora:       "16:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
     resultado:  "pendiente"
   },
   {
@@ -427,7 +466,6 @@ const PROXIMOS_EVENTOS = [
     resultado:  "win",
     resultado:  "win"
   },
-
   {
     fecha:      "19/06/26",
     partido:    "USA vs Australia",
