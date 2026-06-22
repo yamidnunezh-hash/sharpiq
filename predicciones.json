@@ -126,8 +126,8 @@
         "corners_over_10_5": 3.35,
         "corners_over_10_5_casa": "Betfair",
         "pinnacle_corners_over_10_5": 2.88,
-        "corners_under_10_5": 1.41,
-        "corners_under_10_5_casa": "Virgin Bet",
+        "corners_under_10_5": 1.4,
+        "corners_under_10_5_casa": "LiveScore Bet",
         "pinnacle_corners_under_10_5": 1.35,
         "cards_over_2_5": 1.83,
         "cards_over_2_5_casa": "LiveScore Bet",
@@ -187,26 +187,26 @@
         "ah_l_p1_25": 1.67,
         "ah_l_p1_25_casa": "Pinnacle",
         "pinnacle_ah_l_p1_25": 1.67,
-        "ah_v_m1_25": 2.38,
-        "ah_v_m1_25_casa": "Virgin Bet",
+        "ah_v_m1_25": 2.35,
+        "ah_v_m1_25_casa": "Pinnacle",
         "pinnacle_ah_v_m1_25": 2.35,
         "ah_l_p1_5": 1.53,
         "ah_l_p1_5_casa": "Pinnacle",
         "pinnacle_ah_l_p1_5": 1.53,
-        "ah_v_m1_5": 2.7,
-        "ah_v_m1_5_casa": "Virgin Bet",
+        "ah_v_m1_5": 2.69,
+        "ah_v_m1_5_casa": "Pinnacle",
         "pinnacle_ah_v_m1_5": 2.69,
         "ah_l_p1_75": 1.38,
         "ah_l_p1_75_casa": "Pinnacle",
         "pinnacle_ah_l_p1_75": 1.38,
-        "ah_v_m1_75": 3.35,
-        "ah_v_m1_75_casa": "Virgin Bet",
+        "ah_v_m1_75": 3.3,
+        "ah_v_m1_75_casa": "LiveScore Bet",
         "pinnacle_ah_v_m1_75": 3.28,
         "ah_l_p2_0": 1.24,
         "ah_l_p2_0_casa": "Pinnacle",
         "pinnacle_ah_l_p2_0": 1.24,
-        "ah_v_m2_0": 4.7,
-        "ah_v_m2_0_casa": "Virgin Bet",
+        "ah_v_m2_0": 4.6,
+        "ah_v_m2_0_casa": "LiveScore Bet",
         "pinnacle_ah_v_m2_0": 4.55
       },
       "probabilidades": {
@@ -715,14 +715,14 @@
           "mercado_nombre": "Corners Over 10.5"
         },
         "corners_under_10_5": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.41,
-          "casa": "Virgin Bet",
+          "cuota": 1.4,
+          "casa": "LiveScore Bet",
           "pinn_prob": 68.1,
           "mercado_nombre": "Corners Under 10.5"
         },
@@ -963,14 +963,14 @@
           "mercado_nombre": "Hándicap Local +1.25"
         },
         "ah_v_m1_25": {
-          "value": -0.011,
-          "ev_porcentaje": -1.1,
-          "ev_pinn": -1.1,
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.38,
-          "casa": "Virgin Bet",
+          "cuota": 2.35,
+          "casa": "Pinnacle",
           "pinn_prob": 41.5,
           "mercado_nombre": "Hándicap Visitante -1.25"
         },
@@ -987,14 +987,14 @@
           "mercado_nombre": "Hándicap Local +1.5"
         },
         "ah_v_m1_5": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.7,
-          "casa": "Virgin Bet",
+          "cuota": 2.69,
+          "casa": "Pinnacle",
           "pinn_prob": 36.3,
           "mercado_nombre": "Hándicap Visitante -1.5"
         },
@@ -1011,14 +1011,14 @@
           "mercado_nombre": "Hándicap Local +1.75"
         },
         "ah_v_m1_75": {
-          "value": -0.008,
-          "ev_porcentaje": -0.8,
-          "ev_pinn": -0.8,
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.35,
-          "casa": "Virgin Bet",
+          "cuota": 3.3,
+          "casa": "LiveScore Bet",
           "pinn_prob": 29.6,
           "mercado_nombre": "Hándicap Visitante -1.75"
         },
@@ -1035,14 +1035,14 @@
           "mercado_nombre": "Hándicap Local +2"
         },
         "ah_v_m2_0": {
-          "value": 0.007,
-          "ev_porcentaje": 0.7,
-          "ev_pinn": 0.7,
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.7,
-          "casa": "Virgin Bet",
+          "cuota": 4.6,
+          "casa": "LiveScore Bet",
           "pinn_prob": 21.4,
           "mercado_nombre": "Hándicap Visitante -2"
         }
@@ -14941,5 +14941,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:26"
+  "generado": "00:01:41"
 }
