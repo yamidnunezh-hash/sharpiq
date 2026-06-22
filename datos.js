@@ -40,7 +40,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "loss"
   },
   {
     fecha:      "21/06/26",
@@ -53,7 +54,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "68",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "loss"
   },
   {
     fecha:      "21/06/26",
@@ -1239,6 +1241,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "21/06/26",
+    partido:    "Uruguay vs Cape Verde",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.4",
+    prob:       "71",
+    resultado:  "win",
+    resultado:  "loss"
+  },
   {
     fecha:      "21/06/26",
     partido:    "Belgium vs Iran",
