@@ -45,10 +45,10 @@
         "under325": 2.46,
         "under325_casa": "Pinnacle",
         "pinnacle_under325": 2.46,
-        "over35": 1.84,
+        "over35": 1.83,
         "over35_casa": "Betfair",
         "pinnacle_over35": 1.75,
-        "under35": 2.16,
+        "under35": 2.18,
         "under35_casa": "Betfair",
         "pinnacle_under35": 2.14,
         "over40": 2.21,
@@ -63,7 +63,7 @@
         "under425": 1.56,
         "under425_casa": "Pinnacle",
         "pinnacle_under425": 1.56,
-        "over45": 2.84,
+        "over45": 2.88,
         "over45_casa": "Betfair",
         "pinnacle_over45": 2.7,
         "under45": 1.53,
@@ -405,24 +405,24 @@
           "pinn_prob": 38.8
         },
         "over35": {
-          "value": 0.012,
-          "ev_porcentaje": 1.2,
-          "ev_pinn": 1.2,
+          "value": 0.007,
+          "ev_porcentaje": 0.7,
+          "ev_pinn": 0.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.84,
+          "cuota": 1.83,
           "casa": "Betfair",
           "pinn_prob": 55.0
         },
         "under35": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.16,
+          "cuota": 2.18,
           "casa": "Betfair",
           "pinn_prob": 45.0
         },
@@ -471,13 +471,13 @@
           "pinn_prob": 61.2
         },
         "over45": {
-          "value": -0.003,
-          "ev_porcentaje": -0.3,
-          "ev_pinn": -0.3,
+          "value": 0.011,
+          "ev_porcentaje": 1.1,
+          "ev_pinn": 1.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.84,
+          "cuota": 2.88,
           "casa": "Betfair",
           "pinn_prob": 35.1
         },
@@ -6978,8 +6978,8 @@
         "2": 1.97,
         "2_casa": "Betfair",
         "pinnacle_2": 1.93,
-        "1": 4.79,
-        "1_casa": "Pinnacle",
+        "1": 4.8,
+        "1_casa": "Betfair",
         "pinnacle_1": 4.79,
         "X": 3.4,
         "X_casa": "Unibet",
@@ -7136,14 +7136,14 @@
           "pinn_prob": 49.8
         },
         "victoria_local": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.79,
-          "casa": "Pinnacle",
+          "cuota": 4.8,
+          "casa": "Betfair",
           "pinn_prob": 20.0
         },
         "empate": {
@@ -15830,5 +15830,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:00:53"
+  "generado": "20:01:08"
 }
