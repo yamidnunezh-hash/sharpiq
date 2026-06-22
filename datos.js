@@ -14,7 +14,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "22/06/26",
@@ -92,7 +92,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "73",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "21/06/26",
@@ -105,7 +106,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "60",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "21/06/26",
@@ -425,19 +427,7 @@ const PROXIMOS_EVENTOS = [
     resultado:  "win",
     resultado:  "win"
   },
-  {
-    fecha:      "19/06/26",
-    partido:    "NC Dinos vs SSG Landers",
-    liga:       "KBO",
-    prediccion: "Gana NC Dinos",
-    cuota:      "2.1",
-    hora:       "04:30 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.3",
-    prob:       "49",
-    resultado:  "pendiente"
-  },
+
   {
     fecha:      "19/06/26",
     partido:    "USA vs Australia",
@@ -1319,6 +1309,25 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "21/06/26",
+    partido:    "New Zealand vs Egypt",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.35",
+    prob:       "73",
+    resultado:  "win",
+    resultado:  "win"
+  },
+  {
+    fecha:      "22/06/26",
+    partido:    "Shamrock Rovers vs Derry City",
+    liga:       "League of Ireland",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.75",
+    prob:       "71",
+    resultado:  "loss"
+  },
   {
     fecha:      "21/06/26",
     partido:    "Uruguay vs Cape Verde",
