@@ -1,7 +1,6 @@
 {
-  "updated": "2026-06-22T13:14:27Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-06-22T17:54:56Z",
+  "live": [
     {
       "id": "be6c63f416c67bca1300a98f5b89c3af",
       "sport": "soccer_fifa_world_cup",
@@ -13,9 +12,11 @@
       "hora": "12:00 COT",
       "ts": 1782129600,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "7ad7a0ce2ef2618bb59b066da5642f70",
       "sport": "soccer_fifa_world_cup",
@@ -208,6 +209,20 @@
       "fecha": "22/06/26",
       "hora": "19:41 COT",
       "ts": 1782157260,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "541d3f8c1e87131917cbf8386a2563f6",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Angels",
+      "away": "Baltimore Orioles",
+      "fecha": "22/06/26",
+      "hora": "20:39 COT",
+      "ts": 1782160740,
       "completed": false,
       "score_home": null,
       "score_away": null
