@@ -5,19 +5,6 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "23/06/26",
-    partido:    "Cincinnati Reds vs Milwaukee Brewers",
-    liga:       "MLB",
-    prediccion: "Gana Cincinnati Reds",
-    cuota:      "2.02",
-    hora:       "18:11 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.0",
-    prob:       "50",
-    resultado:  "loss"
-  },
-  {
-    fecha:      "23/06/26",
     partido:    "Colombia vs DR Congo",
     liga:       "FIFA Mundial 2026",
     prediccion: "Ambos No Marcan",
@@ -85,14 +72,40 @@ const PROXIMOS_EVENTOS = [
     fecha:      "23/06/26",
     partido:    "Portugal vs Uzbekistan",
     liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Over 8.5",
+    cuota:      "1.7",
+    hora:       "12:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "60",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "23/06/26",
+    partido:    "Portugal vs Uzbekistan",
+    liga:       "FIFA Mundial 2026",
     prediccion: "Over 2.5 Goles",
-    cuota:      "1.51",
+    cuota:      "1.5",
     hora:       "12:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "65",
+    prob:       "66",
     resultado:  "pendiente"
+  },
+  {
+    fecha:      "23/06/26",
+    partido:    "Cincinnati Reds vs Milwaukee Brewers",
+    liga:       "MLB",
+    prediccion: "Gana Cincinnati Reds",
+    cuota:      "2.02",
+    hora:       "18:11 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.0",
+    prob:       "50",
+    resultado:  "loss"
   },
   {
     fecha:      "23/06/26",
