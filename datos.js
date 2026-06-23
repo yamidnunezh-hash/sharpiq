@@ -66,7 +66,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "23/06/26",
@@ -79,7 +80,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "23/06/26",
@@ -1459,6 +1461,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "23/06/26",
+    partido:    "England vs Ghana",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.61",
+    prob:       "62",
+    resultado:  "loss",
+    resultado:  "win"
+  },
   {
     fecha:      "23/06/26",
     partido:    "Portugal vs Uzbekistan",
