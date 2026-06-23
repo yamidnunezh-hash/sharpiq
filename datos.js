@@ -14,7 +14,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "1.0",
     prob:       "50",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "23/06/26",
@@ -1444,6 +1444,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "23/06/26",
+    partido:    "Cincinnati Reds vs Milwaukee Brewers",
+    liga:       "MLB",
+    prediccion: "Gana Cincinnati Reds",
+    cuota:      "2.02",
+    prob:       "50",
+    resultado:  "loss"
+  },
   {
     fecha:      "22/06/26",
     partido:    "Norway vs Senegal",
