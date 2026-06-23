@@ -3,8 +3,12 @@
 
 Proyecta por partido los mercados que pide la gente y que el motor basico NO
 daba: remates totales, remates A PUERTA, atajadas del portero, faltas y corners
-por equipo. Usa los promedios reales de los ultimos N partidos
+por equipo. Usa los promedios reales de los ultimos partidos
 (API-Football /fixtures/statistics), cruzando ataque propio vs defensa rival.
+
+Calidad de muestra: pide hasta 12 partidos, SALTA los que no tienen estadistica
+(no inventa) y se queda con hasta 8 partidos CON datos reales, PONDERANDO los
+mas recientes (pesan mas). Asi la muestra es solida y no de 3 partidos.
 
 Aislado: NO toca motor.py. Se puede llamar desde el flujo o probar a mano.
 Cache SQLite (sharpiq.db) con TTL para no gastar API en cada corrida.
@@ -47,25 +51,31 @@ def _cache_set(key, val):
         pass
 
 
-def stats_equipo(team_id, n=5):
-    """Promedios de los ultimos N partidos: remates/SoT/corners/faltas/atajadas
-    a FAVOR y remates/SoT en CONTRA. Devuelve dict o None. Con cache."""
+def stats_equipo(team_id, n=12, objetivo=8):
+    """Promedio PONDERADO (recientes pesan mas) de los partidos CON estadistica
+    dentro de los ultimos `n`. Salta los partidos sin datos (NO inventa) y apunta
+    a `objetivo` partidos con datos para una muestra solida. Mide remates/SoT/
+    corners/faltas/atajadas a FAVOR y remates/SoT en CONTRA. Devuelve dict (con
+    'n' = partidos reales usados) o None. Con cache."""
     if not team_id:
         return None
-    ck = f"prof_{team_id}_{n}"
+    ck = f"prof_v2_{team_id}_{n}_{objetivo}"
     c = _cache_get(ck)
     if c:
         return c
     from motor import _apifb
     r = _apifb('fixtures', {'team': team_id, 'last': n})
     fxs = (r or {}).get('response') or []
-    acc = {'shots_for': 0, 'sot_for': 0, 'corners_for': 0, 'fouls': 0,
-           'saves': 0, 'shots_ag': 0, 'sot_ag': 0}
-    cnt = 0
-    for fx in fxs:
+    keys = ('shots_for', 'sot_for', 'corners_for', 'fouls', 'saves',
+            'shots_ag', 'sot_ag')
+    acc = {k: 0.0 for k in keys}
+    wsum = 0.0
+    usados = 0   # solo partidos CON estadistica (la recencia se cuenta sobre estos)
+    for fx in fxs:   # API-Football los devuelve del mas reciente al mas viejo
         fid = fx['fixture']['id']
         st = _apifb('fixtures/statistics', {'fixture': fid})
         sresp = (st or {}).get('response') or []
+        vals = {k: 0 for k in keys}
         got = False
         for tm in sresp:
             us = tm['team']['id'] == team_id
@@ -74,20 +84,27 @@ def stats_equipo(team_id, n=5):
                 try: v = int(v)
                 except (TypeError, ValueError): v = 0
                 if us:
-                    if   ty == _K_SHOTS: acc['shots_for'] += v; got = True
-                    elif ty == _K_SOT:   acc['sot_for']   += v
-                    elif ty == _K_CORN:  acc['corners_for'] += v
-                    elif ty == _K_FOULS: acc['fouls']     += v
-                    elif ty == _K_SAVES: acc['saves']     += v
+                    if   ty == _K_SHOTS: vals['shots_for'] = v; got = True
+                    elif ty == _K_SOT:   vals['sot_for']   = v
+                    elif ty == _K_CORN:  vals['corners_for'] = v
+                    elif ty == _K_FOULS: vals['fouls']     = v
+                    elif ty == _K_SAVES: vals['saves']     = v
                 else:
-                    if   ty == _K_SHOTS: acc['shots_ag'] += v
-                    elif ty == _K_SOT:   acc['sot_ag']   += v
-        if got:
-            cnt += 1
-    if cnt == 0:
+                    if   ty == _K_SHOTS: vals['shots_ag'] = v
+                    elif ty == _K_SOT:   vals['sot_ag']   = v
+        if not got:
+            continue   # partido sin estadistica -> NO se inventa, se salta
+        w = 0.9 ** usados   # recencia: el mas reciente pesa 1, luego 0.9, 0.81...
+        for k in keys:
+            acc[k] += vals[k] * w
+        wsum += w
+        usados += 1
+        if usados >= objetivo:
+            break
+    if usados == 0:
         return None
-    out = {k: round(v / cnt, 2) for k, v in acc.items()}
-    out['n'] = cnt
+    out = {k: round(acc[k] / wsum, 2) for k in keys}
+    out['n'] = usados
     _cache_set(ck, out)
     return out
 
@@ -96,7 +113,7 @@ def _blend(a, b):
     return round((a + b) / 2.0, 1)
 
 
-def proyectar(local_id, visita_id, n=5):
+def proyectar(local_id, visita_id, n=12):
     """Proyeccion de mercados profundos del partido. Cruza ataque propio vs
     defensa rival. Devuelve dict con valores esperados, o None si faltan datos."""
     L = stats_equipo(local_id, n)
@@ -120,6 +137,7 @@ def proyectar(local_id, visita_id, n=5):
         'corners_total':   corners, 'faltas_total':     faltas,
         'remates_total':   round(L_shots + V_shots, 1),
         'sot_total':       round(L_sot + V_sot, 1),
+        'muestra_local':   L['n'],  'muestra_visita':   V['n'],
         'n': min(L['n'], V['n']),
     }
 
