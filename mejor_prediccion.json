@@ -139,7 +139,7 @@
       "corners_under_11_5": 1.33,
       "corners_under_11_5_casa": "LiveScore Bet",
       "pinnacle_corners_under_11_5": 1.27,
-      "cards_over_2_5": 2.02,
+      "cards_over_2_5": 1.98,
       "cards_over_2_5_casa": "Betfair",
       "pinnacle_cards_over_2_5": 1.98,
       "cards_under_2_5": 1.95,
@@ -741,13 +741,13 @@
         "mercado_nombre": "Corners Under 11.5"
       },
       "cards_over_2_5": {
-        "value": -0.027,
-        "ev_porcentaje": -2.7,
-        "ev_pinn": -2.7,
+        "value": -0.046,
+        "ev_porcentaje": -4.6,
+        "ev_pinn": -4.6,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.02,
+        "cuota": 1.98,
         "casa": "Betfair",
         "pinn_prob": 48.2,
         "mercado_nombre": "Tarjetas Over 2.5"
