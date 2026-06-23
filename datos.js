@@ -40,7 +40,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "65",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "22/06/26",
@@ -92,7 +92,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "73",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "22/06/26",
@@ -1349,6 +1349,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "22/06/26",
+    partido:    "France vs Iraq",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.35",
+    prob:       "73",
+    resultado:  "win"
+  },
   {
     fecha:      "22/06/26",
     partido:    "Argentina vs Austria",
