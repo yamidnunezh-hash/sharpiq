@@ -92,7 +92,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "60",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "23/06/26",
@@ -105,7 +106,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "66",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "23/06/26",
@@ -1457,6 +1459,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "23/06/26",
+    partido:    "Portugal vs Uzbekistan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Over 8.5",
+    cuota:      "1.7",
+    prob:       "60",
+    resultado:  "loss",
+    resultado:  "win"
+  },
   {
     fecha:      "23/06/26",
     partido:    "Cincinnati Reds vs Milwaukee Brewers",
