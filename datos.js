@@ -5,6 +5,19 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "23/06/26",
+    partido:    "Cincinnati Reds vs Milwaukee Brewers",
+    liga:       "MLB",
+    prediccion: "Gana Cincinnati Reds",
+    cuota:      "2.02",
+    hora:       "18:11 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.0",
+    prob:       "50",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "23/06/26",
     partido:    "Colombia vs DR Congo",
     liga:       "FIFA Mundial 2026",
     prediccion: "Ambos No Marcan",
