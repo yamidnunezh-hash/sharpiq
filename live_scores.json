@@ -1,21 +1,7 @@
 {
-  "updated": "2026-06-23T16:44:18Z",
+  "updated": "2026-06-23T19:08:13Z",
   "live": [],
   "upcoming": [
-    {
-      "id": "8ba93d190f1f934e33862a97a6353a6e",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "Portugal",
-      "away": "Uzbekistan",
-      "fecha": "23/06/26",
-      "hora": "12:00 COT",
-      "ts": 1782216000,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
     {
       "id": "2f49dd8deae3079dc4eb2d634d18a99c",
       "sport": "soccer_fifa_world_cup",
@@ -211,9 +197,37 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "bf29fc0fa42f9b3c5df76115d46b3773",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Colorado Rockies",
+      "away": "Boston Red Sox",
+      "fecha": "23/06/26",
+      "hora": "19:41 COT",
+      "ts": 1782243660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "8ba93d190f1f934e33862a97a6353a6e",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Portugal",
+      "away": "Uzbekistan",
+      "fecha": "23/06/26",
+      "hora": "12:00 COT",
+      "ts": 1782216000,
+      "completed": true,
+      "score_home": "5",
+      "score_away": "0"
+    },
     {
       "id": "fd8533b650e655030f6a7946f8795db2",
       "sport": "soccer_fifa_world_cup",
@@ -336,20 +350,6 @@
       "fecha": "22/06/26",
       "hora": "18:41 COT",
       "ts": 1782153660,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "2"
-    },
-    {
-      "id": "7adc5663e108dbde0834e58a957b5d3e",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Cincinnati Reds",
-      "away": "Milwaukee Brewers",
-      "fecha": "22/06/26",
-      "hora": "18:11 COT",
-      "ts": 1782151860,
       "completed": true,
       "score_home": "1",
       "score_away": "2"
