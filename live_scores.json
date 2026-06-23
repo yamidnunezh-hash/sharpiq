@@ -1,35 +1,6 @@
 {
-  "updated": "2026-06-23T04:32:16Z",
-  "live": [
-    {
-      "id": "66c3c3524e444f31fe9fc224ac058351",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Diego Padres",
-      "away": "Atlanta Braves",
-      "fecha": "22/06/26",
-      "hora": "21:11 COT",
-      "ts": 1782162664,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "0"
-    },
-    {
-      "id": "fd8533b650e655030f6a7946f8795db2",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "Jordan",
-      "away": "Algeria",
-      "fecha": "22/06/26",
-      "hora": "22:00 COT",
-      "ts": 1782165600,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "1"
-    }
-  ],
+  "updated": "2026-06-23T08:07:29Z",
+  "live": [],
   "upcoming": [
     {
       "id": "8ba93d190f1f934e33862a97a6353a6e",
@@ -244,6 +215,34 @@
   ],
   "finished": [
     {
+      "id": "fd8533b650e655030f6a7946f8795db2",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Jordan",
+      "away": "Algeria",
+      "fecha": "22/06/26",
+      "hora": "22:00 COT",
+      "ts": 1782165600,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "2"
+    },
+    {
+      "id": "66c3c3524e444f31fe9fc224ac058351",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Diego Padres",
+      "away": "Atlanta Braves",
+      "fecha": "22/06/26",
+      "hora": "21:11 COT",
+      "ts": 1782162664,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "0"
+    },
+    {
       "id": "541d3f8c1e87131917cbf8386a2563f6",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -353,34 +352,6 @@
       "ts": 1782151860,
       "completed": true,
       "score_home": "1",
-      "score_away": "2"
-    },
-    {
-      "id": "06b34739941eb6ab0d54c4cee040b202",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Toronto Blue Jays",
-      "away": "Houston Astros",
-      "fecha": "22/06/26",
-      "hora": "18:08 COT",
-      "ts": 1782151680,
-      "completed": true,
-      "score_home": "4",
-      "score_away": "2"
-    },
-    {
-      "id": "f5405b438b6ebb1b06047c824ed0e5a8",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Ponte Preta",
-      "away": "Grêmio Novorizontino",
-      "fecha": "22/06/26",
-      "hora": "18:00 COT",
-      "ts": 1782151200,
-      "completed": true,
-      "score_home": "0",
       "score_away": "2"
     }
   ]
