@@ -1549,7 +1549,7 @@
         "btts_si": 2.3,
         "btts_si_casa": "Pinnacle",
         "pinnacle_btts_si": 2.3,
-        "btts_no": 1.75,
+        "btts_no": 1.74,
         "btts_no_casa": "Betfair",
         "pinnacle_btts_no": 1.63,
         "dnb_local": 1.2,
@@ -2209,13 +2209,13 @@
           "pinn_prob": 41.5
         },
         "btts_no": {
-          "value": 0.024,
-          "ev_porcentaje": 2.4,
-          "ev_pinn": 2.4,
+          "value": 0.018,
+          "ev_porcentaje": 1.8,
+          "ev_pinn": 1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.75,
+          "cuota": 1.74,
           "casa": "Betfair",
           "pinn_prob": 58.5
         },
@@ -6609,7 +6609,7 @@
       "cuotas": {
         "Detroit Tigers": 2.01,
         "New York Yankees": 1.91,
-        "Over 8.0": 1.97,
+        "Over 8.0": 2.0,
         "Under 8.0": 1.87,
         "Detroit Tigers (+1.5)": 1.56,
         "New York Yankees (-1.5)": 2.5
@@ -6645,13 +6645,13 @@
           "mercado_nombre": "New York Yankees"
         },
         "over_8_0": {
-          "value": -0.055,
-          "ev_porcentaje": -5.5,
-          "ev_pinn": -5.5,
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.97,
+          "cuota": 2.0,
           "casa": "Unibet",
           "pinn_prob": 47.9,
           "mercado_nombre": "Over 8.0"
@@ -7025,7 +7025,7 @@
         "Washington Nationals": 2.55,
         "Over 8.5": 1.87,
         "Under 8.5": 1.98,
-        "Philadelphia Phillies (-1.5)": 1.93,
+        "Philadelphia Phillies (-1.5)": 1.94,
         "Washington Nationals (+1.5)": 1.91
       },
       "probabilidades": {
@@ -7083,14 +7083,14 @@
           "mercado_nombre": "Under 8.5"
         },
         "spread_philadelphia_phillies_m1_5": {
-          "value": -0.072,
-          "ev_porcentaje": -7.2,
-          "ev_pinn": -7.2,
+          "value": -0.067,
+          "ev_porcentaje": -6.7,
+          "ev_pinn": -6.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.93,
-          "casa": "DraftKings",
+          "cuota": 1.94,
+          "casa": "FanDuel",
           "pinn_prob": 48.1,
           "mercado_nombre": "Philadelphia Phillies (-1.5)"
         },
@@ -7102,7 +7102,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.91,
-          "casa": "FanDuel",
+          "casa": "BetMGM",
           "pinn_prob": 51.9,
           "mercado_nombre": "Washington Nationals (+1.5)"
         }
@@ -11190,5 +11190,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:00:58"
+  "generado": "20:01:10"
 }
