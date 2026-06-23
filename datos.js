@@ -7,13 +7,39 @@ const PROXIMOS_EVENTOS = [
     fecha:      "23/06/26",
     partido:    "Colombia vs DR Congo",
     liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.73",
+    hora:       "21:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "58",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "23/06/26",
+    partido:    "Colombia vs DR Congo",
+    liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
-    cuota:      "1.43",
+    cuota:      "1.42",
     hora:       "21:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "69",
+    prob:       "70",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "23/06/26",
+    partido:    "Panama vs Croatia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos No Marcan",
+    cuota:      "2.04",
+    hora:       "18:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "50",
     resultado:  "pendiente"
   },
   {
@@ -33,13 +59,26 @@ const PROXIMOS_EVENTOS = [
     fecha:      "23/06/26",
     partido:    "England vs Ghana",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Corners Under 8.5",
-    cuota:      "2.16",
+    prediccion: "Hándicap Visitante +2.5",
+    cuota:      "1.6",
     hora:       "15:00 COT",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "48",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "62",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "23/06/26",
+    partido:    "Portugal vs Uzbekistan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.51",
+    hora:       "12:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "65",
     resultado:  "pendiente"
   },
   {
@@ -402,7 +441,6 @@ const PROXIMOS_EVENTOS = [
     resultado:  "win",
     resultado:  "win"
   },
-
   {
     fecha:      "19/06/26",
     partido:    "Turkey vs Paraguay",
