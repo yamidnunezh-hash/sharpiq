@@ -4264,7 +4264,7 @@
         "corners_under_8_0": 2.34,
         "corners_under_8_0_casa": "Pinnacle",
         "pinnacle_corners_under_8_0": 2.34,
-        "corners_over_8_5": 1.81,
+        "corners_over_8_5": 1.82,
         "corners_over_8_5_casa": "Betfair",
         "pinnacle_corners_over_8_5": 1.75,
         "corners_under_8_5": 2.02,
@@ -4776,13 +4776,13 @@
           "mercado_nombre": "Corners Under 8"
         },
         "corners_over_8_5": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.81,
+          "cuota": 1.82,
           "casa": "Betfair",
           "pinn_prob": 53.6,
           "mercado_nombre": "Corners Over 8.5"
@@ -5664,7 +5664,7 @@
         "corners_under_8_0_casa": "Pinnacle",
         "pinnacle_corners_under_8_0": 2.61,
         "corners_over_8_5": 1.68,
-        "corners_over_8_5_casa": "Betfair",
+        "corners_over_8_5_casa": "Virgin Bet",
         "pinnacle_corners_over_8_5": 1.65,
         "corners_under_8_5": 2.22,
         "corners_under_8_5_casa": "Betfair",
@@ -5684,7 +5684,7 @@
         "corners_over_10_5": 2.72,
         "corners_over_10_5_casa": "Pinnacle",
         "pinnacle_corners_over_10_5": 2.72,
-        "corners_under_10_5": 1.47,
+        "corners_under_10_5": 1.45,
         "corners_under_10_5_casa": "Betfair",
         "pinnacle_corners_under_10_5": 1.39,
         "corners_over_11_0": 3.38,
@@ -6174,7 +6174,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.68,
-          "casa": "Betfair",
+          "casa": "Virgin Bet",
           "pinn_prob": 56.8,
           "mercado_nombre": "Corners Over 8.5"
         },
@@ -6251,13 +6251,13 @@
           "mercado_nombre": "Corners Over 10.5"
         },
         "corners_under_10_5": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.47,
+          "cuota": 1.45,
           "casa": "Betfair",
           "pinn_prob": 66.2,
           "mercado_nombre": "Corners Under 10.5"
@@ -10644,5 +10644,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:14"
+  "generado": "00:01:26"
 }
