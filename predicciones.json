@@ -7118,7 +7118,7 @@
         "pinnacle_btts_no": 1.81,
         "dnb_local": 4.7,
         "dnb_local_casa": "Betfair",
-        "dnb_visita": 1.25,
+        "dnb_visita": 1.26,
         "dnb_visita_casa": "Betfair",
         "ah_l_p0_75": 2.16,
         "ah_l_p0_75_casa": "Pinnacle",
@@ -7795,13 +7795,13 @@
           "pinn_prob": 20.9
         },
         "dnb_visita": {
-          "value": -0.011,
-          "ev_porcentaje": -1.1,
-          "ev_pinn": -1.1,
+          "value": -0.003,
+          "ev_porcentaje": -0.3,
+          "ev_pinn": -0.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.25,
+          "cuota": 1.26,
           "casa": "Betfair",
           "pinn_prob": 79.1
         },
@@ -8580,9 +8580,9 @@
       "hora": "18:11",
       "fecha_evento": "2026-06-24",
       "cuotas": {
-        "Chicago White Sox": 2.02,
+        "Chicago White Sox": 2.0,
         "Cleveland Guardians": 1.93,
-        "Over 8.0": 1.87,
+        "Over 8.0": 1.85,
         "Under 8.0": 2.0,
         "Chicago White Sox (+1.5)": 1.59,
         "Cleveland Guardians (-1.5)": 2.43
@@ -8594,14 +8594,14 @@
       "confianza": 50.9,
       "value_bets": {
         "Chicago White Sox": {
-          "value": -0.008,
-          "ev_porcentaje": -0.8,
-          "ev_pinn": -0.8,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.02,
-          "casa": "Unibet",
+          "cuota": 2.0,
+          "casa": "Pinnacle",
           "pinn_prob": 49.1,
           "mercado_nombre": "Chicago White Sox"
         },
@@ -8618,14 +8618,14 @@
           "mercado_nombre": "Cleveland Guardians"
         },
         "over_8_0": {
-          "value": -0.031,
-          "ev_porcentaje": -3.1,
-          "ev_pinn": -3.1,
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.87,
-          "casa": "Unibet",
+          "cuota": 1.85,
+          "casa": "DraftKings",
           "pinn_prob": 51.8,
           "mercado_nombre": "Over 8.0"
         },
@@ -8669,7 +8669,7 @@
       "prediccion_principal": {
         "mercado": "Chicago White Sox",
         "prob": 49.1,
-        "ev": -0.8
+        "ev": -1.8
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -11585,5 +11585,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:00:49"
+  "generado": "16:01:10"
 }
