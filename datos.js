@@ -8,7 +8,20 @@ const PROXIMOS_EVENTOS = [
     partido:    "South Africa vs South Korea",
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
-    cuota:      "1.37",
+    cuota:      "1.38",
+    hora:       "20:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "71",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "24/06/26",
+    partido:    "Czech Republic vs Mexico",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.38",
     hora:       "20:00 COT",
     status:     "vip",
     tier:       "seguro",
@@ -18,15 +31,28 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "24/06/26",
-    partido:    "Czech Republic vs Mexico",
+    partido:    "Morocco vs Haiti",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Over 1.5 Goles",
-    cuota:      "1.37",
-    hora:       "20:00 COT",
+    prediccion: "Hándicap Visitante +3",
+    cuota:      "1.33",
+    hora:       "17:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "72",
+    prob:       "74",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "24/06/26",
+    partido:    "Scotland vs Brazil",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Visitante",
+    cuota:      "1.33",
+    hora:       "17:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "74",
     resultado:  "pendiente"
   },
   {
@@ -40,19 +66,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "60",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "24/06/26",
-    partido:    "Scotland vs Brazil",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Victoria Visitante",
-    cuota:      "1.34",
-    hora:       "17:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "74",
     resultado:  "pendiente"
   },
   {
@@ -105,19 +118,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "57",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "24/06/26",
-    partido:    "Morocco vs Haiti",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Over 2.5 Goles",
-    cuota:      "1.6",
-    hora:       "17:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "62",
     resultado:  "pendiente"
   },
   {
