@@ -5,11 +5,11 @@
   "visitante": "Ivory Coast",
   "prediccion": "Victoria Local (1)",
   "mercado_key": "victoria_local",
-  "cuota": "20.0",
+  "cuota": "21.0",
   "casa": "Betfair",
   "hora_utc": "20:00",
   "hora_cot": "15:00 COT",
-  "ev": 13.5,
+  "ev": 19.2,
   "clasificacion": "ALTO VALOR",
   "confianza": 93.5,
   "pred_completa": {
@@ -22,7 +22,7 @@
     "hora": "20:00",
     "fecha_evento": "2026-06-25",
     "cuotas": {
-      "1": 20.0,
+      "1": 21.0,
       "1_casa": "Betfair",
       "pinnacle_1": 16.69,
       "2": 1.19,
@@ -109,7 +109,7 @@
       "corners_under_8_0": 2.69,
       "corners_under_8_0_casa": "Pinnacle",
       "pinnacle_corners_under_8_0": 2.69,
-      "corners_over_8_5": 1.67,
+      "corners_over_8_5": 1.68,
       "corners_over_8_5_casa": "Betfair",
       "pinnacle_corners_over_8_5": 1.6,
       "corners_under_8_5": 2.25,
@@ -302,13 +302,13 @@
     "confianza": 93.5,
     "value_bets": {
       "victoria_local": {
-        "value": 0.135,
-        "ev_porcentaje": 13.5,
-        "ev_pinn": 13.5,
+        "value": 0.192,
+        "ev_porcentaje": 19.2,
+        "ev_pinn": 19.2,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "ALTO VALOR",
-        "cuota": 20.0,
+        "cuota": 21.0,
         "casa": "Betfair",
         "pinn_prob": 5.7
       },
@@ -629,13 +629,13 @@
         "mercado_nombre": "Corners Under 8"
       },
       "corners_over_8_5": {
-        "value": -0.024,
-        "ev_porcentaje": -2.4,
-        "ev_pinn": -2.4,
+        "value": -0.018,
+        "ev_porcentaje": -1.8,
+        "ev_pinn": -1.8,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.67,
+        "cuota": 1.68,
         "casa": "Betfair",
         "pinn_prob": 58.4,
         "mercado_nombre": "Corners Over 8.5"

@@ -1456,10 +1456,10 @@
         "under325": 1.77,
         "under325_casa": "Pinnacle",
         "pinnacle_under325": 1.77,
-        "over35": 2.5,
+        "over35": 2.48,
         "over35_casa": "Betfair",
         "pinnacle_over35": 2.35,
-        "under35": 1.65,
+        "under35": 1.66,
         "under35_casa": "Betfair",
         "pinnacle_under35": 1.61,
         "over375": 2.72,
@@ -1531,7 +1531,7 @@
         "cards_over_2_5": 1.96,
         "cards_over_2_5_casa": "Pinnacle",
         "pinnacle_cards_over_2_5": 1.96,
-        "cards_under_2_5": 2.02,
+        "cards_under_2_5": 2.0,
         "cards_under_2_5_casa": "Betfair",
         "pinnacle_cards_under_2_5": 1.85,
         "cards_over_2_0": 1.47,
@@ -1554,7 +1554,7 @@
         "pinnacle_btts_no": 1.55,
         "dnb_local": 1.05,
         "dnb_local_casa": "Betfair",
-        "dnb_visita": 17.0,
+        "dnb_visita": 17.5,
         "dnb_visita_casa": "Betfair",
         "ah_l_m2_0": 1.89,
         "ah_l_m2_0_casa": "Pinnacle",
@@ -1848,24 +1848,24 @@
           "pinn_prob": 54.5
         },
         "over35": {
-          "value": 0.016,
-          "ev_porcentaje": 1.6,
-          "ev_pinn": 1.6,
+          "value": 0.008,
+          "ev_porcentaje": 0.8,
+          "ev_pinn": 0.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.5,
+          "cuota": 2.48,
           "casa": "Betfair",
           "pinn_prob": 40.7
         },
         "under35": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.65,
+          "cuota": 1.66,
           "casa": "Betfair",
           "pinn_prob": 59.3
         },
@@ -2142,13 +2142,13 @@
           "mercado_nombre": "Tarjetas Over 2.5"
         },
         "cards_under_2_5": {
-          "value": 0.039,
-          "ev_porcentaje": 3.9,
-          "ev_pinn": 3.9,
+          "value": 0.029,
+          "ev_porcentaje": 2.9,
+          "ev_pinn": 2.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.02,
+          "cuota": 2.0,
           "casa": "Betfair",
           "pinn_prob": 51.4,
           "mercado_nombre": "Tarjetas Under 2.5"
@@ -2235,13 +2235,13 @@
           "pinn_prob": 93.7
         },
         "dnb_visita": {
-          "value": 0.07,
-          "ev_porcentaje": 7.0,
-          "ev_pinn": 7.0,
+          "value": 0.101,
+          "ev_porcentaje": 10.1,
+          "ev_pinn": 10.1,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
-          "clasificacion": "VALOR",
-          "cuota": 17.0,
+          "clasificacion": "ALTO VALOR",
+          "cuota": 17.5,
           "casa": "Betfair",
           "pinn_prob": 6.3
         },
@@ -5576,7 +5576,7 @@
       "hora": "20:00",
       "fecha_evento": "2026-06-25",
       "cuotas": {
-        "1": 20.0,
+        "1": 21.0,
         "1_casa": "Betfair",
         "pinnacle_1": 16.69,
         "2": 1.19,
@@ -5663,7 +5663,7 @@
         "corners_under_8_0": 2.69,
         "corners_under_8_0_casa": "Pinnacle",
         "pinnacle_corners_under_8_0": 2.69,
-        "corners_over_8_5": 1.67,
+        "corners_over_8_5": 1.68,
         "corners_over_8_5_casa": "Betfair",
         "pinnacle_corners_over_8_5": 1.6,
         "corners_under_8_5": 2.25,
@@ -5856,13 +5856,13 @@
       "confianza": 93.5,
       "value_bets": {
         "victoria_local": {
-          "value": 0.135,
-          "ev_porcentaje": 13.5,
-          "ev_pinn": 13.5,
+          "value": 0.192,
+          "ev_porcentaje": 19.2,
+          "ev_pinn": 19.2,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
-          "cuota": 20.0,
+          "cuota": 21.0,
           "casa": "Betfair",
           "pinn_prob": 5.7
         },
@@ -6183,13 +6183,13 @@
           "mercado_nombre": "Corners Under 8"
         },
         "corners_over_8_5": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.67,
+          "cuota": 1.68,
           "casa": "Betfair",
           "pinn_prob": 58.4,
           "mercado_nombre": "Corners Over 8.5"
@@ -9784,14 +9784,14 @@
       "hora": "10:05",
       "fecha_evento": "2026-06-25",
       "cuotas": {
-        "Billy Harris": 1.51,
-        "Yi Zhou": 2.62
+        "Billy Harris": 1.5,
+        "Yi Zhou": 2.65
       },
       "probabilidades": {
-        "Billy Harris": 63.4,
-        "Yi Zhou": 36.6
+        "Billy Harris": 63.9,
+        "Yi Zhou": 36.1
       },
-      "confianza": 63.4,
+      "confianza": 63.9,
       "value_bets": {
         "Billy Harris": {
           "value": -0.042,
@@ -9800,9 +9800,9 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.51,
+          "cuota": 1.5,
           "casa": "Pinnacle",
-          "pinn_prob": 63.4,
+          "pinn_prob": 63.9,
           "mercado_nombre": "Billy Harris"
         },
         "Yi Zhou": {
@@ -9812,15 +9812,15 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.62,
+          "cuota": 2.65,
           "casa": "Pinnacle",
-          "pinn_prob": 36.6,
+          "pinn_prob": 36.1,
           "mercado_nombre": "Yi Zhou"
         }
       },
       "prediccion_principal": {
         "mercado": "Billy Harris",
-        "prob": 63.4,
+        "prob": 63.9,
         "ev": -4.2
       },
       "cuotas_reales": true,
@@ -9842,44 +9842,44 @@
       "hora": "10:05",
       "fecha_evento": "2026-06-25",
       "cuotas": {
-        "Christopher O'Connell": 1.68,
-        "Mackenzie McDonald": 2.23
+        "Christopher O'Connell": 1.69,
+        "Mackenzie McDonald": 2.22
       },
       "probabilidades": {
-        "Christopher O'Connell": 57.0,
-        "Mackenzie McDonald": 43.0
+        "Christopher O'Connell": 56.8,
+        "Mackenzie McDonald": 43.2
       },
-      "confianza": 57.0,
+      "confianza": 56.8,
       "value_bets": {
         "Christopher O'Connell": {
-          "value": -0.042,
-          "ev_porcentaje": -4.2,
-          "ev_pinn": -4.2,
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.68,
+          "cuota": 1.69,
           "casa": "Pinnacle",
-          "pinn_prob": 57.0,
+          "pinn_prob": 56.8,
           "mercado_nombre": "Christopher O'Connell"
         },
         "Mackenzie McDonald": {
-          "value": -0.042,
-          "ev_porcentaje": -4.2,
-          "ev_pinn": -4.2,
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.23,
+          "cuota": 2.22,
           "casa": "Pinnacle",
-          "pinn_prob": 43.0,
+          "pinn_prob": 43.2,
           "mercado_nombre": "Mackenzie McDonald"
         }
       },
       "prediccion_principal": {
         "mercado": "Christopher O'Connell",
-        "prob": 57.0,
-        "ev": -4.2
+        "prob": 56.8,
+        "ev": -4.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -10132,44 +10132,44 @@
       "hora": "10:05",
       "fecha_evento": "2026-06-25",
       "cuotas": {
-        "Nicolas Mejia": 3.75,
+        "Nicolas Mejia": 3.73,
         "Tristan Schoolkate": 1.29
       },
       "probabilidades": {
-        "Nicolas Mejia": 25.6,
-        "Tristan Schoolkate": 74.4
+        "Nicolas Mejia": 25.7,
+        "Tristan Schoolkate": 74.3
       },
-      "confianza": 74.4,
+      "confianza": 74.3,
       "value_bets": {
         "Nicolas Mejia": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.75,
+          "cuota": 3.73,
           "casa": "Pinnacle",
-          "pinn_prob": 25.6,
+          "pinn_prob": 25.7,
           "mercado_nombre": "Nicolas Mejia"
         },
         "Tristan Schoolkate": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.29,
           "casa": "Pinnacle",
-          "pinn_prob": 74.4,
+          "pinn_prob": 74.3,
           "mercado_nombre": "Tristan Schoolkate"
         }
       },
       "prediccion_principal": {
         "mercado": "Nicolas Mejia",
-        "prob": 25.6,
-        "ev": -4.0
+        "prob": 25.7,
+        "ev": -4.1
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -11527,5 +11527,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:01:22"
+  "generado": "20:01:55"
 }
