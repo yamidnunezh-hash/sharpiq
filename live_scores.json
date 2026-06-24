@@ -1,20 +1,6 @@
 {
-  "updated": "2026-06-24T22:24:07Z",
+  "updated": "2026-06-24T23:46:04Z",
   "live": [
-    {
-      "id": "6dcbe8dd9b8e932306789135de65db46",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Los Angeles Angels",
-      "away": "Baltimore Orioles",
-      "fecha": "24/06/26",
-      "hora": "15:08 COT",
-      "ts": 1782313680,
-      "completed": false,
-      "score_home": "2",
-      "score_away": "5"
-    },
     {
       "id": "1f144a9853388d9cfff4f46b16fb544f",
       "sport": "baseball_mlb",
@@ -26,8 +12,8 @@
       "hora": "15:51 COT",
       "ts": 1782316260,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
+      "score_home": "3",
+      "score_away": "3"
     },
     {
       "id": "d1279ce7f33136a33e99ad442fc855e8",
@@ -40,8 +26,8 @@
       "hora": "17:00 COT",
       "ts": 1782320400,
       "completed": false,
-      "score_home": "0",
-      "score_away": "1"
+      "score_home": "3",
+      "score_away": "2"
     },
     {
       "id": "885ba95805db310a7bcc3fb1a7a6dd28",
@@ -55,10 +41,8 @@
       "ts": 1782320460,
       "completed": false,
       "score_home": "0",
-      "score_away": "1"
-    }
-  ],
-  "upcoming": [
+      "score_away": "3"
+    },
     {
       "id": "d4ba9e7cff72c10fef86a3d3e71b80cd",
       "sport": "baseball_mlb",
@@ -70,8 +54,8 @@
       "hora": "17:41 COT",
       "ts": 1782322860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "2",
+      "score_away": "2"
     },
     {
       "id": "6f91332c1c3d9d7efc30b8b5e5596da8",
@@ -84,8 +68,8 @@
       "hora": "17:41 COT",
       "ts": 1782322860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "3",
+      "score_away": "0"
     },
     {
       "id": "6bd1412ad6a83bd72dfccfd3b52aba6b",
@@ -98,8 +82,8 @@
       "hora": "17:41 COT",
       "ts": 1782322860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "af718a14d01fafa34e924ea752814134",
@@ -112,8 +96,8 @@
       "hora": "17:46 COT",
       "ts": 1782323160,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "2",
+      "score_away": "0"
     },
     {
       "id": "e5eb0d0e2884807a04a7a39cb730639d",
@@ -126,8 +110,8 @@
       "hora": "18:08 COT",
       "ts": 1782324480,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "1",
+      "score_away": "1"
     },
     {
       "id": "0af952c1f3ce17d011acf2b042d9a497",
@@ -140,8 +124,8 @@
       "hora": "18:11 COT",
       "ts": 1782324660,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "1",
+      "score_away": "1"
     },
     {
       "id": "2dcef2b58c37ee8ffd48e1d662c5ebda",
@@ -154,37 +138,11 @@
       "hora": "18:11 COT",
       "ts": 1782324660,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "f7efadc6e4a428969fb12a38b1f5c343",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Minnesota Twins",
-      "away": "Los Angeles Dodgers",
-      "fecha": "24/06/26",
-      "hora": "18:41 COT",
-      "ts": 1782326460,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "3f6bd3e4a5b58ebe56c5f3bd89470591",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "St. Louis Cardinals",
-      "away": "Arizona Diamondbacks",
-      "fecha": "24/06/26",
-      "hora": "18:46 COT",
-      "ts": 1782326760,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "0c4f44574b86346807453d2bfde5280e",
       "sport": "baseball_mlb",
@@ -268,9 +226,149 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "2167fbe64e2ec78d184d2dfe0b94ac02",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Francisco Giants",
+      "away": "Athletics",
+      "fecha": "25/06/26",
+      "hora": "14:46 COT",
+      "ts": 1782398760,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "a5a0b544a984ab16e564264f3e859b43",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Curaçao",
+      "away": "Ivory Coast",
+      "fecha": "25/06/26",
+      "hora": "15:00 COT",
+      "ts": 1782399600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "0ec28b84ec399bd4dffbe8d1bc72b3c4",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Ecuador",
+      "away": "Germany",
+      "fecha": "25/06/26",
+      "hora": "15:00 COT",
+      "ts": 1782399600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "b2ba85e7ee80f20971faf8f275bcfb90",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Detroit Tigers",
+      "away": "Houston Astros",
+      "fecha": "25/06/26",
+      "hora": "17:41 COT",
+      "ts": 1782409260,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "c35d300c49e37e20f594b68819c65af4",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Washington Nationals",
+      "away": "Philadelphia Phillies",
+      "fecha": "25/06/26",
+      "hora": "17:46 COT",
+      "ts": 1782409560,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "0ed0233bddc4eafc8507f86a9c17b998",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Japan",
+      "away": "Sweden",
+      "fecha": "25/06/26",
+      "hora": "18:00 COT",
+      "ts": 1782410400,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "f3c4657daa143a0c5bd62cb370d01ce4",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Tunisia",
+      "away": "Netherlands",
+      "fecha": "25/06/26",
+      "hora": "18:00 COT",
+      "ts": 1782410400,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "96d5d5f79ecf6da3f4476ede6c7c5be2",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Toronto Blue Jays",
+      "away": "Texas Rangers",
+      "fecha": "25/06/26",
+      "hora": "18:08 COT",
+      "ts": 1782410880,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "e72272fad7813989b91104d828e36032",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Boston Red Sox",
+      "away": "New York Yankees",
+      "fecha": "25/06/26",
+      "hora": "18:11 COT",
+      "ts": 1782411060,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "6dcbe8dd9b8e932306789135de65db46",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Angels",
+      "away": "Baltimore Orioles",
+      "fecha": "24/06/26",
+      "hora": "15:08 COT",
+      "ts": 1782313680,
+      "completed": true,
+      "score_home": "7",
+      "score_away": "6"
+    },
     {
       "id": "74a9d15be6f7e75b97c7d220010253bd",
       "sport": "baseball_mlb",
@@ -396,20 +494,6 @@
       "completed": true,
       "score_home": "5",
       "score_away": "1"
-    },
-    {
-      "id": "bf29fc0fa42f9b3c5df76115d46b3773",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Colorado Rockies",
-      "away": "Boston Red Sox",
-      "fecha": "23/06/26",
-      "hora": "19:41 COT",
-      "ts": 1782243660,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "5"
     }
   ]
 }
