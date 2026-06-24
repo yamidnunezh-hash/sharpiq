@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T12:31:21Z",
+  "updated": "2026-06-24T15:21:45Z",
   "live": [],
   "upcoming": [
     {
@@ -12,6 +12,20 @@
       "fecha": "24/06/26",
       "hora": "11:11 COT",
       "ts": 1782299460,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "b03e189e275017dfd8549bdf781bd2cc",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "New York Mets",
+      "away": "Chicago Cubs",
+      "fecha": "24/06/26",
+      "hora": "12:11 COT",
+      "ts": 1782303060,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -185,29 +199,15 @@
       "score_away": null
     },
     {
-      "id": "2dcef2b58c37ee8ffd48e1d662c5ebda",
+      "id": "0af952c1f3ce17d011acf2b042d9a497",
       "sport": "baseball_mlb",
       "liga": "MLB",
       "emoji": "⚾",
-      "home": "Cincinnati Reds",
-      "away": "Milwaukee Brewers",
+      "home": "New York Mets",
+      "away": "Chicago Cubs",
       "fecha": "24/06/26",
       "hora": "18:11 COT",
       "ts": 1782324660,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "f7efadc6e4a428969fb12a38b1f5c343",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Minnesota Twins",
-      "away": "Los Angeles Dodgers",
-      "fecha": "24/06/26",
-      "hora": "18:41 COT",
-      "ts": 1782326460,
       "completed": false,
       "score_home": null,
       "score_away": null
