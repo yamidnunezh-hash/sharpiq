@@ -14,7 +14,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "64",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "23/06/26",
@@ -27,7 +28,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "23/06/26",
@@ -1463,6 +1465,16 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "23/06/26",
+    partido:    "Colombia vs DR Congo",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Visitante +1.5",
+    cuota:      "1.54",
+    prob:       "64",
+    resultado:  "win",
+    resultado:  "win"
+  },
   {
     fecha:      "23/06/26",
     partido:    "Panama vs Croatia",
