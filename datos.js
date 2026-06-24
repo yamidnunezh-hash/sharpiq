@@ -92,7 +92,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "55",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "24/06/26",
@@ -105,7 +106,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "49",
-    resultado:  "pendiente"
+    resultado:  "loss",
+    resultado:  "win"
   },
   {
     fecha:      "24/06/26",
@@ -118,7 +120,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "69",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "24/06/26",
@@ -144,7 +147,8 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "70",
-    resultado:  "pendiente"
+    resultado:  "win",
+    resultado:  "win"
   },
   {
     fecha:      "24/06/26",
@@ -1621,6 +1625,35 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "24/06/26",
+    partido:    "Bosnia & Herzegovina vs Qatar",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.42",
+    prob:       "69",
+    resultado:  "win"
+  },
+  {
+    fecha:      "24/06/26",
+    partido:    "Bosnia & Herzegovina vs Qatar",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos No Marcan",
+    cuota:      "2.08",
+    prob:       "49",
+    resultado:  "loss",
+    resultado:  "win"
+  },
+  {
+    fecha:      "24/06/26",
+    partido:    "Switzerland vs Canada",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos Marcan",
+    cuota:      "1.91",
+    prob:       "55",
+    resultado:  "win",
+    resultado:  "win"
+  },
   {
     fecha:      "23/06/26",
     partido:    "Colombia vs DR Congo",
