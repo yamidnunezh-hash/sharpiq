@@ -6681,11 +6681,11 @@
       "hora": "02:00",
       "fecha_evento": "2026-06-25",
       "cuotas": {
-        "1": 3.95,
+        "1": 3.9,
         "1_casa": "Betfair",
         "pinnacle_1": 3.67,
         "2": 1.95,
-        "2_casa": "Pinnacle",
+        "2_casa": "Betfair",
         "pinnacle_2": 1.95,
         "X": 4.2,
         "X_casa": "Betfair",
@@ -6780,10 +6780,10 @@
         "corners_under_10_0": 1.61,
         "corners_under_10_0_casa": "Pinnacle",
         "pinnacle_corners_under_10_0": 1.61,
-        "corners_over_10_5": 2.62,
+        "corners_over_10_5": 2.64,
         "corners_over_10_5_casa": "Betfair",
         "pinnacle_corners_over_10_5": 2.45,
-        "corners_under_10_5": 1.56,
+        "corners_under_10_5": 1.54,
         "corners_under_10_5_casa": "Betfair",
         "pinnacle_corners_under_10_5": 1.49,
         "corners_over_11_0": 2.94,
@@ -6949,13 +6949,13 @@
       "confianza": 75.8,
       "value_bets": {
         "victoria_local": {
-          "value": 0.051,
-          "ev_porcentaje": 5.1,
-          "ev_pinn": 5.1,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "VALOR",
-          "cuota": 3.95,
+          "value": 0.038,
+          "ev_porcentaje": 3.8,
+          "ev_pinn": 3.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 3.9,
           "casa": "Betfair",
           "pinn_prob": 26.6
         },
@@ -6967,7 +6967,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.95,
-          "casa": "Pinnacle",
+          "casa": "Betfair",
           "pinn_prob": 50.1
         },
         "empate": {
@@ -7324,25 +7324,25 @@
           "mercado_nombre": "Corners Under 10"
         },
         "corners_over_10_5": {
-          "value": -0.009,
-          "ev_porcentaje": -0.9,
-          "ev_pinn": -0.9,
+          "value": -0.002,
+          "ev_porcentaje": -0.2,
+          "ev_pinn": -0.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.62,
+          "cuota": 2.64,
           "casa": "Betfair",
           "pinn_prob": 37.8,
           "mercado_nombre": "Corners Over 10.5"
         },
         "corners_under_10_5": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.56,
+          "cuota": 1.54,
           "casa": "Betfair",
           "pinn_prob": 62.2,
           "mercado_nombre": "Corners Under 10.5"
@@ -10492,7 +10492,7 @@
       "fecha_evento": "2026-06-25",
       "cuotas": {
         "Boston Red Sox": 2.45,
-        "New York Yankees": 1.64,
+        "New York Yankees": 1.65,
         "Over 7.5": 1.85,
         "Under 7.5": 1.98,
         "Boston Red Sox (+1.5)": 1.87,
@@ -10517,14 +10517,14 @@
           "mercado_nombre": "Boston Red Sox"
         },
         "New York Yankees": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.64,
-          "casa": "FanDuel",
+          "cuota": 1.65,
+          "casa": "Unibet",
           "pinn_prob": 59.5,
           "mercado_nombre": "New York Yankees"
         },
@@ -11172,5 +11172,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:00:54"
+  "generado": "12:01:16"
 }
