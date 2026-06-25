@@ -1,35 +1,6 @@
 {
-  "updated": "2026-06-25T17:33:29Z",
-  "live": [
-    {
-      "id": "76bea7124df1feb6b3f3a11292d41157",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Tampa Bay Rays",
-      "away": "Kansas City Royals",
-      "fecha": "25/06/26",
-      "hora": "11:11 COT",
-      "ts": 1782385860,
-      "completed": false,
-      "score_home": "7",
-      "score_away": "0"
-    },
-    {
-      "id": "8d5a08315d4db8e350ce94bb65f91c0b",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Pittsburgh Pirates",
-      "away": "Seattle Mariners",
-      "fecha": "25/06/26",
-      "hora": "11:36 COT",
-      "ts": 1782387360,
-      "completed": false,
-      "score_home": "3",
-      "score_away": "0"
-    }
-  ],
+  "updated": "2026-06-25T19:28:38Z",
+  "live": [],
   "upcoming": [
     {
       "id": "2167fbe64e2ec78d184d2dfe0b94ac02",
@@ -244,6 +215,34 @@
   ],
   "finished": [
     {
+      "id": "8d5a08315d4db8e350ce94bb65f91c0b",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Pittsburgh Pirates",
+      "away": "Seattle Mariners",
+      "fecha": "25/06/26",
+      "hora": "11:36 COT",
+      "ts": 1782387360,
+      "completed": true,
+      "score_home": "5",
+      "score_away": "1"
+    },
+    {
+      "id": "76bea7124df1feb6b3f3a11292d41157",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Tampa Bay Rays",
+      "away": "Kansas City Royals",
+      "fecha": "25/06/26",
+      "hora": "11:11 COT",
+      "ts": 1782385860,
+      "completed": true,
+      "score_home": "13",
+      "score_away": "2"
+    },
+    {
       "id": "74b391c5a12588e6bdf6f98be072b920",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -354,34 +353,6 @@
       "completed": true,
       "score_home": "5",
       "score_away": "6"
-    },
-    {
-      "id": "e5eb0d0e2884807a04a7a39cb730639d",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Toronto Blue Jays",
-      "away": "Houston Astros",
-      "fecha": "24/06/26",
-      "hora": "18:08 COT",
-      "ts": 1782324480,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "3"
-    },
-    {
-      "id": "af718a14d01fafa34e924ea752814134",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Washington Nationals",
-      "away": "Philadelphia Phillies",
-      "fecha": "24/06/26",
-      "hora": "17:46 COT",
-      "ts": 1782323160,
-      "completed": true,
-      "score_home": "4",
-      "score_away": "5"
     }
   ]
 }
