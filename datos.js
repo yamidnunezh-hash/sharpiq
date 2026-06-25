@@ -14,7 +14,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "58",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "24/06/26",
@@ -27,7 +27,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "73",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "24/06/26",
@@ -40,7 +40,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "24/06/26",
@@ -165,7 +165,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "73",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "23/06/26",
@@ -1504,6 +1504,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "24/06/26",
+    partido:    "Czech Republic vs Mexico",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.35",
+    prob:       "73",
+    resultado:  "win"
+  },
+  {
+    fecha:      "24/06/26",
+    partido:    "South Africa vs South Korea",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.77",
+    prob:       "58",
+    resultado:  "win"
+  },
   {
     fecha:      "24/06/26",
     partido:    "Scotland vs Brazil",
