@@ -7,13 +7,13 @@ const PROXIMOS_EVENTOS = [
     fecha:      "24/06/26",
     partido:    "South Africa vs South Korea",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Over 1.5 Goles",
-    cuota:      "1.38",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.77",
     hora:       "20:00 COT",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "58",
     resultado:  "pendiente"
   },
   {
@@ -21,12 +21,25 @@ const PROXIMOS_EVENTOS = [
     partido:    "Czech Republic vs Mexico",
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
+    cuota:      "1.35",
+    hora:       "20:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "73",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "24/06/26",
+    partido:    "South Africa vs South Korea",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
     cuota:      "1.38",
     hora:       "20:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "72",
+    prob:       "71",
     resultado:  "pendiente"
   },
   {
@@ -122,19 +135,6 @@ const PROXIMOS_EVENTOS = [
     prob:       "69",
     resultado:  "win",
     resultado:  "win"
-  },
-  {
-    fecha:      "24/06/26",
-    partido:    "South Africa vs South Korea",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Corners Under 8.5",
-    cuota:      "1.79",
-    hora:       "20:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "57",
-    resultado:  "pendiente"
   },
   {
     fecha:      "24/06/26",
