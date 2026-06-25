@@ -33,10 +33,10 @@
         "under225": 3.47,
         "under225_casa": "Pinnacle",
         "pinnacle_under225": 3.47,
-        "over25": 1.51,
+        "over25": 1.52,
         "over25_casa": "Betfair",
         "pinnacle_over25": 1.43,
-        "under25": 2.92,
+        "under25": 2.9,
         "under25_casa": "Betfair",
         "pinnacle_under25": 2.81,
         "over275": 1.53,
@@ -361,24 +361,24 @@
           "pinn_prob": 27.3
         },
         "over25": {
-          "value": 0.001,
-          "ev_porcentaje": 0.1,
-          "ev_pinn": 0.1,
+          "value": 0.007,
+          "ev_porcentaje": 0.7,
+          "ev_pinn": 0.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.51,
+          "cuota": 1.52,
           "casa": "Betfair",
           "pinn_prob": 66.3
         },
         "under25": {
-          "value": -0.015,
-          "ev_porcentaje": -1.5,
-          "ev_pinn": -1.5,
+          "value": -0.022,
+          "ev_porcentaje": -2.2,
+          "ev_pinn": -2.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.92,
+          "cuota": 2.9,
           "casa": "Betfair",
           "pinn_prob": 33.7
         },
@@ -1066,7 +1066,7 @@
       "prediccion_principal": {
         "mercado": "Over 2.5 Goles",
         "prob": 66.3,
-        "ev": 0.1
+        "ev": 0.7
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -11726,5 +11726,5 @@
       "movimiento": null
     }
   ],
-  "generado": "15:20:27"
+  "generado": "15:20:44"
 }
