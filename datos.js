@@ -8,12 +8,12 @@ const PROXIMOS_EVENTOS = [
     partido:    "Turkey vs USA",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
-    cuota:      "1.58",
+    cuota:      "1.62",
     hora:       "21:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "62",
+    prob:       "61",
     resultado:  "pendiente"
   },
   {
@@ -26,20 +26,59 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "63",
+    prob:       "64",
     resultado:  "pendiente"
   },
   {
     fecha:      "25/06/26",
     partido:    "Tunisia vs Netherlands",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Ambos No Marcan",
-    cuota:      "1.57",
+    prediccion: "Under 4.5 Goles",
+    cuota:      "1.38",
     hora:       "18:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "72",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Japan vs Sweden",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.38",
+    hora:       "18:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "71",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Curaçao vs Ivory Coast",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.76",
+    hora:       "15:05 COT",
     status:     "vip",
     tier:       "alto_valor",
     stake_pct:  "2",
-    prob:       "66",
+    prob:       "58",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Curaçao vs Ivory Coast",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.53",
+    hora:       "15:05 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "64",
     resultado:  "pendiente"
   },
   {
@@ -70,19 +109,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "25/06/26",
-    partido:    "Japan vs Sweden",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 3.5 Goles",
-    cuota:      "1.39",
-    hora:       "18:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "25/06/26",
     partido:    "Ecuador vs Germany",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
@@ -96,19 +122,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "25/06/26",
-    partido:    "Curaçao vs Ivory Coast",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Over 2.5 Goles",
-    cuota:      "1.52",
-    hora:       "15:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "66",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "25/06/26",
     partido:    "Turkey vs USA",
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Visitante",
@@ -118,19 +131,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "68",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "25/06/26",
-    partido:    "Curaçao vs Ivory Coast",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Ambos No Marcan",
-    cuota:      "1.7",
-    hora:       "15:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "60",
     resultado:  "pendiente"
   },
   {
