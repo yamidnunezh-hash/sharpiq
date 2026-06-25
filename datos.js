@@ -303,7 +303,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -317,8 +316,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "loss",
-    resultado:  "push"
+    resultado:  "loss"
   },
   {
     fecha:      "22/06/26",
@@ -357,7 +355,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "63",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -371,7 +368,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "73",
-    resultado:  "push",
     resultado:  "push"
   },
   {
@@ -398,7 +394,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -412,7 +407,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "74",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -426,7 +420,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "73",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -440,7 +433,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "60",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -454,8 +446,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "21/06/26",
@@ -468,8 +459,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "68",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "21/06/26",
@@ -482,8 +472,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "69",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "21/06/26",
@@ -496,7 +485,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "69",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -510,7 +498,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "58",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -524,7 +511,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -538,7 +524,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -552,7 +537,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "66",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -566,7 +550,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -580,7 +563,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "75",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -594,7 +576,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "74",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -608,8 +589,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "20/06/26",
@@ -622,7 +602,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "74",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -636,7 +615,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "68",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -650,7 +628,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "52",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -664,7 +641,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -717,8 +693,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "58",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "19/06/26",
@@ -731,7 +706,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "67",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -745,7 +719,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "76",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -759,7 +732,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -799,8 +771,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "67",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "18/06/26",
@@ -826,7 +797,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "70",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -840,8 +810,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "74",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "18/06/26",
@@ -854,8 +823,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "70",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "18/06/26",
@@ -881,8 +849,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "push",
-    resultado:  "win"
+    resultado:  "push"
   },
   {
     fecha:      "18/06/26",
@@ -895,7 +862,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -909,7 +875,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "66",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -923,8 +888,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "70",
-    resultado:  "push",
-    resultado:  "win"
+    resultado:  "push"
   },
   {
     fecha:      "17/06/26",
@@ -937,8 +901,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
-    resultado:  "loss",
-    resultado:  "push"
+    resultado:  "loss"
   },
   {
     fecha:      "17/06/26",
@@ -951,7 +914,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "67",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -965,7 +927,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "66",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -979,8 +940,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "69",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "17/06/26",
@@ -993,7 +953,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "70",
-    resultado:  "push",
     resultado:  "push"
   },
   {
@@ -1007,7 +966,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1021,8 +979,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "75",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "17/06/26",
@@ -1035,7 +992,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "68",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1062,8 +1018,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "16/06/26",
@@ -1076,14 +1031,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "49",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
     resultado:  "loss"
   },
   {
@@ -1097,14 +1044,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "77",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
     resultado:  "loss"
   },
   {
@@ -1118,7 +1057,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "1.0",
     prob:       "69",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -1132,14 +1070,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "61",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
     resultado:  "loss"
   },
   {
@@ -1153,14 +1083,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "67",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1174,14 +1096,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "58",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1195,14 +1109,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1216,12 +1122,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "49",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "16/06/26",
@@ -1234,12 +1135,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "67",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "16/06/26",
@@ -1252,11 +1148,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "1.4",
     prob:       "60",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -1270,11 +1161,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "63",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -1288,8 +1174,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "63",
-    resultado:  "win",
-    resultado:  "loss",
     resultado:  "win"
   },
   {
@@ -1303,8 +1187,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "70",
-    resultado:  "loss",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -1318,11 +1200,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "69",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -1336,8 +1213,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "51",
-    resultado:  "win",
-    resultado:  "loss",
     resultado:  "win"
   },
   {
@@ -1371,7 +1246,7 @@ const PROXIMOS_EVENTOS = [
     hora:       "17:00 COT",
     emoji:      "",
     status:     "vip",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "14/06/26",
@@ -1734,8 +1609,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.41",
     prob:       "71",
-    resultado:  "loss",
-    resultado:  "push"
+    resultado:  "loss"
   },
   {
     fecha:      "22/06/26",
@@ -1744,7 +1618,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
     prob:       "71",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1763,7 +1636,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
     prob:       "72",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1773,7 +1645,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.35",
     prob:       "73",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1792,8 +1663,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.4",
     prob:       "71",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "21/06/26",
@@ -1802,8 +1672,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Victoria Local",
     cuota:      "1.44",
     prob:       "69",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "21/06/26",
@@ -1812,7 +1681,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Corners Under 10.5",
     cuota:      "1.76",
     prob:       "58",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1822,7 +1690,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.37",
     prob:       "72",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1832,7 +1699,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.58",
     prob:       "62",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1842,7 +1708,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Hándicap Visitante +2.25",
     cuota:      "1.32",
     prob:       "75",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1852,8 +1717,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.58",
     prob:       "62",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "19/06/26",
@@ -1862,7 +1726,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Ambos Marcan",
     cuota:      "1.94",
     prob:       "52",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -1890,8 +1753,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Under 2.5 Goles",
     cuota:      "1.81",
     prob:       "58",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "19/06/26",
@@ -1909,7 +1771,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.3",
     prob:       "76",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1919,8 +1780,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.48",
     prob:       "67",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "18/06/26",
@@ -1929,8 +1789,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Victoria Local",
     cuota:      "1.33",
     prob:       "74",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "18/06/26",
@@ -1966,8 +1825,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.4",
     prob:       "70",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "18/06/26",
@@ -1976,8 +1834,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.41",
     prob:       "71",
-    resultado:  "push",
-    resultado:  "win"
+    resultado:  "push"
   },
   {
     fecha:      "18/06/26",
@@ -1995,7 +1852,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Hándicap Visitante +0.75",
     cuota:      "1.46",
     prob:       "67",
-    resultado:  "loss",
     resultado:  "loss"
   },
   {
@@ -2005,8 +1861,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
     prob:       "72",
-    resultado:  "loss",
-    resultado:  "push"
+    resultado:  "loss"
   },
   {
     fecha:      "17/06/26",
@@ -2015,8 +1870,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Hándicap Asiático Visitante +1.5",
     cuota:      "1.41",
     prob:       "69",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "17/06/26",
@@ -2025,8 +1879,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Victoria Local",
     cuota:      "1.31",
     prob:       "75",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "17/06/26",
@@ -2044,12 +1897,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Tarjetas Under 2.5",
     cuota:      "2.2",
     prob:       "49",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "16/06/26",
@@ -2058,14 +1906,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Hándicap Visitante +1",
     cuota:      "2.18",
     prob:       "49",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "loss",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
-    resultado:  "win",
     resultado:  "loss"
   },
   {
@@ -2075,8 +1915,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Victoria Local",
     cuota:      "1.4",
     prob:       "71",
-    resultado:  "win",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "16/06/26",
@@ -2085,8 +1924,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Corners Over 8.5",
     cuota:      "1.61",
     prob:       "63",
-    resultado:  "win",
-    resultado:  "loss",
     resultado:  "win"
   },
   {
@@ -2199,7 +2036,7 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Local -0.25",
     cuota:      "1.48",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "13/06/26",
@@ -2375,7 +2212,7 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Copa Sudamericana",
     prediccion: "Under 2.5 goles",
     cuota:      "1.82",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "28/05/26",

@@ -260,9 +260,12 @@ def _actualizar_en_proximos(texto, partido, resultado):
     el campo "resultado" en el objeto. Asi la entrada queda visible con W/L.
     """
     partido_esc = re.escape(partido)
-    # Caso A: el objeto YA tiene resultado:"pendiente" -> reemplazar el valor
+    # Caso A: el objeto YA tiene un campo "resultado" (pendiente o ya resuelto)
+    #   -> REEMPLAZAR su valor (no insertar otro). Antes solo casaba "pendiente",
+    #   por eso al re-resolver una entrada ya marcada el Caso B metia un SEGUNDO
+    #   resultado (clave duplicada) y la web tomaba el ultimo (marca erronea).
     patA = re.compile(
-        r'(partido:\s*"' + partido_esc + r'"[^{}]*?resultado:\s*")pendiente(")',
+        r'(partido:\s*"' + partido_esc + r'"[^{}]*?resultado:\s*")[^"]*(")',
         re.DOTALL,
     )
     nuevo, n = patA.subn(r"\g<1>" + resultado + r"\g<2>", texto)
