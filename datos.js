@@ -7,13 +7,13 @@ const PROXIMOS_EVENTOS = [
     fecha:      "25/06/26",
     partido:    "Turkey vs USA",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Under 3.5 Goles",
-    cuota:      "1.62",
+    prediccion: "Draw No Bet Visitante",
+    cuota:      "1.44",
     hora:       "21:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "61",
+    prob:       "68",
     resultado:  "pendiente"
   },
   {
@@ -34,12 +34,38 @@ const PROXIMOS_EVENTOS = [
     partido:    "Tunisia vs Netherlands",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 4.5 Goles",
-    cuota:      "1.38",
+    cuota:      "1.39",
     hora:       "18:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Japan vs Sweden",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.32",
+    hora:       "18:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "75",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Turkey vs USA",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.62",
+    hora:       "21:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "61",
     resultado:  "pendiente"
   },
   {
@@ -96,19 +122,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "25/06/26",
-    partido:    "Japan vs Sweden",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 2.5 Goles",
-    cuota:      "1.97",
-    hora:       "18:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "51",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "25/06/26",
     partido:    "Ecuador vs Germany",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
@@ -118,19 +131,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "64",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "25/06/26",
-    partido:    "Turkey vs USA",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Draw No Bet Visitante",
-    cuota:      "1.46",
-    hora:       "21:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "68",
     resultado:  "pendiente"
   },
   {
