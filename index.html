@@ -3334,7 +3334,7 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
   <p class="hero-p">Modelo estadístico propio que detecta valor contra las cuotas del mercado. Todos nuestros picks, con resultados públicos — los aciertos y los fallos.</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="v" id="hmAciertos">PÚBLICO</div><div class="l">TRACK RECORD · cada pick verificable</div></div>
-    <div class="hero-stat"><div class="v pos" id="hmYield">—</div><div class="l">Rentabilidad</div></div>
+    <div class="hero-stat"><div class="v pos" id="hmYield">—</div><div class="l" id="hmYieldLbl">Rentabilidad</div></div>
     <div class="hero-stat"><div class="v" id="hmHoy">—</div><div class="l">Picks hoy</div></div>
   </div>
   <div class="hero-cta">
@@ -4990,6 +4990,7 @@ function toggleTheme(){
     var set = function(id, v){ var e = document.getElementById(id); if(e) e.textContent = v; };
     // heroWR (subtítulo) y hmAciertos (ahora "PÚBLICO" estático) ya no muestran número.
     set('hmYield',   d.n ? ((d.yld >= 0 ? '+' : '') + d.yld.toFixed(1) + '%') : '—');
+    set('hmYieldLbl', d.n ? ('Rentabilidad · ' + d.w + 'W-' + (d.n - d.w) + 'L en ' + d.n + ' picks') : 'Rentabilidad');
     set('hmHoy',     d.hoy);
   }
   pinta();
