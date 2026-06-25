@@ -92,7 +92,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "58",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "25/06/26",
@@ -105,7 +105,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "64",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "25/06/26",
@@ -131,7 +131,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "64",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "25/06/26",
@@ -144,7 +144,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "76",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "25/06/26",
@@ -1660,6 +1660,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "25/06/26",
+    partido:    "Ecuador vs Germany",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.53",
+    prob:       "64",
+    resultado:  "win"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Curaçao vs Ivory Coast",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.76",
+    prob:       "58",
+    resultado:  "win"
+  },
   {
     fecha:      "24/06/26",
     partido:    "Czech Republic vs Mexico",
