@@ -254,33 +254,45 @@ def _stats_tarjetas_corners(fixture_id):
 
 # ── ACTUALIZAR datos.js ──────────────────────────────────────────
 
-def _actualizar_en_proximos(texto, partido, resultado):
+def _actualizar_en_proximos(texto, partido, prediccion, resultado):
     """
-    Marca el resultado de un pick en PROXIMOS_EVENTOS (in-place), exista o NO
-    el campo "resultado" en el objeto. Asi la entrada queda visible con W/L.
+    Marca el resultado del pick (partido + PREDICCION especifica) in-place.
+
+    CLAVE: matchea por partido Y prediccion. Un partido tiene VARIOS picks
+    (mercados distintos), asi que marcar solo por partido pisaba TODOS los picks
+    del partido con el mismo resultado -> ACIERTOS falsos (p.ej. el Handicap que
+    pierde quedaba "win" porque el Victoria del mismo partido ganaba).
+
+    Si el objeto ya tiene 'resultado' -> reemplaza su valor (y colapsa claves
+    'resultado' duplicadas si las hubiera). Si no lo tiene -> lo inserta.
+    Devuelve (texto, n_objetos_actualizados).
     """
     partido_esc = re.escape(partido)
-    # Caso A: el objeto YA tiene un campo "resultado" (pendiente o ya resuelto)
-    #   -> REEMPLAZAR su valor (no insertar otro). Antes solo casaba "pendiente",
-    #   por eso al re-resolver una entrada ya marcada el Caso B metia un SEGUNDO
-    #   resultado (clave duplicada) y la web tomaba el ultimo (marca erronea).
-    patA = re.compile(
-        r'(partido:\s*"' + partido_esc + r'"[^{}]*?resultado:\s*")[^"]*(")',
+    pred_esc = re.escape(prediccion or "")
+    # El objeto {...} que tiene ESE partido Y ESA prediccion (ambos van antes del cierre)
+    obj_pat = re.compile(
+        r'\{[^{}]*?partido:\s*"' + partido_esc + r'"[^{}]*?'
+        r'prediccion:\s*"' + pred_esc + r'"[^{}]*?\}',
         re.DOTALL,
     )
-    nuevo, n = patA.subn(r"\g<1>" + resultado + r"\g<2>", texto)
-    if n:
-        return nuevo, n
-    # Caso B: el objeto NO tiene campo "resultado" -> insertarlo antes del cierre "}"
-    patB = re.compile(
-        r'(\{[^{}]*?partido:\s*"' + partido_esc + r'"[^{}]*?)(\s*\})',
-        re.DOTALL,
-    )
-    def _ins(m):
-        cuerpo = m.group(1).rstrip().rstrip(",")
-        return cuerpo + ',\n    resultado:  "' + resultado + '"' + m.group(2)
-    nuevo, n = patB.subn(_ins, texto)
-    return nuevo, n
+    cnt = [0]
+    def _upd(m):
+        obj = m.group(0)
+        # Caso A: ya hay 'resultado' -> reemplaza el PRIMERO y borra duplicados
+        nuevo, n = re.subn(r'(resultado:\s*")[^"]*(")',
+                           r'\g<1>' + resultado + r'\g<2>', obj, count=1)
+        if n:
+            nuevo = re.sub(
+                r'(resultado:\s*"[^"]*")(?:\s*,\s*resultado:\s*"[^"]*")+',
+                r'\1', nuevo)            # colapsa duplicados -> deja uno
+            cnt[0] += 1
+            return nuevo
+        # Caso B: sin 'resultado' -> insertarlo antes del cierre '}'
+        cuerpo = obj[:obj.rfind('}')].rstrip().rstrip(',')
+        cnt[0] += 1
+        return cuerpo + ',\n    resultado:  "' + resultado + '"\n  }'
+    nuevo_texto = obj_pat.sub(_upd, texto)
+    return nuevo_texto, cnt[0]
 
 def _agregar_a_historial(texto, evento, resultado):
     """
@@ -288,15 +300,17 @@ def _agregar_a_historial(texto, evento, resultado):
     Evita duplicados buscando el partido antes de insertar.
     """
     partido_esc = re.escape(evento['partido'])
-    if re.search(r'partido:\s*"' + partido_esc + r'"', texto):
-        # ya existe en historial (puede estar en PROXIMOS o en HISTORIAL)
-        # Verificar si YA está en PREDICCIONES_HISTORIAL específicamente
-        hist_match = re.search(
-            r'PREDICCIONES_HISTORIAL\s*=\s*\[(.*)',
-            texto, re.DOTALL
-        )
-        if hist_match and partido_esc.replace(r'\ ', ' ') in hist_match.group(1).replace('\\', ''):
-            return texto  # ya está en historial, no duplicar
+    pred_esc = re.escape(evento.get('prediccion', ''))
+    # ¿este pick ESPECIFICO (partido + prediccion) ya esta en el HISTORIAL?
+    # Antes se checaba solo por partido -> con varios picks por partido el 2do
+    # se saltaba (faltaba en el historial). Ahora se identifica el pick exacto.
+    hist_match = re.search(r'PREDICCIONES_HISTORIAL\s*=\s*\[(.*)', texto, re.DOTALL)
+    if hist_match:
+        obj_pat = re.compile(
+            r'\{[^{}]*?partido:\s*"' + partido_esc + r'"[^{}]*?'
+            r'prediccion:\s*"' + pred_esc + r'"[^{}]*?\}', re.DOTALL)
+        if obj_pat.search(hist_match.group(1)):
+            return texto  # ese pick ya esta en historial, no duplicar
 
     nueva_entrada = f'''  {{
     fecha:      "{evento.get('fecha', _hoy_cot().strftime('%d/%m/%y'))}",
@@ -535,7 +549,7 @@ def correr():
         LOG.info(f"  {emoji} {partido} [{gl}-{gv}] → {resultado.upper()}")
 
         # Actualizar in-place en PROXIMOS_EVENTOS (mantiene la entry visible en web)
-        texto, n_upd = _actualizar_en_proximos(texto, partido, resultado)
+        texto, n_upd = _actualizar_en_proximos(texto, partido, evento.get('prediccion', ''), resultado)
         if not n_upd:
             LOG.warning(f"  No se pudo actualizar resultado en PROXIMOS: {partido}")
 

@@ -209,7 +209,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "76",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -223,8 +222,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "24/06/26",
@@ -237,7 +235,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "74",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -251,7 +248,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "74",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -265,7 +261,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "55",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -279,8 +274,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "49",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "24/06/26",
@@ -293,7 +287,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "69",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -307,7 +300,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "70",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -334,7 +326,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "64",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -348,7 +339,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -362,8 +352,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "52",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "23/06/26",
@@ -376,7 +365,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "67",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -390,8 +378,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "23/06/26",
@@ -404,7 +391,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "62",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -418,8 +404,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "60",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "23/06/26",
@@ -432,7 +417,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "66",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1703,8 +1687,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Hándicap Local +2.25",
     cuota:      "1.4",
     prob:       "71",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "24/06/26",
@@ -1713,7 +1696,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Victoria Local",
     cuota:      "1.33",
     prob:       "76",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1732,8 +1714,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Ambos No Marcan",
     cuota:      "2.08",
     prob:       "49",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "24/06/26",
@@ -1742,7 +1723,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Ambos Marcan",
     cuota:      "1.91",
     prob:       "55",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1752,7 +1732,6 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Hándicap Visitante +1.5",
     cuota:      "1.54",
     prob:       "64",
-    resultado:  "win",
     resultado:  "win"
   },
   {
@@ -1762,8 +1741,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Ambos Marcan",
     cuota:      "1.98",
     prob:       "52",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "23/06/26",
@@ -1772,8 +1750,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Over 2.5 Goles",
     cuota:      "1.61",
     prob:       "62",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "23/06/26",
@@ -1782,8 +1759,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Corners Over 8.5",
     cuota:      "1.7",
     prob:       "60",
-    resultado:  "loss",
-    resultado:  "win"
+    resultado:  "loss"
   },
   {
     fecha:      "23/06/26",
