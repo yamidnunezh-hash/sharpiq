@@ -13,7 +13,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "68",
+    prob:       "69",
     resultado:  "pendiente"
   },
   {
@@ -26,7 +26,7 @@ const PROXIMOS_EVENTOS = [
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "64",
+    prob:       "63",
     resultado:  "pendiente"
   },
   {
