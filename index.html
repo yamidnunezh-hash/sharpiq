@@ -4704,6 +4704,20 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     const eventos=PROXIMOS_EVENTOS.filter(_pickVigente); window.__picksHoy=eventos.length;
     if(cnt) cnt.textContent=eventos.length?eventos.length+' picks disponibles':'Próximos picks: 8am COT';
     if(eventos.length===0){
+      // Sin picks de apuestas (EV) -> mostrar las PREDICCIONES de la jornada aqui mismo
+      if(typeof ANALISIS_DIA!=='undefined' && ANALISIS_DIA.length){
+        if(cnt) cnt.textContent=ANALISIS_DIA.length+' partidos analizados';
+        grid.innerHTML='<div style="grid-column:1/-1;font-family:Inter,sans-serif;font-size:12px;font-weight:800;color:var(--gold);letter-spacing:1px;margin:0 0 4px">PREDICCIONES DE LA JORNADA &middot; modelo SharpIQ</div>'
+          +ANALISIS_DIA.map(function(a){
+            return '<a href="pronostico.html?p='+(a.slug||'')+'" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px">'
+              +'<div style="font-family:Inter,sans-serif;font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">'+(a.liga||'')+(a.hora?' &middot; '+a.hora:'')+'</div>'
+              +'<h3 style="font-family:Inter,sans-serif;font-size:16px;font-weight:800;color:var(--t1);margin:0 0 8px;line-height:1.3">'+(a.titulo||a.partido||'')+'</h3>'
+              +'<p style="font-size:13px;color:var(--t2);line-height:1.6;margin:0 0 12px;flex:1">'+(a.cuerpo||'')+'</p>'
+              +'<span style="color:var(--green);font-family:Inter,sans-serif;font-size:13px;font-weight:700">Ver analisis completo &rarr;</span>'
+              +'</a>';
+          }).join('');
+        return;
+      }
       grid.innerHTML=`<div style="padding:48px 24px;text-align:center;width:100%;">
         <div style="font-size:32px;margin-bottom:16px;">⚙️</div>
         <div style="font-family:Inter,sans-serif;font-size:13px;font-weight:700;color:var(--gold);margin-bottom:8px;letter-spacing:1px">MOTOR EN PROCESO</div>
