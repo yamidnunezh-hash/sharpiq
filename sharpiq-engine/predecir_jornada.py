@@ -108,6 +108,16 @@ def main(fechas):
     for it, prof, pr in zip(items, profs, preds):
         it['eqL'] = pr.get('local', '')      # nombre EN INGLES (para resolver el logo)
         it['eqV'] = pr.get('visitante', '')
+        # JUGADA del modelo (la ve el DUENO/VIP en la pagina de detalle): mercado mas confiable
+        _vl = float(it.get('vl') or 0); _vv = float(it.get('vv') or 0)
+        _o = float(it.get('o25') or 0); _u = float(it.get('u25') or 0)
+        _lc, _vs = (it.get('partido', '').split(' vs ') + [''])[:2]
+        _fav, _fp = (_lc, _vl) if _vl >= _vv else (_vs, _vv)
+        if   _fp >= 60: it['pick'] = 'Gana ' + _fav
+        elif _o >= 60:  it['pick'] = 'Over 2.5 goles'
+        elif _u >= 60:  it['pick'] = 'Under 2.5 goles'
+        elif _fp >= 44: it['pick'] = 'Doble oportunidad: ' + _fav + ' o empate'
+        else:           it['pick'] = 'Partido parejo - mejor pasar'
         if not prof:
             continue
         try:
