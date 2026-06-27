@@ -5234,6 +5234,7 @@ function toggleTheme(){
     var wr  = res.length ? Math.round(w / res.length * 100) : 0;
     var yld = res.length ? (pl / res.length * 100) : 0;
     var hoy = (typeof window.__picksHoy==='number') ? window.__picksHoy : P.filter(function(p){ return p.resultado === 'pendiente'; }).length;
+    if(!hoy && typeof ANALISIS_DIA!=='undefined' && ANALISIS_DIA.length) hoy = ANALISIS_DIA.length;
     return { wr: wr, w: w, n: res.length, yld: yld, hoy: hoy };
   }
   function pinta(){
