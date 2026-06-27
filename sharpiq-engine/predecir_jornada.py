@@ -10,13 +10,14 @@ from datetime import datetime, timedelta
 from scipy.stats import poisson
 from motor import _apifb
 import generar_analisis as ga
+import mercados_profundos as mp
 
 
 def _gfgc(tid, n=8):
     """Promedio de goles a favor/en contra y forma (0-1) de los ultimos n."""
     r = _apifb('fixtures', {'team': tid, 'last': n})
     gf = gc = c = pts = 0
-    for fx in (r.get('response') or []):
+    for fx in ((r or {}).get('response') or []):
         gh, gaa = fx['goals']['home'], fx['goals']['away']
         if gh is None:
             continue
@@ -64,15 +65,17 @@ def _hora_cot(iso):
 
 def main(fechas):
     preds = []
+    profs = []
     vistos = set()
     for fecha in fechas:
         r = _apifb('fixtures', {'date': fecha})
-        for fx in (r.get('response') or []):
+        for fx in ((r or {}).get('response') or []):
             lg = fx['league']
             nombre = (lg.get('name') or '').lower()
             if lg.get('id') != 1 and 'world cup' not in nombre and 'mundial' not in nombre:
                 continue
-            if fx['fixture']['status']['short'] not in ('NS', 'TBD'):
+            # incluir no-empezados Y en juego; excluir solo los YA terminados/cancelados
+            if fx['fixture']['status']['short'] in ('FT', 'AET', 'PEN', 'CANC', 'PST', 'ABD', 'AWD', 'WO'):
                 continue
             h, a = fx['teams']['home'], fx['teams']['away']
             key = (h['id'], a['id'])
@@ -80,6 +83,7 @@ def main(fechas):
                 continue
             vistos.add(key)
             m = _predecir(h['id'], a['id'])
+            profs.append(mp.proyectar(h['id'], a['id']))
             preds.append({
                 'local': h['name'], 'visitante': a['name'],
                 'liga': 'FIFA Mundial 2026', 'liga_code': 'soccer_fifa_world_cup',
@@ -100,8 +104,28 @@ def main(fechas):
         print("Sin partidos. Nada que inyectar.")
         return
     items = ga.generar_items(preds)
+    # --- enriquecer cada analisis con MERCADOS PROFUNDOS (remates/atajadas/etc.) ---
+    for it, prof, pr in zip(items, profs, preds):
+        it['eqL'] = pr.get('local', '')      # nombre EN INGLES (para resolver el logo)
+        it['eqV'] = pr.get('visitante', '')
+        if not prof:
+            continue
+        try:
+            loc, vis = it['partido'].split(' vs ')
+        except ValueError:
+            loc, vis = 'el local', 'el visitante'
+        it['cuerpo_largo'] = it.get('cuerpo_largo', '') + (
+            f" En mercados profundos (datos reales, muestra {prof['n']} partidos), "
+            f"el modelo proyecta {prof['remates_total']} remates totales "
+            f"({prof['local_sot']} a puerta de {loc}, {prof['visita_sot']} de {vis}); "
+            f"el portero de {vis} haria ~{prof['visita_atajadas']} atajadas; "
+            f"y {prof['corners_total']} corners y {prof['faltas_total']} faltas en total.")
+        it['remT'] = str(prof['remates_total'])
+        it['sotL'] = str(prof['local_sot']); it['sotV'] = str(prof['visita_sot'])
+        it['ataL'] = str(prof['local_atajadas']); it['ataV'] = str(prof['visita_atajadas'])
+        it['corT'] = str(prof['corners_total']); it['falT'] = str(prof['faltas_total'])
     ga.inyectar(ga._to_js(items))
-    print(f"ANALISIS_DIA inyectado: {len(items)} partidos en la web.")
+    print(f"ANALISIS_DIA inyectado: {len(items)} partidos (con mercados profundos).")
 
 
 if __name__ == '__main__':
