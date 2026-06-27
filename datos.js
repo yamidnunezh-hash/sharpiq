@@ -53,7 +53,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "75",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "25/06/26",
@@ -79,7 +79,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "25/06/26",
@@ -118,7 +118,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "25/06/26",
@@ -1644,6 +1644,33 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "25/06/26",
+    partido:    "Tunisia vs Netherlands",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Local +3.5",
+    cuota:      "1.38",
+    prob:       "72",
+    resultado:  "win"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Japan vs Sweden",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.38",
+    prob:       "71",
+    resultado:  "win"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Japan vs Sweden",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.32",
+    prob:       "75",
+    resultado:  "win"
+  },
   {
     fecha:      "25/06/26",
     partido:    "Paraguay vs Australia",
