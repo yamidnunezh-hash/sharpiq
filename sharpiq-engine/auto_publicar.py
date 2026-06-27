@@ -695,6 +695,12 @@ if __name__ == "__main__":
         _rd  = os.path.join(_eng, "..")
         _sp.run([_sys.executable, "generar_analisis.py"], cwd=_eng,
                 capture_output=True, text=True, timeout=120)
+        # Jornada del Mundial con el MODELO (NO depende de The Odds API): si hay
+        # partidos del Mundial, SOBREESCRIBE ANALISIS_DIA con la jornada (banderas
+        # + mercados profundos). Si no hay partidos, deja intacto lo de generar_analisis.
+        # Esto evita que el motor "borre" la jornada cuando no hay picks EV (Odds API caida).
+        _sp.run([_sys.executable, "predecir_jornada.py"], cwd=_eng,
+                capture_output=True, text=True, timeout=300)
         def _gA(*a):
             return _sp.run(["git", *a], cwd=_rd, capture_output=True, text=True)
         _gA("add", "datos.js", "index.html")
