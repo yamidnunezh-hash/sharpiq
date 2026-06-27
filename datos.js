@@ -14,7 +14,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "69",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "25/06/26",
@@ -27,7 +27,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "63",
-    resultado:  "pendiente"
+    resultado:  "push"
   },
   {
     fecha:      "25/06/26",
@@ -66,7 +66,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "61",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "25/06/26",
@@ -157,7 +157,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "58",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "24/06/26",
@@ -1644,6 +1644,42 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "25/06/26",
+    partido:    "Paraguay vs Australia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.73",
+    prob:       "58",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Turkey vs USA",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.62",
+    prob:       "61",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Paraguay vs Australia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.6",
+    prob:       "63",
+    resultado:  "push"
+  },
+  {
+    fecha:      "25/06/26",
+    partido:    "Turkey vs USA",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Visitante",
+    cuota:      "1.44",
+    prob:       "69",
+    resultado:  "loss"
+  },
   {
     fecha:      "25/06/26",
     partido:    "Ecuador vs Germany",
