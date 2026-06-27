@@ -4507,7 +4507,7 @@ if __name__ == "__main__":
         ev_str = f"EV {'+' if (ev_val or 0)>=0 else ''}{ev_val}%" if ev_val is not None else "sin EV"
         print(f"   → {pred_p['mercado']} ({pred_p['prob']}% prob, {ev_str})")
         for mk, vb in pred["value_bets"].items():
-            if vb.get("ev_pinn", 0) > 0:
+            if (vb.get("ev_pinn") or 0) > 0:
                 nombre = vb.get("mercado_nombre", mk)
                 cuota  = vb.get("cuota", "")
                 casa   = f" [{vb.get('casa','')}]" if vb.get("casa") else ""
