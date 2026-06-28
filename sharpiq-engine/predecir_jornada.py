@@ -52,7 +52,19 @@ def _predecir(local_id, visita_id):
         'o25': _pct(o25), 'u25': _pct(1 - o25),
         'gf_l': round(gf_l, 2), 'gc_l': round(gc_l, 2), 'fo_l': fo_l,
         'gf_v': round(gf_v, 2), 'gc_v': round(gc_v, 2), 'fo_v': fo_v,
+        'lam_l': round(lam_l, 3), 'lam_v': round(lam_v, 3),
     }
+
+
+def _goleadores(local, vis, liga_id, season, m):
+    """Player props: top goleadores probables (nombre + % de marcar). Robusto."""
+    try:
+        import player_props as pp
+        props = pp.calcular_props_partido(local, vis, liga_id,
+                                          m.get('lam_l', 1.2), m.get('lam_v', 1.2), season)
+        return ' &middot; '.join(f"{p['nombre']} {p['prob_scorer']}%" for p in props[:3])
+    except Exception:
+        return ''
 
 
 def _hora_cot(iso):
@@ -66,6 +78,7 @@ def _hora_cot(iso):
 def main(fechas):
     preds = []
     profs = []
+    goles = []
     vistos = set()
     for fecha in fechas:
         r = _apifb('fixtures', {'date': fecha})
@@ -84,6 +97,7 @@ def main(fechas):
             vistos.add(key)
             m = _predecir(h['id'], a['id'])
             profs.append(mp.proyectar(h['id'], a['id']))
+            goles.append(_goleadores(h['name'], a['name'], lg.get('id'), int(fecha[:4]), m))
             preds.append({
                 'local': h['name'], 'visitante': a['name'],
                 'liga': 'FIFA Mundial 2026', 'liga_code': 'soccer_fifa_world_cup',
@@ -105,9 +119,11 @@ def main(fechas):
         return
     items = ga.generar_items(preds)
     # --- enriquecer cada analisis con MERCADOS PROFUNDOS (remates/atajadas/etc.) ---
-    for it, prof, pr in zip(items, profs, preds):
+    for it, prof, pr, gole in zip(items, profs, preds, goles):
         it['eqL'] = pr.get('local', '')      # nombre EN INGLES (para resolver el logo)
         it['eqV'] = pr.get('visitante', '')
+        if gole:
+            it['gole'] = gole                # player props: goleadores probables
         # JUGADA del modelo (la ve el DUENO/VIP en la pagina de detalle): mercado mas confiable
         _vl = float(it.get('vl') or 0); _vv = float(it.get('vv') or 0)
         _o = float(it.get('o25') or 0); _u = float(it.get('u25') or 0)

@@ -50,13 +50,15 @@ def _guardar_cache(liga_id, season, data):
 
 # ── OBTENER TOP SCORERS ─────────────────────────────────────────────
 
-def obtener_topscorers(liga_id):
+def obtener_topscorers(liga_id, season=None):
     """
     Devuelve lista de top scorers con su equipo y goles por partido.
-    Cache de 24 horas — solo 1 llamada por liga por dia.
+    Cache de 24 horas — solo 1 llamada por liga por dia. `season` opcional:
+    para torneos de verano (Mundial) la logica liga-season da el anho anterior.
     """
     inicializar()
-    season = date.today().year if date.today().month >= 7 else date.today().year - 1
+    if season is None:
+        season = date.today().year if date.today().month >= 7 else date.today().year - 1
 
     cached = _get_cache(liga_id, season)
     if cached is not None:
@@ -94,12 +96,12 @@ def obtener_topscorers(liga_id):
 
 # ── CALCULAR PROBABILIDADES DE GOLEADOR ────────────────────────────
 
-def calcular_props_partido(local, visitante, liga_id, lambda_local, lambda_visita):
+def calcular_props_partido(local, visitante, liga_id, lambda_local, lambda_visita, season=None):
     """
     Devuelve lista de jugadores con P(anytime scorer) para este partido.
-    Solo incluye jugadores de los dos equipos en juego.
+    Solo incluye jugadores de los dos equipos en juego. `season` opcional.
     """
-    topscorers = obtener_topscorers(liga_id)
+    topscorers = obtener_topscorers(liga_id, season)
     if not topscorers:
         return []
 

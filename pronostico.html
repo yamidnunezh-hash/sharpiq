@@ -142,6 +142,9 @@
         + '<div class="fcol"><div class="fstat"><span>Córners</span><b>' + n(a.corT) + '</b></div>'
           + '<div class="fstat"><span>Faltas</span><b>' + n(a.falT) + '</b></div></div>'
       + '</div></div>' : '')
+    + (a.gole ? '<div class="panel"><h2>Goleador probable</h2>'
+        + '<div style="font-size:15px;color:var(--t1);line-height:1.9;font-weight:600">' + a.gole + '</div>'
+        + '<div style="font-size:12px;color:var(--t3);margin-top:10px">Probabilidad de marcar (anytime) según goleadores del torneo + modelo.</div></div>' : '')
     + cta
     + '<div class="disc">Análisis informativo basado en datos estadísticos. No es una garantía de resultados. Apuesta con responsabilidad.</div>';
 })();
