@@ -27,7 +27,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "79",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "28/06/26",
@@ -40,7 +40,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "77",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "28/06/26",
@@ -53,7 +53,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "57",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "28/06/26",
@@ -66,7 +66,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "76",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "25/06/26",
@@ -1696,6 +1696,42 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "28/06/26",
+    partido:    "South Africa vs Canada",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Visitante",
+    cuota:      "1.33",
+    prob:       "76",
+    resultado:  "win"
+  },
+  {
+    fecha:      "28/06/26",
+    partido:    "South Africa vs Canada",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Under 9.5",
+    cuota:      "1.8",
+    prob:       "57",
+    resultado:  "win"
+  },
+  {
+    fecha:      "28/06/26",
+    partido:    "Athletic Club (MG) vs Avai",
+    liga:       "Brasileirao B",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.75",
+    prob:       "77",
+    resultado:  "win"
+  },
+  {
+    fecha:      "28/06/26",
+    partido:    "Atletico Goianiense vs Ponte Preta",
+    liga:       "Brasileirao B",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.7",
+    prob:       "79",
+    resultado:  "win"
+  },
   {
     fecha:      "25/06/26",
     partido:    "Tunisia vs Netherlands",
