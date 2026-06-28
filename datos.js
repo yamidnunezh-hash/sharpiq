@@ -94,7 +94,6 @@ const PROXIMOS_EVENTOS = [
     prob:       "63",
     resultado:  "push"
   },
-
   {
     fecha:      "25/06/26",
     partido:    "Japan vs Sweden",
