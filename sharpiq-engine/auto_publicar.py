@@ -359,7 +359,7 @@ def correr():
         }
         def _nombre(_mk, _vb):
             return _vb.get("mercado_nombre") or _NOM.get(_mk) or _mk.replace("_", " ").title()
-        def _dos_picks(_p):
+        def _dos_picks(_p, _usados):
             _cands = []
             for _mk, _vb in (_p.get("value_bets") or {}).items():
                 if not _vb:
@@ -377,14 +377,18 @@ def correr():
             # Nunca corners como SEGURO (mercado menos predecible) -> solo mercados solidos.
             _segs = [c for c in _cands if c[2] >= 58 and c[3] <= 1.95 and c[4] >= -2
                      and not c[0].startswith("corners_")]
-            _seg  = max(_segs, key=lambda c: c[2]) if _segs else None
+            # DIVERSIDAD: -8% prob por cada vez que el mercado ya se publico hoy
+            _seg  = max(_segs, key=lambda c: c[2] - 8 * _usados.get(c[0], 0)) if _segs else None
             # RECOMENDADO: mejor valor real (EV>=1), distinto mercado al seguro
             _recs = [c for c in _cands if c[4] >= 1 and c[2] >= 48 and 1.55 <= c[3] <= 2.80]
             if _seg:
                 _recs = [c for c in _recs if c[0] != _seg[0]]
-            _rec  = max(_recs, key=lambda c: c[4] + c[2] / 100.0) if _recs else None
+            # DIVERSIDAD tambien en el recomendado
+            _rec  = max(_recs, key=lambda c: c[4] + c[2] / 100.0 - 0.6 * _usados.get(c[0], 0)) if _recs else None
             return _seg, _rec
         _mund_list = []
+        # ── PASO 1: REVISAR TODOS los eventos y juntar candidatos en UN pool ──
+        _pool = []
         for _p in reporte.get("predicciones", []):
             if _p.get("confiable") is False:
                 continue
@@ -392,11 +396,8 @@ def correr():
                 continue   # solo futbol (excluye NHL/MLB/balonmano)
             if not _p.get("cuotas_reales"):
                 continue
-            _lg = _p.get("liga", "")
             if (_p.get("fecha_evento") or _hoy_cot().isoformat()) != _hoy_cot().isoformat():
                 continue
-            # (sin filtro _ya_publicado: la dedup por (partido,fecha,prediccion)
-            #  evita repetidos y permite actualizar/completar los 2 picks por partido)
             try:  # descartar si el partido ya empezo (COT)
                 _hh, _mm = (_p.get("hora", "00:00")).split(":")
                 _coth = (int(_hh) - 5 + 24) % 24
@@ -405,21 +406,39 @@ def correr():
                     continue
             except Exception:
                 pass
-            _seg, _rec = _dos_picks(_p)
+            _seg, _rec = _dos_picks(_p, {})   # mejor seguro + mejor valor de ESTE partido
             _part = f"{_p['local']} vs {_p['visitante']}"
             _hcot = _hora_cot(_p.get("hora", "00:00"))
             _fev  = _p.get("fecha_evento") or _hoy_cot().isoformat()
             for _et, _tier, _stk in ((_seg, "seguro", 3), (_rec, "alto_valor", 2)):
                 if not _et:
                     continue
-                _mk2, _vb2 = _et[0], _et[1]
-                _agregar_a_datos_js(
-                    _part, _lg, _nombre(_mk2, _vb2), str(_vb2.get("cuota")),
-                    _hcot, round(_vb2.get("ev_pinn") or 0), fecha_evento=_fev,
-                    tier=_tier, stake_pct=_stk, prob=round(_vb2.get("pinn_prob") or 0))
-                _mund_list.append(f"{_part} — {_vb2.get('mercado_nombre', _mk2)} ({_tier})")
-                _mundial_publicados += 1
-                LOG.info(f"datos.js [{_tier}]: {_part} | {_vb2.get('mercado_nombre', _mk2)} @{_vb2.get('cuota')}")
+                # CALIDAD global = EV + probabilidad + empujon al seguro (la banca)
+                _cal = (_et[4] or 0) + _et[2] / 100.0 + (0.4 if _tier == "seguro" else 0.0)
+                _pool.append((_cal, _part, _p.get("liga", ""), _et, _tier, _stk, _hcot, _fev))
+        # ── PASO 2: RANKEAR por calidad y publicar los MEJORES, VARIADOS ──
+        #   - max 2 veces el mismo mercado en todo el dia (diversidad de mercado)
+        #   - max 2 picks por partido · tope 12 picks (calidad > cantidad)
+        _pool.sort(key=lambda x: -x[0])
+        _usados = {}
+        _por_part = {}
+        for _cal, _part, _lg, _et, _tier, _stk, _hcot, _fev in _pool:
+            _mk2, _vb2 = _et[0], _et[1]
+            if _usados.get(_mk2, 0) >= 2:
+                continue
+            if _por_part.get(_part, 0) >= 2:
+                continue
+            _agregar_a_datos_js(
+                _part, _lg, _nombre(_mk2, _vb2), str(_vb2.get("cuota")),
+                _hcot, round(_vb2.get("ev_pinn") or 0), fecha_evento=_fev,
+                tier=_tier, stake_pct=_stk, prob=round(_vb2.get("pinn_prob") or 0))
+            _usados[_mk2] = _usados.get(_mk2, 0) + 1
+            _por_part[_part] = _por_part.get(_part, 0) + 1
+            _mund_list.append(f"{_part} — {_vb2.get('mercado_nombre', _mk2)} ({_tier})")
+            _mundial_publicados += 1
+            LOG.info(f"datos.js [{_tier}]: {_part} | {_vb2.get('mercado_nombre', _mk2)} @{_vb2.get('cuota')}")
+            if _mundial_publicados >= 12:
+                break
         if _mundial_publicados:
             _rd = os.path.join(BASE_DIR, "..")
             def _gm(*a):
