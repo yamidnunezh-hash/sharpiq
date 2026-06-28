@@ -122,6 +122,18 @@
         + '<div class="fstat"><span>Ataque</span><b>' + n(a.aV) + '</b></div>'
         + '<div class="fstat"><span>Recibe</span><b>' + n(a.dV) + '</b></div></div>'
     + '</div></div>'
+    + ((a.sotL || a.remT) ? '<div class="panel"><h2>Mercados profundos (proyección)</h2><div class="fgrid">'
+        + '<div class="fcol"><div class="ft">' + loc + '</div>'
+          + '<div class="fstat"><span>Remates a puerta</span><b>' + n(a.sotL) + '</b></div>'
+          + '<div class="fstat"><span>Atajadas portero</span><b>' + n(a.ataL) + '</b></div></div>'
+        + '<div class="fcol"><div class="ft">' + vis + '</div>'
+          + '<div class="fstat"><span>Remates a puerta</span><b>' + n(a.sotV) + '</b></div>'
+          + '<div class="fstat"><span>Atajadas portero</span><b>' + n(a.ataV) + '</b></div></div>'
+      + '</div><div class="fgrid" style="margin-top:14px">'
+        + '<div class="fcol"><div class="fstat"><span>Remates totales</span><b>' + n(a.remT) + '</b></div></div>'
+        + '<div class="fcol"><div class="fstat"><span>Córners</span><b>' + n(a.corT) + '</b></div>'
+          + '<div class="fstat"><span>Faltas</span><b>' + n(a.falT) + '</b></div></div>'
+      + '</div></div>' : '')
     + cta
     + '<div class="disc">Análisis informativo basado en datos estadísticos. No es una garantía de resultados. Apuesta con responsabilidad.</div>';
 })();
