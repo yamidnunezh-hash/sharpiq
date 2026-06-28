@@ -29,19 +29,7 @@ const PROXIMOS_EVENTOS = [
     prob:       "63",
     resultado:  "push"
   },
-  {
-    fecha:      "25/06/26",
-    partido:    "Tunisia vs Netherlands",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 4.5 Goles",
-    cuota:      "1.39",
-    hora:       "18:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
-    resultado:  "pendiente"
-  },
+
   {
     fecha:      "25/06/26",
     partido:    "Japan vs Sweden",
