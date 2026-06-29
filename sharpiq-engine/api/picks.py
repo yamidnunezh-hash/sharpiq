@@ -72,6 +72,47 @@ def _leer_resueltos():
     return list(vistos.values())
 
 
+def _leer_proximos():
+    """Picks PUBLICADOS aún pendientes desde datos.js — EXACTAMENTE lo que
+    muestra la web pública. Una sola fuente de verdad para los picks del día."""
+    try:
+        with open(_DATOS_JS, encoding="utf-8", errors="replace") as f:
+            t = f.read()
+    except Exception:
+        return []
+    m = re.search(r'PROXIMOS_EVENTOS\s*=\s*\[(.*?)\];', t, re.DOTALL)
+    blk = m.group(1) if m else ""
+
+    def campo(o, k):
+        mm = re.search(k + r'\s*:\s*["\']([^"\']*)["\']', o)
+        return mm.group(1) if mm else ""
+
+    out, vistos = [], set()
+    for o in re.findall(r'\{[^{}]*\}', blk):
+        part = campo(o, 'partido')
+        if not part or campo(o, 'resultado') not in ("", "pendiente"):
+            continue
+        pred = campo(o, 'prediccion')
+        key = (part, pred)
+        if key in vistos:
+            continue
+        vistos.add(key)
+        loc, _, vis = part.partition(' vs ')
+        cuota = campo(o, 'cuota')
+        out.append({
+            "local":         loc.strip(),
+            "visitante":     vis.strip() or part,
+            "liga":          campo(o, 'liga'),
+            "hora":          campo(o, 'hora'),
+            "fecha_evento":  campo(o, 'fecha'),
+            "deporte_emoji": campo(o, 'emoji') or "⚽",
+            "tier":          campo(o, 'tier'),
+            "cuota":         cuota,
+            "prediccion_principal": {"mercado": pred, "cuota": cuota},
+        })
+    return out
+
+
 def _fecha_key(p):
     try:
         d, m, y = p.get("fecha", "").split("/")
@@ -111,8 +152,14 @@ def picks_hoy(token=Depends(usuario_activo)):
     preds   = data.get("predicciones", [])
     fecha   = data.get("fecha", str(date.today()))
 
+    # FUENTE PRINCIPAL: los picks PUBLICADOS en datos.js (lo mismo que la web).
+    publicados = _leer_proximos()
+
     if plan in ("vip", "admin"):
-        # VIP: todos los picks con EV positivo vs Pinnacle
+        if publicados:
+            return {"plan": plan, "fecha": fecha,
+                    "total": len(publicados), "picks": publicados}
+        # Respaldo: si datos.js viene vacío, usar predicciones.json con EV+
         picks_vip = []
         for p in preds:
             ev_max = max(
@@ -123,19 +170,17 @@ def picks_hoy(token=Depends(usuario_activo)):
                 picks_vip.append(_filtrar_vip(p))
         return {"plan": plan, "fecha": fecha, "total": len(picks_vip), "picks": picks_vip}
     else:
-        # Free: 2 picks como preview (sin EV, sin cuotas)
-        preview = [_filtrar_free(p) for p in preds[:2]]
-        total_vip = sum(
-            1 for p in preds
-            if max((vb.get("ev_pinn", 0) or 0 for vb in p.get("value_bets", {}).values()), default=0) >= 5
-        )
+        # Free: 2 picks como preview BLOQUEADO (del mismo set publicado)
+        fuente  = publicados if publicados else preds
+        preview = [{**p, "bloqueado": True} for p in fuente[:2]]
+        total_vip = len(publicados) if publicados else len(preds)
         return {
             "plan":      "free",
             "fecha":     fecha,
-            "total":     2,
+            "total":     len(preview),
             "total_vip": total_vip,
             "picks":     preview,
-            "mensaje":   f"Hoy hay {total_vip} picks con EV+ para suscriptores VIP",
+            "mensaje":   f"Hoy hay {total_vip} picks para suscriptores VIP",
         }
 
 

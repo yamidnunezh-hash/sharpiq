@@ -2,10 +2,37 @@
 SharpIQ — Panel de membresía del usuario
 """
 from fastapi import APIRouter, Depends
-from .auth import usuario_activo
+from .auth import usuario_activo, solo_admin
 from .db   import db
 
 router = APIRouter()
+
+
+@router.get("/admin/clientes")
+def listar_clientes(token=Depends(solo_admin)):
+    """Lista de TODOS los usuarios registrados con su plan — solo admin."""
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT u.id, u.email, u.nombre, u.plan, u.fecha_registro, s.fecha_fin
+            FROM usuarios u
+            LEFT JOIN suscripciones s ON s.usuario_id=u.id AND s.estado='active'
+            ORDER BY u.fecha_registro DESC
+        """)
+        rows = [dict(r) for r in cur.fetchall()]
+    clientes = [{
+        "email":          r["email"],
+        "nombre":         r["nombre"],
+        "plan":           r.get("plan") or "free",
+        "fecha_registro": str(r.get("fecha_registro") or "")[:10],
+        "vence":          str(r.get("fecha_fin") or "")[:10],
+    } for r in rows]
+    return {
+        "total": len(clientes),
+        "vip":   sum(1 for c in clientes if c["plan"] == "vip"),
+        "free":  sum(1 for c in clientes if c["plan"] == "free"),
+        "clientes": clientes,
+    }
 
 
 @router.get("/dashboard")

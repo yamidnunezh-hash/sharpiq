@@ -109,6 +109,7 @@
   <button class="tab" data-tab="motor" onclick="showTab(this,'motor')">🧠 Motor</button>
   <button class="tab" data-tab="resultados" onclick="showTab(this,'resultados')">✅ Resultados</button>
   <button class="tab" data-tab="historial" onclick="showTab(this,'historial')">📊 Historial</button>
+  <button class="tab" data-tab="clientes" onclick="showTab(this,'clientes')">👥 Clientes</button>
   <button class="tab" data-tab="config" onclick="showTab(this,'config')">⚙️ Config</button>
 </div>
 
@@ -182,6 +183,16 @@
   </div>
 
   <!-- ══ CONFIG ═════════════════════════════════════════════════ -->
+  <!-- ══ CLIENTES ══════════════════════════════════════════════ -->
+  <div id="panel-clientes" class="panel">
+    <div class="card">
+      <div class="card-title">👥 Mis clientes</div>
+      <div id="cliResumen" style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap"></div>
+      <div id="cliMsg" style="font-size:13px;color:var(--t2);margin-bottom:10px"></div>
+      <div id="cliTabla"></div>
+    </div>
+  </div>
+
   <div id="panel-config" class="panel">
     <div class="card">
       <div class="card-title">Token de GitHub</div>
@@ -257,7 +268,7 @@ function showTab(btn,id){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('panel-'+id).classList.add('active');
   btn.classList.add('active');
-  const loaders={motor:cargarMotor,resultados:cargarResultados,historial:cargarHistorial,config:actualizarTokenStatus};
+  const loaders={motor:cargarMotor,resultados:cargarResultados,historial:cargarHistorial,clientes:cargarClientes,config:actualizarTokenStatus};
   if(loaders[id]) loaders[id]();
 }
 
@@ -543,6 +554,34 @@ function actualizarTokenStatus(){
   el.innerHTML=tk
     ?`<div class="token-ok">✅ Token configurado (${tk.slice(0,8)}...)</div>`
     :`<div class="token-needed">⚠️ Sin token — no podrás publicar cambios.</div>`;
+}
+
+async function cargarClientes(){
+  const res=document.getElementById('cliResumen');
+  const tab=document.getElementById('cliTabla');
+  const msg=document.getElementById('cliMsg');
+  const tk=localStorage.getItem('sharpiq_token');
+  if(!tk){ msg.innerHTML='Inicia sesión como admin en <a href="login.html" style="color:#00C8FF">login.html</a> para ver tus clientes.'; return; }
+  msg.textContent='Cargando...'; tab.innerHTML=''; res.innerHTML='';
+  try{
+    const r=await fetch('https://api.sharpiq.co/members/admin/clientes',{headers:{'Authorization':'Bearer '+tk}});
+    if(r.status===401||r.status===403){ msg.innerHTML='Sesión admin vencida. Entra en <a href="login.html" style="color:#00C8FF">login.html</a> y vuelve.'; return; }
+    const d=await r.json();
+    msg.textContent='';
+    res.innerHTML=`
+      <div style="flex:1;min-width:90px;background:rgba(0,200,255,.06);border:1px solid rgba(0,200,255,.2);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#00C8FF">${d.total}</div><div style="font-size:10px;letter-spacing:1px;color:var(--t3);text-transform:uppercase">Registrados</div></div>
+      <div style="flex:1;min-width:90px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#22c55e">${d.vip}</div><div style="font-size:10px;letter-spacing:1px;color:var(--t3);text-transform:uppercase">VIP activos</div></div>
+      <div style="flex:1;min-width:90px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.6rem;font-weight:800;color:var(--t1)">${d.free}</div><div style="font-size:10px;letter-spacing:1px;color:var(--t3);text-transform:uppercase">Free</div></div>`;
+    if(!d.clientes||!d.clientes.length){ tab.innerHTML='<div style="color:var(--t3);text-align:center;padding:20px;font-size:13px">Aún no hay clientes registrados.</div>'; return; }
+    tab.innerHTML='<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px">'+
+      '<tr style="text-align:left;color:var(--t3);font-size:11px;text-transform:uppercase;letter-spacing:1px"><th style="padding:8px">Cliente</th><th style="padding:8px">Plan</th><th style="padding:8px">Registro</th><th style="padding:8px">Vence</th></tr>'+
+      d.clientes.map(c=>`<tr style="border-top:1px solid var(--border)">
+        <td style="padding:8px"><div style="font-weight:600">${c.nombre||'—'}</div><div style="font-size:11px;color:var(--t3)">${c.email}</div></td>
+        <td style="padding:8px">${c.plan==='vip'?'<span style="color:#22c55e;font-weight:700">VIP</span>':(c.plan==='admin'?'<span style="color:#a78bfa">ADMIN</span>':'<span style="color:var(--t3)">Free</span>')}</td>
+        <td style="padding:8px;color:var(--t2)">${c.fecha_registro||'—'}</td>
+        <td style="padding:8px;color:var(--t2)">${c.vence||'—'}</td>
+      </tr>`).join('')+'</table></div>';
+  }catch(e){ msg.textContent='Error: '+e.message; }
 }
 
 async function activarVipCliente(){
