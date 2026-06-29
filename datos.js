@@ -66,7 +66,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "51",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "29/06/26",
@@ -79,7 +79,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "60",
-    resultado:  "pendiente"
+    resultado:  "push"
   },
   {
     fecha:      "29/06/26",
@@ -1787,6 +1787,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "29/06/26",
+    partido:    "Brazil vs Japan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Visitante +1",
+    cuota:      "1.64",
+    prob:       "60",
+    resultado:  "push"
+  },
+  {
+    fecha:      "29/06/26",
+    partido:    "Brazil vs Japan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos Marcan",
+    cuota:      "2.02",
+    prob:       "51",
+    resultado:  "win"
+  },
   {
     fecha:      "28/06/26",
     partido:    "Fortaleza vs Sport Recife",
