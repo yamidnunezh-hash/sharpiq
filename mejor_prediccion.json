@@ -176,7 +176,7 @@
       "ah_l_m1_75": 4.42,
       "ah_l_m1_75_casa": "Pinnacle",
       "pinnacle_ah_l_m1_75": 4.42,
-      "ah_v_p1_75": 1.25,
+      "ah_v_p1_75": 1.24,
       "ah_v_p1_75_casa": "Virgin Bet",
       "pinnacle_ah_v_p1_75": 1.23,
       "ah_l_m1_5": 3.42,
@@ -194,7 +194,7 @@
       "ah_l_m1_0": 2.56,
       "ah_l_m1_0_casa": "Pinnacle",
       "pinnacle_ah_l_m1_0": 2.56,
-      "ah_v_p1_0": 1.58,
+      "ah_v_p1_0": 1.57,
       "ah_v_p1_0_casa": "Virgin Bet",
       "pinnacle_ah_v_p1_0": 1.56,
       "ah_l_m0_5": 1.79,
@@ -889,13 +889,13 @@
         "mercado_nombre": "Hándicap Local -1.75"
       },
       "ah_v_p1_75": {
-        "value": -0.022,
-        "ev_porcentaje": -2.2,
-        "ev_pinn": -2.2,
+        "value": -0.03,
+        "ev_porcentaje": -3.0,
+        "ev_pinn": -3.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.25,
+        "cuota": 1.24,
         "casa": "Virgin Bet",
         "pinn_prob": 78.2,
         "mercado_nombre": "Hándicap Visitante +1.75"
@@ -961,13 +961,13 @@
         "mercado_nombre": "Hándicap Local -1"
       },
       "ah_v_p1_0": {
-        "value": -0.018,
-        "ev_porcentaje": -1.8,
-        "ev_pinn": -1.8,
+        "value": -0.024,
+        "ev_porcentaje": -2.4,
+        "ev_pinn": -2.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.58,
+        "cuota": 1.57,
         "casa": "Virgin Bet",
         "pinn_prob": 62.1,
         "mercado_nombre": "Hándicap Visitante +1"
