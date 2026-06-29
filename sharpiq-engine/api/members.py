@@ -30,6 +30,20 @@ def _tg_config():
     return token, vip
 
 
+@router.get("/telegram-status")
+def telegram_status():
+    """Diagnóstico (sin secretos): confirma si el servidor tiene el bot configurado
+    y si el token es válido. NO expone el token."""
+    tg_token, vip_id = _tg_config()
+    if not tg_token:
+        return {"configured": False, "bot_ok": False}
+    try:
+        r = http.get(f"https://api.telegram.org/bot{tg_token}/getMe", timeout=10)
+        return {"configured": True, "bot_ok": bool((r.json() or {}).get("ok"))}
+    except Exception:
+        return {"configured": True, "bot_ok": False}
+
+
 @router.get("/telegram-vip")
 def telegram_vip(token=Depends(solo_vip)):
     """Genera un enlace de invitación ÚNICO (1 solo uso) al canal VIP de Telegram.

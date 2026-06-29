@@ -85,18 +85,9 @@
 <script>
 const API = 'https://api.sharpiq.co';
 
-async function irAPago(el) {
-  const original = el.innerHTML;
-  try {
-    el.innerHTML = '⏳ Procesando...'; el.disabled = true;
-    const r = await fetch(`${API}/pagos/checkout-publico`, {method:'POST'});
-    const d = await r.json();
-    if(d.checkout_url){ window.location.href = d.checkout_url; }
-    else { throw new Error(d.detail || 'Error'); }
-  } catch(e){
-    el.innerHTML = original; el.disabled = false;
-    alert('Error al conectar con la pasarela. Intenta de nuevo.');
-  }
+function irAPago(){
+  // Crear cuenta primero → el pago queda amarrado y el VIP se activa solo
+  window.location.href = 'registro.html?plan=vip&next=pago';
 }
 
 // Hashes SHA-256 para acceso admin offline (sin API)
