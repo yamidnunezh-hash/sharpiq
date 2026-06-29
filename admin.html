@@ -199,6 +199,20 @@
     </div>
 
     <div class="card">
+      <div class="card-title">⭐ Activar VIP de un cliente</div>
+      <p style="font-size:13px;color:var(--t2);margin-bottom:14px">
+        Para clientes que pagaron por <strong style="color:var(--gold)">Nequi / transferencia</strong>,
+        o cuyo pago web quedó sin activar. El cliente debe tener su cuenta creada en
+        <strong style="color:var(--gold)">sharpiq.co</strong> (con ese mismo correo).
+      </p>
+      <div class="gh-row">
+        <input type="email" id="vipEmail" placeholder="correo del cliente">
+        <button class="btn btn-primary" onclick="activarVipCliente()">Activar VIP</button>
+      </div>
+      <div id="vipMsg" style="margin-top:12px;font-size:13px;font-family:Inter,sans-serif;line-height:1.5"></div>
+    </div>
+
+    <div class="card">
       <div class="card-title">Claves de acceso</div>
       <p style="font-size:13px;color:var(--t2);margin-bottom:14px">Las claves están protegidas con <strong style="color:var(--gold)">SHA-256</strong>. Para cambiarlas: genera el hash de la nueva clave y actualiza <code style="color:var(--gold)">H_VIP</code> / <code style="color:var(--gold)">H_ADMIN</code> en <code>login.html</code>.</p>
       <div style="background:rgba(0,200,255,.04);border:1px solid rgba(0,200,255,.12);border-radius:8px;padding:14px;font-family:Inter,sans-serif;font-size:12px;color:var(--t2);line-height:1.8">
@@ -529,6 +543,30 @@ function actualizarTokenStatus(){
   el.innerHTML=tk
     ?`<div class="token-ok">✅ Token configurado (${tk.slice(0,8)}...)</div>`
     :`<div class="token-needed">⚠️ Sin token — no podrás publicar cambios.</div>`;
+}
+
+async function activarVipCliente(){
+  const email=(document.getElementById('vipEmail').value||'').trim().toLowerCase();
+  const msg=document.getElementById('vipMsg');
+  if(!email){ msg.style.color='#ef4444'; msg.textContent='Escribe el correo del cliente.'; return; }
+  const tk=localStorage.getItem('sharpiq_token');
+  if(!tk){ msg.style.color='#ef4444';
+    msg.innerHTML='Primero inicia sesión como admin en <a href="login.html" style="color:#00C8FF">login.html</a> y vuelve.'; return; }
+  msg.style.color='#97a6bd'; msg.textContent='Activando...';
+  try{
+    const r=await fetch('https://api.sharpiq.co/pagos/admin/activar-vip',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':'Bearer '+tk},
+      body:JSON.stringify({email})
+    });
+    const d=await r.json().catch(()=>({}));
+    if(r.status===401||r.status===403){ msg.style.color='#ef4444';
+      msg.innerHTML='Sesión admin vencida. Inicia sesión en <a href="login.html" style="color:#00C8FF">login.html</a> y vuelve a intentar.'; return; }
+    if(!r.ok) throw new Error(d.detail||'No se pudo activar');
+    msg.style.color='#22c55e';
+    msg.textContent='✅ VIP activado para '+(d.nombre||email)+'. Avísale que entre a sharpiq.co con su cuenta y ya verá todos los picks.';
+    document.getElementById('vipEmail').value='';
+  }catch(e){ msg.style.color='#ef4444'; msg.textContent='✗ '+e.message; }
 }
 
 // ── HELPERS ─────────────────────────────────────────────────────
