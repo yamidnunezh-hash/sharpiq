@@ -1,21 +1,6 @@
 {
-  "updated": "2026-06-29T17:18:33Z",
-  "live": [
-    {
-      "id": "4f3d72fba877939d36a5315618184093",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "Brazil",
-      "away": "Japan",
-      "fecha": "29/06/26",
-      "hora": "12:00 COT",
-      "ts": 1782734400,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    }
-  ],
+  "updated": "2026-06-29T19:17:30Z",
+  "live": [],
   "upcoming": [
     {
       "id": "4930db8e83436874d09e59bd0e29c1a5",
@@ -230,6 +215,20 @@
   ],
   "finished": [
     {
+      "id": "4f3d72fba877939d36a5315618184093",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Brazil",
+      "away": "Japan",
+      "fecha": "29/06/26",
+      "hora": "12:00 COT",
+      "ts": 1782734400,
+      "completed": true,
+      "score_home": "2",
+      "score_away": "1"
+    },
+    {
       "id": "4e17597eeb67ed3ec474a5064ec2788c",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -298,76 +297,6 @@
       "completed": true,
       "score_home": "3",
       "score_away": "2"
-    },
-    {
-      "id": "ae4c2503863105794c22aa36724c8ae8",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Los Angeles Angels",
-      "away": "Athletics",
-      "fecha": "28/06/26",
-      "hora": "14:16 COT",
-      "ts": 1782656160,
-      "completed": true,
-      "score_home": "4",
-      "score_away": "1"
-    },
-    {
-      "id": "d4d9e7bc92d24209caa751d512ebf9e8",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Athletic Club (MG)",
-      "away": "Avai",
-      "fecha": "28/06/26",
-      "hora": "14:01 COT",
-      "ts": 1782655260,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "0"
-    },
-    {
-      "id": "7cb578b22b4f6ee596b6079d778fdd76",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Juventude",
-      "away": "Ceará",
-      "fecha": "28/06/26",
-      "hora": "14:01 COT",
-      "ts": 1782655260,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "0"
-    },
-    {
-      "id": "def55b09ef3d6854e3c01e74b5c63415",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "South Africa",
-      "away": "Canada",
-      "fecha": "28/06/26",
-      "hora": "14:00 COT",
-      "ts": 1782655200,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "1"
-    },
-    {
-      "id": "fbb44b01672bb0d1ebeac10d0313b36d",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Atletico Goianiense",
-      "away": "Ponte Preta",
-      "fecha": "28/06/26",
-      "hora": "13:59 COT",
-      "ts": 1782655140,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "0"
     }
   ]
 }
