@@ -1,21 +1,6 @@
 {
-  "updated": "2026-06-29T00:04:59Z",
-  "live": [
-    {
-      "id": "4e17597eeb67ed3ec474a5064ec2788c",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Boston Red Sox",
-      "away": "New York Yankees",
-      "fecha": "28/06/26",
-      "hora": "18:21 COT",
-      "ts": 1782670860,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    }
-  ],
+  "updated": "2026-06-29T05:01:57Z",
+  "live": [],
   "upcoming": [
     {
       "id": "4f3d72fba877939d36a5315618184093",
@@ -108,6 +93,20 @@
       "emoji": "⚾",
       "home": "Boston Red Sox",
       "away": "Washington Nationals",
+      "fecha": "29/06/26",
+      "hora": "18:11 COT",
+      "ts": 1782756660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "74432b663df15c5695ec62a802768a60",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Cleveland Guardians",
+      "away": "Texas Rangers",
       "fecha": "29/06/26",
       "hora": "18:11 COT",
       "ts": 1782756660,
@@ -212,23 +211,23 @@
       "completed": false,
       "score_home": null,
       "score_away": null
-    },
-    {
-      "id": "0ce57b4f423d4bee56a8b4b941856426",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Seattle Mariners",
-      "away": "Los Angeles Angels",
-      "fecha": "29/06/26",
-      "hora": "20:41 COT",
-      "ts": 1782765660,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "4e17597eeb67ed3ec474a5064ec2788c",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Boston Red Sox",
+      "away": "New York Yankees",
+      "fecha": "28/06/26",
+      "hora": "18:21 COT",
+      "ts": 1782670860,
+      "completed": true,
+      "score_home": "5",
+      "score_away": "4"
+    },
     {
       "id": "98b5294e56e328ac3873d172e9c3b5d2",
       "sport": "soccer_brazil_serie_b",
@@ -354,20 +353,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "0"
-    },
-    {
-      "id": "a0d8dffceba6456f69d9dbb4a78415a3",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "St. Louis Cardinals",
-      "away": "Miami Marlins",
-      "fecha": "28/06/26",
-      "hora": "13:16 COT",
-      "ts": 1782652560,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "1"
     }
   ]
 }
