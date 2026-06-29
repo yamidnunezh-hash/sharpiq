@@ -31,6 +31,19 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "29/06/26",
+    partido:    "Brazil vs Japan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos Marcan",
+    cuota:      "2.02",
+    hora:       "12:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "51",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "29/06/26",
     partido:    "Netherlands vs Morocco",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 2.5 Goles",
@@ -40,19 +53,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "alto_valor",
     stake_pct:  "2",
     prob:       "57",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "29/06/26",
-    partido:    "Brazil vs Japan",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Corners Under 8.5",
-    cuota:      "1.75",
-    hora:       "12:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "59",
     resultado:  "pendiente"
   },
   {
