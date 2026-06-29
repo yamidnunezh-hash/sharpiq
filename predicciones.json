@@ -15,7 +15,7 @@
         "1": 1.36,
         "1_casa": "Betfair",
         "pinnacle_1": 1.34,
-        "2": 12.0,
+        "2": 11.5,
         "2_casa": "Betfair",
         "pinnacle_2": 11.0,
         "X": 5.4,
@@ -295,13 +295,13 @@
           "pinn_prob": 72.7
         },
         "victoria_visita": {
-          "value": 0.063,
-          "ev_porcentaje": 6.3,
-          "ev_pinn": 6.3,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "VALOR",
-          "cuota": 12.0,
+          "value": 0.019,
+          "ev_porcentaje": 1.9,
+          "ev_pinn": 1.9,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 11.5,
           "casa": "Betfair",
           "pinn_prob": 8.9
         },
@@ -1411,10 +1411,10 @@
       "hora": "01:00",
       "fecha_evento": "2026-06-29",
       "cuotas": {
-        "2": 3.45,
+        "2": 3.5,
         "2_casa": "Betfair",
         "pinnacle_2": 3.39,
-        "1": 2.5,
+        "1": 2.48,
         "1_casa": "Betfair",
         "pinnacle_1": 2.47,
         "X": 3.15,
@@ -1679,24 +1679,24 @@
       "confianza": 79.1,
       "value_bets": {
         "victoria_visita": {
-          "value": -0.004,
-          "ev_porcentaje": -0.4,
-          "ev_pinn": -0.4,
+          "value": 0.011,
+          "ev_porcentaje": 1.1,
+          "ev_pinn": 1.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.45,
+          "cuota": 3.5,
           "casa": "Betfair",
           "pinn_prob": 28.9
         },
         "victoria_local": {
-          "value": -0.009,
-          "ev_porcentaje": -0.9,
-          "ev_pinn": -0.9,
+          "value": -0.017,
+          "ev_porcentaje": -1.7,
+          "ev_pinn": -1.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.5,
+          "cuota": 2.48,
           "casa": "Betfair",
           "pinn_prob": 39.6
         },
@@ -10898,5 +10898,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:00:50"
+  "generado": "20:01:00"
 }
