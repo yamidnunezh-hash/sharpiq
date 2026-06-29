@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from fastapi import APIRouter, HTTPException, Request, Depends
 import requests as http
 
-from .auth import usuario_activo
+from .auth import usuario_activo, solo_admin
 from .db   import db
 
 router = APIRouter()
@@ -316,6 +316,28 @@ def _registrar_pago(user_id: int, pago: dict):
     if es_nuevo and pago.get("status") == "approved":
         email = (pago.get("payer") or {}).get("email", "")
         _activar_vip(user_id, str(pago.get("id")), email)
+
+
+@router.post("/admin/activar-vip")
+def activar_vip_manual(body: dict, token=Depends(solo_admin)):
+    """Activa el VIP manualmente por email — para pagos por Nequi/transferencia
+    o pagos web que quedaron sin amarrar. El cliente debe tener cuenta creada
+    en sharpiq.co. Idempotente (extiende la fecha si ya tenía VIP)."""
+    email = (body.get("email") or "").lower().strip()
+    meses = max(1, int(body.get("meses") or 1))
+    if not email:
+        raise HTTPException(400, "Falta el email del cliente")
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT id, nombre, plan FROM usuarios WHERE email=%s", (email,))
+        row = cur.fetchone()
+    if not row:
+        raise HTTPException(404, "No hay cuenta con ese email. Pídele al cliente "
+                                 "que cree su cuenta gratis en sharpiq.co primero.")
+    for _ in range(meses):
+        _activar_vip(row["id"], f"manual-{email}", email)
+    return {"ok": True, "email": email, "nombre": row["nombre"],
+            "user_id": row["id"], "plan": "vip", "meses": meses}
 
 
 @router.get("/mi-suscripcion")
