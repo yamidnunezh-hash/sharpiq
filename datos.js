@@ -5,19 +5,6 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "29/06/26",
-    partido:    "Brazil vs Japan",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Hándicap Visitante +1",
-    cuota:      "1.64",
-    hora:       "12:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "60",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "29/06/26",
     partido:    "Netherlands vs Morocco",
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
@@ -27,6 +14,58 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "69",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "29/06/26",
+    partido:    "Germany vs Paraguay",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.38",
+    hora:       "15:30 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "72",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "29/06/26",
+    partido:    "Netherlands vs Morocco",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.78",
+    hora:       "20:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "57",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "29/06/26",
+    partido:    "Brazil vs Japan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Under 8.5",
+    cuota:      "1.75",
+    hora:       "12:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "59",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "29/06/26",
+    partido:    "Brazil vs Japan",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Visitante +1",
+    cuota:      "1.64",
+    hora:       "12:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "60",
     resultado:  "pendiente"
   },
   {
@@ -44,19 +83,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "29/06/26",
-    partido:    "Brazil vs Japan",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Corners Over 8.5",
-    cuota:      "1.89",
-    hora:       "12:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "54",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "29/06/26",
     partido:    "Ann Li vs Zeynep Sonmez",
     liga:       "WTA Wimbledon",
     prediccion: "Gana Ann Li",
@@ -66,19 +92,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "principal",
     stake_pct:  "1.8",
     prob:       "46",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "29/06/26",
-    partido:    "Germany vs Paraguay",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Victoria Local",
-    cuota:      "1.35",
-    hora:       "15:30 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
     resultado:  "pendiente"
   },
   {
