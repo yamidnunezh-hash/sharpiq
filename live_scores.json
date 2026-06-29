@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T20:59:24Z",
+  "updated": "2026-06-29T22:15:28Z",
   "live": [
     {
       "id": "4930db8e83436874d09e59bd0e29c1a5",
@@ -12,8 +12,8 @@
       "hora": "15:30 COT",
       "ts": 1782747000,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
+      "score_home": "1",
+      "score_away": "1"
     }
   ],
   "upcoming": [
@@ -256,34 +256,6 @@
       "completed": true,
       "score_home": "5",
       "score_away": "4"
-    },
-    {
-      "id": "98b5294e56e328ac3873d172e9c3b5d2",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Nautico PE",
-      "away": "Goiás",
-      "fecha": "28/06/26",
-      "hora": "16:34 COT",
-      "ts": 1782664440,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "1"
-    },
-    {
-      "id": "74c6ce0ca6e651ab8de94efbe40d76a7",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Fortaleza",
-      "away": "Sport Recife",
-      "fecha": "28/06/26",
-      "hora": "16:30 COT",
-      "ts": 1782664200,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "1"
     }
   ]
 }
