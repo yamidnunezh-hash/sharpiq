@@ -102,6 +102,10 @@
         <p>Los suscriptores VIP reciben cada día picks con ventaja real calculada contra líneas de Pinnacle.<br>Solo $60.000 COP al mes. Cancela cuando quieras.</p>
         <button class="btn-upgrade" onclick="suscribir()">ACTIVAR VIP — $60.000 COP/mes</button>
       </div>
+      <div id="tgVipBox" style="display:none;margin-bottom:16px">
+        <button id="tgVipBtn" onclick="entrarTelegramVip(this)" style="width:100%;background:linear-gradient(135deg,#229ED9,#1c7fb0);color:#fff;border:none;border-radius:10px;padding:15px;font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;cursor:pointer">📲 Entrar al canal VIP de Telegram</button>
+        <div id="tgVipMsg" style="font-size:11px;color:var(--t3);text-align:center;margin-top:7px"></div>
+      </div>
       <div id="picksContainer" class="loading"><span class="spin"></span> Cargando picks...</div>
     </div>
 
@@ -228,6 +232,10 @@ async function cargarDashboard(){
 
 async function cargarPicks(plan){
   const c = document.getElementById('picksContainer');
+  // Botón de acceso al canal VIP de Telegram (solo VIP/admin)
+  if(plan==='vip'||plan==='admin'){
+    document.getElementById('tgVipBox').style.display='block';
+  }
   try {
     const r = await fetch(`${API}/picks/hoy`, {headers: headers()});
     const d = await r.json();
@@ -263,6 +271,25 @@ async function cargarPicks(plan){
     ).join('');
   } catch(e){
     c.innerHTML = `<div style="color:var(--red);text-align:center;padding:20px;font-family:Inter,sans-serif;font-size:12px">Error: ${e.message}</div>`;
+  }
+}
+
+async function entrarTelegramVip(btn){
+  const msg=document.getElementById('tgVipMsg');
+  const orig=btn.textContent;
+  btn.disabled=true; btn.textContent='Generando tu acceso...';
+  try{
+    const r=await fetch(`${API}/members/telegram-vip`, {headers: headers()});
+    const d=await r.json();
+    if(r.ok && d.invite_link){
+      msg.textContent='¡Listo! Abriendo Telegram... (tu enlace es de un solo uso)';
+      window.open(d.invite_link,'_blank');
+      btn.disabled=false; btn.textContent='✅ Abrir canal VIP de Telegram';
+      btn.onclick=()=>window.open(d.invite_link,'_blank');
+    } else { throw new Error(d.detail||'No se pudo generar el acceso'); }
+  }catch(e){
+    msg.innerHTML='No se pudo generar el acceso. Escríbenos al <a href="https://wa.me/573144807538" style="color:#00C8FF">WhatsApp</a>.';
+    btn.disabled=false; btn.textContent=orig;
   }
 }
 

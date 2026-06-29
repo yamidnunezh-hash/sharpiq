@@ -83,6 +83,7 @@
   </div>
 
   <a class="btn" id="mainBtn" href="cuenta.html">VER MIS PICKS →</a>
+  <a id="tgBtn" style="display:none;margin-top:14px;background:linear-gradient(135deg,#229ED9,#1c7fb0);color:#fff;border-radius:10px;padding:16px 36px;font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-decoration:none">📲 ENTRAR AL CANAL VIP DE TELEGRAM</a>
 
   <!-- Solo visible si el usuario no tiene cuenta aún -->
   <div id="sinCuenta" style="display:none;margin-top:28px;background:rgba(0,200,255,.06);border:1px solid rgba(0,200,255,.2);border-radius:14px;padding:24px">
@@ -146,6 +147,16 @@
           localStorage.setItem('sharpiq_plan', 'vip');
           sub.textContent = 'Tu suscripción VIP está activa. Ya tienes acceso a todos los picks EV+.';
           badge.textContent = '★ PLAN VIP ACTIVO';
+          // Generar acceso automático al canal VIP de Telegram
+          fetch('https://api.sharpiq.co/members/telegram-vip', {
+            headers: {'Authorization': 'Bearer ' + token}
+          })
+          .then(r => r.json())
+          .then(j => {
+            const tg = document.getElementById('tgBtn');
+            if(j.invite_link){ tg.href = j.invite_link; tg.target = '_blank'; tg.style.display = 'inline-block'; }
+          })
+          .catch(()=>{});
         } else if(intentos++ < 8){
           setTimeout(verificar, 3000);  // reintentar ~24s
         } else {

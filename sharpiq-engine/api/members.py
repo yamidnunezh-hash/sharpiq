@@ -1,11 +1,54 @@
 """
 SharpIQ — Panel de membresía del usuario
 """
-from fastapi import APIRouter, Depends
-from .auth import usuario_activo, solo_admin
+import os
+from fastapi import APIRouter, Depends, HTTPException
+import requests as http
+from .auth import usuario_activo, solo_admin, solo_vip
 from .db   import db
 
 router = APIRouter()
+
+# Canal VIP de Telegram (mismo que usa el worker de pagos). El bot es admin.
+_TG_VIP_DEFAULT = "-1003833982154"
+
+
+def _tg_config():
+    token = os.environ.get("TELEGRAM_TOKEN", "")
+    vip   = os.environ.get("TELEGRAM_CHAT_ID", "") or _TG_VIP_DEFAULT
+    if not token:
+        try:
+            from config import TELEGRAM_TOKEN as t
+            token = t
+            try:
+                from config import TELEGRAM_CHAT_ID as v
+                vip = vip or v
+            except Exception:
+                pass
+        except Exception:
+            pass
+    return token, vip
+
+
+@router.get("/telegram-vip")
+def telegram_vip(token=Depends(solo_vip)):
+    """Genera un enlace de invitación ÚNICO (1 solo uso) al canal VIP de Telegram.
+    Solo para usuarios VIP/admin. El bot debe ser admin del canal."""
+    tg_token, vip_id = _tg_config()
+    if not tg_token:
+        raise HTTPException(503, "Telegram no está configurado en el servidor")
+    try:
+        r = http.post(
+            f"https://api.telegram.org/bot{tg_token}/createChatInviteLink",
+            json={"chat_id": vip_id, "member_limit": 1, "name": "SharpIQ VIP web"},
+            timeout=12,
+        )
+        link = ((r.json() or {}).get("result") or {}).get("invite_link")
+    except Exception as e:
+        raise HTTPException(502, f"Error contactando Telegram: {e}")
+    if not link:
+        raise HTTPException(502, "No se pudo generar la invitación (¿el bot es admin del canal?)")
+    return {"ok": True, "invite_link": link}
 
 
 @router.get("/admin/clientes")
