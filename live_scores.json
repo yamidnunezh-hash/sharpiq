@@ -1,7 +1,6 @@
 {
-  "updated": "2026-06-29T19:17:30Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-06-29T20:59:24Z",
+  "live": [
     {
       "id": "4930db8e83436874d09e59bd0e29c1a5",
       "sport": "soccer_fifa_world_cup",
@@ -13,9 +12,11 @@
       "hora": "15:30 COT",
       "ts": 1782747000,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "da58edb8a6932f91a04f398f83ed0658",
       "sport": "baseball_mlb",
@@ -211,6 +212,20 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "ce017bea1a26252278053ce759e2416b",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Ivory Coast",
+      "away": "Norway",
+      "fecha": "30/06/26",
+      "hora": "12:00 COT",
+      "ts": 1782820800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
@@ -269,34 +284,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "1"
-    },
-    {
-      "id": "bc42a99ecfee68e2bb722cee3741c63b",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Diego Padres",
-      "away": "Los Angeles Dodgers",
-      "fecha": "28/06/26",
-      "hora": "15:11 COT",
-      "ts": 1782659460,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "4"
-    },
-    {
-      "id": "3f981bce1463cf99ee7c4100e779efe7",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Francisco Giants",
-      "away": "Atlanta Braves",
-      "fecha": "28/06/26",
-      "hora": "15:06 COT",
-      "ts": 1782659160,
-      "completed": true,
-      "score_home": "3",
-      "score_away": "2"
     }
   ]
 }
