@@ -4945,7 +4945,8 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
       const evPct=evMatch?parseFloat(evMatch[1]):null;
       const isAlto=evPct&&evPct>=25;
       const _role=localStorage.getItem('sharpiq_role');
-      const _isVip=_role==='vip'||_role==='admin';
+      const _plan=localStorage.getItem('sharpiq_plan');
+      const _isVip=_role==='vip'||_role==='admin'||_plan==='vip'||_plan==='admin';
       const unlocked = e.status==='free'||_isVip;
       // prediction text (strip EV part for cleaner display)
       const predTexto = e.prediccion.replace(/\s*—\s*EV\s*\+?[\d.]+%/i,'').replace(/\s*\(.*?\)/,'').trim();
@@ -4996,6 +4997,18 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     }).join('');}
   };
   window._renderPicks();
+  // Refrescar el plan desde el servidor: si el cliente es VIP, destapa los picks aquí mismo
+  (function(){
+    const tk=localStorage.getItem('sharpiq_token');
+    if(!tk) return;
+    fetch('https://api.sharpiq.co/pagos/mi-suscripcion',{headers:{'Authorization':'Bearer '+tk}})
+      .then(r=>r.json()).then(d=>{
+        if(d && (d.plan==='vip'||d.activo===true)){
+          localStorage.setItem('sharpiq_plan','vip');
+          window._renderPicks();
+        }
+      }).catch(()=>{});
+  })();
 })();
 
 // LIVE SCORES (Sofascore-style)
@@ -5024,7 +5037,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   function stateHTML(g,tipo){if(tipo==='live')return `<span class="ls-state ls-live"><span class="ls-dot"></span>EN VIVO</span>`;if(tipo==='finished')return `<span class="ls-state ls-ft">FINAL</span>`;return `<span class="ls-state ls-soon">${g.hora||''}</span>`;}
   function centerHTML(g,tipo){if(tipo==='upcoming')return `<span class="ls-center ls-cd" data-ts="${g.ts||0}" data-cd="1">—</span>`;const sh=(g.score_home!==null&&g.score_home!==undefined)?g.score_home:'-';const sa=(g.score_away!==null&&g.score_away!==undefined)?g.score_away:'-';return `<span class="ls-center ls-score${tipo==='live'?' ls-score-live':''}">${sh}<i>-</i>${sa}</span>`;}
   function sideHTML(name,side){return side==='home'?`<div class="ls-side ls-home"><span class="ls-name">${name}</span>${_logo(name)}</div>`:`<div class="ls-side ls-away">${_logo(name)}<span class="ls-name">${name}</span></div>`;}
-  function rowHTML(g,tipo){const p=g._pick;let chip='';if(p){const vip=(localStorage.getItem('sharpiq_role')||'')==='vip'||(localStorage.getItem('sharpiq_role')||'')==='admin';if(p.status==='free'||vip){const res=p.resultado==='win'?' · WIN ✅':p.resultado==='loss'?' · LOSS ❌':'';chip=`<div class="ls-pick">⭐ ${p.prediccion.split('—')[0].trim()} <b>@${p.cuota}</b>${res}</div>`;}else{chip=`<div class="ls-pick ls-pick-lock">🔒 Pick VIP — <a href="login.html">Accede</a></div>`;}}return `<div class="ls-row${p?' ls-haspick':''}">${stateHTML(g,tipo)}<div class="ls-match">${sideHTML(g.home,'home')}${centerHTML(g,tipo)}${sideHTML(g.away,'away')}</div>${chip}</div>`;}
+  function rowHTML(g,tipo){const p=g._pick;let chip='';if(p){const _r=localStorage.getItem('sharpiq_role')||'';const _pl=localStorage.getItem('sharpiq_plan')||'';const vip=_r==='vip'||_r==='admin'||_pl==='vip'||_pl==='admin';if(p.status==='free'||vip){const res=p.resultado==='win'?' · WIN ✅':p.resultado==='loss'?' · LOSS ❌':'';chip=`<div class="ls-pick">⭐ ${p.prediccion.split('—')[0].trim()} <b>@${p.cuota}</b>${res}</div>`;}else{chip=`<div class="ls-pick ls-pick-lock">🔒 Pick VIP — <a href="login.html">Accede</a></div>`;}}return `<div class="ls-row${p?' ls-haspick':''}">${stateHTML(g,tipo)}<div class="ls-match">${sideHTML(g.home,'home')}${centerHTML(g,tipo)}${sideHTML(g.away,'away')}</div>${chip}</div>`;}
   function render(data){
     lastData=data;
     const L=buildPicksLookup();
