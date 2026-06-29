@@ -36,7 +36,7 @@
         "over15": 1.4,
         "over15_casa": "Betfair",
         "pinnacle_over15": 1.37,
-        "under15": 3.4,
+        "under15": 3.45,
         "under15_casa": "Betfair",
         "pinnacle_under15": 3.18,
         "over175": 1.46,
@@ -368,13 +368,13 @@
           "pinn_prob": 69.9
         },
         "under15": {
-          "value": 0.024,
-          "ev_porcentaje": 2.4,
-          "ev_pinn": 2.4,
+          "value": 0.039,
+          "ev_porcentaje": 3.9,
+          "ev_pinn": 3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.4,
+          "cuota": 3.45,
           "casa": "Betfair",
           "pinn_prob": 30.1
         },
@@ -7411,5 +7411,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:00:53"
+  "generado": "00:01:02"
 }
