@@ -131,16 +131,30 @@
     return;
   }
 
-  // Usuario logueado — refrescar plan
+  // Usuario logueado — confirmar activación del VIP (el webhook de MP puede
+  // tardar unos segundos; reintentamos hasta confirmarlo).
   if(token && status !== 'failure' && status !== 'rejected'){
-    fetch('https://api.sharpiq.co/pagos/mi-suscripcion', {
-      headers: {'Authorization': 'Bearer ' + token}
-    })
-    .then(r => r.json())
-    .then(data => {
-      if(data.plan === 'vip') localStorage.setItem('sharpiq_plan', 'vip');
-    })
-    .catch(()=>{});
+    let intentos = 0;
+    sub.textContent = 'Confirmando tu pago y activando el acceso VIP...';
+    const verificar = () => {
+      fetch('https://api.sharpiq.co/pagos/mi-suscripcion', {
+        headers: {'Authorization': 'Bearer ' + token}
+      })
+      .then(r => r.json())
+      .then(data => {
+        if(data.plan === 'vip'){
+          localStorage.setItem('sharpiq_plan', 'vip');
+          sub.textContent = 'Tu suscripción VIP está activa. Ya tienes acceso a todos los picks EV+.';
+          badge.textContent = '★ PLAN VIP ACTIVO';
+        } else if(intentos++ < 8){
+          setTimeout(verificar, 3000);  // reintentar ~24s
+        } else {
+          sub.textContent = 'Tu pago se está procesando. Si en unos minutos no ves el VIP, escríbenos al WhatsApp.';
+        }
+      })
+      .catch(() => { if(intentos++ < 8) setTimeout(verificar, 3000); });
+    };
+    verificar();
   }
 })();
 </script>

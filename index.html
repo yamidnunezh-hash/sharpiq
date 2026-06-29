@@ -5345,9 +5345,22 @@ if('serviceWorker' in navigator && 'PushManager' in window){
 
 async function irAPago(el) {
   const original = el ? el.innerHTML : '';
+  const token = localStorage.getItem('sharpiq_token');
+  // SIN sesión → crear cuenta primero. Así el pago queda AMARRADO al usuario
+  // (external_reference) y el VIP se activa SOLO cuando MercadoPago confirma.
+  if(!token){
+    window.location.href = 'registro.html?plan=vip&next=pago';
+    return;
+  }
   try {
     if(el){ el.innerHTML = '⏳ Procesando...'; el.style.pointerEvents = 'none'; }
-    const r = await fetch('https://api.sharpiq.co/pagos/checkout-publico', {method:'POST'});
+    const r = await fetch('https://api.sharpiq.co/pagos/suscribir/vip', {
+      method: 'POST',
+      headers: {'Authorization': 'Bearer ' + token}
+    });
+    if(r.status === 401){  // token vencido → reingresar
+      window.location.href = 'login.html?plan=vip&next=pago'; return;
+    }
     const d = await r.json();
     if(d.checkout_url){ window.location.href = d.checkout_url; }
     else { throw new Error(d.detail || 'Error al crear el pago'); }
