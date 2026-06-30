@@ -40,7 +40,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "73",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "29/06/26",
@@ -53,7 +53,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "72",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "29/06/26",
@@ -1787,6 +1787,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "29/06/26",
+    partido:    "Germany vs Paraguay",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Hándicap Visitante +2.25",
+    cuota:      "1.36",
+    prob:       "72",
+    resultado:  "win"
+  },
+  {
+    fecha:      "29/06/26",
+    partido:    "Germany vs Paraguay",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.36",
+    prob:       "73",
+    resultado:  "loss"
+  },
   {
     fecha:      "29/06/26",
     partido:    "Brazil vs Japan",
