@@ -8,12 +8,12 @@ const PROXIMOS_EVENTOS = [
     partido:    "Mexico vs Ecuador",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 2.5 Goles",
-    cuota:      "1.45",
+    cuota:      "1.46",
     hora:       "20:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "68",
+    prob:       "67",
     resultado:  "pendiente"
   },
   {
