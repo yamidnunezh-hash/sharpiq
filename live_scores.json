@@ -1,7 +1,6 @@
 {
-  "updated": "2026-06-30T16:38:33Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-06-30T18:23:36Z",
+  "live": [
     {
       "id": "ce017bea1a26252278053ce759e2416b",
       "sport": "soccer_fifa_world_cup",
@@ -13,9 +12,11 @@
       "hora": "12:00 COT",
       "ts": 1782820800,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "1"
+    }
+  ],
+  "upcoming": [
     {
       "id": "0b5491529142c9bcc3f88bf45ccb0a7b",
       "sport": "soccer_fifa_world_cup",
@@ -208,6 +209,20 @@
       "fecha": "30/06/26",
       "hora": "19:41 COT",
       "ts": 1782848460,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "f58c55a9da96af562c31b7c5cca40187",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Mexico",
+      "away": "Ecuador",
+      "fecha": "30/06/26",
+      "hora": "20:00 COT",
+      "ts": 1782849600,
       "completed": false,
       "score_home": null,
       "score_away": null
