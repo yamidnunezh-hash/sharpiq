@@ -40,7 +40,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "71",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "30/06/26",
@@ -53,7 +53,7 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "75",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "30/06/26",
@@ -1852,6 +1852,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "30/06/26",
+    partido:    "Ivory Coast vs Norway",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.31",
+    prob:       "75",
+    resultado:  "win"
+  },
+  {
+    fecha:      "30/06/26",
+    partido:    "Ivory Coast vs Norway",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.41",
+    prob:       "71",
+    resultado:  "win"
+  },
   {
     fecha:      "29/06/26",
     partido:    "Netherlands vs Morocco",
