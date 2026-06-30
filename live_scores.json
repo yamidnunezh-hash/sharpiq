@@ -1,7 +1,6 @@
 {
-  "updated": "2026-06-30T20:32:20Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-06-30T22:02:34Z",
+  "live": [
     {
       "id": "0b5491529142c9bcc3f88bf45ccb0a7b",
       "sport": "soccer_fifa_world_cup",
@@ -13,9 +12,11 @@
       "hora": "16:00 COT",
       "ts": 1782835200,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "fc7f74688fa7a695570c6e2a546a1b4c",
       "sport": "baseball_mlb",
@@ -208,6 +209,20 @@
       "fecha": "30/06/26",
       "hora": "20:00 COT",
       "ts": 1782849600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "2b3a5c8c1587ea527558ec8e6fb514ee",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Arizona Diamondbacks",
+      "away": "San Francisco Giants",
+      "fecha": "30/06/26",
+      "hora": "20:40 COT",
+      "ts": 1782852000,
       "completed": false,
       "score_home": null,
       "score_away": null
