@@ -1,6 +1,6 @@
 {
   "fecha": "2026-06-30",
-  "total_partidos": 86,
+  "total_partidos": 85,
   "predicciones": [
     {
       "local": "Ivory Coast",
@@ -2800,7 +2800,7 @@
       "hora": "01:00",
       "fecha_evento": "2026-06-30",
       "cuotas": {
-        "2": 4.2,
+        "2": 4.1,
         "2_casa": "Betfair",
         "pinnacle_2": 4.01,
         "1": 2.34,
@@ -3068,13 +3068,13 @@
       "confianza": 82.0,
       "value_bets": {
         "victoria_visita": {
-          "value": 0.025,
-          "ev_porcentaje": 2.5,
-          "ev_pinn": 2.5,
+          "value": 0.001,
+          "ev_porcentaje": 0.1,
+          "ev_pinn": 0.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.2,
+          "cuota": 4.1,
           "casa": "Betfair",
           "pinn_prob": 24.4
         },
@@ -6488,73 +6488,15 @@
       "movimiento": null
     },
     {
-      "id": "ee20d897e6bd85c863ddea6c7c960906",
-      "comienzo": "2026-06-30T12:01:29Z",
-      "local": "Pablo Llamas Ruiz",
-      "visitante": "Zachary Svajda",
-      "liga": "ATP Wimbledon",
-      "liga_code": "tennis_atp_wimbledon",
-      "deporte": "ATP Wimbledon",
-      "deporte_emoji": "🏆",
-      "hora": "12:01",
-      "fecha_evento": "2026-06-30",
-      "cuotas": {
-        "Pablo Llamas Ruiz": 3.65,
-        "Zachary Svajda": 1.38
-      },
-      "probabilidades": {
-        "Pablo Llamas Ruiz": 26.4,
-        "Zachary Svajda": 73.6
-      },
-      "confianza": 73.6,
-      "value_bets": {
-        "Pablo Llamas Ruiz": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.65,
-          "casa": "Pinnacle",
-          "pinn_prob": 26.4,
-          "mercado_nombre": "Pablo Llamas Ruiz"
-        },
-        "Zachary Svajda": {
-          "value": 0.016,
-          "ev_porcentaje": 1.6,
-          "ev_pinn": 1.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.38,
-          "casa": "Unibet",
-          "pinn_prob": 73.6,
-          "mercado_nombre": "Zachary Svajda"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Zachary Svajda",
-        "prob": 73.6,
-        "ev": 1.6
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
       "id": "1a76e2740082417247d02923fdbf8dd1",
-      "comienzo": "2026-06-30T12:05:00Z",
+      "comienzo": "2026-06-30T12:10:00Z",
       "local": "Thanasi Kokkinakis",
       "visitante": "Alexander Bublik",
       "liga": "ATP Wimbledon",
       "liga_code": "tennis_atp_wimbledon",
       "deporte": "ATP Wimbledon",
       "deporte_emoji": "🏆",
-      "hora": "12:05",
+      "hora": "12:10",
       "fecha_evento": "2026-06-30",
       "cuotas": {
         "Alexander Bublik": 1.42,
@@ -6605,14 +6547,14 @@
     },
     {
       "id": "9790547605ef70511264c7e5bb6122e9",
-      "comienzo": "2026-06-30T12:05:00Z",
+      "comienzo": "2026-06-30T12:10:00Z",
       "local": "Jaume Munar",
       "visitante": "Francisco Cerundolo",
       "liga": "ATP Wimbledon",
       "liga_code": "tennis_atp_wimbledon",
       "deporte": "ATP Wimbledon",
       "deporte_emoji": "🏆",
-      "hora": "12:05",
+      "hora": "12:10",
       "fecha_evento": "2026-06-30",
       "cuotas": {
         "Francisco Cerundolo": 1.29,
@@ -6663,14 +6605,14 @@
     },
     {
       "id": "ac6f094b413a84d452192b5b4fb636a4",
-      "comienzo": "2026-06-30T12:05:00Z",
+      "comienzo": "2026-06-30T12:10:00Z",
       "local": "Kyrian Jacquet",
       "visitante": "Vilius Gaubas",
       "liga": "ATP Wimbledon",
       "liga_code": "tennis_atp_wimbledon",
       "deporte": "ATP Wimbledon",
       "deporte_emoji": "🏆",
-      "hora": "12:05",
+      "hora": "12:10",
       "fecha_evento": "2026-06-30",
       "cuotas": {
         "Kyrian Jacquet": 1.41,
@@ -10932,5 +10874,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:00:51"
+  "generado": "12:01:07"
 }
