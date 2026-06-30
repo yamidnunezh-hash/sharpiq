@@ -7,6 +7,19 @@ const PROXIMOS_EVENTOS = [
     fecha:      "29/06/26",
     partido:    "Netherlands vs Morocco",
     liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.71",
+    hora:       "20:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "58",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "29/06/26",
+    partido:    "Netherlands vs Morocco",
+    liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.4",
     hora:       "20:00 COT",
@@ -14,19 +27,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "70",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "29/06/26",
-    partido:    "Netherlands vs Morocco",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Ambos Marcan",
-    cuota:      "1.91",
-    hora:       "20:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "54",
     resultado:  "pendiente"
   },
   {
