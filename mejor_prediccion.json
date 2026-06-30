@@ -145,8 +145,8 @@
       "btts_no": 1.51,
       "btts_no_casa": "Betfair",
       "pinnacle_btts_no": 1.44,
-      "dnb_local": 1.08,
-      "dnb_local_casa": "Betfair",
+      "dnb_local": 1.07,
+      "dnb_local_casa": "Pinnacle",
       "dnb_visita": 13.0,
       "dnb_visita_casa": "Betfair",
       "ah_l_m1_5": 1.95,
@@ -739,14 +739,14 @@
         "pinn_prob": 66.8
       },
       "dnb_local": {
-        "value": -0.017,
-        "ev_porcentaje": -1.7,
-        "ev_pinn": -1.7,
+        "value": -0.027,
+        "ev_porcentaje": -2.7,
+        "ev_pinn": -2.7,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.08,
-        "casa": "Betfair",
+        "cuota": 1.07,
+        "casa": "Pinnacle",
         "pinn_prob": 91.0
       },
       "dnb_visita": {
