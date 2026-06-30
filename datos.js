@@ -5,6 +5,19 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "30/06/26",
+    partido:    "Ivory Coast vs Norway",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.31",
+    hora:       "12:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "75",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "30/06/26",
     partido:    "Mexico vs Ecuador",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 2.5 Goles",
@@ -14,6 +27,19 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "68",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "30/06/26",
+    partido:    "France vs Sweden",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.3",
+    hora:       "16:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "76",
     resultado:  "pendiente"
   },
   {
@@ -40,19 +66,6 @@ const PROXIMOS_EVENTOS = [
     tier:       "seguro",
     stake_pct:  "3",
     prob:       "69",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "30/06/26",
-    partido:    "France vs Sweden",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Ambos Marcan",
-    cuota:      "1.87",
-    hora:       "16:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "54",
     resultado:  "pendiente"
   },
   {
