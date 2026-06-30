@@ -84,7 +84,7 @@
         "corners_over_7_5": 1.35,
         "corners_over_7_5_casa": "Pinnacle",
         "pinnacle_corners_over_7_5": 1.35,
-        "corners_under_7_5": 3.05,
+        "corners_under_7_5": 3.0,
         "corners_under_7_5_casa": "LiveScore Bet",
         "pinnacle_corners_under_7_5": 2.86,
         "corners_over_8_0": 1.43,
@@ -126,7 +126,7 @@
         "corners_over_11_5": 3.45,
         "corners_over_11_5_casa": "Pinnacle",
         "pinnacle_corners_over_11_5": 3.45,
-        "corners_under_11_5": 1.29,
+        "corners_under_11_5": 1.3,
         "corners_under_11_5_casa": "LiveScore Bet",
         "pinnacle_corners_under_11_5": 1.25,
         "cards_over_2_5": 2.0,
@@ -197,7 +197,7 @@
         "ah_v_m0_75_casa": "Pinnacle",
         "pinnacle_ah_v_m0_75": 2.55,
         "ah_l_p1_0": 1.36,
-        "ah_l_p1_0_casa": "LiveScore Bet",
+        "ah_l_p1_0_casa": "Pinnacle",
         "pinnacle_ah_l_p1_0": 1.36,
         "ah_v_m1_0": 3.3,
         "ah_v_m1_0_casa": "Pinnacle",
@@ -547,13 +547,13 @@
           "mercado_nombre": "Corners Over 7.5"
         },
         "corners_under_7_5": {
-          "value": -0.022,
-          "ev_porcentaje": -2.2,
-          "ev_pinn": -2.2,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.05,
+          "cuota": 3.0,
           "casa": "LiveScore Bet",
           "pinn_prob": 32.1,
           "mercado_nombre": "Corners Under 7.5"
@@ -715,13 +715,13 @@
           "mercado_nombre": "Corners Over 11.5"
         },
         "corners_under_11_5": {
-          "value": -0.053,
-          "ev_porcentaje": -5.3,
-          "ev_pinn": -5.3,
+          "value": -0.046,
+          "ev_porcentaje": -4.6,
+          "ev_pinn": -4.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.29,
+          "cuota": 1.3,
           "casa": "LiveScore Bet",
           "pinn_prob": 73.4,
           "mercado_nombre": "Corners Under 11.5"
@@ -1006,7 +1006,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.36,
-          "casa": "LiveScore Bet",
+          "casa": "Pinnacle",
           "pinn_prob": 70.8,
           "mercado_nombre": "Hándicap Local +1"
         },
@@ -11221,5 +11221,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:00:45"
+  "generado": "16:00:56"
 }
