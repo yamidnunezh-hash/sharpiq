@@ -1,21 +1,6 @@
 {
-  "updated": "2026-06-30T18:23:36Z",
-  "live": [
-    {
-      "id": "ce017bea1a26252278053ce759e2416b",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "Ivory Coast",
-      "away": "Norway",
-      "fecha": "30/06/26",
-      "hora": "12:00 COT",
-      "ts": 1782820800,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "1"
-    }
-  ],
+  "updated": "2026-06-30T20:32:20Z",
+  "live": [],
   "upcoming": [
     {
       "id": "0b5491529142c9bcc3f88bf45ccb0a7b",
@@ -230,6 +215,20 @@
   ],
   "finished": [
     {
+      "id": "ce017bea1a26252278053ce759e2416b",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Ivory Coast",
+      "away": "Norway",
+      "fecha": "30/06/26",
+      "hora": "12:00 COT",
+      "ts": 1782820800,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "2"
+    },
+    {
       "id": "bc5ac70107417075ffd9dda7565caff3",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -354,20 +353,6 @@
       "completed": true,
       "score_home": "6",
       "score_away": "3"
-    },
-    {
-      "id": "74432b663df15c5695ec62a802768a60",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Cleveland Guardians",
-      "away": "Texas Rangers",
-      "fecha": "29/06/26",
-      "hora": "18:11 COT",
-      "ts": 1782756660,
-      "completed": true,
-      "score_home": "3",
-      "score_away": "6"
     }
   ]
 }
