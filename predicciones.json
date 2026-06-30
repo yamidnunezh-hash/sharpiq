@@ -1,6 +1,6 @@
 {
   "fecha": "2026-06-29",
-  "total_partidos": 96,
+  "total_partidos": 92,
   "predicciones": [
     {
       "local": "Netherlands",
@@ -114,7 +114,7 @@
         "corners_over_9_5": 2.37,
         "corners_over_9_5_casa": "Pinnacle",
         "pinnacle_corners_over_9_5": 2.37,
-        "corners_under_9_5": 1.6,
+        "corners_under_9_5": 1.58,
         "corners_under_9_5_casa": "Virgin Bet",
         "pinnacle_corners_under_9_5": 1.53,
         "corners_over_10_0": 2.77,
@@ -173,13 +173,13 @@
         "ah_l_m1_0_casa": "Pinnacle",
         "pinnacle_ah_l_m1_0": 4.04,
         "ah_v_p1_0": 1.27,
-        "ah_v_p1_0_casa": "Pinnacle",
+        "ah_v_p1_0_casa": "Virgin Bet",
         "pinnacle_ah_v_p1_0": 1.27,
         "ah_l_m0_75": 2.95,
         "ah_l_m0_75_casa": "Pinnacle",
         "pinnacle_ah_l_m0_75": 2.95,
         "ah_v_p0_75": 1.44,
-        "ah_v_p0_75_casa": "Pinnacle",
+        "ah_v_p0_75_casa": "Virgin Bet",
         "pinnacle_ah_v_p0_75": 1.44,
         "ah_l_m0_5": 2.44,
         "ah_l_m0_5_casa": "Pinnacle",
@@ -667,13 +667,13 @@
           "mercado_nombre": "Corners Over 9.5"
         },
         "corners_under_9_5": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.6,
+          "cuota": 1.58,
           "casa": "Virgin Bet",
           "pinn_prob": 60.8,
           "mercado_nombre": "Corners Under 9.5"
@@ -910,7 +910,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.27,
-          "casa": "Pinnacle",
+          "casa": "Virgin Bet",
           "pinn_prob": 76.1,
           "mercado_nombre": "Hándicap Visitante +1"
         },
@@ -934,7 +934,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.44,
-          "casa": "Pinnacle",
+          "casa": "Virgin Bet",
           "pinn_prob": 67.2,
           "mercado_nombre": "Hándicap Visitante +0.75"
         },
@@ -2820,7 +2820,7 @@
         "over35": 2.26,
         "over35_casa": "Pinnacle",
         "pinnacle_over35": 2.26,
-        "under35": 1.76,
+        "under35": 1.75,
         "under35_casa": "Betfair",
         "pinnacle_under35": 1.68,
         "over375": 2.61,
@@ -3204,13 +3204,13 @@
           "pinn_prob": 42.6
         },
         "under35": {
-          "value": 0.01,
-          "ev_porcentaje": 1.0,
-          "ev_pinn": 1.0,
+          "value": 0.004,
+          "ev_porcentaje": 0.4,
+          "ev_pinn": 0.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.76,
+          "cuota": 1.75,
           "casa": "Betfair",
           "pinn_prob": 57.4
         },
@@ -5764,64 +5764,6 @@
       "movimiento": null
     },
     {
-      "id": "5e0919a8514a1242a386699a61e9eeaf",
-      "comienzo": "2026-06-30T09:00:00Z",
-      "local": "Hubert Hurkacz",
-      "visitante": "Sebastian Ofner",
-      "liga": "ATP Wimbledon",
-      "liga_code": "tennis_atp_wimbledon",
-      "deporte": "ATP Wimbledon",
-      "deporte_emoji": "🏆",
-      "hora": "09:00",
-      "fecha_evento": "2026-06-30",
-      "cuotas": {
-        "Hubert Hurkacz": 1.32,
-        "Sebastian Ofner": 3.69
-      },
-      "probabilidades": {
-        "Hubert Hurkacz": 73.7,
-        "Sebastian Ofner": 26.3
-      },
-      "confianza": 73.7,
-      "value_bets": {
-        "Hubert Hurkacz": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.32,
-          "casa": "Unibet",
-          "pinn_prob": 73.7,
-          "mercado_nombre": "Hubert Hurkacz"
-        },
-        "Sebastian Ofner": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.69,
-          "casa": "Pinnacle",
-          "pinn_prob": 26.3,
-          "mercado_nombre": "Sebastian Ofner"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Hubert Hurkacz",
-        "prob": 73.7,
-        "ev": -2.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
       "id": "3c42b7c1e9ae3bc7fe1935d6b4ba1ce3",
       "comienzo": "2026-06-30T09:00:00Z",
       "local": "Jenson Brooksby",
@@ -5871,206 +5813,6 @@
         "mercado": "Ignacio Buse",
         "prob": 44.8,
         "ev": -2.4
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "a6f428d1708c0f09427e17d371c12fe9",
-      "comienzo": "2026-06-30T09:00:00Z",
-      "local": "Marton Fucsovics",
-      "visitante": "Learner Tien",
-      "liga": "ATP Wimbledon",
-      "liga_code": "tennis_atp_wimbledon",
-      "deporte": "ATP Wimbledon",
-      "deporte_emoji": "🏆",
-      "hora": "09:00",
-      "fecha_evento": "2026-06-30",
-      "cuotas": {
-        "Learner Tien": 1.38,
-        "Marton Fucsovics": 3.28
-      },
-      "probabilidades": {
-        "Learner Tien": 70.4,
-        "Marton Fucsovics": 29.6
-      },
-      "confianza": 70.4,
-      "value_bets": {
-        "Learner Tien": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.38,
-          "casa": "Pinnacle",
-          "pinn_prob": 70.4,
-          "mercado_nombre": "Learner Tien"
-        },
-        "Marton Fucsovics": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.28,
-          "casa": "Pinnacle",
-          "pinn_prob": 29.6,
-          "mercado_nombre": "Marton Fucsovics"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Learner Tien",
-        "prob": 70.4,
-        "ev": -2.9
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "5cd62d41639d452d84d2114bd9713f4b",
-      "comienzo": "2026-06-30T09:00:00Z",
-      "local": "Rafael Jodar",
-      "visitante": "Pablo Carreno Busta",
-      "liga": "ATP Wimbledon",
-      "liga_code": "tennis_atp_wimbledon",
-      "deporte": "ATP Wimbledon",
-      "deporte_emoji": "🏆",
-      "hora": "09:00",
-      "fecha_evento": "2026-06-30",
-      "cuotas": {
-        "Pablo Carreno Busta": 3.74,
-        "Rafael Jodar": 1.31,
-        "Over 36.5": 1.76,
-        "Under 36.5": 1.96
-      },
-      "probabilidades": {
-        "Pablo Carreno Busta": 25.9,
-        "Rafael Jodar": 74.1
-      },
-      "confianza": 74.1,
-      "value_bets": {
-        "Pablo Carreno Busta": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.74,
-          "casa": "Pinnacle",
-          "pinn_prob": 25.9,
-          "mercado_nombre": "Pablo Carreno Busta"
-        },
-        "Rafael Jodar": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.31,
-          "casa": "Pinnacle",
-          "pinn_prob": 74.1,
-          "mercado_nombre": "Rafael Jodar"
-        },
-        "over_36_5": {
-          "value": -0.113,
-          "ev_porcentaje": -11.3,
-          "ev_pinn": -11.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.76,
-          "casa": "Unibet",
-          "pinn_prob": 50.4,
-          "mercado_nombre": "Over 36.5"
-        },
-        "under_36_5": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.96,
-          "casa": "Unibet",
-          "pinn_prob": 49.6,
-          "mercado_nombre": "Under 36.5"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Under 36.5",
-        "prob": 49.6,
-        "ev": -2.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "62d9401b4e524150c2992b29bb460a1a",
-      "comienzo": "2026-06-30T09:00:00Z",
-      "local": "Soonwoo Kwon",
-      "visitante": "Tommy Paul",
-      "liga": "ATP Wimbledon",
-      "liga_code": "tennis_atp_wimbledon",
-      "deporte": "ATP Wimbledon",
-      "deporte_emoji": "🏆",
-      "hora": "09:00",
-      "fecha_evento": "2026-06-30",
-      "cuotas": {
-        "Soonwoo Kwon": 7.09,
-        "Tommy Paul": 1.12
-      },
-      "probabilidades": {
-        "Soonwoo Kwon": 13.6,
-        "Tommy Paul": 86.4
-      },
-      "confianza": 86.4,
-      "value_bets": {
-        "Soonwoo Kwon": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 7.09,
-          "casa": "Pinnacle",
-          "pinn_prob": 13.6,
-          "mercado_nombre": "Soonwoo Kwon"
-        },
-        "Tommy Paul": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.12,
-          "casa": "Pinnacle",
-          "pinn_prob": 86.4,
-          "mercado_nombre": "Tommy Paul"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Soonwoo Kwon",
-        "prob": 13.6,
-        "ev": -3.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -11142,5 +10884,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:00:55"
+  "generado": "00:01:13"
 }

@@ -64,7 +64,7 @@
       "over35": 2.26,
       "over35_casa": "Pinnacle",
       "pinnacle_over35": 2.26,
-      "under35": 1.76,
+      "under35": 1.75,
       "under35_casa": "Betfair",
       "pinnacle_under35": 1.68,
       "over375": 2.61,
@@ -448,13 +448,13 @@
         "pinn_prob": 42.6
       },
       "under35": {
-        "value": 0.01,
-        "ev_porcentaje": 1.0,
-        "ev_pinn": 1.0,
+        "value": 0.004,
+        "ev_porcentaje": 0.4,
+        "ev_pinn": 0.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.76,
+        "cuota": 1.75,
         "casa": "Betfair",
         "pinn_prob": 57.4
       },
