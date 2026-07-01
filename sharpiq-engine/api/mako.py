@@ -120,9 +120,36 @@ def _goleadores_de(local, visita):
     return ""
 
 
+# El motor guarda nombres en INGLÉS (England, Belgium, USA...), pero el usuario colombiano
+# escribe en ESPAÑOL (Inglaterra, Bélgica, Estados Unidos). Traducimos para que Mako SÍ
+# encuentre el partido. CRÍTICO para el Mundial.
+_ALIAS = {
+    "inglaterra": "england", "belgica": "belgium", "estados unidos": "usa", "eeuu": "usa",
+    "ee uu": "usa", "alemania": "germany", "espana": "spain", "francia": "france",
+    "brasil": "brazil", "paises bajos": "netherlands", "holanda": "netherlands",
+    "croacia": "croatia", "suiza": "switzerland", "suecia": "sweden", "dinamarca": "denmark",
+    "japon": "japan", "corea del sur": "south korea", "arabia saudita": "saudi arabia",
+    "marruecos": "morocco", "polonia": "poland", "italia": "italy", "escocia": "scotland",
+    "gales": "wales", "irlanda": "ireland", "noruega": "norway", "grecia": "greece",
+    "turquia": "turkey", "rusia": "russia", "ucrania": "ukraine", "republica checa": "czech",
+    "hungria": "hungary", "camerun": "cameroon", "costa de marfil": "ivory coast",
+    "egipto": "egypt", "tunez": "tunisia", "argelia": "algeria", "catar": "qatar",
+    "corea": "korea", "nueva zelanda": "new zealand", "sudafrica": "south africa",
+    "senegal": "senegal", "bosnia": "bosnia",
+}
+
+
+def _expandir_alias(pregunta):
+    """Normaliza y AÑADE la traducción al inglés de países en español, para casar con los
+    nombres en inglés del motor (Inglaterra->england, Bélgica->belgium, Estados Unidos->usa)."""
+    qn = _norm(pregunta)
+    extra = [en for es, en in _ALIAS.items() if es in qn]
+    return qn + (" " + " ".join(extra) if extra else "")
+
+
 def _encontrar(pregunta, preds):
     """Encuentra el partido al que se refiere la pregunta (fuzzy por nombres)."""
-    q = _norm(pregunta)
+    q = _expandir_alias(pregunta)
     best = None
     for p in preds:
         hit = 0
