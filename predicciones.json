@@ -3480,7 +3480,7 @@
         "San Francisco Giants": 2.14,
         "Over 9.5": 1.98,
         "Under 9.5": 1.93,
-        "Arizona Diamondbacks (-1.5)": 2.62,
+        "Arizona Diamondbacks (-1.5)": 2.55,
         "San Francisco Giants (+1.5)": 1.54
       },
       "probabilidades": {
@@ -3538,13 +3538,13 @@
           "mercado_nombre": "Under 9.5"
         },
         "spread_arizona_diamondbacks_m1_5": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.62,
+          "cuota": 2.55,
           "casa": "FanDuel",
           "pinn_prob": 37.2,
           "mercado_nombre": "Arizona Diamondbacks (-1.5)"
@@ -6697,5 +6697,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:00:42"
+  "generado": "20:00:50"
 }
