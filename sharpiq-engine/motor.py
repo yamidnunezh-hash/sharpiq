@@ -4376,6 +4376,43 @@ def clasificar_tiers(reporte):
     seguro_pool    = [c for c in seguro_pool    if (c.get("ev_pinn") or 0) <= _EV_TOPE_PUB]
     principal_pool = [c for c in principal_pool if (c.get("ev_pinn") or 0) <= _EV_TOPE_PUB]
     alto_pool      = [c for c in alto_pool      if (c.get("ev_pinn") or 0) <= _EV_TOPE_PUB]
+
+    # ── COMPUERTA DE VALOR (hallazgos de validar_motor.py, 2026-07-01) ──────────
+    # La validación con 74 picks REALES resueltos mostró tres cosas:
+    #   #1 los FAVORITOS <1.50 pierden plata (ROI -5%): el mercado los tiene bien
+    #      tasados, no hay valor -> no publicarlos.
+    #   #2 el edge real vive en cuotas 1.50-3.00 (ROI +6%) -> priorizar esa zona.
+    #   #3 la banda 60-70% de prob SOBRECONFÍA (dice 65%, acierta 50%) -> exigir un
+    #      colchón de EV extra ahí (muestra chica: 16 picks, guardia conservadora).
+    # Filtro CENTRAL, tunable y reversible. NO toca el modelo Poisson.
+    PISO_CUOTA          = 1.50            # #1
+    BANDA_RIESGO        = (60.0, 70.0)    # #3
+    BANDA_RIESGO_MIN_EV = 4.0            # #3: en esa banda exige EV>=4 (si hay ancla)
+    ZONA_VALOR          = (1.50, 3.00)    # #2
+    ZONA_VALOR_BOOST    = 1.10            # #2: +10% al score en el sweet spot
+
+    def _pasa_compuerta(c):
+        prob  = float(c.get("prob") or 0)
+        cuota = float(c.get("cuota") or 0)
+        ev    = c.get("ev_pinn")
+        if cuota < PISO_CUOTA:                                    # #1
+            return False
+        if (not c.get("alta_confianza")                          # #3 (exenta la excepción Mundial)
+                and BANDA_RIESGO[0] <= prob < BANDA_RIESGO[1]
+                and ev is not None and ev < BANDA_RIESGO_MIN_EV):
+            return False
+        return True
+
+    def _boost_zona(pool):                                       # #2
+        for c in pool:
+            if ZONA_VALOR[0] <= float(c.get("cuota") or 0) <= ZONA_VALOR[1]:
+                c["score"] = c.get("score", 0) * ZONA_VALOR_BOOST
+        return pool
+
+    seguro_pool    = _boost_zona([c for c in seguro_pool    if _pasa_compuerta(c)])
+    principal_pool = _boost_zona([c for c in principal_pool if _pasa_compuerta(c)])
+    alto_pool      = _boost_zona([c for c in alto_pool      if _pasa_compuerta(c)])
+
     seguro_pool.sort(key=lambda x: x["score"], reverse=True)
     principal_pool.sort(key=lambda x: x["score"], reverse=True)
     alto_pool.sort(key=lambda x: x["score"], reverse=True)
