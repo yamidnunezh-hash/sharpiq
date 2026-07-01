@@ -413,7 +413,7 @@ def _api_key():
 # Enrutamiento por dificultad: preguntas factuales -> Haiku (rápido y barato);
 # preguntas de ANÁLISIS/COMPARACIÓN/CONSEJO -> modelo fuerte (razona mucho mejor).
 MODELO_SIMPLE   = "claude-haiku-4-5"
-MODELO_COMPLEJO = "claude-sonnet-4-6"   # equilibrio; subir a "claude-opus-4-8" para máxima potencia
+MODELO_COMPLEJO = "claude-opus-4-8"     # MÁXIMA potencia (Opus 4.8) para análisis/consejo
 _COMPLEJA_KW = (
     "compar", "cual es mejor", "cuál es mejor", "mejor opcion", "mejor opción",
     "por que", "porque", "por qué", "explica", "explícame", "analiza", "analisis",
