@@ -3860,7 +3860,7 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
       Sharp<span>IQ</span>
     </a>
     <ul class="nav-ul">
-      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="mako.html" style="color:#00C8FF;font-weight:700">🦈 Mako AI</a></li>
       <li><a href="#predicciones">Predicciones</a></li><li><a href="#analisis">Análisis</a></li>
       <li><a href="estadisticas.html">Estadísticas</a></li>
       <li><a href="#planes">Planes</a></li>
@@ -3875,6 +3875,7 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
   </div>
 </nav>
 <div class="nav-mob" id="navMob">
+  <a href="mako.html" onclick="closeNav()" style="color:#00C8FF;font-weight:700">🦈 Mako AI</a>
   <a href="#nosotros"     onclick="closeNav()">Nosotros</a>
   <a href="#predicciones"    onclick="closeNav()">Predicciones</a>
   <a href="#analisis" onclick="closeNav()">Análisis</a>
@@ -4695,6 +4696,9 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
     </div>
   </div>
 </footer>
+
+<!-- Botón flotante: Pregúntale a Mako AI 🦈 -->
+<a href="mako.html" aria-label="Pregúntale a Mako" style="position:fixed;bottom:20px;right:20px;z-index:95;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#fff;padding:13px 20px;border-radius:30px;text-decoration:none;font-family:Inter,sans-serif;font-weight:800;font-size:13px;letter-spacing:.3px;box-shadow:0 8px 26px rgba(0,200,255,.4)">🦈 Pregúntale a Mako</a>
 
 <!-- Los datos (PROXIMOS_EVENTOS / PREDICCIONES_HISTORIAL) van INLINE arriba en
      el bloque SHARPIQ_DATA; _renderPicks() se invoca directamente más abajo.
