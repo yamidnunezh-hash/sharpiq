@@ -130,6 +130,19 @@ def _lista_partidos(preds, n=6):
     return " · ".join(ps) if ps else "no hay partidos analizados ahora mismo"
 
 
+def _por_nombres(local, visita, preds):
+    """Encuentra el partido por nombres EXACTOS (para reengancharlo desde el frontend).
+    Robusto ante traducciones: no depende del texto de la respuesta, sino de la identidad
+    del último partido que Mako analizó (que el frontend nos devuelve)."""
+    nl, nv = _norm(local), _norm(visita)
+    if not nl or not nv:
+        return None
+    for p in preds:
+        if _norm(p.get("local", "")) == nl and _norm(p.get("visitante", "")) == nv:
+            return p
+    return None
+
+
 def _mejores_del_dia(preds, n=8, ligas=None):
     """Top partidos del día rankeados por SharpScore (para el resumen de la jornada).
     Si `ligas` es una tupla de palabras clave, filtra solo esas competiciones."""
@@ -328,8 +341,23 @@ def _ficha(p):
     if fl or fv:
         L.append(f"Forma reciente -> {loc}: {json.dumps(fl, ensure_ascii=False)[:180]} | {vis}: {json.dumps(fv, ensure_ascii=False)[:180]}")
     me = p.get("mercados_ext")
-    if me:
-        L.append("Mercados profundos (córners/tarjetas/remates): " + json.dumps(me, ensure_ascii=False)[:400])
+    if isinstance(me, dict):
+        # OJO: el objeto pesa ~6000 chars; ANTES se truncaba a 400 y los DISPAROS/paradas
+        # quedaban cortados -> Mako decía "no tengo remates" aunque SÍ estaban. Ahora se
+        # extraen limpios los valores esperados (incluyendo disparos y atajadas).
+        _mp = []
+        _cor = (me.get("corners")  or {}).get("corners_esperados")
+        _tar = (me.get("tarjetas") or {}).get("tarjetas_esperadas")
+        _dis = (me.get("disparos") or {}).get("disparos_esperados")
+        _par = (me.get("paradas")  or {}).get("paradas_esperadas")
+        if _cor is not None: _mp.append(f"córners esperados en el partido (total) ~{_cor}")
+        if _tar is not None: _mp.append(f"tarjetas esperadas en el partido (total) ~{_tar}")
+        if _dis is not None: _mp.append(f"disparos a puerta del visitante ({vis}) esperados ~{_dis}")
+        if _par is not None: _mp.append(f"atajadas esperadas del portero local ({loc}) ~{_par}")
+        if _mp:
+            L.append("Mercados profundos (proyección del modelo, a nivel de EQUIPO): "
+                     + " · ".join(_mp)
+                     + ". Nota: NO hay remates por jugador individual; estos son datos de equipo.")
     h2h = p.get("h2h")
     if h2h:
         L.append("H2H: " + json.dumps(h2h, ensure_ascii=False)[:200])
@@ -490,6 +518,7 @@ def preguntar(body: dict, token=Depends(usuario_activo)):
     user_id   = int(token["sub"])
     plan      = token.get("plan", "free")
     historial = body.get("historial") or []
+    partido_actual = body.get("partido_actual") or {}   # último partido analizado (del frontend)
 
     est = _estado(user_id, plan)
     if not est["puede"]:
@@ -514,8 +543,12 @@ def preguntar(body: dict, token=Depends(usuario_activo)):
         if resumen:
             return {"ok": True, "sin_cargo": True, "restantes": est["restantes"], "plan": plan,
                     "respuesta": resumen}
+    # "ese partido / y los córners?" -> el ÚLTIMO que Mako analizó (lo manda el frontend).
+    # Robusto: no depende del texto (que Mako traduce England->Inglaterra) ni de resúmenes previos.
+    if not match and isinstance(partido_actual, dict) and partido_actual.get("local"):
+        match = _por_nombres(partido_actual.get("local"), partido_actual.get("visitante"), preds)
     if not match and historial:
-        # No perder el hilo: si no nombran el partido, buscarlo en la conversación reciente
+        # Último recurso: buscar el partido en el texto de la conversación reciente
         contexto = " ".join(str(h.get("content", "")) for h in historial[-6:])
         match = _encontrar(contexto, preds)
     if not match:
@@ -542,4 +575,5 @@ def preguntar(body: dict, token=Depends(usuario_activo)):
         aviso = ("Has utilizado tus consultas incluidas. Mako puede seguir analizando "
                  "cualquier partido al instante con SharpIQ Pro.")
     return {"ok": True, "respuesta": respuesta, "restantes": est2["restantes"],
-            "plan": plan, "aviso": aviso}
+            "plan": plan, "aviso": aviso,
+            "partido": {"local": match.get("local"), "visitante": match.get("visitante")}}
