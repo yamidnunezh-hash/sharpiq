@@ -7,35 +7,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:#05070f;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;font-family:Inter,sans-serif}
-  /* Tarjeta 1080x1080 (Instagram/Facebook). Toma screenshot de esta tarjeta. */
-  .card{width:1080px;height:1080px;position:relative;overflow:hidden;
+  html,body{background:#05070f;height:100%}
+  body{display:flex;align-items:center;justify-content:center;padding:2vmin;font-family:Inter,sans-serif}
+  /* Tarjeta cuadrada que SIEMPRE cabe en pantalla (vmin). Toma screenshot de ella. */
+  .card{width:96vmin;height:96vmin;position:relative;overflow:hidden;border-radius:2vmin;
         background:radial-gradient(ellipse at 50% 0%,#0e2a4a 0%,#0a0e1a 55%,#070a12 100%);
-        color:#eef3fb;display:flex;flex-direction:column;transform-origin:top center}
-  .card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 90%,rgba(123,92,240,.18),transparent 55%)}
-  .inner{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;padding:70px 72px}
-  .brand{display:flex;align-items:center;gap:14px;font-weight:900;letter-spacing:3px;font-size:30px}
+        color:#eef3fb;display:flex;flex-direction:column}
+  .card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 82% 92%,rgba(123,92,240,.2),transparent 55%)}
+  .inner{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;padding:6vmin 6.2vmin}
+  .brand{display:flex;align-items:center;gap:1.3vmin;font-weight:900;letter-spacing:.3vmin;font-size:2.7vmin}
   .brand span{background:linear-gradient(90deg,#00C8FF,#22d3a0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .shark{font-size:130px;line-height:1;margin:34px 0 6px;filter:drop-shadow(0 10px 40px rgba(0,200,255,.35))}
-  .h1{font-size:104px;font-weight:900;line-height:.98;letter-spacing:-1px}
+  .shark{font-size:11.5vmin;line-height:1;margin:2.6vmin 0 .4vmin;filter:drop-shadow(0 1vmin 3.5vmin rgba(0,200,255,.35))}
+  .h1{font-size:9.2vmin;font-weight:900;line-height:.98;letter-spacing:-.1vmin}
   .h1 b{background:linear-gradient(90deg,#00C8FF,#7B5CF0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .sub{font-size:33px;color:#aab8d0;margin-top:16px;font-weight:600}
-  .bubbles{margin:44px 0 auto;display:flex;flex-direction:column;gap:18px}
-  .b{background:rgba(255,255,255,.05);border:1px solid rgba(0,200,255,.22);border-radius:18px;padding:20px 26px;font-size:31px;font-weight:600;display:flex;align-items:center;gap:16px}
-  .b .e{font-size:34px}
-  .free{display:flex;align-items:center;gap:18px;background:linear-gradient(135deg,rgba(0,200,255,.14),rgba(123,92,240,.14));border:1px solid rgba(0,200,255,.4);border-radius:20px;padding:26px 30px;margin-top:8px}
-  .free .big{font-size:56px;font-weight:900;color:#22d3a0;line-height:1}
-  .free .t{font-size:29px;color:#cdd8ea;font-weight:600}
-  .cta{margin-top:28px;background:linear-gradient(135deg,#00C8FF,#7B5CF0);border-radius:20px;padding:30px 34px;text-align:center}
-  .cta .l{font-size:26px;font-weight:700;color:#eafaff;opacity:.95}
-  .cta .u{font-size:52px;font-weight:900;color:#fff;letter-spacing:1px;margin-top:4px}
-  .cta .mail{font-size:26px;color:#eafaff;margin-top:10px;font-weight:600}
-  .tag{text-align:center;font-size:26px;letter-spacing:2px;color:#7f90ad;margin-top:28px;font-weight:700;text-transform:uppercase}
-  .hint{position:fixed;top:10px;left:50%;transform:translateX(-50%);color:#5a6b88;font-size:13px;font-family:Inter,sans-serif;z-index:5}
+  .sub{font-size:2.95vmin;color:#aab8d0;margin-top:1.4vmin;font-weight:600}
+  .bubbles{margin:3.6vmin 0 auto;display:flex;flex-direction:column;gap:1.5vmin}
+  .b{background:rgba(255,255,255,.05);border:.16vmin solid rgba(0,200,255,.22);border-radius:1.6vmin;padding:1.7vmin 2.3vmin;font-size:2.75vmin;font-weight:600;display:flex;align-items:center;gap:1.4vmin}
+  .b .e{font-size:3vmin}
+  .free{display:flex;align-items:center;gap:1.6vmin;background:linear-gradient(135deg,rgba(0,200,255,.14),rgba(123,92,240,.14));border:.16vmin solid rgba(0,200,255,.4);border-radius:1.8vmin;padding:2.3vmin 2.6vmin;margin-top:.7vmin}
+  .free .big{font-size:5vmin;font-weight:900;color:#22d3a0;line-height:1}
+  .free .t{font-size:2.55vmin;color:#cdd8ea;font-weight:600}
+  .cta{margin-top:2.4vmin;background:linear-gradient(135deg,#00C8FF,#7B5CF0);border-radius:1.8vmin;padding:2.6vmin 3vmin;text-align:center}
+  .cta .l{font-size:2.3vmin;font-weight:700;color:#eafaff;opacity:.95}
+  .cta .u{font-size:4.6vmin;font-weight:900;color:#fff;letter-spacing:.1vmin;margin-top:.3vmin}
+  .cta .mail{font-size:2.3vmin;color:#eafaff;margin-top:.9vmin;font-weight:600}
+  .tag{text-align:center;font-size:2.3vmin;letter-spacing:.2vmin;color:#7f90ad;margin-top:2.4vmin;font-weight:700;text-transform:uppercase}
+  .hint{position:fixed;top:.6vmin;left:50%;transform:translateX(-50%);color:#5a6b88;font-size:1.6vmin;z-index:5;white-space:nowrap}
 </style>
 </head>
 <body>
-<div class="hint">📸 Toma screenshot de la tarjeta (1080×1080) para redes. En PC: zoom out si no cabe.</div>
+<div class="hint">📸 Toma screenshot de la tarjeta completa (ya cabe en tu pantalla)</div>
 <div class="card">
   <div class="inner">
     <div class="brand">🦈 SHARP<span>IQ</span></div>
