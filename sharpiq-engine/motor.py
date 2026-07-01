@@ -3761,6 +3761,7 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
         # Para totales y BTTS el modelo propio puede detectar valor donde
         # el mercado está menos afinado (altitud CONMEBOL, equipos poco líquidos).
         # Solo actualiza si el EV blend es MAYOR al EV Pinnacle puro.
+        gl = gv = None   # goles esperados por equipo (los guardamos para Mako/análisis)
         try:
             liga_c = _SPORT_KEY_TO_LIGA_CODE.get(sport_key, "")
             if liga_c and APIFOOTBALL_KEY:
@@ -3911,6 +3912,8 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
             "cuotas_avisos":  [],
             "sede_neutral":   False,
             "arbitro":        "",
+            "goles_esperados_local":  round(gl, 2) if gl else None,
+            "goles_esperados_visita": round(gv, 2) if gv else None,
             "forma_local":    obtener_forma_reciente(home)  if APIFOOTBALL_KEY else None,
             "forma_visita":   obtener_forma_reciente(away)  if APIFOOTBALL_KEY else None,
             "h2h":            obtener_h2h(home, away)       if APIFOOTBALL_KEY else None,

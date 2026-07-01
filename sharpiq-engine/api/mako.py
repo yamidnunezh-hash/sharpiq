@@ -165,6 +165,25 @@ def _ficha_otro_deporte(p):
     return "\n".join(L)
 
 
+def _goles_por_equipo(p):
+    """Goles esperados de CADA equipo. Usa el valor exacto del motor si está
+    guardado (goles_esperados_local/visita); si no, lo estima desde la forma
+    reciente con el mismo Poisson simplificado (puente hasta la próxima corrida)."""
+    gl = p.get("goles_esperados_local")
+    gv = p.get("goles_esperados_visita")
+    if isinstance(gl, (int, float)) and isinstance(gv, (int, float)):
+        return round(gl, 2), round(gv, 2), True
+    fl = p.get("forma_local") or {}
+    fv = p.get("forma_visita") or {}
+    al, dl = fl.get("ataque_reciente"), fl.get("defensa_reciente")
+    av, dv = fv.get("ataque_reciente"), fv.get("defensa_reciente")
+    if None in (al, dl, av, dv):
+        return None, None, False
+    est_l = round(((al + dv) / 2) * 1.05, 2)   # leve ventaja local
+    est_v = round((av + dl) / 2, 2)
+    return est_l, est_v, False
+
+
 def _ficha(p):
     """Ficha compacta de datos REALES del partido para aterrizar a Mako."""
     pr = p.get("probabilidades", {}) or {}
@@ -185,6 +204,10 @@ def _ficha(p):
         L.append(f"Partido FINALIZADO: {lv['home']} {lv['sh']} - {lv['sa']} {lv['away']}.")
     L.append(f"Probabilidad 1X2 (pre-partido): Gana {loc} {g('victoria_local')}, Empate {g('empate')}, Gana {vis} {g('victoria_visita')}")
     L.append(f"Goles totales: Over 1.5 {g('over15')} / Under 1.5 {g('under15')} · Over 2.5 {g('over25')} / Under 2.5 {g('under25')} · Over 3.5 {g('over35')} / Under 3.5 {g('under35')}")
+    _gl, _gv, _exacto = _goles_por_equipo(p)
+    if _gl is not None:
+        _et = "" if _exacto else " (estimado por la forma reciente)"
+        L.append(f"Goles esperados por equipo{_et}: {loc} ~{_gl} · {vis} ~{_gv}")
     if pr.get("btts_si") is not None:
         L.append(f"Ambos equipos marcan (BTTS): Sí {g('btts_si')} / No {g('btts_no')}")
     _cor = [f"{lab} {g(k)}" for k, lab in
