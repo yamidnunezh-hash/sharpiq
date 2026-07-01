@@ -5149,6 +5149,18 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
             <div class="ev-card-stake">${dots5}<span class="ev-stake-label">STAKE ${stakeN}%</span></div>
           </div>`;
       }
+      // SharpScore™ — el sello 0-100 (se muestra HASTA en picks bloqueados = gancho de conversión)
+      let _ssv = (e.sharpscore!==undefined && e.sharpscore!=='' && e.sharpscore!==null) ? parseInt(e.sharpscore) : NaN;
+      if(!(_ssv>=1)){ const _p=parseInt(e.prob||0); const _tc={seguro:90,principal:75,alto_valor:70}[e.tier]||65; _ssv=Math.round(0.5*_p+12.5+0.25*_tc); }
+      let ssHTML='';
+      if(_ssv>=1){
+        const _sc=_ssv>=80?'#22C55E':_ssv>=70?'#00C8FF':_ssv>=60?'#7B5CF0':'#F59E0B';
+        const _sn=_ssv>=80?'Máxima confianza':_ssv>=70?'Alta confianza':_ssv>=60?'Sólida':_ssv>=50?'Moderada':'Especulativa';
+        ssHTML=`<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;background:linear-gradient(90deg,rgba(0,200,255,.05),rgba(123,92,240,.05));border:1px solid ${_sc}55;border-radius:10px;padding:9px 14px;margin-top:12px">
+          <div><div style="font-family:Inter,sans-serif;font-size:9px;font-weight:800;letter-spacing:1.5px;color:var(--t3)">🦈 SHARPSCORE™</div><div style="font-family:Inter,sans-serif;font-size:11px;font-weight:700;color:${_sc}">${_sn}</div></div>
+          <div style="font-family:Inter,sans-serif;font-weight:900;font-size:1.55rem;color:${_sc};line-height:1">${_ssv}<span style="font-size:.65rem;color:var(--t3);font-weight:600">/100</span></div>
+        </div>`;
+      }
       return`<div class="ev-card" style="--tier:${tc.color}">
         <div class="ev-card-accent" style="background:${tc.color}"></div>
         <div class="ev-card-head">
@@ -5169,6 +5181,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
             <span class="ev-card-dt-item">📅 ${e.fecha}</span>
             ${e.hora?`<span class="ev-card-dt-item" style="color:${tc.color}">⏰ ${e.hora}</span>`:''}
           </div>
+          ${ssHTML}
           ${e.analisis?`<div class="ev-card-analisis">🧠 ${e.analisis}</div>`:''}
         </div>
         <div class="ev-card-foot">${footHTML}</div>

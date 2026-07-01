@@ -191,6 +191,12 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
 
     # El EV es metrica INTERNA (se mueve con la cuota) -> NO se muestra al cliente.
     ev_tag = ""
+    # SharpScore(TM): el sello 0-100 de SharpIQ (prob + EV + tier). SI se muestra.
+    try:
+        import sharpscore
+        _ss = sharpscore.calcular(prob=prob, ev=ev, tier=tier)
+    except Exception:
+        _ss = ""
     nueva_entrada = f"""  {{
     fecha:      "{fecha_str}",
     partido:    "{partido}",
@@ -202,6 +208,7 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
     tier:       "{tier}",
     stake_pct:  "{stake_pct}",
     prob:       "{prob}",
+    sharpscore: "{_ss}",
     resultado:  "pendiente"
   }},"""
 
