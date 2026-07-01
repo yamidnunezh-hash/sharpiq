@@ -75,17 +75,34 @@ def _hora_cot(iso):
         return ''
 
 
+# Ligas principales para el análisis del día + goleadores (IDs de API-Football).
+# Se extiende más allá del Mundial pero acotado, para no disparar el uso de la API.
+_LIGAS_ANALISIS = {
+    1, 15,                     # Mundial FIFA, Mundial de Clubes
+    2, 3, 848,                 # Champions, Europa League, Conference
+    39, 140, 135, 78, 61,      # Premier, LaLiga, Serie A, Bundesliga, Ligue 1
+    94, 88,                    # Primeira Liga (POR), Eredivisie (NED)
+    13, 11,                    # Copa Libertadores, Copa Sudamericana
+    71, 72, 128, 262, 253,     # Brasileirão A/B, Liga Argentina, Liga MX, MLS
+}
+_MAX_PARTIDOS = 30             # tope de partidos por corrida (cuida la cuota de la API)
+
+
 def main(fechas):
     preds = []
     profs = []
     goles = []
     vistos = set()
     for fecha in fechas:
+        if len(preds) >= _MAX_PARTIDOS:
+            break
         r = _apifb('fixtures', {'date': fecha})
         for fx in ((r or {}).get('response') or []):
+            if len(preds) >= _MAX_PARTIDOS:
+                break
             lg = fx['league']
             nombre = (lg.get('name') or '').lower()
-            if lg.get('id') != 1 and 'world cup' not in nombre and 'mundial' not in nombre:
+            if lg.get('id') not in _LIGAS_ANALISIS and 'world cup' not in nombre and 'mundial' not in nombre:
                 continue
             # incluir no-empezados Y en juego; excluir solo los YA terminados/cancelados
             if fx['fixture']['status']['short'] in ('FT', 'AET', 'PEN', 'CANC', 'PST', 'ABD', 'AWD', 'WO'):
@@ -97,10 +114,13 @@ def main(fechas):
             vistos.add(key)
             m = _predecir(h['id'], a['id'])
             profs.append(mp.proyectar(h['id'], a['id']))
-            goles.append(_goleadores(h['name'], a['name'], lg.get('id'), int(fecha[:4]), m))
+            _es_mundial = lg.get('id') in (1, 15) or 'world cup' in nombre or 'mundial' in nombre
+            _season = int(fecha[:4]) if _es_mundial else None  # ligas domésticas: temporada por defecto
+            goles.append(_goleadores(h['name'], a['name'], lg.get('id'), _season, m))
             preds.append({
                 'local': h['name'], 'visitante': a['name'],
-                'liga': 'FIFA Mundial 2026', 'liga_code': 'soccer_fifa_world_cup',
+                'liga': lg.get('name') or 'Fútbol',
+                'liga_code': 'liga_' + str(lg.get('id') or ''),
                 'hora': _hora_cot(fx['fixture']['date']), 'fecha_evento': fecha,
                 'probabilidades': {
                     'victoria_local': m['vl'], 'empate': m['ve'],
@@ -113,7 +133,7 @@ def main(fechas):
             })
             print(f"  {h['name']} vs {a['name']} | {m['vl']}/{m['ve']}/{m['vv']} "
                   f"O2.5={m['o25']}%")
-    print(f"Partidos del Mundial encontrados: {len(preds)}")
+    print(f"Partidos analizados (Mundial + ligas principales): {len(preds)}")
     if not preds:
         print("Sin partidos. Nada que inyectar.")
         return
