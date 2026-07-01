@@ -5,6 +5,34 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "01/07/26",
+    partido:    "USA vs Bosnia & Herzegovina",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.41",
+    hora:       "19:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "70",
+    sharpscore: "69",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "01/07/26",
+    partido:    "Belgium vs Senegal",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.56",
+    hora:       "15:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "64",
+    sharpscore: "67",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "01/07/26",
     partido:    "England vs DR Congo",
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
@@ -29,34 +57,6 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "76",
     sharpscore: "72",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "01/07/26",
-    partido:    "USA vs Bosnia & Herzegovina",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Victoria Local",
-    cuota:      "1.42",
-    hora:       "19:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "70",
-    sharpscore: "69",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "01/07/26",
-    partido:    "Belgium vs Senegal",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 3.5 Goles",
-    cuota:      "1.37",
-    hora:       "15:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
-    sharpscore: "70",
     resultado:  "pendiente"
   },
   {
