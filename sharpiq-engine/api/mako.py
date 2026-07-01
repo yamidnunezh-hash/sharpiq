@@ -445,9 +445,18 @@ def _ficha(p):
         if _dis is not None: _mp.append(f"disparos a puerta del visitante ({vis}) esperados ~{_dis}")
         if _par is not None: _mp.append(f"atajadas esperadas del portero local ({loc}) ~{_par}")
         if _mp:
-            L.append("Mercados profundos (proyección del modelo, a nivel de EQUIPO): "
-                     + " · ".join(_mp)
-                     + ". Nota: NO hay remates por jugador individual; estos son datos de equipo.")
+            L.append("Mercados profundos del EQUIPO (proyección del modelo): " + " · ".join(_mp))
+        # Hándicap asiático (probabilidad de cubrir cada línea). Solo si preguntan.
+        hcp = me.get("handicap") or {}
+        _h = []
+        for _k, _lab in ((f"ah_local_menos05", f"{loc} -0.5"), ("ah_local_menos1", f"{loc} -1"),
+                         ("ah_local_menos15", f"{loc} -1.5"), ("ah_visita_mas05", f"{vis} +0.5"),
+                         ("ah_visita_mas1", f"{vis} +1"), ("ah_visita_mas15", f"{vis} +1.5")):
+            _v = hcp.get(_k)
+            if isinstance(_v, (int, float)):
+                _h.append(f"{_lab} {round(_v)}%")
+        if _h:
+            L.append("Hándicap asiático (prob. de cubrir la línea): " + " · ".join(_h))
     h2h = p.get("h2h")
     if h2h:
         L.append("H2H: " + json.dumps(h2h, ensure_ascii=False)[:200])
@@ -460,6 +469,16 @@ def _ficha(p):
         L.append("Rematadores por jugador (promedio POR PARTIDO). 'remates totales' = TODOS los "
                  "disparos del jugador (incluye desviados/bloqueados); 'a puerta' = los que van al "
                  "arco. SÍ tienes ambos: " + rem)
+    # Otros mercados de jugador (promedio por partido). SOLO se responden si preguntan por ellos.
+    for _campo, _etq in (
+        ("tarjetas",    "Tarjetas por jugador (amarillas por partido)"),
+        ("asistencias", "Asistencias por jugador (por partido)"),
+        ("faltas",      "Faltas por jugador (por partido)"),
+        ("quites",      "Quites/entradas por jugador (por partido)"),
+    ):
+        _val = _limpiar_entidades(props.get(_campo, ""))
+        if _val:
+            L.append(f"{_etq}: {_val}")
     L.append("Nota: son estimaciones del modelo, no garantía; apostar implica riesgo.")
     return "\n".join(L)
 

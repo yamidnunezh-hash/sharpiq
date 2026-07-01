@@ -205,12 +205,13 @@ def construir_mensaje_props(props_dia):
     return "\n".join(lineas)
 
 
-# ── REMATES POR JUGADOR (shots) ─────────────────────────────────────
-# Usa /players (incluye shots.total y shots.on por jugador). El plan Pro ya lo cubre.
+# ── STATS POR JUGADOR (remates, tarjetas, asistencias, faltas, quites) ──────
+# TODO sale de /players en UNA sola llamada (shots, cards, assists, fouls, tackles).
+# El plan Pro ya lo cubre; agregar mercados NO cuesta requests extra.
 
-def _init_remates():
+def _init_statsjug():
     with _db() as c:
-        c.execute("""CREATE TABLE IF NOT EXISTS remates_cache (
+        c.execute("""CREATE TABLE IF NOT EXISTS statsjug_cache (
             team_id     INTEGER,
             season      INTEGER,
             data_json   TEXT,
@@ -218,9 +219,9 @@ def _init_remates():
             PRIMARY KEY (team_id, season)
         )""")
 
-def _remates_cache_get(team_id, season):
+def _statsjug_get(team_id, season):
     with _db() as c:
-        row = c.execute("SELECT data_json, actualizado FROM remates_cache WHERE team_id=? AND season=?",
+        row = c.execute("SELECT data_json, actualizado FROM statsjug_cache WHERE team_id=? AND season=?",
                         (int(team_id), season)).fetchone()
     if not row:
         return None
@@ -228,20 +229,20 @@ def _remates_cache_get(team_id, season):
         return None
     return json.loads(row[0])
 
-def _remates_cache_put(team_id, season, data):
+def _statsjug_put(team_id, season, data):
     with _db() as c:
-        c.execute("""INSERT OR REPLACE INTO remates_cache (team_id, season, data_json, actualizado)
+        c.execute("""INSERT OR REPLACE INTO statsjug_cache (team_id, season, data_json, actualizado)
                      VALUES (?,?,?,?)""",
                   (int(team_id), season, json.dumps(data), datetime.now().isoformat()))
 
 
-def obtener_remates_equipo(team_id, liga_id, season=None):
-    """Rematadores de un equipo: disparos por partido (total y a puerta). Cache 24h.
-    Devuelve lista ordenada por disparos/partido desc."""
-    _init_remates()
+def obtener_stats_equipo(team_id, liga_id, season=None):
+    """Stats por jugador (promedio POR PARTIDO): remates totales, a puerta, tarjetas amarillas,
+    asistencias, faltas, quites/entradas. Una sola llamada a /players (paginada). Cache 24h."""
+    _init_statsjug()
     if season is None:
         season = date.today().year if date.today().month >= 7 else date.today().year - 1
-    cached = _remates_cache_get(team_id, season)
+    cached = _statsjug_get(team_id, season)
     if cached is not None:
         return cached
     try:
@@ -257,40 +258,69 @@ def obtener_remates_equipo(team_id, liga_id, season=None):
         for entry in data["response"]:
             p  = entry.get("player", {}) or {}
             st = (entry.get("statistics") or [{}])[0] or {}
-            apps  = (st.get("games", {}) or {}).get("appearences") or 0
-            shots = st.get("shots", {}) or {}
-            tot   = shots.get("total") or 0
-            on    = shots.get("on") or 0
-            if apps and apps >= 2 and tot:          # mínimo 2 partidos, evita ruido
-                jugadores.append({
-                    "nombre":   p.get("name", ""),
-                    "apps":     int(apps),
-                    "shots_pg": round(tot / apps, 2),
-                    "sot_pg":   round((on or 0) / apps, 2),
-                })
+            apps = (st.get("games", {}) or {}).get("appearences") or 0
+            if not apps or apps < 2:            # mínimo 2 partidos, evita ruido
+                continue
+            shots   = st.get("shots", {})   or {}
+            goals   = st.get("goals", {})   or {}
+            fouls   = st.get("fouls", {})   or {}
+            tackles = st.get("tackles", {}) or {}
+            cards   = st.get("cards", {})   or {}
+            def _pg(v):
+                return round((v or 0) / apps, 2)
+            jugadores.append({
+                "nombre":     p.get("name", ""),
+                "apps":       int(apps),
+                "shots_pg":   _pg(shots.get("total")),
+                "sot_pg":     _pg(shots.get("on")),
+                "cards_pg":   _pg(cards.get("yellow")),
+                "assists_pg": _pg(goals.get("assists")),
+                "fouls_pg":   _pg(fouls.get("committed")),
+                "tackles_pg": _pg(tackles.get("total")),
+            })
         paging = data.get("paging", {}) or {}
         if page >= (paging.get("total") or 1):
             break
         page += 1
-    jugadores.sort(key=lambda x: x["shots_pg"], reverse=True)
-    _remates_cache_put(team_id, season, jugadores)
-    print(f"    Remates: {len(jugadores)} jugadores (equipo {team_id})")
+    _statsjug_put(team_id, season, jugadores)
+    print(f"    Stats jugadores: {len(jugadores)} (equipo {team_id})")
     return jugadores
+
+
+def _top(lst, campo, top):
+    return sorted([j for j in lst if (j.get(campo) or 0) > 0],
+                  key=lambda j: j[campo], reverse=True)[:top]
+
+
+def stats_jugadores_partido(local_id, visita_id, local_nombre, visita_nombre,
+                            liga_id, season=None, top=3):
+    """Dict de strings legibles por mercado de jugador (para props_jugadores.json / Mako)."""
+    try:
+        loc = obtener_stats_equipo(local_id, liga_id, season)
+        vis = obtener_stats_equipo(visita_id, liga_id, season)
+    except Exception:
+        return {}
+    if not loc and not vis:
+        return {}
+
+    def _mercado(campo, render):
+        l, v = _top(loc, campo, top), _top(vis, campo, top)
+        partes = []
+        if l: partes.append(f"{local_nombre}: " + ", ".join(render(j) for j in l))
+        if v: partes.append(f"{visita_nombre}: " + ", ".join(render(j) for j in v))
+        return " | ".join(partes)
+
+    return {
+        "remates":     _mercado("shots_pg",   lambda j: f"{j['nombre']} {j['shots_pg']} remates totales ({j['sot_pg']} a puerta)"),
+        "tarjetas":    _mercado("cards_pg",   lambda j: f"{j['nombre']} {j['cards_pg']} amarillas/partido"),
+        "asistencias": _mercado("assists_pg", lambda j: f"{j['nombre']} {j['assists_pg']} asistencias/partido"),
+        "faltas":      _mercado("fouls_pg",   lambda j: f"{j['nombre']} {j['fouls_pg']} faltas/partido"),
+        "quites":      _mercado("tackles_pg", lambda j: f"{j['nombre']} {j['tackles_pg']} quites/partido"),
+    }
 
 
 def formato_remates_partido(local_id, visita_id, local_nombre, visita_nombre,
                             liga_id, season=None, top=3):
-    """String legible con los mejores rematadores de cada equipo (para ANALISIS_DIA/Mako).
-    Ej: 'England: H. Kane ~3.8 rem (1.9 a puerta), B. Saka ~2.5 (1.1) | DR Congo: ...'"""
-    try:
-        loc = obtener_remates_equipo(local_id, liga_id, season)[:top]
-        vis = obtener_remates_equipo(visita_id, liga_id, season)[:top]
-    except Exception:
-        return ""
-    def _fmt(lst):
-        return ", ".join(f"{j['nombre']} {j['shots_pg']} remates totales ({j['sot_pg']} a puerta)"
-                         for j in lst)
-    partes = []
-    if loc: partes.append(f"{local_nombre}: {_fmt(loc)}")
-    if vis: partes.append(f"{visita_nombre}: {_fmt(vis)}")
-    return " | ".join(partes)
+    """Compat: solo el string de remates (usa el motor de stats generalizado)."""
+    return stats_jugadores_partido(local_id, visita_id, local_nombre, visita_nombre,
+                                   liga_id, season, top).get("remates", "")

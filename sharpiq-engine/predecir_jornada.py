@@ -15,20 +15,24 @@ import generar_analisis as ga
 import mercados_profundos as mp
 
 
-def _escribir_props(preds, goles, remates):
-    """Escribe props_jugadores.json (goleadores + remates por partido) que Mako lee.
+_MERCADOS_JUG = ("remates", "tarjetas", "asistencias", "faltas", "quites")
+
+
+def _escribir_props(preds, goles, statsjug):
+    """Escribe props_jugadores.json (goleadores + mercados por jugador) que Mako lee.
     Independiente del ANALISIS_DIA (que tiene su propio filtro/timing) -> SIEMPRE fresco."""
     ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "props_jugadores.json")
     data = {"partidos": []}
-    for pr, gole, rem in zip(preds, goles, remates):
-        if not (gole or rem):
+    for pr, gole, sj in zip(preds, goles, statsjug):
+        sj = sj or {}
+        if not (gole or any(sj.get(m) for m in _MERCADOS_JUG)):
             continue
-        data["partidos"].append({
-            "local":     pr.get("local", ""),
-            "visitante": pr.get("visitante", ""),
-            "gole":      gole or "",
-            "remates":   rem or "",
-        })
+        entrada = {"local": pr.get("local", ""), "visitante": pr.get("visitante", ""),
+                   "gole": gole or ""}
+        for m in _MERCADOS_JUG:
+            if sj.get(m):
+                entrada[m] = sj[m]
+        data["partidos"].append(entrada)
     try:
         with open(ruta, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=1)
@@ -91,13 +95,13 @@ def _goleadores(local, vis, liga_id, season, m):
         return ''
 
 
-def _remates(local_id, vis_id, local, vis, liga_id, season):
-    """Player props: top rematadores (disparos por partido, total y a puerta). Robusto."""
+def _stats_jug(local_id, vis_id, local, vis, liga_id, season):
+    """Player props: dict de mercados por jugador (remates, tarjetas, asistencias, faltas, quites)."""
     try:
         import player_props as pp
-        return pp.formato_remates_partido(local_id, vis_id, local, vis, liga_id, season)
+        return pp.stats_jugadores_partido(local_id, vis_id, local, vis, liga_id, season)
     except Exception:
-        return ''
+        return {}
 
 
 def _hora_cot(iso):
@@ -125,7 +129,7 @@ def main(fechas):
     preds = []
     profs = []
     goles = []
-    remates = []
+    statsjug = []
     vistos = set()
     for fecha in fechas:
         if len(preds) >= _MAX_PARTIDOS:
@@ -151,7 +155,7 @@ def main(fechas):
             _es_mundial = lg.get('id') in (1, 15) or 'world cup' in nombre or 'mundial' in nombre
             _season = int(fecha[:4]) if _es_mundial else None  # ligas domésticas: temporada por defecto
             goles.append(_goleadores(h['name'], a['name'], lg.get('id'), _season, m))
-            remates.append(_remates(h['id'], a['id'], h['name'], a['name'], lg.get('id'), _season))
+            statsjug.append(_stats_jug(h['id'], a['id'], h['name'], a['name'], lg.get('id'), _season))
             preds.append({
                 'local': h['name'], 'visitante': a['name'],
                 'liga': lg.get('name') or 'Fútbol',
@@ -172,8 +176,8 @@ def main(fechas):
     if not preds:
         print("Sin partidos. Nada que inyectar.")
         return
-    # Props de jugadores (goleadores + remates) SIEMPRE, aunque el ANALISIS_DIA no se inyecte.
-    _escribir_props(preds, goles, remates)
+    # Props de jugadores (goleadores + todos los mercados) SIEMPRE, aunque no se inyecte ANALISIS_DIA.
+    _escribir_props(preds, goles, statsjug)
     items = ga.generar_items(preds)
     if not items:
         # Los partidos ya empezaron/pasaron -> NO inyectar vacío (conserva el
@@ -181,13 +185,13 @@ def main(fechas):
         print("Sin partidos próximos; conservo el ANALISIS_DIA actual.")
         return
     # --- enriquecer cada analisis con MERCADOS PROFUNDOS (remates/atajadas/etc.) ---
-    for it, prof, pr, gole, rem in zip(items, profs, preds, goles, remates):
+    for it, prof, pr, gole, sj in zip(items, profs, preds, goles, statsjug):
         it['eqL'] = pr.get('local', '')      # nombre EN INGLES (para resolver el logo)
         it['eqV'] = pr.get('visitante', '')
         if gole:
             it['gole'] = gole                # player props: goleadores probables
-        if rem:
-            it['remates'] = rem              # player props: rematadores (disparos/partido)
+        if (sj or {}).get('remates'):
+            it['remates'] = sj['remates']    # player props: rematadores (disparos/partido)
         # JUGADA del modelo (la ve el DUENO/VIP en la pagina de detalle): mercado mas confiable
         _vl = float(it.get('vl') or 0); _vv = float(it.get('vv') or 0)
         _o = float(it.get('o25') or 0); _u = float(it.get('u25') or 0)
