@@ -197,6 +197,12 @@ def _responder(ficha, pregunta):
 
 # ── Endpoints ──────────────────────────────────────────────────────
 
+@router.get("/salud")
+def salud():
+    """Diagnóstico (sin secretos): ¿está configurada la IA de Mako en el servidor?"""
+    return {"ia_configurada": bool(_api_key()), "modelo": "claude-haiku-4-5"}
+
+
 @router.get("/estado")
 def estado(token=Depends(usuario_activo)):
     """Créditos disponibles del usuario para Mako."""
