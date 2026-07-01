@@ -145,7 +145,21 @@ def _ficha(p):
     elif lv and lv["estado"] == "finished":
         L.append(f"Partido FINALIZADO: {lv['home']} {lv['sh']} - {lv['sa']} {lv['away']}.")
     L.append(f"Probabilidad 1X2 (pre-partido): Gana {loc} {g('victoria_local')}, Empate {g('empate')}, Gana {vis} {g('victoria_visita')}")
-    L.append(f"Goles: Over 2.5 {g('over225')} / Under 2.5 {g('under225')} · Over 1.5 {g('over15')} / Under 1.5 {g('under15')}")
+    L.append(f"Goles totales: Over 1.5 {g('over15')} / Under 1.5 {g('under15')} · Over 2.5 {g('over25')} / Under 2.5 {g('under25')} · Over 3.5 {g('over35')} / Under 3.5 {g('under35')}")
+    if pr.get("btts_si") is not None:
+        L.append(f"Ambos equipos marcan (BTTS): Sí {g('btts_si')} / No {g('btts_no')}")
+    _cor = [f"{lab} {g(k)}" for k, lab in
+            (("corners_over_8_5", "+8.5"), ("corners_over_9_5", "+9.5"), ("corners_over_10_5", "+10.5"))
+            if pr.get(k) is not None]
+    if _cor:
+        L.append("Córners (prob. de superar la línea): " + " · ".join(_cor))
+    _tar = [f"{lab} {g(k)}" for k, lab in
+            (("cards_over_2_5", "+2.5"), ("cards_over_3_0", "+3.0"))
+            if pr.get(k) is not None]
+    if _tar:
+        L.append("Tarjetas (prob. de superar la línea): " + " · ".join(_tar))
+    if pr.get("dnb_local") is not None:
+        L.append(f"Draw No Bet (gana sin contar el empate): {loc} {g('dnb_local')} / {vis} {g('dnb_visita')}")
     pp = p.get("prediccion_principal")
     if pp:
         L.append("Pick del modelo SharpIQ: " + (pp.get("mercado", "") if isinstance(pp, dict) else str(pp)))
@@ -306,7 +320,14 @@ def preguntar(body: dict, token=Depends(usuario_activo)):
                               f"Puedo analizarte: {_lista_partidos(preds)}. ¿Sobre cuál quieres saber?")}
 
     respuesta = _responder(_ficha(match), pregunta, historial)
-    _registrar_uso(user_id)
+    # Justo con el cliente: si Mako NO pudo dar el dato, no le cobramos la consulta.
+    _low = respuesta.lower()
+    _no_dato = any(f in _low for f in ("no tengo ese dato", "no tengo el dato",
+                                       "no tengo datos", "no cuento con ese dato",
+                                       "no tengo esa informacion", "no tengo esa información",
+                                       "no tengo ese dato específico", "no tengo ese dato especifico"))
+    if not _no_dato:
+        _registrar_uso(user_id)
     est2 = _estado(user_id, plan)
 
     aviso = ""
