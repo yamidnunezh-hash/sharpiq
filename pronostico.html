@@ -110,11 +110,30 @@
       + '<a href="index.html#planes">Ver la jugada del modelo &rarr;</a></div>';
   }
 
+  // SharpScore™ del análisis (confianza del modelo)
+  var _o25 = parseFloat(a.o25) || 0, _u25 = parseFloat(a.u25) || 0;
+  var _pk = (a.pick || '').toLowerCase();
+  var _sp;
+  if (_pk.indexOf('over') >= 0) _sp = _o25;
+  else if (_pk.indexOf('under') >= 0) _sp = _u25;
+  else if (_pk.indexOf('gana') >= 0 && vv > vl) _sp = vv;
+  else if (_pk.indexOf('gana') >= 0) _sp = vl;
+  else _sp = Math.max(vl, vv, _o25, _u25);
+  var _ss = Math.max(1, Math.min(99, Math.round(0.5 * _sp + 12.5 + 0.25 * 75)));
+  var _sc = _ss >= 80 ? '#22C55E' : _ss >= 70 ? '#00C8FF' : _ss >= 60 ? '#7B5CF0' : '#F59E0B';
+  var _sn = _ss >= 80 ? 'Máxima confianza' : _ss >= 70 ? 'Alta confianza' : _ss >= 60 ? 'Sólida' : _ss >= 50 ? 'Moderada' : 'Especulativa';
+  var ssPanel = '<div class="panel" style="display:flex;align-items:center;justify-content:space-between;border-color:' + _sc + '55">'
+    + '<div><div style="font-family:Inter,sans-serif;font-size:11px;font-weight:800;letter-spacing:2px;color:var(--t3)">🦈 SHARPSCORE™</div>'
+    + '<div style="font-family:Inter,sans-serif;font-size:14px;font-weight:700;color:' + _sc + ';margin-top:4px">' + _sn + '</div></div>'
+    + '<div style="font-family:Bebas Neue,sans-serif;font-size:48px;color:' + _sc + ';line-height:1">' + _ss + '<span style="font-size:16px;color:var(--t3)">/100</span></div>'
+    + '</div>';
+
   content.innerHTML =
     '<div class="crumb">' + n(a.liga) + (a.hora ? ' &middot; ' + a.hora + ' COT' : '') + '</div>'
     + '<h1>' + a.titulo + '</h1>'
     + '<div class="meta">Previa generada por el modelo estadístico de SharpIQ</div>'
     + '<p class="lead">' + (a.cuerpo_largo || a.cuerpo || '') + '</p>'
+    + ssPanel
     + '<div class="panel"><h2>Probabilidad del modelo (1X2)</h2>'
       + proj('Gana ' + loc, vl, '#22c55e')
       + proj('Empate', ve, '#a78bfa')
