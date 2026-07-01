@@ -57,7 +57,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "75",
     sharpscore: "72",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "01/07/26",
@@ -1935,6 +1935,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "01/07/26",
+    partido:    "England vs DR Congo",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.31",
+    prob:       "75",
+    resultado:  "win"
+  },
   {
     fecha:      "30/06/26",
     partido:    "Mexico vs Ecuador",
