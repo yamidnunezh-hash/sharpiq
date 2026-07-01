@@ -130,6 +130,60 @@ def _lista_partidos(preds, n=6):
     return " · ".join(ps) if ps else "no hay partidos analizados ahora mismo"
 
 
+def _mejores_del_dia(preds, n=8):
+    """Top partidos del día rankeados por SharpScore (para el resumen de la jornada)."""
+    try:
+        import sharpscore
+    except Exception:
+        sharpscore = None
+    filas = []
+    for p in preds:
+        loc, vis = p.get("local"), p.get("visitante")
+        pp = p.get("prediccion_principal")
+        if not (loc and vis and isinstance(pp, dict)):
+            continue
+        prob, ev = pp.get("prob"), pp.get("ev")
+        if not isinstance(prob, (int, float)) or not isinstance(ev, (int, float)):
+            continue
+        ss = None
+        if sharpscore:
+            try:
+                ss = sharpscore.calcular(float(prob), float(ev), "principal")
+            except Exception:
+                ss = None
+        filas.append({"loc": loc, "vis": vis, "liga": p.get("liga", ""),
+                      "merc": pp.get("mercado", ""), "prob": prob, "ev": ev, "ss": ss})
+    filas.sort(key=lambda x: (x["ss"] or 0, x["ev"] or 0), reverse=True)
+    return filas[:n]
+
+
+def _resumen_dia(preds):
+    """Resumen tipo '¿qué hay hoy?': lista rankeada de los mejores partidos. Texto listo."""
+    filas = _mejores_del_dia(preds, 8)
+    if not filas:
+        return None
+    total = sum(1 for p in preds if p.get("local") and p.get("visitante"))
+    L = [f"🦈 Hoy tengo {total} eventos analizados. Estos son los mejores picks de hoy según SharpScore:\n"]
+    for i, f in enumerate(filas, 1):
+        fuego = " 🔥" if i == 1 else ""
+        ss = f" · SharpScore {f['ss']}" if f["ss"] is not None else ""
+        liga = f" ({f['liga']})" if f.get("liga") else ""
+        L.append(f"{i}. {f['loc']} vs {f['vis']}{liga} — {f['merc']}{ss}{fuego}")
+    L.append(f"\nPregúntame por cualquiera (ej. \"cuéntame del {filas[0]['loc']}\") "
+             "y lo analizamos a fondo: goles, córners, valor, a quién le veo más chances 👇")
+    return "\n".join(L)
+
+
+def _es_resumen(pregunta):
+    """¿El cliente pide un panorama del día (no un partido específico)?"""
+    q = _norm(pregunta)
+    claves = ("que hay", "que partido", "resumen", "cartilla", "recomiend", "mejor pick",
+              "mejores pick", "mas valor", "que tienes", "opciones", "que analiz",
+              "todos los partidos", "la jornada", "que sugiere", "algun over", "algun pick",
+              "que apuesto", "bajo riesgo", "mas seguro", "que juego hay", "que hay hoy")
+    return any(k in q for k in claves)
+
+
 def _ficha_otro_deporte(p):
     """Ficha para deportes que NO son fútbol (MLB, NBA, NHL...): ganador/moneyline,
     totales (carreras/puntos) y hándicap, tomados de value_bets."""
@@ -377,6 +431,13 @@ def preguntar(body: dict, token=Depends(usuario_activo)):
 
     preds = _cargar()
     match = _encontrar(pregunta, preds)
+    # Panorama de la jornada ("¿qué hay hoy?", "¿qué recomiendas?", "¿más valor?") ->
+    # resumen rankeado GRATIS (es el gancho; el análisis a fondo de cada partido sí cobra).
+    if not match and _es_resumen(pregunta):
+        resumen = _resumen_dia(preds)
+        if resumen:
+            return {"ok": True, "sin_cargo": True, "restantes": est["restantes"], "plan": plan,
+                    "respuesta": resumen}
     if not match and historial:
         # No perder el hilo: si no nombran el partido, buscarlo en la conversación reciente
         contexto = " ".join(str(h.get("content", "")) for h in historial[-6:])

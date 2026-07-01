@@ -94,7 +94,7 @@ function chips(){
   const d=document.createElement('div'); d.className='msg';
   d.innerHTML='<div class="av">🦈</div><div style="flex:1"><div class="bub">Escríbeme una pregunta o toca un ejemplo 👇</div><div class="chips" id="chips"></div></div>';
   chat.appendChild(d);
-  const ej=['¿Qué partido tiene más valor hoy?','¿Cuántos goles esperas en el primer partido?','¿Me recomiendas algún Over hoy?'];
+  const ej=['¿Qué hay para hoy? 🦈','¿Qué partido tiene más valor hoy?','¿Me recomiendas algún Over hoy?'];
   const c=d.querySelector('#chips');
   ej.forEach(t=>{ const b=document.createElement('span'); b.className='chip'; b.textContent=t; b.onclick=()=>{document.getElementById('q').value=t; enviar();}; c.appendChild(b); });
   scroll_();
