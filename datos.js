@@ -5,6 +5,48 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "01/07/26",
+    partido:    "England vs DR Congo",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.31",
+    hora:       "11:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "75",
+    sharpscore: "72",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "01/07/26",
+    partido:    "Belgium vs Senegal",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.3",
+    hora:       "15:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "76",
+    sharpscore: "72",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "01/07/26",
+    partido:    "USA vs Bosnia & Herzegovina",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.42",
+    hora:       "19:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "70",
+    sharpscore: "69",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "01/07/26",
     partido:    "Belgium vs Senegal",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
@@ -19,20 +61,6 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "01/07/26",
-    partido:    "England vs DR Congo",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Victoria Local",
-    cuota:      "1.32",
-    hora:       "11:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "75",
-    sharpscore: "72",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "01/07/26",
     partido:    "USA vs Bosnia & Herzegovina",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
@@ -43,20 +71,6 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "66",
     sharpscore: "67",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "01/07/26",
-    partido:    "Belgium vs Senegal",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Corners Over 8.5",
-    cuota:      "1.66",
-    hora:       "15:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "61",
-    sharpscore: "61",
     resultado:  "pendiente"
   },
   {
