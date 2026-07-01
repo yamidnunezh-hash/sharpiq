@@ -19,9 +19,9 @@ TRM = 4000                      # COP por USD (para mostrar en pesos)
 
 # --- Costos FIJOS mensuales (no dependen del # de usuarios) en USD ---
 COSTOS_FIJOS = {
-    "The Odds API":     30.0,   # ⚠️ VALIDAR tu plan real
-    "API-Football":     25.0,   # ⚠️ VALIDAR tu plan real
-    "Railway (API+DB)": 10.0,   # ⚠️ VALIDAR
+    "The Odds API":     50.0,   # ✅ real (Yamid 2026-07-01)
+    "API-Football":     19.0,   # ✅ real (Yamid 2026-07-01)
+    "Railway (API+DB)": 10.0,   # ⚠️ VALIDAR (dashboard Railway → Usage; Hobby ~$5)
     "Dominio+otros":     2.0,   # amortizado
     # Anthropic (Mako) NO va aquí: es variable por uso (abajo)
 }
