@@ -565,6 +565,44 @@ def _responder_general(pregunta, historial=None):
                 "del modelo de SharpIQ. ¿Sobre cuál quieres saber?")
 
 
+def _buscar_live(pregunta):
+    """Busca el partido en live_scores.json (para eventos EN VIVO/terminados que YA no están
+    en predicciones.json porque arrancaron). Devuelve (evento, categoria) o None."""
+    q = _expandir_alias(pregunta)
+    data = _cargar_live()
+    best = None
+    for cat in ("live", "finished", "upcoming"):
+        for g in (data.get(cat) or []):
+            if not isinstance(g, dict):
+                continue
+            hit = 0
+            for name in (_norm(g.get("home", "")), _norm(g.get("away", ""))):
+                if name and name in q:
+                    hit += 3
+                else:
+                    for w in name.split():
+                        if len(w) >= 4 and w in q:
+                            hit += 1
+            if hit > 0 and (best is None or hit > best[0]):
+                best = (hit, g, cat)
+    return (best[1], best[2]) if best else None
+
+
+def _texto_live(g, cat):
+    """Respuesta natural con el marcador (partido que ya arrancó, fuera de predicciones)."""
+    home, away = g.get("home"), g.get("away")
+    sh, sa = g.get("score_home"), g.get("score_away")
+    liga = g.get("liga", "")
+    if cat == "live":
+        return (f"🔴 EN VIVO: {home} {sh} - {sa} {away} ({liga}). El partido está en curso ahora mismo. "
+                "Como ya arrancó, salió de mi análisis pre-partido, pero te paso el marcador al momento 🦈.")
+    if cat == "finished":
+        return (f"Ese partido ya terminó: {home} {sh} - {sa} {away} ({liga}). "
+                "Pregúntame por otro evento de hoy y te doy el análisis completo del modelo 🦈.")
+    return (f"{home} vs {away} ({liga}) todavía no arranca. Pregúntame por el análisis y te doy "
+            "las probabilidades y el valor según el modelo 🦈.")
+
+
 # ── Endpoints ──────────────────────────────────────────────────────
 
 @router.get("/salud")
@@ -625,6 +663,12 @@ def preguntar(body: dict, token=Depends(usuario_activo)):
         contexto = " ".join(str(h.get("content", "")) for h in historial[-6:])
         match = _encontrar(contexto, preds)
     if not match:
+        # ¿El partido está EN VIVO / terminado? (ya salió de predicciones al arrancar) ->
+        # dar el marcador desde live_scores.json. Cubre el "¿cómo va el partido en vivo?".
+        live_ev = _buscar_live(pregunta)
+        if live_ev:
+            return {"ok": True, "sin_cargo": True, "restantes": est["restantes"], "plan": plan,
+                    "respuesta": _texto_live(live_ev[0], live_ev[1])}
         # Sin partido específico -> Mako CONVERSA natural (como una IA), sin inventar datos.
         # No cobra crédito: la charla es gratis; el análisis a fondo de un partido sí cobra.
         return {"ok": True, "sin_cargo": True, "restantes": est["restantes"], "plan": plan,
