@@ -457,7 +457,9 @@ def _ficha(p):
         L.append("Goleadores probables (probabilidad de marcar): " + gole)
     rem = _limpiar_entidades(props.get("remates", "")) or _remates_de(loc, vis)
     if rem:
-        L.append("Rematadores por jugador (disparos por partido, total y a puerta): " + rem)
+        L.append("Rematadores por jugador (promedio POR PARTIDO). 'remates totales' = TODOS los "
+                 "disparos del jugador (incluye desviados/bloqueados); 'a puerta' = los que van al "
+                 "arco. SÍ tienes ambos: " + rem)
     L.append("Nota: son estimaciones del modelo, no garantía; apostar implica riesgo.")
     return "\n".join(L)
 

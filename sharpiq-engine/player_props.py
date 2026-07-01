@@ -288,7 +288,8 @@ def formato_remates_partido(local_id, visita_id, local_nombre, visita_nombre,
     except Exception:
         return ""
     def _fmt(lst):
-        return ", ".join(f"{j['nombre']} ~{j['shots_pg']} rem ({j['sot_pg']} a puerta)" for j in lst)
+        return ", ".join(f"{j['nombre']} {j['shots_pg']} remates totales ({j['sot_pg']} a puerta)"
+                         for j in lst)
     partes = []
     if loc: partes.append(f"{local_nombre}: {_fmt(loc)}")
     if vis: partes.append(f"{visita_nombre}: {_fmt(vis)}")
