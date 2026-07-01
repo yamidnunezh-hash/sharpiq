@@ -31,8 +31,8 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
   .chip{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--t2);font-size:12px;padding:7px 12px;border-radius:16px;cursor:pointer;transition:all .15s}
   .chip:hover{border-color:var(--gold);color:var(--t1)}
-  .bar{position:sticky;bottom:0;background:rgba(10,14,26,.95);backdrop-filter:blur(14px);border-top:1px solid var(--border);padding:12px 18px}
-  .barin{max-width:760px;margin:0 auto;display:flex;gap:10px;align-items:flex-end}
+  .bar{position:sticky;bottom:0;background:rgba(10,14,26,.95);backdrop-filter:blur(14px);border-top:1px solid var(--border);padding:12px 14px}
+  .barin{max-width:760px;margin:0 auto;display:flex;gap:9px;align-items:flex-end}
   textarea{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--t1);font-family:Inter,sans-serif;font-size:14.5px;resize:none;outline:none;max-height:120px}
   textarea:focus{border-color:rgba(0,200,255,.45)}
   .send{background:linear-gradient(135deg,#00C8FF,#7B5CF0);border:none;color:#fff;width:46px;height:46px;border-radius:12px;font-size:18px;cursor:pointer;flex-shrink:0;transition:opacity .2s}
@@ -43,6 +43,14 @@
   .typing{color:var(--t3);font-size:13px;font-style:italic}
   .login-box{text-align:center;padding:60px 20px}
   .login-box a{color:var(--gold);text-decoration:none;font-weight:700}
+  /* Móvil: input más ancho + flecha azul completa a la derecha */
+  @media(max-width:600px){
+    .wrap{padding:14px 10px}
+    .bar{padding:10px 8px}
+    .barin{gap:7px;max-width:100%}
+    textarea{padding:11px 12px;font-size:15px}
+    .send{width:44px;height:44px;font-size:17px}
+  }
 </style>
 </head>
 <body>
