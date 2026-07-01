@@ -28,6 +28,7 @@ _BASE  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _PRED  = os.path.join(_BASE, "..", "predicciones.json")
 _LIVE  = os.path.join(_BASE, "..", "live_scores.json")
 _DATOS = os.path.join(_BASE, "..", "datos.js")
+_PROPS = os.path.join(_BASE, "..", "props_jugadores.json")
 
 _SYSTEM = """Eres Mako 🦈, el analista deportivo personal de SharpIQ.
 Respondes preguntas sobre partidos usando EXCLUSIVAMENTE los datos del análisis de SharpIQ que te entrego. Reglas estrictas:
@@ -118,6 +119,54 @@ def _goleadores_de(local, visita):
             if g and g.group(1).strip():
                 return (g.group(1).replace("&middot;", "·").replace("&amp;", "&").strip())
     return ""
+
+
+def _remates_de(local, visita):
+    """Rematadores por jugador (disparos/partido, total y a puerta) desde ANALISIS_DIA."""
+    try:
+        with open(_DATOS, encoding="utf-8", errors="replace") as f:
+            t = f.read()
+    except Exception:
+        return ""
+    m = re.search(r'ANALISIS_DIA\s*=\s*(\[.*?\]);', t, re.DOTALL)
+    if not m:
+        return ""
+    nl, nv = _norm(local), _norm(visita)
+    for o in re.findall(r'\{[^{}]*\}', m.group(1)):
+        on = _norm(o)
+        okl = any(w in on for w in nl.split() if len(w) >= 4)
+        okv = any(w in on for w in nv.split() if len(w) >= 4)
+        if okl and okv:
+            g = re.search(r'remates\s*:\s*["\']([^"\']*)["\']', o)
+            if g and g.group(1).strip():
+                return (g.group(1).replace("&middot;", "·").replace("&apos;", "'")
+                        .replace("&#39;", "'").replace("&amp;", "&").strip())
+    return ""
+
+
+def _limpiar_entidades(s):
+    return (str(s or "").replace("&middot;", "·").replace("&apos;", "'")
+            .replace("&#39;", "'").replace("&amp;", "&").strip())
+
+
+def _props_de(local, visita):
+    """Goleadores + remates por jugador desde props_jugadores.json (fuente dedicada, siempre
+    fresca). Devuelve {'gole':..., 'remates':...} del partido, o {} si no está."""
+    try:
+        with open(_PROPS, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return {}
+    nl, nv = _norm(local), _norm(visita)
+
+    def _coincide(a, b):
+        return bool(a) and (a in b or b in a or any(w in b for w in a.split() if len(w) >= 4))
+
+    for p in data.get("partidos", []):
+        pl, pv = _norm(p.get("local", "")), _norm(p.get("visitante", ""))
+        if (_coincide(pl, nl) and _coincide(pv, nv)) or (_coincide(pl, nv) and _coincide(pv, nl)):
+            return p
+    return {}
 
 
 # El motor guarda nombres en INGLÉS (England, Belgium, USA...), pero el usuario colombiano
@@ -402,9 +451,13 @@ def _ficha(p):
     h2h = p.get("h2h")
     if h2h:
         L.append("H2H: " + json.dumps(h2h, ensure_ascii=False)[:200])
-    gole = _goleadores_de(loc, vis)
+    props = _props_de(loc, vis)   # fuente dedicada (siempre fresca); datos.js como respaldo
+    gole = _limpiar_entidades(props.get("gole", "")) or _goleadores_de(loc, vis)
     if gole:
         L.append("Goleadores probables (probabilidad de marcar): " + gole)
+    rem = _limpiar_entidades(props.get("remates", "")) or _remates_de(loc, vis)
+    if rem:
+        L.append("Rematadores por jugador (disparos por partido, total y a puerta): " + rem)
     L.append("Nota: son estimaciones del modelo, no garantía; apostar implica riesgo.")
     return "\n".join(L)
 

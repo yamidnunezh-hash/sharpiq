@@ -203,3 +203,93 @@ def construir_mensaje_props(props_dia):
 
     lineas.append("\n<i>SharpIQ — La ventaja inteligente</i>")
     return "\n".join(lineas)
+
+
+# ── REMATES POR JUGADOR (shots) ─────────────────────────────────────
+# Usa /players (incluye shots.total y shots.on por jugador). El plan Pro ya lo cubre.
+
+def _init_remates():
+    with _db() as c:
+        c.execute("""CREATE TABLE IF NOT EXISTS remates_cache (
+            team_id     INTEGER,
+            season      INTEGER,
+            data_json   TEXT,
+            actualizado TEXT,
+            PRIMARY KEY (team_id, season)
+        )""")
+
+def _remates_cache_get(team_id, season):
+    with _db() as c:
+        row = c.execute("SELECT data_json, actualizado FROM remates_cache WHERE team_id=? AND season=?",
+                        (int(team_id), season)).fetchone()
+    if not row:
+        return None
+    if (datetime.now() - datetime.fromisoformat(row[1])).total_seconds() / 3600 > 24:
+        return None
+    return json.loads(row[0])
+
+def _remates_cache_put(team_id, season, data):
+    with _db() as c:
+        c.execute("""INSERT OR REPLACE INTO remates_cache (team_id, season, data_json, actualizado)
+                     VALUES (?,?,?,?)""",
+                  (int(team_id), season, json.dumps(data), datetime.now().isoformat()))
+
+
+def obtener_remates_equipo(team_id, liga_id, season=None):
+    """Rematadores de un equipo: disparos por partido (total y a puerta). Cache 24h.
+    Devuelve lista ordenada por disparos/partido desc."""
+    _init_remates()
+    if season is None:
+        season = date.today().year if date.today().month >= 7 else date.today().year - 1
+    cached = _remates_cache_get(team_id, season)
+    if cached is not None:
+        return cached
+    try:
+        from motor import _apifb
+    except Exception:
+        return []
+    jugadores, page = [], 1
+    while page <= 3:                     # tope de páginas (cuida la cuota de la API)
+        data = _apifb("players", {"team": int(team_id), "league": int(liga_id),
+                                  "season": season, "page": page})
+        if not data or not data.get("response"):
+            break
+        for entry in data["response"]:
+            p  = entry.get("player", {}) or {}
+            st = (entry.get("statistics") or [{}])[0] or {}
+            apps  = (st.get("games", {}) or {}).get("appearences") or 0
+            shots = st.get("shots", {}) or {}
+            tot   = shots.get("total") or 0
+            on    = shots.get("on") or 0
+            if apps and apps >= 2 and tot:          # mínimo 2 partidos, evita ruido
+                jugadores.append({
+                    "nombre":   p.get("name", ""),
+                    "apps":     int(apps),
+                    "shots_pg": round(tot / apps, 2),
+                    "sot_pg":   round((on or 0) / apps, 2),
+                })
+        paging = data.get("paging", {}) or {}
+        if page >= (paging.get("total") or 1):
+            break
+        page += 1
+    jugadores.sort(key=lambda x: x["shots_pg"], reverse=True)
+    _remates_cache_put(team_id, season, jugadores)
+    print(f"    Remates: {len(jugadores)} jugadores (equipo {team_id})")
+    return jugadores
+
+
+def formato_remates_partido(local_id, visita_id, local_nombre, visita_nombre,
+                            liga_id, season=None, top=3):
+    """String legible con los mejores rematadores de cada equipo (para ANALISIS_DIA/Mako).
+    Ej: 'England: H. Kane ~3.8 rem (1.9 a puerta), B. Saka ~2.5 (1.1) | DR Congo: ...'"""
+    try:
+        loc = obtener_remates_equipo(local_id, liga_id, season)[:top]
+        vis = obtener_remates_equipo(visita_id, liga_id, season)[:top]
+    except Exception:
+        return ""
+    def _fmt(lst):
+        return ", ".join(f"{j['nombre']} ~{j['shots_pg']} rem ({j['sot_pg']} a puerta)" for j in lst)
+    partes = []
+    if loc: partes.append(f"{local_nombre}: {_fmt(loc)}")
+    if vis: partes.append(f"{visita_nombre}: {_fmt(vis)}")
+    return " | ".join(partes)

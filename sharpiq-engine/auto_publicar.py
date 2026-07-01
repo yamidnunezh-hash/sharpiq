@@ -729,7 +729,7 @@ if __name__ == "__main__":
                 capture_output=True, text=True, timeout=300)
         def _gA(*a):
             return _sp.run(["git", *a], cwd=_rd, capture_output=True, text=True)
-        _gA("add", "datos.js", "index.html")
+        _gA("add", "datos.js", "index.html", "props_jugadores.json")
         _cmA = _gA("commit", "-m", "auto: analisis del dia")
         if "nothing to commit" not in (_cmA.stdout + _cmA.stderr):
             for _iA in range(3):

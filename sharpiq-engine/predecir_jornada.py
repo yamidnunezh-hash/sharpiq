@@ -5,12 +5,36 @@ via API-Football PRO) — SIN depender de The Odds API — y lo monta en la web
 
 Uso: python predecir_jornada.py [YYYY-MM-DD ...]   (por defecto hoy+manana COT)
 """
+import os
 import sys
+import json
 from datetime import datetime, timedelta
 from scipy.stats import poisson
 from motor import _apifb
 import generar_analisis as ga
 import mercados_profundos as mp
+
+
+def _escribir_props(preds, goles, remates):
+    """Escribe props_jugadores.json (goleadores + remates por partido) que Mako lee.
+    Independiente del ANALISIS_DIA (que tiene su propio filtro/timing) -> SIEMPRE fresco."""
+    ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "props_jugadores.json")
+    data = {"partidos": []}
+    for pr, gole, rem in zip(preds, goles, remates):
+        if not (gole or rem):
+            continue
+        data["partidos"].append({
+            "local":     pr.get("local", ""),
+            "visitante": pr.get("visitante", ""),
+            "gole":      gole or "",
+            "remates":   rem or "",
+        })
+    try:
+        with open(ruta, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=1)
+        print(f"props_jugadores.json escrito: {len(data['partidos'])} partidos con props")
+    except Exception as e:
+        print("No pude escribir props_jugadores.json:", e)
 
 
 def _gfgc(tid, n=8):
@@ -67,6 +91,15 @@ def _goleadores(local, vis, liga_id, season, m):
         return ''
 
 
+def _remates(local_id, vis_id, local, vis, liga_id, season):
+    """Player props: top rematadores (disparos por partido, total y a puerta). Robusto."""
+    try:
+        import player_props as pp
+        return pp.formato_remates_partido(local_id, vis_id, local, vis, liga_id, season)
+    except Exception:
+        return ''
+
+
 def _hora_cot(iso):
     try:
         u = datetime.fromisoformat(iso.replace('Z', '+00:00'))
@@ -92,6 +125,7 @@ def main(fechas):
     preds = []
     profs = []
     goles = []
+    remates = []
     vistos = set()
     for fecha in fechas:
         if len(preds) >= _MAX_PARTIDOS:
@@ -117,6 +151,7 @@ def main(fechas):
             _es_mundial = lg.get('id') in (1, 15) or 'world cup' in nombre or 'mundial' in nombre
             _season = int(fecha[:4]) if _es_mundial else None  # ligas domésticas: temporada por defecto
             goles.append(_goleadores(h['name'], a['name'], lg.get('id'), _season, m))
+            remates.append(_remates(h['id'], a['id'], h['name'], a['name'], lg.get('id'), _season))
             preds.append({
                 'local': h['name'], 'visitante': a['name'],
                 'liga': lg.get('name') or 'Fútbol',
@@ -137,6 +172,8 @@ def main(fechas):
     if not preds:
         print("Sin partidos. Nada que inyectar.")
         return
+    # Props de jugadores (goleadores + remates) SIEMPRE, aunque el ANALISIS_DIA no se inyecte.
+    _escribir_props(preds, goles, remates)
     items = ga.generar_items(preds)
     if not items:
         # Los partidos ya empezaron/pasaron -> NO inyectar vacío (conserva el
@@ -144,11 +181,13 @@ def main(fechas):
         print("Sin partidos próximos; conservo el ANALISIS_DIA actual.")
         return
     # --- enriquecer cada analisis con MERCADOS PROFUNDOS (remates/atajadas/etc.) ---
-    for it, prof, pr, gole in zip(items, profs, preds, goles):
+    for it, prof, pr, gole, rem in zip(items, profs, preds, goles, remates):
         it['eqL'] = pr.get('local', '')      # nombre EN INGLES (para resolver el logo)
         it['eqV'] = pr.get('visitante', '')
         if gole:
             it['gole'] = gole                # player props: goleadores probables
+        if rem:
+            it['remates'] = rem              # player props: rematadores (disparos/partido)
         # JUGADA del modelo (la ve el DUENO/VIP en la pagina de detalle): mercado mas confiable
         _vl = float(it.get('vl') or 0); _vv = float(it.get('vv') or 0)
         _o = float(it.get('o25') or 0); _u = float(it.get('u25') or 0)
