@@ -595,7 +595,9 @@ def _texto_live(g, cat):
     liga = g.get("liga", "")
     if cat == "live":
         return (f"🔴 EN VIVO: {home} {sh} - {sa} {away} ({liga}). El partido está en curso ahora mismo. "
-                "Como ya arrancó, salió de mi análisis pre-partido, pero te paso el marcador al momento 🦈.")
+                "Como ya arrancó, salió de mi análisis pre-partido, así que te paso el marcador al "
+                "momento. En vivo tengo el resultado, pero no estadísticas minuto a minuto "
+                "(remates, posesión, etc.) — esas las proyecto ANTES del partido 🦈.")
     if cat == "finished":
         return (f"Ese partido ya terminó: {home} {sh} - {sa} {away} ({liga}). "
                 "Pregúntame por otro evento de hoy y te doy el análisis completo del modelo 🦈.")
