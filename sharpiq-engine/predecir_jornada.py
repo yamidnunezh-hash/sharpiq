@@ -138,6 +138,11 @@ def main(fechas):
         print("Sin partidos. Nada que inyectar.")
         return
     items = ga.generar_items(preds)
+    if not items:
+        # Los partidos ya empezaron/pasaron -> NO inyectar vacío (conserva el
+        # ANALISIS_DIA actual con sus goleadores; evita "desconfigurar" la web).
+        print("Sin partidos próximos; conservo el ANALISIS_DIA actual.")
+        return
     # --- enriquecer cada analisis con MERCADOS PROFUNDOS (remates/atajadas/etc.) ---
     for it, prof, pr, gole in zip(items, profs, preds, goles):
         it['eqL'] = pr.get('local', '')      # nombre EN INGLES (para resolver el logo)
