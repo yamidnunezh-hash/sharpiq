@@ -52,7 +52,7 @@ _SYSTEM_GENERAL = """Eres Mako 🦈, el analista deportivo personal de SharpIQ. 
 Habla de forma NATURAL, cercana, con personalidad y criterio experto — como una IA moderna, NO como un menú de opciones.
 PUEDES: saludar y presentarte; explicar quién eres y cómo funcionas; enseñar conceptos de apuestas y deporte (valor/EV, probabilidades, gestión de banca, tipos de mercado, qué es Pinnacle); dar consejos generales de estrategia; y charlar de deporte.
 REGLAS ESTRICTAS:
-1. NUNCA inventes datos de un partido/evento CONCRETO (probabilidades, cuotas, marcadores, alineaciones, quién va ganando). Si el usuario pregunta por un evento específico, invítalo con naturalidad a nombrarlo: "dime qué partido y te doy los números exactos del modelo de SharpIQ 🦈".
+1. NUNCA inventes CIFRAS de un partido concreto (probabilidades, cuotas, alineaciones) que no tengas delante. PERO ojo: SharpIQ SÍ tiene el análisis del modelo Y los marcadores EN VIVO (el marcador se actualiza cada ~10 min, con leve retraso). Si el usuario pregunta por un partido —incluso uno que ya arrancó— invítalo a nombrarlo: "dime qué partido y te doy el marcador y el análisis del modelo 🦈". JAMÁS digas que "no tienes acceso a marcadores en vivo": SÍ los tienes (con ~10 min de retraso). Lo ÚNICO que no tienes es estadística minuto a minuto (posesión/remates en tiempo real). Si el usuario dice que un partido ya va en cierto minuto, créele y ofrécele el marcador que tienes.
 2. NUNCA prometas ganancias ni digas "apuesta segura/fija". Habla siempre en probabilidades y valor; apostar implica riesgo.
 3. Tu DIFERENCIAL: SharpIQ tiene un MOTOR propio (modelo estadístico + comparación con el mercado Pinnacle) que analiza los eventos del día con datos reales. Tú no adivinas como un chatbot común: cuando el usuario nombra un evento, le das cifras del modelo. Transmite esa confianza.
 4. Español latino, tono claro y cercano, con chispa. Breve (2-5 frases). Responde SIEMPRE, nunca rechaces con un mensaje robótico.
@@ -675,8 +675,9 @@ def _texto_live(g, cat):
     if cat == "finished":
         return (f"Ese partido ya terminó: {home} {sh} - {sa} {away} ({liga}). "
                 "Pregúntame por otro evento de hoy y te doy el análisis completo del modelo 🦈.")
-    return (f"{home} vs {away} ({liga}) todavía no arranca. Pregúntame por el análisis y te doy "
-            "las probabilidades y el valor según el modelo 🦈.")
+    return (f"Según mi último dato, {home} vs {away} ({liga}) aún no había arrancado — pero mi "
+            "marcador se actualiza cada ~10 min, así que si ya empezó, dímelo. Mientras, te doy el "
+            "análisis pre-partido del modelo: probabilidades, valor y a quién le veo más chances 🦈.")
 
 
 # ── Endpoints ──────────────────────────────────────────────────────
@@ -742,8 +743,12 @@ def preguntar(body: dict, token=Depends(usuario_activo)):
         # ¿El partido está EN VIVO / terminado? (ya salió de predicciones al arrancar) ->
         # dar el marcador desde live_scores.json. Cubre el "¿cómo va el partido en vivo?".
         live_ev = _buscar_live(pregunta)
+        # Seguimiento sobre un partido en vivo ("¿cómo va ahora?", "ya van 10 min"): usar el último.
+        if not live_ev and isinstance(partido_actual, dict) and partido_actual.get("local"):
+            live_ev = _buscar_live(f"{partido_actual.get('local','')} {partido_actual.get('visitante','')}")
         if live_ev:
             return {"ok": True, "sin_cargo": True, "restantes": est["restantes"], "plan": plan,
+                    "partido": {"local": live_ev[0].get("home"), "visitante": live_ev[0].get("away")},
                     "respuesta": _texto_live(live_ev[0], live_ev[1])}
         # Sin partido específico -> Mako CONVERSA natural (como una IA), sin inventar datos.
         # No cobra crédito: la charla es gratis; el análisis a fondo de un partido sí cobra.
