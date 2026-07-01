@@ -99,6 +99,16 @@ def _leer_proximos():
         vistos.add(key)
         loc, _, vis = part.partition(' vs ')
         cuota = campo(o, 'cuota')
+        prob  = campo(o, 'prob')
+        tier  = campo(o, 'tier')
+        # SharpScore: usa el guardado; si falta, lo calcula desde prob+tier
+        ss = campo(o, 'sharpscore')
+        if not ss:
+            try:
+                import sharpscore
+                ss = str(sharpscore.calcular(prob=prob, ev=0, tier=tier))
+            except Exception:
+                ss = ""
         out.append({
             "local":         loc.strip(),
             "visitante":     vis.strip() or part,
@@ -106,8 +116,10 @@ def _leer_proximos():
             "hora":          campo(o, 'hora'),
             "fecha_evento":  campo(o, 'fecha'),
             "deporte_emoji": campo(o, 'emoji') or "⚽",
-            "tier":          campo(o, 'tier'),
+            "tier":          tier,
             "cuota":         cuota,
+            "prob":          prob,
+            "sharpscore":    ss,
             "prediccion_principal": {"mercado": pred, "cuota": cuota},
         })
     return out

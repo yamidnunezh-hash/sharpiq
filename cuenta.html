@@ -267,6 +267,7 @@ async function cargarPicks(plan){
         </div>
         ${p.prediccion_principal?.mercado ? `<div style="margin-top:10px;font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:var(--gold)">⭐ ${p.prediccion_principal.mercado}</div>` : ''}
         ${p.tier ? `<div style="margin-top:6px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--t3)">${String(p.tier).replace(/_/g,' ')}</div>` : ''}
+        ${(()=>{ let s=parseInt(p.sharpscore); if(!(s>=1)){const pr=parseInt(p.prob||0);const tv={seguro:90,principal:75,alto_valor:70}[p.tier]||65;s=Math.round(0.5*pr+12.5+0.25*tv);} if(!(s>=1))return''; const c=s>=80?'#22C55E':s>=70?'#00C8FF':s>=60?'#7B5CF0':'#F59E0B'; const n=s>=80?'Máxima confianza':s>=70?'Alta confianza':s>=60?'Sólida':s>=50?'Moderada':'Especulativa'; return `<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;background:rgba(0,200,255,.05);border:1px solid ${c}55;border-radius:8px;padding:8px 12px"><div><div style="font-size:9px;font-weight:800;letter-spacing:1px;color:var(--t3)">🦈 SHARPSCORE™</div><div style="font-size:11px;font-weight:700;color:${c}">${n}</div></div><div style="font-weight:900;font-size:1.3rem;color:${c}">${s}<span style="font-size:.6rem;color:var(--t3)">/100</span></div></div>`; })()}
       </div>`
     ).join('');
   } catch(e){

@@ -206,10 +206,22 @@ def enviar_alerta_value_bet(pred, mercado, vb):
     deporte = pred.get("deporte", "").upper()
     sport_emoji = pred.get("deporte_emoji") or {"NBA":"🏀","NHL":"🏒","MLB":"⚾","NFL":"🏈"}.get(deporte, "⚽")
 
+    # SharpScore™ — el sello 0-100 de SharpIQ
+    ss_linea = ""
+    try:
+        import sharpscore
+        _tier = {"SEGURO": "seguro", "PRINCIPAL": "principal",
+                 "ALTO VALOR": "alto_valor"}.get(str(vb.get("clasificacion", "")).upper(), "principal")
+        _ss = sharpscore.calcular(prob=prob, ev=vb.get("ev_porcentaje", 0), tier=_tier)
+        _nv, _st = sharpscore.nivel(_ss)
+        ss_linea = f"\n🦈 <b>SharpScore:</b> {_ss}/100 · {_nv} {_st}"
+    except Exception:
+        pass
+
     texto = f"""{emoji} <b>SharpIQ — {vb['clasificacion']}</b>
 
 {sport_emoji} <b>{esc(pred['local'])} vs {esc(pred['visitante'])}</b>
-🏆 {esc(pred.get('liga', ''))} | {_fmt_fecha(pred.get('fecha_evento',''))}{hora_cot}
+🏆 {esc(pred.get('liga', ''))} | {_fmt_fecha(pred.get('fecha_evento',''))}{hora_cot}{ss_linea}
 
 📊 <b>Mercado:</b> {nombres_mercado.get(mercado, mercado)}
 📈 <b>Probabilidad modelo:</b> {prob}%
