@@ -9,7 +9,7 @@ EXCLUSIVAMENTE los datos del motor (predicciones.json) -> aterrizado, no inventa
             VIP/admin = límite diario.
 """
 import os, sys, json, re, unicodedata
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -246,6 +246,12 @@ def _ficha(p):
 
 # ── Créditos ───────────────────────────────────────────────────────
 
+def _hoy_col():
+    """Fecha actual en HORA COLOMBIA (UTC-5, sin horario de verano). Así el día
+    del cliente cambia a la medianoche colombiana, no a la del servidor (UTC)."""
+    return (datetime.utcnow() - timedelta(hours=5)).date()
+
+
 def _estado(user_id, plan):
     plan = (plan or "free").lower()
     with db() as conn:
@@ -257,7 +263,7 @@ def _estado(user_id, plan):
     inicio    = row.get("inicio_trial")
     usos_hoy  = int(row.get("usos_hoy") or 0)
     fecha_hoy = row.get("fecha_hoy")
-    hoy = date.today()
+    hoy = _hoy_col()
     if fecha_hoy != hoy:
         usos_hoy = 0
 
@@ -281,7 +287,7 @@ def _estado(user_id, plan):
 
 
 def _registrar_uso(user_id):
-    hoy = date.today()
+    hoy = _hoy_col()
     with db() as conn:
         cur = conn.cursor()
         cur.execute("""
