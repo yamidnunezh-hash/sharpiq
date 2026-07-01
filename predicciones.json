@@ -1,6 +1,6 @@
 {
   "fecha": "2026-06-30",
-  "total_partidos": 55,
+  "total_partidos": 54,
   "predicciones": [
     {
       "local": "Mexico",
@@ -18,7 +18,7 @@
         "1": 2.3,
         "1_casa": "Betfair",
         "pinnacle_1": 2.29,
-        "X": 2.94,
+        "X": 2.92,
         "X_casa": "Betfair",
         "pinnacle_X": 2.91,
         "over175": 1.9,
@@ -45,10 +45,10 @@
         "under125": 2.87,
         "under125_casa": "Pinnacle",
         "pinnacle_under125": 2.87,
-        "over15": 1.71,
+        "over15": 1.72,
         "over15_casa": "Betfair",
         "pinnacle_over15": 1.67,
-        "under15": 2.38,
+        "under15": 2.34,
         "under15_casa": "Betfair",
         "pinnacle_under15": 2.3,
         "over20": 2.3,
@@ -153,9 +153,9 @@
         "btts_no": 1.67,
         "btts_no_casa": "Betfair",
         "pinnacle_btts_no": 1.67,
-        "dnb_local": 1.53,
+        "dnb_local": 1.52,
         "dnb_local_casa": "Betfair",
-        "dnb_visita": 2.82,
+        "dnb_visita": 2.86,
         "dnb_visita_casa": "Betfair",
         "ah_l_m0_25": 1.91,
         "ah_l_m0_25_casa": "Pinnacle",
@@ -302,13 +302,13 @@
           "pinn_prob": 42.7
         },
         "empate": {
-          "value": -0.011,
-          "ev_porcentaje": -1.1,
-          "ev_pinn": -1.1,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.94,
+          "cuota": 2.92,
           "casa": "Betfair",
           "pinn_prob": 33.6
         },
@@ -401,24 +401,24 @@
           "pinn_prob": 33.6
         },
         "over15": {
-          "value": -0.009,
-          "ev_porcentaje": -0.9,
-          "ev_pinn": -0.9,
+          "value": -0.004,
+          "ev_porcentaje": -0.4,
+          "ev_pinn": -0.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.71,
+          "cuota": 1.72,
           "casa": "Betfair",
           "pinn_prob": 57.9
         },
         "under15": {
-          "value": 0.001,
-          "ev_porcentaje": 0.1,
-          "ev_pinn": 0.1,
+          "value": -0.016,
+          "ev_porcentaje": -1.6,
+          "ev_pinn": -1.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.38,
+          "cuota": 2.34,
           "casa": "Betfair",
           "pinn_prob": 42.1
         },
@@ -821,24 +821,24 @@
           "pinn_prob": 58.1
         },
         "dnb_local": {
-          "value": -0.015,
-          "ev_porcentaje": -1.5,
-          "ev_pinn": -1.5,
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.53,
+          "cuota": 1.52,
           "casa": "Betfair",
           "pinn_prob": 64.4
         },
         "dnb_visita": {
-          "value": 0.004,
-          "ev_porcentaje": 0.4,
-          "ev_pinn": 0.4,
+          "value": 0.018,
+          "ev_porcentaje": 1.8,
+          "ev_pinn": 1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.82,
+          "cuota": 2.86,
           "casa": "Betfair",
           "pinn_prob": 35.6
         },
@@ -6485,64 +6485,6 @@
       "movimiento": null
     },
     {
-      "id": "e8389cd2a90193f0774dd9a0efe2e13c",
-      "comienzo": "2026-07-01T09:00:00Z",
-      "local": "Alex de Minaur",
-      "visitante": "Adrian Mannarino",
-      "liga": "ATP Wimbledon",
-      "liga_code": "tennis_atp_wimbledon",
-      "deporte": "ATP Wimbledon",
-      "deporte_emoji": "🏆",
-      "hora": "09:00",
-      "fecha_evento": "2026-07-01",
-      "cuotas": {
-        "Adrian Mannarino": 4.65,
-        "Alex de Minaur": 1.27
-      },
-      "probabilidades": {
-        "Adrian Mannarino": 20.9,
-        "Alex de Minaur": 79.1
-      },
-      "confianza": 79.1,
-      "value_bets": {
-        "Adrian Mannarino": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.65,
-          "casa": "Pinnacle",
-          "pinn_prob": 20.9,
-          "mercado_nombre": "Adrian Mannarino"
-        },
-        "Alex de Minaur": {
-          "value": 0.004,
-          "ev_porcentaje": 0.4,
-          "ev_pinn": 0.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.27,
-          "casa": "Unibet",
-          "pinn_prob": 79.1,
-          "mercado_nombre": "Alex de Minaur"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Alex de Minaur",
-        "prob": 79.1,
-        "ev": 0.4
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
       "id": "5e0919a8514a1242a386699a61e9eeaf",
       "comienzo": "2026-07-01T10:00:00Z",
       "local": "Hubert Hurkacz",
@@ -9207,5 +9149,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:00"
+  "generado": "00:01:14"
 }
