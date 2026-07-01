@@ -410,6 +410,28 @@ def _api_key():
     return key
 
 
+# Enrutamiento por dificultad: preguntas factuales -> Haiku (rápido y barato);
+# preguntas de ANÁLISIS/COMPARACIÓN/CONSEJO -> modelo fuerte (razona mucho mejor).
+MODELO_SIMPLE   = "claude-haiku-4-5"
+MODELO_COMPLEJO = "claude-sonnet-4-6"   # equilibrio; subir a "claude-opus-4-8" para máxima potencia
+_COMPLEJA_KW = (
+    "compar", "cual es mejor", "cuál es mejor", "mejor opcion", "mejor opción",
+    "por que", "porque", "por qué", "explica", "explícame", "analiza", "analisis",
+    "análisis", "recomien", "conviene", "vale la pena", "que opinas", "qué opinas",
+    "opinas", "estrategia", "combinada", "apuesto", "me conviene", "razona", "justifica",
+    "cual elijo", "cuál elijo", "qué prefieres", "que prefieres", "arriesgar", "cual apostar",
+    "cuál apostar", "que apostar", "qué apostar",
+)
+
+
+def _es_compleja(pregunta):
+    """¿La pregunta pide RAZONAR (análisis, comparación, consejo) y no un dato suelto?"""
+    q = _norm(pregunta)
+    if any(k in q for k in _COMPLEJA_KW):
+        return True
+    return len(q.split()) >= 18   # preguntas largas suelen pedir razonamiento
+
+
 def _responder(ficha, pregunta, historial=None):
     key = _api_key()
     if not key:
@@ -432,8 +454,10 @@ def _responder(ficha, pregunta, historial=None):
             msgs.append({"role": role, "content": content})
         msgs.append({"role": "user",
                      "content": f"DATOS DEL ANÁLISIS DE SHARPIQ (partido relevante):\n{ficha}\n\nPREGUNTA DEL CLIENTE:\n{pregunta}"})
+        complejo = _es_compleja(pregunta)
         msg = client.messages.create(
-            model="claude-haiku-4-5", max_tokens=500, system=_SYSTEM, messages=msgs)
+            model=(MODELO_COMPLEJO if complejo else MODELO_SIMPLE),
+            max_tokens=(800 if complejo else 500), system=_SYSTEM, messages=msgs)
         txt = "\n".join(b.text for b in msg.content if getattr(b, "type", "") == "text").strip()
         return txt or ("No pude generar el análisis ahora mismo. Intenta de nuevo 🦈.")
     except Exception:
@@ -445,7 +469,8 @@ def _responder(ficha, pregunta, historial=None):
 @router.get("/salud")
 def salud():
     """Diagnóstico (sin secretos): ¿está configurada la IA de Mako en el servidor?"""
-    return {"ia_configurada": bool(_api_key()), "modelo": "claude-haiku-4-5"}
+    return {"ia_configurada": bool(_api_key()),
+            "modelo_simple": MODELO_SIMPLE, "modelo_complejo": MODELO_COMPLEJO}
 
 
 @router.get("/estado")
