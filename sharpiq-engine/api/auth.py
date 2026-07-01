@@ -17,7 +17,14 @@ from .db import db
 router  = APIRouter()
 bearer  = HTTPBearer()
 
-JWT_SECRET  = os.environ.get("JWT_SECRET", "sharpiq_jwt_secret_cambiar_en_prod")
+JWT_SECRET  = os.environ.get("JWT_SECRET")
+if not JWT_SECRET or len(JWT_SECRET) < 16:
+    # NUNCA usar una clave por defecto insegura: sin un JWT_SECRET real (largo) el
+    # sistema NO arranca. Con la clave por defecto cualquiera podría forjar tokens admin.
+    raise RuntimeError(
+        "JWT_SECRET no está configurado o es muy corto (<16). Ponlo como variable de "
+        "entorno en Railway con una clave larga y aleatoria antes de arrancar."
+    )
 JWT_ALGO    = "HS256"
 JWT_EXPIRY  = 30  # días
 
