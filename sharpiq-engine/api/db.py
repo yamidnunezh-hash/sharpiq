@@ -105,5 +105,15 @@ def inicializar_db():
             ev_pinn         NUMERIC(6,2),
             publicado_en    TIMESTAMP DEFAULT NOW()
         );
+
+        -- Uso de Mako (asistente IA): controla el trial free (10 preguntas o 7 dias)
+        -- y el limite diario de los VIP.
+        CREATE TABLE IF NOT EXISTS mako_uso (
+            usuario_id      INTEGER PRIMARY KEY REFERENCES usuarios(id),
+            total_usos      INTEGER DEFAULT 0,
+            inicio_trial    TIMESTAMP,
+            usos_hoy        INTEGER DEFAULT 0,
+            fecha_hoy       DATE
+        );
         """)
     print("[OK] DB inicializada — tablas listas")
