@@ -130,8 +130,9 @@ def _lista_partidos(preds, n=6):
     return " · ".join(ps) if ps else "no hay partidos analizados ahora mismo"
 
 
-def _mejores_del_dia(preds, n=8):
-    """Top partidos del día rankeados por SharpScore (para el resumen de la jornada)."""
+def _mejores_del_dia(preds, n=8, ligas=None):
+    """Top partidos del día rankeados por SharpScore (para el resumen de la jornada).
+    Si `ligas` es una tupla de palabras clave, filtra solo esas competiciones."""
     try:
         import sharpscore
     except Exception:
@@ -141,6 +142,8 @@ def _mejores_del_dia(preds, n=8):
         loc, vis = p.get("local"), p.get("visitante")
         pp = p.get("prediccion_principal")
         if not (loc and vis and isinstance(pp, dict)):
+            continue
+        if ligas and not any(k in _norm(p.get("liga", "")) for k in ligas):
             continue
         prob, ev = pp.get("prob"), pp.get("ev")
         if not isinstance(prob, (int, float)) or not isinstance(ev, (int, float)):
@@ -157,21 +160,60 @@ def _mejores_del_dia(preds, n=8):
     return filas[:n]
 
 
-def _resumen_dia(preds):
-    """Resumen tipo '¿qué hay hoy?': lista rankeada de los mejores partidos. Texto listo."""
-    filas = _mejores_del_dia(preds, 8)
+def _bonito_mercado(m):
+    """Traduce claves crudas del motor (corners_over_8_5, over25...) a texto legible.
+    Si ya viene legible (ej. 'Under 3.5 Goles', un nombre de tenista) lo deja igual."""
+    if not m:
+        return m
+    s = str(m)
+    mm = re.match(r"corners_over_(\d+)_(\d+)$", s)
+    if mm:
+        return f"Más de {mm.group(1)}.{mm.group(2)} córners"
+    mm = re.match(r"cards_over_(\d+)_(\d+)$", s)
+    if mm:
+        return f"Más de {mm.group(1)}.{mm.group(2)} tarjetas"
+    tabla = {
+        "over15": "Más de 1.5 goles", "under15": "Menos de 1.5 goles",
+        "over25": "Más de 2.5 goles", "under25": "Menos de 2.5 goles",
+        "over35": "Más de 3.5 goles", "under35": "Menos de 3.5 goles",
+        "btts_si": "Ambos equipos marcan", "btts_no": "No marcan ambos",
+        "dnb_local": "Gana el local (sin empate)", "dnb_visita": "Gana el visitante (sin empate)",
+    }
+    return tabla.get(s, s)
+
+
+def _resumen_dia(preds, ligas=None, titulo=None):
+    """Resumen tipo '¿qué hay hoy?': lista rankeada de los mejores partidos. Texto listo.
+    `ligas` filtra por competición (ej. Mundial); `titulo` cambia el encabezado."""
+    filas = _mejores_del_dia(preds, 8, ligas)
     if not filas:
         return None
-    total = sum(1 for p in preds if p.get("local") and p.get("visitante"))
-    L = [f"🦈 Hoy tengo {total} eventos analizados. Estos son los mejores picks de hoy según SharpScore:\n"]
+    if titulo:
+        cab = titulo
+    else:
+        total = sum(1 for p in preds if p.get("local") and p.get("visitante"))
+        cab = f"🦈 Hoy tengo {total} eventos analizados. Estos son los mejores picks de hoy según SharpScore:"
+    L = [cab + "\n"]
     for i, f in enumerate(filas, 1):
         fuego = " 🔥" if i == 1 else ""
         ss = f" · SharpScore {f['ss']}" if f["ss"] is not None else ""
         liga = f" ({f['liga']})" if f.get("liga") else ""
-        L.append(f"{i}. {f['loc']} vs {f['vis']}{liga} — {f['merc']}{ss}{fuego}")
+        L.append(f"{i}. {f['loc']} vs {f['vis']}{liga} — {_bonito_mercado(f['merc'])}{ss}{fuego}")
+    # Texto neutro: sirve para fútbol, tenis, MLB... (no asumimos "goles/córners").
     L.append(f"\nPregúntame por cualquiera (ej. \"cuéntame del {filas[0]['loc']}\") "
-             "y lo analizamos a fondo: goles, córners, valor, a quién le veo más chances 👇")
+             "y lo analizo a fondo: probabilidades, valor, forma y a quién le veo más chances 👇")
     return "\n".join(L)
+
+
+# Competiciones del Mundial (para el resumen filtrado). El motor guarda la liga
+# como "FIFA Mundial 2026" o similar; cubrimos variantes por si cambia el nombre.
+_LIGAS_MUNDIAL = ("mundial", "world cup", "fifa", "copa del mundo")
+
+
+def _es_mundial(pregunta):
+    """¿El cliente pregunta específicamente por el Mundial?"""
+    q = _norm(pregunta)
+    return any(k in q for k in ("mundial", "world cup", "copa del mundo"))
 
 
 def _es_resumen(pregunta):
@@ -431,6 +473,15 @@ def preguntar(body: dict, token=Depends(usuario_activo)):
 
     preds = _cargar()
     match = _encontrar(pregunta, preds)
+    # Resumen específico del MUNDIAL (que el fútbol no lo tape el tenis/MLB).
+    if not match and _es_mundial(pregunta):
+        r = _resumen_dia(preds, ligas=_LIGAS_MUNDIAL,
+                         titulo="⚽ Los mejores picks del MUNDIAL hoy según SharpScore:")
+        if not r:
+            r = ("Hoy no tengo partidos del Mundial en el análisis 🦈. "
+                 "Pero mira lo mejor del día:\n\n" + (_resumen_dia(preds) or ""))
+        return {"ok": True, "sin_cargo": True, "restantes": est["restantes"], "plan": plan,
+                "respuesta": r}
     # Panorama de la jornada ("¿qué hay hoy?", "¿qué recomiendas?", "¿más valor?") ->
     # resumen rankeado GRATIS (es el gancho; el análisis a fondo de cada partido sí cobra).
     if not match and _es_resumen(pregunta):
