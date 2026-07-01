@@ -68,7 +68,7 @@
 
 <div class="bar" id="bar" style="display:none">
   <div class="barin">
-    <textarea id="q" rows="1" placeholder="Pregúntale a Mako sobre cualquier partido..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();enviar();}"></textarea>
+    <textarea id="q" rows="1" placeholder="Pregúntale a Mako sobre cualquier evento de hoy..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();enviar();}"></textarea>
     <button class="send" id="sendBtn" onclick="enviar()">➤</button>
   </div>
 </div>
@@ -155,9 +155,9 @@ async function enviar(){
   try{
     const e=await estado();
     pintaCreditos(e);
-    burbuja('¡Hola! Soy Mako 🦈, tu analista de SharpIQ. Pregúntame lo que quieras de cualquier partido de hoy: probabilidades, goles, córners, valor, a quién le ves más chances… lo que sea.','mako');
+    burbuja('¡Hola! Soy Mako 🦈, tu analista de SharpIQ. Pregúntame lo que quieras de cualquier evento de hoy: probabilidades, goles, córners, valor, a quién le ves más chances… lo que sea.','mako');
     if(!e.puede){ upsell(e.motivo); }
-    else { chips(); document.getElementById('bar').style.display='block'; }
+    else { document.getElementById('bar').style.display='block'; }
   }catch(err){
     chat.innerHTML='<div class="login-box"><div style="font-size:40px;margin-bottom:14px">🦈</div><p style="color:var(--t2);margin-bottom:16px">Tu sesión expiró. Vuelve a entrar para hablar con Mako.</p><a href="login.html">Iniciar sesión</a></div>';
   }
