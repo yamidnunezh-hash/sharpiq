@@ -70,6 +70,7 @@ const API='https://api.sharpiq.co';
 const chat=document.getElementById('chat');
 const token=localStorage.getItem('sharpiq_token');
 let bloqueado=false;
+let hist=[];
 
 function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 
@@ -121,11 +122,13 @@ async function enviar(){
   document.getElementById('sendBtn').disabled=true;
   const t=burbuja('Mako está analizando…','mako'); t.querySelector('.bub').className='bub typing';
   try{
-    const r=await fetch(`${API}/mako/preguntar`,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({pregunta:q})});
+    const r=await fetch(`${API}/mako/preguntar`,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({pregunta:q, historial:hist.slice(-10)})});
     const d=await r.json();
     t.remove();
     if(d.bloqueado){ upsell(d.motivo); return; }
-    burbuja(d.respuesta||'No pude responder ahora mismo.','mako');
+    const resp=d.respuesta||'No pude responder ahora mismo.';
+    burbuja(resp,'mako');
+    hist.push({role:'user',content:q}); hist.push({role:'assistant',content:resp});
     if(d.aviso) aviso(d.aviso);
     pintaCreditos({plan:d.plan,restantes:d.restantes});
     document.getElementById('sendBtn').disabled=false;
