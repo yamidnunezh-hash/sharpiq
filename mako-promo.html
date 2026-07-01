@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mako — Pieza publicitaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#05070f;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;font-family:Inter,sans-serif}
+  /* Tarjeta 1080x1080 (Instagram/Facebook). Toma screenshot de esta tarjeta. */
+  .card{width:1080px;height:1080px;position:relative;overflow:hidden;
+        background:radial-gradient(ellipse at 50% 0%,#0e2a4a 0%,#0a0e1a 55%,#070a12 100%);
+        color:#eef3fb;display:flex;flex-direction:column;transform-origin:top center}
+  .card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 90%,rgba(123,92,240,.18),transparent 55%)}
+  .inner{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;padding:70px 72px}
+  .brand{display:flex;align-items:center;gap:14px;font-weight:900;letter-spacing:3px;font-size:30px}
+  .brand span{background:linear-gradient(90deg,#00C8FF,#22d3a0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .shark{font-size:130px;line-height:1;margin:34px 0 6px;filter:drop-shadow(0 10px 40px rgba(0,200,255,.35))}
+  .h1{font-size:104px;font-weight:900;line-height:.98;letter-spacing:-1px}
+  .h1 b{background:linear-gradient(90deg,#00C8FF,#7B5CF0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .sub{font-size:33px;color:#aab8d0;margin-top:16px;font-weight:600}
+  .bubbles{margin:44px 0 auto;display:flex;flex-direction:column;gap:18px}
+  .b{background:rgba(255,255,255,.05);border:1px solid rgba(0,200,255,.22);border-radius:18px;padding:20px 26px;font-size:31px;font-weight:600;display:flex;align-items:center;gap:16px}
+  .b .e{font-size:34px}
+  .free{display:flex;align-items:center;gap:18px;background:linear-gradient(135deg,rgba(0,200,255,.14),rgba(123,92,240,.14));border:1px solid rgba(0,200,255,.4);border-radius:20px;padding:26px 30px;margin-top:8px}
+  .free .big{font-size:56px;font-weight:900;color:#22d3a0;line-height:1}
+  .free .t{font-size:29px;color:#cdd8ea;font-weight:600}
+  .cta{margin-top:28px;background:linear-gradient(135deg,#00C8FF,#7B5CF0);border-radius:20px;padding:30px 34px;text-align:center}
+  .cta .l{font-size:26px;font-weight:700;color:#eafaff;opacity:.95}
+  .cta .u{font-size:52px;font-weight:900;color:#fff;letter-spacing:1px;margin-top:4px}
+  .cta .mail{font-size:26px;color:#eafaff;margin-top:10px;font-weight:600}
+  .tag{text-align:center;font-size:26px;letter-spacing:2px;color:#7f90ad;margin-top:28px;font-weight:700;text-transform:uppercase}
+  .hint{position:fixed;top:10px;left:50%;transform:translateX(-50%);color:#5a6b88;font-size:13px;font-family:Inter,sans-serif;z-index:5}
+</style>
+</head>
+<body>
+<div class="hint">📸 Toma screenshot de la tarjeta (1080×1080) para redes. En PC: zoom out si no cabe.</div>
+<div class="card">
+  <div class="inner">
+    <div class="brand">🦈 SHARP<span>IQ</span></div>
+    <div class="shark">🦈</div>
+    <div class="h1">Conoce a <b>MAKO</b></div>
+    <div class="sub">Tu analista deportivo personal con IA</div>
+
+    <div class="bubbles">
+      <div class="b"><span class="e">⚽</span> "¿Cuántos córners en el Madrid-Barça?"</div>
+      <div class="b"><span class="e">🎯</span> "¿Hay valor en el Over hoy?"</div>
+      <div class="b"><span class="e">⚾</span> "¿Quién gana, Yankees o Red Sox?"</div>
+    </div>
+
+    <div class="free">
+      <div class="big">10</div>
+      <div class="t">consultas <b style="color:#22d3a0">GRATIS</b> para probar a Mako 🦈</div>
+    </div>
+
+    <div class="cta">
+      <div class="l">📧 Regístrate con tu correo en</div>
+      <div class="u">sharpiq.co</div>
+      <div class="mail">y empieza a hablar con Mako gratis</div>
+    </div>
+
+    <div class="tag">SharpIQ · La ventaja inteligente</div>
+  </div>
+</div>
+</body>
+</html>
