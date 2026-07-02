@@ -106,6 +106,7 @@
         <h3>Accede a todos los picks EV+</h3>
         <p>Los suscriptores VIP reciben cada día picks con ventaja real calculada contra líneas de Pinnacle.<br>Solo $60.000 COP al mes. Cancela cuando quieras.</p>
         <button class="btn-upgrade" onclick="suscribir()">ACTIVAR VIP — $60.000 COP/mes</button>
+        <button onclick="pagarCripto(this)" style="width:100%;margin-top:10px;background:rgba(0,200,255,.08);color:#00C8FF;border:1px solid rgba(0,200,255,.5);border-radius:10px;padding:13px;font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;cursor:pointer">🪙 Pagar con cripto (USDT / USDC)</button>
       </div>
       <div id="tgVipBox" style="display:none;margin-bottom:16px">
         <button id="tgVipBtn" onclick="entrarTelegramVip(this)" style="width:100%;background:linear-gradient(135deg,#229ED9,#1c7fb0);color:#fff;border:none;border-radius:10px;padding:15px;font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;cursor:pointer">📲 Entrar al canal VIP de Telegram</button>
@@ -341,6 +342,20 @@ async function suscribir(){
     if(d.checkout_url){ window.location.href = d.checkout_url; }
     else throw new Error(d.detail||'Error al crear suscripción');
   } catch(e){ alert('Error: '+e.message); }
+}
+
+async function pagarCripto(btn){
+  const orig = btn ? btn.textContent : '';
+  if(btn){ btn.disabled=true; btn.textContent='Creando pago cripto…'; }
+  try {
+    const r = await fetch(`${API}/pagos/cripto/checkout`, {method:'POST', headers: headers()});
+    const d = await r.json();
+    if(d.url){ window.location.href = d.url; }
+    else throw new Error(d.detail||'No se pudo crear el pago cripto');
+  } catch(e){
+    alert('Error: '+e.message);
+    if(btn){ btn.disabled=false; btn.textContent=orig; }
+  }
 }
 
 function copiarRef(){
