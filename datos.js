@@ -10,11 +10,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 36.5",
     cuota:      "2.04",
     hora:       "07:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.4",
-    prob:       "50",
-    sharpscore: "59",
     resultado:  "pendiente"
   },
   {
@@ -24,11 +21,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.43",
     hora:       "22:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "70",
-    sharpscore: "70",
     resultado:  "pendiente"
   },
   {
@@ -38,11 +32,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.67",
     hora:       "19:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "88",
-    sharpscore: "79",
     resultado:  "pendiente"
   },
   {
@@ -52,25 +43,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.32",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "75",
-    sharpscore: "72",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "02/07/26",
-    partido:    "Spain vs Austria",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Corners Over 8.5",
-    cuota:      "1.8",
-    hora:       "14:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "57",
-    sharpscore: "60",
     resultado:  "pendiente"
   },
   {
@@ -80,11 +54,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.5",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "65",
-    sharpscore: "66",
     resultado:  "pendiente"
   },
   {
@@ -94,11 +65,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.31",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "76",
-    sharpscore: "73",
     resultado:  "pendiente"
   },
   {
@@ -108,11 +76,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.42",
     hora:       "22:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "70",
-    sharpscore: "69",
     resultado:  "pendiente"
   },
   {
@@ -122,11 +87,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.4",
     hora:       "19:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
-    sharpscore: "70",
     resultado:  "win"
   },
   {
@@ -136,11 +98,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.54",
     hora:       "19:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "64",
-    sharpscore: "66",
     resultado:  "win"
   },
   {
@@ -150,11 +109,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.43",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "69",
-    sharpscore: "68",
     resultado:  "loss"
   },
   {
@@ -164,11 +120,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.56",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "64",
-    sharpscore: "67",
     resultado:  "push"
   },
   {
@@ -178,11 +131,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.31",
     hora:       "11:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "75",
-    sharpscore: "72",
     resultado:  "win"
   },
   {
@@ -192,10 +142,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles",
     cuota:      "1.42",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "69",
     resultado:  "win"
   },
   {
@@ -205,10 +153,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Corners Under 7.5",
     cuota:      "2.02",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "50",
     resultado:  "loss"
   },
   {
@@ -218,10 +164,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +2.75",
     cuota:      "1.36",
     hora:       "16:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "74",
     resultado:  "loss"
   },
   {
@@ -231,10 +175,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.3",
     hora:       "16:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "76",
     resultado:  "win"
   },
   {
@@ -244,10 +186,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.41",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -257,10 +197,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.31",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "75",
     resultado:  "win"
   },
   {
@@ -270,10 +208,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.71",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "58",
     resultado:  "push"
   },
   {
@@ -283,10 +219,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.4",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "70",
     resultado:  "win"
   },
   {
@@ -296,10 +230,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.36",
     hora:       "15:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
     resultado:  "loss"
   },
   {
@@ -309,10 +241,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +2.25",
     cuota:      "1.36",
     hora:       "15:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -322,10 +252,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos Marcan",
     cuota:      "2.02",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "51",
     resultado:  "win"
   },
   {
@@ -335,10 +263,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +1",
     cuota:      "1.64",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "60",
     resultado:  "push"
   },
   {
@@ -348,10 +274,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.85",
     hora:       "16:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "83",
     resultado:  "loss"
   },
   {
@@ -361,10 +285,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.7",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "79",
     resultado:  "win"
   },
   {
@@ -374,10 +296,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.75",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "77",
     resultado:  "win"
   },
   {
@@ -387,10 +307,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Corners Under 9.5",
     cuota:      "1.8",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "57",
     resultado:  "win"
   },
   {
@@ -400,10 +318,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Visitante",
     cuota:      "1.33",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "76",
     resultado:  "win"
   },
   {
@@ -413,10 +329,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Visitante",
     cuota:      "1.44",
     hora:       "21:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "69",
     resultado:  "loss"
   },
   {
@@ -426,10 +340,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.6",
     hora:       "21:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "63",
     resultado:  "push"
   },
   {
@@ -439,10 +351,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.32",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "75",
     resultado:  "win"
   },
   {
@@ -452,10 +362,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.62",
     hora:       "21:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "61",
     resultado:  "loss"
   },
   {
@@ -465,10 +373,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -478,10 +384,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.76",
     hora:       "15:05 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "58",
     resultado:  "win"
   },
   {
@@ -491,10 +395,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 2.5 Goles",
     cuota:      "1.53",
     hora:       "15:05 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "64",
     resultado:  "loss"
   },
   {
@@ -504,10 +406,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Local +3.5",
     cuota:      "1.38",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -517,10 +417,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.53",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "64",
     resultado:  "win"
   },
   {
@@ -530,10 +428,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Visitante",
     cuota:      "1.3",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "76",
     resultado:  "loss"
   },
   {
@@ -543,10 +439,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.73",
     hora:       "21:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "58",
     resultado:  "loss"
   },
   {
@@ -556,10 +450,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles",
     cuota:      "1.77",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "58",
     resultado:  "win"
   },
   {
@@ -569,10 +461,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.35",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
     resultado:  "win"
   },
   {
@@ -582,10 +472,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.38",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "loss"
   },
   {
@@ -595,10 +483,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.33",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "76",
     resultado:  "win"
   },
   {
@@ -608,10 +494,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Local +2.25",
     cuota:      "1.4",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "loss"
   },
   {
@@ -621,10 +505,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +3",
     cuota:      "1.33",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "74",
     resultado:  "win"
   },
   {
@@ -634,10 +516,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Visitante",
     cuota:      "1.33",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "74",
     resultado:  "win"
   },
   {
@@ -647,10 +527,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos Marcan",
     cuota:      "1.91",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "55",
     resultado:  "win"
   },
   {
@@ -660,10 +538,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "2.08",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "49",
     resultado:  "loss"
   },
   {
@@ -673,10 +549,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.42",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "69",
     resultado:  "win"
   },
   {
@@ -686,10 +560,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.41",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "70",
     resultado:  "win"
   },
   {
@@ -699,10 +571,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.34",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
     resultado:  "win"
   },
   {
@@ -712,10 +582,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +1.5",
     cuota:      "1.54",
     hora:       "21:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "64",
     resultado:  "win"
   },
   {
@@ -725,10 +593,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +1.75",
     cuota:      "1.38",
     hora:       "21:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -738,10 +604,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos Marcan",
     cuota:      "1.98",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "52",
     resultado:  "loss"
   },
   {
@@ -751,10 +615,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Visitante",
     cuota:      "1.48",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "67",
     resultado:  "win"
   },
   {
@@ -764,10 +626,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 2.5 Goles",
     cuota:      "1.61",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "62",
     resultado:  "loss"
   },
   {
@@ -777,10 +637,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +2.5",
     cuota:      "1.6",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "62",
     resultado:  "win"
   },
   {
@@ -790,10 +648,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Corners Over 8.5",
     cuota:      "1.7",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "60",
     resultado:  "loss"
   },
   {
@@ -803,10 +659,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 2.5 Goles",
     cuota:      "1.5",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "66",
     resultado:  "win"
   },
   {
@@ -816,10 +670,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Cincinnati Reds",
     cuota:      "2.02",
     hora:       "18:11 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.0",
-    prob:       "50",
     resultado:  "loss"
   },
   {
@@ -829,10 +681,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
     hora:       "22:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -842,10 +692,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.41",
     hora:       "19:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "loss"
   },
   {
@@ -855,10 +703,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 4.5 Goles",
     cuota:      "1.53",
     hora:       "16:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "65",
     resultado:  "win"
   },
   {
@@ -868,10 +714,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.75",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "loss"
   },
   {
@@ -881,10 +725,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Visitante",
     cuota:      "1.57",
     hora:       "22:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "63",
     resultado:  "win"
   },
   {
@@ -894,10 +736,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +1",
     cuota:      "1.35",
     hora:       "19:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
     resultado:  "push"
   },
   {
@@ -907,10 +747,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 2.5 Goles",
     cuota:      "1.35",
     hora:       "16:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
     resultado:  "win"
   },
   {
@@ -920,10 +758,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -933,10 +769,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.33",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "74",
     resultado:  "win"
   },
   {
@@ -946,10 +780,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.35",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
     resultado:  "win"
   },
   {
@@ -959,10 +791,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Visitante",
     cuota:      "1.65",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "60",
     resultado:  "win"
   },
   {
@@ -972,10 +802,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.4",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -985,10 +813,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.46",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "68",
     resultado:  "win"
   },
   {
@@ -998,10 +824,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.44",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "69",
     resultado:  "loss"
   },
   {
@@ -1011,10 +835,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.44",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "69",
     resultado:  "win"
   },
   {
@@ -1024,10 +846,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Corners Under 10.5",
     cuota:      "1.76",
     hora:       "11:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "58",
     resultado:  "win"
   },
   {
@@ -1037,10 +857,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 2.5 Goles",
     cuota:      "1.38",
     hora:       "11:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -1050,10 +868,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.37",
     hora:       "23:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -1063,10 +879,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Visitante",
     cuota:      "1.51",
     hora:       "23:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "66",
     resultado:  "win"
   },
   {
@@ -1076,10 +890,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.58",
     hora:       "19:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "62",
     resultado:  "win"
   },
   {
@@ -1089,10 +901,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +2.25",
     cuota:      "1.32",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "75",
     resultado:  "win"
   },
   {
@@ -1102,10 +912,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +2",
     cuota:      "1.35",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "74",
     resultado:  "win"
   },
   {
@@ -1115,10 +923,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.58",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "62",
     resultado:  "loss"
   },
   {
@@ -1128,10 +934,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.34",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "74",
     resultado:  "win"
   },
   {
@@ -1141,10 +945,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.44",
     hora:       "19:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "68",
     resultado:  "win"
   },
   {
@@ -1154,10 +956,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos Marcan",
     cuota:      "1.94",
     hora:       "22:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "52",
     resultado:  "loss"
   },
   {
@@ -1167,10 +967,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.38",
     hora:       "22:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "loss"
   },
   {
@@ -1180,10 +978,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 2.5 Goles",
     cuota:      "1.36",
     hora:       "19:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -1193,10 +989,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Connecticut Sun",
     cuota:      "1.92",
     hora:       "18:40 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.1",
-    prob:       "53",
     resultado:  "win"
   },
   {
@@ -1206,10 +1000,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 4.5 Goles",
     cuota:      "1.51",
     hora:       "19:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "66",
     resultado:  "win"
   },
   {
@@ -1219,10 +1011,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 2.5 Goles",
     cuota:      "1.81",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "58",
     resultado:  "win"
   },
   {
@@ -1232,10 +1022,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.47",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "67",
     resultado:  "loss"
   },
   {
@@ -1245,10 +1033,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.3",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "76",
     resultado:  "win"
   },
   {
@@ -1258,10 +1044,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.39",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -1271,10 +1055,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Hamilton Tiger-Cats",
     cuota:      "1.87",
     hora:       "18:30 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "2.2",
-    prob:       "56",
     resultado:  "win"
   },
   {
@@ -1284,10 +1066,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.91",
     hora:       "19:02 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "76",
     resultado:  "loss"
   },
   {
@@ -1297,10 +1077,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.48",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "67",
     resultado:  "win"
   },
   {
@@ -1310,10 +1088,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos No Marcan",
     cuota:      "1.79",
     hora:       "19:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "79",
     resultado:  "win"
   },
   {
@@ -1323,10 +1099,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.42",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "70",
     resultado:  "loss"
   },
   {
@@ -1336,10 +1110,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.33",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "74",
     resultado:  "win"
   },
   {
@@ -1349,10 +1121,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.4",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "70",
     resultado:  "loss"
   },
   {
@@ -1362,10 +1132,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Indiana Fever",
     cuota:      "2.0",
     hora:       "18:40 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.4",
-    prob:       "51",
     resultado:  "win"
   },
   {
@@ -1375,10 +1143,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Draw No Bet Local",
     cuota:      "1.41",
     hora:       "11:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "push"
   },
   {
@@ -1388,10 +1154,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.6",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "62",
     resultado:  "win"
   },
   {
@@ -1401,10 +1165,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.49",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "66",
     resultado:  "loss"
   },
   {
@@ -1414,10 +1176,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.4",
     hora:       "11:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "70",
     resultado:  "push"
   },
   {
@@ -1427,10 +1187,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
     hora:       "21:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
     resultado:  "loss"
   },
   {
@@ -1440,10 +1198,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +0.75",
     cuota:      "1.46",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "67",
     resultado:  "loss"
   },
   {
@@ -1453,10 +1209,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.49",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "66",
     resultado:  "loss"
   },
   {
@@ -1466,10 +1220,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Asiático Visitante +1.5",
     cuota:      "1.41",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "69",
     resultado:  "loss"
   },
   {
@@ -1479,10 +1231,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Local +2",
     cuota:      "1.4",
     hora:       "21:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "70",
     resultado:  "push"
   },
   {
@@ -1492,10 +1242,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Over 1.5 Goles",
     cuota:      "1.38",
     hora:       "15:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -1505,10 +1253,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.31",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "75",
     resultado:  "loss"
   },
   {
@@ -1518,10 +1264,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.45",
     hora:       "12:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "68",
     resultado:  "win"
   },
   {
@@ -1531,10 +1275,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Gana Connecticut Sun",
     cuota:      "2.25",
     hora:       "18:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.0",
-    prob:       "46",
     resultado:  "win"
   },
   {
@@ -1544,10 +1286,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.4",
     hora:       "23:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -1557,10 +1297,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +1",
     cuota:      "2.18",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "49",
     resultado:  "loss"
   },
   {
@@ -1570,10 +1308,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Hándicap Visitante +2",
     cuota:      "1.32",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "77",
     resultado:  "loss"
   },
   {
@@ -1583,10 +1319,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.43",
     hora:       "23:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "1.0",
-    prob:       "69",
     resultado:  "loss"
   },
   {
@@ -1596,10 +1330,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Tarjetas Over 3.5",
     cuota:      "1.74",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "61",
     resultado:  "loss"
   },
   {
@@ -1609,10 +1341,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Victoria Local",
     cuota:      "1.48",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "67",
     resultado:  "win"
   },
   {
@@ -1622,10 +1352,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Corners Under 8.5",
     cuota:      "1.83",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "58",
     resultado:  "win"
   },
   {
@@ -1635,10 +1363,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.36",
     hora:       "20:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -1648,10 +1374,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Tarjetas Under 2.5",
     cuota:      "2.2",
     hora:       "17:05 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "49",
     resultado:  "win"
   },
   {
@@ -1661,10 +1385,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Tarjetas Under 3.5",
     cuota:      "1.51",
     hora:       "17:05 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "67",
     resultado:  "win"
   },
   {
@@ -1674,10 +1396,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Corners Over 8.5",
     cuota:      "1.7",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.4",
-    prob:       "60",
     resultado:  "loss"
   },
   {
@@ -1687,10 +1407,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Under 3.5 Goles",
     cuota:      "1.57",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "63",
     resultado:  "loss"
   },
   {
@@ -1700,10 +1418,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Corners Over 8.5",
     cuota:      "1.61",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "63",
     resultado:  "win"
   },
   {
@@ -1713,10 +1429,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Tarjetas Over 2.5",
     cuota:      "1.4",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "70",
     resultado:  "loss"
   },
   {
@@ -1726,10 +1440,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Corners Over 7.5",
     cuota:      "1.42",
     hora:       "17:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "69",
     resultado:  "loss"
   },
   {
@@ -1739,10 +1451,8 @@ const PROXIMOS_EVENTOS = [
     prediccion: "Ambos Marcan",
     cuota:      "2.0",
     hora:       "14:00 COT",
+    emoji:      "",
     status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "51",
     resultado:  "win"
   },
   {
@@ -2035,12 +1745,19 @@ const PROXIMOS_EVENTOS = [
 
 const PREDICCIONES_HISTORIAL = [
   {
+    fecha:      "02/07/26",
+    partido:    "Spain vs Austria",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Over 8.5",
+    cuota:      "1.8",
+    resultado:  "win"
+  },
+  {
     fecha:      "01/07/26",
     partido:    "USA vs Bosnia & Herzegovina",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.54",
-    prob:       "64",
     resultado:  "win"
   },
   {
@@ -2049,7 +1766,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.4",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -2058,7 +1774,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Local",
     cuota:      "1.56",
-    prob:       "64",
     resultado:  "push"
   },
   {
@@ -2067,7 +1782,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.43",
-    prob:       "69",
     resultado:  "loss"
   },
   {
@@ -2076,7 +1790,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.31",
-    prob:       "75",
     resultado:  "win"
   },
   {
@@ -2085,7 +1798,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Corners Under 7.5",
     cuota:      "2.02",
-    prob:       "50",
     resultado:  "loss"
   },
   {
@@ -2094,7 +1806,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 2.5 Goles",
     cuota:      "1.42",
-    prob:       "69",
     resultado:  "win"
   },
   {
@@ -2103,7 +1814,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.3",
-    prob:       "76",
     resultado:  "win"
   },
   {
@@ -2112,7 +1822,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Visitante +2.75",
     cuota:      "1.36",
-    prob:       "74",
     resultado:  "loss"
   },
   {
@@ -2121,7 +1830,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.31",
-    prob:       "75",
     resultado:  "win"
   },
   {
@@ -2130,7 +1838,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.41",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -2139,7 +1846,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.4",
-    prob:       "70",
     resultado:  "win"
   },
   {
@@ -2148,7 +1854,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Local",
     cuota:      "1.71",
-    prob:       "58",
     resultado:  "push"
   },
   {
@@ -2157,7 +1862,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Visitante +2.25",
     cuota:      "1.36",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -2166,7 +1870,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.36",
-    prob:       "73",
     resultado:  "loss"
   },
   {
@@ -2175,7 +1878,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Visitante +1",
     cuota:      "1.64",
-    prob:       "60",
     resultado:  "push"
   },
   {
@@ -2184,7 +1886,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Ambos Marcan",
     cuota:      "2.02",
-    prob:       "51",
     resultado:  "win"
   },
   {
@@ -2193,7 +1894,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Brasileirao B",
     prediccion: "Ambos No Marcan",
     cuota:      "1.85",
-    prob:       "83",
     resultado:  "loss"
   },
   {
@@ -2202,7 +1902,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Visitante",
     cuota:      "1.33",
-    prob:       "76",
     resultado:  "win"
   },
   {
@@ -2211,7 +1910,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Corners Under 9.5",
     cuota:      "1.8",
-    prob:       "57",
     resultado:  "win"
   },
   {
@@ -2220,7 +1918,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Brasileirao B",
     prediccion: "Ambos No Marcan",
     cuota:      "1.75",
-    prob:       "77",
     resultado:  "win"
   },
   {
@@ -2229,7 +1926,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Brasileirao B",
     prediccion: "Ambos No Marcan",
     cuota:      "1.7",
-    prob:       "79",
     resultado:  "win"
   },
   {
@@ -2238,7 +1934,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Local +3.5",
     cuota:      "1.38",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -2247,7 +1942,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -2256,7 +1950,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.32",
-    prob:       "75",
     resultado:  "win"
   },
   {
@@ -2265,7 +1958,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.73",
-    prob:       "58",
     resultado:  "loss"
   },
   {
@@ -2274,7 +1966,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.62",
-    prob:       "61",
     resultado:  "loss"
   },
   {
@@ -2283,7 +1974,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Local",
     cuota:      "1.6",
-    prob:       "63",
     resultado:  "push"
   },
   {
@@ -2292,7 +1982,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Visitante",
     cuota:      "1.44",
-    prob:       "69",
     resultado:  "loss"
   },
   {
@@ -2301,7 +1990,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.53",
-    prob:       "64",
     resultado:  "win"
   },
   {
@@ -2310,7 +1998,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.76",
-    prob:       "58",
     resultado:  "win"
   },
   {
@@ -2319,7 +2006,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.35",
-    prob:       "73",
     resultado:  "win"
   },
   {
@@ -2328,7 +2014,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 2.5 Goles",
     cuota:      "1.77",
-    prob:       "58",
     resultado:  "win"
   },
   {
@@ -2337,7 +2022,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Local +2.25",
     cuota:      "1.4",
-    prob:       "71",
     resultado:  "loss"
   },
   {
@@ -2346,7 +2030,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.33",
-    prob:       "76",
     resultado:  "win"
   },
   {
@@ -2355,7 +2038,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.42",
-    prob:       "69",
     resultado:  "win"
   },
   {
@@ -2364,7 +2046,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Ambos No Marcan",
     cuota:      "2.08",
-    prob:       "49",
     resultado:  "loss"
   },
   {
@@ -2373,7 +2054,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Ambos Marcan",
     cuota:      "1.91",
-    prob:       "55",
     resultado:  "win"
   },
   {
@@ -2382,7 +2062,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Visitante +1.5",
     cuota:      "1.54",
-    prob:       "64",
     resultado:  "win"
   },
   {
@@ -2391,7 +2070,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Ambos Marcan",
     cuota:      "1.98",
-    prob:       "52",
     resultado:  "loss"
   },
   {
@@ -2400,7 +2078,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 2.5 Goles",
     cuota:      "1.61",
-    prob:       "62",
     resultado:  "loss"
   },
   {
@@ -2409,7 +2086,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Corners Over 8.5",
     cuota:      "1.7",
-    prob:       "60",
     resultado:  "loss"
   },
   {
@@ -2418,7 +2094,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "MLB",
     prediccion: "Gana Cincinnati Reds",
     cuota:      "2.02",
-    prob:       "50",
     resultado:  "loss"
   },
   {
@@ -2427,7 +2102,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.41",
-    prob:       "71",
     resultado:  "loss"
   },
   {
@@ -2436,7 +2110,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -2445,7 +2118,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 2.5 Goles",
     cuota:      "1.35",
-    prob:       "73",
     resultado:  "win"
   },
   {
@@ -2454,7 +2126,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -2463,7 +2134,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.35",
-    prob:       "73",
     resultado:  "win"
   },
   {
@@ -2472,7 +2142,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "League of Ireland",
     prediccion: "Ambos No Marcan",
     cuota:      "1.75",
-    prob:       "71",
     resultado:  "loss"
   },
   {
@@ -2481,7 +2150,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.4",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -2490,7 +2158,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.44",
-    prob:       "69",
     resultado:  "loss"
   },
   {
@@ -2499,7 +2166,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Corners Under 10.5",
     cuota:      "1.76",
-    prob:       "58",
     resultado:  "win"
   },
   {
@@ -2508,7 +2174,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
     cuota:      "1.37",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -2517,7 +2182,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.58",
-    prob:       "62",
     resultado:  "win"
   },
   {
@@ -2526,7 +2190,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Visitante +2.25",
     cuota:      "1.32",
-    prob:       "75",
     resultado:  "win"
   },
   {
@@ -2535,7 +2198,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.58",
-    prob:       "62",
     resultado:  "loss"
   },
   {
@@ -2544,7 +2206,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Ambos Marcan",
     cuota:      "1.94",
-    prob:       "52",
     resultado:  "loss"
   },
   {
@@ -2553,7 +2214,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 2.5 Goles",
     cuota:      "1.36",
-    prob:       "72",
     resultado:  "win"
   },
   {
@@ -2562,7 +2222,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "CFL",
     prediccion: "Gana Hamilton Tiger-Cats",
     cuota:      "1.87",
-    prob:       "56",
     resultado:  "win"
   },
   {
@@ -2571,7 +2230,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 2.5 Goles",
     cuota:      "1.81",
-    prob:       "58",
     resultado:  "win"
   },
   {
@@ -2580,7 +2238,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "WNBA",
     prediccion: "Gana Connecticut Sun",
     cuota:      "1.92",
-    prob:       "53",
     resultado:  "win"
   },
   {
@@ -2589,7 +2246,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Local",
     cuota:      "1.3",
-    prob:       "76",
     resultado:  "win"
   },
   {
@@ -2598,7 +2254,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Local",
     cuota:      "1.48",
-    prob:       "67",
     resultado:  "win"
   },
   {
@@ -2607,7 +2262,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.33",
-    prob:       "74",
     resultado:  "win"
   },
   {
@@ -2616,7 +2270,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Campeonato Chileno",
     prediccion: "Ambos No Marcan",
     cuota:      "1.79",
-    prob:       "79",
     resultado:  "win"
   },
   {
@@ -2625,7 +2278,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "Brasileirao B",
     prediccion: "Ambos No Marcan",
     cuota:      "1.91",
-    prob:       "76",
     resultado:  "loss"
   },
   {
@@ -2634,7 +2286,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.6",
-    prob:       "62",
     resultado:  "win"
   },
   {
@@ -2643,7 +2294,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.4",
-    prob:       "70",
     resultado:  "loss"
   },
   {
@@ -2652,7 +2302,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Local",
     cuota:      "1.41",
-    prob:       "71",
     resultado:  "push"
   },
   {
@@ -2661,7 +2310,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "WNBA",
     prediccion: "Gana Indiana Fever",
     cuota:      "2.0",
-    prob:       "51",
     resultado:  "win"
   },
   {
@@ -2670,7 +2318,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Visitante +0.75",
     cuota:      "1.46",
-    prob:       "67",
     resultado:  "loss"
   },
   {
@@ -2679,7 +2326,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.38",
-    prob:       "72",
     resultado:  "loss"
   },
   {
@@ -2688,7 +2334,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Asiático Visitante +1.5",
     cuota:      "1.41",
-    prob:       "69",
     resultado:  "loss"
   },
   {
@@ -2697,7 +2342,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.31",
-    prob:       "75",
     resultado:  "loss"
   },
   {
@@ -2706,7 +2350,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "WNBA",
     prediccion: "Gana Connecticut Sun",
     cuota:      "2.25",
-    prob:       "46",
     resultado:  "win"
   },
   {
@@ -2715,7 +2358,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Tarjetas Under 2.5",
     cuota:      "2.2",
-    prob:       "49",
     resultado:  "win"
   },
   {
@@ -2724,7 +2366,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Hándicap Visitante +1",
     cuota:      "2.18",
-    prob:       "49",
     resultado:  "loss"
   },
   {
@@ -2733,7 +2374,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Victoria Local",
     cuota:      "1.4",
-    prob:       "71",
     resultado:  "win"
   },
   {
@@ -2742,7 +2382,6 @@ const PREDICCIONES_HISTORIAL = [
     liga:       "FIFA Mundial 2026",
     prediccion: "Corners Over 8.5",
     cuota:      "1.61",
-    prob:       "63",
     resultado:  "win"
   },
   {
