@@ -91,6 +91,12 @@ def inicializar_db():
         -- reenvía el mismo webhook (mismo mp_payment_id).
         CREATE UNIQUE INDEX IF NOT EXISTS pagos_mp_payment_id_uniq ON pagos (mp_payment_id);
 
+        -- Verificación de correo (anti-abuso del trial de Mako). Default TRUE => los
+        -- usuarios EXISTENTES quedan verificados (grandfather); el registro nuevo pone
+        -- FALSE solo si el SMTP está configurado (para poder enviar el correo).
+        ALTER TABLE usuarios ADD COLUMN IF NOT EXISTS email_verificado   BOOLEAN DEFAULT TRUE;
+        ALTER TABLE usuarios ADD COLUMN IF NOT EXISTS token_verificacion TEXT;
+
         CREATE TABLE IF NOT EXISTS picks_publicados (
             id              SERIAL PRIMARY KEY,
             fecha           TEXT NOT NULL,

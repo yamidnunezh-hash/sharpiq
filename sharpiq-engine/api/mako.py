@@ -503,6 +503,9 @@ def _estado(user_id, plan):
         cur.execute("""SELECT total_usos, inicio_trial, usos_hoy, fecha_hoy
                        FROM mako_uso WHERE usuario_id=%s""", (user_id,))
         row = cur.fetchone() or {}
+        cur.execute("SELECT email_verificado FROM usuarios WHERE id=%s", (user_id,))
+        uv = cur.fetchone() or {}
+    email_verificado = uv.get("email_verificado", True)  # default True: no bloquear si falta la columna
     total     = int(row.get("total_usos") or 0)
     inicio    = row.get("inicio_trial")
     usos_hoy  = int(row.get("usos_hoy") or 0)
@@ -516,6 +519,13 @@ def _estado(user_id, plan):
         return {"plan": plan, "puede": rest > 0, "restantes": rest, "limite": PRO_DIARIO,
                 "tipo": "diario",
                 "motivo": "" if rest > 0 else f"Llegaste a tus {PRO_DIARIO} consultas de hoy. Vuelven mañana 🦈."}
+
+    # Free: exige CORREO VERIFICADO (anti-abuso del trial con correos falsos/desechables).
+    if not email_verificado:
+        return {"plan": "free", "puede": False, "restantes": 0, "limite": FREE_TRIAL_MAX,
+                "tipo": "verificar", "verificar": True,
+                "motivo": "Verifica tu correo para usar a Mako gratis. Te enviamos un enlace a tu "
+                          "email cuando te registraste 🦈. Revisa tu bandeja (y spam)."}
 
     # Free -> trial de FREE_TRIAL_MAX preguntas O FREE_TRIAL_DIAS días
     dias = (datetime.utcnow() - inicio).days if inicio else 0
