@@ -235,6 +235,25 @@ def reenviar_verificacion(token=Depends(usuario_activo)):
     return {"ok": enviado, "email": u["email"]}
 
 
+@router.get("/diag-smtp")
+def diag_smtp(clave: str = "", to: str = ""):
+    """TEMPORAL: diagnóstico del login/envío SMTP. Borrar tras diagnosticar."""
+    if clave != "sqdiag2026":
+        raise HTTPException(403, "no")
+    out = {"host": SMTP_HOST, "port": SMTP_PORT, "user": SMTP_USER, "pass_set": bool(SMTP_PASS)}
+    import smtplib, ssl
+    try:
+        ctx = ssl.create_default_context()
+        with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=ctx, timeout=15) as s:
+            s.login(SMTP_USER, SMTP_PASS or "")
+            out["login"] = "OK"
+        if to:
+            out["send"] = "OK" if _enviar_verificacion(to, "Prueba SharpIQ", "diag-token-123") else "FALLO"
+    except Exception as e:
+        out["error"] = f"{type(e).__name__}: {e}"
+    return out
+
+
 _ADMIN_EMAIL = "yamidnunezh@gmail.com"
 _ADMIN_HASH  = "d12d7715f4949c62c8f39d339ff436f54192bd1e6905414d15bd63f29c02908a"
 
