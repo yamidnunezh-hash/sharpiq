@@ -1,34 +1,6 @@
 {
-  "updated": "2026-07-02T20:16:52Z",
+  "updated": "2026-07-02T21:36:57Z",
   "live": [
-    {
-      "id": "2bbaa286b732c0af8947d273e164f15e",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Milwaukee Brewers",
-      "away": "Cincinnati Reds",
-      "fecha": "02/07/26",
-      "hora": "13:11 COT",
-      "ts": 1782997860,
-      "completed": false,
-      "score_home": "2",
-      "score_away": "6"
-    },
-    {
-      "id": "a518ac20df8f5c732b881e213ae0c230",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "Spain",
-      "away": "Austria",
-      "fecha": "02/07/26",
-      "hora": "14:00 COT",
-      "ts": 1783000800,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "0"
-    },
     {
       "id": "bf902b3b8ba731d8cf4b422470319439",
       "sport": "baseball_mlb",
@@ -40,8 +12,8 @@
       "hora": "14:11 COT",
       "ts": 1783001460,
       "completed": false,
-      "score_home": "3",
-      "score_away": "3"
+      "score_home": "12",
+      "score_away": "4"
     }
   ],
   "upcoming": [
@@ -258,6 +230,34 @@
   ],
   "finished": [
     {
+      "id": "a518ac20df8f5c732b881e213ae0c230",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Spain",
+      "away": "Austria",
+      "fecha": "02/07/26",
+      "hora": "14:00 COT",
+      "ts": 1783000800,
+      "completed": true,
+      "score_home": "3",
+      "score_away": "0"
+    },
+    {
+      "id": "2bbaa286b732c0af8947d273e164f15e",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Milwaukee Brewers",
+      "away": "Cincinnati Reds",
+      "fecha": "02/07/26",
+      "hora": "13:11 COT",
+      "ts": 1782997860,
+      "completed": true,
+      "score_home": "2",
+      "score_away": "7"
+    },
+    {
       "id": "0d018935d27849176c88ca1dae8a8da8",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -368,34 +368,6 @@
       "completed": true,
       "score_home": "0",
       "score_away": "4"
-    },
-    {
-      "id": "9bc02db3da6a621d686c70c4384d1a9f",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Atlanta Braves",
-      "away": "St. Louis Cardinals",
-      "fecha": "01/07/26",
-      "hora": "18:16 COT",
-      "ts": 1782929760,
-      "completed": true,
-      "score_home": "5",
-      "score_away": "1"
-    },
-    {
-      "id": "5961513fee89b7b96eae78376ec2fe3f",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Philadelphia Phillies",
-      "away": "Pittsburgh Pirates",
-      "fecha": "01/07/26",
-      "hora": "17:41 COT",
-      "ts": 1782927660,
-      "completed": true,
-      "score_home": "10",
-      "score_away": "6"
     }
   ]
 }
