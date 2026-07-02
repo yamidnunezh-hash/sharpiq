@@ -39,6 +39,14 @@ except Exception:
     SMTP_PASS = os.environ.get("SMTP_PASS", "")
 BASE_API = os.environ.get("BASE_API", "https://api.sharpiq.co")
 
+# Brevo (API HTTP de correo transaccional). Railway bloquea los puertos SMTP, así que
+# el envío va por HTTPS (443) con Brevo. SMTP queda solo como fallback local.
+try:
+    from config import BREVO_API_KEY
+except Exception:
+    BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "")
+_EMAIL_ACTIVO = bool(BREVO_API_KEY or SMTP_PASS)
+
 
 # ── Modelos ──────────────────────────────────────────────────────
 
@@ -97,13 +105,10 @@ def solo_admin(token=Depends(verificar_token)):
 # ── Verificación de correo ───────────────────────────────────────
 
 def _enviar_verificacion(email: str, nombre: str, token: str) -> bool:
-    """Envía el correo de verificación por SMTP (Zoho). True si se envió."""
-    if not SMTP_PASS:
-        return False
-    import smtplib, ssl
-    from email.mime.text import MIMEText
-    from email.mime.multipart import MIMEMultipart
+    """Envía el correo de verificación. Prioridad: Brevo (API HTTP, funciona en Railway);
+    SMTP como respaldo (Railway suele bloquearlo). True si se envió."""
     link = f"{BASE_API}/auth/verificar?token={token}"
+    asunto = "Verifica tu correo — SharpIQ 🦈"
     html = f"""<div style="font-family:Arial,sans-serif;background:#0a0e1a;color:#eef3fb;padding:32px;border-radius:12px;max-width:480px;margin:auto">
       <div style="font-size:26px">🦈 <b>SharpIQ</b></div>
       <h2 style="color:#00C8FF">Confirma tu correo</h2>
@@ -114,20 +119,42 @@ def _enviar_verificacion(email: str, nombre: str, token: str) -> bool:
       <p style="font-size:12px;color:#97a6bd">Si el botón no abre, copia este enlace:<br>{link}</p>
       <p style="font-size:12px;color:#97a6bd">Si no creaste esta cuenta, ignora este mensaje.</p>
     </div>"""
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = "Verifica tu correo — SharpIQ 🦈"
-    msg["From"]    = f"SharpIQ <{SMTP_USER}>"
-    msg["To"]      = email
-    msg.attach(MIMEText(html, "html", "utf-8"))
-    try:
-        ctx = ssl.create_default_context()
-        with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=ctx, timeout=20) as s:
-            s.login(SMTP_USER, SMTP_PASS)
-            s.sendmail(SMTP_USER, [email], msg.as_string())
-        return True
-    except Exception as e:
-        print("[verificacion] error enviando:", e)
-        return False
+
+    # 1) Brevo (API HTTP por 443 — no la bloquea Railway).
+    if BREVO_API_KEY:
+        try:
+            import requests
+            r = requests.post("https://api.brevo.com/v3/smtp/email", timeout=20,
+                headers={"api-key": BREVO_API_KEY, "accept": "application/json",
+                         "content-type": "application/json"},
+                json={"sender": {"name": "SharpIQ", "email": SMTP_USER},
+                      "to": [{"email": email, "name": nombre or email}],
+                      "subject": asunto, "htmlContent": html})
+            if r.status_code in (200, 201):
+                return True
+            print("[verificacion] Brevo error:", r.status_code, r.text[:200])
+        except Exception as e:
+            print("[verificacion] Brevo excepcion:", e)
+
+    # 2) SMTP (respaldo; suele fallar en la nube por bloqueo de puertos).
+    if SMTP_PASS:
+        import smtplib, ssl
+        from email.mime.text import MIMEText
+        from email.mime.multipart import MIMEMultipart
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = asunto
+        msg["From"]    = f"SharpIQ <{SMTP_USER}>"
+        msg["To"]      = email
+        msg.attach(MIMEText(html, "html", "utf-8"))
+        try:
+            ctx = ssl.create_default_context()
+            with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=ctx, timeout=15) as s:
+                s.login(SMTP_USER, SMTP_PASS)
+                s.sendmail(SMTP_USER, [email], msg.as_string())
+            return True
+        except Exception as e:
+            print("[verificacion] SMTP error:", e)
+    return False
 
 
 def _pagina_verificado(ok: bool) -> str:
@@ -175,8 +202,8 @@ def register(body: RegisterBody):
 
         # Verificación de correo: con SMTP activo el usuario nace SIN verificar y debe
         # confirmar; sin SMTP nace verificado (no bloqueamos el trial de Mako).
-        token_verif = secrets.token_urlsafe(32) if SMTP_PASS else None
-        email_verif = not bool(SMTP_PASS)
+        token_verif = secrets.token_urlsafe(32) if _EMAIL_ACTIVO else None
+        email_verif = not _EMAIL_ACTIVO
 
         cur.execute("""
             INSERT INTO usuarios (email, nombre, password_hash, plan, referido_por, codigo_ref,
@@ -237,20 +264,13 @@ def reenviar_verificacion(token=Depends(usuario_activo)):
 
 @router.get("/diag-smtp")
 def diag_smtp(clave: str = "", to: str = ""):
-    """TEMPORAL: diagnóstico del login/envío SMTP. Borrar tras diagnosticar."""
+    """TEMPORAL: diagnóstico del envío de correo (Brevo/SMTP). Borrar tras diagnosticar."""
     if clave != "sqdiag2026":
         raise HTTPException(403, "no")
-    out = {"host": SMTP_HOST, "port": SMTP_PORT, "user": SMTP_USER, "pass_set": bool(SMTP_PASS)}
-    import smtplib, ssl
-    try:
-        ctx = ssl.create_default_context()
-        with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=ctx, timeout=15) as s:
-            s.login(SMTP_USER, SMTP_PASS or "")
-            out["login"] = "OK"
-        if to:
-            out["send"] = "OK" if _enviar_verificacion(to, "Prueba SharpIQ", "diag-token-123") else "FALLO"
-    except Exception as e:
-        out["error"] = f"{type(e).__name__}: {e}"
+    out = {"brevo_set": bool(BREVO_API_KEY), "smtp_set": bool(SMTP_PASS),
+           "sender": SMTP_USER, "email_activo": _EMAIL_ACTIVO}
+    if to:
+        out["enviado"] = _enviar_verificacion(to, "Prueba SharpIQ", "diag-token-123")
     return out
 
 
