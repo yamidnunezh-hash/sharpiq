@@ -45,7 +45,7 @@ const PROXIMOS_EVENTOS = [
     hora:       "14:00 COT",
     emoji:      "",
     status:     "vip",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "02/07/26",
@@ -1744,6 +1744,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "02/07/26",
+    partido:    "Spain vs Austria",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.32",
+    prob:       "",
+    resultado:  "win"
+  },
   {
     fecha:      "02/07/26",
     partido:    "Spain vs Austria",
