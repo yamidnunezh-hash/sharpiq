@@ -269,8 +269,20 @@ def diag_smtp(clave: str = "", to: str = ""):
         raise HTTPException(403, "no")
     out = {"brevo_set": bool(BREVO_API_KEY), "smtp_set": bool(SMTP_PASS),
            "sender": SMTP_USER, "email_activo": _EMAIL_ACTIVO}
-    if to:
-        out["enviado"] = _enviar_verificacion(to, "Prueba SharpIQ", "diag-token-123")
+    if to and BREVO_API_KEY:
+        try:
+            import requests
+            r = requests.post("https://api.brevo.com/v3/smtp/email", timeout=20,
+                headers={"api-key": BREVO_API_KEY, "accept": "application/json",
+                         "content-type": "application/json"},
+                json={"sender": {"name": "SharpIQ", "email": SMTP_USER},
+                      "to": [{"email": to, "name": "Prueba"}],
+                      "subject": "Prueba SharpIQ 🦈",
+                      "htmlContent": "<p>Prueba de envío desde SharpIQ 🦈. Si lees esto, funciona.</p>"})
+            out["brevo_status"] = r.status_code
+            out["brevo_resp"]   = r.text[:300]
+        except Exception as e:
+            out["brevo_error"] = f"{type(e).__name__}: {e}"
     return out
 
 
