@@ -115,5 +115,49 @@ def inicializar_db():
             usos_hoy        INTEGER DEFAULT 0,
             fecha_hoy       DATE
         );
+
+        -- ── MOTOR DE PARTNERS (comisiones recurrentes + payouts cripto) ──────────
+        -- Un Partner es un usuario habilitado para ganar comisión RECURRENTE por los
+        -- clientes que trae. Idempotencia dura (payouts cripto son irreversibles):
+        --   comisiones.pago_id UNIQUE  -> una comisión por pago (webhook reenviado no duplica)
+        --   payouts UNIQUE(partner_id, periodo) -> un solo lote de pago por periodo
+        CREATE TABLE IF NOT EXISTS partners (
+            id              SERIAL PRIMARY KEY,
+            usuario_id      INTEGER UNIQUE NOT NULL REFERENCES usuarios(id),
+            es_partner      BOOLEAN DEFAULT TRUE,
+            pct_comision    NUMERIC(5,2) DEFAULT 25.00,   -- % de comisión recurrente
+            crypto_red      TEXT,                          -- 'BSC' | 'POLYGON' | 'TRON'...
+            crypto_address  TEXT,                          -- wallet del partner
+            min_payout_usd  NUMERIC(10,2) DEFAULT 20.00,   -- umbral mínimo para pagar
+            activo          BOOLEAN DEFAULT TRUE,
+            fecha_alta      TIMESTAMP DEFAULT NOW()
+        );
+
+        CREATE TABLE IF NOT EXISTS comisiones (
+            id              SERIAL PRIMARY KEY,
+            partner_id      INTEGER NOT NULL REFERENCES partners(id),
+            cliente_id      INTEGER REFERENCES usuarios(id),   -- el cliente que pagó
+            pago_id         INTEGER REFERENCES pagos(id),       -- el pago que la generó
+            periodo         TEXT,                               -- ej. '2026-07'
+            monto_usd       NUMERIC(10,2) NOT NULL,
+            moneda          TEXT DEFAULT 'USD',
+            estado          TEXT DEFAULT 'pendiente',           -- pendiente | pagada | anulada
+            fecha           TIMESTAMP DEFAULT NOW()
+        );
+        -- Idempotencia: una sola comisión por pago (si el webhook se reenvía, no duplica).
+        CREATE UNIQUE INDEX IF NOT EXISTS comisiones_pago_id_uniq ON comisiones (pago_id);
+
+        CREATE TABLE IF NOT EXISTS payouts (
+            id                SERIAL PRIMARY KEY,
+            partner_id        INTEGER NOT NULL REFERENCES partners(id),
+            periodo           TEXT NOT NULL,                    -- lote por periodo
+            monto_total_usd   NUMERIC(12,2) NOT NULL,
+            crypto_red        TEXT,
+            crypto_address    TEXT,
+            txid              TEXT,                             -- hash de la transacción on-chain
+            estado            TEXT DEFAULT 'pendiente',         -- pendiente | aprobado | enviado | completado | fallido
+            creado            TIMESTAMP DEFAULT NOW(),
+            UNIQUE(partner_id, periodo)
+        );
         """)
     print("[OK] DB inicializada — tablas listas")
