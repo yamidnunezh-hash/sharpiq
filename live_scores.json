@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-02T15:34:05Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-02T17:15:03Z",
+  "live": [
     {
       "id": "0d018935d27849176c88ca1dae8a8da8",
       "sport": "baseball_mlb",
@@ -13,9 +12,11 @@
       "hora": "11:36 COT",
       "ts": 1782992160,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "2bbaa286b732c0af8947d273e164f15e",
       "sport": "baseball_mlb",
@@ -208,6 +209,20 @@
       "fecha": "03/07/26",
       "hora": "13:00 COT",
       "ts": 1783083600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "3e161b2448ed76d6b0c0f5bda6fd5bf2",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Argentina",
+      "away": "Cape Verde",
+      "fecha": "03/07/26",
+      "hora": "17:00 COT",
+      "ts": 1783098000,
       "completed": false,
       "score_home": null,
       "score_away": null
