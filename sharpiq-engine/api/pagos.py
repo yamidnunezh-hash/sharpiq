@@ -318,6 +318,114 @@ def _registrar_pago(user_id: int, pago: dict):
         _activar_vip(user_id, str(pago.get("id")), email)
 
 
+# ══════════════════════════════════════════════════════════════════════════
+#  PAGOS CRIPTO (NOWPayments) — EN PARALELO a MercadoPago, SIN tocarlo.
+#  El cliente paga en la cripto/red que quiera (auto-conversión a tu wallet).
+#  El pago finalizado engancha en el MISMO _activar_vip() (no duplica lógica).
+#  Idempotencia: reusa mp_payment_id con prefijo 'nowp_' (índice UNIQUE ya existe).
+# ══════════════════════════════════════════════════════════════════════════
+try:
+    from config import NOWPAYMENTS_API_KEY, NOWPAYMENTS_IPN_SECRET
+except ImportError:
+    NOWPAYMENTS_API_KEY    = os.environ.get("NOWPAYMENTS_API_KEY", "")
+    NOWPAYMENTS_IPN_SECRET = os.environ.get("NOWPAYMENTS_IPN_SECRET", "")
+
+NP_BASE = "https://api.nowpayments.io/v1"
+PRECIO_VIP_USD = float(os.environ.get("PRECIO_VIP_USD", "15"))  # ~60.000 COP; ajustable en Railway
+
+
+@router.post("/cripto/checkout")
+def cripto_checkout(token=Depends(usuario_activo)):
+    """Crea un cobro cripto (invoice NOWPayments) para el VIP y devuelve la URL de pago.
+    order_id = user_id -> amarra el pago al usuario, igual que external_reference en MP."""
+    if not NOWPAYMENTS_API_KEY:
+        raise HTTPException(503, "Pagos cripto no configurados todavía")
+    user_id = int(token["sub"])
+    payload = {
+        "price_amount":     PRECIO_VIP_USD,
+        "price_currency":   "usd",
+        "order_id":         str(user_id),
+        "order_description": "SharpIQ VIP — 1 mes",
+        "ipn_callback_url": "https://api.sharpiq.co/pagos/cripto/webhook",
+        "success_url":      "https://sharpiq.co/bienvenido.html?plan=vip",
+        "cancel_url":       "https://sharpiq.co/cuenta.html?error=pago",
+    }
+    r = http.post(f"{NP_BASE}/invoice", json=payload, timeout=20,
+                  headers={"x-api-key": NOWPAYMENTS_API_KEY, "Content-Type": "application/json"})
+    if r.status_code not in (200, 201):
+        raise HTTPException(502, f"NOWPayments error: {r.text[:200]}")
+    return {"url": r.json().get("invoice_url")}
+
+
+def _verificar_ipn(raw_body: bytes, firma: str) -> bool:
+    """Verifica la firma HMAC-SHA512 del IPN (recipe NOWPayments: JSON con claves
+    ordenadas y sin espacios). Endpoint de dinero: firma OBLIGATORIA."""
+    if not NOWPAYMENTS_IPN_SECRET or not firma:
+        return False
+    import hmac, hashlib
+    try:
+        datos    = json.loads(raw_body)
+        ordenado = json.dumps(datos, sort_keys=True, separators=(",", ":"))
+        digest   = hmac.new(NOWPAYMENTS_IPN_SECRET.encode(), ordenado.encode(),
+                            hashlib.sha512).hexdigest()
+        return hmac.compare_digest(digest, firma)
+    except Exception:
+        return False
+
+
+def _np_confirmar_pago(payment_id: str) -> dict:
+    """Doble chequeo: re-consulta el estado real del pago en NOWPayments (no confiar
+    solo en el body reenviado)."""
+    try:
+        r = http.get(f"{NP_BASE}/payment/{payment_id}", timeout=15,
+                     headers={"x-api-key": NOWPAYMENTS_API_KEY})
+        if r.status_code == 200:
+            return r.json()
+    except Exception:
+        pass
+    return {}
+
+
+def _registrar_pago_cripto(user_id: int, np: dict):
+    """Registra el pago cripto (idempotente) y activa el VIP si quedó FINALIZADO."""
+    pay_id = "nowp_" + str(np.get("payment_id") or np.get("id") or "")
+    estado = str(np.get("payment_status") or "")
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("""
+            INSERT INTO pagos (usuario_id, monto, moneda, mp_payment_id, mp_status, concepto)
+            VALUES (%s,%s,%s,%s,%s,'VIP SharpIQ (cripto)')
+            ON CONFLICT (mp_payment_id) DO NOTHING
+            RETURNING id
+        """, (user_id, np.get("price_amount") or PRECIO_VIP_USD,
+              (np.get("price_currency") or "usd").upper(), pay_id, estado))
+        es_nuevo = cur.fetchone() is not None
+    # Activa SOLO si es NUEVO y el pago está 'finished' (pagado y confirmado en la red).
+    if es_nuevo and estado == "finished":
+        _activar_vip(user_id, pay_id, "")
+
+
+@router.post("/cripto/webhook")
+async def cripto_webhook(request: Request):
+    """IPN de NOWPayments: verifica firma -> re-confirma estado -> activa VIP.
+    Paralelo total al webhook de MercadoPago; no comparte tabla ni idempotencia."""
+    raw   = await request.body()
+    firma = request.headers.get("x-nowpayments-sig", "")
+    if not _verificar_ipn(raw, firma):
+        raise HTTPException(401, "Firma IPN inválida")
+    try:
+        data = json.loads(raw)
+    except Exception:
+        raise HTTPException(400, "Body inválido")
+    user_ref   = data.get("order_id")
+    payment_id = data.get("payment_id") or data.get("id")
+    if not user_ref or not payment_id:
+        return {"ok": True}
+    real = _np_confirmar_pago(str(payment_id)) or {}
+    _registrar_pago_cripto(int(user_ref), {**data, **real})
+    return {"ok": True}
+
+
 @router.post("/admin/activar-vip")
 def activar_vip_manual(body: dict, token=Depends(solo_admin)):
     """Activa el VIP manualmente por email — para pagos por Nequi/transferencia
