@@ -7357,7 +7357,7 @@
         "Over 8.5": 1.93,
         "Under 8.5": 1.91,
         "Chicago White Sox (-1.5)": 2.48,
-        "Cleveland Guardians (+1.5)": 1.57
+        "Cleveland Guardians (+1.5)": 1.56
       },
       "probabilidades": {
         "Chicago White Sox": 49.1,
@@ -7426,14 +7426,14 @@
           "mercado_nombre": "Chicago White Sox (-1.5)"
         },
         "spread_cleveland_guardians_1_5": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.57,
-          "casa": "BetMGM",
+          "cuota": 1.56,
+          "casa": "FanDuel",
           "pinn_prob": 62.1,
           "mercado_nombre": "Cleveland Guardians (+1.5)"
         }
@@ -7659,7 +7659,9 @@
         "Detroit Tigers": 2.06,
         "Texas Rangers": 1.89,
         "Over 7.5": 1.98,
-        "Under 7.5": 1.83
+        "Under 7.5": 1.83,
+        "Detroit Tigers (+1.5)": 1.45,
+        "Texas Rangers (-1.5)": 2.65
       },
       "probabilidades": {
         "Detroit Tigers": 48.1,
@@ -7714,6 +7716,30 @@
           "casa": "FanDuel",
           "pinn_prob": 52.2,
           "mercado_nombre": "Under 7.5"
+        },
+        "spread_detroit_tigers_1_5": {
+          "value": -0.048,
+          "ev_porcentaje": -4.8,
+          "ev_pinn": -4.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.45,
+          "casa": "BetMGM",
+          "pinn_prob": 65.7,
+          "mercado_nombre": "Detroit Tigers (+1.5)"
+        },
+        "spread_texas_rangers_m1_5": {
+          "value": -0.09,
+          "ev_porcentaje": -9.0,
+          "ev_pinn": -9.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.65,
+          "casa": "BetMGM",
+          "pinn_prob": 34.3,
+          "mercado_nombre": "Texas Rangers (-1.5)"
         }
       },
       "prediccion_principal": {
@@ -10491,5 +10517,5 @@
       "movimiento": null
     }
   ],
-  "generado": "14:32:31"
+  "generado": "14:32:41"
 }
