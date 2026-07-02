@@ -1,22 +1,6 @@
 {
-  "updated": "2026-07-02T21:36:57Z",
+  "updated": "2026-07-02T22:44:25Z",
   "live": [
-    {
-      "id": "bf902b3b8ba731d8cf4b422470319439",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Colorado Rockies",
-      "away": "Miami Marlins",
-      "fecha": "02/07/26",
-      "hora": "14:11 COT",
-      "ts": 1783001460,
-      "completed": false,
-      "score_home": "12",
-      "score_away": "4"
-    }
-  ],
-  "upcoming": [
     {
       "id": "6f7b9d64e494097e8646d88ca4c33577",
       "sport": "baseball_mlb",
@@ -28,9 +12,11 @@
       "hora": "17:41 COT",
       "ts": 1783014060,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "67edf4cb633918ae273cf4d8d89e228b",
       "sport": "soccer_brazil_serie_b",
@@ -226,9 +212,37 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "6a7d6767bd4da0f044ab6d250c233769",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Cincinnati Reds",
+      "away": "Baltimore Orioles",
+      "fecha": "03/07/26",
+      "hora": "18:11 COT",
+      "ts": 1783102260,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "bf902b3b8ba731d8cf4b422470319439",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Colorado Rockies",
+      "away": "Miami Marlins",
+      "fecha": "02/07/26",
+      "hora": "14:11 COT",
+      "ts": 1783001460,
+      "completed": true,
+      "score_home": "14",
+      "score_away": "4"
+    },
     {
       "id": "a518ac20df8f5c732b881e213ae0c230",
       "sport": "soccer_fifa_world_cup",
@@ -354,20 +368,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "0"
-    },
-    {
-      "id": "cf32c9650e5e4179dbc82552ff735228",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Kansas City Royals",
-      "away": "Tampa Bay Rays",
-      "fecha": "01/07/26",
-      "hora": "18:41 COT",
-      "ts": 1782931260,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "4"
     }
   ]
 }
