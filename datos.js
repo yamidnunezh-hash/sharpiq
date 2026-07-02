@@ -5,29 +5,15 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "02/07/26",
-    partido:    "Spain vs Austria",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Victoria Local",
-    cuota:      "1.32",
-    hora:       "14:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "75",
-    sharpscore: "72",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "02/07/26",
     partido:    "Switzerland vs Algeria",
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Local",
-    cuota:      "1.4",
+    cuota:      "1.43",
     hora:       "22:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "71",
+    prob:       "70",
     sharpscore: "70",
     resultado:  "pendiente"
   },
@@ -43,6 +29,20 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "88",
     sharpscore: "79",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "02/07/26",
+    partido:    "Spain vs Austria",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.32",
+    hora:       "14:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "75",
+    sharpscore: "72",
     resultado:  "pendiente"
   },
   {
