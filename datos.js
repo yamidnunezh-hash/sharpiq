@@ -43,7 +43,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "69",
     sharpscore: "68",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "01/07/26",
@@ -57,7 +57,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "64",
     sharpscore: "67",
-    resultado:  "pendiente"
+    resultado:  "push"
   },
   {
     fecha:      "01/07/26",
@@ -1935,6 +1935,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "01/07/26",
+    partido:    "Belgium vs Senegal",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.56",
+    prob:       "64",
+    resultado:  "push"
+  },
+  {
+    fecha:      "01/07/26",
+    partido:    "Belgium vs Senegal",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.43",
+    prob:       "69",
+    resultado:  "loss"
+  },
   {
     fecha:      "01/07/26",
     partido:    "England vs DR Congo",
