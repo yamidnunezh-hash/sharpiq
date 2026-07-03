@@ -29,7 +29,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "88",
     sharpscore: "79",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "03/07/26",
@@ -62,7 +62,7 @@ const PROXIMOS_EVENTOS = [
     hora:       "18:00 COT",
     emoji:      "",
     status:     "vip",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "02/07/26",
@@ -73,7 +73,7 @@ const PROXIMOS_EVENTOS = [
     hora:       "18:00 COT",
     emoji:      "",
     status:     "vip",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "02/07/26",
@@ -1750,6 +1750,33 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "02/07/26",
+    partido:    "Portugal vs Croatia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.31",
+    prob:       "",
+    resultado:  "win"
+  },
+  {
+    fecha:      "02/07/26",
+    partido:    "Portugal vs Croatia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.5",
+    prob:       "",
+    resultado:  "win"
+  },
+  {
+    fecha:      "02/07/26",
+    partido:    "Fortaleza vs Ponte Preta",
+    liga:       "Brasileirao B",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.67",
+    prob:       "88",
+    resultado:  "win"
+  },
   {
     fecha:      "02/07/26",
     partido:    "Spain vs Austria",
