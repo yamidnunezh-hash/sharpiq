@@ -4,6 +4,20 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "04/07/26",
+    partido:    "Zizou Bergs vs Arthur Fery",
+    liga:       "ATP Wimbledon",
+    prediccion: "Gana Arthur Fery",
+    cuota:      "2.2",
+    hora:       "05:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.0",
+    prob:       "46",
+    sharpscore: "56",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "03/07/26",
     partido:    "Colombia vs Ghana",
     liga:       "FIFA Mundial 2026",
