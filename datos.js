@@ -5,6 +5,20 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "03/07/26",
+    partido:    "Colombia vs Ghana",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.46",
+    hora:       "20:30 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "67",
+    sharpscore: "67",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "03/07/26",
     partido:    "Argentina vs Cape Verde",
     liga:       "FIFA Mundial 2026",
     prediccion: "Ambos No Marcan",
@@ -19,16 +33,16 @@ const PROXIMOS_EVENTOS = [
   },
   {
     fecha:      "03/07/26",
-    partido:    "Colombia vs Ghana",
+    partido:    "Argentina vs Cape Verde",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Victoria Local",
-    cuota:      "1.47",
-    hora:       "20:30 COT",
+    prediccion: "Corners Under 8.5",
+    cuota:      "2.08",
+    hora:       "17:00 COT",
     status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "67",
-    sharpscore: "68",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "49",
+    sharpscore: "57",
     resultado:  "pendiente"
   },
   {
@@ -57,20 +71,6 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "72",
     sharpscore: "70",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "03/07/26",
-    partido:    "Argentina vs Cape Verde",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Corners Under 8.5",
-    cuota:      "2.02",
-    hora:       "17:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "51",
-    sharpscore: "57",
     resultado:  "pendiente"
   },
   {
