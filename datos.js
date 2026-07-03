@@ -57,7 +57,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "67",
     sharpscore: "68",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "03/07/26",
@@ -85,7 +85,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     prob:       "56",
     sharpscore: "59",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "04/07/26",
@@ -1848,6 +1848,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "03/07/26",
+    partido:    "Australia vs Egypt",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.8",
+    prob:       "56",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "03/07/26",
+    partido:    "Australia vs Egypt",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.47",
+    prob:       "67",
+    resultado:  "win"
+  },
   {
     fecha:      "02/07/26",
     partido:    "Switzerland vs Algeria",
