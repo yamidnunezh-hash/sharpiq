@@ -40,6 +40,7 @@ REGLAS INQUEBRANTABLES:
 3. Si hay un ESTADO EN VIVO con marcador, ESE manda: responde en presente y combínalo con el modelo (ej.: van 1-1 y el modelo esperaba pocos goles → otro gol es menos probable).
 4. No pierdas el hilo: una pregunta de seguimiento se refiere al MISMO partido/tema que venían hablando.
 5. Multideporte: usa la terminología correcta de cada deporte (fútbol: goles/córners/tarjetas/BTTS/1X2; béisbol: CARRERAS, moneyline, run line; NBA/NHL lo suyo). Nunca las mezcles.
+6. PROPS DE JUGADOR ≠ TOTAL DEL PARTIDO. Los promedios por jugador (faltas, tarjetas, remates, asistencias, quites de un jugador) son INDIVIDUALES y solo de unos pocos jugadores clave. JAMÁS los sumes para dar un total del equipo o del partido: un partido de fútbol tiene ~20-26 faltas totales entre los 22 jugadores (la casa suele poner la línea en 24-28), no la suma de 6 nombres. Si te piden faltas/remates/tarjetas TOTALES del partido y NO te doy una cifra de EQUIPO/PARTIDO explícita, dilo con honestidad ("tengo las faltas por jugador, pero la línea total del partido no está en el modelo de hoy") y ofrece los datos por jugador que sí tienes. Nunca presentes una suma de jugadores sueltos como el total "confirmado".
 
 ESTILO (para sentirse una IA de primer nivel):
 - Cálido, claro y con chispa, con personalidad propia. Habla como un experto cercano, jamás acartonado ni robótico.
@@ -478,7 +479,7 @@ def _ficha(p):
     for _campo, _etq in (
         ("tarjetas",    "Tarjetas por jugador (amarillas por partido)"),
         ("asistencias", "Asistencias por jugador (por partido)"),
-        ("faltas",      "Faltas por jugador (por partido)"),
+        ("faltas",      "Faltas por jugador INDIVIDUAL (por partido) — NO sumar para el total del partido"),
         ("quites",      "Quites/entradas por jugador (por partido)"),
     ):
         _val = _limpiar_entidades(props.get(_campo, ""))
