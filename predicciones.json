@@ -15,7 +15,7 @@
         "1": 1.16,
         "1_casa": "Pinnacle",
         "pinnacle_1": 1.16,
-        "2": 29.0,
+        "2": 30.0,
         "2_casa": "Betfair",
         "pinnacle_2": 21.0,
         "X": 9.0,
@@ -295,13 +295,13 @@
           "pinn_prob": 84.2
         },
         "victoria_visita": {
-          "value": 0.349,
-          "ev_porcentaje": 34.9,
-          "ev_pinn": 34.9,
+          "value": 0.395,
+          "ev_porcentaje": 39.5,
+          "ev_pinn": 39.5,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
-          "cuota": 29.0,
+          "cuota": 30.0,
           "casa": "Betfair",
           "pinn_prob": 4.7
         },
@@ -20425,5 +20425,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:01:00"
+  "generado": "20:01:16"
 }
