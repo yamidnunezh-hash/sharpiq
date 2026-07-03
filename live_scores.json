@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T21:00:23Z",
+  "updated": "2026-07-03T22:17:39Z",
   "live": [
     {
       "id": "471b2b7bb19f52be5e618aec359cd8e5",
@@ -13,10 +13,8 @@
       "ts": 1783091709,
       "completed": false,
       "score_home": "0",
-      "score_away": "3"
-    }
-  ],
-  "upcoming": [
+      "score_away": "14"
+    },
     {
       "id": "3e161b2448ed76d6b0c0f5bda6fd5bf2",
       "sport": "soccer_fifa_world_cup",
@@ -28,9 +26,11 @@
       "hora": "17:00 COT",
       "ts": 1783098000,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "14423828314cc83167d6c7ce88323746",
       "sport": "baseball_mlb",
@@ -223,6 +223,20 @@
       "fecha": "04/07/26",
       "hora": "10:06 COT",
       "ts": 1783159560,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "9c7073ae2c29ee4881bb695f92168c68",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Canada",
+      "away": "Morocco",
+      "fecha": "04/07/26",
+      "hora": "12:00 COT",
+      "ts": 1783166400,
       "completed": false,
       "score_home": null,
       "score_away": null
