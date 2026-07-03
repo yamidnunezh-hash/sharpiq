@@ -726,6 +726,7 @@ def preguntar(body: dict, token=Depends(usuario_activo)):
     est = _estado(user_id, plan)
     if not est["puede"]:
         return {"ok": False, "bloqueado": True, "motivo": est["motivo"],
+                "tipo": est.get("tipo"), "verificar": est.get("verificar", False),
                 "restantes": 0, "plan": plan}
 
     preds = _cargar()

@@ -262,30 +262,6 @@ def reenviar_verificacion(token=Depends(usuario_activo)):
     return {"ok": enviado, "email": u["email"]}
 
 
-@router.get("/diag-smtp")
-def diag_smtp(clave: str = "", to: str = ""):
-    """TEMPORAL: diagnóstico del envío de correo (Brevo/SMTP). Borrar tras diagnosticar."""
-    if clave != "sqdiag2026":
-        raise HTTPException(403, "no")
-    out = {"brevo_set": bool(BREVO_API_KEY), "smtp_set": bool(SMTP_PASS),
-           "sender": SMTP_USER, "email_activo": _EMAIL_ACTIVO}
-    if to and BREVO_API_KEY:
-        try:
-            import requests
-            r = requests.post("https://api.brevo.com/v3/smtp/email", timeout=20,
-                headers={"api-key": BREVO_API_KEY, "accept": "application/json",
-                         "content-type": "application/json"},
-                json={"sender": {"name": "SharpIQ", "email": SMTP_USER},
-                      "to": [{"email": to, "name": "Prueba"}],
-                      "subject": "Prueba SharpIQ 🦈",
-                      "htmlContent": "<p>Prueba de envío desde SharpIQ 🦈. Si lees esto, funciona.</p>"})
-            out["brevo_status"] = r.status_code
-            out["brevo_resp"]   = r.text[:300]
-        except Exception as e:
-            out["brevo_error"] = f"{type(e).__name__}: {e}"
-    return out
-
-
 _ADMIN_EMAIL = "yamidnunezh@gmail.com"
 _ADMIN_HASH  = "d12d7715f4949c62c8f39d339ff436f54192bd1e6905414d15bd63f29c02908a"
 

@@ -165,9 +165,15 @@ async function registrar(){
         window.location.href = 'cuenta.html?upgrade=1';
       }
     } else {
-      ok.textContent = 'Cuenta creada. Bienvenido a SharpIQ.';
-      ok.style.display = 'block';
-      setTimeout(()=>{ window.location.href = 'cuenta.html'; }, 1500);
+      if(data.verificar_correo){
+        ok.innerHTML = '📧 <b>Cuenta creada.</b> Te enviamos un correo a <b>'+email+'</b>. Verifícalo para usar a Mako gratis 🦈. (Revisa también spam.)';
+        ok.style.display = 'block';
+        setTimeout(()=>{ window.location.href = 'cuenta.html'; }, 3500);
+      } else {
+        ok.textContent = 'Cuenta creada. Bienvenido a SharpIQ.';
+        ok.style.display = 'block';
+        setTimeout(()=>{ window.location.href = 'cuenta.html'; }, 1500);
+      }
     }
   } catch(e){
     err.textContent = e.message;
