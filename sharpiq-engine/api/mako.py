@@ -504,8 +504,12 @@ def _estado(user_id, plan):
         cur.execute("""SELECT total_usos, inicio_trial, usos_hoy, fecha_hoy
                        FROM mako_uso WHERE usuario_id=%s""", (user_id,))
         row = cur.fetchone() or {}
-        cur.execute("SELECT email_verificado FROM usuarios WHERE id=%s", (user_id,))
+        cur.execute("SELECT plan, email_verificado FROM usuarios WHERE id=%s", (user_id,))
         uv = cur.fetchone() or {}
+    # El plan REAL de la base manda. Si el VIP se activó DESPUÉS del login (pago cripto/MP
+    # o activación manual), el token todavía trae 'free' viejo -> aquí lo corregimos leyendo
+    # el plan actual, para que el VIP se reconozca SIN volver a iniciar sesión.
+    plan = (uv.get("plan") or plan or "free").lower()
     email_verificado = uv.get("email_verificado", True)  # default True: no bloquear si falta la columna
     total     = int(row.get("total_usos") or 0)
     inicio    = row.get("inicio_trial")
@@ -725,6 +729,7 @@ def preguntar(body: dict, token=Depends(usuario_activo)):
     partido_actual = body.get("partido_actual") or {}   # último partido analizado (del frontend)
 
     est = _estado(user_id, plan)
+    plan = est["plan"]   # plan REAL de la base (corrige el token viejo tras activar VIP)
     if not est["puede"]:
         return {"ok": False, "bloqueado": True, "motivo": est["motivo"],
                 "tipo": est.get("tipo"), "verificar": est.get("verificar", False),
