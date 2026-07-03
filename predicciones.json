@@ -1,6 +1,6 @@
 {
   "fecha": "2026-07-02",
-  "total_partidos": 55,
+  "total_partidos": 54,
   "predicciones": [
     {
       "local": "Switzerland",
@@ -4153,7 +4153,7 @@
       "hora": "12:00",
       "fecha_evento": "2026-07-03",
       "cuotas": {
-        "2": 2.76,
+        "2": 2.78,
         "2_casa": "Betfair",
         "pinnacle_2": 2.71,
         "1": 2.48,
@@ -4319,13 +4319,13 @@
       "confianza": 86.1,
       "value_bets": {
         "victoria_visita": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
+          "value": -0.017,
+          "ev_porcentaje": -1.7,
+          "ev_pinn": -1.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.76,
+          "cuota": 2.78,
           "casa": "Betfair",
           "pinn_prob": 35.4
         },
@@ -11661,64 +11661,6 @@
       "movimiento": null
     },
     {
-      "id": "40f075c68595d809bd4835c234817431",
-      "comienzo": "2026-07-03T09:00:00Z",
-      "local": "Taylor Fritz",
-      "visitante": "Lorenzo Sonego",
-      "liga": "ATP Wimbledon",
-      "liga_code": "tennis_atp_wimbledon",
-      "deporte": "ATP Wimbledon",
-      "deporte_emoji": "🏆",
-      "hora": "09:00",
-      "fecha_evento": "2026-07-03",
-      "cuotas": {
-        "Lorenzo Sonego": 6.04,
-        "Taylor Fritz": 1.15
-      },
-      "probabilidades": {
-        "Lorenzo Sonego": 16.0,
-        "Taylor Fritz": 84.0
-      },
-      "confianza": 84.0,
-      "value_bets": {
-        "Lorenzo Sonego": {
-          "value": -0.034,
-          "ev_porcentaje": -3.4,
-          "ev_pinn": -3.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 6.04,
-          "casa": "Pinnacle",
-          "pinn_prob": 16.0,
-          "mercado_nombre": "Lorenzo Sonego"
-        },
-        "Taylor Fritz": {
-          "value": -0.034,
-          "ev_porcentaje": -3.4,
-          "ev_pinn": -3.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.15,
-          "casa": "Unibet",
-          "pinn_prob": 84.0,
-          "mercado_nombre": "Taylor Fritz"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Lorenzo Sonego",
-        "prob": 16.0,
-        "ev": -3.4
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
       "id": "2625a7c32791e4d4771b9b00699e9fbd",
       "comienzo": "2026-07-03T10:00:00Z",
       "local": "Roman Safiullin",
@@ -13951,5 +13893,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:00:47"
+  "generado": "00:01:00"
 }
