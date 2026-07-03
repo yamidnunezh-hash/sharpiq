@@ -3828,6 +3828,9 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
     <a href="#picks" class="btn-hero btn-hero-ghost">Ver picks gratis</a>
     <a href="#" onclick="irAPago(this);return false;" class="btn-hero btn-hero-gold">Únete VIP — $60.000 COP/mes</a>
   </div>
+  <div style="text-align:center;margin-top:12px">
+    <a href="#" onclick="irAPagoCripto(this);return false;" style="display:inline-flex;align-items:center;gap:7px;font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#7dd3fc;text-decoration:none;background:rgba(0,200,255,.06);border:1px solid rgba(0,200,255,.35);border-radius:8px;padding:10px 18px;transition:all .2s" onmouseover="this.style.background='rgba(0,200,255,.14)'" onmouseout="this.style.background='rgba(0,200,255,.06)'">🪙 O paga con cripto (USDT / USDC)</a>
+  </div>
   <div class="hero-extra">
     <span id="heroKpi1" style="font-size:12px;color:#64748b;font-family:Inter,sans-serif"></span>
     <button id="btnPush" onclick="suscribirPush()" style="display:none;background:transparent;border:1px solid rgba(0,200,255,.3);color:#7dd3fc;font-size:11px;padding:6px 14px;border-radius:6px;cursor:pointer;font-family:Inter,sans-serif">🔔 Alertas gratis</button>
@@ -5472,6 +5475,32 @@ async function irAPago(el) {
   } catch(e){
     if(el){ el.innerHTML = original; el.style.pointerEvents = ''; }
     alert('No se pudo conectar con la pasarela de pago. Intenta de nuevo.');
+  }
+}
+
+async function irAPagoCripto(el) {
+  const original = el ? el.innerHTML : '';
+  const token = localStorage.getItem('sharpiq_token');
+  // SIN sesión → crear cuenta primero, luego seguir al checkout cripto.
+  if(!token){
+    window.location.href = 'registro.html?plan=vip&next=cripto';
+    return;
+  }
+  try {
+    if(el){ el.innerHTML = '⏳ Procesando...'; el.style.pointerEvents = 'none'; }
+    const r = await fetch('https://api.sharpiq.co/pagos/cripto/checkout', {
+      method: 'POST',
+      headers: {'Authorization': 'Bearer ' + token}
+    });
+    if(r.status === 401){  // token vencido → reingresar
+      window.location.href = 'login.html?plan=vip&next=cripto'; return;
+    }
+    const d = await r.json();
+    if(d.url){ window.location.href = d.url; }
+    else { throw new Error(d.detail || 'Error al crear el pago cripto'); }
+  } catch(e){
+    if(el){ el.innerHTML = original; el.style.pointerEvents = ''; }
+    alert('No se pudo conectar con la pasarela de cripto. Intenta de nuevo.');
   }
 }
 </script>

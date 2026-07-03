@@ -91,6 +91,7 @@
 <script>
 const API = 'https://api.sharpiq.co';
 let planSel = 'free';
+let nextAction = 'pago';   // 'pago' (MercadoPago) | 'cripto'
 
 function selPlan(p){
   planSel = p;
@@ -103,6 +104,7 @@ function selPlan(p){
   const params = new URLSearchParams(location.search);
   const ref  = params.get('ref');
   const plan = params.get('plan');
+  if(params.get('next') === 'cripto'){ nextAction = 'cripto'; }
   if(ref){
     document.getElementById('refCode').value = ref.toUpperCase();
   }
@@ -147,7 +149,23 @@ async function registrar(){
     localStorage.setItem('sharpiq_plan',  data.plan);
     localStorage.setItem('sharpiq_ref',   data.codigo_ref);
 
-    if(planSel === 'vip'){
+    if(planSel === 'vip' && nextAction === 'cripto'){
+      ok.textContent = 'Cuenta creada. Redirigiendo al pago con cripto...';
+      ok.style.display = 'block';
+      // Checkout cripto (NOWPayments) amarrado a esta cuenta (order_id=user_id) →
+      // el VIP se activa SOLO cuando el webhook confirma el pago.
+      try {
+        const rp = await fetch(`${API}/pagos/cripto/checkout`, {
+          method: 'POST',
+          headers: {'Authorization': 'Bearer ' + data.token}
+        });
+        const dp = await rp.json();
+        if(dp.url){ window.location.href = dp.url; return; }
+        throw new Error(dp.detail || 'No se pudo crear el pago cripto');
+      } catch(e2){
+        window.location.href = 'cuenta.html?upgrade=1';
+      }
+    } else if(planSel === 'vip'){
       ok.textContent = 'Cuenta creada. Redirigiendo al pago VIP...';
       ok.style.display = 'block';
       // Generar el checkout AMARRADO a esta cuenta (external_reference) →
