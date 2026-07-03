@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Switzerland",
-   "visitante": "Algeria",
-   "gole": "J. Manzambi 63.2%",
-   "remates": "Switzerland: D. Ndoye 2.67 remates totales (1.33 a puerta), R. Vargas 1.67 remates totales (1.33 a puerta), G. Xhaka 1.33 remates totales (0.33 a puerta) | Algeria: I. Maza 2.33 remates totales (1.0 a puerta), F. Chaïbi 2.0 remates totales (0.67 a puerta), A. Gouiri 1.0 remates totales (0.67 a puerta)",
-   "tarjetas": "Switzerland: N. Elvedi 0.33 amarillas/partido, G. Xhaka 0.33 amarillas/partido | Algeria: R. Zerrouki 0.5 amarillas/partido",
-   "asistencias": "Switzerland: B. Embolo 0.67 asistencias/partido, R. Vargas 0.33 asistencias/partido, J. Manzambi 0.33 asistencias/partido | Algeria: H. Aouar 1.0 asistencias/partido, R. Mahrez 0.33 asistencias/partido",
-   "faltas": "Switzerland: R. Rodríguez 2.0 faltas/partido, B. Embolo 2.0 faltas/partido, L. Jaquez 1.5 faltas/partido | Algeria: R. Aït-Nouri 1.33 faltas/partido, R. Belghali 1.0 faltas/partido, H. Boudaoui 1.0 faltas/partido",
-   "quites": "Switzerland: M. Akanji 2.0 quites/partido, R. Rodríguez 2.0 quites/partido, M. Aebischer 1.67 quites/partido | Algeria: R. Aït-Nouri 3.33 quites/partido, R. Bensebaïni 2.67 quites/partido, N. Bentaleb 2.0 quites/partido"
-  },
-  {
    "local": "Australia",
    "visitante": "Egypt",
    "gole": "",
@@ -29,6 +19,76 @@
    "asistencias": "Argentina: F. Medina 0.5 asistencias/partido, R. De Paul 0.5 asistencias/partido, N. González 0.5 asistencias/partido",
    "faltas": "Argentina: Lautaro Martínez 1.67 faltas/partido, C. Romero 1.5 faltas/partido, F. Medina 1.5 faltas/partido | Cape Verde Islands: S. Lopes Cabral 1.0 faltas/partido, Kevin Pina 1.0 faltas/partido, Willy Semedo 1.0 faltas/partido",
    "quites": "Argentina: E. Fernández 3.0 quites/partido, A. Mac Allister 2.67 quites/partido, F. Medina 2.5 quites/partido | Cape Verde Islands: Diney Borges 2.67 quites/partido, Deroy Duarte 2.33 quites/partido, S. Lopes Cabral 2.0 quites/partido"
+  },
+  {
+   "local": "Colombia",
+   "visitante": "Ghana",
+   "gole": "",
+   "remates": "Colombia: G. Puerta 2.0 remates totales (1.0 a puerta), J. Arias 2.0 remates totales (1.0 a puerta), L. Díaz 2.0 remates totales (1.0 a puerta) | Ghana: A. Fatawu 1.0 remates totales (0.0 a puerta), J. Adjetey 0.67 remates totales (0.33 a puerta), Caleb Marfo Yirenkyi 0.67 remates totales (0.33 a puerta)",
+   "tarjetas": "Colombia: J. Mojica 0.5 amarillas/partido, J. Lucumí 0.33 amarillas/partido, G. Puerta 0.33 amarillas/partido | Ghana: K. Peprah Oppong 0.5 amarillas/partido, Caleb Marfo Yirenkyi 0.33 amarillas/partido",
+   "asistencias": "Colombia: J. Quintero 0.5 asistencias/partido, G. Puerta 0.33 asistencias/partido, L. Díaz 0.33 asistencias/partido | Ghana: E. Nuamah 0.5 asistencias/partido",
+   "faltas": "Colombia: G. Puerta 1.67 faltas/partido, R. Rios 1.67 faltas/partido, D. Muñoz 1.33 faltas/partido | Ghana: J. Ayew 2.33 faltas/partido, K. Sibo 2.33 faltas/partido, M. Senaya 2.0 faltas/partido",
+   "quites": "Colombia: J. Arias 2.67 quites/partido, D. Muñoz 1.67 quites/partido, D. Sánchez 1.33 quites/partido | Ghana: M. Senaya 6.0 quites/partido, G. Mensah 2.0 quites/partido, E. Owusu 2.0 quites/partido"
+  },
+  {
+   "local": "Canada",
+   "visitante": "Morocco",
+   "gole": "J. David 52.8% &middot; I. Saibari 52.8%",
+   "remates": "Canada: J. David 2.5 remates totales (1.75 a puerta), C. Larin 1.67 remates totales (1.33 a puerta), P. David 1.67 remates totales (1.0 a puerta) | Morocco: A. Hakimi 2.5 remates totales (1.0 a puerta), I. Saibari 1.5 remates totales (0.75 a puerta), N. El Aynaoui 1.25 remates totales (0.5 a puerta)",
+   "tarjetas": "Canada: N. Sigur 0.5 amarillas/partido, C. Larin 0.33 amarillas/partido, N. Saliba 0.33 amarillas/partido | Morocco: I. Diop 0.67 amarillas/partido",
+   "asistencias": "Canada: N. Saliba 0.67 asistencias/partido, P. David 0.33 asistencias/partido | Morocco: Brahim Díaz 0.5 asistencias/partido, C. Talbi 0.33 asistencias/partido, A. Hakimi 0.25 asistencias/partido",
+   "faltas": "Canada: N. Saliba 1.67 faltas/partido, R. Laryea 1.5 faltas/partido, N. Sigur 1.5 faltas/partido | Morocco: N. El Aynaoui 2.75 faltas/partido, I. Saibari 2.0 faltas/partido, A. Hakimi 1.0 faltas/partido",
+   "quites": "Canada: R. Laryea 2.25 quites/partido, L. De Fougerolles 2.0 quites/partido, N. Saliba 2.0 quites/partido | Morocco: N. El Aynaoui 4.0 quites/partido, N. Mazraoui 2.5 quites/partido, A. Bouaddi 2.33 quites/partido"
+  },
+  {
+   "local": "Criciuma",
+   "visitante": "Sport Recife",
+   "gole": "Perotti 39.3% &middot; Chrystian Barletta 37.0% &middot; Vinícius 33.0%",
+   "remates": "Criciuma: Marcelo Hermes 1.4 remates totales (0.33 a puerta), R. Otero 1.29 remates totales (0.5 a puerta), Waguininho 1.13 remates totales (0.4 a puerta) | Sport Recife: Perotti 2.29 remates totales (1.36 a puerta), Chrystian Barletta 1.69 remates totales (0.85 a puerta), C. de Pena 1.38 remates totales (0.54 a puerta)",
+   "tarjetas": "Criciuma: Bruno Alves 0.4 amarillas/partido, Eduardo 0.38 amarillas/partido, Ruan 0.33 amarillas/partido | Sport Recife: Iury Castilho 0.33 amarillas/partido, Marcelo Ajul 0.33 amarillas/partido, Chrystian Barletta 0.31 amarillas/partido",
+   "asistencias": "Criciuma: Romarinho 0.25 asistencias/partido, Ruan 0.17 asistencias/partido, R. Otero 0.14 asistencias/partido | Sport Recife: Chrystian Barletta 0.23 asistencias/partido, Marlon 0.2 asistencias/partido, C. de Pena 0.15 asistencias/partido",
+   "faltas": "Criciuma: Eduardo 2.38 faltas/partido, Luciano Castán 1.83 faltas/partido, Ruan 1.83 faltas/partido | Sport Recife: Perotti 1.86 faltas/partido, Zé Marcos 1.33 faltas/partido, Biel 1.21 faltas/partido",
+   "quites": "Criciuma: Ruan 2.0 quites/partido, Eduardo 1.88 quites/partido, Marcelo Hermes 1.53 quites/partido | Sport Recife: Biel 2.07 quites/partido, Marcelo Ajul 1.5 quites/partido, Felipinho 1.43 quites/partido"
+  },
+  {
+   "local": "Londrina",
+   "visitante": "CRB",
+   "gole": "Bruno Santos 45.1%",
+   "remates": "Londrina: Bruno Santos 2.07 remates totales (1.07 a puerta), Iago Teles 2.0 remates totales (1.0 a puerta), Thalis 0.82 remates totales (0.18 a puerta) | CRB: Mikael 2.57 remates totales (1.29 a puerta), Dadá Belmonte 1.62 remates totales (0.77 a puerta), Thiaguinho 1.56 remates totales (0.56 a puerta)",
+   "tarjetas": "Londrina: Kevyn 0.5 amarillas/partido, Iago Teles 0.42 amarillas/partido, Fabiano 0.4 amarillas/partido | CRB: Daniel 0.46 amarillas/partido, Fábio Alemão 0.42 amarillas/partido, Guilherme Estrella 0.33 amarillas/partido",
+   "asistencias": "Londrina: Victor Hugo 0.27 asistencias/partido, Bruno Santos 0.2 asistencias/partido, Paulinho Moccelin 0.14 asistencias/partido | CRB: Hereda 0.25 asistencias/partido, Léo Campos 0.25 asistencias/partido, Dadá Belmonte 0.23 asistencias/partido",
+   "faltas": "Londrina: Iago Teles 1.92 faltas/partido, Kevyn 1.38 faltas/partido, Thalis 1.36 faltas/partido | CRB: Hereda 1.75 faltas/partido, Wallace 1.5 faltas/partido, Fábio Alemão 1.25 faltas/partido",
+   "quites": "Londrina: Victor Hugo 1.73 quites/partido, Lucas Marques 1.69 quites/partido, Heron 1.42 quites/partido | CRB: Fábio Alemão 1.58 quites/partido, Hereda 1.42 quites/partido, De Lucca 1.38 quites/partido"
+  },
+  {
+   "local": "Novorizontino",
+   "visitante": "Atletico Goianiense",
+   "gole": "Gustavo Coutinho 48.7% &middot; Robson 37.3% &middot; Léo Jacó 26.5%",
+   "remates": "Novorizontino: Robson 1.53 remates totales (0.87 a puerta), Matheus Bianqui 1.3 remates totales (0.4 a puerta), Juninho 1.27 remates totales (0.73 a puerta) | Atletico Goianiense: Gustavo Coutinho 2.58 remates totales (1.58 a puerta), Marrony 1.73 remates totales (0.73 a puerta), Soares Geovany 1.36 remates totales (0.79 a puerta)",
+   "tarjetas": "Novorizontino: Gabriel Bahia 0.5 amarillas/partido, N. Castrillón 0.44 amarillas/partido, Nicolas Careca 0.33 amarillas/partido | Atletico Goianiense: Cristiano 0.36 amarillas/partido, Guilherme Lopes 0.29 amarillas/partido, Guilherme Marques 0.25 amarillas/partido",
+   "asistencias": "Novorizontino: Romulo 0.33 asistencias/partido, Robson 0.13 asistencias/partido, Juninho 0.13 asistencias/partido | Atletico Goianiense: Bruno José 0.3 asistencias/partido, Guilherme Marques 0.25 asistencias/partido, Soares Geovany 0.21 asistencias/partido",
+   "faltas": "Novorizontino: Patrick 1.71 faltas/partido, Reidiney 1.5 faltas/partido, Robson 1.47 faltas/partido | Atletico Goianiense: Assis 2.1 faltas/partido, Gebson 1.8 faltas/partido, Igor Henrique 1.8 faltas/partido",
+   "quites": "Novorizontino: Reidiney 3.5 quites/partido, Diego Mathias 2.0 quites/partido, Sander 2.0 quites/partido | Atletico Goianiense: Gustavo Daniel 2.5 quites/partido, Ewerthon 1.8 quites/partido, Marrony 1.8 quites/partido"
+  },
+  {
+   "local": "Paraguay",
+   "visitante": "France",
+   "gole": "Kylian Mbappé 73.1% &middot; O. Dembélé 63.2%",
+   "remates": "Paraguay: J. Enciso 1.25 remates totales (0.25 a puerta), D. Gómez 1.0 remates totales (0.0 a puerta), Maurício 1.0 remates totales (1.0 a puerta) | France: Kylian Mbappé 4.75 remates totales (3.25 a puerta), M. Olise 2.25 remates totales (1.25 a puerta), O. Dembélé 1.75 remates totales (1.25 a puerta)",
+   "tarjetas": "Paraguay: D. Gómez 0.67 amarillas/partido, M. Galarza 0.67 amarillas/partido, A. Arce 0.5 amarillas/partido | France: A. Tchouaméni 0.33 amarillas/partido",
+   "asistencias": "Paraguay: J. Enciso 0.5 asistencias/partido, M. Galarza 0.33 asistencias/partido | France: M. Olise 1.25 asistencias/partido, O. Dembélé 0.5 asistencias/partido, Kylian Mbappé 0.5 asistencias/partido",
+   "faltas": "Paraguay: A. Cubas 3.0 faltas/partido, M. Galarza 2.33 faltas/partido, J. Cáceres 2.0 faltas/partido | France: A. Rabiot 2.33 faltas/partido, A. Tchouaméni 1.33 faltas/partido, D. Upamecano 1.0 faltas/partido",
+   "quites": "Paraguay: M. Galarza 5.0 quites/partido, J. Cáceres 4.5 quites/partido, A. Cubas 3.5 quites/partido | France: A. Tchouaméni 4.33 quites/partido, J. Koundé 2.75 quites/partido, M. Koné 2.5 quites/partido"
+  },
+  {
+   "local": "Goias",
+   "visitante": "Ceara",
+   "gole": "Anselmo Ramon 30.0% &middot; Melk 26.5%",
+   "remates": "Goias: Kadu 2.17 remates totales (0.5 a puerta), Gegê 1.5 remates totales (0.7 a puerta), Anselmo Ramon 1.14 remates totales (0.64 a puerta) | Ceara: Vina 1.75 remates totales (0.5 a puerta), Melk 1.69 remates totales (0.92 a puerta), Vinicius Zanocelo 1.33 remates totales (0.33 a puerta)",
+   "tarjetas": "Goias: Nicolas 0.42 amarillas/partido, Luquinhas 0.33 amarillas/partido, Lucas Lima 0.29 amarillas/partido | Ceara: Luiz Otávio 0.5 amarillas/partido, Matheus Araújo 0.42 amarillas/partido, Bruno Ferreira 0.4 amarillas/partido",
+   "asistencias": "Goias: E. García 0.3 asistencias/partido, Diego Caito 0.2 asistencias/partido, Juninho 0.1 asistencias/partido | Ceara: Melk 0.23 asistencias/partido, Enzo 0.17 asistencias/partido, Lucca 0.14 asistencias/partido",
+   "faltas": "Goias: Kadu 1.5 faltas/partido, Luquinhas 1.44 faltas/partido, Nicolas 1.42 faltas/partido | Ceara: Vinicius Zanocelo 2.0 faltas/partido, Lucca 1.57 faltas/partido, Éder 1.5 faltas/partido",
+   "quites": "Goias: Luquinhas 1.89 quites/partido, Lucas Lima 1.5 quites/partido, Nicolas 1.42 quites/partido | Ceara: Fernandinho 1.82 quites/partido, Vinicius Zanocelo 1.67 quites/partido, Alex Silva 1.33 quites/partido"
   }
  ]
 }
