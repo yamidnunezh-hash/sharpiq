@@ -15,7 +15,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "69",
     sharpscore: "69",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "02/07/26",
@@ -84,7 +84,7 @@ const PROXIMOS_EVENTOS = [
     hora:       "22:00 COT",
     emoji:      "",
     status:     "vip",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "01/07/26",
@@ -1750,6 +1750,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "02/07/26",
+    partido:    "Switzerland vs Algeria",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.42",
+    prob:       "",
+    resultado:  "win"
+  },
+  {
+    fecha:      "02/07/26",
+    partido:    "Switzerland vs Algeria",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.44",
+    prob:       "69",
+    resultado:  "win"
+  },
   {
     fecha:      "02/07/26",
     partido:    "Portugal vs Croatia",
