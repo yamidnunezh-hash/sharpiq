@@ -21291,7 +21291,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.61,
-          "casa": "DraftKings",
+          "casa": "FanDuel",
           "pinn_prob": 59.6,
           "mercado_nombre": "Seattle Mariners (+1.5)"
         },
@@ -21333,7 +21333,9 @@
       "fecha_evento": "2026-07-03",
       "cuotas": {
         "Felix Auger-Aliassime": 1.19,
-        "Michael Zheng": 5.53
+        "Michael Zheng": 5.54,
+        "Over 36.5": 1.82,
+        "Under 36.5": 1.93
       },
       "probabilidades": {
         "Felix Auger-Aliassime": 82.3,
@@ -21342,9 +21344,9 @@
       "confianza": 82.3,
       "value_bets": {
         "Felix Auger-Aliassime": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
@@ -21354,22 +21356,46 @@
           "mercado_nombre": "Felix Auger-Aliassime"
         },
         "Michael Zheng": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.53,
+          "cuota": 5.54,
           "casa": "Pinnacle",
           "pinn_prob": 17.7,
           "mercado_nombre": "Michael Zheng"
+        },
+        "over_36_5": {
+          "value": -0.078,
+          "ev_porcentaje": -7.8,
+          "ev_pinn": -7.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.82,
+          "casa": "Unibet",
+          "pinn_prob": 50.6,
+          "mercado_nombre": "Over 36.5"
+        },
+        "under_36_5": {
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.93,
+          "casa": "Unibet",
+          "pinn_prob": 49.4,
+          "mercado_nombre": "Under 36.5"
         }
       },
       "prediccion_principal": {
         "mercado": "Felix Auger-Aliassime",
         "prob": 82.3,
-        "ev": -2.1
+        "ev": -2.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -21764,44 +21790,44 @@
       "hora": "16:00",
       "fecha_evento": "2026-07-04",
       "cuotas": {
-        "Alexander Bublik": 2.02,
+        "Alexander Bublik": 2.0,
         "Frances Tiafoe": 1.88
       },
       "probabilidades": {
-        "Alexander Bublik": 48.2,
-        "Frances Tiafoe": 51.8
+        "Alexander Bublik": 48.5,
+        "Frances Tiafoe": 51.5
       },
-      "confianza": 51.8,
+      "confianza": 51.5,
       "value_bets": {
         "Alexander Bublik": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.02,
-          "casa": "Pinnacle",
-          "pinn_prob": 48.2,
+          "cuota": 2.0,
+          "casa": "William Hill",
+          "pinn_prob": 48.5,
           "mercado_nombre": "Alexander Bublik"
         },
         "Frances Tiafoe": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.88,
           "casa": "Pinnacle",
-          "pinn_prob": 51.8,
+          "pinn_prob": 51.5,
           "mercado_nombre": "Frances Tiafoe"
         }
       },
       "prediccion_principal": {
         "mercado": "Alexander Bublik",
-        "prob": 48.2,
-        "ev": -2.6
+        "prob": 48.5,
+        "ev": -3.1
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -23249,5 +23275,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:00:57"
+  "generado": "16:01:16"
 }
