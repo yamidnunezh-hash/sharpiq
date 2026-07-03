@@ -75,7 +75,7 @@
         "under30": 1.2,
         "under30_casa": "Pinnacle",
         "pinnacle_under30": 1.2,
-        "corners_over_8_5": 2.0,
+        "corners_over_8_5": 2.04,
         "corners_over_8_5_casa": "Betfair",
         "pinnacle_corners_over_8_5": 1.89,
         "corners_under_8_5": 1.97,
@@ -123,7 +123,7 @@
         "corners_under_10_0": 1.37,
         "corners_under_10_0_casa": "Pinnacle",
         "pinnacle_corners_under_10_0": 1.37,
-        "corners_over_10_5": 3.35,
+        "corners_over_10_5": 3.4,
         "corners_over_10_5_casa": "Betfair",
         "pinnacle_corners_over_10_5": 3.12,
         "corners_under_10_5": 1.38,
@@ -144,8 +144,8 @@
         "cards_over_3_5": 2.59,
         "cards_over_3_5_casa": "Pinnacle",
         "pinnacle_cards_over_3_5": 2.59,
-        "cards_under_3_5": 1.56,
-        "cards_under_3_5_casa": "Betfair",
+        "cards_under_3_5": 1.55,
+        "cards_under_3_5_casa": "Virgin Bet",
         "pinnacle_cards_under_3_5": 1.49,
         "btts_si": 2.27,
         "btts_si_casa": "Pinnacle",
@@ -511,13 +511,13 @@
           "pinn_prob": 79.7
         },
         "corners_over_8_5": {
-          "value": 0.01,
-          "ev_porcentaje": 1.0,
-          "ev_pinn": 1.0,
+          "value": 0.031,
+          "ev_porcentaje": 3.1,
+          "ev_pinn": 3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
+          "cuota": 2.04,
           "casa": "Betfair",
           "pinn_prob": 50.5,
           "mercado_nombre": "Corners Over 8.5"
@@ -703,13 +703,13 @@
           "mercado_nombre": "Corners Under 10"
         },
         "corners_over_10_5": {
-          "value": -0.015,
-          "ev_porcentaje": -1.5,
-          "ev_pinn": -1.5,
+          "value": 0.0,
+          "ev_porcentaje": 0.0,
+          "ev_pinn": 0.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.35,
+          "cuota": 3.4,
           "casa": "Betfair",
           "pinn_prob": 29.4,
           "mercado_nombre": "Corners Over 10.5"
@@ -787,14 +787,14 @@
           "mercado_nombre": "Tarjetas Over 3.5"
         },
         "cards_under_3_5": {
-          "value": -0.01,
-          "ev_porcentaje": -1.0,
-          "ev_pinn": -1.0,
+          "value": -0.016,
+          "ev_porcentaje": -1.6,
+          "ev_pinn": -1.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.56,
-          "casa": "Betfair",
+          "cuota": 1.55,
+          "casa": "Virgin Bet",
           "pinn_prob": 63.5,
           "mercado_nombre": "Tarjetas Under 3.5"
         },
@@ -16960,6 +16960,64 @@
       "movimiento": null
     },
     {
+      "id": "efb5613b7fb513944c45f5272aa25690",
+      "comienzo": "2026-07-03T14:00:00Z",
+      "local": "Alejandro Davidovich Fokina",
+      "visitante": "Marton Fucsovics",
+      "liga": "ATP Wimbledon",
+      "liga_code": "tennis_atp_wimbledon",
+      "deporte": "ATP Wimbledon",
+      "deporte_emoji": "🏆",
+      "hora": "14:00",
+      "fecha_evento": "2026-07-03",
+      "cuotas": {
+        "Alejandro Davidovich Fokina": 1.29,
+        "Marton Fucsovics": 4.12
+      },
+      "probabilidades": {
+        "Alejandro Davidovich Fokina": 76.3,
+        "Marton Fucsovics": 23.7
+      },
+      "confianza": 76.3,
+      "value_bets": {
+        "Alejandro Davidovich Fokina": {
+          "value": -0.016,
+          "ev_porcentaje": -1.6,
+          "ev_pinn": -1.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.29,
+          "casa": "William Hill",
+          "pinn_prob": 76.3,
+          "mercado_nombre": "Alejandro Davidovich Fokina"
+        },
+        "Marton Fucsovics": {
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.12,
+          "casa": "Pinnacle",
+          "pinn_prob": 23.7,
+          "mercado_nombre": "Marton Fucsovics"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "Alejandro Davidovich Fokina",
+        "prob": 76.3,
+        "ev": -1.6
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
       "id": "f136c958bf05964358323eb663a07b22",
       "comienzo": "2026-07-03T14:12:00Z",
       "local": "Hubert Hurkacz",
@@ -17009,64 +17067,6 @@
         "mercado": "Hubert Hurkacz",
         "prob": 37.9,
         "ev": -2.5
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
-      "id": "efb5613b7fb513944c45f5272aa25690",
-      "comienzo": "2026-07-03T14:15:00Z",
-      "local": "Alejandro Davidovich Fokina",
-      "visitante": "Marton Fucsovics",
-      "liga": "ATP Wimbledon",
-      "liga_code": "tennis_atp_wimbledon",
-      "deporte": "ATP Wimbledon",
-      "deporte_emoji": "🏆",
-      "hora": "14:15",
-      "fecha_evento": "2026-07-03",
-      "cuotas": {
-        "Alejandro Davidovich Fokina": 1.29,
-        "Marton Fucsovics": 4.12
-      },
-      "probabilidades": {
-        "Alejandro Davidovich Fokina": 76.3,
-        "Marton Fucsovics": 23.7
-      },
-      "confianza": 76.3,
-      "value_bets": {
-        "Alejandro Davidovich Fokina": {
-          "value": -0.016,
-          "ev_porcentaje": -1.6,
-          "ev_pinn": -1.6,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.29,
-          "casa": "William Hill",
-          "pinn_prob": 76.3,
-          "mercado_nombre": "Alejandro Davidovich Fokina"
-        },
-        "Marton Fucsovics": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 4.12,
-          "casa": "Pinnacle",
-          "pinn_prob": 23.7,
-          "mercado_nombre": "Marton Fucsovics"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Alejandro Davidovich Fokina",
-        "prob": 76.3,
-        "ev": -1.6
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -18734,5 +18734,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:00:59"
+  "generado": "12:01:12"
 }
