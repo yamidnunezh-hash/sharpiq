@@ -1,20 +1,6 @@
 {
-  "updated": "2026-07-03T23:30:45Z",
+  "updated": "2026-07-04T01:12:59Z",
   "live": [
-    {
-      "id": "3e161b2448ed76d6b0c0f5bda6fd5bf2",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "Argentina",
-      "away": "Cape Verde",
-      "fecha": "03/07/26",
-      "hora": "17:00 COT",
-      "ts": 1783098000,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "1"
-    },
     {
       "id": "14423828314cc83167d6c7ce88323746",
       "sport": "baseball_mlb",
@@ -26,8 +12,8 @@
       "hora": "17:46 COT",
       "ts": 1783100798,
       "completed": false,
-      "score_home": "2",
-      "score_away": "0"
+      "score_home": "7",
+      "score_away": "1"
     },
     {
       "id": "0a7769461d3b3126c2e4bb98b8cee225",
@@ -40,8 +26,8 @@
       "hora": "18:07 COT",
       "ts": 1783102035,
       "completed": false,
-      "score_home": "1",
-      "score_away": "1"
+      "score_home": "3",
+      "score_away": "2"
     },
     {
       "id": "b854e09aa9677136666533dc8d2459ff",
@@ -54,8 +40,8 @@
       "hora": "18:10 COT",
       "ts": 1783102234,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
+      "score_home": "1",
+      "score_away": "3"
     },
     {
       "id": "6a7d6767bd4da0f044ab6d250c233769",
@@ -69,7 +55,7 @@
       "ts": 1783102253,
       "completed": false,
       "score_home": "0",
-      "score_away": "1"
+      "score_away": "3"
     },
     {
       "id": "02a01af3575ee92bb974caaf28f76911",
@@ -82,11 +68,9 @@
       "hora": "18:16 COT",
       "ts": 1783102599,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    }
-  ],
-  "upcoming": [
+      "score_home": "4",
+      "score_away": "2"
+    },
     {
       "id": "3bf177f10d546535921fa6be841880f7",
       "sport": "baseball_mlb",
@@ -95,11 +79,11 @@
       "home": "Colorado Rockies",
       "away": "San Francisco Giants",
       "fecha": "03/07/26",
-      "hora": "19:10 COT",
-      "ts": 1783105800,
+      "hora": "19:12 COT",
+      "ts": 1783105936,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "7",
+      "score_away": "1"
     },
     {
       "id": "f0e24a50674443856bff31b645ff5572",
@@ -110,11 +94,13 @@
       "away": "Tampa Bay Rays",
       "fecha": "03/07/26",
       "hora": "19:15 COT",
-      "ts": 1783106100,
+      "ts": 1783106127,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "88e032a2b2e5042d26db3f0da1df924a",
       "sport": "soccer_fifa_world_cup",
@@ -144,26 +130,26 @@
       "score_away": null
     },
     {
-      "id": "5434f34b7e8232a7091f0e3efdd4a175",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Athletics",
-      "away": "Miami Marlins",
-      "fecha": "03/07/26",
-      "hora": "20:40 COT",
-      "ts": 1783111200,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
       "id": "bb4dc431a7347100e9781696b2bcf256",
       "sport": "baseball_mlb",
       "liga": "MLB",
       "emoji": "⚾",
       "home": "Arizona Diamondbacks",
       "away": "Milwaukee Brewers",
+      "fecha": "03/07/26",
+      "hora": "20:45 COT",
+      "ts": 1783111500,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "5434f34b7e8232a7091f0e3efdd4a175",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Miami Marlins",
       "fecha": "03/07/26",
       "hora": "20:45 COT",
       "ts": 1783111500,
@@ -296,9 +282,51 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "984229c1b91fa0876a5f4e5c584d4387",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Seattle Mariners",
+      "away": "Toronto Blue Jays",
+      "fecha": "04/07/26",
+      "hora": "15:11 COT",
+      "ts": 1783177860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "c798a1ffdeda28e82d930e7145a8ff10",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Paraguay",
+      "away": "France",
+      "fecha": "04/07/26",
+      "hora": "16:00 COT",
+      "ts": 1783180800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "3e161b2448ed76d6b0c0f5bda6fd5bf2",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Argentina",
+      "away": "Cape Verde",
+      "fecha": "03/07/26",
+      "hora": "17:00 COT",
+      "ts": 1783098000,
+      "completed": true,
+      "score_home": "3",
+      "score_away": "2"
+    },
     {
       "id": "471b2b7bb19f52be5e618aec359cd8e5",
       "sport": "baseball_mlb",
@@ -368,48 +396,6 @@
       "completed": true,
       "score_home": "1",
       "score_away": "0"
-    },
-    {
-      "id": "63d068d292e5a379ba2a1d669c979313",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Texas Rangers",
-      "away": "Detroit Tigers",
-      "fecha": "02/07/26",
-      "hora": "19:07 COT",
-      "ts": 1783019220,
-      "completed": true,
-      "score_home": "10",
-      "score_away": "4"
-    },
-    {
-      "id": "00548ff933117fef219d82df10dbc24a",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Fortaleza",
-      "away": "Ponte Preta",
-      "fecha": "02/07/26",
-      "hora": "18:59 COT",
-      "ts": 1783018740,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "0"
-    },
-    {
-      "id": "e01b5de283d3047c0c1bc73082a2d67a",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Kansas City Royals",
-      "away": "Tampa Bay Rays",
-      "fecha": "02/07/26",
-      "hora": "18:41 COT",
-      "ts": 1783017660,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "5"
     }
   ]
 }
