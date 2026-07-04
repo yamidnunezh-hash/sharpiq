@@ -329,8 +329,13 @@ try:
 except ImportError:
     NOWPAYMENTS_API_KEY    = os.environ.get("NOWPAYMENTS_API_KEY", "")
     NOWPAYMENTS_IPN_SECRET = os.environ.get("NOWPAYMENTS_IPN_SECRET", "")
+# Login de la cuenta NOWPayments: necesario SOLO para LISTAR pagos (ese endpoint exige un
+# JWT de POST /v1/auth; la API key sola no basta). Con esto reconciliamos sin webhook.
+NOWPAYMENTS_EMAIL    = os.environ.get("NOWPAYMENTS_EMAIL", "")
+NOWPAYMENTS_PASSWORD = os.environ.get("NOWPAYMENTS_PASSWORD", "")
 
 NP_BASE = "https://api.nowpayments.io/v1"
+_NP_JWT = {"token": "", "exp": 0.0}
 PRECIO_VIP_USD = float(os.environ.get("PRECIO_VIP_USD", "15"))  # ~60.000 COP; ajustable en Railway
 
 
@@ -435,12 +440,38 @@ async def cripto_webhook(request: Request):
     return {"ok": True}
 
 
-def _np_listar_pagos(limit=200):
-    """Lista los pagos recientes de la cuenta NOWPayments para RECONCILIAR por order_id
-    sin depender del webhook. Devuelve lista (posiblemente vacía)."""
+def _np_token():
+    """JWT de NOWPayments (POST /v1/auth con email+password). Cacheado ~4 min.
+    El endpoint de LISTAR pagos lo exige (la API key sola da 401)."""
+    import time
+    now = time.time()
+    if _NP_JWT["token"] and _NP_JWT["exp"] > now:
+        return _NP_JWT["token"]
+    if not (NOWPAYMENTS_EMAIL and NOWPAYMENTS_PASSWORD):
+        return ""
+    try:
+        r = http.post(f"{NP_BASE}/auth", timeout=15,
+                      json={"email": NOWPAYMENTS_EMAIL, "password": NOWPAYMENTS_PASSWORD})
+        if r.status_code == 200:
+            tk = (r.json() or {}).get("token", "")
+            _NP_JWT["token"] = tk
+            _NP_JWT["exp"]   = now + 240
+            return tk
+    except Exception:
+        pass
+    return ""
+
+
+def _np_listar_pagos(limit=500):
+    """Lista los pagos recientes de la cuenta NOWPayments (JWT + API key) para RECONCILIAR
+    por order_id sin depender del webhook. Devuelve lista (posiblemente vacía)."""
+    tk = _np_token()
+    if not tk:
+        return []
     try:
         r = http.get(f"{NP_BASE}/payment/?limit={limit}&page=0&sortBy=created_at&orderBy=desc",
-                     headers={"x-api-key": NOWPAYMENTS_API_KEY}, timeout=20)
+                     headers={"Authorization": f"Bearer {tk}", "x-api-key": NOWPAYMENTS_API_KEY},
+                     timeout=25)
         if r.status_code == 200:
             d = r.json()
             return (d.get("data") if isinstance(d, dict) else d) or []
@@ -486,20 +517,26 @@ def cripto_diag(clave: str = ""):
     emparejamiento por order_id). Borrar tras diagnosticar."""
     if clave != "npdiag2026":
         raise HTTPException(403, "no")
-    out = {"api_key_set": bool(NOWPAYMENTS_API_KEY)}
-    try:
-        r = http.get(f"{NP_BASE}/payment/?limit=50&page=0&sortBy=created_at&orderBy=desc",
-                     headers={"x-api-key": NOWPAYMENTS_API_KEY}, timeout=20)
-        out["status"] = r.status_code
-        out["resp_snippet"] = r.text[:400]
+    out = {"api_key_set": bool(NOWPAYMENTS_API_KEY),
+           "email_set": bool(NOWPAYMENTS_EMAIL), "pass_set": bool(NOWPAYMENTS_PASSWORD)}
+    # 1) login
+    tk = _np_token()
+    out["jwt_ok"] = bool(tk)
+    if not tk:
         try:
-            d = r.json()
-            data = (d.get("data") if isinstance(d, dict) else d) or []
-            out["count"] = len(data)
-            out["muestra"] = [{"order_id": p.get("order_id"), "st": p.get("payment_status"),
-                               "keys": list(p.keys())} for p in data[:8]]
+            r = http.post(f"{NP_BASE}/auth", timeout=15,
+                          json={"email": NOWPAYMENTS_EMAIL, "password": NOWPAYMENTS_PASSWORD})
+            out["auth_status"] = r.status_code
+            out["auth_snippet"] = r.text[:250]
         except Exception as e:
-            out["parse_err"] = f"{type(e).__name__}: {e}"
+            out["auth_err"] = f"{type(e).__name__}: {e}"
+        return out
+    # 2) listar
+    try:
+        pagos = _np_listar_pagos()
+        out["count"] = len(pagos)
+        out["muestra"] = [{"order_id": p.get("order_id"), "st": p.get("payment_status"),
+                           "keys": list(p.keys())} for p in pagos[:8]]
     except Exception as e:
         out["error"] = f"{type(e).__name__}: {e}"
     return out
