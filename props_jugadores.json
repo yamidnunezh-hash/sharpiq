@@ -1,39 +1,9 @@
 {
  "partidos": [
   {
-   "local": "Criciuma",
-   "visitante": "Sport Recife",
-   "gole": "Perotti 35.5% &middot; Chrystian Barletta 35.5% &middot; Vinícius 33.0%",
-   "remates": "Criciuma: Marcelo Hermes 1.4 remates totales (0.33 a puerta), R. Otero 1.29 remates totales (0.5 a puerta), Waguininho 1.13 remates totales (0.4 a puerta) | Sport Recife: Perotti 2.29 remates totales (1.36 a puerta), Chrystian Barletta 1.69 remates totales (0.85 a puerta), C. de Pena 1.38 remates totales (0.54 a puerta)",
-   "tarjetas": "Criciuma: Bruno Alves 0.4 amarillas/partido, Eduardo 0.38 amarillas/partido, Ruan 0.33 amarillas/partido | Sport Recife: Iury Castilho 0.33 amarillas/partido, Marcelo Ajul 0.33 amarillas/partido, Chrystian Barletta 0.31 amarillas/partido",
-   "asistencias": "Criciuma: Romarinho 0.25 asistencias/partido, Ruan 0.17 asistencias/partido, R. Otero 0.14 asistencias/partido | Sport Recife: Chrystian Barletta 0.23 asistencias/partido, Marlon 0.2 asistencias/partido, C. de Pena 0.15 asistencias/partido",
-   "faltas": "Criciuma: Eduardo 2.38 faltas/partido, Luciano Castán 1.83 faltas/partido, Ruan 1.83 faltas/partido | Sport Recife: Perotti 1.86 faltas/partido, Zé Marcos 1.33 faltas/partido, Biel 1.21 faltas/partido",
-   "quites": "Criciuma: Ruan 2.0 quites/partido, Eduardo 1.88 quites/partido, Marcelo Hermes 1.53 quites/partido | Sport Recife: Biel 2.07 quites/partido, Marcelo Ajul 1.5 quites/partido, Felipinho 1.43 quites/partido"
-  },
-  {
-   "local": "Londrina",
-   "visitante": "CRB",
-   "gole": "Bruno Santos 45.1%",
-   "remates": "Londrina: Bruno Santos 2.07 remates totales (1.07 a puerta), Iago Teles 2.0 remates totales (1.0 a puerta), Thalis 0.82 remates totales (0.18 a puerta) | CRB: Mikael 2.57 remates totales (1.29 a puerta), Dadá Belmonte 1.62 remates totales (0.77 a puerta), Thiaguinho 1.56 remates totales (0.56 a puerta)",
-   "tarjetas": "Londrina: Kevyn 0.5 amarillas/partido, Iago Teles 0.42 amarillas/partido, Fabiano 0.4 amarillas/partido | CRB: Daniel 0.46 amarillas/partido, Fábio Alemão 0.42 amarillas/partido, Guilherme Estrella 0.33 amarillas/partido",
-   "asistencias": "Londrina: Victor Hugo 0.27 asistencias/partido, Bruno Santos 0.2 asistencias/partido, Paulinho Moccelin 0.14 asistencias/partido | CRB: Hereda 0.25 asistencias/partido, Léo Campos 0.25 asistencias/partido, Dadá Belmonte 0.23 asistencias/partido",
-   "faltas": "Londrina: Iago Teles 1.92 faltas/partido, Kevyn 1.38 faltas/partido, Thalis 1.36 faltas/partido | CRB: Hereda 1.75 faltas/partido, Wallace 1.5 faltas/partido, Fábio Alemão 1.25 faltas/partido",
-   "quites": "Londrina: Victor Hugo 1.73 quites/partido, Lucas Marques 1.69 quites/partido, Heron 1.42 quites/partido | CRB: Fábio Alemão 1.58 quites/partido, Hereda 1.42 quites/partido, De Lucca 1.38 quites/partido"
-  },
-  {
-   "local": "Novorizontino",
-   "visitante": "Atletico Goianiense",
-   "gole": "Gustavo Coutinho 48.7% &middot; Robson 37.3% &middot; Léo Jacó 26.5%",
-   "remates": "Novorizontino: Robson 1.53 remates totales (0.87 a puerta), Matheus Bianqui 1.3 remates totales (0.4 a puerta), Juninho 1.27 remates totales (0.73 a puerta) | Atletico Goianiense: Gustavo Coutinho 2.58 remates totales (1.58 a puerta), Marrony 1.73 remates totales (0.73 a puerta), Soares Geovany 1.36 remates totales (0.79 a puerta)",
-   "tarjetas": "Novorizontino: Gabriel Bahia 0.5 amarillas/partido, N. Castrillón 0.44 amarillas/partido, Nicolas Careca 0.33 amarillas/partido | Atletico Goianiense: Cristiano 0.36 amarillas/partido, Guilherme Lopes 0.29 amarillas/partido, Guilherme Marques 0.25 amarillas/partido",
-   "asistencias": "Novorizontino: Romulo 0.33 asistencias/partido, Robson 0.13 asistencias/partido, Juninho 0.13 asistencias/partido | Atletico Goianiense: Bruno José 0.3 asistencias/partido, Guilherme Marques 0.25 asistencias/partido, Soares Geovany 0.21 asistencias/partido",
-   "faltas": "Novorizontino: Patrick 1.71 faltas/partido, Reidiney 1.5 faltas/partido, Robson 1.47 faltas/partido | Atletico Goianiense: Assis 2.1 faltas/partido, Gebson 1.8 faltas/partido, Igor Henrique 1.8 faltas/partido",
-   "quites": "Novorizontino: Reidiney 3.5 quites/partido, Diego Mathias 2.0 quites/partido, Sander 2.0 quites/partido | Atletico Goianiense: Gustavo Daniel 2.5 quites/partido, Ewerthon 1.8 quites/partido, Marrony 1.8 quites/partido"
-  },
-  {
    "local": "Paraguay",
    "visitante": "France",
-   "gole": "Kylian Mbappé 73.1% &middot; O. Dembélé 63.2%",
+   "gole": "Kylian Mbappé 69.3% &middot; O. Dembélé 63.2%",
    "remates": "Paraguay: J. Enciso 1.25 remates totales (0.25 a puerta), D. Gómez 1.0 remates totales (0.0 a puerta), Maurício 1.0 remates totales (1.0 a puerta) | France: Kylian Mbappé 4.75 remates totales (3.25 a puerta), M. Olise 2.25 remates totales (1.25 a puerta), O. Dembélé 1.75 remates totales (1.25 a puerta)",
    "tarjetas": "Paraguay: D. Gómez 0.67 amarillas/partido, M. Galarza 0.67 amarillas/partido, A. Arce 0.5 amarillas/partido | France: A. Tchouaméni 0.33 amarillas/partido",
    "asistencias": "Paraguay: J. Enciso 0.5 asistencias/partido, M. Galarza 0.33 asistencias/partido | France: M. Olise 1.25 asistencias/partido, O. Dembélé 0.5 asistencias/partido, Kylian Mbappé 0.5 asistencias/partido",
