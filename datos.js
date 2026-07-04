@@ -5,6 +5,20 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "04/07/26",
+    partido:    "Los Angeles Dodgers vs San Diego Padres",
+    liga:       "MLB",
+    prediccion: "Los Angeles Dodgers (-1.5)",
+    cuota:      "1.91",
+    hora:       "21:11 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.2",
+    prob:       "54",
+    sharpscore: "60",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "04/07/26",
     partido:    "Paraguay vs France",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
