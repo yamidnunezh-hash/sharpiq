@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T15:58:32Z",
+  "updated": "2026-07-04T17:12:05Z",
   "live": [
     {
       "id": "cf30692398660f7bad608a5e820b0d31",
@@ -14,9 +14,7 @@
       "completed": false,
       "score_home": "1",
       "score_away": "5"
-    }
-  ],
-  "upcoming": [
+    },
     {
       "id": "9c7073ae2c29ee4881bb695f92168c68",
       "sport": "soccer_fifa_world_cup",
@@ -28,9 +26,11 @@
       "hora": "12:00 COT",
       "ts": 1783166400,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "612d9a4c3240e9ad249a9e03681b4a6c",
       "sport": "baseball_mlb",
@@ -220,6 +220,20 @@
       "emoji": "⚾",
       "home": "Colorado Rockies",
       "away": "San Francisco Giants",
+      "fecha": "04/07/26",
+      "hora": "19:11 COT",
+      "ts": 1783192260,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "478dd82a6850dc38220b29a31ad54938",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Kansas City Royals",
+      "away": "Philadelphia Phillies",
       "fecha": "04/07/26",
       "hora": "19:11 COT",
       "ts": 1783192260,
