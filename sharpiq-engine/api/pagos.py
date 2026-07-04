@@ -480,6 +480,31 @@ def cripto_verificar(token=Depends(usuario_activo)):
     return {"ok": True, "activado": activado, "plan": _plan_actual(user_id)}
 
 
+@router.get("/cripto/diag")
+def cripto_diag(clave: str = ""):
+    """TEMPORAL: ver qué devuelve la API de NOWPayments al listar pagos (para arreglar el
+    emparejamiento por order_id). Borrar tras diagnosticar."""
+    if clave != "npdiag2026":
+        raise HTTPException(403, "no")
+    out = {"api_key_set": bool(NOWPAYMENTS_API_KEY)}
+    try:
+        r = http.get(f"{NP_BASE}/payment/?limit=50&page=0&sortBy=created_at&orderBy=desc",
+                     headers={"x-api-key": NOWPAYMENTS_API_KEY}, timeout=20)
+        out["status"] = r.status_code
+        out["resp_snippet"] = r.text[:400]
+        try:
+            d = r.json()
+            data = (d.get("data") if isinstance(d, dict) else d) or []
+            out["count"] = len(data)
+            out["muestra"] = [{"order_id": p.get("order_id"), "st": p.get("payment_status"),
+                               "keys": list(p.keys())} for p in data[:8]]
+        except Exception as e:
+            out["parse_err"] = f"{type(e).__name__}: {e}"
+    except Exception as e:
+        out["error"] = f"{type(e).__name__}: {e}"
+    return out
+
+
 @router.post("/admin/reconciliar-cripto")
 def admin_reconciliar_cripto(body: dict, token=Depends(solo_admin)):
     """El admin reconcilia el pago cripto de un cliente por email (herramienta de soporte y
