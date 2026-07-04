@@ -15,7 +15,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "63",
     sharpscore: "65",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "03/07/26",
@@ -29,7 +29,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "67",
     sharpscore: "68",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "03/07/26",
@@ -43,7 +43,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "68",
     sharpscore: "67",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "03/07/26",
@@ -71,7 +71,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "72",
     sharpscore: "70",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "03/07/26",
@@ -1848,6 +1848,42 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "03/07/26",
+    partido:    "Colombia vs Ghana",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.37",
+    prob:       "72",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "03/07/26",
+    partido:    "Argentina vs Cape Verde",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.45",
+    prob:       "68",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "03/07/26",
+    partido:    "Colombia vs Ghana",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Victoria Local",
+    cuota:      "1.47",
+    prob:       "67",
+    resultado:  "win"
+  },
+  {
+    fecha:      "03/07/26",
+    partido:    "Argentina vs Cape Verde",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.55",
+    prob:       "63",
+    resultado:  "win"
+  },
   {
     fecha:      "03/07/26",
     partido:    "Australia vs Egypt",
