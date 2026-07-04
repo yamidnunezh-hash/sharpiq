@@ -435,6 +435,41 @@ async def cripto_webhook(request: Request):
     return {"ok": True}
 
 
+def _np_listar_pagos(limit=200):
+    """Lista los pagos recientes de la cuenta NOWPayments para RECONCILIAR por order_id
+    sin depender del webhook. Devuelve lista (posiblemente vacía)."""
+    try:
+        r = http.get(f"{NP_BASE}/payment/?limit={limit}&page=0&sortBy=created_at&orderBy=desc",
+                     headers={"x-api-key": NOWPAYMENTS_API_KEY}, timeout=20)
+        if r.status_code == 200:
+            d = r.json()
+            return (d.get("data") if isinstance(d, dict) else d) or []
+    except Exception:
+        pass
+    return []
+
+
+@router.post("/cripto/verificar")
+def cripto_verificar(token=Depends(usuario_activo)):
+    """Reconciliación SIN webhook: le PREGUNTA a NOWPayments por los pagos de este usuario
+    (por order_id = user_id) y, si alguno está 'finished', activa el VIP (idempotente).
+    Lo llama el frontend al volver del pago y el botón 'Ya pagué'. A prueba de webhooks
+    perdidos: no depende del IPN ni de su firma, solo de la API key (ya en Railway)."""
+    if not NOWPAYMENTS_API_KEY:
+        raise HTTPException(503, "Pagos cripto no configurados")
+    user_id = int(token["sub"])
+    activado = False
+    for p in _np_listar_pagos():
+        if str(p.get("order_id")) == str(user_id) and str(p.get("payment_status")) == "finished":
+            _registrar_pago_cripto(user_id, p)
+            activado = True
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT plan FROM usuarios WHERE id=%s", (user_id,))
+        row = cur.fetchone() or {}
+    return {"ok": True, "activado": activado, "plan": (row.get("plan") or "free")}
+
+
 @router.post("/admin/activar-vip")
 def activar_vip_manual(body: dict, token=Depends(solo_admin)):
     """Activa el VIP manualmente por email — para pagos por Nequi/transferencia
