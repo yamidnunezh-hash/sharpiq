@@ -224,6 +224,20 @@
     </div>
 
     <div class="card">
+      <div class="card-title">🪙 Reconciliar pago cripto de un cliente</div>
+      <p style="font-size:13px;color:var(--t2);margin-bottom:14px">
+        Si un cliente pagó con <strong style="color:var(--gold)">cripto</strong> y el VIP no se
+        activó solo, escribe su correo. SharpIQ le pregunta a NOWPayments y, si el pago está
+        confirmado, <strong style="color:var(--gold)">activa su VIP al instante</strong>.
+      </p>
+      <div class="gh-row">
+        <input type="email" id="cripEmail" placeholder="correo del cliente">
+        <button class="btn btn-primary" onclick="reconciliarCripto()">Verificar pago cripto</button>
+      </div>
+      <div id="cripMsg" style="margin-top:12px;font-size:13px;font-family:Inter,sans-serif;line-height:1.5"></div>
+    </div>
+
+    <div class="card">
       <div class="card-title">Claves de acceso</div>
       <p style="font-size:13px;color:var(--t2);margin-bottom:14px">Las claves están protegidas con <strong style="color:var(--gold)">SHA-256</strong>. Para cambiarlas: genera el hash de la nueva clave y actualiza <code style="color:var(--gold)">H_VIP</code> / <code style="color:var(--gold)">H_ADMIN</code> en <code>login.html</code>.</p>
       <div style="background:rgba(0,200,255,.04);border:1px solid rgba(0,200,255,.12);border-radius:8px;padding:14px;font-family:Inter,sans-serif;font-size:12px;color:var(--t2);line-height:1.8">
@@ -605,6 +619,38 @@ async function activarVipCliente(){
     msg.style.color='#22c55e';
     msg.textContent='✅ VIP activado para '+(d.nombre||email)+'. Avísale que entre a sharpiq.co con su cuenta y ya verá todos los picks.';
     document.getElementById('vipEmail').value='';
+  }catch(e){ msg.style.color='#ef4444'; msg.textContent='✗ '+e.message; }
+}
+
+async function reconciliarCripto(){
+  const email=(document.getElementById('cripEmail').value||'').trim().toLowerCase();
+  const msg=document.getElementById('cripMsg');
+  if(!email){ msg.style.color='#ef4444'; msg.textContent='Escribe el correo del cliente.'; return; }
+  const tk=localStorage.getItem('sharpiq_token');
+  if(!tk){ msg.style.color='#ef4444';
+    msg.innerHTML='Primero inicia sesión como admin en <a href="login.html" style="color:#00C8FF">login.html</a> y vuelve.'; return; }
+  msg.style.color='#97a6bd'; msg.textContent='Preguntándole a NOWPayments...';
+  try{
+    const r=await fetch('https://api.sharpiq.co/pagos/admin/reconciliar-cripto',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':'Bearer '+tk},
+      body:JSON.stringify({email})
+    });
+    const d=await r.json().catch(()=>({}));
+    if(r.status===401||r.status===403){ msg.style.color='#ef4444';
+      msg.innerHTML='Sesión admin vencida. Inicia sesión en <a href="login.html" style="color:#00C8FF">login.html</a> y vuelve.'; return; }
+    if(!r.ok) throw new Error(d.detail||'No se pudo reconciliar');
+    if(d.encontro_pago && d.plan==='vip'){
+      msg.style.color='#22c55e';
+      msg.textContent='✅ ¡Pago cripto confirmado! VIP activo para '+email+' (plan: '+d.plan+').';
+    } else if(d.plan==='vip'){
+      msg.style.color='#22c55e';
+      msg.textContent='✅ '+email+' ya está VIP (plan: '+d.plan+').';
+    } else {
+      msg.style.color='#f5b544';
+      msg.textContent='⚠ No se encontró un pago cripto confirmado para '+email+'. Si acaba de pagar, espera 1-2 min y reintenta.';
+    }
+    document.getElementById('cripEmail').value='';
   }catch(e){ msg.style.color='#ef4444'; msg.textContent='✗ '+e.message; }
 }
 

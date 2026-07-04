@@ -449,25 +449,55 @@ def _np_listar_pagos(limit=200):
     return []
 
 
-@router.post("/cripto/verificar")
-def cripto_verificar(token=Depends(usuario_activo)):
-    """Reconciliación SIN webhook: le PREGUNTA a NOWPayments por los pagos de este usuario
-    (por order_id = user_id) y, si alguno está 'finished', activa el VIP (idempotente).
-    Lo llama el frontend al volver del pago y el botón 'Ya pagué'. A prueba de webhooks
-    perdidos: no depende del IPN ni de su firma, solo de la API key (ya en Railway)."""
-    if not NOWPAYMENTS_API_KEY:
-        raise HTTPException(503, "Pagos cripto no configurados")
-    user_id = int(token["sub"])
-    activado = False
+def _reconciliar_cripto(user_id: int) -> bool:
+    """Le pregunta a NOWPayments por los pagos de este usuario (order_id = user_id) y activa
+    el VIP por cada uno 'finished' (idempotente). Devuelve True si encontró alguno finished."""
+    encontro = False
     for p in _np_listar_pagos():
         if str(p.get("order_id")) == str(user_id) and str(p.get("payment_status")) == "finished":
             _registrar_pago_cripto(user_id, p)
-            activado = True
+            encontro = True
+    return encontro
+
+
+def _plan_actual(user_id: int) -> str:
     with db() as conn:
         cur = conn.cursor()
         cur.execute("SELECT plan FROM usuarios WHERE id=%s", (user_id,))
         row = cur.fetchone() or {}
-    return {"ok": True, "activado": activado, "plan": (row.get("plan") or "free")}
+    return (row.get("plan") or "free")
+
+
+@router.post("/cripto/verificar")
+def cripto_verificar(token=Depends(usuario_activo)):
+    """Reconciliación SIN webhook: le PREGUNTA a NOWPayments por los pagos de este usuario
+    y, si alguno está 'finished', activa el VIP (idempotente). Lo llama el frontend al volver
+    del pago y el botón 'Ya pagué'. A prueba de webhooks perdidos: solo usa la API key."""
+    if not NOWPAYMENTS_API_KEY:
+        raise HTTPException(503, "Pagos cripto no configurados")
+    user_id = int(token["sub"])
+    activado = _reconciliar_cripto(user_id)
+    return {"ok": True, "activado": activado, "plan": _plan_actual(user_id)}
+
+
+@router.post("/admin/reconciliar-cripto")
+def admin_reconciliar_cripto(body: dict, token=Depends(solo_admin)):
+    """El admin reconcilia el pago cripto de un cliente por email (herramienta de soporte y
+    prueba). Busca los pagos 'finished' del cliente en NOWPayments y activa su VIP."""
+    if not NOWPAYMENTS_API_KEY:
+        raise HTTPException(503, "Pagos cripto no configurados")
+    email = (body.get("email") or "").lower().strip()
+    if not email:
+        raise HTTPException(400, "Falta el email del cliente")
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT id FROM usuarios WHERE email=%s", (email,))
+        row = cur.fetchone()
+    if not row:
+        raise HTTPException(404, "No hay cuenta con ese email")
+    activado = _reconciliar_cripto(row["id"])
+    return {"ok": True, "email": email, "user_id": row["id"],
+            "encontro_pago": activado, "plan": _plan_actual(row["id"])}
 
 
 @router.post("/admin/activar-vip")
