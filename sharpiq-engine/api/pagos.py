@@ -511,41 +511,10 @@ def cripto_verificar(token=Depends(usuario_activo)):
     return {"ok": True, "activado": activado, "plan": _plan_actual(user_id)}
 
 
-@router.get("/cripto/diag")
-def cripto_diag(clave: str = ""):
-    """TEMPORAL: ver qué devuelve la API de NOWPayments al listar pagos (para arreglar el
-    emparejamiento por order_id). Borrar tras diagnosticar."""
-    if clave != "npdiag2026":
-        raise HTTPException(403, "no")
-    out = {"api_key_set": bool(NOWPAYMENTS_API_KEY),
-           "email_set": bool(NOWPAYMENTS_EMAIL), "pass_set": bool(NOWPAYMENTS_PASSWORD)}
-    # 1) login
-    tk = _np_token()
-    out["jwt_ok"] = bool(tk)
-    if not tk:
-        try:
-            r = http.post(f"{NP_BASE}/auth", timeout=15,
-                          json={"email": NOWPAYMENTS_EMAIL, "password": NOWPAYMENTS_PASSWORD})
-            out["auth_status"] = r.status_code
-            out["auth_snippet"] = r.text[:250]
-        except Exception as e:
-            out["auth_err"] = f"{type(e).__name__}: {e}"
-        return out
-    # 2) listar
-    try:
-        pagos = _np_listar_pagos()
-        out["count"] = len(pagos)
-        out["muestra"] = [{"order_id": p.get("order_id"), "st": p.get("payment_status"),
-                           "keys": list(p.keys())} for p in pagos[:8]]
-    except Exception as e:
-        out["error"] = f"{type(e).__name__}: {e}"
-    return out
-
-
 @router.post("/admin/reconciliar-cripto")
 def admin_reconciliar_cripto(body: dict, token=Depends(solo_admin)):
-    """El admin reconcilia el pago cripto de un cliente por email (herramienta de soporte y
-    prueba). Busca los pagos 'finished' del cliente en NOWPayments y activa su VIP."""
+    """El admin reconcilia el pago cripto de un cliente por email (herramienta de soporte).
+    Busca los pagos 'finished' del cliente en NOWPayments y activa su VIP."""
     if not NOWPAYMENTS_API_KEY:
         raise HTTPException(503, "Pagos cripto no configurados")
     email = (body.get("email") or "").lower().strip()
@@ -557,18 +526,9 @@ def admin_reconciliar_cripto(body: dict, token=Depends(solo_admin)):
         row = cur.fetchone()
     if not row:
         raise HTTPException(404, "No hay cuenta con ese email")
-    # DEBUG temporal: ver qué devuelve NOWPayments para diagnosticar el emparejamiento.
-    pagos_np = _np_listar_pagos()
-    muestra = [{"order_id": p.get("order_id"), "status": p.get("payment_status"),
-                "id": p.get("payment_id") or p.get("id")} for p in pagos_np[:20]]
-    activado = False
-    for p in pagos_np:
-        if str(p.get("order_id")) == str(row["id"]) and str(p.get("payment_status")) == "finished":
-            _registrar_pago_cripto(row["id"], p)
-            activado = True
+    activado = _reconciliar_cripto(row["id"])
     return {"ok": True, "email": email, "user_id": row["id"],
-            "encontro_pago": activado, "plan": _plan_actual(row["id"]),
-            "np_vistos": len(pagos_np), "np_muestra": muestra}
+            "encontro_pago": activado, "plan": _plan_actual(row["id"])}
 
 
 @router.post("/admin/activar-vip")
