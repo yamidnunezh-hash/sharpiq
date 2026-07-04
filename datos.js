@@ -15,7 +15,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "1.2",
     prob:       "54",
     sharpscore: "60",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "04/07/26",
@@ -1918,6 +1918,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "04/07/26",
+    partido:    "Los Angeles Dodgers vs San Diego Padres",
+    liga:       "MLB",
+    prediccion: "Los Angeles Dodgers (-1.5)",
+    cuota:      "1.91",
+    prob:       "54",
+    resultado:  "win"
+  },
   {
     fecha:      "03/07/26",
     partido:    "Colombia vs Ghana",
