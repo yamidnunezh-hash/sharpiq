@@ -387,21 +387,30 @@ def _np_confirmar_pago(payment_id: str) -> dict:
 
 
 def _registrar_pago_cripto(user_id: int, np: dict):
-    """Registra el pago cripto (idempotente) y activa el VIP si quedó FINALIZADO."""
+    """Registra/actualiza el pago cripto y activa el VIP la PRIMERA vez que queda 'finished'.
+    Robusto ante VARIOS IPN del mismo pago: NOWPayments manda un aviso por cada cambio de
+    estado (waiting -> confirming -> finished). Antes, si llegaba primero un aviso no-finished
+    se creaba la fila y el aviso 'finished' posterior caía en ON CONFLICT -> NUNCA activaba.
+    Ahora activamos exactamente UNA vez, al llegar a 'finished', aunque la fila ya existiera."""
     pay_id = "nowp_" + str(np.get("payment_id") or np.get("id") or "")
     estado = str(np.get("payment_status") or "")
     with db() as conn:
         cur = conn.cursor()
-        cur.execute("""
-            INSERT INTO pagos (usuario_id, monto, moneda, mp_payment_id, mp_status, concepto)
-            VALUES (%s,%s,%s,%s,%s,'VIP SharpIQ (cripto)')
-            ON CONFLICT (mp_payment_id) DO NOTHING
-            RETURNING id
-        """, (user_id, np.get("price_amount") or PRECIO_VIP_USD,
-              (np.get("price_currency") or "usd").upper(), pay_id, estado))
-        es_nuevo = cur.fetchone() is not None
-    # Activa SOLO si es NUEVO y el pago está 'finished' (pagado y confirmado en la red).
-    if es_nuevo and estado == "finished":
+        cur.execute("SELECT mp_status FROM pagos WHERE mp_payment_id=%s", (pay_id,))
+        prev = cur.fetchone()
+        ya_finished = bool(prev and str(prev.get("mp_status")) == "finished")
+        if prev is None:
+            cur.execute("""
+                INSERT INTO pagos (usuario_id, monto, moneda, mp_payment_id, mp_status, concepto)
+                VALUES (%s,%s,%s,%s,%s,'VIP SharpIQ (cripto)')
+                ON CONFLICT (mp_payment_id) DO NOTHING
+            """, (user_id, np.get("price_amount") or PRECIO_VIP_USD,
+                  (np.get("price_currency") or "usd").upper(), pay_id, estado))
+        else:
+            cur.execute("UPDATE pagos SET mp_status=%s WHERE mp_payment_id=%s", (estado, pay_id))
+    # Activa el VIP al llegar a 'finished'. ya_finished evita el doble-activado si NOWPayments
+    # reenvía el aviso de 'finished'.
+    if estado == "finished" and not ya_finished:
         _activar_vip(user_id, pay_id, "")
 
 
