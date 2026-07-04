@@ -495,9 +495,18 @@ def admin_reconciliar_cripto(body: dict, token=Depends(solo_admin)):
         row = cur.fetchone()
     if not row:
         raise HTTPException(404, "No hay cuenta con ese email")
-    activado = _reconciliar_cripto(row["id"])
+    # DEBUG temporal: ver qué devuelve NOWPayments para diagnosticar el emparejamiento.
+    pagos_np = _np_listar_pagos()
+    muestra = [{"order_id": p.get("order_id"), "status": p.get("payment_status"),
+                "id": p.get("payment_id") or p.get("id")} for p in pagos_np[:20]]
+    activado = False
+    for p in pagos_np:
+        if str(p.get("order_id")) == str(row["id"]) and str(p.get("payment_status")) == "finished":
+            _registrar_pago_cripto(row["id"], p)
+            activado = True
     return {"ok": True, "email": email, "user_id": row["id"],
-            "encontro_pago": activado, "plan": _plan_actual(row["id"])}
+            "encontro_pago": activado, "plan": _plan_actual(row["id"]),
+            "np_vistos": len(pagos_np), "np_muestra": muestra}
 
 
 @router.post("/admin/activar-vip")

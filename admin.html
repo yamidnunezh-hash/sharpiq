@@ -650,7 +650,12 @@ async function reconciliarCripto(){
       msg.style.color='#f5b544';
       msg.textContent='⚠ No se encontró un pago cripto confirmado para '+email+'. Si acaba de pagar, espera 1-2 min y reintenta.';
     }
-    document.getElementById('cripEmail').value='';
+    if(typeof d.np_vistos!=='undefined'){
+      const dbg=document.createElement('pre');
+      dbg.style.cssText='margin-top:10px;font-size:11px;color:#7486a6;white-space:pre-wrap;word-break:break-all;background:rgba(0,0,0,.25);padding:8px;border-radius:8px';
+      dbg.textContent='DEBUG · NOWPayments devolvió '+d.np_vistos+' pagos\n'+JSON.stringify(d.np_muestra,null,1);
+      msg.appendChild(dbg);
+    }
   }catch(e){ msg.style.color='#ef4444'; msg.textContent='✗ '+e.message; }
 }
 
