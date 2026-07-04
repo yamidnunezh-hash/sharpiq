@@ -12,7 +12,7 @@
       "hora": "01:30",
       "fecha_evento": "2026-07-03",
       "cuotas": {
-        "1": 1.46,
+        "1": 1.45,
         "1_casa": "Betfair",
         "pinnacle_1": 1.45,
         "2": 9.8,
@@ -284,13 +284,13 @@
       "confianza": 86.5,
       "value_bets": {
         "victoria_local": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.46,
+          "cuota": 1.45,
           "casa": "Betfair",
           "pinn_prob": 67.3
         },
@@ -1064,9 +1064,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Victoria Local",
-        "prob": 67.3,
-        "ev": -1.8
+        "mercado": "cards_under_2_5",
+        "prob": 50.7,
+        "ev": 1.3
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -2801,7 +2801,7 @@
         "2": 1.21,
         "2_casa": "Pinnacle",
         "pinnacle_2": 1.21,
-        "1": 21.0,
+        "1": 22.0,
         "1_casa": "Betfair",
         "pinnacle_1": 16.02,
         "X": 7.6,
@@ -3073,13 +3073,13 @@
           "pinn_prob": 80.0
         },
         "victoria_local": {
-          "value": 0.268,
-          "ev_porcentaje": 26.8,
-          "ev_pinn": 26.8,
+          "value": 0.329,
+          "ev_porcentaje": 32.9,
+          "ev_pinn": 32.9,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
-          "cuota": 21.0,
+          "cuota": 22.0,
           "casa": "Betfair",
           "pinn_prob": 6.0
         },
@@ -10687,8 +10687,8 @@
         "2": 5.0,
         "2_casa": "Betfair",
         "pinnacle_2": 4.82,
-        "X": 3.96,
-        "X_casa": "Pinnacle",
+        "X": 4.0,
+        "X_casa": "Betfair",
         "pinnacle_X": 3.96,
         "over275": 1.96,
         "over275_casa": "Pinnacle",
@@ -10861,14 +10861,14 @@
           "pinn_prob": 19.9
         },
         "empate": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.96,
-          "casa": "Pinnacle",
+          "cuota": 4.0,
+          "casa": "Betfair",
           "pinn_prob": 24.2
         },
         "over275": {
@@ -18125,14 +18125,14 @@
     },
     {
       "id": "3bf177f10d546535921fa6be841880f7",
-      "comienzo": "2026-07-04T00:10:00Z",
+      "comienzo": "2026-07-04T00:15:00Z",
       "local": "Colorado Rockies",
       "visitante": "San Francisco Giants",
       "liga": "MLB",
       "liga_code": "baseball_mlb",
       "deporte": "MLB",
       "deporte_emoji": "⚾",
-      "hora": "00:10",
+      "hora": "00:15",
       "fecha_evento": "2026-07-03",
       "cuotas": {
         "Colorado Rockies": 2.35,
@@ -21372,5 +21372,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:26"
+  "generado": "00:01:46"
 }
