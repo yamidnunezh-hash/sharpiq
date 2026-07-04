@@ -108,6 +108,7 @@
         <button class="btn-upgrade" onclick="suscribir()">ACTIVAR VIP — $60.000 COP/mes</button>
         <button onclick="pagarCripto(this)" style="width:100%;margin-top:10px;background:rgba(0,200,255,.08);color:#00C8FF;border:1px solid rgba(0,200,255,.5);border-radius:10px;padding:13px;font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;cursor:pointer">🪙 Pagar con cripto (USDT / USDC)</button>
         <div style="font-family:Inter,sans-serif;font-size:11px;color:var(--t3);margin-top:8px;line-height:1.5;text-align:center">💡 Recomendado: <b>USDT</b> en red <b>Tron (TRC-20)</b> o <b>BSC</b> — las más baratas. Evita Ethereum (comisiones altas).</div>
+        <button onclick="verificarPagoCripto(this)" style="width:100%;margin-top:12px;background:transparent;color:var(--t2);border:1px solid var(--border);border-radius:10px;padding:11px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;cursor:pointer">¿Ya pagaste con cripto? Verificar mi pago ✓</button>
       </div>
       <div id="tgVipBox" style="display:none;margin-bottom:16px">
         <button id="tgVipBtn" onclick="entrarTelegramVip(this)" style="width:100%;background:linear-gradient(135deg,#229ED9,#1c7fb0);color:#fff;border:none;border-radius:10px;padding:15px;font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;cursor:pointer">📲 Entrar al canal VIP de Telegram</button>
@@ -353,6 +354,27 @@ async function pagarCripto(btn){
     const d = await r.json();
     if(d.url){ window.location.href = d.url; }
     else throw new Error(d.detail||'No se pudo crear el pago cripto');
+  } catch(e){
+    alert('Error: '+e.message);
+    if(btn){ btn.disabled=false; btn.textContent=orig; }
+  }
+}
+
+// Reconciliación manual: si el cliente pagó pero no se activó (cerró la pestaña, etc.),
+// este botón le pregunta a NOWPayments y activa el VIP en el momento.
+async function verificarPagoCripto(btn){
+  const orig = btn ? btn.textContent : '';
+  if(btn){ btn.disabled=true; btn.textContent='Verificando tu pago…'; }
+  try {
+    const r = await fetch(`${API}/pagos/cripto/verificar`, {method:'POST', headers: headers()});
+    const d = await r.json();
+    if(d.plan === 'vip'){
+      alert('✅ ¡Pago confirmado! Tu VIP quedó activo.');
+      location.reload();
+    } else {
+      alert('Aún no vemos tu pago confirmado. Si acabas de pagar, espera 1-2 minutos y vuelve a intentar (la red tarda en confirmar).');
+      if(btn){ btn.disabled=false; btn.textContent=orig; }
+    }
   } catch(e){
     alert('Error: '+e.message);
     if(btn){ btn.disabled=false; btn.textContent=orig; }

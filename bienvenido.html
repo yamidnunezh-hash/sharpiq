@@ -138,9 +138,16 @@
     let intentos = 0;
     sub.textContent = 'Confirmando tu pago y activando el acceso VIP...';
     const verificar = () => {
-      fetch('https://api.sharpiq.co/pagos/mi-suscripcion', {
-        headers: {'Authorization': 'Bearer ' + token}
+      // 1) Dispara la reconciliación CRIPTO: le pregunta a NOWPayments y activa el VIP si
+      //    el pago ya está 'finished' (NO depende del webhook). Para pagos MercadoPago no
+      //    hace daño (devuelve activado:false). 2) Luego confirma el plan y arma Telegram.
+      fetch('https://api.sharpiq.co/pagos/cripto/verificar', {
+        method: 'POST', headers: {'Authorization': 'Bearer ' + token}
       })
+      .catch(() => {})
+      .then(() => fetch('https://api.sharpiq.co/pagos/mi-suscripcion', {
+        headers: {'Authorization': 'Bearer ' + token}
+      }))
       .then(r => r.json())
       .then(data => {
         if(data.plan === 'vip'){
