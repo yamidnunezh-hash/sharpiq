@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T19:39:42Z",
+  "updated": "2026-07-04T20:34:51Z",
   "live": [
     {
       "id": "9c7073ae2c29ee4881bb695f92168c68",
@@ -27,7 +27,7 @@
       "ts": 1783168740,
       "completed": false,
       "score_home": "4",
-      "score_away": "6"
+      "score_away": "9"
     },
     {
       "id": "1c19552bd3113a7d36087a3ae84fc5c6",
@@ -40,7 +40,7 @@
       "hora": "13:59 COT",
       "ts": 1783173540,
       "completed": false,
-      "score_home": "1",
+      "score_home": "2",
       "score_away": "0"
     },
     {
@@ -54,7 +54,7 @@
       "hora": "13:59 COT",
       "ts": 1783173540,
       "completed": false,
-      "score_home": "2",
+      "score_home": "3",
       "score_away": "0"
     },
     {
@@ -70,9 +70,7 @@
       "completed": false,
       "score_home": "1",
       "score_away": "0"
-    }
-  ],
-  "upcoming": [
+    },
     {
       "id": "ec4b853359310a5bcf7395eeb51dc121",
       "sport": "baseball_mlb",
@@ -84,8 +82,8 @@
       "hora": "15:06 COT",
       "ts": 1783177560,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "3"
     },
     {
       "id": "984229c1b91fa0876a5f4e5c584d4387",
@@ -98,9 +96,11 @@
       "hora": "15:11 COT",
       "ts": 1783177860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "c798a1ffdeda28e82d930e7145a8ff10",
       "sport": "soccer_fifa_world_cup",
@@ -279,6 +279,34 @@
       "fecha": "04/07/26",
       "hora": "21:11 COT",
       "ts": 1783199460,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "a4634eae056c18d705e3feffb347163f",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Brazil",
+      "away": "Norway",
+      "fecha": "05/07/26",
+      "hora": "15:00 COT",
+      "ts": 1783263600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "413f04da71b393e087d80f485f03a4a7",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Nautico PE",
+      "away": "Juventude",
+      "fecha": "05/07/26",
+      "hora": "18:30 COT",
+      "ts": 1783276200,
       "completed": false,
       "score_home": null,
       "score_away": null
