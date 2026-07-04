@@ -506,10 +506,12 @@ def _estado(user_id, plan):
         row = cur.fetchone() or {}
         cur.execute("SELECT plan, email_verificado FROM usuarios WHERE id=%s", (user_id,))
         uv = cur.fetchone() or {}
-    # El plan REAL de la base manda. Si el VIP se activó DESPUÉS del login (pago cripto/MP
-    # o activación manual), el token todavía trae 'free' viejo -> aquí lo corregimos leyendo
-    # el plan actual, para que el VIP se reconozca SIN volver a iniciar sesión.
-    plan = (uv.get("plan") or plan or "free").lower()
+    # El plan REAL de la base manda para reflejar el VIP activado DESPUÉS del login (pago
+    # cripto/MP o activación manual) SIN re-login. PERO el admin (bypass hardcoded de Yamid,
+    # que NO vive como 'admin' en la tabla usuarios) NUNCA se degrada al plan de la fila.
+    db_plan = (uv.get("plan") or "").lower()
+    if plan != "admin" and db_plan:
+        plan = db_plan
     email_verificado = uv.get("email_verificado", True)  # default True: no bloquear si falta la columna
     total     = int(row.get("total_usos") or 0)
     inicio    = row.get("inicio_trial")
@@ -519,7 +521,10 @@ def _estado(user_id, plan):
     if fecha_hoy != hoy:
         usos_hoy = 0
 
-    if plan in ("vip", "admin"):
+    if plan == "admin":   # dueño/administrador: sin límite
+        return {"plan": "admin", "puede": True, "restantes": 999, "limite": 999,
+                "tipo": "diario", "motivo": ""}
+    if plan == "vip":
         rest = max(0, PRO_DIARIO - usos_hoy)
         return {"plan": plan, "puede": rest > 0, "restantes": rest, "limite": PRO_DIARIO,
                 "tipo": "diario",
