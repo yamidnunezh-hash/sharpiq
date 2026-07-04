@@ -57,7 +57,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "76",
     sharpscore: "72",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "04/07/26",
@@ -85,7 +85,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     prob:       "54",
     sharpscore: "60",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "03/07/26",
@@ -1932,6 +1932,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "04/07/26",
+    partido:    "Canada vs Morocco",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Over 8.5",
+    cuota:      "1.89",
+    prob:       "54",
+    resultado:  "win"
+  },
+  {
+    fecha:      "04/07/26",
+    partido:    "Canada vs Morocco",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Visitante",
+    cuota:      "1.3",
+    prob:       "76",
+    resultado:  "win"
+  },
   {
     fecha:      "04/07/26",
     partido:    "Los Angeles Dodgers vs San Diego Padres",
