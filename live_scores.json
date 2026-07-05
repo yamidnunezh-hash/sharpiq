@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-05T15:50:43Z",
-  "live": [],
-  "upcoming": [
-    {
-      "id": "6f0fa1db67e69c8f534003061fdedee9",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Atlanta Braves",
-      "away": "New York Mets",
-      "fecha": "05/07/26",
-      "hora": "11:30 COT",
-      "ts": 1783251000,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+  "updated": "2026-07-05T17:05:12Z",
+  "live": [
     {
       "id": "e7bb88c6da50433a86db985ff3c21afe",
       "sport": "baseball_mlb",
@@ -27,8 +12,8 @@
       "hora": "12:01 COT",
       "ts": 1783252860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "ff0f58dec0d0f4a36d53233a99151d06",
@@ -40,6 +25,22 @@
       "fecha": "05/07/26",
       "hora": "12:05 COT",
       "ts": 1783253100,
+      "completed": false,
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
+    {
+      "id": "6f0fa1db67e69c8f534003061fdedee9",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Atlanta Braves",
+      "away": "New York Mets",
+      "fecha": "05/07/26",
+      "hora": "12:35 COT",
+      "ts": 1783254900,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -208,6 +209,34 @@
       "fecha": "05/07/26",
       "hora": "18:21 COT",
       "ts": 1783275660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "413f04da71b393e087d80f485f03a4a7",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Nautico PE",
+      "away": "Juventude",
+      "fecha": "05/07/26",
+      "hora": "18:30 COT",
+      "ts": 1783276200,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "e61a7b471cadc8e3849158ed59d49cab",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Mexico",
+      "away": "England",
+      "fecha": "05/07/26",
+      "hora": "19:00 COT",
+      "ts": 1783278000,
       "completed": false,
       "score_home": null,
       "score_away": null
