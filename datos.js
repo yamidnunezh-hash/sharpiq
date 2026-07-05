@@ -4,6 +4,48 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "05/07/26",
+    partido:    "Mexico vs England",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.46",
+    hora:       "19:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "68",
+    sharpscore: "68",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "05/07/26",
+    partido:    "Brazil vs Norway",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.38",
+    hora:       "15:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "72",
+    sharpscore: "70",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "05/07/26",
+    partido:    "Mexico vs England",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Under 8.5",
+    cuota:      "1.8",
+    hora:       "19:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "57",
+    sharpscore: "60",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "04/07/26",
     partido:    "Paraguay vs France",
     liga:       "FIFA Mundial 2026",
