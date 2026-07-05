@@ -1529,7 +1529,7 @@
         "cards_over_3_5": 2.38,
         "cards_over_3_5_casa": "Pinnacle",
         "pinnacle_cards_over_3_5": 2.38,
-        "cards_under_3_5": 1.67,
+        "cards_under_3_5": 1.68,
         "cards_under_3_5_casa": "Betfair",
         "pinnacle_cards_under_3_5": 1.57,
         "btts_si": 2.04,
@@ -2172,13 +2172,13 @@
           "mercado_nombre": "Tarjetas Over 3.5"
         },
         "cards_under_3_5": {
-          "value": 0.006,
-          "ev_porcentaje": 0.6,
-          "ev_pinn": 0.6,
+          "value": 0.012,
+          "ev_porcentaje": 1.2,
+          "ev_pinn": 1.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.67,
+          "cuota": 1.68,
           "casa": "Betfair",
           "pinn_prob": 60.3,
           "mercado_nombre": "Tarjetas Under 3.5"
@@ -2435,7 +2435,7 @@
       "prediccion_principal": {
         "mercado": "cards_under_3_5",
         "prob": 60.3,
-        "ev": 0.6
+        "ev": 1.2
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -7130,5 +7130,5 @@
       "movimiento": null
     }
   ],
-  "generado": "14:13:02"
+  "generado": "14:13:12"
 }
