@@ -1,6 +1,6 @@
 """
 SharpIQ — Pagos MercadoPago
-Suscripción VIP: 60.000 COP/mes
+Suscripción VIP: $20 USD/mes (~80.000 COP)
 """
 import os, sys, json
 from datetime import datetime, timedelta
@@ -26,7 +26,7 @@ MP_BASE = "https://api.mercadopago.com"
 PLANES = {
     "vip": {
         "nombre":      "SharpIQ VIP",
-        "precio":      60000,
+        "precio":      80000,   # COP que cobra MercadoPago (~$20 USD, precio pre-lanzamiento)
         "moneda":      "COP",
         "descripcion": "Acceso completo a picks EV+ diarios con análisis Sharp",
         "frecuencia":  1,
@@ -238,7 +238,7 @@ def _activar_vip(user_id: int, sub_id: str, email: str):
         cur.execute("""
             INSERT INTO suscripciones (usuario_id, plan, precio_usd, fecha_fin,
                                        mp_subscription_id, mp_payer_email, estado)
-            VALUES (%s,'vip',60000,%s,%s,%s,'active')
+            VALUES (%s,'vip',20,%s,%s,%s,'active')
             ON CONFLICT (usuario_id, estado) DO UPDATE
             SET fecha_fin=%s, mp_subscription_id=%s, mp_payer_email=%s
         """, (user_id, fecha_fin, sub_id, email, fecha_fin, sub_id, email))
@@ -346,7 +346,7 @@ NOWPAYMENTS_PASSWORD = os.environ.get("NOWPAYMENTS_PASSWORD", "")
 
 NP_BASE = "https://api.nowpayments.io/v1"
 _NP_JWT = {"token": "", "exp": 0.0}
-PRECIO_VIP_USD = float(os.environ.get("PRECIO_VIP_USD", "15"))  # ~60.000 COP; ajustable en Railway
+PRECIO_VIP_USD = float(os.environ.get("PRECIO_VIP_USD", "20"))  # $20 pre-lanzamiento; ajustable en Railway
 
 
 @router.post("/cripto/checkout")
