@@ -265,3 +265,37 @@ def admin_payout_pagar(body: dict, token=Depends(solo_admin)):
         cur.execute("""UPDATE comisiones SET estado='pagada'
                        WHERE partner_id=%s AND estado='pendiente'""", (po["partner_id"],))
     return {"ok": True}
+
+
+@router.post("/admin/anclar")
+def admin_anclar(body: dict, token=Depends(solo_admin)):
+    """Ancla un usuario EXISTENTE bajo un sponsor en el árbol (setea referido_por). Sirve para
+    meter en la red a gente que ya se había registrado sin enlace. Evita ciclos."""
+    email  = (body.get("email") or "").lower().strip()
+    codigo = (body.get("sponsor_codigo") or "").upper().strip()
+    if not email or not codigo:
+        raise HTTPException(400, "Falta el email o el código del sponsor")
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT id FROM usuarios WHERE email=%s", (email,))
+        u = cur.fetchone()
+        if not u:
+            raise HTTPException(404, "No hay cuenta con ese email")
+        cur.execute("SELECT id, nombre FROM usuarios WHERE codigo_ref=%s", (codigo,))
+        s = cur.fetchone()
+        if not s:
+            raise HTTPException(404, "No existe un usuario con ese código de sponsor")
+        uid, sid = u["id"], s["id"]
+        if uid == sid:
+            raise HTTPException(400, "Un usuario no puede ser su propio sponsor")
+        # Anti-ciclo: subiendo desde el sponsor no debemos toparnos con el usuario.
+        actual, hops = sid, 0
+        while actual and hops < 30:
+            cur.execute("SELECT referido_por FROM usuarios WHERE id=%s", (actual,))
+            r = cur.fetchone()
+            actual = r.get("referido_por") if r else None
+            if actual == uid:
+                raise HTTPException(400, "No se puede: crearía un ciclo en el árbol")
+            hops += 1
+        cur.execute("UPDATE usuarios SET referido_por=%s WHERE id=%s", (sid, uid))
+    return {"ok": True, "email": email, "sponsor": s["nombre"], "sponsor_codigo": codigo}

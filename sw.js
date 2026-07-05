@@ -1,6 +1,6 @@
 // SharpIQ Service Worker — actualización automática garantizada
 // Cambia CACHE_VERSION en cada deploy importante para forzar recarga global
-const CACHE_VERSION = 'sharpiq-v110';
+const CACHE_VERSION = 'sharpiq-v111';
 const STATIC_ASSETS = [
   '/assets/icon-192.png',
   '/assets/icon-512.png',
