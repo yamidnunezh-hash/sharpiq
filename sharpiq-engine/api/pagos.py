@@ -234,19 +234,7 @@ def _activar_vip(user_id: int, sub_id: str, email: str):
         base = datetime.utcnow()
         if row and row.get("fecha_fin") and row["fecha_fin"] > base:
             base = row["fecha_fin"]
-        dias = 30  # mes pagado
-
-        # Aplicar MESES GRATIS PENDIENTES que este usuario tenga como referidor (opción a).
-        cur.execute("""SELECT COALESCE(SUM(meses_gratis_ganados - meses_gratis_aplicados),0) AS pend
-                       FROM referidos WHERE referidor_id=%s""", (user_id,))
-        pend = int((cur.fetchone() or {}).get("pend") or 0)
-        if pend > 0:
-            dias += 30 * pend
-            cur.execute("""UPDATE referidos SET meses_gratis_aplicados = meses_gratis_ganados
-                           WHERE referidor_id=%s AND meses_gratis_ganados > meses_gratis_aplicados""",
-                        (user_id,))
-
-        fecha_fin = base + timedelta(days=dias)
+        fecha_fin = base + timedelta(days=30)  # 1 mes pagado
         cur.execute("""
             INSERT INTO suscripciones (usuario_id, plan, precio_usd, fecha_fin,
                                        mp_subscription_id, mp_payer_email, estado)
@@ -255,37 +243,8 @@ def _activar_vip(user_id: int, sub_id: str, email: str):
             SET fecha_fin=%s, mp_subscription_id=%s, mp_payer_email=%s
         """, (user_id, fecha_fin, sub_id, email, fecha_fin, sub_id, email))
         cur.execute("UPDATE usuarios SET plan='vip' WHERE id=%s", (user_id,))
-
-        # NOTA: el premio de "1 mes gratis" al referidor se REEMPLAZÓ por el motor de Partners
-        # (comisión en efectivo 35/10/5, ver _devengar_comisiones). Ya NO se generan meses gratis
-        # nuevos. Los meses YA GANADOS se siguen aplicando arriba (grandfather), no se pierden.
-        # _recompensar_referidor(cur, user_id)   # <- desactivado a propósito
-
-
-def _recompensar_referidor(cur, referido_id: int):
-    """Otorga 1 mes gratis a quien refirió a `referido_id`. Idempotente.
-    Si el referidor tiene VIP vigente se aplica al instante (+30d a su fecha_fin);
-    si no, queda pendiente y se aplica cuando reactive (en _activar_vip)."""
-    cur.execute("""SELECT referidor_id, meses_gratis_aplicados
-                   FROM referidos WHERE referido_id=%s""", (referido_id,))
-    ref = cur.fetchone()
-    if not ref:
-        return
-    # 1 mes ganado por este referido (set a 1, no acumula por renovaciones del referido).
-    cur.execute("UPDATE referidos SET meses_gratis_ganados=1 WHERE referido_id=%s", (referido_id,))
-    if (ref.get("meses_gratis_aplicados") or 0) >= 1:
-        return  # ya se aplicó antes → no duplicar
-    referidor_id = ref["referidor_id"]
-    cur.execute("""SELECT id FROM suscripciones
-                   WHERE usuario_id=%s AND estado='active' AND fecha_fin > NOW()""",
-                (referidor_id,))
-    sub = cur.fetchone()
-    if sub:
-        cur.execute("""UPDATE suscripciones SET fecha_fin = fecha_fin + INTERVAL '30 days'
-                       WHERE id=%s""", (sub["id"],))
-        cur.execute("UPDATE referidos SET meses_gratis_aplicados=1 WHERE referido_id=%s",
-                    (referido_id,))
-    # else: queda pendiente (aplicados=0); se suma a fecha_fin cuando el referidor reactive.
+        # El premio al referidor ahora es COMISIÓN en efectivo (motor de Partners,
+        # ver _devengar_comisiones). El viejo "1 mes gratis" quedó ELIMINADO.
 
 
 def _desactivar_vip(user_id: int):
