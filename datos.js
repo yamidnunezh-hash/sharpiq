@@ -7,6 +7,20 @@ const PROXIMOS_EVENTOS = [
     fecha:      "05/07/26",
     partido:    "Mexico vs England",
     liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.5",
+    hora:       "19:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "66",
+    sharpscore: "66",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "05/07/26",
+    partido:    "Mexico vs England",
+    liga:       "FIFA Mundial 2026",
     prediccion: "Under 2.5 Goles",
     cuota:      "1.64",
     hora:       "19:00 COT",
@@ -29,20 +43,6 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "73",
     sharpscore: "71",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "05/07/26",
-    partido:    "Mexico vs England",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Over 1.5 Goles",
-    cuota:      "1.47",
-    hora:       "19:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "67",
-    sharpscore: "67",
     resultado:  "pendiente"
   },
   {
