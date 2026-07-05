@@ -1,48 +1,6 @@
 {
-  "updated": "2026-07-05T20:54:37Z",
+  "updated": "2026-07-05T21:57:51Z",
   "live": [
-    {
-      "id": "6f0fa1db67e69c8f534003061fdedee9",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Atlanta Braves",
-      "away": "New York Mets",
-      "fecha": "05/07/26",
-      "hora": "13:17 COT",
-      "ts": 1783257431,
-      "completed": false,
-      "score_home": "3",
-      "score_away": "8"
-    },
-    {
-      "id": "5aed324537c72e3b3cd7d1f3e3905db5",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Chicago Cubs",
-      "away": "St. Louis Cardinals",
-      "fecha": "05/07/26",
-      "hora": "13:35 COT",
-      "ts": 1783258536,
-      "completed": false,
-      "score_home": "6",
-      "score_away": "3"
-    },
-    {
-      "id": "4dea73f21196e43153d6355e7f5d1266",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Kansas City Royals",
-      "away": "Philadelphia Phillies",
-      "fecha": "05/07/26",
-      "hora": "14:01 COT",
-      "ts": 1783260060,
-      "completed": false,
-      "score_home": "3",
-      "score_away": "2"
-    },
     {
       "id": "12eaa8dfb716d6ed545a6e1fed88cc2a",
       "sport": "baseball_mlb",
@@ -54,8 +12,8 @@
       "hora": "14:31 COT",
       "ts": 1783261860,
       "completed": false,
-      "score_home": "1",
-      "score_away": "2"
+      "score_home": "2",
+      "score_away": "6"
     },
     {
       "id": "1dea84746e977d3a57b78a0a47ba6935",
@@ -68,7 +26,7 @@
       "hora": "14:31 COT",
       "ts": 1783261860,
       "completed": false,
-      "score_home": "1",
+      "score_home": "2",
       "score_away": "0"
     },
     {
@@ -82,8 +40,8 @@
       "hora": "14:32 COT",
       "ts": 1783261922,
       "completed": false,
-      "score_home": "3",
-      "score_away": "6"
+      "score_home": "6",
+      "score_away": "7"
     },
     {
       "id": "a4634eae056c18d705e3feffb347163f",
@@ -97,7 +55,7 @@
       "ts": 1783263600,
       "completed": false,
       "score_home": "0",
-      "score_away": "0"
+      "score_away": "2"
     },
     {
       "id": "acc7a54706d2d24e201d069a00e76d50",
@@ -124,8 +82,8 @@
       "hora": "15:07 COT",
       "ts": 1783264054,
       "completed": false,
-      "score_home": "3",
-      "score_away": "2"
+      "score_home": "4",
+      "score_away": "6"
     },
     {
       "id": "5fb0c67a8c660b822db6b5a2a9d75125",
@@ -139,10 +97,8 @@
       "ts": 1783265460,
       "completed": false,
       "score_home": "0",
-      "score_away": "1"
-    }
-  ],
-  "upcoming": [
+      "score_away": "6"
+    },
     {
       "id": "2cf5f7fa6ed79ae90ee9f6aa70ceb1e2",
       "sport": "baseball_mlb",
@@ -151,12 +107,14 @@
       "home": "Seattle Mariners",
       "away": "Toronto Blue Jays",
       "fecha": "05/07/26",
-      "hora": "16:00 COT",
-      "ts": 1783267200,
+      "hora": "16:05 COT",
+      "ts": 1783267558,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "2991d31eedcff470d7105f7237e66e03",
       "sport": "baseball_mlb",
@@ -352,9 +310,65 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "190922affd0be754bfefd71548dbf90d",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Argentina",
+      "away": "Egypt",
+      "fecha": "07/07/26",
+      "hora": "11:00 COT",
+      "ts": 1783422000,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "4dea73f21196e43153d6355e7f5d1266",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Kansas City Royals",
+      "away": "Philadelphia Phillies",
+      "fecha": "05/07/26",
+      "hora": "14:01 COT",
+      "ts": 1783260060,
+      "completed": true,
+      "score_home": "5",
+      "score_away": "2"
+    },
+    {
+      "id": "5aed324537c72e3b3cd7d1f3e3905db5",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago Cubs",
+      "away": "St. Louis Cardinals",
+      "fecha": "05/07/26",
+      "hora": "13:35 COT",
+      "ts": 1783258536,
+      "completed": true,
+      "score_home": "6",
+      "score_away": "4"
+    },
+    {
+      "id": "6f0fa1db67e69c8f534003061fdedee9",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Atlanta Braves",
+      "away": "New York Mets",
+      "fecha": "05/07/26",
+      "hora": "13:17 COT",
+      "ts": 1783257431,
+      "completed": true,
+      "score_home": "9",
+      "score_away": "10"
+    },
     {
       "id": "29749cde930adfaf1cbc374908eeac88",
       "sport": "baseball_mlb",
@@ -452,48 +466,6 @@
       "completed": true,
       "score_home": "1",
       "score_away": "8"
-    },
-    {
-      "id": "ee9972cacf647720c50225d0f8004a91",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Chicago Cubs",
-      "away": "St. Louis Cardinals",
-      "fecha": "04/07/26",
-      "hora": "20:07 COT",
-      "ts": 1783195622,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "3"
-    },
-    {
-      "id": "01abcc9d9a9408b8be4a4acc7dc53ec5",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Colorado Rockies",
-      "away": "San Francisco Giants",
-      "fecha": "04/07/26",
-      "hora": "19:55 COT",
-      "ts": 1783194900,
-      "completed": true,
-      "score_home": "4",
-      "score_away": "6"
-    },
-    {
-      "id": "478dd82a6850dc38220b29a31ad54938",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Kansas City Royals",
-      "away": "Philadelphia Phillies",
-      "fecha": "04/07/26",
-      "hora": "19:11 COT",
-      "ts": 1783192260,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "6"
     }
   ]
 }
