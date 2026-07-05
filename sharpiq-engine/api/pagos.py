@@ -256,8 +256,10 @@ def _activar_vip(user_id: int, sub_id: str, email: str):
         """, (user_id, fecha_fin, sub_id, email, fecha_fin, sub_id, email))
         cur.execute("UPDATE usuarios SET plan='vip' WHERE id=%s", (user_id,))
 
-        # Recompensar a quien refirió a este usuario: 1 MES GRATIS (antes: $3).
-        _recompensar_referidor(cur, user_id)
+        # NOTA: el premio de "1 mes gratis" al referidor se REEMPLAZÓ por el motor de Partners
+        # (comisión en efectivo 35/10/5, ver _devengar_comisiones). Ya NO se generan meses gratis
+        # nuevos. Los meses YA GANADOS se siguen aplicando arriba (grandfather), no se pierden.
+        # _recompensar_referidor(cur, user_id)   # <- desactivado a propósito
 
 
 def _recompensar_referidor(cur, referido_id: int):

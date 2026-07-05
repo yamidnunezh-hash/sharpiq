@@ -90,7 +90,6 @@
     <!-- Tabs -->
     <div class="tabs">
       <div class="tab active" onclick="showTab('picks')">Mis Picks</div>
-      <div class="tab" onclick="showTab('referidos')">Referidos</div>
       <div class="tab" onclick="showTab('pagos')">Pagos</div>
       <div class="tab" onclick="showTab('partner')">🤝 Zona Partner</div>
       <div class="tab" onclick="showTab('config')">Configuración</div>
@@ -181,7 +180,7 @@ function logout(){
 
 function showTab(name){
   document.querySelectorAll('.tab').forEach((t,i)=>{
-    const names=['picks','referidos','pagos','partner','config'];
+    const names=['picks','pagos','partner','config'];
     t.classList.toggle('active', names[i]===name);
   });
   document.querySelectorAll('.tab-panel').forEach(p=> p.classList.remove('active'));
