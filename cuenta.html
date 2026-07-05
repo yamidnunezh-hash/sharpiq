@@ -211,17 +211,41 @@ async function cargarPartner(){
       return;
     }
     const d = await (await fetch(`${API}/partners/dashboard`,{headers:headers()})).json();
-    const k=d.kpis||{}, refs=d.referidos||[], coms=d.comisiones||[], w=d.wallet||{};
+    const k=d.kpis||{}, refs=d.referidos||[], coms=d.comisiones||[], w=d.wallet||{}, rg=d.rango||{}, serie=d.mensual||[];
     const fmt=n=>'$'+(Number(n)||0).toFixed(2);
-    const filaRef = r=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border);font-family:Inter,sans-serif;font-size:13px"><span style="color:var(--t1)">${esc_(r.nombre)}<span style="display:block;color:var(--t3);font-size:11px">${esc_(r.fecha)}</span></span><span style="font-weight:700;color:${r.plan==='vip'?'#22c55e':'var(--t3)'}">${r.plan==='vip'?'★ VIP':'Free'}</span></div>`;
+    // Gráfico de comisiones por mes (SVG autocontenido)
+    let chart;
+    if(!serie.length){
+      chart='<p style="color:var(--t3);font-size:12px;font-family:Inter,sans-serif;text-align:center;padding:18px 0">Aún no hay comisiones. Empieza a construir tu red 🦈</p>';
+    } else {
+      const W=320,H=120,n=serie.length,mx=Math.max(1,...serie.map(s=>s.monto));
+      const X=i=> n===1?W/2:8+i*(W-16)/(n-1), Y=v=> H-24-(v/mx)*(H-40);
+      const P=serie.map((s,i)=>[X(i),Y(s.monto)]);
+      const line=P.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+      const area=P[0][0].toFixed(1)+','+(H-24)+' '+line+' '+P[n-1][0].toFixed(1)+','+(H-24);
+      const dots=P.map(p=>`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3" fill="#00C8FF"/>`).join('');
+      const labs=serie.map((s,i)=>`<text x="${X(i).toFixed(1)}" y="${H-6}" fill="#7486a6" font-size="9" text-anchor="middle" font-family="Inter,sans-serif">${esc_((s.periodo||'').slice(5))}</text>`).join('');
+      chart=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block"><defs><linearGradient id="gcom" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00C8FF" stop-opacity="0.35"/><stop offset="1" stop-color="#00C8FF" stop-opacity="0"/></linearGradient></defs><polygon points="${area}" fill="url(#gcom)"/><polyline points="${line}" fill="none" stroke="#00C8FF" stroke-width="2" stroke-linejoin="round"/>${dots}${labs}</svg>`;
+    }
+    const filaRef = r=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);font-family:Inter,sans-serif"><div><div style="color:var(--t1);font-size:13px;font-weight:600">${esc_(r.nombre)}</div><span style="display:inline-block;margin-top:4px;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px;${r.activo?'background:rgba(34,197,94,.15);color:#22c55e':'background:rgba(120,134,166,.16);color:var(--t3)'}">${r.activo?'● Activo':'○ Inactivo'}</span></div><div style="text-align:right"><div style="font-weight:800;color:${r.activo?'#22c55e':'var(--t3)'};font-size:14px">${fmt(r.generado)}</div><div style="font-size:10px;color:var(--t3)">generado</div></div></div>`;
     const filaCom = x=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border);font-family:Inter,sans-serif;font-size:13px"><span style="color:var(--t2)">Nivel ${x.nivel} · ${x.pct}% <span style="color:var(--t3);font-size:11px">· ${esc_(x.periodo)}</span></span><span style="font-weight:800;color:#22c55e">${fmt(x.monto)} <span style="font-size:10px;color:var(--t3);font-weight:600">${esc_(x.estado)}</span></span></div>`;
     c.innerHTML = `
+      <div style="background:linear-gradient(135deg,rgba(123,92,240,.16),rgba(0,200,255,.10));border:1px solid rgba(123,92,240,.35);border-radius:14px;padding:18px 20px;margin-bottom:16px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="font-size:38px">${rg.emoji||'🥉'}</div>
+          <div style="flex:1"><div style="font-family:Inter,sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px">TU NIVEL</div><div style="font-size:21px;font-weight:800;color:var(--t1)">${esc_(rg.nombre||'Bronce')}</div></div>
+          <div style="text-align:right"><div style="font-size:24px;font-weight:800;color:#00C8FF">${k.clientes_activos||0}</div><div style="font-size:10px;color:var(--t3);font-family:Inter,sans-serif">activos</div></div>
+        </div>
+        <div style="font-size:12px;color:var(--t2);font-family:Inter,sans-serif;margin:11px 0 9px">✓ ${esc_(rg.beneficio||'')}</div>
+        ${rg.siguiente?`<div style="height:8px;border-radius:5px;background:rgba(255,255,255,.09);overflow:hidden"><div style="height:100%;width:${rg.progreso||0}%;background:linear-gradient(90deg,#00C8FF,#7B5CF0)"></div></div><div style="font-size:11px;color:var(--t3);font-family:Inter,sans-serif;margin-top:7px">Te faltan <b style="color:var(--t1)">${rg.faltan}</b> clientes activos para <b style="color:#7B5CF0">${esc_(rg.siguiente)}</b> 🚀</div>`:'<div style="font-size:12px;color:#22c55e;font-family:Inter,sans-serif;margin-top:6px">¡Nivel máximo alcanzado! 💎</div>'}
+      </div>
       <div class="kpi-row">
         <div class="kpi"><div class="kpi-val">${k.clientes_activos||0}</div><div class="kpi-lbl">Clientes activos</div></div>
         <div class="kpi"><div class="kpi-val" style="color:#22c55e">${fmt(k.comision_mes)}</div><div class="kpi-lbl">Comisión del mes</div></div>
         <div class="kpi"><div class="kpi-val" style="color:#22c55e">${fmt(k.total_ganado)}</div><div class="kpi-lbl">Total ganado</div></div>
         <div class="kpi"><div class="kpi-val">${fmt(k.por_cobrar)}</div><div class="kpi-lbl">Por cobrar</div></div>
       </div>
+      <div class="ref-box"><div class="section-title">📈 Comisiones por mes</div>${chart}</div>
       <div class="ref-box">
         <div class="section-title">🔗 Tu enlace de Partner</div>
         <p style="font-size:13px;color:var(--t2);line-height:1.7">Compártelo. Ganas comisión por cada persona que se registre con él y active el VIP — <b style="color:var(--gold)">cada mes</b> que renueve.</p>
@@ -241,7 +265,7 @@ async function cargarPartner(){
       </div>
       <button onclick="solicitarPayout(this)" style="width:100%;margin-top:4px;background:rgba(34,197,94,.12);color:#22c55e;border:1px solid rgba(34,197,94,.4);border-radius:10px;padding:14px;font-family:Inter,sans-serif;font-size:12px;font-weight:700;letter-spacing:.4px;cursor:pointer">💸 Solicitar el pago de mis comisiones</button>
       <div id="payoutMsg" style="margin-top:8px;font-family:Inter,sans-serif;font-size:12px;text-align:center"></div>
-      <div class="section-title" style="margin-top:22px">👥 Mis referidos (${refs.length})</div>
+      <div class="section-title" style="margin-top:22px">👥 Tus directos (${refs.length})</div>
       ${refs.length ? refs.map(filaRef).join('') : '<p style="font-size:13px;color:var(--t3);font-family:Inter,sans-serif">Aún no tienes referidos. Comparte tu enlace y empieza a ganar 🦈</p>'}
       <div class="section-title" style="margin-top:22px">💰 Mis comisiones</div>
       ${coms.length ? coms.map(filaCom).join('') : '<p style="font-size:13px;color:var(--t3);font-family:Inter,sans-serif">Aquí verás tus comisiones cuando tus referidos paguen su VIP.</p>'}
