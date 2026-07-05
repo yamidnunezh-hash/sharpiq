@@ -5,6 +5,34 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "05/07/26",
+    partido:    "Brazil vs Norway",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.36",
+    hora:       "15:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "73",
+    sharpscore: "71",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "05/07/26",
+    partido:    "Mexico vs England",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.65",
+    hora:       "19:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "60",
+    sharpscore: "65",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "05/07/26",
     partido:    "Mexico vs England",
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
@@ -21,20 +49,6 @@ const PROXIMOS_EVENTOS = [
     fecha:      "05/07/26",
     partido:    "Brazil vs Norway",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Draw No Bet Local",
-    cuota:      "1.36",
-    hora:       "15:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "73",
-    sharpscore: "72",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "05/07/26",
-    partido:    "Brazil vs Norway",
-    liga:       "FIFA Mundial 2026",
     prediccion: "Corners Under 10.5",
     cuota:      "1.63",
     hora:       "15:00 COT",
@@ -43,20 +57,6 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     prob:       "62",
     sharpscore: "62",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "05/07/26",
-    partido:    "Mexico vs England",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Under 2.5 Goles",
-    cuota:      "1.67",
-    hora:       "19:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "60",
-    sharpscore: "65",
     resultado:  "pendiente"
   },
   {
