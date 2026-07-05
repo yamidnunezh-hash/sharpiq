@@ -299,8 +299,8 @@ def _desactivar_vip(user_id: int):
 # ── Comisiones del motor de Partners (unilevel legal) ────────────────────────
 # % por nivel sobre el precio VIP. Configurable por env. Empezamos con 30 / 7 / 5.
 COM_NIVELES = [
-    (1, float(os.environ.get("COM_N1", "30"))),
-    (2, float(os.environ.get("COM_N2", "7"))),
+    (1, float(os.environ.get("COM_N1", "35"))),
+    (2, float(os.environ.get("COM_N2", "10"))),
     (3, float(os.environ.get("COM_N3", "5"))),
 ]
 # INTERRUPTOR LEGAL: por defecto SOLO el nivel 1 (comisión directa = inequívocamente legal).

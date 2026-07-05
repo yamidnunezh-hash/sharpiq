@@ -12,7 +12,33 @@ from .db import db
 router = APIRouter()
 
 # % por nivel — SOLO para mostrar en el dashboard (el cálculo real está en pagos.COM_NIVELES).
-NIVELES_PCT = {1: 30, 2: 7, 3: 5}
+NIVELES_PCT = {1: 35, 2: 10, 3: 5}
+
+# Rangos por # de clientes VIP directos activos (gamificación, sin implicación de pago).
+RANGOS = [
+    (0,   "Bronce",    "🥉", "Bienvenido — empieza a construir tu red"),
+    (5,   "Plata",     "🥈", "Bono de reconocimiento por tu crecimiento"),
+    (10,  "Oro",       "🥇", "Prioridad en soporte y material de venta"),
+    (25,  "Zafiro",    "💠", "Acceso a concursos y bonos de liderazgo"),
+    (50,  "Esmeralda", "💚", "Bono estratégico del equipo"),
+    (100, "Diamante",  "💎", "Élite SharpIQ — beneficios máximos"),
+]
+
+
+def _rango(activos):
+    idx = 0
+    for i, (minv, *_ ) in enumerate(RANGOS):
+        if activos >= minv:
+            idx = i
+    minv, nombre, emoji, beneficio = RANGOS[idx]
+    if idx + 1 < len(RANGOS):
+        nextmin, nextname, _, _ = RANGOS[idx + 1]
+        span = nextmin - minv
+        progreso = int(min(100, (activos - minv) * 100 / span)) if span else 100
+        return {"nombre": nombre, "emoji": emoji, "beneficio": beneficio, "activos": activos,
+                "siguiente": nextname, "faltan": max(0, nextmin - activos), "progreso": progreso}
+    return {"nombre": nombre, "emoji": emoji, "beneficio": beneficio, "activos": activos,
+            "siguiente": None, "faltan": 0, "progreso": 100}
 
 
 def _partner_row(cur, user_id):
@@ -77,10 +103,19 @@ def dashboard(token=Depends(usuario_activo)):
         k = cur.fetchone() or {}
         cur.execute("SELECT COUNT(*) AS n FROM usuarios WHERE referido_por=%s AND plan='vip'", (uid,))
         activos = int((cur.fetchone() or {}).get("n") or 0)
-        cur.execute("""SELECT nombre, email, plan, fecha_registro
-                       FROM usuarios WHERE referido_por=%s
-                       ORDER BY fecha_registro DESC LIMIT 100""", (uid,))
+        # Directos con lo que CADA UNO le ha generado en comisión al partner.
+        cur.execute("""
+            SELECT u.id, u.nombre, u.email, u.plan, u.fecha_registro,
+                   COALESCE((SELECT SUM(monto_usd) FROM comisiones
+                             WHERE partner_id=%s AND cliente_id=u.id),0) AS generado
+            FROM usuarios u WHERE u.referido_por=%s
+            ORDER BY (u.plan='vip') DESC, u.fecha_registro DESC LIMIT 100""", (pid, uid))
         refs = cur.fetchall()
+        # Serie mensual de comisiones (para el gráfico) — últimos 6 periodos.
+        cur.execute("""SELECT periodo, COALESCE(SUM(monto_usd),0) AS monto
+                       FROM comisiones WHERE partner_id=%s
+                       GROUP BY periodo ORDER BY periodo DESC LIMIT 6""", (pid,))
+        mensual = list(reversed(cur.fetchall()))
         cur.execute("""SELECT nivel, pct, monto_usd, periodo, estado, fecha
                        FROM comisiones WHERE partner_id=%s ORDER BY id DESC LIMIT 60""", (pid,))
         coms = cur.fetchall()
@@ -93,11 +128,14 @@ def dashboard(token=Depends(usuario_activo)):
             "total_ganado":     float(k.get("total") or 0),
             "por_cobrar":       float(k.get("pendiente") or 0),
         },
+        "rango": _rango(activos),
+        "mensual": [{"periodo": m["periodo"] or "", "monto": float(m["monto"] or 0)} for m in mensual],
         "codigo_ref": codigo, "enlace": _enlace(codigo),
         "wallet": {"red": p.get("crypto_red"), "address": p.get("crypto_address")},
         "min_payout_usd": float(p.get("min_payout_usd") or 20),
         "referidos": [{"nombre": r["nombre"], "email": r["email"], "plan": r["plan"],
-                       "fecha": str(r["fecha_registro"])[:10]} for r in refs],
+                       "fecha": str(r["fecha_registro"])[:10],
+                       "activo": r["plan"] == "vip", "generado": float(r["generado"] or 0)} for r in refs],
         "comisiones": [{"nivel": c["nivel"], "pct": float(c["pct"] or 0),
                         "monto": float(c["monto_usd"] or 0), "periodo": c["periodo"],
                         "estado": c["estado"], "fecha": str(c["fecha"])[:10]} for c in coms],
