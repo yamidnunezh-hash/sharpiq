@@ -6,7 +6,7 @@ El DEVENGO de comisiones (crear la comisión al pagar un cliente) vive en pagos.
 from fastapi import APIRouter, Depends, HTTPException
 from datetime import datetime
 
-from .auth import usuario_activo
+from .auth import usuario_activo, solo_admin
 from .db import db
 
 router = APIRouter()
@@ -220,3 +220,48 @@ def solicitar_payout(token=Depends(usuario_activo)):
                     (pid, periodo, pend, p.get("crypto_red"), p.get("crypto_address")))
     return {"ok": True, "monto": pend, "estado": "solicitado",
             "mensaje": "Solicitud enviada. Se paga tras la aprobación del equipo."}
+
+
+# ── ADMIN: pagar comisiones a los Partners ───────────────────────────────────
+
+@router.get("/admin/payouts")
+def admin_payouts(token=Depends(solo_admin)):
+    """Lista los payouts SOLICITADOS (pendientes) para que el admin los pague."""
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT po.id, po.periodo, po.monto_total_usd, po.crypto_red, po.crypto_address,
+                   po.creado, u.nombre, u.email
+            FROM payouts po
+            JOIN partners pa ON pa.id = po.partner_id
+            JOIN usuarios  u ON u.id  = pa.usuario_id
+            WHERE po.estado='pendiente'
+            ORDER BY po.creado ASC""")
+        rows = cur.fetchall()
+    return {"payouts": [{"id": r["id"], "nombre": r["nombre"], "email": r["email"],
+                         "monto": float(r["monto_total_usd"] or 0), "periodo": r["periodo"],
+                         "red": r["crypto_red"], "address": r["crypto_address"],
+                         "creado": str(r["creado"])[:16]} for r in rows]}
+
+
+@router.post("/admin/payout/pagar")
+def admin_payout_pagar(body: dict, token=Depends(solo_admin)):
+    """Marca un payout como PAGADO (con el txid on-chain) y pasa a 'pagada' las comisiones
+    pendientes de ese partner. El envío de la cripto lo hace el admin por fuera (NOWPayments
+    Mass Payouts o su wallet) y aquí solo registra el resultado."""
+    pid  = body.get("payout_id")
+    txid = (body.get("txid") or "").strip()
+    if not pid:
+        raise HTTPException(400, "Falta payout_id")
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT partner_id, estado FROM payouts WHERE id=%s", (pid,))
+        po = cur.fetchone()
+        if not po:
+            raise HTTPException(404, "Ese payout no existe")
+        if po["estado"] == "completado":
+            return {"ok": True, "ya_pagado": True}
+        cur.execute("UPDATE payouts SET estado='completado', txid=%s WHERE id=%s", (txid, pid))
+        cur.execute("""UPDATE comisiones SET estado='pagada'
+                       WHERE partner_id=%s AND estado='pendiente'""", (po["partner_id"],))
+    return {"ok": True}
