@@ -1,6 +1,6 @@
 ---
 name: project-zona-partner-construida-2026-07-03
-description: Zona Partner CONSTRUIDA (Fases 1-3): motor backend, dashboard premium estilo Movve y árbol genealógico D3. Comisión 50% (35/10/5). Falta Fase 4 (payouts admin) y encender multinivel tras abogado.
+description: Zona Partner CONSTRUIDA COMPLETA (Fases 1-4): motor, dashboard premium estilo Movve, árbol D3 y payouts admin. Comisión 50% (35/10/5). Solo falta config en Railway (PRECIO_VIP_USD=20, COM_MULTINIVEL tras abogado).
 metadata:
   type: project
 ---
@@ -42,9 +42,18 @@ huérfanos (cargarReferidos, copiarRef).
 Se crearon 6 usuarios "Demo" bajo el código de Yamid (UQRKBXSK) para ver el árbol: Carlos/Maria/Jorge
 (N1) -> Ana/Luis (N2) -> Sofia (N3). Son de prueba, se pueden borrar.
 
-## PENDIENTE
-1. **Fase 4 — Payouts (lado admin)**: aprobar y pagar comisiones en cripto (NOWPayments Mass Payouts).
-   El partner ya solicita; falta el panel admin para aprobar + ejecutar el pago.
-2. Poner **PRECIO_VIP_USD=20** en Railway.
-3. Probar el flujo end-to-end: referido paga -> comisión aparece -> nodo verde.
-4. Encender **COM_MULTINIVEL=1** tras consulta legal (SENA/universidad gratis).
+## Fase 4 — Payouts admin (HECHA 2026-07-03)
+- partners.py: `GET /partners/admin/payouts` (solo_admin, lista solicitudes pendientes con
+  nombre/monto/wallet) y `POST /partners/admin/payout/pagar` {payout_id, txid} -> marca el payout
+  'completado' + pasa las comisiones pendientes del partner a 'pagada'. El envío de la cripto lo hace
+  el admin por fuera (NOWPayments Mass Payouts o MetaMask); el endpoint solo registra el resultado.
+- admin.html (Config): tarjeta "💸 Pagos a Partners" -> botón "Ver solicitudes" (cargarPayouts) +
+  por cada solicitud, input de TxID y botón "Marcar pagado" (pagarPayout).
+- Ciclo completo: inscribirse -> compartir enlace -> devengo -> dashboard/árbol -> solicitar payout
+  -> admin paga con TxID -> comisiones 'pagada'. TODO funciona.
+
+## PENDIENTE (solo CONFIG en Railway, no código)
+1. Poner **PRECIO_VIP_USD=20** en Railway (ahora 15) — precio pre-lanzamiento.
+2. Encender **COM_MULTINIVEL=1** en Railway tras consulta legal (SENA/universidad gratis).
+3. (Opcional) Probar el flujo end-to-end con una comisión real (referido que pague).
+4. (Opcional) Borrar los 6 usuarios "Demo" del árbol.
