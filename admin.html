@@ -195,6 +195,13 @@
 
   <div id="panel-config" class="panel">
     <div class="card">
+      <div class="card-title">📊 Resumen del negocio (ganancias)</div>
+      <p style="font-size:13px;color:var(--t2);margin-bottom:14px">Tu vista de dueño: ingreso recurrente, comisiones a partners y utilidad estimada.</p>
+      <button class="btn btn-primary" onclick="cargarResumen()">Ver resumen</button>
+      <div id="resumenBox" style="margin-top:16px"></div>
+    </div>
+
+    <div class="card">
       <div class="card-title">Token de GitHub</div>
       <p style="font-size:13px;color:var(--t2);margin-bottom:16px">
         Necesitas un <strong>Personal Access Token</strong> de GitHub con permiso <code style="color:var(--gold);background:rgba(0,200,255,.08);padding:2px 6px;border-radius:4px">repo</code> para publicar desde acá.<br>
@@ -740,6 +747,44 @@ async function anclarUsuario(){
     msg.textContent='✅ '+email+' quedó anclado bajo '+(d.sponsor||cod)+'. Ya aparece en su árbol.';
     document.getElementById('anclarEmail').value=''; document.getElementById('anclarSponsor').value='';
   }catch(e){ msg.style.color='#ef4444'; msg.textContent='✗ '+e.message; }
+}
+
+async function cargarResumen(){
+  const box=document.getElementById('resumenBox');
+  const tk=localStorage.getItem('sharpiq_token');
+  if(!tk){ box.innerHTML='<span style="color:#ef4444">Inicia sesión como admin en <a href="login.html" style="color:#00C8FF">login.html</a>.</span>'; return; }
+  box.innerHTML='Cargando...';
+  try{
+    const r=await fetch('https://api.sharpiq.co/partners/admin/resumen',{headers:{'Authorization':'Bearer '+tk}});
+    if(r.status===401||r.status===403){ box.innerHTML='<span style="color:#ef4444">Sesión admin vencida. Entra en <a href="login.html" style="color:#00C8FF">login.html</a>.</span>'; return; }
+    const d=await r.json();
+    const f=n=>'$'+(Number(n)||0).toFixed(2);
+    const util=d.utilidad_mes_estimada||0;
+    box.innerHTML=`
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;font-family:Inter,sans-serif">
+        <div style="background:rgba(0,200,255,.06);border:1px solid rgba(0,200,255,.2);border-radius:12px;padding:16px;text-align:center">
+          <div style="font-size:22px;font-weight:800;color:#00C8FF">${f(d.mrr_usd)}</div>
+          <div style="font-size:10px;color:var(--t3);text-transform:uppercase;margin-top:4px">Ingreso recurrente/mes</div>
+        </div>
+        <div style="background:rgba(245,181,68,.06);border:1px solid rgba(245,181,68,.25);border-radius:12px;padding:16px;text-align:center">
+          <div style="font-size:22px;font-weight:800;color:#f5b544">${f(d.comisiones_mes)}</div>
+          <div style="font-size:10px;color:var(--t3);text-transform:uppercase;margin-top:4px">Comisiones del mes</div>
+        </div>
+        <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.25);border-radius:12px;padding:16px;text-align:center">
+          <div style="font-size:22px;font-weight:800;color:${util>=0?'#22c55e':'#ef4444'}">${f(util)}</div>
+          <div style="font-size:10px;color:var(--t3);text-transform:uppercase;margin-top:4px">Utilidad estimada/mes</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-top:12px;font-family:Inter,sans-serif">
+        <div style="border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center"><div style="font-size:18px;font-weight:700;color:var(--t1)">${d.usuarios||0}</div><div style="font-size:10px;color:var(--t3)">Usuarios</div></div>
+        <div style="border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center"><div style="font-size:18px;font-weight:700;color:#22c55e">${d.vip_activos||0}</div><div style="font-size:10px;color:var(--t3)">VIP activos</div></div>
+        <div style="border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center"><div style="font-size:18px;font-weight:700;color:#7B5CF0">${d.partners||0}</div><div style="font-size:10px;color:var(--t3)">Partners</div></div>
+        <div style="border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center"><div style="font-size:18px;font-weight:700;color:var(--t1)">${f(d.comisiones_pendientes)}</div><div style="font-size:10px;color:var(--t3)">Por pagar</div></div>
+      </div>
+      <div style="font-size:11px;color:var(--t3);font-family:Inter,sans-serif;margin-top:12px;line-height:1.6">
+        Ingreso = ${d.vip_activos||0} VIP × $${d.precio_vip}. Utilidad = ingreso − comisiones (${f(d.comisiones_mes)}) − Mako (${f(d.costo_mako)}) − costos fijos (${f(d.costos_fijos)}).
+      </div>`;
+  }catch(e){ box.innerHTML='<span style="color:#ef4444">Error: '+e.message+'</span>'; }
 }
 
 // ── HELPERS ─────────────────────────────────────────────────────

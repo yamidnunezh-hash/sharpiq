@@ -299,3 +299,38 @@ def admin_anclar(body: dict, token=Depends(solo_admin)):
             hops += 1
         cur.execute("UPDATE usuarios SET referido_por=%s WHERE id=%s", (sid, uid))
     return {"ok": True, "email": email, "sponsor": s["nombre"], "sponsor_codigo": codigo}
+
+
+@router.get("/admin/resumen")
+def admin_resumen(token=Depends(solo_admin)):
+    """Vista de DUEÑO: ingreso recurrente, comisiones y utilidad estimada del negocio."""
+    from .pagos import PRECIO_VIP_USD
+    periodo = datetime.utcnow().strftime("%Y-%m")
+    COSTOS_FIJOS = 85.0          # APIs (Odds/API-Football) + Railway, aprox USD/mes
+    COSTO_MAKO   = 0.56          # por usuario VIP/mes, aprox
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) AS n FROM usuarios");                          usuarios = cur.fetchone()["n"]
+        cur.execute("SELECT COUNT(*) AS n FROM usuarios WHERE plan='vip'");         vip      = cur.fetchone()["n"]
+        cur.execute("SELECT COUNT(*) AS n FROM partners WHERE es_partner AND activo"); partners = cur.fetchone()["n"]
+        cur.execute("SELECT COUNT(*) AS n FROM pagos");                             pagos    = cur.fetchone()["n"]
+        cur.execute("""SELECT
+                COALESCE(SUM(monto_usd),0)                                   AS total,
+                COALESCE(SUM(monto_usd) FILTER (WHERE periodo=%s),0)         AS mes,
+                COALESCE(SUM(monto_usd) FILTER (WHERE estado='pendiente'),0) AS pend
+            FROM comisiones""", (periodo,))
+        c = cur.fetchone()
+    mrr        = vip * PRECIO_VIP_USD
+    com_mes    = float(c["mes"] or 0)
+    costo_mako = vip * COSTO_MAKO
+    utilidad   = mrr - com_mes - costo_mako - COSTOS_FIJOS
+    return {
+        "usuarios": usuarios, "vip_activos": vip, "partners": partners, "pagos": pagos,
+        "precio_vip": PRECIO_VIP_USD,
+        "mrr_usd": round(mrr, 2),
+        "comisiones_mes": round(com_mes, 2),
+        "comisiones_pendientes": round(float(c["pend"] or 0), 2),
+        "comisiones_total": round(float(c["total"] or 0), 2),
+        "costos_fijos": COSTOS_FIJOS, "costo_mako": round(costo_mako, 2),
+        "utilidad_mes_estimada": round(utilidad, 2),
+    }
