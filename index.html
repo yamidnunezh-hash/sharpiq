@@ -5851,11 +5851,13 @@ async function irAPagoCripto(el) {
 
   if(valid && role==='admin'){
     area.innerHTML=`
+      <a href="cuenta.html" style="font-family:Inter,sans-serif;font-size:10px;letter-spacing:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#eef3fb;padding:6px 14px;border-radius:6px;text-decoration:none;">👤<span class="nlbl"> Mi Cuenta</span></a>
       <a href="predicciones.html" style="font-family:Inter,sans-serif;font-size:10px;letter-spacing:1px;background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.25);color:#00C8FF;padding:6px 14px;border-radius:6px;text-decoration:none;">⚡<span class="nlbl"> Motor</span></a>
       <a href="admin.html" style="font-family:Inter,sans-serif;font-size:10px;letter-spacing:1px;background:rgba(123,92,240,.1);border:1px solid rgba(123,92,240,.25);color:#a78bfa;padding:6px 14px;border-radius:6px;text-decoration:none;">⚙<span class="nlbl"> Admin</span></a>
       <button onclick="cerrarSesion()" style="background:transparent;border:1px solid rgba(239,68,68,.3);color:#ef4444;font-size:11px;font-family:Inter,sans-serif;padding:6px 12px;border-radius:6px;cursor:pointer;">Salir</button>`;
   } else if(valid && role==='vip'){
     area.innerHTML=`
+      <a href="cuenta.html" style="font-family:Inter,sans-serif;font-size:10px;letter-spacing:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#eef3fb;padding:6px 14px;border-radius:6px;text-decoration:none;">👤<span class="nlbl"> Mi Cuenta</span></a>
       <span style="font-family:Inter,sans-serif;font-size:10px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);color:#22c55e;padding:6px 12px;border-radius:6px;">🔓 VIP Activo</span>
       <button onclick="cerrarSesion()" style="background:transparent;border:1px solid rgba(239,68,68,.3);color:#ef4444;font-size:11px;font-family:Inter,sans-serif;padding:6px 12px;border-radius:6px;cursor:pointer;">Salir</button>`;
   } else {
