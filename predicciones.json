@@ -4462,7 +4462,7 @@
       "cuotas": {
         "Detroit Tigers": 1.85,
         "Texas Rangers": 2.08,
-        "Over 7.5": 1.89,
+        "Over 7.5": 1.91,
         "Under 7.5": 1.95,
         "Detroit Tigers (-1.5)": 2.4,
         "Texas Rangers (+1.5)": 1.62
@@ -4498,14 +4498,14 @@
           "mercado_nombre": "Texas Rangers"
         },
         "over_7_5": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.89,
-          "casa": "DraftKings",
+          "cuota": 1.91,
+          "casa": "BetMGM",
           "pinn_prob": 50.8,
           "mercado_nombre": "Over 7.5"
         },
@@ -6187,5 +6187,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:00:59"
+  "generado": "16:01:13"
 }
