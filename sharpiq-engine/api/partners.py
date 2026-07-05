@@ -298,7 +298,15 @@ def admin_anclar(body: dict, token=Depends(solo_admin)):
                 raise HTTPException(400, "No se puede: crearía un ciclo en el árbol")
             hops += 1
         cur.execute("UPDATE usuarios SET referido_por=%s WHERE id=%s", (sid, uid))
-    return {"ok": True, "email": email, "sponsor": s["nombre"], "sponsor_codigo": codigo}
+        hizo_partner = False
+        if body.get("hacer_partner"):
+            cur.execute("""INSERT INTO partners (usuario_id, es_partner, activo)
+                           VALUES (%s, TRUE, TRUE)
+                           ON CONFLICT (usuario_id) DO UPDATE SET es_partner=TRUE, activo=TRUE""",
+                        (uid,))
+            hizo_partner = True
+    return {"ok": True, "email": email, "sponsor": s["nombre"], "sponsor_codigo": codigo,
+            "hizo_partner": hizo_partner}
 
 
 @router.get("/admin/resumen")
