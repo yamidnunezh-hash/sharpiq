@@ -144,14 +144,22 @@ def inicializar_db():
             partner_id      INTEGER NOT NULL REFERENCES partners(id),
             cliente_id      INTEGER REFERENCES usuarios(id),   -- el cliente que pagó
             pago_id         INTEGER REFERENCES pagos(id),       -- el pago que la generó
+            nivel           INTEGER DEFAULT 1,                  -- 1 | 2 | 3 (unilevel)
+            pct             NUMERIC(5,2),                       -- % aplicado en ese nivel
             periodo         TEXT,                               -- ej. '2026-07'
             monto_usd       NUMERIC(10,2) NOT NULL,
             moneda          TEXT DEFAULT 'USD',
             estado          TEXT DEFAULT 'pendiente',           -- pendiente | pagada | anulada
             fecha           TIMESTAMP DEFAULT NOW()
         );
-        -- Idempotencia: una sola comisión por pago (si el webhook se reenvía, no duplica).
-        CREATE UNIQUE INDEX IF NOT EXISTS comisiones_pago_id_uniq ON comisiones (pago_id);
+        -- Multinivel: un pago genera HASTA 3 comisiones (una por nivel/partner). El candado
+        -- viejo era UNIQUE(pago_id) = 1 sola comisión por pago -> lo cambiamos a
+        -- UNIQUE(pago_id, partner_id): permite las 3 filas del árbol pero evita duplicar.
+        ALTER TABLE comisiones ADD COLUMN IF NOT EXISTS nivel INTEGER DEFAULT 1;
+        ALTER TABLE comisiones ADD COLUMN IF NOT EXISTS pct   NUMERIC(5,2);
+        DROP INDEX IF EXISTS comisiones_pago_id_uniq;
+        CREATE UNIQUE INDEX IF NOT EXISTS comisiones_pago_partner_uniq
+            ON comisiones (pago_id, partner_id);
 
         CREATE TABLE IF NOT EXISTS payouts (
             id                SERIAL PRIMARY KEY,

@@ -1,0 +1,184 @@
+"""
+SharpIQ — Motor de Partners (afiliados / unilevel legal, estilo bróker)
+Zona del socio: inscribirse, ver comisiones, referidos, árbol genealógico, wallet y payouts.
+El DEVENGO de comisiones (crear la comisión al pagar un cliente) vive en pagos.py.
+"""
+from fastapi import APIRouter, Depends, HTTPException
+from datetime import datetime
+
+from .auth import usuario_activo
+from .db import db
+
+router = APIRouter()
+
+# % por nivel — SOLO para mostrar en el dashboard (el cálculo real está en pagos.COM_NIVELES).
+NIVELES_PCT = {1: 30, 2: 7, 3: 5}
+
+
+def _partner_row(cur, user_id):
+    cur.execute("""SELECT id, es_partner, pct_comision, crypto_red, crypto_address,
+                          min_payout_usd, activo, fecha_alta
+                   FROM partners WHERE usuario_id=%s""", (user_id,))
+    return cur.fetchone()
+
+
+def _enlace(codigo):
+    return f"https://sharpiq.co/registro.html?ref={codigo or ''}"
+
+
+@router.get("/estado")
+def estado(token=Depends(usuario_activo)):
+    """¿El usuario es Partner? Devuelve su ficha (o es_partner:false) + su código/enlace."""
+    uid = int(token["sub"])
+    with db() as conn:
+        cur = conn.cursor()
+        p = _partner_row(cur, uid)
+        cur.execute("SELECT codigo_ref FROM usuarios WHERE id=%s", (uid,))
+        codigo = (cur.fetchone() or {}).get("codigo_ref") or ""
+    if not p:
+        return {"es_partner": False, "codigo_ref": codigo, "enlace": _enlace(codigo)}
+    return {"es_partner": bool(p.get("es_partner")) and bool(p.get("activo")),
+            "codigo_ref": codigo, "enlace": _enlace(codigo),
+            "wallet": {"red": p.get("crypto_red"), "address": p.get("crypto_address")},
+            "min_payout_usd": float(p.get("min_payout_usd") or 20)}
+
+
+@router.post("/inscribir")
+def inscribir(token=Depends(usuario_activo)):
+    """Auto-inscripción como Partner: GRATIS, cualquiera que quiera. Idempotente."""
+    uid = int(token["sub"])
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("""INSERT INTO partners (usuario_id, es_partner, activo)
+                       VALUES (%s, TRUE, TRUE)
+                       ON CONFLICT (usuario_id) DO UPDATE SET es_partner=TRUE, activo=TRUE""",
+                    (uid,))
+        cur.execute("SELECT codigo_ref FROM usuarios WHERE id=%s", (uid,))
+        codigo = (cur.fetchone() or {}).get("codigo_ref") or ""
+    return {"ok": True, "es_partner": True, "codigo_ref": codigo, "enlace": _enlace(codigo)}
+
+
+@router.get("/dashboard")
+def dashboard(token=Depends(usuario_activo)):
+    """Resumen del Partner: KPIs, referidos directos y comisiones recientes."""
+    uid = int(token["sub"])
+    periodo = datetime.utcnow().strftime("%Y-%m")
+    with db() as conn:
+        cur = conn.cursor()
+        p = _partner_row(cur, uid)
+        if not p:
+            raise HTTPException(404, "Aún no eres Partner")
+        pid = p["id"]
+        cur.execute("""SELECT
+                COALESCE(SUM(monto_usd),0)                                      AS total,
+                COALESCE(SUM(monto_usd) FILTER (WHERE periodo=%s),0)            AS mes,
+                COALESCE(SUM(monto_usd) FILTER (WHERE estado='pendiente'),0)    AS pendiente
+            FROM comisiones WHERE partner_id=%s""", (periodo, pid))
+        k = cur.fetchone() or {}
+        cur.execute("SELECT COUNT(*) AS n FROM usuarios WHERE referido_por=%s AND plan='vip'", (uid,))
+        activos = int((cur.fetchone() or {}).get("n") or 0)
+        cur.execute("""SELECT nombre, email, plan, fecha_registro
+                       FROM usuarios WHERE referido_por=%s
+                       ORDER BY fecha_registro DESC LIMIT 100""", (uid,))
+        refs = cur.fetchall()
+        cur.execute("""SELECT nivel, pct, monto_usd, periodo, estado, fecha
+                       FROM comisiones WHERE partner_id=%s ORDER BY id DESC LIMIT 60""", (pid,))
+        coms = cur.fetchall()
+        cur.execute("SELECT codigo_ref FROM usuarios WHERE id=%s", (uid,))
+        codigo = (cur.fetchone() or {}).get("codigo_ref") or ""
+    return {
+        "kpis": {
+            "clientes_activos": activos,
+            "comision_mes":     float(k.get("mes") or 0),
+            "total_ganado":     float(k.get("total") or 0),
+            "por_cobrar":       float(k.get("pendiente") or 0),
+        },
+        "codigo_ref": codigo, "enlace": _enlace(codigo),
+        "wallet": {"red": p.get("crypto_red"), "address": p.get("crypto_address")},
+        "min_payout_usd": float(p.get("min_payout_usd") or 20),
+        "referidos": [{"nombre": r["nombre"], "email": r["email"], "plan": r["plan"],
+                       "fecha": str(r["fecha_registro"])[:10]} for r in refs],
+        "comisiones": [{"nivel": c["nivel"], "pct": float(c["pct"] or 0),
+                        "monto": float(c["monto_usd"] or 0), "periodo": c["periodo"],
+                        "estado": c["estado"], "fecha": str(c["fecha"])[:10]} for c in coms],
+    }
+
+
+@router.get("/arbol")
+def arbol(token=Depends(usuario_activo)):
+    """Árbol genealógico (3 niveles) para la visualización D3. Una sola consulta recursiva."""
+    uid = int(token["sub"])
+    with db() as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT nombre FROM usuarios WHERE id=%s", (uid,))
+        yo = (cur.fetchone() or {}).get("nombre") or "Tú"
+        cur.execute("""
+            WITH RECURSIVE arbol AS (
+                SELECT id, nombre, plan, referido_por, 1 AS nivel
+                FROM usuarios WHERE referido_por=%s
+                UNION ALL
+                SELECT u.id, u.nombre, u.plan, u.referido_por, a.nivel+1
+                FROM usuarios u JOIN arbol a ON u.referido_por = a.id
+                WHERE a.nivel < 3
+            )
+            SELECT id, nombre, plan, referido_por, nivel FROM arbol
+        """, (uid,))
+        filas = cur.fetchall()
+    nodos = {uid: {"id": uid, "nombre": yo, "plan": "-", "nivel": 0, "hijos": []}}
+    for f in filas:
+        nodos[f["id"]] = {"id": f["id"], "nombre": f["nombre"], "plan": f["plan"],
+                          "nivel": f["nivel"], "hijos": []}
+    for f in filas:
+        padre = nodos.get(f["referido_por"])
+        if padre:
+            padre["hijos"].append(nodos[f["id"]])
+    return nodos[uid]
+
+
+@router.post("/wallet")
+def wallet(body: dict, token=Depends(usuario_activo)):
+    """Guarda/actualiza la wallet cripto de cobro del Partner."""
+    uid = int(token["sub"])
+    red  = (body.get("red") or "").strip().upper()
+    addr = (body.get("address") or "").strip()
+    if not red or not addr:
+        raise HTTPException(400, "Falta la red o la dirección de la wallet")
+    with db() as conn:
+        cur = conn.cursor()
+        p = _partner_row(cur, uid)
+        if not p:
+            raise HTTPException(404, "Aún no eres Partner")
+        cur.execute("UPDATE partners SET crypto_red=%s, crypto_address=%s WHERE usuario_id=%s",
+                    (red, addr, uid))
+    return {"ok": True, "red": red, "address": addr}
+
+
+@router.post("/solicitar-payout")
+def solicitar_payout(token=Depends(usuario_activo)):
+    """El Partner solicita el pago de sus comisiones PENDIENTES. Si supera el mínimo, crea
+    el lote del periodo (estado 'pendiente'); el admin lo aprueba y paga en cripto (Fase 4)."""
+    uid = int(token["sub"])
+    periodo = datetime.utcnow().strftime("%Y-%m")
+    with db() as conn:
+        cur = conn.cursor()
+        p = _partner_row(cur, uid)
+        if not p:
+            raise HTTPException(404, "Aún no eres Partner")
+        if not p.get("crypto_address"):
+            raise HTTPException(400, "Primero configura tu wallet de cobro")
+        pid    = p["id"]
+        minimo = float(p.get("min_payout_usd") or 20)
+        cur.execute("""SELECT COALESCE(SUM(monto_usd),0) AS pend FROM comisiones
+                       WHERE partner_id=%s AND estado='pendiente'""", (pid,))
+        pend = float((cur.fetchone() or {}).get("pend") or 0)
+        if pend < minimo:
+            return {"ok": False, "monto": pend, "minimo": minimo,
+                    "motivo": f"Necesitas al menos ${minimo:.0f} para retirar. Llevas ${pend:.2f}."}
+        cur.execute("""INSERT INTO payouts (partner_id, periodo, monto_total_usd, crypto_red,
+                                            crypto_address, estado)
+                       VALUES (%s,%s,%s,%s,%s,'pendiente')
+                       ON CONFLICT (partner_id, periodo) DO UPDATE
+                       SET monto_total_usd=EXCLUDED.monto_total_usd""",
+                    (pid, periodo, pend, p.get("crypto_red"), p.get("crypto_address")))
+    return {"ok": True, "monto": pend, "estado": "solicitado",
+            "mensaje": "Solicitud enviada. Se paga tras la aprobación del equipo."}

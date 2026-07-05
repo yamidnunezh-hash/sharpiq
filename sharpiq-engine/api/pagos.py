@@ -296,6 +296,55 @@ def _desactivar_vip(user_id: int):
         cur.execute("UPDATE usuarios SET plan='free' WHERE id=%s", (user_id,))
 
 
+# ── Comisiones del motor de Partners (unilevel legal) ────────────────────────
+# % por nivel sobre el precio VIP. Configurable por env. Empezamos con 30 / 7 / 5.
+COM_NIVELES = [
+    (1, float(os.environ.get("COM_N1", "30"))),
+    (2, float(os.environ.get("COM_N2", "7"))),
+    (3, float(os.environ.get("COM_N3", "5"))),
+]
+# INTERRUPTOR LEGAL: por defecto SOLO el nivel 1 (comisión directa = inequívocamente legal).
+# Cuando el abogado dé el OK, se pone COM_MULTINIVEL=1 en Railway y se encienden N2 y N3.
+COM_MULTINIVEL = os.environ.get("COM_MULTINIVEL", "0") == "1"
+
+
+def _devengar_comisiones(cliente_id: int, pago_id):
+    """Al pagar un cliente, sube su cadena de referidos y crea una comisión para cada
+    referidor que sea PARTNER activo. Nivel 1 SIEMPRE; niveles 2-3 solo si COM_MULTINIVEL
+    (tras visto bueno legal). Base = precio VIP en USD (igual pague en COP o cripto).
+    Idempotente por UNIQUE(pago_id, partner_id). Nunca rompe el pago (try/except)."""
+    if not pago_id:
+        return
+    base    = PRECIO_VIP_USD
+    periodo = datetime.utcnow().strftime("%Y-%m")
+    niveles = COM_NIVELES if COM_MULTINIVEL else COM_NIVELES[:1]
+    try:
+        with db() as conn:
+            cur = conn.cursor()
+            actual = cliente_id
+            for nivel, pct in niveles:
+                cur.execute("SELECT referido_por FROM usuarios WHERE id=%s", (actual,))
+                row = cur.fetchone()
+                ref_id = row.get("referido_por") if row else None
+                if not ref_id:
+                    break                      # se acabó la cadena de referidos
+                cur.execute("""SELECT id FROM partners
+                               WHERE usuario_id=%s AND es_partner=TRUE AND activo=TRUE""",
+                            (ref_id,))
+                prow = cur.fetchone()
+                if prow:
+                    monto = round(base * pct / 100.0, 2)
+                    cur.execute("""
+                        INSERT INTO comisiones (partner_id, cliente_id, pago_id, nivel, pct,
+                                                periodo, monto_usd, estado)
+                        VALUES (%s,%s,%s,%s,%s,%s,%s,'pendiente')
+                        ON CONFLICT (pago_id, partner_id) DO NOTHING
+                    """, (prow["id"], cliente_id, pago_id, nivel, pct, periodo, monto))
+                actual = ref_id                # sube un nivel en el árbol
+    except Exception as e:
+        print("[comisiones] error devengando:", e)
+
+
 def _registrar_pago(user_id: int, pago: dict):
     with db() as conn:
         cur = conn.cursor()
@@ -307,15 +356,15 @@ def _registrar_pago(user_id: int, pago: dict):
         """, (user_id, pago.get("transaction_amount", 0),
               pago.get("currency_id", "COP"),
               str(pago.get("id")), pago.get("status")))
-        es_nuevo = cur.fetchone() is not None
+        r = cur.fetchone()
+        pago_id = r["id"] if r else None
 
-    # ── Este es el flujo REAL (Checkout Pro de pago único): el evento 'payment'
-    #    llega aquí. Antes solo se registraba el pago y NO se activaba el VIP ni
-    #    se acreditaba al referidor. Ahora sí: activar VIP en DB + recompensa.
-    #    Solo si el pago es NUEVO → idempotente ante webhooks duplicados de MP.
-    if es_nuevo and pago.get("status") == "approved":
+    # ── Flujo REAL (Checkout Pro, pago único): activar VIP + recompensa referido +
+    #    DEVENGAR comisiones de Partners. Solo si el pago es NUEVO (pago_id) → idempotente.
+    if pago_id and pago.get("status") == "approved":
         email = (pago.get("payer") or {}).get("email", "")
         _activar_vip(user_id, str(pago.get("id")), email)
+        _devengar_comisiones(user_id, pago_id)
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -401,7 +450,7 @@ def _registrar_pago_cripto(user_id: int, np: dict):
     estado = str(np.get("payment_status") or "")
     with db() as conn:
         cur = conn.cursor()
-        cur.execute("SELECT mp_status FROM pagos WHERE mp_payment_id=%s", (pay_id,))
+        cur.execute("SELECT id, mp_status FROM pagos WHERE mp_payment_id=%s", (pay_id,))
         prev = cur.fetchone()
         ya_finished = bool(prev and str(prev.get("mp_status")) == "finished")
         if prev is None:
@@ -411,12 +460,16 @@ def _registrar_pago_cripto(user_id: int, np: dict):
                 ON CONFLICT (mp_payment_id) DO NOTHING
             """, (user_id, np.get("price_amount") or PRECIO_VIP_USD,
                   (np.get("price_currency") or "usd").upper(), pay_id, estado))
+            cur.execute("SELECT id FROM pagos WHERE mp_payment_id=%s", (pay_id,))
+            prev = cur.fetchone()
         else:
             cur.execute("UPDATE pagos SET mp_status=%s WHERE mp_payment_id=%s", (estado, pay_id))
-    # Activa el VIP al llegar a 'finished'. ya_finished evita el doble-activado si NOWPayments
-    # reenvía el aviso de 'finished'.
+        pago_id = prev["id"] if prev else None
+    # Activa el VIP + devenga comisiones al llegar a 'finished'. ya_finished evita el
+    # doble-activado si NOWPayments reenvía el aviso de 'finished'.
     if estado == "finished" and not ya_finished:
         _activar_vip(user_id, pay_id, "")
+        _devengar_comisiones(user_id, pago_id)
 
 
 @router.post("/cripto/webhook")

@@ -18,6 +18,7 @@ from .members import router as members_router
 from .pagos   import router as pagos_router
 from .picks   import router as picks_router
 from .referidos import router as referidos_router
+from .partners  import router as partners_router
 from .mako    import router as mako_router
 from .db      import inicializar_db
 
@@ -168,4 +169,5 @@ app.include_router(members_router,   prefix="/members",   tags=["members"])
 app.include_router(pagos_router,     prefix="/pagos",     tags=["pagos"])
 app.include_router(picks_router,     prefix="/picks",     tags=["picks"])
 app.include_router(referidos_router, prefix="/referidos", tags=["referidos"])
+app.include_router(partners_router,  prefix="/partners",  tags=["partners"])
 app.include_router(mako_router,      prefix="/mako",      tags=["mako"])
