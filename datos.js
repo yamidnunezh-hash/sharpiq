@@ -43,7 +43,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "73",
     sharpscore: "71",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "05/07/26",
@@ -57,7 +57,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     prob:       "62",
     sharpscore: "62",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "04/07/26",
@@ -1988,6 +1988,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "05/07/26",
+    partido:    "Brazil vs Norway",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Under 10.5",
+    cuota:      "1.63",
+    prob:       "62",
+    resultado:  "win"
+  },
+  {
+    fecha:      "05/07/26",
+    partido:    "Brazil vs Norway",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.36",
+    prob:       "73",
+    resultado:  "loss"
+  },
   {
     fecha:      "04/07/26",
     partido:    "Paraguay vs France",
