@@ -248,8 +248,11 @@ async function cargarPartner(){
       ${refs.length ? refs.map(filaRef).join('') : '<p style="font-size:13px;color:var(--t3);font-family:Inter,sans-serif">Aún no tienes referidos. Comparte tu enlace y empieza a ganar 🦈</p>'}
       <div class="section-title" style="margin-top:22px">💰 Mis comisiones</div>
       ${coms.length ? coms.map(filaCom).join('') : '<p style="font-size:13px;color:var(--t3);font-family:Inter,sans-serif">Aquí verás tus comisiones cuando tus referidos paguen su VIP.</p>'}
-      <p style="font-size:11px;color:var(--t3);font-family:Inter,sans-serif;margin-top:18px;text-align:center">🌳 El árbol genealógico de tu red llega muy pronto.</p>`;
+      <div class="section-title" style="margin-top:22px">🌳 Tu árbol genealógico</div>
+      <p style="font-size:11px;color:var(--t3);font-family:Inter,sans-serif;margin:2px 0 8px">Clic en un nodo para expandir/colapsar · arrastra y haz zoom para explorar tu red.</p>
+      <div id="arbolBox" style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;min-height:180px;overflow:hidden"></div>`;
     if(w.red){ const s=document.getElementById('walletRed'); if(s) s.value=w.red; }
+    cargarArbol();
   }catch(e){ c.innerHTML='<p style="color:#ef4444;font-family:Inter,sans-serif;font-size:13px">No se pudo cargar la Zona Partner. Recarga la página.</p>'; }
 }
 
@@ -287,6 +290,80 @@ async function solicitarPayout(btn){
     else { msg.style.color='#f5b544'; msg.textContent='⚠ '+(d.motivo||'No disponible aún.'); }
   }catch(e){ msg.style.color='#ef4444'; msg.textContent='✗ '+e.message; }
   if(btn){ btn.disabled=false; btn.textContent='💸 Solicitar el pago de mis comisiones'; }
+}
+
+// ── ÁRBOL GENEALÓGICO (D3, carga bajo demanda) ───────────────────
+let _d3ing=false;
+function _loadD3(cb){
+  if(window.d3) return cb();
+  const go=()=>{ if(window.d3) cb(); };
+  if(_d3ing){ const t=setInterval(()=>{ if(window.d3){ clearInterval(t); cb(); } },120); return; }
+  _d3ing=true;
+  const s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js';
+  s.onload=go;
+  s.onerror=()=>{ const b=document.getElementById('arbolBox'); if(b) b.innerHTML='<p style="color:var(--t3);font-family:Inter,sans-serif;font-size:12px;text-align:center;padding:24px">No se pudo cargar el árbol. Revisa tu conexión.</p>'; };
+  document.head.appendChild(s);
+}
+
+async function cargarArbol(){
+  const box=document.getElementById('arbolBox');
+  if(!box) return;
+  box.innerHTML='<div class="loading" style="padding:30px"><span class="spin"></span> Cargando árbol...</div>';
+  let data;
+  try{ data=await (await fetch(`${API}/partners/arbol`,{headers:headers()})).json(); }
+  catch(e){ box.innerHTML='<p style="color:var(--t3);font-family:Inter,sans-serif;font-size:12px;text-align:center;padding:24px">No se pudo cargar el árbol.</p>'; return; }
+  const totalHijos=(data.hijos||[]).length;
+  if(!totalHijos){
+    box.innerHTML='<div style="text-align:center;padding:34px 20px;font-family:Inter,sans-serif"><div style="font-size:34px">🌱</div><p style="color:var(--t2);font-size:13px;margin-top:8px">Tu red está por crecer. Comparte tu enlace y verás aquí tu árbol formarse 🦈</p></div>';
+    return;
+  }
+  _loadD3(()=>_renderArbol(box,data));
+}
+
+function _renderArbol(box,data){
+  const d3=window.d3; box.innerHTML='';
+  const W=Math.max(300, box.clientWidth||320), H=400, dy=90;
+  const COL={0:'#00C8FF',1:'#7B5CF0',2:'#22c55e',3:'#f5b544'};
+  const svg=d3.select(box).append('svg').attr('width','100%').attr('height',H).attr('viewBox',`0 0 ${W} ${H}`);
+  const g=svg.append('g');
+  svg.call(d3.zoom().scaleExtent([0.35,2.2]).on('zoom',ev=>g.attr('transform',ev.transform)));
+  const root=d3.hierarchy(data,d=>d.hijos);
+  root.descendants().forEach(d=>{ if(d.depth>=1 && d.children){ d._children=d.children; d.children=null; } });
+  const layout=d3.tree().nodeSize([64,dy]);
+  function update(){
+    layout(root);
+    const nodes=root.descendants(), links=root.links();
+    let mnx=Infinity,mxx=-Infinity; nodes.forEach(d=>{ mnx=Math.min(mnx,d.x); mxx=Math.max(mxx,d.x); });
+    const ox=W/2-(mnx+mxx)/2, oy=34;
+    const px=d=>d.x+ox, py=d=>d.depth*dy+oy;
+    g.selectAll('path.lnk').data(links,d=>d.target.data.id).join('path')
+      .attr('class','lnk').attr('fill','none').attr('stroke','rgba(120,150,200,.28)').attr('stroke-width',1.5)
+      .attr('d',d=>{const sx=px(d.source),sy=py(d.source),tx=px(d.target),ty=py(d.target),m=(sy+ty)/2;
+        return `M${sx},${sy} C${sx},${m} ${tx},${m} ${tx},${ty}`;});
+    const nd=g.selectAll('g.nd').data(nodes,d=>d.data.id).join(enter=>{
+      const ge=enter.append('g').attr('class','nd').style('cursor','pointer')
+        .on('click',(ev,d)=>{ if(d.children){d._children=d.children;d.children=null;} else {d.children=d._children;d._children=null;} update(); });
+      ge.append('circle').attr('r',15).attr('stroke-width',2.5);
+      ge.append('text').attr('class','ini').attr('dy',4).attr('text-anchor','middle').attr('font-size',12).attr('font-weight',700).attr('font-family','Inter,sans-serif');
+      ge.append('text').attr('class','nm').attr('dy',31).attr('text-anchor','middle').attr('font-size',10).attr('font-family','Inter,sans-serif');
+      return ge;
+    });
+    nd.attr('transform',d=>`translate(${px(d)},${py(d)})`);
+    nd.select('circle')
+      .attr('fill',d=>d.depth===0?'#00C8FF':(d.data.plan==='vip'?'#22c55e':'#1b2540'))
+      .attr('stroke',d=>COL[d.depth]||'#7486a6');
+    nd.select('text.ini').attr('fill',d=>d.depth===0||d.data.plan==='vip'?'#04121f':'#aebbd4')
+      .text(d=> (d._children? (d.data.nombre? d.data.nombre[0].toUpperCase():'•') : (d.data.nombre? d.data.nombre[0].toUpperCase():'•')));
+    nd.select('text.nm').attr('fill','#aebbd4').text(d=>{const n=(d.data.nombre||'').split(' ')[0]; return (n.length>9?n.slice(0,8)+'…':n)+(d._children?' (+'+(d._children.length)+')':'');});
+  }
+  update();
+  const pn={1:0,2:0,3:0};
+  (function c(n){ (n.hijos||[]).forEach(h=>{ if(h.nivel>=1&&h.nivel<=3) pn[h.nivel]++; c(h); }); })(data);
+  const res=document.createElement('div');
+  res.style.cssText='display:flex;gap:12px;padding:10px 12px;font-family:Inter,sans-serif;font-size:11px;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--border)';
+  res.innerHTML=`<span style="color:#7B5CF0">● Nivel 1: <b style="color:var(--t1)">${pn[1]}</b></span><span style="color:#22c55e">● Nivel 2: <b style="color:var(--t1)">${pn[2]}</b></span><span style="color:#f5b544">● Nivel 3: <b style="color:var(--t1)">${pn[3]}</b></span>`;
+  box.appendChild(res);
 }
 
 async function cargarDashboard(){
