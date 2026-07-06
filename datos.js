@@ -15,7 +15,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "65",
     sharpscore: "67",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "05/07/26",
@@ -29,7 +29,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "61",
     sharpscore: "66",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "05/07/26",
@@ -269,17 +269,7 @@ const PROXIMOS_EVENTOS = [
     sharpscore: "79",
     resultado:  "win"
   },
-  {
-    fecha:      "03/07/26",
-    partido:    "Arthur Rinderknech vs Novak Djokovic",
-    liga:       "ATP Wimbledon",
-    prediccion: "Over 36.5",
-    cuota:      "2.04",
-    hora:       "07:30 COT",
-    emoji:      "",
-    status:     "vip",
-    resultado:  "pendiente"
-  },
+
   {
     fecha:      "02/07/26",
     partido:    "Spain vs Austria",
@@ -1988,6 +1978,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "05/07/26",
+    partido:    "Mexico vs England",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.64",
+    prob:       "61",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "05/07/26",
+    partido:    "Mexico vs England",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.52",
+    prob:       "65",
+    resultado:  "win"
+  },
   {
     fecha:      "05/07/26",
     partido:    "Brazil vs Norway",
