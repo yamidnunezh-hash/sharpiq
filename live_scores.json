@@ -1,36 +1,6 @@
 {
-  "updated": "2026-07-05T23:04:08Z",
+  "updated": "2026-07-06T00:17:30Z",
   "live": [
-    {
-      "id": "5fb0c67a8c660b822db6b5a2a9d75125",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Athletics",
-      "away": "Miami Marlins",
-      "fecha": "05/07/26",
-      "hora": "15:31 COT",
-      "ts": 1783265460,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "8"
-    },
-    {
-      "id": "2cf5f7fa6ed79ae90ee9f6aa70ceb1e2",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Seattle Mariners",
-      "away": "Toronto Blue Jays",
-      "fecha": "05/07/26",
-      "hora": "16:05 COT",
-      "ts": 1783267558,
-      "completed": false,
-      "score_home": "3",
-      "score_away": "0"
-    }
-  ],
-  "upcoming": [
     {
       "id": "2991d31eedcff470d7105f7237e66e03",
       "sport": "baseball_mlb",
@@ -42,8 +12,8 @@
       "hora": "18:21 COT",
       "ts": 1783275660,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "413f04da71b393e087d80f485f03a4a7",
@@ -56,9 +26,11 @@
       "hora": "18:30 COT",
       "ts": 1783276200,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "e61a7b471cadc8e3849158ed59d49cab",
       "sport": "soccer_fifa_world_cup",
@@ -67,8 +39,8 @@
       "home": "Mexico",
       "away": "England",
       "fecha": "05/07/26",
-      "hora": "19:00 COT",
-      "ts": 1783278000,
+      "hora": "20:00 COT",
+      "ts": 1783281600,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -214,6 +186,20 @@
       "score_away": null
     },
     {
+      "id": "d1ba74caa5492c9e300650c9ba7bebab",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Diego Padres",
+      "away": "Arizona Diamondbacks",
+      "fecha": "06/07/26",
+      "hora": "20:41 COT",
+      "ts": 1783370460,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
       "id": "92bad434cf32ec6dd5e2b856708a6596",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -223,6 +209,20 @@
       "fecha": "06/07/26",
       "hora": "20:46 COT",
       "ts": 1783370760,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "ce47831dfdb0f68ba311fd79cc19d68a",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Dodgers",
+      "away": "Colorado Rockies",
+      "fecha": "06/07/26",
+      "hora": "21:11 COT",
+      "ts": 1783372260,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -243,6 +243,34 @@
     }
   ],
   "finished": [
+    {
+      "id": "2cf5f7fa6ed79ae90ee9f6aa70ceb1e2",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Seattle Mariners",
+      "away": "Toronto Blue Jays",
+      "fecha": "05/07/26",
+      "hora": "16:05 COT",
+      "ts": 1783267558,
+      "completed": true,
+      "score_home": "4",
+      "score_away": "0"
+    },
+    {
+      "id": "5fb0c67a8c660b822db6b5a2a9d75125",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Miami Marlins",
+      "fecha": "05/07/26",
+      "hora": "15:31 COT",
+      "ts": 1783265460,
+      "completed": true,
+      "score_home": "8",
+      "score_away": "9"
+    },
     {
       "id": "a2dde9d9ca56dc238d564ace87b244f0",
       "sport": "baseball_mlb",
@@ -354,34 +382,6 @@
       "completed": true,
       "score_home": "6",
       "score_away": "4"
-    },
-    {
-      "id": "6f0fa1db67e69c8f534003061fdedee9",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Atlanta Braves",
-      "away": "New York Mets",
-      "fecha": "05/07/26",
-      "hora": "13:17 COT",
-      "ts": 1783257431,
-      "completed": true,
-      "score_home": "9",
-      "score_away": "10"
-    },
-    {
-      "id": "29749cde930adfaf1cbc374908eeac88",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Yankees",
-      "away": "Minnesota Twins",
-      "fecha": "05/07/26",
-      "hora": "12:37 COT",
-      "ts": 1783255029,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "6"
     }
   ]
 }
