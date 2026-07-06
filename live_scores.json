@@ -1,36 +1,6 @@
 {
-  "updated": "2026-07-06T20:31:50Z",
+  "updated": "2026-07-06T22:01:20Z",
   "live": [
-    {
-      "id": "caea4c3449e9f30ffe2c708a884e3296",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Kansas City Royals",
-      "away": "Philadelphia Phillies",
-      "fecha": "06/07/26",
-      "hora": "13:11 COT",
-      "ts": 1783343460,
-      "completed": false,
-      "score_home": "11",
-      "score_away": "1"
-    },
-    {
-      "id": "16ed3adcf661b3a9bea39871a2d204df",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "Portugal",
-      "away": "Spain",
-      "fecha": "06/07/26",
-      "hora": "14:00 COT",
-      "ts": 1783346400,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    }
-  ],
-  "upcoming": [
     {
       "id": "b89359de69e9b8a3550fd8a06d54df68",
       "sport": "soccer_brazil_serie_b",
@@ -42,8 +12,8 @@
       "hora": "17:00 COT",
       "ts": 1783357200,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "9cb483499d88b19d7eadd46f1e6644cb",
@@ -56,9 +26,11 @@
       "hora": "17:00 COT",
       "ts": 1783357200,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "8708f0b1ad493caa280c8d963be2dc0b",
       "sport": "baseball_mlb",
@@ -240,9 +212,65 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "c75c73742e72944d0e18edf59560720d",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Athletic Club (MG)",
+      "away": "Operario PR",
+      "fecha": "07/07/26",
+      "hora": "18:00 COT",
+      "ts": 1783447200,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "fa63ecda3e7fe4b049c7e9cfd633f461",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago White Sox",
+      "away": "Boston Red Sox",
+      "fecha": "07/07/26",
+      "hora": "18:41 COT",
+      "ts": 1783449660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "16ed3adcf661b3a9bea39871a2d204df",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Portugal",
+      "away": "Spain",
+      "fecha": "06/07/26",
+      "hora": "14:00 COT",
+      "ts": 1783346400,
+      "completed": true,
+      "score_home": "0",
+      "score_away": "1"
+    },
+    {
+      "id": "caea4c3449e9f30ffe2c708a884e3296",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Kansas City Royals",
+      "away": "Philadelphia Phillies",
+      "fecha": "06/07/26",
+      "hora": "13:11 COT",
+      "ts": 1783343460,
+      "completed": true,
+      "score_home": "15",
+      "score_away": "1"
+    },
     {
       "id": "0351ac13f45c028104c1b860422817ef",
       "sport": "baseball_mlb",
@@ -298,20 +326,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "5"
-    },
-    {
-      "id": "2cf5f7fa6ed79ae90ee9f6aa70ceb1e2",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Seattle Mariners",
-      "away": "Toronto Blue Jays",
-      "fecha": "05/07/26",
-      "hora": "16:05 COT",
-      "ts": 1783267558,
-      "completed": true,
-      "score_home": "4",
-      "score_away": "0"
     }
   ]
 }
