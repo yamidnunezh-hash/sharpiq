@@ -57,7 +57,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "68",
     sharpscore: "67",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "06/07/26",
@@ -85,7 +85,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "69",
     sharpscore: "69",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "06/07/26",
@@ -2089,6 +2089,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "06/07/26",
+    partido:    "Portugal vs Spain",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Visitante",
+    cuota:      "1.44",
+    prob:       "69",
+    resultado:  "win"
+  },
+  {
+    fecha:      "06/07/26",
+    partido:    "Portugal vs Spain",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.44",
+    prob:       "68",
+    resultado:  "win"
+  },
   {
     fecha:      "06/07/26",
     partido:    "BK Hacken vs Djurgardens IF",
