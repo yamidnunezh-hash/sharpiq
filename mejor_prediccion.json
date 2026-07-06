@@ -22,7 +22,7 @@
     "hora": "22:00",
     "fecha_evento": "2026-07-06",
     "cuotas": {
-      "2": 4.9,
+      "2": 4.7,
       "2_casa": "Betfair",
       "pinnacle_2": 4.54,
       "1": 1.98,
@@ -172,13 +172,13 @@
     "confianza": 87.2,
     "value_bets": {
       "victoria_visita": {
-        "value": 0.035,
-        "ev_porcentaje": 3.5,
-        "ev_pinn": 3.5,
+        "value": -0.008,
+        "ev_porcentaje": -0.8,
+        "ev_pinn": -0.8,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 4.9,
+        "cuota": 4.7,
         "casa": "Betfair",
         "pinn_prob": 21.1
       },
