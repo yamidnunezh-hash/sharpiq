@@ -8,13 +8,13 @@ const PROXIMOS_EVENTOS = [
     partido:    "Mexico vs England",
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
-    cuota:      "1.5",
-    hora:       "19:00 COT",
+    cuota:      "1.52",
+    hora:       "20:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "66",
-    sharpscore: "66",
+    prob:       "65",
+    sharpscore: "67",
     resultado:  "pendiente"
   },
   {
