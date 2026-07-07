@@ -1477,13 +1477,13 @@
         "under325_casa": "Pinnacle",
         "pinnacle_under325": 1.22,
         "corners_over_8_5": 1.86,
-        "corners_over_8_5_casa": "LiveScore Bet",
+        "corners_over_8_5_casa": "Virgin Bet",
         "pinnacle_corners_over_8_5": 1.83,
         "corners_under_8_5": 2.0,
         "corners_under_8_5_casa": "Betfair",
         "pinnacle_corners_under_8_5": 1.97,
         "corners_over_6_5": 1.28,
-        "corners_over_6_5_casa": "LiveScore Bet",
+        "corners_over_6_5_casa": "Virgin Bet",
         "pinnacle_corners_over_6_5": 1.24,
         "corners_under_6_5": 3.45,
         "corners_under_6_5_casa": "Pinnacle",
@@ -1495,7 +1495,7 @@
         "corners_under_7_0_casa": "Pinnacle",
         "pinnacle_corners_under_7_0": 3.12,
         "corners_over_7_5": 1.5,
-        "corners_over_7_5_casa": "LiveScore Bet",
+        "corners_over_7_5_casa": "Virgin Bet",
         "pinnacle_corners_over_7_5": 1.47,
         "corners_under_7_5": 2.51,
         "corners_under_7_5_casa": "Pinnacle",
@@ -1513,7 +1513,7 @@
         "corners_under_9_0_casa": "Pinnacle",
         "pinnacle_corners_under_9_0": 1.73,
         "corners_over_9_5": 2.38,
-        "corners_over_9_5_casa": "LiveScore Bet",
+        "corners_over_9_5_casa": "Virgin Bet",
         "pinnacle_corners_over_9_5": 2.28,
         "corners_under_9_5": 1.57,
         "corners_under_9_5_casa": "Pinnacle",
@@ -1537,7 +1537,7 @@
         "cards_under_3_0_casa": "Pinnacle",
         "pinnacle_cards_under_3_0": 1.98,
         "cards_over_2_5": 1.53,
-        "cards_over_2_5_casa": "LiveScore Bet",
+        "cards_over_2_5_casa": "Virgin Bet",
         "pinnacle_cards_over_2_5": 1.52,
         "cards_under_2_5": 2.48,
         "cards_under_2_5_casa": "Pinnacle",
@@ -1592,7 +1592,7 @@
         "ah_v_m0_5_casa": "Pinnacle",
         "pinnacle_ah_v_m0_5": 2.24,
         "ah_l_p0_75": 1.5,
-        "ah_l_p0_75_casa": "LiveScore Bet",
+        "ah_l_p0_75_casa": "Virgin Bet",
         "pinnacle_ah_l_p0_75": 1.5,
         "ah_v_m0_75": 2.68,
         "ah_v_m0_75_casa": "Pinnacle",
@@ -1919,7 +1919,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.86,
-          "casa": "LiveScore Bet",
+          "casa": "Virgin Bet",
           "pinn_prob": 51.8,
           "mercado_nombre": "Corners Over 8.5"
         },
@@ -1943,7 +1943,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.28,
-          "casa": "LiveScore Bet",
+          "casa": "Virgin Bet",
           "pinn_prob": 73.6,
           "mercado_nombre": "Corners Over 6.5"
         },
@@ -1991,7 +1991,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.5,
-          "casa": "LiveScore Bet",
+          "casa": "Virgin Bet",
           "pinn_prob": 63.1,
           "mercado_nombre": "Corners Over 7.5"
         },
@@ -2063,7 +2063,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.38,
-          "casa": "LiveScore Bet",
+          "casa": "Virgin Bet",
           "pinn_prob": 40.8,
           "mercado_nombre": "Corners Over 9.5"
         },
@@ -2159,7 +2159,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.53,
-          "casa": "LiveScore Bet",
+          "casa": "Virgin Bet",
           "pinn_prob": 62.0,
           "mercado_nombre": "Tarjetas Over 2.5"
         },
@@ -2383,7 +2383,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.5,
-          "casa": "LiveScore Bet",
+          "casa": "Virgin Bet",
           "pinn_prob": 64.1,
           "mercado_nombre": "Hándicap Local +0.75"
         },
@@ -5165,5 +5165,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:01"
+  "generado": "00:01:12"
 }
