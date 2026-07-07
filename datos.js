@@ -43,7 +43,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "64",
     sharpscore: "66",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "06/07/26",
@@ -99,7 +99,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "63",
     sharpscore: "66",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "06/07/26",
@@ -2117,6 +2117,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "06/07/26",
+    partido:    "USA vs Belgium",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos Marcan",
+    cuota:      "1.58",
+    prob:       "63",
+    resultado:  "win"
+  },
+  {
+    fecha:      "06/07/26",
+    partido:    "USA vs Belgium",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.54",
+    prob:       "64",
+    resultado:  "loss"
+  },
   {
     fecha:      "06/07/26",
     partido:    "Botafogo vs Avai",
