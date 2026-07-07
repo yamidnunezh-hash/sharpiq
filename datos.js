@@ -8,12 +8,12 @@ const PROXIMOS_EVENTOS = [
     partido:    "Switzerland vs Colombia",
     liga:       "FIFA Mundial 2026",
     prediccion: "Over 1.5 Goles",
-    cuota:      "1.46",
+    cuota:      "1.44",
     hora:       "15:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "68",
+    prob:       "69",
     sharpscore: "69",
     resultado:  "pendiente"
   },
@@ -22,12 +22,12 @@ const PROXIMOS_EVENTOS = [
     partido:    "Argentina vs Egypt",
     liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
-    cuota:      "1.37",
+    cuota:      "1.34",
     hora:       "11:00 COT",
     status:     "vip",
     tier:       "seguro",
     stake_pct:  "3",
-    prob:       "73",
+    prob:       "74",
     sharpscore: "72",
     resultado:  "pendiente"
   },
@@ -35,14 +35,14 @@ const PROXIMOS_EVENTOS = [
     fecha:      "07/07/26",
     partido:    "Argentina vs Egypt",
     liga:       "FIFA Mundial 2026",
-    prediccion: "Under 2.5 Goles",
-    cuota:      "1.97",
+    prediccion: "Corners Under 8.5",
+    cuota:      "2.04",
     hora:       "11:00 COT",
     status:     "vip",
     tier:       "alto_valor",
     stake_pct:  "2",
-    prob:       "51",
-    sharpscore: "56",
+    prob:       "50",
+    sharpscore: "57",
     resultado:  "pendiente"
   },
   {
@@ -409,7 +409,6 @@ const PROXIMOS_EVENTOS = [
     sharpscore: "59",
     resultado:  "loss"
   },
-
   {
     fecha:      "02/07/26",
     partido:    "Switzerland vs Algeria",
