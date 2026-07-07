@@ -1,22 +1,6 @@
 {
-  "updated": "2026-07-07T19:24:19Z",
+  "updated": "2026-07-07T21:09:37Z",
   "live": [
-    {
-      "id": "6611ecd500747b1f1aebe1ea49f9d00a",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "St. Louis Cardinals",
-      "away": "Milwaukee Brewers",
-      "fecha": "07/07/26",
-      "hora": "13:16 COT",
-      "ts": 1783430160,
-      "completed": false,
-      "score_home": "3",
-      "score_away": "2"
-    }
-  ],
-  "upcoming": [
     {
       "id": "a6da973c5749ce60adab77d64b3664f4",
       "sport": "soccer_fifa_world_cup",
@@ -28,9 +12,11 @@
       "hora": "15:00 COT",
       "ts": 1783436400,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "a250fe250560caa8b56cd4e061c8e7b0",
       "sport": "baseball_mlb",
@@ -226,9 +212,37 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "0ae1e836fd92f0f98b83e2d7451f6f97",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Francisco Giants",
+      "away": "Toronto Blue Jays",
+      "fecha": "07/07/26",
+      "hora": "20:46 COT",
+      "ts": 1783457160,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "6611ecd500747b1f1aebe1ea49f9d00a",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "St. Louis Cardinals",
+      "away": "Milwaukee Brewers",
+      "fecha": "07/07/26",
+      "hora": "13:16 COT",
+      "ts": 1783430160,
+      "completed": true,
+      "score_home": "3",
+      "score_away": "4"
+    },
     {
       "id": "190922affd0be754bfefd71548dbf90d",
       "sport": "soccer_fifa_world_cup",
@@ -354,20 +368,6 @@
       "completed": true,
       "score_home": "1",
       "score_away": "5"
-    },
-    {
-      "id": "b89359de69e9b8a3550fd8a06d54df68",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Botafogo",
-      "away": "Avai",
-      "fecha": "06/07/26",
-      "hora": "17:00 COT",
-      "ts": 1783357200,
-      "completed": true,
-      "score_home": "3",
-      "score_away": "1"
     }
   ]
 }
