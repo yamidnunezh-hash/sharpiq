@@ -4509,6 +4509,63 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
   </div>
 </div>
 
+<!-- ── COMBINADA DEL DÍA (VIP) — bloque independiente ── -->
+<div id="combinadaDia" style="padding:14px 0 0;scroll-margin-top:110px">
+  <div class="wrap">
+    <div class="upcoming-wrap rv">
+      <div class="upcoming-header">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="live-badge" style="background:rgba(245,181,68,.14);border-color:rgba(245,181,68,.45)"><div class="hero-dot" style="background:#f5b544"></div>🎯 COMBINADA DEL DÍA</div>
+        </div>
+        <span style="font-family:Inter,sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px">EXCLUSIVO VIP · CUOTA COMBINADA</span>
+      </div>
+      <div style="position:relative;margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+        <div id="combiPicks" style="padding:22px;filter:blur(6px);transition:filter .3s">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding-bottom:16px;border-bottom:1px solid var(--border)">
+            <div>
+              <div style="font-family:Inter,sans-serif;font-size:12px;color:var(--t3);letter-spacing:.5px">⚽ ARGENTINA vs EGIPTO</div>
+              <div style="font-family:Inter,sans-serif;font-size:16px;font-weight:800;color:var(--t1);margin-top:5px">Más de 6.5 tiros de Egipto</div>
+              <div style="font-size:11px;color:var(--t3);margin-top:3px">Total de tiros · Opta Data</div>
+            </div>
+            <div style="font-family:Inter,sans-serif;font-size:20px;font-weight:900;color:#00C8FF;white-space:nowrap">@1.67</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding-top:16px">
+            <div>
+              <div style="font-family:Inter,sans-serif;font-size:12px;color:var(--t3);letter-spacing:.5px">⚽ SUIZA vs COLOMBIA</div>
+              <div style="font-family:Inter,sans-serif;font-size:16px;font-weight:800;color:var(--t1);margin-top:5px">Colombia se clasifica 🇨🇴</div>
+              <div style="font-size:11px;color:var(--t3);margin-top:3px">Equipo que se clasificará</div>
+            </div>
+            <div style="font-family:Inter,sans-serif;font-size:20px;font-weight:900;color:#00C8FF;white-space:nowrap">@1.61</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:16px;border-top:2px dashed var(--border)">
+            <div style="font-family:Inter,sans-serif;font-size:13px;font-weight:700;color:var(--t2);letter-spacing:1px">CUOTA COMBINADA</div>
+            <div style="font-family:'Bebas Neue',Inter,sans-serif;font-size:36px;font-weight:900;color:#22c55e;line-height:1;letter-spacing:.5px">@2.69</div>
+          </div>
+        </div>
+        <div id="combiLock" style="position:absolute;inset:0;background:rgba(7,9,16,.72);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px">
+          <div style="font-size:32px">🔒</div>
+          <div style="font-family:Inter,sans-serif;font-size:17px;font-weight:800;color:var(--t1)">Combinada del día — Exclusivo VIP</div>
+          <div style="font-size:13px;color:var(--t2);max-width:340px;line-height:1.5">Únete al VIP y desbloquea la combinada del día con la cuota completa. 🦈</div>
+          <a href="#planes" style="background:linear-gradient(135deg,#00C8FF,#7B5CF0);color:#04121f;font-weight:800;font-size:13px;padding:11px 24px;border-radius:9px;text-decoration:none;margin-top:4px">Desbloquear VIP →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){
+    try{
+      var role=localStorage.getItem('sharpiq_role');
+      var plan=localStorage.getItem('sharpiq_plan');
+      var isVip = role==='vip'||role==='admin'||plan==='vip'||plan==='admin';
+      if(isVip){
+        var p=document.getElementById('combiPicks'); if(p) p.style.filter='none';
+        var l=document.getElementById('combiLock'); if(l) l.style.display='none';
+      }
+    }catch(e){}
+  })();
+</script>
+
 <!-- ── BARRA DE LIGAS ── -->
 <div class="leagues-bar" style="margin:28px 0">
   <div class="leagues-track-w">
