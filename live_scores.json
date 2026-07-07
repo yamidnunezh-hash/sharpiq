@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T21:09:37Z",
+  "updated": "2026-07-07T22:32:48Z",
   "live": [
     {
       "id": "a6da973c5749ce60adab77d64b3664f4",
@@ -17,20 +17,6 @@
     }
   ],
   "upcoming": [
-    {
-      "id": "a250fe250560caa8b56cd4e061c8e7b0",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Baltimore Orioles",
-      "away": "Chicago Cubs",
-      "fecha": "07/07/26",
-      "hora": "17:36 COT",
-      "ts": 1783445760,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
     {
       "id": "c892fb37a2662fa901742b27c6b7f205",
       "sport": "baseball_mlb",
@@ -139,6 +125,20 @@
       "fecha": "07/07/26",
       "hora": "18:11 COT",
       "ts": 1783447860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "a250fe250560caa8b56cd4e061c8e7b0",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Baltimore Orioles",
+      "away": "Chicago Cubs",
+      "fecha": "07/07/26",
+      "hora": "18:36 COT",
+      "ts": 1783449360,
       "completed": false,
       "score_home": null,
       "score_away": null
