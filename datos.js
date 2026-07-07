@@ -367,20 +367,7 @@ const PROXIMOS_EVENTOS = [
     sharpscore: "59",
     resultado:  "loss"
   },
-  {
-    fecha:      "04/07/26",
-    partido:    "Zizou Bergs vs Arthur Fery",
-    liga:       "ATP Wimbledon",
-    prediccion: "Gana Arthur Fery",
-    cuota:      "2.2",
-    hora:       "05:00 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.0",
-    prob:       "46",
-    sharpscore: "56",
-    resultado:  "pendiente"
-  },
+
   {
     fecha:      "02/07/26",
     partido:    "Switzerland vs Algeria",
