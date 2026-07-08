@@ -16,9 +16,8 @@
 //    resultado   "pendiente" | "ganado" | "perdido"
 // ═══════════════════════════════════════════════════════════════
 window.TIPSTER_PICKS = [
-  // Ejemplo (borrar cuando cargues los reales):
-  // { fecha:"2026-07-08", partido:"Argentina vs Egipto", liga:"Mundial 2026",
-  //   mercado:"Remates", prediccion:"Egipto +6.5 tiros", cuota:"1.67",
-  //   analisis:"Egipto genera mucho volumen de disparos ante rivales superiores.",
-  //   tier:"principal", resultado:"pendiente" },
+  { fecha:"2026-07-08", partido:"Ponte Preta vs Criciúma", liga:"Brasileirão Serie B",
+    mercado:"Disparos a puerta", prediccion:"Rómulo Otero — Más de 0.5 disparos a puerta", cuota:"1.64",
+    analisis:"Análisis realizado junto a Mako AI 🦈 — Rómulo Otero es el rematador de mayor volumen de Criciúma (1.33 remates, 0.53 a puerta por partido) y referente en balón parado. El modelo proyecta ~3.6 disparos a puerta del visitante, lo que respalda su línea individual. Valor en el +0.5 disparos a puerta.",
+    tier:"principal", resultado:"pendiente" },
 ];
