@@ -1,22 +1,6 @@
 {
-  "updated": "2026-07-08T21:33:53Z",
+  "updated": "2026-07-08T22:38:34Z",
   "live": [
-    {
-      "id": "57172eebee377baa85502b3c14ce8249",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Francisco Giants",
-      "away": "Toronto Blue Jays",
-      "fecha": "08/07/26",
-      "hora": "14:46 COT",
-      "ts": 1783521960,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "5"
-    }
-  ],
-  "upcoming": [
     {
       "id": "fbdf2c9598b2ee82ae2cd6b9934f9b67",
       "sport": "baseball_mlb",
@@ -28,9 +12,11 @@
       "hora": "17:36 COT",
       "ts": 1783532160,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "8d7cadd457d4e05f27a0ef6feab14d62",
       "sport": "baseball_mlb",
@@ -226,9 +212,37 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "2b3ca3496277938aa74f87f24a2c064c",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Pittsburgh Pirates",
+      "away": "Atlanta Braves",
+      "fecha": "09/07/26",
+      "hora": "11:36 COT",
+      "ts": 1783596960,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "57172eebee377baa85502b3c14ce8249",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Francisco Giants",
+      "away": "Toronto Blue Jays",
+      "fecha": "08/07/26",
+      "hora": "14:46 COT",
+      "ts": 1783521960,
+      "completed": true,
+      "score_home": "0",
+      "score_away": "10"
+    },
     {
       "id": "8df69c8e501590af54db5363e5fdc3af",
       "sport": "baseball_mlb",
@@ -354,20 +368,6 @@
       "completed": true,
       "score_home": "1",
       "score_away": "4"
-    },
-    {
-      "id": "288b4514ed237def0df905ead634d530",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Mets",
-      "away": "Kansas City Royals",
-      "fecha": "07/07/26",
-      "hora": "18:11 COT",
-      "ts": 1783447860,
-      "completed": true,
-      "score_home": "12",
-      "score_away": "16"
     }
   ]
 }
