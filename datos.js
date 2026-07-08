@@ -7,20 +7,6 @@ const PROXIMOS_EVENTOS = [
     fecha:      "08/07/26",
     partido:    "Ponte Preta vs Criciuma",
     liga:       "Brasileirao B",
-    prediccion: "Under 2.5 Goles",
-    cuota:      "1.65",
-    hora:       "18:00 COT",
-    status:     "vip",
-    tier:       "seguro",
-    stake_pct:  "3",
-    prob:       "81",
-    sharpscore: "76",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "08/07/26",
-    partido:    "Ponte Preta vs Criciuma",
-    liga:       "Brasileirao B",
     prediccion: "Ambos No Marcan",
     cuota:      "1.67",
     hora:       "18:00 COT",
@@ -29,6 +15,20 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "92",
     sharpscore: "81",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "08/07/26",
+    partido:    "Ponte Preta vs Criciuma",
+    liga:       "Brasileirao B",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.65",
+    hora:       "18:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "81",
+    sharpscore: "76",
     resultado:  "pendiente"
   },
   {
