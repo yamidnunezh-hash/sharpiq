@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-08T04:34:34Z",
-  "live": [
-    {
-      "id": "8df69c8e501590af54db5363e5fdc3af",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Los Angeles Dodgers",
-      "away": "Colorado Rockies",
-      "fecha": "07/07/26",
-      "hora": "21:11 COT",
-      "ts": 1783458660,
-      "completed": false,
-      "score_home": "3",
-      "score_away": "4"
-    }
-  ],
+  "updated": "2026-07-08T07:11:38Z",
+  "live": [],
   "upcoming": [
     {
       "id": "57172eebee377baa85502b3c14ce8249",
@@ -130,6 +115,20 @@
       "score_away": null
     },
     {
+      "id": "fa2f6fc2aee410abafe5d685acfde5f3",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "New York Mets",
+      "away": "Kansas City Royals",
+      "fecha": "08/07/26",
+      "hora": "18:11 COT",
+      "ts": 1783534260,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
       "id": "e8175b3e1d8e51c76f4fad9075a7d707",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -212,23 +211,23 @@
       "completed": false,
       "score_home": null,
       "score_away": null
-    },
-    {
-      "id": "b6e926d7f026782b9cab2fa02b823d92",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "France",
-      "away": "Morocco",
-      "fecha": "09/07/26",
-      "hora": "15:00 COT",
-      "ts": 1783609200,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "8df69c8e501590af54db5363e5fdc3af",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Dodgers",
+      "away": "Colorado Rockies",
+      "fecha": "07/07/26",
+      "hora": "21:11 COT",
+      "ts": 1783458660,
+      "completed": true,
+      "score_home": "3",
+      "score_away": "4"
+    },
     {
       "id": "0ae1e836fd92f0f98b83e2d7451f6f97",
       "sport": "baseball_mlb",
@@ -354,20 +353,6 @@
       "completed": true,
       "score_home": "12",
       "score_away": "16"
-    },
-    {
-      "id": "c75c73742e72944d0e18edf59560720d",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Athletic Club (MG)",
-      "away": "Operario PR",
-      "fecha": "07/07/26",
-      "hora": "18:00 COT",
-      "ts": 1783447200,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "1"
     }
   ]
 }
