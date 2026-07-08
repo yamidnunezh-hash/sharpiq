@@ -15,7 +15,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "66",
     sharpscore: "67",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "07/07/26",
@@ -29,7 +29,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     prob:       "51",
     sharpscore: "58",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "07/07/26",
@@ -2159,6 +2159,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "07/07/26",
+    partido:    "Switzerland vs Colombia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Ambos Marcan",
+    cuota:      "2.0",
+    prob:       "51",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "07/07/26",
+    partido:    "Switzerland vs Colombia",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.49",
+    prob:       "66",
+    resultado:  "loss"
+  },
   {
     fecha:      "07/07/26",
     partido:    "Argentina vs Egypt",
