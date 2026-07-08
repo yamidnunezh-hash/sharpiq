@@ -4585,6 +4585,59 @@ window.sharpiqTeamLogo=function(name){if(!name)return null;var clean=function(s,
   </div>
 </div>
 
+<!-- ── EL TIPSTER EXPERTO (VIP) — bloque independiente, NO lo toca el motor ── -->
+<div id="tipsterExperto" style="padding:14px 0 0;scroll-margin-top:110px;display:none">
+  <div class="wrap">
+    <div class="upcoming-wrap rv">
+      <div class="upcoming-header">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="live-badge" style="background:rgba(139,108,240,.14);border-color:rgba(139,108,240,.45)"><div class="hero-dot" style="background:#8b6cf0"></div>🎯 EL TIPSTER EXPERTO</div>
+          <span id="tipsterStat" style="font-family:Inter,sans-serif;font-size:11px;color:#22c55e;font-weight:700"></span>
+        </div>
+        <span style="font-family:Inter,sans-serif;font-size:10px;color:var(--t3);letter-spacing:1px">SELECCIÓN MANUAL · ANÁLISIS HUMANO + DATOS</span>
+      </div>
+      <div id="tipsterGrid" style="display:flex;flex-direction:column;gap:12px;margin-top:14px"></div>
+    </div>
+  </div>
+</div>
+<script src="tipster.js"></script>
+<script>
+(function(){
+  try{
+    var picks = window.TIPSTER_PICKS || [];
+    var sec = document.getElementById('tipsterExperto');
+    if(!sec || !picks.length) return;
+    sec.style.display='block';
+    var res = picks.filter(function(p){return p.resultado==='ganado'||p.resultado==='perdido';});
+    var win = res.filter(function(p){return p.resultado==='ganado';}).length;
+    if(res.length){ var st=document.getElementById('tipsterStat'); if(st) st.textContent='✅ '+Math.round(win/res.length*100)+'% · '+win+'/'+res.length; }
+    var role=localStorage.getItem('sharpiq_role'), plan=localStorage.getItem('sharpiq_plan');
+    var isVip = role==='vip'||role==='admin'||plan==='vip'||plan==='admin';
+    var tcMap={seguro:'#22c55e',principal:'#0066CC',alto_valor:'#F59E0B'};
+    var grid=document.getElementById('tipsterGrid');
+    picks.forEach(function(p){
+      var tc=tcMap[p.tier]||'#8b6cf0';
+      var rb = p.resultado==='ganado' ? '<span style="color:#22c55e;font-weight:800">✅ GANADO</span>'
+             : p.resultado==='perdido' ? '<span style="color:#ef4444;font-weight:800">❌ FALLÓ</span>'
+             : '<span style="color:var(--t3);font-weight:700">⏳ Pendiente</span>';
+      var body;
+      if(isVip){
+        body='<div style="font-size:16px;font-weight:800;color:var(--t1);margin-top:8px">⭐ '+p.prediccion+'</div>'
+           +(p.analisis?'<div style="font-size:12.5px;color:var(--t2);margin-top:6px;line-height:1.55">'+p.analisis+'</div>':'')
+           +'<div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px"><span style="font-size:19px;font-weight:900;color:'+tc+'">@'+p.cuota+'</span>'+rb+'</div>';
+      } else {
+        body='<div style="filter:blur(5px);font-size:16px;font-weight:800;color:var(--t1);margin-top:8px;user-select:none">⭐ '+p.prediccion+'</div>'
+           +'<div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px"><a href="#planes" style="font-size:13px;color:var(--gold);text-decoration:none;font-weight:700">🔒 Pick VIP — Desbloquear</a>'+rb+'</div>';
+      }
+      grid.insertAdjacentHTML('beforeend',
+        '<div style="background:var(--card);border:1px solid var(--border);border-left:3px solid '+tc+';border-radius:12px;padding:16px 18px">'
+        +'<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><span style="font-size:11px;color:var(--t3);font-family:Inter,sans-serif;letter-spacing:.5px">⚽ '+p.partido+(p.liga?' · '+p.liga:'')+'</span><span style="font-size:11px;color:'+tc+';font-weight:800;text-transform:uppercase">'+(p.mercado||'')+'</span></div>'
+        +body+'</div>');
+    });
+  }catch(e){}
+})();
+</script>
+
 <!-- ── BARRA DE LIGAS ── -->
 <div class="leagues-bar" style="margin:28px 0">
   <div class="leagues-track-w">
