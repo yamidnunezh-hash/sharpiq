@@ -2956,8 +2956,8 @@
       "cuotas": {
         "Cincinnati Reds": 1.74,
         "Philadelphia Phillies": 2.25,
-        "Over 8.5": 1.83,
-        "Under 8.5": 2.0,
+        "Over 8.5": 1.85,
+        "Under 8.5": 2.01,
         "Cincinnati Reds (-1.5)": 2.52,
         "Philadelphia Phillies (+1.5)": 1.57
       },
@@ -2992,25 +2992,25 @@
           "mercado_nombre": "Philadelphia Phillies"
         },
         "over_8_5": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.83,
-          "casa": "DraftKings",
+          "cuota": 1.85,
+          "casa": "BetMGM",
           "pinn_prob": 52.4,
           "mercado_nombre": "Over 8.5"
         },
         "under_8_5": {
-          "value": -0.049,
-          "ev_porcentaje": -4.9,
-          "ev_pinn": -4.9,
+          "value": -0.044,
+          "ev_porcentaje": -4.4,
+          "ev_pinn": -4.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
+          "cuota": 2.01,
           "casa": "DraftKings",
           "pinn_prob": 47.6,
           "mercado_nombre": "Under 8.5"
@@ -3067,7 +3067,7 @@
         "Kansas City Royals": 2.57,
         "New York Mets": 1.58,
         "Over 9.0": 1.89,
-        "Under 9.0": 1.96,
+        "Under 9.0": 1.97,
         "Kansas City Royals (+1.5)": 1.73,
         "New York Mets (-1.5)": 2.18
       },
@@ -3114,13 +3114,13 @@
           "mercado_nombre": "Over 9.0"
         },
         "under_9_0": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.96,
+          "cuota": 1.97,
           "casa": "Unibet",
           "pinn_prob": 48.8,
           "mercado_nombre": "Under 9.0"
@@ -4681,5 +4681,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:00:53"
+  "generado": "20:01:03"
 }
