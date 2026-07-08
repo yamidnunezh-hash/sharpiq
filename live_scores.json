@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-08T18:49:21Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-08T20:17:37Z",
+  "live": [
     {
       "id": "57172eebee377baa85502b3c14ce8249",
       "sport": "baseball_mlb",
@@ -13,9 +12,11 @@
       "hora": "14:46 COT",
       "ts": 1783521960,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "5"
+    }
+  ],
+  "upcoming": [
     {
       "id": "fbdf2c9598b2ee82ae2cd6b9934f9b67",
       "sport": "baseball_mlb",
@@ -205,6 +206,20 @@
       "emoji": "⚾",
       "home": "San Diego Padres",
       "away": "Arizona Diamondbacks",
+      "fecha": "08/07/26",
+      "hora": "21:11 COT",
+      "ts": 1783545060,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "49de1a8b7d85007610fb077c920e206a",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Dodgers",
+      "away": "Colorado Rockies",
       "fecha": "08/07/26",
       "hora": "21:11 COT",
       "ts": 1783545060,
