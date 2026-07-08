@@ -1,6 +1,6 @@
 {
   "fecha": "2026-07-07",
-  "total_partidos": 26,
+  "total_partidos": 25,
   "predicciones": [
     {
       "local": "Ponte Preta",
@@ -1538,90 +1538,6 @@
       "movimiento": null
     },
     {
-      "id": "c16a9052499cf37cf12fb2b5c275b62c",
-      "comienzo": "2026-07-08T09:00:00Z",
-      "local": "Karolina Muchova",
-      "visitante": "Coco Gauff",
-      "liga": "WTA Wimbledon",
-      "liga_code": "tennis_wta_wimbledon",
-      "deporte": "WTA Wimbledon",
-      "deporte_emoji": "🏆",
-      "hora": "09:00",
-      "fecha_evento": "2026-07-08",
-      "cuotas": {
-        "Coco Gauff": 1.97,
-        "Karolina Muchova": 1.92,
-        "Over 22.5": 1.87,
-        "Under 22.5": 1.88
-      },
-      "probabilidades": {
-        "Coco Gauff": 49.4,
-        "Karolina Muchova": 50.6
-      },
-      "confianza": 50.6,
-      "value_bets": {
-        "Coco Gauff": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.97,
-          "casa": "Pinnacle",
-          "pinn_prob": 49.4,
-          "mercado_nombre": "Coco Gauff"
-        },
-        "Karolina Muchova": {
-          "value": -0.028,
-          "ev_porcentaje": -2.8,
-          "ev_pinn": -2.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.92,
-          "casa": "Pinnacle",
-          "pinn_prob": 50.6,
-          "mercado_nombre": "Karolina Muchova"
-        },
-        "over_22_5": {
-          "value": -0.058,
-          "ev_porcentaje": -5.8,
-          "ev_pinn": -5.8,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.87,
-          "casa": "Unibet",
-          "pinn_prob": 50.4,
-          "mercado_nombre": "Over 22.5"
-        },
-        "under_22_5": {
-          "value": -0.067,
-          "ev_porcentaje": -6.7,
-          "ev_pinn": -6.7,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 1.88,
-          "casa": "Unibet",
-          "pinn_prob": 49.6,
-          "mercado_nombre": "Under 22.5"
-        }
-      },
-      "prediccion_principal": {
-        "mercado": "Coco Gauff",
-        "prob": 49.4,
-        "ev": -2.8
-      },
-      "cuotas_reales": true,
-      "cuotas_avisos": [],
-      "forma_local": [],
-      "forma_visita": [],
-      "h2h": {},
-      "movimiento": null
-    },
-    {
       "id": "ce12ab4d3d0aa390920234e6b1b8401d",
       "comienzo": "2026-07-08T12:00:00Z",
       "local": "Linda Noskova",
@@ -2790,5 +2706,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:09"
+  "generado": "00:01:23"
 }
