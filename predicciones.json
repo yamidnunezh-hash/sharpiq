@@ -1816,7 +1816,7 @@
       "fecha_evento": "2026-07-08",
       "cuotas": {
         "Cleveland Guardians": 2.1,
-        "Minnesota Twins": 1.85,
+        "Minnesota Twins": 1.83,
         "Over 8.0": 1.84,
         "Under 8.0": 2.0,
         "Cleveland Guardians (+1.5)": 1.54,
@@ -1841,13 +1841,13 @@
           "mercado_nombre": "Cleveland Guardians"
         },
         "Minnesota Twins": {
-          "value": -0.009,
-          "ev_porcentaje": -0.9,
-          "ev_pinn": -0.9,
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.85,
+          "cuota": 1.83,
           "casa": "Unibet",
           "pinn_prob": 53.6,
           "mercado_nombre": "Minnesota Twins"
@@ -1904,7 +1904,7 @@
       "prediccion_principal": {
         "mercado": "Minnesota Twins",
         "prob": 53.6,
-        "ev": -0.9
+        "ev": -2.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -2980,5 +2980,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:00:56"
+  "generado": "12:01:09"
 }
