@@ -2693,9 +2693,13 @@ def predecir_partido(local, visitante, cuotas=None, liga_code="", sede_neutral=F
     mejor_ev   = -9999
     mejor_pred = None
 
+    # Mercados SIN VENTAJA histórica → NUNCA se publican como pick del día.
+    # BTTS/Ambos Marcan quedó en 50% (moneda al aire) en el historial → lo excluimos
+    # de la selección. Se sigue calculando (Mako puede usarlo), pero no compite por el pick.
+    _EXCLUIR_DEL_PICK = {"btts_si", "btts_no"}
     # Escanear value_bets (1X2 + goles + doble chance + DNB)
     for mk, vb in value_bets.items():
-        if not vb or mk not in _NOMBRES:
+        if not vb or mk not in _NOMBRES or mk in _EXCLUIR_DEL_PICK:
             continue
         ev = vb.get("ev_porcentaje", -9999)
         if ev > mejor_ev:
@@ -2876,6 +2880,8 @@ def seleccionar_mejor_prediccion(reporte):
             continue  # stats default (API sin datos) → no es el mejor pick del día
         for mercado, vb in pred["value_bets"].items():
             if not vb["tiene_valor"]:
+                continue
+            if mercado in ("btts_si", "btts_no"):   # BTTS/Ambos Marcan = 50% histórico → nunca es el pick destacado
                 continue
             ev_pinn = vb.get("ev_pinn")
             if ev_pinn is not None and ev_pinn <= 0:
@@ -4250,6 +4256,8 @@ def clasificar_tiers(reporte):
             # ── Evaluar TODOS los mercados con línea Pinnacle ────────
             for mk, vb in vbs.items():
                 if not vb:
+                    continue
+                if mk in ("btts_si", "btts_no"):   # BTTS/Ambos Marcan = 50% histórico (sin ventaja) → NUNCA se publica
                     continue
                 ev_p = vb.get("ev_pinn")
                 # ev_p None = pick SIN ancla de mercado (regla 2). Puede ser SEGURO/PRINCIPAL
