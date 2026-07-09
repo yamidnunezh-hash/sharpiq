@@ -19,5 +19,5 @@ window.TIPSTER_PICKS = [
   { fecha:"2026-07-09", partido:"Francia vs Marruecos", liga:"Mundial 2026",
     mercado:"Combinada", prediccion:"Más de 1.5 goles  +  Más de 8.5 córners", cuota:"1.66",
     analisis:"Combinada del Tipster (2 selecciones) — analizada junto a Mako AI 🦈. Francia llega con ataque potente y Marruecos con la defensa exigida (0.743 goles en contra en sus últimos 5), un escenario que empuja goles y córners: partido de alto ritmo y llegadas para ambos lados. Los dos mercados (Más de 1.5 goles y Más de 8.5 córners) son de los más fuertes de nuestro historial.",
-    tier:"principal", resultado:"pendiente" },
+    tier:"principal", resultado:"ganado" },   // 2-0 (2 goles) · 5+5 = 10 córners ✅
 ];
