@@ -41,7 +41,17 @@ from mlb_datos import BASE, _get, _stat, _f, partidos_de_hoy, datos_partido
 MAX_CARRERAS = 25      # cola suficiente: P(>25 carreras) es despreciable
 VAR_RATIO    = 1.25    # varianza / media (sobredispersión del béisbol)
 PESO_ABRIDOR = 0.60    # el abridor cubre ~5.3 de 9 entradas
-VENTAJA_LOCAL = 1.02
+
+# Localía. Medido el 2026-07-09 contra 13 líneas de Pinnacle: el modelo daba al
+# local 3.2% MENOS de lo que le da el mercado -> subestimábamos la localía y
+# el modelo escupía "valor" en casi todos los visitantes. En MLB el local anota
+# ~4% más y gana ~53.5% de los partidos. Se aplica simétrico (×f al local,
+# ÷f al visitante) para mover el GANADOR sin tocar el TOTAL.
+VENTAJA_LOCAL = 1.04
+
+# Escala global. Mismo día, el total del modelo salía +0.29 carreras por encima
+# de la línea de Pinnacle -> sesgo sistemático al Over. Esto lo endereza.
+ESCALA_GLOBAL = 0.968
 
 # Regresión a la media. El ratio crudo (ataque_equipo / media_liga) exagera:
 # media temporada != habilidad real, y el ERA de un abridor es RUIDOSÍSIMO en
@@ -132,9 +142,8 @@ def carreras_esperadas(datos: dict) -> tuple[float, float]:
             _era_defensiva(datos[rival]["pitcher"],
                            datos[rival]["equipo"], era_liga) / era_liga,
             REG_DEFENSA)
-        lam = cpj_liga * ataque * defensa * parque
-        if lado == "local":
-            lam *= VENTAJA_LOCAL
+        lam = cpj_liga * ataque * defensa * parque * ESCALA_GLOBAL
+        lam *= VENTAJA_LOCAL if lado == "local" else 1 / VENTAJA_LOCAL
         lams[lado] = round(max(lam, 0.5), 3)     # piso: nadie espera <0.5 carreras
 
     return lams["visita"], lams["local"]
