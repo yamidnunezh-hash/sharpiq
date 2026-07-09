@@ -127,7 +127,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "1.3",
     prob:       "51",
     sharpscore: "59",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "07/07/26",
@@ -141,7 +141,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "1.4",
     prob:       "51",
     sharpscore: "59",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "06/07/26",
@@ -2215,6 +2215,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "07/07/26",
+    partido:    "Washington Nationals vs Houston Astros",
+    liga:       "MLB",
+    prediccion: "Over 9.0",
+    cuota:      "2.0",
+    prob:       "51",
+    resultado:  "win"
+  },
+  {
+    fecha:      "07/07/26",
+    partido:    "Los Angeles Dodgers vs Colorado Rockies",
+    liga:       "MLB",
+    prediccion: "Over 9.5",
+    cuota:      "2.0",
+    prob:       "51",
+    resultado:  "win"
+  },
   {
     fecha:      "08/07/26",
     partido:    "Ponte Preta vs Criciuma",
