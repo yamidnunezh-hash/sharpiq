@@ -32,6 +32,7 @@ from __future__ import annotations
 
 import csv
 import sys
+import time
 from collections import defaultdict
 from datetime import date, timedelta
 
@@ -127,16 +128,23 @@ def juegos_finalizados(fecha: str) -> list[dict]:
     return out
 
 
-def cuotas_historicas(fecha: str) -> list[dict]:
+def cuotas_historicas(fecha: str, intentos: int = 4) -> list[dict]:
     """Snapshot de cuotas del mediodía (antes de que empiece casi cualquier juego)."""
-    r = requests.get(HIST_URL, timeout=25, params={
-        "apiKey": ODDS_API_KEY, "bookmakers": BOOKMAKERS,
-        "markets": "h2h,spreads,totals", "oddsFormat": "decimal",
-        "date": f"{fecha}T16:00:00Z",
-    })
-    if r.status_code != 200:
-        return []
-    return r.json().get("data", [])
+    for intento in range(intentos):
+        try:
+            r = requests.get(HIST_URL, timeout=25, params={
+                "apiKey": ODDS_API_KEY, "bookmakers": BOOKMAKERS,
+                "markets": "h2h,spreads,totals", "oddsFormat": "decimal",
+                "date": f"{fecha}T16:00:00Z",
+            })
+            if r.status_code != 200:
+                return []
+            return r.json().get("data", [])
+        except Exception:
+            if intento == intentos - 1:
+                return []
+            time.sleep(2 ** intento)
+    return []
 
 
 # ── Un partido: del dato crudo a las apuestas resueltas ───────────────────────
@@ -289,15 +297,31 @@ if __name__ == "__main__":
     print(f"\nBACKTEST MLB · {d0} → {d1}")
     print("Stats point-in-time (sin mirar el futuro) · cuotas históricas reales\n")
 
-    todas, dias, sin_odds = [], 0, 0
+    todas, dias, sin_odds, fallidos = [], 0, 0, []
     bias_tot, bias_loc, nb = 0.0, 0.0, 0
+
+    # El CSV se escribe DÍA A DÍA: si el proceso muere en el minuto 28, no se
+    # pierden los 27 anteriores (ya nos pasó — un corte de DNS mató una corrida).
+    salida = f"backtest_mlb_{d0}_{d1}.csv"
+    COLS = ["fecha", "partido", "apuesta", "mercado", "cuota",
+            "prob_modelo", "prob_pinnacle", "edge", "ev", "resultado"]
+    fh = open(salida, "w", encoding="utf-8", newline="")
+    escritor = csv.DictWriter(fh, fieldnames=COLS)
+    escritor.writeheader()
 
     d = d0
     while d <= d1:
         f = d.isoformat()
         hasta = (d - timedelta(days=1)).isoformat()   # ← la clave: día ANTERIOR
-        juegos = juegos_finalizados(f)
-        eventos = cuotas_historicas(f) if juegos else []
+        try:
+            juegos = juegos_finalizados(f)
+            eventos = cuotas_historicas(f) if juegos else []
+        except Exception as e:
+            # Un día que falla no puede tumbar la corrida entera.
+            fallidos.append(f)
+            print(f"  {f}: ERROR ({type(e).__name__}) — se omite", flush=True)
+            d += timedelta(days=1)
+            continue
         if juegos and not eventos:
             sin_odds += 1
         for j in juegos:
@@ -311,29 +335,29 @@ if __name__ == "__main__":
                     break
             if not ev_evento:
                 continue
-            filas = apuestas_del_partido(j, ev_evento, hasta, fecha=f)
+            try:
+                filas = apuestas_del_partido(j, ev_evento, hasta, fecha=f)
+            except Exception:
+                continue
             todas += filas
+            escritor.writerows(filas)
             for fl in filas:
                 if fl["apuesta"].startswith("Gana ") and fl["apuesta"][5:] == j["local"]["nombre"]:
                     bias_loc += fl["edge"]; nb += 1
+        fh.flush()                     # ← al disco YA, no cuando el proceso muera
         dias += 1
         print(f"  {f}: {len(juegos)} juegos, {len(todas)} apuestas evaluadas", flush=True)
         d += timedelta(days=1)
 
-    # Guardar TODO a CSV: analizar de nuevo no debe costar otros 30 minutos.
-    salida = f"backtest_mlb_{d0}_{d1}.csv"
-    with open(salida, "w", encoding="utf-8", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=[
-            "fecha", "partido", "apuesta", "mercado", "cuota",
-            "prob_modelo", "prob_pinnacle", "edge", "ev", "resultado"])
-        w.writeheader()
-        w.writerows(todas)
+    fh.close()
     print(f"\n→ {len(todas)} apuestas guardadas en {salida}")
 
     print(f"\n{'='*70}")
     print(f"MUESTRA: {dias} días · {len(todas)} apuestas candidatas evaluadas")
     if sin_odds:
         print(f"({sin_odds} día(s) sin snapshot de cuotas)")
+    if fallidos:
+        print(f"⚠ {len(fallidos)} día(s) OMITIDOS por error de red: {', '.join(fallidos)}")
     if nb:
         print(f"Sesgo local fuera de muestra: {bias_loc/nb:+.2%}  [ideal ~0]")
     print(f"{'='*70}\n")

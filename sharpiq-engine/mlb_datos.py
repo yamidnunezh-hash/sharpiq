@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 import urllib.request
 from datetime import date
 
@@ -28,15 +29,26 @@ TEMPORADA = date.today().year
 _cache: dict[str, dict] = {}
 
 
-def _get(url: str) -> dict:
-    """GET con caché en memoria (la API es gratis, pero no la maltratamos)."""
+def _get(url: str, intentos: int = 4) -> dict:
+    """GET con caché en memoria y reintentos.
+
+    Un corte de red de dos segundos no puede tumbar un backtest de 30 minutos:
+    reintenta con espera creciente (1s, 2s, 4s) antes de rendirse.
+    """
     if url in _cache:
         return _cache[url]
     req = urllib.request.Request(url, headers={"User-Agent": "SharpIQ/1.0"})
-    with urllib.request.urlopen(req, timeout=20) as r:
-        data = json.load(r)
-    _cache[url] = data
-    return data
+    for intento in range(intentos):
+        try:
+            with urllib.request.urlopen(req, timeout=20) as r:
+                data = json.load(r)
+            _cache[url] = data
+            return data
+        except Exception:
+            if intento == intentos - 1:
+                raise
+            time.sleep(2 ** intento)
+    raise RuntimeError("inalcanzable")
 
 
 def _stat(bloque: dict) -> dict:
