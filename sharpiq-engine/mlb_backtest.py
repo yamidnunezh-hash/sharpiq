@@ -30,6 +30,7 @@ Un yield del +20% en una muestra chica es ruido, no talento.
 """
 from __future__ import annotations
 
+import csv
 import sys
 from collections import defaultdict
 from datetime import date, timedelta
@@ -139,7 +140,8 @@ def cuotas_historicas(fecha: str) -> list[dict]:
 
 
 # ── Un partido: del dato crudo a las apuestas resueltas ───────────────────────
-def apuestas_del_partido(j: dict, ev_evento: dict, hasta: str) -> list[dict]:
+def apuestas_del_partido(j: dict, ev_evento: dict, hasta: str,
+                         fecha: str = "") -> list[dict]:
     equipos, liga = stats_equipos_a_fecha(hasta)
     if j["local"]["id"] not in equipos or j["visita"]["id"] not in equipos:
         return []
@@ -212,14 +214,47 @@ def apuestas_del_partido(j: dict, ev_evento: dict, hasta: str) -> list[dict]:
             continue
         cuota = out["price"]
         filas.append({
-            "partido": f"{visita} @ {local}", "apuesta": nombre, "mercado": mkt,
+            "fecha": fecha, "partido": f"{visita} @ {local}",
+            "apuesta": nombre, "mercado": mkt,
             "cuota": cuota, "prob_modelo": pm, "prob_pinnacle": pp,
             "edge": pm - pp, "ev": pm * cuota - 1, "resultado": resultado,
         })
     return filas
 
 
-def _resumen(picks: list[dict], titulo: str):
+def _ganancia(p: dict) -> float:
+    """Unidades ganadas/perdidas por esta apuesta (stake plano de 1u)."""
+    if p["resultado"] == "push":
+        return 0.0
+    return (p["cuota"] - 1) if p["resultado"] == "win" else -1.0
+
+
+def _significancia(ganancias: list[float]) -> tuple[float, str]:
+    """t de Student del yield contra cero.
+
+    La pregunta no es "¿ganó?" sino "¿ganó MÁS de lo que la suerte explica?".
+    Con cuotas ~2.00 la desviación de una apuesta es ~1 unidad, así que el error
+    del yield cae como 1/√n: con 130 apuestas el ruido vale ±8.7%. Un +7% ahí
+    dentro NO prueba nada. Se necesita t≈2 (≈95% de confianza) para hablar.
+    """
+    n = len(ganancias)
+    if n < 2:
+        return 0.0, "muestra insuficiente"
+    media = sum(ganancias) / n
+    var = sum((g - media) ** 2 for g in ganancias) / (n - 1)
+    err = (var / n) ** 0.5
+    if err == 0:
+        return 0.0, "sin varianza"
+    t = media / err
+    if   t >= 2.58: veredicto = "SEÑAL FUERTE (99%)"
+    elif t >= 1.96: veredicto = "SEÑAL (95%)"
+    elif t >= 1.64: veredicto = "indicio (90%) — insuficiente"
+    elif t > -1.64: veredicto = "RUIDO — indistinguible de la suerte"
+    else:           veredicto = "PIERDE de forma significativa"
+    return t, veredicto
+
+
+def _resumen(picks: list[dict], titulo: str, con_t: bool = True):
     if not picks:
         print(f"  {titulo}: sin apuestas")
         return
@@ -228,15 +263,20 @@ def _resumen(picks: list[dict], titulo: str):
     empates = sum(1 for p in picks if p["resultado"] == "push")
     perdidas = n - ganadas - empates
     arriesgado = n - empates
-    unidades = sum((p["cuota"] - 1) if p["resultado"] == "win"
-                   else 0 if p["resultado"] == "push" else -1 for p in picks)
+    gs = [_ganancia(p) for p in picks if p["resultado"] != "push"]
+    unidades = sum(gs)
     yield_ = unidades / arriesgado * 100 if arriesgado else 0
     acierto = ganadas / arriesgado * 100 if arriesgado else 0
     cuota_media = sum(p["cuota"] for p in picks) / n
     print(f"  {titulo}")
     print(f"    {n} picks | {ganadas}W {perdidas}L {empates}P | acierto {acierto:.1f}% "
           f"| cuota media {cuota_media:.2f}")
-    print(f"    unidades {unidades:+.2f} | YIELD {yield_:+.2f}%")
+    linea = f"    unidades {unidades:+.2f} | YIELD {yield_:+.2f}%"
+    if con_t and gs:
+        t, veredicto = _significancia(gs)
+        err = abs(yield_ / t) if t else 0
+        linea += f" (±{err:.2f}%) | t={t:+.2f} → {veredicto}"
+    print(linea)
 
 
 if __name__ == "__main__":
@@ -271,7 +311,7 @@ if __name__ == "__main__":
                     break
             if not ev_evento:
                 continue
-            filas = apuestas_del_partido(j, ev_evento, hasta)
+            filas = apuestas_del_partido(j, ev_evento, hasta, fecha=f)
             todas += filas
             for fl in filas:
                 if fl["apuesta"].startswith("Gana ") and fl["apuesta"][5:] == j["local"]["nombre"]:
@@ -279,6 +319,16 @@ if __name__ == "__main__":
         dias += 1
         print(f"  {f}: {len(juegos)} juegos, {len(todas)} apuestas evaluadas", flush=True)
         d += timedelta(days=1)
+
+    # Guardar TODO a CSV: analizar de nuevo no debe costar otros 30 minutos.
+    salida = f"backtest_mlb_{d0}_{d1}.csv"
+    with open(salida, "w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=[
+            "fecha", "partido", "apuesta", "mercado", "cuota",
+            "prob_modelo", "prob_pinnacle", "edge", "ev", "resultado"])
+        w.writeheader()
+        w.writerows(todas)
+    print(f"\n→ {len(todas)} apuestas guardadas en {salida}")
 
     print(f"\n{'='*70}")
     print(f"MUESTRA: {dias} días · {len(todas)} apuestas candidatas evaluadas")
