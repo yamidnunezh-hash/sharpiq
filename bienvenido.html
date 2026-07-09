@@ -9,11 +9,11 @@
   <style>
     :root{--bg:#0a0e1a;--gold:#00C8FF;--purple:#7B5CF0;--border:rgba(0,200,255,.18);--t1:#eef3fb;--t2:#97a6bd;--t3:#94a3b8;--green:#22c55e;--red:#ef4444}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--bg);color:var(--t1);font-family:Inter,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden}
+    body{background:var(--bg);color:var(--t1);font-family:Inter,sans-serif;min-height:100vh;display:flex;justify-content:center;padding:24px;overflow-x:hidden;overflow-y:auto}
     body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,200,255,.1) 0%,transparent 65%);pointer-events:none}
     body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 80% 80%,rgba(123,92,240,.07) 0%,transparent 50%);pointer-events:none}
 
-    .wrap{width:100%;max-width:520px;text-align:center;position:relative;z-index:1;animation:fadeUp .6s ease both}
+    .wrap{width:100%;max-width:520px;margin:auto;text-align:center;position:relative;z-index:1;animation:fadeUp .6s ease both}
     @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
     .logo{font-family:Inter,sans-serif;font-size:1.4rem;font-weight:900;letter-spacing:4px;color:#fff;margin-bottom:40px}
@@ -40,6 +40,20 @@
     .btn:active{transform:scale(.98)}
 
     .pending-box{background:rgba(234,179,8,.06);border:1px solid rgba(234,179,8,.2);border-radius:12px;padding:16px 20px;margin-bottom:28px;font-family:Inter,sans-serif;font-size:11px;color:#eab308;line-height:1.6;display:none}
+
+    /* Lee esto antes de empezar — expectativas honestas sobre la varianza */
+    .honestidad{background:rgba(8,15,28,.8);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:32px;text-align:left}
+    .honestidad h3{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;text-align:center}
+    .honestidad .lead{font-size:12px;color:var(--t3);line-height:1.6;margin-bottom:20px;text-align:center}
+    .h-item{display:flex;gap:12px;padding:14px 0;border-top:1px solid rgba(255,255,255,.05)}
+    .h-item:first-of-type{border-top:none;padding-top:0}
+    .h-ico{font-size:1.15rem;line-height:1.4;flex-shrink:0}
+    .h-t{font-size:12px;font-weight:700;color:var(--t1);margin-bottom:4px}
+    .h-d{font-size:12.5px;color:var(--t2);line-height:1.65}
+    .h-d strong{color:var(--t1);font-weight:600}
+    .h-cierre{margin-top:18px;padding-top:16px;border-top:1px solid rgba(0,200,255,.15);font-size:12.5px;color:var(--t2);line-height:1.65;text-align:center}
+    .h-cierre strong{color:var(--gold);font-weight:700}
+    .h-legal{margin-top:14px;font-size:11px;color:var(--t3);line-height:1.55;text-align:center}
   </style>
 </head>
 <body>
@@ -82,6 +96,46 @@
     </div>
   </div>
 
+  <div class="honestidad" id="honestidad">
+    <h3>🦈 Antes de empezar, hablemos claro</h3>
+    <p class="lead">Aquí no vendemos humo. Esto es lo que necesitas saber.</p>
+
+    <div class="h-item">
+      <div class="h-ico">📊</div>
+      <div>
+        <div class="h-t">Nuestro número real</div>
+        <div class="h-d">Acertamos cerca del <strong>64%</strong> de los picks, con una rentabilidad de <strong>+3%</strong>. Eso significa que perdemos casi <strong>4 de cada 10</strong>. Es matemática, no magia.</div>
+      </div>
+    </div>
+
+    <div class="h-item">
+      <div class="h-ico">⚠️</div>
+      <div>
+        <div class="h-t">Habrá rachas malas</div>
+        <div class="h-d">Vas a vivir días — y a veces semanas — donde se pierda. Nos pasa a nosotros también. <strong>El que te prometa ganar siempre, te está mintiendo.</strong></div>
+      </div>
+    </div>
+
+    <div class="h-item">
+      <div class="h-ico">✅</div>
+      <div>
+        <div class="h-t">Lo que sí te garantizamos</div>
+        <div class="h-d">Cada pick con análisis y datos reales. Resultados <strong>100% públicos</strong>: los aciertos y los fallos. Y si no hay valor, <strong>no publicamos</strong> — preferimos no jugar antes que forzar una jugada sin ventaja.</div>
+      </div>
+    </div>
+
+    <div class="h-item">
+      <div class="h-ico">🎯</div>
+      <div>
+        <div class="h-t">La clave</div>
+        <div class="h-d">Esto se mide por <strong>mes</strong>, no por día. Con disciplina y buena gestión de tu bankroll, la ventaja aparece en el largo plazo.</div>
+      </div>
+    </div>
+
+    <div class="h-cierre">Gracias por confiar. <strong>Vamos por el largo plazo.</strong> 🦈</div>
+    <div class="h-legal">Apuesta con responsabilidad. Nunca arriesgues más de lo que puedas permitirte perder.</div>
+  </div>
+
   <a class="btn" id="mainBtn" href="cuenta.html">VER MIS PICKS →</a>
   <a id="tgBtn" style="display:none;margin-top:14px;background:linear-gradient(135deg,#229ED9,#1c7fb0);color:#fff;border-radius:10px;padding:16px 36px;font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-decoration:none">📲 ENTRAR AL CANAL VIP DE TELEGRAM</a>
 
@@ -105,6 +159,7 @@
   const badge   = document.getElementById('badgeVip');
   const feats   = document.getElementById('featGrid');
   const btn     = document.getElementById('mainBtn');
+  const honest  = document.getElementById('honestidad');
 
   if(status === 'pending' || status === 'in_process'){
     icon.textContent = '⏳';
@@ -118,6 +173,7 @@
     sub.textContent  = 'Hubo un problema con tu pago. Por favor intenta de nuevo.';
     badge.style.display  = 'none';
     feats.style.display  = 'none';
+    honest.style.display = 'none';
     btn.textContent      = 'INTENTAR DE NUEVO →';
     btn.href             = 'login.html';
   }
