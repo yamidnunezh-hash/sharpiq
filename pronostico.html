@@ -86,25 +86,34 @@
       + '<div class="pval">' + val + '%</div></div>';
   }
 
-  // Dueño/Admin ve la jugada SIEMPRE; el publico ve el candado (embudo VIP intacto).
+  // Admin/Dueño Y CLIENTES VIP ven la jugada; el publico ve el candado (embudo intacto).
+  // BUGFIX: antes solo miraba 'admin' -> los VIP que PAGAN veian el candado y los mandaba
+  // a comprar el plan. Ahora reconoce vip + admin, igual que index.html.
   // Activar vista de dueño 1 sola vez con ?owner=1 -> queda guardada para siempre.
-  var esAdmin = false;
+  var esAdmin = false, esVip = false;
   try {
     var qp = new URLSearchParams(location.search);
     if (qp.get('owner') === '1') localStorage.setItem('sharpiq_owner', '1');
-    var rol = (localStorage.getItem('sharpiq_role') || '').toLowerCase();
-    esAdmin = rol === 'admin' || localStorage.getItem('sharpiq_owner') === '1';
-    if (!esAdmin) {
+    var rol  = (localStorage.getItem('sharpiq_role') || '').toLowerCase();
+    var plan = (localStorage.getItem('sharpiq_plan') || '').toLowerCase();
+    esAdmin = rol === 'admin' || plan === 'admin' || localStorage.getItem('sharpiq_owner') === '1';
+    esVip   = esAdmin || rol === 'vip' || plan === 'vip';
+    if (!esVip) {
       var tk = localStorage.getItem('sharpiq_token');
-      if (tk) { var pl = JSON.parse(atob(tk.split('.')[1])); if ((((pl.plan || pl.role || '')) + '').toLowerCase() === 'admin') esAdmin = true; }
+      if (tk) {
+        var pl = JSON.parse(atob(tk.split('.')[1]));
+        var r2 = (((pl.plan || pl.role || '')) + '').toLowerCase();
+        if (r2 === 'admin')    { esAdmin = true; esVip = true; }
+        else if (r2 === 'vip') { esVip = true; }
+      }
     }
   } catch(e){}
   var cta;
-  if (esAdmin && a.pick) {
+  if (esVip && a.pick) {
     cta = '<div class="cta" style="background:linear-gradient(135deg,#0a3d2e,#0e5c43);border:1px solid #22c55e">'
-      + '<div class="lk" style="color:#7CFFC4">👑 JUGADA DEL MODELO &middot; vista admin</div>'
+      + '<div class="lk" style="color:#7CFFC4">' + (esAdmin ? '👑 JUGADA DEL MODELO &middot; vista admin' : '⭐ JUGADA DEL MODELO &middot; acceso VIP') + '</div>'
       + '<div style="font-family:Bebas Neue,sans-serif;font-size:28px;color:#fff;margin-top:6px;letter-spacing:.5px">' + a.pick + '</div>'
-      + '<div style="font-size:12px;color:#9fe7c8;margin-top:8px">El público ve el candado. Esta jugada es solo para ti y tus VIP.</div></div>';
+      + '<div style="font-size:12px;color:#9fe7c8;margin-top:8px">' + (esAdmin ? 'El público ve el candado. Esta jugada es solo para ti y tus VIP.' : 'Gracias por ser VIP 🦈 — esta jugada es exclusiva para ti.') + '</div></div>';
   } else {
     cta = '<div class="cta"><div class="lk">🔒 El pick recomendado de este partido es exclusivo VIP</div>'
       + '<a href="index.html#planes">Ver la jugada del modelo &rarr;</a></div>';
