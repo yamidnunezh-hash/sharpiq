@@ -164,6 +164,12 @@ def evaluar(prediccion, gl, gv, local="", visitante="", tarjetas=None, corners=N
         if corners == _ln: return 'push'
         if 'under' in p: return 'win' if corners < _ln else 'loss'
         return 'win' if corners > _ln else 'loss'
+    # Estadísticas que NO son el marcador (remates, disparos, faltas, atajadas):
+    # sin ese dato NO se pueden resolver. Devolver None (pendiente) en vez de
+    # evaluarlos como si fueran goles — antes "Remates Over 2.5" caía en la regla
+    # de goles "over 2.5" y se resolvía MAL.
+    if any(_k in p for _k in ('remate', 'disparo', 'falta', 'atajada', 'saque de')):
+        return None
     if 'ndicap' in p or 'handicap' in p:
         _m = _re.search(r'([+-]\s*\d+\.?\d*)', p)
         _h = float(_m.group(1).replace(' ', '')) if _m else 0.0
@@ -191,6 +197,22 @@ def evaluar(prediccion, gl, gv, local="", visitante="", tarjetas=None, corners=N
         return 'win' if total >= 2 else 'loss'
     if 'under175' in p or 'under 1.75' in p:
         return 'win' if total <= 1 else 'loss'
+
+    # ── Over/Under GENÉRICO — CUALQUIER línea (BUGFIX 2026-07-09) ────────────────
+    # Antes solo se conocían las líneas de fútbol (1.5/2.5/3.5/1.75/3.25), así que los
+    # picks de deportes US (MLB "Over 9.5" carreras, NBA "Over 220.5" puntos, NHL, NFL)
+    # NUNCA se resolvían y quedaban "pendientes" para siempre, ensuciando el historial.
+    # Nota: tarjetas/córners/remates/hándicap ya se resolvieron/descartaron arriba.
+    _mou = _re.search(r'\b(over|under|m[áa]s de|menos de)\s*(\d+(?:\.\d+)?)', p)
+    if _mou:
+        _dir = _mou.group(1)
+        _ln  = float(_mou.group(2))
+        if total == _ln:                       # línea entera clavada -> push
+            return 'push'
+        if _dir.startswith('under') or _dir.startswith('menos'):
+            return 'win' if total < _ln else 'loss'
+        return 'win' if total > _ln else 'loss'
+
     if 'ambos no marcan' in p or 'btts_no' in p or 'btts no' in p:
         return 'win' if not (gl > 0 and gv > 0) else 'loss'   # BTTS No: gana si UNO no marca
     if 'btts' in p or 'ambos marcan' in p:
