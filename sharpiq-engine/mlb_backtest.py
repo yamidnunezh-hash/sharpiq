@@ -237,19 +237,26 @@ def _ganancia(p: dict) -> float:
     return (p["cuota"] - 1) if p["resultado"] == "win" else -1.0
 
 
-def _significancia(ganancias: list[float]) -> tuple[float, str]:
-    """t de Student del yield contra cero.
+def _significancia(picks: list[dict]) -> tuple[float, str]:
+    """t de Student del yield contra cero, AGRUPANDO POR DÍA.
 
     La pregunta no es "¿ganó?" sino "¿ganó MÁS de lo que la suerte explica?".
-    Con cuotas ~2.00 la desviación de una apuesta es ~1 unidad, así que el error
-    del yield cae como 1/√n: con 130 apuestas el ruido vale ±8.7%. Un +7% ahí
-    dentro NO prueba nada. Se necesita t≈2 (≈95% de confianza) para hablar.
+
+    ⚠️ La unidad independiente es el DÍA, no la apuesta. En una jornada de
+    muchas carreras TODOS los "Over" ganan juntos: las apuestas del mismo día
+    están correlacionadas. Tratarlas como independientes infla la t y hace pasar
+    por "señal" lo que es ruido (nos pasó: t=+2.66 por apuesta → +2.29 por día).
     """
-    n = len(ganancias)
+    por_dia: dict[str, list[float]] = defaultdict(list)
+    for p in picks:
+        if p["resultado"] != "push":
+            por_dia[p.get("fecha", "?")].append(_ganancia(p))
+    dias = [sum(g) / len(g) for g in por_dia.values() if g]   # yield de cada día
+    n = len(dias)
     if n < 2:
         return 0.0, "muestra insuficiente"
-    media = sum(ganancias) / n
-    var = sum((g - media) ** 2 for g in ganancias) / (n - 1)
+    media = sum(dias) / n
+    var = sum((d - media) ** 2 for d in dias) / (n - 1)
     err = (var / n) ** 0.5
     if err == 0:
         return 0.0, "sin varianza"
@@ -281,9 +288,8 @@ def _resumen(picks: list[dict], titulo: str, con_t: bool = True):
           f"| cuota media {cuota_media:.2f}")
     linea = f"    unidades {unidades:+.2f} | YIELD {yield_:+.2f}%"
     if con_t and gs:
-        t, veredicto = _significancia(gs)
-        err = abs(yield_ / t) if t else 0
-        linea += f" (±{err:.2f}%) | t={t:+.2f} → {veredicto}"
+        t, veredicto = _significancia(picks)
+        linea += f" | t={t:+.2f} (por día) → {veredicto}"
     print(linea)
 
 
