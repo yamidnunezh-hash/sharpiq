@@ -127,9 +127,14 @@ def _regresar(factor: float, k: float) -> float:
     return 1.0 + k * (factor - 1.0)
 
 
-def carreras_esperadas(datos: dict) -> tuple[float, float]:
-    """(λ_visita, λ_local) — carreras esperadas de cada lado."""
-    liga = medias_liga()
+def carreras_esperadas(datos: dict, liga: dict | None = None) -> tuple[float, float]:
+    """(λ_visita, λ_local) — carreras esperadas de cada lado.
+
+    `liga` permite inyectar las medias VIGENTES en la fecha del partido. El
+    backtest DEBE pasarlas: usar las medias de hoy para un partido de junio
+    sería mirar el futuro (data leakage) e inflaría el resultado.
+    """
+    liga = liga or medias_liga()
     cpj_liga, era_liga = liga["carreras_por_juego"], liga["era"]
     parque = PARQUES.get(datos["local"]["nombre"], 1.00)
 
