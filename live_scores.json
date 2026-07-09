@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-09T15:54:37Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-09T17:52:02Z",
+  "live": [
     {
       "id": "2b3ca3496277938aa74f87f24a2c064c",
       "sport": "baseball_mlb",
@@ -13,8 +12,8 @@
       "hora": "11:36 COT",
       "ts": 1783596960,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "2",
+      "score_away": "5"
     },
     {
       "id": "be3485a7acdabede1a849330fcc226dc",
@@ -25,10 +24,10 @@
       "away": "New York Yankees",
       "fecha": "09/07/26",
       "hora": "12:10 COT",
-      "ts": 1783599000,
+      "ts": 1783599021,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "1",
+      "score_away": "1"
     },
     {
       "id": "4690bcfaacd780fc44c057a6a7a4cc46",
@@ -41,8 +40,8 @@
       "hora": "12:11 COT",
       "ts": 1783599060,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "1",
+      "score_away": "1"
     },
     {
       "id": "9f1eb41cd2972a08e88069d6c5b4bb6c",
@@ -55,8 +54,8 @@
       "hora": "12:36 COT",
       "ts": 1783600560,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "a3b9b93cdd33f60538713d337711afe2",
@@ -69,9 +68,11 @@
       "hora": "12:41 COT",
       "ts": 1783600860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "2c1eb8ab560fe810d23f21a2acf7cbe6",
       "sport": "baseball_mlb",
@@ -208,6 +209,76 @@
       "fecha": "10/07/26",
       "hora": "14:00 COT",
       "ts": 1783692000,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "8ef4d776ed05b5f3554e9f74f461a4bf",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Juventude",
+      "away": "Vila Nova",
+      "fecha": "10/07/26",
+      "hora": "17:00 COT",
+      "ts": 1783702800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "250b0373676b10f51ed1c59c93714245",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Washington Nationals",
+      "away": "New York Yankees",
+      "fecha": "10/07/26",
+      "hora": "17:46 COT",
+      "ts": 1783705560,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "7e1f8f6b343ed42c826fc13072a08037",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Sport Recife",
+      "away": "Botafogo",
+      "fecha": "10/07/26",
+      "hora": "18:00 COT",
+      "ts": 1783706400,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "e66e4478b739fa0657a7a11235e1fcee",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Norway",
+      "away": "England",
+      "fecha": "11/07/26",
+      "hora": "16:00 COT",
+      "ts": 1783785600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "200d9cd5eda092c7eb778cc104cd2fd2",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Argentina",
+      "away": "Switzerland",
+      "fecha": "11/07/26",
+      "hora": "20:00 COT",
+      "ts": 1783800000,
       "completed": false,
       "score_home": null,
       "score_away": null
