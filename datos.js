@@ -7,6 +7,20 @@ const PROXIMOS_EVENTOS = [
     fecha:      "09/07/26",
     partido:    "France vs Morocco",
     liga:       "FIFA Mundial 2026",
+    prediccion: "Over 1.5 Goles",
+    cuota:      "1.35",
+    hora:       "15:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "73",
+    sharpscore: "71",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "09/07/26",
+    partido:    "France vs Morocco",
+    liga:       "FIFA Mundial 2026",
     prediccion: "Under 3.5 Goles",
     cuota:      "1.35",
     hora:       "15:00 COT",
@@ -15,20 +29,6 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "74",
     sharpscore: "72",
-    resultado:  "pendiente"
-  },
-  {
-    fecha:      "09/07/26",
-    partido:    "France vs Morocco",
-    liga:       "FIFA Mundial 2026",
-    prediccion: "Ambos Marcan",
-    cuota:      "2.04",
-    hora:       "15:00 COT",
-    status:     "vip",
-    tier:       "alto_valor",
-    stake_pct:  "2",
-    prob:       "50",
-    sharpscore: "57",
     resultado:  "pendiente"
   },
   {
