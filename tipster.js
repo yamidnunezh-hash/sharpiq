@@ -16,6 +16,11 @@
 //    resultado   "pendiente" | "ganado" | "perdido"
 // ═══════════════════════════════════════════════════════════════
 window.TIPSTER_PICKS = [
+  { fecha:"2026-07-10", partido:"España vs Bélgica", liga:"Mundial 2026",
+    mercado:"Disparos a puerta", prediccion:"Lamine Yamal — Más de 0.5 disparos a puerta", cuota:"1.17",
+    analisis:"Pick del Tipster — analizado junto a Mako AI 🦈. Yamal es el principal generador de peligro de España por banda derecha: entra a rematar desde el perfil zurdo y acumula tiros a puerta con regularidad. Ante una Bélgica que concede espacios entre líneas, se espera volumen de llegada. Mercado resuelto con Opta Data.",
+    tier:"seguro", resultado:"pendiente" },
+
   { fecha:"2026-07-09", partido:"Francia vs Marruecos", liga:"Mundial 2026",
     mercado:"Combinada", prediccion:"Más de 1.5 goles  +  Más de 8.5 córners", cuota:"1.66",
     analisis:"Combinada del Tipster (2 selecciones) — analizada junto a Mako AI 🦈. Francia llega con ataque potente y Marruecos con la defensa exigida (0.743 goles en contra en sus últimos 5), un escenario que empuja goles y córners: partido de alto ritmo y llegadas para ambos lados. Los dos mercados (Más de 1.5 goles y Más de 8.5 córners) son de los más fuertes de nuestro historial.",
