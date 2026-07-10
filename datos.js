@@ -4,6 +4,48 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "10/07/26",
+    partido:    "Spain vs Belgium",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.45",
+    hora:       "14:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "68",
+    sharpscore: "67",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "10/07/26",
+    partido:    "Juventude vs Vila Nova",
+    liga:       "Brasileirao B",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.7",
+    hora:       "17:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "74",
+    sharpscore: "72",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "10/07/26",
+    partido:    "Sport Recife vs Botafogo",
+    liga:       "Brasileirao B",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.78",
+    hora:       "18:00 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "80",
+    sharpscore: "75",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "09/07/26",
     partido:    "France vs Morocco",
     liga:       "FIFA Mundial 2026",
