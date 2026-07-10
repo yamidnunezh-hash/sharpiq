@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T22:44:31Z",
+  "updated": "2026-07-10T00:00:59Z",
   "live": [
     {
       "id": "673121d56b103f8d38738980fbffafef",
@@ -12,8 +12,8 @@
       "hora": "17:41 COT",
       "ts": 1783618860,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
+      "score_home": "1",
+      "score_away": "1"
     },
     {
       "id": "83cf12bed561626b784721179f647eb2",
@@ -26,11 +26,9 @@
       "hora": "17:41 COT",
       "ts": 1783618860,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    }
-  ],
-  "upcoming": [
+      "score_home": "5",
+      "score_away": "1"
+    },
     {
       "id": "6bfe03bb9d1e3ada87b6238cd7203d64",
       "sport": "baseball_mlb",
@@ -42,8 +40,8 @@
       "hora": "18:11 COT",
       "ts": 1783620660,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "cea3285cc6f53d314e7111cbd078141b",
@@ -56,9 +54,11 @@
       "hora": "18:46 COT",
       "ts": 1783622760,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "c2c3eb02058f54f27b00aeb1e59224f9",
       "sport": "baseball_mlb",
@@ -125,6 +125,20 @@
       "fecha": "10/07/26",
       "hora": "17:00 COT",
       "ts": 1783702800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "895dfbfbbb57ff9ecc3cb430a9c69076",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Detroit Tigers",
+      "away": "Philadelphia Phillies",
+      "fecha": "10/07/26",
+      "hora": "17:41 COT",
+      "ts": 1783705260,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -237,6 +251,20 @@
       "fecha": "10/07/26",
       "hora": "18:16 COT",
       "ts": 1783707360,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "c710eb874e3d11ac6f032fbc186f2e5f",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago White Sox",
+      "away": "Athletics",
+      "fecha": "10/07/26",
+      "hora": "18:41 COT",
+      "ts": 1783708860,
       "completed": false,
       "score_home": null,
       "score_away": null
