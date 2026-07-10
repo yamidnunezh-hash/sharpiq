@@ -115,9 +115,20 @@ def _generar(p, i):
             f"En goles, el modelo proyecta un {o25}% de Over 2.5.",
         ], i)
 
+    # PICK del modelo. Sin este campo, pronostico.html evalua `esVip && a.pick`,
+    # a.pick sale undefined SIEMPRE y hasta el admin ve el candado: la jugada que
+    # el VIP paga por ver no existia en los datos.
+    # BTTS ("Ambos Marcan") va vacio: mercado retirado por 50% historico. El motor
+    # ya no lo elige, pero un predicciones.json viejo si puede traerlo.
+    _pick_mk = str(pp.get('mercado') or '')
+    if 'ambos' in _pick_mk.lower():
+        _pick_mk = ''
+
     return {"partido": f"{loc} vs {vis}", "liga": liga, "titulo": titulo,
             "cuerpo": c, "cuerpo_largo": c_largo, "hora": p.get('hora', ''),
             "slug": _slug(f"{loc}-vs-{vis}"),
+            "pick": _pick_mk,
+            "pick_prob": (pp.get('prob') or '') if _pick_mk else '',
             "fL": flv, "aL": atk_l, "dL": fl.get('defensa_reciente') or 0,
             "fV": fvv, "aV": atk_v, "dV": fv.get('defensa_reciente') or 0,
             "vl": vl, "ve": ve, "vv": vv, "o25": o25 or 0, "u25": u25 or 0}

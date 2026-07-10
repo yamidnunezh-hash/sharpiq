@@ -3865,9 +3865,15 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
             if p < 50 or not (1.35 <= cu <= 2.60) or e < -2:
                 return -999.0
             return p + max(0.0, e) * 2.0          # prob manda; +EV real da bonus
-        mejor_mk = max(value_bets, key=_score_bal)
+        # BTTS = 50% historico, sin ventaja. Tambien fuera de la prediccion principal:
+        # esa es la jugada que el VIP ve en pronostico.html. Si el partido solo tiene
+        # BTTS, no hay prediccion principal — antes que recomendar un volado, nada.
+        _elegibles = [k for k in value_bets if k not in ("btts_si", "btts_no")]
+        if not _elegibles:
+            continue
+        mejor_mk = max(_elegibles, key=_score_bal)
         if _score_bal(mejor_mk) <= -900:          # ningun pick solido -> mejor EV
-            mejor_mk = max(value_bets, key=lambda k: value_bets[k].get("ev_pinn") or -999)
+            mejor_mk = max(_elegibles, key=lambda k: value_bets[k].get("ev_pinn") or -999)
         mejor_vb  = value_bets[mejor_mk]
 
         # Mercados extendidos: corners, tarjetas, remates (API-Football)
