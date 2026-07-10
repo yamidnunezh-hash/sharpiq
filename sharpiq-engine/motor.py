@@ -3912,7 +3912,9 @@ def analizar_futbol_sharp(sport_key, nombre_liga):
             "confianza":  max(probs_out.values()) if probs_out else 0,
             "value_bets": value_bets,
             "prediccion_principal": {
-                "mercado": _NOMBRES_MK.get(mejor_mk, mejor_mk),
+                # _NOMBRES_MK no tiene corners ni tarjetas -> caia a la clave cruda
+                # ("corners_over_8_5") y ESO era lo que veia el cliente en la web.
+                "mercado": mejor_vb.get("mercado_nombre") or _NOMBRES_MK.get(mejor_mk, mejor_mk),
                 "prob":    mejor_vb["pinn_prob"],
                 "ev":      mejor_vb["ev_pinn"],
             },

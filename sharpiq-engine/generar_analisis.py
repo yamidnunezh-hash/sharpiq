@@ -121,7 +121,10 @@ def _generar(p, i):
     # BTTS ("Ambos Marcan") va vacio: mercado retirado por 50% historico. El motor
     # ya no lo elige, pero un predicciones.json viejo si puede traerlo.
     _pick_mk = str(pp.get('mercado') or '')
-    if 'ambos' in _pick_mk.lower():
+    if '_' in _pick_mk:      # llego la clave cruda ("corners_over_8_5"), no el nombre
+        _vb = (p.get('value_bets') or {}).get(_pick_mk) or {}
+        _pick_mk = _vb.get('mercado_nombre') or _pick_mk.replace('_', ' ').title()
+    if 'ambos' in _pick_mk.lower() or 'btts' in _pick_mk.lower():
         _pick_mk = ''
 
     return {"partido": f"{loc} vs {vis}", "liga": liga, "titulo": titulo,
