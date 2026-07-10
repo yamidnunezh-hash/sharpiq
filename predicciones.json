@@ -105,7 +105,7 @@
         "corners_under_9_5": 2.21,
         "corners_under_9_5_casa": "Pinnacle",
         "pinnacle_corners_under_9_5": 2.21,
-        "corners_over_10_5": 2.24,
+        "corners_over_10_5": 2.22,
         "corners_over_10_5_casa": "Betfair",
         "pinnacle_corners_over_10_5": 1.83,
         "corners_under_10_5": 1.81,
@@ -153,9 +153,9 @@
         "btts_no": 2.14,
         "btts_no_casa": "Betfair",
         "pinnacle_btts_no": 2.05,
-        "dnb_local": 1.25,
+        "dnb_local": 1.26,
         "dnb_local_casa": "Betfair",
-        "dnb_visita": 4.8,
+        "dnb_visita": 4.7,
         "dnb_visita_casa": "Betfair",
         "ah_l_m1_0": 2.09,
         "ah_l_m1_0_casa": "Pinnacle",
@@ -631,13 +631,13 @@
           "mercado_nombre": "Corners Under 9.5"
         },
         "corners_over_10_5": {
-          "value": 0.114,
-          "ev_porcentaje": 11.4,
-          "ev_pinn": 11.4,
+          "value": 0.104,
+          "ev_porcentaje": 10.4,
+          "ev_pinn": 10.4,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
-          "cuota": 2.24,
+          "cuota": 2.22,
           "casa": "Betfair",
           "pinn_prob": 49.7,
           "mercado_nombre": "Corners Over 10.5"
@@ -821,24 +821,24 @@
           "pinn_prob": 47.2
         },
         "dnb_local": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
+          "value": -0.01,
+          "ev_porcentaje": -1.0,
+          "ev_pinn": -1.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.25,
+          "cuota": 1.26,
           "casa": "Betfair",
           "pinn_prob": 78.6
         },
         "dnb_visita": {
-          "value": 0.027,
-          "ev_porcentaje": 2.7,
-          "ev_pinn": 2.7,
+          "value": 0.006,
+          "ev_porcentaje": 0.6,
+          "ev_pinn": 0.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.8,
+          "cuota": 4.7,
           "casa": "Betfair",
           "pinn_prob": 21.4
         },
@@ -1397,7 +1397,7 @@
       "hora": "22:00",
       "fecha_evento": "2026-07-10",
       "cuotas": {
-        "1": 1.89,
+        "1": 1.88,
         "1_casa": "Betfair",
         "pinnacle_1": 1.86,
         "2": 5.2,
@@ -1547,13 +1547,13 @@
       "confianza": 88.4,
       "value_bets": {
         "victoria_local": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.89,
+          "cuota": 1.88,
           "casa": "Betfair",
           "pinn_prob": 51.6
         },
@@ -11644,7 +11644,7 @@
         "1": 3.25,
         "1_casa": "LiveScore Bet",
         "pinnacle_1": 3.07,
-        "2": 2.26,
+        "2": 2.24,
         "2_casa": "Betfair",
         "pinnacle_2": 2.18,
         "X": 3.93,
@@ -11810,13 +11810,13 @@
           "pinn_prob": 31.4
         },
         "victoria_visita": {
-          "value": -0.002,
-          "ev_porcentaje": -0.2,
-          "ev_pinn": -0.2,
+          "value": -0.011,
+          "ev_porcentaje": -1.1,
+          "ev_pinn": -1.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.26,
+          "cuota": 2.24,
           "casa": "Betfair",
           "pinn_prob": 44.2
         },
@@ -17327,11 +17327,11 @@
       "hora": "00:11",
       "fecha_evento": "2026-07-10",
       "cuotas": {
-        "Los Angeles Angels": 2.18,
+        "Los Angeles Angels": 2.22,
         "Minnesota Twins": 1.79,
         "Over 9.5": 2.0,
         "Under 9.5": 1.85,
-        "Los Angeles Angels (+1.5)": 1.56,
+        "Los Angeles Angels (+1.5)": 1.59,
         "Minnesota Twins (-1.5)": 2.5
       },
       "probabilidades": {
@@ -17341,14 +17341,14 @@
       "confianza": 54.8,
       "value_bets": {
         "Los Angeles Angels": {
-          "value": -0.015,
-          "ev_porcentaje": -1.5,
-          "ev_pinn": -1.5,
+          "value": 0.003,
+          "ev_porcentaje": 0.3,
+          "ev_pinn": 0.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.18,
-          "casa": "DraftKings",
+          "cuota": 2.22,
+          "casa": "FanDuel",
           "pinn_prob": 45.2,
           "mercado_nombre": "Los Angeles Angels"
         },
@@ -17389,13 +17389,13 @@
           "mercado_nombre": "Under 9.5"
         },
         "spread_los_angeles_angels_1_5": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.56,
+          "cuota": 1.59,
           "casa": "FanDuel",
           "pinn_prob": 62.1,
           "mercado_nombre": "Los Angeles Angels (+1.5)"
@@ -17416,7 +17416,7 @@
       "prediccion_principal": {
         "mercado": "Los Angeles Angels",
         "prob": 45.2,
-        "ev": -1.5
+        "ev": 0.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -18614,5 +18614,5 @@
       "movimiento": null
     }
   ],
-  "generado": "15:06:41"
+  "generado": "15:07:01"
 }
