@@ -366,7 +366,29 @@ def correr():
         }
         def _nombre(_mk, _vb):
             return _vb.get("mercado_nombre") or _NOM.get(_mk) or _mk.replace("_", " ").title()
-        def _dos_picks(_p, _usados):
+        def _familia(_mk):
+            """Mercados que son 'la misma apuesta con otra cara'.
+
+            Contar la diversidad por clave exacta no sirve: 'Over 1.5' y 'Under 3.5'
+            son claves distintas pero AMBAS son goles, y el motor terminaba ofreciendo
+            la misma jugada 6 veces al dia creyendo que variaba.
+            """
+            if _mk.startswith("corners_"):                      return "corners"
+            if _mk.startswith("cards_"):                        return "tarjetas"
+            if _mk.startswith("ah_"):                           return "handicap"
+            if _mk.startswith(("over", "under")):               return "goles"
+            if _mk.startswith("btts"):                          return "btts"
+            if _mk.startswith(("doble_", "dnb_")):              return "resultado"
+            if _mk in ("victoria_local", "empate", "victoria_visita"): return "resultado"
+            return _mk
+
+        def _candidatos(_p):
+            """TODOS los picks publicables de un partido, no solo dos.
+
+            Devolver varios permite que, si el mejor mercado ya llego a su tope de
+            diversidad, el partido aporte su segunda mejor jugada en vez de quedarse
+            fuera. Antes solo se ofrecia una y el partido se perdia.
+            """
             _cands = []
             for _mk, _vb in (_p.get("value_bets") or {}).items():
                 if not _vb:
@@ -385,19 +407,17 @@ def correr():
                 if _pr < 40 or _cu < 1.30 or _cu > 3.0:
                     continue
                 _cands.append((_mk, _vb, _pr, _cu, _e))
+            _out = []
             # SEGURO: mayor probabilidad (banca; cuota <=1.95, EV no muy negativo).
             # Nunca corners como SEGURO (mercado menos predecible) -> solo mercados solidos.
-            _segs = [c for c in _cands if c[2] >= 58 and c[3] <= 1.95 and c[4] >= -2
-                     and not c[0].startswith("corners_")]
-            # DIVERSIDAD: -8% prob por cada vez que el mercado ya se publico hoy
-            _seg  = max(_segs, key=lambda c: c[2] - 8 * _usados.get(c[0], 0)) if _segs else None
-            # RECOMENDADO: mejor valor real (EV>=1), distinto mercado al seguro
-            _recs = [c for c in _cands if c[4] >= 1 and c[2] >= 48 and 1.55 <= c[3] <= 2.80]
-            if _seg:
-                _recs = [c for c in _recs if c[0] != _seg[0]]
-            # DIVERSIDAD tambien en el recomendado
-            _rec  = max(_recs, key=lambda c: c[4] + c[2] / 100.0 - 0.6 * _usados.get(c[0], 0)) if _recs else None
-            return _seg, _rec
+            for c in _cands:
+                if c[2] >= 58 and c[3] <= 1.95 and c[4] >= -2 and not c[0].startswith("corners_"):
+                    _out.append((c, "seguro", 3))
+            # RECOMENDADO: mejor valor real (EV>=1), cuota con recorrido
+            for c in _cands:
+                if c[4] >= 1 and c[2] >= 48 and 1.55 <= c[3] <= 2.80:
+                    _out.append((c, "alto_valor", 2))
+            return _out
         _mund_list = []
         # ── PASO 1: REVISAR TODOS los eventos y juntar candidatos en UN pool ──
         _pool = []
@@ -418,25 +438,33 @@ def correr():
                     continue
             except Exception:
                 pass
-            _seg, _rec = _dos_picks(_p, {})   # mejor seguro + mejor valor de ESTE partido
             _part = f"{_p['local']} vs {_p['visitante']}"
             _hcot = _hora_cot(_p.get("hora", "00:00"))
             _fev  = _p.get("fecha_evento") or _hoy_cot().isoformat()
-            for _et, _tier, _stk in ((_seg, "seguro", 3), (_rec, "alto_valor", 2)):
-                if not _et:
-                    continue
+            for _et, _tier, _stk in _candidatos(_p):   # TODOS los publicables de este partido
                 # CALIDAD global = EV + probabilidad + empujon al seguro (la banca)
                 _cal = (_et[4] or 0) + _et[2] / 100.0 + (0.4 if _tier == "seguro" else 0.0)
                 _pool.append((_cal, _part, _p.get("liga", ""), _et, _tier, _stk, _hcot, _fev))
         # ── PASO 2: RANKEAR por calidad y publicar los MEJORES, VARIADOS ──
-        #   - max 2 veces el mismo mercado en todo el dia (diversidad de mercado)
+        #   - max 2 veces el mismo mercado exacto en todo el dia
+        #   - max 3 veces la misma FAMILIA de mercado (goles, resultado, corners...)
+        #     Sin esto, "Over 1.5" + "Under 3.5" + "Under 2.5" pasaban como si fueran
+        #     tres mercados distintos y el dia entero era la misma apuesta.
+        #   - max 1 pick por familia EN EL MISMO PARTIDO (nada de Over 1.5 y Under 3.5 juntos)
         #   - max 2 picks por partido · tope 12 picks (calidad > cantidad)
         _pool.sort(key=lambda x: -x[0])
         _usados = {}
+        _por_fam = {}
+        _fam_part = set()
         _por_part = {}
         for _cal, _part, _lg, _et, _tier, _stk, _hcot, _fev in _pool:
             _mk2, _vb2 = _et[0], _et[1]
+            _fam = _familia(_mk2)
             if _usados.get(_mk2, 0) >= 2:
+                continue
+            if _por_fam.get(_fam, 0) >= 3:
+                continue
+            if (_part, _fam) in _fam_part:
                 continue
             if _por_part.get(_part, 0) >= 2:
                 continue
@@ -445,6 +473,8 @@ def correr():
                 _hcot, round(_vb2.get("ev_pinn") or 0), fecha_evento=_fev,
                 tier=_tier, stake_pct=_stk, prob=round(_vb2.get("pinn_prob") or 0))
             _usados[_mk2] = _usados.get(_mk2, 0) + 1
+            _por_fam[_fam] = _por_fam.get(_fam, 0) + 1
+            _fam_part.add((_part, _fam))
             _por_part[_part] = _por_part.get(_part, 0) + 1
             _mund_list.append(f"{_part} — {_vb2.get('mercado_nombre', _mk2)} ({_tier})")
             _mundial_publicados += 1
