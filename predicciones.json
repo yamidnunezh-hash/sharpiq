@@ -7282,7 +7282,7 @@
         "Pittsburgh Pirates": 1.76,
         "Over 8.0": 1.87,
         "Under 8.0": 1.95,
-        "Milwaukee Brewers (+1.5)": 1.55,
+        "Milwaukee Brewers (+1.5)": 1.56,
         "Pittsburgh Pirates (-1.5)": 2.5
       },
       "probabilidades": {
@@ -7340,13 +7340,13 @@
           "mercado_nombre": "Under 8.0"
         },
         "spread_milwaukee_brewers_1_5": {
-          "value": -0.034,
-          "ev_porcentaje": -3.4,
-          "ev_pinn": -3.4,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.55,
+          "cuota": 1.56,
           "casa": "FanDuel",
           "pinn_prob": 62.3,
           "mercado_nombre": "Milwaukee Brewers (+1.5)"
@@ -7359,7 +7359,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.5,
-          "casa": "FanDuel",
+          "casa": "BetMGM",
           "pinn_prob": 37.7,
           "mercado_nombre": "Pittsburgh Pirates (-1.5)"
         }
@@ -8235,5 +8235,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:14"
+  "generado": "00:01:26"
 }
