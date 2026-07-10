@@ -19,7 +19,7 @@ window.TIPSTER_PICKS = [
   { fecha:"2026-07-10", partido:"España vs Bélgica", liga:"Mundial 2026",
     mercado:"Disparos a puerta", prediccion:"Lamine Yamal — Más de 1.5 disparos a puerta", cuota:"1.95",
     analisis:"Pick del Tipster — analizado junto a Mako AI 🦈. Yamal es el principal generador de peligro de España por banda derecha: entra desde el perfil zurdo a rematar y acumula tiros a puerta con regularidad. Ante una Bélgica que concede espacios entre líneas, se espera volumen de llegada. Elegimos la línea de 1.5 (y no la de 0.5) porque ahí está el valor real: a cuota 1.95 el mercado paga lo que el análisis vale. Mercado resuelto con Opta Data.",
-    tier:"principal", resultado:"pendiente" },
+    tier:"principal", resultado:"ganado" },   // 2 tiros a puerta al 61' (Opta) ✅ Más de 1.5 cumplido
 
   { fecha:"2026-07-09", partido:"Francia vs Marruecos", liga:"Mundial 2026",
     mercado:"Combinada", prediccion:"Más de 1.5 goles  +  Más de 8.5 córners", cuota:"1.66",
