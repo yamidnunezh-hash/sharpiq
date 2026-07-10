@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T19:22:00Z",
+  "updated": "2026-07-10T20:51:39Z",
   "live": [
     {
       "id": "fca257de4583bd4bc592e8b2a8f24ad7",
@@ -12,8 +12,8 @@
       "hora": "14:00 COT",
       "ts": 1783692000,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
+      "score_home": "2",
+      "score_away": "1"
     }
   ],
   "upcoming": [
@@ -326,20 +326,6 @@
       "completed": true,
       "score_home": "8",
       "score_away": "4"
-    },
-    {
-      "id": "b6e926d7f026782b9cab2fa02b823d92",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "France",
-      "away": "Morocco",
-      "fecha": "09/07/26",
-      "hora": "15:00 COT",
-      "ts": 1783609200,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "0"
     }
   ]
 }
