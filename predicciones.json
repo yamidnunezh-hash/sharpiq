@@ -4688,8 +4688,8 @@
         "2": 3.21,
         "2_casa": "Pinnacle",
         "pinnacle_2": 3.21,
-        "1": 2.33,
-        "1_casa": "Unibet",
+        "1": 2.34,
+        "1_casa": "Betfair",
         "pinnacle_1": 2.27,
         "X": 3.55,
         "X_casa": "Betfair",
@@ -4854,14 +4854,14 @@
           "pinn_prob": 29.9
         },
         "victoria_local": {
-          "value": -0.016,
-          "ev_porcentaje": -1.6,
-          "ev_pinn": -1.6,
+          "value": -0.012,
+          "ev_porcentaje": -1.2,
+          "ev_pinn": -1.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.33,
-          "casa": "Unibet",
+          "cuota": 2.34,
+          "casa": "Betfair",
           "pinn_prob": 42.2
         },
         "empate": {
@@ -16753,34 +16753,34 @@
           "mercado_nombre": "Linda Noskova"
         },
         "over_23_5": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.95,
           "casa": "Unibet",
-          "pinn_prob": 50.3,
+          "pinn_prob": 50.0,
           "mercado_nombre": "Over 23.5"
         },
         "under_23_5": {
-          "value": -0.1,
-          "ev_porcentaje": -10.0,
-          "ev_pinn": -10.0,
+          "value": -0.095,
+          "ev_porcentaje": -9.5,
+          "ev_pinn": -9.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.81,
           "casa": "Unibet",
-          "pinn_prob": 49.7,
+          "pinn_prob": 50.0,
           "mercado_nombre": "Under 23.5"
         }
       },
       "prediccion_principal": {
-        "mercado": "Over 23.5",
-        "prob": 50.3,
-        "ev": -2.0
+        "mercado": "Karolina Muchova",
+        "prob": 53.9,
+        "ev": -2.4
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -17448,5 +17448,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:01:16"
+  "generado": "20:01:49"
 }
