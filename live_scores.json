@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-10T20:51:39Z",
-  "live": [
-    {
-      "id": "fca257de4583bd4bc592e8b2a8f24ad7",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "Spain",
-      "away": "Belgium",
-      "fecha": "10/07/26",
-      "hora": "14:00 COT",
-      "ts": 1783692000,
-      "completed": false,
-      "score_home": "2",
-      "score_away": "1"
-    }
-  ],
+  "updated": "2026-07-10T21:57:51Z",
+  "live": [],
   "upcoming": [
     {
       "id": "8ef4d776ed05b5f3554e9f74f461a4bf",
@@ -229,6 +214,20 @@
     }
   ],
   "finished": [
+    {
+      "id": "fca257de4583bd4bc592e8b2a8f24ad7",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Spain",
+      "away": "Belgium",
+      "fecha": "10/07/26",
+      "hora": "14:00 COT",
+      "ts": 1783692000,
+      "completed": true,
+      "score_home": "2",
+      "score_away": "1"
+    },
     {
       "id": "f6d5d25a3b26ed6f4b0aa584e75b872c",
       "sport": "baseball_mlb",
