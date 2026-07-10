@@ -157,19 +157,19 @@ def _dedup_proximos_texto(texto):
         # 2) tarjetas FUERA (solo pendientes; los resueltos se quedan por integridad)
         objs2 = [o for o in objs2
                  if not (_es_pend(o) and 'tarjeta' in _campo(o, 'prediccion').lower())]
-        # 3) maximo 2 PENDIENTES por (partido, fecha): SEGURO + RECOMENDADO(alto_valor)
-        _TIER_ORD = {'seguro': 0, 'alto_valor': 1, 'principal': 2}
-        _pend_grp = {}
-        for i, o in enumerate(objs2):
-            if _es_pend(o):
-                g = (_campo(o, 'partido'), _campo(o, 'fecha'))
-                _pend_grp.setdefault(g, []).append(i)
-        _keep = set()
-        for g, idxs in _pend_grp.items():
-            idxs.sort(key=lambda i: (_TIER_ORD.get(_campo(objs2[i], 'tier'), 9), i))
-            for i in idxs[:2]:
-                _keep.add(i)
-        kept = [o for i, o in enumerate(objs2) if (not _es_pend(o)) or (i in _keep)]
+        # 3) NUNCA se borra un pick ya publicado.
+        #
+        # Aqui habia un recorte a "max 2 pendientes por (partido, fecha)" ordenando
+        # por tier. Cada corrida del motor volvia a aplicarlo, asi que un pick
+        # publicado a las 11am podia ser DESALOJADO a la 1pm por otro de mejor tier
+        # y desaparecer sin resolverse. Paso 29 veces en 224 picks (12.9%): el VIP
+        # veia la jugada, la apostaba, y nunca aparecia en el historial.
+        # (Caso real: France vs Morocco "Ambos Marcan @2.04 ALTO VALOR", 09/07 —
+        #  lo echaron dos picks "seguro" y el partido termino 2-0: era derrota.)
+        #
+        # El tope de 2 por partido ahora se aplica AL AGREGAR (_agregar_a_datos_js),
+        # que es donde corresponde. Publicado es publicado.
+        kept = objs2
         if len(kept) == len(objs):
             return texto   # nada que limpiar
         nuevo_body = "\n  " + ",\n  ".join(kept) + "\n"
@@ -217,6 +217,32 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
     # Actualizar datos.js (backup)
     with open(DATOS_PATH, encoding="utf-8") as f:
         texto = f.read()
+
+    # TOPE AL AGREGAR (no borrando): si ya hay 2 picks PENDIENTES de este mismo
+    # partido+fecha, no se publica un tercero. Antes el tope se aplicaba en la
+    # limpieza, que desalojaba picks ya publicados -> desaparecian sin resolverse.
+    # Tambien evita re-publicar un pick identico que ya existe.
+    try:
+        _i = texto.find('PROXIMOS_EVENTOS'); _j = texto.find('PREDICCIONES_HISTORIAL')
+        _prox = texto[_i:_j if _j > _i else len(texto)]
+        _pend, _existe = 0, False
+        for _b in re.findall(r'\{[^{}]*\}', _prox, re.S):
+            _gp = (re.search(r'partido:\s*"([^"]*)"', _b) or [None, ''])[1]
+            _gf = (re.search(r'fecha:\s*"([^"]*)"', _b) or [None, ''])[1]
+            _gr = (re.search(r'resultado:\s*"([^"]*)"', _b) or [None, ''])[1]
+            _gm = (re.search(r'prediccion:\s*"([^"]*)"', _b) or [None, ''])[1]
+            if _gp == partido and _gf == fecha_str:
+                if _gm.split('—')[0].strip() == str(mercado).split('—')[0].strip():
+                    _existe = True
+                if _gr in ('', 'pendiente', 'pending'):
+                    _pend += 1
+        if _existe or _pend >= 2:
+            LOG.info(f"datos.js: NO se agrega {partido} | {mercado} "
+                     f"(ya hay {_pend} pendiente(s) o el pick ya existe)")
+            return
+    except Exception:
+        pass
+
     texto_nuevo = re.sub(patron, r'\1\n' + nueva_entrada, texto)
     texto_nuevo = _dedup_proximos_texto(texto_nuevo)
     with open(DATOS_PATH, "w", encoding="utf-8") as f:
