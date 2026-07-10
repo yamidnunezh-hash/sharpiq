@@ -5804,13 +5804,26 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     if(!track) return;
     const items=[];
     if(typeof PROXIMOS_EVENTOS!=='undefined' && PROXIMOS_EVENTOS.length){
-      // SOLO eventos con pick SharpIQ (con prediccion); sin cola de resultados historicos
-      PROXIMOS_EVENTOS.filter(e=>e.prediccion).forEach(e=>{
+      // Solo los picks de la fecha MÁS RECIENTE. Antes desfilaba el historial
+      // entero (180+ picks, muchos ya perdidos) rotulado "PICK HOY" -> mentira
+      // involuntaria al visitante. El ticker anuncia el día, no el archivo.
+      const conPick = PROXIMOS_EVENTOS.filter(e=>e.prediccion && e.fecha);
+      // fecha viene "DD/MM/YY" -> a "YYMMDD" para poder ordenar
+      const orden = f => { const p=String(f).split('/'); return p.length===3 ? p[2]+p[1]+p[0] : ''; };
+      const ultima = conPick.reduce((max,e)=> orden(e.fecha)>max ? orden(e.fecha) : max, '');
+      // ¿esa fecha es HOY en Colombia (UTC-5)?
+      const cot = new Date(Date.now() - 5*3600*1000);
+      const hoy = String(cot.getUTCFullYear()).slice(2)
+                + String(cot.getUTCMonth()+1).padStart(2,'0')
+                + String(cot.getUTCDate()).padStart(2,'0');
+      const etiqueta = ultima===hoy ? 'PICK HOY' : 'ÚLTIMO PICK';
+
+      conPick.filter(e=>orden(e.fecha)===ultima).forEach(e=>{
         const pred=e.prediccion.split('—')[0].trim();
-        items.push(`⚽ ${e.liga} · ${e.partido} · <strong>${pred}${e.cuota?` @${e.cuota}`:''} — PICK HOY</strong>`);
+        items.push(`⚽ ${e.liga} · ${e.partido} · <strong>${pred}${e.cuota?` @${e.cuota}`:''} — ${etiqueta}</strong>`);
       });
     }
-    if(items.length===0) return;
+    if(items.length===0){ const b=track.closest('.ticker'); if(b) b.style.display='none'; return; }
     track.innerHTML=[...items,...items].map(t=>`<span>${t}</span>`).join('');
   })();
 
