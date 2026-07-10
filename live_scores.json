@@ -1,35 +1,6 @@
 {
-  "updated": "2026-07-10T04:18:22Z",
-  "live": [
-    {
-      "id": "ff7fcfaa73e919c6a69c375313853a91",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Diego Padres",
-      "away": "Arizona Diamondbacks",
-      "fecha": "09/07/26",
-      "hora": "20:41 COT",
-      "ts": 1783629660,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "3"
-    },
-    {
-      "id": "f6d5d25a3b26ed6f4b0aa584e75b872c",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Francisco Giants",
-      "away": "Colorado Rockies",
-      "fecha": "09/07/26",
-      "hora": "20:46 COT",
-      "ts": 1783629960,
-      "completed": false,
-      "score_home": "5",
-      "score_away": "2"
-    }
-  ],
+  "updated": "2026-07-10T07:56:04Z",
+  "live": [],
   "upcoming": [
     {
       "id": "fca257de4583bd4bc592e8b2a8f24ad7",
@@ -244,6 +215,34 @@
   ],
   "finished": [
     {
+      "id": "f6d5d25a3b26ed6f4b0aa584e75b872c",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Francisco Giants",
+      "away": "Colorado Rockies",
+      "fecha": "09/07/26",
+      "hora": "20:46 COT",
+      "ts": 1783629960,
+      "completed": true,
+      "score_home": "8",
+      "score_away": "2"
+    },
+    {
+      "id": "ff7fcfaa73e919c6a69c375313853a91",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Diego Padres",
+      "away": "Arizona Diamondbacks",
+      "fecha": "09/07/26",
+      "hora": "20:41 COT",
+      "ts": 1783629660,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "3"
+    },
+    {
       "id": "c2c3eb02058f54f27b00aeb1e59224f9",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -354,34 +353,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "5"
-    },
-    {
-      "id": "9f1eb41cd2972a08e88069d6c5b4bb6c",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Baltimore Orioles",
-      "away": "Chicago Cubs",
-      "fecha": "09/07/26",
-      "hora": "12:36 COT",
-      "ts": 1783600560,
-      "completed": true,
-      "score_home": "3",
-      "score_away": "2"
-    },
-    {
-      "id": "4690bcfaacd780fc44c057a6a7a4cc46",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Mets",
-      "away": "Kansas City Royals",
-      "fecha": "09/07/26",
-      "hora": "12:11 COT",
-      "ts": 1783599060,
-      "completed": true,
-      "score_home": "7",
-      "score_away": "3"
     }
   ]
 }
