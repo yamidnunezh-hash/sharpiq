@@ -373,6 +373,11 @@ def correr():
                     continue
                 if _mk.startswith("cards_"):
                     continue   # tarjetas FUERA: mercado volatil, no se puede prever
+                if _mk in ("btts_si", "btts_no"):
+                    # BTTS/Ambos Marcan = 50% historico, sin ventaja -> NUNCA se publica.
+                    # Este bloque NO pasa por clasificar_tiers (que ya lo filtra), asi que
+                    # necesita su propio corte. Sin esto, el mercado se sigue publicando.
+                    continue
                 _pr = float(_vb.get("pinn_prob") or 0)
                 _cu = float(_vb.get("cuota") or 0)
                 _e  = _vb.get("ev_pinn")

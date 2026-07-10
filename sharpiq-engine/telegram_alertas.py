@@ -283,9 +283,11 @@ def enviar_resumen_dia(reporte):
         if (_p.get("local", "") + " vs " + _p.get("visitante", "")) in _usados:
             continue
         _best = None
-        for _vb in (_p.get("value_bets") or {}).values():
+        for _mk, _vb in (_p.get("value_bets") or {}).items():
             if not _vb:
                 continue
+            if _mk in ("btts_si", "btts_no"):
+                continue   # BTTS = 50% historico. Ni siquiera se sugiere para el criterio manual.
             if _best is None or (_vb.get("ev_pinn") or 0) > (_best.get("ev_pinn") or 0):
                 _best = _vb
         if _best and (_best.get("ev_pinn") or 0) > 0:
