@@ -5,6 +5,20 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "11/07/26",
+    partido:    "Argentina vs Switzerland",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Under 7.5",
+    cuota:      "2.2",
+    hora:       "20:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "51",
+    sharpscore: "67",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "11/07/26",
     partido:    "Norway vs England",
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Visitante",
