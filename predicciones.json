@@ -4606,7 +4606,7 @@
         "2": 1.56,
         "2_casa": "Betfair",
         "pinnacle_2": 1.54,
-        "1": 5.9,
+        "1": 6.0,
         "1_casa": "Betfair",
         "pinnacle_1": 5.61,
         "X": 4.8,
@@ -4780,13 +4780,13 @@
           "pinn_prob": 62.4
         },
         "victoria_local": {
-          "value": 0.01,
-          "ev_porcentaje": 1.0,
-          "ev_pinn": 1.0,
+          "value": 0.028,
+          "ev_porcentaje": 2.8,
+          "ev_pinn": 2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.9,
+          "cuota": 6.0,
           "casa": "Betfair",
           "pinn_prob": 17.1
         },
@@ -5220,7 +5220,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Local",
         "prob": 17.1,
-        "ev": 1.0
+        "ev": 2.8
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -6498,7 +6498,7 @@
         "1": 1.4,
         "1_casa": "Betfair",
         "pinnacle_1": 1.38,
-        "X": 5.6,
+        "X": 5.5,
         "X_casa": "Betfair",
         "pinnacle_X": 5.44,
         "over325": 2.01,
@@ -6684,13 +6684,13 @@
           "pinn_prob": 69.5
         },
         "empate": {
-          "value": -0.013,
-          "ev_porcentaje": -1.3,
-          "ev_pinn": -1.3,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.6,
+          "cuota": 5.5,
           "casa": "Betfair",
           "pinn_prob": 17.6
         },
@@ -11256,7 +11256,7 @@
         "2": 4.1,
         "2_casa": "Betfair",
         "pinnacle_2": 4.04,
-        "X": 3.75,
+        "X": 3.7,
         "X_casa": "Betfair",
         "pinnacle_X": 3.7,
         "over25": 1.91,
@@ -11430,13 +11430,13 @@
           "pinn_prob": 23.6
         },
         "empate": {
-          "value": -0.034,
-          "ev_porcentaje": -3.4,
-          "ev_pinn": -3.4,
+          "value": -0.047,
+          "ev_porcentaje": -4.7,
+          "ev_pinn": -4.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.75,
+          "cuota": 3.7,
           "casa": "Betfair",
           "pinn_prob": 25.7
         },
@@ -13216,7 +13216,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.0,
-          "casa": "DraftKings",
+          "casa": "Unibet",
           "pinn_prob": 48.3,
           "mercado_nombre": "Under 8.5"
         },
@@ -15514,5 +15514,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:01:01"
+  "generado": "16:01:13"
 }
