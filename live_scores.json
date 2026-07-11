@@ -1,20 +1,6 @@
 {
-  "updated": "2026-07-11T21:09:04Z",
+  "updated": "2026-07-11T22:09:41Z",
   "live": [
-    {
-      "id": "39a35ef6ca846e78caf1d3d4063cba8b",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Minnesota Twins",
-      "away": "Los Angeles Angels",
-      "fecha": "11/07/26",
-      "hora": "13:37 COT",
-      "ts": 1783777020,
-      "completed": false,
-      "score_home": "5",
-      "score_away": "3"
-    },
     {
       "id": "93986de15fc102a4875daaf7e6250f9e",
       "sport": "baseball_mlb",
@@ -40,8 +26,8 @@
       "hora": "15:06 COT",
       "ts": 1783782367,
       "completed": false,
-      "score_home": "0",
-      "score_away": "1"
+      "score_home": "4",
+      "score_away": "2"
     },
     {
       "id": "ff676cfabd491a806f9fad9a93924adb",
@@ -55,7 +41,7 @@
       "ts": 1783782660,
       "completed": false,
       "score_home": "0",
-      "score_away": "0"
+      "score_away": "2"
     },
     {
       "id": "b552ecd25e0e2e615532c65ff294144f",
@@ -69,7 +55,7 @@
       "ts": 1783782660,
       "completed": false,
       "score_home": "0",
-      "score_away": "0"
+      "score_away": "2"
     },
     {
       "id": "3e0030b3cd282b42e4c204a9e30ec8f4",
@@ -82,8 +68,8 @@
       "hora": "15:16 COT",
       "ts": 1783782960,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
+      "score_home": "3",
+      "score_away": "2"
     },
     {
       "id": "93a5e6119186fda8b8ae5e4ec2abd550",
@@ -96,7 +82,7 @@
       "hora": "15:35 COT",
       "ts": 1783784100,
       "completed": false,
-      "score_home": "1",
+      "score_home": "2",
       "score_away": "1"
     },
     {
@@ -110,8 +96,8 @@
       "hora": "16:01 COT",
       "ts": 1783785660,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
+      "score_home": "1",
+      "score_away": "1"
     }
   ],
   "upcoming": [
@@ -328,6 +314,20 @@
   ],
   "finished": [
     {
+      "id": "39a35ef6ca846e78caf1d3d4063cba8b",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Minnesota Twins",
+      "away": "Los Angeles Angels",
+      "fecha": "11/07/26",
+      "hora": "13:37 COT",
+      "ts": 1783777020,
+      "completed": true,
+      "score_home": "5",
+      "score_away": "3"
+    },
+    {
       "id": "8ec769ee362e5e0e25ac93ee886cdfd4",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -452,20 +452,6 @@
       "completed": true,
       "score_home": "7",
       "score_away": "3"
-    },
-    {
-      "id": "76ab48541c0690199e815574c469d162",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Mets",
-      "away": "Boston Red Sox",
-      "fecha": "10/07/26",
-      "hora": "18:50 COT",
-      "ts": 1783709400,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "6"
     }
   ]
 }
