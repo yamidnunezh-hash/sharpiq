@@ -17,6 +17,17 @@ from fastapi import APIRouter, Depends, HTTPException
 from .auth import usuario_activo
 from .db   import db
 
+# Herramienta de stats de jugador bajo demanda (faltas/remates/tarjetas de
+# CUALQUIER jugador vía API-Football). A prueba de fallos: si no carga, Mako
+# sigue funcionando con los datos del motor como antes.
+try:
+    from .mako_jugadores import texto_para_mako as _stats_jugador_txt
+except Exception:
+    try:
+        from mako_jugadores import texto_para_mako as _stats_jugador_txt
+    except Exception:
+        _stats_jugador_txt = None
+
 router = APIRouter()
 
 # ── Reglas de créditos (fáciles de tunear) ──────────────────────────
@@ -600,6 +611,66 @@ def _es_compleja(pregunta):
     return len(q.split()) >= 18   # preguntas largas suelen pedir razonamiento
 
 
+# ── HERRAMIENTA: stats de jugador bajo demanda ──────────────────────
+# Antes Mako solo conocía los ~6 jugadores pre-calculados del día. Con esta
+# herramienta consulta API-Football en el momento y responde por CUALQUIER
+# jugador (faltas, remates, tarjetas, goles). Resuelve el feedback del cliente
+# "eso no dice nada" cuando preguntaba por un jugador fuera de la lista.
+_TOOL_JUGADOR = {
+    "name": "consultar_jugador",
+    "description": (
+        "Consulta estadísticas REALES y actuales de un jugador de fútbol: promedios "
+        "por partido de faltas cometidas/recibidas, remates (totales y a puerta), "
+        "tarjetas, goles y asistencias — global y en el Mundial. Úsala SIEMPRE que el "
+        "cliente pregunte por props o estadísticas de un jugador concreto (ej. "
+        "'¿cuántas faltas hace Berge?', '¿remates de Haaland?', '¿tarjetas de Casemiro?'). "
+        "Devuelve datos verificados de API-Football; NO inventes cifras de jugador sin esta herramienta."
+    ),
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "nombre": {"type": "string",
+                       "description": "Nombre del jugador como lo dijo el cliente (ej. 'Sander Berge', 'Haaland', 'Rodri')"}
+        },
+        "required": ["nombre"],
+    },
+}
+
+
+def _crear_con_tools(client, model, system, msgs, max_tokens):
+    """messages.create con la herramienta de jugador + loop de tool-use.
+
+    Si Mako no necesita la herramienta, se comporta igual que antes (una llamada).
+    Solo cuando pregunta por un jugador hace la vuelta extra. A prueba de fallos:
+    si la herramienta no está disponible, llama sin tools."""
+    tools = [_TOOL_JUGADOR] if _stats_jugador_txt else []
+    kw = {"model": model, "max_tokens": max_tokens, "system": system, "messages": msgs}
+    if tools:
+        kw["tools"] = tools
+    for _ in range(3):                      # máx 3 vueltas de herramienta
+        msg = client.messages.create(**kw)
+        if getattr(msg, "stop_reason", "") != "tool_use":
+            return "\n".join(b.text for b in msg.content if getattr(b, "type", "") == "text").strip()
+        # Ejecutar las herramientas que pidió y devolver resultados
+        msgs.append({"role": "assistant", "content": msg.content})
+        resultados = []
+        for b in msg.content:
+            if getattr(b, "type", "") == "tool_use" and b.name == "consultar_jugador":
+                nombre = (b.input or {}).get("nombre", "")
+                txt = None
+                try:
+                    txt = _stats_jugador_txt(nombre) if _stats_jugador_txt else None
+                except Exception:
+                    txt = None
+                resultados.append({
+                    "type": "tool_result", "tool_use_id": b.id,
+                    "content": txt or f"No encontré datos de '{nombre}' en API-Football. Dilo con honestidad y ofrece lo que sí tengas.",
+                })
+        msgs.append({"role": "user", "content": resultados})
+        kw["messages"] = msgs
+    return "\n".join(b.text for b in msg.content if getattr(b, "type", "") == "text").strip()
+
+
 def _responder(ficha, pregunta, historial=None):
     key = _api_key()
     if not key:
@@ -623,10 +694,9 @@ def _responder(ficha, pregunta, historial=None):
         msgs.append({"role": "user",
                      "content": f"DATOS DEL ANÁLISIS DE SHARPIQ (partido relevante):\n{ficha}\n\nPREGUNTA DEL CLIENTE:\n{pregunta}"})
         complejo = _es_compleja(pregunta)
-        msg = client.messages.create(
-            model=(MODELO_COMPLEJO if complejo else MODELO_SIMPLE),
-            max_tokens=(800 if complejo else 500), system=_SYSTEM, messages=msgs)
-        txt = "\n".join(b.text for b in msg.content if getattr(b, "type", "") == "text").strip()
+        txt = _crear_con_tools(
+            client, (MODELO_COMPLEJO if complejo else MODELO_SIMPLE),
+            _SYSTEM, msgs, (800 if complejo else 500))
         return txt or ("No pude generar el análisis ahora mismo. Intenta de nuevo 🦈.")
     except Exception:
         return ("Aquí está el análisis del partido 🦈:\n\n" + ficha)
@@ -654,10 +724,9 @@ def _responder_general(pregunta, historial=None):
             msgs.append({"role": role, "content": content})
         msgs.append({"role": "user", "content": pregunta})
         complejo = _es_compleja(pregunta)
-        msg = client.messages.create(
-            model=(MODELO_COMPLEJO if complejo else MODELO_SIMPLE),
-            max_tokens=(700 if complejo else 400), system=_SYSTEM_GENERAL, messages=msgs)
-        txt = "\n".join(b.text for b in msg.content if getattr(b, "type", "") == "text").strip()
+        txt = _crear_con_tools(
+            client, (MODELO_COMPLEJO if complejo else MODELO_SIMPLE),
+            _SYSTEM_GENERAL, msgs, (700 if complejo else 400))
         return txt or "¡Cuéntame! ¿De qué partido o tema quieres que hablemos? 🦈"
     except Exception:
         return ("¡Hola! Soy Mako 🦈. Pregúntame por cualquier evento de hoy y te doy el análisis "
