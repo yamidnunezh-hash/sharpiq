@@ -63,7 +63,7 @@
         "under325": 1.58,
         "under325_casa": "Pinnacle",
         "pinnacle_under325": 1.58,
-        "over35": 2.92,
+        "over35": 2.9,
         "over35_casa": "Betfair",
         "pinnacle_over35": 2.71,
         "under35": 1.51,
@@ -105,7 +105,7 @@
         "corners_under_9_5": 1.99,
         "corners_under_9_5_casa": "Pinnacle",
         "pinnacle_corners_under_9_5": 1.99,
-        "corners_over_10_5": 2.5,
+        "corners_over_10_5": 2.52,
         "corners_over_10_5_casa": "Betfair",
         "pinnacle_corners_over_10_5": 2.03,
         "corners_under_10_5": 1.64,
@@ -467,13 +467,13 @@
           "pinn_prob": 60.7
         },
         "over35": {
-          "value": 0.027,
-          "ev_porcentaje": 2.7,
-          "ev_pinn": 2.7,
+          "value": 0.02,
+          "ev_porcentaje": 2.0,
+          "ev_pinn": 2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.92,
+          "cuota": 2.9,
           "casa": "Betfair",
           "pinn_prob": 35.2
         },
@@ -631,13 +631,13 @@
           "mercado_nombre": "Corners Under 9.5"
         },
         "corners_over_10_5": {
-          "value": 0.11,
-          "ev_porcentaje": 11.0,
-          "ev_pinn": 11.0,
+          "value": 0.118,
+          "ev_porcentaje": 11.8,
+          "ev_pinn": 11.8,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
-          "cuota": 2.5,
+          "cuota": 2.52,
           "casa": "Betfair",
           "pinn_prob": 44.4,
           "mercado_nombre": "Corners Over 10.5"
@@ -1490,8 +1490,8 @@
         "corners_under_7_5": 2.2,
         "corners_under_7_5_casa": "LiveScore Bet",
         "pinnacle_corners_under_7_5": 2.17,
-        "corners_over_8_5": 2.09,
-        "corners_over_8_5_casa": "Pinnacle",
+        "corners_over_8_5": 2.12,
+        "corners_over_8_5_casa": "Betfair",
         "pinnacle_corners_over_8_5": 2.09,
         "corners_under_8_5": 1.76,
         "corners_under_8_5_casa": "Betfair",
@@ -2016,14 +2016,14 @@
           "mercado_nombre": "Corners Under 7.5"
         },
         "corners_over_8_5": {
-          "value": -0.066,
-          "ev_porcentaje": -6.6,
-          "ev_pinn": -6.6,
+          "value": -0.052,
+          "ev_porcentaje": -5.2,
+          "ev_pinn": -5.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.09,
-          "casa": "Pinnacle",
+          "cuota": 2.12,
+          "casa": "Betfair",
           "pinn_prob": 44.7,
           "mercado_nombre": "Corners Over 8.5"
         },
@@ -4641,7 +4641,7 @@
         "2": 4.9,
         "2_casa": "Betfair",
         "pinnacle_2": 4.68,
-        "X": 4.1,
+        "X": 4.0,
         "X_casa": "Betfair",
         "pinnacle_X": 3.96,
         "over275": 2.0,
@@ -4815,13 +4815,13 @@
           "pinn_prob": 20.6
         },
         "empate": {
-          "value": -0.002,
-          "ev_porcentaje": -0.2,
-          "ev_pinn": -0.2,
+          "value": -0.027,
+          "ev_porcentaje": -2.7,
+          "ev_pinn": -2.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.1,
+          "cuota": 4.0,
           "casa": "Betfair",
           "pinn_prob": 24.3
         },
@@ -6505,7 +6505,7 @@
         "1": 5.9,
         "1_casa": "Betfair",
         "pinnacle_1": 5.41,
-        "X": 5.0,
+        "X": 4.9,
         "X_casa": "Betfair",
         "pinnacle_X": 4.67,
         "over325": 1.93,
@@ -6687,13 +6687,13 @@
           "pinn_prob": 17.7
         },
         "empate": {
-          "value": 0.025,
-          "ev_porcentaje": 2.5,
-          "ev_pinn": 2.5,
+          "value": 0.005,
+          "ev_porcentaje": 0.5,
+          "ev_pinn": 0.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.0,
+          "cuota": 4.9,
           "casa": "Betfair",
           "pinn_prob": 20.5
         },
@@ -14939,5 +14939,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:01:24"
+  "generado": "12:01:40"
 }
