@@ -1,20 +1,6 @@
 {
-  "updated": "2026-07-11T18:56:08Z",
+  "updated": "2026-07-11T20:04:55Z",
   "live": [
-    {
-      "id": "1ff6b7060ccd99869ddc9396d067920c",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Pittsburgh Pirates",
-      "away": "Milwaukee Brewers",
-      "fecha": "11/07/26",
-      "hora": "11:07 COT",
-      "ts": 1783768020,
-      "completed": false,
-      "score_home": "7",
-      "score_away": "6"
-    },
     {
       "id": "8ec769ee362e5e0e25ac93ee886cdfd4",
       "sport": "baseball_mlb",
@@ -26,7 +12,7 @@
       "hora": "13:11 COT",
       "ts": 1783775460,
       "completed": false,
-      "score_home": "0",
+      "score_home": "1",
       "score_away": "0"
     },
     {
@@ -40,25 +26,11 @@
       "hora": "13:37 COT",
       "ts": 1783777020,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
+      "score_home": "3",
+      "score_away": "2"
     }
   ],
   "upcoming": [
-    {
-      "id": "93986de15fc102a4875daaf7e6250f9e",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Washington Nationals",
-      "away": "New York Yankees",
-      "fecha": "11/07/26",
-      "hora": "15:05 COT",
-      "ts": 1783782300,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
     {
       "id": "def5adac76d2258bb7ff1a427e09f8a8",
       "sport": "baseball_mlb",
@@ -74,15 +46,15 @@
       "score_away": null
     },
     {
-      "id": "3e0030b3cd282b42e4c204a9e30ec8f4",
+      "id": "93986de15fc102a4875daaf7e6250f9e",
       "sport": "baseball_mlb",
       "liga": "MLB",
       "emoji": "⚾",
-      "home": "Pittsburgh Pirates",
-      "away": "Milwaukee Brewers",
+      "home": "Washington Nationals",
+      "away": "New York Yankees",
       "fecha": "11/07/26",
-      "hora": "15:06 COT",
-      "ts": 1783782360,
+      "hora": "15:10 COT",
+      "ts": 1783782600,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -116,6 +88,20 @@
       "score_away": null
     },
     {
+      "id": "3e0030b3cd282b42e4c204a9e30ec8f4",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Pittsburgh Pirates",
+      "away": "Milwaukee Brewers",
+      "fecha": "11/07/26",
+      "hora": "15:16 COT",
+      "ts": 1783782960,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
       "id": "93a5e6119186fda8b8ae5e4ec2abd550",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -123,8 +109,8 @@
       "home": "Tampa Bay Rays",
       "away": "Seattle Mariners",
       "fecha": "11/07/26",
-      "hora": "15:11 COT",
-      "ts": 1783782660,
+      "hora": "15:21 COT",
+      "ts": 1783783260,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -258,6 +244,20 @@
   ],
   "finished": [
     {
+      "id": "1ff6b7060ccd99869ddc9396d067920c",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Pittsburgh Pirates",
+      "away": "Milwaukee Brewers",
+      "fecha": "11/07/26",
+      "hora": "11:07 COT",
+      "ts": 1783768020,
+      "completed": true,
+      "score_home": "7",
+      "score_away": "6"
+    },
+    {
       "id": "976819aa47554213e70bc968d9356fc4",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -382,20 +382,6 @@
       "completed": true,
       "score_home": "14",
       "score_away": "1"
-    },
-    {
-      "id": "55c7996867831d050e3a904c541089d8",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Cincinnati Reds",
-      "away": "Chicago Cubs",
-      "fecha": "10/07/26",
-      "hora": "18:11 COT",
-      "ts": 1783707060,
-      "completed": true,
-      "score_home": "4",
-      "score_away": "0"
     }
   ]
 }
