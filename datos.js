@@ -57,7 +57,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "80",
     sharpscore: "75",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "09/07/26",
@@ -2271,6 +2271,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "10/07/26",
+    partido:    "Sport Recife vs Botafogo",
+    liga:       "Brasileirao B",
+    prediccion: "Ambos No Marcan",
+    cuota:      "1.78",
+    prob:       "80",
+    resultado:  "loss"
+  },
   {
     fecha:      "10/07/26",
     partido:    "Juventude vs Vila Nova",
