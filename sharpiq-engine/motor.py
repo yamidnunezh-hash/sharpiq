@@ -4235,6 +4235,14 @@ def clasificar_tiers(reporte):
     SEGURO_MIN_PROB  = 62.0
     SEGURO_MAX_CUOTA = 2.10
     SEGURO_MIN_EV    = 2.0     # Mínimo 2% de edge real vs Pinnacle
+    # PISO DE CUOTA (12-jul-2026). SEGURO era el unico tier SIN piso -> por ahi se
+    # colaban los picks de 1.20-1.44: 81 picks (38% de TODO el volumen) que perdian
+    # -4.41u. No es mala suerte, es aritmetica: a cuota 1.37 el punto de equilibrio
+    # es 72.8% de acierto y el motor ahi logra 69.1%. Su MEJOR marca historica en
+    # cualquier banda es 69.1% -> se le pedia mas de lo que ha logrado nunca.
+    # Breakeven a 1.45 = 69.0%, justo en su techo. Debajo de eso NO se puede ganar.
+    # Backtest 214 picks: yield +1.4% -> +5.6% cortando esta banda.
+    SEGURO_MIN_CUOTA = 1.45
 
     PRINC_MIN_PROB   = 45.0
     PRINC_MIN_CUOTA  = 1.55
@@ -4253,7 +4261,7 @@ def clasificar_tiers(reporte):
     # el resto del anio mantiene la disciplina +EV. Aprobado por Yamid 2026-06-11.
     MUND_SEGURO_MIN_PROB  = 65.0    # favorito claro (mas exigente que el 62 normal)
     MUND_SEGURO_MAX_CUOTA = 1.95
-    MUND_SEGURO_MIN_CUOTA = 1.40    # piso: evita picks triviales (@1.13) sin upside
+    MUND_SEGURO_MIN_CUOTA = 1.45    # piso alineado al global (12-jul): breakeven 69% = techo del motor
     MUND_SEGURO_MIN_EV    = -3.0    # tolera el margen de la casa en favoritos solidos
     def _es_mundial(lc):
         lc = str(lc).lower()
@@ -4349,7 +4357,7 @@ def clasificar_tiers(reporte):
 
                 # SEGURO: alta probabilidad. Con mercado exige EV≥2; sin mercado, solo prob+cuota.
                 if (prob >= SEGURO_MIN_PROB
-                        and cuota_f <= SEGURO_MAX_CUOTA
+                        and SEGURO_MIN_CUOTA <= cuota_f <= SEGURO_MAX_CUOTA
                         and (sin_ev or ev_p >= SEGURO_MIN_EV)):
                     seguro_pool.append({**c, "score": prob * (1 + _ev / 200) + steam_bonus})
                 # SEGURO Mundial: favorito de alta confianza aunque el EV sea ~breakeven.
@@ -4395,7 +4403,7 @@ def clasificar_tiers(reporte):
                     "ev":             ev_v,
                     "kelly_pct":      kelly_stake(prob_val, cuota_val),
                 }
-                if prob_val >= SEGURO_MIN_PROB and cuota_val <= SEGURO_MAX_CUOTA and ev_v >= SEGURO_MIN_EV:
+                if prob_val >= SEGURO_MIN_PROB and SEGURO_MIN_CUOTA <= cuota_val <= SEGURO_MAX_CUOTA and ev_v >= SEGURO_MIN_EV:
                     seguro_pool.append({**c, "score": prob_val})
                 if prob_val >= PRINC_MIN_PROB and PRINC_MIN_CUOTA <= cuota_val <= PRINC_MAX_CUOTA and ev_v >= PRINC_MIN_EV:
                     principal_pool.append({**c, "score": prob_val * cuota_val})
@@ -4424,7 +4432,7 @@ def clasificar_tiers(reporte):
                     "ev":             ev_p,
                     "kelly_pct":      kelly_stake(prob_val, cuota_val),
                 }
-                if prob_val >= SEGURO_MIN_PROB and cuota_val <= SEGURO_MAX_CUOTA and ev_p >= SEGURO_MIN_EV:
+                if prob_val >= SEGURO_MIN_PROB and SEGURO_MIN_CUOTA <= cuota_val <= SEGURO_MAX_CUOTA and ev_p >= SEGURO_MIN_EV:
                     seguro_pool.append({**c, "score": prob_val * (1 + ev_p / 200)})
                 if prob_val >= PRINC_MIN_PROB and PRINC_MIN_CUOTA <= cuota_val <= PRINC_MAX_CUOTA and ev_p >= PRINC_MIN_EV:
                     principal_pool.append({**c, "score": ev_p * (prob_val / 100)})

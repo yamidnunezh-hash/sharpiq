@@ -430,7 +430,10 @@ def correr():
                 _cu = float(_vb.get("cuota") or 0)
                 _e  = _vb.get("ev_pinn")
                 _e  = _e if _e is not None else 0.0
-                if _pr < 40 or _cu < 1.30 or _cu > 3.0:
+                # Piso 1.45: este bloque NO pasa por clasificar_tiers, asi que hay que
+                # repetirle el piso aqui (mismo hueco por el que se colo el BTTS).
+                # Debajo de 1.45 el breakeven (>69%) supera el techo historico del motor.
+                if _pr < 40 or _cu < 1.45 or _cu > 3.0:
                     continue
                 _cands.append((_mk, _vb, _pr, _cu, _e))
             _out = []
