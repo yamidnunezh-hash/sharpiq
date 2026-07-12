@@ -5794,9 +5794,12 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     // Live stats from data
     const _isPending=r=>!r||r==='pending'||r==='pendiente';
     // Combinar historial + picks de proximos que ya tienen resultado
-    // Base unica deduplicada: un pick resuelto vive en historial Y en proximos -> contar 1 vez
+    // Base unica deduplicada: un pick resuelto vive en historial Y en proximos -> contar 1 vez.
+    // La clave DEBE incluir la PREDICCION: el motor publica varios picks del MISMO
+    // partido (ej. "Victoria Local" + "Under 3.5"). Sin ella se fusionaban en uno
+    // y el track record salia CORTO (mostraba 174 picks cuando eran 214).
     const _dedup={};
-    [...(typeof PREDICCIONES_HISTORIAL!=='undefined'?PREDICCIONES_HISTORIAL:[]),...(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS:[])].forEach(function(p){var k=(p.partido||'')+'|'+(p.fecha||'');if(!_dedup[k]||(_isPending(_dedup[k].resultado)&&!_isPending(p.resultado)))_dedup[k]=p;});
+    [...(typeof PREDICCIONES_HISTORIAL!=='undefined'?PREDICCIONES_HISTORIAL:[]),...(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS:[])].forEach(function(p){var k=(p.partido||'')+'|'+(p.fecha||'')+'|'+(p.prediccion||'');if(!_dedup[k]||(_isPending(_dedup[k].resultado)&&!_isPending(p.resultado)))_dedup[k]=p;});
     const _allPicks=Object.values(_dedup);
     const resolved=_allPicks.filter(p=>!_isPending(p.resultado));
     const wins=resolved.filter(p=>p.resultado==='win');

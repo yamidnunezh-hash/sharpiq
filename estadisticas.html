@@ -273,7 +273,10 @@ const _pend = r => !r || r==='pending' || r==='pendiente';
 const _hist = (typeof PREDICCIONES_HISTORIAL !== 'undefined') ? PREDICCIONES_HISTORIAL : [];
 const _prox = (typeof PROXIMOS_EVENTOS !== 'undefined') ? PROXIMOS_EVENTOS : [];
 const _dedup = {};
-[..._hist, ..._prox].forEach(function(p){ var k=(p.partido||'')+'|'+(p.fecha||''); if(!_dedup[k] || (_pend(_dedup[k].resultado) && !_pend(p.resultado))) _dedup[k]=p; });
+// La clave DEBE incluir la predicción: el motor publica varios picks del MISMO
+// partido (ej. "Victoria Local" + "Under 3.5"). Sin la predicción, esos picks
+// se fusionaban en uno y el track record salía CORTO (~40 picks perdidos).
+[..._hist, ..._prox].forEach(function(p){ var k=(p.partido||'')+'|'+(p.fecha||'')+'|'+(p.prediccion||''); if(!_dedup[k] || (_pend(_dedup[k].resultado) && !_pend(p.resultado))) _dedup[k]=p; });
 const todos    = Object.values(_dedup);
 const resueltos = todos.filter(p=>p.resultado==='win'||p.resultado==='loss');
 const wins      = resueltos.filter(p=>p.resultado==='win');
