@@ -61,7 +61,14 @@ MERCADOS = "h2h,totals"
 EV_MIN_VIVO = 0.05
 EV_MIN_PRE  = 0.03
 EDGE_MAXIMO = 0.15            # >15% sobre Pinnacle = error de datos, no oportunidad
-VENTANA_PRE = 6 * 60          # pre-partido: hasta 6 h antes
+
+# CONTROL DE CRÉDITOS. El monitor anterior murió por "quemar API". Cada evento
+# escaneado cuesta ~2 créditos (2 mercados). En hora pico hay 20+ partidos ->
+# ~40 créditos por corrida. A 96 corridas/día eso son ~3.800/día: se comería el
+# plan en 3 semanas. Por eso: ventana pre-partido CORTA (los precios blandos se
+# desajustan cerca del inicio, no 6 h antes) y freno si quedan pocos créditos.
+VENTANA_PRE      = 2 * 60     # pre-partido: solo las 2 h previas
+CREDITOS_MINIMOS = 8000       # por debajo de esto, NO escanea (protege el motor)
 
 # MISMAS REGLAS DURAS DEL MOTOR (las que sostienen el 64.2%). Un longshot con
 # "+EV" es veneno: al 4% de probabilidad el VIP pierde 22 seguidas antes de
@@ -327,18 +334,75 @@ def valor_del_partido(deporte: str, ev: dict) -> list:
     return hallazgos
 
 
-def escanear(registrar: bool = True) -> list:
+def _ya_avisado(h: dict, minutos: int = 45) -> bool:
+    """¿Ya avisamos esta MISMA jugada hace poco?
+
+    ⚠️ El monitor anterior (live_monitor.yml) se PAUSÓ el 18-jun-2026 por
+    "spameaba Telegram y quemaba API". No repetimos ese error: una jugada que
+    sigue teniendo valor durante 40 minutos NO son 8 alertas — es UNA.
+    """
+    if not os.path.exists(LOG):
+        return False
+    firma = (h["partido"], h["jugada"], h["casa"])
+    ahora = datetime.now(timezone.utc)
+    try:
+        with open(LOG, encoding="utf-8") as f:
+            for ln in f:
+                try:
+                    v = json.loads(ln)
+                except Exception:
+                    continue
+                if (v.get("partido"), v.get("jugada"), v.get("casa")) != firma:
+                    continue
+                if not v.get("avisado"):
+                    continue
+                dt = datetime.fromisoformat(v["ts"])
+                if (ahora - dt).total_seconds() / 60 < minutos:
+                    return True
+    except Exception:
+        pass
+    return False
+
+
+def creditos_restantes() -> int | None:
+    """Créditos que quedan en The Odds API (viene en la cabecera de cualquier GET)."""
+    try:
+        r = requests.get(f"{BASE}/sports", params={"apiKey": ODDS_API_KEY}, timeout=10)
+        return int(r.headers.get("x-requests-remaining", 0))
+    except Exception:
+        return None
+
+
+def escanear(registrar: bool = True, solo_nuevos: bool = False) -> list:
+    """Escanea todo. Si `solo_nuevos`, filtra lo ya avisado (anti-spam)."""
+    # FRENO DE MANO: el motor de picks es lo que sostiene el negocio. Si este
+    # detector (que aún es un experimento) va a dejarlo sin créditos, se apaga.
+    q = creditos_restantes()
+    if q is not None and q < CREDITOS_MINIMOS:
+        print(f"⛔ Quedan {q} créditos (< {CREDITOS_MINIMOS}). NO se escanea: "
+              f"el motor de picks tiene prioridad.")
+        return []
+
     todos = []
     for dep in DEPORTES:
-        for ev in eventos(dep):
+        evs = eventos(dep)
+        if not evs:
+            continue            # sin partidos -> ni gastamos créditos en odds
+        for ev in evs:
             todos += valor_del_partido(dep, ev)
     todos.sort(key=lambda h: (h["estado"] != "VIVO", -h["ev"]))
+
+    nuevos = [h for h in todos if not _ya_avisado(h)] if solo_nuevos else todos
+
     if registrar and todos:
         ts = datetime.now(timezone.utc).isoformat()
+        firmas_nuevas = {(h["partido"], h["jugada"], h["casa"]) for h in nuevos}
         with open(LOG, "a", encoding="utf-8") as f:
             for h in todos:
-                f.write(json.dumps({**h, "ts": ts}, ensure_ascii=False) + "\n")
-    return todos
+                avisado = (h["partido"], h["jugada"], h["casa"]) in firmas_nuevas
+                f.write(json.dumps({**h, "ts": ts, "avisado": avisado},
+                                   ensure_ascii=False) + "\n")
+    return nuevos
 
 
 # ── LO CRÍTICO: ¿la cuota sobrevive el tiempo de reacción del VIP? ────────────
@@ -433,6 +497,20 @@ def alertar_yamid(hallazgos: list) -> None:
 if __name__ == "__main__":
     if "--revisar" in sys.argv:
         revisar_supervivencia()
+        sys.exit(0)
+
+    # ── MODO AUTOMÁTICO (GitHub Actions) ──────────────────────────────────
+    # Silencioso, anti-spam, y solo avisa a Yamid (nunca al canal VIP todavía).
+    if "--auto" in sys.argv:
+        nuevos = escanear(registrar=True, solo_nuevos=True)
+        if nuevos:
+            print(f"{len(nuevos)} jugada(s) NUEVA(s) con valor:")
+            for h in nuevos[:8]:
+                print(f"  [{h['estado']}] {h['partido']} | {h['jugada']} @{h['cuota']} "
+                      f"({h['casa']}) EV +{h['ev']}%")
+            alertar_yamid(nuevos)
+        else:
+            print("Sin valor NUEVO. (No se avisa por lo ya avisado — anti-spam.)")
         sys.exit(0)
 
     registrar = "--ver" not in sys.argv

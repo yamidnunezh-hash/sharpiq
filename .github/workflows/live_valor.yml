@@ -1,0 +1,95 @@
+name: SharpIQ — Detector de Valor (papel)
+
+# Escanea PRE-PARTIDO y EN VIVO buscando casas que paguen MÁS de lo que la
+# jugada vale (usando Pinnacle como precio justo). Avisa SOLO a Yamid.
+#
+# ⚠️ MODO PAPEL — no publica a los VIP. Está juntando datos para decidir, con
+#    números y no con ganas, si el producto EN VIVO es viable.
+#
+# 🛡️ LECCIÓN APRENDIDA: `live_monitor.yml` se PAUSÓ el 18-jun-2026 porque
+#    "spameaba Telegram y quemaba API (288 corridas/día)". Aquí NO repetimos:
+#      · cada 20 min (no cada 5)  -> ~54 corridas/día en vez de 288
+#      · solo en franja con fútbol (16:00–04:00 UTC = 11am–11pm COT)
+#      · anti-spam: una jugada solo se avisa UNA vez cada 45 min
+#      · si un deporte no tiene partidos, ni se piden sus cuotas (0 créditos)
+#      · FRENO: si quedan <8.000 créditos, no escanea (el motor manda)
+#
+# 💰 CONSUMO ESTIMADO: ~2 créditos por evento escaneado. En pico (~20 partidos)
+#    ~40 créditos/corrida × 54 = ~2.100/día. VIGILAR la primera semana: si el
+#    gasto amenaza al motor, subir el cron a 30 min o recortar DEPORTES.
+
+on:
+  schedule:
+    - cron: '*/20 16-23 * * *'    # cada 20 min, 11am–6pm COT
+    - cron: '*/20 0-4 * * *'      # cada 20 min, 7pm–11pm COT
+  workflow_dispatch:
+
+concurrency:
+  group: live-valor
+  cancel-in-progress: false
+
+jobs:
+  detectar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Crear config.py
+        env:
+          ODDS_API_KEY:      ${{ secrets.ODDS_API_KEY }}
+          APIFOOTBALL_KEY:   ${{ secrets.APIFOOTBALL_KEY }}
+          TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_YAMID_ID: ${{ secrets.TELEGRAM_YAMID_ID }}
+        run: |
+          python - << 'EOF'
+          import os
+          open("sharpiq-engine/config.py", "w").write("\n".join([
+            f'ODDS_API_KEY       = "{os.environ["ODDS_API_KEY"]}"',
+            f'APIFOOTBALL_KEY    = "{os.environ["APIFOOTBALL_KEY"]}"',
+            f'TELEGRAM_TOKEN     = "{os.environ["TELEGRAM_TOKEN"]}"',
+            f'TELEGRAM_YAMID_ID  = "{os.environ["TELEGRAM_YAMID_ID"]}"',
+            'TELEGRAM_CHAT_ID   = ""',
+            'TELEGRAM_FREE_ID   = ""',
+            'FOOTBALL_DATA_KEY  = ""',
+            'DATABASE_URL       = ""',
+          ]) + "\n")
+          print("config.py OK")
+          EOF
+
+      - name: Configurar git
+        run: |
+          git config user.name  "SharpIQ Valor"
+          git config user.email "valor@sharpiq.co"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+      - name: Detectar valor (modo papel + anti-spam)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python sharpiq-engine/live_valor.py --auto
+
+      - name: Guardar el registro (para validar en 2 semanas)
+        run: |
+          git add -f sharpiq-engine/live_valor_log.jsonl
+          git diff --cached --quiet && exit 0
+          git commit -m "valor: registro $(date -u +%H:%M UTC)"
+          for i in 1 2 3; do
+            git pull origin main --no-rebase --quiet || true
+            git push origin main && exit 0
+            sleep 3
+          done
+          echo "push fallo — el proximo ciclo reintenta"
