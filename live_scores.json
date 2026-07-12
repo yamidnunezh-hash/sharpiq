@@ -1,20 +1,6 @@
 {
-  "updated": "2026-07-12T21:44:23Z",
+  "updated": "2026-07-12T22:42:38Z",
   "live": [
-    {
-      "id": "9d71a179d7d4dd618d4fae5516f00d95",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Francisco Giants",
-      "away": "Colorado Rockies",
-      "fecha": "12/07/26",
-      "hora": "15:06 COT",
-      "ts": 1783868760,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "1"
-    },
     {
       "id": "40ac03ae2d2b1dc11d41ced3f411f478",
       "sport": "baseball_mlb",
@@ -27,7 +13,7 @@
       "ts": 1783869060,
       "completed": false,
       "score_home": "3",
-      "score_away": "2"
+      "score_away": "4"
     },
     {
       "id": "f1d16b70bce98d0cea5eb7551dfbe37f",
@@ -40,8 +26,8 @@
       "hora": "15:11 COT",
       "ts": 1783869060,
       "completed": false,
-      "score_home": "3",
-      "score_away": "3"
+      "score_home": "5",
+      "score_away": "4"
     },
     {
       "id": "d3526c65cd251f82bc5d99cfe4db26b1",
@@ -54,11 +40,9 @@
       "hora": "16:00 COT",
       "ts": 1783872000,
       "completed": false,
-      "score_home": "0",
+      "score_home": "1",
       "score_away": "0"
-    }
-  ],
-  "upcoming": [
+    },
     {
       "id": "528608d5fd3ba2ec90f95b97a916c8a4",
       "sport": "soccer_brazil_serie_b",
@@ -67,12 +51,14 @@
       "home": "Clube de Regatas Brasil",
       "away": "Goiás",
       "fecha": "12/07/26",
-      "hora": "17:00 COT",
-      "ts": 1783875600,
+      "hora": "17:02 COT",
+      "ts": 1783875720,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "3a693fa22bd295e1ff6d217dd3fb5ea1",
       "sport": "soccer_brazil_serie_b",
@@ -268,9 +254,37 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "11d2a3f0580d5a871978e8d398764fc5",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Fortaleza",
+      "away": "Grêmio Novorizontino",
+      "fecha": "17/07/26",
+      "hora": "19:00 COT",
+      "ts": 1784314800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "9d71a179d7d4dd618d4fae5516f00d95",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Francisco Giants",
+      "away": "Colorado Rockies",
+      "fecha": "12/07/26",
+      "hora": "15:06 COT",
+      "ts": 1783868760,
+      "completed": true,
+      "score_home": "3",
+      "score_away": "1"
+    },
     {
       "id": "568190205089d07f728bd077a88b5cee",
       "sport": "soccer_brazil_serie_b",
@@ -396,20 +410,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "3"
-    },
-    {
-      "id": "fe2a389f5cf40c61156a794804ec0fff",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Miami Marlins",
-      "away": "Cleveland Guardians",
-      "fecha": "12/07/26",
-      "hora": "12:41 COT",
-      "ts": 1783860060,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "5"
     }
   ]
 }
