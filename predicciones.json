@@ -15,7 +15,7 @@
         "2": 3.25,
         "2_casa": "Betfair",
         "pinnacle_2": 3.1,
-        "1": 2.72,
+        "1": 2.7,
         "1_casa": "Betfair",
         "pinnacle_1": 2.65,
         "X": 3.05,
@@ -173,13 +173,13 @@
           "pinn_prob": 31.1
         },
         "victoria_local": {
-          "value": -0.011,
-          "ev_porcentaje": -1.1,
-          "ev_pinn": -1.1,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.72,
+          "cuota": 2.7,
           "casa": "Betfair",
           "pinn_prob": 36.4
         },
@@ -4687,7 +4687,7 @@
         "2": 3.95,
         "2_casa": "Betfair",
         "pinnacle_2": 3.88,
-        "1": 2.0,
+        "1": 1.99,
         "1_casa": "Betfair",
         "pinnacle_1": 1.95,
         "X": 3.85,
@@ -4853,13 +4853,13 @@
           "pinn_prob": 24.9
         },
         "victoria_local": {
-          "value": -0.008,
-          "ev_porcentaje": -0.8,
-          "ev_pinn": -0.8,
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
+          "cuota": 1.99,
           "casa": "Betfair",
           "pinn_prob": 49.6
         },
@@ -8418,7 +8418,7 @@
         "2": 4.9,
         "2_casa": "Betfair",
         "pinnacle_2": 4.58,
-        "X": 3.95,
+        "X": 4.0,
         "X_casa": "Betfair",
         "pinnacle_X": 3.76,
         "over25": 1.86,
@@ -8592,13 +8592,13 @@
           "pinn_prob": 20.9
         },
         "empate": {
-          "value": 0.004,
-          "ev_porcentaje": 0.4,
-          "ev_pinn": 0.4,
+          "value": 0.017,
+          "ev_porcentaje": 1.7,
+          "ev_pinn": 1.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.95,
+          "cuota": 4.0,
           "casa": "Betfair",
           "pinn_prob": 25.4
         },
@@ -12358,5 +12358,5 @@
       "movimiento": null
     }
   ],
-  "generado": "13:59:44"
+  "generado": "13:59:58"
 }
