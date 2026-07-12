@@ -452,6 +452,15 @@ def correr():
                 continue
             if "soccer" not in str(_p.get("liga_code", "")).lower():
                 continue   # solo futbol (excluye NHL/MLB/balonmano)
+            # Liga en OBSERVACIÓN (paper trading): NO se publica. Este bloque no
+            # pasa por clasificar_tiers, así que necesita su propio filtro (misma
+            # lección que el escape de BTTS).
+            try:
+                from motor import LIGAS_EN_OBSERVACION as _OBS
+            except Exception:
+                _OBS = set()
+            if str(_p.get("liga_code", "")) in _OBS:
+                continue
             if not _p.get("cuotas_reales"):
                 continue
             if (_p.get("fecha_evento") or _hoy_cot().isoformat()) != _hoy_cot().isoformat():

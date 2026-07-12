@@ -912,6 +912,35 @@ _SELECCIONES_MUNDIAL_2026 = {
 TEAM_IDS.update(_SELECCIONES_MUNDIAL_2026)
 
 
+# ── SUPERLIGA CHINA (soccer_china_superleague) ───────────────────────────────
+# El motor ANALIZABA los partidos chinos pero NUNCA los publicaba: sin estos IDs
+# no podía pedir forma/goles a API-Football, marcaba `confiable: False` y los
+# descartaba (protección anti-datos-inventados). Con esto quedan habilitados.
+#
+# ⚠️ LOS NOMBRES NO COINCIDEN entre APIs: los clubes chinos se renombraron en
+# 2021 y API-Football conserva los nombres viejos (y uno hasta cambió de ciudad).
+# Por eso NO se mapeó "a ojo" ni buscando por nombre (eso daba equipos B y
+# homónimos — el mismo bug que corrompió CONMEBOL en su día). Se emparejó por
+# PARTIDO: mismo horario exacto en ambas APIs => son los mismos equipos.
+# Verificado: los 7 partidos de la jornada casan sin un solo error, y los 12
+# equipos devuelven stats reales (17-18 PJ, goles, forma).
+_SUPERLIGA_CHINA = {
+    "Beijing FC":              830,     # ← Beijing Guoan
+    "Chengdu Rongcheng FC":    5648,    # ← Chengdu Better City (ex Xingcheng)
+    "Dalian Yingbo":           21263,   # ← Dalian Zhixing
+    "Liaoning Tieren FC":      5684,    # ← Shenyang Urban
+    "Qingdao Hainiu FC":       1431,    # ← Qingdao Jonoon
+    "Qingdao West Coast FC":   17265,   # ← Qingdao Youth Island
+    "Shanghai SIPG FC":        836,     # ← SHANGHAI SIPG
+    "Shanghai Shenhua FC":     833,     # ← Shanghai Shenhua
+    "Shenzhen Peng City FC":   5686,    # ← Sichuan Jiuniu (el club se MUDÓ de ciudad)
+    "Tianjin Jinmen Tiger FC": 837,     # ← Tianjin Teda
+    "Wuhan Three Towns":       5695,    # ← Wuhan Three Towns (idéntico)
+    "Zhejiang":                848,     # ← Hangzhou Greentown
+}
+TEAM_IDS.update(_SUPERLIGA_CHINA)
+
+
 # Mapeo ligas football-data.org / api-sports → the-odds-api.com
 LIGAS_ODDS = {
     # football-data.org codes
@@ -1046,6 +1075,19 @@ _SPORT_KEY_TO_LIGA_CODE = {
 # Deportes adicionales cubiertos por The Odds API (no requieren API-Football)
 # El motor los analiza directo con EV vs Pinnacle.
 # Claves de tenis: tournament-specific (solo la activa devolverá datos — las inactivas retornan vacío y se ignoran)
+# ── LIGAS EN OBSERVACIÓN (paper trading) ─────────────────────────────────────
+# El motor las ANALIZA con datos reales, pero sus picks NO se publican ni cuentan
+# en la estadística pública. Un mercado nuevo, sin historial, NO puede tocar el
+# 64.2% que costó 212 picks construir. Se deja correr unas semanas, se mide, y
+# SOLO si demuestra que gana se saca de esta lista.
+#
+# Misma disciplina que ya se aplicó a MLB (backtest antes de publicar) y al
+# Tipster (estadística separada). Regla firme de Yamid: "no quiero que estos
+# picks me bajen el porcentaje".
+LIGAS_EN_OBSERVACION = {
+    "soccer_china_superleague",     # habilitada 12-jul-2026 (IDs mapeados)
+}
+
 SPORTS_ODDS_ONLY = {
     # ── Basketball ───────────────────────────────────────────────
     "basketball_nba":               "NBA",
@@ -4254,6 +4296,10 @@ def clasificar_tiers(reporte):
         probs     = pred.get("probabilidades", {})
         vbs       = pred.get("value_bets", {})
         liga_code = str(pred.get("liga_code", ""))
+        # Liga en OBSERVACIÓN (paper trading): se analiza, pero NO se publica ni
+        # cuenta en la estadística pública hasta que demuestre que gana.
+        if liga_code in LIGAS_EN_OBSERVACION:
+            continue
         es_futbol = liga_code not in SPORTS_ODDS_ONLY
 
         # Fútbol sin cuotas reales de Pinnacle = fallback estadístico → no publicar
