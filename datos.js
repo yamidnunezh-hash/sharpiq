@@ -15,7 +15,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "59",
     sharpscore: "64",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "12/07/26",
@@ -29,7 +29,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "65",
     sharpscore: "75",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "11/07/26",
@@ -2355,6 +2355,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "12/07/26",
+    partido:    "Atletico Goianiense vs Fortaleza",
+    liga:       "Brasileirao B",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.69",
+    prob:       "65",
+    resultado:  "win"
+  },
+  {
+    fecha:      "12/07/26",
+    partido:    "Atletico Goianiense vs Fortaleza",
+    liga:       "Brasileirao B",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.68",
+    prob:       "59",
+    resultado:  "win"
+  },
   {
     fecha:      "11/07/26",
     partido:    "Argentina vs Switzerland",
