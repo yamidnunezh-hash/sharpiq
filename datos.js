@@ -15,7 +15,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "65",
     sharpscore: "67",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "11/07/26",
@@ -43,7 +43,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "3",
     prob:       "67",
     sharpscore: "68",
-    resultado:  "pendiente"
+    resultado:  "push"
   },
   {
     fecha:      "11/07/26",
@@ -2327,6 +2327,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "11/07/26",
+    partido:    "Norway vs England",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Visitante",
+    cuota:      "1.48",
+    prob:       "67",
+    resultado:  "push"
+  },
+  {
+    fecha:      "11/07/26",
+    partido:    "Norway vs England",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.51",
+    prob:       "65",
+    resultado:  "win"
+  },
   {
     fecha:      "10/07/26",
     partido:    "Sport Recife vs Botafogo",
