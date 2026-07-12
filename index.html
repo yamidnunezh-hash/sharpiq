@@ -5801,7 +5801,11 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     const _dedup={};
     [...(typeof PREDICCIONES_HISTORIAL!=='undefined'?PREDICCIONES_HISTORIAL:[]),...(typeof PROXIMOS_EVENTOS!=='undefined'?PROXIMOS_EVENTOS:[])].forEach(function(p){var k=(p.partido||'')+'|'+(p.fecha||'')+'|'+(p.prediccion||'');if(!_dedup[k]||(_isPending(_dedup[k].resultado)&&!_isPending(p.resultado)))_dedup[k]=p;});
     const _allPicks=Object.values(_dedup);
-    const resolved=_allPicks.filter(p=>!_isPending(p.resultado));
+    // Un PUSH (empate de linea) NO es derrota: la casa DEVUELVE la apuesta. No
+    // puede contar en el win rate ni en el yield. Antes 'resolved' era "todo lo
+    // que no esta pendiente" -> metia los 9 push en el denominador y hundia el
+    // numero (137/223 = 61% en vez de 137/214 = 64%) y el bankroll salia en rojo.
+    const resolved=_allPicks.filter(p=>p.resultado==='win'||p.resultado==='loss');
     const wins=resolved.filter(p=>p.resultado==='win');
     const losses=resolved.filter(p=>p.resultado==='loss');
     let racha=0;
@@ -5850,7 +5854,14 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
       const bc=document.getElementById('bankrollCurve'); if(!bc) return;
       const seq=[...resolved].reverse();
       let u=0; const pts=[0];
-      seq.forEach(p=>{ u += p.resultado==='win' ? (parseFloat(p.cuota)-1) : -1; pts.push(+u.toFixed(3)); });
+      // win -> +(cuota-1) · loss -> -1 · push -> 0 (la casa DEVUELVE la apuesta).
+      // Antes el push restaba -1u: 9 push = -9u y el bankroll salia en ROJO
+      // (-5.96u) cuando el real es +3.04u. Un empate de linea no es una derrota.
+      seq.forEach(p=>{
+        if(p.resultado==='win')  u += (parseFloat(p.cuota)-1);
+        else if(p.resultado==='loss') u -= 1;
+        pts.push(+u.toFixed(3));
+      });
       const W=600,H=120,pad=10;
       const mn=Math.min(0,...pts), mx=Math.max(0,...pts), rng=(mx-mn)||1;
       const X=i=>pad+(i/((pts.length-1)||1))*(W-2*pad);
