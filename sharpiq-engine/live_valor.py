@@ -71,12 +71,52 @@ CUOTA_MAXIMA = 5.5            # nada de cuotas de lotería
 CUOTA_MINIMA = 1.30           # por debajo, el margen se come todo
 
 
-def _get(url, params):
+def _get(url, params, headers=None):
     try:
-        r = requests.get(url, params=params, timeout=15)
+        r = requests.get(url, params=params, headers=headers, timeout=15)
         return r.json() if r.status_code == 200 else None
     except Exception:
         return None
+
+
+# ── MARCADOR EN VIVO (imprescindible: sin él, el cálculo en vivo miente) ──────
+_marcadores: dict | None = None
+
+
+def _marcador_en_vivo(local: str, visita: str) -> int | None:
+    """Goles TOTALES ya marcados en el partido, o None si no lo encontramos.
+
+    Sin este dato NO se puede valorar un total en vivo: los goles ya marcados
+    son un hecho, no una probabilidad. Si no lo conseguimos, preferimos NO
+    opinar (devolver None) antes que publicar un número inventado.
+    """
+    global _marcadores
+    if _marcadores is None:
+        _marcadores = {}
+        try:
+            from config import APIFOOTBALL_KEY
+            d = _get("https://v3.football.api-sports.io/fixtures",
+                     {"live": "all"}, {"x-apisports-key": APIFOOTBALL_KEY}) or {}
+            for f in d.get("response", []):
+                t, g = f["teams"], f["goals"]
+                clave = (_norm_eq(t["home"]["name"]), _norm_eq(t["away"]["name"]))
+                _marcadores[clave] = (g["home"] or 0) + (g["away"] or 0)
+        except Exception:
+            pass
+    l, v = _norm_eq(local), _norm_eq(visita)
+    if (l, v) in _marcadores:
+        return _marcadores[(l, v)]
+    # match laxo por si los nombres difieren entre APIs
+    for (a, b), goles in _marcadores.items():
+        if (a in l or l in a) and (b in v or v in b):
+            return goles
+    return None
+
+
+def _norm_eq(s: str) -> str:
+    import unicodedata
+    s = unicodedata.normalize("NFD", s or "").encode("ascii", "ignore").decode().lower()
+    return " ".join(s.replace("fc", " ").split())
 
 
 def _sin_margen(cuotas: dict) -> dict:
@@ -147,9 +187,17 @@ def _lambda_desde_linea(linea: float, p_over: float) -> float | None:
     return (lo + hi) / 2
 
 
-def _probs_totales_pinnacle(mercados: list) -> dict:
-    """De las líneas de totales de Pinnacle -> lambda del mercado -> permite
-    valorar CUALQUIER línea. Devuelve {'_lambda': x, 'Over|2.5': p, ...}."""
+def _probs_totales_pinnacle(mercados: list, ya_marcados: int = 0) -> dict:
+    """Deduce los goles que AÚN FALTAN según Pinnacle (lambda de lo que queda).
+
+    ⚠️ EN VIVO los goles ya marcados NO son aleatorios — son un HECHO. Tratar la
+    línea como una Poisson desde cero infla las probabilidades y genera VALOR
+    FALSO. Ej. real: 1-0 al minuto 65, Pinnacle Over 2.0 @1.74. Calcularlo desde
+    cero da 55% de que haya 3+ goles (absurdo: faltan 2 en 25 min). Lo correcto:
+    la línea EFECTIVA es (2.0 − 1 gol ya marcado) = 1.0 goles más.
+
+    Por eso restamos `ya_marcados` a cada línea antes de invertir la Poisson.
+    """
     lams = []
     for m in mercados:
         if m.get("key") != "totals":
@@ -163,14 +211,16 @@ def _probs_totales_pinnacle(mercados: list) -> dict:
         for pt, cu in por_linea.items():
             if "Over" not in cu or "Under" not in cu:
                 continue
+            efectiva = float(pt) - ya_marcados      # ← lo que REALMENTE falta
+            if efectiva <= 0:
+                continue                           # el Over ya está ganado: sin info
             p = _sin_margen(cu).get("Over")
-            lam = _lambda_desde_linea(float(pt), p) if p else None
+            lam = _lambda_desde_linea(efectiva, p) if p else None
             if lam:
                 lams.append(lam)
     if not lams:
         return {}
-    lam = sum(lams) / len(lams)          # promedio de todas las líneas de Pinnacle
-    return {"_lambda": lam}
+    return {"_lambda": sum(lams) / len(lams)}      # goles que FALTAN, no del partido
 
 
 def eventos(deporte: str) -> list:
@@ -216,9 +266,17 @@ def valor_del_partido(deporte: str, ev: dict) -> list:
     if not justo:
         return []      # sin Pinnacle no hay verdad -> no opinamos
 
-    # Goles esperados según Pinnacle -> permite valorar líneas que Pinnacle
-    # NO ofrece ahora mismo (en vivo mueve su línea constantemente).
-    lam = _probs_totales_pinnacle(mk_pinn).get("_lambda")
+    # EN VIVO necesitamos el MARCADOR: los goles ya marcados son un hecho, no
+    # una probabilidad. Sin ese dato no valoramos totales (preferimos callar).
+    ya = 0
+    if ev["_estado"] == "VIVO":
+        ya = _marcador_en_vivo(ev["home_team"], ev["away_team"])
+        if ya is None:
+            return []          # no sabemos el marcador -> NO opinamos. Punto.
+
+    # Goles que aún FALTAN según Pinnacle -> permite valorar líneas que Pinnacle
+    # no ofrece ahora mismo (en vivo mueve su línea constantemente).
+    lam = _probs_totales_pinnacle(mk_pinn, ya).get("_lambda")
 
     ev_min = EV_MIN_VIVO if ev["_estado"] == "VIVO" else EV_MIN_PRE
     hallazgos = []
@@ -233,8 +291,12 @@ def valor_del_partido(deporte: str, ev: dict) -> list:
                 p = probs.get(k)
                 traducida = False
                 # Pinnacle NO tiene esta línea -> la deducimos de su lambda.
+                # OJO: la línea efectiva descuenta los goles YA marcados.
                 if p is None and m["key"] == "totals" and lam and o.get("point") is not None:
-                    pov = _poisson_cola(lam, float(o["point"]))
+                    efectiva = float(o["point"]) - ya
+                    if efectiva <= 0:      # el Over ya está ganado en la cancha
+                        continue
+                    pov = _poisson_cola(lam, efectiva)
                     if pov is None:        # línea .25/.75 -> no opinamos
                         continue
                     p = pov if o["name"] == "Over" else 1.0 - pov
