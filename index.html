@@ -6638,7 +6638,19 @@ function toggleTheme(){
   function calc(){
     var H = (typeof PREDICCIONES_HISTORIAL !== 'undefined') ? PREDICCIONES_HISTORIAL : [];
     var P = (typeof PROXIMOS_EVENTOS !== 'undefined') ? PROXIMOS_EVENTOS : [];
-    var res = H.filter(function(p){ return p.resultado === 'win' || p.resultado === 'loss'; });
+    // El hero contaba SOLO el historial -> se le caian 39 picks ya resueltos que
+    // todavia viven en PROXIMOS_EVENTOS. Mostraba 112W-63L/175 (+3.3%) mientras el
+    // dashboard mostraba 137W-77L/214 (+1.4%). Dos numeros distintos en la misma
+    // pagina = el cliente lo nota. Se usa la MISMA base deduplicada del dashboard.
+    var pend = function(r){ return !r || r === 'pending' || r === 'pendiente'; };
+    var dd = {};
+    H.concat(P).forEach(function(p){
+      var k = (p.partido||'') + '|' + (p.fecha||'') + '|' + (p.prediccion||'');
+      if(!dd[k] || (pend(dd[k].resultado) && !pend(p.resultado))) dd[k] = p;
+    });
+    var all = Object.keys(dd).map(function(k){ return dd[k]; });
+    // El PUSH devuelve la apuesta: 0u, y fuera del win rate.
+    var res = all.filter(function(p){ return p.resultado === 'win' || p.resultado === 'loss'; });
     var w   = res.filter(function(p){ return p.resultado === 'win'; }).length;
     var pl  = res.reduce(function(s,p){ return s + (p.resultado === 'win' ? (parseFloat(p.cuota) - 1) : -1); }, 0);
     var wr  = res.length ? Math.round(w / res.length * 100) : 0;
