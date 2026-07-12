@@ -1,20 +1,6 @@
 {
-  "updated": "2026-07-11T23:12:51Z",
+  "updated": "2026-07-12T00:13:12Z",
   "live": [
-    {
-      "id": "e66e4478b739fa0657a7a11235e1fcee",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "Norway",
-      "away": "England",
-      "fecha": "11/07/26",
-      "hora": "16:01 COT",
-      "ts": 1783785660,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "1"
-    },
     {
       "id": "ba8bc57255560c92ff44bf4ac63a4fd9",
       "sport": "baseball_mlb",
@@ -26,7 +12,7 @@
       "hora": "17:11 COT",
       "ts": 1783789860,
       "completed": false,
-      "score_home": "0",
+      "score_home": "1",
       "score_away": "4"
     },
     {
@@ -40,7 +26,7 @@
       "hora": "18:06 COT",
       "ts": 1783793160,
       "completed": false,
-      "score_home": "0",
+      "score_home": "3",
       "score_away": "0"
     },
     {
@@ -55,7 +41,7 @@
       "ts": 1783793160,
       "completed": false,
       "score_home": "0",
-      "score_away": "2"
+      "score_away": "7"
     },
     {
       "id": "27168ae4cc8b352a2cb7e3f6dab8b610",
@@ -68,11 +54,9 @@
       "hora": "18:11 COT",
       "ts": 1783793460,
       "completed": false,
-      "score_home": "0",
+      "score_home": "1",
       "score_away": "0"
-    }
-  ],
-  "upcoming": [
+    },
     {
       "id": "a2501dff8c71ab28b0051fafeed81903",
       "sport": "baseball_mlb",
@@ -81,12 +65,14 @@
       "home": "St. Louis Cardinals",
       "away": "Atlanta Braves",
       "fecha": "11/07/26",
-      "hora": "18:15 COT",
-      "ts": 1783793700,
+      "hora": "18:16 COT",
+      "ts": 1783793808,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "3",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "db5e5f99da28e0ea52c06c7694fb5ad1",
       "sport": "baseball_mlb",
@@ -172,12 +158,40 @@
       "score_away": null
     },
     {
+      "id": "32eb2951f81d870c61eae4eb3afb7ea8",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Washington Nationals",
+      "away": "New York Yankees",
+      "fecha": "12/07/26",
+      "hora": "12:36 COT",
+      "ts": 1783859760,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
       "id": "07753111ee3b354abbe8fab4987bb817",
       "sport": "baseball_mlb",
       "liga": "MLB",
       "emoji": "⚾",
       "home": "Cincinnati Reds",
       "away": "Chicago Cubs",
+      "fecha": "12/07/26",
+      "hora": "12:41 COT",
+      "ts": 1783860060,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "fe2a389f5cf40c61156a794804ec0fff",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Miami Marlins",
+      "away": "Cleveland Guardians",
       "fecha": "12/07/26",
       "hora": "12:41 COT",
       "ts": 1783860060,
@@ -268,23 +282,23 @@
       "completed": false,
       "score_home": null,
       "score_away": null
-    },
-    {
-      "id": "71124182285c6a10d6a5da8c032b1131",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "São Bernardo",
-      "away": "Cuiabá",
-      "fecha": "12/07/26",
-      "hora": "14:00 COT",
-      "ts": 1783864800,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "e66e4478b739fa0657a7a11235e1fcee",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "Norway",
+      "away": "England",
+      "fecha": "11/07/26",
+      "hora": "16:01 COT",
+      "ts": 1783785660,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "2"
+    },
     {
       "id": "93a5e6119186fda8b8ae5e4ec2abd550",
       "sport": "baseball_mlb",
@@ -410,20 +424,6 @@
       "completed": true,
       "score_home": "7",
       "score_away": "6"
-    },
-    {
-      "id": "976819aa47554213e70bc968d9356fc4",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Francisco Giants",
-      "away": "Colorado Rockies",
-      "fecha": "10/07/26",
-      "hora": "21:16 COT",
-      "ts": 1783718160,
-      "completed": true,
-      "score_home": "3",
-      "score_away": "4"
     }
   ]
 }
