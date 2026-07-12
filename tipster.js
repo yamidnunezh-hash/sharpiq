@@ -19,7 +19,7 @@ window.TIPSTER_PICKS = [
   { fecha:"2026-07-11", partido:"Noruega vs Inglaterra", liga:"Mundial 2026",
     mercado:"Faltas de jugador", prediccion:"Erling Haaland — Más de 0.5 faltas cometidas", cuota:"1.53",
     analisis:"Pick del Tipster — analizado con datos reales (API-Football). Haaland promedia 1.25 faltas por partido en este Mundial (5 en 4 partidos), por encima de su registro general. Ante una Inglaterra físicamente fuerte que le disputará cada balón, se espera que baje a pelear y cometa al menos una falta. La línea de 0.5 (una sola falta basta) tiene respaldo en el dato del torneo. Mercado resuelto con Opta Data.",
-    tier:"seguro", resultado:"ganado" },   // Haaland cometió falta ✅ Más de 0.5 cumplido
+    tier:"seguro", resultado:"pendiente" },   // Se liquida al FINAL con datos Opta — no marcar hasta que la casa lo confirme
 
   { fecha:"2026-07-10", partido:"España vs Bélgica", liga:"Mundial 2026",
     mercado:"Disparos a puerta", prediccion:"Lamine Yamal — Más de 1.5 disparos a puerta", cuota:"1.95",
