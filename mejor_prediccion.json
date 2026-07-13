@@ -1,92 +1,92 @@
 {
-  "partido": "Dallas Wings vs Chicago Sky",
+  "partido": "Las Vegas Aces vs Indiana Fever",
   "liga": "WNBA",
-  "local": "Dallas Wings",
-  "visitante": "Chicago Sky",
-  "prediccion": "Chicago Sky",
+  "local": "Las Vegas Aces",
+  "visitante": "Indiana Fever",
+  "prediccion": "Indiana Fever (+5.5)",
   "mercado_key": null,
   "cuota": "",
-  "hora_utc": "23:00",
-  "hora_cot": "18:00 COT",
+  "hora_utc": "01:00",
+  "hora_cot": "20:00 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 78.5,
+  "confianza": 65.6,
   "pred_completa": {
-    "id": "15504ed1a378321542911fbfb7a49591",
-    "comienzo": "2026-07-12T23:00:00Z",
-    "local": "Dallas Wings",
-    "visitante": "Chicago Sky",
+    "id": "7a7ba7018aa8c14997cbbcb0170fe203",
+    "comienzo": "2026-07-13T01:00:00Z",
+    "local": "Las Vegas Aces",
+    "visitante": "Indiana Fever",
     "liga": "WNBA",
     "liga_code": "basketball_wnba",
     "deporte": "WNBA",
     "deporte_emoji": "🏆",
-    "hora": "23:00",
+    "hora": "01:00",
     "fecha_evento": "2026-07-12",
     "cuotas": {
-      "Chicago Sky": 4.5,
-      "Dallas Wings": 1.23,
-      "Over 177.5": 1.87,
-      "Under 177.5": 1.95
+      "Indiana Fever": 2.86,
+      "Las Vegas Aces": 1.49,
+      "Indiana Fever (+5.5)": 1.95,
+      "Las Vegas Aces (-5.5)": 1.97
     },
     "probabilidades": {
-      "Chicago Sky": 21.5,
-      "Dallas Wings": 78.5
+      "Indiana Fever": 34.4,
+      "Las Vegas Aces": 65.6
     },
-    "confianza": 78.5,
+    "confianza": 65.6,
     "value_bets": {
-      "Chicago Sky": {
-        "value": -0.032,
-        "ev_porcentaje": -3.2,
-        "ev_pinn": -3.2,
+      "Indiana Fever": {
+        "value": -0.015,
+        "ev_porcentaje": -1.5,
+        "ev_pinn": -1.5,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 4.5,
-        "casa": "DraftKings",
-        "pinn_prob": 21.5,
-        "mercado_nombre": "Chicago Sky"
-      },
-      "Dallas Wings": {
-        "value": -0.034,
-        "ev_porcentaje": -3.4,
-        "ev_pinn": -3.4,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.23,
-        "casa": "Unibet",
-        "pinn_prob": 78.5,
-        "mercado_nombre": "Dallas Wings"
-      },
-      "over_177_5": {
-        "value": -0.038,
-        "ev_porcentaje": -3.8,
-        "ev_pinn": -3.8,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.87,
+        "cuota": 2.86,
         "casa": "FanDuel",
-        "pinn_prob": 51.4,
-        "mercado_nombre": "Over 177.5"
+        "pinn_prob": 34.4,
+        "mercado_nombre": "Indiana Fever"
       },
-      "under_177_5": {
-        "value": -0.053,
-        "ev_porcentaje": -5.3,
-        "ev_pinn": -5.3,
+      "Las Vegas Aces": {
+        "value": -0.023,
+        "ev_porcentaje": -2.3,
+        "ev_pinn": -2.3,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.49,
+        "casa": "Unibet",
+        "pinn_prob": 65.6,
+        "mercado_nombre": "Las Vegas Aces"
+      },
+      "spread_indiana_fever_5_5": {
+        "value": -0.007,
+        "ev_porcentaje": -0.7,
+        "ev_pinn": -0.7,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 1.95,
-        "casa": "FanDuel",
-        "pinn_prob": 48.6,
-        "mercado_nombre": "Under 177.5"
+        "casa": "DraftKings",
+        "pinn_prob": 50.9,
+        "mercado_nombre": "Indiana Fever (+5.5)"
+      },
+      "spread_las_vegas_aces_m5_5": {
+        "value": -0.033,
+        "ev_porcentaje": -3.3,
+        "ev_pinn": -3.3,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.97,
+        "casa": "Unibet",
+        "pinn_prob": 49.1,
+        "mercado_nombre": "Las Vegas Aces (-5.5)"
       }
     },
     "prediccion_principal": {
-      "mercado": "Chicago Sky",
-      "prob": 21.5,
-      "ev": -3.2
+      "mercado": "Indiana Fever (+5.5)",
+      "prob": 50.9,
+      "ev": -0.7
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
