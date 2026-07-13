@@ -15,7 +15,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "1.1",
     prob:       "52",
     sharpscore: "59",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "12/07/26",
@@ -2369,6 +2369,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "14/07/26",
+    partido:    "Connecticut Sun vs Portland Fire",
+    liga:       "WNBA",
+    prediccion: "Gana Portland Fire",
+    cuota:      "1.98",
+    prob:       "52",
+    resultado:  "win"
+  },
   {
     fecha:      "12/07/26",
     partido:    "Atletico Goianiense vs Fortaleza",
