@@ -1,92 +1,66 @@
 {
-  "partido": "Las Vegas Aces vs Indiana Fever",
+  "partido": "Atlanta Dream vs Los Angeles Sparks",
   "liga": "WNBA",
-  "local": "Las Vegas Aces",
-  "visitante": "Indiana Fever",
-  "prediccion": "Indiana Fever (+5.5)",
+  "local": "Atlanta Dream",
+  "visitante": "Los Angeles Sparks",
+  "prediccion": "Los Angeles Sparks",
   "mercado_key": null,
   "cuota": "",
-  "hora_utc": "01:00",
-  "hora_cot": "20:00 COT",
+  "hora_utc": "23:00",
+  "hora_cot": "18:00 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 65.6,
+  "confianza": 73.8,
   "pred_completa": {
-    "id": "7a7ba7018aa8c14997cbbcb0170fe203",
-    "comienzo": "2026-07-13T01:00:00Z",
-    "local": "Las Vegas Aces",
-    "visitante": "Indiana Fever",
+    "id": "59e806dd41a1cdd33be91c732ab446be",
+    "comienzo": "2026-07-13T23:00:00Z",
+    "local": "Atlanta Dream",
+    "visitante": "Los Angeles Sparks",
     "liga": "WNBA",
     "liga_code": "basketball_wnba",
     "deporte": "WNBA",
     "deporte_emoji": "🏆",
-    "hora": "01:00",
-    "fecha_evento": "2026-07-12",
+    "hora": "23:00",
+    "fecha_evento": "2026-07-13",
     "cuotas": {
-      "Indiana Fever": 2.86,
-      "Las Vegas Aces": 1.49,
-      "Indiana Fever (+5.5)": 1.95,
-      "Las Vegas Aces (-5.5)": 1.97
+      "Atlanta Dream": 1.32,
+      "Los Angeles Sparks": 3.8
     },
     "probabilidades": {
-      "Indiana Fever": 34.4,
-      "Las Vegas Aces": 65.6
+      "Atlanta Dream": 73.8,
+      "Los Angeles Sparks": 26.2
     },
-    "confianza": 65.6,
+    "confianza": 73.8,
     "value_bets": {
-      "Indiana Fever": {
-        "value": -0.015,
-        "ev_porcentaje": -1.5,
-        "ev_pinn": -1.5,
+      "Atlanta Dream": {
+        "value": -0.025,
+        "ev_porcentaje": -2.5,
+        "ev_pinn": -2.5,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.86,
-        "casa": "FanDuel",
-        "pinn_prob": 34.4,
-        "mercado_nombre": "Indiana Fever"
-      },
-      "Las Vegas Aces": {
-        "value": -0.023,
-        "ev_porcentaje": -2.3,
-        "ev_pinn": -2.3,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.49,
+        "cuota": 1.32,
         "casa": "Unibet",
-        "pinn_prob": 65.6,
-        "mercado_nombre": "Las Vegas Aces"
+        "pinn_prob": 73.8,
+        "mercado_nombre": "Atlanta Dream"
       },
-      "spread_indiana_fever_5_5": {
-        "value": -0.007,
-        "ev_porcentaje": -0.7,
-        "ev_pinn": -0.7,
+      "Los Angeles Sparks": {
+        "value": -0.006,
+        "ev_porcentaje": -0.6,
+        "ev_pinn": -0.6,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.95,
-        "casa": "DraftKings",
-        "pinn_prob": 50.9,
-        "mercado_nombre": "Indiana Fever (+5.5)"
-      },
-      "spread_las_vegas_aces_m5_5": {
-        "value": -0.033,
-        "ev_porcentaje": -3.3,
-        "ev_pinn": -3.3,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.97,
-        "casa": "Unibet",
-        "pinn_prob": 49.1,
-        "mercado_nombre": "Las Vegas Aces (-5.5)"
+        "cuota": 3.8,
+        "casa": "BetMGM",
+        "pinn_prob": 26.2,
+        "mercado_nombre": "Los Angeles Sparks"
       }
     },
     "prediccion_principal": {
-      "mercado": "Indiana Fever (+5.5)",
-      "prob": 50.9,
-      "ev": -0.7
+      "mercado": "Los Angeles Sparks",
+      "prob": 26.2,
+      "ev": -0.6
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
