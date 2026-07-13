@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-13T21:31:54Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-13T22:32:31Z",
+  "live": [
     {
       "id": "3a693fa22bd295e1ff6d217dd3fb5ea1",
       "sport": "soccer_brazil_serie_b",
@@ -10,12 +9,14 @@
       "home": "América Mineiro",
       "away": "Londrina",
       "fecha": "13/07/26",
-      "hora": "17:00 COT",
-      "ts": 1783962000,
+      "hora": "16:59 COT",
+      "ts": 1783961940,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "224d8212c089b064d542230ade40cdaf",
       "sport": "soccer_brazil_serie_b",
@@ -211,22 +212,21 @@
       "completed": false,
       "score_home": null,
       "score_away": null
-    }
-  ],
-  "finished": [
+    },
     {
-      "id": "528608d5fd3ba2ec90f95b97a916c8a4",
+      "id": "11d2a3f0580d5a871978e8d398764fc5",
       "sport": "soccer_brazil_serie_b",
       "liga": "Brasileirao B",
       "emoji": "⚽",
-      "home": "Clube de Regatas Brasil",
-      "away": "Goiás",
-      "fecha": "12/07/26",
-      "hora": "17:02 COT",
-      "ts": 1783875720,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "2"
+      "home": "Fortaleza",
+      "away": "Grêmio Novorizontino",
+      "fecha": "17/07/26",
+      "hora": "19:00 COT",
+      "ts": 1784314800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
-  ]
+  ],
+  "finished": []
 }
