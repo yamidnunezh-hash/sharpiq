@@ -5784,15 +5784,20 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     const st=map[liga]||'color:#94a3b8;background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.2)';
     return`<span class="league-badge" style="${st}">${liga}</span>`;
   }
+  // El PUSH (empate de linea) es un resultado PROPIO: la casa DEVUELVE la apuesta.
+  // Antes caia en el 'else' de las dos funciones -> se pintaba como PENDIENTE y
+  // ademas restaba -1.00u. Ni una cosa ni la otra: vale 0u y ya esta resuelto.
   function resultBadge(r){
     if(r==='win')  return'<span class="status-win">✓ ACIERTO</span>';
     if(r==='loss') return'<span class="status-loss">✗ FALLO</span>';
+    if(r==='push') return'<span class="status-pend" style="color:#94a3b8">= PUSH</span>';
     return'<span class="status-pend">⏳ PENDIENTE</span>';
   }
 
   function plCell(p){
     if(p.resultado==='pending'||p.resultado==='pendiente'||!p.resultado) return'<span class="pl-pend">—</span>';
     if(p.resultado==='win'){const g=(parseFloat(p.cuota)-1).toFixed(2);return`<span class="pl-pos">+${g}u</span>`;}
+    if(p.resultado==='push') return'<span class="pl-pend">0.00u</span>';
     return'<span class="pl-neg">-1.00u</span>';
   }
 

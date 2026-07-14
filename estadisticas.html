@@ -444,15 +444,21 @@ function renderTabla(data){
     return;
   }
   tbody.innerHTML = data.map(p=>{
+    // El PUSH es un resultado propio (la casa devuelve la apuesta): 0u, NO es
+    // 'pendiente' ni derrota. Antes caia en el else y se etiquetaba como PEND.
     const badge = p.resultado==='win'
       ? '<span class="badge badge-win">WIN ✅</span>'
       : p.resultado==='loss'
       ? '<span class="badge badge-loss">LOSS ❌</span>'
+      : p.resultado==='push'
+      ? '<span class="badge badge-pend">PUSH =</span>'
       : '<span class="badge badge-pend">PEND</span>';
     const plVal = p.resultado==='win'
       ? `<span class="pl-pos">+${(parseFloat(p.cuota)-1).toFixed(2)}u</span>`
       : p.resultado==='loss'
       ? '<span class="pl-neg">-1.00u</span>'
+      : p.resultado==='push'
+      ? '<span style="color:var(--t3)">0.00u</span>'
       : '<span style="color:var(--t3)">—</span>';
     return `<tr>
       <td><span class="match-date">${p.fecha}</span></td>
