@@ -15,7 +15,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     prob:       "50",
     sharpscore: "62",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "14/07/26",
@@ -29,7 +29,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     prob:       "57",
     sharpscore: "60",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "13/07/26",
@@ -2411,6 +2411,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "14/07/26",
+    partido:    "France vs Spain",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Over 8.5",
+    cuota:      "1.79",
+    prob:       "57",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "14/07/26",
+    partido:    "France vs Spain",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Under 8.5",
+    cuota:      "2.14",
+    prob:       "50",
+    resultado:  "win"
+  },
   {
     fecha:      "14/07/26",
     partido:    "Connecticut Sun vs Portland Fire",
