@@ -3,13 +3,13 @@
   "liga": "FIFA Mundial 2026",
   "local": "France",
   "visitante": "Spain",
-  "prediccion": "corners_under_8_5",
-  "mercado_key": "corners_under_8_5",
+  "prediccion": "cards_under_2_5",
+  "mercado_key": "cards_under_2_5",
   "cuota": "2.52",
   "casa": "Betfair",
   "hora_utc": "19:00",
   "hora_cot": "14:00 COT",
-  "ev": 8.2,
+  "ev": 9.2,
   "clasificacion": "VALOR",
   "confianza": 78.6,
   "pred_completa": {
@@ -136,7 +136,7 @@
       "corners_over_10_5": 3.25,
       "corners_over_10_5_casa": "Betfair",
       "pinnacle_corners_over_10_5": 3.03,
-      "corners_under_10_5": 1.43,
+      "corners_under_10_5": 1.41,
       "corners_under_10_5_casa": "Betfair",
       "pinnacle_corners_under_10_5": 1.26,
       "cards_over_3_0": 2.03,
@@ -148,7 +148,7 @@
       "cards_over_2_5": 1.63,
       "cards_over_2_5_casa": "Pinnacle",
       "pinnacle_cards_over_2_5": 1.63,
-      "cards_under_2_5": 2.48,
+      "cards_under_2_5": 2.52,
       "cards_under_2_5_casa": "Betfair",
       "pinnacle_cards_under_2_5": 2.13,
       "cards_over_3_5": 2.52,
@@ -163,7 +163,7 @@
       "btts_no": 2.48,
       "btts_no_casa": "Betfair",
       "pinnacle_btts_no": 2.35,
-      "dnb_local": 1.74,
+      "dnb_local": 1.73,
       "dnb_local_casa": "Betfair",
       "dnb_visita": 2.34,
       "dnb_visita_casa": "Betfair",
@@ -725,13 +725,13 @@
         "mercado_nombre": "Corners Over 10.5"
       },
       "corners_under_10_5": {
-        "value": 0.01,
-        "ev_porcentaje": 1.0,
-        "ev_pinn": 1.0,
+        "value": -0.004,
+        "ev_porcentaje": -0.4,
+        "ev_pinn": -0.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.43,
+        "cuota": 1.41,
         "casa": "Betfair",
         "pinn_prob": 70.6,
         "mercado_nombre": "Corners Under 10.5"
@@ -773,13 +773,13 @@
         "mercado_nombre": "Tarjetas Over 2.5"
       },
       "cards_under_2_5": {
-        "value": 0.075,
-        "ev_porcentaje": 7.5,
-        "ev_pinn": 7.5,
+        "value": 0.092,
+        "ev_porcentaje": 9.2,
+        "ev_pinn": 9.2,
         "tiene_valor": true,
         "tiene_valor_pinn": true,
         "clasificacion": "VALOR",
-        "cuota": 2.48,
+        "cuota": 2.52,
         "casa": "Betfair",
         "pinn_prob": 43.4,
         "mercado_nombre": "Tarjetas Under 2.5"
@@ -831,13 +831,13 @@
         "pinn_prob": 41.2
       },
       "dnb_local": {
-        "value": -0.004,
-        "ev_porcentaje": -0.4,
-        "ev_pinn": -0.4,
+        "value": -0.01,
+        "ev_porcentaje": -1.0,
+        "ev_pinn": -1.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.74,
+        "cuota": 1.73,
         "casa": "Betfair",
         "pinn_prob": 57.2
       },
@@ -1058,9 +1058,9 @@
       }
     },
     "prediccion_principal": {
-      "mercado": "Corners Under 10.5",
+      "mercado": "Under 3.5 Goles",
       "prob": 70.6,
-      "ev": 1.0
+      "ev": -1.2
     },
     "cuotas_reales": true,
     "confiable": true,
