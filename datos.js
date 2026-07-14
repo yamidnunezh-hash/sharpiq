@@ -4,6 +4,20 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "14/07/26",
+    partido:    "France vs Spain",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Corners Over 8.5",
+    cuota:      "1.79",
+    hora:       "14:00 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "57",
+    sharpscore: "60",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "13/07/26",
     partido:    "Hokkaido Nippon-Ham Fighters vs Fukuoka SoftBank Hawks",
     liga:       "NPB",
