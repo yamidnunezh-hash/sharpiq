@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-14T00:59:26Z",
-  "live": [
-    {
-      "id": "224d8212c089b064d542230ade40cdaf",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Ceará",
-      "away": "Athletic Club (MG)",
-      "fecha": "13/07/26",
-      "hora": "18:31 COT",
-      "ts": 1783967460,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    }
-  ],
+  "updated": "2026-07-14T04:08:50Z",
+  "live": [],
   "upcoming": [
     {
       "id": "f9aa13a662d1658e5a02cfc06d6a2d73",
@@ -229,6 +214,20 @@
     }
   ],
   "finished": [
+    {
+      "id": "224d8212c089b064d542230ade40cdaf",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Ceará",
+      "away": "Athletic Club (MG)",
+      "fecha": "13/07/26",
+      "hora": "18:31 COT",
+      "ts": 1783967460,
+      "completed": true,
+      "score_home": "0",
+      "score_away": "0"
+    },
     {
       "id": "3a693fa22bd295e1ff6d217dd3fb5ea1",
       "sport": "soccer_brazil_serie_b",
