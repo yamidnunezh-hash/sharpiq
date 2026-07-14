@@ -1,6 +1,6 @@
 {
   "fecha": "2026-07-13",
-  "total_partidos": 11,
+  "total_partidos": 12,
   "predicciones": [
     {
       "local": "France",
@@ -2380,6 +2380,116 @@
       }
     },
     {
+      "id": "7fecfdecc539334a88781da1943c5e9a",
+      "comienzo": "2026-07-15T00:01:00Z",
+      "local": "National League",
+      "visitante": "American League",
+      "liga": "MLB",
+      "liga_code": "baseball_mlb",
+      "deporte": "MLB",
+      "deporte_emoji": "⚾",
+      "hora": "00:01",
+      "fecha_evento": "2026-07-14",
+      "cuotas": {
+        "American League": 2.2,
+        "National League": 1.78,
+        "Over 8.0": 2.0,
+        "Under 8.0": 1.83,
+        "American League (+1.5)": 1.55,
+        "National League (-1.5)": 2.5
+      },
+      "probabilidades": {
+        "American League": 45.4,
+        "National League": 54.6
+      },
+      "confianza": 54.6,
+      "value_bets": {
+        "American League": {
+          "value": -0.001,
+          "ev_porcentaje": -0.1,
+          "ev_pinn": -0.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.2,
+          "casa": "FanDuel",
+          "pinn_prob": 45.4,
+          "mercado_nombre": "American League"
+        },
+        "National League": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.78,
+          "casa": "Pinnacle",
+          "pinn_prob": 54.6,
+          "mercado_nombre": "National League"
+        },
+        "over_8_0": {
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.0,
+          "casa": "BetMGM",
+          "pinn_prob": 49.1,
+          "mercado_nombre": "Over 8.0"
+        },
+        "under_8_0": {
+          "value": -0.068,
+          "ev_porcentaje": -6.8,
+          "ev_pinn": -6.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.83,
+          "casa": "BetMGM",
+          "pinn_prob": 50.9,
+          "mercado_nombre": "Under 8.0"
+        },
+        "spread_american_league_1_5": {
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.55,
+          "casa": "FanDuel",
+          "pinn_prob": 62.5,
+          "mercado_nombre": "American League (+1.5)"
+        },
+        "spread_national_league_m1_5": {
+          "value": -0.063,
+          "ev_porcentaje": -6.3,
+          "ev_pinn": -6.3,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.5,
+          "casa": "FanDuel",
+          "pinn_prob": 37.5,
+          "mercado_nombre": "National League (-1.5)"
+        }
+      },
+      "prediccion_principal": {
+        "mercado": "American League",
+        "prob": 45.4,
+        "ev": -0.1
+      },
+      "cuotas_reales": true,
+      "cuotas_avisos": [],
+      "forma_local": [],
+      "forma_visita": [],
+      "h2h": {},
+      "movimiento": null
+    },
+    {
       "id": "089163a3a05d1b2e8028fab27ad5605f",
       "comienzo": "2026-07-14T01:00:00Z",
       "local": "Minnesota Lynx",
@@ -2954,5 +3064,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:00:54"
+  "generado": "00:01:07"
 }
