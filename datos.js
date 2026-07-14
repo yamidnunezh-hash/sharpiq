@@ -71,7 +71,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     prob:       "51",
     sharpscore: "67",
-    resultado:  "loss"
+    resultado:  "pendiente"
   },
   {
     fecha:      "11/07/26",
@@ -2412,7 +2412,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Corners Under 7.5",
     cuota:      "2.2",
     prob:       "51",
-    resultado:  "loss"
+    resultado:  "pendiente"
   },
   {
     fecha:      "11/07/26",

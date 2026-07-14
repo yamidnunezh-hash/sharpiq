@@ -596,6 +596,22 @@ def correr():
         _predl = (evento.get('prediccion', '') or '').lower()
         _tarj = _corn = None
         if fixture and ('tarjeta' in _predl or 'corner' in _predl):
+            # ⚠️ PRORROGA (13-jul-2026). Las casas liquidan corners y tarjetas en los
+            # 90 MINUTOS REGLAMENTARIOS; la prorroga NO cuenta. Pero el endpoint
+            # /fixtures/statistics de API-Football devuelve el conteo del partido
+            # COMPLETO (120 min) y no lo separa por periodo.
+            #   Argentina vs Switzerland (11-jul, Mundial): 1-1 a los 90', fue a
+            #   prorroga. La API dio 10 corners (los de 120') -> el motor marco
+            #   "Corners Under 7.5" como FALLO, cuando la casa liquida con los de 90'.
+            # Los GOLES no sufren esto (usan score.fulltime, que ya es de 90').
+            # Como la API NO permite saber el conteo a los 90', el motor NO OPINA:
+            # el pick se queda PENDIENTE y se resuelve a mano.
+            _st = (fixture.get("fixture", {}).get("status", {}) or {}).get("short", "")
+            if _st in ("AET", "PEN"):
+                LOG.warning(
+                    f"  ⚠ PRORROGA — no liquido corners/tarjetas de '{partido}': la API "
+                    f"cuenta los 120 min y la casa liquida a los 90. Resolver A MANO.")
+                continue
             _fid = fixture.get("fixture", {}).get("id")
             if _fid:
                 _tarj, _corn = _stats_tarjetas_corners(_fid)
