@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-14T20:56:28Z",
-  "live": [
-    {
-      "id": "f9aa13a662d1658e5a02cfc06d6a2d73",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "France",
-      "away": "Spain",
-      "fecha": "14/07/26",
-      "hora": "14:00 COT",
-      "ts": 1784037600,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "2"
-    }
-  ],
+  "updated": "2026-07-14T21:57:12Z",
+  "live": [],
   "upcoming": [
     {
       "id": "7fecfdecc539334a88781da1943c5e9a",
@@ -229,6 +214,20 @@
     }
   ],
   "finished": [
+    {
+      "id": "f9aa13a662d1658e5a02cfc06d6a2d73",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "France",
+      "away": "Spain",
+      "fecha": "14/07/26",
+      "hora": "14:00 COT",
+      "ts": 1784037600,
+      "completed": true,
+      "score_home": "0",
+      "score_away": "2"
+    },
     {
       "id": "224d8212c089b064d542230ade40cdaf",
       "sport": "soccer_brazil_serie_b",
