@@ -57,7 +57,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "1.1",
     prob:       "52",
     sharpscore: "59",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "12/07/26",
@@ -2418,7 +2418,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Gana Portland Fire",
     cuota:      "1.98",
     prob:       "52",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "12/07/26",
