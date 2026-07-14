@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-14T18:18:16Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-14T19:47:46Z",
+  "live": [
     {
       "id": "f9aa13a662d1658e5a02cfc06d6a2d73",
       "sport": "soccer_fifa_world_cup",
@@ -13,9 +12,11 @@
       "hora": "14:00 COT",
       "ts": 1784037600,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "1"
+    }
+  ],
+  "upcoming": [
     {
       "id": "7fecfdecc539334a88781da1943c5e9a",
       "sport": "baseball_mlb",
@@ -205,6 +206,20 @@
       "emoji": "⚽",
       "home": "Criciuma",
       "away": "Vila Nova",
+      "fecha": "18/07/26",
+      "hora": "14:00 COT",
+      "ts": 1784383200,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "92dcfeed14e17eec0c873f6cfff6d154",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Ponte Preta",
+      "away": "Goiás",
       "fecha": "18/07/26",
       "hora": "14:00 COT",
       "ts": 1784383200,
