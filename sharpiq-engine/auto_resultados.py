@@ -5,7 +5,7 @@ Detecta partidos publicados que ya terminaron, evalúa la predicción
 y actualiza datos.js automáticamente con win/loss + push a GitHub.
 """
 import os, sys, re, json, subprocess, logging
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 
 BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
@@ -434,17 +434,54 @@ def _goles_odds(ev):
         elif sc.get("name") == away: gv = val
     return gl, gv
 
-def resolver_no_futbol(liga, local_js, visita_js):
-    """(gl, gv) de un pick US/tenis ya FINALIZADO vía Odds API /scores, o None."""
+def _fecha_cot_de_evento(s):
+    """dd/mm/yy (COT) del commence_time de un evento de Odds API, o None."""
+    try:
+        ct = datetime.fromisoformat(
+            str(s.get("commence_time", "")).replace("Z", "+00:00"))
+        return (ct - timedelta(hours=5)).strftime("%d/%m/%y")
+    except Exception:
+        return None
+
+
+def resolver_no_futbol(liga, local_js, visita_js, fecha_js=None):
+    """(gl, gv) de un pick US/tenis ya FINALIZADO vía Odds API /scores, o None.
+
+    ⚠️ BUG GRAVE CORREGIDO (13-jul-2026). El matcher aceptaba el PROMEDIO de
+    similitud > 0.4, asi que UN equipo que coincidia al 100% arrastraba al otro
+    aunque no tuviera nada que ver:
+
+        pick:     Connecticut Sun vs Portland Fire  (14/07, SIN JUGAR)
+        agarro:   Atlanta Dream   vs Portland Fire  (11/07, jugado)
+        similitud: (0.00 + 1.00) / 2 = 0.50  > 0.4  -> lo dio por bueno
+
+    Resultado: marco como GANADO un partido que ni se habia jugado. Es el mismo
+    fallo que corrompio CONMEBOL: emparejar por NOMBRE sin verificar la FECHA.
+
+    Dos candados ahora:
+      1) LOS DOS equipos deben pasar el umbral por separado (no el promedio).
+      2) La FECHA del evento (COT) debe ser la MISMA que la del pick.
+    Si no se cumple algo -> NO opina (devuelve None) y el pick sigue pendiente.
+    """
     if not _ODDS_KEY:
         return None
+    MIN_EQUIPO = 0.60          # cada equipo por separado
     for key in _sport_keys_de_liga(liga):
-        best, bs = None, 0.4
+        best, bs = None, 0.0
         for s in _odds_scores(key):
             if not s.get("completed"):
                 continue
-            sc = (_similitud(local_js, s.get("home_team", "")) +
-                  _similitud(visita_js, s.get("away_team", ""))) / 2
+            # Candado 2: misma fecha COT que el pick.
+            if fecha_js:
+                f_ev = _fecha_cot_de_evento(s)
+                if f_ev and f_ev != fecha_js:
+                    continue
+            s_loc = _similitud(local_js,  s.get("home_team", ""))
+            s_vis = _similitud(visita_js, s.get("away_team", ""))
+            # Candado 1: AMBOS equipos, no el promedio.
+            if s_loc < MIN_EQUIPO or s_vis < MIN_EQUIPO:
+                continue
+            sc = min(s_loc, s_vis)
             if sc > bs:
                 bs, best = sc, s
         if best:
@@ -549,7 +586,8 @@ def correr():
             gv = fixture["score"]["fulltime"]["away"] or 0
         else:
             # No es fútbol (o no encontrado) → resolver US/tenis por marcador real
-            goles = resolver_no_futbol(evento.get('liga', ''), local_js, visita_js)
+            goles = resolver_no_futbol(evento.get('liga', ''), local_js, visita_js,
+                                       evento.get('fecha', ''))
             if not goles:
                 LOG.info(f"  Sin resultado aún: {partido}")
                 continue
