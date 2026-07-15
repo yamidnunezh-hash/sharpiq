@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-14T23:54:39Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-15T02:02:50Z",
+  "live": [
     {
       "id": "7fecfdecc539334a88781da1943c5e9a",
       "sport": "baseball_mlb",
@@ -10,12 +9,14 @@
       "home": "National League",
       "away": "American League",
       "fecha": "14/07/26",
-      "hora": "19:01 COT",
-      "ts": 1784055660,
+      "hora": "19:29 COT",
+      "ts": 1784057340,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "3"
+    }
+  ],
+  "upcoming": [
     {
       "id": "ced22494ae0bbb8cc4f7108bf6f493df",
       "sport": "soccer_fifa_world_cup",
@@ -205,6 +206,20 @@
       "emoji": "⚽",
       "home": "Ponte Preta",
       "away": "Goiás",
+      "fecha": "18/07/26",
+      "hora": "14:00 COT",
+      "ts": 1784383200,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "b4abdaf20863ed466f4bf05059d01bff",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Sport Recife",
+      "away": "Operario PR",
       "fecha": "18/07/26",
       "hora": "14:00 COT",
       "ts": 1784383200,
