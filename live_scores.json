@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-15T02:02:50Z",
-  "live": [
-    {
-      "id": "7fecfdecc539334a88781da1943c5e9a",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "National League",
-      "away": "American League",
-      "fecha": "14/07/26",
-      "hora": "19:29 COT",
-      "ts": 1784057340,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "3"
-    }
-  ],
+  "updated": "2026-07-15T05:10:55Z",
+  "live": [],
   "upcoming": [
     {
       "id": "ced22494ae0bbb8cc4f7108bf6f493df",
@@ -229,6 +214,20 @@
     }
   ],
   "finished": [
+    {
+      "id": "7fecfdecc539334a88781da1943c5e9a",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "National League",
+      "away": "American League",
+      "fecha": "14/07/26",
+      "hora": "19:29 COT",
+      "ts": 1784057340,
+      "completed": true,
+      "score_home": "0",
+      "score_away": "4"
+    },
     {
       "id": "f9aa13a662d1658e5a02cfc06d6a2d73",
       "sport": "soccer_fifa_world_cup",
