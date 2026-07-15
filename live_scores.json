@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-15T20:18:54Z",
-  "live": [
-    {
-      "id": "ced22494ae0bbb8cc4f7108bf6f493df",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "England",
-      "away": "Argentina",
-      "fecha": "15/07/26",
-      "hora": "14:00 COT",
-      "ts": 1784124000,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "0"
-    }
-  ],
+  "updated": "2026-07-15T21:26:01Z",
+  "live": [],
   "upcoming": [
     {
       "id": "c3dbb97e9aef640afa391b76f7af061d",
@@ -229,6 +214,20 @@
     }
   ],
   "finished": [
+    {
+      "id": "ced22494ae0bbb8cc4f7108bf6f493df",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "England",
+      "away": "Argentina",
+      "fecha": "15/07/26",
+      "hora": "14:00 COT",
+      "ts": 1784124000,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "2"
+    },
     {
       "id": "7fecfdecc539334a88781da1943c5e9a",
       "sport": "baseball_mlb",
