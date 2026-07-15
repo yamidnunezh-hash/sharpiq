@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T19:04:50Z",
+  "updated": "2026-07-15T20:18:54Z",
   "live": [
     {
       "id": "ced22494ae0bbb8cc4f7108bf6f493df",
@@ -12,7 +12,7 @@
       "hora": "14:00 COT",
       "ts": 1784124000,
       "completed": false,
-      "score_home": "0",
+      "score_home": "1",
       "score_away": "0"
     }
   ],
@@ -158,6 +158,20 @@
       "score_away": null
     },
     {
+      "id": "cfb2e85cbd19eb03e617782d90d2c60e",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Toronto Blue Jays",
+      "away": "Chicago White Sox",
+      "fecha": "17/07/26",
+      "hora": "18:16 COT",
+      "ts": 1784312160,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
       "id": "83334ecd8da6252ae1df4fb1e91f09ca",
       "sport": "soccer_brazil_serie_b",
       "liga": "Brasileirao B",
@@ -206,20 +220,6 @@
       "emoji": "⚽",
       "home": "Ponte Preta",
       "away": "Goiás",
-      "fecha": "18/07/26",
-      "hora": "14:00 COT",
-      "ts": 1784383200,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "b4abdaf20863ed466f4bf05059d01bff",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Sport Recife",
-      "away": "Operario PR",
       "fecha": "18/07/26",
       "hora": "14:00 COT",
       "ts": 1784383200,
