@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-15T17:41:42Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-15T19:04:50Z",
+  "live": [
     {
       "id": "ced22494ae0bbb8cc4f7108bf6f493df",
       "sport": "soccer_fifa_world_cup",
@@ -13,9 +12,11 @@
       "hora": "14:00 COT",
       "ts": 1784124000,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "c3dbb97e9aef640afa391b76f7af061d",
       "sport": "soccer_brazil_campeonato",
@@ -211,6 +212,20 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "b4abdaf20863ed466f4bf05059d01bff",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Sport Recife",
+      "away": "Operario PR",
+      "fecha": "18/07/26",
+      "hora": "14:00 COT",
+      "ts": 1784383200,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
@@ -227,20 +242,6 @@
       "completed": true,
       "score_home": "0",
       "score_away": "4"
-    },
-    {
-      "id": "f9aa13a662d1658e5a02cfc06d6a2d73",
-      "sport": "soccer_fifa_world_cup",
-      "liga": "Mundial FIFA",
-      "emoji": "⚽",
-      "home": "France",
-      "away": "Spain",
-      "fecha": "14/07/26",
-      "hora": "14:00 COT",
-      "ts": 1784037600,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "2"
     }
   ]
 }
