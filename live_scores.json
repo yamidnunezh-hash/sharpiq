@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16T22:54:10Z",
+  "updated": "2026-07-16T23:55:21Z",
   "live": [
     {
       "id": "7ad2e88701ead09625333188a5b653b2",
@@ -26,8 +26,8 @@
       "hora": "17:30 COT",
       "ts": 1784223000,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
+      "score_home": "1",
+      "score_away": "1"
     },
     {
       "id": "0a5e9527c4698b6fb5af47094a185c1e",
@@ -42,9 +42,7 @@
       "completed": false,
       "score_home": "0",
       "score_away": "0"
-    }
-  ],
-  "upcoming": [
+    },
     {
       "id": "5a0f414f3dae8f58d208ea1ef1621427",
       "sport": "soccer_brazil_serie_b",
@@ -53,12 +51,14 @@
       "home": "Clube de Regatas Brasil",
       "away": "Nautico PE",
       "fecha": "16/07/26",
-      "hora": "18:00 COT",
-      "ts": 1784224800,
+      "hora": "18:01 COT",
+      "ts": 1784224860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "43706fff6ae5bb5201b9add3c0945034",
       "sport": "baseball_mlb",
@@ -251,6 +251,20 @@
       "fecha": "17/07/26",
       "hora": "19:00 COT",
       "ts": 1784314800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "7d92a7dff1e2a4e0569b73cf9069f2e3",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago Cubs",
+      "away": "Minnesota Twins",
+      "fecha": "17/07/26",
+      "hora": "19:06 COT",
+      "ts": 1784315160,
       "completed": false,
       "score_home": null,
       "score_away": null
