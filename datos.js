@@ -5,6 +5,20 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "16/07/26",
+    partido:    "Seattle Sounders FC vs Portland Timbers",
+    liga:       "MLS",
+    prediccion: "Victoria Local",
+    cuota:      "1.51",
+    hora:       "21:30 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "65",
+    sharpscore: "66",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "16/07/26",
     partido:    "St. Louis City SC vs Sporting Kansas City",
     liga:       "MLS",
     prediccion: "Victoria Local",
