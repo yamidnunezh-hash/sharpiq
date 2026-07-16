@@ -59,20 +59,7 @@ const PROXIMOS_EVENTOS = [
     sharpscore: "60",
     resultado:  "loss"
   },
-  {
-    fecha:      "13/07/26",
-    partido:    "Hokkaido Nippon-Ham Fighters vs Fukuoka SoftBank Hawks",
-    liga:       "NPB",
-    prediccion: "Gana Fukuoka SoftBank Hawks",
-    cuota:      "2.2",
-    hora:       "23:00 COT",
-    status:     "vip",
-    tier:       "principal",
-    stake_pct:  "1.1",
-    prob:       "47",
-    sharpscore: "57",
-    resultado:  "pendiente"
-  },
+
   {
     fecha:      "14/07/26",
     partido:    "Connecticut Sun vs Portland Fire",
