@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-16T21:41:02Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-16T22:54:10Z",
+  "live": [
     {
       "id": "7ad2e88701ead09625333188a5b653b2",
       "sport": "baseball_mlb",
@@ -13,8 +12,8 @@
       "hora": "17:11 COT",
       "ts": 1784221860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "c3dbb97e9aef640afa391b76f7af061d",
@@ -27,8 +26,8 @@
       "hora": "17:30 COT",
       "ts": 1784223000,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "0a5e9527c4698b6fb5af47094a185c1e",
@@ -41,9 +40,11 @@
       "hora": "17:30 COT",
       "ts": 1784223000,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "5a0f414f3dae8f58d208ea1ef1621427",
       "sport": "soccer_brazil_serie_b",
@@ -208,6 +209,48 @@
       "fecha": "17/07/26",
       "hora": "18:16 COT",
       "ts": 1784312160,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "11dadeb57de8089d2a80fb4a82fbff1d",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Milwaukee Brewers",
+      "away": "Miami Marlins",
+      "fecha": "17/07/26",
+      "hora": "18:41 COT",
+      "ts": 1784313660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "83334ecd8da6252ae1df4fb1e91f09ca",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Londrina",
+      "away": "Botafogo",
+      "fecha": "17/07/26",
+      "hora": "19:00 COT",
+      "ts": 1784314800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "11d2a3f0580d5a871978e8d398764fc5",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Fortaleza",
+      "away": "Grêmio Novorizontino",
+      "fecha": "17/07/26",
+      "hora": "19:00 COT",
+      "ts": 1784314800,
       "completed": false,
       "score_home": null,
       "score_away": null
