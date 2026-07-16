@@ -1,7 +1,21 @@
 {
-  "updated": "2026-07-16T19:35:32Z",
+  "updated": "2026-07-16T20:31:07Z",
   "live": [],
   "upcoming": [
+    {
+      "id": "7ad2e88701ead09625333188a5b653b2",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Philadelphia Phillies",
+      "away": "New York Mets",
+      "fecha": "16/07/26",
+      "hora": "17:11 COT",
+      "ts": 1784221860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
     {
       "id": "c3dbb97e9aef640afa391b76f7af061d",
       "sport": "soccer_brazil_campeonato",
@@ -40,20 +54,6 @@
       "fecha": "16/07/26",
       "hora": "18:00 COT",
       "ts": 1784224800,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "7ad2e88701ead09625333188a5b653b2",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Philadelphia Phillies",
-      "away": "New York Mets",
-      "fecha": "16/07/26",
-      "hora": "18:11 COT",
-      "ts": 1784225460,
       "completed": false,
       "score_home": null,
       "score_away": null
