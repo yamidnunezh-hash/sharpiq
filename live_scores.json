@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16T01:05:05Z",
+  "updated": "2026-07-16T04:27:41Z",
   "live": [],
   "upcoming": [
     {
@@ -143,6 +143,34 @@
       "score_away": null
     },
     {
+      "id": "f20d3f5cf3efbb324f11686e68db809c",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "New York Yankees",
+      "away": "Los Angeles Dodgers",
+      "fecha": "17/07/26",
+      "hora": "18:06 COT",
+      "ts": 1784311560,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "c137da348b9193a96f85af78c01a1aca",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Cleveland Guardians",
+      "away": "Pittsburgh Pirates",
+      "fecha": "17/07/26",
+      "hora": "18:11 COT",
+      "ts": 1784311860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
       "id": "cfb2e85cbd19eb03e617782d90d2c60e",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -180,34 +208,6 @@
       "fecha": "17/07/26",
       "hora": "19:00 COT",
       "ts": 1784314800,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "20cdb34603db2e0327949bd1af674408",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Criciuma",
-      "away": "Vila Nova",
-      "fecha": "18/07/26",
-      "hora": "14:00 COT",
-      "ts": 1784383200,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "92dcfeed14e17eec0c873f6cfff6d154",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Ponte Preta",
-      "away": "Goiás",
-      "fecha": "18/07/26",
-      "hora": "14:00 COT",
-      "ts": 1784383200,
       "completed": false,
       "score_home": null,
       "score_away": null
