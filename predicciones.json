@@ -1295,7 +1295,7 @@
         "2": 4.8,
         "2_casa": "Betfair",
         "pinnacle_2": 4.71,
-        "1": 1.91,
+        "1": 1.92,
         "1_casa": "Betfair",
         "pinnacle_1": 1.86,
         "X": 3.6,
@@ -1547,13 +1547,13 @@
           "pinn_prob": 20.5
         },
         "victoria_local": {
-          "value": -0.008,
-          "ev_porcentaje": -0.8,
-          "ev_pinn": -0.8,
+          "value": -0.003,
+          "ev_porcentaje": -0.3,
+          "ev_pinn": -0.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.91,
+          "cuota": 1.92,
           "casa": "Betfair",
           "pinn_prob": 51.9
         },
@@ -2214,7 +2214,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Local",
         "prob": 51.9,
-        "ev": -0.8
+        "ev": -0.3
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -2556,7 +2556,7 @@
       "hora": "23:00",
       "fecha_evento": "2026-07-17",
       "cuotas": {
-        "2": 4.2,
+        "2": 4.1,
         "2_casa": "Betfair",
         "pinnacle_2": 3.99,
         "1": 2.04,
@@ -2776,13 +2776,13 @@
       "confianza": 82.7,
       "value_bets": {
         "victoria_visita": {
-          "value": 0.019,
-          "ev_porcentaje": 1.9,
-          "ev_pinn": 1.9,
+          "value": -0.005,
+          "ev_porcentaje": -0.5,
+          "ev_pinn": -0.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.2,
+          "cuota": 4.1,
           "casa": "Betfair",
           "pinn_prob": 24.3
         },
@@ -5558,7 +5558,7 @@
         "1": 2.12,
         "1_casa": "Unibet",
         "pinnacle_1": 2.08,
-        "X": 3.0,
+        "X": 3.05,
         "X_casa": "Betfair",
         "pinnacle_X": 2.95,
         "over175": 1.96,
@@ -5732,13 +5732,13 @@
           "pinn_prob": 46.2
         },
         "empate": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
+          "value": -0.007,
+          "ev_porcentaje": -0.7,
+          "ev_pinn": -0.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.0,
+          "cuota": 3.05,
           "casa": "Betfair",
           "pinn_prob": 32.6
         },
@@ -14636,7 +14636,7 @@
         "2": 2.9,
         "2_casa": "Unibet",
         "pinnacle_2": 2.86,
-        "X": 4.1,
+        "X": 4.0,
         "X_casa": "Betfair",
         "pinnacle_X": 3.87,
         "over325": 1.96,
@@ -14818,13 +14818,13 @@
           "pinn_prob": 33.5
         },
         "empate": {
-          "value": 0.014,
-          "ev_porcentaje": 1.4,
-          "ev_pinn": 1.4,
+          "value": -0.011,
+          "ev_porcentaje": -1.1,
+          "ev_pinn": -1.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.1,
+          "cuota": 4.0,
           "casa": "Betfair",
           "pinn_prob": 24.7
         },
@@ -15245,9 +15245,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Empate",
-        "prob": 24.7,
-        "ev": 1.4
+        "mercado": "Over 4.5 Goles",
+        "prob": 26.9,
+        "ev": -0.6
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -28612,7 +28612,7 @@
         "1": 3.25,
         "1_casa": "Unibet",
         "pinnacle_1": 3.0,
-        "X": 3.85,
+        "X": 3.9,
         "X_casa": "Betfair",
         "pinnacle_X": 3.8,
         "over30": 2.01,
@@ -28778,13 +28778,13 @@
           "pinn_prob": 31.8
         },
         "empate": {
-          "value": -0.034,
-          "ev_porcentaje": -3.4,
-          "ev_pinn": -3.4,
+          "value": -0.022,
+          "ev_porcentaje": -2.2,
+          "ev_pinn": -2.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.85,
+          "cuota": 3.9,
           "casa": "Betfair",
           "pinn_prob": 25.1
         },
@@ -32069,5 +32069,5 @@
       "movimiento": null
     }
   ],
-  "generado": "14:08:15"
+  "generado": "14:08:42"
 }
