@@ -60,6 +60,31 @@ def _liga_valida(nombre):
     return any(k in n for k in LIGAS_LATAM)
 
 
+# ANOMALIA CAZADA 17-jul-26: el Tijuana-Tigres daba "empate 52%" (imposible en
+# pre-partido). Causa: el partido YA HABIA EMPEZADO (03:10 UTC) cuando lo
+# consultamos (~04:00 UTC) -> eran cuotas EN VIVO. Con 0-0 avanzado, el empate
+# SI se vuelve favorito: el 52% era correcto... para un partido en curso.
+# `status != "settled"` NO basta: mientras rueda el partido sigue sin ser settled.
+# Sin este filtro compararíamos cuotas EN VIVO contra probabilidad de PRE-PARTIDO
+# -> valor fantasma.
+MINUTOS_ANTES = 5   # margen: si arranca en <5 min, ya no lo tocamos
+
+
+def _no_ha_empezado(ev):
+    """True solo si el partido aun NO arranco (con margen de seguridad)."""
+    from datetime import datetime, timezone, timedelta
+    f = ev.get("date")
+    if not f:
+        return False
+    try:
+        dt = datetime.fromisoformat(str(f).replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt > datetime.now(timezone.utc) + timedelta(minutes=MINUTOS_ANTES)
+    except Exception:
+        return False
+
+
 def _key():
     from config import ODDSAPI_IO_KEY
     return ODDSAPI_IO_KEY
@@ -143,7 +168,8 @@ def obtener_eventos_latam(forzar=False):
             return []
         evs = [e for e in r.json()
                if _liga_valida((e.get("league", {}) or {}).get("name", ""))
-               and e.get("status") != "settled"]
+               and e.get("status") != "settled"
+               and _no_ha_empezado(e)]          # <- anti cuotas EN VIVO
         _cache_put("eventos_latam", evs)
         print(f"    odds-api.io: {len(evs)} partidos LatAm sin jugar")
         return evs
