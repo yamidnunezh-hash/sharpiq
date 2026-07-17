@@ -5428,8 +5428,8 @@
       "hora": "22:00",
       "fecha_evento": "2026-07-17",
       "cuotas": {
-        "2": 4.6,
-        "2_casa": "Betfair",
+        "2": 4.41,
+        "2_casa": "Pinnacle",
         "pinnacle_2": 4.41,
         "1": 2.12,
         "1_casa": "Betfair",
@@ -5586,14 +5586,14 @@
       "confianza": 100.0,
       "value_bets": {
         "victoria_visita": {
-          "value": -0.002,
-          "ev_porcentaje": -0.2,
-          "ev_pinn": -0.2,
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.6,
-          "casa": "Betfair",
+          "cuota": 4.41,
+          "casa": "Pinnacle",
           "pinn_prob": 21.7
         },
         "victoria_local": {
@@ -21906,5 +21906,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:38"
+  "generado": "00:02:03"
 }
