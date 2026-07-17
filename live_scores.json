@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-17T21:27:54Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-17T22:27:47Z",
+  "live": [
     {
       "id": "75e884517e60da1477391eba81d8e155",
       "sport": "soccer_brazil_serie_b",
@@ -13,8 +12,8 @@
       "hora": "17:00 COT",
       "ts": 1784307600,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "280a1f1d99aa2102f1e3addeaf506db6",
@@ -27,8 +26,8 @@
       "hora": "17:00 COT",
       "ts": 1784307600,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "7b1cce6e6b78d5eb92beac490ed9900a",
@@ -41,9 +40,11 @@
       "hora": "17:00 COT",
       "ts": 1784307600,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "e64cfcc03ee00f71d21b9c99e9c37d2d",
       "sport": "soccer_brazil_campeonato",
@@ -211,6 +212,48 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "704ba175e571a9f003f1c83cd86e48e6",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Kansas City Royals",
+      "away": "San Diego Padres",
+      "fecha": "17/07/26",
+      "hora": "19:11 COT",
+      "ts": 1784315460,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "e9c736dab72b5dc33dd4f665870c8f2b",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Colorado Rockies",
+      "away": "Cincinnati Reds",
+      "fecha": "17/07/26",
+      "hora": "19:41 COT",
+      "ts": 1784317260,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "e047c3dd3d688fead07d77b8b32852af",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Angels",
+      "away": "Detroit Tigers",
+      "fecha": "17/07/26",
+      "hora": "20:39 COT",
+      "ts": 1784320740,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
@@ -269,20 +312,6 @@
       "completed": true,
       "score_home": "1",
       "score_away": "0"
-    },
-    {
-      "id": "7ad2e88701ead09625333188a5b653b2",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Philadelphia Phillies",
-      "away": "New York Mets",
-      "fecha": "16/07/26",
-      "hora": "17:11 COT",
-      "ts": 1784221860,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "4"
     }
   ]
 }
