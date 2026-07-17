@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T20:29:56Z",
+  "updated": "2026-07-17T21:27:54Z",
   "live": [],
   "upcoming": [
     {
@@ -115,20 +115,6 @@
       "score_away": null
     },
     {
-      "id": "c137da348b9193a96f85af78c01a1aca",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Cleveland Guardians",
-      "away": "Pittsburgh Pirates",
-      "fecha": "17/07/26",
-      "hora": "18:11 COT",
-      "ts": 1784311860,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
       "id": "218dcb584dbeb2e0c6f3ec5b029b0521",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -208,6 +194,20 @@
       "fecha": "17/07/26",
       "hora": "19:06 COT",
       "ts": 1784315160,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "dbf668de78fe1352520d4e2011c77603",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Houston Astros",
+      "away": "Baltimore Orioles",
+      "fecha": "17/07/26",
+      "hora": "19:11 COT",
+      "ts": 1784315460,
       "completed": false,
       "score_home": null,
       "score_away": null
