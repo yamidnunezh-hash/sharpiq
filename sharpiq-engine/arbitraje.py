@@ -91,6 +91,94 @@ def escanear_arbitraje(partidos_odds_lista):
     return oportunidades
 
 
+# ── ARBITRAJE 2.0: mercados de 2 VIAS + filtro por PAIS ───────────────
+# El 1X2 (3 vias) casi nunca da arbitraje. El volumen real esta en los
+# mercados de 2 vias: totals (over/under) y spreads (handicaps).
+#
+# FILTRO POR PAIS (idea de Yamid): un arb solo sirve si el cliente puede
+# operar en TODAS las casas. Un arb FanDuel(USA) + BoyleSports(UK) no le
+# sirve a un colombiano. Ver casas_por_pais.py.
+#
+# FILTRO ANTI-BASURA: cuotas absurdas (@226 en MLS, @14 a un favorito) son
+# errores palpables o lineas viejas -> la casa te las ANULA. Un arb "de +8%"
+# es mentira; los reales van de 0.3% a 2%.
+
+MAX_CUOTA_SANA   = 15.0   # arriba de esto, en 2 vias, huele a error/linea vieja
+MAX_PROFIT_SANO  = 5.0    # un arb real rara vez pasa de ~2%; +5% = sospechoso
+
+
+def detectar_arb_2vias(partido_odds, market_key="totals", pais="TODAS"):
+    """Arbitrajes de 2 vias agrupando por linea (point). Devuelve lista."""
+    try:
+        from casas_por_pais import casas_de
+        permitidas = None if pais == "TODAS" else set(casas_de(pais))
+    except Exception:
+        permitidas = None
+
+    home = partido_odds.get("home_team", "")
+    away = partido_odds.get("away_team", "")
+
+    # {linea: {lado: {"cuota","casa"}}}
+    lineas = {}
+    for bm in partido_odds.get("bookmakers", []):
+        casa = bm.get("title", "")
+        if permitidas is not None and casa not in permitidas:
+            continue
+        for mk in bm.get("markets", []):
+            if mk.get("key") != market_key:
+                continue
+            for o in mk.get("outcomes", []):
+                pt, nm, pr = o.get("point"), o.get("name"), o.get("price") or 0
+                if pt is None or not nm:
+                    continue
+                if pr <= 1.01 or pr > MAX_CUOTA_SANA:   # anti-basura
+                    continue
+                d = lineas.setdefault(pt, {})
+                if pr > d.get(nm, {}).get("cuota", 0):
+                    d[nm] = {"cuota": pr, "casa": casa}
+
+    encontrados = []
+    for pt, lados in lineas.items():
+        if len(lados) != 2:
+            continue                       # necesitamos LOS DOS lados
+        (n1, l1), (n2, l2) = list(lados.items())
+        if l1["casa"] == l2["casa"]:
+            continue                       # misma casa = no es arbitraje
+        suma = 1 / l1["cuota"] + 1 / l2["cuota"]
+        if suma >= 1.0:
+            continue
+        profit = round((1 / suma - 1) * 100, 2)
+        if profit > MAX_PROFIT_SANO:       # demasiado bueno = error palpable
+            continue
+        bankroll = 100
+        encontrados.append({
+            "local": home, "visitante": away,
+            "mercado": market_key, "linea": pt,
+            "profit_pct": profit,
+            "suma_impl": round(suma * 100, 2),
+            "pais": pais,
+            "lados": [
+                {"nombre": n1, "cuota": l1["cuota"], "casa": l1["casa"],
+                 "stake": round((1 / l1["cuota"]) / suma * bankroll, 2)},
+                {"nombre": n2, "cuota": l2["cuota"], "casa": l2["casa"],
+                 "stake": round((1 / l2["cuota"]) / suma * bankroll, 2)},
+            ],
+        })
+    return encontrados
+
+
+def escanear_pais(partidos, pais="TODAS", mercados=("totals", "spreads", "h2h")):
+    """Escaneo COMPLETO para un pais: todos los mercados, solo casas operables ahi."""
+    out = []
+    for p in partidos:
+        for mk in mercados:
+            if mk == "h2h":
+                continue        # el 1X2 lo cubre detectar_arbitraje_partido
+            out.extend(detectar_arb_2vias(p, mk, pais))
+    out.sort(key=lambda x: -x["profit_pct"])
+    return out
+
+
 def construir_alerta_arbitraje(arb):
     """Construye el texto de la alerta Telegram."""
     return (
