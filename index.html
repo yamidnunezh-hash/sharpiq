@@ -5969,6 +5969,22 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
     return'<span class="pl-neg">-1.00u</span>';
   }
 
+  // LA MATEMATICA VISIBLE (mata el "cara y sello"): muestra la cuota justa
+  // (devig de Pinnacle) vs lo que paga BETPLAY. Solo aparece si el motor la
+  // calculo (cuota_betplay/cuota_justa/valor_real, ver auto_publicar.py).
+  // Verde = hay valor real; gris = sin valor (honesto, se muestra igual).
+  function valorLatam(p){
+    const bp = parseFloat(p.cuota_betplay), cj = parseFloat(p.cuota_justa);
+    const vr = parseFloat(p.valor_real);
+    if(!bp || !cj) return '';
+    if(!isNaN(vr) && vr > 0){
+      return `<div style="font-size:11px;color:#22c55e;font-weight:700;margin-top:4px;white-space:nowrap">`
+           + `💎 BetPlay ${bp} · justa ${cj} · <b>+${vr}% valor</b></div>`;
+    }
+    return `<div style="font-size:11px;color:#94a3b8;margin-top:4px;white-space:nowrap">`
+         + `BetPlay ${bp} · justa ${cj}</div>`;
+  }
+
   function renderHistorial(data){
     const tbody=document.getElementById('predBody');
     if(!tbody)return;
@@ -5977,7 +5993,7 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
         <td><span class="match-date">${p.fecha}</span></td>
         <td><span class="match-name">${p.partido}</span></td>
         <td>${leagueBadge(p.liga)}</td>
-        <td><span class="pred-type">${p.prediccion}</span></td>
+        <td><span class="pred-type">${p.prediccion}</span>${valorLatam(p)}</td>
         <td><span class="odds-val">${p.cuota}</span></td>
         <td>${plCell(p)}</td>
         <td>${resultBadge(p.resultado)}</td>
