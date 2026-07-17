@@ -4,6 +4,23 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "17/07/26",
+    partido:    "Nashville SC vs Atlanta United FC",
+    liga:       "MLS",
+    prediccion: "Victoria Local",
+    cuota:      "1.59",
+    hora:       "19:10 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "62",
+    sharpscore: "64",
+    cuota_betplay: "",
+    cuota_justa:   "",
+    valor_real:    "",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "16/07/26",
     partido:    "Seattle Sounders FC vs Portland Timbers",
     liga:       "MLS",
