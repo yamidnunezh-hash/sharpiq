@@ -43,7 +43,7 @@ const PROXIMOS_EVENTOS = [
     stake_pct:  "2",
     prob:       "58",
     sharpscore: "66",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "15/07/26",
@@ -2468,6 +2468,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "16/07/26",
+    partido:    "Vitoria vs Vasco da Gama",
+    liga:       "Brasileirao",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.86",
+    prob:       "58",
+    resultado:  "win"
+  },
   {
     fecha:      "15/07/26",
     partido:    "England vs Argentina",
