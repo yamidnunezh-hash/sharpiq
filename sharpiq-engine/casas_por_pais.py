@@ -39,17 +39,25 @@ CASAS = {
         # FALTAN: Caliente, Strendus, Winpot
     ],
 
-    # ── ESPANA (mercado licenciado, VARIAS casas de la API SI operan) ─
+    # ── ESPANA (mercado licenciado DGOJ; MUCHAS casas de la API operan aqui) ─
+    # Yamid viaja a Espana el 1-ago-26: abrira cuentas y probara el arbitraje en
+    # carne propia. Espana tiene MAS casas apostables que Colombia -> mas arbs.
+    # Nombres EXACTOS de The Odds API (bookmaker["title"]).
     "ES": [
-        "888sport",
-        "Betfair",
-        "Betway",
-        "Codere (IT)",        # Codere.es
-        "William Hill",
-        "Winamax (FR)",       # Winamax.es
-        "Marathon Bet",
-        "LeoVegas",
-        "Betsson",
+        "888sport",           # 888sport.es
+        "Betfair",            # betfair.es
+        "Betfair Sportsbook",
+        "Betway",             # betway.es
+        "Codere (IT)",        # Codere opera en ES (la API trae la version IT)
+        "William Hill",       # williamhill.es
+        "Winamax (FR)",       # winamax.es
+        "Marathon Bet",       # marathonbet.es
+        "LeoVegas",           # leovegas.es
+        "Betsson",            # betsson.es
+        "Coolbet",            # opera en ES
+        "Unibet",             # unibet.es (a veces como Unibet a secas)
+        "Bet Victor",         # betvictor.es
+        "Pinnacle",           # referencia sharp (no siempre apostable en ES)
     ],
 
     # ── BRASIL (REGULADO desde 2025 — mercado grande y abierto) ──────
