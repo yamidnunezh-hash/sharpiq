@@ -200,6 +200,62 @@ def _familia_nombre(mercado):
     return _m
 
 
+def _mercado_a_key_latam(mercado):
+    """Nombre visible del mercado -> clave de odds_latam. None si BetPlay (free
+    tier) no cotiza ese mercado (solo ML, Totals y BTTS)."""
+    m = str(mercado).split("—")[0].strip().lower()
+    for a, b in (("á","a"),("é","e"),("í","i"),("ó","o"),("ú","u")):
+        m = m.replace(a, b)
+    if "corner" in m or "tarjeta" in m or "card" in m:      return None
+    if "handicap" in m or m.startswith("ah ") or "spread" in m: return None
+    if "draw no bet" in m or "dnb" in m or "doble" in m:    return None
+    if "victoria local" in m or m == "1" or "gana local" in m:   return "1"
+    if "victoria visita" in m or m == "2" or "gana visita" in m: return "2"
+    if m == "x" or "empate" in m:                           return "X"
+    if "ambos anotan" in m or "btts" in m:
+        # OJO: "aNOtan" contiene "no" -> hay que mirar SOLO el sufijo (si)/(no),
+        # no la palabra completa. Quitamos el prefijo antes de decidir.
+        cola = m.replace("ambos anotan", "").replace("btts", "")
+        return "btts_no" if "no" in cola else "btts_si"
+    if "gol" in m or "over" in m or "under" in m:
+        lado = "under" if "under" in m else ("over" if "over" in m else None)
+        if not lado:
+            return None
+        linea = "25"
+        if "1.5" in m or "15" in m: linea = "15"
+        elif "3.5" in m or "35" in m: linea = "35"
+        elif "2.5" in m or "25" in m: linea = "25"
+        return f"{lado}{linea}"
+    return None
+
+
+def _enriquecer_latam(partido, mercado, prob):
+    """Compara la cuota justa (prob de Pinnacle) contra lo que paga BETPLAY.
+    Devuelve (cuota_real, cuota_justa, valor_pct) o ('','','').
+    TODO a prueba de fallos: si algo sale mal, publica normal sin la comparativa.
+    """
+    try:
+        key = _mercado_a_key_latam(mercado)
+        if not key:
+            return "", "", ""
+        p = float(prob or 0)
+        if p <= 0 or p >= 100:
+            return "", "", ""
+        if " vs " not in partido:
+            return "", "", ""
+        local, visitante = partido.split(" vs ", 1)
+        import odds_latam
+        r = odds_latam.comparar(local.strip(), visitante.strip(), key, p)
+        if not r:
+            return "", "", ""
+        return (r.get("cuota_casa", "") or "",
+                r.get("cuota_justa", "") or "",
+                r.get("valor_pct", "") if r.get("valor_pct") is not None else "")
+    except Exception as _e:
+        LOG.info(f"odds_latam enriquecer fallo (no bloquea): {_e}")
+        return "", "", ""
+
+
 def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=None, tier="principal", stake_pct=3, prob=""):
     if fecha_evento:
         try:
@@ -219,6 +275,12 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
         _ss = sharpscore.calcular(prob=prob, ev=ev, tier=tier)
     except Exception:
         _ss = ""
+
+    # LA MATEMATICA VISIBLE (mata el "cara y sello"): compara la cuota justa
+    # contra lo que paga BETPLAY (la casa real del cliente colombiano).
+    # Aditivo: si no hay datos, van vacios y la web muestra el pick como siempre.
+    _cbp, _cj, _vr = _enriquecer_latam(partido, mercado, prob)
+
     nueva_entrada = f"""  {{
     fecha:      "{fecha_str}",
     partido:    "{partido}",
@@ -231,6 +293,9 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
     stake_pct:  "{stake_pct}",
     prob:       "{prob}",
     sharpscore: "{_ss}",
+    cuota_betplay: "{_cbp}",
+    cuota_justa:   "{_cj}",
+    valor_real:    "{_vr}",
     resultado:  "pendiente"
   }},"""
 
