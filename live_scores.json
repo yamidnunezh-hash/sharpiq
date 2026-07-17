@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-17T19:35:57Z",
-  "live": [
-    {
-      "id": "43706fff6ae5bb5201b9add3c0945034",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Boston Red Sox",
-      "away": "Tampa Bay Rays",
-      "fecha": "17/07/26",
-      "hora": "12:36 COT",
-      "ts": 1784291760,
-      "completed": false,
-      "score_home": "10",
-      "score_away": "0"
-    }
-  ],
+  "updated": "2026-07-17T20:29:56Z",
+  "live": [],
   "upcoming": [
     {
       "id": "75e884517e60da1477391eba81d8e155",
@@ -229,6 +214,20 @@
     }
   ],
   "finished": [
+    {
+      "id": "43706fff6ae5bb5201b9add3c0945034",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Boston Red Sox",
+      "away": "Tampa Bay Rays",
+      "fecha": "17/07/26",
+      "hora": "12:36 COT",
+      "ts": 1784291760,
+      "completed": true,
+      "score_home": "10",
+      "score_away": "0"
+    },
     {
       "id": "5a0f414f3dae8f58d208ea1ef1621427",
       "sport": "soccer_brazil_serie_b",
