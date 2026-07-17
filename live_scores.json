@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T22:27:47Z",
+  "updated": "2026-07-17T23:31:10Z",
   "live": [
     {
       "id": "75e884517e60da1477391eba81d8e155",
@@ -12,7 +12,7 @@
       "hora": "17:00 COT",
       "ts": 1784307600,
       "completed": false,
-      "score_home": "0",
+      "score_home": "1",
       "score_away": "0"
     },
     {
@@ -26,8 +26,8 @@
       "hora": "17:00 COT",
       "ts": 1784307600,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
+      "score_home": "1",
+      "score_away": "1"
     },
     {
       "id": "7b1cce6e6b78d5eb92beac490ed9900a",
@@ -40,11 +40,9 @@
       "hora": "17:00 COT",
       "ts": 1784307600,
       "completed": false,
-      "score_home": "0",
+      "score_home": "1",
       "score_away": "0"
-    }
-  ],
-  "upcoming": [
+    },
     {
       "id": "e64cfcc03ee00f71d21b9c99e9c37d2d",
       "sport": "soccer_brazil_campeonato",
@@ -56,22 +54,8 @@
       "hora": "17:30 COT",
       "ts": 1784309400,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "86d6bb6c03425aec2dbe3e631e844d53",
-      "sport": "soccer_brazil_campeonato",
-      "liga": "Brasileirao",
-      "emoji": "⚽",
-      "home": "Fluminense",
-      "away": "Bragantino-SP",
-      "fecha": "17/07/26",
-      "hora": "18:00 COT",
-      "ts": 1784311200,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "2",
+      "score_away": "0"
     },
     {
       "id": "e105f546df821df13a1c7474f4734943",
@@ -84,8 +68,22 @@
       "hora": "18:00 COT",
       "ts": 1784311200,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "1",
+      "score_away": "0"
+    },
+    {
+      "id": "86d6bb6c03425aec2dbe3e631e844d53",
+      "sport": "soccer_brazil_campeonato",
+      "liga": "Brasileirao",
+      "emoji": "⚽",
+      "home": "Fluminense",
+      "away": "Bragantino-SP",
+      "fecha": "17/07/26",
+      "hora": "18:01 COT",
+      "ts": 1784311260,
+      "completed": false,
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "f20d3f5cf3efbb324f11686e68db809c",
@@ -98,8 +96,8 @@
       "hora": "18:06 COT",
       "ts": 1784311560,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "9d0976062d4e6d31f94ff2c8b3baff89",
@@ -112,8 +110,8 @@
       "hora": "18:11 COT",
       "ts": 1784311860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "2"
     },
     {
       "id": "218dcb584dbeb2e0c6f3ec5b029b0521",
@@ -126,8 +124,8 @@
       "hora": "18:16 COT",
       "ts": 1784312160,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "cfb2e85cbd19eb03e617782d90d2c60e",
@@ -140,9 +138,11 @@
       "hora": "18:16 COT",
       "ts": 1784312160,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "11dadeb57de8089d2a80fb4a82fbff1d",
       "sport": "baseball_mlb",
@@ -254,6 +254,104 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "2e309c8e4682895ea0516d055b78f53a",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Arizona Diamondbacks",
+      "away": "St. Louis Cardinals",
+      "fecha": "17/07/26",
+      "hora": "20:41 COT",
+      "ts": 1784320860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "e0989f5a2163779f2b0c456d7f844ce9",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Washington Nationals",
+      "fecha": "17/07/26",
+      "hora": "20:41 COT",
+      "ts": 1784320860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "25f714905d486c907ee2e0c1377097ea",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Seattle Mariners",
+      "away": "San Francisco Giants",
+      "fecha": "17/07/26",
+      "hora": "21:11 COT",
+      "ts": 1784322660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "1ac6eaa4fa03ab0a81e5ba09ce7bcaa3",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago Cubs",
+      "away": "Minnesota Twins",
+      "fecha": "18/07/26",
+      "hora": "13:21 COT",
+      "ts": 1784380860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "20cdb34603db2e0327949bd1af674408",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Criciuma",
+      "away": "Vila Nova",
+      "fecha": "18/07/26",
+      "hora": "14:00 COT",
+      "ts": 1784383200,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "92dcfeed14e17eec0c873f6cfff6d154",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Ponte Preta",
+      "away": "Goiás",
+      "fecha": "18/07/26",
+      "hora": "14:00 COT",
+      "ts": 1784383200,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "b4abdaf20863ed466f4bf05059d01bff",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Sport Recife",
+      "away": "Operario PR",
+      "fecha": "18/07/26",
+      "hora": "14:00 COT",
+      "ts": 1784383200,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
@@ -269,48 +367,6 @@
       "ts": 1784291760,
       "completed": true,
       "score_home": "10",
-      "score_away": "0"
-    },
-    {
-      "id": "5a0f414f3dae8f58d208ea1ef1621427",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Clube de Regatas Brasil",
-      "away": "Nautico PE",
-      "fecha": "16/07/26",
-      "hora": "18:01 COT",
-      "ts": 1784224860,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "1"
-    },
-    {
-      "id": "c3dbb97e9aef640afa391b76f7af061d",
-      "sport": "soccer_brazil_campeonato",
-      "liga": "Brasileirao",
-      "emoji": "⚽",
-      "home": "Botafogo",
-      "away": "Santos",
-      "fecha": "16/07/26",
-      "hora": "17:30 COT",
-      "ts": 1784223000,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "1"
-    },
-    {
-      "id": "0a5e9527c4698b6fb5af47094a185c1e",
-      "sport": "soccer_brazil_campeonato",
-      "liga": "Brasileirao",
-      "emoji": "⚽",
-      "home": "Vitoria",
-      "away": "Vasco da Gama",
-      "fecha": "16/07/26",
-      "hora": "17:30 COT",
-      "ts": 1784223000,
-      "completed": true,
-      "score_home": "1",
       "score_away": "0"
     }
   ]
