@@ -5993,13 +5993,11 @@ function closeNav(){document.getElementById('navMob').classList.remove('open')}
   function valorLatam(p){
     const bp = parseFloat(p.cuota_betplay), cj = parseFloat(p.cuota_justa);
     const vr = parseFloat(p.valor_real);
-    if(!bp || !cj) return '';
-    if(!isNaN(vr) && vr > 0){
-      return `<div style="font-size:11px;color:#22c55e;font-weight:700;margin-top:4px;white-space:nowrap">`
-           + `💎 BetPlay ${bp} · justa ${cj} · <b>+${vr}% valor</b></div>`;
-    }
-    return `<div style="font-size:11px;color:#94a3b8;margin-top:4px;white-space:nowrap">`
-         + `BetPlay ${bp} · justa ${cj}</div>`;
+    // El 💎 verde es un SELLO: solo aparece cuando HAY valor real en BetPlay.
+    // Sin valor -> no se muestra nada (el pick igual se ve, pero sin la linea).
+    if(!bp || !cj || isNaN(vr) || vr <= 0) return '';
+    return `<div style="font-size:11px;color:#22c55e;font-weight:700;margin-top:4px;white-space:nowrap">`
+         + `💎 BetPlay ${bp} · justa ${cj} · <b>+${vr}% valor</b></div>`;
   }
 
   function renderHistorial(data){
