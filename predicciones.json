@@ -24033,7 +24033,7 @@
         "2": 3.5,
         "2_casa": "Unibet",
         "pinnacle_2": 3.2,
-        "1": 2.22,
+        "1": 2.24,
         "1_casa": "Betfair",
         "pinnacle_1": 2.14,
         "X": 3.85,
@@ -24191,13 +24191,13 @@
           "pinn_prob": 30.0
         },
         "victoria_local": {
-          "value": -0.005,
-          "ev_porcentaje": -0.5,
-          "ev_pinn": -0.5,
+          "value": 0.004,
+          "ev_porcentaje": 0.4,
+          "ev_pinn": 0.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.22,
+          "cuota": 2.24,
           "casa": "Betfair",
           "pinn_prob": 44.8
         },
@@ -33642,7 +33642,7 @@
       "cuotas": {
         "Athletics": 2.21,
         "Washington Nationals": 1.76,
-        "Over 10.0": 1.92,
+        "Over 10.0": 1.91,
         "Under 10.0": 1.95,
         "Athletics (+1.5)": 1.76,
         "Washington Nationals (-1.5)": 2.2
@@ -33673,19 +33673,19 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.76,
-          "casa": "Pinnacle",
+          "casa": "Unibet",
           "pinn_prob": 55.7,
           "mercado_nombre": "Washington Nationals"
         },
         "over_10_0": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.92,
-          "casa": "Unibet",
+          "cuota": 1.91,
+          "casa": "FanDuel",
           "pinn_prob": 50.3,
           "mercado_nombre": "Over 10.0"
         },
@@ -34907,5 +34907,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:01:25"
+  "generado": "16:01:48"
 }
