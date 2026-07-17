@@ -16394,7 +16394,7 @@
         "2": 3.3,
         "2_casa": "Unibet",
         "pinnacle_2": 3.06,
-        "1": 2.32,
+        "1": 2.3,
         "1_casa": "Betfair",
         "pinnacle_1": 2.23,
         "X": 3.6,
@@ -16560,13 +16560,13 @@
           "pinn_prob": 31.0
         },
         "victoria_local": {
-          "value": -0.014,
-          "ev_porcentaje": -1.4,
-          "ev_pinn": -1.4,
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.32,
+          "cuota": 2.3,
           "casa": "Betfair",
           "pinn_prob": 42.5
         },
@@ -20117,7 +20117,7 @@
       "hora": "17:00",
       "fecha_evento": "2026-07-17",
       "cuotas": {
-        "1": 1.95,
+        "1": 1.94,
         "1_casa": "Betfair",
         "pinnacle_1": 1.85,
         "2": 4.1,
@@ -20275,13 +20275,13 @@
       "confianza": 80.9,
       "value_bets": {
         "victoria_local": {
-          "value": 0.008,
-          "ev_porcentaje": 0.8,
-          "ev_pinn": 0.8,
+          "value": 0.003,
+          "ev_porcentaje": 0.3,
+          "ev_pinn": 0.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
+          "cuota": 1.94,
           "casa": "Betfair",
           "pinn_prob": 51.7
         },
@@ -24571,5 +24571,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:01:34"
+  "generado": "12:01:59"
 }
