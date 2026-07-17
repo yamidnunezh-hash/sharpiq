@@ -16,6 +16,29 @@ conoce el terreno (apuesta en Rushbet). Antes de vender, confirmar pais por pais
 Los nombres deben coincidir EXACTO con el campo `title` de The Odds API.
 """
 
+# Casas de ESPANA verificadas en odds-api.io (26 activas, 17-jul-26). Nombres
+# EXACTOS como los devuelve odds-api.io. Estas se usan para el arbitraje Espana
+# cuando Yamid tenga el plan pago (free tier = 2 casas). Incluye Betfair
+# Exchange (oro para arbitraje: cuotas sin margen).
+CASAS_ES_ODDSAPIIO = [
+    "Bet365", "888Sport", "Betfair ES", "Betfair Exchange", "Betfair Sportsbook",
+    "William Hill", "Bwin ES", "Betway", "LeoVegas ES", "LeoVegas",
+    "Luckia ES", "Retabet ES", "PAF ES", "paf", "Betsson", "Unibet",
+    "Interwetten", "Coolbet", "TonyBet", "Vbet", "DafaBet", "Betano",
+    "1xbet", "Marathonbet",
+]
+
+# Casas de BRASIL verificadas en odds-api.io (29 activas, 17-jul-26). Mercado
+# regulado desde 2025, 200M+ personas locas por el futbol -> el MEJOR mercado
+# para arbitraje (mas casas = mas arbs). Betfair Exchange incluida.
+CASAS_BR_ODDSAPIIO = [
+    "Bet365", "Betano BR", "Betano", "Betfair Exchange", "Betfair Sportsbook",
+    "Superbet", "KTO", "Betnacional", "Pixbet", "Estrela Bet", "Novibet",
+    "Sportingbet BR", "SportingBet", "Blaze", "Betsson", "Betway",
+    "Stake.bet.br", "Stake", "Brazino777", "BetMGM BR", "Betfast",
+    "Hanzbet", "Bet Da Sorte", "Vbet BR", "1xbet", "Lottoland", "Mystake",
+]
+
 # Nombres tal cual los devuelve The Odds API (bookmaker["title"])
 CASAS = {
     # ── COLOMBIA (mercado licenciado por Coljuegos) ──────────────────
