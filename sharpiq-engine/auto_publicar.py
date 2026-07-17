@@ -178,6 +178,28 @@ def _dedup_proximos_texto(texto):
         return texto
 
 
+def _familia_nombre(mercado):
+    """Familia de un mercado a partir de su NOMBRE VISIBLE (el que va a datos.js).
+
+    GUARDARRAIL ANTI-CONTRADICCION: el motor corre varias veces al dia y cada
+    corrida arranca con su propio _fam_part vacio. Sin esto, la corrida 1
+    publicaba 'Corners Under 8.5' y la corrida 2 publicaba 'Corners Over 8.5'
+    del MISMO partido -> uno pierde SIEMPRE (-1u regalada) y el cliente ve el
+    motor roto. Paso de verdad en France vs Spain (14/07/26).
+    """
+    _m = str(mercado).split("—")[0].strip().lower()
+    for _a, _b in (("á","a"),("é","e"),("í","i"),("ó","o"),("ú","u")):
+        _m = _m.replace(_a, _b)
+    if "corner" in _m:                                   return "corners"
+    if "tarjeta" in _m or "card" in _m:                  return "tarjetas"
+    if "handicap" in _m or _m.startswith("ah "):         return "handicap"
+    if "ambos anotan" in _m or "btts" in _m:             return "btts"
+    if ("victoria" in _m or "empate" in _m or "draw no bet" in _m
+            or "dnb" in _m or "doble" in _m):            return "resultado"
+    if "gol" in _m or "over" in _m or "under" in _m:     return "goles"
+    return _m
+
+
 def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=None, tier="principal", stake_pct=3, prob=""):
     if fecha_evento:
         try:
@@ -225,7 +247,8 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
     try:
         _i = texto.find('PROXIMOS_EVENTOS'); _j = texto.find('PREDICCIONES_HISTORIAL')
         _prox = texto[_i:_j if _j > _i else len(texto)]
-        _pend, _existe = 0, False
+        _pend, _existe, _fam_dup = 0, False, False
+        _fam_nueva = _familia_nombre(mercado)
         for _b in re.findall(r'\{[^{}]*\}', _prox, re.S):
             _gp = (re.search(r'partido:\s*"([^"]*)"', _b) or [None, ''])[1]
             _gf = (re.search(r'fecha:\s*"([^"]*)"', _b) or [None, ''])[1]
@@ -234,11 +257,18 @@ def _agregar_a_datos_js(partido, liga, mercado, cuota, hora, ev, fecha_evento=No
             if _gp == partido and _gf == fecha_str:
                 if _gm.split('—')[0].strip() == str(mercado).split('—')[0].strip():
                     _existe = True
+                # ANTI-CONTRADICCION (cross-corrida): si ya hay un pick de la MISMA
+                # FAMILIA en este partido, el nuevo es el otro lado de la misma
+                # apuesta (Corners Under 8.5 + Corners Over 8.5) -> uno pierde SIEMPRE.
+                # El _fam_part del bloque de futbol solo vive dentro de UNA corrida;
+                # este chequeo lee datos.js, asi que tambien cubre corridas anteriores.
+                if _familia_nombre(_gm) == _fam_nueva:
+                    _fam_dup = True
                 if _gr in ('', 'pendiente', 'pending'):
                     _pend += 1
-        if _existe or _pend >= 2:
+        if _existe or _fam_dup or _pend >= 2:
             LOG.info(f"datos.js: NO se agrega {partido} | {mercado} "
-                     f"(ya hay {_pend} pendiente(s) o el pick ya existe)")
+                     f"(existe={_existe} misma_familia={_fam_dup} pendientes={_pend})")
             return
     except Exception:
         pass
