@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T07:35:06Z",
+  "updated": "2026-07-17T09:29:14Z",
   "live": [],
   "upcoming": [
     {
@@ -115,6 +115,20 @@
       "score_away": null
     },
     {
+      "id": "9d0976062d4e6d31f94ff2c8b3baff89",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Boston Red Sox",
+      "away": "Tampa Bay Rays",
+      "fecha": "17/07/26",
+      "hora": "18:11 COT",
+      "ts": 1784311860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
       "id": "c137da348b9193a96f85af78c01a1aca",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -194,20 +208,6 @@
       "fecha": "17/07/26",
       "hora": "19:00 COT",
       "ts": 1784314800,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "7d92a7dff1e2a4e0569b73cf9069f2e3",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Chicago Cubs",
-      "away": "Minnesota Twins",
-      "fecha": "17/07/26",
-      "hora": "19:06 COT",
-      "ts": 1784315160,
       "completed": false,
       "score_home": null,
       "score_away": null
