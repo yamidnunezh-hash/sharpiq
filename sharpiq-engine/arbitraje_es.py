@@ -18,7 +18,8 @@ Estructura odds-api.io (distinta a The Odds API):
 """
 import os
 import requests
-from casas_por_pais import CASAS_ES_ODDSAPIIO, CASAS_BR_ODDSAPIIO
+from casas_por_pais import (CASAS_ES_ODDSAPIIO, CASAS_BR_ODDSAPIIO,
+                            CASAS_MX_ODDSAPIIO)
 
 API  = "https://api.odds-api.io/v3"
 
@@ -26,6 +27,7 @@ API  = "https://api.odds-api.io/v3"
 CASAS_POR_PAIS = {
     "ES": CASAS_ES_ODDSAPIIO,   # 24 casas espanolas
     "BR": CASAS_BR_ODDSAPIIO,   # 27 casas brasilenas (el mejor mercado)
+    "MX": CASAS_MX_ODDSAPIIO,   # ~10 casas mexicanas (Liga MX)
 }
 
 # Ligas que le interesan a cada mercado (substring del league.name).
@@ -34,6 +36,8 @@ LIGAS_POR_PAIS = {
            "ligue 1", "champions", "europa"),
     "BR": ("brazil -", "brasileiro", "copa do brasil", "libertadores",
            "sudamericana", "paulista", "carioca"),
+    "MX": ("mexico -", "liga mx", "liga de expansion", "copa mx",
+           "concacaf", "usa - mls", "libertadores"),
 }
 
 # Ligas espanolas/europeas + verano (para tener partidos siempre) — compat

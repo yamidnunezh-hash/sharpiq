@@ -39,6 +39,14 @@ CASAS_BR_ODDSAPIIO = [
     "Hanzbet", "Bet Da Sorte", "Vbet BR", "1xbet", "Lottoland", "Mystake",
 ]
 
+# Casas de MEXICO en odds-api.io (~10 distintas apostables por un mexicano).
+# Mercado enorme + Liga MX que el motor ya cubre. OJO: solo Betano MX, no las
+# otras Betano (BR/PE/etc) que un mexicano no puede usar.
+CASAS_MX_ODDSAPIIO = [
+    "Bet365", "Betano MX", "Betano", "Betfair Exchange", "Betfair Sportsbook",
+    "Betsson", "Betway", "Novibet", "Stake", "Winpot MX", "1xbet", "Mystake",
+]
+
 # Nombres tal cual los devuelve The Odds API (bookmaker["title"])
 CASAS = {
     # ── COLOMBIA (mercado licenciado por Coljuegos) ──────────────────
