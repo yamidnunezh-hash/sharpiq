@@ -2336,6 +2336,46 @@ def buscar_cuotas_partido(local, visitante, sport_key):
         print(f"  No match '{local}' vs '{visitante}' en {sport_key}. API tiene: {candidatos}")
     return None
 
+# ── FILTRO ANTI-CUOTA-FANTASMA ───────────────────────────────────────
+# BUG CAZADO 16-jul-26 (lo reporto Yamid: "el motor dice Madrid 1.9 y las
+# casas pagan 1.4, ese error es frecuente"). PROBADO con datos reales:
+#
+#   Tijuana (local):  motor usaba 1.31 [FANATICS]  <- casa SOLO de USA
+#                     BetPlay pagaba  1.20         <- lo que consigue el cliente
+#                     -> el motor inflaba la cuota 9.2% y publicaba "+9% de valor"
+#                        sobre un precio que un colombiano NO PUEDE TOMAR JAMAS.
+#
+# Consecuencia: picks -EV disfrazados de +EV, y track record sobreestimado
+# (registraba la cuota de una casa inalcanzable, no la que se apuesta).
+#
+# FIX: a "mejor" (la cuota que el cliente va a jugar) solo entran casas donde
+# el cliente LatAm puede abrir cuenta. Pinnacle se sigue LEYENDO como
+# referencia de probabilidad (devig) pero, si no es apostable, no compite por
+# ser "la mejor cuota".
+#
+# OJO: los nombres son los de The Odds API (bookmaker["title"]). Varias son la
+# version europea (Betano UK, Codere IT), no la local -> aproximacion honesta.
+# El fix DEFINITIVO es leer BetPlay real via odds-api.io (ver odds_latam.py).
+
+CASAS_APOSTABLES = {
+    "1xBet", "Betsson", "Betano (UK)", "Betfair", "Betfair Sportsbook",
+    "Codere (IT)", "Coolbet", "Marathon Bet", "Betway", "LeoVegas",
+    "LeoVegas (SE)", "Unibet", "888sport", "Pinnacle", "bet365",
+}
+# Excluidas a proposito (NO operan para un cliente LatAm):
+#   Fanatics, DraftKings, FanDuel, BetRivers, BetMGM, Caesars, BetUS,
+#   Bovada, BoyleSports, Sky Bet, Paddy Power, TAB, SportsBet, Neds...
+
+# Pinnacle SI es apostable desde varios paises LatAm; si en tu mercado no lo es,
+# sacalo de CASAS_APOSTABLES y seguira funcionando como referencia (devig).
+CASA_REFERENCIA = "pinnacle"
+
+
+def _casa_apostable(nombre):
+    """True si el cliente puede realmente apostar en esa casa."""
+    return nombre in CASAS_APOSTABLES
+
+
 def extraer_mejor_cuota(partido):
     mejor = {
         "1": None,       "1_casa": None,
@@ -2372,7 +2412,12 @@ def extraer_mejor_cuota(partido):
     for bm in partido.get("bookmakers", []):
         bm_name  = bm.get("title", "")
         bm_key   = bm.get("key", "")
-        es_pinn  = bm_key == "pinnacle"
+        es_pinn  = bm_key == CASA_REFERENCIA
+        # ANTI-CUOTA-FANTASMA: si el cliente no puede apostar ahi, esta casa NO
+        # compite por ser "la mejor cuota". Pinnacle pasa igual (es referencia).
+        apostable = _casa_apostable(bm_name)
+        if not apostable and not es_pinn:
+            continue
         for market in bm.get("markets", []):
             key = market.get("key")
             outcomes = market.get("outcomes", [])
@@ -2387,11 +2432,11 @@ def extraer_mejor_cuota(partido):
                     if c1: mejor["pinnacle_1"] = round(c1, 2)
                     if cx: mejor["pinnacle_X"] = round(cx, 2)
                     if c2: mejor["pinnacle_2"] = round(c2, 2)
-                if c1 and (mejor["1"] is None or c1 > mejor["1"]):
+                if apostable and c1 and (mejor["1"] is None or c1 > mejor["1"]):
                     mejor["1"] = round(c1, 2);  mejor["1_casa"] = bm_name
-                if cx and (mejor["X"] is None or cx > mejor["X"]):
+                if apostable and cx and (mejor["X"] is None or cx > mejor["X"]):
                     mejor["X"] = round(cx, 2);  mejor["X_casa"] = bm_name
-                if c2 and (mejor["2"] is None or c2 > mejor["2"]):
+                if apostable and c2 and (mejor["2"] is None or c2 > mejor["2"]):
                     mejor["2"] = round(c2, 2);  mejor["2_casa"] = bm_name
 
             elif key == "totals":
@@ -2401,9 +2446,9 @@ def extraer_mejor_cuota(partido):
                     pr = o["price"]
                     for lim, over_k, under_k in [(1.5,"over15","under15"),(2.5,"over25","under25"),(3.5,"over35","under35")]:
                         if abs(pt - lim) < 0.01:
-                            if nm == "Over" and (mejor[over_k] is None or pr > mejor[over_k]):
+                            if apostable and nm == "Over" and (mejor[over_k] is None or pr > mejor[over_k]):
                                 mejor[over_k] = round(pr, 2); mejor[over_k+"_casa"] = bm_name
-                            elif nm == "Under" and (mejor[under_k] is None or pr > mejor[under_k]):
+                            elif apostable and nm == "Under" and (mejor[under_k] is None or pr > mejor[under_k]):
                                 mejor[under_k] = round(pr, 2); mejor[under_k+"_casa"] = bm_name
                             if es_pinn:
                                 if nm == "Over":    mejor[f"pinnacle_{over_k}"]  = round(pr, 2)
@@ -2414,12 +2459,12 @@ def extraer_mejor_cuota(partido):
                     if o.get("name") in ("Yes", "Sí"):
                         if es_pinn:
                             mejor["pinnacle_btts_si"] = round(o["price"], 2)
-                        if mejor["btts_si"] is None or o["price"] > mejor["btts_si"]:
+                        if apostable and (mejor["btts_si"] is None or o["price"] > mejor["btts_si"]):
                             mejor["btts_si"] = round(o["price"], 2); mejor["btts_si_casa"] = bm_name
                     elif o.get("name") == "No":
                         if es_pinn:
                             mejor["pinnacle_btts_no"] = round(o["price"], 2)
-                        if mejor["btts_no"] is None or o["price"] > mejor["btts_no"]:
+                        if apostable and (mejor["btts_no"] is None or o["price"] > mejor["btts_no"]):
                             mejor["btts_no"] = round(o["price"], 2); mejor["btts_no_casa"] = bm_name
 
             elif key == "double_chance":
@@ -2430,7 +2475,7 @@ def extraer_mejor_cuota(partido):
                     if k2:
                         if es_pinn:
                             mejor[pinn_dc_map[o["name"]]] = round(o["price"], 2)
-                        if mejor[k2] is None or o["price"] > mejor[k2]:
+                        if apostable and (mejor[k2] is None or o["price"] > mejor[k2]):
                             mejor[k2] = round(o["price"], 2); mejor[k2+"_casa"] = bm_name
 
             elif key == "draw_no_bet":
@@ -2438,12 +2483,12 @@ def extraer_mejor_cuota(partido):
                     if o["name"] == home:
                         if es_pinn:
                             mejor["pinnacle_dnb_local"] = round(o["price"], 2)
-                        if mejor["dnb_local"] is None or o["price"] > mejor["dnb_local"]:
+                        if apostable and (mejor["dnb_local"] is None or o["price"] > mejor["dnb_local"]):
                             mejor["dnb_local"] = round(o["price"], 2); mejor["dnb_local_casa"] = bm_name
                     elif o["name"] == away:
                         if es_pinn:
                             mejor["pinnacle_dnb_visita"] = round(o["price"], 2)
-                        if mejor["dnb_visita"] is None or o["price"] > mejor["dnb_visita"]:
+                        if apostable and (mejor["dnb_visita"] is None or o["price"] > mejor["dnb_visita"]):
                             mejor["dnb_visita"] = round(o["price"], 2); mejor["dnb_visita_casa"] = bm_name
 
             elif key == "spreads":
@@ -2456,7 +2501,7 @@ def extraer_mejor_cuota(partido):
                     if es_pinn:
                         mejor[f"pinnacle_spread_{side}"] = pr
                     k_price = f"spread_{side}"
-                    if mejor[k_price] is None or pr > mejor[k_price]:
+                    if apostable and (mejor[k_price] is None or pr > mejor[k_price]):
                         mejor[k_price] = pr
                         mejor[f"spread_{side}_linea"] = pt
                         mejor[f"spread_{side}_casa"]  = bm_name
