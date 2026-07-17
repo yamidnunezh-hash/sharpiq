@@ -1,56 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Botafogo",
-   "visitante": "Santos",
-   "gole": "Danilo Santos 44.2% &middot; Gabriel Barbosa 44.2% &middot; Arthur Cabral 37.3%",
-   "remates": "Botafogo: Arthur Cabral 1.87 remates totales (1.07 a puerta), Danilo Santos 1.75 remates totales (1.0 a puerta), Matheus Martins 1.47 remates totales (0.93 a puerta) | Santos: Neymar 2.12 remates totales (0.88 a puerta), Gabriel Barbosa 1.25 remates totales (0.58 a puerta), Á. Barreal 1.07 remates totales (0.4 a puerta)",
-   "tarjetas": "Botafogo: J. Correa 0.5 amarillas/partido, A. Barboza 0.42 amarillas/partido, M. Ponte 0.38 amarillas/partido | Santos: Neymar 0.62 amarillas/partido, Diógenes 0.5 amarillas/partido, T. Rincón 0.5 amarillas/partido",
-   "asistencias": "Botafogo: Kauan Toledo 0.33 asistencias/partido, Nathan Fernandes 0.25 asistencias/partido, Álvaro Montoro 0.2 asistencias/partido | Santos: M. Terceros 0.25 asistencias/partido, Neymar 0.25 asistencias/partido, Zé Rafael 0.2 asistencias/partido",
-   "faltas": "Botafogo: Huguinho 2.33 faltas/partido, A. Barboza 1.92 faltas/partido, Marçal 1.75 faltas/partido | Santos: João Schmidt 1.5 faltas/partido, T. Rincón 1.5 faltas/partido, Neymar 1.5 faltas/partido",
-   "quites": "Botafogo: Vitinho 2.2 quites/partido, A. Barboza 2.08 quites/partido, N. Ferraresi 2.0 quites/partido | Santos: João Paulo Ananias 3.0 quites/partido, Igor Vinicius 2.38 quites/partido, Gustavo Henrique Pereira 2.25 quites/partido"
-  },
-  {
-   "local": "Vitoria",
-   "visitante": "Vasco DA Gama",
-   "gole": "Rene 39.3%",
-   "remates": "Vitoria: Rene 1.9 remates totales (1.4 a puerta), Zé Vitor 1.22 remates totales (0.33 a puerta), Matheuzinho 1.19 remates totales (0.69 a puerta) | Vasco DA Gama: Philippe Coutinho 3.33 remates totales (2.33 a puerta), A. Gómez 2.44 remates totales (1.06 a puerta), C. Spinelli 1.67 remates totales (0.75 a puerta)",
-   "tarjetas": "Vitoria: Zé Marcos 0.5 amarillas/partido, E. Martínez 0.36 amarillas/partido, Zé Vitor 0.33 amarillas/partido | Vasco DA Gama: Thiago Mendes 0.38 amarillas/partido, A. Gómez 0.38 amarillas/partido, A. Saldivia 0.3 amarillas/partido",
-   "asistencias": "Vitoria: Erick 0.25 asistencias/partido, Gabriel Baralhas 0.21 asistencias/partido, Luan Cândido 0.2 asistencias/partido | Vasco DA Gama: Ramon Rique 0.5 asistencias/partido, J. Rodríguez 0.33 asistencias/partido, Cuiabano 0.27 asistencias/partido",
-   "faltas": "Vitoria: Zé Marcos 2.5 faltas/partido, Zé Vitor 2.44 faltas/partido, Gabriel Baralhas 1.86 faltas/partido | Vasco DA Gama: Cauan Barros 1.87 faltas/partido, C. Cuesta 1.5 faltas/partido, A. Gómez 1.38 faltas/partido",
-   "quites": "Vitoria: Nathan 1.92 quites/partido, Zé Vitor 1.89 quites/partido, Ramon 1.86 quites/partido | Vasco DA Gama: Cuiabano 3.27 quites/partido, V. Joao 3.0 quites/partido, Paulo Henrique 1.92 quites/partido"
-  },
-  {
-   "local": "CRB",
-   "visitante": "Nautico Recife",
-   "gole": "Chrystian Barletta 41.3% &middot; Perotti 35.5% &middot; Vinícius 33.0%",
-   "remates": "CRB: Mikael 2.62 remates totales (1.38 a puerta), Dadá Belmonte 1.87 remates totales (0.8 a puerta), Thiaguinho 1.8 remates totales (0.7 a puerta) | Nautico Recife: Vinícius 2.4 remates totales (1.33 a puerta), Dodozinho 2.25 remates totales (1.12 a puerta), Derek 2.08 remates totales (0.54 a puerta)",
-   "tarjetas": "CRB: Daniel 0.47 amarillas/partido, Fábio Alemão 0.36 amarillas/partido, Guilherme Estrella 0.33 amarillas/partido | Nautico Recife: Luiz Felipe 0.55 amarillas/partido, Mateus Silva 0.4 amarillas/partido, Leonai 0.4 amarillas/partido",
-   "asistencias": "CRB: Hereda 0.21 asistencias/partido, Dadá Belmonte 0.2 asistencias/partido, Léo Campos 0.2 asistencias/partido | Nautico Recife: Yuri 0.2 asistencias/partido, Paulo Sérgio 0.17 asistencias/partido, Vinícius 0.13 asistencias/partido",
-   "faltas": "CRB: Hereda 1.79 faltas/partido, Wallace 1.5 faltas/partido, Fábio Alemão 1.07 faltas/partido | Nautico Recife: Luiz Felipe 2.0 faltas/partido, Wenderson 1.81 faltas/partido, Leonai 1.6 faltas/partido",
-   "quites": "CRB: Fábio Alemão 1.71 quites/partido, Dadá Belmonte 1.47 quites/partido, Hereda 1.43 quites/partido | Nautico Recife: Matheus Ribeiro 1.92 quites/partido, Luiz Felipe 1.45 quites/partido, Wenderson 1.25 quites/partido"
-  },
-  {
-   "local": "CF Montreal",
-   "visitante": "Toronto FC",
-   "gole": "P. Owusu 47.4%",
-   "remates": "CF Montreal: P. Owusu 1.79 remates totales (1.07 a puerta), H. Synchuk 1.5 remates totales (0.75 a puerta), W. Carmona 1.25 remates totales (0.67 a puerta) | Toronto FC: J. Sargent 1.75 remates totales (1.12 a puerta), D. Sallói 1.64 remates totales (1.0 a puerta), D. Kerr 1.29 remates totales (0.29 a puerta)",
-   "tarjetas": "CF Montreal: B. Craig 0.4 amarillas/partido, P. Owusu 0.36 amarillas/partido, B. Vera 0.33 amarillas/partido | Toronto FC: J. Osorio 0.36 amarillas/partido, B. Kuscevic 0.33 amarillas/partido, J. Cifuentes 0.3 amarillas/partido",
-   "asistencias": "CF Montreal: P. Owusu 0.43 asistencias/partido, M. Longstaff 0.21 asistencias/partido, W. Carmona 0.17 asistencias/partido | Toronto FC: D. Mihailović 0.4 asistencias/partido, J. Osorio 0.21 asistencias/partido, Alonso Coello 0.21 asistencias/partido",
-   "faltas": "CF Montreal: P. Owusu 2.57 faltas/partido, J. Neal 1.33 faltas/partido, V. Loturi 1.29 faltas/partido | Toronto FC: M. Cimermancic 3.0 faltas/partido, R. Laryea 1.89 faltas/partido, Matheus Pereira 1.5 faltas/partido",
-   "quites": "CF Montreal: D. Bugaj 2.0 quites/partido, B. Vera 1.83 quites/partido, E. Morales 1.82 quites/partido | Toronto FC: R. Edwards 3.33 quites/partido, R. Laryea 2.0 quites/partido, J. Cifuentes 2.0 quites/partido"
-  },
-  {
-   "local": "St. Louis City",
-   "visitante": "Sporting Kansas City",
-   "gole": "",
-   "remates": "St. Louis City: M. Hartel 2.83 remates totales (1.5 a puerta), S. Becher 1.57 remates totales (0.5 a puerta), Célio Pompeu 1.0 remates totales (0.67 a puerta) | Sporting Kansas City: D. Joveljić 1.43 remates totales (1.07 a puerta), C. Harris 1.29 remates totales (0.71 a puerta), Capita 1.12 remates totales (0.5 a puerta)",
-   "tarjetas": "St. Louis City: C. Durkin 0.46 amarillas/partido, J. Orozco 0.33 amarillas/partido, M. Fall 0.33 amarillas/partido | Sporting Kansas City: Z. Bassong 0.4 amarillas/partido, Jansen Miller 0.25 amarillas/partido, Capita 0.25 amarillas/partido",
-   "asistencias": "St. Louis City: S. Becher 0.21 asistencias/partido, D. Edelman 0.15 asistencias/partido, E. Löwen 0.14 asistencias/partido | Sporting Kansas City: Manu García 0.21 asistencias/partido, C. Harris 0.21 asistencias/partido, J. Reynolds 0.12 asistencias/partido",
-   "faltas": "St. Louis City: C. Wallem 2.17 faltas/partido, C. Durkin 2.0 faltas/partido, S. Becher 1.64 faltas/partido | Sporting Kansas City: Z. Bassong 2.0 faltas/partido, Capita 2.0 faltas/partido, J. Davis 1.85 faltas/partido",
-   "quites": "St. Louis City: C. Wallem 2.08 quites/partido, C. Durkin 1.92 quites/partido, F. Fall 1.8 quites/partido | Sporting Kansas City: J. Davis 2.54 quites/partido, Capita 2.5 quites/partido, J. Reid 2.0 quites/partido"
-  },
-  {
    "local": "Seattle Sounders",
    "visitante": "Portland Timbers",
    "gole": "",
