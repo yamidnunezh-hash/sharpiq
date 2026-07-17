@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-17T17:07:44Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-17T18:17:01Z",
+  "live": [
     {
       "id": "43706fff6ae5bb5201b9add3c0945034",
       "sport": "baseball_mlb",
@@ -13,9 +12,11 @@
       "hora": "12:36 COT",
       "ts": 1784291760,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "2",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "75e884517e60da1477391eba81d8e155",
       "sport": "soccer_brazil_serie_b",
@@ -208,6 +209,20 @@
       "fecha": "17/07/26",
       "hora": "19:00 COT",
       "ts": 1784314800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "7d92a7dff1e2a4e0569b73cf9069f2e3",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago Cubs",
+      "away": "Minnesota Twins",
+      "fecha": "17/07/26",
+      "hora": "19:06 COT",
+      "ts": 1784315160,
       "completed": false,
       "score_home": null,
       "score_away": null
