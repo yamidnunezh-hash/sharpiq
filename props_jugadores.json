@@ -1,66 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Bahia",
-   "visitante": "Chapecoense-sc",
-   "gole": "Luciano Juba 37.3%",
-   "remates": "Bahia: Luciano Juba 1.27 remates totales (0.8 a puerta), C. Olivera 1.25 remates totales (0.88 a puerta), Willian José 1.06 remates totales (0.5 a puerta) | Chapecoense-sc: Y. Bolasie 1.21 remates totales (0.5 a puerta), João Vitor 1.18 remates totales (0.27 a puerta), Neto Pessoa 1.12 remates totales (0.5 a puerta)",
-   "tarjetas": "Bahia: Kanu 0.67 amarillas/partido, João Paulo 0.5 amarillas/partido, N. Acevedo 0.4 amarillas/partido | Chapecoense-sc: Eduardo Vinicius 0.5 amarillas/partido, Everton 0.36 amarillas/partido, João Paulo 0.33 amarillas/partido",
-   "asistencias": "Bahia: Éverton Ribeiro 0.31 asistencias/partido, Gilberto 0.14 asistencias/partido, Jean Lucas 0.13 asistencias/partido | Chapecoense-sc: Bruno Pacheco 0.33 asistencias/partido, Jean Carlos 0.12 asistencias/partido, Neto Pessoa 0.12 asistencias/partido",
-   "faltas": "Bahia: N. Acevedo 2.47 faltas/partido, Jean Lucas 1.73 faltas/partido, Roman Gomez 1.67 faltas/partido | Chapecoense-sc: João Paulo 1.83 faltas/partido, Camilo 1.64 faltas/partido, Higor Meritão 1.55 faltas/partido",
-   "quites": "Bahia: N. Acevedo 2.73 quites/partido, Éverton Ribeiro 1.69 quites/partido, Jean Lucas 1.6 quites/partido | Chapecoense-sc: Camilo 2.29 quites/partido, Higor Meritão 2.0 quites/partido, Bruno Pacheco 1.56 quites/partido"
-  },
-  {
-   "local": "Fluminense",
-   "visitante": "RB Bragantino",
-   "gole": "John Kennedy 41.1% &middot; I. Pitta 29.7%",
-   "remates": "Fluminense: John Kennedy 2.0 remates totales (1.53 a puerta), J. Savarino 1.67 remates totales (0.93 a puerta), A. Canobbio 1.45 remates totales (0.82 a puerta) | RB Bragantino: Lucas Barbosa 2.06 remates totales (1.06 a puerta), Davi Gomes 2.0 remates totales (1.0 a puerta), I. Pitta 1.88 remates totales (0.71 a puerta)",
-   "tarjetas": "Fluminense: Nonato 0.5 amarillas/partido, Alisson 0.38 amarillas/partido, J. Millán 0.33 amarillas/partido | RB Bragantino: Juninho Capixaba 0.56 amarillas/partido, Alix 0.33 amarillas/partido, Cauê Nascimento Santos 0.33 amarillas/partido",
-   "asistencias": "Fluminense: L. Acosta 0.29 asistencias/partido, Renê 0.18 asistencias/partido, Guga 0.18 asistencias/partido | RB Bragantino: Marcelinho 0.25 asistencias/partido, Henry Mosquera 0.21 asistencias/partido, A. Sant&apos;Anna 0.14 asistencias/partido",
-   "faltas": "Fluminense: J. Millán 2.0 faltas/partido, R. Castillo 1.67 faltas/partido, Hércules 1.62 faltas/partido | RB Bragantino: Juninho Capixaba 2.0 faltas/partido, Lucas Barbosa 2.0 faltas/partido, Alix 1.87 faltas/partido",
-   "quites": "Fluminense: Nonato 2.17 quites/partido, Renê 2.09 quites/partido, A. Canobbio 1.73 quites/partido | RB Bragantino: Juninho Capixaba 2.06 quites/partido, Ryan Tavares 2.0 quites/partido, Lucas Barbosa 1.75 quites/partido"
-  },
-  {
-   "local": "Mirassol",
-   "visitante": "Gremio",
-   "gole": "Carlos Vinícius 41.1%",
-   "remates": "Mirassol: Nathan Fogaça 1.7 remates totales (1.0 a puerta), Negueba 1.44 remates totales (0.56 a puerta), Tiquinho Soares 1.43 remates totales (0.57 a puerta) | Gremio: Carlos Vinícius 1.41 remates totales (1.12 a puerta), F. Amuzu 1.38 remates totales (0.5 a puerta), Tetê 1.29 remates totales (0.5 a puerta)",
-   "tarjetas": "Mirassol: José Aldo 0.47 amarillas/partido, Negueba 0.44 amarillas/partido, Lucas Oliveira 0.43 amarillas/partido | Gremio: Riquelme Freitas 0.5 amarillas/partido, André Henrique 0.4 amarillas/partido, Dodi 0.33 amarillas/partido",
-   "asistencias": "Mirassol: Alesson 0.24 asistencias/partido, Gabriel Pires 0.14 asistencias/partido, Willian Machado 0.07 asistencias/partido | Gremio: F. Amuzu 0.19 asistencias/partido, Gustavo Martins 0.18 asistencias/partido, Marlon 0.17 asistencias/partido",
-   "faltas": "Mirassol: Igor Formiga 1.57 faltas/partido, José Aldo 1.47 faltas/partido, Denilson 1.4 faltas/partido | Gremio: L. Pérez 1.8 faltas/partido, Pedro Gabriel 1.56 faltas/partido, Viery 1.54 faltas/partido",
-   "quites": "Mirassol: Igor Formiga 2.71 quites/partido, Alesson 1.82 quites/partido, Daniel Borges 1.6 quites/partido | Gremio: Marlon 3.33 quites/partido, Viery 2.23 quites/partido, Luis Eduardo 2.0 quites/partido"
-  },
-  {
-   "local": "Fortaleza EC",
-   "visitante": "Novorizontino",
-   "gole": "Robson 41.1% &middot; J. Miritello 30.0%",
-   "remates": "Fortaleza EC: J. Miritello 1.93 remates totales (1.29 a puerta), Maílton 1.83 remates totales (0.83 a puerta), Luiz Fernando 1.6 remates totales (0.73 a puerta) | Novorizontino: Robson 1.53 remates totales (0.94 a puerta), Juninho 1.25 remates totales (0.69 a puerta), Matheus Bianqui 1.17 remates totales (0.33 a puerta)",
-   "tarjetas": "Fortaleza EC: Lucas Emanoel 0.5 amarillas/partido, Rodriguinho 0.36 amarillas/partido, Maílton 0.33 amarillas/partido | Novorizontino: N. Castrillón 0.45 amarillas/partido, Gabriel Bahia 0.33 amarillas/partido, Diego Galo 0.29 amarillas/partido",
-   "asistencias": "Fortaleza EC: Kayke 0.33 asistencias/partido, Paulo Baya 0.12 asistencias/partido, Pierre 0.11 asistencias/partido | Novorizontino: Romulo 0.35 asistencias/partido, Reidiney 0.25 asistencias/partido, Juninho 0.19 asistencias/partido",
-   "faltas": "Fortaleza EC: Kayke 2.0 faltas/partido, Pierre 1.78 faltas/partido, Lucas Gazal 1.53 faltas/partido | Novorizontino: Patrick 1.69 faltas/partido, Reidiney 1.5 faltas/partido, Maykon 1.42 faltas/partido",
-   "quites": "Fortaleza EC: Pierre 1.78 quites/partido, Mauricio Junior 1.73 quites/partido, Lucas Sasha 1.67 quites/partido | Novorizontino: Reidiney 2.75 quites/partido, Diego Mathias 2.0 quites/partido, Sander 2.0 quites/partido"
-  },
-  {
-   "local": "Londrina",
-   "visitante": "Botafogo SP",
-   "gole": "Bruno Santos 49.7% &middot; Everton Morelli 35.5% &middot; Hygor 34.1%",
-   "remates": "Londrina: Bruno Santos 2.19 remates totales (1.19 a puerta), Iago Teles 2.08 remates totales (1.08 a puerta), Lucas Marques 0.79 remates totales (0.5 a puerta) | Botafogo SP: Everton Morelli 1.81 remates totales (0.69 a puerta), Hygor 1.58 remates totales (0.92 a puerta), Patrick Brey 0.87 remates totales (0.53 a puerta)",
-   "tarjetas": "Londrina: Kevyn 0.44 amarillas/partido, Fabiano 0.4 amarillas/partido, Iago Teles 0.38 amarillas/partido | Botafogo SP: Felipe Vieira 0.57 amarillas/partido, Márcio Carlos Maranhão 0.4 amarillas/partido, Matheus Sales 0.36 amarillas/partido",
-   "asistencias": "Londrina: Victor Hugo 0.31 asistencias/partido, Iago Teles 0.23 asistencias/partido, Bruno Santos 0.19 asistencias/partido | Botafogo SP: Rafael Gava 0.33 asistencias/partido, Patrick Brey 0.2 asistencias/partido, Wesley Pinheiro Santos 0.14 asistencias/partido",
-   "faltas": "Londrina: Iago Teles 1.85 faltas/partido, Thalis 1.31 faltas/partido, Kevyn 1.22 faltas/partido | Botafogo SP: Patrick Brey 1.87 faltas/partido, Carlão 1.75 faltas/partido, Guilherme Mariano 1.67 faltas/partido",
-   "quites": "Londrina: Victor Hugo 1.62 quites/partido, Lucas Marques 1.57 quites/partido, Heron 1.57 quites/partido | Botafogo SP: Patrick Brey 2.07 quites/partido, Marco Antônio 2.0 quites/partido, Ericson 1.8 quites/partido"
-  },
-  {
-   "local": "Nashville SC",
-   "visitante": "Atlanta United FC",
-   "gole": "S. Surridge 67.5%",
-   "remates": "Nashville SC: S. Surridge 2.12 remates totales (1.88 a puerta), H. Mukhtar 2.0 remates totales (1.29 a puerta), W. Madrigal 1.29 remates totales (0.57 a puerta) | Atlanta United FC: A. Miranchuk 1.38 remates totales (0.77 a puerta), E. Latte Lath 1.31 remates totales (0.38 a puerta), S. Lobzhanidze 1.31 remates totales (0.85 a puerta)",
-   "tarjetas": "Nashville SC: D. Lovitz 0.29 amarillas/partido, B. Acosta 0.29 amarillas/partido, A. Najar 0.27 amarillas/partido | Atlanta United FC: R. Hernández 0.5 amarillas/partido, T. Jacob 0.42 amarillas/partido, S. Gregersen 0.33 amarillas/partido",
-   "asistencias": "Nashville SC: C. Espinoza 0.43 asistencias/partido, P. Yazbek 0.3 asistencias/partido, H. Mukhtar 0.29 asistencias/partido | Atlanta United FC: M. Almirón 0.25 asistencias/partido, E. Báez 0.17 asistencias/partido, E. Latte Lath 0.15 asistencias/partido",
-   "faltas": "Nashville SC: D. Lovitz 1.29 faltas/partido, W. Madrigal 1.14 faltas/partido, A. Qasem 1.14 faltas/partido | Atlanta United FC: R. Hernández 4.5 faltas/partido, M. Galarza 1.8 faltas/partido, C. Sanchez 1.69 faltas/partido",
-   "quites": "Nashville SC: M. Woledzi 1.86 quites/partido, M. Corcoran 1.73 quites/partido, E. Tagseth 1.67 quites/partido | Atlanta United FC: M. Galarza 2.6 quites/partido, T. Jacob 2.58 quites/partido, T. Muyumba 2.21 quites/partido"
-  },
-  {
    "local": "Los Angeles Galaxy",
    "visitante": "Los Angeles FC",
    "gole": "",
