@@ -5,6 +5,23 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "18/07/26",
+    partido:    "Monterrey vs Santos Laguna",
+    liga:       "Liga MX",
+    prediccion: "Victoria Local",
+    cuota:      "1.59",
+    hora:       "20:05 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "62",
+    sharpscore: "64",
+    cuota_betplay: "",
+    cuota_justa:   "",
+    valor_real:    "",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "18/07/26",
     partido:    "France vs England",
     liga:       "FIFA Mundial 2026",
     prediccion: "Draw No Bet Local",
