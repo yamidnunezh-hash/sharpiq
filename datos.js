@@ -18,7 +18,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "17/07/26",
@@ -35,7 +35,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "16/07/26",
@@ -2502,6 +2502,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "17/07/26",
+    partido:    "Nashville SC vs Atlanta United FC",
+    liga:       "MLS",
+    prediccion: "Victoria Local",
+    cuota:      "1.59",
+    prob:       "62",
+    resultado:  "win"
+  },
+  {
+    fecha:      "17/07/26",
+    partido:    "Nashville SC vs Atlanta United FC",
+    liga:       "MLS",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.68",
+    prob:       "59",
+    resultado:  "loss"
+  },
   {
     fecha:      "16/07/26",
     partido:    "St. Louis City SC vs Sporting Kansas City",
