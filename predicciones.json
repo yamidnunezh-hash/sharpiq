@@ -99,7 +99,7 @@
         "corners_under_8_0": 2.64,
         "corners_under_8_0_casa": "Pinnacle",
         "pinnacle_corners_under_8_0": 2.64,
-        "corners_over_8_5": 1.67,
+        "corners_over_8_5": 1.66,
         "corners_over_8_5_casa": "Betfair",
         "pinnacle_corners_over_8_5": 1.62,
         "corners_under_8_5": 2.38,
@@ -607,13 +607,13 @@
           "mercado_nombre": "Corners Under 8"
         },
         "corners_over_8_5": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": -0.038,
+          "ev_porcentaje": -3.8,
+          "ev_pinn": -3.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.67,
+          "cuota": 1.66,
           "casa": "Betfair",
           "pinn_prob": 57.9,
           "mercado_nombre": "Corners Over 8.5"
@@ -10604,7 +10604,7 @@
         "2": 2.04,
         "2_casa": "Betfair",
         "pinnacle_2": 1.98,
-        "X": 3.9,
+        "X": 3.95,
         "X_casa": "Betfair",
         "pinnacle_X": 3.78,
         "over275": 1.84,
@@ -10778,13 +10778,13 @@
           "pinn_prob": 48.1
         },
         "empate": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
+          "value": -0.005,
+          "ev_porcentaje": -0.5,
+          "ev_pinn": -0.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.9,
+          "cuota": 3.95,
           "casa": "Betfair",
           "pinn_prob": 25.2
         },
@@ -11531,7 +11531,7 @@
         "1_casa": "Betfair",
         "pinnacle_1": 1.55,
         "2": 5.3,
-        "2_casa": "Unibet",
+        "2_casa": "Betfair",
         "pinnacle_2": 5.23,
         "X": 4.53,
         "X_casa": "Pinnacle",
@@ -11703,7 +11703,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 5.3,
-          "casa": "Unibet",
+          "casa": "Betfair",
           "pinn_prob": 18.1
         },
         "empate": {
@@ -15251,7 +15251,7 @@
         "Pittsburgh Pirates": 2.14,
         "Over 7.5": 1.96,
         "Under 7.5": 1.89,
-        "Cleveland Guardians (-1.5)": 2.8,
+        "Cleveland Guardians (-1.5)": 2.68,
         "Pittsburgh Pirates (+1.5)": 1.51
       },
       "probabilidades": {
@@ -15309,13 +15309,13 @@
           "mercado_nombre": "Under 7.5"
         },
         "spread_cleveland_guardians_m1_5": {
-          "value": 0.001,
-          "ev_porcentaje": 0.1,
-          "ev_pinn": 0.1,
+          "value": -0.042,
+          "ev_porcentaje": -4.2,
+          "ev_pinn": -4.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.8,
+          "cuota": 2.68,
           "casa": "FanDuel",
           "pinn_prob": 35.8,
           "mercado_nombre": "Cleveland Guardians (-1.5)"
@@ -15334,9 +15334,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Cleveland Guardians (-1.5)",
-        "prob": 35.8,
-        "ev": 0.1
+        "mercado": "Cleveland Guardians",
+        "prob": 54.2,
+        "ev": -1.9
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -16330,7 +16330,7 @@
         "Cleveland Guardians": 2.01,
         "Pittsburgh Pirates": 1.96,
         "Over 8.0": 1.88,
-        "Under 8.0": 1.98,
+        "Under 8.0": 2.0,
         "Cleveland Guardians (+1.5)": 1.57,
         "Pittsburgh Pirates (-1.5)": 2.6
       },
@@ -16377,14 +16377,14 @@
           "mercado_nombre": "Over 8.0"
         },
         "under_8_0": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
+          "value": -0.008,
+          "ev_porcentaje": -0.8,
+          "ev_pinn": -0.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.98,
-          "casa": "DraftKings",
+          "cuota": 2.0,
+          "casa": "BetMGM",
           "pinn_prob": 49.6,
           "mercado_nombre": "Under 8.0"
         },
@@ -16746,7 +16746,7 @@
         "Over 8.0": 1.88,
         "Under 8.0": 1.95,
         "Detroit Tigers (-1.5)": 1.88,
-        "Los Angeles Angels (+1.5)": 1.97
+        "Los Angeles Angels (+1.5)": 1.98
       },
       "probabilidades": {
         "Detroit Tigers": 64.1,
@@ -16815,14 +16815,14 @@
           "mercado_nombre": "Detroit Tigers (-1.5)"
         },
         "spread_los_angeles_angels_1_5": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.97,
-          "casa": "Unibet",
+          "cuota": 1.98,
+          "casa": "DraftKings",
           "pinn_prob": 48.7,
           "mercado_nombre": "Los Angeles Angels (+1.5)"
         }
@@ -17898,5 +17898,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:01:39"
+  "generado": "16:02:11"
 }
