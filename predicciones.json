@@ -3836,15 +3836,15 @@
           "corners_under13": 70.9
         },
         "tarjetas": {
-          "tarjetas_esperadas": 6.0,
-          "tarjetas_over3": 94.0,
-          "tarjetas_under3": 6.0,
-          "tarjetas_over4": 85.3,
-          "tarjetas_under4": 14.7,
-          "tarjetas_over5": 72.2,
-          "tarjetas_under5": 27.8,
-          "tarjetas_over6": 56.2,
-          "tarjetas_under6": 43.8
+          "tarjetas_esperadas": 6.1,
+          "tarjetas_over3": 94.3,
+          "tarjetas_under3": 5.7,
+          "tarjetas_over4": 85.9,
+          "tarjetas_under4": 14.1,
+          "tarjetas_over5": 73.1,
+          "tarjetas_under5": 26.9,
+          "tarjetas_over6": 57.3,
+          "tarjetas_under6": 42.7
         },
         "handicap": {
           "ah_local_menos05": 49.3,
@@ -3924,50 +3924,50 @@
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_over3": {
-            "prob_modelo": 94.0,
+            "prob_modelo": 94.3,
             "cuota_justa": 1.06,
             "cuota_ref": 1.01,
-            "ev_porcentaje": -5.1,
+            "ev_porcentaje": -4.8,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_under3": {
-            "prob_modelo": 6.0,
-            "cuota_justa": 16.67,
-            "cuota_ref": 15.83,
+            "prob_modelo": 5.7,
+            "cuota_justa": 17.54,
+            "cuota_ref": 16.67,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_over4": {
-            "prob_modelo": 85.3,
-            "cuota_justa": 1.17,
+            "prob_modelo": 85.9,
+            "cuota_justa": 1.16,
             "cuota_ref": 1.11,
-            "ev_porcentaje": -5.3,
+            "ev_porcentaje": -4.7,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_under4": {
-            "prob_modelo": 14.7,
-            "cuota_justa": 6.8,
-            "cuota_ref": 6.46,
+            "prob_modelo": 14.1,
+            "cuota_justa": 7.09,
+            "cuota_ref": 6.74,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_over5": {
-            "prob_modelo": 72.2,
-            "cuota_justa": 1.39,
-            "cuota_ref": 1.32,
-            "ev_porcentaje": -4.7,
+            "prob_modelo": 73.1,
+            "cuota_justa": 1.37,
+            "cuota_ref": 1.3,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_under5": {
-            "prob_modelo": 27.8,
-            "cuota_justa": 3.6,
-            "cuota_ref": 3.42,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 26.9,
+            "cuota_justa": 3.72,
+            "cuota_ref": 3.53,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
@@ -5978,7 +5978,7 @@
         "1": 5.0,
         "1_casa": "Betfair",
         "pinnacle_1": 4.61,
-        "2": 1.79,
+        "2": 1.81,
         "2_casa": "Betfair",
         "pinnacle_2": 1.78,
         "X": 4.0,
@@ -6144,13 +6144,13 @@
           "pinn_prob": 20.8
         },
         "victoria_visita": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.79,
+          "cuota": 1.81,
           "casa": "Betfair",
           "pinn_prob": 53.8
         },
@@ -29879,5 +29879,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:29"
+  "generado": "00:01:55"
 }
