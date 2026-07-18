@@ -51,10 +51,10 @@
         "under30": 2.23,
         "under30_casa": "Pinnacle",
         "pinnacle_under30": 2.23,
-        "over35": 2.24,
+        "over35": 2.22,
         "over35_casa": "Betfair",
         "pinnacle_over35": 2.17,
-        "under35": 1.8,
+        "under35": 1.81,
         "under35_casa": "Betfair",
         "pinnacle_under35": 1.75,
         "over375": 2.46,
@@ -423,24 +423,24 @@
           "pinn_prob": 43.3
         },
         "over35": {
-          "value": 0.0,
-          "ev_porcentaje": 0.0,
-          "ev_pinn": 0.0,
+          "value": -0.009,
+          "ev_porcentaje": -0.9,
+          "ev_pinn": -0.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.24,
+          "cuota": 2.22,
           "casa": "Betfair",
           "pinn_prob": 44.6
         },
         "under35": {
-          "value": -0.004,
-          "ev_porcentaje": -0.4,
-          "ev_pinn": -0.4,
+          "value": 0.002,
+          "ev_porcentaje": 0.2,
+          "ev_pinn": 0.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.8,
+          "cuota": 1.81,
           "casa": "Betfair",
           "pinn_prob": 55.4
         },
@@ -9696,10 +9696,10 @@
       "hora": "14:00",
       "fecha_evento": "2026-07-18",
       "cuotas": {
-        "2": 5.5,
+        "2": 5.6,
         "2_casa": "Betfair",
         "pinnacle_2": 5.25,
-        "1": 1.68,
+        "1": 1.67,
         "1_casa": "Betfair",
         "pinnacle_1": 1.61,
         "X": 4.33,
@@ -9854,24 +9854,24 @@
       "confianza": 80.7,
       "value_bets": {
         "victoria_visita": {
-          "value": 0.005,
-          "ev_porcentaje": 0.5,
-          "ev_pinn": 0.5,
+          "value": 0.023,
+          "ev_porcentaje": 2.3,
+          "ev_pinn": 2.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.5,
+          "cuota": 5.6,
           "casa": "Betfair",
           "pinn_prob": 18.3
         },
         "victoria_local": {
-          "value": 0.001,
-          "ev_porcentaje": 0.1,
-          "ev_pinn": 0.1,
+          "value": -0.005,
+          "ev_porcentaje": -0.5,
+          "ev_pinn": -0.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.68,
+          "cuota": 1.67,
           "casa": "Betfair",
           "pinn_prob": 59.6
         },
@@ -18148,7 +18148,7 @@
         "2": 3.0,
         "2_casa": "Betfair",
         "pinnacle_2": 2.97,
-        "1": 2.4,
+        "1": 2.36,
         "1_casa": "Betfair",
         "pinnacle_1": 2.34,
         "X": 3.85,
@@ -18306,13 +18306,13 @@
           "pinn_prob": 32.6
         },
         "victoria_local": {
-          "value": -0.008,
-          "ev_porcentaje": -0.8,
-          "ev_pinn": -0.8,
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
+          "cuota": 2.36,
           "casa": "Betfair",
           "pinn_prob": 41.3
         },
@@ -19957,7 +19957,7 @@
         "San Diego Padres": 1.95,
         "Over 11.0": 2.0,
         "Under 11.0": 1.89,
-        "Kansas City Royals (+1.5)": 1.67,
+        "Kansas City Royals (+1.5)": 1.68,
         "San Diego Padres (-1.5)": 2.38
       },
       "probabilidades": {
@@ -20015,13 +20015,13 @@
           "mercado_nombre": "Under 11.0"
         },
         "spread_kansas_city_royals_1_5": {
-          "value": -0.002,
-          "ev_porcentaje": -0.2,
-          "ev_pinn": -0.2,
+          "value": 0.004,
+          "ev_porcentaje": 0.4,
+          "ev_pinn": 0.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.67,
+          "cuota": 1.68,
           "casa": "FanDuel",
           "pinn_prob": 59.8,
           "mercado_nombre": "Kansas City Royals (+1.5)"
@@ -20040,9 +20040,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Over 11.0",
-        "prob": 50.0,
-        "ev": 0.0
+        "mercado": "Kansas City Royals (+1.5)",
+        "prob": 59.8,
+        "ev": 0.4
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -21718,5 +21718,5 @@
       "movimiento": null
     }
   ],
-  "generado": "13:54:14"
+  "generado": "13:54:32"
 }
