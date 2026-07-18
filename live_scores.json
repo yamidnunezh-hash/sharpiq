@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-18T16:13:21Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-18T17:16:55Z",
+  "live": [
     {
       "id": "d8bf9cd37db11dd5e36f7b8d846883b4",
       "sport": "baseball_mlb",
@@ -13,9 +12,11 @@
       "hora": "12:11 COT",
       "ts": 1784376660,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "1ac6eaa4fa03ab0a81e5ba09ce7bcaa3",
       "sport": "baseball_mlb",
@@ -205,6 +206,20 @@
       "emoji": "⚽",
       "home": "Atletico Goianiense",
       "away": "Athletic Club (MG)",
+      "fecha": "18/07/26",
+      "hora": "16:00 COT",
+      "ts": 1784390400,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "7a49e7985534a5ff3428740d0b630fd7",
+      "sport": "soccer_fifa_world_cup",
+      "liga": "Mundial FIFA",
+      "emoji": "⚽",
+      "home": "France",
+      "away": "England",
       "fecha": "18/07/26",
       "hora": "16:00 COT",
       "ts": 1784390400,
