@@ -1,39 +1,9 @@
 {
  "partidos": [
   {
-   "local": "Criciuma",
-   "visitante": "Vila Nova",
-   "gole": "Ryan Lima 40.8% &middot; Janderson 26.8%",
-   "remates": "Criciuma: Marcelo Hermes 1.29 remates totales (0.35 a puerta), R. Otero 1.25 remates totales (0.5 a puerta), Waguininho 1.12 remates totales (0.47 a puerta) | Vila Nova: Rafa Silva 2.0 remates totales (1.6 a puerta), Janderson 1.25 remates totales (0.81 a puerta), Marquinhos Gabriel 1.14 remates totales (0.64 a puerta)",
-   "tarjetas": "Criciuma: Bruno Alves 0.33 amarillas/partido, Eduardo 0.33 amarillas/partido, Ruan 0.33 amarillas/partido | Vila Nova: Pedro Romano 0.57 amarillas/partido, Dalberson 0.5 amarillas/partido, Rafa Silva 0.4 amarillas/partido",
-   "asistencias": "Criciuma: Romarinho 0.2 asistencias/partido, Ruan 0.17 asistencias/partido, R. Otero 0.12 asistencias/partido | Vila Nova: Marquinhos Gabriel 0.29 asistencias/partido, Janderson 0.25 asistencias/partido, Enzo 0.2 asistencias/partido",
-   "faltas": "Criciuma: Eduardo 2.11 faltas/partido, Ruan 1.83 faltas/partido, Luciano Castán 1.57 faltas/partido | Vila Nova: Elias 1.89 faltas/partido, João Vieira 1.57 faltas/partido, Dudu 1.47 faltas/partido",
-   "quites": "Criciuma: Ruan 2.0 quites/partido, Eduardo 1.67 quites/partido, Marcelo Hermes 1.53 quites/partido | Vila Nova: Dudu 1.93 quites/partido, Higor 1.44 quites/partido, Caio Marcelo 1.4 quites/partido"
-  },
-  {
-   "local": "Ponte Preta",
-   "visitante": "Goias",
-   "gole": "Anselmo Ramon 26.8%",
-   "remates": "Ponte Preta: Bryan 1.5 remates totales (0.75 a puerta), William Pottker 1.42 remates totales (0.83 a puerta), Miguel 1.0 remates totales (0.29 a puerta) | Goias: Kadu 2.0 remates totales (0.62 a puerta), Gegê 1.5 remates totales (0.7 a puerta), Anselmo Ramon 1.0 remates totales (0.56 a puerta)",
-   "tarjetas": "Ponte Preta: Luis Phelipe 0.5 amarillas/partido, Julio 0.5 amarillas/partido, David Braz 0.4 amarillas/partido | Goias: Nicolas 0.36 amarillas/partido, Luquinhas 0.33 amarillas/partido, Filipe Machado 0.27 amarillas/partido",
-   "asistencias": "Ponte Preta: Luis Phelipe 0.12 asistencias/partido, Brandão 0.1 asistencias/partido, Élvis 0.08 asistencias/partido | Goias: E. García 0.27 asistencias/partido, Diego Caito 0.17 asistencias/partido, Lucas Lima 0.12 asistencias/partido",
-   "faltas": "Ponte Preta: Julio 2.0 faltas/partido, William Pottker 1.67 faltas/partido, R. Saravia 1.67 faltas/partido | Goias: Kadu 1.62 faltas/partido, Luquinhas 1.44 faltas/partido, Luis Fellipe 1.33 faltas/partido",
-   "quites": "Ponte Preta: Julio 3.25 quites/partido, Murilo 2.14 quites/partido, Rodrigo Souza 2.0 quites/partido | Goias: Luquinhas 1.89 quites/partido, Lucas Lima 1.56 quites/partido, Guilherme Baldória 1.25 quites/partido"
-  },
-  {
-   "local": "Sport Recife",
-   "visitante": "Operario-PR",
-   "gole": "Boschilia 43.0% &middot; Chrystian Barletta 41.3% &middot; Perotti 35.5%",
-   "remates": "Sport Recife: Perotti 2.19 remates totales (1.25 a puerta), Chrystian Barletta 2.07 remates totales (1.07 a puerta), Iury Castilho 1.46 remates totales (0.54 a puerta) | Operario-PR: Boschilia 2.06 remates totales (1.06 a puerta), Pablo 1.38 remates totales (0.75 a puerta), Aylon 1.0 remates totales (0.4 a puerta)",
-   "tarjetas": "Sport Recife: Chrystian Barletta 0.33 amarillas/partido, Iury Castilho 0.31 amarillas/partido, Zé Lucas 0.29 amarillas/partido | Operario-PR: J. Cuenú 0.38 amarillas/partido, Klaus 0.38 amarillas/partido, Índio 0.33 amarillas/partido",
-   "asistencias": "Sport Recife: Chrystian Barletta 0.2 asistencias/partido, Marlon 0.17 asistencias/partido, C. de Pena 0.14 asistencias/partido | Operario-PR: Mikael Doka 0.24 asistencias/partido, Pablo 0.19 asistencias/partido, Aylon 0.13 asistencias/partido",
-   "faltas": "Sport Recife: Perotti 1.88 faltas/partido, Zé Marcos 1.38 faltas/partido, Biel 1.38 faltas/partido | Operario-PR: Vinícius Diniz 1.94 faltas/partido, Boschilia 1.5 faltas/partido, Pablo 1.38 faltas/partido",
-   "quites": "Sport Recife: Biel 2.12 quites/partido, Felipinho 1.5 quites/partido, Habraão 1.5 quites/partido | Operario-PR: Matheus Trindade 1.94 quites/partido, Mikael Doka 1.82 quites/partido, Moraes 1.43 quites/partido"
-  },
-  {
    "local": "Atletico Goianiense",
    "visitante": "Athletic Club",
-   "gole": "Ronaldo Tavares 50.3% &middot; Gustavo Coutinho 43.5% &middot; Léo Jacó 23.4%",
+   "gole": "Gustavo Coutinho 43.5% &middot; Ronaldo Tavares 43.3%",
    "remates": "Atletico Goianiense: Gustavo Coutinho 2.29 remates totales (1.36 a puerta), Marrony 1.69 remates totales (0.75 a puerta), Soares Geovany 1.19 remates totales (0.69 a puerta) | Athletic Club: Ronaldo Tavares 2.5 remates totales (1.5 a puerta), Ian Luccas 1.73 remates totales (0.6 a puerta), Max 0.82 remates totales (0.09 a puerta)",
    "tarjetas": "Atletico Goianiense: Cristiano 0.31 amarillas/partido, Gustavo Coutinho 0.29 amarillas/partido, Guilherme Lopes 0.25 amarillas/partido | Athletic Club: Jhonatan 0.36 amarillas/partido, Bruninho 0.31 amarillas/partido, Diogo Batista 0.29 amarillas/partido",
    "asistencias": "Atletico Goianiense: Bruno José 0.25 asistencias/partido, Guilherme Marques 0.23 asistencias/partido, Soares Geovany 0.19 asistencias/partido | Athletic Club: Ruan Assis 0.14 asistencias/partido, Ian Luccas 0.13 asistencias/partido, Zeca 0.12 asistencias/partido",
@@ -43,7 +13,7 @@
   {
    "local": "France",
    "visitante": "England",
-   "gole": "Kylian Mbappé 68.1% &middot; J. Bellingham 57.6% &middot; H. Kane 57.6%",
+   "gole": "Kylian Mbappé 66.8% &middot; J. Bellingham 57.6% &middot; H. Kane 57.6%",
    "remates": "France: Kylian Mbappé 4.29 remates totales (2.71 a puerta), O. Dembélé 1.86 remates totales (1.14 a puerta), M. Olise 1.57 remates totales (0.71 a puerta) | England: H. Kane 2.57 remates totales (1.71 a puerta), J. Bellingham 2.14 remates totales (1.57 a puerta), M. Rashford 1.8 remates totales (0.6 a puerta)",
    "tarjetas": "France: A. Tchouaméni 0.25 amarillas/partido, M. Koné 0.2 amarillas/partido, A. Rabiot 0.17 amarillas/partido | England: J. Quansah 0.5 amarillas/partido, D. Rice 0.33 amarillas/partido, N. O&apos;Reilly 0.14 amarillas/partido",
    "asistencias": "France: M. Olise 0.71 asistencias/partido, Kylian Mbappé 0.43 asistencias/partido, O. Dembélé 0.29 asistencias/partido | England: A. Gordon 0.5 asistencias/partido, B. Saka 0.5 asistencias/partido, D. Rice 0.17 asistencias/partido",
