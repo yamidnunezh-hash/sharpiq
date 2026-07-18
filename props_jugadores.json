@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Los Angeles Galaxy",
-   "visitante": "Los Angeles FC",
-   "gole": "",
-   "remates": "Los Angeles Galaxy: Gabriel Pec 2.79 remates totales (2.07 a puerta), João Klauss 2.12 remates totales (1.5 a puerta), J. Paintsil 1.64 remates totales (0.91 a puerta) | Los Angeles FC: D. Bouanga 2.57 remates totales (1.43 a puerta), Son Heung-Min 1.38 remates totales (0.77 a puerta), D. Martínez 1.14 remates totales (0.71 a puerta)",
-   "tarjetas": "Los Angeles Galaxy: J. Glesnes 0.33 amarillas/partido, R. Ramos 0.33 amarillas/partido, M. Cuevas 0.33 amarillas/partido | Los Angeles FC: Kenny Nielsen 0.33 amarillas/partido, D. Bouanga 0.29 amarillas/partido, R. Raposo 0.29 amarillas/partido",
-   "asistencias": "Los Angeles Galaxy: M. Reus 0.33 asistencias/partido, Gabriel Pec 0.29 asistencias/partido, J. Paintsil 0.18 asistencias/partido | Los Angeles FC: Son Heung-Min 0.62 asistencias/partido, J. Shaffelburg 0.33 asistencias/partido, T. Tillman 0.14 asistencias/partido",
-   "faltas": "Los Angeles Galaxy: C. Garcés 1.3 faltas/partido, João Klauss 1.12 faltas/partido, Gabriel Pec 1.07 faltas/partido | Los Angeles FC: D. Bouanga 2.14 faltas/partido, Sergi Palencia 1.56 faltas/partido, D. Martínez 1.07 faltas/partido",
-   "quites": "Los Angeles Galaxy: C. Garcés 2.3 quites/partido, M. Yamane 1.85 quites/partido, J. Aude 1.75 quites/partido | Los Angeles FC: R. Porteous 1.77 quites/partido, M. Delgado 1.71 quites/partido, S. Eustáquio 1.7 quites/partido"
-  },
-  {
    "local": "Criciuma",
    "visitante": "Vila Nova",
    "gole": "Ryan Lima 48.2% &middot; Janderson 26.8%",
@@ -59,6 +49,16 @@
    "asistencias": "England: A. Gordon 0.5 asistencias/partido, B. Saka 0.5 asistencias/partido, D. Rice 0.17 asistencias/partido",
    "faltas": "England: E. Anderson 1.29 faltas/partido, J. Bellingham 1.29 faltas/partido, H. Kane 1.14 faltas/partido",
    "quites": "England: E. Anderson 2.71 quites/partido, J. Bellingham 2.0 quites/partido, D. Spence 2.0 quites/partido"
+  },
+  {
+   "local": "Spain",
+   "visitante": "Argentina",
+   "gole": "L. Messi 65.0% &middot; Mikel Oyarzabal 51.0%",
+   "remates": "Spain: Mikel Oyarzabal 2.86 remates totales (1.57 a puerta), Lamine Yamal 2.43 remates totales (1.43 a puerta), Pedro Porro 1.4 remates totales (0.6 a puerta) | Argentina: L. Messi 4.0 remates totales (2.57 a puerta), E. Fernández 1.33 remates totales (0.67 a puerta), A. Mac Allister 1.29 remates totales (0.57 a puerta)",
+   "tarjetas": "Spain: Álex Baena 0.17 amarillas/partido, Pau Cubarsí Paredes 0.14 amarillas/partido, Aymeric Laporte 0.14 amarillas/partido | Argentina: J. López 0.5 amarillas/partido, F. Medina 0.25 amarillas/partido, G. Montiel 0.2 amarillas/partido",
+   "asistencias": "Spain: Marcos Llorente 0.33 asistencias/partido, Marc Cucurella 0.29 asistencias/partido, Dani Olmo 0.29 asistencias/partido | Argentina: L. Messi 0.57 asistencias/partido, F. Medina 0.25 asistencias/partido, G. Montiel 0.2 asistencias/partido",
+   "faltas": "Spain: Lamine Yamal 1.71 faltas/partido, Álex Baena 1.5 faltas/partido, Pedro Porro 1.4 faltas/partido | Argentina: G. Simeone 3.0 faltas/partido, C. Romero 1.5 faltas/partido, E. Fernández 1.5 faltas/partido",
+   "quites": "Spain: Rodri 3.14 quites/partido, Pedro Porro 2.4 quites/partido, Marcos Llorente 2.33 quites/partido | Argentina: A. Mac Allister 2.71 quites/partido, C. Romero 2.33 quites/partido, F. Medina 2.0 quites/partido"
   }
  ]
 }
