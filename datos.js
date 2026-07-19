@@ -35,7 +35,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "18/07/26",
@@ -52,7 +52,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "17/07/26",
@@ -2553,6 +2553,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "18/07/26",
+    partido:    "France vs England",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.49",
+    prob:       "66",
+    resultado:  "win"
+  },
+  {
+    fecha:      "18/07/26",
+    partido:    "France vs England",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.47",
+    prob:       "67",
+    resultado:  "loss"
+  },
   {
     fecha:      "18/07/26",
     partido:    "Monterrey vs Santos Laguna",
