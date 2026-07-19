@@ -91,7 +91,7 @@
         "corners_over_6_5_casa": "LiveScore Bet",
         "pinnacle_corners_over_6_5": 1.36,
         "corners_under_6_5": 2.8,
-        "corners_under_6_5_casa": "Virgin Bet",
+        "corners_under_6_5_casa": "LiveScore Bet",
         "pinnacle_corners_under_6_5": 2.74,
         "corners_over_7_0": 1.48,
         "corners_over_7_0_casa": "Pinnacle",
@@ -103,7 +103,7 @@
         "corners_over_7_5_casa": "Pinnacle",
         "pinnacle_corners_over_7_5": 1.71,
         "corners_under_7_5": 2.08,
-        "corners_under_7_5_casa": "Virgin Bet",
+        "corners_under_7_5_casa": "LiveScore Bet",
         "pinnacle_corners_under_7_5": 2.07,
         "corners_over_8_5": 2.38,
         "corners_over_8_5_casa": "Betfair",
@@ -117,8 +117,8 @@
         "corners_under_9_0": 1.43,
         "corners_under_9_0_casa": "Pinnacle",
         "pinnacle_corners_under_9_0": 1.43,
-        "corners_over_9_5": 2.85,
-        "corners_over_9_5_casa": "LiveScore Bet",
+        "corners_over_9_5": 2.84,
+        "corners_over_9_5_casa": "Pinnacle",
         "pinnacle_corners_over_9_5": 2.84,
         "corners_under_9_5": 1.38,
         "corners_under_9_5_casa": "LiveScore Bet",
@@ -578,7 +578,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.8,
-          "casa": "Virgin Bet",
+          "casa": "LiveScore Bet",
           "pinn_prob": 33.2,
           "mercado_nombre": "Corners Under 6.5"
         },
@@ -626,7 +626,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.08,
-          "casa": "Virgin Bet",
+          "casa": "LiveScore Bet",
           "pinn_prob": 45.2,
           "mercado_nombre": "Corners Under 7.5"
         },
@@ -679,14 +679,14 @@
           "mercado_nombre": "Corners Under 9"
         },
         "corners_over_9_5": {
-          "value": -0.091,
-          "ev_porcentaje": -9.1,
-          "ev_pinn": -9.1,
+          "value": -0.094,
+          "ev_porcentaje": -9.4,
+          "ev_pinn": -9.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.85,
-          "casa": "LiveScore Bet",
+          "cuota": 2.84,
+          "casa": "Pinnacle",
           "pinn_prob": 31.9,
           "mercado_nombre": "Corners Over 9.5"
         },
@@ -7952,7 +7952,7 @@
         "Colorado Rockies": 2.25,
         "Over 11.0": 1.91,
         "Under 11.0": 1.93,
-        "Cincinnati Reds (-1.5)": 2.08,
+        "Cincinnati Reds (-1.5)": 2.12,
         "Colorado Rockies (+1.5)": 1.8
       },
       "probabilidades": {
@@ -8010,13 +8010,13 @@
           "mercado_nombre": "Under 11.0"
         },
         "spread_cincinnati_reds_m1_5": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.016,
+          "ev_porcentaje": -1.6,
+          "ev_pinn": -1.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.08,
+          "cuota": 2.12,
           "casa": "FanDuel",
           "pinn_prob": 46.4,
           "mercado_nombre": "Cincinnati Reds (-1.5)"
@@ -8035,9 +8035,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Cincinnati Reds",
-        "prob": 56.7,
-        "ev": -2.5
+        "mercado": "Cincinnati Reds (-1.5)",
+        "prob": 46.4,
+        "ev": -1.6
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -8797,5 +8797,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:01:08"
+  "generado": "12:01:19"
 }
