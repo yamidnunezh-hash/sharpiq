@@ -1,35 +1,6 @@
 {
-  "updated": "2026-07-19T04:38:48Z",
-  "live": [
-    {
-      "id": "ded1e582d76a9362d25395cef8921336",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Athletics",
-      "away": "Washington Nationals",
-      "fecha": "18/07/26",
-      "hora": "21:06 COT",
-      "ts": 1784408760,
-      "completed": false,
-      "score_home": "14",
-      "score_away": "0"
-    },
-    {
-      "id": "9933e32d7b9c200975b046306d80856d",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Los Angeles Angels",
-      "away": "Detroit Tigers",
-      "fecha": "18/07/26",
-      "hora": "21:08 COT",
-      "ts": 1784408880,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "7"
-    }
-  ],
+  "updated": "2026-07-19T07:13:40Z",
+  "live": [],
   "upcoming": [
     {
       "id": "9428684a7aeb42f6f3b5c0c9613c66ca",
@@ -244,6 +215,34 @@
   ],
   "finished": [
     {
+      "id": "9933e32d7b9c200975b046306d80856d",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Angels",
+      "away": "Detroit Tigers",
+      "fecha": "18/07/26",
+      "hora": "21:08 COT",
+      "ts": 1784408880,
+      "completed": true,
+      "score_home": "0",
+      "score_away": "7"
+    },
+    {
+      "id": "ded1e582d76a9362d25395cef8921336",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Washington Nationals",
+      "fecha": "18/07/26",
+      "hora": "21:06 COT",
+      "ts": 1784408760,
+      "completed": true,
+      "score_home": "15",
+      "score_away": "1"
+    },
+    {
       "id": "1b7f4086b3b3d2a039917465354f741b",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -354,34 +353,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "4"
-    },
-    {
-      "id": "af96de180c395ddeb2a1600317946494",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Kansas City Royals",
-      "away": "San Diego Padres",
-      "fecha": "18/07/26",
-      "hora": "15:11 COT",
-      "ts": 1784387460,
-      "completed": true,
-      "score_home": "6",
-      "score_away": "1"
-    },
-    {
-      "id": "31b5f1a35ef3661e5911f39a57d11ac5",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Milwaukee Brewers",
-      "away": "Miami Marlins",
-      "fecha": "18/07/26",
-      "hora": "15:11 COT",
-      "ts": 1784387460,
-      "completed": true,
-      "score_home": "8",
-      "score_away": "6"
     }
   ]
 }
