@@ -4,6 +4,23 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "19/07/26",
+    partido:    "Los Angeles Angels vs Detroit Tigers",
+    liga:       "MLB",
+    prediccion: "Under 9.0",
+    cuota:      "1.96",
+    hora:       "15:08 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.2",
+    prob:       "52",
+    sharpscore: "59",
+    cuota_betplay: "",
+    cuota_justa:   "",
+    valor_real:    "",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "18/07/26",
     partido:    "Monterrey vs Santos Laguna",
     liga:       "Liga MX",
