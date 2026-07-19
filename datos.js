@@ -18,7 +18,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "push"
   },
   {
     fecha:      "19/07/26",
@@ -35,7 +35,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "19/07/26",
@@ -52,7 +52,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "18/07/26",
@@ -2604,6 +2604,33 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "19/07/26",
+    partido:    "Los Angeles Angels vs Detroit Tigers",
+    liga:       "MLB",
+    prediccion: "Under 9.0",
+    cuota:      "1.96",
+    prob:       "52",
+    resultado:  "win"
+  },
+  {
+    fecha:      "19/07/26",
+    partido:    "Spain vs Argentina",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.69",
+    prob:       "59",
+    resultado:  "win"
+  },
+  {
+    fecha:      "19/07/26",
+    partido:    "Spain vs Argentina",
+    liga:       "FIFA Mundial 2026",
+    prediccion: "Draw No Bet Local",
+    cuota:      "1.61",
+    prob:       "61",
+    resultado:  "push"
+  },
   {
     fecha:      "18/07/26",
     partido:    "France vs England",
