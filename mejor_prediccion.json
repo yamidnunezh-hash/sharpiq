@@ -1,118 +1,118 @@
 {
-  "partido": "Athletics vs Washington Nationals",
+  "partido": "New York Yankees vs Los Angeles Dodgers",
   "liga": "MLB",
-  "local": "Athletics",
-  "visitante": "Washington Nationals",
-  "prediccion": "Washington Nationals (-1.5)",
+  "local": "New York Yankees",
+  "visitante": "Los Angeles Dodgers",
+  "prediccion": "Los Angeles Dodgers",
   "mercado_key": null,
   "cuota": "",
-  "hora_utc": "20:06",
-  "hora_cot": "15:06 COT",
+  "hora_utc": "23:21",
+  "hora_cot": "18:21 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 58.0,
+  "confianza": 53.7,
   "pred_completa": {
-    "id": "ab8576134a3706666341fe754bad1d8f",
-    "comienzo": "2026-07-19T20:06:00Z",
-    "local": "Athletics",
-    "visitante": "Washington Nationals",
+    "id": "e7ba65ff4e90d9960a0619d266c10ff5",
+    "comienzo": "2026-07-19T23:21:00Z",
+    "local": "New York Yankees",
+    "visitante": "Los Angeles Dodgers",
     "liga": "MLB",
     "liga_code": "baseball_mlb",
     "deporte": "MLB",
     "deporte_emoji": "⚾",
-    "hora": "20:06",
+    "hora": "23:21",
     "fecha_evento": "2026-07-19",
     "cuotas": {
-      "Athletics": 2.33,
-      "Washington Nationals": 1.69,
-      "Over 10.5": 1.87,
-      "Under 10.5": 2.0,
-      "Athletics (+1.5)": 1.85,
-      "Washington Nationals (-1.5)": 2.06
+      "Los Angeles Dodgers": 1.83,
+      "New York Yankees": 2.12,
+      "Over 9.0": 1.93,
+      "Under 9.0": 1.95,
+      "Los Angeles Dodgers (-1.5)": 2.26,
+      "New York Yankees (+1.5)": 1.67
     },
     "probabilidades": {
-      "Athletics": 42.0,
-      "Washington Nationals": 58.0
+      "Los Angeles Dodgers": 53.7,
+      "New York Yankees": 46.3
     },
-    "confianza": 58.0,
+    "confianza": 53.7,
     "value_bets": {
-      "Athletics": {
-        "value": -0.02,
-        "ev_porcentaje": -2.0,
-        "ev_pinn": -2.0,
+      "Los Angeles Dodgers": {
+        "value": -0.018,
+        "ev_porcentaje": -1.8,
+        "ev_pinn": -1.8,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.33,
+        "cuota": 1.83,
         "casa": "Pinnacle",
-        "pinn_prob": 42.0,
-        "mercado_nombre": "Athletics"
+        "pinn_prob": 53.7,
+        "mercado_nombre": "Los Angeles Dodgers"
       },
-      "Washington Nationals": {
-        "value": -0.02,
-        "ev_porcentaje": -2.0,
-        "ev_pinn": -2.0,
+      "New York Yankees": {
+        "value": -0.018,
+        "ev_porcentaje": -1.8,
+        "ev_pinn": -1.8,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.69,
+        "cuota": 2.12,
         "casa": "Pinnacle",
-        "pinn_prob": 58.0,
-        "mercado_nombre": "Washington Nationals"
+        "pinn_prob": 46.3,
+        "mercado_nombre": "New York Yankees"
       },
-      "over_10_5": {
-        "value": -0.043,
-        "ev_porcentaje": -4.3,
-        "ev_pinn": -4.3,
+      "over_9_0": {
+        "value": -0.028,
+        "ev_porcentaje": -2.8,
+        "ev_pinn": -2.8,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.87,
+        "cuota": 1.93,
         "casa": "Unibet",
-        "pinn_prob": 51.2,
-        "mercado_nombre": "Over 10.5"
+        "pinn_prob": 50.4,
+        "mercado_nombre": "Over 9.0"
       },
-      "under_10_5": {
-        "value": -0.023,
-        "ev_porcentaje": -2.3,
-        "ev_pinn": -2.3,
+      "under_9_0": {
+        "value": -0.033,
+        "ev_porcentaje": -3.3,
+        "ev_pinn": -3.3,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.0,
-        "casa": "DraftKings",
-        "pinn_prob": 48.8,
-        "mercado_nombre": "Under 10.5"
-      },
-      "spread_athletics_1_5": {
-        "value": -0.044,
-        "ev_porcentaje": -4.4,
-        "ev_pinn": -4.4,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.85,
+        "cuota": 1.95,
         "casa": "BetMGM",
-        "pinn_prob": 51.7,
-        "mercado_nombre": "Athletics (+1.5)"
+        "pinn_prob": 49.6,
+        "mercado_nombre": "Under 9.0"
       },
-      "spread_washington_nationals_m1_5": {
-        "value": -0.004,
-        "ev_porcentaje": -0.4,
-        "ev_pinn": -0.4,
+      "spread_los_angeles_dodgers_m1_5": {
+        "value": -0.056,
+        "ev_porcentaje": -5.6,
+        "ev_pinn": -5.6,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.06,
+        "cuota": 2.26,
         "casa": "FanDuel",
-        "pinn_prob": 48.3,
-        "mercado_nombre": "Washington Nationals (-1.5)"
+        "pinn_prob": 41.8,
+        "mercado_nombre": "Los Angeles Dodgers (-1.5)"
+      },
+      "spread_new_york_yankees_1_5": {
+        "value": -0.028,
+        "ev_porcentaje": -2.8,
+        "ev_pinn": -2.8,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.67,
+        "casa": "DraftKings",
+        "pinn_prob": 58.2,
+        "mercado_nombre": "New York Yankees (+1.5)"
       }
     },
     "prediccion_principal": {
-      "mercado": "Washington Nationals (-1.5)",
-      "prob": 48.3,
-      "ev": -0.4
+      "mercado": "Los Angeles Dodgers",
+      "prob": 53.7,
+      "ev": -1.8
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
