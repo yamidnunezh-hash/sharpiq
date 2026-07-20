@@ -1,14 +1,81 @@
 {
  "partidos": [
   {
-   "local": "Spain",
-   "visitante": "Argentina",
-   "gole": "L. Messi 58.3% &middot; Mikel Oyarzabal 51.0%",
-   "remates": "Spain: Mikel Oyarzabal 2.86 remates totales (1.57 a puerta), Lamine Yamal 2.43 remates totales (1.43 a puerta), Pedro Porro 1.4 remates totales (0.6 a puerta) | Argentina: L. Messi 4.0 remates totales (2.57 a puerta), E. Fernández 1.33 remates totales (0.67 a puerta), A. Mac Allister 1.29 remates totales (0.57 a puerta)",
-   "tarjetas": "Spain: Álex Baena 0.17 amarillas/partido, Pau Cubarsí Paredes 0.14 amarillas/partido, Aymeric Laporte 0.14 amarillas/partido | Argentina: J. López 0.5 amarillas/partido, F. Medina 0.25 amarillas/partido, G. Montiel 0.2 amarillas/partido",
-   "asistencias": "Spain: Marcos Llorente 0.33 asistencias/partido, Marc Cucurella 0.29 asistencias/partido, Dani Olmo 0.29 asistencias/partido | Argentina: L. Messi 0.57 asistencias/partido, J. López 0.5 asistencias/partido, F. Medina 0.25 asistencias/partido",
-   "faltas": "Spain: Lamine Yamal 1.71 faltas/partido, Álex Baena 1.5 faltas/partido, Pedro Porro 1.4 faltas/partido | Argentina: G. Simeone 3.0 faltas/partido, C. Romero 1.5 faltas/partido, E. Fernández 1.5 faltas/partido",
-   "quites": "Spain: Rodri 3.14 quites/partido, Pedro Porro 2.4 quites/partido, Marcos Llorente 2.33 quites/partido | Argentina: A. Mac Allister 2.71 quites/partido, C. Romero 2.33 quites/partido, F. Medina 2.0 quites/partido"
+   "local": "Ararat-Armenia",
+   "visitante": "Shamrock Rovers",
+   "gole": "D. Watts 39.3% &middot; J. Byrne 39.3% &middot; Z. Shaghoyan 39.3%",
+   "tarjetas": "Ararat-Armenia: E. Grigoryan 0.5 amarillas/partido, França 0.5 amarillas/partido, Zidane Banjaqui 0.5 amarillas/partido | Shamrock Rovers: D. Watts 0.5 amarillas/partido, J. McGovern 0.5 amarillas/partido",
+   "asistencias": "Ararat-Armenia: Zidane Banjaqui 0.5 asistencias/partido | Shamrock Rovers: D. Watts 1.0 asistencias/partido, J. Mulraney 0.5 asistencias/partido, J. Byrne 0.5 asistencias/partido"
+  },
+  {
+   "local": "Sabah FA",
+   "visitante": "KuPS",
+   "gole": "J. Mickels 39.3%",
+   "tarjetas": "Sabah FA: A. Zedadka 0.5 amarillas/partido, J. Mickels 0.5 amarillas/partido, I. Lepinjica 0.5 amarillas/partido",
+   "asistencias": "Sabah FA: T. Puchacz 0.5 asistencias/partido, A. Malouda 0.5 asistencias/partido"
+  },
+  {
+   "local": "KI Klaksvik",
+   "visitante": "Kauno Žalgiris",
+   "gole": "V. Slivka 63.2% &middot; A. Benchaib 39.3%",
+   "tarjetas": "Kauno Žalgiris: A. Tolordava 0.5 amarillas/partido, J. Moutachy 0.5 amarillas/partido, A. Benchaib 0.5 amarillas/partido",
+   "asistencias": "Kauno Žalgiris: J. Moutachy 0.5 asistencias/partido, A. Benchaib 0.5 asistencias/partido"
+  },
+  {
+   "local": "Larne",
+   "visitante": "FK Crvena Zvezda",
+   "gole": "M. Ridley 39.3% &middot; D. Bent 39.3%",
+   "tarjetas": "Larne: S. Graham 0.5 amarillas/partido"
+  },
+  {
+   "local": "Vikingur Reykjavik",
+   "visitante": "Hapoel Beer Sheva",
+   "gole": "D. Hafsteinsson 39.3% &middot; G. Sigurðsson 39.3%",
+   "remates": "Vikingur Reykjavik: D. Hafsteinsson 1.0 remates totales (0.5 a puerta), G. Sigurðsson 1.0 remates totales (0.5 a puerta), S. Þorkelsson 0.5 remates totales (0.0 a puerta)",
+   "tarjetas": "Vikingur Reykjavik: O. Ekroth 0.5 amarillas/partido, T. Ibrahimagic 0.5 amarillas/partido, Ó. Borgþórsson 0.5 amarillas/partido",
+   "asistencias": "Vikingur Reykjavik: D. Hafsteinsson 0.5 asistencias/partido, G. Sigurðsson 0.5 asistencias/partido",
+   "faltas": "Vikingur Reykjavik: D. Hafsteinsson 1.0 faltas/partido, G. Sigurðsson 1.0 faltas/partido, Ó. Borgþórsson 1.0 faltas/partido",
+   "quites": "Vikingur Reykjavik: G. Sigurðsson 2.0 quites/partido, Ó. Borgþórsson 1.5 quites/partido, H. Guðjónsson 1.0 quites/partido"
+  },
+  {
+   "local": "Club Nacional",
+   "visitante": "Tigre",
+   "gole": "D. Romero 45.1% &middot; I. Russo 28.3%",
+   "remates": "Tigre: D. Romero 2.4 remates totales (1.0 a puerta), I. Russo 1.67 remates totales (0.67 a puerta), P. Martínez 1.33 remates totales (0.33 a puerta)",
+   "tarjetas": "Tigre: N. Banegas 0.5 amarillas/partido, R. Arias 0.5 amarillas/partido, J. Elías 0.4 amarillas/partido",
+   "asistencias": "Tigre: J. Mosqueira 0.5 asistencias/partido, E. Cabrera 0.25 asistencias/partido, R. Arias 0.25 asistencias/partido",
+   "faltas": "Tigre: I. Russo 1.83 faltas/partido, R. Arias 1.75 faltas/partido, B. Leyes 1.67 faltas/partido",
+   "quites": "Tigre: B. Leyes 3.5 quites/partido, N. Banegas 3.0 quites/partido, F. Álvarez 2.2 quites/partido"
+  },
+  {
+   "local": "Atletico-MG",
+   "visitante": "Bahia",
+   "gole": "Luciano Juba 37.3%",
+   "remates": "Atletico-MG: T. Cuello 1.47 remates totales (0.53 a puerta), Hulk 1.42 remates totales (0.58 a puerta), Victor Hugo 1.0 remates totales (0.6 a puerta) | Bahia: Luciano Juba 1.27 remates totales (0.8 a puerta), C. Olivera 1.25 remates totales (0.88 a puerta), Willian José 1.0 remates totales (0.47 a puerta)",
+   "tarjetas": "Atletico-MG: I. Román 0.5 amarillas/partido, Lyanco 0.43 amarillas/partido, Ruan Tressoldi 0.4 amarillas/partido | Bahia: Kanu 0.67 amarillas/partido, João Paulo 0.5 amarillas/partido, Zé Guilherme 0.5 amarillas/partido",
+   "asistencias": "Atletico-MG: Hulk 0.25 asistencias/partido, Bernard 0.13 asistencias/partido, Renan Lodi 0.12 asistencias/partido | Bahia: Éverton Ribeiro 0.29 asistencias/partido, Gilberto 0.14 asistencias/partido, Jean Lucas 0.12 asistencias/partido",
+   "faltas": "Atletico-MG: I. Román 2.0 faltas/partido, A. Franco 1.67 faltas/partido, Renan Lodi 1.65 faltas/partido | Bahia: N. Acevedo 2.44 faltas/partido, Jean Lucas 1.75 faltas/partido, Roman Gomez 1.5 faltas/partido",
+   "quites": "Atletico-MG: I. Román 1.67 quites/partido, A. Franco 1.6 quites/partido, Natanael 1.55 quites/partido | Bahia: N. Acevedo 2.69 quites/partido, Zé Guilherme 2.5 quites/partido, Roman Gomez 1.75 quites/partido"
+  },
+  {
+   "local": "Avai",
+   "visitante": "America Mineiro",
+   "gole": "",
+   "remates": "Avai: Daniel Penha 1.23 remates totales (0.77 a puerta), Jean Lucas 0.82 remates totales (0.35 a puerta), Thayllon 0.78 remates totales (0.17 a puerta) | America Mineiro: Guilherme Parede 1.5 remates totales (1.5 a puerta), G. Mastriani 1.35 remates totales (0.88 a puerta), M. Segovia 1.31 remates totales (0.62 a puerta)",
+   "tarjetas": "Avai: DG 0.56 amarillas/partido, Paulo Vitor 0.4 amarillas/partido, Guilherme Vargas 0.38 amarillas/partido | America Mineiro: Rafael Barcelos 0.5 amarillas/partido, Alex Silva 0.5 amarillas/partido, Otavio Goncalves 0.33 amarillas/partido",
+   "asistencias": "Avai: J. Sousa Rocha Leandro 0.5 asistencias/partido, Jean Lucas 0.18 asistencias/partido, Thayllon 0.17 asistencias/partido | America Mineiro: M. Segovia 0.19 asistencias/partido, Paulinho 0.14 asistencias/partido, Willian 0.13 asistencias/partido",
+   "faltas": "Avai: Wallison 1.93 faltas/partido, Zé Ricardo 1.71 faltas/partido, Luiz Henrique 1.59 faltas/partido | America Mineiro: Rafael Barcelos 1.67 faltas/partido, Alex Silva 1.5 faltas/partido, Dalbert Henrique 1.46 faltas/partido",
+   "quites": "Avai: DG 2.19 quites/partido, Wallison 1.93 quites/partido, Luiz Henrique 1.71 quites/partido | America Mineiro: Nathan 1.7 quites/partido, Artur 1.6 quites/partido, Alê 1.36 quites/partido"
+  },
+  {
+   "local": "Novorizontino",
+   "visitante": "Criciuma",
+   "gole": "Robson 39.3%",
+   "remates": "Novorizontino: Robson 1.5 remates totales (0.89 a puerta), Reidiney 1.4 remates totales (0.4 a puerta), Juninho 1.29 remates totales (0.71 a puerta) | Criciuma: Marcelo Hermes 1.33 remates totales (0.39 a puerta), R. Otero 1.24 remates totales (0.47 a puerta), Waguininho 1.06 remates totales (0.44 a puerta)",
+   "tarjetas": "Novorizontino: N. Castrillón 0.42 amarillas/partido, Diego Galo 0.29 amarillas/partido, Gabriel Bahia 0.29 amarillas/partido | Criciuma: Eduardo 0.4 amarillas/partido, Bruno Alves 0.38 amarillas/partido, Ruan 0.33 amarillas/partido",
+   "asistencias": "Novorizontino: Romulo 0.33 asistencias/partido, Reidiney 0.2 asistencias/partido, Juninho 0.18 asistencias/partido | Criciuma: Romarinho 0.18 asistencias/partido, Ruan 0.17 asistencias/partido, R. Otero 0.12 asistencias/partido",
+   "faltas": "Novorizontino: Patrick 1.59 faltas/partido, Reidiney 1.4 faltas/partido, Maykon 1.38 faltas/partido | Criciuma: Eduardo 2.2 faltas/partido, Ruan 1.83 faltas/partido, Luciano Castán 1.6 faltas/partido",
+   "quites": "Novorizontino: Reidiney 2.4 quites/partido, Diego Mathias 2.0 quites/partido, Sander 2.0 quites/partido | Criciuma: Ruan 2.0 quites/partido, Eduardo 1.6 quites/partido, Marcelo Hermes 1.5 quites/partido"
   }
  ]
 }
