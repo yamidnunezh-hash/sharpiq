@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-19T23:53:30Z",
-  "live": [
-    {
-      "id": "e7ba65ff4e90d9960a0619d266c10ff5",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Yankees",
-      "away": "Los Angeles Dodgers",
-      "fecha": "19/07/26",
-      "hora": "18:21 COT",
-      "ts": 1784485260,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "0"
-    }
-  ],
+  "updated": "2026-07-20T03:27:01Z",
+  "live": [],
   "upcoming": [
     {
       "id": "ed99d6d31957cf5543b0733a49085559",
@@ -230,6 +215,20 @@
   ],
   "finished": [
     {
+      "id": "e7ba65ff4e90d9960a0619d266c10ff5",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "New York Yankees",
+      "away": "Los Angeles Dodgers",
+      "fecha": "19/07/26",
+      "hora": "18:21 COT",
+      "ts": 1784485260,
+      "completed": true,
+      "score_home": "2",
+      "score_away": "1"
+    },
+    {
       "id": "4a351bac7c9d35b346c76736bd88b1de",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -354,20 +353,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "19"
-    },
-    {
-      "id": "7bdca69ce161b0f7fa1d383357c64989",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Milwaukee Brewers",
-      "away": "Miami Marlins",
-      "fecha": "19/07/26",
-      "hora": "13:11 COT",
-      "ts": 1784466660,
-      "completed": true,
-      "score_home": "3",
-      "score_away": "1"
     }
   ]
 }
