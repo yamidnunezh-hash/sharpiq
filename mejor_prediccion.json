@@ -44,7 +44,7 @@
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 2.15,
-        "casa": "Pinnacle",
+        "casa": "Unibet",
         "pinn_prob": 45.6,
         "mercado_nombre": "Cleveland Guardians"
       },
@@ -61,27 +61,27 @@
         "mercado_nombre": "Minnesota Twins"
       },
       "over_7_5": {
-        "value": -0.029,
-        "ev_porcentaje": -2.9,
-        "ev_pinn": -2.9,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.88,
-        "casa": "Unibet",
-        "pinn_prob": 51.7,
-        "mercado_nombre": "Over 7.5"
-      },
-      "under_7_5": {
         "value": -0.033,
         "ev_porcentaje": -3.3,
         "ev_pinn": -3.3,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
+        "cuota": 1.88,
+        "casa": "DraftKings",
+        "pinn_prob": 51.4,
+        "mercado_nombre": "Over 7.5"
+      },
+      "under_7_5": {
+        "value": -0.028,
+        "ev_porcentaje": -2.8,
+        "ev_pinn": -2.8,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
         "cuota": 2.0,
         "casa": "FanDuel",
-        "pinn_prob": 48.3,
+        "pinn_prob": 48.6,
         "mercado_nombre": "Under 7.5"
       },
       "spread_cleveland_guardians_1_5": {
@@ -92,7 +92,7 @@
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 1.64,
-        "casa": "FanDuel",
+        "casa": "DraftKings",
         "pinn_prob": 59.2,
         "mercado_nombre": "Cleveland Guardians (+1.5)"
       },
