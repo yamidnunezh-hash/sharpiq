@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-20T22:14:52Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-20T23:17:10Z",
+  "live": [
     {
       "id": "ed99d6d31957cf5543b0733a49085559",
       "sport": "baseball_mlb",
@@ -13,8 +12,8 @@
       "hora": "17:41 COT",
       "ts": 1784569260,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "3",
+      "score_away": "2"
     },
     {
       "id": "29d4af8b2386afc600f412243c22a53b",
@@ -27,8 +26,8 @@
       "hora": "18:06 COT",
       "ts": 1784570760,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "f237d860c80df8632a4717d53fee1c25",
@@ -41,8 +40,8 @@
       "hora": "18:08 COT",
       "ts": 1784570880,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "0dd84d01f2970e524c07c9ff2a747b7f",
@@ -55,8 +54,8 @@
       "hora": "18:11 COT",
       "ts": 1784571060,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "128e4328bfe1ffa187a85b1e5e2b5ec6",
@@ -69,8 +68,8 @@
       "hora": "18:11 COT",
       "ts": 1784571060,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "b829b2871533d73401916f919c2b485a",
@@ -83,9 +82,11 @@
       "hora": "18:16 COT",
       "ts": 1784571360,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "c9a69923caed0afdda9fd6b94171b189",
       "sport": "baseball_mlb",
@@ -208,6 +209,90 @@
       "fecha": "20/07/26",
       "hora": "21:11 COT",
       "ts": 1784581860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "f4080730439de4ccf01dadabc9a7ccc6",
+      "sport": "soccer_brazil_campeonato",
+      "liga": "Brasileirao",
+      "emoji": "⚽",
+      "home": "Atletico Mineiro",
+      "away": "Bahia",
+      "fecha": "21/07/26",
+      "hora": "17:30 COT",
+      "ts": 1784655000,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "bacf079d030edf63d42bb924641c77cd",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Avai",
+      "away": "América Mineiro",
+      "fecha": "21/07/26",
+      "hora": "17:30 COT",
+      "ts": 1784655000,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "de4e05424fca9f4f6bee15287a6f1d4c",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Grêmio Novorizontino",
+      "away": "Criciuma",
+      "fecha": "21/07/26",
+      "hora": "17:30 COT",
+      "ts": 1784655000,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "0423e391e6f8cfd58c7f2f1c72d0aec7",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Cleveland Guardians",
+      "away": "Minnesota Twins",
+      "fecha": "21/07/26",
+      "hora": "17:41 COT",
+      "ts": 1784655660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "41aa20c582aac0979e875a6e5a86b79b",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Philadelphia Phillies",
+      "away": "Los Angeles Dodgers",
+      "fecha": "21/07/26",
+      "hora": "17:41 COT",
+      "ts": 1784655660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "4b39d95fa5e27f227c44ec3a8f68aaf4",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "New York Yankees",
+      "away": "Pittsburgh Pirates",
+      "fecha": "21/07/26",
+      "hora": "18:06 COT",
+      "ts": 1784657160,
       "completed": false,
       "score_home": null,
       "score_away": null
