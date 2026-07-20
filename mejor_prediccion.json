@@ -3,14 +3,14 @@
   "liga": "MLB",
   "local": "Cleveland Guardians",
   "visitante": "Minnesota Twins",
-  "prediccion": "Cleveland Guardians",
+  "prediccion": "Over 7.5",
   "mercado_key": null,
   "cuota": "",
   "hora_utc": "22:41",
   "hora_cot": "17:41 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 52.7,
+  "confianza": 52.2,
   "pred_completa": {
     "id": "ed99d6d31957cf5543b0733a49085559",
     "comienzo": "2026-07-20T22:41:00Z",
@@ -24,64 +24,64 @@
     "fecha_evento": "2026-07-20",
     "cuotas": {
       "Cleveland Guardians": 2.06,
-      "Minnesota Twins": 1.85,
+      "Minnesota Twins": 1.87,
       "Over 7.5": 1.95,
-      "Under 7.5": 1.88,
+      "Under 7.5": 1.93,
       "Cleveland Guardians (+1.5)": 1.6,
       "Minnesota Twins (-1.5)": 2.41
     },
     "probabilidades": {
-      "Cleveland Guardians": 47.3,
-      "Minnesota Twins": 52.7
+      "Cleveland Guardians": 47.8,
+      "Minnesota Twins": 52.2
     },
-    "confianza": 52.7,
+    "confianza": 52.2,
     "value_bets": {
       "Cleveland Guardians": {
-        "value": -0.025,
-        "ev_porcentaje": -2.5,
-        "ev_pinn": -2.5,
+        "value": -0.015,
+        "ev_porcentaje": -1.5,
+        "ev_pinn": -1.5,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 2.06,
         "casa": "FanDuel",
-        "pinn_prob": 47.3,
+        "pinn_prob": 47.8,
         "mercado_nombre": "Cleveland Guardians"
       },
       "Minnesota Twins": {
-        "value": -0.025,
-        "ev_porcentaje": -2.5,
-        "ev_pinn": -2.5,
+        "value": -0.024,
+        "ev_porcentaje": -2.4,
+        "ev_pinn": -2.4,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.85,
-        "casa": "BetMGM",
-        "pinn_prob": 52.7,
+        "cuota": 1.87,
+        "casa": "Pinnacle",
+        "pinn_prob": 52.2,
         "mercado_nombre": "Minnesota Twins"
       },
       "over_7_5": {
-        "value": -0.043,
-        "ev_porcentaje": -4.3,
-        "ev_pinn": -4.3,
+        "value": 0.0,
+        "ev_porcentaje": 0.0,
+        "ev_pinn": 0.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 1.95,
         "casa": "FanDuel",
-        "pinn_prob": 49.1,
+        "pinn_prob": 51.3,
         "mercado_nombre": "Over 7.5"
       },
       "under_7_5": {
-        "value": -0.043,
-        "ev_porcentaje": -4.3,
-        "ev_pinn": -4.3,
+        "value": -0.06,
+        "ev_porcentaje": -6.0,
+        "ev_pinn": -6.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.88,
+        "cuota": 1.93,
         "casa": "DraftKings",
-        "pinn_prob": 50.9,
+        "pinn_prob": 48.7,
         "mercado_nombre": "Under 7.5"
       },
       "spread_cleveland_guardians_1_5": {
@@ -110,9 +110,9 @@
       }
     },
     "prediccion_principal": {
-      "mercado": "Cleveland Guardians",
-      "prob": 47.3,
-      "ev": -2.5
+      "mercado": "Over 7.5",
+      "prob": 51.3,
+      "ev": 0.0
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
