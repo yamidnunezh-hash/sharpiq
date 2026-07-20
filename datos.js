@@ -4,6 +4,40 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "20/07/26",
+    partido:    "Seattle Storm vs Minnesota Lynx",
+    liga:       "WNBA",
+    prediccion: "Seattle Storm (+9.5)",
+    cuota:      "1.98",
+    hora:       "21:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.1",
+    prob:       "52",
+    sharpscore: "59",
+    cuota_betplay: "",
+    cuota_justa:   "",
+    valor_real:    "",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "20/07/26",
+    partido:    "Milwaukee Brewers vs New York Mets",
+    liga:       "MLB",
+    prediccion: "Milwaukee Brewers (-1.5)",
+    cuota:      "2.02",
+    hora:       "18:41 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.1",
+    prob:       "51",
+    sharpscore: "58",
+    cuota_betplay: "",
+    cuota_justa:   "",
+    valor_real:    "",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "19/07/26",
     partido:    "Spain vs Argentina",
     liga:       "FIFA Mundial 2026",
