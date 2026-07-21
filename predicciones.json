@@ -2793,13 +2793,13 @@
           "disp_vis_under5": 71.2
         },
         "paradas": {
-          "paradas_esperadas": 4.4,
-          "paradas_local_over2": 93.4,
-          "paradas_local_under2": 6.6,
-          "paradas_local_over3": 81.5,
-          "paradas_local_under3": 18.5,
-          "paradas_local_over4": 64.1,
-          "paradas_local_under4": 35.9
+          "paradas_esperadas": 3.8,
+          "paradas_local_over2": 89.3,
+          "paradas_local_under2": 10.7,
+          "paradas_local_over3": 73.1,
+          "paradas_local_under3": 26.9,
+          "paradas_local_over4": 52.7,
+          "paradas_local_under4": 47.3
         },
         "ev_ext": {
           "corners_over9": {
@@ -3011,49 +3011,49 @@
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over2": {
-            "prob_modelo": 93.4,
-            "cuota_justa": 1.07,
-            "cuota_ref": 1.02,
-            "ev_porcentaje": -4.7,
+            "prob_modelo": 89.3,
+            "cuota_justa": 1.12,
+            "cuota_ref": 1.06,
+            "ev_porcentaje": -5.3,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under2": {
-            "prob_modelo": 6.6,
-            "cuota_justa": 15.15,
-            "cuota_ref": 14.39,
+            "prob_modelo": 10.7,
+            "cuota_justa": 9.35,
+            "cuota_ref": 8.88,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over3": {
-            "prob_modelo": 81.5,
-            "cuota_justa": 1.23,
-            "cuota_ref": 1.17,
-            "ev_porcentaje": -4.6,
+            "prob_modelo": 73.1,
+            "cuota_justa": 1.37,
+            "cuota_ref": 1.3,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under3": {
-            "prob_modelo": 18.5,
-            "cuota_justa": 5.41,
-            "cuota_ref": 5.14,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 26.9,
+            "cuota_justa": 3.72,
+            "cuota_ref": 3.53,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over4": {
-            "prob_modelo": 64.1,
-            "cuota_justa": 1.56,
-            "cuota_ref": 1.48,
+            "prob_modelo": 52.7,
+            "cuota_justa": 1.9,
+            "cuota_ref": 1.8,
             "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under4": {
-            "prob_modelo": 35.9,
-            "cuota_justa": 2.79,
-            "cuota_ref": 2.65,
+            "prob_modelo": 47.3,
+            "cuota_justa": 2.11,
+            "cuota_ref": 2.01,
             "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
@@ -6105,14 +6105,14 @@
     },
     {
       "id": "f8d499fa23c7a4576854388ba749a0ad",
-      "comienzo": "2026-07-21T00:06:00Z",
+      "comienzo": "2026-07-21T00:08:00Z",
       "local": "Dallas Wings",
       "visitante": "New York Liberty",
       "liga": "WNBA",
       "liga_code": "basketball_wnba",
       "deporte": "WNBA",
       "deporte_emoji": "🏆",
-      "hora": "00:06",
+      "hora": "00:08",
       "fecha_evento": "2026-07-20",
       "cuotas": {
         "Dallas Wings": 2.8,
@@ -6962,5 +6962,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:14"
+  "generado": "00:01:45"
 }
