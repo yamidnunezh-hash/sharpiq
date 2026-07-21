@@ -18,7 +18,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "20/07/26",
@@ -2638,6 +2638,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "20/07/26",
+    partido:    "Seattle Storm vs Minnesota Lynx",
+    liga:       "WNBA",
+    prediccion: "Seattle Storm (+9.5)",
+    cuota:      "1.98",
+    prob:       "52",
+    resultado:  "loss"
+  },
   {
     fecha:      "20/07/26",
     partido:    "Milwaukee Brewers vs New York Mets",
