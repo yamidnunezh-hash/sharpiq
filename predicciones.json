@@ -4659,15 +4659,15 @@
           "ah_visita_mas15": 80.1
         },
         "disparos": {
-          "disparos_esperados": 3.6,
-          "disp_vis_over2": 87.1,
-          "disp_vis_under2": 12.9,
-          "disp_vis_over3": 69.2,
-          "disp_vis_under3": 30.8,
-          "disp_vis_over4": 47.8,
-          "disp_vis_under4": 52.2,
-          "disp_vis_over5": 28.8,
-          "disp_vis_under5": 71.2
+          "disparos_esperados": 3.4,
+          "disp_vis_over2": 85.3,
+          "disp_vis_under2": 14.7,
+          "disp_vis_over3": 66.0,
+          "disp_vis_under3": 34.0,
+          "disp_vis_over4": 44.2,
+          "disp_vis_under4": 55.8,
+          "disp_vis_over5": 25.6,
+          "disp_vis_under5": 74.4
         },
         "paradas": {
           "paradas_esperadas": 1.6,
@@ -4824,66 +4824,66 @@
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over2": {
-            "prob_modelo": 87.1,
-            "cuota_justa": 1.15,
-            "cuota_ref": 1.09,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 85.3,
+            "cuota_justa": 1.17,
+            "cuota_ref": 1.11,
+            "ev_porcentaje": -5.3,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under2": {
-            "prob_modelo": 12.9,
-            "cuota_justa": 7.75,
-            "cuota_ref": 7.36,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 14.7,
+            "cuota_justa": 6.8,
+            "cuota_ref": 6.46,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over3": {
-            "prob_modelo": 69.2,
-            "cuota_justa": 1.45,
-            "cuota_ref": 1.37,
-            "ev_porcentaje": -5.2,
+            "prob_modelo": 66.0,
+            "cuota_justa": 1.52,
+            "cuota_ref": 1.44,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under3": {
-            "prob_modelo": 30.8,
-            "cuota_justa": 3.25,
-            "cuota_ref": 3.08,
+            "prob_modelo": 34.0,
+            "cuota_justa": 2.94,
+            "cuota_ref": 2.79,
             "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over4": {
-            "prob_modelo": 47.8,
-            "cuota_justa": 2.09,
-            "cuota_ref": 1.99,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under4": {
-            "prob_modelo": 52.2,
-            "cuota_justa": 1.92,
-            "cuota_ref": 1.82,
+            "prob_modelo": 44.2,
+            "cuota_justa": 2.26,
+            "cuota_ref": 2.15,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
+          "disp_vis_under4": {
+            "prob_modelo": 55.8,
+            "cuota_justa": 1.79,
+            "cuota_ref": 1.7,
+            "ev_porcentaje": -5.1,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
           "disp_vis_over5": {
-            "prob_modelo": 28.8,
-            "cuota_justa": 3.47,
-            "cuota_ref": 3.3,
+            "prob_modelo": 25.6,
+            "cuota_justa": 3.91,
+            "cuota_ref": 3.71,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under5": {
-            "prob_modelo": 71.2,
-            "cuota_justa": 1.4,
-            "cuota_ref": 1.33,
-            "ev_porcentaje": -5.3,
+            "prob_modelo": 74.4,
+            "cuota_justa": 1.34,
+            "cuota_ref": 1.28,
+            "ev_porcentaje": -4.8,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
@@ -11781,5 +11781,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:01:05"
+  "generado": "20:01:30"
 }
