@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-21T21:03:18Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-21T22:13:20Z",
+  "live": [
     {
       "id": "e38b938069d601692760954037d7ba59",
       "sport": "soccer_conmebol_copa_sudamericana",
@@ -10,12 +9,14 @@
       "home": "Nacional de Montevideo",
       "away": "CA Tigre BA",
       "fecha": "21/07/26",
-      "hora": "17:00 COT",
-      "ts": 1784653200,
+      "hora": "17:01 COT",
+      "ts": 1784653260,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "1"
+    }
+  ],
+  "upcoming": [
     {
       "id": "f4080730439de4ccf01dadabc9a7ccc6",
       "sport": "soccer_brazil_campeonato",
@@ -73,20 +74,6 @@
       "score_away": null
     },
     {
-      "id": "41aa20c582aac0979e875a6e5a86b79b",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Philadelphia Phillies",
-      "away": "Los Angeles Dodgers",
-      "fecha": "21/07/26",
-      "hora": "17:41 COT",
-      "ts": 1784655660,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
       "id": "267dae014ac02839048da8da0bf226c3",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -101,12 +88,12 @@
       "score_away": null
     },
     {
-      "id": "ded163387935cca0e01c3281ff323291",
+      "id": "41aa20c582aac0979e875a6e5a86b79b",
       "sport": "baseball_mlb",
       "liga": "MLB",
       "emoji": "⚾",
-      "home": "Boston Red Sox",
-      "away": "Baltimore Orioles",
+      "home": "Philadelphia Phillies",
+      "away": "Los Angeles Dodgers",
       "fecha": "21/07/26",
       "hora": "18:11 COT",
       "ts": 1784657460,
@@ -208,6 +195,34 @@
       "fecha": "21/07/26",
       "hora": "19:30 COT",
       "ts": 1784662200,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "c8f02f4eaf38dfd1c2b87fed2125ccf1",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Vila Nova",
+      "away": "Fortaleza",
+      "fecha": "21/07/26",
+      "hora": "19:35 COT",
+      "ts": 1784662500,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "0d8a10122998e00420770fa704603388",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Colorado Rockies",
+      "away": "Washington Nationals",
+      "fecha": "21/07/26",
+      "hora": "19:41 COT",
+      "ts": 1784662860,
       "completed": false,
       "score_home": null,
       "score_away": null
