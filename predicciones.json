@@ -9873,8 +9873,8 @@
         "St. Louis Cardinals": 2.05,
         "Over 9.0": 1.87,
         "Under 9.0": 2.0,
-        "Los Angeles Angels (+1.5)": 1.54,
-        "St. Louis Cardinals (-1.5)": 2.57
+        "Los Angeles Angels (+1.5)": 1.53,
+        "St. Louis Cardinals (-1.5)": 2.58
       },
       "probabilidades": {
         "Los Angeles Angels": 52.2,
@@ -9931,26 +9931,26 @@
           "mercado_nombre": "Under 9.0"
         },
         "spread_los_angeles_angels_1_5": {
-          "value": -0.032,
-          "ev_porcentaje": -3.2,
-          "ev_pinn": -3.2,
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.54,
-          "casa": "FanDuel",
+          "cuota": 1.53,
+          "casa": "BetMGM",
           "pinn_prob": 62.8,
           "mercado_nombre": "Los Angeles Angels (+1.5)"
         },
         "spread_st._louis_cardinals_m1_5": {
-          "value": -0.045,
-          "ev_porcentaje": -4.5,
-          "ev_pinn": -4.5,
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.57,
-          "casa": "DraftKings",
+          "cuota": 2.58,
+          "casa": "FanDuel",
           "pinn_prob": 37.2,
           "mercado_nombre": "St. Louis Cardinals (-1.5)"
         }
@@ -10800,5 +10800,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:01:02"
+  "generado": "16:01:27"
 }
