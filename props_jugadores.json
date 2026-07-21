@@ -1,20 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Ararat-Armenia",
-   "visitante": "Shamrock Rovers",
-   "gole": "D. Watts 39.3% &middot; J. Byrne 39.3% &middot; Z. Shaghoyan 39.3%",
-   "tarjetas": "Ararat-Armenia: E. Grigoryan 0.5 amarillas/partido, França 0.5 amarillas/partido, Zidane Banjaqui 0.5 amarillas/partido | Shamrock Rovers: D. Watts 0.5 amarillas/partido, J. McGovern 0.5 amarillas/partido",
-   "asistencias": "Ararat-Armenia: Zidane Banjaqui 0.5 asistencias/partido | Shamrock Rovers: D. Watts 1.0 asistencias/partido, J. Mulraney 0.5 asistencias/partido, J. Byrne 0.5 asistencias/partido"
-  },
-  {
-   "local": "Sabah FA",
-   "visitante": "KuPS",
-   "gole": "J. Mickels 39.3%",
-   "tarjetas": "Sabah FA: A. Zedadka 0.5 amarillas/partido, J. Mickels 0.5 amarillas/partido, I. Lepinjica 0.5 amarillas/partido",
-   "asistencias": "Sabah FA: T. Puchacz 0.5 asistencias/partido, A. Malouda 0.5 asistencias/partido"
-  },
-  {
    "local": "KI Klaksvik",
    "visitante": "Kauno Žalgiris",
    "gole": "V. Slivka 63.2% &middot; A. Benchaib 39.3%",
@@ -113,6 +99,86 @@
    "gole": "Reinaldo 63.2% &middot; J. Perea 39.3% &middot; A. Oko-Flex 39.3%",
    "tarjetas": "Levski Sofia: N. Serafimov 0.5 amarillas/partido",
    "asistencias": "Levski Sofia: Álex Centelles 0.5 asistencias/partido"
+  },
+  {
+   "local": "Independiente Medellin",
+   "visitante": "Vasco DA Gama",
+   "gole": "Adson 52.8%",
+   "remates": "Vasco DA Gama: J. Rojas 4.5 remates totales (1.5 a puerta), C. Spinelli 2.8 remates totales (1.4 a puerta), J. Rodríguez 1.67 remates totales (1.0 a puerta)",
+   "tarjetas": "Vasco DA Gama: Matheus França 0.67 amarillas/partido, Tchê Tchê 0.67 amarillas/partido, Cauan Barros 0.67 amarillas/partido",
+   "asistencias": "Vasco DA Gama: Adson 0.75 asistencias/partido, J. Rojas 0.5 asistencias/partido, Nuno Moreira 0.33 asistencias/partido",
+   "faltas": "Vasco DA Gama: A. Saldivia 1.5 faltas/partido, Lucas Piton 1.33 faltas/partido, Cauan Barros 1.33 faltas/partido",
+   "quites": "Vasco DA Gama: A. Saldivia 2.5 quites/partido, Hugo Moura 2.0 quites/partido, Avellar 1.8 quites/partido"
+  },
+  {
+   "local": "Coritiba",
+   "visitante": "Palmeiras",
+   "gole": "Breno Lopes 41.3% &middot; J. López 29.7% &middot; J. Lavega 25.5%",
+   "remates": "Coritiba: Pedro Rocha 1.61 remates totales (0.72 a puerta), Lucas Ronier 1.53 remates totales (0.47 a puerta), Breno Lopes 1.07 remates totales (0.8 a puerta) | Palmeiras: Vitor Roque 1.57 remates totales (1.0 a puerta), J. López 1.53 remates totales (0.82 a puerta), J. Arias 1.23 remates totales (0.69 a puerta)",
+   "tarjetas": "Coritiba: Lucas Taverna 0.33 amarillas/partido, Thiago Santos 0.27 amarillas/partido, Pedro Luccas 0.25 amarillas/partido | Palmeiras: Luis Felipe 0.67 amarillas/partido, J. Arias 0.31 amarillas/partido, Luighi Hanri 0.29 amarillas/partido",
+   "asistencias": "Coritiba: Josué 0.41 asistencias/partido, Tinga 0.18 asistencias/partido, Lucas Ronier 0.13 asistencias/partido | Palmeiras: Andreas Pereira 0.53 asistencias/partido, J. López 0.18 asistencias/partido, J. Piquerez 0.17 asistencias/partido",
+   "faltas": "Coritiba: S. Gómez 1.6 faltas/partido, Wallisson 1.33 faltas/partido, Lucas Taverna 1.33 faltas/partido | Palmeiras: J. López 1.65 faltas/partido, Murilo 1.33 faltas/partido, A. Giay 1.27 faltas/partido",
+   "quites": "Coritiba: Lucas Ronier 1.93 quites/partido, S. Gómez 1.73 quites/partido, Jacy 1.73 quites/partido | Palmeiras: J. Piquerez 2.17 quites/partido, A. Giay 1.8 quites/partido, Arthur 1.67 quites/partido"
+  },
+  {
+   "local": "Ceara",
+   "visitante": "CRB",
+   "gole": "Melk 22.1%",
+   "remates": "Ceara: Vina 1.5 remates totales (0.5 a puerta), Melk 1.5 remates totales (0.81 a puerta), Vinicius Zanocelo 1.33 remates totales (0.33 a puerta) | CRB: Mikael 2.76 remates totales (1.53 a puerta), Dadá Belmonte 1.94 remates totales (0.88 a puerta), Thiaguinho 1.91 remates totales (0.55 a puerta)",
+   "tarjetas": "Ceara: Bryan 0.67 amarillas/partido, Caio 0.5 amarillas/partido, Bruno Ferreira 0.4 amarillas/partido | CRB: Daniel 0.44 amarillas/partido, Fábio Alemão 0.33 amarillas/partido, Guilherme Estrella 0.33 amarillas/partido",
+   "asistencias": "Ceara: Melk 0.19 asistencias/partido, Giulio 0.12 asistencias/partido, Enzo 0.12 asistencias/partido | CRB: Dadá Belmonte 0.25 asistencias/partido, Hereda 0.2 asistencias/partido, Léo Campos 0.2 asistencias/partido",
+   "faltas": "Ceara: Vinicius Zanocelo 2.0 faltas/partido, Joao Gabriel 1.62 faltas/partido, Éder 1.47 faltas/partido | CRB: Hereda 1.93 faltas/partido, Wallace 1.5 faltas/partido, Lucas Lovat 1.12 faltas/partido",
+   "quites": "Ceara: Bryan 2.33 quites/partido, Fernandinho 1.82 quites/partido, Vinicius Zanocelo 1.67 quites/partido | CRB: Fábio Alemão 1.53 quites/partido, Hereda 1.47 quites/partido, Dadá Belmonte 1.38 quites/partido"
+  },
+  {
+   "local": "Operario-PR",
+   "visitante": "Ponte Preta",
+   "gole": "Boschilia 43.0% &middot; Pablo 22.1%",
+   "remates": "Operario-PR: Boschilia 2.06 remates totales (1.06 a puerta), Pablo 1.38 remates totales (0.75 a puerta), Vinícius Diniz 1.0 remates totales (0.35 a puerta) | Ponte Preta: Bryan 1.5 remates totales (0.75 a puerta), William Pottker 1.42 remates totales (0.83 a puerta), Luis Phelipe 0.88 remates totales (0.38 a puerta)",
+   "tarjetas": "Operario-PR: Klaus 0.38 amarillas/partido, J. Cuenú 0.36 amarillas/partido, Boschilia 0.31 amarillas/partido | Ponte Preta: Luis Phelipe 0.5 amarillas/partido, S. Palacios 0.5 amarillas/partido, David Braz 0.4 amarillas/partido",
+   "asistencias": "Operario-PR: Mikael Doka 0.22 asistencias/partido, Pablo 0.19 asistencias/partido, Gabriel Feliciano 0.14 asistencias/partido | Ponte Preta: Luis Phelipe 0.12 asistencias/partido, Brandão 0.09 asistencias/partido, Élvis 0.07 asistencias/partido",
+   "faltas": "Operario-PR: Vinícius Diniz 1.82 faltas/partido, Boschilia 1.5 faltas/partido, Pablo 1.38 faltas/partido | Ponte Preta: Danilo Barcelos 1.92 faltas/partido, William Pottker 1.67 faltas/partido, R. Saravia 1.67 faltas/partido",
+   "quites": "Operario-PR: Matheus Trindade 1.94 quites/partido, Mikael Doka 1.78 quites/partido, Moraes 1.43 quites/partido | Ponte Preta: Julio 4.0 quites/partido, Murilo 2.14 quites/partido, Rodrigo Souza 2.0 quites/partido"
+  },
+  {
+   "local": "Inter Miami",
+   "visitante": "Chicago Fire",
+   "gole": "H. Cuypers 69.3% &middot; L. Messi 60.5% &middot; G. Berterame 37.3%",
+   "remates": "Inter Miami: L. Messi 4.29 remates totales (2.5 a puerta), G. Berterame 1.87 remates totales (1.13 a puerta), L. Suárez 1.82 remates totales (1.18 a puerta) | Chicago Fire: H. Cuypers 3.09 remates totales (2.0 a puerta), P. Zinckernagel 2.14 remates totales (1.07 a puerta), J. Bamba 1.67 remates totales (0.78 a puerta)",
+   "tarjetas": "Inter Miami: T. Segovia 0.5 amarillas/partido, I. Fray 0.36 amarillas/partido, T. Allende 0.33 amarillas/partido | Chicago Fire: T. D&apos;Avilla 0.38 amarillas/partido, V. Radojević 0.33 amarillas/partido, A. Gutman 0.3 amarillas/partido",
+   "asistencias": "Inter Miami: L. Messi 0.5 asistencias/partido, T. Segovia 0.43 asistencias/partido, Mateo Silvetti 0.4 asistencias/partido | Chicago Fire: P. Zinckernagel 0.43 asistencias/partido, J. Bamba 0.22 asistencias/partido, A. Gutman 0.2 asistencias/partido",
+   "faltas": "Inter Miami: D. Ruíz 2.0 faltas/partido, T. Segovia 1.86 faltas/partido, G. Berterame 1.67 faltas/partido | Chicago Fire: P. Zinckernagel 1.86 faltas/partido, T. D&apos;Avilla 1.38 faltas/partido, H. Cuypers 1.36 faltas/partido",
+   "quites": "Inter Miami: Y. Bright 3.83 quites/partido, G. Luján 1.92 quites/partido, N. Allen 1.67 quites/partido | Chicago Fire: J. Dean 1.82 quites/partido, P. Zinckernagel 1.71 quites/partido, A. Gutman 1.7 quites/partido"
+  },
+  {
+   "local": "FC Cincinnati",
+   "visitante": "Vancouver Whitecaps",
+   "gole": "B. White 51.0% &middot; K. Denkey 47.4% &middot; Evander 47.4%",
+   "remates": "Vancouver Whitecaps: B. White 3.29 remates totales (1.93 a puerta), Bruno Steven Caicedo Quiñonez 2.12 remates totales (1.0 a puerta), S. Berhalter 1.93 remates totales (0.64 a puerta)",
+   "tarjetas": "Vancouver Whitecaps: J. Ngando 0.5 amarillas/partido, A. Cubas 0.45 amarillas/partido, É. Ocampo 0.36 amarillas/partido",
+   "asistencias": "Vancouver Whitecaps: S. Berhalter 0.29 asistencias/partido, Bruno Steven Caicedo Quiñonez 0.25 asistencias/partido, K. Cabrera 0.22 asistencias/partido",
+   "faltas": "Vancouver Whitecaps: S. Berhalter 2.14 faltas/partido, A. Cubas 1.64 faltas/partido, E. Sabbi 1.55 faltas/partido",
+   "quites": "Vancouver Whitecaps: A. Cubas 4.64 quites/partido, É. Ocampo 2.29 quites/partido, S. Berhalter 2.29 quites/partido"
+  },
+  {
+   "local": "Columbus Crew",
+   "visitante": "New York City FC",
+   "gole": "N. Fernández Mercau 48.7% &middot; J. Hall 45.1%",
+   "remates": "Columbus Crew: W. Abou Ali 2.0 remates totales (1.29 a puerta), D. Rossi 1.93 remates totales (0.8 a puerta), M. Arfsten 1.13 remates totales (0.53 a puerta) | New York City FC: N. Fernández Mercau 2.2 remates totales (1.67 a puerta), M. Jones 1.17 remates totales (0.83 a puerta), H. Wolf 1.14 remates totales (0.64 a puerta)",
+   "tarjetas": "Columbus Crew: R. Camacho 0.33 amarillas/partido, S. Zawadzki 0.2 amarillas/partido, M. Amundsen 0.18 amarillas/partido | New York City FC: N. Fernández Mercau 0.27 amarillas/partido, T. Gray 0.21 amarillas/partido, Raul Gustavo 0.21 amarillas/partido",
+   "asistencias": "Columbus Crew: M. Farsi 0.33 asistencias/partido, M. Arfsten 0.27 asistencias/partido, T. Habroune 0.14 asistencias/partido | New York City FC: M. Moralez 0.43 asistencias/partido, A. Ojeda 0.2 asistencias/partido, N. Fernández Mercau 0.2 asistencias/partido",
+   "faltas": "Columbus Crew: André Gomes 1.67 faltas/partido, T. Habroune 1.29 faltas/partido, R. Camacho 1.27 faltas/partido | New York City FC: N. Fernández Mercau 2.07 faltas/partido, A. O&apos;Neill 1.64 faltas/partido, K. Parks 1.43 faltas/partido",
+   "quites": "Columbus Crew: T. Habroune 2.57 quites/partido, M. Amundsen 2.09 quites/partido, André Gomes 2.0 quites/partido | New York City FC: A. O&apos;Neill 2.73 quites/partido, T. Gray 2.0 quites/partido, N. Fernández Mercau 1.87 quites/partido"
+  },
+  {
+   "local": "Philadelphia Union",
+   "visitante": "New York Red Bulls",
+   "gole": "N. Fernández Mercau 48.7% &middot; J. Hall 45.1%",
+   "remates": "Philadelphia Union: M. Iloski 2.53 remates totales (1.2 a puerta), B. Damiani 1.53 remates totales (0.27 a puerta), A. Anello 1.0 remates totales (0.6 a puerta) | New York Red Bulls: J. Ruvalcaba 1.6 remates totales (1.0 a puerta), J. Hall 1.53 remates totales (1.0 a puerta), C. Cowell 1.31 remates totales (0.85 a puerta)",
+   "tarjetas": "Philadelphia Union: J. Sery Larsen 0.4 amarillas/partido, O. Makhanya 0.38 amarillas/partido, D. Jean-Jacques 0.36 amarillas/partido | New York Red Bulls: Joyeux Masanka Bungi 0.5 amarillas/partido, O. Valencia 0.33 amarillas/partido, R. Donkor 0.29 amarillas/partido",
+   "asistencias": "Philadelphia Union: A. Bedoya 0.25 asistencias/partido, F. Westfield 0.18 asistencias/partido, Stas Kornzeniowski 0.17 asistencias/partido | New York Red Bulls: R. Donkor 0.29 asistencias/partido, C. Cowell 0.23 asistencias/partido, E. Forsberg 0.21 asistencias/partido",
+   "faltas": "Philadelphia Union: J. Sery Larsen 2.3 faltas/partido, B. Damiani 1.6 faltas/partido, N. Harriel 1.53 faltas/partido | New York Red Bulls: A. Mehmeti 1.67 faltas/partido, R. Donkor 1.57 faltas/partido, Joyeux Masanka Bungi 1.5 faltas/partido",
+   "quites": "Philadelphia Union: F. Sundstrom 2.5 quites/partido, N. Harriel 2.47 quites/partido, O. Makhanya 2.31 quites/partido | New York Red Bulls: Joyeux Masanka Bungi 3.5 quites/partido, A. Mehmeti 2.2 quites/partido, J. Che 1.88 quites/partido"
   }
  ]
 }
