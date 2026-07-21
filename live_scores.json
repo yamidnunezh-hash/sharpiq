@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T18:13:54Z",
+  "updated": "2026-07-21T19:54:25Z",
   "live": [],
   "upcoming": [
     {
@@ -82,20 +82,6 @@
       "fecha": "21/07/26",
       "hora": "17:41 COT",
       "ts": 1784655660,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "4b39d95fa5e27f227c44ec3a8f68aaf4",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Yankees",
-      "away": "Pittsburgh Pirates",
-      "fecha": "21/07/26",
-      "hora": "18:06 COT",
-      "ts": 1784657160,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -208,6 +194,20 @@
       "fecha": "21/07/26",
       "hora": "19:11 COT",
       "ts": 1784661060,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "03868280fe8e1f360f9faa1d11407af7",
+      "sport": "soccer_conmebol_copa_sudamericana",
+      "liga": "Copa Sudamericana",
+      "emoji": "⚽",
+      "home": "UCV FC",
+      "away": "Santos",
+      "fecha": "21/07/26",
+      "hora": "19:30 COT",
+      "ts": 1784662200,
       "completed": false,
       "score_home": null,
       "score_away": null
