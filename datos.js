@@ -35,7 +35,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "21/07/26",
@@ -52,7 +52,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "21/07/26",
@@ -69,7 +69,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "21/07/26",
@@ -2740,6 +2740,33 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "21/07/26",
+    partido:    "Toluca vs Pumas",
+    liga:       "Liga MX",
+    prediccion: "Over 2.5 Goles",
+    cuota:      "1.6",
+    prob:       "60",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "21/07/26",
+    partido:    "Toluca vs Pumas",
+    liga:       "Liga MX",
+    prediccion: "Victoria Local",
+    cuota:      "1.67",
+    prob:       "59",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "21/07/26",
+    partido:    "Cruz Azul vs Puebla",
+    liga:       "Liga MX",
+    prediccion: "Under 3.5 Goles",
+    cuota:      "1.55",
+    prob:       "70",
+    resultado:  "win"
+  },
   {
     fecha:      "20/07/26",
     partido:    "Seattle Storm vs Minnesota Lynx",
