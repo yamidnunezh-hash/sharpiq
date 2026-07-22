@@ -86,7 +86,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "21/07/26",
@@ -103,7 +103,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "20/07/26",
@@ -2740,6 +2740,24 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "21/07/26",
+    partido:    "Vila Nova vs Fortaleza",
+    liga:       "Brasileirao B",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.68",
+    prob:       "81",
+    resultado:  "loss"
+  },
+  {
+    fecha:      "21/07/26",
+    partido:    "UCV FC vs Santos",
+    liga:       "Copa Sudamericana",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.71",
+    prob:       "77",
+    resultado:  "loss"
+  },
   {
     fecha:      "21/07/26",
     partido:    "Atletico Mineiro vs Bahia",
