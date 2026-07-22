@@ -120,7 +120,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "21/07/26",
@@ -2825,7 +2825,7 @@ const PREDICCIONES_HISTORIAL = [
     prediccion: "Over 2.5 Goles",
     cuota:      "1.6",
     prob:       "60",
-    resultado:  "loss"
+    resultado:  "win"
   },
   {
     fecha:      "21/07/26",
