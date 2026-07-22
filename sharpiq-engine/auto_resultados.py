@@ -529,8 +529,14 @@ def _auto_verificar_resueltos(texto, fixtures_ft):
         if len(cand) != 1:
             return o   # ambiguo o no encontrado -> no tocar (seguro)
         f = cand[0]
-        gl = f['score']['fulltime']['home'] or 0
-        gv = f['score']['fulltime']['away'] or 0
+        # BLINDAJE: mismo candado que el resolvedor principal. Si el partido no esta
+        # finalizado o el marcador viene vacio, NO re-calificar (nunca asumir 0-0).
+        _st = (f.get('fixture', {}).get('status', {}) or {}).get('short', '')
+        _ft = (f.get('score', {}) or {}).get('fulltime', {}) or {}
+        if _st not in ('FT', 'AET', 'PEN') or _ft.get('home') is None or _ft.get('away') is None:
+            return o
+        gl = _ft['home']
+        gv = _ft['away']
         nuevo = evaluar(gf(o, 'prediccion'), gl, gv, local_js, visita_js)
         if not nuevo or nuevo == res:
             return o
@@ -582,8 +588,30 @@ def correr():
 
         fixture = buscar_fixture(local_js, visita_js, fixtures_ft)
         if fixture:
-            gl = fixture["score"]["fulltime"]["home"] or 0
-            gv = fixture["score"]["fulltime"]["away"] or 0
+            # ── BLINDAJE ANTI "CALIFICAR ANTES DE JUGARSE" (bug 21-jul-26) ──────────
+            # Toluca-Pumas quedo marcado PERDIDO a las 7pm cuando el partido era a las
+            # 9pm. Causa: se agarraba un marcador que NO era del partido correcto (o
+            # venia vacio y el `or 0` lo volvia 0-0). Tres candados:
+            #   1) el partido debe estar FINALIZADO (status FT/AET/PEN)
+            #   2) el marcador NO puede venir vacio (None) -> nunca asumir 0-0
+            #   3) la FECHA del fixture debe ser la MISMA que la del pick
+            # Si algo no cumple -> NO se opina, el pick sigue pendiente (seguro).
+            _st = (fixture.get("fixture", {}).get("status", {}) or {}).get("short", "")
+            _ft = (fixture.get("score", {}) or {}).get("fulltime", {}) or {}
+            _fpick = _fecha_pick_iso(evento.get("fecha", ""))
+            _ffix  = (fixture.get("fixture", {}).get("date") or "")[:10]
+            if _st not in ("FT", "AET", "PEN"):
+                LOG.info(f"  Aun NO finaliza ({_st or 'sin status'}): {partido} -> queda pendiente")
+                continue
+            if _ft.get("home") is None or _ft.get("away") is None:
+                LOG.info(f"  Marcador VACIO (no finalizado de verdad): {partido} -> queda pendiente")
+                continue
+            if _fpick and _ffix and _fpick != _ffix:
+                LOG.warning(f"  ⚠ FECHA NO COINCIDE (pick {_fpick} vs fixture {_ffix}): {partido} "
+                            f"-> NO califico (partido equivocado)")
+                continue
+            gl = _ft["home"]
+            gv = _ft["away"]
         else:
             # No es fútbol (o no encontrado) → resolver US/tenis por marcador real
             goles = resolver_no_futbol(evento.get('liga', ''), local_js, visita_js,
