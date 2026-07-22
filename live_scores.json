@@ -1,48 +1,6 @@
 {
-  "updated": "2026-07-22T21:01:36Z",
+  "updated": "2026-07-22T22:17:40Z",
   "live": [
-    {
-      "id": "a362299f25a2814e5b0e40d072bb782f",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Milwaukee Brewers",
-      "away": "New York Mets",
-      "fecha": "22/07/26",
-      "hora": "13:11 COT",
-      "ts": 1784725860,
-      "completed": false,
-      "score_home": "4",
-      "score_away": "2"
-    },
-    {
-      "id": "fcc83e954b9e74964b190cb0e29366c7",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Colorado Rockies",
-      "away": "Washington Nationals",
-      "fecha": "22/07/26",
-      "hora": "14:11 COT",
-      "ts": 1784729460,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "1"
-    },
-    {
-      "id": "5d1eeebcccadcfc65a1ae65709da7845",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Seattle Mariners",
-      "away": "Cincinnati Reds",
-      "fecha": "22/07/26",
-      "hora": "14:41 COT",
-      "ts": 1784731260,
-      "completed": false,
-      "score_home": "3",
-      "score_away": "2"
-    },
     {
       "id": "fe2c8918c10c47fffd27be962809d726",
       "sport": "baseball_mlb",
@@ -54,8 +12,8 @@
       "hora": "14:43 COT",
       "ts": 1784731380,
       "completed": false,
-      "score_home": "2",
-      "score_away": "2"
+      "score_home": "14",
+      "score_away": "3"
     },
     {
       "id": "9121395092ebe73ce8eaba439dc5be34",
@@ -69,10 +27,8 @@
       "ts": 1784732880,
       "completed": false,
       "score_home": "0",
-      "score_away": "0"
-    }
-  ],
-  "upcoming": [
+      "score_away": "1"
+    },
     {
       "id": "04fd513adb50860e553553a771be0887",
       "sport": "soccer_conmebol_copa_sudamericana",
@@ -84,9 +40,11 @@
       "hora": "17:00 COT",
       "ts": 1784739600,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "1564002429f60a7c9faba9a3789eeaad",
       "sport": "soccer_brazil_campeonato",
@@ -282,9 +240,51 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "ebf2e592382079b9c0f291241cb5acb3",
+      "sport": "soccer_conmebol_copa_sudamericana",
+      "liga": "Copa Sudamericana",
+      "emoji": "⚽",
+      "home": "Lanus",
+      "away": "Club Cienciano",
+      "fecha": "22/07/26",
+      "hora": "19:30 COT",
+      "ts": 1784748600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "5d1eeebcccadcfc65a1ae65709da7845",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Seattle Mariners",
+      "away": "Cincinnati Reds",
+      "fecha": "22/07/26",
+      "hora": "14:41 COT",
+      "ts": 1784731260,
+      "completed": true,
+      "score_home": "3",
+      "score_away": "5"
+    },
+    {
+      "id": "fcc83e954b9e74964b190cb0e29366c7",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Colorado Rockies",
+      "away": "Washington Nationals",
+      "fecha": "22/07/26",
+      "hora": "14:11 COT",
+      "ts": 1784729460,
+      "completed": true,
+      "score_home": "0",
+      "score_away": "8"
+    },
     {
       "id": "a319064ad34e8e60220140acb9035af3",
       "sport": "baseball_mlb",
@@ -298,6 +298,20 @@
       "completed": true,
       "score_home": "5",
       "score_away": "4"
+    },
+    {
+      "id": "a362299f25a2814e5b0e40d072bb782f",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Milwaukee Brewers",
+      "away": "New York Mets",
+      "fecha": "22/07/26",
+      "hora": "13:11 COT",
+      "ts": 1784725860,
+      "completed": true,
+      "score_home": "4",
+      "score_away": "3"
     },
     {
       "id": "10ee5044193bffe8f24adf381ebde5ad",
@@ -382,48 +396,6 @@
       "completed": true,
       "score_home": "8",
       "score_away": "7"
-    },
-    {
-      "id": "c8f02f4eaf38dfd1c2b87fed2125ccf1",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Vila Nova",
-      "away": "Fortaleza",
-      "fecha": "21/07/26",
-      "hora": "19:35 COT",
-      "ts": 1784662500,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "1"
-    },
-    {
-      "id": "03868280fe8e1f360f9faa1d11407af7",
-      "sport": "soccer_conmebol_copa_sudamericana",
-      "liga": "Copa Sudamericana",
-      "emoji": "⚽",
-      "home": "UCV FC",
-      "away": "Santos",
-      "fecha": "21/07/26",
-      "hora": "19:30 COT",
-      "ts": 1784662200,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "4"
-    },
-    {
-      "id": "8a1eca9b5002748c0050289d4c35b045",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Houston Astros",
-      "away": "Miami Marlins",
-      "fecha": "21/07/26",
-      "hora": "19:11 COT",
-      "ts": 1784661060,
-      "completed": true,
-      "score_home": "5",
-      "score_away": "3"
     }
   ]
 }
