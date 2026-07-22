@@ -32640,7 +32640,7 @@
         "Over 11.5": 1.98,
         "Under 11.5": 1.87,
         "Colorado Rockies (+1.5)": 1.77,
-        "Washington Nationals (-1.5)": 2.09
+        "Washington Nationals (-1.5)": 2.15
       },
       "probabilidades": {
         "Colorado Rockies": 44.6,
@@ -32668,7 +32668,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.76,
-          "casa": "Pinnacle",
+          "casa": "FanDuel",
           "pinn_prob": 55.4,
           "mercado_nombre": "Washington Nationals"
         },
@@ -32704,27 +32704,27 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.77,
-          "casa": "FanDuel",
+          "casa": "BetMGM",
           "pinn_prob": 54.2,
           "mercado_nombre": "Colorado Rockies (+1.5)"
         },
         "spread_washington_nationals_m1_5": {
-          "value": -0.043,
-          "ev_porcentaje": -4.3,
-          "ev_pinn": -4.3,
+          "value": -0.016,
+          "ev_porcentaje": -1.6,
+          "ev_pinn": -1.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.09,
-          "casa": "DraftKings",
+          "cuota": 2.15,
+          "casa": "FanDuel",
           "pinn_prob": 45.8,
           "mercado_nombre": "Washington Nationals (-1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Colorado Rockies",
-        "prob": 44.6,
-        "ev": -2.0
+        "mercado": "Washington Nationals (-1.5)",
+        "prob": 45.8,
+        "ev": -1.6
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -34208,5 +34208,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:01:07"
+  "generado": "12:01:26"
 }
