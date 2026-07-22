@@ -42,7 +42,7 @@
         "over25": 2.14,
         "over25_casa": "Pinnacle",
         "pinnacle_over25": 2.14,
-        "under25": 1.72,
+        "under25": 1.73,
         "under25_casa": "Unibet",
         "pinnacle_under25": 1.71,
         "over20": 1.58,
@@ -63,7 +63,7 @@
         "under15": 3.18,
         "under15_casa": "Pinnacle",
         "pinnacle_under15": 3.18,
-        "dnb_local": 2.9,
+        "dnb_local": 2.85,
         "dnb_local_casa": "LiveScore Bet",
         "dnb_visita": 1.35,
         "dnb_visita_casa": "LiveScore Bet",
@@ -327,13 +327,13 @@
           "pinn_prob": 61.4
         },
         "dnb_local": {
-          "value": -0.117,
-          "ev_porcentaje": -11.7,
-          "ev_pinn": -11.7,
+          "value": -0.132,
+          "ev_porcentaje": -13.2,
+          "ev_pinn": -13.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.9,
+          "cuota": 2.85,
           "casa": "LiveScore Bet",
           "pinn_prob": 30.5
         },
@@ -571,7 +571,7 @@
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN EV",
-          "cuota": 1.85,
+          "cuota": 1.86,
           "casa": "LiveScore Bet",
           "pinn_prob": 70.9,
           "sin_mercado": true
@@ -3124,7 +3124,7 @@
         "2": 3.33,
         "2_casa": "Pinnacle",
         "pinnacle_2": 3.33,
-        "1": 2.62,
+        "1": 2.66,
         "1_casa": "Betfair",
         "pinnacle_1": 2.6,
         "X": 3.15,
@@ -3290,13 +3290,13 @@
           "pinn_prob": 28.9
         },
         "victoria_local": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.62,
+          "cuota": 2.66,
           "casa": "Betfair",
           "pinn_prob": 37.0
         },
@@ -17975,5 +17975,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:02:07"
+  "generado": "00:02:35"
 }
