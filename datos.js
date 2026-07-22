@@ -18,7 +18,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "win"
   },
   {
     fecha:      "21/07/26",
@@ -2740,6 +2740,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "21/07/26",
+    partido:    "Atletico Mineiro vs Bahia",
+    liga:       "Brasileirao",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.97",
+    prob:       "53",
+    resultado:  "win"
+  },
   {
     fecha:      "21/07/26",
     partido:    "Toluca vs Pumas",
