@@ -5,6 +5,23 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "22/07/26",
+    partido:    "Colorado Rapids vs San Diego FC",
+    liga:       "MLS",
+    prediccion: "Victoria Local",
+    cuota:      "2.1",
+    hora:       "20:30 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "48",
+    sharpscore: "55",
+    cuota_betplay: "",
+    cuota_justa:   "",
+    valor_real:    "",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "22/07/26",
     partido:    "San Jose Earthquakes vs Orlando City SC",
     liga:       "MLS",
     prediccion: "Victoria Local",
