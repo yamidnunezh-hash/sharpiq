@@ -6671,7 +6671,7 @@
         "2": 3.25,
         "2_casa": "Betfair",
         "pinnacle_2": 3.18,
-        "1": 2.46,
+        "1": 2.44,
         "1_casa": "Betfair",
         "pinnacle_1": 2.38,
         "X": 3.4,
@@ -6923,13 +6923,13 @@
           "pinn_prob": 30.4
         },
         "victoria_local": {
-          "value": 0.0,
-          "ev_porcentaje": 0.0,
-          "ev_pinn": 0.0,
+          "value": -0.008,
+          "ev_porcentaje": -0.8,
+          "ev_pinn": -0.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.46,
+          "cuota": 2.44,
           "casa": "Betfair",
           "pinn_prob": 40.7
         },
@@ -8862,7 +8862,7 @@
         "1": 1.38,
         "1_casa": "Unibet",
         "pinnacle_1": 1.32,
-        "2": 12.0,
+        "2": 11.5,
         "2_casa": "Betfair",
         "pinnacle_2": 10.99,
         "X": 5.3,
@@ -9032,13 +9032,13 @@
           "pinn_prob": 72.4
         },
         "victoria_visita": {
-          "value": 0.043,
-          "ev_porcentaje": 4.3,
-          "ev_pinn": 4.3,
+          "value": -0.0,
+          "ev_porcentaje": -0.0,
+          "ev_pinn": -0.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 12.0,
+          "cuota": 11.5,
           "casa": "Betfair",
           "pinn_prob": 8.7
         },
@@ -10739,7 +10739,7 @@
         "2": 4.75,
         "2_casa": "Unibet",
         "pinnacle_2": 4.59,
-        "1": 1.89,
+        "1": 1.88,
         "1_casa": "Betfair",
         "pinnacle_1": 1.82,
         "X": 3.75,
@@ -10905,13 +10905,13 @@
           "pinn_prob": 20.9
         },
         "victoria_local": {
-          "value": -0.003,
-          "ev_porcentaje": -0.3,
-          "ev_pinn": -0.3,
+          "value": -0.008,
+          "ev_porcentaje": -0.8,
+          "ev_pinn": -0.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.89,
+          "cuota": 1.88,
           "casa": "Betfair",
           "pinn_prob": 52.8
         },
@@ -31353,9 +31353,9 @@
         "New York Yankees": 1.57,
         "Pittsburgh Pirates": 2.6,
         "Over 9.0": 1.93,
-        "Under 9.0": 1.94,
+        "Under 9.0": 1.95,
         "New York Yankees (-1.5)": 2.12,
-        "Pittsburgh Pirates (+1.5)": 1.8
+        "Pittsburgh Pirates (+1.5)": 1.77
       },
       "probabilidades": {
         "New York Yankees": 62.4,
@@ -31400,14 +31400,14 @@
           "mercado_nombre": "Over 9.0"
         },
         "under_9_0": {
-          "value": -0.005,
-          "ev_porcentaje": -0.5,
-          "ev_pinn": -0.5,
+          "value": 0.0,
+          "ev_porcentaje": 0.0,
+          "ev_pinn": 0.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.94,
-          "casa": "FanDuel",
+          "cuota": 1.95,
+          "casa": "BetMGM",
           "pinn_prob": 51.3,
           "mercado_nombre": "Under 9.0"
         },
@@ -31424,22 +31424,22 @@
           "mercado_nombre": "New York Yankees (-1.5)"
         },
         "spread_pittsburgh_pirates_1_5": {
-          "value": 0.003,
-          "ev_porcentaje": 0.3,
-          "ev_pinn": 0.3,
+          "value": -0.014,
+          "ev_porcentaje": -1.4,
+          "ev_pinn": -1.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.8,
+          "cuota": 1.77,
           "casa": "BetMGM",
           "pinn_prob": 55.7,
           "mercado_nombre": "Pittsburgh Pirates (+1.5)"
         }
       },
       "prediccion_principal": {
-        "mercado": "Pittsburgh Pirates (+1.5)",
-        "prob": 55.7,
-        "ev": 0.3
+        "mercado": "Under 9.0",
+        "prob": 51.3,
+        "ev": 0.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -32831,5 +32831,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:00:59"
+  "generado": "20:01:18"
 }
