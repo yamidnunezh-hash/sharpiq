@@ -15550,13 +15550,13 @@
       "hora": "23:30",
       "fecha_evento": "2026-07-22",
       "cuotas": {
-        "1": 2.1,
+        "1": 2.08,
         "1_casa": "Betfair",
         "pinnacle_1": 2.06,
         "2": 3.75,
         "2_casa": "Unibet",
         "pinnacle_2": 3.55,
-        "X": 3.85,
+        "X": 3.8,
         "X_casa": "Betfair",
         "pinnacle_X": 3.75,
         "over275": 1.93,
@@ -15794,13 +15794,13 @@
       "confianza": 82.2,
       "value_bets": {
         "victoria_local": {
-          "value": -0.014,
-          "ev_porcentaje": -1.4,
-          "ev_pinn": -1.4,
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.1,
+          "cuota": 2.08,
           "casa": "Betfair",
           "pinn_prob": 47.0
         },
@@ -15816,13 +15816,13 @@
           "pinn_prob": 27.2
         },
         "empate": {
-          "value": -0.007,
-          "ev_porcentaje": -0.7,
-          "ev_pinn": -0.7,
+          "value": -0.02,
+          "ev_porcentaje": -2.0,
+          "ev_pinn": -2.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.85,
+          "cuota": 3.8,
           "casa": "Betfair",
           "pinn_prob": 25.8
         },
@@ -29689,7 +29689,7 @@
         "2": 5.1,
         "2_casa": "Unibet",
         "pinnacle_2": 4.81,
-        "1": 1.63,
+        "1": 1.64,
         "1_casa": "Betfair",
         "pinnacle_1": 1.6,
         "X": 5.0,
@@ -29949,13 +29949,13 @@
           "pinn_prob": 20.1
         },
         "victoria_local": {
-          "value": -0.016,
-          "ev_porcentaje": -1.6,
-          "ev_pinn": -1.6,
+          "value": -0.01,
+          "ev_porcentaje": -1.0,
+          "ev_pinn": -1.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.63,
+          "cuota": 1.64,
           "casa": "Betfair",
           "pinn_prob": 60.4
         },
@@ -30660,7 +30660,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Local",
         "prob": 60.4,
-        "ev": -1.6
+        "ev": -1.0
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -33882,7 +33882,7 @@
         "Minnesota Twins": 2.12,
         "Over 8.0": 1.97,
         "Under 8.0": 1.91,
-        "Cleveland Guardians (-1.5)": 2.72,
+        "Cleveland Guardians (-1.5)": 2.76,
         "Minnesota Twins (+1.5)": 1.49
       },
       "probabilidades": {
@@ -33940,13 +33940,13 @@
           "mercado_nombre": "Under 8.0"
         },
         "spread_cleveland_guardians_m1_5": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.011,
+          "ev_porcentaje": -1.1,
+          "ev_pinn": -1.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.72,
+          "cuota": 2.76,
           "casa": "FanDuel",
           "pinn_prob": 35.8,
           "mercado_nombre": "Cleveland Guardians (-1.5)"
@@ -33965,9 +33965,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Cleveland Guardians",
-        "prob": 53.8,
-        "ev": -2.1
+        "mercado": "Cleveland Guardians (-1.5)",
+        "prob": 35.8,
+        "ev": -1.1
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -35663,5 +35663,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:01:08"
+  "generado": "16:01:28"
 }
