@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-22T16:51:41Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-22T18:05:40Z",
+  "live": [
     {
       "id": "8291188eca889695bdbc42aac91ad1e5",
       "sport": "baseball_mlb",
@@ -13,8 +12,8 @@
       "hora": "12:06 COT",
       "ts": 1784721960,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "10ee5044193bffe8f24adf381ebde5ad",
@@ -27,9 +26,11 @@
       "hora": "12:36 COT",
       "ts": 1784723760,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "4",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "a319064ad34e8e60220140acb9035af3",
       "sport": "baseball_mlb",
@@ -208,6 +209,34 @@
       "fecha": "22/07/26",
       "hora": "18:05 COT",
       "ts": 1784743500,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "b6df72e0280eb235fcca22cc3d3fc1ab",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Toronto Blue Jays",
+      "away": "Tampa Bay Rays",
+      "fecha": "22/07/26",
+      "hora": "18:08 COT",
+      "ts": 1784743680,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "e3d220f8bbf8ac99e58dbf7088695b59",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Boston Red Sox",
+      "away": "Baltimore Orioles",
+      "fecha": "22/07/26",
+      "hora": "18:10 COT",
+      "ts": 1784743800,
       "completed": false,
       "score_home": null,
       "score_away": null
