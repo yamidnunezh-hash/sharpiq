@@ -1908,7 +1908,7 @@
       "hora": "00:30",
       "fecha_evento": "2026-07-23",
       "cuotas": {
-        "2": 11.5,
+        "2": 11.0,
         "2_casa": "Betfair",
         "pinnacle_2": 9.69,
         "1": 1.4,
@@ -2062,13 +2062,13 @@
       "confianza": 87.6,
       "value_bets": {
         "victoria_visita": {
-          "value": 0.123,
-          "ev_porcentaje": 12.3,
-          "ev_pinn": 12.3,
+          "value": 0.075,
+          "ev_porcentaje": 7.5,
+          "ev_pinn": 7.5,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
-          "clasificacion": "ALTO VALOR",
-          "cuota": 11.5,
+          "clasificacion": "VALOR",
+          "cuota": 11.0,
           "casa": "Betfair",
           "pinn_prob": 9.8
         },
@@ -17261,5 +17261,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:01:04"
+  "generado": "20:01:22"
 }
