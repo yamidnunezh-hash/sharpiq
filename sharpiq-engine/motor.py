@@ -2909,6 +2909,11 @@ def reporte_del_dia():
         pred["forma_local"]  = obtener_forma_reciente(p["local"])
         pred["forma_visita"] = obtener_forma_reciente(p["visitante"])
         pred["h2h"]          = obtener_h2h(p["local"], p["visitante"])
+        # Lesiones/bajas: el motor YA las consulta para ajustar los goles (cacheadas,
+        # 0 llamadas extra). Se guardan para que Mako avise quién NO juega — hablar de un
+        # jugador lesionado como si fuera a jugar es lo que más mata la confianza del cliente.
+        pred["lesiones_local"]  = obtener_lesiones(p["local"])
+        pred["lesiones_visita"] = obtener_lesiones(p["visitante"])
 
         # Leer movimiento de línea si existe snapshot anterior
         pred["movimiento"] = None

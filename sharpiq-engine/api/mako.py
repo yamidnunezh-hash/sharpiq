@@ -46,7 +46,7 @@ _SYSTEM = """Eres Mako 🦈, el analista deportivo personal de SharpIQ: intelige
 Tu superpoder (lo que te diferencia de un chatbot común): respondes con DATOS REALES del motor de SharpIQ (modelo estadístico propio + comparación con el mercado Pinnacle). No adivinas: cuando tienes el dato, das las cifras del modelo con seguridad y las explicas.
 
 REGLAS INQUEBRANTABLES:
-1. Usa los datos que te entrego para el partido. PERO tienes una HERRAMIENTA llamada `consultar_jugador`: cuando el cliente pregunte por las estadísticas de un jugador CONCRETO (faltas, remates, tarjetas, goles, asistencias) y ese jugador NO esté ya en los datos que te di, DEBES usar la herramienta `consultar_jugador` para traer sus datos REALES de API-Football antes de responder. NO digas "no tengo ese dato" sobre un jugador sin haber usado primero la herramienta. Para el resto de datos del partido, si algo no está, dilo con naturalidad. Nunca inventes cifras, jugadores ni resultados: si la herramienta tampoco lo trae, entonces sí dilo con honestidad.
+1. Usa los datos que te entrego para el partido. PERO tienes una HERRAMIENTA llamada `consultar_jugador`: cuando el cliente pregunte por las estadísticas de un jugador CONCRETO (faltas, remates, tarjetas, goles, asistencias) y ese jugador NO esté ya en los datos que te di, DEBES usar la herramienta `consultar_jugador` para traer sus datos REALES de API-Football antes de responder. NO digas "no tengo ese dato" sobre un jugador sin haber usado primero la herramienta. Para el resto de datos del partido, si algo no está, dilo con naturalidad. Nunca inventes cifras, jugadores ni resultados: si la herramienta tampoco lo trae, entonces sí dilo con honestidad. IMPORTANTE: si el jugador por el que preguntan aparece en la lista de "Bajas y lesionados" del partido, AVÍSALE primero al cliente que está descartado o en duda (y por qué, si lo sabes) ANTES de dar sus estadísticas — dar los números de un jugador que no va a jugar es el error que más destruye la confianza.
 2. NUNCA prometas ganar ni digas "apuesta segura/fija". Hablas en probabilidades y valor; apostar implica riesgo. Si te preguntan si apostar, das tu lectura honesta pero la decisión final es del usuario.
 3. Si hay un ESTADO EN VIVO con marcador, ESE manda: responde en presente y combínalo con el modelo (ej.: van 1-1 y el modelo esperaba pocos goles → otro gol es menos probable).
 4. No pierdas el hilo: una pregunta de seguimiento se refiere al MISMO partido/tema que venían hablando.
@@ -445,6 +445,30 @@ def _h2h_texto(loc, vis, h):
     return txt
 
 
+def _lesiones_texto(nombre, ls):
+    """Traduce las bajas/lesionados a espanol claro, separando DESCARTADOS (no juegan)
+    de DUDAS. Es lo que evita que Mako hable de un jugador lesionado como si fuera a
+    jugar — el error que mas mata la confianza del cliente."""
+    if not isinstance(ls, list) or not ls:
+        return None
+    fuera, dudas = [], []
+    for l in ls:
+        if not isinstance(l, dict):
+            continue
+        nom = (l.get("nombre") or "").strip()
+        if not nom or nom.lower() == "unknown":
+            continue
+        (dudas if l.get("tipo") == "Questionable" else fuera).append(nom)
+    partes = []
+    if fuera:
+        partes.append("descartados (NO juegan): " + ", ".join(fuera[:6]))
+    if dudas:
+        partes.append("en duda: " + ", ".join(dudas[:6]))
+    if not partes:
+        return None
+    return f"{nombre} — " + " · ".join(partes)
+
+
 def _ficha(p):
     """Ficha compacta de datos REALES del partido para aterrizar a Mako."""
     pr = p.get("probabilidades", {}) or {}
@@ -493,6 +517,11 @@ def _ficha(p):
     _formas = [t for t in (_forma_texto(loc, fl), _forma_texto(vis, fv)) if t]
     if _formas:
         L.append("Forma reciente (promedio de sus ultimos partidos): " + " · ".join(_formas))
+    _les = [t for t in (_lesiones_texto(loc, p.get("lesiones_local")),
+                        _lesiones_texto(vis, p.get("lesiones_visita"))) if t]
+    if _les:
+        L.append("Bajas y lesionados (IMPORTANTE, avisale al cliente si pregunta por un "
+                 "jugador que esta aqui): " + " | ".join(_les))
     me = p.get("mercados_ext")
     if isinstance(me, dict):
         # OJO: el objeto pesa ~6000 chars; ANTES se truncaba a 400 y los DISPAROS/paradas
