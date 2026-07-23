@@ -401,6 +401,50 @@ def _goles_por_equipo(p):
     return est_l, est_v, False
 
 
+def _forma_texto(nombre, f):
+    """Traduce la forma reciente (numeros crudos del motor) a espanol que Mako SI
+    puede razonar. ataque_reciente = goles MARCADOS por partido; defensa_reciente =
+    goles RECIBIDOS por partido; forma = rendimiento 0-1 (puntos ponderados). Antes
+    esto se le pasaba a Mako como JSON crudo ({"ataque_reciente": 1.565}) y no lo sabia
+    interpretar -> daba el % sin explicar el porque."""
+    if not isinstance(f, dict):
+        return None
+    at, de, fo, n = (f.get("ataque_reciente"), f.get("defensa_reciente"),
+                     f.get("forma"), f.get("partidos"))
+    partes = []
+    if isinstance(at, (int, float)):
+        partes.append(f"marca ~{round(at, 1)} goles/partido")
+    if isinstance(de, (int, float)):
+        partes.append(f"recibe ~{round(de, 1)}")
+    if isinstance(fo, (int, float)):
+        etq = ("viene muy fuerte" if fo >= 0.75 else "en buena forma" if fo >= 0.60
+               else "irregular" if fo >= 0.45 else "en mala racha")
+        partes.append(f"rendimiento {round(fo * 100)}% ({etq})")
+    if not partes:
+        return None
+    cola = f" [ult. {n}]" if isinstance(n, int) and n else ""
+    return f"{nombre}: " + ", ".join(partes) + cola
+
+
+def _h2h_texto(loc, vis, h):
+    """Traduce el head-to-head (fracciones crudas del motor) a espanol para Mako:
+    quien ha ganado los enfrentamientos directos y si suelen ser de muchos/pocos goles."""
+    if not isinstance(h, dict):
+        return None
+    n = h.get("partidos")
+    if not (isinstance(n, int) and n):
+        return None
+    vl = round((h.get("victorias_local")  or 0) * n)
+    ve = round((h.get("empates")          or 0) * n)
+    vv = max(0, n - vl - ve)   # cierra el cuadre (evita que redondeos no sumen n)
+    txt = f"Historial directo (ult. {n}): {loc} gano {vl}, {vis} gano {vv}, {ve} empates"
+    gpp = h.get("goles_por_partido")
+    if isinstance(gpp, (int, float)):
+        tend = ("muchos goles" if gpp >= 2.6 else "pocos goles" if gpp <= 2.2 else "goles parejos")
+        txt += f". Promedio {round(gpp, 1)} goles/partido (esos duelos tienden a {tend})"
+    return txt
+
+
 def _ficha(p):
     """Ficha compacta de datos REALES del partido para aterrizar a Mako."""
     pr = p.get("probabilidades", {}) or {}
@@ -446,8 +490,9 @@ def _ficha(p):
     if conf:
         L.append(f"Confianza del modelo: {conf}")
     fl, fv = p.get("forma_local"), p.get("forma_visita")
-    if fl or fv:
-        L.append(f"Forma reciente -> {loc}: {json.dumps(fl, ensure_ascii=False)[:180]} | {vis}: {json.dumps(fv, ensure_ascii=False)[:180]}")
+    _formas = [t for t in (_forma_texto(loc, fl), _forma_texto(vis, fv)) if t]
+    if _formas:
+        L.append("Forma reciente (promedio de sus ultimos partidos): " + " · ".join(_formas))
     me = p.get("mercados_ext")
     if isinstance(me, dict):
         # OJO: el objeto pesa ~6000 chars; ANTES se truncaba a 400 y los DISPAROS/paradas
@@ -476,8 +521,9 @@ def _ficha(p):
         if _h:
             L.append("Hándicap asiático (prob. de cubrir la línea): " + " · ".join(_h))
     h2h = p.get("h2h")
-    if h2h:
-        L.append("H2H: " + json.dumps(h2h, ensure_ascii=False)[:200])
+    _h2ht = _h2h_texto(loc, vis, h2h)
+    if _h2ht:
+        L.append(_h2ht)
     props = _props_de(loc, vis)   # fuente dedicada (siempre fresca); datos.js como respaldo
     gole = _limpiar_entidades(props.get("gole", "")) or _goleadores_de(loc, vis)
     if gole:
