@@ -1,3 +1,34 @@
 {
- "partidos": []
+ "partidos": [
+  {
+   "local": "Bolívar",
+   "visitante": "Gremio",
+   "gole": "",
+   "remates": "Gremio: Carlos Vinícius 1.6 remates totales (1.0 a puerta), F. Amuzu 1.4 remates totales (0.8 a puerta), C. Pavón 1.4 remates totales (1.0 a puerta)",
+   "tarjetas": "Gremio: Wagner Leonardo 0.67 amarillas/partido, Marcos Rocha 0.5 amarillas/partido, W. Kannemann 0.5 amarillas/partido",
+   "asistencias": "Gremio: Arthur 0.25 asistencias/partido, J. Enamorado 0.2 asistencias/partido, C. Pavón 0.2 asistencias/partido",
+   "faltas": "Gremio: Viery 2.2 faltas/partido, Gabriel Mec 1.5 faltas/partido, Tiago 1.5 faltas/partido",
+   "quites": "Gremio: W. Kannemann 2.0 quites/partido, L. Pérez 2.0 quites/partido, Caio Paulista 1.67 quites/partido"
+  },
+  {
+   "local": "Botafogo",
+   "visitante": "Vitoria",
+   "gole": "Danilo Santos 44.2% &middot; Arthur Cabral 37.3% &middot; Rene 36.6%",
+   "remates": "Botafogo: Arthur Cabral 1.87 remates totales (1.07 a puerta), Danilo Santos 1.83 remates totales (1.0 a puerta), Matheus Martins 1.5 remates totales (1.0 a puerta) | Vitoria: Rene 1.91 remates totales (1.36 a puerta), Matheuzinho 1.19 remates totales (0.69 a puerta), Zé Vitor 1.1 remates totales (0.3 a puerta)",
+   "tarjetas": "Botafogo: J. Correa 0.5 amarillas/partido, Huguinho 0.5 amarillas/partido, A. Barboza 0.42 amarillas/partido | Vitoria: Zé Marcos 0.5 amarillas/partido, E. Martínez 0.33 amarillas/partido, Zé Vitor 0.3 amarillas/partido",
+   "asistencias": "Botafogo: Kauan Toledo 0.5 asistencias/partido, Nathan Fernandes 0.25 asistencias/partido, Álvaro Montoro 0.2 asistencias/partido | Vitoria: Erick 0.24 asistencias/partido, Gabriel Baralhas 0.2 asistencias/partido, Luan Cândido 0.18 asistencias/partido",
+   "faltas": "Botafogo: Huguinho 2.0 faltas/partido, A. Barboza 1.92 faltas/partido, K. Barria 1.56 faltas/partido | Vitoria: Zé Marcos 2.5 faltas/partido, Zé Vitor 2.2 faltas/partido, Gabriel Baralhas 1.8 faltas/partido",
+   "quites": "Botafogo: Vitinho 2.12 quites/partido, A. Barboza 2.08 quites/partido, N. Ferraresi 1.92 quites/partido | Vitoria: Nathan 1.92 quites/partido, Ramon 1.87 quites/partido, E. Martínez 1.8 quites/partido"
+  },
+  {
+   "local": "Corinthians",
+   "visitante": "Remo",
+   "gole": "",
+   "remates": "Corinthians: Yuri Alberto 1.86 remates totales (0.93 a puerta), R. Garro 1.17 remates totales (0.72 a puerta), João Pedro 1.0 remates totales (0.5 a puerta) | Remo: Patrick de Paula 1.83 remates totales (0.5 a puerta), Gabriel Taliari 1.67 remates totales (1.0 a puerta), Jája Silva 1.36 remates totales (0.79 a puerta)",
+   "tarjetas": "Corinthians: André Ramalho 0.5 amarillas/partido, João Pedro 0.5 amarillas/partido, Kauê Camargo 0.5 amarillas/partido | Remo: Patrick de Paula 0.67 amarillas/partido, João Lucas 0.5 amarillas/partido, João Pedro 0.33 amarillas/partido",
+   "asistencias": "Corinthians: R. Garro 0.33 asistencias/partido, Kaio César 0.17 asistencias/partido, Yuri Alberto 0.14 asistencias/partido | Remo: Patrick de Paula 0.33 asistencias/partido, Vitor Bueno 0.18 asistencias/partido, Alef Manga 0.17 asistencias/partido",
+   "faltas": "Corinthians: A. Carrillo 1.64 faltas/partido, Raniele 1.62 faltas/partido, João Pedro 1.5 faltas/partido | Remo: João Pedro 2.0 faltas/partido, Zé Ricardo 1.5 faltas/partido, Gabriel Taliari 1.5 faltas/partido",
+   "quites": "Corinthians: Raniele 1.88 quites/partido, Matheus Bidu 1.87 quites/partido, Kaio César 1.67 quites/partido | Remo: João Lucas 3.17 quites/partido, Leo Andrade 2.25 quites/partido, Patrick 2.07 quites/partido"
+  }
+ ]
 }
