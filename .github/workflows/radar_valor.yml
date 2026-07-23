@@ -1,0 +1,87 @@
+name: SharpIQ — RADAR DE VALOR (web)
+
+# Regenera radar_feed.js (la seccion PUBLICA "RADAR DE VALOR" de la web).
+# Compara cada casa contra Pinnacle sin margen y publica SOLO las jugadas con
+# valor real tomables en Colombia. No adivina: mide.
+#
+# 🛡️ CUIDADO CON LOS CREDITOS (leccion de live_monitor/live_valor):
+#   · cada 30 min, solo en franja con deporte (15:00-04:00 UTC = 10am-11pm COT)
+#   · radar_valor.py ya trae FRENO: si quedan <5.000 creditos, NO escanea
+#     (el motor manda). Aun asi VIGILAR la primera semana el gasto combinado
+#     con motor + live_valor; si aprieta, subir el cron a 60 min.
+#   · ~2-3 creditos por evento; en pico (~35 eventos) ~100 creditos/corrida.
+
+on:
+  schedule:
+    - cron: '*/30 15-23 * * *'    # cada 30 min, 10am-6pm COT
+    - cron: '*/30 0-4 * * *'      # cada 30 min, 7pm-11pm COT
+  workflow_dispatch:
+
+concurrency:
+  group: radar-valor
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Crear config.py
+        env:
+          ODDS_API_KEY:    ${{ secrets.ODDS_API_KEY }}
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: |
+          python - << 'EOF'
+          import os
+          open("sharpiq-engine/config.py", "w").write("\n".join([
+            f'ODDS_API_KEY       = "{os.environ["ODDS_API_KEY"]}"',
+            f'APIFOOTBALL_KEY    = "{os.environ["APIFOOTBALL_KEY"]}"',
+            'TELEGRAM_TOKEN     = ""',
+            'TELEGRAM_YAMID_ID  = ""',
+            'TELEGRAM_CHAT_ID   = ""',
+            'TELEGRAM_FREE_ID   = ""',
+            'FOOTBALL_DATA_KEY  = ""',
+            'DATABASE_URL       = ""',
+          ]) + "\n")
+          print("config.py OK")
+          EOF
+
+      - name: Configurar git
+        run: |
+          git config user.name  "SharpIQ Radar"
+          git config user.email "radar@sharpiq.co"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+      - name: Regenerar el radar (solo casas de Colombia)
+        env:
+          PYTHONIOENCODING: utf-8
+          PYTHONUTF8: '1'
+        run: python sharpiq-engine/radar_valor.py --web
+
+      - name: Publicar radar_feed.js
+        run: |
+          git add -f radar_feed.js
+          git diff --cached --quiet && echo "sin cambios en el radar" && exit 0
+          git commit -m "radar: valor $(date -u +%H:%M UTC)"
+          for i in 1 2 3; do
+            git pull origin main --no-rebase --quiet || true
+            git push origin main && exit 0
+            sleep 3
+          done
+          echo "push fallo — el proximo ciclo reintenta"
