@@ -29,6 +29,96 @@
    "asistencias": "Corinthians: R. Garro 0.33 asistencias/partido, Kaio César 0.17 asistencias/partido, Yuri Alberto 0.14 asistencias/partido | Remo: Patrick de Paula 0.33 asistencias/partido, Vitor Bueno 0.18 asistencias/partido, Alef Manga 0.17 asistencias/partido",
    "faltas": "Corinthians: A. Carrillo 1.64 faltas/partido, Raniele 1.62 faltas/partido, João Pedro 1.5 faltas/partido | Remo: João Pedro 2.0 faltas/partido, Zé Ricardo 1.5 faltas/partido, Gabriel Taliari 1.5 faltas/partido",
    "quites": "Corinthians: Raniele 1.88 quites/partido, Matheus Bidu 1.87 quites/partido, Kaio César 1.67 quites/partido | Remo: João Lucas 3.17 quites/partido, Leo Andrade 2.25 quites/partido, Patrick 2.07 quites/partido"
+  },
+  {
+   "local": "Belgrano Cordoba",
+   "visitante": "Rosario Central",
+   "gole": "Á. Di María 30.0% &middot; A. Luna 28.3% &middot; E. Copetti 25.5%"
+  },
+  {
+   "local": "Sarmiento Junin",
+   "visitante": "Argentinos JRS",
+   "gole": "J. Marabel 31.3%"
+  },
+  {
+   "local": "Athletic Club",
+   "visitante": "São Bernardo",
+   "gole": "Ronaldo Tavares 47.4%"
+  },
+  {
+   "local": "Cuiaba",
+   "visitante": "Atletico Goianiense",
+   "gole": "Gustavo Coutinho 43.5%"
+  },
+  {
+   "local": "Botafogo SP",
+   "visitante": "Juventude",
+   "gole": "Everton Morelli 33.8% &middot; Hygor 32.0% &middot; Raí 19.9%",
+   "remates": "Botafogo SP: Everton Morelli 1.76 remates totales (0.65 a puerta), Hygor 1.46 remates totales (0.85 a puerta), L. Maciel 0.85 remates totales (0.23 a puerta) | Juventude: Raí 1.33 remates totales (0.67 a puerta), Marcos Paulo 1.21 remates totales (0.93 a puerta), Alisson Safira 1.18 remates totales (0.47 a puerta)",
+   "tarjetas": "Botafogo SP: Felipe Vieira 0.57 amarillas/partido, Matheus Sales 0.4 amarillas/partido, Márcio Carlos Maranhão 0.4 amarillas/partido | Juventude: Gabriel Pinheiro 0.33 amarillas/partido, Marcos Paulo 0.31 amarillas/partido, Mandaca 0.3 amarillas/partido",
+   "asistencias": "Botafogo SP: Rafael Gava 0.31 asistencias/partido, Patrick Brey 0.19 asistencias/partido, Zé Hugo 0.12 asistencias/partido | Juventude: Raí 0.17 asistencias/partido, Luan Gonçalves 0.14 asistencias/partido, Aderlan 0.14 asistencias/partido",
+   "faltas": "Botafogo SP: Patrick Brey 2.0 faltas/partido, Carlão 1.75 faltas/partido, Guilherme Mariano 1.67 faltas/partido | Juventude: Rodrigo Sam 2.07 faltas/partido, Alisson Safira 1.94 faltas/partido, Mandaca 1.9 faltas/partido",
+   "quites": "Botafogo SP: Patrick Brey 2.19 quites/partido, Marco Antônio 2.0 quites/partido, Matheus Sales 1.6 quites/partido | Juventude: Aderlan 2.57 quites/partido, Rodrigo Sam 2.53 quites/partido, Raí 1.89 quites/partido"
+  },
+  {
+   "local": "Boca Juniors",
+   "visitante": "O'Higgins",
+   "gole": "F. González 28.3%",
+   "remates": "O'Higgins: A. Castillo 2.5 remates totales (1.0 a puerta), F. González 1.83 remates totales (1.0 a puerta), A. Robledo 1.5 remates totales (1.0 a puerta)",
+   "tarjetas": "O'Higgins: B. Schamine 0.5 amarillas/partido, M. Brizuela 0.5 amarillas/partido, L. Pavez 0.4 amarillas/partido",
+   "asistencias": "O'Higgins: F. González 0.67 asistencias/partido, B. Yáñez 0.25 asistencias/partido, Felipe Andrés Faúndez González 0.17 asistencias/partido",
+   "faltas": "O'Higgins: A. Castillo 2.33 faltas/partido, F. González 1.17 faltas/partido, Felipe Andrés Faúndez González 1.0 faltas/partido",
+   "quites": "O'Higgins: J. Leiva 3.0 quites/partido, Felipe Andrés Faúndez González 2.0 quites/partido, M. Sarrafiore 2.0 quites/partido"
+  },
+  {
+   "local": "Santa Fe",
+   "visitante": "Caracas FC",
+   "gole": "W. Correa 39.3%",
+   "remates": "Caracas FC: A. Fernández 1.71 remates totales (0.71 a puerta), W. Correa 1.17 remates totales (1.17 a puerta), L. Del Pino 1.14 remates totales (0.57 a puerta)",
+   "tarjetas": "Caracas FC: F. La Mantia 0.5 amarillas/partido, Á. Figueroa 0.5 amarillas/partido, L. Del Pino 0.43 amarillas/partido",
+   "asistencias": "Caracas FC: I. Gudiño 0.2 asistencias/partido, E. Fereira 0.14 asistencias/partido, L. Del Pino 0.14 asistencias/partido",
+   "faltas": "Caracas FC: I. Gudiño 2.0 faltas/partido, Á. Figueroa 1.5 faltas/partido, M. Covea 1.43 faltas/partido",
+   "quites": "Caracas FC: C. Larotonda 2.43 quites/partido, I. Gudiño 1.6 quites/partido, E. Fereira 1.57 quites/partido"
+  },
+  {
+   "local": "Defensa Y Justicia",
+   "visitante": "Aldosivi",
+   "gole": "",
+   "remates": "Defensa Y Justicia: C. Pérez 1.67 remates totales (0.0 a puerta), J. Gutiérrez 1.38 remates totales (0.69 a puerta), A. Molinas 1.07 remates totales (0.53 a puerta) | Aldosivi: J. Arias 1.27 remates totales (0.27 a puerta), N. Cordero 1.25 remates totales (0.42 a puerta), F. Anso 1.0 remates totales (0.33 a puerta)",
+   "tarjetas": "Defensa Y Justicia: D. Martínez 0.42 amarillas/partido, D. Fernández 0.25 amarillas/partido, R. Botta 0.23 amarillas/partido | Aldosivi: F. Gino 0.46 amarillas/partido, E. Rolón 0.43 amarillas/partido, T. Fernández 0.33 amarillas/partido",
+   "asistencias": "Defensa Y Justicia: A. Molinas 0.27 asistencias/partido, J. Gutiérrez 0.19 asistencias/partido, A. Portillo 0.09 asistencias/partido | Aldosivi: L. Rodríguez 0.09 asistencias/partido, F. Román 0.07 asistencias/partido, N. Zalazar 0.07 asistencias/partido",
+   "faltas": "Defensa Y Justicia: D. Martínez 1.33 faltas/partido, C. Pérez 1.33 faltas/partido, L. Souto 1.13 faltas/partido | Aldosivi: J. Novillo 1.75 faltas/partido, F. Gino 1.62 faltas/partido, T. Fernández 1.56 faltas/partido",
+   "quites": "Defensa Y Justicia: D. Fernández 3.17 quites/partido, D. Martínez 2.08 quites/partido, S. Sosa 1.6 quites/partido | Aldosivi: N. Breitenbruch 2.33 quites/partido, R. Bochi 2.1 quites/partido, E. Iñíguez 2.0 quites/partido"
+  },
+  {
+   "local": "Gimnasia M.",
+   "visitante": "Central Cordoba de Santiago",
+   "gole": "M. Torres 35.9% &middot; Á. Di María 30.0% &middot; A. Luna 28.3%",
+   "remates": "Gimnasia M.: A. Módica 1.62 remates totales (1.0 a puerta), F. Lencioni 1.56 remates totales (0.62 a puerta), U. Sánchez 1.0 remates totales (0.33 a puerta) | Central Cordoba de Santiago: M. Santos 1.21 remates totales (0.5 a puerta), D. Barrera 0.93 remates totales (0.47 a puerta), E. Naya 0.67 remates totales (0.58 a puerta)",
+   "tarjetas": "Gimnasia M.: L. Petruchi 0.5 amarillas/partido, J. Franco 0.33 amarillas/partido, F. Antonini 0.33 amarillas/partido | Central Cordoba de Santiago: L. Marchi 0.5 amarillas/partido, A. Maciel 0.43 amarillas/partido, L. González 0.29 amarillas/partido",
+   "asistencias": "Gimnasia M.: I. Sabatini 0.4 asistencias/partido, F. Lencioni 0.31 asistencias/partido, S. Rodríguez 0.09 asistencias/partido | Central Cordoba de Santiago: H. Tijanovich 0.15 asistencias/partido, M. Santos 0.14 asistencias/partido, M. Iacobellis 0.08 asistencias/partido",
+   "faltas": "Gimnasia M.: N. Linares 1.62 faltas/partido, I. Sabatini 1.6 faltas/partido, F. Antonini 1.58 faltas/partido | Central Cordoba de Santiago: F. Juárez 1.5 faltas/partido, M. Santos 1.43 faltas/partido, S. Moyano 1.29 faltas/partido",
+   "quites": "Gimnasia M.: D. Mondino 1.91 quites/partido, F. Antonini 1.83 quites/partido, F. Lencioni 1.81 quites/partido | Central Cordoba de Santiago: M. Vera 2.27 quites/partido, Y. Casermeiro 2.25 quites/partido, A. Maciel 2.0 quites/partido"
+  },
+  {
+   "local": "Racing Club",
+   "visitante": "Gimnasia L.P.",
+   "gole": "M. Torres 35.9%",
+   "remates": "Racing Club: A. Martínez 1.5 remates totales (0.5 a puerta), M. Miljevic 1.29 remates totales (0.64 a puerta), D. Pizarro 1.0 remates totales (1.0 a puerta) | Gimnasia L.P.: M. Zalazar 1.57 remates totales (0.43 a puerta), M. Torres 1.11 remates totales (0.83 a puerta), A. Auzmendi 1.0 remates totales (0.44 a puerta)",
+   "tarjetas": "Racing Club: M. Di Cesare 0.53 amarillas/partido, J. Nardoni 0.5 amarillas/partido, T. Rubio 0.5 amarillas/partido | Gimnasia L.P.: I. Fernández 0.5 amarillas/partido, B. Barros Schelotto 0.5 amarillas/partido, A. Steimbach 0.41 amarillas/partido",
+   "asistencias": "Racing Club: D. Pizarro 0.5 asistencias/partido, G. Rojas 0.29 asistencias/partido, S. Solari 0.18 asistencias/partido | Gimnasia L.P.: N. Schelotto 0.19 asistencias/partido, A. Steimbach 0.18 asistencias/partido, I. Fernández 0.12 asistencias/partido",
+   "faltas": "Racing Club: A. Martínez 1.75 faltas/partido, J. Nardoni 1.5 faltas/partido, D. Pizarro 1.5 faltas/partido | Gimnasia L.P.: I. Fernández 1.38 faltas/partido, I. Miramón 1.38 faltas/partido, A. Max 1.33 faltas/partido",
+   "quites": "Racing Club: E. Cannavo 3.08 quites/partido, S. Sosa 1.83 quites/partido, B. Zuculini 1.75 quites/partido | Gimnasia L.P.: A. Max 3.2 quites/partido, A. Steimbach 2.76 quites/partido, I. Miramón 2.15 quites/partido"
+  },
+  {
+   "local": "Velez Sarsfield",
+   "visitante": "Instituto Cordoba",
+   "gole": "F. Monzón 33.0% &middot; A. Luna 28.3% &middot; L. Zelarayán 19.9%",
+   "remates": "Velez Sarsfield: F. Monzón 1.93 remates totales (1.07 a puerta), M. Pellegrini 1.33 remates totales (0.75 a puerta), D. Godoy 1.17 remates totales (0.5 a puerta) | Instituto Cordoba: A. Luna 2.07 remates totales (1.13 a puerta), F. Jara 1.36 remates totales (0.55 a puerta), J. Córdoba 1.0 remates totales (0.58 a puerta)",
+   "tarjetas": "Velez Sarsfield: L. Robertone 0.33 amarillas/partido, Elías Gómez 0.31 amarillas/partido, B. Romero 0.3 amarillas/partido | Instituto Cordoba: F. Alarcón 0.38 amarillas/partido, F. Moyano 0.33 amarillas/partido, A. Luna 0.33 amarillas/partido",
+   "asistencias": "Velez Sarsfield: D. Valdés 0.36 asistencias/partido, D. Godoy 0.25 asistencias/partido, M. Arias 0.2 asistencias/partido | Instituto Cordoba: J. Lázaro 0.18 asistencias/partido, D. Sosa 0.12 asistencias/partido, L. Rafaelli 0.11 asistencias/partido",
+   "faltas": "Velez Sarsfield: Jano Gordon 2.0 faltas/partido, F. Monzón 1.47 faltas/partido, T. Andrada 1.44 faltas/partido | Instituto Cordoba: M. Fonseca 1.69 faltas/partido, J. Córdoba 1.58 faltas/partido, A. Massaccesi 1.5 faltas/partido",
+   "quites": "Velez Sarsfield: Jano Gordon 3.33 quites/partido, T. Andrada 2.56 quites/partido, R. Aliendro 2.41 quites/partido | Instituto Cordoba: G. Cerato 2.62 quites/partido, J. Córdoba 1.83 quites/partido, F. Alarcón 1.77 quites/partido"
   }
  ]
 }
