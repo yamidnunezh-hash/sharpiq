@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-23T15:26:38Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-23T17:02:53Z",
+  "live": [
     {
       "id": "22fc220be6958e93fba4354054d8fd16",
       "sport": "baseball_mlb",
@@ -13,9 +12,11 @@
       "hora": "11:16 COT",
       "ts": 1784805360,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "3"
+    }
+  ],
+  "upcoming": [
     {
       "id": "5c7e77b42c0db49ce882d3c9473d74c1",
       "sport": "baseball_mlb",
@@ -208,6 +209,20 @@
       "fecha": "25/07/26",
       "hora": "16:30 COT",
       "ts": 1784997000,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "804d263820352f697b38f35c8c9286d0",
+      "sport": "soccer_brazil_campeonato",
+      "liga": "Brasileirao",
+      "emoji": "⚽",
+      "home": "Vasco da Gama",
+      "away": "Mirassol",
+      "fecha": "25/07/26",
+      "hora": "18:30 COT",
+      "ts": 1785004200,
       "completed": false,
       "score_home": null,
       "score_away": null
