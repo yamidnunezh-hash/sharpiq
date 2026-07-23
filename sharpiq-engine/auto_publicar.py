@@ -525,10 +525,11 @@ def correr():
                 _cu = float(_vb.get("cuota") or 0)
                 _e  = _vb.get("ev_pinn")
                 _e  = _e if _e is not None else 0.0
-                # Piso 1.45: este bloque NO pasa por clasificar_tiers, asi que hay que
-                # repetirle el piso aqui (mismo hueco por el que se colo el BTTS).
-                # Debajo de 1.45 el breakeven (>69%) supera el techo historico del motor.
-                if _pr < 40 or _cu < 1.45 or _cu > 3.0:
+                # Piso 1.80 (22-jul-26): este bloque NO pasa por clasificar_tiers, asi
+                # que hay que repetirle el piso aqui. Backtest 417 picks (2 mitades):
+                # la banda <1.80 PIERDE en ambas (yield -6% y -2%) pese a acertar ~65%;
+                # cortarla lleva el yield global de +2.6% a +21.9%. Ver motor.py SEGURO.
+                if _pr < 40 or _cu < 1.80 or _cu > 3.0:
                     continue
                 _cands.append((_mk, _vb, _pr, _cu, _e))
             _out = []

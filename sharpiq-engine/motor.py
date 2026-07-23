@@ -4285,17 +4285,22 @@ def clasificar_tiers(reporte):
     # -4.41u. No es mala suerte, es aritmetica: a cuota 1.37 el punto de equilibrio
     # es 72.8% de acierto y el motor ahi logra 69.1%. Su MEJOR marca historica en
     # cualquier banda es 69.1% -> se le pedia mas de lo que ha logrado nunca.
-    # Breakeven a 1.45 = 69.0%, justo en su techo. Debajo de eso NO se puede ganar.
-    # Backtest 214 picks: yield +1.4% -> +5.6% cortando esta banda.
-    SEGURO_MIN_CUOTA = 1.45
+    # PISO SUBIDO A 1.80 (22-jul-26). Backtest riguroso de 417 picks reales,
+    # partido en 2 mitades por fecha (anti-sobreajuste): la banda cuota <1.80
+    # PIERDE plata en LAS DOS mitades (yield -6.1% y -1.7%), pese a acertar ~65%.
+    # La zona 1.80-2.20 GANA en las dos (+23% y +27%). Cortar <1.80 lleva el yield
+    # global de +2.6% a +21.9% (104 picks, volumen sano). SEGURO_MAX=2.10 -> SEGURO
+    # queda 1.80-2.10, justo la zona ganadora. Los favoritos de cuota baja aciertan
+    # mucho pero pierden plata: es la trampa clasica del breakeven.
+    SEGURO_MIN_CUOTA = 1.80
 
     PRINC_MIN_PROB   = 45.0
-    PRINC_MIN_CUOTA  = 1.55
+    PRINC_MIN_CUOTA  = 1.80    # piso subido a 1.80 (backtest 417 picks: <1.80 pierde)
     PRINC_MAX_CUOTA  = 3.00
     PRINC_MIN_EV     = 2.0
 
     AV_MIN_EV        = 7.0
-    AV_MIN_CUOTA     = 1.75
+    AV_MIN_CUOTA     = 1.80    # piso subido a 1.80 (backtest 417 picks: <1.80 pierde)
     AV_MAX_CUOTA     = 5.5     # Política: nunca publicar cuota > 5.5
     AV_MIN_PROB      = 30.0    # Política: nunca publicar prob < 30%
 
@@ -4306,7 +4311,7 @@ def clasificar_tiers(reporte):
     # el resto del anio mantiene la disciplina +EV. Aprobado por Yamid 2026-06-11.
     MUND_SEGURO_MIN_PROB  = 65.0    # favorito claro (mas exigente que el 62 normal)
     MUND_SEGURO_MAX_CUOTA = 1.95
-    MUND_SEGURO_MIN_CUOTA = 1.45    # piso alineado al global (12-jul): breakeven 69% = techo del motor
+    MUND_SEGURO_MIN_CUOTA = 1.80    # piso subido a 1.80 (22-jul, backtest 417 picks)
     MUND_SEGURO_MIN_EV    = -3.0    # tolera el margen de la casa en favoritos solidos
     def _es_mundial(lc):
         lc = str(lc).lower()
