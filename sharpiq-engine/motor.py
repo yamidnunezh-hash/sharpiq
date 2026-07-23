@@ -4304,10 +4304,12 @@ def clasificar_tiers(reporte):
     # global de +2.6% a +21.9% (104 picks, volumen sano). SEGURO_MAX=2.10 -> SEGURO
     # queda 1.80-2.10, justo la zona ganadora. Los favoritos de cuota baja aciertan
     # mucho pero pierden plata: es la trampa clasica del breakeven.
-    SEGURO_MIN_CUOTA = 1.80
+    SEGURO_MIN_CUOTA = 1.55    # piso a 1.55 SOLO para dejar entrar la Zona B (1.55-1.75 +
+                               # prob 65-70%); la compuerta _zona_ganadora cierra todo lo demas
+                               # sub-1.80. Zona A sigue siendo 1.80-2.20.
 
     PRINC_MIN_PROB   = 45.0
-    PRINC_MIN_CUOTA  = 1.80    # piso subido a 1.80 (backtest 417 picks: <1.80 pierde)
+    PRINC_MIN_CUOTA  = 1.55    # ver SEGURO_MIN_CUOTA: piso 1.55 para Zona B; gate cierra el resto
     PRINC_MAX_CUOTA  = 2.20    # techo bajado 3.00->2.20 (backtest 2875: >2.20 PIERDE en ambas mitades)
     PRINC_MIN_EV     = 2.0
 
@@ -4531,7 +4533,8 @@ def clasificar_tiers(reporte):
         ev    = c.get("ev_pinn")
         if cuota < PISO_CUOTA:                                    # #1
             return False
-        if (not c.get("alta_confianza")                          # #3 (exenta la excepción Mundial)
+        _es_zona_b = (1.55 <= cuota <= 1.75 and 65 <= prob < 70)  # Zona B validada (+4.9%)
+        if (not c.get("alta_confianza") and not _es_zona_b       # #3 (exenta Mundial y Zona B)
                 and BANDA_RIESGO[0] <= prob < BANDA_RIESGO[1]
                 and ev is not None and ev < BANDA_RIESGO_MIN_EV):
             return False
@@ -4543,9 +4546,17 @@ def clasificar_tiers(reporte):
                 c["score"] = c.get("score", 0) * ZONA_VALOR_BOOST
         return pool
 
-    seguro_pool    = _boost_zona([c for c in seguro_pool    if _pasa_compuerta(c)])
-    principal_pool = _boost_zona([c for c in principal_pool if _pasa_compuerta(c)])
-    alto_pool      = _boost_zona([c for c in alto_pool      if _pasa_compuerta(c)])
+    # ── COMPUERTA DE ZONAS GANADORAS (backtest 2875 picks, split-half por fecha) ──
+    # Solo 2 zonas ganan en AMBAS mitades: A = cuota 1.80-2.20 (+1.8%); B = cuota
+    # 1.55-1.75 con prob 65-70% (+4.9%, favorito bien calibrado). Todo lo demas
+    # (longshots >2.20, favoritos <1.55, prob>=70 sobre-confiado) PIERDE. Esta es la
+    # senal robusta REAL (la cuota), no el EV del modelo (que esta mal calibrado).
+    def _zona_ganadora(c):
+        cu = float(c.get("cuota") or 0); pr = float(c.get("prob") or 0)
+        return (1.80 <= cu <= 2.20) or (1.55 <= cu <= 1.75 and 65 <= pr < 70)
+    seguro_pool    = _boost_zona([c for c in seguro_pool    if _pasa_compuerta(c) and _zona_ganadora(c)])
+    principal_pool = _boost_zona([c for c in principal_pool if _pasa_compuerta(c) and _zona_ganadora(c)])
+    alto_pool      = _boost_zona([c for c in alto_pool      if _pasa_compuerta(c) and _zona_ganadora(c)])
 
     seguro_pool.sort(key=lambda x: x["score"], reverse=True)
     principal_pool.sort(key=lambda x: x["score"], reverse=True)
@@ -4580,8 +4591,10 @@ def clasificar_tiers(reporte):
             # estrella (Mundial...), donde queremos el mejor pick de CADA partido.
             if liga in usados_ligas and liga not in _LIGAS_MERCADO_COMPLETO:
                 continue
-            # Máximo 1 pick de tipo "totals" entre los 3 picks del día
-            if not permitir_mismo_tipo and tipo == "totals" and usados_mercados.count("totals") >= 1:
+            # VARIEDAD (22-jul): los 3 picks base deben ser de TIPOS DISTINTOS (max 1
+            # por tipo) para que no salga "Under 2.5" repetido. Antes solo limitaba
+            # "totals"; ahora aplica a todos los tipos (goles/1x2/corners/tarjetas/handicap).
+            if not permitir_mismo_tipo and usados_mercados.count(tipo) >= 1:
                 continue
             usados_partidos.add(k)
             usados_ligas.add(liga)
@@ -4603,6 +4616,8 @@ def clasificar_tiers(reporte):
     MAX_TOTAL    = 5    # tope de extras en ligas normales
     MAX_ESTRELLA = 8    # tope total cuando hay torneos estrella (1 por partido)
     MAX_POR_LIGA = 2    # diversificacion en ligas normales
+    MAX_POR_TIPO = 2    # VARIEDAD (22-jul): max 2 picks del mismo tipo de mercado en TODO
+                        # el dia (goles/1x2/corners/tarjetas/handicap). Evita el muro de "Under 2.5".
     _base = [t for t in (seguro, principal, alto_valor) if t]
     _liga_cnt = {}
     for _t in _base:
@@ -4628,7 +4643,11 @@ def clasificar_tiers(reporte):
             break
         if _k in usados_partidos:
             continue
+        _tp = _mercado_tipo(c['mercado'])   # VARIEDAD: no apilar el mismo tipo
+        if usados_mercados.count(_tp) >= MAX_POR_TIPO:
+            continue
         usados_partidos.add(_k)
+        usados_mercados.append(_tp)
         _lg = str(c["pred"].get("liga_code", ""))
         _liga_cnt[_lg] = _liga_cnt.get(_lg, 0) + 1
         extra.append({**c, "tier": _tier_por_ev(c.get("ev_pinn") or 0)})
@@ -4647,7 +4666,11 @@ def clasificar_tiers(reporte):
                 continue
             if _liga_cnt.get(_lg, 0) >= MAX_POR_LIGA:
                 continue
+            _tp = _mercado_tipo(c['mercado'])   # VARIEDAD: no apilar el mismo tipo
+            if usados_mercados.count(_tp) >= MAX_POR_TIPO:
+                continue
             usados_partidos.add(_k)
+            usados_mercados.append(_tp)
             _liga_cnt[_lg] = _liga_cnt.get(_lg, 0) + 1
             extra.append({**c, "tier": _tn})
     if extra:
