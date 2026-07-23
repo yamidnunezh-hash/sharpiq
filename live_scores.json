@@ -1,20 +1,6 @@
 {
-  "updated": "2026-07-23T19:59:27Z",
+  "updated": "2026-07-23T21:14:02Z",
   "live": [
-    {
-      "id": "5c7e77b42c0db49ce882d3c9473d74c1",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Cleveland Guardians",
-      "away": "Minnesota Twins",
-      "fecha": "23/07/26",
-      "hora": "12:11 COT",
-      "ts": 1784808660,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "1"
-    },
     {
       "id": "36ba7a8a8c46e8cc308c1dd037995889",
       "sport": "baseball_mlb",
@@ -26,7 +12,7 @@
       "hora": "14:08 COT",
       "ts": 1784815680,
       "completed": false,
-      "score_home": "1",
+      "score_home": "3",
       "score_away": "1"
     }
   ],
@@ -244,6 +230,20 @@
   ],
   "finished": [
     {
+      "id": "5c7e77b42c0db49ce882d3c9473d74c1",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Cleveland Guardians",
+      "away": "Minnesota Twins",
+      "fecha": "23/07/26",
+      "hora": "12:11 COT",
+      "ts": 1784808660,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "3"
+    },
+    {
       "id": "22fc220be6958e93fba4354054d8fd16",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -368,20 +368,6 @@
       "completed": true,
       "score_home": "1",
       "score_away": "5"
-    },
-    {
-      "id": "5a272ddcdf5d8b9d87abacf3a492c021",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Texas Rangers",
-      "away": "Chicago White Sox",
-      "fecha": "22/07/26",
-      "hora": "19:06 COT",
-      "ts": 1784747160,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "4"
     }
   ]
 }
