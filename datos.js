@@ -4,6 +4,23 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "23/07/26",
+    partido:    "Corinthians vs Remo",
+    liga:       "Brasileirao",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.85",
+    hora:       "17:30 COT",
+    status:     "vip",
+    tier:       "seguro",
+    stake_pct:  "3",
+    prob:       "62",
+    sharpscore: "66",
+    cuota_betplay: "",
+    cuota_justa:   "",
+    valor_real:    "",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "22/07/26",
     partido:    "Nashville SC vs CF Montreal",
     liga:       "MLS",
