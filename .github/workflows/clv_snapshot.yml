@@ -4,10 +4,12 @@ name: SharpIQ CLV Snapshot
 # congela el cierre antes del kickoff (-> CLV). Solo lee/escribe la DB Postgres;
 # NO commitea al repo (no ensucia ramas).
 on:
-  # PAUSADO 2026-06-18: analitica interna (CLV) no monetizada; quemaba Odds API
-  # cada 30 min. Reactivar quitando los '#' cuando se use el CLV de verdad.
-  # schedule:
-  #   - cron: '8,38 * * * *'   # cada 30 min (:08 y :38)
+  # REACTIVADO 2026-07-22: el CLV es la PRUEBA de edge del motor (batir la linea de
+  # cierre). Ritmo 30 min => cierre capturado a <=30 min del pitazo = precision
+  # profesional, y dentro del margen del plan de API (100k/mes). NO subir a 15 min:
+  # reventaria el plan sumado al gasto del motor y cortaria la API.
+  schedule:
+    - cron: '8,38 * * * *'   # cada 30 min (:08 y :38)
   workflow_dispatch:
 
 permissions:
