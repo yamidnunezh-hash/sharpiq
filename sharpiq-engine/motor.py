@@ -4274,16 +4274,23 @@ def clasificar_tiers(reporte):
     Selecciona los 3 picks del día evaluando TODOS los mercados disponibles.
     Los tiers se asignan por perfil de riesgo (prob + EV + cuota), no por tipo de mercado.
 
-    SEGURO:     prob >= 62%, EV >= 2% vs Pinnacle, cuota <= 2.10
-    PRINCIPAL:  prob >= 45%, EV >= 2% vs Pinnacle, cuota 1.55-3.00
-    ALTO VALOR: EV >= 7% vs Pinnacle, cuota 1.75-5.5, prob >= 30%
+    ZONA GANADORA (backtest 2875 picks, split-half por fecha): SOLO cuota 1.80-2.20
+    gana en ambas mitades (+1.8%). >2.20 (longshots) y <1.80 (favoritos) PIERDEN.
+    SEGURO:     prob >= 62%, EV >= 2% vs Pinnacle, cuota 1.80-2.20
+    PRINCIPAL:  prob >= 45%, EV >= 2% vs Pinnacle, cuota 1.80-2.20
+    ALTO VALOR: EV >= 7% vs Pinnacle, cuota 1.80-2.20, prob >= 30%
 
     Mercados elegibles: 1X2, Over/Under 0.5-5.5, BTTS, DC, DNB,
                         Hándicap Asiático, cualquier mercado con línea Pinnacle.
     Nunca repite el mismo partido entre tiers.
     """
     SEGURO_MIN_PROB  = 62.0
-    SEGURO_MAX_CUOTA = 2.10
+    # TECHO DE CUOTA 2.20 (22-jul-26). Backtest de 2875 picks (2022-2025) partido en
+    # 2 mitades por fecha (anti-sobreajuste): la ZONA GANADORA robusta es cuota 1.80-2.20
+    # (+1.8%, gana en AMBAS mitades). Todo lo de cuota >2.20 (longshots que el modelo "ama"
+    # por EV inflado) PIERDE. La regla 1.80-2.20 lleva el yield global de -2.5% a +2.1%.
+    # Es el arreglo de la sobre-confianza: el motor infla el valor de longshots y favoritos.
+    SEGURO_MAX_CUOTA = 2.20
     SEGURO_MIN_EV    = 2.0     # Mínimo 2% de edge real vs Pinnacle
     # PISO DE CUOTA (12-jul-2026). SEGURO era el unico tier SIN piso -> por ahi se
     # colaban los picks de 1.20-1.44: 81 picks (38% de TODO el volumen) que perdian
@@ -4301,12 +4308,14 @@ def clasificar_tiers(reporte):
 
     PRINC_MIN_PROB   = 45.0
     PRINC_MIN_CUOTA  = 1.80    # piso subido a 1.80 (backtest 417 picks: <1.80 pierde)
-    PRINC_MAX_CUOTA  = 3.00
+    PRINC_MAX_CUOTA  = 2.20    # techo bajado 3.00->2.20 (backtest 2875: >2.20 PIERDE en ambas mitades)
     PRINC_MIN_EV     = 2.0
 
     AV_MIN_EV        = 7.0
     AV_MIN_CUOTA     = 1.80    # piso subido a 1.80 (backtest 417 picks: <1.80 pierde)
-    AV_MAX_CUOTA     = 5.5     # Política: nunca publicar cuota > 5.5
+    AV_MAX_CUOTA     = 2.20    # techo bajado 5.5->2.20 (backtest 2875: los longshots >2.20
+                               # que el modelo marca "alto valor" por EV inflado, PIERDEN en
+                               # las 2 mitades). ALTO VALOR = mayor EV DENTRO de la zona 1.80-2.20.
     AV_MIN_PROB      = 30.0    # Política: nunca publicar prob < 30%
 
     # -- MUNDIAL: tier SEGURO de alta confianza (evento estrella) --------
