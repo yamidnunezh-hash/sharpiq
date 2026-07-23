@@ -12,10 +12,10 @@
       "hora": "22:00",
       "fecha_evento": "2026-07-23",
       "cuotas": {
-        "1": 1.7,
+        "1": 1.69,
         "1_casa": "Betfair",
         "pinnacle_1": 1.57,
-        "2": 5.7,
+        "2": 5.8,
         "2_casa": "Betfair",
         "pinnacle_2": 5.08,
         "X": 4.1,
@@ -162,24 +162,24 @@
       "confianza": 80.8,
       "value_bets": {
         "victoria_local": {
-          "value": -0.001,
-          "ev_porcentaje": -0.1,
-          "ev_pinn": -0.1,
+          "value": -0.007,
+          "ev_porcentaje": -0.7,
+          "ev_pinn": -0.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.7,
+          "cuota": 1.69,
           "casa": "Betfair",
           "pinn_prob": 58.7
         },
         "victoria_visita": {
-          "value": 0.035,
-          "ev_porcentaje": 3.5,
-          "ev_pinn": 3.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 5.7,
+          "value": 0.053,
+          "ev_porcentaje": 5.3,
+          "ev_pinn": 5.3,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "VALOR",
+          "cuota": 5.8,
           "casa": "Betfair",
           "pinn_prob": 18.2
         },
@@ -580,7 +580,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Local",
         "prob": 58.7,
-        "ev": -0.1
+        "ev": -0.7
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -7190,7 +7190,7 @@
       "hora": "00:30",
       "fecha_evento": "2026-07-23",
       "cuotas": {
-        "1": 2.58,
+        "1": 2.6,
         "1_casa": "Betfair",
         "pinnacle_1": 2.55,
         "2": 3.45,
@@ -7340,13 +7340,13 @@
       "confianza": 100.0,
       "value_bets": {
         "victoria_local": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.018,
+          "ev_porcentaje": -1.8,
+          "ev_pinn": -1.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.58,
+          "cuota": 2.6,
           "casa": "Betfair",
           "pinn_prob": 37.8
         },
@@ -13893,5 +13893,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:01:15"
+  "generado": "16:01:44"
 }
