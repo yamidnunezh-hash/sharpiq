@@ -18,7 +18,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "22/07/26",
@@ -2842,6 +2842,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "23/07/26",
+    partido:    "Corinthians vs Remo",
+    liga:       "Brasileirao",
+    prediccion: "Under 2.5 Goles",
+    cuota:      "1.85",
+    prob:       "62",
+    resultado:  "loss"
+  },
   {
     fecha:      "22/07/26",
     partido:    "Coritiba vs Palmeiras",
