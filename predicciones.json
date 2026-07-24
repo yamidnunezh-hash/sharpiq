@@ -12203,11 +12203,11 @@
       "hora": "17:00",
       "fecha_evento": "2026-07-24",
       "cuotas": {
-        "1": 1.66,
+        "1": 1.65,
         "1_casa": "Betfair",
         "pinnacle_1": 1.62,
-        "2": 5.3,
-        "2_casa": "Unibet",
+        "2": 5.4,
+        "2_casa": "Betfair",
         "pinnacle_2": 4.91,
         "X": 4.7,
         "X_casa": "Betfair",
@@ -12353,25 +12353,25 @@
       "confianza": 78.4,
       "value_bets": {
         "victoria_local": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.025,
+          "ev_porcentaje": -2.5,
+          "ev_pinn": -2.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.66,
+          "cuota": 1.65,
           "casa": "Betfair",
           "pinn_prob": 59.1
         },
         "victoria_visita": {
-          "value": 0.033,
-          "ev_porcentaje": 3.3,
-          "ev_pinn": 3.3,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 5.3,
-          "casa": "Unibet",
+          "value": 0.052,
+          "ev_porcentaje": 5.2,
+          "ev_pinn": 5.2,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "VALOR",
+          "cuota": 5.4,
+          "casa": "Betfair",
           "pinn_prob": 19.5
         },
         "empate": {
@@ -12758,9 +12758,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Victoria Local",
-        "prob": 59.1,
-        "ev": -2.0
+        "mercado": "Victoria Visitante",
+        "prob": 19.5,
+        "ev": 5.2
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -22434,7 +22434,7 @@
         "Chicago Cubs": 2.0,
         "Pittsburgh Pirates": 1.95,
         "Over 8.0": 1.91,
-        "Under 8.0": 1.96
+        "Under 8.0": 1.94
       },
       "probabilidades": {
         "Chicago Cubs": 49.7,
@@ -22479,14 +22479,14 @@
           "mercado_nombre": "Over 8.0"
         },
         "under_8_0": {
-          "value": 0.018,
-          "ev_porcentaje": 1.8,
-          "ev_pinn": 1.8,
+          "value": 0.007,
+          "ev_porcentaje": 0.7,
+          "ev_pinn": 0.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.96,
-          "casa": "DraftKings",
+          "cuota": 1.94,
+          "casa": "Unibet",
           "pinn_prob": 51.9,
           "mercado_nombre": "Under 8.0"
         }
@@ -22494,7 +22494,7 @@
       "prediccion_principal": {
         "mercado": "Under 8.0",
         "prob": 51.9,
-        "ev": 1.8
+        "ev": 0.7
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -24578,5 +24578,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:02:18"
+  "generado": "16:02:43"
 }
