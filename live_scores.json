@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-24T19:49:06Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-24T20:58:14Z",
+  "live": [
     {
       "id": "d7f4b3c3080d3f6612a4be54f7e0f798",
       "sport": "baseball_mlb",
@@ -13,9 +12,11 @@
       "hora": "15:11 COT",
       "ts": 1784905860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "3"
+    }
+  ],
+  "upcoming": [
     {
       "id": "263aac2dfd923f6a65c5136418407715",
       "sport": "baseball_mlb",
@@ -208,6 +209,20 @@
       "fecha": "24/07/26",
       "hora": "21:16 COT",
       "ts": 1784927760,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "6b06a4bf25ee92a7ac908981664ca759",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Detroit Tigers",
+      "away": "Kansas City Royals",
+      "fecha": "25/07/26",
+      "hora": "12:11 COT",
+      "ts": 1784981460,
       "completed": false,
       "score_home": null,
       "score_away": null
