@@ -18,7 +18,7 @@
         "1": 1.96,
         "1_casa": "Betfair",
         "pinnacle_1": 1.92,
-        "X": 3.35,
+        "X": 3.3,
         "X_casa": "Betfair",
         "pinnacle_X": 3.24,
         "over20": 2.0,
@@ -184,13 +184,13 @@
           "pinn_prob": 50.4
         },
         "empate": {
-          "value": -0.0,
-          "ev_porcentaje": -0.0,
-          "ev_pinn": -0.0,
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.35,
+          "cuota": 3.3,
           "casa": "Betfair",
           "pinn_prob": 29.8
         },
@@ -8388,9 +8388,9 @@
         "1": 1.39,
         "1_casa": "Betfair",
         "pinnacle_1": 1.39,
-        "2": 7.0,
-        "2_casa": "Virgin Bet",
-        "pinnacle_2": 3.3,
+        "2": 8.0,
+        "2_casa": "Betfair",
+        "pinnacle_2": 8.0,
         "X": 4.7,
         "X_casa": "Unibet",
         "pinnacle_X": 1.1,
@@ -8400,11 +8400,11 @@
         "dnb_visita_casa": "Virgin Bet"
       },
       "probabilidades": {
-        "victoria_local": 37.2,
-        "victoria_visita": 15.7,
-        "empate": 47.1,
-        "dnb_local": 70.3,
-        "dnb_visita": 29.7,
+        "victoria_local": 41.0,
+        "victoria_visita": 7.1,
+        "empate": 51.8,
+        "dnb_local": 85.2,
+        "dnb_visita": 14.8,
         "over15": 51.5,
         "under15": 48.5,
         "over25": 23.9,
@@ -8417,59 +8417,59 @@
       "confianza": 90.9,
       "value_bets": {
         "victoria_local": {
-          "value": -0.482,
-          "ev_porcentaje": -48.2,
-          "ev_pinn": -48.2,
+          "value": -0.43,
+          "ev_porcentaje": -43.0,
+          "ev_pinn": -43.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.39,
           "casa": "Betfair",
-          "pinn_prob": 37.2
+          "pinn_prob": 41.0
         },
         "victoria_visita": {
-          "value": 0.098,
-          "ev_porcentaje": 9.8,
-          "ev_pinn": 9.8,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "VALOR",
-          "cuota": 7.0,
-          "casa": "Virgin Bet",
-          "pinn_prob": 15.7
+          "value": -0.43,
+          "ev_porcentaje": -43.0,
+          "ev_pinn": -43.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 8.0,
+          "casa": "Betfair",
+          "pinn_prob": 7.1
         },
         "empate": {
-          "value": 1.212,
-          "ev_porcentaje": 121.2,
-          "ev_pinn": 121.2,
+          "value": 1.437,
+          "ev_porcentaje": 143.7,
+          "ev_pinn": 143.7,
           "tiene_valor": true,
           "tiene_valor_pinn": true,
           "clasificacion": "ALTO VALOR",
           "cuota": 4.7,
           "casa": "Unibet",
-          "pinn_prob": 47.1
+          "pinn_prob": 51.8
         },
         "dnb_local": {
-          "value": -0.233,
-          "ev_porcentaje": -23.3,
-          "ev_pinn": -23.3,
+          "value": -0.071,
+          "ev_porcentaje": -7.1,
+          "ev_pinn": -7.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.09,
           "casa": "Virgin Bet",
-          "pinn_prob": 70.3
+          "pinn_prob": 85.2
         },
         "dnb_visita": {
-          "value": 0.543,
-          "ev_porcentaje": 54.3,
-          "ev_pinn": 54.3,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "ALTO VALOR",
+          "value": -0.232,
+          "ev_porcentaje": -23.2,
+          "ev_pinn": -23.2,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
           "cuota": 5.2,
           "casa": "Virgin Bet",
-          "pinn_prob": 29.7
+          "pinn_prob": 14.8
         },
         "over15": {
           "value": null,
@@ -8616,12 +8616,12 @@
           "tarjetas_under6": 75.6
         },
         "handicap": {
-          "ah_local_menos05": 37.2,
-          "ah_visita_mas05": 62.8,
-          "ah_local_menos1": 24.2,
-          "ah_visita_mas1": 75.8,
-          "ah_local_menos15": 16.9,
-          "ah_visita_mas15": 83.1
+          "ah_local_menos05": 41.0,
+          "ah_visita_mas05": 58.9,
+          "ah_local_menos1": 26.7,
+          "ah_visita_mas1": 73.3,
+          "ah_local_menos15": 18.7,
+          "ah_visita_mas15": 81.3
         },
         "disparos": {
           "disparos_esperados": 4.6,
@@ -8741,50 +8741,50 @@
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos05": {
-            "prob_modelo": 37.2,
-            "cuota_justa": 2.69,
-            "cuota_ref": 2.55,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 41.0,
+            "cuota_justa": 2.44,
+            "cuota_ref": 2.32,
+            "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas05": {
-            "prob_modelo": 62.8,
-            "cuota_justa": 1.59,
-            "cuota_ref": 1.51,
+            "prob_modelo": 58.9,
+            "cuota_justa": 1.7,
+            "cuota_ref": 1.61,
             "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos1": {
-            "prob_modelo": 24.2,
-            "cuota_justa": 4.13,
-            "cuota_ref": 3.93,
+            "prob_modelo": 26.7,
+            "cuota_justa": 3.75,
+            "cuota_ref": 3.56,
             "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas1": {
-            "prob_modelo": 75.8,
-            "cuota_justa": 1.32,
-            "cuota_ref": 1.25,
-            "ev_porcentaje": -5.2,
+            "prob_modelo": 73.3,
+            "cuota_justa": 1.36,
+            "cuota_ref": 1.3,
+            "ev_porcentaje": -4.7,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_local_menos15": {
-            "prob_modelo": 16.9,
-            "cuota_justa": 5.92,
-            "cuota_ref": 5.62,
+            "prob_modelo": 18.7,
+            "cuota_justa": 5.35,
+            "cuota_ref": 5.08,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "ah_visita_mas15": {
-            "prob_modelo": 83.1,
-            "cuota_justa": 1.2,
-            "cuota_ref": 1.14,
-            "ev_porcentaje": -5.3,
+            "prob_modelo": 81.3,
+            "cuota_justa": 1.23,
+            "cuota_ref": 1.17,
+            "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
@@ -10826,10 +10826,10 @@
       "hora": "11:35",
       "fecha_evento": "2026-07-25",
       "cuotas": {
-        "2": 2.78,
+        "2": 2.8,
         "2_casa": "Betfair",
         "pinnacle_2": 2.74,
-        "1": 2.4,
+        "1": 2.42,
         "1_casa": "Betfair",
         "pinnacle_1": 2.39,
         "X": 4.0,
@@ -10992,24 +10992,24 @@
       "confianza": 84.5,
       "value_bets": {
         "victoria_visita": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
+          "value": -0.022,
+          "ev_porcentaje": -2.2,
+          "ev_pinn": -2.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.78,
+          "cuota": 2.8,
           "casa": "Betfair",
           "pinn_prob": 34.9
         },
         "victoria_local": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
+          "cuota": 2.42,
           "casa": "Betfair",
           "pinn_prob": 40.0
         },
@@ -23727,7 +23727,7 @@
         "Over 9.0": 1.88,
         "Under 9.0": 1.97,
         "Los Angeles Dodgers (-1.5)": 2.2,
-        "New York Mets (+1.5)": 1.7
+        "New York Mets (+1.5)": 1.73
       },
       "probabilidades": {
         "Los Angeles Dodgers": 55.1,
@@ -23796,13 +23796,13 @@
           "mercado_nombre": "Los Angeles Dodgers (-1.5)"
         },
         "spread_new_york_mets_1_5": {
-          "value": -0.051,
-          "ev_porcentaje": -5.1,
-          "ev_pinn": -5.1,
+          "value": -0.035,
+          "ev_porcentaje": -3.5,
+          "ev_pinn": -3.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.7,
+          "cuota": 1.73,
           "casa": "FanDuel",
           "pinn_prob": 55.8,
           "mercado_nombre": "New York Mets (+1.5)"
@@ -25287,5 +25287,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:01:49"
+  "generado": "20:02:20"
 }
