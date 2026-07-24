@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T20:58:14Z",
+  "updated": "2026-07-24T22:08:52Z",
   "live": [
     {
       "id": "d7f4b3c3080d3f6612a4be54f7e0f798",
@@ -12,8 +12,8 @@
       "hora": "15:11 COT",
       "ts": 1784905860,
       "completed": false,
-      "score_home": "1",
-      "score_away": "3"
+      "score_home": "2",
+      "score_away": "5"
     }
   ],
   "upcoming": [
@@ -340,34 +340,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "1"
-    },
-    {
-      "id": "4934cf8f31416013ec91adee3a0f4794",
-      "sport": "soccer_conmebol_copa_sudamericana",
-      "liga": "Copa Sudamericana",
-      "emoji": "⚽",
-      "home": "Club Bolívar",
-      "away": "Grêmio",
-      "fecha": "23/07/26",
-      "hora": "17:03 COT",
-      "ts": 1784826180,
-      "completed": true,
-      "score_home": "3",
-      "score_away": "2"
-    },
-    {
-      "id": "8e2411581a27c6dccd9eae0b233fe64c",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "St. Louis Cardinals",
-      "away": "Arizona Diamondbacks",
-      "fecha": "23/07/26",
-      "hora": "16:16 COT",
-      "ts": 1784823360,
-      "completed": true,
-      "score_home": "6",
-      "score_away": "10"
     }
   ]
 }
