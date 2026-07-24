@@ -14931,7 +14931,7 @@
       "hora": "16:00",
       "fecha_evento": "2026-07-24",
       "cuotas": {
-        "1": 2.54,
+        "1": 2.56,
         "1_casa": "Betfair",
         "pinnacle_1": 2.51,
         "2": 2.92,
@@ -15087,13 +15087,13 @@
       "confianza": 81.3,
       "value_bets": {
         "victoria_local": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.017,
+          "ev_porcentaje": -1.7,
+          "ev_pinn": -1.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.54,
+          "cuota": 2.56,
           "casa": "Betfair",
           "pinn_prob": 38.4
         },
@@ -23631,5 +23631,5 @@
       "movimiento": null
     }
   ],
-  "generado": "14:17:50"
+  "generado": "14:18:10"
 }
