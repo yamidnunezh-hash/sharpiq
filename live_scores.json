@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-25T04:10:47Z",
-  "live": [
-    {
-      "id": "2192276baf2c4e8e5358e9905c801e2f",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Francisco Giants",
-      "away": "Los Angeles Angels",
-      "fecha": "24/07/26",
-      "hora": "21:16 COT",
-      "ts": 1784927760,
-      "completed": false,
-      "score_home": "5",
-      "score_away": "4"
-    }
-  ],
+  "updated": "2026-07-25T06:31:46Z",
+  "live": [],
   "upcoming": [
     {
       "id": "6b06a4bf25ee92a7ac908981664ca759",
@@ -230,6 +215,20 @@
   ],
   "finished": [
     {
+      "id": "2192276baf2c4e8e5358e9905c801e2f",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Francisco Giants",
+      "away": "Los Angeles Angels",
+      "fecha": "24/07/26",
+      "hora": "21:16 COT",
+      "ts": 1784927760,
+      "completed": true,
+      "score_home": "7",
+      "score_away": "6"
+    },
+    {
       "id": "e52022e436fbab769c0e31e1eec70f53",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -354,20 +353,6 @@
       "completed": true,
       "score_home": "6",
       "score_away": "7"
-    },
-    {
-      "id": "12a8e27a29d44d46e10583c9c875e5f5",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Washington Nationals",
-      "away": "Arizona Diamondbacks",
-      "fecha": "24/07/26",
-      "hora": "17:46 COT",
-      "ts": 1784915160,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "3"
     }
   ]
 }
