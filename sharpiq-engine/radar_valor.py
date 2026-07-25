@@ -48,7 +48,26 @@ FEED = os.path.join(os.path.dirname(os.path.abspath(__file__)), "radar_valor_fee
 
 SHARP = "pinnacle"                 # el termómetro de la verdad
 REGIONS = "eu,uk"                  # eu trae Pinnacle + blandas; uk suma bet365/willhill
-MERCADOS = "h2h,totals,spreads"    # ganador · goles/totales · hándicap
+MERCADOS = "h2h,totals,spreads"    # ganador · goles/totales · hándicap (fallback)
+
+# Mercados POR DEPORTE — solo los que Pinnacle SÍ cotiza (medibles).
+# Las líneas "alternate_*" multiplican jugadas: no solo el O/U principal,
+# también Más/Menos 1.5, 2.5, 3.5… y hándicaps alternativos, cada uno medido.
+def _mercados_de(dep_key: str) -> str:
+    if dep_key.startswith("soccer"):
+        return "h2h,totals,spreads,alternate_totals,alternate_spreads"
+    if dep_key.startswith("baseball"):
+        return "h2h,totals,spreads,alternate_totals"
+    if dep_key.startswith("basketball"):
+        return "h2h,totals,spreads,alternate_totals,alternate_spreads"
+    return MERCADOS
+
+def _norm_mkey(k: str) -> str:
+    """Trata las líneas alternativas como el mismo mercado que la principal,
+    para que la cuota justa de Pinnacle case con la de la casa por PUNTO."""
+    if k in ("totals", "alternate_totals"):   return "totals"
+    if k in ("spreads", "alternate_spreads"): return "spreads"
+    return k
 
 # ── CASAS: nombre bonito + ¿opera en Colombia? (que el cliente SÍ pueda tomar) ──
 # El valor solo sirve si el cliente puede apostarlo. Marcamos cuáles operan en
@@ -182,7 +201,7 @@ def _grupos_pinnacle(markets: list) -> dict:
     """
     justo = {}
     for m in markets:
-        key = m.get("key")
+        key = _norm_mkey(m.get("key"))
         outs = m.get("outcomes", [])
         if key == "h2h":
             cu = {o["name"]: o["price"] for o in outs if o.get("price")}
@@ -222,7 +241,7 @@ def valor_del_evento(dep_key: str, dep_titulo: str, ev: dict) -> list:
     """Compara TODAS las casas contra Pinnacle en este evento. Devuelve jugadas."""
     d = _get(f"{BASE}/sports/{dep_key}/events/{ev['id']}/odds", {
         "apiKey": ODDS_API_KEY, "regions": REGIONS,
-        "markets": MERCADOS, "oddsFormat": "decimal",
+        "markets": _mercados_de(dep_key), "oddsFormat": "decimal",
     })
     if not d:
         return []
@@ -240,7 +259,7 @@ def valor_del_evento(dep_key: str, dep_titulo: str, ev: dict) -> list:
         if bm["key"] == SHARP:
             continue
         for m in bm.get("markets", []):
-            mkey = m.get("key")
+            mkey = _norm_mkey(m.get("key"))
             for o in m.get("outcomes", []):
                 cuota = o.get("price")
                 pt = o.get("point")
