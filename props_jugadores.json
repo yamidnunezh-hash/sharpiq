@@ -1,36 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Gimnasia M.",
-   "visitante": "Central Cordoba de Santiago",
-   "gole": "M. Torres 35.9% &middot; Á. Di María 30.0% &middot; A. Luna 28.3%",
-   "remates": "Gimnasia M.: A. Módica 1.62 remates totales (1.0 a puerta), F. Lencioni 1.56 remates totales (0.62 a puerta), U. Sánchez 1.0 remates totales (0.33 a puerta) | Central Cordoba de Santiago: M. Santos 1.21 remates totales (0.5 a puerta), D. Barrera 0.93 remates totales (0.47 a puerta), E. Naya 0.67 remates totales (0.58 a puerta)",
-   "tarjetas": "Gimnasia M.: L. Petruchi 0.5 amarillas/partido, J. Franco 0.33 amarillas/partido, F. Antonini 0.33 amarillas/partido | Central Cordoba de Santiago: L. Marchi 0.5 amarillas/partido, A. Maciel 0.43 amarillas/partido, L. González 0.29 amarillas/partido",
-   "asistencias": "Gimnasia M.: I. Sabatini 0.4 asistencias/partido, F. Lencioni 0.31 asistencias/partido, S. Rodríguez 0.09 asistencias/partido | Central Cordoba de Santiago: H. Tijanovich 0.15 asistencias/partido, M. Santos 0.14 asistencias/partido, M. Iacobellis 0.08 asistencias/partido",
-   "faltas": "Gimnasia M.: N. Linares 1.62 faltas/partido, I. Sabatini 1.6 faltas/partido, F. Antonini 1.58 faltas/partido | Central Cordoba de Santiago: F. Juárez 1.5 faltas/partido, M. Santos 1.43 faltas/partido, S. Moyano 1.29 faltas/partido",
-   "quites": "Gimnasia M.: D. Mondino 1.91 quites/partido, F. Antonini 1.83 quites/partido, F. Lencioni 1.81 quites/partido | Central Cordoba de Santiago: M. Vera 2.27 quites/partido, Y. Casermeiro 2.25 quites/partido, A. Maciel 2.0 quites/partido"
-  },
-  {
-   "local": "Racing Club",
-   "visitante": "Gimnasia L.P.",
-   "gole": "M. Torres 35.9%",
-   "remates": "Racing Club: A. Martínez 1.5 remates totales (0.5 a puerta), M. Miljevic 1.29 remates totales (0.64 a puerta), D. Pizarro 1.0 remates totales (1.0 a puerta) | Gimnasia L.P.: M. Zalazar 1.57 remates totales (0.43 a puerta), M. Torres 1.11 remates totales (0.83 a puerta), A. Auzmendi 1.0 remates totales (0.44 a puerta)",
-   "tarjetas": "Racing Club: M. Di Cesare 0.53 amarillas/partido, J. Nardoni 0.5 amarillas/partido, T. Rubio 0.5 amarillas/partido | Gimnasia L.P.: I. Fernández 0.5 amarillas/partido, B. Barros Schelotto 0.5 amarillas/partido, A. Steimbach 0.41 amarillas/partido",
-   "asistencias": "Racing Club: D. Pizarro 0.5 asistencias/partido, G. Rojas 0.29 asistencias/partido, S. Solari 0.18 asistencias/partido | Gimnasia L.P.: N. Schelotto 0.19 asistencias/partido, A. Steimbach 0.18 asistencias/partido, I. Fernández 0.12 asistencias/partido",
-   "faltas": "Racing Club: A. Martínez 1.75 faltas/partido, J. Nardoni 1.5 faltas/partido, D. Pizarro 1.5 faltas/partido | Gimnasia L.P.: I. Fernández 1.38 faltas/partido, I. Miramón 1.38 faltas/partido, A. Max 1.33 faltas/partido",
-   "quites": "Racing Club: E. Cannavo 3.08 quites/partido, S. Sosa 1.83 quites/partido, B. Zuculini 1.75 quites/partido | Gimnasia L.P.: A. Max 3.2 quites/partido, A. Steimbach 2.76 quites/partido, I. Miramón 2.15 quites/partido"
-  },
-  {
-   "local": "Velez Sarsfield",
-   "visitante": "Instituto Cordoba",
-   "gole": "F. Monzón 33.0% &middot; A. Luna 28.3% &middot; L. Zelarayán 19.9%",
-   "remates": "Velez Sarsfield: F. Monzón 1.93 remates totales (1.07 a puerta), M. Pellegrini 1.33 remates totales (0.75 a puerta), D. Godoy 1.17 remates totales (0.5 a puerta) | Instituto Cordoba: A. Luna 2.07 remates totales (1.13 a puerta), F. Jara 1.36 remates totales (0.55 a puerta), J. Córdoba 1.0 remates totales (0.58 a puerta)",
-   "tarjetas": "Velez Sarsfield: L. Robertone 0.33 amarillas/partido, Elías Gómez 0.31 amarillas/partido, B. Romero 0.3 amarillas/partido | Instituto Cordoba: F. Alarcón 0.38 amarillas/partido, F. Moyano 0.33 amarillas/partido, A. Luna 0.33 amarillas/partido",
-   "asistencias": "Velez Sarsfield: D. Valdés 0.36 asistencias/partido, D. Godoy 0.25 asistencias/partido, M. Arias 0.2 asistencias/partido | Instituto Cordoba: J. Lázaro 0.18 asistencias/partido, D. Sosa 0.12 asistencias/partido, L. Rafaelli 0.11 asistencias/partido",
-   "faltas": "Velez Sarsfield: Jano Gordon 2.0 faltas/partido, F. Monzón 1.47 faltas/partido, T. Andrada 1.44 faltas/partido | Instituto Cordoba: M. Fonseca 1.69 faltas/partido, J. Córdoba 1.58 faltas/partido, A. Massaccesi 1.5 faltas/partido",
-   "quites": "Velez Sarsfield: Jano Gordon 3.33 quites/partido, T. Andrada 2.56 quites/partido, R. Aliendro 2.41 quites/partido | Instituto Cordoba: G. Cerato 2.62 quites/partido, J. Córdoba 1.83 quites/partido, F. Alarcón 1.77 quites/partido"
-  },
-  {
    "local": "Huracan",
    "visitante": "Banfield",
    "gole": "J. Caicedo 37.6% &middot; M. Méndez 31.3%",
