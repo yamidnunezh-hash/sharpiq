@@ -2229,15 +2229,15 @@
           "corners_under13": 70.9
         },
         "tarjetas": {
-          "tarjetas_esperadas": 6.3,
-          "tarjetas_over3": 94.9,
-          "tarjetas_under3": 5.1,
-          "tarjetas_over4": 87.2,
-          "tarjetas_under4": 12.8,
-          "tarjetas_over5": 75.1,
-          "tarjetas_under5": 24.9,
-          "tarjetas_over6": 59.8,
-          "tarjetas_under6": 40.2
+          "tarjetas_esperadas": 6.1,
+          "tarjetas_over3": 94.1,
+          "tarjetas_under3": 5.9,
+          "tarjetas_over4": 85.5,
+          "tarjetas_under4": 14.5,
+          "tarjetas_over5": 72.4,
+          "tarjetas_under5": 27.6,
+          "tarjetas_over6": 56.5,
+          "tarjetas_under6": 43.5
         },
         "handicap": {
           "ah_local_menos05": 68.9,
@@ -2317,50 +2317,50 @@
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_over3": {
-            "prob_modelo": 94.9,
-            "cuota_justa": 1.05,
-            "cuota_ref": 1.0,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 94.1,
+            "cuota_justa": 1.06,
+            "cuota_ref": 1.01,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_under3": {
-            "prob_modelo": 5.1,
-            "cuota_justa": 19.61,
-            "cuota_ref": 18.63,
+            "prob_modelo": 5.9,
+            "cuota_justa": 16.95,
+            "cuota_ref": 16.1,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_over4": {
-            "prob_modelo": 87.2,
-            "cuota_justa": 1.15,
-            "cuota_ref": 1.09,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 85.5,
+            "cuota_justa": 1.17,
+            "cuota_ref": 1.11,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_under4": {
-            "prob_modelo": 12.8,
-            "cuota_justa": 7.81,
-            "cuota_ref": 7.42,
+            "prob_modelo": 14.5,
+            "cuota_justa": 6.9,
+            "cuota_ref": 6.55,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_over5": {
-            "prob_modelo": 75.1,
-            "cuota_justa": 1.33,
-            "cuota_ref": 1.26,
-            "ev_porcentaje": -5.4,
+            "prob_modelo": 72.4,
+            "cuota_justa": 1.38,
+            "cuota_ref": 1.31,
+            "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_under5": {
-            "prob_modelo": 24.9,
-            "cuota_justa": 4.02,
-            "cuota_ref": 3.82,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 27.6,
+            "cuota_justa": 3.62,
+            "cuota_ref": 3.44,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
@@ -3493,15 +3493,15 @@
           "corners_under13": 70.9
         },
         "tarjetas": {
-          "tarjetas_esperadas": 5.3,
-          "tarjetas_over3": 90.1,
-          "tarjetas_under3": 9.9,
-          "tarjetas_over4": 77.8,
-          "tarjetas_under4": 22.2,
-          "tarjetas_over5": 61.5,
-          "tarjetas_under5": 38.5,
-          "tarjetas_over6": 44.2,
-          "tarjetas_under6": 55.8
+          "tarjetas_esperadas": 5.2,
+          "tarjetas_over3": 89.3,
+          "tarjetas_under3": 10.7,
+          "tarjetas_over4": 76.5,
+          "tarjetas_under4": 23.5,
+          "tarjetas_over5": 59.7,
+          "tarjetas_under5": 40.3,
+          "tarjetas_over6": 42.3,
+          "tarjetas_under6": 57.7
         },
         "handicap": {
           "ah_local_menos05": 46.1,
@@ -3581,49 +3581,49 @@
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_over3": {
-            "prob_modelo": 90.1,
-            "cuota_justa": 1.11,
-            "cuota_ref": 1.05,
-            "ev_porcentaje": -5.4,
+            "prob_modelo": 89.3,
+            "cuota_justa": 1.12,
+            "cuota_ref": 1.06,
+            "ev_porcentaje": -5.3,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_under3": {
-            "prob_modelo": 9.9,
-            "cuota_justa": 10.1,
-            "cuota_ref": 9.6,
+            "prob_modelo": 10.7,
+            "cuota_justa": 9.35,
+            "cuota_ref": 8.88,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_over4": {
-            "prob_modelo": 77.8,
-            "cuota_justa": 1.29,
-            "cuota_ref": 1.22,
+            "prob_modelo": 76.5,
+            "cuota_justa": 1.31,
+            "cuota_ref": 1.24,
             "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_under4": {
-            "prob_modelo": 22.2,
-            "cuota_justa": 4.5,
-            "cuota_ref": 4.28,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 23.5,
+            "cuota_justa": 4.26,
+            "cuota_ref": 4.04,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_over5": {
-            "prob_modelo": 61.5,
-            "cuota_justa": 1.63,
-            "cuota_ref": 1.54,
-            "ev_porcentaje": -5.3,
+            "prob_modelo": 59.7,
+            "cuota_justa": 1.68,
+            "cuota_ref": 1.59,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "tarjetas_under5": {
-            "prob_modelo": 38.5,
-            "cuota_justa": 2.6,
-            "cuota_ref": 2.47,
+            "prob_modelo": 40.3,
+            "cuota_justa": 2.48,
+            "cuota_ref": 2.36,
             "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
@@ -21060,14 +21060,14 @@
       "hora": "00:30",
       "fecha_evento": "2026-07-24",
       "cuotas": {
-        "1": 1.55,
+        "1": 1.56,
         "1_casa": "Betfair",
         "pinnacle_1": 1.52,
         "2": 6.2,
         "2_casa": "Betfair",
         "pinnacle_2": 5.7,
-        "X": 4.8,
-        "X_casa": "Betfair",
+        "X": 4.77,
+        "X_casa": "Pinnacle",
         "pinnacle_X": 4.77,
         "over30": 1.82,
         "over30_casa": "Pinnacle",
@@ -21210,13 +21210,13 @@
       "confianza": 90.5,
       "value_bets": {
         "victoria_local": {
-          "value": -0.022,
-          "ev_porcentaje": -2.2,
-          "ev_pinn": -2.2,
+          "value": -0.016,
+          "ev_porcentaje": -1.6,
+          "ev_pinn": -1.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.55,
+          "cuota": 1.56,
           "casa": "Betfair",
           "pinn_prob": 63.1
         },
@@ -21232,14 +21232,14 @@
           "pinn_prob": 16.8
         },
         "empate": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.041,
+          "ev_porcentaje": -4.1,
+          "ev_pinn": -4.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.8,
-          "casa": "Betfair",
+          "cuota": 4.77,
+          "casa": "Pinnacle",
           "pinn_prob": 20.1
         },
         "over30": {
@@ -21626,9 +21626,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Over 1.5 Goles",
-        "prob": 90.5,
-        "ev": 5.0
+        "mercado": "Victoria Local",
+        "prob": 63.1,
+        "ev": -1.6
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -41171,5 +41171,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:18"
+  "generado": "00:01:55"
 }
