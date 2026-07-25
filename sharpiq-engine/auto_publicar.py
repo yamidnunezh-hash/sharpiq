@@ -651,30 +651,77 @@ def correr():
 
     tiene_alguno = any(tiers.get(k) for k in ("seguro", "principal", "alto_valor"))
     if not tiene_alguno and not _mundial_publicados:
-        # Solo avisar a Yamid UNA vez al día, no en cada turno
-        _sin_picks_sent = os.path.join(BASE_DIR_AP, "logs", f"sin_picks_{_hoy_cot().isoformat()}.sent")
-        if not os.path.exists(_sin_picks_sent):
+        # Antes salía "Sin picks hoy" (canal vacío = el suscriptor siente que paga por nada).
+        # Ahora el VIP NUNCA queda vacío: entra el RADAR DEL DÍA — las mejores lecturas del
+        # motor con el precio disponible vs el justo y una etiqueta HONESTA
+        # (🟢 valor / 🟡 casi justo / 🔴 la casa cobra de más). Es transparencia, no una orden:
+        # NO fuerza jugada — los días sin valor salen en rojo y el cierre dice "no se apuesta".
+        # Se muestra el NOMBRE de la casa en cada línea → sin cuota fantasma oculta.
+        _radar_sent = os.path.join(BASE_DIR_AP, "logs", f"radar_dia_{_hoy_cot().isoformat()}.sent")
+        if not os.path.exists(_radar_sent):
             try:
-                from telegram_alertas import enviar_alerta_servicio, enviar_mensaje, get_chat_id
-                from config import TELEGRAM_FREE_ID
-                _msg_sin = (
-                    f"📭 <b>SharpIQ — Sin picks hoy</b>\n\n"
-                    f"El motor no encontró valor suficiente para publicar hoy. "
-                    f"Preferimos no apostar antes que forzar una jugada sin ventaja.\n\n"
-                    f"<i>Mañana seguimos. La disciplina es parte del sistema.</i>"
-                )
-                # Aviso de SERVICIO → canal Alertas
-                enviar_alerta_servicio(_msg_sin)
-                # También al VIP, para que el suscriptor vea que el sistema funciona (no caído)
-                try:
-                    enviar_mensaje(_msg_sin, chat_id=get_chat_id())      # VIP
-                    enviar_mensaje(_msg_sin, chat_id=TELEGRAM_FREE_ID)   # Free: cierra el saludo de la manana
-                except Exception:
-                    pass
-                open(_sin_picks_sent, "w").close()
-            except Exception:
-                pass
-        LOG.info("Sin picks nuevos hoy — fin")
+                def _mejor_lectura(_p):
+                    """La lectura más sólida del partido: mejor EV vs Pinnacle,
+                    saltando mercados volátiles (tarjetas) y cuotas absurdas."""
+                    _best = None
+                    for _mk, _vb in (_p.get("value_bets") or {}).items():
+                        if not _vb or _mk.startswith("cards_"):
+                            continue
+                        _pr = float(_vb.get("pinn_prob") or 0)
+                        _cu = float(_vb.get("cuota") or 0)
+                        _ev = _vb.get("ev_pinn")
+                        _ev = _ev if _ev is not None else -99.0
+                        if _pr < 40 or _cu < 1.30 or _cu > 6.0:
+                            continue
+                        if _best is None or _ev > _best["ev"]:
+                            _best = {
+                                "local": _p.get("local", ""), "visitante": _p.get("visitante", ""),
+                                "liga": _p.get("liga", ""),
+                                "lectura": _vb.get("mercado_nombre") or _mk,
+                                "prob": _pr, "disp": round(_cu, 2),
+                                "justa": round(100.0 / _pr, 2) if _pr else None,
+                                "ev": _ev, "casa": _vb.get("casa") or "la casa",
+                            }
+                    return _best
+                _items, _total = [], 0
+                for _p in reporte.get("predicciones", []):
+                    if _p.get("confiable") is False or not _p.get("cuotas_reales"):
+                        continue
+                    if (_p.get("fecha_evento") or _hoy_cot().isoformat()) != _hoy_cot().isoformat():
+                        continue
+                    _total += 1
+                    _ml = _mejor_lectura(_p)
+                    if _ml:
+                        _items.append(_ml)
+                _items.sort(key=lambda x: -x["ev"])
+                _items = _items[:3]
+                _MES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+                _DIA = ["lun", "mar", "mié", "jue", "vie", "sáb", "dom"]
+                _hy = _hoy_cot()
+                _fecha_txt = f"{_DIA[_hy.weekday()]} {_hy.day} {_MES[_hy.month - 1]}"
+                if _items:
+                    from telegram_alertas import enviar_radar_dia
+                    enviar_radar_dia(_items, _fecha_txt, _total)
+                    LOG.info(f"Radar del día enviado ({len(_items)} lecturas de {_total} partidos)")
+                else:
+                    # true-empty (no hay partidos en cobertura): honesto, no inventamos jugada
+                    from telegram_alertas import enviar_alerta_servicio, enviar_mensaje, get_chat_id
+                    from config import TELEGRAM_FREE_ID
+                    _msg = ("📊 <b>SharpIQ — Análisis del día</b>\n\n"
+                            "Hoy no hay partidos en cobertura para analizar. "
+                            "Volvemos apenas haya jornada.\n\n"
+                            "<i>Sin datos reales no inventamos jugadas.</i>")
+                    enviar_alerta_servicio(_msg)
+                    try:
+                        enviar_mensaje(_msg, chat_id=get_chat_id())
+                        enviar_mensaje(_msg, chat_id=TELEGRAM_FREE_ID)
+                    except Exception:
+                        pass
+                    LOG.info("Radar del día: sin partidos en cobertura hoy")
+                open(_radar_sent, "w").close()
+            except Exception as _eR:
+                LOG.error(f"Radar del día error: {_eR}")
+        LOG.info("Sin picks de valor hoy — radar enviado — fin")
         return
 
     # ── GIF + Mensaje VIP con los 3 tiers en un solo mensaje ────

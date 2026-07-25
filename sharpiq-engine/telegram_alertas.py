@@ -400,6 +400,60 @@ def enviar_alerta_servicio(texto):
     return enviar_mensaje(texto, chat_id=TELEGRAM_ALERTAS_ID)
 
 
+def construir_radar_dia(items, fecha_txt, total_analizados):
+    """RADAR DEL DÍA (reemplaza el 'Sin picks hoy').
+    Filosofía (decisión Yamid 25-jul): mandamos el PRONÓSTICO + el PRECIO JUSTO
+    (línea Pinnacle sin margen) como vara universal. NO colgamos una etiqueta de
+    'valor' de una casa concreta: eso solo aplicaría al suscriptor que use ESA casa
+    (cuota fantasma nivel 2). Con el precio justo, cada quien compara contra SU casa:
+    si su casa paga más → hay valor; si paga menos → le cobran de más.
+    `items` = lista de dicts: {local, visitante, liga, lectura, prob, justa}.
+    Devuelve el texto HTML listo para Telegram (o None si no hay ni una lectura)."""
+    if not items:
+        return None
+    cab = (
+        f"📊 <b>SharpIQ VIP · Análisis del día</b>\n"
+        f"{esc(fecha_txt)} · {total_analizados} partidos analizados\n\n"
+        f"Estas son las lecturas más sólidas del motor.\n"
+        f"El <b>precio justo</b> es lo que vale de verdad la jugada (línea Pinnacle sin margen).\n"
+        f"👉 Si <b>tu casa</b> paga MÁS que ese número, hay valor. Si paga menos, te cobra de más.\n"
+        f"━━━━━━━━━━━━━━\n"
+    )
+    _NUM = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣"]
+    bloques = []
+    for i, it in enumerate(items):
+        justa = it.get("justa")
+        linea_precio = (f"   💰 Precio justo: <b>{justa:.2f}</b>  →  valor si tu casa paga MÁS"
+                        if justa else "   💰 Precio justo: —")
+        bloques.append(
+            f"{_NUM[i] if i < len(_NUM) else '•'} <b>{esc(it['local'])} vs {esc(it['visitante'])}</b> · {esc(it.get('liga',''))}\n"
+            f"   Pronóstico: {esc(it.get('lectura',''))} · {round(it.get('prob') or 0)}% probable\n"
+            f"{linea_precio}"
+        )
+    pie = ("\n━━━━━━━━━━━━━━\n"
+           "💡 <i>Nosotros te damos la lectura y el precio justo. "
+           "Tú la juegas donde tu casa te pague por encima.</i>")
+    return cab + "\n\n".join(bloques) + pie
+
+
+def enviar_radar_dia(items, fecha_txt, total_analizados, a_vip=True, a_free=True, a_servicio=True):
+    """Envía el Radar del día a VIP + Free + canal de servicio. Falla silencioso por canal."""
+    texto = construir_radar_dia(items, fecha_txt, total_analizados)
+    if not texto:
+        return False
+    ok = False
+    if a_vip:
+        try: ok = enviar_mensaje(texto, chat_id=get_chat_id()) or ok
+        except Exception: pass
+    if a_free and TELEGRAM_FREE_ID:
+        try: enviar_mensaje(texto, chat_id=TELEGRAM_FREE_ID)
+        except Exception: pass
+    if a_servicio and TELEGRAM_ALERTAS_ID:
+        try: enviar_mensaje(texto, chat_id=TELEGRAM_ALERTAS_ID)
+        except Exception: pass
+    return ok
+
+
 def _sport_emoji(liga: str) -> str:
     u = (liga or "").upper()
     if any(x in u for x in ("NHL", "HOCKEY")):                          return "🏒"
