@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SharpIQ · Radar de valor</title>
+<meta name="description" content="Radar de valor SharpIQ: jugadas medidas contra el precio justo de Pinnacle. Datos reales, sin humo.">
+<style>
+  :root{
+    --bg:#0a0e14; --bg2:#0f141d; --card:#141b26; --card2:#182230;
+    --line:#1f2b3a; --t1:#eaf2ff; --t2:#9fb0c4; --t3:#5f7085;
+    --green:#00e27a; --green-d:#0a3a26; --amber:#ffb020; --blue:#3aa0ff;
+    --red:#ff5470; --pill:#0e2a1c;
+    --top:rgba(10,14,20,.92); --shadow:0 1px 0 rgba(255,255,255,.02);
+  }
+  :root[data-theme="light"]{
+    --bg:#f4f6fa; --bg2:#eaeef4; --card:#ffffff; --card2:#f7f9fc;
+    --line:#e3e8f0; --t1:#0e1726; --t2:#4a5a70; --t3:#8595a8;
+    --green:#00b463; --green-d:#e2f7ec; --amber:#c77f00; --blue:#1f7fd6;
+    --red:#e03454; --pill:#e2f7ec;
+    --top:rgba(255,255,255,.92); --shadow:0 1px 3px rgba(16,23,38,.06);
+  }
+  :root[data-theme="light"] .card{box-shadow:var(--shadow)}
+  :root[data-theme="light"] .logo .dot{color:#fff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--t1);
+    font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased; min-height:100vh; padding-bottom:40px;
+  }
+  a{color:inherit;text-decoration:none}
+
+  /* ── Header ── */
+  .top{
+    position:sticky; top:0; z-index:20; background:var(--top);
+    backdrop-filter:blur(12px); border-bottom:1px solid var(--line);
+    padding:14px 18px; display:flex; align-items:center; gap:12px;
+  }
+  .theme-btn{background:var(--card);border:1px solid var(--line);color:var(--t2);
+    width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:15px;
+    display:grid;place-items:center;transition:.15s}
+  .theme-btn:hover{border-color:var(--t3);color:var(--t1)}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.3px}
+  .logo .dot{width:26px;height:26px;border-radius:7px;
+    background:linear-gradient(135deg,var(--green),#00b566);
+    display:grid;place-items:center;color:#04120b;font-weight:900;font-size:15px;
+    box-shadow:0 0 18px rgba(0,226,122,.35)}
+  .logo b{font-size:18px}
+  .logo span{color:var(--green)}
+  .top .live{margin-left:auto;font-size:11px;color:var(--t3);
+    display:flex;align-items:center;gap:6px}
+  .top .live i{width:7px;height:7px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 8px var(--green);animation:pulse 1.8s infinite;font-style:normal}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* ── Tabs deporte ── */
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding:14px 18px 4px;
+    scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{white-space:nowrap;padding:8px 15px;border-radius:999px;
+    background:var(--card);border:1px solid var(--line);color:var(--t2);
+    font-size:13px;font-weight:600;cursor:pointer;transition:.15s;flex:0 0 auto}
+  .tab:hover{border-color:var(--t3);color:var(--t1)}
+  .tab.on{background:var(--green);color:#04120b;border-color:var(--green);
+    box-shadow:0 0 16px rgba(0,226,122,.3)}
+  .tab .n{opacity:.6;font-weight:700;margin-left:5px}
+
+  /* ── Destacados ── */
+  .hero{display:flex;gap:10px;padding:12px 18px 4px;overflow-x:auto;
+    scrollbar-width:none}
+  .hero::-webkit-scrollbar{display:none}
+  .hchip{flex:0 0 auto;padding:9px 14px;border-radius:12px;
+    background:var(--card2);border:1px solid var(--line);font-size:12px;
+    display:flex;flex-direction:column;gap:2px;min-width:150px}
+  .hchip .lbl{color:var(--amber);font-weight:700;font-size:10px;letter-spacing:.5px}
+  .hchip.best .lbl{color:var(--green)}
+  .hchip b{font-size:13px;color:var(--t1);font-weight:700}
+  .hchip small{color:var(--t3);font-size:11px}
+
+  /* ── Filtros grade ── */
+  .filters{display:flex;gap:7px;padding:12px 18px 6px}
+  .fchip{padding:6px 13px;border-radius:8px;background:var(--card);
+    border:1px solid var(--line);color:var(--t2);font-size:12px;font-weight:600;
+    cursor:pointer;transition:.15s}
+  .fchip.on{background:var(--card2);color:var(--t1);border-color:var(--green)}
+
+  /* ── Grid tarjetas ── */
+  .grid{display:grid;gap:11px;padding:8px 18px;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));max-width:1100px;margin:0 auto}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px;position:relative;overflow:hidden;transition:.15s}
+  .card:hover{border-color:var(--t3);transform:translateY(-1px)}
+  .card .rail{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green)}
+  .card.g-B .rail{background:var(--blue)}
+  .card.g-C .rail{background:var(--t3)}
+
+  .crow{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .sport{font-size:16px}
+  .league{font-size:11px;color:var(--t3);flex:1;white-space:nowrap;overflow:hidden;
+    text-overflow:ellipsis}
+  .state{font-size:10px;font-weight:800;letter-spacing:.4px;padding:2px 7px;
+    border-radius:5px;background:var(--bg2);color:var(--t3)}
+  .state.vivo{background:var(--green-d);color:var(--green)}
+  .grade{font-size:12px;font-weight:900;width:24px;height:24px;border-radius:7px;
+    display:grid;place-items:center;background:rgba(0,226,122,.14);color:var(--green)}
+  .g-B .grade{background:rgba(58,160,255,.14);color:var(--blue)}
+  .g-C .grade{background:rgba(95,112,133,.18);color:var(--t2)}
+
+  .match{font-size:15px;font-weight:700;margin-bottom:3px;line-height:1.25}
+  .play{font-size:13px;color:var(--t2);margin-bottom:12px}
+  .play b{color:var(--t1)}
+
+  .meter{margin:10px 0 12px}
+  .meter .heads{display:flex;justify-content:space-between;font-size:10px;
+    color:var(--t3);margin-bottom:5px;font-weight:600;letter-spacing:.3px}
+  .bar{height:8px;border-radius:5px;background:var(--bg2);position:relative;overflow:hidden}
+  .bar .pay{position:absolute;top:0;bottom:0;left:0;border-radius:5px;
+    background:linear-gradient(90deg,var(--green),#00b566)}
+  .g-B .bar .pay{background:linear-gradient(90deg,var(--blue),#1f6fce)}
+  .g-C .bar .pay{background:linear-gradient(90deg,var(--t3),#43536a)}
+  .meter .nums{display:flex;justify-content:space-between;margin-top:6px;font-size:12px}
+  .meter .nums .just{color:var(--t2)}
+  .meter .nums .just b{color:var(--t1)}
+  .meter .nums .ev{color:var(--green);font-weight:800}
+  .g-B .meter .nums .ev{color:var(--blue)}
+  .g-C .meter .nums .ev{color:var(--t2)}
+
+  .foot{display:flex;align-items:center;gap:10px;margin-top:4px}
+  .odds{flex:1;font-size:12px;color:var(--t3)}
+  .odds b{color:var(--t1);font-size:15px}
+  .odds .book{display:block;font-size:11px;color:var(--t3);margin-top:1px}
+  .take{background:var(--green);color:#04120b;border:none;border-radius:9px;
+    padding:9px 16px;font-weight:800;font-size:13px;cursor:pointer;transition:.15s}
+  .take:hover{filter:brightness(1.08)}
+
+  /* ── Nota honesta ── */
+  .note{max-width:1100px;margin:8px auto 0;padding:14px 18px;color:var(--t3);
+    font-size:12px;line-height:1.5}
+  .note b{color:var(--t2)}
+  .empty{text-align:center;padding:60px 20px;color:var(--t3)}
+  .empty .big{font-size:44px;margin-bottom:10px}
+  .empty b{color:var(--t2);display:block;margin-bottom:4px;font-size:15px}
+  .foot-brand{text-align:center;color:var(--t3);font-size:11px;margin-top:26px}
+  .foot-brand a{color:var(--green)}
+</style>
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="index.html">
+      <span class="dot">S</span><b>Sharp<span>IQ</span></b>
+    </a>
+    <div class="live"><i></i> Radar en vivo</div>
+    <button class="theme-btn" id="themeBtn" title="Cambiar fondo">🌙</button>
+  </header>
+
+  <nav class="tabs" id="tabs"></nav>
+  <div class="hero" id="hero"></div>
+  <div class="filters" id="filters">
+    <div class="fchip on" data-g="all">Todas</div>
+    <div class="fchip" data-g="A">A · Alto valor</div>
+    <div class="fchip" data-g="B">B</div>
+    <div class="fchip" data-g="C">C</div>
+  </div>
+
+  <main class="grid" id="grid"></main>
+  <p class="note" id="note"></p>
+  <p class="foot-brand">SharpIQ · La ventaja inteligente — <a href="index.html">Volver al inicio</a></p>
+
+<!-- Feed real generado por el motor (radar_valor.py). Mismo que consume index.html -->
+<script src="radar_feed.js"></script>
+<script>
+(function(){
+  var DATA = (window.RADAR_VALOR && Array.isArray(window.RADAR_VALOR.jugadas))
+             ? window.RADAR_VALOR.jugadas.slice() : [];
+
+  // ── Grade honesto desde el EV REAL medido vs Pinnacle ──
+  function grade(ev){ ev = +ev||0; return ev>=7 ? 'A' : (ev>=3 ? 'B' : 'C'); }
+
+  // Deporte para agrupar (emoji + nombre corto del string "Liga - País")
+  function sportKey(j){ return j.emoji || '•'; }
+  function sportName(j){
+    var e=j.emoji||'', map={'⚽':'Fútbol','🏀':'NBA','⚾':'MLB','🎾':'Tenis',
+      '🏒':'NHL','🏈':'NFL','🏉':'Rugby','🥊':'MMA','🏏':'Cricket','🏐':'Voleibol'};
+    return map[e] || (j.deporte? j.deporte.split(' - ')[0] : 'Otros');
+  }
+
+  var state = { sport:'all', g:'all' };
+
+  // ── Tabs por deporte (con conteo real) ──
+  function buildTabs(){
+    var counts={}, order=[];
+    DATA.forEach(function(j){
+      var k=sportName(j);
+      if(!(k in counts)){counts[k]=0;order.push(k);}
+      counts[k]++;
+    });
+    var el=document.getElementById('tabs');
+    var html='<div class="tab on" data-s="all">Todos <span class="n">'+DATA.length+'</span></div>';
+    order.forEach(function(k){
+      var emoji = DATA.find(function(j){return sportName(j)===k;}).emoji||'';
+      html+='<div class="tab" data-s="'+k+'">'+emoji+' '+k+' <span class="n">'+counts[k]+'</span></div>';
+    });
+    el.innerHTML=html;
+    el.querySelectorAll('.tab').forEach(function(t){
+      t.onclick=function(){
+        el.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on');});
+        t.classList.add('on'); state.sport=t.getAttribute('data-s'); render();
+      };
+    });
+  }
+
+  // ── Destacados reales: mejor EV + más probable ──
+  function buildHero(){
+    if(!DATA.length){document.getElementById('hero').innerHTML='';return;}
+    var byEv=DATA.slice().sort(function(a,b){return (b.ev||b.valor||0)-(a.ev||a.valor||0);})[0];
+    var byPr=DATA.slice().sort(function(a,b){return (b.prob||0)-(a.prob||0);})[0];
+    function chip(cls,lbl,j){
+      return '<div class="hchip '+cls+'"><span class="lbl">'+lbl+'</span>'
+        +'<b>'+esc(j.jugada)+'</b><small>'+esc(shortMatch(j.partido))+'</small></div>';
+    }
+    document.getElementById('hero').innerHTML =
+      chip('best','⭐ MEJOR VALOR', byEv) + chip('','🎯 MÁS PROBABLE', byPr);
+  }
+
+  function shortMatch(p){ if(!p)return''; return p.replace(' @ ',' vs '); }
+  function esc(s){ s=(s==null?'':''+s);
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  // ── Render de tarjetas ──
+  function render(){
+    var list = DATA.filter(function(j){
+      var okS = state.sport==='all' || sportName(j)===state.sport;
+      var okG = state.g==='all' || grade(j.ev!=null?j.ev:j.valor)===state.g;
+      return okS && okG;
+    }).sort(function(a,b){return (b.ev||b.valor||0)-(a.ev||a.valor||0);});
+
+    var grid=document.getElementById('grid');
+    if(!list.length){
+      grid.innerHTML='<div class="empty" style="grid-column:1/-1">'
+        +'<div class="big">📡</div><b>Sin lecturas en este filtro ahora mismo</b>'
+        +'El radar solo muestra jugadas donde el precio supera al justo. Cuando no hay, no inventamos.</div>';
+      return;
+    }
+    grid.innerHTML = list.map(cardHTML).join('');
+  }
+
+  function cardHTML(j){
+    var ev = (j.ev!=null ? j.ev : (j.valor!=null?j.valor:0));
+    var g  = grade(ev);
+    var justa = +j.cuota_justa || 0;
+    var paga  = +j.cuota || 0;
+    // Barra = FUERZA DEL VALOR (∝ EV real). Un +8% llena la barra; así se distingue
+    // una jugada de +5.5% de una de +3.8%. El número exacto va en la etiqueta.
+    var wVal = Math.max(6, Math.min(100, (ev/8)*100));
+    var vivo  = (j.estado==='VIVO');
+    return ''
+    +'<article class="card g-'+g+'">'
+    +'<div class="rail"></div>'
+    +'<div class="crow">'
+      +'<span class="sport">'+(j.emoji||'•')+'</span>'
+      +'<span class="league">'+esc(j.deporte||'')+'</span>'
+      +'<span class="state'+(vivo?' vivo':'')+'">'+(vivo?('VIVO'+(j.min?" "+j.min+"'":'')):'PRÓXIMO')+'</span>'
+      +'<span class="grade">'+g+'</span>'
+    +'</div>'
+    +'<div class="match">'+esc(shortMatch(j.partido))+'</div>'
+    +'<div class="play">Jugada: <b>'+esc(j.jugada)+'</b> · '+(Math.round(j.prob||0))+'% prob.</div>'
+    +'<div class="meter">'
+      +'<div class="heads"><span>FUERZA DEL VALOR</span><span>@'+paga.toFixed(2)+' vs justo '+justa.toFixed(2)+'</span></div>'
+      +'<div class="bar"><span class="pay" style="width:'+wVal+'%"></span></div>'
+      +'<div class="nums">'
+        +'<span class="just">Precio justo <b>'+justa.toFixed(2)+'</b></span>'
+        +'<span class="ev">+'+(+ev).toFixed(1)+'% valor</span>'
+      +'</div>'
+    +'</div>'
+    +'<div class="foot">'
+      +'<div class="odds"><b>@'+paga.toFixed(2)+'</b>'
+        +'<span class="book">en '+esc(j.casa||'—')+'</span></div>'
+      +'<button class="take">Ver</button>'
+    +'</div>'
+    +'</article>';
+  }
+
+  // ── Nota honesta (mata la cuota fantasma con transparencia) ──
+  document.getElementById('note').innerHTML =
+    '<b>Cómo leer esto:</b> el <b>precio justo</b> es lo que vale de verdad la jugada '
+    +'(línea Pinnacle sin margen). Si una casa paga por encima, hay valor — y ese % es medido, no adivinado. '
+    +'La casa mostrada es donde el motor detectó el mejor precio global; <b>verifica que puedas tomarla desde Colombia</b>. '
+    +'Si tu casa paga menos que el precio justo, para ti no hay valor.';
+
+  // ── Filtros de grade ──
+  document.querySelectorAll('.fchip').forEach(function(f){
+    f.onclick=function(){
+      document.querySelectorAll('.fchip').forEach(function(x){x.classList.remove('on');});
+      f.classList.add('on'); state.g=f.getAttribute('data-g'); render();
+    };
+  });
+
+  // ── Toggle de tema (fondo blanco / oscuro) ──
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('themeBtn');
+    var saved=null; try{saved=localStorage.getItem('sharpiq_props_theme');}catch(e){}
+    if(saved){ root.setAttribute('data-theme',saved); }
+    function sync(){ btn.textContent = root.getAttribute('data-theme')==='light' ? '🌙' : '☀️'; }
+    sync();
+    btn.onclick=function(){
+      var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+      root.setAttribute('data-theme',next);
+      try{localStorage.setItem('sharpiq_props_theme',next);}catch(e){}
+      sync();
+    };
+  })();
+
+  // ── Init ──
+  buildTabs(); buildHero(); render();
+})();
+</script>
+</body>
+</html>
