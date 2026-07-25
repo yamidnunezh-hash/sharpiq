@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Estudiantes de Rio Cuarto",
-   "visitante": "Tigre",
-   "gole": "D. Romero 44.2% &middot; I. Russo 22.1%",
-   "remates": "Estudiantes de Rio Cuarto: M. Bajamich 1.07 remates totales (0.53 a puerta), M. Tévez 1.0 remates totales (0.0 a puerta), M. Garnerone 0.94 remates totales (0.25 a puerta) | Tigre: D. Romero 2.42 remates totales (1.17 a puerta), I. Russo 1.88 remates totales (0.94 a puerta), P. Martínez 1.45 remates totales (0.64 a puerta)",
-   "tarjetas": "Estudiantes de Rio Cuarto: M. Valenti 0.42 amarillas/partido, T. Gonzalez 0.4 amarillas/partido, T. Olmos 0.33 amarillas/partido | Tigre: V. Moreno 0.44 amarillas/partido, G. Piñeiro 0.43 amarillas/partido, J. Laso 0.29 amarillas/partido",
-   "asistencias": "Estudiantes de Rio Cuarto: R. Lozano 0.17 asistencias/partido, G. Maffini 0.08 asistencias/partido, S. Rosané 0.07 asistencias/partido | Tigre: I. Russo 0.19 asistencias/partido, D. Romero 0.17 asistencias/partido, A. Barrionuevo 0.13 asistencias/partido",
-   "faltas": "Estudiantes de Rio Cuarto: T. Gonzalez 1.87 faltas/partido, R. Lozano 1.5 faltas/partido, T. Ostchega 1.18 faltas/partido | Tigre: G. Piñeiro 2.14 faltas/partido, S. López 1.6 faltas/partido, B. Leyes 1.33 faltas/partido",
-   "quites": "Estudiantes de Rio Cuarto: F. Cobos 2.38 quites/partido, T. Gonzalez 2.07 quites/partido, A. Cabrera 1.73 quites/partido | Tigre: V. Moreno 2.44 quites/partido, N. Banegas 2.0 quites/partido, B. Leyes 1.93 quites/partido"
-  },
-  {
    "local": "Newells Old Boys",
    "visitante": "Talleres Cordoba",
    "gole": "A. Luna 28.3% &middot; L. Zelarayán 19.9%",
@@ -274,6 +264,16 @@
    "asistencias": "São Bernardo: Lucas Lima 0.5 asistencias/partido, Eduardo 0.17 asistencias/partido, Pedro Vitor 0.15 asistencias/partido | Ceara: Melk 0.18 asistencias/partido, Giulio 0.11 asistencias/partido, Enzo 0.11 asistencias/partido",
    "faltas": "São Bernardo: Felipe Garcia 1.46 faltas/partido, Rodrigo Ferreira 1.17 faltas/partido, Eduardo 1.17 faltas/partido | Ceara: Vinicius Zanocelo 2.0 faltas/partido, Joao Gabriel 1.79 faltas/partido, Éder 1.56 faltas/partido",
    "quites": "São Bernardo: Pedro Vitor 2.15 quites/partido, Jemerson 1.58 quites/partido, Hélder 1.43 quites/partido | Ceara: Bryan 2.25 quites/partido, Fernandinho 1.82 quites/partido, Vinicius Zanocelo 1.67 quites/partido"
+  },
+  {
+   "local": "Estudiantes L.P.",
+   "visitante": "Independiente",
+   "gole": "G. Ávalos 44.5% &middot; M. Abaldo 26.8%",
+   "remates": "Estudiantes L.P.: G. Carrillo 2.08 remates totales (1.25 a puerta), C. Medina 1.2 remates totales (0.6 a puerta), F. Farías 1.1 remates totales (0.4 a puerta) | Independiente: G. Ávalos 2.29 remates totales (0.71 a puerta), M. Abaldo 1.38 remates totales (0.94 a puerta), S. Montiel 1.33 remates totales (0.75 a puerta)",
+   "tarjetas": "Estudiantes L.P.: J. Pereyra 0.5 amarillas/partido, L. González 0.47 amarillas/partido, E. Meza 0.42 amarillas/partido | Independiente: F. Zabala 0.33 amarillas/partido, M. Perez 0.33 amarillas/partido, M. Valenzuela 0.29 amarillas/partido",
+   "asistencias": "Estudiantes L.P.: J. Burgos 0.25 asistencias/partido, B. Aguirre 0.2 asistencias/partido, C. Medina 0.2 asistencias/partido | Independiente: G. Ávalos 0.29 asistencias/partido, M. Gutiérrez 0.25 asistencias/partido, V. Malcorra 0.2 asistencias/partido",
+   "faltas": "Estudiantes L.P.: J. Pereyra 2.0 faltas/partido, B. Aguirre 1.3 faltas/partido, Lucas Ezequiel Piovi 1.2 faltas/partido | Independiente: F. Zabala 1.73 faltas/partido, G. Ávalos 1.47 faltas/partido, M. Valenzuela 1.43 faltas/partido",
+   "quites": "Estudiantes L.P.: Lucas Ezequiel Piovi 2.67 quites/partido, C. Medina 2.2 quites/partido, E. Meza 2.08 quites/partido | Independiente: I. Marcone 2.4 quites/partido, F. Zabala 2.27 quites/partido, M. Valenzuela 2.14 quites/partido"
   }
  ]
 }
