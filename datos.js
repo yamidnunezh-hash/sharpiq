@@ -18,7 +18,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "26/07/26",
@@ -2861,6 +2861,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "26/07/26",
+    partido:    "Malmo FF vs IF Elfsborg",
+    liga:       "Allsvenskan",
+    prediccion: "Victoria Local",
+    cuota:      "2.1",
+    prob:       "50",
+    resultado:  "loss"
+  },
   {
     fecha:      "23/07/26",
     partido:    "Corinthians vs Remo",
