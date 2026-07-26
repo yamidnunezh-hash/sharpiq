@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-26T16:15:47Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-26T17:27:13Z",
+  "live": [
     {
       "id": "d651270eb53d061fc93a471f11c2f53d",
       "sport": "baseball_mlb",
@@ -13,9 +12,11 @@
       "hora": "11:16 COT",
       "ts": 1785064560,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "714c1847e9003da34be408b74dca72e3",
       "sport": "baseball_mlb",
@@ -205,6 +206,20 @@
       "emoji": "⚽",
       "home": "Cruzeiro",
       "away": "Botafogo",
+      "fecha": "26/07/26",
+      "hora": "14:00 COT",
+      "ts": 1785074400,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "8f3c01ba922c61e86421261b940ea949",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "São Bernardo",
+      "away": "Ceará",
       "fecha": "26/07/26",
       "hora": "14:00 COT",
       "ts": 1785074400,
