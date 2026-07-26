@@ -5,6 +5,23 @@
 const PROXIMOS_EVENTOS = [
   {
     fecha:      "26/07/26",
+    partido:    "Audax Italiano vs Universidad de Chile",
+    liga:       "Campeonato Chileno",
+    prediccion: "Victoria Visitante",
+    cuota:      "2.15",
+    hora:       "16:30 COT",
+    status:     "vip",
+    tier:       "alto_valor",
+    stake_pct:  "2",
+    prob:       "48",
+    sharpscore: "58",
+    cuota_betplay: "",
+    cuota_justa:   "",
+    valor_real:    "",
+    resultado:  "pendiente"
+  },
+  {
+    fecha:      "26/07/26",
     partido:    "Malmo FF vs IF Elfsborg",
     liga:       "Allsvenskan",
     prediccion: "Victoria Local",
