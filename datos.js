@@ -69,7 +69,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "25/07/26",
@@ -2861,6 +2861,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "26/07/26",
+    partido:    "Tampa Bay Rays vs Cleveland Guardians",
+    liga:       "MLB",
+    prediccion: "Over 7.0",
+    cuota:      "1.98",
+    prob:       "52",
+    resultado:  "loss"
+  },
   {
     fecha:      "26/07/26",
     partido:    "Malmo FF vs IF Elfsborg",
