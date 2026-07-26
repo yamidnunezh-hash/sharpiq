@@ -1,39 +1,9 @@
 {
  "partidos": [
   {
-   "local": "Newells Old Boys",
-   "visitante": "Talleres Cordoba",
-   "gole": "A. Luna 28.3% &middot; L. Zelarayán 19.9%",
-   "remates": "Newells Old Boys: I. Ramírez 1.3 remates totales (0.8 a puerta), O. Salomón 1.0 remates totales (0.62 a puerta), W. Núñez 1.0 remates totales (0.27 a puerta) | Talleres Cordoba: R. Martínez 1.41 remates totales (0.82 a puerta), Rick 1.33 remates totales (0.73 a puerta), V. Depietri 1.1 remates totales (0.4 a puerta)",
-   "tarjetas": "Newells Old Boys: M. Luciano 0.5 amarillas/partido, L. Regiardo 0.36 amarillas/partido, M. Ortega 0.33 amarillas/partido | Talleres Cordoba: M. Gómez 0.5 amarillas/partido, Rodrigo Guth 0.5 amarillas/partido, A. Vigo 0.38 amarillas/partido",
-   "asistencias": "Newells Old Boys: J. Russo 0.15 asistencias/partido, W. Mazzantti 0.12 asistencias/partido, J. Mattar 0.08 asistencias/partido | Talleres Cordoba: B. Barticciotto 0.33 asistencias/partido, G. Baroni 0.23 asistencias/partido, F. Cristaldo 0.22 asistencias/partido",
-   "faltas": "Newells Old Boys: L. Herrera 2.0 faltas/partido, R. Herrera 1.71 faltas/partido, L. Regiardo 1.64 faltas/partido | Talleres Cordoba: D. Ortegoza 1.53 faltas/partido, M. Gómez 1.5 faltas/partido, G. Báez 1.17 faltas/partido",
-   "quites": "Newells Old Boys: A. Méndez 3.79 quites/partido, R. Herrera 2.21 quites/partido, L. Regiardo 2.09 quites/partido | Talleres Cordoba: M. Gómez 3.0 quites/partido, A. Schott 2.25 quites/partido, M. Galarza 2.0 quites/partido"
-  },
-  {
-   "local": "Atletico Paranaense",
-   "visitante": "Internacional",
-   "gole": "K. Viveros 45.7% &middot; J. Carbonero 24.3% &middot; S. Mendoza 23.1%",
-   "remates": "Atletico Paranaense: K. Viveros 2.11 remates totales (1.56 a puerta), Leozinho 1.4 remates totales (0.6 a puerta), S. Mendoza 1.21 remates totales (0.58 a puerta) | Internacional: A. Bernabéi 1.75 remates totales (0.75 a puerta), J. Carbonero 1.72 remates totales (0.78 a puerta), Vitinho 1.28 remates totales (0.56 a puerta)",
-   "tarjetas": "Atletico Paranaense: Arthur Dias 0.33 amarillas/partido, Jádson 0.31 amarillas/partido, Felipinho 0.29 amarillas/partido | Internacional: Victor Gabriel 0.44 amarillas/partido, A. Bernabéi 0.38 amarillas/partido, G. Mercado 0.33 amarillas/partido",
-   "asistencias": "Atletico Paranaense: G. Benavídez 0.33 asistencias/partido, L. Esquivel 0.27 asistencias/partido, Claudinho 0.25 asistencias/partido | Internacional: Vitinho 0.17 asistencias/partido, J. Carbonero 0.17 asistencias/partido, Alerrandro 0.17 asistencias/partido",
-   "faltas": "Atletico Paranaense: K. Viveros 2.17 faltas/partido, L. Esquivel 1.6 faltas/partido, Léo 1.33 faltas/partido | Internacional: A. Bernabéi 2.31 faltas/partido, Victor Gabriel 1.56 faltas/partido, Vitinho 1.5 faltas/partido",
-   "quites": "Atletico Paranaense: L. Esquivel 2.13 quites/partido, Jádson 1.92 quites/partido, Felipinho 1.71 quites/partido | Internacional: Bruno Gomes 2.21 quites/partido, A. Bernabéi 1.88 quites/partido, Ronaldo 1.75 quites/partido"
-  },
-  {
-   "local": "Santos",
-   "visitante": "Chapecoense-sc",
-   "gole": "Gabriel Barbosa 44.2%",
-   "remates": "Santos: Neymar 2.12 remates totales (0.88 a puerta), Á. Barreal 1.31 remates totales (0.62 a puerta), Gabriel Barbosa 1.25 remates totales (0.58 a puerta) | Chapecoense-sc: Bruno Matias 1.5 remates totales (0.0 a puerta), Y. Bolasie 1.31 remates totales (0.5 a puerta), Neto Pessoa 1.3 remates totales (0.5 a puerta)",
-   "tarjetas": "Santos: Neymar 0.62 amarillas/partido, Diógenes 0.5 amarillas/partido, T. Rincón 0.5 amarillas/partido | Chapecoense-sc: Eduardo Vinicius 0.5 amarillas/partido, João Paulo 0.33 amarillas/partido, Everton 0.31 amarillas/partido",
-   "asistencias": "Santos: Neymar 0.25 asistencias/partido, M. Terceros 0.22 asistencias/partido, Zé Rafael 0.2 asistencias/partido | Chapecoense-sc: Bruno Pacheco 0.27 asistencias/partido, Jean Carlos 0.12 asistencias/partido, Marcos Vinícius 0.1 asistencias/partido",
-   "faltas": "Santos: João Schmidt 1.5 faltas/partido, T. Rincón 1.5 faltas/partido, Neymar 1.5 faltas/partido | Chapecoense-sc: João Paulo 1.83 faltas/partido, Camilo 1.56 faltas/partido, Higor Meritão 1.55 faltas/partido",
-   "quites": "Santos: João Paulo Ananias 3.0 quites/partido, Igor Vinicius 2.43 quites/partido, G. Escobar 2.38 quites/partido | Chapecoense-sc: Camilo 2.38 quites/partido, Higor Meritão 2.0 quites/partido, Bruno Pacheco 1.64 quites/partido"
-  },
-  {
    "local": "River Plate",
    "visitante": "Barracas Central",
-   "gole": "Á. Di María 30.0% &middot; S. Driussi 28.3% &middot; F. Colidio 26.8%",
+   "gole": "S. Driussi 28.3% &middot; Á. Di María 28.3% &middot; F. Colidio 26.8%",
    "remates": "River Plate: F. Vera 1.62 remates totales (0.44 a puerta), S. Driussi 1.6 remates totales (0.8 a puerta), J. Quintero 1.53 remates totales (1.0 a puerta) | Barracas Central: F. Bruera 1.33 remates totales (0.6 a puerta), R. Bogarín 1.2 remates totales (0.6 a puerta), N. Briasco 1.2 remates totales (0.4 a puerta)",
    "tarjetas": "River Plate: M. Viña 0.5 amarillas/partido, M. Acuña 0.47 amarillas/partido, L. Rivero 0.33 amarillas/partido | Barracas Central: G. Campi 0.29 amarillas/partido, F. Bruera 0.27 amarillas/partido, T. Porra 0.25 amarillas/partido",
    "asistencias": "River Plate: J. Meza 0.29 asistencias/partido, J. Quintero 0.2 asistencias/partido, F. Colidio 0.19 asistencias/partido | Barracas Central: T. Porra 0.19 asistencias/partido, N. Demartini 0.1 asistencias/partido, F. Bruera 0.07 asistencias/partido",
@@ -81,19 +51,9 @@
    "quites": "Philadelphia Union: F. Sundstrom 2.5 quites/partido, O. Makhanya 2.31 quites/partido, N. Harriel 2.31 quites/partido | Seattle Sounders: C. Roldan 2.08 quites/partido, Y. Gómez 2.0 quites/partido, A. Roldan 1.82 quites/partido"
   },
   {
-   "local": "Orlando City SC",
-   "visitante": "Nashville SC",
-   "gole": "S. Surridge 63.2% &middot; M. Ojeda 52.0%",
-   "remates": "Orlando City SC: M. Ojeda 2.6 remates totales (1.6 a puerta), T. Spicer 1.08 remates totales (0.5 a puerta), G. Dorsey 0.85 remates totales (0.38 a puerta) | Nashville SC: H. Mukhtar 1.88 remates totales (1.19 a puerta), S. Surridge 1.8 remates totales (1.6 a puerta), W. Madrigal 1.29 remates totales (0.57 a puerta)",
-   "tarjetas": "Orlando City SC: I. Gómez 0.5 amarillas/partido, E. Atuesta 0.42 amarillas/partido, N. Miller 0.4 amarillas/partido | Nashville SC: D. Lovitz 0.25 amarillas/partido, A. Najar 0.23 amarillas/partido, B. Acosta 0.22 amarillas/partido",
-   "asistencias": "Orlando City SC: Justin Ellis 0.33 asistencias/partido, I. Angulo 0.25 asistencias/partido, E. Atuesta 0.25 asistencias/partido | Nashville SC: C. Espinoza 0.43 asistencias/partido, P. Yazbek 0.3 asistencias/partido, H. Mukhtar 0.25 asistencias/partido",
-   "faltas": "Orlando City SC: B. Ojeda 1.31 faltas/partido, Tiago 1.21 faltas/partido, D. Brekalo 1.17 faltas/partido | Nashville SC: S. Mohammed 1.5 faltas/partido, D. Lovitz 1.31 faltas/partido, W. Madrigal 1.14 faltas/partido",
-   "quites": "Orlando City SC: E. Atuesta 2.17 quites/partido, G. Dorsey 1.92 quites/partido, I. Angulo 1.81 quites/partido | Nashville SC: E. Tagseth 1.82 quites/partido, M. Woledzi 1.81 quites/partido, J. Palacios 1.62 quites/partido"
-  },
-  {
    "local": "New York City FC",
    "visitante": "Chicago Fire",
-   "gole": "H. Cuypers 67.9% &middot; N. Fernández Mercau 49.7% &middot; J. Hall 43.0%",
+   "gole": "H. Cuypers 61.8% &middot; N. Fernández Mercau 49.7% &middot; J. Hall 43.0%",
    "remates": "New York City FC: N. Fernández Mercau 2.19 remates totales (1.62 a puerta), A. Ojeda 1.19 remates totales (0.62 a puerta), A. Perea 1.17 remates totales (0.5 a puerta) | Chicago Fire: H. Cuypers 3.09 remates totales (2.0 a puerta), P. Zinckernagel 2.07 remates totales (1.0 a puerta), J. Bamba 1.6 remates totales (0.7 a puerta)",
    "tarjetas": "New York City FC: T. Gray 0.27 amarillas/partido, N. Fernández Mercau 0.25 amarillas/partido, Raul Gustavo 0.21 amarillas/partido | Chicago Fire: T. D&apos;Avilla 0.36 amarillas/partido, J. Elliott 0.31 amarillas/partido, V. Radojević 0.29 amarillas/partido",
    "asistencias": "New York City FC: M. Moralez 0.43 asistencias/partido, A. Ojeda 0.19 asistencias/partido, N. Fernández Mercau 0.19 asistencias/partido | Chicago Fire: P. Zinckernagel 0.4 asistencias/partido, M. Haile-Selassie 0.2 asistencias/partido, J. Bamba 0.2 asistencias/partido",
@@ -274,6 +234,46 @@
    "asistencias": "Estudiantes L.P.: J. Burgos 0.25 asistencias/partido, B. Aguirre 0.2 asistencias/partido, C. Medina 0.2 asistencias/partido | Independiente: G. Ávalos 0.29 asistencias/partido, M. Gutiérrez 0.25 asistencias/partido, V. Malcorra 0.2 asistencias/partido",
    "faltas": "Estudiantes L.P.: J. Pereyra 2.0 faltas/partido, B. Aguirre 1.3 faltas/partido, Lucas Ezequiel Piovi 1.2 faltas/partido | Independiente: F. Zabala 1.73 faltas/partido, G. Ávalos 1.47 faltas/partido, M. Valenzuela 1.43 faltas/partido",
    "quites": "Estudiantes L.P.: Lucas Ezequiel Piovi 2.67 quites/partido, C. Medina 2.2 quites/partido, E. Meza 2.08 quites/partido | Independiente: I. Marcone 2.4 quites/partido, F. Zabala 2.27 quites/partido, M. Valenzuela 2.14 quites/partido"
+  },
+  {
+   "local": "RB Bragantino",
+   "visitante": "Coritiba",
+   "gole": "Breno Lopes 39.3% &middot; I. Pitta 29.7% &middot; J. Lavega 24.3%",
+   "remates": "RB Bragantino: Davi Gomes 2.0 remates totales (1.0 a puerta), Lucas Barbosa 1.94 remates totales (1.0 a puerta), I. Pitta 1.88 remates totales (0.71 a puerta) | Coritiba: Pedro Rocha 1.61 remates totales (0.72 a puerta), Lucas Ronier 1.56 remates totales (0.5 a puerta), Breno Lopes 1.0 remates totales (0.75 a puerta)",
+   "tarjetas": "RB Bragantino: Juninho Capixaba 0.56 amarillas/partido, Alix 0.38 amarillas/partido, Gabriel 0.31 amarillas/partido | Coritiba: Thiago Santos 0.33 amarillas/partido, Lucas Taverna 0.33 amarillas/partido, Pedro Luccas 0.25 amarillas/partido",
+   "asistencias": "RB Bragantino: Marcelinho 0.25 asistencias/partido, Henry Mosquera 0.2 asistencias/partido, Juninho Capixaba 0.12 asistencias/partido | Coritiba: Josué 0.44 asistencias/partido, Tinga 0.17 asistencias/partido, Lucas Ronier 0.12 asistencias/partido",
+   "faltas": "RB Bragantino: Juninho Capixaba 2.0 faltas/partido, Lucas Barbosa 1.94 faltas/partido, Alix 1.88 faltas/partido | Coritiba: S. Gómez 1.5 faltas/partido, Wallisson 1.33 faltas/partido, Lucas Taverna 1.33 faltas/partido",
+   "quites": "RB Bragantino: Juninho Capixaba 2.06 quites/partido, Cauê Nascimento Santos 2.0 quites/partido, Ryan Tavares 2.0 quites/partido | Coritiba: Jacy 1.88 quites/partido, Lucas Ronier 1.81 quites/partido, S. Gómez 1.69 quites/partido"
+  },
+  {
+   "local": "Flamengo",
+   "visitante": "Sao Paulo",
+   "gole": "Pedro 48.7% &middot; Luciano 33.0% &middot; J. Calleri 29.7%",
+   "remates": "Flamengo: Pedro 1.83 remates totales (1.22 a puerta), G. Plata 1.64 remates totales (1.09 a puerta), G. de Arrascaeta 1.64 remates totales (0.82 a puerta) | Sao Paulo: J. Calleri 1.94 remates totales (0.82 a puerta), Artur 1.36 remates totales (1.0 a puerta), Luciano 1.33 remates totales (0.8 a puerta)",
+   "tarjetas": "Flamengo: E. Pulgar 0.44 amarillas/partido, Léo Pereira 0.4 amarillas/partido, Evertton Araújo 0.29 amarillas/partido | Sao Paulo: E. Díaz 0.54 amarillas/partido, R. Tolói 0.5 amarillas/partido, D. Ferreira 0.5 amarillas/partido",
+   "asistencias": "Flamengo: Samuel Lino 0.39 asistencias/partido, Pedro 0.22 asistencias/partido, G. Varela 0.21 asistencias/partido | Sao Paulo: Wendell 0.23 asistencias/partido, Marcos Antônio 0.15 asistencias/partido, D. Bobadilla 0.13 asistencias/partido",
+   "faltas": "Flamengo: Alex Sandro 1.57 faltas/partido, Lucas Paquetá 1.5 faltas/partido, E. Pulgar 1.44 faltas/partido | Sao Paulo: Wendell 2.23 faltas/partido, E. Díaz 1.77 faltas/partido, J. Calleri 1.53 faltas/partido",
+   "quites": "Flamengo: Lucas Paquetá 1.58 quites/partido, G. Plata 1.55 quites/partido, Samuel Lino 1.5 quites/partido | Sao Paulo: E. Díaz 2.46 quites/partido, R. Arboleda 2.43 quites/partido, R. Tolói 2.17 quites/partido"
+  },
+  {
+   "local": "Gremio",
+   "visitante": "Fluminense",
+   "gole": "Carlos Vinícius 42.7% &middot; John Kennedy 39.3%",
+   "remates": "Gremio: Carlos Vinícius 1.39 remates totales (1.11 a puerta), F. Amuzu 1.35 remates totales (0.47 a puerta), Tetê 1.33 remates totales (0.6 a puerta) | Fluminense: John Kennedy 1.89 remates totales (1.44 a puerta), J. Savarino 1.62 remates totales (0.88 a puerta), A. Canobbio 1.42 remates totales (0.83 a puerta)",
+   "tarjetas": "Gremio: André Henrique 0.4 amarillas/partido, Gustavo Martins 0.33 amarillas/partido, Dodi 0.33 amarillas/partido | Fluminense: Nonato 0.5 amarillas/partido, Alisson 0.38 amarillas/partido, Riquelme 0.33 amarillas/partido",
+   "asistencias": "Gremio: F. Amuzu 0.18 asistencias/partido, C. Pavón 0.18 asistencias/partido, Gustavo Martins 0.17 asistencias/partido | Fluminense: L. Acosta 0.27 asistencias/partido, Renê 0.17 asistencias/partido, Nonato 0.17 asistencias/partido",
+   "faltas": "Gremio: L. Pérez 1.82 faltas/partido, Viery 1.54 faltas/partido, Marlon 1.5 faltas/partido | Fluminense: R. Castillo 1.67 faltas/partido, Hércules 1.65 faltas/partido, A. Canobbio 1.5 faltas/partido",
+   "quites": "Gremio: Marlon 3.33 quites/partido, Viery 2.23 quites/partido, Luis Eduardo 2.0 quites/partido | Fluminense: Nonato 2.17 quites/partido, Renê 2.08 quites/partido, F. Bernal 1.6 quites/partido"
+  },
+  {
+   "local": "America Mineiro",
+   "visitante": "Goias",
+   "gole": "Kadu 39.3% &middot; Anselmo Ramon 25.5%",
+   "remates": "America Mineiro: M. Segovia 1.41 remates totales (0.71 a puerta), G. Mastriani 1.35 remates totales (0.88 a puerta), Guilherme Parede 1.33 remates totales (1.33 a puerta) | Goias: Kadu 2.1 remates totales (0.8 a puerta), Gegê 1.33 remates totales (0.58 a puerta), Anselmo Ramon 1.0 remates totales (0.53 a puerta)",
+   "tarjetas": "America Mineiro: Rafael Barcelos 0.5 amarillas/partido, Alex Silva 0.5 amarillas/partido, Otavio Goncalves 0.33 amarillas/partido | Goias: Luquinhas 0.33 amarillas/partido, Nicolas 0.31 amarillas/partido, Kadu 0.3 amarillas/partido",
+   "asistencias": "America Mineiro: M. Segovia 0.18 asistencias/partido, Paulinho 0.14 asistencias/partido, Willian 0.13 asistencias/partido | Goias: E. García 0.25 asistencias/partido, Lucas Lima 0.17 asistencias/partido, Diego Caito 0.17 asistencias/partido",
+   "faltas": "America Mineiro: Rafael Barcelos 1.67 faltas/partido, Paulo Victor 1.55 faltas/partido, Dalbert Henrique 1.5 faltas/partido | Goias: Kadu 2.1 faltas/partido, Luquinhas 1.44 faltas/partido, Luiz Felipe 1.29 faltas/partido",
+   "quites": "America Mineiro: Nathan 1.7 quites/partido, Artur 1.6 quites/partido, Felipe Amaral 1.39 quites/partido | Goias: Luquinhas 1.89 quites/partido, Lucas Lima 1.5 quites/partido, Guilherme Baldória 1.25 quites/partido"
   }
  ]
 }
