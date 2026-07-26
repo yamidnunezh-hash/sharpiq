@@ -2568,7 +2568,7 @@
         "2": 6.0,
         "2_casa": "Betfair",
         "pinnacle_2": 5.8,
-        "X": 4.0,
+        "X": 4.1,
         "X_casa": "Betfair",
         "pinnacle_X": 3.98,
         "over25": 2.01,
@@ -2828,13 +2828,13 @@
           "pinn_prob": 16.6
         },
         "empate": {
-          "value": -0.031,
-          "ev_porcentaje": -3.1,
-          "ev_pinn": -3.1,
+          "value": -0.007,
+          "ev_porcentaje": -0.7,
+          "ev_pinn": -0.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.0,
+          "cuota": 4.1,
           "casa": "Betfair",
           "pinn_prob": 24.2
         },
@@ -19913,7 +19913,7 @@
         "1": 6.0,
         "1_casa": "Betfair",
         "pinnacle_1": 5.63,
-        "2": 1.55,
+        "2": 1.56,
         "2_casa": "Betfair",
         "pinnacle_2": 1.52,
         "X": 5.0,
@@ -20087,13 +20087,13 @@
           "pinn_prob": 17.1
         },
         "victoria_visita": {
-          "value": -0.016,
-          "ev_porcentaje": -1.6,
-          "ev_pinn": -1.6,
+          "value": -0.009,
+          "ev_porcentaje": -0.9,
+          "ev_pinn": -0.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.55,
+          "cuota": 1.56,
           "casa": "Betfair",
           "pinn_prob": 63.5
         },
@@ -20527,7 +20527,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Visitante",
         "prob": 63.5,
-        "ev": -1.6
+        "ev": -0.9
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -21799,7 +21799,7 @@
       "cuotas": {
         "Cleveland Guardians": 2.1,
         "Tampa Bay Rays": 1.84,
-        "Over 7.0": 2.01,
+        "Over 7.0": 2.02,
         "Under 7.0": 1.85,
         "Cleveland Guardians (+1.5)": 1.47,
         "Tampa Bay Rays (-1.5)": 2.8
@@ -21835,14 +21835,14 @@
           "mercado_nombre": "Tampa Bay Rays"
         },
         "over_7_0": {
-          "value": -0.039,
-          "ev_porcentaje": -3.9,
-          "ev_pinn": -3.9,
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.01,
-          "casa": "DraftKings",
+          "cuota": 2.02,
+          "casa": "Unibet",
           "pinn_prob": 47.8,
           "mercado_nombre": "Over 7.0"
         },
@@ -22131,7 +22131,7 @@
         "Toronto Blue Jays": 2.27,
         "Over 7.5": 1.91,
         "Under 7.5": 1.94,
-        "Boston Red Sox (-1.5)": 2.55,
+        "Boston Red Sox (-1.5)": 2.53,
         "Toronto Blue Jays (+1.5)": 1.54
       },
       "probabilidades": {
@@ -22189,14 +22189,14 @@
           "mercado_nombre": "Under 7.5"
         },
         "spread_boston_red_sox_m1_5": {
-          "value": -0.022,
-          "ev_porcentaje": -2.2,
-          "ev_pinn": -2.2,
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.55,
-          "casa": "FanDuel",
+          "cuota": 2.53,
+          "casa": "DraftKings",
           "pinn_prob": 38.3,
           "mercado_nombre": "Boston Red Sox (-1.5)"
         },
@@ -22208,7 +22208,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 1.54,
-          "casa": "DraftKings",
+          "casa": "FanDuel",
           "pinn_prob": 61.7,
           "mercado_nombre": "Toronto Blue Jays (+1.5)"
         }
@@ -23390,5 +23390,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:01:29"
+  "generado": "16:02:03"
 }
