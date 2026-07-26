@@ -1,41 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Los Angeles FC",
-   "visitante": "Sporting Kansas City",
-   "gole": "D. Joveljić 39.3% &middot; D. Bouanga 39.3%",
-   "remates": "Los Angeles FC: D. Bouanga 2.5 remates totales (1.44 a puerta), Son Heung-Min 1.67 remates totales (0.93 a puerta), D. Martínez 1.06 remates totales (0.62 a puerta) | Sporting Kansas City: D. Joveljić 1.5 remates totales (1.19 a puerta), C. Harris 1.31 remates totales (0.69 a puerta), Capita 1.1 remates totales (0.5 a puerta)",
-   "tarjetas": "Los Angeles FC: R. Raposo 0.29 amarillas/partido, D. Bouanga 0.25 amarillas/partido, Sergi Palencia 0.22 amarillas/partido | Sporting Kansas City: Capita 0.4 amarillas/partido, Z. Bassong 0.29 amarillas/partido, Jansen Miller 0.22 amarillas/partido",
-   "asistencias": "Los Angeles FC: Son Heung-Min 0.53 asistencias/partido, J. Shaffelburg 0.25 asistencias/partido, T. Tillman 0.14 asistencias/partido | Sporting Kansas City: Manu García 0.25 asistencias/partido, C. Harris 0.19 asistencias/partido, J. Davis 0.13 asistencias/partido",
-   "faltas": "Los Angeles FC: D. Bouanga 2.0 faltas/partido, Sergi Palencia 1.56 faltas/partido, A. Smolyakov 1.0 faltas/partido | Sporting Kansas City: Capita 2.3 faltas/partido, Z. Bassong 2.0 faltas/partido, J. Davis 1.67 faltas/partido",
-   "quites": "Los Angeles FC: Y. Cheberko 2.5 quites/partido, M. Delgado 1.75 quites/partido, S. Eustáquio 1.7 quites/partido | Sporting Kansas City: E. Karić 2.5 quites/partido, J. Davis 2.4 quites/partido, Capita 2.3 quites/partido"
-  },
-  {
-   "local": "San Jose Earthquakes",
-   "visitante": "Los Angeles Galaxy",
-   "gole": "P. Judd 49.7% &middot; M. Ingvartsen 49.7% &middot; D. Bouanga 39.3%",
-   "remates": "San Jose Earthquakes: P. Judd 2.69 remates totales (1.62 a puerta), T. Werner 1.5 remates totales (1.25 a puerta), O. Bouda 1.31 remates totales (0.81 a puerta) | Los Angeles Galaxy: Gabriel Pec 2.79 remates totales (2.07 a puerta), João Klauss 2.12 remates totales (1.5 a puerta), J. Paintsil 1.62 remates totales (0.85 a puerta)",
-   "tarjetas": "San Jose Earthquakes: D. Jones 0.4 amarillas/partido, B. Kikanovic 0.31 amarillas/partido, P. Judd 0.31 amarillas/partido | Los Angeles Galaxy: J. Glesnes 0.45 amarillas/partido, E. Cerrillo 0.33 amarillas/partido, M. Cuevas 0.33 amarillas/partido",
-   "asistencias": "San Jose Earthquakes: N. Adimabua 0.5 asistencias/partido, T. Werner 0.38 asistencias/partido, N. Tsakiris 0.36 asistencias/partido | Los Angeles Galaxy: Gabriel Pec 0.29 asistencias/partido, M. Reus 0.29 asistencias/partido, J. Paintsil 0.15 asistencias/partido",
-   "faltas": "San Jose Earthquakes: R. Vieira 1.86 faltas/partido, P. Judd 1.56 faltas/partido, N. Adimabua 1.5 faltas/partido | Los Angeles Galaxy: J. Haak 1.19 faltas/partido, C. Garcés 1.17 faltas/partido, João Klauss 1.12 faltas/partido",
-   "quites": "San Jose Earthquakes: D. Jones 2.4 quites/partido, Beau Leroux 2.2 quites/partido, B. Kikanovic 1.69 quites/partido | Los Angeles Galaxy: C. Garcés 2.17 quites/partido, L. Sanabria 1.71 quites/partido, M. Yamane 1.6 quites/partido"
-  },
-  {
-   "local": "Portland Timbers",
-   "visitante": "Real Salt Lake",
-   "gole": "K. Kelsy 39.3%",
-   "remates": "Portland Timbers: K. Kelsy 1.75 remates totales (0.88 a puerta), K. Velde 1.67 remates totales (0.87 a puerta), C. Bassett 1.42 remates totales (0.67 a puerta) | Real Salt Lake: Z. Gozo 2.53 remates totales (1.27 a puerta), S. Solans 2.13 remates totales (1.0 a puerta), M. Guilavogui 1.92 remates totales (1.15 a puerta)",
-   "tarjetas": "Portland Timbers: D. Chará 0.25 amarillas/partido, Ian Smith 0.25 amarillas/partido, K. Miller 0.25 amarillas/partido | Real Salt Lake: D. Yedlin 0.4 amarillas/partido, L. Moisa 0.33 amarillas/partido, M. Guilavogui 0.31 amarillas/partido",
-   "asistencias": "Portland Timbers: David Pereira da Costa 0.38 asistencias/partido, J. Mosquera 0.33 asistencias/partido, C. Bassett 0.17 asistencias/partido | Real Salt Lake: J. Sanabria 0.33 asistencias/partido, Z. Gozo 0.27 asistencias/partido, M. Guilavogui 0.23 asistencias/partido",
-   "faltas": "Portland Timbers: J. Fory 1.27 faltas/partido, K. Velde 1.2 faltas/partido, K. Kelsy 1.19 faltas/partido | Real Salt Lake: D. Yedlin 2.0 faltas/partido, S. Spierings 1.5 faltas/partido, Z. Gozo 1.4 faltas/partido",
-   "quites": "Portland Timbers: J. Caicedo 2.22 quites/partido, D. Chará 2.17 quites/partido, F. Surman 1.75 quites/partido | Real Salt Lake: Z. Gozo 2.53 quites/partido, J. Sanabria 1.83 quites/partido, L. Moisa 1.67 quites/partido"
-  },
-  {
-   "local": "Santos Laguna",
-   "visitante": "Atlas",
-   "gole": "E. Aguirre 60.1% &middot; L. Di Yorio 60.1% &middot; A. González 52.4%"
-  },
-  {
    "local": "Atletico Tucuman",
    "visitante": "Independ. Rivadavia",
    "gole": "F. Sartori 35.5% &middot; L. Díaz 30.0%",
@@ -179,6 +144,41 @@
    "local": "Necaxa",
    "visitante": "Monterrey",
    "gole": "M. Pedroza 63.2% &middot; L. Ocampos 62.3% &middot; J. Corona 62.3%"
+  },
+  {
+   "local": "CF Pachuca",
+   "visitante": "Club Queretaro",
+   "gole": "S. Rondón 56.3% &middot; E. Montiel 56.3%"
+  },
+  {
+   "local": "Atletico Goianiense",
+   "visitante": "Operario-PR",
+   "gole": "Gustavo Coutinho 41.3% &middot; Boschilia 41.1% &middot; Pablo 25.5%",
+   "remates": "Atletico Goianiense: Gustavo Coutinho 2.2 remates totales (1.27 a puerta), Marrony 1.67 remates totales (0.72 a puerta), Soares Geovany 1.11 remates totales (0.67 a puerta) | Operario-PR: Boschilia 2.12 remates totales (1.06 a puerta), Pablo 1.35 remates totales (0.76 a puerta), Vinícius Diniz 1.06 remates totales (0.33 a puerta)",
+   "tarjetas": "Atletico Goianiense: Cristiano 0.33 amarillas/partido, Gustavo Coutinho 0.33 amarillas/partido, Guilherme Lopes 0.28 amarillas/partido | Operario-PR: J. Cuenú 0.36 amarillas/partido, Vinícius Diniz 0.33 amarillas/partido, Klaus 0.33 amarillas/partido",
+   "asistencias": "Atletico Goianiense: Bruno José 0.21 asistencias/partido, Guilherme Marques 0.2 asistencias/partido, Soares Geovany 0.17 asistencias/partido | Operario-PR: Mikael Doka 0.22 asistencias/partido, Gabriel Feliciano 0.2 asistencias/partido, Pablo 0.18 asistencias/partido",
+   "faltas": "Atletico Goianiense: Assis 2.09 faltas/partido, Igor Henrique 2.0 faltas/partido, Guilherme Marques 1.6 faltas/partido | Operario-PR: Vinícius Diniz 1.83 faltas/partido, Pablo 1.59 faltas/partido, Boschilia 1.41 faltas/partido",
+   "quites": "Atletico Goianiense: Gustavo Daniel 2.0 quites/partido, Marrony 1.78 quites/partido, Ewerthon 1.74 quites/partido | Operario-PR: Matheus Trindade 1.83 quites/partido, Mikael Doka 1.78 quites/partido, Moraes 1.4 quites/partido"
+  },
+  {
+   "local": "CRB",
+   "visitante": "Vila Nova",
+   "gole": "Janderson 24.3%",
+   "remates": "CRB: Mikael 2.83 remates totales (1.56 a puerta), Thiaguinho 1.92 remates totales (0.58 a puerta), Dadá Belmonte 1.88 remates totales (0.82 a puerta) | Vila Nova: Rafa Silva 2.0 remates totales (1.6 a puerta), Janderson 1.22 remates totales (0.78 a puerta), Marquinhos Gabriel 1.12 remates totales (0.62 a puerta)",
+   "tarjetas": "CRB: Daniel 0.41 amarillas/partido, Fábio Alemão 0.33 amarillas/partido, Guilherme Estrella 0.33 amarillas/partido | Vila Nova: Pedro Romano 0.57 amarillas/partido, Dalberson 0.5 amarillas/partido, Rafa Silva 0.4 amarillas/partido",
+   "asistencias": "CRB: Dadá Belmonte 0.24 asistencias/partido, Hereda 0.2 asistencias/partido, Léo Campos 0.2 asistencias/partido | Vila Nova: Marquinhos Gabriel 0.31 asistencias/partido, Janderson 0.22 asistencias/partido, Enzo 0.17 asistencias/partido",
+   "faltas": "CRB: Hereda 1.93 faltas/partido, Wallace 1.5 faltas/partido, Kevin 1.25 faltas/partido | Vila Nova: Higor Meritão 3.0 faltas/partido, Elias 1.89 faltas/partido, João Vieira 1.75 faltas/partido",
+   "quites": "CRB: Fábio Alemão 1.53 quites/partido, Hereda 1.47 quites/partido, Dadá Belmonte 1.35 quites/partido | Vila Nova: Higor Meritão 3.0 quites/partido, Dudu 1.76 quites/partido, Higor 1.53 quites/partido"
+  },
+  {
+   "local": "Sport Recife",
+   "visitante": "Cuiaba",
+   "gole": "Chrystian Barletta 39.3% &middot; Perotti 35.9% &middot; Vinícius 33.0%",
+   "remates": "Sport Recife: Perotti 2.17 remates totales (1.22 a puerta), Chrystian Barletta 1.94 remates totales (1.0 a puerta), Iury Castilho 1.46 remates totales (0.54 a puerta) | Cuiaba: Rodrigo Farofa 1.56 remates totales (0.94 a puerta), Hernandes 1.4 remates totales (0.8 a puerta), Eliel 1.25 remates totales (0.25 a puerta)",
+   "tarjetas": "Sport Recife: Chrystian Barletta 0.38 amarillas/partido, Iury Castilho 0.31 amarillas/partido, Zé Lucas 0.29 amarillas/partido | Cuiaba: Gabriel 0.75 amarillas/partido, David Miguel 0.47 amarillas/partido, Hernandes 0.4 amarillas/partido",
+   "asistencias": "Sport Recife: Chrystian Barletta 0.19 asistencias/partido, Biel 0.17 asistencias/partido, Marlon 0.15 asistencias/partido | Cuiaba: Eliel 0.25 asistencias/partido, Hernandes 0.2 asistencias/partido, Pepê 0.18 asistencias/partido",
+   "faltas": "Sport Recife: Perotti 1.89 faltas/partido, Biel 1.5 faltas/partido, Zé Marcos 1.38 faltas/partido | Cuiaba: David Miguel 2.24 faltas/partido, Pepê 1.82 faltas/partido, Hernandes 1.6 faltas/partido",
+   "quites": "Sport Recife: Biel 2.11 quites/partido, Habraão 1.5 quites/partido, Felipinho 1.44 quites/partido | Cuiaba: Lorenzo 2.33 quites/partido, Raul 1.58 quites/partido, Gabriel 1.5 quites/partido"
   }
  ]
 }
