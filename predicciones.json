@@ -2562,8 +2562,8 @@
       "hora": "21:30",
       "fecha_evento": "2026-07-26",
       "cuotas": {
-        "1": 1.67,
-        "1_casa": "William Hill",
+        "1": 1.68,
+        "1_casa": "Betfair",
         "pinnacle_1": 1.64,
         "2": 6.0,
         "2_casa": "Betfair",
@@ -2806,14 +2806,14 @@
       "confianza": 86.4,
       "value_bets": {
         "victoria_local": {
-          "value": -0.015,
-          "ev_porcentaje": -1.5,
-          "ev_pinn": -1.5,
+          "value": -0.01,
+          "ev_porcentaje": -1.0,
+          "ev_pinn": -1.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.67,
-          "casa": "William Hill",
+          "cuota": 1.68,
+          "casa": "Betfair",
           "pinn_prob": 59.0
         },
         "victoria_visita": {
@@ -3506,7 +3506,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Local",
         "prob": 59.0,
-        "ev": -1.5
+        "ev": -1.0
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -20883,7 +20883,7 @@
         "2": 5.0,
         "2_casa": "Betfair",
         "pinnacle_2": 4.89,
-        "1": 1.71,
+        "1": 1.7,
         "1_casa": "Betfair",
         "pinnacle_1": 1.66,
         "X": 4.5,
@@ -21041,13 +21041,13 @@
           "pinn_prob": 19.7
         },
         "victoria_local": {
-          "value": -0.006,
-          "ev_porcentaje": -0.6,
-          "ev_pinn": -0.6,
+          "value": -0.012,
+          "ev_porcentaje": -1.2,
+          "ev_pinn": -1.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.71,
+          "cuota": 1.7,
           "casa": "Betfair",
           "pinn_prob": 58.1
         },
@@ -21437,7 +21437,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Local",
         "prob": 58.1,
-        "ev": -0.6
+        "ev": -1.2
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -27371,7 +27371,7 @@
         "1": 2.18,
         "1_casa": "Unibet",
         "pinnacle_1": 2.12,
-        "X": 3.65,
+        "X": 3.7,
         "X_casa": "Betfair",
         "pinnacle_X": 3.57,
         "over25": 1.91,
@@ -27543,13 +27543,13 @@
           "pinn_prob": 45.4
         },
         "empate": {
-          "value": -0.017,
-          "ev_porcentaje": -1.7,
-          "ev_pinn": -1.7,
+          "value": -0.003,
+          "ev_porcentaje": -0.3,
+          "ev_pinn": -0.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.65,
+          "cuota": 3.7,
           "casa": "Betfair",
           "pinn_prob": 26.9
         },
@@ -27957,9 +27957,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Victoria Local",
-        "prob": 45.4,
-        "ev": -1.1
+        "mercado": "Empate",
+        "prob": 26.9,
+        "ev": -0.3
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -28961,7 +28961,7 @@
         "Los Angeles Dodgers": 1.65,
         "New York Mets": 2.42,
         "Over 9.0": 1.98,
-        "Under 9.0": 1.95,
+        "Under 9.0": 1.92,
         "Los Angeles Dodgers (-1.5)": 2.05,
         "New York Mets (+1.5)": 1.83
       },
@@ -29008,13 +29008,13 @@
           "mercado_nombre": "Over 9.0"
         },
         "under_9_0": {
-          "value": 0.005,
-          "ev_porcentaje": 0.5,
-          "ev_pinn": 0.5,
+          "value": -0.01,
+          "ev_porcentaje": -1.0,
+          "ev_pinn": -1.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
+          "cuota": 1.92,
           "casa": "Unibet",
           "pinn_prob": 51.5,
           "mercado_nombre": "Under 9.0"
@@ -29047,7 +29047,7 @@
       "prediccion_principal": {
         "mercado": "Under 9.0",
         "prob": 51.5,
-        "ev": 0.5
+        "ev": -1.0
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -29764,7 +29764,7 @@
         "Philadelphia Phillies": 1.55,
         "Over 8.0": 1.92,
         "Under 8.0": 1.91,
-        "New York Yankees (+1.5)": 1.72,
+        "New York Yankees (+1.5)": 1.73,
         "Philadelphia Phillies (-1.5)": 2.2
       },
       "probabilidades": {
@@ -29822,13 +29822,13 @@
           "mercado_nombre": "Under 8.0"
         },
         "spread_new_york_yankees_1_5": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.72,
+          "cuota": 1.73,
           "casa": "FanDuel",
           "pinn_prob": 56.4,
           "mercado_nombre": "New York Yankees (+1.5)"
@@ -29917,5 +29917,5 @@
       "movimiento": null
     }
   ],
-  "generado": "14:03:26"
+  "generado": "14:03:51"
 }
