@@ -1,49 +1,9 @@
 {
  "partidos": [
   {
-   "local": "Bahia",
-   "visitante": "Corinthians",
-   "gole": "Luciano Juba 37.3%",
-   "remates": "Bahia: Luciano Juba 1.27 remates totales (0.8 a puerta), C. Olivera 1.25 remates totales (0.88 a puerta), Willian José 0.94 remates totales (0.44 a puerta) | Corinthians: Yuri Alberto 2.0 remates totales (1.0 a puerta), R. Garro 1.17 remates totales (0.72 a puerta), João Pedro 1.0 remates totales (0.5 a puerta)",
-   "tarjetas": "Bahia: Kanu 0.67 amarillas/partido, Zé Guilherme 0.67 amarillas/partido, João Paulo 0.5 amarillas/partido | Corinthians: André Ramalho 0.5 amarillas/partido, João Pedro 0.5 amarillas/partido, Kauê Camargo 0.5 amarillas/partido",
-   "asistencias": "Bahia: Éverton Ribeiro 0.27 asistencias/partido, Gilberto 0.14 asistencias/partido, Jean Lucas 0.12 asistencias/partido | Corinthians: R. Garro 0.33 asistencias/partido, Z. Labyad 0.22 asistencias/partido, Kaio César 0.14 asistencias/partido",
-   "faltas": "Bahia: N. Acevedo 2.29 faltas/partido, Jean Lucas 1.75 faltas/partido, Roman Gomez 1.2 faltas/partido | Corinthians: Raniele 1.62 faltas/partido, A. Carrillo 1.53 faltas/partido, João Pedro 1.5 faltas/partido",
-   "quites": "Bahia: N. Acevedo 2.53 quites/partido, Zé Guilherme 1.67 quites/partido, Éverton Ribeiro 1.53 quites/partido | Corinthians: Raniele 1.88 quites/partido, Kaio César 1.86 quites/partido, Matheus Bidu 1.81 quites/partido"
-  },
-  {
-   "local": "Cruzeiro",
-   "visitante": "Botafogo",
-   "gole": "Danilo Santos 41.6% &middot; Arthur Cabral 35.5% &middot; Kaio Jorge 32.0%",
-   "remates": "Cruzeiro: Matheus Pereira 1.88 remates totales (0.76 a puerta), Kaio Jorge 1.77 remates totales (0.77 a puerta), N. Villareal 1.58 remates totales (0.67 a puerta) | Botafogo: Arthur Cabral 1.88 remates totales (1.12 a puerta), Danilo Santos 1.69 remates totales (0.92 a puerta), Matheus Martins 1.53 remates totales (1.06 a puerta)",
-   "tarjetas": "Cruzeiro: Matheus Pereira 0.53 amarillas/partido, Lucas Silva 0.36 amarillas/partido, Otávio Eleodoro Rezende Costa 0.33 amarillas/partido | Botafogo: J. Correa 0.5 amarillas/partido, A. Barboza 0.42 amarillas/partido, M. Ponte 0.4 amarillas/partido",
-   "asistencias": "Cruzeiro: L. Romero 0.25 asistencias/partido, Fágner 0.23 asistencias/partido, Christian 0.18 asistencias/partido | Botafogo: Kauan Toledo 0.5 asistencias/partido, Nathan Fernandes 0.25 asistencias/partido, Álvaro Montoro 0.19 asistencias/partido",
-   "faltas": "Cruzeiro: Kaiki 2.25 faltas/partido, Matheus Pereira 1.82 faltas/partido, Kauã Moraes 1.56 faltas/partido | Botafogo: Huguinho 2.0 faltas/partido, A. Barboza 1.92 faltas/partido, Arthur Cabral 1.56 faltas/partido",
-   "quites": "Cruzeiro: Kaiki 2.25 quites/partido, Kauã Moraes 1.89 quites/partido, L. Romero 1.67 quites/partido | Botafogo: A. Barboza 2.08 quites/partido, Vitinho 2.06 quites/partido, N. Ferraresi 1.92 quites/partido"
-  },
-  {
-   "local": "Criciuma",
-   "visitante": "Nautico Recife",
-   "gole": "Perotti 35.5% &middot; Chrystian Barletta 35.5% &middot; Vinícius 33.0%",
-   "remates": "Criciuma: R. Otero 1.22 remates totales (0.44 a puerta), Marcelo Hermes 1.21 remates totales (0.37 a puerta), Waguininho 1.0 remates totales (0.42 a puerta) | Nautico Recife: Vinícius 2.4 remates totales (1.33 a puerta), Dodozinho 2.25 remates totales (1.12 a puerta), Derek 1.93 remates totales (0.47 a puerta)",
-   "tarjetas": "Criciuma: Bruno Alves 0.38 amarillas/partido, Eduardo 0.36 amarillas/partido, Ruan 0.33 amarillas/partido | Nautico Recife: Jean Carlos 0.5 amarillas/partido, Luiz Felipe 0.46 amarillas/partido, Mateus Silva 0.4 amarillas/partido",
-   "asistencias": "Criciuma: Ronald 0.5 asistencias/partido, Romarinho 0.18 asistencias/partido, Ruan 0.17 asistencias/partido | Nautico Recife: Jean Carlos 1.0 asistencias/partido, Yuri 0.2 asistencias/partido, Paulo Sérgio 0.17 asistencias/partido",
-   "faltas": "Criciuma: Eduardo 2.18 faltas/partido, Ruan 1.83 faltas/partido, Luciano Castán 1.56 faltas/partido | Nautico Recife: Luiz Felipe 1.92 faltas/partido, Wenderson 1.78 faltas/partido, Samuel 1.78 faltas/partido",
-   "quites": "Criciuma: Ruan 2.0 quites/partido, Eduardo 1.64 quites/partido, Marcelo Hermes 1.63 quites/partido | Nautico Recife: Matheus Ribeiro 1.92 quites/partido, Luiz Felipe 1.46 quites/partido, Wenderson 1.39 quites/partido"
-  },
-  {
-   "local": "São Bernardo",
-   "visitante": "Ceara",
-   "gole": "Melk 20.9%",
-   "remates": "São Bernardo: Pedro Vitor 1.46 remates totales (0.77 a puerta), Hyoran 0.92 remates totales (0.31 a puerta), D. Davi 0.9 remates totales (0.6 a puerta) | Ceara: Vina 1.86 remates totales (0.86 a puerta), Melk 1.47 remates totales (0.76 a puerta), Vinicius Zanocelo 1.33 remates totales (0.33 a puerta)",
-   "tarjetas": "São Bernardo: Hélder 0.57 amarillas/partido, Pedro Vitor 0.31 amarillas/partido, Felipe Garcia 0.31 amarillas/partido | Ceara: Bryan 0.5 amarillas/partido, Caio 0.5 amarillas/partido, R. López 0.5 amarillas/partido",
-   "asistencias": "São Bernardo: Lucas Lima 0.5 asistencias/partido, Eduardo 0.17 asistencias/partido, Pedro Vitor 0.15 asistencias/partido | Ceara: Melk 0.18 asistencias/partido, Giulio 0.11 asistencias/partido, Enzo 0.11 asistencias/partido",
-   "faltas": "São Bernardo: Felipe Garcia 1.46 faltas/partido, Rodrigo Ferreira 1.17 faltas/partido, Eduardo 1.17 faltas/partido | Ceara: Vinicius Zanocelo 2.0 faltas/partido, Joao Gabriel 1.79 faltas/partido, Éder 1.56 faltas/partido",
-   "quites": "São Bernardo: Pedro Vitor 2.15 quites/partido, Jemerson 1.58 quites/partido, Hélder 1.43 quites/partido | Ceara: Bryan 2.25 quites/partido, Fernandinho 1.82 quites/partido, Vinicius Zanocelo 1.67 quites/partido"
-  },
-  {
    "local": "Estudiantes L.P.",
    "visitante": "Independiente",
-   "gole": "G. Ávalos 44.5% &middot; M. Abaldo 26.8%",
+   "gole": "G. Ávalos 44.4% &middot; M. Abaldo 26.8%",
    "remates": "Estudiantes L.P.: G. Carrillo 2.08 remates totales (1.25 a puerta), C. Medina 1.2 remates totales (0.6 a puerta), F. Farías 1.1 remates totales (0.4 a puerta) | Independiente: G. Ávalos 2.29 remates totales (0.71 a puerta), M. Abaldo 1.38 remates totales (0.94 a puerta), S. Montiel 1.33 remates totales (0.75 a puerta)",
    "tarjetas": "Estudiantes L.P.: J. Pereyra 0.5 amarillas/partido, L. González 0.47 amarillas/partido, E. Meza 0.42 amarillas/partido | Independiente: F. Zabala 0.33 amarillas/partido, M. Perez 0.33 amarillas/partido, M. Valenzuela 0.29 amarillas/partido",
    "asistencias": "Estudiantes L.P.: J. Burgos 0.25 asistencias/partido, B. Aguirre 0.2 asistencias/partido, C. Medina 0.2 asistencias/partido | Independiente: G. Ávalos 0.29 asistencias/partido, M. Gutiérrez 0.25 asistencias/partido, V. Malcorra 0.2 asistencias/partido",
