@@ -3570,15 +3570,15 @@
           "ah_visita_mas15": 73.1
         },
         "disparos": {
-          "disparos_esperados": 3.1,
-          "disp_vis_over2": 81.0,
-          "disp_vis_under2": 19.0,
-          "disp_vis_over3": 59.0,
-          "disp_vis_under3": 41.0,
-          "disp_vis_over4": 36.6,
-          "disp_vis_under4": 63.4,
-          "disp_vis_over5": 19.5,
-          "disp_vis_under5": 80.5
+          "disparos_esperados": 3.6,
+          "disp_vis_over2": 87.1,
+          "disp_vis_under2": 12.9,
+          "disp_vis_over3": 69.2,
+          "disp_vis_under3": 30.8,
+          "disp_vis_over4": 47.8,
+          "disp_vis_under4": 52.2,
+          "disp_vis_over5": 28.8,
+          "disp_vis_under5": 71.2
         },
         "paradas": {
           "paradas_esperadas": 3.8,
@@ -3735,66 +3735,66 @@
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over2": {
-            "prob_modelo": 81.0,
-            "cuota_justa": 1.23,
-            "cuota_ref": 1.17,
-            "ev_porcentaje": -5.2,
+            "prob_modelo": 87.1,
+            "cuota_justa": 1.15,
+            "cuota_ref": 1.09,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under2": {
-            "prob_modelo": 19.0,
-            "cuota_justa": 5.26,
-            "cuota_ref": 5.0,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 12.9,
+            "cuota_justa": 7.75,
+            "cuota_ref": 7.36,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over3": {
-            "prob_modelo": 59.0,
-            "cuota_justa": 1.69,
-            "cuota_ref": 1.61,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 69.2,
+            "cuota_justa": 1.45,
+            "cuota_ref": 1.37,
+            "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under3": {
-            "prob_modelo": 41.0,
-            "cuota_justa": 2.44,
-            "cuota_ref": 2.32,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 30.8,
+            "cuota_justa": 3.25,
+            "cuota_ref": 3.08,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over4": {
-            "prob_modelo": 36.6,
-            "cuota_justa": 2.73,
-            "cuota_ref": 2.6,
-            "ev_porcentaje": -4.8,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under4": {
-            "prob_modelo": 63.4,
-            "cuota_justa": 1.58,
-            "cuota_ref": 1.5,
+            "prob_modelo": 47.8,
+            "cuota_justa": 2.09,
+            "cuota_ref": 1.99,
             "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
+          "disp_vis_under4": {
+            "prob_modelo": 52.2,
+            "cuota_justa": 1.92,
+            "cuota_ref": 1.82,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
           "disp_vis_over5": {
-            "prob_modelo": 19.5,
-            "cuota_justa": 5.13,
-            "cuota_ref": 4.87,
+            "prob_modelo": 28.8,
+            "cuota_justa": 3.47,
+            "cuota_ref": 3.3,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under5": {
-            "prob_modelo": 80.5,
-            "cuota_justa": 1.24,
-            "cuota_ref": 1.18,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 71.2,
+            "cuota_justa": 1.4,
+            "cuota_ref": 1.33,
+            "ev_porcentaje": -5.3,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
@@ -7245,13 +7245,13 @@
           "disp_vis_under5": 67.9
         },
         "paradas": {
-          "paradas_esperadas": 2.0,
-          "paradas_local_over2": 59.4,
-          "paradas_local_under2": 40.6,
-          "paradas_local_over3": 32.3,
-          "paradas_local_under3": 67.7,
-          "paradas_local_over4": 14.3,
-          "paradas_local_under4": 85.7
+          "paradas_esperadas": 2.4,
+          "paradas_local_over2": 69.2,
+          "paradas_local_under2": 30.8,
+          "paradas_local_over3": 43.0,
+          "paradas_local_under3": 57.0,
+          "paradas_local_over4": 22.1,
+          "paradas_local_under4": 77.9
         },
         "ev_ext": {
           "corners_over9": {
@@ -7463,50 +7463,50 @@
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over2": {
-            "prob_modelo": 59.4,
-            "cuota_justa": 1.68,
-            "cuota_ref": 1.6,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 69.2,
+            "cuota_justa": 1.45,
+            "cuota_ref": 1.37,
+            "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under2": {
-            "prob_modelo": 40.6,
-            "cuota_justa": 2.46,
-            "cuota_ref": 2.34,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 30.8,
+            "cuota_justa": 3.25,
+            "cuota_ref": 3.08,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over3": {
-            "prob_modelo": 32.3,
-            "cuota_justa": 3.1,
-            "cuota_ref": 2.94,
+            "prob_modelo": 43.0,
+            "cuota_justa": 2.33,
+            "cuota_ref": 2.21,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under3": {
-            "prob_modelo": 67.7,
-            "cuota_justa": 1.48,
-            "cuota_ref": 1.4,
-            "ev_porcentaje": -5.2,
+            "prob_modelo": 57.0,
+            "cuota_justa": 1.75,
+            "cuota_ref": 1.67,
+            "ev_porcentaje": -4.8,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over4": {
-            "prob_modelo": 14.3,
-            "cuota_justa": 6.99,
-            "cuota_ref": 6.64,
+            "prob_modelo": 22.1,
+            "cuota_justa": 4.52,
+            "cuota_ref": 4.3,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under4": {
-            "prob_modelo": 85.7,
-            "cuota_justa": 1.17,
-            "cuota_ref": 1.11,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 77.9,
+            "cuota_justa": 1.28,
+            "cuota_ref": 1.22,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           }
@@ -9350,24 +9350,24 @@
           "ah_visita_mas15": 82.4
         },
         "disparos": {
-          "disparos_esperados": 1.5,
-          "disp_vis_over2": 45.2,
-          "disp_vis_under2": 54.8,
-          "disp_vis_over3": 19.9,
-          "disp_vis_under3": 80.1,
-          "disp_vis_over4": 6.9,
-          "disp_vis_under4": 93.1,
-          "disp_vis_over5": 2.0,
-          "disp_vis_under5": 98.0
+          "disparos_esperados": 2.2,
+          "disp_vis_over2": 64.8,
+          "disp_vis_under2": 35.2,
+          "disp_vis_over3": 38.0,
+          "disp_vis_under3": 62.0,
+          "disp_vis_over4": 18.3,
+          "disp_vis_under4": 81.7,
+          "disp_vis_over5": 7.4,
+          "disp_vis_under5": 92.6
         },
         "paradas": {
-          "paradas_esperadas": 0.5,
-          "paradas_local_over2": 9.0,
-          "paradas_local_under2": 91.0,
-          "paradas_local_over3": 1.4,
-          "paradas_local_under3": 98.6,
-          "paradas_local_over4": 0.2,
-          "paradas_local_under4": 99.8
+          "paradas_esperadas": 1.1,
+          "paradas_local_over2": 30.5,
+          "paradas_local_under2": 69.5,
+          "paradas_local_over3": 10.2,
+          "paradas_local_under3": 89.8,
+          "paradas_local_over4": 2.6,
+          "paradas_local_under4": 97.4
         },
         "ev_ext": {
           "corners_over9": {
@@ -9515,114 +9515,114 @@
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over2": {
-            "prob_modelo": 45.2,
-            "cuota_justa": 2.21,
-            "cuota_ref": 2.1,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under2": {
-            "prob_modelo": 54.8,
-            "cuota_justa": 1.82,
-            "cuota_ref": 1.73,
-            "ev_porcentaje": -5.2,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_over3": {
-            "prob_modelo": 19.9,
-            "cuota_justa": 5.03,
-            "cuota_ref": 4.77,
-            "ev_porcentaje": -5.1,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under3": {
-            "prob_modelo": 80.1,
-            "cuota_justa": 1.25,
-            "cuota_ref": 1.19,
+            "prob_modelo": 64.8,
+            "cuota_justa": 1.54,
+            "cuota_ref": 1.47,
             "ev_porcentaje": -4.7,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
+          "disp_vis_under2": {
+            "prob_modelo": 35.2,
+            "cuota_justa": 2.84,
+            "cuota_ref": 2.7,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_over3": {
+            "prob_modelo": 38.0,
+            "cuota_justa": 2.63,
+            "cuota_ref": 2.5,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_under3": {
+            "prob_modelo": 62.0,
+            "cuota_justa": 1.61,
+            "cuota_ref": 1.53,
+            "ev_porcentaje": -5.1,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
           "disp_vis_over4": {
-            "prob_modelo": 6.9,
-            "cuota_justa": 14.49,
-            "cuota_ref": 13.77,
+            "prob_modelo": 18.3,
+            "cuota_justa": 5.46,
+            "cuota_ref": 5.19,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under4": {
-            "prob_modelo": 93.1,
-            "cuota_justa": 1.07,
-            "cuota_ref": 1.02,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 81.7,
+            "cuota_justa": 1.22,
+            "cuota_ref": 1.16,
+            "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over5": {
-            "prob_modelo": 2.0,
-            "cuota_justa": 50.0,
-            "cuota_ref": 47.5,
+            "prob_modelo": 7.4,
+            "cuota_justa": 13.51,
+            "cuota_ref": 12.84,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under5": {
-            "prob_modelo": 98.0,
-            "cuota_justa": 1.02,
-            "cuota_ref": 0.97,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 92.6,
+            "cuota_justa": 1.08,
+            "cuota_ref": 1.03,
+            "ev_porcentaje": -4.6,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over2": {
-            "prob_modelo": 9.0,
-            "cuota_justa": 11.11,
-            "cuota_ref": 10.56,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 30.5,
+            "cuota_justa": 3.28,
+            "cuota_ref": 3.11,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under2": {
-            "prob_modelo": 91.0,
-            "cuota_justa": 1.1,
-            "cuota_ref": 1.04,
-            "ev_porcentaje": -5.4,
+            "prob_modelo": 69.5,
+            "cuota_justa": 1.44,
+            "cuota_ref": 1.37,
+            "ev_porcentaje": -4.8,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over3": {
-            "prob_modelo": 1.4,
-            "cuota_justa": 71.43,
-            "cuota_ref": 67.86,
+            "prob_modelo": 10.2,
+            "cuota_justa": 9.8,
+            "cuota_ref": 9.31,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under3": {
-            "prob_modelo": 98.6,
-            "cuota_justa": 1.01,
-            "cuota_ref": 0.96,
-            "ev_porcentaje": -5.3,
+            "prob_modelo": 89.8,
+            "cuota_justa": 1.11,
+            "cuota_ref": 1.06,
+            "ev_porcentaje": -4.8,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over4": {
-            "prob_modelo": 0.2,
-            "cuota_justa": 500.0,
-            "cuota_ref": 475.0,
+            "prob_modelo": 2.6,
+            "cuota_justa": 38.46,
+            "cuota_ref": 36.54,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under4": {
-            "prob_modelo": 99.8,
-            "cuota_justa": 1.0,
-            "cuota_ref": 0.95,
-            "ev_porcentaje": -5.2,
+            "prob_modelo": 97.4,
+            "cuota_justa": 1.03,
+            "cuota_ref": 0.98,
+            "ev_porcentaje": -4.5,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           }
@@ -11187,24 +11187,24 @@
           "ah_visita_mas15": 85.7
         },
         "disparos": {
-          "disparos_esperados": 3.1,
-          "disp_vis_over2": 81.0,
-          "disp_vis_under2": 19.0,
-          "disp_vis_over3": 59.0,
-          "disp_vis_under3": 41.0,
-          "disp_vis_over4": 36.6,
-          "disp_vis_under4": 63.4,
-          "disp_vis_over5": 19.5,
-          "disp_vis_under5": 80.5
+          "disparos_esperados": 2.7,
+          "disp_vis_over2": 75.5,
+          "disp_vis_under2": 24.5,
+          "disp_vis_over3": 51.1,
+          "disp_vis_under3": 48.9,
+          "disp_vis_over4": 29.0,
+          "disp_vis_under4": 71.0,
+          "disp_vis_over5": 14.0,
+          "disp_vis_under5": 86.0
         },
         "paradas": {
-          "paradas_esperadas": 2.0,
-          "paradas_local_over2": 58.3,
-          "paradas_local_under2": 41.7,
-          "paradas_local_over3": 31.2,
-          "paradas_local_under3": 68.8,
-          "paradas_local_over4": 13.6,
-          "paradas_local_under4": 86.4
+          "paradas_esperadas": 1.6,
+          "paradas_local_over2": 48.2,
+          "paradas_local_under2": 51.8,
+          "paradas_local_over3": 22.2,
+          "paradas_local_under3": 77.8,
+          "paradas_local_over4": 8.2,
+          "paradas_local_under4": 91.8
         },
         "ev_ext": {
           "corners_over9": {
@@ -11352,114 +11352,114 @@
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over2": {
-            "prob_modelo": 81.0,
-            "cuota_justa": 1.23,
-            "cuota_ref": 1.17,
-            "ev_porcentaje": -5.2,
+            "prob_modelo": 75.5,
+            "cuota_justa": 1.32,
+            "cuota_ref": 1.26,
+            "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under2": {
-            "prob_modelo": 19.0,
-            "cuota_justa": 5.26,
-            "cuota_ref": 5.0,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 24.5,
+            "cuota_justa": 4.08,
+            "cuota_ref": 3.88,
+            "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over3": {
-            "prob_modelo": 59.0,
-            "cuota_justa": 1.69,
-            "cuota_ref": 1.61,
+            "prob_modelo": 51.1,
+            "cuota_justa": 1.96,
+            "cuota_ref": 1.86,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under3": {
-            "prob_modelo": 41.0,
-            "cuota_justa": 2.44,
-            "cuota_ref": 2.32,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 48.9,
+            "cuota_justa": 2.04,
+            "cuota_ref": 1.94,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over4": {
-            "prob_modelo": 36.6,
-            "cuota_justa": 2.73,
-            "cuota_ref": 2.6,
-            "ev_porcentaje": -4.8,
+            "prob_modelo": 29.0,
+            "cuota_justa": 3.45,
+            "cuota_ref": 3.28,
+            "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under4": {
-            "prob_modelo": 63.4,
-            "cuota_justa": 1.58,
-            "cuota_ref": 1.5,
+            "prob_modelo": 71.0,
+            "cuota_justa": 1.41,
+            "cuota_ref": 1.34,
             "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over5": {
-            "prob_modelo": 19.5,
-            "cuota_justa": 5.13,
-            "cuota_ref": 4.87,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 14.0,
+            "cuota_justa": 7.14,
+            "cuota_ref": 6.79,
+            "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under5": {
-            "prob_modelo": 80.5,
-            "cuota_justa": 1.24,
-            "cuota_ref": 1.18,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 86.0,
+            "cuota_justa": 1.16,
+            "cuota_ref": 1.1,
+            "ev_porcentaje": -5.4,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over2": {
-            "prob_modelo": 58.3,
-            "cuota_justa": 1.72,
-            "cuota_ref": 1.63,
+            "prob_modelo": 48.2,
+            "cuota_justa": 2.07,
+            "cuota_ref": 1.97,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under2": {
-            "prob_modelo": 41.7,
-            "cuota_justa": 2.4,
-            "cuota_ref": 2.28,
-            "ev_porcentaje": -4.9,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "paradas_local_over3": {
-            "prob_modelo": 31.2,
-            "cuota_justa": 3.21,
-            "cuota_ref": 3.04,
+            "prob_modelo": 51.8,
+            "cuota_justa": 1.93,
+            "cuota_ref": 1.83,
             "ev_porcentaje": -5.2,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
+          "paradas_local_over3": {
+            "prob_modelo": 22.2,
+            "cuota_justa": 4.5,
+            "cuota_ref": 4.28,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
           "paradas_local_under3": {
-            "prob_modelo": 68.8,
-            "cuota_justa": 1.45,
-            "cuota_ref": 1.38,
+            "prob_modelo": 77.8,
+            "cuota_justa": 1.29,
+            "cuota_ref": 1.22,
             "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over4": {
-            "prob_modelo": 13.6,
-            "cuota_justa": 7.35,
-            "cuota_ref": 6.99,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 8.2,
+            "cuota_justa": 12.2,
+            "cuota_ref": 11.59,
+            "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under4": {
-            "prob_modelo": 86.4,
-            "cuota_justa": 1.16,
-            "cuota_ref": 1.1,
-            "ev_porcentaje": -5.0,
+            "prob_modelo": 91.8,
+            "cuota_justa": 1.09,
+            "cuota_ref": 1.03,
+            "ev_porcentaje": -5.4,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           }
@@ -12395,7 +12395,7 @@
         "1": 2.04,
         "1_casa": "Betfair",
         "pinnacle_1": 2.0,
-        "2": 5.2,
+        "2": 5.3,
         "2_casa": "Betfair",
         "pinnacle_2": 4.99,
         "X": 3.0,
@@ -12561,13 +12561,13 @@
           "pinn_prob": 48.4
         },
         "victoria_visita": {
-          "value": 0.008,
-          "ev_porcentaje": 0.8,
-          "ev_pinn": 0.8,
+          "value": 0.027,
+          "ev_porcentaje": 2.7,
+          "ev_pinn": 2.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.2,
+          "cuota": 5.3,
           "casa": "Betfair",
           "pinn_prob": 19.4
         },
@@ -18858,7 +18858,7 @@
       "hora": "00:30",
       "fecha_evento": "2026-07-25",
       "cuotas": {
-        "2": 5.0,
+        "2": 5.1,
         "2_casa": "Betfair",
         "pinnacle_2": 4.91,
         "1": 1.77,
@@ -19102,13 +19102,13 @@
       "confianza": 82.3,
       "value_bets": {
         "victoria_visita": {
-          "value": -0.017,
-          "ev_porcentaje": -1.7,
-          "ev_pinn": -1.7,
+          "value": 0.003,
+          "ev_porcentaje": 0.3,
+          "ev_pinn": 0.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.0,
+          "cuota": 5.1,
           "casa": "Betfair",
           "pinn_prob": 19.7
         },
@@ -20186,7 +20186,7 @@
         "over25": 1.7,
         "over25_casa": "William Hill",
         "pinnacle_over25": 1.7,
-        "under25": 2.3,
+        "under25": 2.28,
         "under25_casa": "Unibet",
         "pinnacle_under25": 2.24,
         "over225": 1.51,
@@ -20264,10 +20264,10 @@
         "btts_si": 1.62,
         "btts_si_casa": "Pinnacle",
         "pinnacle_btts_si": 1.62,
-        "btts_no": 2.4,
+        "btts_no": 2.38,
         "btts_no_casa": "Virgin Bet",
         "pinnacle_btts_no": 2.37,
-        "dnb_local": 1.49,
+        "dnb_local": 1.48,
         "dnb_local_casa": "Virgin Bet",
         "dnb_visita": 2.75,
         "dnb_visita_casa": "Pinnacle",
@@ -20542,13 +20542,13 @@
           "pinn_prob": 56.9
         },
         "under25": {
-          "value": -0.008,
-          "ev_porcentaje": -0.8,
-          "ev_pinn": -0.8,
+          "value": -0.016,
+          "ev_porcentaje": -1.6,
+          "ev_pinn": -1.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.3,
+          "cuota": 2.28,
           "casa": "Unibet",
           "pinn_prob": 43.1
         },
@@ -20848,24 +20848,24 @@
           "pinn_prob": 59.4
         },
         "btts_no": {
-          "value": -0.026,
-          "ev_porcentaje": -2.6,
-          "ev_pinn": -2.6,
+          "value": -0.034,
+          "ev_porcentaje": -3.4,
+          "ev_pinn": -3.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.4,
+          "cuota": 2.38,
           "casa": "Virgin Bet",
           "pinn_prob": 40.6
         },
         "dnb_local": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": -0.04,
+          "ev_porcentaje": -4.0,
+          "ev_pinn": -4.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.49,
+          "cuota": 1.48,
           "casa": "Virgin Bet",
           "pinn_prob": 64.9
         },
@@ -47588,7 +47588,7 @@
         "2": 4.6,
         "2_casa": "Betfair",
         "pinnacle_2": 4.46,
-        "X": 3.95,
+        "X": 4.0,
         "X_casa": "Betfair",
         "pinnacle_X": 3.87,
         "over25": 1.88,
@@ -47762,13 +47762,13 @@
           "pinn_prob": 21.5
         },
         "empate": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.007,
+          "ev_porcentaje": -0.7,
+          "ev_pinn": -0.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.95,
+          "cuota": 4.0,
           "casa": "Betfair",
           "pinn_prob": 24.8
         },
@@ -51477,7 +51477,9 @@
         "Los Angeles Angels": 2.01,
         "San Francisco Giants": 1.91,
         "Over 8.0": 1.98,
-        "Under 8.0": 1.85
+        "Under 8.0": 1.85,
+        "Los Angeles Angels (+1.5)": 1.45,
+        "San Francisco Giants (-1.5)": 2.65
       },
       "probabilidades": {
         "Los Angeles Angels": 48.5,
@@ -51532,6 +51534,30 @@
           "casa": "DraftKings",
           "pinn_prob": 51.7,
           "mercado_nombre": "Under 8.0"
+        },
+        "spread_los_angeles_angels_1_5": {
+          "value": -0.05,
+          "ev_porcentaje": -5.0,
+          "ev_pinn": -5.0,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 1.45,
+          "casa": "BetMGM",
+          "pinn_prob": 65.5,
+          "mercado_nombre": "Los Angeles Angels (+1.5)"
+        },
+        "spread_san_francisco_giants_m1_5": {
+          "value": -0.086,
+          "ev_porcentaje": -8.6,
+          "ev_pinn": -8.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 2.65,
+          "casa": "BetMGM",
+          "pinn_prob": 34.5,
+          "mercado_nombre": "San Francisco Giants (-1.5)"
         }
       },
       "prediccion_principal": {
@@ -52295,5 +52321,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:01:30"
+  "generado": "00:02:11"
 }
