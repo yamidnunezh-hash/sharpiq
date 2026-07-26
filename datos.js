@@ -4,6 +4,23 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "26/07/26",
+    partido:    "Tampa Bay Rays vs Cleveland Guardians",
+    liga:       "MLB",
+    prediccion: "Over 7.0",
+    cuota:      "1.98",
+    hora:       "11:16 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.2",
+    prob:       "52",
+    sharpscore: "59",
+    cuota_betplay: "",
+    cuota_justa:   "",
+    valor_real:    "",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "25/07/26",
     partido:    "Chunichi Dragons vs Yokohama DeNA BayStars",
     liga:       "NPB",
