@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-27T17:57:31Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-27T19:35:47Z",
+  "live": [
     {
       "id": "0740e4a4b0377a066eec394f1a30425b",
       "sport": "baseball_mlb",
@@ -10,12 +9,14 @@
       "home": "Texas Rangers",
       "away": "Seattle Mariners",
       "fecha": "27/07/26",
-      "hora": "13:35 COT",
-      "ts": 1785159300,
+      "hora": "13:38 COT",
+      "ts": 1785159511,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "7",
+      "score_away": "2"
+    }
+  ],
+  "upcoming": [
     {
       "id": "e51972466047219c9d643949ee0c5a2c",
       "sport": "soccer_brazil_serie_b",
@@ -211,6 +212,20 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "1fd6cc9bf9409f76d065bd414aefdf26",
+      "sport": "soccer_conmebol_copa_sudamericana",
+      "liga": "Copa Sudamericana",
+      "emoji": "⚽",
+      "home": "CA Tigre BA",
+      "away": "Nacional de Montevideo",
+      "fecha": "28/07/26",
+      "hora": "17:00 COT",
+      "ts": 1785258000,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
@@ -339,20 +354,6 @@
       "completed": true,
       "score_home": "3",
       "score_away": "4"
-    },
-    {
-      "id": "ffa775c13bd1fc1e79040c61f2969d6e",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Criciuma",
-      "away": "Nautico PE",
-      "fecha": "26/07/26",
-      "hora": "14:02 COT",
-      "ts": 1785074520,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "0"
     }
   ]
 }
