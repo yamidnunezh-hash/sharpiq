@@ -3,14 +3,14 @@
   "liga": "MLB",
   "local": "Pittsburgh Pirates",
   "visitante": "Arizona Diamondbacks",
-  "prediccion": "Arizona Diamondbacks (+1.5)",
+  "prediccion": "Over 9.5",
   "mercado_key": null,
   "cuota": "",
   "hora_utc": "22:40",
   "hora_cot": "17:40 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 51.8,
+  "confianza": 51.7,
   "pred_completa": {
     "id": "74749169ead486e15c8bbd906e738bd6",
     "comienzo": "2026-07-27T22:40:00Z",
@@ -24,64 +24,64 @@
     "fecha_evento": "2026-07-27",
     "cuotas": {
       "Arizona Diamondbacks": 2.03,
-      "Pittsburgh Pirates": 1.89,
+      "Pittsburgh Pirates": 1.9,
       "Over 9.5": 2.0,
-      "Under 9.5": 1.85,
+      "Under 9.5": 1.87,
       "Arizona Diamondbacks (+1.5)": 1.52,
       "Pittsburgh Pirates (-1.5)": 2.59
     },
     "probabilidades": {
-      "Arizona Diamondbacks": 48.2,
-      "Pittsburgh Pirates": 51.8
+      "Arizona Diamondbacks": 48.3,
+      "Pittsburgh Pirates": 51.7
     },
-    "confianza": 51.8,
+    "confianza": 51.7,
     "value_bets": {
       "Arizona Diamondbacks": {
-        "value": -0.021,
-        "ev_porcentaje": -2.1,
-        "ev_pinn": -2.1,
+        "value": -0.019,
+        "ev_porcentaje": -1.9,
+        "ev_pinn": -1.9,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 2.03,
         "casa": "Pinnacle",
-        "pinn_prob": 48.2,
+        "pinn_prob": 48.3,
         "mercado_nombre": "Arizona Diamondbacks"
       },
       "Pittsburgh Pirates": {
-        "value": -0.021,
-        "ev_porcentaje": -2.1,
-        "ev_pinn": -2.1,
+        "value": -0.019,
+        "ev_porcentaje": -1.9,
+        "ev_pinn": -1.9,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.89,
+        "cuota": 1.9,
         "casa": "Pinnacle",
-        "pinn_prob": 51.8,
+        "pinn_prob": 51.7,
         "mercado_nombre": "Pittsburgh Pirates"
       },
       "over_9_5": {
-        "value": -0.041,
-        "ev_porcentaje": -4.1,
-        "ev_pinn": -4.1,
+        "value": -0.005,
+        "ev_porcentaje": -0.5,
+        "ev_pinn": -0.5,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
         "cuota": 2.0,
         "casa": "FanDuel",
-        "pinn_prob": 47.9,
+        "pinn_prob": 49.7,
         "mercado_nombre": "Over 9.5"
       },
       "under_9_5": {
-        "value": -0.037,
-        "ev_porcentaje": -3.7,
-        "ev_pinn": -3.7,
+        "value": -0.06,
+        "ev_porcentaje": -6.0,
+        "ev_pinn": -6.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.85,
-        "casa": "DraftKings",
-        "pinn_prob": 52.1,
+        "cuota": 1.87,
+        "casa": "BetMGM",
+        "pinn_prob": 50.3,
         "mercado_nombre": "Under 9.5"
       },
       "spread_arizona_diamondbacks_1_5": {
@@ -110,9 +110,9 @@
       }
     },
     "prediccion_principal": {
-      "mercado": "Arizona Diamondbacks (+1.5)",
-      "prob": 64.5,
-      "ev": -2.0
+      "mercado": "Over 9.5",
+      "prob": 49.7,
+      "ev": -0.5
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
