@@ -1,46 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Palmeiras",
-   "visitante": "Atletico-MG",
-   "gole": "J. López 29.7%",
-   "remates": "Palmeiras: Vitor Roque 1.57 remates totales (1.0 a puerta), J. López 1.53 remates totales (0.82 a puerta), Maurício 1.25 remates totales (0.69 a puerta) | Atletico-MG: Hulk 1.42 remates totales (0.58 a puerta), T. Cuello 1.39 remates totales (0.5 a puerta), Gustavo Scarpa 1.0 remates totales (0.3 a puerta)",
-   "tarjetas": "Palmeiras: Luis Felipe 0.67 amarillas/partido, Luighi Hanri 0.29 amarillas/partido, J. Arias 0.29 amarillas/partido | Atletico-MG: I. Román 0.5 amarillas/partido, Ruan Tressoldi 0.38 amarillas/partido, Lyanco 0.38 amarillas/partido",
-   "asistencias": "Palmeiras: Andreas Pereira 0.5 asistencias/partido, J. Piquerez 0.29 asistencias/partido, J. López 0.18 asistencias/partido | Atletico-MG: Hulk 0.25 asistencias/partido, Bernard 0.12 asistencias/partido, Renan Lodi 0.11 asistencias/partido",
-   "faltas": "Palmeiras: J. López 1.65 faltas/partido, Murilo 1.31 faltas/partido, J. Arias 1.29 faltas/partido | Atletico-MG: I. Román 2.0 faltas/partido, A. Franco 1.67 faltas/partido, Renan Lodi 1.56 faltas/partido",
-   "quites": "Palmeiras: J. Piquerez 2.0 quites/partido, A. Giay 1.8 quites/partido, Arthur 1.67 quites/partido | Atletico-MG: I. Román 1.67 quites/partido, A. Franco 1.6 quites/partido, J. Alonso 1.5 quites/partido"
-  },
-  {
-   "local": "Remo",
-   "visitante": "Vitoria",
-   "gole": "Rene 34.1%",
-   "remates": "Remo: Patrick de Paula 1.83 remates totales (0.5 a puerta), Gabriel Taliari 1.43 remates totales (0.86 a puerta), Jája Silva 1.27 remates totales (0.73 a puerta) | Vitoria: Rene 1.83 remates totales (1.33 a puerta), Matheuzinho 1.18 remates totales (0.65 a puerta), Renato Kayzer 1.0 remates totales (0.57 a puerta)",
-   "tarjetas": "Remo: Patrick de Paula 0.67 amarillas/partido, João Lucas 0.5 amarillas/partido, João Pedro 0.33 amarillas/partido | Vitoria: Zé Marcos 0.5 amarillas/partido, E. Martínez 0.38 amarillas/partido, Zé Vitor 0.27 amarillas/partido",
-   "asistencias": "Remo: Patrick de Paula 0.33 asistencias/partido, Vitor Bueno 0.17 asistencias/partido, Alef Manga 0.16 asistencias/partido | Vitoria: Erick 0.22 asistencias/partido, Gabriel Baralhas 0.19 asistencias/partido, Luan Cândido 0.17 asistencias/partido",
-   "faltas": "Remo: João Pedro 2.0 faltas/partido, Zé Ricardo 1.47 faltas/partido, João Lucas 1.33 faltas/partido | Vitoria: Zé Marcos 2.5 faltas/partido, Zé Vitor 2.18 faltas/partido, Gabriel Baralhas 1.75 faltas/partido",
-   "quites": "Remo: João Lucas 3.17 quites/partido, Leo Andrade 2.25 quites/partido, Patrick 2.06 quites/partido | Vitoria: T. Pochettino 2.0 quites/partido, Nathan 1.92 quites/partido, Zé Vitor 1.91 quites/partido"
-  },
-  {
-   "local": "Deportivo Riestra",
-   "visitante": "Boca Juniors",
-   "gole": "M. Merentiel 30.0%",
-   "remates": "Deportivo Riestra: Antony Daniel Alonso Espinoza 1.44 remates totales (0.94 a puerta), J. Herrera 1.19 remates totales (0.62 a puerta), P. Ramírez 1.0 remates totales (0.27 a puerta) | Boca Juniors: M. Giménez 1.83 remates totales (1.0 a puerta), A. Bareiro 1.7 remates totales (1.0 a puerta), M. Merentiel 1.64 remates totales (0.93 a puerta)",
-   "tarjetas": "Deportivo Riestra: G. Flores 0.75 amarillas/partido, L. Landriel 0.5 amarillas/partido, Á. Stringa 0.5 amarillas/partido | Boca Juniors: L. Paredes 0.47 amarillas/partido, A. Bareiro 0.4 amarillas/partido, L. Janson 0.33 amarillas/partido",
-   "asistencias": "Boca Juniors: E. Zeballos 0.38 asistencias/partido, L. Paredes 0.2 asistencias/partido, W. Alarcón 0.2 asistencias/partido",
-   "faltas": "Deportivo Riestra: N. Watson 1.75 faltas/partido, N. Benegas 1.64 faltas/partido, J. Goitía 1.62 faltas/partido | Boca Juniors: L. Janson 2.33 faltas/partido, A. Bareiro 1.7 faltas/partido, M. Delgado 1.25 faltas/partido",
-   "quites": "Deportivo Riestra: J. Goitía 2.23 quites/partido, P. Ramírez 2.18 quites/partido, N. Watson 1.83 quites/partido | Boca Juniors: L. Blanco 2.86 quites/partido, M. Braida 2.83 quites/partido, L. Di Lollo 2.46 quites/partido"
-  },
-  {
-   "local": "Necaxa",
-   "visitante": "Monterrey",
-   "gole": "L. Ocampos 58.6%"
-  },
-  {
-   "local": "CF Pachuca",
-   "visitante": "Club Queretaro",
-   "gole": "S. Rondón 56.3% &middot; E. Montiel 56.3%"
-  },
-  {
    "local": "Atletico Goianiense",
    "visitante": "Operario-PR",
    "gole": "Gustavo Coutinho 41.3% &middot; Boschilia 41.1% &middot; Pablo 25.5%",
