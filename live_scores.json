@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-27T20:52:04Z",
-  "live": [
-    {
-      "id": "0740e4a4b0377a066eec394f1a30425b",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Texas Rangers",
-      "away": "Seattle Mariners",
-      "fecha": "27/07/26",
-      "hora": "13:38 COT",
-      "ts": 1785159511,
-      "completed": false,
-      "score_home": "7",
-      "score_away": "2"
-    }
-  ],
+  "updated": "2026-07-27T22:02:50Z",
+  "live": [],
   "upcoming": [
     {
       "id": "e51972466047219c9d643949ee0c5a2c",
@@ -230,6 +215,20 @@
   ],
   "finished": [
     {
+      "id": "0740e4a4b0377a066eec394f1a30425b",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Texas Rangers",
+      "away": "Seattle Mariners",
+      "fecha": "27/07/26",
+      "hora": "13:38 COT",
+      "ts": 1785159511,
+      "completed": true,
+      "score_home": "7",
+      "score_away": "3"
+    },
+    {
       "id": "210e6566d3641ee245e8a099a1679244",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -270,76 +269,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "0"
-    },
-    {
-      "id": "d9d1726d183975de80ce176cd8e4a6ab",
-      "sport": "soccer_brazil_campeonato",
-      "liga": "Brasileirao",
-      "emoji": "⚽",
-      "home": "Bragantino-SP",
-      "away": "Coritiba",
-      "fecha": "26/07/26",
-      "hora": "16:30 COT",
-      "ts": 1785083400,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "0"
-    },
-    {
-      "id": "19fc51f8fad955615b5d08db4ec89e1f",
-      "sport": "soccer_brazil_campeonato",
-      "liga": "Brasileirao",
-      "emoji": "⚽",
-      "home": "Flamengo",
-      "away": "Sao Paulo",
-      "fecha": "26/07/26",
-      "hora": "16:30 COT",
-      "ts": 1785083400,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "1"
-    },
-    {
-      "id": "b2ae0c5388431d8a811f3ead9312fed1",
-      "sport": "soccer_brazil_campeonato",
-      "liga": "Brasileirao",
-      "emoji": "⚽",
-      "home": "Grêmio",
-      "away": "Fluminense",
-      "fecha": "26/07/26",
-      "hora": "16:30 COT",
-      "ts": 1785083400,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "1"
-    },
-    {
-      "id": "599e46b4b9f36136b2723c825e0fc82f",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "América Mineiro",
-      "away": "Goiás",
-      "fecha": "26/07/26",
-      "hora": "16:30 COT",
-      "ts": 1785083400,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "0"
-    },
-    {
-      "id": "2dae7a8cf20814f1e7b206f5e44b7751",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Londrina",
-      "away": "Grêmio Novorizontino",
-      "fecha": "26/07/26",
-      "hora": "16:30 COT",
-      "ts": 1785083400,
-      "completed": true,
-      "score_home": "1",
-      "score_away": "4"
     }
   ]
 }
