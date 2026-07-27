@@ -1,118 +1,118 @@
 {
-  "partido": "Texas Rangers vs Seattle Mariners",
+  "partido": "Pittsburgh Pirates vs Arizona Diamondbacks",
   "liga": "MLB",
-  "local": "Texas Rangers",
-  "visitante": "Seattle Mariners",
-  "prediccion": "Seattle Mariners",
+  "local": "Pittsburgh Pirates",
+  "visitante": "Arizona Diamondbacks",
+  "prediccion": "Arizona Diamondbacks (+1.5)",
   "mercado_key": null,
   "cuota": "",
-  "hora_utc": "18:35",
-  "hora_cot": "13:35 COT",
+  "hora_utc": "22:40",
+  "hora_cot": "17:40 COT",
   "ev": null,
   "clasificacion": null,
-  "confianza": 54.2,
+  "confianza": 51.8,
   "pred_completa": {
-    "id": "0740e4a4b0377a066eec394f1a30425b",
-    "comienzo": "2026-07-27T18:35:00Z",
-    "local": "Texas Rangers",
-    "visitante": "Seattle Mariners",
+    "id": "74749169ead486e15c8bbd906e738bd6",
+    "comienzo": "2026-07-27T22:40:00Z",
+    "local": "Pittsburgh Pirates",
+    "visitante": "Arizona Diamondbacks",
     "liga": "MLB",
     "liga_code": "baseball_mlb",
     "deporte": "MLB",
     "deporte_emoji": "⚾",
-    "hora": "18:35",
+    "hora": "22:40",
     "fecha_evento": "2026-07-27",
     "cuotas": {
-      "Seattle Mariners": 1.81,
-      "Texas Rangers": 2.14,
-      "Over 8.0": 1.95,
-      "Under 8.0": 1.96,
-      "Seattle Mariners (-1.5)": 2.35,
-      "Texas Rangers (+1.5)": 1.62
+      "Arizona Diamondbacks": 2.03,
+      "Pittsburgh Pirates": 1.89,
+      "Over 9.5": 2.0,
+      "Under 9.5": 1.85,
+      "Arizona Diamondbacks (+1.5)": 1.52,
+      "Pittsburgh Pirates (-1.5)": 2.59
     },
     "probabilidades": {
-      "Seattle Mariners": 54.2,
-      "Texas Rangers": 45.8
+      "Arizona Diamondbacks": 48.2,
+      "Pittsburgh Pirates": 51.8
     },
-    "confianza": 54.2,
+    "confianza": 51.8,
     "value_bets": {
-      "Seattle Mariners": {
-        "value": -0.019,
-        "ev_porcentaje": -1.9,
-        "ev_pinn": -1.9,
+      "Arizona Diamondbacks": {
+        "value": -0.021,
+        "ev_porcentaje": -2.1,
+        "ev_pinn": -2.1,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.81,
+        "cuota": 2.03,
         "casa": "Pinnacle",
-        "pinn_prob": 54.2,
-        "mercado_nombre": "Seattle Mariners"
+        "pinn_prob": 48.2,
+        "mercado_nombre": "Arizona Diamondbacks"
       },
-      "Texas Rangers": {
-        "value": -0.019,
-        "ev_porcentaje": -1.9,
-        "ev_pinn": -1.9,
+      "Pittsburgh Pirates": {
+        "value": -0.021,
+        "ev_porcentaje": -2.1,
+        "ev_pinn": -2.1,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 2.14,
+        "cuota": 1.89,
         "casa": "Pinnacle",
-        "pinn_prob": 45.8,
-        "mercado_nombre": "Texas Rangers"
+        "pinn_prob": 51.8,
+        "mercado_nombre": "Pittsburgh Pirates"
       },
-      "over_8_0": {
+      "over_9_5": {
+        "value": -0.041,
+        "ev_porcentaje": -4.1,
+        "ev_pinn": -4.1,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 2.0,
+        "casa": "FanDuel",
+        "pinn_prob": 47.9,
+        "mercado_nombre": "Over 9.5"
+      },
+      "under_9_5": {
+        "value": -0.037,
+        "ev_porcentaje": -3.7,
+        "ev_pinn": -3.7,
+        "tiene_valor": false,
+        "tiene_valor_pinn": false,
+        "clasificacion": "SIN VALOR",
+        "cuota": 1.85,
+        "casa": "DraftKings",
+        "pinn_prob": 52.1,
+        "mercado_nombre": "Under 9.5"
+      },
+      "spread_arizona_diamondbacks_1_5": {
         "value": -0.02,
         "ev_porcentaje": -2.0,
         "ev_pinn": -2.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.95,
-        "casa": "Unibet",
-        "pinn_prob": 50.3,
-        "mercado_nombre": "Over 8.0"
-      },
-      "under_8_0": {
-        "value": -0.025,
-        "ev_porcentaje": -2.5,
-        "ev_pinn": -2.5,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 1.96,
-        "casa": "FanDuel",
-        "pinn_prob": 49.7,
-        "mercado_nombre": "Under 8.0"
-      },
-      "spread_seattle_mariners_m1_5": {
-        "value": -0.038,
-        "ev_porcentaje": -3.8,
-        "ev_pinn": -3.8,
-        "tiene_valor": false,
-        "tiene_valor_pinn": false,
-        "clasificacion": "SIN VALOR",
-        "cuota": 2.35,
+        "cuota": 1.52,
         "casa": "DraftKings",
-        "pinn_prob": 40.9,
-        "mercado_nombre": "Seattle Mariners (-1.5)"
+        "pinn_prob": 64.5,
+        "mercado_nombre": "Arizona Diamondbacks (+1.5)"
       },
-      "spread_texas_rangers_1_5": {
-        "value": -0.043,
-        "ev_porcentaje": -4.3,
-        "ev_pinn": -4.3,
+      "spread_pittsburgh_pirates_m1_5": {
+        "value": -0.08,
+        "ev_porcentaje": -8.0,
+        "ev_pinn": -8.0,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.62,
-        "casa": "FanDuel",
-        "pinn_prob": 59.1,
-        "mercado_nombre": "Texas Rangers (+1.5)"
+        "cuota": 2.59,
+        "casa": "DraftKings",
+        "pinn_prob": 35.5,
+        "mercado_nombre": "Pittsburgh Pirates (-1.5)"
       }
     },
     "prediccion_principal": {
-      "mercado": "Seattle Mariners",
-      "prob": 54.2,
-      "ev": -1.9
+      "mercado": "Arizona Diamondbacks (+1.5)",
+      "prob": 64.5,
+      "ev": -2.0
     },
     "cuotas_reales": true,
     "cuotas_avisos": [],
