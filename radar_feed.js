@@ -1,19 +1,19 @@
 // Generado por radar_valor.py — NO editar a mano.
 window.RADAR_VALOR = {
-  "generado": "2026-07-27T16:57:36.039501+00:00",
+  "generado": "2026-07-27T18:26:57.188646+00:00",
   "total": 1,
   "jugadas": [
     {
-      "deporte": "ATP Washington Open",
-      "emoji": "🎾",
+      "deporte": "Allsvenskan - Sweden",
+      "emoji": "⚽",
       "estado": "VIVO",
-      "partido": "Alejandro Tabilo vs Tallon Griekspoor",
-      "jugada": "Gana Alejandro Tabilo",
-      "casa": "Betfair",
-      "cuota": 1.84,
-      "cuota_justa": 1.71,
-      "valor": 7.7,
-      "prob": 58.5,
+      "partido": "BK Hacken vs AIK",
+      "jugada": "Más de 1.0 goles",
+      "casa": "Betsson",
+      "cuota": 2.35,
+      "cuota_justa": 2.07,
+      "valor": 13.5,
+      "prob": 48.3,
       "betplay_cuota": null,
       "betplay_valor": null
     }
