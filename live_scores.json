@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-28T16:38:19Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-28T18:02:06Z",
+  "live": [
     {
       "id": "979a29c09433f74c9cf81057e852ddf2",
       "sport": "baseball_mlb",
@@ -10,12 +9,14 @@
       "home": "Cincinnati Reds",
       "away": "Cleveland Guardians",
       "fecha": "28/07/26",
-      "hora": "12:41 COT",
-      "ts": 1785242460,
+      "hora": "12:42 COT",
+      "ts": 1785242520,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "4"
+    }
+  ],
+  "upcoming": [
     {
       "id": "1fd6cc9bf9409f76d065bd414aefdf26",
       "sport": "soccer_conmebol_copa_sudamericana",
@@ -143,20 +144,6 @@
       "score_away": null
     },
     {
-      "id": "828e21d2b1a6b79dd714546f52d7a38d",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Mets",
-      "away": "Atlanta Braves",
-      "fecha": "28/07/26",
-      "hora": "18:11 COT",
-      "ts": 1785262260,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
       "id": "6fb81f375a5fc10737ecb85381f1ac0b",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -208,6 +195,34 @@
       "fecha": "28/07/26",
       "hora": "19:30 COT",
       "ts": 1785267000,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "00f0f6a84cc40dfe5b1f42285ec4875f",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Fortaleza",
+      "away": "Botafogo",
+      "fecha": "28/07/26",
+      "hora": "19:35 COT",
+      "ts": 1785267300,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "a981fee543b7844ab5bf4928bdca43d2",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Angels",
+      "away": "Houston Astros",
+      "fecha": "28/07/26",
+      "hora": "20:39 COT",
+      "ts": 1785271140,
       "completed": false,
       "score_home": null,
       "score_away": null
