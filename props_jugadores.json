@@ -1,18 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Heart Of Midlothian",
-   "visitante": "Sturm Graz",
-   "gole": "Luca Weinhandl 63.2% &middot; J. Mitchell 63.2%"
-  },
-  {
-   "local": "Shamrock Rovers",
-   "visitante": "Ararat-Armenia",
-   "gole": "J. McGovern 39.3% &middot; D. Watts 28.3% &middot; J. Byrne 28.3%",
-   "tarjetas": "Shamrock Rovers: J. Afolabi 0.5 amarillas/partido, J. McGovern 0.5 amarillas/partido, N. Razi 0.5 amarillas/partido | Ararat-Armenia: Zidane Banjaqui 0.67 amarillas/partido, E. Grigoryan 0.5 amarillas/partido, França 0.33 amarillas/partido",
-   "asistencias": "Shamrock Rovers: D. Watts 0.67 asistencias/partido, J. Mulraney 0.33 asistencias/partido, J. Byrne 0.33 asistencias/partido | Ararat-Armenia: Zidane Banjaqui 0.33 asistencias/partido"
-  },
-  {
    "local": "Banfield",
    "visitante": "Sarmiento Junin",
    "gole": "J. Marabel 33.8% &middot; M. Méndez 31.3%",
@@ -190,6 +178,26 @@
    "asistencias": "Gimnasia L.P.: N. Schelotto 0.19 asistencias/partido, A. Steimbach 0.17 asistencias/partido, I. Fernández 0.12 asistencias/partido | River Plate: J. Meza 0.29 asistencias/partido, J. Quintero 0.2 asistencias/partido, F. Colidio 0.18 asistencias/partido",
    "faltas": "Gimnasia L.P.: I. Miramón 1.43 faltas/partido, I. Fernández 1.41 faltas/partido, A. Max 1.33 faltas/partido | River Plate: F. Gonzalez 1.5 faltas/partido, J. Freitas 1.47 faltas/partido, A. Moreno 1.3 faltas/partido",
    "quites": "Gimnasia L.P.: A. Max 3.2 quites/partido, A. Steimbach 2.61 quites/partido, I. Miramón 2.07 quites/partido | River Plate: A. Moreno 3.05 quites/partido, F. Gonzalez 2.5 quites/partido, M. Acuña 1.81 quites/partido"
+  },
+  {
+   "local": "Internacional",
+   "visitante": "Flamengo",
+   "gole": "Pedro 46.8% &middot; J. Carbonero 23.1%",
+   "remates": "Internacional: A. Bernabéi 1.71 remates totales (0.76 a puerta), J. Carbonero 1.63 remates totales (0.74 a puerta), R. Borré 1.28 remates totales (0.67 a puerta) | Flamengo: Lorran 2.0 remates totales (2.0 a puerta), Pedro 1.84 remates totales (1.16 a puerta), G. de Arrascaeta 1.67 remates totales (0.83 a puerta)",
+   "tarjetas": "Internacional: Victor Gabriel 0.44 amarillas/partido, A. Bernabéi 0.35 amarillas/partido, G. Mercado 0.33 amarillas/partido | Flamengo: E. Pulgar 0.4 amarillas/partido, Léo Pereira 0.38 amarillas/partido, Alex Sandro 0.27 amarillas/partido",
+   "asistencias": "Internacional: Vitinho 0.16 asistencias/partido, J. Carbonero 0.16 asistencias/partido, Alerrandro 0.16 asistencias/partido | Flamengo: Samuel Lino 0.37 asistencias/partido, G. Varela 0.21 asistencias/partido, Pedro 0.21 asistencias/partido",
+   "faltas": "Internacional: A. Bernabéi 2.29 faltas/partido, G. Maripán 2.0 faltas/partido, Victor Gabriel 1.56 faltas/partido | Flamengo: Alex Sandro 1.6 faltas/partido, Lucas Paquetá 1.5 faltas/partido, E. Pulgar 1.4 faltas/partido",
+   "quites": "Internacional: Bruno Gomes 2.15 quites/partido, A. Bernabéi 1.76 quites/partido, Ronaldo 1.75 quites/partido | Flamengo: E. Pulgar 1.9 quites/partido, Emerson Royal 1.6 quites/partido, Lucas Paquetá 1.58 quites/partido"
+  },
+  {
+   "local": "Mirassol",
+   "visitante": "Remo",
+   "gole": "Jája Silva 26.8% &middot; Alef Manga 22.1%",
+   "remates": "Mirassol: Bruno Santos 2.0 remates totales (0.5 a puerta), Nathan Fogaça 1.7 remates totales (1.0 a puerta), Japa 1.5 remates totales (1.0 a puerta) | Remo: Patrick de Paula 1.83 remates totales (0.5 a puerta), Zé Ivaldo 1.5 remates totales (0.5 a puerta), Jája Silva 1.38 remates totales (0.88 a puerta)",
+   "tarjetas": "Mirassol: Negueba 0.44 amarillas/partido, José Aldo 0.41 amarillas/partido, Lucas Oliveira 0.38 amarillas/partido | Remo: Patrick de Paula 0.67 amarillas/partido, Zé Ivaldo 0.5 amarillas/partido, João Lucas 0.5 amarillas/partido",
+   "asistencias": "Mirassol: Alesson 0.22 asistencias/partido, Gabriel Pires 0.14 asistencias/partido, Reinaldo 0.12 asistencias/partido | Remo: Patrick de Paula 0.33 asistencias/partido, Alef Manga 0.15 asistencias/partido, Vitor Bueno 0.15 asistencias/partido",
+   "faltas": "Mirassol: Igor Formiga 1.56 faltas/partido, José Aldo 1.53 faltas/partido, Denilson 1.5 faltas/partido | Remo: João Pedro 2.0 faltas/partido, Zé Ricardo 1.61 faltas/partido, João Lucas 1.33 faltas/partido",
+   "quites": "Mirassol: Igor Formiga 2.88 quites/partido, Alesson 1.89 quites/partido, Daniel Borges 1.6 quites/partido | Remo: João Lucas 3.17 quites/partido, Leo Andrade 2.25 quites/partido, Patrick 2.06 quites/partido"
   }
  ]
 }
