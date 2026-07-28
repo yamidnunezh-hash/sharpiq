@@ -1,13 +1,6 @@
 {
  "partidos": [
   {
-   "local": "KuPS",
-   "visitante": "Sabah FA",
-   "gole": "J. Mickels 28.3%",
-   "tarjetas": "Sabah FA: A. Zedadka 0.33 amarillas/partido, J. Mickels 0.33 amarillas/partido, I. Lepinjica 0.33 amarillas/partido",
-   "asistencias": "Sabah FA: A. Malouda 0.5 asistencias/partido, T. Puchacz 0.33 asistencias/partido"
-  },
-  {
    "local": "Heart Of Midlothian",
    "visitante": "Sturm Graz",
    "gole": "Luca Weinhandl 63.2% &middot; J. Mitchell 63.2%"
@@ -158,6 +151,15 @@
    "visitante": "Larne",
    "gole": "M. Ridley 28.3%",
    "tarjetas": "Larne: S. Graham 0.67 amarillas/partido, M. Lusty 0.33 amarillas/partido"
+  },
+  {
+   "local": "Rapid Vienna",
+   "visitante": "FC Santa Coloma",
+   "gole": "Y. Demir 63.2% &middot; Moulaye Haïdara 63.2% &middot; M. Wels 63.2%",
+   "remates": "FC Santa Coloma: G. López 0.33 remates totales (0.0 a puerta)",
+   "asistencias": "FC Santa Coloma: Adri Arjona 0.33 asistencias/partido",
+   "faltas": "FC Santa Coloma: G. López 0.67 faltas/partido, J. Padilla 0.33 faltas/partido, Iñigo Barrenetxea 0.33 faltas/partido",
+   "quites": "FC Santa Coloma: D. Andrade 0.5 quites/partido, J. Padilla 0.33 quites/partido, Guti 0.33 quites/partido"
   }
  ]
 }
