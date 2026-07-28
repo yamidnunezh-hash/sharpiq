@@ -2776,10 +2776,10 @@
         "under05": 6.19,
         "under05_casa": "Pinnacle",
         "pinnacle_under05": 6.19,
-        "dnb_local": 1.41,
+        "dnb_local": 1.38,
         "dnb_local_casa": "LiveScore Bet",
         "dnb_visita": 2.7,
-        "dnb_visita_casa": "Virgin Bet",
+        "dnb_visita_casa": "LiveScore Bet",
         "ah_l_m0_5": 2.11,
         "ah_l_m0_5_casa": "Pinnacle",
         "pinnacle_ah_l_m0_5": 2.11,
@@ -3086,13 +3086,13 @@
           "pinn_prob": 15.4
         },
         "dnb_local": {
-          "value": -0.053,
-          "ev_porcentaje": -5.3,
-          "ev_pinn": -5.3,
+          "value": -0.073,
+          "ev_porcentaje": -7.3,
+          "ev_pinn": -7.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.41,
+          "cuota": 1.38,
           "casa": "LiveScore Bet",
           "pinn_prob": 67.2
         },
@@ -3104,7 +3104,7 @@
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
           "cuota": 2.7,
-          "casa": "Virgin Bet",
+          "casa": "LiveScore Bet",
           "pinn_prob": 32.8
         },
         "ah_l_m0_5": {
@@ -7294,7 +7294,7 @@
         "Over 8.5": 1.95,
         "Under 8.5": 1.87,
         "Chicago White Sox (+1.5)": 1.67,
-        "New York Yankees (-1.5)": 2.3
+        "New York Yankees (-1.5)": 2.26
       },
       "probabilidades": {
         "Chicago White Sox": 44.1,
@@ -7363,13 +7363,13 @@
           "mercado_nombre": "Chicago White Sox (+1.5)"
         },
         "spread_new_york_yankees_m1_5": {
-          "value": 0.004,
-          "ev_porcentaje": 0.4,
-          "ev_pinn": 0.4,
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.3,
+          "cuota": 2.26,
           "casa": "FanDuel",
           "pinn_prob": 43.7,
           "mercado_nombre": "New York Yankees (-1.5)"
@@ -7378,7 +7378,7 @@
       "prediccion_principal": {
         "mercado": "New York Yankees (-1.5)",
         "prob": 43.7,
-        "ev": 0.4
+        "ev": -1.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -7930,5 +7930,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:00:51"
+  "generado": "00:01:06"
 }
