@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-28T19:54:45Z",
-  "live": [
-    {
-      "id": "979a29c09433f74c9cf81057e852ddf2",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Cincinnati Reds",
-      "away": "Cleveland Guardians",
-      "fecha": "28/07/26",
-      "hora": "12:42 COT",
-      "ts": 1785242520,
-      "completed": false,
-      "score_home": "5",
-      "score_away": "5"
-    }
-  ],
+  "updated": "2026-07-28T21:03:43Z",
+  "live": [],
   "upcoming": [
     {
       "id": "1fd6cc9bf9409f76d065bd414aefdf26",
@@ -230,6 +215,20 @@
   ],
   "finished": [
     {
+      "id": "979a29c09433f74c9cf81057e852ddf2",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Cincinnati Reds",
+      "away": "Cleveland Guardians",
+      "fecha": "28/07/26",
+      "hora": "12:42 COT",
+      "ts": 1785242520,
+      "completed": true,
+      "score_home": "5",
+      "score_away": "6"
+    },
+    {
       "id": "9b0ec0a466486c849457165fd2c565e1",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -354,20 +353,6 @@
       "completed": true,
       "score_home": "8",
       "score_away": "7"
-    },
-    {
-      "id": "01c25573da43dfef2b25036b3d865245",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Detroit Tigers",
-      "away": "Baltimore Orioles",
-      "fecha": "27/07/26",
-      "hora": "17:40 COT",
-      "ts": 1785174044,
-      "completed": true,
-      "score_home": "5",
-      "score_away": "8"
     }
   ]
 }
