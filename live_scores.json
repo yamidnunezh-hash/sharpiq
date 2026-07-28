@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-28T21:03:43Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-28T22:18:13Z",
+  "live": [
     {
       "id": "1fd6cc9bf9409f76d065bd414aefdf26",
       "sport": "soccer_conmebol_copa_sudamericana",
@@ -13,9 +12,11 @@
       "hora": "17:00 COT",
       "ts": 1785258000,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "1"
+    }
+  ],
+  "upcoming": [
     {
       "id": "7f97e1ad452a6c39dab72ee7a0c99130",
       "sport": "soccer_brazil_serie_b",
@@ -101,20 +102,6 @@
       "score_away": null
     },
     {
-      "id": "652c3471321a108cc9222b8e5b773ad2",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Washington Nationals",
-      "away": "Toronto Blue Jays",
-      "fecha": "28/07/26",
-      "hora": "17:46 COT",
-      "ts": 1785260760,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
       "id": "c869940458363d7a7eafe0d2a6de32b7",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -171,6 +158,20 @@
       "score_away": null
     },
     {
+      "id": "652c3471321a108cc9222b8e5b773ad2",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Washington Nationals",
+      "away": "Toronto Blue Jays",
+      "fecha": "28/07/26",
+      "hora": "18:46 COT",
+      "ts": 1785264360,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
       "id": "3f85f2fb6ebdec0986b515d32b8f30cd",
       "sport": "soccer_conmebol_copa_sudamericana",
       "liga": "Copa Sudamericana",
@@ -208,6 +209,20 @@
       "fecha": "28/07/26",
       "hora": "20:39 COT",
       "ts": 1785271140,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "0f350cb709d6394c946ef1df6fca40af",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Boston Red Sox",
+      "fecha": "28/07/26",
+      "hora": "20:41 COT",
+      "ts": 1785271260,
       "completed": false,
       "score_home": null,
       "score_away": null
