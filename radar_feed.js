@@ -1,19 +1,33 @@
 // Generado por radar_valor.py — NO editar a mano.
 window.RADAR_VALOR = {
-  "generado": "2026-07-28T22:58:47.481123+00:00",
-  "total": 1,
+  "generado": "2026-07-29T00:04:33.431662+00:00",
+  "total": 2,
   "jugadas": [
     {
       "deporte": "MLB",
       "emoji": "⚾",
       "estado": "VIVO",
-      "partido": "Miami Marlins vs Philadelphia Phillies",
-      "jugada": "Menos de 8.0",
-      "casa": "Betsson",
-      "cuota": 1.96,
-      "cuota_justa": 1.82,
-      "valor": 7.9,
-      "prob": 55.1,
+      "partido": "Washington Nationals vs Toronto Blue Jays",
+      "jugada": "Gana Toronto Blue Jays",
+      "casa": "Betway",
+      "cuota": 2.85,
+      "cuota_justa": 2.58,
+      "valor": 10.6,
+      "prob": 38.8,
+      "betplay_cuota": null,
+      "betplay_valor": null
+    },
+    {
+      "deporte": "WNBA",
+      "emoji": "🏀",
+      "estado": "VIVO",
+      "partido": "Washington Mystics vs Connecticut Sun",
+      "jugada": "Gana Washington Mystics",
+      "casa": "Betfair",
+      "cuota": 1.75,
+      "cuota_justa": 1.67,
+      "valor": 4.8,
+      "prob": 59.9,
       "betplay_cuota": null,
       "betplay_valor": null
     }
