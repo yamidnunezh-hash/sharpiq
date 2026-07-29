@@ -1,34 +1,6 @@
 {
-  "updated": "2026-07-29T19:08:32Z",
+  "updated": "2026-07-29T20:18:06Z",
   "live": [
-    {
-      "id": "00cfd9daf945b43d83d13223ae65d32d",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Washington Nationals",
-      "away": "Toronto Blue Jays",
-      "fecha": "29/07/26",
-      "hora": "12:06 COT",
-      "ts": 1785326760,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "2"
-    },
-    {
-      "id": "428de1142289c9bb933a480d8c5b44f4",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Mets",
-      "away": "Atlanta Braves",
-      "fecha": "29/07/26",
-      "hora": "12:11 COT",
-      "ts": 1785327060,
-      "completed": false,
-      "score_home": "2",
-      "score_away": "2"
-    },
     {
       "id": "2803bb8e96c2e13f37418f06bbba2ead",
       "sport": "baseball_mlb",
@@ -40,11 +12,9 @@
       "hora": "12:11 COT",
       "ts": 1785327060,
       "completed": false,
-      "score_home": "7",
-      "score_away": "5"
-    }
-  ],
-  "upcoming": [
+      "score_home": "9",
+      "score_away": "9"
+    },
     {
       "id": "92e25bff5f6c907dca22a23e2493de73",
       "sport": "baseball_mlb",
@@ -56,8 +26,8 @@
       "hora": "14:46 COT",
       "ts": 1785336360,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "fc8fe7c515f49fbf66ce1f60a9d39f32",
@@ -70,9 +40,11 @@
       "hora": "15:11 COT",
       "ts": 1785337860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "96a729391b41e774f84f701ed4419c0f",
       "sport": "soccer_conmebol_copa_sudamericana",
@@ -254,9 +226,65 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "45eb66bca21d81d652f8f776e25c0a60",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Angels",
+      "away": "Houston Astros",
+      "fecha": "29/07/26",
+      "hora": "20:39 COT",
+      "ts": 1785357540,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "8777958bb59fab1de0fad4589b6bc278",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Boston Red Sox",
+      "fecha": "29/07/26",
+      "hora": "20:41 COT",
+      "ts": 1785357660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "428de1142289c9bb933a480d8c5b44f4",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "New York Mets",
+      "away": "Atlanta Braves",
+      "fecha": "29/07/26",
+      "hora": "12:11 COT",
+      "ts": 1785327060,
+      "completed": true,
+      "score_home": "3",
+      "score_away": "2"
+    },
+    {
+      "id": "00cfd9daf945b43d83d13223ae65d32d",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Washington Nationals",
+      "away": "Toronto Blue Jays",
+      "fecha": "29/07/26",
+      "hora": "12:06 COT",
+      "ts": 1785326760,
+      "completed": true,
+      "score_home": "2",
+      "score_away": "5"
+    },
     {
       "id": "f915125c1b1553c2c8ceb8acef3f2c11",
       "sport": "baseball_mlb",
@@ -368,34 +396,6 @@
       "completed": true,
       "score_home": "1",
       "score_away": "0"
-    },
-    {
-      "id": "3f85f2fb6ebdec0986b515d32b8f30cd",
-      "sport": "soccer_conmebol_copa_sudamericana",
-      "liga": "Copa Sudamericana",
-      "emoji": "⚽",
-      "home": "Santos",
-      "away": "UCV FC",
-      "fecha": "28/07/26",
-      "hora": "19:30 COT",
-      "ts": 1785267000,
-      "completed": true,
-      "score_home": "4",
-      "score_away": "2"
-    },
-    {
-      "id": "652c3471321a108cc9222b8e5b773ad2",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Washington Nationals",
-      "away": "Toronto Blue Jays",
-      "fecha": "28/07/26",
-      "hora": "18:50 COT",
-      "ts": 1785264600,
-      "completed": true,
-      "score_home": "8",
-      "score_away": "6"
     }
   ]
 }
