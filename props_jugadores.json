@@ -1,66 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Juventude",
-   "visitante": "Avai",
-   "gole": "Raí 19.9%",
-   "remates": "Juventude: Raí 1.33 remates totales (0.67 a puerta), Alisson Safira 1.22 remates totales (0.44 a puerta), Patryck 1.2 remates totales (0.6 a puerta) | Avai: Daniel Penha 1.43 remates totales (0.86 a puerta), Jean Lucas 0.83 remates totales (0.39 a puerta), Thayllon 0.79 remates totales (0.21 a puerta)",
-   "tarjetas": "Juventude: Gabriel Pinheiro 0.31 amarillas/partido, Mandaca 0.3 amarillas/partido, Marcos Paulo 0.29 amarillas/partido | Avai: DG 0.56 amarillas/partido, Paulo Vitor 0.4 amarillas/partido, Guilherme Vargas 0.38 amarillas/partido",
-   "asistencias": "Juventude: Raí 0.17 asistencias/partido, Aderlan 0.14 asistencias/partido, Luan Gonçalves 0.13 asistencias/partido | Avai: J. Sousa Rocha Leandro 0.5 asistencias/partido, Jean Lucas 0.17 asistencias/partido, Thayllon 0.16 asistencias/partido",
-   "faltas": "Juventude: Rodrigo Sam 2.0 faltas/partido, Alisson Safira 1.94 faltas/partido, Mandaca 1.9 faltas/partido | Avai: Wallison 1.93 faltas/partido, Zé Ricardo 1.73 faltas/partido, Luiz Henrique 1.61 faltas/partido",
-   "quites": "Juventude: Aderlan 2.57 quites/partido, Rodrigo Sam 2.44 quites/partido, Raí 1.89 quites/partido | Avai: DG 2.19 quites/partido, Wallison 1.8 quites/partido, Luiz Henrique 1.72 quites/partido"
-  },
-  {
-   "local": "Ponte Preta",
-   "visitante": "Athletic Club",
-   "gole": "Ronaldo Tavares 56.5%",
-   "remates": "Ponte Preta: Bryan 1.5 remates totales (0.75 a puerta), William Pottker 1.42 remates totales (0.83 a puerta), Élvis 1.0 remates totales (0.6 a puerta) | Athletic Club: Jota 3.33 remates totales (1.0 a puerta), Ronaldo Tavares 2.5 remates totales (1.5 a puerta), Ian Luccas 1.69 remates totales (0.56 a puerta)",
-   "tarjetas": "Ponte Preta: Luis Phelipe 0.5 amarillas/partido, S. Palacios 0.43 amarillas/partido, David Braz 0.4 amarillas/partido | Athletic Club: Jota 0.67 amarillas/partido, Felipe Vieira 0.33 amarillas/partido, Jhonatan 0.31 amarillas/partido",
-   "asistencias": "Ponte Preta: Élvis 0.13 asistencias/partido, Luis Phelipe 0.12 asistencias/partido, Brandão 0.08 asistencias/partido | Athletic Club: Jota 0.67 asistencias/partido, Ruan Assis 0.14 asistencias/partido, Diogo Batista 0.12 asistencias/partido",
-   "faltas": "Ponte Preta: Danilo Barcelos 2.0 faltas/partido, Léo Gomes 1.71 faltas/partido, William Pottker 1.67 faltas/partido | Athletic Club: Jota 11.67 faltas/partido, Ronaldo Tavares 1.83 faltas/partido, Ian Luccas 1.44 faltas/partido",
-   "quites": "Ponte Preta: Julio 3.67 quites/partido, Murilo 2.14 quites/partido, Rodrigo Souza 2.0 quites/partido | Athletic Club: Jota 8.0 quites/partido, Felipe Vieira 7.0 quites/partido, Diogo Batista 2.31 quites/partido"
-  },
-  {
-   "local": "Argentinos JRS",
-   "visitante": "Estudiantes de Rio Cuarto",
-   "gole": "",
-   "remates": "Argentinos JRS: T. Molina 2.13 remates totales (0.93 a puerta), H. López 1.53 remates totales (0.8 a puerta), G. Verón 1.5 remates totales (1.0 a puerta) | Estudiantes de Rio Cuarto: M. Bajamich 1.07 remates totales (0.53 a puerta), M. Tévez 1.0 remates totales (0.0 a puerta), M. Garnerone 0.94 remates totales (0.25 a puerta)",
-   "tarjetas": "Argentinos JRS: G. Florentín 0.5 amarillas/partido, R. Riquelme 0.46 amarillas/partido, F. Álvarez 0.37 amarillas/partido | Estudiantes de Rio Cuarto: M. Valenti 0.46 amarillas/partido, T. Gonzalez 0.38 amarillas/partido, T. Olmos 0.33 amarillas/partido",
-   "asistencias": "Argentinos JRS: H. López 0.2 asistencias/partido, N. Oroz 0.16 asistencias/partido, L. Lozano 0.14 asistencias/partido | Estudiantes de Rio Cuarto: R. Lozano 0.17 asistencias/partido, G. Maffini 0.08 asistencias/partido, M. Valenti 0.08 asistencias/partido",
-   "faltas": "Argentinos JRS: G. Verón 1.5 faltas/partido, G. Florentín 1.25 faltas/partido, T. Molina 1.2 faltas/partido | Estudiantes de Rio Cuarto: T. Gonzalez 1.94 faltas/partido, R. Lozano 1.5 faltas/partido, T. Ostchega 1.18 faltas/partido",
-   "quites": "Argentinos JRS: K. Coronel 2.38 quites/partido, L. Lozano 2.29 quites/partido, F. Álvarez 1.68 quites/partido | Estudiantes de Rio Cuarto: F. Cobos 2.67 quites/partido, T. Gonzalez 2.0 quites/partido, A. Cabrera 1.73 quites/partido"
-  },
-  {
-   "local": "Rosario Central",
-   "visitante": "Racing Club",
-   "gole": "Á. Di María 28.3% &middot; E. Copetti 25.5%",
-   "remates": "Rosario Central: G. Cantizano 2.33 remates totales (1.67 a puerta), J. Campaz 2.31 remates totales (1.15 a puerta), A. Véliz 1.82 remates totales (0.76 a puerta) | Racing Club: A. Martínez 1.5 remates totales (0.5 a puerta), M. Miljevic 1.4 remates totales (0.73 a puerta), D. Pizarro 1.0 remates totales (1.0 a puerta)",
-   "tarjetas": "Rosario Central: E. Veron 0.67 amarillas/partido, F. Ibarra 0.39 amarillas/partido, A. Sandez 0.31 amarillas/partido | Racing Club: M. Di Cesare 0.53 amarillas/partido, J. Nardoni 0.5 amarillas/partido, T. Rubio 0.5 amarillas/partido",
-   "asistencias": "Rosario Central: G. Cantizano 0.33 asistencias/partido, J. Campaz 0.31 asistencias/partido, Á. Di María 0.27 asistencias/partido | Racing Club: D. Pizarro 0.5 asistencias/partido, G. Rojas 0.29 asistencias/partido, S. Solari 0.22 asistencias/partido",
-   "faltas": "Rosario Central: F. Ibarra 1.72 faltas/partido, E. Giménez 1.59 faltas/partido, G. Cantizano 1.33 faltas/partido | Racing Club: A. Martínez 1.75 faltas/partido, J. Nardoni 1.5 faltas/partido, D. Pizarro 1.5 faltas/partido",
-   "quites": "Rosario Central: F. Ibarra 4.22 quites/partido, E. Giménez 2.06 quites/partido, G. Ávila 1.64 quites/partido | Racing Club: E. Cannavo 3.07 quites/partido, B. Zuculini 1.75 quites/partido, S. Sosa 1.74 quites/partido"
-  },
-  {
-   "local": "Santos",
-   "visitante": "UCV",
-   "gole": "Gabriel Barbosa 45.1% &middot; Gabriel Bontempo 34.9%",
-   "remates": "Santos: Neymar 2.67 remates totales (1.0 a puerta), Gabriel Barbosa 1.6 remates totales (0.8 a puerta), Gabriel Bontempo 1.43 remates totales (0.57 a puerta)",
-   "tarjetas": "Santos: Lucas Veríssimo 0.6 amarillas/partido, Luan Peres 0.4 amarillas/partido, G. Escobar 0.4 amarillas/partido",
-   "asistencias": "Santos: Gabriel Barbosa 0.4 asistencias/partido, B. Rollheiser 0.33 asistencias/partido, C. Oliva 0.2 asistencias/partido",
-   "faltas": "Santos: João Schmidt 2.5 faltas/partido, Gustavo Henrique Pereira 1.25 faltas/partido, Lucas Veríssimo 1.2 faltas/partido",
-   "quites": "Santos: Gustavo Henrique Pereira 4.5 quites/partido, G. Escobar 3.2 quites/partido, Willian Arão 2.6 quites/partido"
-  },
-  {
-   "local": "Fortaleza EC",
-   "visitante": "Botafogo SP",
-   "gole": "Everton Morelli 32.2% &middot; Hygor 32.0% &middot; J. Miritello 26.8%",
-   "remates": "Fortaleza EC: J. Miritello 1.88 remates totales (1.12 a puerta), Maílton 1.64 remates totales (0.71 a puerta), Luiz Fernando 1.41 remates totales (0.65 a puerta) | Botafogo SP: Everton Morelli 1.83 remates totales (0.61 a puerta), Hygor 1.46 remates totales (0.85 a puerta), Gabriel Mateus de Souza Porte 1.0 remates totales (0.0 a puerta)",
-   "tarjetas": "Fortaleza EC: Lucas Emanoel 0.5 amarillas/partido, Neris 0.5 amarillas/partido, Rodriguinho 0.42 amarillas/partido | Botafogo SP: Felipe Vieira 0.57 amarillas/partido, Gabriel Mateus de Souza Porte 0.5 amarillas/partido, Matheus Sales 0.4 amarillas/partido",
-   "asistencias": "Fortaleza EC: Kayke 0.33 asistencias/partido, Paulo Baya 0.1 asistencias/partido, Pierre 0.09 asistencias/partido | Botafogo SP: Rafael Gava 0.35 asistencias/partido, Patrick Brey 0.18 asistencias/partido, Zé Hugo 0.11 asistencias/partido",
-   "faltas": "Fortaleza EC: Kayke 2.0 faltas/partido, Pierre 1.73 faltas/partido, E. Brítez 1.5 faltas/partido | Botafogo SP: Gabriel Mateus de Souza Porte 11.0 faltas/partido, Patrick Brey 2.06 faltas/partido, Carlão 1.75 faltas/partido",
-   "quites": "Fortaleza EC: Pierre 1.73 quites/partido, Mauricio Junior 1.62 quites/partido, Lucas Sasha 1.53 quites/partido | Botafogo SP: Gabriel Mateus de Souza Porte 13.0 quites/partido, Patrick Brey 2.12 quites/partido, Matheus Sales 1.6 quites/partido"
-  },
-  {
    "local": "Kauno Žalgiris",
    "visitante": "KI Klaksvik",
    "gole": "V. Slivka 48.7%",
