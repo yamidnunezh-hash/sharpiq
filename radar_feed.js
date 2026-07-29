@@ -1,19 +1,19 @@
 // Generado por radar_valor.py — NO editar a mano.
 window.RADAR_VALOR = {
-  "generado": "2026-07-29T22:32:29.117231+00:00",
+  "generado": "2026-07-29T23:59:20.465409+00:00",
   "total": 1,
   "jugadas": [
     {
-      "deporte": "WTA Washington Open",
-      "emoji": "🎾",
-      "estado": "PRE",
-      "partido": "Ashlyn Krueger vs Naomi Osaka",
-      "jugada": "Gana Ashlyn Krueger",
-      "casa": "Betway",
-      "cuota": 3.5,
-      "cuota_justa": 3.07,
-      "valor": 14.0,
-      "prob": 32.6,
+      "deporte": "MLB",
+      "emoji": "⚾",
+      "estado": "VIVO",
+      "partido": "Cincinnati Reds vs Cleveland Guardians",
+      "jugada": "Más de 6.5",
+      "casa": "Betsson",
+      "cuota": 1.79,
+      "cuota_justa": 1.61,
+      "valor": 11.2,
+      "prob": 62.1,
       "betplay_cuota": null,
       "betplay_valor": null
     }
