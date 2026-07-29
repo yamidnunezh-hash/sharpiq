@@ -1,19 +1,19 @@
 // Generado por radar_valor.py — NO editar a mano.
 window.RADAR_VALOR = {
-  "generado": "2026-07-29T20:30:19.920345+00:00",
+  "generado": "2026-07-29T21:30:00.401106+00:00",
   "total": 1,
   "jugadas": [
     {
-      "deporte": "MLB",
-      "emoji": "⚾",
+      "deporte": "WTA Washington Open",
+      "emoji": "🎾",
       "estado": "VIVO",
-      "partido": "San Francisco Giants vs Milwaukee Brewers",
-      "jugada": "Gana San Francisco Giants",
+      "partido": "Emma Navarro vs Elisabetta Cocciaretto",
+      "jugada": "Gana Emma Navarro",
       "casa": "Betfair",
-      "cuota": 1.35,
-      "cuota_justa": 1.22,
-      "valor": 10.5,
-      "prob": 81.9,
+      "cuota": 1.53,
+      "cuota_justa": 1.37,
+      "valor": 11.4,
+      "prob": 72.8,
       "betplay_cuota": null,
       "betplay_valor": null
     }
