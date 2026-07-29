@@ -4,6 +4,23 @@
 
 const PROXIMOS_EVENTOS = [
   {
+    fecha:      "29/07/26",
+    partido:    "Dallas Wings vs Atlanta Dream",
+    liga:       "WNBA",
+    prediccion: "Gana Atlanta Dream",
+    cuota:      "1.82",
+    hora:       "19:00 COT",
+    status:     "vip",
+    tier:       "principal",
+    stake_pct:  "1.3",
+    prob:       "56",
+    sharpscore: "61",
+    cuota_betplay: "",
+    cuota_justa:   "",
+    valor_real:    "",
+    resultado:  "pendiente"
+  },
+  {
     fecha:      "26/07/26",
     partido:    "Audax Italiano vs Universidad de Chile",
     liga:       "Campeonato Chileno",
