@@ -1,34 +1,6 @@
 {
-  "updated": "2026-07-29T22:15:25Z",
+  "updated": "2026-07-29T23:16:05Z",
   "live": [
-    {
-      "id": "92e25bff5f6c907dca22a23e2493de73",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Francisco Giants",
-      "away": "Milwaukee Brewers",
-      "fecha": "29/07/26",
-      "hora": "14:46 COT",
-      "ts": 1785336360,
-      "completed": false,
-      "score_home": "11",
-      "score_away": "3"
-    },
-    {
-      "id": "fc8fe7c515f49fbf66ce1f60a9d39f32",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Diego Padres",
-      "away": "Colorado Rockies",
-      "fecha": "29/07/26",
-      "hora": "15:11 COT",
-      "ts": 1785337860,
-      "completed": false,
-      "score_home": "3",
-      "score_away": "1"
-    },
     {
       "id": "96a729391b41e774f84f701ed4419c0f",
       "sport": "soccer_conmebol_copa_sudamericana",
@@ -42,9 +14,7 @@
       "completed": false,
       "score_home": "0",
       "score_away": "0"
-    }
-  ],
-  "upcoming": [
+    },
     {
       "id": "b819c817f44cbe053c1de60d0a53ee3a",
       "sport": "soccer_brazil_campeonato",
@@ -56,8 +26,8 @@
       "hora": "17:30 COT",
       "ts": 1785346200,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "1",
+      "score_away": "0"
     },
     {
       "id": "7f3c84d26ae6c82bb6c33c5f161185cb",
@@ -70,8 +40,8 @@
       "hora": "17:30 COT",
       "ts": 1785346200,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "1",
+      "score_away": "0"
     },
     {
       "id": "f7a4edfc8ce302460d9f8c40851ca78b",
@@ -84,8 +54,8 @@
       "hora": "17:41 COT",
       "ts": 1785346860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "3",
+      "score_away": "0"
     },
     {
       "id": "b8e341bd32a393ea6e1d1f3b843bf452",
@@ -98,8 +68,8 @@
       "hora": "18:11 COT",
       "ts": 1785348660,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "d3a738dccfb8833e757d8dbc4caead9d",
@@ -112,9 +82,11 @@
       "hora": "18:11 COT",
       "ts": 1785348660,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "0eb6629148e96e8af74128cc11ba2b37",
       "sport": "baseball_mlb",
@@ -254,9 +226,107 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "a711967b87d0815d1a1b45806b632b42",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Tampa Bay Rays",
+      "away": "Texas Rangers",
+      "fecha": "30/07/26",
+      "hora": "11:11 COT",
+      "ts": 1785409860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "4ab9265338d5ee8f4e0ecf43a83aa9d7",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Minnesota Twins",
+      "away": "Kansas City Royals",
+      "fecha": "30/07/26",
+      "hora": "12:41 COT",
+      "ts": 1785415260,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "c4f54051354f3d027c0f1cabfc630e52",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago White Sox",
+      "away": "New York Yankees",
+      "fecha": "30/07/26",
+      "hora": "13:11 COT",
+      "ts": 1785417060,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "459ad5aa37b0d7865d087c8acb7d9d4d",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "St. Louis Cardinals",
+      "away": "Chicago Cubs",
+      "fecha": "30/07/26",
+      "hora": "13:16 COT",
+      "ts": 1785417360,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "c56c0611b78cf2c9b19aaf7403def23b",
+      "sport": "soccer_conmebol_copa_sudamericana",
+      "liga": "Copa Sudamericana",
+      "emoji": "⚽",
+      "home": "Grêmio",
+      "away": "Club Bolívar",
+      "fecha": "30/07/26",
+      "hora": "17:00 COT",
+      "ts": 1785430800,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "fc8fe7c515f49fbf66ce1f60a9d39f32",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Diego Padres",
+      "away": "Colorado Rockies",
+      "fecha": "29/07/26",
+      "hora": "15:11 COT",
+      "ts": 1785337860,
+      "completed": true,
+      "score_home": "3",
+      "score_away": "1"
+    },
+    {
+      "id": "92e25bff5f6c907dca22a23e2493de73",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Francisco Giants",
+      "away": "Milwaukee Brewers",
+      "fecha": "29/07/26",
+      "hora": "14:46 COT",
+      "ts": 1785336360,
+      "completed": true,
+      "score_home": "16",
+      "score_away": "3"
+    },
     {
       "id": "428de1142289c9bb933a480d8c5b44f4",
       "sport": "baseball_mlb",
@@ -367,34 +437,6 @@
       "ts": 1785271260,
       "completed": true,
       "score_home": "4",
-      "score_away": "3"
-    },
-    {
-      "id": "f829a782d542dc9d3eb459cddb29492c",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Diego Padres",
-      "away": "Colorado Rockies",
-      "fecha": "28/07/26",
-      "hora": "20:41 COT",
-      "ts": 1785271260,
-      "completed": true,
-      "score_home": "8",
-      "score_away": "7"
-    },
-    {
-      "id": "a981fee543b7844ab5bf4928bdca43d2",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Los Angeles Angels",
-      "away": "Houston Astros",
-      "fecha": "28/07/26",
-      "hora": "20:39 COT",
-      "ts": 1785271140,
-      "completed": true,
-      "score_home": "2",
       "score_away": "3"
     }
   ]
