@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-29T14:56:22Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-29T16:20:38Z",
+  "live": [
     {
       "id": "90886b82a7992a92d8826ca80ba69be0",
       "sport": "baseball_mlb",
@@ -13,9 +12,11 @@
       "hora": "11:11 COT",
       "ts": 1785323460,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "f915125c1b1553c2c8ceb8acef3f2c11",
       "sport": "baseball_mlb",
@@ -208,6 +209,20 @@
       "fecha": "29/07/26",
       "hora": "18:41 COT",
       "ts": 1785350460,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "c8354a0c9f4876c67feb31fa06f35aa5",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "St. Louis Cardinals",
+      "away": "Chicago Cubs",
+      "fecha": "29/07/26",
+      "hora": "18:46 COT",
+      "ts": 1785350760,
       "completed": false,
       "score_home": null,
       "score_away": null
