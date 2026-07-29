@@ -5154,7 +5154,7 @@
       "hora": "00:30",
       "fecha_evento": "2026-07-29",
       "cuotas": {
-        "2": 5.1,
+        "2": 5.0,
         "2_casa": "Betfair",
         "pinnacle_2": 4.79,
         "1": 1.83,
@@ -5398,13 +5398,13 @@
       "confianza": 84.7,
       "value_bets": {
         "victoria_visita": {
-          "value": 0.031,
-          "ev_porcentaje": 3.1,
-          "ev_pinn": 3.1,
+          "value": 0.011,
+          "ev_porcentaje": 1.1,
+          "ev_pinn": 1.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.1,
+          "cuota": 5.0,
           "casa": "Betfair",
           "pinn_prob": 20.2
         },
@@ -6052,9 +6052,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Victoria Visitante",
-        "prob": 20.2,
-        "ev": 3.1
+        "mercado": "Empate",
+        "prob": 26.8,
+        "ev": 2.0
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -13152,5 +13152,5 @@
       "movimiento": null
     }
   ],
-  "generado": "14:35:09"
+  "generado": "14:35:35"
 }
