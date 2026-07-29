@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T21:15:05Z",
+  "updated": "2026-07-29T22:15:25Z",
   "live": [
     {
       "id": "92e25bff5f6c907dca22a23e2493de73",
@@ -12,8 +12,8 @@
       "hora": "14:46 COT",
       "ts": 1785336360,
       "completed": false,
-      "score_home": "3",
-      "score_away": "2"
+      "score_home": "11",
+      "score_away": "3"
     },
     {
       "id": "fc8fe7c515f49fbf66ce1f60a9d39f32",
@@ -26,11 +26,9 @@
       "hora": "15:11 COT",
       "ts": 1785337860,
       "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    }
-  ],
-  "upcoming": [
+      "score_home": "3",
+      "score_away": "1"
+    },
     {
       "id": "96a729391b41e774f84f701ed4419c0f",
       "sport": "soccer_conmebol_copa_sudamericana",
@@ -42,9 +40,11 @@
       "hora": "17:00 COT",
       "ts": 1785344400,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "b819c817f44cbe053c1de60d0a53ee3a",
       "sport": "soccer_brazil_campeonato",
@@ -237,6 +237,20 @@
       "fecha": "29/07/26",
       "hora": "20:41 COT",
       "ts": 1785357660,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "94e1ca20cc591b6b6cdc042c16880a40",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Dodgers",
+      "away": "Seattle Mariners",
+      "fecha": "29/07/26",
+      "hora": "21:11 COT",
+      "ts": 1785359460,
       "completed": false,
       "score_home": null,
       "score_away": null
