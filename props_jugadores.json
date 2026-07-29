@@ -1,56 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Kauno Žalgiris",
-   "visitante": "KI Klaksvik",
-   "gole": "V. Slivka 48.7%",
-   "tarjetas": "Kauno Žalgiris: A. Tolordava 0.33 amarillas/partido, V. Slivka 0.33 amarillas/partido, J. Moutachy 0.33 amarillas/partido",
-   "asistencias": "Kauno Žalgiris: J. Moutachy 0.33 asistencias/partido, A. Benchaib 0.33 asistencias/partido"
-  },
-  {
-   "local": "Lech Poznan",
-   "visitante": "Aarhus",
-   "gole": "P. Wålemark 73.6%"
-  },
-  {
-   "local": "FC Copenhagen",
-   "visitante": "Polessya",
-   "gole": "Robert 77.5% &middot; M. Emil Madsen 63.2% &middot; O. Filippov 63.2%"
-  },
-  {
-   "local": "Barracas Central",
-   "visitante": "Aldosivi",
-   "gole": "Á. Di María 28.3% &middot; E. Copetti 25.5%",
-   "remates": "Barracas Central: F. Bruera 1.33 remates totales (0.6 a puerta), R. Bogarín 1.2 remates totales (0.6 a puerta), N. Briasco 1.09 remates totales (0.36 a puerta) | Aldosivi: N. Cordero 1.31 remates totales (0.46 a puerta), J. Arias 1.27 remates totales (0.27 a puerta), F. Anso 1.0 remates totales (0.33 a puerta)",
-   "tarjetas": "Barracas Central: G. Campi 0.29 amarillas/partido, F. Bruera 0.27 amarillas/partido, Ivan Guaraz 0.27 amarillas/partido | Aldosivi: F. Gino 0.46 amarillas/partido, E. Rolón 0.43 amarillas/partido, T. Fernández 0.4 amarillas/partido",
-   "asistencias": "Barracas Central: T. Porra 0.18 asistencias/partido, N. Demartini 0.09 asistencias/partido, F. Bruera 0.07 asistencias/partido | Aldosivi: T. Fernández 0.1 asistencias/partido, L. Rodríguez 0.09 asistencias/partido, F. Román 0.07 asistencias/partido",
-   "faltas": "Barracas Central: F. Bruera 2.2 faltas/partido, N. Demartini 1.82 faltas/partido, N. Briasco 1.64 faltas/partido | Aldosivi: J. Novillo 1.75 faltas/partido, F. Gino 1.62 faltas/partido, T. Fernández 1.6 faltas/partido",
-   "quites": "Barracas Central: N. Demartini 2.27 quites/partido, N. Capraro 1.54 quites/partido, R. Barrios 1.5 quites/partido | Aldosivi: N. Breitenbruch 2.33 quites/partido, R. Bochi 2.1 quites/partido, R. González 2.07 quites/partido"
-  },
-  {
-   "local": "Hapoel Beer Sheva",
-   "visitante": "Vikingur Reykjavik",
-   "gole": "D. Hafsteinsson 28.3% &middot; G. Sigurðsson 28.3%",
-   "remates": "Vikingur Reykjavik: D. Hafsteinsson 0.67 remates totales (0.33 a puerta), G. Sigurðsson 0.67 remates totales (0.33 a puerta), V. Andrason 0.5 remates totales (0.0 a puerta)",
-   "tarjetas": "Vikingur Reykjavik: T. Ibrahimagic 0.5 amarillas/partido, O. Ekroth 0.33 amarillas/partido, V. Ingimundarson 0.33 amarillas/partido",
-   "asistencias": "Vikingur Reykjavik: D. Hafsteinsson 0.33 asistencias/partido, G. Sigurðsson 0.33 asistencias/partido",
-   "faltas": "Vikingur Reykjavik: D. Hafsteinsson 0.67 faltas/partido, G. Sigurðsson 0.67 faltas/partido, Ó. Borgþórsson 0.67 faltas/partido",
-   "quites": "Vikingur Reykjavik: G. Sigurðsson 1.33 quites/partido, Ó. Borgþórsson 1.0 quites/partido, H. Guðjónsson 0.67 quites/partido"
-  },
-  {
-   "local": "Universitatea Craiova",
-   "visitante": "Levski Sofia",
-   "gole": "Reinaldo 48.7% &middot; J. Perea 39.3% &middot; A. Oko-Flex 28.3%",
-   "tarjetas": "Levski Sofia: Aldair 0.5 amarillas/partido, N. Serafimov 0.33 amarillas/partido, Maicon 0.33 amarillas/partido",
-   "asistencias": "Levski Sofia: Álex Centelles 0.33 asistencias/partido"
-  },
-  {
-   "local": "FK Crvena Zvezda",
-   "visitante": "Larne",
-   "gole": "M. Ridley 28.3%",
-   "tarjetas": "Larne: S. Graham 0.67 amarillas/partido, M. Lusty 0.33 amarillas/partido"
-  },
-  {
    "local": "Rapid Vienna",
    "visitante": "FC Santa Coloma",
    "gole": "Y. Demir 63.2% &middot; Moulaye Haïdara 63.2% &middot; M. Wels 63.2%",
@@ -167,6 +117,11 @@
    "tarjetas": "Pyunik Yerevan: M. Kovalenko 0.33 amarillas/partido, S. Islamović 0.33 amarillas/partido",
    "faltas": "Pyunik Yerevan: Filipe Almeida 0.33 faltas/partido, M. Kovalenko 0.33 faltas/partido, S. Islamović 0.33 faltas/partido",
    "quites": "Pyunik Yerevan: M. Kovalenko 0.67 quites/partido, S. Islamović 0.67 quites/partido, K. Hovhannisyan 0.67 quites/partido"
+  },
+  {
+   "local": "Gyori ETO FC",
+   "visitante": "Atert Bissen",
+   "gole": "N. Njie 76.1% &middot; K. Bánáti 63.2% &middot; V. Đukanović 63.2%"
   }
  ]
 }
