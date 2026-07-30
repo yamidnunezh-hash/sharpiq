@@ -1,20 +1,6 @@
 {
-  "updated": "2026-07-29T23:16:05Z",
+  "updated": "2026-07-30T00:13:44Z",
   "live": [
-    {
-      "id": "96a729391b41e774f84f701ed4419c0f",
-      "sport": "soccer_conmebol_copa_sudamericana",
-      "liga": "Copa Sudamericana",
-      "emoji": "⚽",
-      "home": "Vasco da Gama",
-      "away": "Independiente Medellín",
-      "fecha": "29/07/26",
-      "hora": "17:00 COT",
-      "ts": 1785344400,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    },
     {
       "id": "b819c817f44cbe053c1de60d0a53ee3a",
       "sport": "soccer_brazil_campeonato",
@@ -27,7 +13,7 @@
       "ts": 1785346200,
       "completed": false,
       "score_home": "1",
-      "score_away": "0"
+      "score_away": "1"
     },
     {
       "id": "7f3c84d26ae6c82bb6c33c5f161185cb",
@@ -40,8 +26,8 @@
       "hora": "17:30 COT",
       "ts": 1785346200,
       "completed": false,
-      "score_home": "1",
-      "score_away": "0"
+      "score_home": "2",
+      "score_away": "1"
     },
     {
       "id": "f7a4edfc8ce302460d9f8c40851ca78b",
@@ -84,9 +70,7 @@
       "completed": false,
       "score_home": "0",
       "score_away": "0"
-    }
-  ],
-  "upcoming": [
+    },
     {
       "id": "0eb6629148e96e8af74128cc11ba2b37",
       "sport": "baseball_mlb",
@@ -98,8 +82,8 @@
       "hora": "18:41 COT",
       "ts": 1785350460,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "4"
     },
     {
       "id": "8550a2048d2b7f67231d7180079f8ddd",
@@ -112,8 +96,8 @@
       "hora": "18:41 COT",
       "ts": 1785350460,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "0"
     },
     {
       "id": "c8354a0c9f4876c67feb31fa06f35aa5",
@@ -126,9 +110,11 @@
       "hora": "18:46 COT",
       "ts": 1785350760,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "8bf7e0a05cf190a5039f2482c21438d9",
       "sport": "soccer_conmebol_copa_sudamericana",
@@ -296,9 +282,65 @@
       "completed": false,
       "score_home": null,
       "score_away": null
+    },
+    {
+      "id": "4f68110ae33722f386ddcd2aa17cc01c",
+      "sport": "soccer_brazil_campeonato",
+      "liga": "Brasileirao",
+      "emoji": "⚽",
+      "home": "Corinthians",
+      "away": "Atletico Paranaense",
+      "fecha": "30/07/26",
+      "hora": "17:30 COT",
+      "ts": 1785432600,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "690922fd97ed105a96d9b06ae8cf9a56",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Cincinnati Reds",
+      "away": "Pittsburgh Pirates",
+      "fecha": "30/07/26",
+      "hora": "18:11 COT",
+      "ts": 1785435060,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "d64f0d0688a85bdcd854092dcbd6b233",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "New York Mets",
+      "away": "Miami Marlins",
+      "fecha": "30/07/26",
+      "hora": "18:11 COT",
+      "ts": 1785435060,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
     }
   ],
   "finished": [
+    {
+      "id": "96a729391b41e774f84f701ed4419c0f",
+      "sport": "soccer_conmebol_copa_sudamericana",
+      "liga": "Copa Sudamericana",
+      "emoji": "⚽",
+      "home": "Vasco da Gama",
+      "away": "Independiente Medellín",
+      "fecha": "29/07/26",
+      "hora": "17:00 COT",
+      "ts": 1785344400,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "0"
+    },
     {
       "id": "fc8fe7c515f49fbf66ce1f60a9d39f32",
       "sport": "baseball_mlb",
@@ -424,20 +466,6 @@
       "completed": true,
       "score_home": "2",
       "score_away": "8"
-    },
-    {
-      "id": "0f350cb709d6394c946ef1df6fca40af",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Athletics",
-      "away": "Boston Red Sox",
-      "fecha": "28/07/26",
-      "hora": "20:41 COT",
-      "ts": 1785271260,
-      "completed": true,
-      "score_home": "4",
-      "score_away": "3"
     }
   ]
 }
