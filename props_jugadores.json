@@ -1,86 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Gimnasia L.P.",
-   "visitante": "River Plate",
-   "gole": "M. Torres 34.4% &middot; A. Módica 30.0% &middot; S. Driussi 28.3%",
-   "remates": "Gimnasia L.P.: M. Zalazar 1.57 remates totales (0.43 a puerta), M. Torres 1.11 remates totales (0.84 a puerta), A. Auzmendi 1.0 remates totales (0.47 a puerta) | River Plate: S. Driussi 1.6 remates totales (0.8 a puerta), F. Colidio 1.59 remates totales (0.88 a puerta), F. Vera 1.53 remates totales (0.41 a puerta)",
-   "tarjetas": "Gimnasia L.P.: I. Fernández 0.47 amarillas/partido, A. Max 0.4 amarillas/partido, B. Barros Schelotto 0.4 amarillas/partido | River Plate: M. Viña 0.5 amarillas/partido, M. Acuña 0.44 amarillas/partido, L. Rivero 0.33 amarillas/partido",
-   "asistencias": "Gimnasia L.P.: N. Schelotto 0.19 asistencias/partido, A. Steimbach 0.17 asistencias/partido, I. Fernández 0.12 asistencias/partido | River Plate: J. Meza 0.29 asistencias/partido, J. Quintero 0.2 asistencias/partido, F. Colidio 0.18 asistencias/partido",
-   "faltas": "Gimnasia L.P.: I. Miramón 1.43 faltas/partido, I. Fernández 1.41 faltas/partido, A. Max 1.33 faltas/partido | River Plate: F. Gonzalez 1.5 faltas/partido, J. Freitas 1.47 faltas/partido, A. Moreno 1.3 faltas/partido",
-   "quites": "Gimnasia L.P.: A. Max 3.2 quites/partido, A. Steimbach 2.61 quites/partido, I. Miramón 2.07 quites/partido | River Plate: A. Moreno 3.05 quites/partido, F. Gonzalez 2.5 quites/partido, M. Acuña 1.81 quites/partido"
-  },
-  {
-   "local": "Internacional",
-   "visitante": "Flamengo",
-   "gole": "Pedro 46.8% &middot; J. Carbonero 23.1%",
-   "remates": "Internacional: A. Bernabéi 1.71 remates totales (0.76 a puerta), J. Carbonero 1.63 remates totales (0.74 a puerta), R. Borré 1.28 remates totales (0.67 a puerta) | Flamengo: Lorran 2.0 remates totales (2.0 a puerta), Pedro 1.84 remates totales (1.16 a puerta), G. de Arrascaeta 1.67 remates totales (0.83 a puerta)",
-   "tarjetas": "Internacional: Victor Gabriel 0.44 amarillas/partido, A. Bernabéi 0.35 amarillas/partido, G. Mercado 0.33 amarillas/partido | Flamengo: E. Pulgar 0.4 amarillas/partido, Léo Pereira 0.38 amarillas/partido, Alex Sandro 0.27 amarillas/partido",
-   "asistencias": "Internacional: Vitinho 0.16 asistencias/partido, J. Carbonero 0.16 asistencias/partido, Alerrandro 0.16 asistencias/partido | Flamengo: Samuel Lino 0.37 asistencias/partido, G. Varela 0.21 asistencias/partido, Pedro 0.21 asistencias/partido",
-   "faltas": "Internacional: A. Bernabéi 2.29 faltas/partido, G. Maripán 2.0 faltas/partido, Victor Gabriel 1.56 faltas/partido | Flamengo: Alex Sandro 1.6 faltas/partido, Lucas Paquetá 1.5 faltas/partido, E. Pulgar 1.4 faltas/partido",
-   "quites": "Internacional: Bruno Gomes 2.15 quites/partido, A. Bernabéi 1.76 quites/partido, Ronaldo 1.75 quites/partido | Flamengo: E. Pulgar 1.9 quites/partido, Emerson Royal 1.6 quites/partido, Lucas Paquetá 1.58 quites/partido"
-  },
-  {
-   "local": "Mirassol",
-   "visitante": "Remo",
-   "gole": "Jája Silva 26.8% &middot; Alef Manga 22.1%",
-   "remates": "Mirassol: Bruno Santos 2.0 remates totales (0.5 a puerta), Nathan Fogaça 1.7 remates totales (1.0 a puerta), Japa 1.5 remates totales (1.0 a puerta) | Remo: Patrick de Paula 1.83 remates totales (0.5 a puerta), Zé Ivaldo 1.5 remates totales (0.5 a puerta), Jája Silva 1.38 remates totales (0.88 a puerta)",
-   "tarjetas": "Mirassol: Negueba 0.44 amarillas/partido, José Aldo 0.41 amarillas/partido, Lucas Oliveira 0.38 amarillas/partido | Remo: Patrick de Paula 0.67 amarillas/partido, Zé Ivaldo 0.5 amarillas/partido, João Lucas 0.5 amarillas/partido",
-   "asistencias": "Mirassol: Alesson 0.22 asistencias/partido, Gabriel Pires 0.14 asistencias/partido, Reinaldo 0.12 asistencias/partido | Remo: Patrick de Paula 0.33 asistencias/partido, Alef Manga 0.15 asistencias/partido, Vitor Bueno 0.15 asistencias/partido",
-   "faltas": "Mirassol: Igor Formiga 1.56 faltas/partido, José Aldo 1.53 faltas/partido, Denilson 1.5 faltas/partido | Remo: João Pedro 2.0 faltas/partido, Zé Ricardo 1.61 faltas/partido, João Lucas 1.33 faltas/partido",
-   "quites": "Mirassol: Igor Formiga 2.88 quites/partido, Alesson 1.89 quites/partido, Daniel Borges 1.6 quites/partido | Remo: João Lucas 3.17 quites/partido, Leo Andrade 2.25 quites/partido, Patrick 2.06 quites/partido"
-  },
-  {
-   "local": "Fluminense",
-   "visitante": "Bahia",
-   "gole": "John Kennedy 39.3% &middot; Luciano Juba 35.5%",
-   "remates": "Fluminense: Hulk 3.5 remates totales (1.0 a puerta), John Kennedy 1.89 remates totales (1.44 a puerta), J. Savarino 1.62 remates totales (0.88 a puerta) | Bahia: C. Olivera 1.25 remates totales (0.88 a puerta), Rodrigo Nestor 1.23 remates totales (0.23 a puerta), Luciano Juba 1.19 remates totales (0.75 a puerta)",
-   "tarjetas": "Fluminense: Nonato 0.43 amarillas/partido, Alisson 0.38 amarillas/partido, Riquelme 0.33 amarillas/partido | Bahia: Zé Guilherme 0.75 amarillas/partido, Kanu 0.67 amarillas/partido, João Paulo 0.5 amarillas/partido",
-   "asistencias": "Fluminense: L. Acosta 0.25 asistencias/partido, Renê 0.15 asistencias/partido, A. Canobbio 0.15 asistencias/partido | Bahia: Éverton Ribeiro 0.25 asistencias/partido, Gilberto 0.14 asistencias/partido, Jean Lucas 0.12 asistencias/partido",
-   "faltas": "Fluminense: Hércules 1.67 faltas/partido, R. Castillo 1.67 faltas/partido, J. Millán 1.5 faltas/partido | Bahia: N. Acevedo 2.28 faltas/partido, Jean Lucas 1.76 faltas/partido, Roman Gomez 1.5 faltas/partido",
-   "quites": "Fluminense: Renê 2.08 quites/partido, Nonato 1.86 quites/partido, F. Bernal 1.6 quites/partido | Bahia: N. Acevedo 2.44 quites/partido, Zé Guilherme 1.75 quites/partido, Jean Lucas 1.59 quites/partido"
-  },
-  {
-   "local": "Vitoria",
-   "visitante": "Palmeiras",
-   "gole": "Rene 32.0% &middot; J. López 29.7%",
-   "remates": "Vitoria: Rene 1.92 remates totales (1.38 a puerta), Matheuzinho 1.17 remates totales (0.61 a puerta), Gabriel Baralhas 0.94 remates totales (0.29 a puerta) | Palmeiras: Vitor Roque 1.62 remates totales (0.88 a puerta), J. López 1.53 remates totales (0.82 a puerta), J. Arias 1.4 remates totales (0.67 a puerta)",
-   "tarjetas": "Vitoria: Zé Marcos 0.5 amarillas/partido, E. Martínez 0.38 amarillas/partido, Cacá 0.27 amarillas/partido | Palmeiras: Luis Felipe 0.67 amarillas/partido, Luighi Hanri 0.29 amarillas/partido, J. Arias 0.27 amarillas/partido",
-   "asistencias": "Vitoria: Erick 0.21 asistencias/partido, Gabriel Baralhas 0.18 asistencias/partido, Luan Cândido 0.15 asistencias/partido | Palmeiras: Andreas Pereira 0.47 asistencias/partido, J. Piquerez 0.25 asistencias/partido, J. López 0.18 asistencias/partido",
-   "faltas": "Vitoria: Zé Marcos 2.5 faltas/partido, Zé Vitor 2.08 faltas/partido, R. López 1.67 faltas/partido | Palmeiras: J. López 1.65 faltas/partido, Murilo 1.35 faltas/partido, A. Giay 1.25 faltas/partido",
-   "quites": "Vitoria: Zé Vitor 2.08 quites/partido, Nathan 1.92 quites/partido, Ramon 1.88 quites/partido | Palmeiras: J. Piquerez 2.0 quites/partido, A. Giay 1.81 quites/partido, Arthur 1.62 quites/partido"
-  },
-  {
-   "local": "Instituto Cordoba",
-   "visitante": "Platense",
-   "gole": "A. Luna 26.8% &middot; N. Fernández 22.1%",
-   "remates": "Instituto Cordoba: A. Luna 2.12 remates totales (1.12 a puerta), F. Jara 1.36 remates totales (0.55 a puerta), M. Tissera 1.0 remates totales (0.43 a puerta) | Platense: G. Lencina 1.33 remates totales (0.56 a puerta), F. Zapiola 1.31 remates totales (0.69 a puerta), T. Nasif 0.92 remates totales (0.58 a puerta)",
-   "tarjetas": "Instituto Cordoba: F. Alarcón 0.43 amarillas/partido, F. Moyano 0.33 amarillas/partido, A. Luna 0.31 amarillas/partido | Platense: V. Cuesta 0.56 amarillas/partido, M. Mendia 0.4 amarillas/partido, F. Amarfil 0.36 amarillas/partido",
-   "asistencias": "Instituto Cordoba: J. Lázaro 0.17 asistencias/partido, D. Sosa 0.12 asistencias/partido, L. Rafaelli 0.11 asistencias/partido | Platense: N. Retamar 0.15 asistencias/partido, T. Nasif 0.08 asistencias/partido, J. Gauto 0.06 asistencias/partido",
-   "faltas": "Instituto Cordoba: J. Córdoba 1.69 faltas/partido, M. Fonseca 1.57 faltas/partido, A. Massaccesi 1.5 faltas/partido | Platense: F. Amarfil 1.71 faltas/partido, Stefan Đokić 1.67 faltas/partido, M. Mendia 1.4 faltas/partido",
-   "quites": "Instituto Cordoba: G. Cerato 2.47 quites/partido, F. Alarcón 1.93 quites/partido, J. Córdoba 1.85 quites/partido | Platense: P. Ferreira 3.4 quites/partido, T. Silva 3.14 quites/partido, Stefan Đokić 2.33 quites/partido"
-  },
-  {
-   "local": "RB Bragantino",
-   "visitante": "Sporting Cristal",
-   "gole": "Fernando 39.3% &middot; I. Pitta 34.9% &middot; Rodriguinho 28.3%",
-   "remates": "RB Bragantino: I. Pitta 2.57 remates totales (1.43 a puerta), A. Sant&apos;Anna 2.33 remates totales (0.0 a puerta), Lucas Barbosa 2.25 remates totales (0.5 a puerta)",
-   "tarjetas": "RB Bragantino: Matheus Fernandes 1.0 amarillas/partido, Gustavinho 0.5 amarillas/partido, Marcelinho 0.4 amarillas/partido",
-   "asistencias": "RB Bragantino: Marcelinho 0.4 asistencias/partido, Fernando 0.33 asistencias/partido, Eric Ramires 0.25 asistencias/partido",
-   "faltas": "RB Bragantino: Gustavinho 2.25 faltas/partido, Alix 1.67 faltas/partido, Cauê Nascimento Santos 1.25 faltas/partido",
-   "quites": "RB Bragantino: Juninho Capixaba 3.0 quites/partido, A. Sant&apos;Anna 3.0 quites/partido, Gabriel 2.5 quites/partido"
-  },
-  {
-   "local": "Cienciano",
-   "visitante": "Lanus",
-   "gole": "C. Garcés 22.1%",
-   "remates": "Cienciano: A. Hohberg 2.5 remates totales (1.0 a puerta), C. Garcés 1.88 remates totales (1.0 a puerta), N. Bandiera 1.86 remates totales (0.43 a puerta)",
-   "tarjetas": "Cienciano: S. Arias 0.67 amarillas/partido, S. Cavero 0.33 amarillas/partido, C. Núñez 0.25 amarillas/partido",
-   "asistencias": "Cienciano: C. Souza 0.25 asistencias/partido, G. Barreto 0.12 asistencias/partido, C. Garcés 0.12 asistencias/partido",
-   "faltas": "Cienciano: G. Barreto 1.88 faltas/partido, H. Caparó 1.6 faltas/partido, C. Núñez 1.25 faltas/partido",
-   "quites": "Cienciano: K. Becerra 3.0 quites/partido, G. Barreto 2.25 quites/partido, M. Martinich 2.14 quites/partido"
-  },
-  {
    "local": "Pyunik Yerevan",
    "visitante": "Debreceni VSC",
    "gole": "",
@@ -93,6 +13,11 @@
    "local": "Gyori ETO FC",
    "visitante": "Atert Bissen",
    "gole": "N. Njie 76.1% &middot; K. Bánáti 63.2% &middot; V. Đukanović 63.2%"
+  },
+  {
+   "local": "Ajax",
+   "visitante": "Vojvodina",
+   "gole": "Mohamed Abdalla 58.6% &middot; O. Gloukh 58.6% &middot; D. Klaassen 58.6%"
   }
  ]
 }
