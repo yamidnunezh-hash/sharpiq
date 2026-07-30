@@ -1,33 +1,19 @@
 // Generado por radar_valor.py — NO editar a mano.
 window.RADAR_VALOR = {
-  "generado": "2026-07-30T16:26:14.646682+00:00",
-  "total": 2,
+  "generado": "2026-07-30T17:57:16.992292+00:00",
+  "total": 1,
   "jugadas": [
     {
       "deporte": "MLB",
       "emoji": "⚾",
       "estado": "VIVO",
       "partido": "Tampa Bay Rays vs Texas Rangers",
-      "jugada": "Más de 7.0",
+      "jugada": "Más de 6.5",
       "casa": "Betsson",
-      "cuota": 1.94,
-      "cuota_justa": 1.69,
-      "valor": 14.9,
-      "prob": 59.2,
-      "betplay_cuota": null,
-      "betplay_valor": null
-    },
-    {
-      "deporte": "The Hundred",
-      "emoji": "🏏",
-      "estado": "PRE",
-      "partido": "Southern Brave vs Birmingham Phoenix",
-      "jugada": "Gana Birmingham Phoenix",
-      "casa": "Betfair",
-      "cuota": 2.34,
-      "cuota_justa": 2.22,
-      "valor": 5.5,
-      "prob": 45.1,
+      "cuota": 1.87,
+      "cuota_justa": 1.65,
+      "valor": 13.6,
+      "prob": 60.7,
       "betplay_cuota": null,
       "betplay_valor": null
     }
