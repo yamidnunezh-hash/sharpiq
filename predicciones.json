@@ -1881,7 +1881,7 @@
         "1": 3.35,
         "1_casa": "Betfair",
         "pinnacle_1": 3.22,
-        "2": 2.34,
+        "2": 2.36,
         "2_casa": "Betfair",
         "pinnacle_2": 2.28,
         "X": 3.4,
@@ -2039,13 +2039,13 @@
           "pinn_prob": 29.6
         },
         "victoria_visita": {
-          "value": -0.022,
-          "ev_porcentaje": -2.2,
-          "ev_pinn": -2.2,
+          "value": -0.014,
+          "ev_porcentaje": -1.4,
+          "ev_pinn": -1.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.34,
+          "cuota": 2.36,
           "casa": "Betfair",
           "pinn_prob": 41.8
         },
@@ -6244,7 +6244,7 @@
       "hora": "22:00",
       "fecha_evento": "2026-07-30",
       "cuotas": {
-        "1": 2.66,
+        "1": 2.68,
         "1_casa": "Betfair",
         "pinnacle_1": 2.63,
         "2": 3.35,
@@ -6394,13 +6394,13 @@
       "confianza": 85.1,
       "value_bets": {
         "victoria_local": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.66,
+          "cuota": 2.68,
           "casa": "Betfair",
           "pinn_prob": 36.8
         },
@@ -9872,8 +9872,8 @@
         "under225": 1.8,
         "under225_casa": "Pinnacle",
         "pinnacle_under225": 1.8,
-        "over35": 4.17,
-        "over35_casa": "Pinnacle",
+        "over35": 4.2,
+        "over35_casa": "LiveScore Bet",
         "pinnacle_over35": 4.17,
         "under35": 1.23,
         "under35_casa": "Pinnacle",
@@ -9902,7 +9902,7 @@
         "under175": 2.55,
         "under175_casa": "Pinnacle",
         "pinnacle_under175": 2.55,
-        "over15": 1.43,
+        "over15": 1.44,
         "over15_casa": "LiveScore Bet",
         "pinnacle_over15": 1.4,
         "under15": 2.92,
@@ -9914,7 +9914,7 @@
         "under05": 7.02,
         "under05_casa": "Pinnacle",
         "pinnacle_under05": 7.02,
-        "dnb_local": 2.0,
+        "dnb_local": 1.98,
         "dnb_local_casa": "LiveScore Bet",
         "dnb_visita": 1.7,
         "dnb_visita_casa": "LiveScore Bet",
@@ -10068,14 +10068,14 @@
           "pinn_prob": 53.2
         },
         "over35": {
-          "value": -0.05,
-          "ev_porcentaje": -5.0,
-          "ev_pinn": -5.0,
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 4.17,
-          "casa": "Pinnacle",
+          "cuota": 4.2,
+          "casa": "LiveScore Bet",
           "pinn_prob": 22.8
         },
         "under35": {
@@ -10178,13 +10178,13 @@
           "pinn_prob": 37.3
         },
         "over15": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": -0.027,
+          "ev_porcentaje": -2.7,
+          "ev_pinn": -2.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.43,
+          "cuota": 1.44,
           "casa": "LiveScore Bet",
           "pinn_prob": 67.6
         },
@@ -10222,13 +10222,13 @@
           "pinn_prob": 13.5
         },
         "dnb_local": {
-          "value": -0.164,
-          "ev_porcentaje": -16.4,
-          "ev_pinn": -16.4,
+          "value": -0.173,
+          "ev_porcentaje": -17.3,
+          "ev_pinn": -17.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.0,
+          "cuota": 1.98,
           "casa": "LiveScore Bet",
           "pinn_prob": 41.8
         },
@@ -12375,5 +12375,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:01:08"
+  "generado": "16:01:32"
 }
