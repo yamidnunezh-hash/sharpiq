@@ -1,35 +1,6 @@
 {
-  "updated": "2026-07-30T20:12:14Z",
-  "live": [
-    {
-      "id": "c4f54051354f3d027c0f1cabfc630e52",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Chicago White Sox",
-      "away": "New York Yankees",
-      "fecha": "30/07/26",
-      "hora": "13:11 COT",
-      "ts": 1785417060,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "0"
-    },
-    {
-      "id": "459ad5aa37b0d7865d087c8acb7d9d4d",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "St. Louis Cardinals",
-      "away": "Chicago Cubs",
-      "fecha": "30/07/26",
-      "hora": "13:16 COT",
-      "ts": 1785417360,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "1"
-    }
-  ],
+  "updated": "2026-07-30T21:34:16Z",
+  "live": [],
   "upcoming": [
     {
       "id": "c56c0611b78cf2c9b19aaf7403def23b",
@@ -244,6 +215,34 @@
   ],
   "finished": [
     {
+      "id": "459ad5aa37b0d7865d087c8acb7d9d4d",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "St. Louis Cardinals",
+      "away": "Chicago Cubs",
+      "fecha": "30/07/26",
+      "hora": "13:16 COT",
+      "ts": 1785417360,
+      "completed": true,
+      "score_home": "2",
+      "score_away": "4"
+    },
+    {
+      "id": "c4f54051354f3d027c0f1cabfc630e52",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago White Sox",
+      "away": "New York Yankees",
+      "fecha": "30/07/26",
+      "hora": "13:11 COT",
+      "ts": 1785417060,
+      "completed": true,
+      "score_home": "2",
+      "score_away": "1"
+    },
+    {
       "id": "4ab9265338d5ee8f4e0ecf43a83aa9d7",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -354,34 +353,6 @@
       "completed": true,
       "score_home": "4",
       "score_away": "0"
-    },
-    {
-      "id": "ec1db1ae59afdc3fb045803d003445c5",
-      "sport": "soccer_brazil_campeonato",
-      "liga": "Brasileirao",
-      "emoji": "⚽",
-      "home": "Vitoria",
-      "away": "Palmeiras",
-      "fecha": "29/07/26",
-      "hora": "19:30 COT",
-      "ts": 1785353400,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "4"
-    },
-    {
-      "id": "c8354a0c9f4876c67feb31fa06f35aa5",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "St. Louis Cardinals",
-      "away": "Chicago Cubs",
-      "fecha": "29/07/26",
-      "hora": "18:46 COT",
-      "ts": 1785350760,
-      "completed": true,
-      "score_home": "3",
-      "score_away": "2"
     }
   ]
 }
