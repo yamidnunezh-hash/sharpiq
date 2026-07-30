@@ -1,6 +1,6 @@
 // Generado por radar_valor.py — NO editar a mano.
 window.RADAR_VALOR = {
-  "generado": "2026-07-30T02:35:32.171798+00:00",
+  "generado": "2026-07-30T05:44:09.186693+00:00",
   "total": 0,
   "jugadas": []
 };
