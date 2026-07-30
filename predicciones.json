@@ -927,10 +927,10 @@
       "hora": "00:30",
       "fecha_evento": "2026-07-29",
       "cuotas": {
-        "1": 2.44,
+        "1": 2.4,
         "1_casa": "Betfair",
         "pinnacle_1": 2.31,
-        "2": 3.3,
+        "2": 3.35,
         "2_casa": "Betfair",
         "pinnacle_2": 3.28,
         "X": 3.35,
@@ -1077,24 +1077,24 @@
       "confianza": 84.4,
       "value_bets": {
         "victoria_local": {
-          "value": 0.008,
-          "ev_porcentaje": 0.8,
-          "ev_pinn": 0.8,
+          "value": -0.009,
+          "ev_porcentaje": -0.9,
+          "ev_pinn": -0.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.44,
+          "cuota": 2.4,
           "casa": "Betfair",
           "pinn_prob": 41.3
         },
         "victoria_visita": {
-          "value": -0.04,
-          "ev_porcentaje": -4.0,
-          "ev_pinn": -4.0,
+          "value": -0.026,
+          "ev_porcentaje": -2.6,
+          "ev_pinn": -2.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.3,
+          "cuota": 3.35,
           "casa": "Betfair",
           "pinn_prob": 29.1
         },
@@ -3733,13 +3733,13 @@
           "disp_vis_under5": 71.2
         },
         "paradas": {
-          "paradas_esperadas": 1.7,
-          "paradas_local_over2": 49.7,
-          "paradas_local_under2": 50.3,
-          "paradas_local_over3": 23.5,
-          "paradas_local_under3": 76.5,
-          "paradas_local_over4": 8.9,
-          "paradas_local_under4": 91.1
+          "paradas_esperadas": 2.3,
+          "paradas_local_over2": 67.6,
+          "paradas_local_under2": 32.4,
+          "paradas_local_over3": 41.2,
+          "paradas_local_under3": 58.8,
+          "paradas_local_over4": 20.7,
+          "paradas_local_under4": 79.3
         },
         "ev_ext": {
           "corners_over9": {
@@ -3951,50 +3951,50 @@
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over2": {
-            "prob_modelo": 49.7,
-            "cuota_justa": 2.01,
-            "cuota_ref": 1.91,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 67.6,
+            "cuota_justa": 1.48,
+            "cuota_ref": 1.41,
+            "ev_porcentaje": -4.7,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under2": {
-            "prob_modelo": 50.3,
-            "cuota_justa": 1.99,
-            "cuota_ref": 1.89,
-            "ev_porcentaje": -4.9,
+            "prob_modelo": 32.4,
+            "cuota_justa": 3.09,
+            "cuota_ref": 2.93,
+            "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over3": {
-            "prob_modelo": 23.5,
-            "cuota_justa": 4.26,
-            "cuota_ref": 4.04,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 41.2,
+            "cuota_justa": 2.43,
+            "cuota_ref": 2.31,
+            "ev_porcentaje": -4.8,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under3": {
-            "prob_modelo": 76.5,
-            "cuota_justa": 1.31,
-            "cuota_ref": 1.24,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 58.8,
+            "cuota_justa": 1.7,
+            "cuota_ref": 1.62,
+            "ev_porcentaje": -4.7,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_over4": {
-            "prob_modelo": 8.9,
-            "cuota_justa": 11.24,
-            "cuota_ref": 10.67,
+            "prob_modelo": 20.7,
+            "cuota_justa": 4.83,
+            "cuota_ref": 4.59,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "paradas_local_under4": {
-            "prob_modelo": 91.1,
-            "cuota_justa": 1.1,
-            "cuota_ref": 1.04,
-            "ev_porcentaje": -5.3,
+            "prob_modelo": 79.3,
+            "cuota_justa": 1.26,
+            "cuota_ref": 1.2,
+            "ev_porcentaje": -4.8,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           }
@@ -10783,5 +10783,5 @@
       "movimiento": null
     }
   ],
-  "generado": "00:00:59"
+  "generado": "00:01:14"
 }
