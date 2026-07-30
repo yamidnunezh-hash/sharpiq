@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-30T21:34:16Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-30T22:42:46Z",
+  "live": [
     {
       "id": "c56c0611b78cf2c9b19aaf7403def23b",
       "sport": "soccer_conmebol_copa_sudamericana",
@@ -13,8 +12,8 @@
       "hora": "17:00 COT",
       "ts": 1785430800,
       "completed": false,
-      "score_home": null,
-      "score_away": null
+      "score_home": "0",
+      "score_away": "1"
     },
     {
       "id": "4f68110ae33722f386ddcd2aa17cc01c",
@@ -27,9 +26,11 @@
       "hora": "17:30 COT",
       "ts": 1785432600,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "0",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "690922fd97ed105a96d9b06ae8cf9a56",
       "sport": "baseball_mlb",
@@ -37,20 +38,6 @@
       "emoji": "⚾",
       "home": "Cincinnati Reds",
       "away": "Pittsburgh Pirates",
-      "fecha": "30/07/26",
-      "hora": "18:11 COT",
-      "ts": 1785435060,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "d64f0d0688a85bdcd854092dcbd6b233",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "New York Mets",
-      "away": "Miami Marlins",
       "fecha": "30/07/26",
       "hora": "18:11 COT",
       "ts": 1785435060,
@@ -68,6 +55,20 @@
       "fecha": "30/07/26",
       "hora": "18:16 COT",
       "ts": 1785435360,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "d64f0d0688a85bdcd854092dcbd6b233",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "New York Mets",
+      "away": "Miami Marlins",
+      "fecha": "30/07/26",
+      "hora": "19:11 COT",
+      "ts": 1785438660,
       "completed": false,
       "score_home": null,
       "score_away": null
@@ -205,6 +206,34 @@
       "emoji": "⚾",
       "home": "Cleveland Guardians",
       "away": "Arizona Diamondbacks",
+      "fecha": "31/07/26",
+      "hora": "18:11 COT",
+      "ts": 1785521460,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "8b3666056a3b2912d05e6a2ef95a35f8",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Tampa Bay Rays",
+      "away": "Chicago White Sox",
+      "fecha": "31/07/26",
+      "hora": "18:11 COT",
+      "ts": 1785521460,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "5382f2f139958bbb12e0cd166e06d3ea",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "New York Mets",
+      "away": "Miami Marlins",
       "fecha": "31/07/26",
       "hora": "18:11 COT",
       "ts": 1785521460,
