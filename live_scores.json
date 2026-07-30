@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-30T15:24:57Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-30T17:06:40Z",
+  "live": [
     {
       "id": "a711967b87d0815d1a1b45806b632b42",
       "sport": "baseball_mlb",
@@ -13,9 +12,11 @@
       "hora": "11:11 COT",
       "ts": 1785409860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "1",
+      "score_away": "0"
+    }
+  ],
+  "upcoming": [
     {
       "id": "4ab9265338d5ee8f4e0ecf43a83aa9d7",
       "sport": "baseball_mlb",
@@ -208,6 +209,20 @@
       "fecha": "30/07/26",
       "hora": "21:11 COT",
       "ts": 1785445860,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "81e8bc3d9f4b5ffab9f429df283e5a86",
+      "sport": "soccer_brazil_serie_b",
+      "liga": "Brasileirao B",
+      "emoji": "⚽",
+      "home": "Operario PR",
+      "away": "São Bernardo",
+      "fecha": "07/08/26",
+      "hora": "17:30 COT",
+      "ts": 1786123800,
       "completed": false,
       "score_home": null,
       "score_away": null
