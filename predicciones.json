@@ -8830,7 +8830,7 @@
       "hora": "12:00",
       "fecha_evento": "2026-08-01",
       "cuotas": {
-        "1": 1.34,
+        "1": 1.35,
         "1_casa": "Betfair",
         "pinnacle_1": 1.32,
         "2": 9.4,
@@ -9000,13 +9000,13 @@
       "confianza": 87.3,
       "value_bets": {
         "victoria_local": {
-          "value": -0.044,
-          "ev_porcentaje": -4.4,
-          "ev_pinn": -4.4,
+          "value": -0.037,
+          "ev_porcentaje": -3.7,
+          "ev_pinn": -3.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.34,
+          "cuota": 1.35,
           "casa": "Betfair",
           "pinn_prob": 71.3
         },
@@ -19047,7 +19047,7 @@
       "cuotas": {
         "Colorado Rockies": 1.94,
         "Kansas City Royals": 1.96,
-        "Over 11.0": 1.95,
+        "Over 11.0": 1.92,
         "Under 11.0": 1.95,
         "Colorado Rockies (+1.5)": 1.62,
         "Kansas City Royals (-1.5)": 2.35
@@ -19083,13 +19083,13 @@
           "mercado_nombre": "Kansas City Royals"
         },
         "over_11_0": {
-          "value": 0.01,
-          "ev_porcentaje": 1.0,
-          "ev_pinn": 1.0,
+          "value": -0.005,
+          "ev_porcentaje": -0.5,
+          "ev_pinn": -0.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.95,
+          "cuota": 1.92,
           "casa": "Unibet",
           "pinn_prob": 51.8,
           "mercado_nombre": "Over 11.0"
@@ -19134,7 +19134,7 @@
       "prediccion_principal": {
         "mercado": "Over 11.0",
         "prob": 51.8,
-        "ev": 1.0
+        "ev": -0.5
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -19156,10 +19156,10 @@
       "fecha_evento": "2026-07-31",
       "cuotas": {
         "Los Angeles Angels": 2.51,
-        "Milwaukee Brewers": 1.62,
+        "Milwaukee Brewers": 1.6,
         "Over 9.0": 1.94,
         "Under 9.0": 1.93,
-        "Los Angeles Angels (+1.5)": 1.88,
+        "Los Angeles Angels (+1.5)": 1.96,
         "Milwaukee Brewers (-1.5)": 2.0
       },
       "probabilidades": {
@@ -19181,14 +19181,14 @@
           "mercado_nombre": "Los Angeles Angels"
         },
         "Milwaukee Brewers": {
-          "value": -0.011,
-          "ev_porcentaje": -1.1,
-          "ev_pinn": -1.1,
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.62,
-          "casa": "FanDuel",
+          "cuota": 1.6,
+          "casa": "Pinnacle",
           "pinn_prob": 61.1,
           "mercado_nombre": "Milwaukee Brewers"
         },
@@ -19217,13 +19217,13 @@
           "mercado_nombre": "Under 9.0"
         },
         "spread_los_angeles_angels_1_5": {
-          "value": -0.053,
-          "ev_porcentaje": -5.3,
-          "ev_pinn": -5.3,
+          "value": -0.012,
+          "ev_porcentaje": -1.2,
+          "ev_pinn": -1.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.88,
+          "cuota": 1.96,
           "casa": "FanDuel",
           "pinn_prob": 50.4,
           "mercado_nombre": "Los Angeles Angels (+1.5)"
@@ -19694,5 +19694,5 @@
       "movimiento": null
     }
   ],
-  "generado": "12:01:27"
+  "generado": "12:01:52"
 }
