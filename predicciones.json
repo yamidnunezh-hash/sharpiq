@@ -6545,7 +6545,7 @@
       "hora": "23:30",
       "fecha_evento": "2026-07-31",
       "cuotas": {
-        "1": 1.73,
+        "1": 1.74,
         "1_casa": "Betfair",
         "pinnacle_1": 1.68,
         "2": 5.1,
@@ -6789,13 +6789,13 @@
       "confianza": 82.0,
       "value_bets": {
         "victoria_local": {
-          "value": -0.006,
-          "ev_porcentaje": -0.6,
-          "ev_pinn": -0.6,
+          "value": -0.0,
+          "ev_porcentaje": -0.0,
+          "ev_pinn": -0.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.73,
+          "cuota": 1.74,
           "casa": "Betfair",
           "pinn_prob": 57.5
         },
@@ -7489,7 +7489,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Local",
         "prob": 57.5,
-        "ev": -0.6
+        "ev": -0.0
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -13515,8 +13515,8 @@
       "hora": "12:00",
       "fecha_evento": "2026-08-01",
       "cuotas": {
-        "1": 1.37,
-        "1_casa": "Betfair",
+        "1": 1.36,
+        "1_casa": "Pinnacle",
         "pinnacle_1": 1.36,
         "2": 9.0,
         "2_casa": "Betfair",
@@ -13685,14 +13685,14 @@
       "confianza": 86.4,
       "value_bets": {
         "victoria_local": {
-          "value": -0.042,
-          "ev_porcentaje": -4.2,
-          "ev_pinn": -4.2,
+          "value": -0.049,
+          "ev_porcentaje": -4.9,
+          "ev_pinn": -4.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.37,
-          "casa": "Betfair",
+          "cuota": 1.36,
+          "casa": "Pinnacle",
           "pinn_prob": 69.9
         },
         "victoria_visita": {
@@ -14501,8 +14501,8 @@
       "hora": "14:00",
       "fecha_evento": "2026-08-01",
       "cuotas": {
-        "1": 2.39,
-        "1_casa": "Pinnacle",
+        "1": 2.4,
+        "1_casa": "Betfair",
         "pinnacle_1": 2.39,
         "2": 3.15,
         "2_casa": "Betfair",
@@ -14659,14 +14659,14 @@
       "confianza": 81.9,
       "value_bets": {
         "victoria_local": {
-          "value": -0.036,
-          "ev_porcentaje": -3.6,
-          "ev_pinn": -3.6,
+          "value": -0.032,
+          "ev_porcentaje": -3.2,
+          "ev_pinn": -3.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.39,
-          "casa": "Pinnacle",
+          "cuota": 2.4,
+          "casa": "Betfair",
           "pinn_prob": 40.3
         },
         "victoria_visita": {
@@ -24578,7 +24578,7 @@
         "1": 1.66,
         "1_casa": "Unibet",
         "pinnacle_1": 1.61,
-        "2": 5.4,
+        "2": 5.5,
         "2_casa": "Betfair",
         "pinnacle_2": 5.35,
         "X": 4.4,
@@ -24744,13 +24744,13 @@
           "pinn_prob": 59.5
         },
         "victoria_visita": {
-          "value": -0.033,
-          "ev_porcentaje": -3.3,
-          "ev_pinn": -3.3,
+          "value": -0.015,
+          "ev_porcentaje": -1.5,
+          "ev_pinn": -1.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.4,
+          "cuota": 5.5,
           "casa": "Betfair",
           "pinn_prob": 17.9
         },
@@ -25502,7 +25502,7 @@
         "1": 3.25,
         "1_casa": "Betfair",
         "pinnacle_1": 3.12,
-        "2": 2.18,
+        "2": 2.2,
         "2_casa": "Betfair",
         "pinnacle_2": 2.16,
         "X": 3.89,
@@ -25668,13 +25668,13 @@
           "pinn_prob": 30.8
         },
         "victoria_visita": {
-          "value": -0.03,
-          "ev_porcentaje": -3.0,
-          "ev_pinn": -3.0,
+          "value": -0.021,
+          "ev_porcentaje": -2.1,
+          "ev_pinn": -2.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.18,
+          "cuota": 2.2,
           "casa": "Betfair",
           "pinn_prob": 44.5
         },
@@ -26598,7 +26598,7 @@
         "Over 7.5": 1.95,
         "Under 7.5": 1.95,
         "St. Louis Cardinals (+1.5)": 1.76,
-        "Toronto Blue Jays (-1.5)": 2.15
+        "Toronto Blue Jays (-1.5)": 2.14
       },
       "probabilidades": {
         "St. Louis Cardinals": 36.8,
@@ -26667,13 +26667,13 @@
           "mercado_nombre": "St. Louis Cardinals (+1.5)"
         },
         "spread_toronto_blue_jays_m1_5": {
-          "value": -0.044,
-          "ev_porcentaje": -4.4,
-          "ev_pinn": -4.4,
+          "value": -0.049,
+          "ev_porcentaje": -4.9,
+          "ev_pinn": -4.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.15,
+          "cuota": 2.14,
           "casa": "FanDuel",
           "pinn_prob": 44.4,
           "mercado_nombre": "Toronto Blue Jays (-1.5)"
@@ -27876,5 +27876,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:01:32"
+  "generado": "20:02:05"
 }
