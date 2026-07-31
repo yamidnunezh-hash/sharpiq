@@ -18,7 +18,7 @@ const PROXIMOS_EVENTOS = [
     cuota_betplay: "",
     cuota_justa:   "",
     valor_real:    "",
-    resultado:  "pendiente"
+    resultado:  "loss"
   },
   {
     fecha:      "29/07/26",
@@ -2896,6 +2896,15 @@ const PROXIMOS_EVENTOS = [
 ];
 
 const PREDICCIONES_HISTORIAL = [
+  {
+    fecha:      "30/07/26",
+    partido:    "Corinthians vs Atletico Paranaense",
+    liga:       "Brasileirao",
+    prediccion: "Victoria Local",
+    cuota:      "2.38",
+    prob:       "49",
+    resultado:  "loss"
+  },
   {
     fecha:      "29/07/26",
     partido:    "Dallas Wings vs Atlanta Dream",
