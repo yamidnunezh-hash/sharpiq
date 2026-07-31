@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "O'Higgins",
-   "visitante": "Boca Juniors",
-   "gole": "F. González 24.9%",
-   "remates": "O'Higgins: A. Castillo 2.29 remates totales (0.86 a puerta), F. González 1.71 remates totales (0.86 a puerta), A. Robledo 1.67 remates totales (0.67 a puerta)",
-   "tarjetas": "O'Higgins: B. Schamine 0.5 amarillas/partido, M. Brizuela 0.4 amarillas/partido, L. Pavez 0.33 amarillas/partido",
-   "asistencias": "O'Higgins: F. González 0.57 asistencias/partido, B. Yáñez 0.2 asistencias/partido, Felipe Andrés Faúndez González 0.14 asistencias/partido",
-   "faltas": "O'Higgins: A. Castillo 2.0 faltas/partido, M. Sarrafiore 1.43 faltas/partido, F. González 1.29 faltas/partido",
-   "quites": "O'Higgins: J. Leiva 2.71 quites/partido, M. Sarrafiore 2.14 quites/partido, Felipe Andrés Faúndez González 2.0 quites/partido"
-  },
-  {
    "local": "New York City FC",
    "visitante": "Toronto FC",
    "gole": "N. Fernández Mercau 50.6% &middot; J. Hall 41.1%",
@@ -19,6 +9,166 @@
    "asistencias": "New York City FC: M. Moralez 0.43 asistencias/partido, A. Ojeda 0.24 asistencias/partido, N. Fernández Mercau 0.18 asistencias/partido | Toronto FC: D. Mihailović 0.29 asistencias/partido, J. Osorio 0.19 asistencias/partido, Alonso Coello 0.18 asistencias/partido",
    "faltas": "New York City FC: N. Fernández Mercau 2.12 faltas/partido, A. O&apos;Neill 1.64 faltas/partido, K. Parks 1.43 faltas/partido | Toronto FC: M. Cimermancic 3.0 faltas/partido, R. Laryea 1.67 faltas/partido, Matheus Pereira 1.5 faltas/partido",
    "quites": "New York City FC: J. Sands 3.0 quites/partido, A. O&apos;Neill 2.73 quites/partido, Nico Cavallo 2.12 quites/partido | Toronto FC: R. Edwards 3.33 quites/partido, J. Cifuentes 2.0 quites/partido, N. Gomis 2.0 quites/partido"
+  },
+  {
+   "local": "Puebla",
+   "visitante": "Guadalajara Chivas",
+   "gole": "",
+   "remates": "Puebla: F. Almada 1.5 remates totales (0.5 a puerta), F. Monárrez 1.0 remates totales (0.5 a puerta), A. Herrera 0.5 remates totales (0.5 a puerta) | Guadalajara Chivas: B. González 2.5 remates totales (1.5 a puerta), A. González 2.0 remates totales (1.0 a puerta), R. Alvarado 1.5 remates totales (1.0 a puerta)",
+   "tarjetas": "Puebla: F. Monárrez 0.5 amarillas/partido, A. Ramírez 0.5 amarillas/partido, E. Mustre 0.5 amarillas/partido | Guadalajara Chivas: R. Alvarado 0.5 amarillas/partido, J. Carrillo 0.5 amarillas/partido, R. Marín 0.5 amarillas/partido",
+   "asistencias": "Puebla: A. Herrera 1.0 asistencias/partido | Guadalajara Chivas: R. Marín 0.5 asistencias/partido",
+   "faltas": "Puebla: A. Herrera 2.5 faltas/partido, F. Monárrez 2.0 faltas/partido, E. Gómez 1.5 faltas/partido | Guadalajara Chivas: D. Aguirre 2.5 faltas/partido, L. Romo 2.5 faltas/partido, D. Campillo 1.5 faltas/partido",
+   "quites": "Puebla: E. Gómez 2.5 quites/partido, S. Sanabria 2.5 quites/partido, F. Monárrez 2.0 quites/partido | Guadalajara Chivas: D. Aguirre 2.5 quites/partido, L. Romo 2.5 quites/partido, R. Alvarado 2.5 quites/partido"
+  },
+  {
+   "local": "Atletico San Luis",
+   "visitante": "Club Tijuana",
+   "gole": "Rafa Llorente 63.2% &middot; Mourad 63.2%",
+   "remates": "Atletico San Luis: D. Rodríguez 2.5 remates totales (1.5 a puerta), Rafa Llorente 2.5 remates totales (2.0 a puerta), S. Salles-Lamonge 2.0 remates totales (0.5 a puerta) | Club Tijuana: Mourad 2.0 remates totales (1.5 a puerta), Y. Padilla 1.5 remates totales (1.0 a puerta), A. Gómez 1.0 remates totales (1.0 a puerta)",
+   "tarjetas": "Atletico San Luis: Robson Bambu 1.0 amarillas/partido, Rafa Llorente 0.5 amarillas/partido | Club Tijuana: J. Porozo 0.5 amarillas/partido, Adonis Preciado 0.5 amarillas/partido",
+   "asistencias": "Atletico San Luis: R. Torres 0.5 asistencias/partido, L. Flores 0.5 asistencias/partido | Club Tijuana: Y. Padilla 0.5 asistencias/partido",
+   "faltas": "Atletico San Luis: Robson Bambu 3.0 faltas/partido, S. Salles-Lamonge 2.0 faltas/partido, Rafa Llorente 1.5 faltas/partido | Club Tijuana: I. Tona 2.0 faltas/partido, Mourad 2.0 faltas/partido, R. Árciga 1.5 faltas/partido",
+   "quites": "Atletico San Luis: E.  Águila 3.0 quites/partido, Ó. Macías 2.0 quites/partido, S. Salles-Lamonge 2.0 quites/partido | Club Tijuana: I. Tona 3.0 quites/partido, R. Árciga 3.0 quites/partido, Adonis Preciado 3.0 quites/partido"
+  },
+  {
+   "local": "FC Juarez",
+   "visitante": "U.N.A.M. - Pumas",
+   "gole": "S. Córdova 39.3%",
+   "remates": "FC Juarez: Ricardinho 1.5 remates totales (0.0 a puerta), J. Murillo 1.0 remates totales (0.0 a puerta), Ó. Estupiñán 1.0 remates totales (0.0 a puerta) | U.N.A.M. - Pumas: R. López 1.0 remates totales (0.0 a puerta), S. Córdova 1.0 remates totales (0.5 a puerta), R. Morales 1.0 remates totales (0.0 a puerta)",
+   "tarjetas": "FC Juarez: H. Ortega 0.5 amarillas/partido, Guilherme Castilho 0.5 amarillas/partido, J. Torres 0.5 amarillas/partido | U.N.A.M. - Pumas: R. López 0.5 amarillas/partido, P. Vite 0.5 amarillas/partido",
+   "asistencias": "U.N.A.M. - Pumas: R. López 0.5 asistencias/partido, R. Morales 0.5 asistencias/partido",
+   "faltas": "FC Juarez: Guilherme Castilho 2.5 faltas/partido, H. Ortega 1.5 faltas/partido, Ricardinho 1.5 faltas/partido | U.N.A.M. - Pumas: Á. Angulo 2.0 faltas/partido, Juninho 2.0 faltas/partido, P. Vite 1.5 faltas/partido",
+   "quites": "FC Juarez: D. García 3.5 quites/partido, J. Aquino 2.0 quites/partido, H. Ortega 1.5 quites/partido | U.N.A.M. - Pumas: P. Vite 2.5 quites/partido, Juninho 2.0 quites/partido, V. Arteaga 2.0 quites/partido"
+  },
+  {
+   "local": "Estudiantes de Rio Cuarto",
+   "visitante": "Banfield",
+   "gole": "Tiziano Perrota 33.0% &middot; M. Méndez 31.3%",
+   "remates": "Estudiantes de Rio Cuarto: A. Quiroga 2.5 remates totales (1.0 a puerta), Y. Moreno 2.0 remates totales (0.5 a puerta), M. Bajamich 1.12 remates totales (0.56 a puerta) | Banfield: D. Zalazar 1.79 remates totales (0.5 a puerta), Tiziano Perrota 1.73 remates totales (0.87 a puerta), M. Méndez 1.56 remates totales (0.75 a puerta)",
+   "tarjetas": "Estudiantes de Rio Cuarto: A. Quiroga 0.5 amarillas/partido, M. Valenti 0.46 amarillas/partido, T. Gonzalez 0.35 amarillas/partido | Banfield: T. Adoryán 0.38 amarillas/partido, J. Alfaro 0.33 amarillas/partido, Santiago Esquivel 0.3 amarillas/partido",
+   "asistencias": "Estudiantes de Rio Cuarto: R. Lozano 0.14 asistencias/partido, G. Maffini 0.08 asistencias/partido, M. Valenti 0.08 asistencias/partido | Banfield: S. López 0.22 asistencias/partido, I. Abraham 0.22 asistencias/partido, D. Zalazar 0.21 asistencias/partido",
+   "faltas": "Estudiantes de Rio Cuarto: T. Gonzalez 1.82 faltas/partido, R. Lozano 1.29 faltas/partido, T. Ostchega 1.18 faltas/partido | Banfield: L. Ríos 2.0 faltas/partido, I. Pais 1.93 faltas/partido, T. Adoryán 1.92 faltas/partido",
+   "quites": "Estudiantes de Rio Cuarto: F. Cobos 2.6 quites/partido, T. Gonzalez 2.12 quites/partido, G. Gonzalez 2.0 quites/partido | Banfield: J. Alfaro 3.0 quites/partido, I. Pais 2.79 quites/partido, T. Adoryán 2.46 quites/partido"
+  },
+  {
+   "local": "Gimnasia M.",
+   "visitante": "Union Santa Fe",
+   "gole": "C. Tarragona 37.7% &middot; M. Torres 34.4% &middot; A. Módica 28.3%",
+   "remates": "Gimnasia M.: F. Lencioni 1.72 remates totales (0.56 a puerta), A. Módica 1.6 remates totales (0.93 a puerta), U. Sánchez 1.0 remates totales (0.38 a puerta) | Union Santa Fe: M. Estigarribia 2.82 remates totales (1.12 a puerta), C. Tarragona 2.05 remates totales (1.32 a puerta), M. Del Blanco 1.56 remates totales (0.61 a puerta)",
+   "tarjetas": "Gimnasia M.: L. Petruchi 0.5 amarillas/partido, J. Franco 0.29 amarillas/partido, F. Antonini 0.29 amarillas/partido | Union Santa Fe: M. Estigarribia 0.41 amarillas/partido, L. Vargas 0.39 amarillas/partido, M. Pittón 0.28 amarillas/partido",
+   "asistencias": "Gimnasia M.: I. Sabatini 0.29 asistencias/partido, F. Lencioni 0.28 asistencias/partido, L. Cingolani 0.11 asistencias/partido | Union Santa Fe: J. Palacios 0.33 asistencias/partido, R. Profini 0.28 asistencias/partido, E. Álvarez 0.25 asistencias/partido",
+   "faltas": "Gimnasia M.: F. Antonini 1.64 faltas/partido, N. Linares 1.62 faltas/partido, I. Sabatini 1.57 faltas/partido | Union Santa Fe: M. Estigarribia 1.65 faltas/partido, C. Tarragona 1.47 faltas/partido, J. Palacios 1.33 faltas/partido",
+   "quites": "Gimnasia M.: F. Lencioni 1.83 quites/partido, U. Sánchez 1.77 quites/partido, D. Mondino 1.77 quites/partido | Union Santa Fe: L. Vargas 2.11 quites/partido, J. Ludueña 1.67 quites/partido, L. Menossi 1.67 quites/partido"
+  },
+  {
+   "local": "Belgrano Cordoba",
+   "visitante": "Argentinos JRS",
+   "gole": "N. Fernández 22.1%",
+   "remates": "Belgrano Cordoba: L. Zelarayán 1.68 remates totales (0.58 a puerta), R. Hernandes 1.43 remates totales (0.57 a puerta), N. Fernández 1.4 remates totales (0.85 a puerta) | Argentinos JRS: G. Verón 2.67 remates totales (1.33 a puerta), T. Molina 2.12 remates totales (0.94 a puerta), H. López 1.56 remates totales (0.81 a puerta)",
+   "tarjetas": "Belgrano Cordoba: A. Falcon 0.5 amarillas/partido, R. Hernandes 0.43 amarillas/partido, Alcides Benítez 0.31 amarillas/partido | Argentinos JRS: F. Paredes 0.5 amarillas/partido, R. Riquelme 0.46 amarillas/partido, G. Florentín 0.4 amarillas/partido",
+   "asistencias": "Belgrano Cordoba: L. Passerini 0.4 asistencias/partido, N. Fernández 0.2 asistencias/partido, E. Rigoni 0.17 asistencias/partido | Argentinos JRS: H. López 0.19 asistencias/partido, N. Oroz 0.15 asistencias/partido, L. Lozano 0.14 asistencias/partido",
+   "faltas": "Belgrano Cordoba: R. Hernandes 1.71 faltas/partido, L. Passerini 1.6 faltas/partido, A. Sánchez 1.55 faltas/partido | Argentinos JRS: T. Molina 1.19 faltas/partido, I. Morales 1.13 faltas/partido, D. Porcel 1.06 faltas/partido",
+   "quites": "Belgrano Cordoba: A. Sánchez 2.75 quites/partido, Alcides Benítez 2.75 quites/partido, R. Hernandes 2.29 quites/partido | Argentinos JRS: K. Coronel 2.33 quites/partido, L. Lozano 2.29 quites/partido, C. Bravo 1.67 quites/partido"
+  },
+  {
+   "local": "Estudiantes L.P.",
+   "visitante": "Defensa Y Justicia",
+   "gole": "",
+   "remates": "Estudiantes L.P.: G. Carrillo 2.15 remates totales (1.23 a puerta), C. Medina 1.2 remates totales (0.6 a puerta), F. Farías 1.1 remates totales (0.4 a puerta) | Defensa Y Justicia: L. Fernández 2.5 remates totales (1.5 a puerta), C. Pérez 2.0 remates totales (0.2 a puerta), J. Gutiérrez 1.44 remates totales (0.72 a puerta)",
+   "tarjetas": "Estudiantes L.P.: J. Pereyra 0.5 amarillas/partido, L. González 0.47 amarillas/partido, E. Meza 0.38 amarillas/partido | Defensa Y Justicia: F. Román 0.5 amarillas/partido, D. Martínez 0.38 amarillas/partido, D. Fernández 0.29 amarillas/partido",
+   "asistencias": "Estudiantes L.P.: J. Burgos 0.22 asistencias/partido, C. Medina 0.2 asistencias/partido, B. Aguirre 0.18 asistencias/partido | Defensa Y Justicia: A. Molinas 0.27 asistencias/partido, J. Gutiérrez 0.17 asistencias/partido, D. Martínez 0.08 asistencias/partido",
+   "faltas": "Estudiantes L.P.: J. Pereyra 2.0 faltas/partido, E. Meza 1.31 faltas/partido, Lucas Ezequiel Piovi 1.31 faltas/partido | Defensa Y Justicia: C. Pérez 1.4 faltas/partido, D. Martínez 1.38 faltas/partido, L. Souto 1.12 faltas/partido",
+   "quites": "Estudiantes L.P.: Lucas Ezequiel Piovi 2.94 quites/partido, C. Medina 2.2 quites/partido, E. Meza 2.08 quites/partido | Defensa Y Justicia: D. Fernández 3.0 quites/partido, D. Martínez 2.08 quites/partido, L. Fernández 2.0 quites/partido"
+  },
+  {
+   "local": "Club Queretaro",
+   "visitante": "Tigres UANL",
+   "gole": "A. Ávila 60.1% &middot; D. Sánchez 39.3%",
+   "remates": "Club Queretaro: A. Ávila 3.0 remates totales (2.0 a puerta), M. Coronel 2.5 remates totales (0.5 a puerta), Carlo Adriano 1.5 remates totales (0.5 a puerta) | Tigres UANL: J. Brunetta 2.5 remates totales (0.5 a puerta), O. Herrera 2.5 remates totales (0.5 a puerta), J. García 1.0 remates totales (0.5 a puerta)",
+   "tarjetas": "Club Queretaro: B. Duarte 1.0 amarillas/partido, L. Abascia 1.0 amarillas/partido, D. Reyes 0.5 amarillas/partido | Tigres UANL: N. Guzmán 0.5 amarillas/partido, V. Loroña 0.5 amarillas/partido, F. Gorriarán 0.5 amarillas/partido",
+   "asistencias": "Club Queretaro: B. Duarte 0.5 asistencias/partido | Tigres UANL: Joaquim 1.0 asistencias/partido, J. Brunetta 0.5 asistencias/partido",
+   "faltas": "Club Queretaro: B. Duarte 2.5 faltas/partido, A. Ávila 2.0 faltas/partido, L. Abascia 1.5 faltas/partido | Tigres UANL: F. Gorriarán 3.0 faltas/partido, J. García 2.5 faltas/partido, Rômulo 2.5 faltas/partido",
+   "quites": "Club Queretaro: L. Abascia 5.0 quites/partido, S. Homenchenko 5.0 quites/partido, D. Parra 2.5 quites/partido | Tigres UANL: J. García 3.0 quites/partido, D. Lainez 2.5 quites/partido, F. Gorriarán 2.0 quites/partido"
+  },
+  {
+   "local": "Inter Miami",
+   "visitante": "Columbus Crew",
+   "gole": "L. Messi 60.5% &middot; L. Suárez 49.9%",
+   "remates": "Inter Miami: L. Messi 4.29 remates totales (2.5 a puerta), L. Suárez 2.0 remates totales (1.31 a puerta), G. Berterame 1.82 remates totales (1.06 a puerta) | Columbus Crew: W. Abou Ali 2.0 remates totales (1.29 a puerta), D. Rossi 1.93 remates totales (0.8 a puerta), M. Arfsten 1.12 remates totales (0.59 a puerta)",
+   "tarjetas": "Inter Miami: T. Segovia 0.5 amarillas/partido, I. Fray 0.38 amarillas/partido, T. Allende 0.33 amarillas/partido | Columbus Crew: R. Camacho 0.29 amarillas/partido, T. Habroune 0.19 amarillas/partido, S. Zawadzki 0.18 amarillas/partido",
+   "asistencias": "Inter Miami: L. Messi 0.5 asistencias/partido, T. Segovia 0.38 asistencias/partido, Mateo Silvetti 0.33 asistencias/partido | Columbus Crew: M. Farsi 0.25 asistencias/partido, M. Arfsten 0.24 asistencias/partido, W. Abou Ali 0.14 asistencias/partido",
+   "faltas": "Inter Miami: T. Segovia 1.81 faltas/partido, Y. Bright 1.71 faltas/partido, D. Ruíz 1.5 faltas/partido | Columbus Crew: André Gomes 1.5 faltas/partido, T. Karumanchi 1.5 faltas/partido, T. Habroune 1.31 faltas/partido",
+   "quites": "Inter Miami: Y. Bright 3.57 quites/partido, G. Luján 1.92 quites/partido, Micael 1.81 quites/partido | Columbus Crew: T. Habroune 2.69 quites/partido, S. Zawadzki 2.0 quites/partido, André Gomes 2.0 quites/partido"
+  },
+  {
+   "local": "Vancouver Whitecaps",
+   "visitante": "Los Angeles FC",
+   "gole": "B. White 46.5% &middot; D. Bouanga 44.5%",
+   "remates": "Vancouver Whitecaps: B. White 3.0 remates totales (1.75 a puerta), R. Gauld 2.5 remates totales (2.0 a puerta), Bruno Steven Caicedo Quiñonez 2.0 remates totales (0.89 a puerta) | Los Angeles FC: D. Bouanga 2.47 remates totales (1.47 a puerta), Son Heung-Min 1.69 remates totales (1.0 a puerta), D. Martínez 1.06 remates totales (0.65 a puerta)",
+   "tarjetas": "Vancouver Whitecaps: A. Cubas 0.46 amarillas/partido, É. Ocampo 0.4 amarillas/partido, J. Ngando 0.33 amarillas/partido | Los Angeles FC: R. Raposo 0.25 amarillas/partido, D. Bouanga 0.24 amarillas/partido, Sergi Palencia 0.22 amarillas/partido",
+   "asistencias": "Vancouver Whitecaps: Bruno Steven Caicedo Quiñonez 0.33 asistencias/partido, S. Berhalter 0.29 asistencias/partido, K. Cabrera 0.22 asistencias/partido | Los Angeles FC: Son Heung-Min 0.5 asistencias/partido, J. Shaffelburg 0.25 asistencias/partido, D. Bouanga 0.18 asistencias/partido",
+   "faltas": "Vancouver Whitecaps: S. Berhalter 2.14 faltas/partido, E. Sabbi 1.55 faltas/partido, A. Cubas 1.54 faltas/partido | Los Angeles FC: D. Bouanga 1.94 faltas/partido, Sergi Palencia 1.56 faltas/partido, A. Smolyakov 1.0 faltas/partido",
+   "quites": "Vancouver Whitecaps: A. Cubas 4.77 quites/partido, S. Berhalter 2.29 quites/partido, É. Ocampo 2.2 quites/partido | Los Angeles FC: Y. Cheberko 2.0 quites/partido, M. Delgado 1.71 quites/partido, S. Eustáquio 1.7 quites/partido"
+  },
+  {
+   "local": "Philadelphia Union",
+   "visitante": "Atlanta United FC",
+   "gole": "M. Iloski 41.1%",
+   "remates": "Philadelphia Union: M. Iloski 2.65 remates totales (1.35 a puerta), Q. Sullivan 2.0 remates totales (1.0 a puerta), B. Damiani 1.59 remates totales (0.41 a puerta) | Atlanta United FC: M. Almirón 2.0 remates totales (1.09 a puerta), S. Lobzhanidze 1.31 remates totales (0.85 a puerta), A. Miranchuk 1.31 remates totales (0.81 a puerta)",
+   "tarjetas": "Philadelphia Union: O. Makhanya 0.38 amarillas/partido, J. Sery Larsen 0.36 amarillas/partido, D. Jean-Jacques 0.31 amarillas/partido | Atlanta United FC: T. Jacob 0.43 amarillas/partido, William Reilly 0.43 amarillas/partido, S. Gregersen 0.27 amarillas/partido",
+   "asistencias": "Philadelphia Union: K. Wagner 0.5 asistencias/partido, F. Westfield 0.31 asistencias/partido, A. Bedoya 0.22 asistencias/partido | Atlanta United FC: A. Miranchuk 0.19 asistencias/partido, M. Almirón 0.18 asistencias/partido, E. Latte Lath 0.14 asistencias/partido",
+   "faltas": "Philadelphia Union: J. Sery Larsen 2.18 faltas/partido, B. Damiani 1.53 faltas/partido, P. Ndinga Ossibadjouo 1.5 faltas/partido | Atlanta United FC: R. Hernández 2.25 faltas/partido, J. Alonso 2.0 faltas/partido, C. Sanchez 1.81 faltas/partido",
+   "quites": "Philadelphia Union: F. Sundstrom 2.5 quites/partido, O. Makhanya 2.31 quites/partido, N. Harriel 2.18 quites/partido | Atlanta United FC: M. Galarza 2.6 quites/partido, T. Jacob 2.43 quites/partido, T. Muyumba 2.29 quites/partido"
+  },
+  {
+   "local": "New York Red Bulls",
+   "visitante": "Orlando City SC",
+   "gole": "M. Ojeda 52.0% &middot; N. Fernández Mercau 50.6% &middot; J. Hall 41.1%",
+   "remates": "New York Red Bulls: J. Ruvalcaba 1.71 remates totales (1.0 a puerta), J. Hall 1.59 remates totales (0.94 a puerta), C. Cowell 1.4 remates totales (0.93 a puerta) | Orlando City SC: M. Ojeda 2.6 remates totales (1.6 a puerta), A. Griezmann 2.5 remates totales (0.5 a puerta), Justin Ellis 1.3 remates totales (0.8 a puerta)",
+   "tarjetas": "New York Red Bulls: Joyeux Masanka Bungi 0.5 amarillas/partido, O. Valencia 0.45 amarillas/partido, R. Donkor 0.31 amarillas/partido | Orlando City SC: Adrián Marín 0.5 amarillas/partido, I. Gómez 0.5 amarillas/partido, E. Atuesta 0.42 amarillas/partido",
+   "asistencias": "New York Red Bulls: R. Donkor 0.25 asistencias/partido, E. Forsberg 0.25 asistencias/partido, C. Cowell 0.2 asistencias/partido | Orlando City SC: Adrián Marín 0.5 asistencias/partido, Justin Ellis 0.3 asistencias/partido, E. Atuesta 0.25 asistencias/partido",
+   "faltas": "New York Red Bulls: A. Mehmeti 1.76 faltas/partido, R. Donkor 1.56 faltas/partido, Joyeux Masanka Bungi 1.5 faltas/partido | Orlando City SC: Adrián Marín 2.5 faltas/partido, B. Ojeda 1.41 faltas/partido, Tiago 1.2 faltas/partido",
+   "quites": "New York Red Bulls: Joyeux Masanka Bungi 3.5 quites/partido, A. Mehmeti 2.06 quites/partido, J. Che 1.9 quites/partido | Orlando City SC: Adrián Marín 4.0 quites/partido, E. Atuesta 2.17 quites/partido, G. Dorsey 1.79 quites/partido"
+  },
+  {
+   "local": "FC Cincinnati",
+   "visitante": "San Jose Earthquakes",
+   "gole": "P. Judd 49.7% &middot; K. Denkey 49.7% &middot; M. Ingvartsen 47.6%",
+   "remates": "San Jose Earthquakes: P. Judd 2.69 remates totales (1.62 a puerta), T. Werner 1.78 remates totales (1.33 a puerta), O. Bouda 1.41 remates totales (0.76 a puerta)",
+   "tarjetas": "San Jose Earthquakes: D. Jones 0.4 amarillas/partido, B. Kikanovic 0.36 amarillas/partido, P. Judd 0.31 amarillas/partido",
+   "asistencias": "San Jose Earthquakes: N. Adimabua 0.5 asistencias/partido, N. Tsakiris 0.36 asistencias/partido, T. Werner 0.33 asistencias/partido",
+   "faltas": "San Jose Earthquakes: R. Vieira 1.86 faltas/partido, P. Judd 1.56 faltas/partido, N. Adimabua 1.5 faltas/partido",
+   "quites": "San Jose Earthquakes: D. Jones 2.4 quites/partido, Beau Leroux 2.12 quites/partido, R. Roberts 1.69 quites/partido"
+  },
+  {
+   "local": "DC United",
+   "visitante": "Nashville SC",
+   "gole": "S. Surridge 59.7%",
+   "remates": "DC United: L. Munteanu 2.23 remates totales (1.15 a puerta), T. Baribo 1.71 remates totales (0.93 a puerta), J. Hopkins 1.12 remates totales (0.76 a puerta) | Nashville SC: H. Mukhtar 1.82 remates totales (1.12 a puerta), S. Surridge 1.64 remates totales (1.45 a puerta), W. Madrigal 1.29 remates totales (0.57 a puerta)",
+   "tarjetas": "DC United: A. Dozzell 0.5 amarillas/partido, J. Stroud 0.27 amarillas/partido, S. Hefti 0.25 amarillas/partido | Nashville SC: D. Lovitz 0.24 amarillas/partido, A. Najar 0.21 amarillas/partido, B. Acosta 0.2 amarillas/partido",
+   "asistencias": "DC United: N. Ordaz 0.5 asistencias/partido, K. Kurokawa 0.24 asistencias/partido, Peglow 0.18 asistencias/partido | Nashville SC: C. Espinoza 0.43 asistencias/partido, P. Yazbek 0.3 asistencias/partido, H. Mukhtar 0.24 asistencias/partido",
+   "faltas": "DC United: Peglow 1.59 faltas/partido, Gabriel Pirani 1.57 faltas/partido, L. Munteanu 1.54 faltas/partido | Nashville SC: S. Mohammed 1.43 faltas/partido, D. Lovitz 1.24 faltas/partido, W. Madrigal 1.14 faltas/partido",
+   "quites": "DC United: Peglow 2.71 quites/partido, S. Hefti 2.69 quites/partido, M. Peltola 2.53 quites/partido | Nashville SC: M. Woledzi 1.82 quites/partido, E. Tagseth 1.67 quites/partido, J. Palacios 1.62 quites/partido"
+  },
+  {
+   "local": "CF Montreal",
+   "visitante": "New England Revolution",
+   "gole": "N. Fernández Mercau 50.6% &middot; P. Owusu 43.0%",
+   "remates": "CF Montreal: H. Synchuk 1.82 remates totales (0.91 a puerta), P. Owusu 1.81 remates totales (1.0 a puerta), W. Carmona 1.25 remates totales (0.67 a puerta) | New England Revolution: D. Turgeman 1.5 remates totales (0.75 a puerta), P. Miller 1.43 remates totales (0.64 a puerta), Carles Gil 1.25 remates totales (0.75 a puerta)",
+   "tarjetas": "CF Montreal: D. Pereira 0.5 amarillas/partido, P. Owusu 0.38 amarillas/partido, B. Craig 0.33 amarillas/partido | New England Revolution: W. Harris 0.5 amarillas/partido, B. Raines 0.4 amarillas/partido, B. Ceballos 0.33 amarillas/partido",
+   "asistencias": "CF Montreal: P. Owusu 0.38 asistencias/partido, M. Longstaff 0.18 asistencias/partido, W. Carmona 0.17 asistencias/partido | New England Revolution: L. Langoni 0.43 asistencias/partido, D. Turgeman 0.25 asistencias/partido, Marcos Zambrano-Delgado 0.25 asistencias/partido",
+   "faltas": "CF Montreal: P. Owusu 2.69 faltas/partido, N. Streit 2.0 faltas/partido, J. Neal 1.38 faltas/partido | New England Revolution: B. Raines 2.53 faltas/partido, A. Yusuf 1.5 faltas/partido, B. Ceballos 1.44 faltas/partido",
+   "quites": "CF Montreal: D. Bugaj 1.92 quites/partido, E. Morales 1.85 quites/partido, T. Avilés 1.75 quites/partido | New England Revolution: M. Fofana 1.87 quites/partido, A. Yusuf 1.81 quites/partido, W. Sands 1.69 quites/partido"
+  },
+  {
+   "local": "Racing Club",
+   "visitante": "Tigre",
+   "gole": "D. Romero 44.2%",
+   "remates": "Racing Club: A. Martínez 1.5 remates totales (0.5 a puerta), M. Miljevic 1.31 remates totales (0.69 a puerta), D. Pizarro 1.0 remates totales (1.0 a puerta) | Tigre: D. Romero 2.42 remates totales (1.17 a puerta), I. Russo 1.82 remates totales (0.88 a puerta), P. Martínez 1.75 remates totales (0.83 a puerta)",
+   "tarjetas": "Racing Club: M. Di Cesare 0.53 amarillas/partido, J. Nardoni 0.5 amarillas/partido, T. Rubio 0.5 amarillas/partido | Tigre: J. Villalba 1.0 amarillas/partido, V. Moreno 0.44 amarillas/partido, G. Piñeiro 0.43 amarillas/partido",
+   "asistencias": "Racing Club: D. Pizarro 0.5 asistencias/partido, G. Rojas 0.29 asistencias/partido, S. Solari 0.21 asistencias/partido | Tigre: I. Russo 0.18 asistencias/partido, D. Romero 0.17 asistencias/partido, A. Barrionuevo 0.12 asistencias/partido",
+   "faltas": "Racing Club: A. Martínez 1.75 faltas/partido, J. Nardoni 1.5 faltas/partido, B. Gallego 1.5 faltas/partido | Tigre: G. Piñeiro 2.14 faltas/partido, S. López 1.5 faltas/partido, B. Leyes 1.33 faltas/partido",
+   "quites": "Racing Club: E. Cannavo 3.2 quites/partido, S. Sosa 1.8 quites/partido, B. Zuculini 1.75 quites/partido | Tigre: V. Moreno 2.44 quites/partido, N. Banegas 2.0 quites/partido, B. Leyes 1.93 quites/partido"
   }
  ]
 }
