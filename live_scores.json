@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T06:32:04Z",
+  "updated": "2026-07-31T09:29:48Z",
   "live": [],
   "upcoming": [
     {
@@ -171,6 +171,34 @@
       "score_away": null
     },
     {
+      "id": "fd2cf2d3dbd1656d7b968673de5f4cad",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Diego Padres",
+      "away": "San Francisco Giants",
+      "fecha": "31/07/26",
+      "hora": "20:46 COT",
+      "ts": 1785530760,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "7d1b7a2bed8c47d5ecf945ba07f77d56",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Dodgers",
+      "away": "Boston Red Sox",
+      "fecha": "31/07/26",
+      "hora": "21:11 COT",
+      "ts": 1785532260,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
       "id": "0b314c94b53dbed0719087c29b520ace",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -180,34 +208,6 @@
       "fecha": "31/07/26",
       "hora": "21:11 COT",
       "ts": 1785532260,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "81e8bc3d9f4b5ffab9f429df283e5a86",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Operario PR",
-      "away": "São Bernardo",
-      "fecha": "07/08/26",
-      "hora": "17:30 COT",
-      "ts": 1786123800,
-      "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
-    {
-      "id": "ac6fcdb85ed59c7d424a6c6a46dcd0af",
-      "sport": "soccer_brazil_serie_b",
-      "liga": "Brasileirao B",
-      "emoji": "⚽",
-      "home": "Ceará",
-      "away": "Ponte Preta",
-      "fecha": "07/08/26",
-      "hora": "18:30 COT",
-      "ts": 1786127400,
       "completed": false,
       "score_home": null,
       "score_away": null
