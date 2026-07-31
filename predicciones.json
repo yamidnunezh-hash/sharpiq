@@ -15,7 +15,7 @@
         "2": 5.9,
         "2_casa": "Betfair",
         "pinnacle_2": 5.54,
-        "1": 1.65,
+        "1": 1.64,
         "1_casa": "Betfair",
         "pinnacle_1": 1.61,
         "X": 4.2,
@@ -181,13 +181,13 @@
           "pinn_prob": 17.3
         },
         "victoria_local": {
-          "value": -0.018,
-          "ev_porcentaje": -1.8,
-          "ev_pinn": -1.8,
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.65,
+          "cuota": 1.64,
           "casa": "Betfair",
           "pinn_prob": 59.5
         },
@@ -10778,10 +10778,10 @@
       "hora": "17:00",
       "fecha_evento": "2026-07-31",
       "cuotas": {
-        "2": 5.5,
+        "2": 5.4,
         "2_casa": "Betfair",
         "pinnacle_2": 5.1,
-        "1": 1.64,
+        "1": 1.65,
         "1_casa": "Betfair",
         "pinnacle_1": 1.63,
         "X": 4.6,
@@ -10944,24 +10944,24 @@
       "confianza": 86.7,
       "value_bets": {
         "victoria_visita": {
-          "value": 0.041,
-          "ev_porcentaje": 4.1,
-          "ev_pinn": 4.1,
+          "value": 0.022,
+          "ev_porcentaje": 2.2,
+          "ev_pinn": 2.2,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 5.5,
+          "cuota": 5.4,
           "casa": "Betfair",
           "pinn_prob": 18.9
         },
         "victoria_local": {
-          "value": -0.029,
-          "ev_porcentaje": -2.9,
-          "ev_pinn": -2.9,
+          "value": -0.023,
+          "ev_porcentaje": -2.3,
+          "ev_pinn": -2.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.64,
+          "cuota": 1.65,
           "casa": "Betfair",
           "pinn_prob": 59.2
         },
@@ -11395,7 +11395,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Visitante",
         "prob": 18.9,
-        "ev": 4.1
+        "ev": 2.2
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -30246,5 +30246,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:01:38"
+  "generado": "16:02:05"
 }
