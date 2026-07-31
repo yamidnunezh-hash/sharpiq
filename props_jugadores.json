@@ -1,51 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Corinthians",
-   "visitante": "Atletico Paranaense",
-   "gole": "K. Viveros 46.8%"
-  },
-  {
-   "local": "Central Cordoba de Santiago",
-   "visitante": "Atletico Tucuman",
-   "gole": "Á. Di María 26.8% &middot; E. Copetti 24.3% &middot; N. Fernández 22.1%",
-   "remates": "Central Cordoba de Santiago: M. Santos 1.47 remates totales (0.6 a puerta), D. Barrera 0.88 remates totales (0.44 a puerta), E. Naya 0.77 remates totales (0.62 a puerta) | Atletico Tucuman: L. Díaz 2.0 remates totales (1.13 a puerta), G. Abeldano 1.0 remates totales (0.22 a puerta), L. Godoy 0.93 remates totales (0.36 a puerta)",
-   "tarjetas": "Central Cordoba de Santiago: A. Maciel 0.4 amarillas/partido, L. Marchi 0.4 amarillas/partido, L. González 0.27 amarillas/partido | Atletico Tucuman: L. Vega 0.5 amarillas/partido, Luciano Vallejo 0.29 amarillas/partido, C. Ferreira 0.27 amarillas/partido",
-   "asistencias": "Central Cordoba de Santiago: H. Tijanovich 0.15 asistencias/partido, M. Santos 0.13 asistencias/partido, M. Iacobellis 0.08 asistencias/partido | Atletico Tucuman: G. Compagnucci 0.1 asistencias/partido, K. Ortíz 0.08 asistencias/partido, M. Villa 0.08 asistencias/partido",
-   "faltas": "Central Cordoba de Santiago: F. Juárez 1.5 faltas/partido, M. Santos 1.47 faltas/partido, S. Moyano 1.33 faltas/partido | Atletico Tucuman: L. Vega 2.17 faltas/partido, J. Dominguez 1.92 faltas/partido, L. Díaz 1.67 faltas/partido",
-   "quites": "Central Cordoba de Santiago: M. Vera 2.31 quites/partido, Y. Casermeiro 2.25 quites/partido, A. Maciel 2.0 quites/partido | Atletico Tucuman: L. Vega 4.17 quites/partido, K. Ortíz 2.42 quites/partido, J. Dominguez 1.75 quites/partido"
-  },
-  {
-   "local": "Independiente",
-   "visitante": "Newells Old Boys",
-   "gole": "G. Ávalos 45.7% &middot; M. Abaldo 25.5%",
-   "remates": "Independiente: G. Ávalos 2.33 remates totales (0.83 a puerta), S. Montiel 1.31 remates totales (0.77 a puerta), M. Abaldo 1.29 remates totales (0.88 a puerta) | Newells Old Boys: I. Ramírez 1.18 remates totales (0.73 a puerta), O. Salomón 1.0 remates totales (0.62 a puerta), W. Núñez 0.94 remates totales (0.25 a puerta)",
-   "tarjetas": "Independiente: F. Zabala 0.31 amarillas/partido, L. Godoy 0.3 amarillas/partido, M. Perez 0.3 amarillas/partido | Newells Old Boys: M. Luciano 0.5 amarillas/partido, L. Regiardo 0.33 amarillas/partido, S. Salcedo 0.29 amarillas/partido",
-   "asistencias": "Independiente: G. Ávalos 0.28 asistencias/partido, M. Gutiérrez 0.22 asistencias/partido, V. Malcorra 0.2 asistencias/partido | Newells Old Boys: J. Russo 0.14 asistencias/partido, W. Mazzantti 0.11 asistencias/partido, Facundo Gauch 0.07 asistencias/partido",
-   "faltas": "Independiente: F. Zabala 1.69 faltas/partido, G. Ávalos 1.56 faltas/partido, M. Valenzuela 1.43 faltas/partido | Newells Old Boys: L. Herrera 2.0 faltas/partido, R. Herrera 1.71 faltas/partido, L. Regiardo 1.5 faltas/partido",
-   "quites": "Independiente: I. Marcone 2.31 quites/partido, F. Zabala 2.25 quites/partido, M. Valenzuela 2.14 quites/partido | Newells Old Boys: A. Méndez 3.79 quites/partido, R. Herrera 2.21 quites/partido, L. Regiardo 2.08 quites/partido"
-  },
-  {
-   "local": "Coritiba",
-   "visitante": "Cruzeiro",
-   "gole": "Breno Lopes 37.6% &middot; Christian 25.5% &middot; J. Lavega 23.1%",
-   "remates": "Coritiba: Pedro Rocha 1.68 remates totales (0.79 a puerta), Lucas Ronier 1.47 remates totales (0.47 a puerta), Breno Lopes 0.94 remates totales (0.71 a puerta) | Cruzeiro: Matheus Pereira 1.88 remates totales (0.76 a puerta), Kaio Jorge 1.86 remates totales (0.79 a puerta), N. Villareal 1.58 remates totales (0.67 a puerta)",
-   "tarjetas": "Coritiba: Paulo Roberto 0.5 amarillas/partido, Lucas Taverna 0.33 amarillas/partido, Thiago Santos 0.31 amarillas/partido | Cruzeiro: Matheus Pereira 0.53 amarillas/partido, Lucas Silva 0.36 amarillas/partido, K. Arroyo 0.31 amarillas/partido",
-   "asistencias": "Coritiba: Josué 0.42 asistencias/partido, Tinga 0.15 asistencias/partido, Lucas Ronier 0.12 asistencias/partido | Cruzeiro: L. Romero 0.23 asistencias/partido, Fágner 0.21 asistencias/partido, Christian 0.18 asistencias/partido",
-   "faltas": "Coritiba: S. Gómez 1.5 faltas/partido, Wallisson 1.33 faltas/partido, Lucas Taverna 1.33 faltas/partido | Cruzeiro: Kaiki 2.25 faltas/partido, Matheus Pereira 1.82 faltas/partido, G. Rojas 1.5 faltas/partido",
-   "quites": "Coritiba: Jacy 1.82 quites/partido, Lucas Ronier 1.71 quites/partido, S. Gómez 1.69 quites/partido | Cruzeiro: G. Rojas 3.0 quites/partido, Kaiki 2.25 quites/partido, Kauã Moraes 1.8 quites/partido"
-  },
-  {
-   "local": "Caracas FC",
-   "visitante": "Santa Fe",
-   "gole": "W. Correa 34.9%",
-   "remates": "Caracas FC: A. Fernández 1.71 remates totales (0.71 a puerta), L. Del Pino 1.14 remates totales (0.57 a puerta), C. Vegas 1.0 remates totales (0.25 a puerta)",
-   "tarjetas": "Caracas FC: F. La Mantia 0.43 amarillas/partido, L. Del Pino 0.43 amarillas/partido, I. Gudiño 0.33 amarillas/partido",
-   "asistencias": "Caracas FC: I. Gudiño 0.17 asistencias/partido, L. Del Pino 0.14 asistencias/partido, A. Fernández 0.14 asistencias/partido",
-   "faltas": "Caracas FC: I. Gudiño 1.67 faltas/partido, M. Covea 1.38 faltas/partido, C. Larotonda 1.0 faltas/partido",
-   "quites": "Caracas FC: C. Larotonda 2.25 quites/partido, E. Fereira 1.5 quites/partido, I. Gudiño 1.5 quites/partido"
-  },
-  {
    "local": "O'Higgins",
    "visitante": "Boca Juniors",
    "gole": "F. González 24.9%",
