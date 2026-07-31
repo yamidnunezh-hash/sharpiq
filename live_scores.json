@@ -1,49 +1,6 @@
 {
-  "updated": "2026-07-31T03:29:13Z",
-  "live": [
-    {
-      "id": "e29b6d58950d18ba7eccacc0e05ce5c6",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Athletics",
-      "away": "Boston Red Sox",
-      "fecha": "30/07/26",
-      "hora": "20:41 COT",
-      "ts": 1785444060,
-      "completed": false,
-      "score_home": "4",
-      "score_away": "3"
-    },
-    {
-      "id": "58ab19b637430e9e8416219614c4d185",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "San Diego Padres",
-      "away": "San Francisco Giants",
-      "fecha": "30/07/26",
-      "hora": "20:41 COT",
-      "ts": 1785444060,
-      "completed": false,
-      "score_home": "1",
-      "score_away": "4"
-    },
-    {
-      "id": "443672ce29e54ba67b3d8d50d63c33f8",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Los Angeles Dodgers",
-      "away": "Seattle Mariners",
-      "fecha": "30/07/26",
-      "hora": "21:11 COT",
-      "ts": 1785445860,
-      "completed": false,
-      "score_home": "5",
-      "score_away": "0"
-    }
-  ],
+  "updated": "2026-07-31T06:32:04Z",
+  "live": [],
   "upcoming": [
     {
       "id": "69b3161b9e45cd7a7054fba7043f41d6",
@@ -258,6 +215,48 @@
   ],
   "finished": [
     {
+      "id": "443672ce29e54ba67b3d8d50d63c33f8",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Los Angeles Dodgers",
+      "away": "Seattle Mariners",
+      "fecha": "30/07/26",
+      "hora": "21:11 COT",
+      "ts": 1785445860,
+      "completed": true,
+      "score_home": "6",
+      "score_away": "2"
+    },
+    {
+      "id": "e29b6d58950d18ba7eccacc0e05ce5c6",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Athletics",
+      "away": "Boston Red Sox",
+      "fecha": "30/07/26",
+      "hora": "20:41 COT",
+      "ts": 1785444060,
+      "completed": true,
+      "score_home": "4",
+      "score_away": "5"
+    },
+    {
+      "id": "58ab19b637430e9e8416219614c4d185",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "San Diego Padres",
+      "away": "San Francisco Giants",
+      "fecha": "30/07/26",
+      "hora": "20:41 COT",
+      "ts": 1785444060,
+      "completed": true,
+      "score_home": "1",
+      "score_away": "4"
+    },
+    {
       "id": "0df9935b244ca0ed27d8fd4ca7b065ed",
       "sport": "soccer_conmebol_copa_sudamericana",
       "liga": "Copa Sudamericana",
@@ -354,48 +353,6 @@
       "completed": true,
       "score_home": "0",
       "score_away": "0"
-    },
-    {
-      "id": "c56c0611b78cf2c9b19aaf7403def23b",
-      "sport": "soccer_conmebol_copa_sudamericana",
-      "liga": "Copa Sudamericana",
-      "emoji": "⚽",
-      "home": "Grêmio",
-      "away": "Club Bolívar",
-      "fecha": "30/07/26",
-      "hora": "17:00 COT",
-      "ts": 1785430800,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "1"
-    },
-    {
-      "id": "459ad5aa37b0d7865d087c8acb7d9d4d",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "St. Louis Cardinals",
-      "away": "Chicago Cubs",
-      "fecha": "30/07/26",
-      "hora": "13:16 COT",
-      "ts": 1785417360,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "4"
-    },
-    {
-      "id": "c4f54051354f3d027c0f1cabfc630e52",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Chicago White Sox",
-      "away": "New York Yankees",
-      "fecha": "30/07/26",
-      "hora": "13:11 COT",
-      "ts": 1785417060,
-      "completed": true,
-      "score_home": "2",
-      "score_away": "1"
     }
   ]
 }
