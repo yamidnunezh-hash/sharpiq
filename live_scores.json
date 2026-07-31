@@ -1,21 +1,6 @@
 {
-  "updated": "2026-07-31T20:37:41Z",
-  "live": [
-    {
-      "id": "69b3161b9e45cd7a7054fba7043f41d6",
-      "sport": "baseball_mlb",
-      "liga": "MLB",
-      "emoji": "⚾",
-      "home": "Chicago Cubs",
-      "away": "New York Yankees",
-      "fecha": "31/07/26",
-      "hora": "13:21 COT",
-      "ts": 1785504060,
-      "completed": false,
-      "score_home": "0",
-      "score_away": "2"
-    }
-  ],
+  "updated": "2026-07-31T21:44:42Z",
+  "live": [],
   "upcoming": [
     {
       "id": "3ee3bc4062aa650bb871ebbc705fe19e",
@@ -230,6 +215,20 @@
   ],
   "finished": [
     {
+      "id": "69b3161b9e45cd7a7054fba7043f41d6",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Chicago Cubs",
+      "away": "New York Yankees",
+      "fecha": "31/07/26",
+      "hora": "13:21 COT",
+      "ts": 1785504060,
+      "completed": true,
+      "score_home": "0",
+      "score_away": "2"
+    },
+    {
       "id": "443672ce29e54ba67b3d8d50d63c33f8",
       "sport": "baseball_mlb",
       "liga": "MLB",
@@ -354,20 +353,6 @@
       "completed": true,
       "score_home": "3",
       "score_away": "2"
-    },
-    {
-      "id": "4f68110ae33722f386ddcd2aa17cc01c",
-      "sport": "soccer_brazil_campeonato",
-      "liga": "Brasileirao",
-      "emoji": "⚽",
-      "home": "Corinthians",
-      "away": "Atletico Paranaense",
-      "fecha": "30/07/26",
-      "hora": "17:30 COT",
-      "ts": 1785432600,
-      "completed": true,
-      "score_home": "0",
-      "score_away": "0"
     }
   ]
 }
