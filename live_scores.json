@@ -1,7 +1,6 @@
 {
-  "updated": "2026-07-31T21:44:42Z",
-  "live": [],
-  "upcoming": [
+  "updated": "2026-07-31T22:56:00Z",
+  "live": [
     {
       "id": "3ee3bc4062aa650bb871ebbc705fe19e",
       "sport": "baseball_mlb",
@@ -13,9 +12,11 @@
       "hora": "17:11 COT",
       "ts": 1785517860,
       "completed": false,
-      "score_home": null,
-      "score_away": null
-    },
+      "score_home": "2",
+      "score_away": "3"
+    }
+  ],
+  "upcoming": [
     {
       "id": "df9eba7a564b0b80a2a4fbd790388ee4",
       "sport": "baseball_mlb",
@@ -208,6 +209,20 @@
       "fecha": "01/08/26",
       "hora": "14:08 COT",
       "ts": 1785593280,
+      "completed": false,
+      "score_home": null,
+      "score_away": null
+    },
+    {
+      "id": "2984d38103bf67fc68bc0fb23e98ad8e",
+      "sport": "baseball_mlb",
+      "liga": "MLB",
+      "emoji": "⚾",
+      "home": "Tampa Bay Rays",
+      "away": "Chicago White Sox",
+      "fecha": "01/08/26",
+      "hora": "15:11 COT",
+      "ts": 1785597060,
       "completed": false,
       "score_home": null,
       "score_away": null
