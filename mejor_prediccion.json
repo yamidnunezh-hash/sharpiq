@@ -22,8 +22,8 @@
     "hora": "12:00",
     "fecha_evento": "2026-08-01",
     "cuotas": {
-      "1": 1.37,
-      "1_casa": "Betfair",
+      "1": 1.36,
+      "1_casa": "Pinnacle",
       "pinnacle_1": 1.36,
       "2": 9.0,
       "2_casa": "Betfair",
@@ -192,14 +192,14 @@
     "confianza": 86.4,
     "value_bets": {
       "victoria_local": {
-        "value": -0.042,
-        "ev_porcentaje": -4.2,
-        "ev_pinn": -4.2,
+        "value": -0.049,
+        "ev_porcentaje": -4.9,
+        "ev_pinn": -4.9,
         "tiene_valor": false,
         "tiene_valor_pinn": false,
         "clasificacion": "SIN VALOR",
-        "cuota": 1.37,
-        "casa": "Betfair",
+        "cuota": 1.36,
+        "casa": "Pinnacle",
         "pinn_prob": 69.9
       },
       "victoria_visita": {
