@@ -952,7 +952,7 @@
       "hora": "15:00",
       "fecha_evento": "2026-08-02",
       "cuotas": {
-        "1": 2.74,
+        "1": 2.76,
         "1_casa": "Betfair",
         "pinnacle_1": 2.72,
         "2": 2.7,
@@ -1102,13 +1102,13 @@
       "confianza": 79.9,
       "value_bets": {
         "victoria_local": {
-          "value": -0.035,
-          "ev_porcentaje": -3.5,
-          "ev_pinn": -3.5,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.74,
+          "cuota": 2.76,
           "casa": "Betfair",
           "pinn_prob": 35.2
         },
@@ -8274,8 +8274,8 @@
         "1": 3.05,
         "1_casa": "Betfair",
         "pinnacle_1": 2.96,
-        "2": 2.52,
-        "2_casa": "Betfair",
+        "2": 2.51,
+        "2_casa": "Pinnacle",
         "pinnacle_2": 2.51,
         "X": 3.5,
         "X_casa": "Betfair",
@@ -8440,14 +8440,14 @@
           "pinn_prob": 32.7
         },
         "victoria_visita": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
+          "value": -0.031,
+          "ev_porcentaje": -3.1,
+          "ev_pinn": -3.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.52,
-          "casa": "Betfair",
+          "cuota": 2.51,
+          "casa": "Pinnacle",
           "pinn_prob": 38.6
         },
         "empate": {
@@ -17558,7 +17558,7 @@
         "2": 3.7,
         "2_casa": "Unibet",
         "pinnacle_2": 3.68,
-        "1": 1.97,
+        "1": 1.98,
         "1_casa": "Betfair",
         "pinnacle_1": 1.9,
         "X": 4.4,
@@ -17802,13 +17802,13 @@
           "pinn_prob": 26.2
         },
         "victoria_local": {
-          "value": 0.001,
-          "ev_porcentaje": 0.1,
-          "ev_pinn": 0.1,
+          "value": 0.006,
+          "ev_porcentaje": 0.6,
+          "ev_pinn": 0.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.97,
+          "cuota": 1.98,
           "casa": "Betfair",
           "pinn_prob": 50.8
         },
@@ -18469,7 +18469,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Local",
         "prob": 50.8,
-        "ev": 0.1
+        "ev": 0.6
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -37528,13 +37528,13 @@
       "hora": "15:00",
       "fecha_evento": "2026-08-02",
       "cuotas": {
-        "1": 1.68,
-        "1_casa": "Betfair",
+        "1": 1.67,
+        "1_casa": "Unibet",
         "pinnacle_1": 1.66,
         "2": 5.12,
         "2_casa": "Pinnacle",
         "pinnacle_2": 5.12,
-        "X": 4.5,
+        "X": 4.4,
         "X_casa": "Betfair",
         "pinnacle_X": 4.12,
         "over325": 1.89,
@@ -37694,14 +37694,14 @@
       "confianza": 85.1,
       "value_bets": {
         "victoria_local": {
-          "value": -0.027,
-          "ev_porcentaje": -2.7,
-          "ev_pinn": -2.7,
+          "value": -0.033,
+          "ev_porcentaje": -3.3,
+          "ev_pinn": -3.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.68,
-          "casa": "Betfair",
+          "cuota": 1.67,
+          "casa": "Unibet",
           "pinn_prob": 57.9
         },
         "victoria_visita": {
@@ -37716,13 +37716,13 @@
           "pinn_prob": 18.8
         },
         "empate": {
-          "value": 0.05,
-          "ev_porcentaje": 5.0,
-          "ev_pinn": 5.0,
-          "tiene_valor": true,
-          "tiene_valor_pinn": true,
-          "clasificacion": "VALOR",
-          "cuota": 4.5,
+          "value": 0.026,
+          "ev_porcentaje": 2.6,
+          "ev_pinn": 2.6,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.4,
           "casa": "Betfair",
           "pinn_prob": 23.3
         },
@@ -38145,7 +38145,7 @@
       "prediccion_principal": {
         "mercado": "Empate",
         "prob": 23.3,
-        "ev": 5.0
+        "ev": 2.6
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -41259,7 +41259,7 @@
         "1": 2.2,
         "1_casa": "Pinnacle",
         "pinnacle_1": 2.2,
-        "X": 3.85,
+        "X": 3.9,
         "X_casa": "Betfair",
         "pinnacle_X": 3.81,
         "over30": 1.93,
@@ -41425,13 +41425,13 @@
           "pinn_prob": 43.1
         },
         "empate": {
-          "value": -0.042,
-          "ev_porcentaje": -4.2,
-          "ev_pinn": -4.2,
+          "value": -0.03,
+          "ev_porcentaje": -3.0,
+          "ev_pinn": -3.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.85,
+          "cuota": 3.9,
           "casa": "Betfair",
           "pinn_prob": 24.9
         },
@@ -44965,13 +44965,13 @@
       "hora": "14:00",
       "fecha_evento": "2026-08-02",
       "cuotas": {
-        "1": 2.3,
-        "1_casa": "Betfair",
+        "1": 2.28,
+        "1_casa": "Unibet",
         "pinnacle_1": 2.26,
         "2": 3.14,
         "2_casa": "Pinnacle",
         "pinnacle_2": 3.14,
-        "X": 3.65,
+        "X": 3.7,
         "X_casa": "Betfair",
         "pinnacle_X": 3.6,
         "over275": 1.91,
@@ -45123,14 +45123,14 @@
       "confianza": 80.9,
       "value_bets": {
         "victoria_local": {
-          "value": -0.02,
-          "ev_porcentaje": -2.0,
-          "ev_pinn": -2.0,
+          "value": -0.029,
+          "ev_porcentaje": -2.9,
+          "ev_pinn": -2.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.3,
-          "casa": "Betfair",
+          "cuota": 2.28,
+          "casa": "Unibet",
           "pinn_prob": 42.6
         },
         "victoria_visita": {
@@ -45145,13 +45145,13 @@
           "pinn_prob": 30.7
         },
         "empate": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
+          "value": -0.011,
+          "ev_porcentaje": -1.1,
+          "ev_pinn": -1.1,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.65,
+          "cuota": 3.7,
           "casa": "Betfair",
           "pinn_prob": 26.7
         },
@@ -45550,9 +45550,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Victoria Local",
-        "prob": 42.6,
-        "ev": -2.0
+        "mercado": "Empate",
+        "prob": 26.7,
+        "ev": -1.1
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -47848,7 +47848,7 @@
       "cuotas": {
         "Chicago White Sox": 2.52,
         "Tampa Bay Rays": 1.6,
-        "Over 7.5": 1.88,
+        "Over 7.5": 1.87,
         "Under 7.5": 1.98,
         "Chicago White Sox (+1.5)": 1.7,
         "Tampa Bay Rays (-1.5)": 2.3
@@ -47884,14 +47884,14 @@
           "mercado_nombre": "Tampa Bay Rays"
         },
         "over_7_5": {
-          "value": -0.038,
-          "ev_porcentaje": -3.8,
-          "ev_pinn": -3.8,
+          "value": -0.043,
+          "ev_porcentaje": -4.3,
+          "ev_pinn": -4.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.88,
-          "casa": "Unibet",
+          "cuota": 1.87,
+          "casa": "FanDuel",
           "pinn_prob": 51.2,
           "mercado_nombre": "Over 7.5"
         },
@@ -49323,5 +49323,5 @@
       "movimiento": null
     }
   ],
-  "generado": "16:01:10"
+  "generado": "16:01:41"
 }
