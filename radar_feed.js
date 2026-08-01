@@ -1,19 +1,19 @@
 // Generado por radar_valor.py — NO editar a mano.
 window.RADAR_VALOR = {
-  "generado": "2026-08-01T00:08:54.070534+00:00",
+  "generado": "2026-08-01T03:14:57.907334+00:00",
   "total": 1,
   "jugadas": [
     {
-      "deporte": "MLB",
-      "emoji": "⚾",
-      "estado": "VIVO",
-      "partido": "Baltimore Orioles vs Philadelphia Phillies",
-      "jugada": "Gana Baltimore Orioles",
-      "casa": "Betway",
-      "cuota": 2.4,
-      "cuota_justa": 2.19,
-      "valor": 9.7,
-      "prob": 45.7,
+      "deporte": "MMA",
+      "emoji": "🥊",
+      "estado": "PRE",
+      "partido": "Mark Vologdin vs Borislav Nikolić",
+      "jugada": "Gana Borislav Nikolić",
+      "casa": "1xBet",
+      "cuota": 1.62,
+      "cuota_justa": 1.55,
+      "valor": 4.8,
+      "prob": 64.7,
       "betplay_cuota": null,
       "betplay_valor": null
     }
