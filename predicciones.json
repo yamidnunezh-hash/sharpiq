@@ -2790,13 +2790,13 @@
       "hora": "21:00",
       "fecha_evento": "2026-08-01",
       "cuotas": {
-        "2": 3.6,
+        "2": 3.55,
         "2_casa": "Betfair",
         "pinnacle_2": 3.48,
-        "1": 2.56,
+        "1": 2.54,
         "1_casa": "Betfair",
         "pinnacle_1": 2.47,
-        "X": 2.96,
+        "X": 2.98,
         "X_casa": "Betfair",
         "pinnacle_X": 2.93,
         "over20": 2.1,
@@ -2940,35 +2940,35 @@
       "confianza": 86.0,
       "value_bets": {
         "victoria_visita": {
-          "value": 0.001,
-          "ev_porcentaje": 0.1,
-          "ev_pinn": 0.1,
+          "value": -0.013,
+          "ev_porcentaje": -1.3,
+          "ev_pinn": -1.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.6,
+          "cuota": 3.55,
           "casa": "Betfair",
           "pinn_prob": 27.8
         },
         "victoria_local": {
-          "value": 0.003,
-          "ev_porcentaje": 0.3,
-          "ev_pinn": 0.3,
+          "value": -0.005,
+          "ev_porcentaje": -0.5,
+          "ev_pinn": -0.5,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.56,
+          "cuota": 2.54,
           "casa": "Betfair",
           "pinn_prob": 39.2
         },
         "empate": {
-          "value": -0.023,
-          "ev_porcentaje": -2.3,
-          "ev_pinn": -2.3,
+          "value": -0.016,
+          "ev_porcentaje": -1.6,
+          "ev_pinn": -1.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.96,
+          "cuota": 2.98,
           "casa": "Betfair",
           "pinn_prob": 33.0
         },
@@ -4331,15 +4331,15 @@
           "ah_visita_mas15": 73.6
         },
         "disparos": {
-          "disparos_esperados": 2.3,
-          "disp_vis_over2": 67.8,
-          "disp_vis_under2": 32.2,
-          "disp_vis_over3": 41.5,
-          "disp_vis_under3": 58.5,
-          "disp_vis_over4": 20.9,
-          "disp_vis_under4": 79.1,
-          "disp_vis_over5": 8.8,
-          "disp_vis_under5": 91.2
+          "disparos_esperados": 3.6,
+          "disp_vis_over2": 87.5,
+          "disp_vis_under2": 12.5,
+          "disp_vis_over3": 69.9,
+          "disp_vis_under3": 30.1,
+          "disp_vis_over4": 48.7,
+          "disp_vis_under4": 51.3,
+          "disp_vis_over5": 29.5,
+          "disp_vis_under5": 70.5
         },
         "paradas": {
           "paradas_esperadas": 2.0,
@@ -4472,66 +4472,66 @@
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over2": {
-            "prob_modelo": 67.8,
-            "cuota_justa": 1.47,
-            "cuota_ref": 1.4,
-            "ev_porcentaje": -5.1,
+            "prob_modelo": 87.5,
+            "cuota_justa": 1.14,
+            "cuota_ref": 1.09,
+            "ev_porcentaje": -4.6,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under2": {
-            "prob_modelo": 32.2,
-            "cuota_justa": 3.11,
-            "cuota_ref": 2.95,
+            "prob_modelo": 12.5,
+            "cuota_justa": 8.0,
+            "cuota_ref": 7.6,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over3": {
-            "prob_modelo": 41.5,
-            "cuota_justa": 2.41,
-            "cuota_ref": 2.29,
-            "ev_porcentaje": -5.0,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_under3": {
-            "prob_modelo": 58.5,
-            "cuota_justa": 1.71,
-            "cuota_ref": 1.62,
-            "ev_porcentaje": -5.2,
-            "tiene_valor": false,
-            "clasificacion": "SIN VALOR"
-          },
-          "disp_vis_over4": {
-            "prob_modelo": 20.9,
-            "cuota_justa": 4.78,
-            "cuota_ref": 4.55,
+            "prob_modelo": 69.9,
+            "cuota_justa": 1.43,
+            "cuota_ref": 1.36,
             "ev_porcentaje": -4.9,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
+          "disp_vis_under3": {
+            "prob_modelo": 30.1,
+            "cuota_justa": 3.32,
+            "cuota_ref": 3.16,
+            "ev_porcentaje": -4.9,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
+          "disp_vis_over4": {
+            "prob_modelo": 48.7,
+            "cuota_justa": 2.05,
+            "cuota_ref": 1.95,
+            "ev_porcentaje": -5.0,
+            "tiene_valor": false,
+            "clasificacion": "SIN VALOR"
+          },
           "disp_vis_under4": {
-            "prob_modelo": 79.1,
-            "cuota_justa": 1.26,
-            "cuota_ref": 1.2,
+            "prob_modelo": 51.3,
+            "cuota_justa": 1.95,
+            "cuota_ref": 1.85,
             "ev_porcentaje": -5.1,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_over5": {
-            "prob_modelo": 8.8,
-            "cuota_justa": 11.36,
-            "cuota_ref": 10.8,
+            "prob_modelo": 29.5,
+            "cuota_justa": 3.39,
+            "cuota_ref": 3.22,
             "ev_porcentaje": -5.0,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
           "disp_vis_under5": {
-            "prob_modelo": 91.2,
-            "cuota_justa": 1.1,
-            "cuota_ref": 1.04,
-            "ev_porcentaje": -5.2,
+            "prob_modelo": 70.5,
+            "cuota_justa": 1.42,
+            "cuota_ref": 1.35,
+            "ev_porcentaje": -4.8,
             "tiene_valor": false,
             "clasificacion": "SIN VALOR"
           },
@@ -13306,7 +13306,7 @@
         "1": 2.14,
         "1_casa": "Betfair",
         "pinnacle_1": 2.08,
-        "2": 3.6,
+        "2": 3.55,
         "2_casa": "Betfair",
         "pinnacle_2": 3.53,
         "X": 3.8,
@@ -13558,13 +13558,13 @@
           "pinn_prob": 46.4
         },
         "victoria_visita": {
-          "value": -0.015,
-          "ev_porcentaje": -1.5,
-          "ev_pinn": -1.5,
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.6,
+          "cuota": 3.55,
           "casa": "Betfair",
           "pinn_prob": 27.4
         },
@@ -14600,7 +14600,7 @@
       "hora": "23:30",
       "fecha_evento": "2026-08-01",
       "cuotas": {
-        "2": 5.6,
+        "2": 5.7,
         "2_casa": "Betfair",
         "pinnacle_2": 5.23,
         "1": 1.61,
@@ -14844,13 +14844,13 @@
       "confianza": 81.7,
       "value_bets": {
         "victoria_visita": {
-          "value": 0.032,
-          "ev_porcentaje": 3.2,
-          "ev_pinn": 3.2,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 5.6,
+          "value": 0.051,
+          "ev_porcentaje": 5.1,
+          "ev_pinn": 5.1,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "VALOR",
+          "cuota": 5.7,
           "casa": "Betfair",
           "pinn_prob": 18.4
         },
@@ -15544,7 +15544,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Visitante",
         "prob": 18.4,
-        "ev": 3.2
+        "ev": 5.1
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -30063,7 +30063,7 @@
         "2": 2.74,
         "2_casa": "Betfair",
         "pinnacle_2": 2.73,
-        "1": 2.92,
+        "1": 2.94,
         "1_casa": "Betfair",
         "pinnacle_1": 2.85,
         "X": 3.2,
@@ -30221,13 +30221,13 @@
           "pinn_prob": 35.3
         },
         "victoria_local": {
-          "value": -0.014,
-          "ev_porcentaje": -1.4,
-          "ev_pinn": -1.4,
+          "value": -0.007,
+          "ev_porcentaje": -0.7,
+          "ev_pinn": -0.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.92,
+          "cuota": 2.94,
           "casa": "Betfair",
           "pinn_prob": 33.8
         },
@@ -30981,7 +30981,7 @@
       "hora": "00:00",
       "fecha_evento": "2026-08-01",
       "cuotas": {
-        "1": 2.36,
+        "1": 2.32,
         "1_casa": "Betfair",
         "pinnacle_1": 2.29,
         "2": 3.25,
@@ -31139,13 +31139,13 @@
       "confianza": 83.4,
       "value_bets": {
         "victoria_local": {
-          "value": -0.007,
-          "ev_porcentaje": -0.7,
-          "ev_pinn": -0.7,
+          "value": -0.024,
+          "ev_porcentaje": -2.4,
+          "ev_pinn": -2.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.36,
+          "cuota": 2.32,
           "casa": "Betfair",
           "pinn_prob": 42.1
         },
@@ -52947,5 +52947,5 @@
       "movimiento": null
     }
   ],
-  "generado": "20:01:15"
+  "generado": "20:01:51"
 }

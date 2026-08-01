@@ -660,15 +660,15 @@
         "ah_visita_mas15": 73.6
       },
       "disparos": {
-        "disparos_esperados": 2.3,
-        "disp_vis_over2": 67.8,
-        "disp_vis_under2": 32.2,
-        "disp_vis_over3": 41.5,
-        "disp_vis_under3": 58.5,
-        "disp_vis_over4": 20.9,
-        "disp_vis_under4": 79.1,
-        "disp_vis_over5": 8.8,
-        "disp_vis_under5": 91.2
+        "disparos_esperados": 3.6,
+        "disp_vis_over2": 87.5,
+        "disp_vis_under2": 12.5,
+        "disp_vis_over3": 69.9,
+        "disp_vis_under3": 30.1,
+        "disp_vis_over4": 48.7,
+        "disp_vis_under4": 51.3,
+        "disp_vis_over5": 29.5,
+        "disp_vis_under5": 70.5
       },
       "paradas": {
         "paradas_esperadas": 2.0,
@@ -801,66 +801,66 @@
           "clasificacion": "SIN VALOR"
         },
         "disp_vis_over2": {
-          "prob_modelo": 67.8,
-          "cuota_justa": 1.47,
-          "cuota_ref": 1.4,
-          "ev_porcentaje": -5.1,
+          "prob_modelo": 87.5,
+          "cuota_justa": 1.14,
+          "cuota_ref": 1.09,
+          "ev_porcentaje": -4.6,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
         "disp_vis_under2": {
-          "prob_modelo": 32.2,
-          "cuota_justa": 3.11,
-          "cuota_ref": 2.95,
+          "prob_modelo": 12.5,
+          "cuota_justa": 8.0,
+          "cuota_ref": 7.6,
           "ev_porcentaje": -5.0,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
         "disp_vis_over3": {
-          "prob_modelo": 41.5,
-          "cuota_justa": 2.41,
-          "cuota_ref": 2.29,
-          "ev_porcentaje": -5.0,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "disp_vis_under3": {
-          "prob_modelo": 58.5,
-          "cuota_justa": 1.71,
-          "cuota_ref": 1.62,
-          "ev_porcentaje": -5.2,
-          "tiene_valor": false,
-          "clasificacion": "SIN VALOR"
-        },
-        "disp_vis_over4": {
-          "prob_modelo": 20.9,
-          "cuota_justa": 4.78,
-          "cuota_ref": 4.55,
+          "prob_modelo": 69.9,
+          "cuota_justa": 1.43,
+          "cuota_ref": 1.36,
           "ev_porcentaje": -4.9,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
+        "disp_vis_under3": {
+          "prob_modelo": 30.1,
+          "cuota_justa": 3.32,
+          "cuota_ref": 3.16,
+          "ev_porcentaje": -4.9,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
+        "disp_vis_over4": {
+          "prob_modelo": 48.7,
+          "cuota_justa": 2.05,
+          "cuota_ref": 1.95,
+          "ev_porcentaje": -5.0,
+          "tiene_valor": false,
+          "clasificacion": "SIN VALOR"
+        },
         "disp_vis_under4": {
-          "prob_modelo": 79.1,
-          "cuota_justa": 1.26,
-          "cuota_ref": 1.2,
+          "prob_modelo": 51.3,
+          "cuota_justa": 1.95,
+          "cuota_ref": 1.85,
           "ev_porcentaje": -5.1,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
         "disp_vis_over5": {
-          "prob_modelo": 8.8,
-          "cuota_justa": 11.36,
-          "cuota_ref": 10.8,
+          "prob_modelo": 29.5,
+          "cuota_justa": 3.39,
+          "cuota_ref": 3.22,
           "ev_porcentaje": -5.0,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
         "disp_vis_under5": {
-          "prob_modelo": 91.2,
-          "cuota_justa": 1.1,
-          "cuota_ref": 1.04,
-          "ev_porcentaje": -5.2,
+          "prob_modelo": 70.5,
+          "cuota_justa": 1.42,
+          "cuota_ref": 1.35,
+          "ev_porcentaje": -4.8,
           "tiene_valor": false,
           "clasificacion": "SIN VALOR"
         },
