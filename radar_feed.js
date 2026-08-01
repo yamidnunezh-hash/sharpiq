@@ -1,13 +1,13 @@
 // Generado por radar_valor.py — NO editar a mano.
 window.RADAR_VALOR = {
-  "generado": "2026-08-01T03:14:57.907334+00:00",
+  "generado": "2026-08-01T06:15:27.557475+00:00",
   "total": 1,
   "jugadas": [
     {
       "deporte": "MMA",
       "emoji": "🥊",
       "estado": "PRE",
-      "partido": "Mark Vologdin vs Borislav Nikolić",
+      "partido": "Borislav Nikolić vs Mark Vologdin",
       "jugada": "Gana Borislav Nikolić",
       "casa": "1xBet",
       "cuota": 1.62,
