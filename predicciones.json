@@ -4644,7 +4644,7 @@
         "2": 6.8,
         "2_casa": "Betfair",
         "pinnacle_2": 6.41,
-        "1": 1.68,
+        "1": 1.69,
         "1_casa": "Betfair",
         "pinnacle_1": 1.66,
         "X": 3.65,
@@ -4802,13 +4802,13 @@
           "pinn_prob": 15.0
         },
         "victoria_local": {
-          "value": -0.025,
-          "ev_porcentaje": -2.5,
-          "ev_pinn": -2.5,
+          "value": -0.019,
+          "ev_porcentaje": -1.9,
+          "ev_pinn": -1.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.68,
+          "cuota": 1.69,
           "casa": "Betfair",
           "pinn_prob": 58.0
         },
@@ -14080,13 +14080,13 @@
       "hora": "23:30",
       "fecha_evento": "2026-08-01",
       "cuotas": {
-        "1": 3.05,
+        "1": 3.1,
         "1_casa": "Betfair",
         "pinnacle_1": 3.0,
         "2": 2.46,
         "2_casa": "Betfair",
         "pinnacle_2": 2.41,
-        "X": 3.55,
+        "X": 3.6,
         "X_casa": "Betfair",
         "pinnacle_X": 3.51,
         "over25": 1.91,
@@ -14324,13 +14324,13 @@
       "confianza": 84.3,
       "value_bets": {
         "victoria_local": {
-          "value": -0.016,
-          "ev_porcentaje": -1.6,
-          "ev_pinn": -1.6,
+          "value": 0.0,
+          "ev_porcentaje": 0.0,
+          "ev_pinn": 0.0,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.05,
+          "cuota": 3.1,
           "casa": "Betfair",
           "pinn_prob": 32.3
         },
@@ -14346,13 +14346,13 @@
           "pinn_prob": 40.2
         },
         "empate": {
-          "value": -0.021,
-          "ev_porcentaje": -2.1,
-          "ev_pinn": -2.1,
+          "value": -0.007,
+          "ev_porcentaje": -0.7,
+          "ev_pinn": -0.7,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.55,
+          "cuota": 3.6,
           "casa": "Betfair",
           "pinn_prob": 27.6
         },
@@ -15022,9 +15022,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Victoria Visitante",
-        "prob": 40.2,
-        "ev": -1.2
+        "mercado": "Empate",
+        "prob": 27.6,
+        "ev": -0.7
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -15491,7 +15491,7 @@
         "pinnacle_btts_no": 3.62,
         "dnb_local": 1.45,
         "dnb_local_casa": "Pinnacle",
-        "dnb_visita": 2.85,
+        "dnb_visita": 2.88,
         "dnb_visita_casa": "Pinnacle",
         "ah_l_m0_5": 1.86,
         "ah_l_m0_5_casa": "Pinnacle",
@@ -16092,13 +16092,13 @@
           "pinn_prob": 66.6
         },
         "dnb_visita": {
-          "value": -0.049,
-          "ev_porcentaje": -4.9,
-          "ev_pinn": -4.9,
+          "value": -0.039,
+          "ev_porcentaje": -3.9,
+          "ev_pinn": -3.9,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.85,
+          "cuota": 2.88,
           "casa": "Pinnacle",
           "pinn_prob": 33.4
         },
@@ -26882,7 +26882,7 @@
         "1": 2.16,
         "1_casa": "Betfair",
         "pinnacle_1": 2.1,
-        "2": 3.25,
+        "2": 3.2,
         "2_casa": "Betfair",
         "pinnacle_2": 3.13,
         "X": 4.2,
@@ -27142,13 +27142,13 @@
           "pinn_prob": 45.8
         },
         "victoria_visita": {
-          "value": -0.001,
-          "ev_porcentaje": -0.1,
-          "ev_pinn": -0.1,
+          "value": -0.016,
+          "ev_porcentaje": -1.6,
+          "ev_pinn": -1.6,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.25,
+          "cuota": 3.2,
           "casa": "Betfair",
           "pinn_prob": 30.7
         },
@@ -27851,9 +27851,9 @@
         }
       },
       "prediccion_principal": {
-        "mercado": "Victoria Visitante",
-        "prob": 30.7,
-        "ev": -0.1
+        "mercado": "Over 3.5 Goles",
+        "prob": 44.5,
+        "ev": -0.8
       },
       "cuotas_reales": true,
       "confiable": true,
@@ -33824,7 +33824,7 @@
         "2": 3.35,
         "2_casa": "Unibet",
         "pinnacle_2": 3.25,
-        "1": 2.36,
+        "1": 2.34,
         "1_casa": "Betfair",
         "pinnacle_1": 2.27,
         "X": 3.45,
@@ -33990,13 +33990,13 @@
           "pinn_prob": 29.4
         },
         "victoria_local": {
-          "value": -0.005,
-          "ev_porcentaje": -0.5,
-          "ev_pinn": -0.5,
+          "value": -0.014,
+          "ev_porcentaje": -1.4,
+          "ev_pinn": -1.4,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 2.36,
+          "cuota": 2.34,
           "casa": "Betfair",
           "pinn_prob": 42.2
         },
@@ -43014,14 +43014,14 @@
       "hora": "16:00",
       "fecha_evento": "2026-08-01",
       "cuotas": {
-        "1": 3.35,
+        "1": 3.4,
         "1_casa": "Betfair",
         "pinnacle_1": 3.13,
-        "2": 2.18,
-        "2_casa": "Betfair",
+        "2": 2.16,
+        "2_casa": "Pinnacle",
         "pinnacle_2": 2.16,
-        "X": 3.98,
-        "X_casa": "Pinnacle",
+        "X": 4.0,
+        "X_casa": "Betfair",
         "pinnacle_X": 3.98,
         "over30": 2.05,
         "over30_casa": "Pinnacle",
@@ -43164,36 +43164,36 @@
       "confianza": 79.5,
       "value_bets": {
         "victoria_local": {
-          "value": 0.035,
-          "ev_porcentaje": 3.5,
-          "ev_pinn": 3.5,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 3.35,
+          "value": 0.051,
+          "ev_porcentaje": 5.1,
+          "ev_pinn": 5.1,
+          "tiene_valor": true,
+          "tiene_valor_pinn": true,
+          "clasificacion": "VALOR",
+          "cuota": 3.4,
           "casa": "Betfair",
           "pinn_prob": 30.9
         },
         "victoria_visita": {
-          "value": -0.024,
-          "ev_porcentaje": -2.4,
-          "ev_pinn": -2.4,
-          "tiene_valor": false,
-          "tiene_valor_pinn": false,
-          "clasificacion": "SIN VALOR",
-          "cuota": 2.18,
-          "casa": "Betfair",
-          "pinn_prob": 44.8
-        },
-        "empate": {
           "value": -0.033,
           "ev_porcentaje": -3.3,
           "ev_pinn": -3.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 3.98,
+          "cuota": 2.16,
           "casa": "Pinnacle",
+          "pinn_prob": 44.8
+        },
+        "empate": {
+          "value": -0.028,
+          "ev_porcentaje": -2.8,
+          "ev_pinn": -2.8,
+          "tiene_valor": false,
+          "tiene_valor_pinn": false,
+          "clasificacion": "SIN VALOR",
+          "cuota": 4.0,
+          "casa": "Betfair",
           "pinn_prob": 24.3
         },
         "over30": {
@@ -43571,7 +43571,7 @@
       "prediccion_principal": {
         "mercado": "Victoria Local",
         "prob": 30.9,
-        "ev": 3.5
+        "ev": 5.1
       },
       "cuotas_reales": true,
       "confiable": false,
@@ -47471,7 +47471,7 @@
       "fecha_evento": "2026-08-01",
       "cuotas": {
         "Arizona Diamondbacks": 2.57,
-        "Cleveland Guardians": 1.62,
+        "Cleveland Guardians": 1.61,
         "Over 8.5": 1.98,
         "Under 8.5": 1.87,
         "Arizona Diamondbacks (+1.5)": 1.7,
@@ -47496,14 +47496,14 @@
           "mercado_nombre": "Arizona Diamondbacks"
         },
         "Cleveland Guardians": {
-          "value": 0.003,
-          "ev_porcentaje": 0.3,
-          "ev_pinn": 0.3,
+          "value": -0.003,
+          "ev_porcentaje": -0.3,
+          "ev_pinn": -0.3,
           "tiene_valor": false,
           "tiene_valor_pinn": false,
           "clasificacion": "SIN VALOR",
-          "cuota": 1.62,
-          "casa": "Unibet",
+          "cuota": 1.61,
+          "casa": "FanDuel",
           "pinn_prob": 61.9,
           "mercado_nombre": "Cleveland Guardians"
         },
@@ -47559,7 +47559,7 @@
       "prediccion_principal": {
         "mercado": "Cleveland Guardians",
         "prob": 61.9,
-        "ev": 0.3
+        "ev": -0.3
       },
       "cuotas_reales": true,
       "cuotas_avisos": [],
@@ -48533,5 +48533,5 @@
       "movimiento": null
     }
   ],
-  "generado": "14:02:34"
+  "generado": "14:03:11"
 }
