@@ -1,36 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Los Angeles Galaxy",
-   "visitante": "FC Dallas",
-   "gole": "P. Musa 58.0% &middot; D. Bouanga 44.5%",
-   "remates": "Los Angeles Galaxy: Gabriel Pec 2.79 remates totales (2.07 a puerta), João Klauss 2.12 remates totales (1.5 a puerta), J. Paintsil 1.79 remates totales (0.93 a puerta) | FC Dallas: P. Musa 2.53 remates totales (1.6 a puerta), L. Farrington 1.19 remates totales (0.75 a puerta), P. Delgado 0.79 remates totales (0.43 a puerta)",
-   "tarjetas": "Los Angeles Galaxy: J. Glesnes 0.45 amarillas/partido, M. Cuevas 0.33 amarillas/partido, E. Cerrillo 0.31 amarillas/partido | FC Dallas: Samuel Sarver 0.36 amarillas/partido, A. Julio 0.33 amarillas/partido, O. Urhoghide 0.29 amarillas/partido",
-   "asistencias": "Los Angeles Galaxy: M. Reus 0.33 asistencias/partido, Gabriel Pec 0.29 asistencias/partido, J. Paintsil 0.14 asistencias/partido | FC Dallas: J. Valiente 0.19 asistencias/partido, H. Johansson 0.13 asistencias/partido, P. Musa 0.13 asistencias/partido",
-   "faltas": "Los Angeles Galaxy: J. Haak 1.18 faltas/partido, C. Garcés 1.17 faltas/partido, João Klauss 1.12 faltas/partido | FC Dallas: H. Johansson 1.8 faltas/partido, L. Farrington 1.44 faltas/partido, O. Urhoghide 1.43 faltas/partido",
-   "quites": "Los Angeles Galaxy: C. Garcés 2.17 quites/partido, L. Sanabria 1.94 quites/partido, M. Yamane 1.56 quites/partido | FC Dallas: S. Moore 1.53 quites/partido, C. Cappis 1.53 quites/partido, O. Urhoghide 1.5 quites/partido"
-  },
-  {
-   "local": "Portland Timbers",
-   "visitante": "Seattle Sounders",
-   "gole": "K. Kelsy 39.3%",
-   "remates": "Portland Timbers: K. Velde 1.81 remates totales (0.94 a puerta), K. Kelsy 1.75 remates totales (0.88 a puerta), C. Bassett 1.46 remates totales (0.69 a puerta) | Seattle Sounders: Y. Gómez 1.33 remates totales (0.33 a puerta), A. Rusnák 1.13 remates totales (0.67 a puerta), P. Rothrock 1.13 remates totales (0.6 a puerta)",
-   "tarjetas": "Portland Timbers: D. Chará 0.31 amarillas/partido, Ian Smith 0.25 amarillas/partido, K. Miller 0.23 amarillas/partido | Seattle Sounders: N. Petković 0.5 amarillas/partido, J. Ragen 0.36 amarillas/partido, H. Dotson 0.31 amarillas/partido",
-   "asistencias": "Portland Timbers: David Pereira da Costa 0.36 asistencias/partido, J. Mosquera 0.33 asistencias/partido, K. Velde 0.19 asistencias/partido | Seattle Sounders: A. Rusnák 0.27 asistencias/partido, J. Ferreira 0.19 asistencias/partido, J. Morris 0.18 asistencias/partido",
-   "faltas": "Portland Timbers: J. Fory 1.25 faltas/partido, K. Velde 1.25 faltas/partido, K. Kelsy 1.19 faltas/partido | Seattle Sounders: P. Rothrock 1.47 faltas/partido, G. Minoungou 1.0 faltas/partido, P. Kingston 1.0 faltas/partido",
-   "quites": "Portland Timbers: J. Caicedo 2.2 quites/partido, D. Chará 2.08 quites/partido, F. Surman 1.65 quites/partido | Seattle Sounders: C. Roldan 2.08 quites/partido, Y. Gómez 2.0 quites/partido, A. Roldan 1.82 quites/partido"
-  },
-  {
-   "local": "Cruz Azul",
-   "visitante": "Atlante FC",
-   "gole": "J. Márquez 63.2% &middot; E. Pizzuto 58.3% &middot; L. Romero 39.3%",
-   "remates": "Cruz Azul: C. Rotondi 2.5 remates totales (2.0 a puerta), G. Fernández 2.5 remates totales (1.0 a puerta), J. Márquez 2.0 remates totales (1.0 a puerta) | Atlante FC: L. Puente 2.5 remates totales (1.5 a puerta), E. Pizzuto 2.0 remates totales (1.0 a puerta), L. Calzadilla 1.0 remates totales (1.0 a puerta)",
-   "tarjetas": "Cruz Azul: C. Rodríguez 0.5 amarillas/partido, N. Ibáñez 0.5 amarillas/partido, L. Romero 0.5 amarillas/partido | Atlante FC: Walter Portales 0.5 amarillas/partido, J. N. Carrera 0.5 amarillas/partido",
-   "asistencias": "Cruz Azul: J. Márquez 0.5 asistencias/partido, J. Paradela 0.5 asistencias/partido, C. Rodríguez 0.5 asistencias/partido | Atlante FC: L. Calzadilla 0.5 asistencias/partido, J. Julio 0.5 asistencias/partido",
-   "faltas": "Cruz Azul: C. Rodríguez 2.0 faltas/partido, L. Romero 1.5 faltas/partido, G. Piovi 1.0 faltas/partido | Atlante FC: J. N. Carrera 2.5 faltas/partido, M. Fernández 2.5 faltas/partido, L. Puente 2.5 faltas/partido",
-   "quites": "Cruz Azul: J. Márquez 4.5 quites/partido, G. Piovi 3.0 quites/partido, W. Ditta 2.5 quites/partido | Atlante FC: Walter Portales 4.0 quites/partido, G. Sánchez 3.5 quites/partido, E. Tercero 2.5 quites/partido"
-  },
-  {
    "local": "Aldosivi",
    "visitante": "Gimnasia L.P.",
    "gole": "M. Torres 34.4% &middot; A. Módica 28.3%",
@@ -79,6 +49,56 @@
    "asistencias": "Club America: I. Violante 0.5 asistencias/partido, H. Martín 0.5 asistencias/partido | Santos Laguna: Felipe Sánchez 0.5 asistencias/partido",
    "faltas": "Club America: K. Álvarez 2.0 faltas/partido, H. Martín 2.0 faltas/partido, D. Espinoza 1.5 faltas/partido | Santos Laguna: E. Bullaude 2.5 faltas/partido, R. Sordo 2.0 faltas/partido, L. Di Yorio 1.5 faltas/partido",
    "quites": "Club America: É. Sánchez 3.5 quites/partido, Icaro 2.0 quites/partido, D. Espinoza 1.5 quites/partido | Santos Laguna: C. Gruezo 4.5 quites/partido, R. Sordo 3.0 quites/partido, S. Mariscal 2.5 quites/partido"
+  },
+  {
+   "local": "Lanus",
+   "visitante": "Instituto Cordoba",
+   "gole": "D. Aquino 30.0% &middot; N. Fernández 22.1%",
+   "remates": "Lanus: M. Moreno 2.22 remates totales (1.56 a puerta), R. Castillo 1.4 remates totales (0.8 a puerta), R. Carrera 1.35 remates totales (0.53 a puerta) | Instituto Cordoba: A. Luna 2.12 remates totales (1.06 a puerta), F. Jara 1.36 remates totales (0.55 a puerta), M. Tissera 1.12 remates totales (0.62 a puerta)",
+   "tarjetas": "Lanus: R. Carrera 0.47 amarillas/partido, C. Izquierdoz 0.36 amarillas/partido, A. Medina 0.36 amarillas/partido | Instituto Cordoba: F. Alarcón 0.4 amarillas/partido, F. Moyano 0.33 amarillas/partido, A. Luna 0.29 amarillas/partido",
+   "asistencias": "Lanus: R. Castillo 0.6 asistencias/partido, R. Carrera 0.18 asistencias/partido, E. Salvio 0.17 asistencias/partido | Instituto Cordoba: D. Sosa 0.17 asistencias/partido, J. Lázaro 0.15 asistencias/partido, L. Rafaelli 0.11 asistencias/partido",
+   "faltas": "Lanus: A. Medina 1.79 faltas/partido, N. Morgantini 1.67 faltas/partido, R. Castillo 1.6 faltas/partido | Instituto Cordoba: J. Córdoba 1.64 faltas/partido, A. Massaccesi 1.5 faltas/partido, M. Fonseca 1.47 faltas/partido",
+   "quites": "Lanus: A. Medina 2.36 quites/partido, S. Marcich 1.94 quites/partido, T. Guidara 1.8 quites/partido | Instituto Cordoba: G. Cerato 2.33 quites/partido, F. Alarcón 1.93 quites/partido, J. Córdoba 1.79 quites/partido"
+  },
+  {
+   "local": "Toluca",
+   "visitante": "Necaxa",
+   "gole": "J. Carranza 63.2% &middot; M. Pedroza 39.3% &middot; J. Gallardo 39.3%",
+   "remates": "Toluca: Helinho 3.0 remates totales (1.5 a puerta), J. Angulo 1.5 remates totales (0.5 a puerta), N. Castro 1.5 remates totales (1.0 a puerta) | Necaxa: J. Carranza 4.0 remates totales (2.5 a puerta), A. Oliveros 1.5 remates totales (0.0 a puerta), J. Torres 1.5 remates totales (1.5 a puerta)",
+   "tarjetas": "Toluca: J. Gallardo 0.5 amarillas/partido, F. Romero 0.5 amarillas/partido, Helinho 0.5 amarillas/partido | Necaxa: R. Martínez 0.5 amarillas/partido, R. Monreal 0.5 amarillas/partido, L. Faravelli 0.5 amarillas/partido",
+   "asistencias": "Toluca: Helinho 1.0 asistencias/partido | Necaxa: J. Carranza 0.5 asistencias/partido, F. Mendez 0.5 asistencias/partido",
+   "faltas": "Toluca: J. Gallardo 1.5 faltas/partido, J. Angulo 1.0 faltas/partido, Helinho 1.0 faltas/partido | Necaxa: J. Carranza 4.0 faltas/partido, L. Faravelli 2.0 faltas/partido, C. Vargas 2.0 faltas/partido",
+   "quites": "Toluca: S. Simón 2.0 quites/partido, F. Arce 1.5 quites/partido, J. Gallardo 0.5 quites/partido | Necaxa: C. Vargas 3.0 quites/partido, D. Leyva 2.0 quites/partido, J. Ruiz 2.0 quites/partido"
+  },
+  {
+   "local": "Sarmiento Junin",
+   "visitante": "Independ. Rivadavia",
+   "gole": "J. Marabel 35.9% &middot; F. Sartori 32.2%",
+   "remates": "Sarmiento Junin: J. Marabel 1.83 remates totales (0.94 a puerta), Jhon Rentería 0.78 remates totales (0.56 a puerta), D. Churín 0.73 remates totales (0.33 a puerta) | Independ. Rivadavia: S. Villa 1.79 remates totales (0.64 a puerta), A. Arce 1.67 remates totales (0.58 a puerta), J. Florentín 1.61 remates totales (0.67 a puerta)",
+   "tarjetas": "Sarmiento Junin: E. Giménez 0.5 amarillas/partido, J. Insaurralde 0.47 amarillas/partido, C. Villalba 0.36 amarillas/partido | Independ. Rivadavia: M. Fernández 0.35 amarillas/partido, A. Riep 0.33 amarillas/partido, I. Villalba 0.29 amarillas/partido",
+   "asistencias": "Sarmiento Junin: J. Marabel 0.17 asistencias/partido, P. Magnín 0.14 asistencias/partido, J. Contrera 0.13 asistencias/partido | Independ. Rivadavia: S. Villa 0.36 asistencias/partido, M. Fernández 0.24 asistencias/partido, R. Atencio 0.24 asistencias/partido",
+   "faltas": "Sarmiento Junin: E. Giménez 2.5 faltas/partido, J. Contrera 2.2 faltas/partido, M. García 1.79 faltas/partido | Independ. Rivadavia: J. Florentín 1.78 faltas/partido, F. Sartori 1.33 faltas/partido, A. Arce 1.25 faltas/partido",
+   "quites": "Sarmiento Junin: E. Giménez 2.5 quites/partido, C. Zabala 2.28 quites/partido, M. García 2.0 quites/partido | Independ. Rivadavia: T. Bottari 1.92 quites/partido, J. Florentín 1.78 quites/partido, I. Villalba 1.76 quites/partido"
+  },
+  {
+   "local": "Platense",
+   "visitante": "Talleres Cordoba",
+   "gole": "N. Fernández 22.1%",
+   "remates": "Platense: F. Zapiola 1.29 remates totales (0.65 a puerta), G. Lencina 1.2 remates totales (0.5 a puerta), N. Retamar 0.93 remates totales (0.43 a puerta) | Talleres Cordoba: Rick 1.59 remates totales (0.71 a puerta), R. Martínez 1.37 remates totales (0.79 a puerta), T. Chamorro 1.2 remates totales (0.8 a puerta)",
+   "tarjetas": "Platense: V. Cuesta 0.5 amarillas/partido, M. Mendia 0.4 amarillas/partido, F. Amarfil 0.36 amarillas/partido | Talleres Cordoba: F. Fattori 0.5 amarillas/partido, M. Gómez 0.5 amarillas/partido, Rodrigo Guth 0.5 amarillas/partido",
+   "asistencias": "Platense: N. Retamar 0.14 asistencias/partido, J. Gauto 0.11 asistencias/partido, T. Nasif 0.08 asistencias/partido | Talleres Cordoba: B. Barticciotto 0.25 asistencias/partido, G. Baroni 0.21 asistencias/partido, T. Chamorro 0.2 asistencias/partido",
+   "faltas": "Platense: F. Amarfil 1.71 faltas/partido, Stefan Đokić 1.67 faltas/partido, M. Barrios 1.44 faltas/partido | Talleres Cordoba: V. Fascendini 3.0 faltas/partido, F. Fattori 2.5 faltas/partido, D. Ortegoza 1.53 faltas/partido",
+   "quites": "Platense: P. Ferreira 3.4 quites/partido, T. Silva 3.0 quites/partido, Stefan Đokić 2.33 quites/partido | Talleres Cordoba: M. Gómez 3.0 quites/partido, A. Schott 2.11 quites/partido, M. Galarza 1.95 quites/partido"
+  },
+  {
+   "local": "Velez Sarsfield",
+   "visitante": "Independiente",
+   "gole": "G. Ávalos 44.0% &middot; F. Monzón 31.3% &middot; M. Abaldo 24.3%",
+   "remates": "Velez Sarsfield: S. Escobar 2.0 remates totales (0.0 a puerta), F. Monzón 1.88 remates totales (1.06 a puerta), M. Pellegrini 1.29 remates totales (0.64 a puerta) | Independiente: G. Ávalos 2.21 remates totales (0.79 a puerta), S. Montiel 1.36 remates totales (0.86 a puerta), M. Abaldo 1.22 remates totales (0.83 a puerta)",
+   "tarjetas": "Velez Sarsfield: Thiago Silveor 0.33 amarillas/partido, B. Romero 0.3 amarillas/partido, C. Baeza 0.29 amarillas/partido | Independiente: D. Martínez 0.5 amarillas/partido, F. Zabala 0.29 amarillas/partido, M. Valenzuela 0.29 amarillas/partido",
+   "asistencias": "Velez Sarsfield: D. Valdés 0.31 asistencias/partido, D. Godoy 0.21 asistencias/partido, M. Arias 0.2 asistencias/partido | Independiente: G. Ávalos 0.26 asistencias/partido, V. Malcorra 0.2 asistencias/partido, M. Gutiérrez 0.2 asistencias/partido",
+   "faltas": "Velez Sarsfield: Jano Gordon 2.0 faltas/partido, F. Monzón 1.44 faltas/partido, T. Andrada 1.41 faltas/partido | Independiente: F. Zabala 1.71 faltas/partido, M. Meza 1.5 faltas/partido, G. Ávalos 1.47 faltas/partido",
+   "quites": "Velez Sarsfield: S. Escobar 3.5 quites/partido, Jano Gordon 3.33 quites/partido, T. Andrada 2.59 quites/partido | Independiente: D. Martínez 2.5 quites/partido, I. Marcone 2.35 quites/partido, F. Zabala 2.18 quites/partido"
   }
  ]
 }
