@@ -1,46 +1,6 @@
 {
  "partidos": [
   {
-   "local": "River Plate",
-   "visitante": "Rosario Central",
-   "gole": "S. Driussi 28.3% &middot; Á. Di María 26.8% &middot; E. Copetti 24.3%",
-   "remates": "River Plate: L. Beltrán 2.0 remates totales (1.0 a puerta), S. Driussi 1.6 remates totales (0.8 a puerta), J. Quintero 1.53 remates totales (1.0 a puerta) | Rosario Central: J. Campaz 2.29 remates totales (1.14 a puerta), A. Véliz 1.82 remates totales (0.76 a puerta), Á. Di María 1.75 remates totales (1.06 a puerta)",
-   "tarjetas": "River Plate: M. Viña 0.5 amarillas/partido, N. Otamendi 0.5 amarillas/partido, M. Arambarri 0.5 amarillas/partido | Rosario Central: E. Veron 0.67 amarillas/partido, F. Ibarra 0.37 amarillas/partido, E. Giménez 0.29 amarillas/partido",
-   "asistencias": "River Plate: J. Meza 0.29 asistencias/partido, J. Quintero 0.2 asistencias/partido, F. Colidio 0.17 asistencias/partido | Rosario Central: J. Campaz 0.29 asistencias/partido, Á. Di María 0.25 asistencias/partido, G. Cantizano 0.25 asistencias/partido",
-   "faltas": "River Plate: M. Arambarri 2.0 faltas/partido, J. Freitas 1.5 faltas/partido, R. Borré 1.5 faltas/partido | Rosario Central: F. Ibarra 1.68 faltas/partido, E. Giménez 1.59 faltas/partido, T. Badaloni 1.5 faltas/partido",
-   "quites": "River Plate: A. Moreno 3.05 quites/partido, L. Martínez 1.76 quites/partido, T. Galván 1.73 quites/partido | Rosario Central: F. Ibarra 4.21 quites/partido, E. Giménez 2.06 quites/partido, G. Ávila 1.67 quites/partido"
-  },
-  {
-   "local": "Club America",
-   "visitante": "Santos Laguna",
-   "gole": "I. Violante 39.3%",
-   "remates": "Club America: R. Juárez 2.5 remates totales (0.5 a puerta), I. Violante 2.5 remates totales (1.5 a puerta), Raphael Veiga 1.5 remates totales (1.5 a puerta) | Santos Laguna: E. Bullaude 1.5 remates totales (0.5 a puerta), L. Di Yorio 1.0 remates totales (0.5 a puerta), Felipe Sánchez 0.5 remates totales (0.0 a puerta)",
-   "tarjetas": "Club America: K. Álvarez 1.0 amarillas/partido, R. Juárez 0.5 amarillas/partido, É. Sánchez 0.5 amarillas/partido | Santos Laguna: C. Gruezo 0.5 amarillas/partido, Fran Villalba 0.5 amarillas/partido",
-   "asistencias": "Club America: I. Violante 0.5 asistencias/partido, H. Martín 0.5 asistencias/partido | Santos Laguna: Felipe Sánchez 0.5 asistencias/partido",
-   "faltas": "Club America: K. Álvarez 2.0 faltas/partido, H. Martín 2.0 faltas/partido, D. Espinoza 1.5 faltas/partido | Santos Laguna: E. Bullaude 2.5 faltas/partido, R. Sordo 2.0 faltas/partido, L. Di Yorio 1.5 faltas/partido",
-   "quites": "Club America: É. Sánchez 3.5 quites/partido, Icaro 2.0 quites/partido, D. Espinoza 1.5 quites/partido | Santos Laguna: C. Gruezo 4.5 quites/partido, R. Sordo 3.0 quites/partido, S. Mariscal 2.5 quites/partido"
-  },
-  {
-   "local": "Lanus",
-   "visitante": "Instituto Cordoba",
-   "gole": "D. Aquino 30.0% &middot; N. Fernández 22.1%",
-   "remates": "Lanus: M. Moreno 2.22 remates totales (1.56 a puerta), R. Castillo 1.4 remates totales (0.8 a puerta), R. Carrera 1.35 remates totales (0.53 a puerta) | Instituto Cordoba: A. Luna 2.12 remates totales (1.06 a puerta), F. Jara 1.36 remates totales (0.55 a puerta), M. Tissera 1.12 remates totales (0.62 a puerta)",
-   "tarjetas": "Lanus: R. Carrera 0.47 amarillas/partido, C. Izquierdoz 0.36 amarillas/partido, A. Medina 0.36 amarillas/partido | Instituto Cordoba: F. Alarcón 0.4 amarillas/partido, F. Moyano 0.33 amarillas/partido, A. Luna 0.29 amarillas/partido",
-   "asistencias": "Lanus: R. Castillo 0.6 asistencias/partido, R. Carrera 0.18 asistencias/partido, E. Salvio 0.17 asistencias/partido | Instituto Cordoba: D. Sosa 0.17 asistencias/partido, J. Lázaro 0.15 asistencias/partido, L. Rafaelli 0.11 asistencias/partido",
-   "faltas": "Lanus: A. Medina 1.79 faltas/partido, N. Morgantini 1.67 faltas/partido, R. Castillo 1.6 faltas/partido | Instituto Cordoba: J. Córdoba 1.64 faltas/partido, A. Massaccesi 1.5 faltas/partido, M. Fonseca 1.47 faltas/partido",
-   "quites": "Lanus: A. Medina 2.36 quites/partido, S. Marcich 1.94 quites/partido, T. Guidara 1.8 quites/partido | Instituto Cordoba: G. Cerato 2.33 quites/partido, F. Alarcón 1.93 quites/partido, J. Córdoba 1.79 quites/partido"
-  },
-  {
-   "local": "Toluca",
-   "visitante": "Necaxa",
-   "gole": "J. Carranza 63.2%",
-   "remates": "Toluca: Helinho 3.0 remates totales (1.5 a puerta), J. Angulo 1.5 remates totales (0.5 a puerta), N. Castro 1.5 remates totales (1.0 a puerta) | Necaxa: J. Carranza 4.0 remates totales (2.5 a puerta), A. Oliveros 1.5 remates totales (0.0 a puerta), J. Torres 1.5 remates totales (1.5 a puerta)",
-   "tarjetas": "Toluca: J. Gallardo 0.5 amarillas/partido, F. Romero 0.5 amarillas/partido, Helinho 0.5 amarillas/partido | Necaxa: R. Martínez 0.5 amarillas/partido, R. Monreal 0.5 amarillas/partido, L. Faravelli 0.5 amarillas/partido",
-   "asistencias": "Toluca: Helinho 1.0 asistencias/partido | Necaxa: J. Carranza 0.5 asistencias/partido, F. Mendez 0.5 asistencias/partido",
-   "faltas": "Toluca: J. Gallardo 1.5 faltas/partido, J. Angulo 1.0 faltas/partido, Helinho 1.0 faltas/partido | Necaxa: J. Carranza 4.0 faltas/partido, L. Faravelli 2.0 faltas/partido, C. Vargas 2.0 faltas/partido",
-   "quites": "Toluca: S. Simón 2.0 quites/partido, F. Arce 1.5 quites/partido, J. Gallardo 0.5 quites/partido | Necaxa: C. Vargas 3.0 quites/partido, D. Leyva 2.0 quites/partido, J. Ruiz 2.0 quites/partido"
-  },
-  {
    "local": "Sarmiento Junin",
    "visitante": "Independ. Rivadavia",
    "gole": "J. Marabel 35.9% &middot; F. Sartori 32.2%",
@@ -53,7 +13,7 @@
   {
    "local": "Platense",
    "visitante": "Talleres Cordoba",
-   "gole": "N. Fernández 22.1%",
+   "gole": "N. Fernández 21.2%",
    "remates": "Platense: F. Zapiola 1.29 remates totales (0.65 a puerta), G. Lencina 1.2 remates totales (0.5 a puerta), N. Retamar 0.93 remates totales (0.43 a puerta) | Talleres Cordoba: Rick 1.59 remates totales (0.71 a puerta), R. Martínez 1.37 remates totales (0.79 a puerta), T. Chamorro 1.2 remates totales (0.8 a puerta)",
    "tarjetas": "Platense: V. Cuesta 0.5 amarillas/partido, M. Mendia 0.4 amarillas/partido, F. Amarfil 0.36 amarillas/partido | Talleres Cordoba: F. Fattori 0.5 amarillas/partido, M. Gómez 0.5 amarillas/partido, Rodrigo Guth 0.5 amarillas/partido",
    "asistencias": "Platense: N. Retamar 0.14 asistencias/partido, J. Gauto 0.11 asistencias/partido, T. Nasif 0.08 asistencias/partido | Talleres Cordoba: B. Barticciotto 0.25 asistencias/partido, G. Baroni 0.21 asistencias/partido, T. Chamorro 0.2 asistencias/partido",
