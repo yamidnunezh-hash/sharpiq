@@ -1,36 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Sarmiento Junin",
-   "visitante": "Independ. Rivadavia",
-   "gole": "J. Marabel 35.9% &middot; F. Sartori 32.2%",
-   "remates": "Sarmiento Junin: J. Marabel 1.83 remates totales (0.94 a puerta), Jhon Rentería 0.78 remates totales (0.56 a puerta), D. Churín 0.73 remates totales (0.33 a puerta) | Independ. Rivadavia: S. Villa 1.79 remates totales (0.64 a puerta), A. Arce 1.67 remates totales (0.58 a puerta), J. Florentín 1.61 remates totales (0.67 a puerta)",
-   "tarjetas": "Sarmiento Junin: E. Giménez 0.5 amarillas/partido, J. Insaurralde 0.47 amarillas/partido, C. Villalba 0.36 amarillas/partido | Independ. Rivadavia: M. Fernández 0.35 amarillas/partido, A. Riep 0.33 amarillas/partido, I. Villalba 0.29 amarillas/partido",
-   "asistencias": "Sarmiento Junin: J. Marabel 0.17 asistencias/partido, P. Magnín 0.14 asistencias/partido, J. Contrera 0.13 asistencias/partido | Independ. Rivadavia: S. Villa 0.36 asistencias/partido, M. Fernández 0.24 asistencias/partido, R. Atencio 0.24 asistencias/partido",
-   "faltas": "Sarmiento Junin: E. Giménez 2.5 faltas/partido, J. Contrera 2.2 faltas/partido, M. García 1.79 faltas/partido | Independ. Rivadavia: J. Florentín 1.78 faltas/partido, F. Sartori 1.33 faltas/partido, A. Arce 1.25 faltas/partido",
-   "quites": "Sarmiento Junin: E. Giménez 2.5 quites/partido, C. Zabala 2.28 quites/partido, M. García 2.0 quites/partido | Independ. Rivadavia: T. Bottari 1.92 quites/partido, J. Florentín 1.78 quites/partido, I. Villalba 1.76 quites/partido"
-  },
-  {
-   "local": "Platense",
-   "visitante": "Talleres Cordoba",
-   "gole": "N. Fernández 21.2%",
-   "remates": "Platense: F. Zapiola 1.29 remates totales (0.65 a puerta), G. Lencina 1.2 remates totales (0.5 a puerta), N. Retamar 0.93 remates totales (0.43 a puerta) | Talleres Cordoba: Rick 1.59 remates totales (0.71 a puerta), R. Martínez 1.37 remates totales (0.79 a puerta), T. Chamorro 1.2 remates totales (0.8 a puerta)",
-   "tarjetas": "Platense: V. Cuesta 0.5 amarillas/partido, M. Mendia 0.4 amarillas/partido, F. Amarfil 0.36 amarillas/partido | Talleres Cordoba: F. Fattori 0.5 amarillas/partido, M. Gómez 0.5 amarillas/partido, Rodrigo Guth 0.5 amarillas/partido",
-   "asistencias": "Platense: N. Retamar 0.14 asistencias/partido, J. Gauto 0.11 asistencias/partido, T. Nasif 0.08 asistencias/partido | Talleres Cordoba: B. Barticciotto 0.25 asistencias/partido, G. Baroni 0.21 asistencias/partido, T. Chamorro 0.2 asistencias/partido",
-   "faltas": "Platense: F. Amarfil 1.71 faltas/partido, Stefan Đokić 1.67 faltas/partido, M. Barrios 1.44 faltas/partido | Talleres Cordoba: V. Fascendini 3.0 faltas/partido, F. Fattori 2.5 faltas/partido, D. Ortegoza 1.53 faltas/partido",
-   "quites": "Platense: P. Ferreira 3.4 quites/partido, T. Silva 3.0 quites/partido, Stefan Đokić 2.33 quites/partido | Talleres Cordoba: M. Gómez 3.0 quites/partido, A. Schott 2.11 quites/partido, M. Galarza 1.95 quites/partido"
-  },
-  {
-   "local": "Velez Sarsfield",
-   "visitante": "Independiente",
-   "gole": "G. Ávalos 44.0% &middot; F. Monzón 31.3% &middot; M. Abaldo 24.3%",
-   "remates": "Velez Sarsfield: S. Escobar 2.0 remates totales (0.0 a puerta), F. Monzón 1.88 remates totales (1.06 a puerta), M. Pellegrini 1.29 remates totales (0.64 a puerta) | Independiente: G. Ávalos 2.21 remates totales (0.79 a puerta), S. Montiel 1.36 remates totales (0.86 a puerta), M. Abaldo 1.22 remates totales (0.83 a puerta)",
-   "tarjetas": "Velez Sarsfield: Thiago Silveor 0.33 amarillas/partido, B. Romero 0.3 amarillas/partido, C. Baeza 0.29 amarillas/partido | Independiente: D. Martínez 0.5 amarillas/partido, F. Zabala 0.29 amarillas/partido, M. Valenzuela 0.29 amarillas/partido",
-   "asistencias": "Velez Sarsfield: D. Valdés 0.31 asistencias/partido, D. Godoy 0.21 asistencias/partido, M. Arias 0.2 asistencias/partido | Independiente: G. Ávalos 0.26 asistencias/partido, V. Malcorra 0.2 asistencias/partido, M. Gutiérrez 0.2 asistencias/partido",
-   "faltas": "Velez Sarsfield: Jano Gordon 2.0 faltas/partido, F. Monzón 1.44 faltas/partido, T. Andrada 1.41 faltas/partido | Independiente: F. Zabala 1.71 faltas/partido, M. Meza 1.5 faltas/partido, G. Ávalos 1.47 faltas/partido",
-   "quites": "Velez Sarsfield: S. Escobar 3.5 quites/partido, Jano Gordon 3.33 quites/partido, T. Andrada 2.59 quites/partido | Independiente: D. Martínez 2.5 quites/partido, I. Marcone 2.35 quites/partido, F. Zabala 2.18 quites/partido"
-  },
-  {
    "local": "Central Cordoba de Santiago",
    "visitante": "San Lorenzo",
    "gole": "R. Auzmendi 39.3% &middot; E. Copetti 24.3% &middot; N. Fernández 21.2%",
