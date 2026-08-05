@@ -1,26 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Aarhus",
-   "visitante": "Sabah FA",
-   "gole": "Kristian Fredrik Malt Arnstad 65.2% &middot; T. Bech 39.3% &middot; J. Mickels 22.1%",
-   "remates": "Aarhus: Frederik Emmery 1.5 remates totales (0.5 a puerta), F. Tingager 1.0 remates totales (1.0 a puerta), T. Bech 1.0 remates totales (1.0 a puerta)",
-   "tarjetas": "Aarhus: Frederik Emmery 0.5 amarillas/partido, M. Anderson 0.5 amarillas/partido, J. Bogere 0.5 amarillas/partido | Sabah FA: A. Zedadka 0.25 amarillas/partido, U. Rahmonaliyev 0.25 amarillas/partido, J. Mickels 0.25 amarillas/partido",
-   "asistencias": "Aarhus: E. Kahl 0.5 asistencias/partido, Frederik Emmery 0.5 asistencias/partido, T. Bech 0.5 asistencias/partido | Sabah FA: A. Malouda 0.5 asistencias/partido, T. Puchacz 0.25 asistencias/partido",
-   "faltas": "Aarhus: Frederik Emmery 1.5 faltas/partido, M. Anderson 1.5 faltas/partido, J. Jensen-Abbew 1.0 faltas/partido",
-   "quites": "Aarhus: E. Kahl 3.0 quites/partido, M. Knudsen 2.0 quites/partido, J. Jensen-Abbew 1.5 quites/partido"
-  },
-  {
-   "local": "Fenerbahçe",
-   "visitante": "Sturm Graz",
-   "gole": "Talisca 63.2% &middot; Luca Weinhandl 39.3% &middot; J. Gorenc Stankovič 39.3%",
-   "remates": "Fenerbahçe: Talisca 5.0 remates totales (2.5 a puerta), İ. Kahveci 1.0 remates totales (0.5 a puerta), Fred 1.0 remates totales (0.0 a puerta) | Sturm Graz: J. Gorenc Stankovič 2.0 remates totales (1.0 a puerta), Jacob Peter Hödl 2.0 remates totales (1.5 a puerta), S. Włodarczyk 2.0 remates totales (1.5 a puerta)",
-   "tarjetas": "Fenerbahçe: Nélson Semedo 0.5 amarillas/partido, J. Oosterwolde 0.5 amarillas/partido, M. Guendouzi 0.5 amarillas/partido | Sturm Graz: A. Vallci 0.5 amarillas/partido, J. Gorenc Stankovič 0.5 amarillas/partido",
-   "asistencias": "Sturm Graz: J. Mitchell 0.5 asistencias/partido, J. Gorenc Stankovič 0.5 asistencias/partido, Luca Weinhandl 0.5 asistencias/partido",
-   "faltas": "Fenerbahçe: J. Oosterwolde 2.5 faltas/partido, M. Škriniar 2.0 faltas/partido, Nélson Semedo 1.5 faltas/partido | Sturm Graz: A. Vallci 2.5 faltas/partido, S. Jatta 2.5 faltas/partido, J. Heil 2.0 faltas/partido",
-   "quites": "Fenerbahçe: Nélson Semedo 2.5 quites/partido, M. Škriniar 2.0 quites/partido, J. Oosterwolde 2.0 quites/partido | Sturm Graz: E. Soglo 4.5 quites/partido, J. Heil 4.0 quites/partido, S. Seidl 3.5 quites/partido"
-  },
-  {
    "local": "Panathinaikos",
    "visitante": "CSKA 1948",
    "gole": "",
@@ -99,6 +79,15 @@
    "local": "Beitar Jerusalem",
    "visitante": "Austria Vienna",
    "gole": "E. Kara 70.6% &middot; P. Dahl 39.3% &middot; Y. Demir 39.3%"
+  },
+  {
+   "local": "Ajax",
+   "visitante": "Shelbourne",
+   "gole": "O. Gloukh 75.9% &middot; D. Klaassen 63.2% &middot; S. Berghuis 39.3%",
+   "remates": "Ajax: K. Dolberg 3.5 remates totales (2.5 a puerta), M. Godts 3.0 remates totales (1.0 a puerta), O. Gloukh 2.5 remates totales (2.5 a puerta)",
+   "asistencias": "Ajax: M. Godts 1.0 asistencias/partido, Y. Regeer 0.5 asistencias/partido, S. Berghuis 0.5 asistencias/partido",
+   "faltas": "Ajax: O. Wijndal 2.5 faltas/partido, A. Bouwman 1.5 faltas/partido, J. Mokio 1.0 faltas/partido",
+   "quites": "Ajax: Lucas Rosa 2.0 quites/partido, Y. Regeer 2.0 quites/partido, D. Blind 1.5 quites/partido"
   }
  ]
 }
