@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Tigre",
-   "visitante": "Belgrano Cordoba",
-   "gole": "D. Romero 44.2% &middot; I. Russo 24.3% &middot; N. Fernández 21.2%",
-   "remates": "Tigre: D. Romero 2.42 remates totales (1.17 a puerta), I. Russo 1.83 remates totales (0.89 a puerta), P. Martínez 1.77 remates totales (0.92 a puerta) | Belgrano Cordoba: L. Zelarayán 1.7 remates totales (0.65 a puerta), N. Fernández 1.43 remates totales (0.81 a puerta), L. Passerini 1.12 remates totales (0.38 a puerta)",
-   "tarjetas": "Tigre: J. Villalba 1.0 amarillas/partido, V. Moreno 0.5 amarillas/partido, G. Piñeiro 0.43 amarillas/partido | Belgrano Cordoba: A. Falcon 0.5 amarillas/partido, Alcides Benítez 0.29 amarillas/partido, L. Passerini 0.25 amarillas/partido",
-   "asistencias": "Tigre: I. Russo 0.17 asistencias/partido, D. Romero 0.17 asistencias/partido, A. Barrionuevo 0.12 asistencias/partido | Belgrano Cordoba: L. Passerini 0.38 asistencias/partido, N. Fernández 0.19 asistencias/partido, E. Rigoni 0.16 asistencias/partido",
-   "faltas": "Tigre: G. Piñeiro 2.14 faltas/partido, S. López 1.47 faltas/partido, B. Leyes 1.33 faltas/partido | Belgrano Cordoba: L. Passerini 1.56 faltas/partido, A. Sánchez 1.52 faltas/partido, A. Falcon 1.17 faltas/partido",
-   "quites": "Tigre: V. Moreno 2.4 quites/partido, S. López 2.12 quites/partido, N. Banegas 2.0 quites/partido | Belgrano Cordoba: A. Sánchez 2.71 quites/partido, Alcides Benítez 2.59 quites/partido, S. Longo 1.93 quites/partido"
-  },
-  {
    "local": "Inter Turku",
    "visitante": "FC Vaduz",
    "gole": "C. Jephta 58.2% &middot; J. Tuominen 22.1%",
@@ -68,6 +58,16 @@
    "asistencias": "Ajax: M. Godts 1.0 asistencias/partido, Y. Regeer 0.5 asistencias/partido, S. Berghuis 0.5 asistencias/partido",
    "faltas": "Ajax: O. Wijndal 2.5 faltas/partido, A. Bouwman 1.5 faltas/partido, J. Mokio 1.0 faltas/partido",
    "quites": "Ajax: Lucas Rosa 2.0 quites/partido, Y. Regeer 2.0 quites/partido, D. Blind 1.5 quites/partido"
+  },
+  {
+   "local": "FC Lugano",
+   "visitante": "NSI Runavik",
+   "gole": "K. Behrens 73.6%",
+   "remates": "FC Lugano: K. Behrens 4.0 remates totales (1.5 a puerta), R. Steffen 2.5 remates totales (1.5 a puerta), Daniel Dos Santos 2.0 remates totales (1.0 a puerta)",
+   "tarjetas": "FC Lugano: M. Zanotti 0.5 amarillas/partido, K. Behrens 0.5 amarillas/partido",
+   "asistencias": "FC Lugano: M. Zanotti 0.5 asistencias/partido, A. Papadopoulos 0.5 asistencias/partido, U. Bislimi 0.5 asistencias/partido",
+   "faltas": "FC Lugano: M. Zanotti 3.0 faltas/partido, U. Bislimi 2.5 faltas/partido, A. Papadopoulos 1.5 faltas/partido",
+   "quites": "FC Lugano: U. Bislimi 3.0 quites/partido, R. Steffen 3.0 quites/partido, Y. Cimignani 1.5 quites/partido"
   }
  ]
 }
