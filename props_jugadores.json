@@ -33,7 +33,12 @@
   {
    "local": "Debreceni VSC",
    "visitante": "FC Copenhagen",
-   "gole": "Robert 76.4% &middot; M. Emil Madsen 39.3%"
+   "gole": "Robert 76.4% &middot; M. Emil Madsen 39.3%",
+   "remates": "Debreceni VSC: Á. Lang 1.0 remates totales (0.0 a puerta), B. Boskovic 1.0 remates totales (0.0 a puerta), Adrián Guerrero 0.5 remates totales (0.5 a puerta) | FC Copenhagen: Robert 2.5 remates totales (2.5 a puerta), F. Beijmo 0.5 remates totales (0.0 a puerta), M. Garananga 0.5 remates totales (0.0 a puerta)",
+   "tarjetas": "Debreceni VSC: Á. Lang 0.5 amarillas/partido, B. Boskovic 0.5 amarillas/partido | FC Copenhagen: J. Suzuki 0.5 amarillas/partido, W. Clem 0.5 amarillas/partido",
+   "asistencias": "Debreceni VSC: S. Baldoni 0.5 asistencias/partido | FC Copenhagen: M. Emil Madsen 1.0 asistencias/partido, M. Elyounoussi 0.5 asistencias/partido, A. Cornelius 0.5 asistencias/partido",
+   "faltas": "Debreceni VSC: B. Boskovic 3.5 faltas/partido, Á. Lang 1.5 faltas/partido, Adrián Guerrero 1.5 faltas/partido | FC Copenhagen: J. Suzuki 1.5 faltas/partido, M. Emil Madsen 1.5 faltas/partido, M. Garananga 1.0 faltas/partido",
+   "quites": "Debreceni VSC: Adrián Guerrero 2.5 quites/partido, B. Dzsudzsák 1.0 quites/partido, Á. Lang 0.5 quites/partido | FC Copenhagen: J. Suzuki 2.5 quites/partido, M. Emil Madsen 2.5 quites/partido, M. Elyounoussi 2.0 quites/partido"
   },
   {
    "local": "Inter Club d'Escaldes",
@@ -43,12 +48,22 @@
   {
    "local": "Riga",
    "visitante": "Gyori ETO FC",
-   "gole": "N. Njie 63.2%"
+   "gole": "N. Njie 63.2%",
+   "remates": "Gyori ETO FC: V. Đukanović 2.0 remates totales (1.5 a puerta), C. Bumba 1.5 remates totales (1.5 a puerta), M. Krpić 1.0 remates totales (0.5 a puerta)",
+   "tarjetas": "Gyori ETO FC: N. Njie 0.5 amarillas/partido",
+   "asistencias": "Gyori ETO FC: D. Štefulj 0.5 asistencias/partido",
+   "faltas": "Gyori ETO FC: Ã. Umathum 1.5 faltas/partido, D. Štefulj 1.5 faltas/partido, M. Lamin Mass 1.5 faltas/partido",
+   "quites": "Gyori ETO FC: D. Štefulj 2.0 quites/partido, M. Vitális 1.5 quites/partido, S. Schön 1.5 quites/partido"
   },
   {
    "local": "Beitar Jerusalem",
    "visitante": "Austria Vienna",
-   "gole": "E. Kara 70.6% &middot; P. Dahl 39.3% &middot; Y. Demir 39.3%"
+   "gole": "E. Kara 70.6% &middot; P. Dahl 39.3% &middot; Y. Demir 39.3%",
+   "remates": "Austria Vienna: M. Fischer 1.5 remates totales (0.5 a puerta), Matteo Schablas 1.5 remates totales (1.5 a puerta), J. Feddersen 1.0 remates totales (0.5 a puerta)",
+   "tarjetas": "Austria Vienna: F. Wustinger 0.5 amarillas/partido",
+   "asistencias": "Austria Vienna: M. Fischer 1.0 asistencias/partido, Philipp Maybach 0.5 asistencias/partido",
+   "faltas": "Austria Vienna: V. Markovic 2.5 faltas/partido, Philipp Maybach 2.0 faltas/partido, R. Ranftl 1.5 faltas/partido",
+   "quites": "Austria Vienna: Matteo Schablas 3.5 quites/partido, R. Ranftl 2.5 quites/partido, F. Wustinger 2.0 quites/partido"
   },
   {
    "local": "Ajax",
