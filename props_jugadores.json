@@ -1,36 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Rosario Central",
-   "visitante": "Aldosivi",
-   "gole": "E. Copetti 23.1%",
-   "remates": "Rosario Central: J. Campaz 2.33 remates totales (1.2 a puerta), Á. Di María 1.82 remates totales (1.0 a puerta), A. Véliz 1.82 remates totales (0.76 a puerta) | Aldosivi: M. García 3.0 remates totales (0.8 a puerta), A. Vombergar 1.5 remates totales (0.0 a puerta), L. Castro 1.33 remates totales (0.33 a puerta)",
-   "tarjetas": "Rosario Central: E. Veron 0.67 amarillas/partido, F. Ibarra 0.4 amarillas/partido, E. Giménez 0.29 amarillas/partido | Aldosivi: M. García 0.8 amarillas/partido, F. Gino 0.46 amarillas/partido, E. Rolón 0.43 amarillas/partido",
-   "asistencias": "Rosario Central: J. Campaz 0.27 asistencias/partido, Á. Di María 0.24 asistencias/partido, G. Cantizano 0.2 asistencias/partido | Aldosivi: L. Rodríguez 0.09 asistencias/partido, T. Fernández 0.08 asistencias/partido, F. Román 0.07 asistencias/partido",
-   "faltas": "Rosario Central: F. Ibarra 1.7 faltas/partido, E. Giménez 1.59 faltas/partido, E. Coronel 1.41 faltas/partido | Aldosivi: M. García 3.6 faltas/partido, J. Pombo 2.33 faltas/partido, J. Novillo 1.75 faltas/partido",
-   "quites": "Rosario Central: F. Ibarra 4.35 quites/partido, E. Giménez 2.06 quites/partido, G. Ávila 1.62 quites/partido | Aldosivi: M. García 3.6 quites/partido, N. Breitenbruch 2.25 quites/partido, R. Bochi 2.1 quites/partido"
-  },
-  {
-   "local": "Operario-PR",
-   "visitante": "São Bernardo",
-   "gole": "Boschilia 42.7% &middot; Pablo 24.3%",
-   "remates": "Operario-PR: Boschilia 2.17 remates totales (1.06 a puerta), Pablo 1.39 remates totales (0.72 a puerta), Vinícius Diniz 1.06 remates totales (0.33 a puerta) | São Bernardo: Pedro Vitor 1.46 remates totales (0.77 a puerta), Lucas Lima 1.0 remates totales (0.67 a puerta), Hyoran 0.86 remates totales (0.29 a puerta)",
-   "tarjetas": "Operario-PR: J. Cuenú 0.36 amarillas/partido, Vinícius Diniz 0.33 amarillas/partido, Klaus 0.3 amarillas/partido | São Bernardo: Hélder 0.5 amarillas/partido, Felipe Garcia 0.36 amarillas/partido, Pedro Vitor 0.31 amarillas/partido",
-   "asistencias": "Operario-PR: Mikael Doka 0.21 asistencias/partido, Gabriel Feliciano 0.2 asistencias/partido, Pablo 0.17 asistencias/partido | São Bernardo: Mário Sérgio 0.5 asistencias/partido, Lucas Lima 0.33 asistencias/partido, Eduardo 0.16 asistencias/partido",
-   "faltas": "Operario-PR: Vinícius Diniz 1.83 faltas/partido, Pablo 1.56 faltas/partido, Boschilia 1.44 faltas/partido | São Bernardo: Felipe Garcia 1.57 faltas/partido, Hugo Sanches 1.5 faltas/partido, Eduardo 1.26 faltas/partido",
-   "quites": "Operario-PR: Mikael Doka 1.79 quites/partido, Matheus Trindade 1.74 quites/partido, Gabriel Feliciano 1.33 quites/partido | São Bernardo: Pedro Vitor 2.15 quites/partido, Lucas Lima 1.67 quites/partido, Jemerson 1.46 quites/partido"
-  },
-  {
-   "local": "Ceara",
-   "visitante": "Ponte Preta",
-   "gole": "Melk 19.9%",
-   "remates": "Ceara: Vina 1.75 remates totales (0.88 a puerta), N. Ferreira 1.5 remates totales (1.0 a puerta), Melk 1.39 remates totales (0.72 a puerta) | Ponte Preta: Bryan 1.5 remates totales (0.75 a puerta), William Pottker 1.42 remates totales (0.83 a puerta), Élvis 1.31 remates totales (0.69 a puerta)",
-   "tarjetas": "Ceara: Caio 0.5 amarillas/partido, Bryan 0.4 amarillas/partido, Bruno Ferreira 0.4 amarillas/partido | Ponte Preta: Luis Phelipe 0.5 amarillas/partido, Julio 0.43 amarillas/partido, David Braz 0.4 amarillas/partido",
-   "asistencias": "Ceara: N. Ferreira 0.5 asistencias/partido, Giulio 0.3 asistencias/partido, Melk 0.17 asistencias/partido | Ponte Preta: Élvis 0.19 asistencias/partido, Luis Phelipe 0.12 asistencias/partido, Brandão 0.08 asistencias/partido",
-   "faltas": "Ceara: Vinicius Zanocelo 2.0 faltas/partido, Joao Gabriel 1.87 faltas/partido, Éder 1.74 faltas/partido | Ponte Preta: Léo Gomes 2.0 faltas/partido, Danilo Barcelos 1.87 faltas/partido, S. Palacios 1.75 faltas/partido",
-   "quites": "Ceara: Bryan 3.2 quites/partido, Fernandinho 1.82 quites/partido, Vinicius Zanocelo 1.67 quites/partido | Ponte Preta: Julio 3.43 quites/partido, Murilo 2.14 quites/partido, Thalys 1.92 quites/partido"
-  },
-  {
    "local": "Independ. Rivadavia",
    "visitante": "Estudiantes de Rio Cuarto",
    "gole": "F. Sartori 30.8%",
@@ -83,7 +53,7 @@
   {
    "local": "Tigre",
    "visitante": "River Plate",
-   "gole": "D. Romero 44.2% &middot; S. Driussi 28.3% &middot; I. Russo 24.3%",
+   "gole": "D. Romero 44.2% &middot; S. Driussi 28.3% &middot; I. Russo 23.1%",
    "remates": "Tigre: D. Romero 2.42 remates totales (1.17 a puerta), I. Russo 1.79 remates totales (0.84 a puerta), P. Martínez 1.64 remates totales (0.86 a puerta) | River Plate: L. Beltrán 1.67 remates totales (1.0 a puerta), S. Driussi 1.6 remates totales (0.8 a puerta), F. Vera 1.53 remates totales (0.37 a puerta)",
    "tarjetas": "Tigre: J. Villalba 1.0 amarillas/partido, V. Moreno 0.45 amarillas/partido, G. Piñeiro 0.43 amarillas/partido | River Plate: M. Viña 0.5 amarillas/partido, M. Arambarri 0.5 amarillas/partido, M. Acuña 0.41 amarillas/partido",
    "asistencias": "Tigre: D. Romero 0.17 asistencias/partido, I. Russo 0.16 asistencias/partido, A. Barrionuevo 0.11 asistencias/partido | River Plate: J. Meza 0.25 asistencias/partido, J. Quintero 0.2 asistencias/partido, F. Colidio 0.16 asistencias/partido",
@@ -123,7 +93,7 @@
   {
    "local": "Boca Juniors",
    "visitante": "Velez Sarsfield",
-   "gole": "F. Monzón 31.3% &middot; M. Merentiel 26.8%",
+   "gole": "F. Monzón 31.3% &middot; M. Merentiel 25.5%",
    "remates": "Boca Juniors: L. Flores 2.33 remates totales (0.0 a puerta), M. Giménez 1.71 remates totales (0.86 a puerta), A. Bareiro 1.7 remates totales (1.0 a puerta) | Velez Sarsfield: F. Monzón 1.88 remates totales (1.06 a puerta), S. Escobar 1.33 remates totales (0.0 a puerta), M. Pellegrini 1.27 remates totales (0.67 a puerta)",
    "tarjetas": "Boca Juniors: L. Paredes 0.47 amarillas/partido, A. Bareiro 0.4 amarillas/partido, L. Janson 0.33 amarillas/partido | Velez Sarsfield: S. Escobar 0.33 amarillas/partido, B. Romero 0.3 amarillas/partido, Thiago Silveor 0.29 amarillas/partido",
    "asistencias": "Boca Juniors: E. Zeballos 0.38 asistencias/partido, S. Villa 0.33 asistencias/partido, L. Paredes 0.18 asistencias/partido | Velez Sarsfield: T. Aguirre 0.5 asistencias/partido, D. Valdés 0.29 asistencias/partido, M. Arias 0.2 asistencias/partido",
