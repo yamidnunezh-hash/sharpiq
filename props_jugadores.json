@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Independiente",
-   "visitante": "Platense",
-   "gole": "G. Ávalos 42.3% &middot; M. Abaldo 23.1%",
-   "remates": "Independiente: G. Ávalos 2.15 remates totales (0.75 a puerta), S. Montiel 1.4 remates totales (0.8 a puerta), M. Abaldo 1.16 remates totales (0.79 a puerta) | Platense: N. López 2.0 remates totales (2.0 a puerta), H. Bobadilla 1.5 remates totales (1.0 a puerta), F. Zapiola 1.44 remates totales (0.72 a puerta)",
-   "tarjetas": "Independiente: D. Martínez 0.5 amarillas/partido, M. Valenzuela 0.29 amarillas/partido, F. Zabala 0.28 amarillas/partido | Platense: V. Cuesta 0.45 amarillas/partido, M. Mendia 0.4 amarillas/partido, F. Amarfil 0.36 amarillas/partido",
-   "asistencias": "Independiente: G. Ávalos 0.25 asistencias/partido, V. Malcorra 0.2 asistencias/partido, F. Tempone 0.2 asistencias/partido | Platense: N. Retamar 0.13 asistencias/partido, J. Gauto 0.11 asistencias/partido, T. Nasif 0.08 asistencias/partido",
-   "faltas": "Independiente: F. Zabala 1.67 faltas/partido, M. Valenzuela 1.43 faltas/partido, G. Ávalos 1.4 faltas/partido | Platense: F. Amarfil 1.71 faltas/partido, Stefan Đokić 1.67 faltas/partido, M. Mendia 1.4 faltas/partido",
-   "quites": "Independiente: D. Martínez 2.5 quites/partido, I. Marcone 2.33 quites/partido, F. Zabala 2.22 quites/partido | Platense: P. Ferreira 3.33 quites/partido, T. Silva 3.0 quites/partido, Stefan Đokić 2.33 quites/partido"
-  },
-  {
    "local": "Cruzeiro",
    "visitante": "Mirassol",
    "gole": "Christian 25.5% &middot; Matheus Pereira 24.3%",
@@ -149,6 +139,26 @@
    "asistencias": "Argentinos JRS: H. López 0.18 asistencias/partido, G. Florentín 0.17 asistencias/partido, L. Lozano 0.14 asistencias/partido | Racing Club: D. Pizarro 0.5 asistencias/partido, M. Kranevitter 0.33 asistencias/partido, G. Rojas 0.29 asistencias/partido",
    "faltas": "Argentinos JRS: T. Molina 1.24 faltas/partido, I. Morales 1.13 faltas/partido, A. Lescano 1.0 faltas/partido | Racing Club: A. Martínez 1.71 faltas/partido, J. Nardoni 1.5 faltas/partido, B. Gallego 1.5 faltas/partido",
    "quites": "Argentinos JRS: L. Lozano 2.29 quites/partido, K. Coronel 2.2 quites/partido, F. Álvarez 1.67 quites/partido | Racing Club: E. Cannavo 3.0 quites/partido, S. Sosa 1.8 quites/partido, B. Zuculini 1.75 quites/partido"
+  },
+  {
+   "local": "Banfield",
+   "visitante": "Belgrano Cordoba",
+   "gole": "M. Méndez 31.3% &middot; Tiziano Perrota 31.3% &middot; N. Fernández 20.3%",
+   "remates": "Banfield: D. Zalazar 1.73 remates totales (0.47 a puerta), Tiziano Perrota 1.69 remates totales (0.81 a puerta), M. Méndez 1.56 remates totales (0.75 a puerta) | Belgrano Cordoba: L. Zelarayán 1.67 remates totales (0.62 a puerta), R. Hernandes 1.57 remates totales (0.57 a puerta), N. Fernández 1.5 remates totales (0.91 a puerta)",
+   "tarjetas": "Banfield: T. Adoryán 0.36 amarillas/partido, Santiago Esquivel 0.27 amarillas/partido, J. Alfaro 0.25 amarillas/partido | Belgrano Cordoba: A. Falcon 0.5 amarillas/partido, R. Hernandes 0.43 amarillas/partido, Alcides Benítez 0.29 amarillas/partido",
+   "asistencias": "Banfield: S. López 0.21 asistencias/partido, I. Abraham 0.21 asistencias/partido, D. Zalazar 0.2 asistencias/partido | Belgrano Cordoba: L. Passerini 0.35 asistencias/partido, N. Fernández 0.18 asistencias/partido, E. Rigoni 0.15 asistencias/partido",
+   "faltas": "Banfield: L. Ríos 2.0 faltas/partido, T. Adoryán 1.93 faltas/partido, I. Pais 1.93 faltas/partido | Belgrano Cordoba: R. Hernandes 1.86 faltas/partido, A. Sánchez 1.55 faltas/partido, L. Passerini 1.53 faltas/partido",
+   "quites": "Banfield: I. Pais 2.73 quites/partido, T. Adoryán 2.5 quites/partido, J. Alfaro 2.5 quites/partido | Belgrano Cordoba: A. Sánchez 2.68 quites/partido, Alcides Benítez 2.59 quites/partido, R. Hernandes 2.57 quites/partido"
+  },
+  {
+   "local": "Goias",
+   "visitante": "Londrina",
+   "gole": "Bruno Santos 49.7% &middot; Kadu 39.3% &middot; Anselmo Ramon 24.3%",
+   "remates": "Goias: Kadu 2.1 remates totales (0.8 a puerta), Gegê 1.23 remates totales (0.54 a puerta), Anselmo Ramon 0.94 remates totales (0.5 a puerta) | Londrina: Raí 2.5 remates totales (1.0 a puerta), Bruno Santos 2.19 remates totales (1.19 a puerta), Iago Teles 2.08 remates totales (1.08 a puerta)",
+   "tarjetas": "Goias: Luquinhas 0.33 amarillas/partido, Kadu 0.3 amarillas/partido, Nicolas 0.29 amarillas/partido | Londrina: João Vitor 0.5 amarillas/partido, Kevyn 0.45 amarillas/partido, Fabiano 0.4 amarillas/partido",
+   "asistencias": "Goias: E. García 0.23 asistencias/partido, Diego Caito 0.17 asistencias/partido, Lucas Lima 0.16 asistencias/partido | Londrina: João Vitor 0.5 asistencias/partido, Victor Hugo 0.25 asistencias/partido, Iago Teles 0.23 asistencias/partido",
+   "faltas": "Goias: Kadu 2.1 faltas/partido, Luquinhas 1.44 faltas/partido, Luiz Felipe 1.29 faltas/partido | Londrina: Iago Teles 1.85 faltas/partido, Pablo Dyego 1.5 faltas/partido, Tárik 1.33 faltas/partido",
+   "quites": "Goias: Luquinhas 1.89 quites/partido, Lucas Lima 1.42 quites/partido, Guilherme Baldória 1.25 quites/partido | Londrina: Victor Hugo 1.62 quites/partido, Heron 1.53 quites/partido, Yago Lincoln 1.44 quites/partido"
   }
  ]
 }
