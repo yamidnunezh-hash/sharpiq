@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "San Lorenzo",
-   "visitante": "Huracan",
-   "gole": "R. Auzmendi 36.6% &middot; J. Caicedo 36.2%",
-   "remates": "San Lorenzo: R. Auzmendi 2.27 remates totales (1.45 a puerta), A. Cuello 1.53 remates totales (0.58 a puerta), F. Lorenzón 1.0 remates totales (0.33 a puerta) | Huracan: J. Caicedo 1.65 remates totales (1.05 a puerta), N. Paz 1.4 remates totales (0.4 a puerta), L. Blondel 1.23 remates totales (0.15 a puerta)",
-   "tarjetas": "San Lorenzo: F. Lorenzón 0.67 amarillas/partido, J. Devecchi 0.5 amarillas/partido, L. Montenegro 0.33 amarillas/partido | Huracan: C. Ibáñez 0.5 amarillas/partido, Ignacio Campo 0.5 amarillas/partido, J. Caicedo 0.45 amarillas/partido",
-   "asistencias": "San Lorenzo: N. Barrios 0.2 asistencias/partido, A. Cuello 0.16 asistencias/partido, Facundo Gulli 0.13 asistencias/partido | Huracan: Ó. Cortés 0.21 asistencias/partido, E. Ojeda 0.11 asistencias/partido, C. Ibáñez 0.11 asistencias/partido",
-   "faltas": "San Lorenzo: L. Montenegro 1.67 faltas/partido, A. Cuello 1.58 faltas/partido, E. Cerutti 1.57 faltas/partido | Huracan: C. Ibáñez 2.11 faltas/partido, J. Caicedo 2.05 faltas/partido, F. Waller 1.94 faltas/partido",
-   "quites": "San Lorenzo: F. Lorenzón 3.0 quites/partido, G. Hernández 2.89 quites/partido, A. Cordoba 2.67 quites/partido | Huracan: F. Waller 2.94 quites/partido, C. Ibáñez 2.78 quites/partido, F. Vera 2.67 quites/partido"
-  },
-  {
    "local": "Bahia",
    "visitante": "Vasco DA Gama",
    "gole": "Luciano Juba 33.8%",
@@ -74,11 +64,11 @@
    "local": "Cuiaba",
    "visitante": "Fortaleza EC",
    "gole": "J. Miritello 25.5%",
-   "remates": "Cuiaba: Rodrigo Farofa 1.47 remates totales (0.89 a puerta), Hernandes 1.4 remates totales (0.8 a puerta), Vinicius Peixoto 1.19 remates totales (0.69 a puerta) | Fortaleza EC: J. Miritello 1.76 remates totales (1.06 a puerta), Pedro Henrique 1.75 remates totales (0.75 a puerta), Maílton 1.53 remates totales (0.67 a puerta)",
+   "remates": "Cuiaba: Rodrigo Farofa 1.47 remates totales (0.89 a puerta), Hernandes 1.4 remates totales (0.8 a puerta), Eliel 1.25 remates totales (0.25 a puerta) | Fortaleza EC: J. Miritello 1.76 remates totales (1.06 a puerta), Pedro Henrique 1.75 remates totales (0.75 a puerta), Maílton 1.53 remates totales (0.67 a puerta)",
    "tarjetas": "Cuiaba: Gabriel 0.75 amarillas/partido, David Miguel 0.5 amarillas/partido, Hernandes 0.4 amarillas/partido | Fortaleza EC: Lucas Emanoel 0.5 amarillas/partido, Nathan Fogaça 0.5 amarillas/partido, Rodriguinho 0.38 amarillas/partido",
-   "asistencias": "Cuiaba: Hernandes 0.2 asistencias/partido, Pepê 0.18 asistencias/partido, Kauan 0.12 asistencias/partido | Fortaleza EC: Kayke 0.33 asistencias/partido, Paulo Baya 0.1 asistencias/partido, Pierre 0.09 asistencias/partido",
-   "faltas": "Cuiaba: Eliel 3.25 faltas/partido, David Miguel 2.22 faltas/partido, Pepê 1.82 faltas/partido | Fortaleza EC: Kayke 2.0 faltas/partido, Nathan Fogaça 2.0 faltas/partido, Pierre 1.73 faltas/partido",
-   "quites": "Cuiaba: Eliel 4.25 quites/partido, Lorenzo 2.0 quites/partido, Raul 1.7 quites/partido | Fortaleza EC: Pierre 1.73 quites/partido, Mauricio Junior 1.53 quites/partido, Lucas Sasha 1.5 quites/partido"
+   "asistencias": "Cuiaba: Eliel 0.25 asistencias/partido, Hernandes 0.2 asistencias/partido, Pepê 0.18 asistencias/partido | Fortaleza EC: Kayke 0.33 asistencias/partido, Paulo Baya 0.1 asistencias/partido, Pierre 0.09 asistencias/partido",
+   "faltas": "Cuiaba: David Miguel 2.22 faltas/partido, Pepê 1.82 faltas/partido, Hernandes 1.6 faltas/partido | Fortaleza EC: Kayke 2.0 faltas/partido, Nathan Fogaça 2.0 faltas/partido, Pierre 1.73 faltas/partido",
+   "quites": "Cuiaba: Lorenzo 2.0 quites/partido, Raul 1.7 quites/partido, Gabriel 1.5 quites/partido | Fortaleza EC: Pierre 1.73 quites/partido, Mauricio Junior 1.62 quites/partido, Lucas Sasha 1.56 quites/partido"
   },
   {
    "local": "RB Bragantino",
