@@ -1,36 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Boca Juniors",
-   "visitante": "Velez Sarsfield",
-   "gole": "F. Monzón 31.3% &middot; M. Merentiel 25.5%",
-   "remates": "Boca Juniors: L. Flores 2.33 remates totales (0.0 a puerta), M. Giménez 1.71 remates totales (0.86 a puerta), A. Bareiro 1.7 remates totales (1.0 a puerta) | Velez Sarsfield: F. Monzón 1.88 remates totales (1.06 a puerta), S. Escobar 1.33 remates totales (0.0 a puerta), M. Pellegrini 1.27 remates totales (0.67 a puerta)",
-   "tarjetas": "Boca Juniors: L. Paredes 0.47 amarillas/partido, A. Bareiro 0.4 amarillas/partido, L. Janson 0.33 amarillas/partido | Velez Sarsfield: S. Escobar 0.33 amarillas/partido, B. Romero 0.3 amarillas/partido, Thiago Silveor 0.29 amarillas/partido",
-   "asistencias": "Boca Juniors: E. Zeballos 0.38 asistencias/partido, S. Villa 0.33 asistencias/partido, L. Paredes 0.18 asistencias/partido | Velez Sarsfield: T. Aguirre 0.5 asistencias/partido, D. Valdés 0.29 asistencias/partido, M. Arias 0.2 asistencias/partido",
-   "faltas": "Boca Juniors: L. Janson 2.33 faltas/partido, A. Bareiro 1.7 faltas/partido, L. Lozano 1.5 faltas/partido | Velez Sarsfield: Jano Gordon 2.0 faltas/partido, F. Monzón 1.44 faltas/partido, T. Andrada 1.41 faltas/partido",
-   "quites": "Boca Juniors: L. Blanco 2.88 quites/partido, L. Di Lollo 2.69 quites/partido, M. Braida 2.43 quites/partido | Velez Sarsfield: Jano Gordon 3.33 quites/partido, R. Aliendro 2.6 quites/partido, T. Andrada 2.59 quites/partido"
-  },
-  {
-   "local": "Coritiba",
-   "visitante": "Chapecoense-sc",
-   "gole": "Breno Lopes 35.9% &middot; J. Lavega 23.1%",
-   "remates": "Coritiba: Pedro Rocha 1.65 remates totales (0.75 a puerta), Lucas Ronier 1.5 remates totales (0.5 a puerta), B. Ocampo 1.0 remates totales (0.0 a puerta) | Chapecoense-sc: Neto Pessoa 1.3 remates totales (0.5 a puerta), Y. Bolasie 1.29 remates totales (0.53 a puerta), João Vitor 1.18 remates totales (0.27 a puerta)",
-   "tarjetas": "Coritiba: Paulo Roberto 0.5 amarillas/partido, Thiago Santos 0.36 amarillas/partido, Lucas Taverna 0.33 amarillas/partido | Chapecoense-sc: Eduardo Vinicius 0.5 amarillas/partido, Matheus Aurélio 0.33 amarillas/partido, Bruno Matias 0.33 amarillas/partido",
-   "asistencias": "Coritiba: Josué 0.4 asistencias/partido, Tinga 0.14 asistencias/partido, Lucas Ronier 0.11 asistencias/partido | Chapecoense-sc: Bruno Pacheco 0.25 asistencias/partido, Jean Carlos 0.12 asistencias/partido, Marcos Vinícius 0.1 asistencias/partido",
-   "faltas": "Coritiba: S. Gómez 1.47 faltas/partido, Wallisson 1.33 faltas/partido, Lucas Taverna 1.33 faltas/partido | Chapecoense-sc: João Paulo 1.83 faltas/partido, Bruno Matias 1.67 faltas/partido, Higor Meritão 1.55 faltas/partido",
-   "quites": "Coritiba: Jacy 1.78 quites/partido, Lucas Ronier 1.72 quites/partido, S. Gómez 1.59 quites/partido | Chapecoense-sc: Camilo 2.29 quites/partido, Higor Meritão 2.0 quites/partido, Bruno Pacheco 1.5 quites/partido"
-  },
-  {
-   "local": "Botafogo",
-   "visitante": "Fluminense",
-   "gole": "John Kennedy 39.3% &middot; Danilo Santos 39.3% &middot; Arthur Cabral 33.8%",
-   "remates": "Botafogo: Arthur Cabral 1.82 remates totales (1.12 a puerta), Danilo Santos 1.57 remates totales (0.86 a puerta), Matheus Martins 1.5 remates totales (1.0 a puerta) | Fluminense: Hulk 3.67 remates totales (1.67 a puerta), John Kennedy 1.89 remates totales (1.44 a puerta), J. Savarino 1.59 remates totales (0.82 a puerta)",
-   "tarjetas": "Botafogo: Warleson 0.5 amarillas/partido, Huguinho 0.5 amarillas/partido, J. Correa 0.5 amarillas/partido | Fluminense: Thiago Silva 0.5 amarillas/partido, Nonato 0.38 amarillas/partido, Alisson 0.38 amarillas/partido",
-   "asistencias": "Botafogo: Kauan Toledo 0.4 asistencias/partido, Nathan Fernandes 0.25 asistencias/partido, Álvaro Montoro 0.18 asistencias/partido | Fluminense: L. Acosta 0.24 asistencias/partido, Guga 0.15 asistencias/partido, Renê 0.14 asistencias/partido",
-   "faltas": "Botafogo: Huguinho 2.0 faltas/partido, A. Barboza 1.92 faltas/partido, Arthur Cabral 1.59 faltas/partido | Fluminense: R. Castillo 1.67 faltas/partido, Hércules 1.58 faltas/partido, J. Millán 1.5 faltas/partido",
-   "quites": "Botafogo: A. Barboza 2.08 quites/partido, Vitinho 2.06 quites/partido, N. Ferraresi 1.86 quites/partido | Fluminense: Renê 2.14 quites/partido, Nonato 1.88 quites/partido, F. Bernal 1.6 quites/partido"
-  },
-  {
    "local": "Independiente",
    "visitante": "Platense",
    "gole": "G. Ávalos 42.3% &middot; M. Abaldo 23.1%",
@@ -39,16 +9,6 @@
    "asistencias": "Independiente: G. Ávalos 0.25 asistencias/partido, V. Malcorra 0.2 asistencias/partido, F. Tempone 0.2 asistencias/partido | Platense: N. Retamar 0.13 asistencias/partido, J. Gauto 0.11 asistencias/partido, T. Nasif 0.08 asistencias/partido",
    "faltas": "Independiente: F. Zabala 1.67 faltas/partido, M. Valenzuela 1.43 faltas/partido, G. Ávalos 1.4 faltas/partido | Platense: F. Amarfil 1.71 faltas/partido, Stefan Đokić 1.67 faltas/partido, M. Mendia 1.4 faltas/partido",
    "quites": "Independiente: D. Martínez 2.5 quites/partido, I. Marcone 2.33 quites/partido, F. Zabala 2.22 quites/partido | Platense: P. Ferreira 3.33 quites/partido, T. Silva 3.0 quites/partido, Stefan Đokić 2.33 quites/partido"
-  },
-  {
-   "local": "Instituto Cordoba",
-   "visitante": "Gimnasia M.",
-   "gole": "A. Módica 35.5% &middot; M. Torres 34.4% &middot; N. Fernández 20.3%",
-   "remates": "Instituto Cordoba: A. Luna 2.17 remates totales (1.06 a puerta), F. Jara 1.36 remates totales (0.55 a puerta), D. Sosa 1.0 remates totales (0.32 a puerta) | Gimnasia M.: F. Lencioni 1.79 remates totales (0.68 a puerta), A. Módica 1.69 remates totales (1.0 a puerta), U. Sánchez 1.0 remates totales (0.38 a puerta)",
-   "tarjetas": "Instituto Cordoba: F. Alarcón 0.44 amarillas/partido, F. Moyano 0.33 amarillas/partido, G. Cerato 0.32 amarillas/partido | Gimnasia M.: L. Petruchi 0.5 amarillas/partido, E. Fernández 0.33 amarillas/partido, F. Antonini 0.27 amarillas/partido",
-   "asistencias": "Instituto Cordoba: D. Sosa 0.16 asistencias/partido, J. Lázaro 0.14 asistencias/partido, G. Lodico 0.13 asistencias/partido | Gimnasia M.: F. Lencioni 0.32 asistencias/partido, I. Sabatini 0.25 asistencias/partido, L. Cingolani 0.1 asistencias/partido",
-   "faltas": "Instituto Cordoba: J. Córdoba 1.67 faltas/partido, A. Luna 1.5 faltas/partido, F. Alarcón 1.44 faltas/partido | Gimnasia M.: N. Linares 1.62 faltas/partido, F. Antonini 1.6 faltas/partido, I. Sabatini 1.5 faltas/partido",
-   "quites": "Instituto Cordoba: A. Massaccesi 2.4 quites/partido, G. Cerato 2.32 quites/partido, F. Alarcón 1.94 quites/partido | Gimnasia M.: U. Sánchez 1.85 quites/partido, D. Mondino 1.77 quites/partido, F. Lencioni 1.74 quites/partido"
   },
   {
    "local": "Cruzeiro",
