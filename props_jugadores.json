@@ -1,66 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Gremio",
-   "visitante": "Sao Paulo",
-   "gole": "Carlos Vinícius 40.9% &middot; J. Calleri 32.2% &middot; Luciano 31.3%",
-   "remates": "Gremio: Carlos Vinícius 1.47 remates totales (1.11 a puerta), Tetê 1.31 remates totales (0.62 a puerta), F. Amuzu 1.28 remates totales (0.44 a puerta) | Sao Paulo: J. Calleri 1.89 remates totales (0.83 a puerta), Artur 1.33 remates totales (0.92 a puerta), Luciano 1.25 remates totales (0.75 a puerta)",
-   "tarjetas": "Gremio: W. Kannemann 0.5 amarillas/partido, André Henrique 0.4 amarillas/partido, Dodi 0.33 amarillas/partido | Sao Paulo: E. Díaz 0.54 amarillas/partido, R. Tolói 0.5 amarillas/partido, D. Ferreira 0.5 amarillas/partido",
-   "asistencias": "Gremio: F. Amuzu 0.17 asistencias/partido, C. Pavón 0.17 asistencias/partido, Gustavo Martins 0.15 asistencias/partido | Sao Paulo: Osorio Luis 0.25 asistencias/partido, Wendell 0.21 asistencias/partido, Marcos Antônio 0.14 asistencias/partido",
-   "faltas": "Gremio: W. Kannemann 2.0 faltas/partido, L. Pérez 1.82 faltas/partido, Viery 1.54 faltas/partido | Sao Paulo: Wendell 2.14 faltas/partido, E. Díaz 1.77 faltas/partido, J. Calleri 1.56 faltas/partido",
-   "quites": "Gremio: Marlon 3.0 quites/partido, Viery 2.23 quites/partido, Luis Eduardo 2.0 quites/partido | Sao Paulo: R. Arboleda 2.5 quites/partido, E. Díaz 2.46 quites/partido, R. Tolói 2.17 quites/partido"
-  },
-  {
-   "local": "Vila Nova",
-   "visitante": "Sport Recife",
-   "gole": "Perotti 37.7% &middot; Chrystian Barletta 37.6% &middot; Vinícius 33.0%",
-   "remates": "Vila Nova: Rafa Silva 2.0 remates totales (1.6 a puerta), Janderson 1.21 remates totales (0.79 a puerta), Dellatorre 1.15 remates totales (0.38 a puerta) | Sport Recife: Perotti 2.32 remates totales (1.26 a puerta), Chrystian Barletta 1.88 remates totales (0.94 a puerta), Iury Castilho 1.46 remates totales (0.54 a puerta)",
-   "tarjetas": "Vila Nova: Pedro Romano 0.57 amarillas/partido, Dalberson 0.5 amarillas/partido, Rafa Silva 0.4 amarillas/partido | Sport Recife: Chrystian Barletta 0.35 amarillas/partido, Iury Castilho 0.31 amarillas/partido, Zé Lucas 0.29 amarillas/partido",
-   "asistencias": "Vila Nova: Marquinhos Gabriel 0.29 asistencias/partido, Janderson 0.21 asistencias/partido, Enzo 0.17 asistencias/partido | Sport Recife: Chrystian Barletta 0.18 asistencias/partido, Biel 0.16 asistencias/partido, Marlon 0.15 asistencias/partido",
-   "faltas": "Vila Nova: Higor Meritão 2.25 faltas/partido, Breno Augusto 2.0 faltas/partido, Elias 1.89 faltas/partido | Sport Recife: Perotti 1.89 faltas/partido, Biel 1.47 faltas/partido, Zé Marcos 1.38 faltas/partido",
-   "quites": "Vila Nova: Higor Meritão 2.25 quites/partido, Igor Cariús 2.0 quites/partido, Dudu 1.67 quites/partido | Sport Recife: Biel 2.05 quites/partido, Habraão 1.57 quites/partido, Marcelo Ajul 1.38 quites/partido"
-  },
-  {
-   "local": "Tigre",
-   "visitante": "River Plate",
-   "gole": "D. Romero 44.2% &middot; S. Driussi 28.3% &middot; I. Russo 23.1%",
-   "remates": "Tigre: D. Romero 2.42 remates totales (1.17 a puerta), I. Russo 1.79 remates totales (0.84 a puerta), P. Martínez 1.64 remates totales (0.86 a puerta) | River Plate: L. Beltrán 1.67 remates totales (1.0 a puerta), S. Driussi 1.6 remates totales (0.8 a puerta), F. Vera 1.53 remates totales (0.37 a puerta)",
-   "tarjetas": "Tigre: J. Villalba 1.0 amarillas/partido, V. Moreno 0.45 amarillas/partido, G. Piñeiro 0.43 amarillas/partido | River Plate: M. Viña 0.5 amarillas/partido, M. Arambarri 0.5 amarillas/partido, M. Acuña 0.41 amarillas/partido",
-   "asistencias": "Tigre: D. Romero 0.17 asistencias/partido, I. Russo 0.16 asistencias/partido, A. Barrionuevo 0.11 asistencias/partido | River Plate: J. Meza 0.25 asistencias/partido, J. Quintero 0.2 asistencias/partido, F. Colidio 0.16 asistencias/partido",
-   "faltas": "Tigre: G. Piñeiro 2.14 faltas/partido, S. López 1.5 faltas/partido, B. Leyes 1.33 faltas/partido | River Plate: R. Borré 2.0 faltas/partido, M. Arambarri 2.0 faltas/partido, J. Freitas 1.47 faltas/partido",
-   "quites": "Tigre: V. Moreno 2.18 quites/partido, N. Banegas 2.14 quites/partido, S. López 2.11 quites/partido | River Plate: A. Moreno 3.19 quites/partido, L. Martínez 1.73 quites/partido, M. Acuña 1.71 quites/partido"
-  },
-  {
-   "local": "New England Revolution",
-   "visitante": "Houston Dynamo",
-   "gole": "N. Fernández Mercau 51.3% &middot; Guilherme 44.5%",
-   "remates": "New England Revolution: D. Turgeman 1.71 remates totales (0.82 a puerta), P. Miller 1.53 remates totales (0.67 a puerta), Carles Gil 1.29 remates totales (0.82 a puerta) | Houston Dynamo: M. Bogusz 2.5 remates totales (1.25 a puerta), Guilherme 2.0 remates totales (1.29 a puerta), E. Ponce 0.94 remates totales (0.25 a puerta)",
-   "tarjetas": "New England Revolution: B. Raines 0.38 amarillas/partido, B. Ceballos 0.33 amarillas/partido, W. Harris 0.33 amarillas/partido | Houston Dynamo: Lucas Halter 0.5 amarillas/partido, Felipe Andrade 0.5 amarillas/partido, E. Sviatchenko 0.3 amarillas/partido",
-   "asistencias": "New England Revolution: L. Langoni 0.4 asistencias/partido, D. Turgeman 0.24 asistencias/partido, Marcos Zambrano-Delgado 0.2 asistencias/partido | Houston Dynamo: J. McGlynn 0.31 asistencias/partido, Guilherme 0.29 asistencias/partido, L. Ennali 0.12 asistencias/partido",
-   "faltas": "New England Revolution: B. Raines 2.44 faltas/partido, A. Yusuf 1.47 faltas/partido, B. Ceballos 1.44 faltas/partido | Houston Dynamo: Felipe Andrade 1.5 faltas/partido, A. Resch 1.12 faltas/partido, E. Ponce 1.12 faltas/partido",
-   "quites": "New England Revolution: A. Yusuf 1.82 quites/partido, M. Fofana 1.81 quites/partido, W. Sands 1.59 quites/partido | Houston Dynamo: Felipe Andrade 2.21 quites/partido, D. Holmes 1.9 quites/partido, Lucas Halter 1.5 quites/partido"
-  },
-  {
-   "local": "Remo",
-   "visitante": "Atletico-MG",
-   "gole": "Alef Manga 21.2%",
-   "remates": "Remo: Patrick de Paula 1.83 remates totales (0.5 a puerta), Jája Silva 1.41 remates totales (0.82 a puerta), Alef Manga 1.33 remates totales (0.71 a puerta) | Atletico-MG: Hulk 1.42 remates totales (0.58 a puerta), T. Cuello 1.39 remates totales (0.5 a puerta), Gustavo Scarpa 1.0 remates totales (0.3 a puerta)",
-   "tarjetas": "Remo: Zé Ivaldo 0.67 amarillas/partido, Patrick de Paula 0.67 amarillas/partido, João Lucas 0.5 amarillas/partido | Atletico-MG: I. Román 0.5 amarillas/partido, Ruan Tressoldi 0.41 amarillas/partido, Lyanco 0.33 amarillas/partido",
-   "asistencias": "Remo: Patrick de Paula 0.33 asistencias/partido, Alef Manga 0.14 asistencias/partido, Vitor Bueno 0.14 asistencias/partido | Atletico-MG: Hulk 0.25 asistencias/partido, Bernard 0.12 asistencias/partido, Renan Lodi 0.11 asistencias/partido",
-   "faltas": "Remo: João Pedro 2.0 faltas/partido, Zé Ricardo 1.58 faltas/partido, João Lucas 1.33 faltas/partido | Atletico-MG: I. Román 2.0 faltas/partido, Renan Lodi 1.68 faltas/partido, A. Franco 1.67 faltas/partido",
-   "quites": "Remo: João Lucas 3.17 quites/partido, Patrick 2.28 quites/partido, Leo Andrade 2.25 quites/partido | Atletico-MG: I. Román 1.67 quites/partido, A. Franco 1.6 quites/partido, J. Alonso 1.5 quites/partido"
-  },
-  {
-   "local": "Botafogo SP",
-   "visitante": "America Mineiro",
-   "gole": "Hygor 32.0% &middot; Everton Morelli 30.8%",
-   "remates": "Botafogo SP: Everton Morelli 1.79 remates totales (0.63 a puerta), Hygor 1.46 remates totales (0.85 a puerta), Patrick Brey 0.89 remates totales (0.5 a puerta) | America Mineiro: M. Segovia 1.41 remates totales (0.71 a puerta), G. Mastriani 1.28 remates totales (0.83 a puerta), Guilherme Parede 1.25 remates totales (1.25 a puerta)",
-   "tarjetas": "Botafogo SP: Felipe Vieira 0.62 amarillas/partido, Matheus Sales 0.44 amarillas/partido, Márcio Carlos Maranhão 0.4 amarillas/partido | America Mineiro: Rafael Barcelos 0.5 amarillas/partido, Alex Silva 0.33 amarillas/partido, Otavio Goncalves 0.33 amarillas/partido",
-   "asistencias": "Botafogo SP: Rafael Gava 0.33 asistencias/partido, Patrick Brey 0.17 asistencias/partido, Zé Hugo 0.11 asistencias/partido | America Mineiro: M. Segovia 0.18 asistencias/partido, Paulinho 0.14 asistencias/partido, Willian 0.13 asistencias/partido",
-   "faltas": "Botafogo SP: Patrick Brey 2.06 faltas/partido, Carlão 1.75 faltas/partido, Guilherme Mariano 1.67 faltas/partido | America Mineiro: Rafael Barcelos 1.67 faltas/partido, Dalbert Henrique 1.53 faltas/partido, Alê 1.45 faltas/partido",
-   "quites": "Botafogo SP: Patrick Brey 2.06 quites/partido, Matheus Sales 1.56 quites/partido, Marco Antônio 1.5 quites/partido | America Mineiro: Nathan 1.7 quites/partido, Artur 1.6 quites/partido, Felipe Amaral 1.42 quites/partido"
-  },
-  {
    "local": "Boca Juniors",
    "visitante": "Velez Sarsfield",
    "gole": "F. Monzón 31.3% &middot; M. Merentiel 25.5%",
@@ -209,6 +149,46 @@
    "asistencias": "Cuiaba: Hernandes 0.2 asistencias/partido, Pepê 0.18 asistencias/partido, Kauan 0.12 asistencias/partido | Fortaleza EC: Kayke 0.33 asistencias/partido, Paulo Baya 0.1 asistencias/partido, Pierre 0.09 asistencias/partido",
    "faltas": "Cuiaba: Eliel 3.25 faltas/partido, David Miguel 2.22 faltas/partido, Pepê 1.82 faltas/partido | Fortaleza EC: Kayke 2.0 faltas/partido, Nathan Fogaça 2.0 faltas/partido, Pierre 1.73 faltas/partido",
    "quites": "Cuiaba: Eliel 4.25 quites/partido, Lorenzo 2.0 quites/partido, Raul 1.7 quites/partido | Fortaleza EC: Pierre 1.73 quites/partido, Mauricio Junior 1.53 quites/partido, Lucas Sasha 1.5 quites/partido"
+  },
+  {
+   "local": "RB Bragantino",
+   "visitante": "Corinthians",
+   "gole": "I. Pitta 28.3%",
+   "remates": "RB Bragantino: Lucas Barbosa 2.0 remates totales (0.94 a puerta), Davi Gomes 2.0 remates totales (1.0 a puerta), I. Pitta 1.83 remates totales (0.67 a puerta) | Corinthians: Yuri Alberto 1.88 remates totales (1.0 a puerta), R. Garro 1.05 remates totales (0.65 a puerta), João Pedro 1.0 remates totales (0.5 a puerta)",
+   "tarjetas": "RB Bragantino: Juninho Capixaba 0.53 amarillas/partido, Alix 0.35 amarillas/partido, I. Sosa 0.33 amarillas/partido | Corinthians: Kauê Camargo 1.0 amarillas/partido, André Ramalho 0.57 amarillas/partido, João Pedro 0.5 amarillas/partido",
+   "asistencias": "RB Bragantino: Marcelinho 0.25 asistencias/partido, Henry Mosquera 0.19 asistencias/partido, Juninho Capixaba 0.12 asistencias/partido | Corinthians: R. Garro 0.3 asistencias/partido, Z. Labyad 0.18 asistencias/partido, Yuri Alberto 0.12 asistencias/partido",
+   "faltas": "RB Bragantino: Juninho Capixaba 2.06 faltas/partido, Lucas Barbosa 2.0 faltas/partido, Alix 1.82 faltas/partido | Corinthians: Raniele 1.61 faltas/partido, João Pedro 1.5 faltas/partido, A. Carrillo 1.41 faltas/partido",
+   "quites": "RB Bragantino: Juninho Capixaba 2.06 quites/partido, Cauê Nascimento Santos 2.0 quites/partido, Ryan Tavares 2.0 quites/partido | Corinthians: Raniele 1.89 quites/partido, Matheus Bidu 1.81 quites/partido, Kaio César 1.78 quites/partido"
+  },
+  {
+   "local": "Santos",
+   "visitante": "Atletico Paranaense",
+   "gole": "Neymar 48.7% &middot; K. Viveros 45.1% &middot; Gabriel Barbosa 41.6%",
+   "remates": "Santos: Neymar 2.56 remates totales (1.33 a puerta), Á. Barreal 1.24 remates totales (0.59 a puerta), Gabriel Barbosa 1.23 remates totales (0.54 a puerta) | Atletico Paranaense: K. Viveros 2.2 remates totales (1.5 a puerta), Leozinho 1.57 remates totales (0.57 a puerta), S. Mendoza 1.1 remates totales (0.52 a puerta)",
+   "tarjetas": "Santos: Neymar 0.67 amarillas/partido, Diógenes 0.5 amarillas/partido, T. Rincón 0.5 amarillas/partido | Atletico Paranaense: Jádson 0.33 amarillas/partido, Arthur Dias 0.32 amarillas/partido, G. Benavídez 0.29 amarillas/partido",
+   "asistencias": "Santos: M. Terceros 0.22 asistencias/partido, Neymar 0.22 asistencias/partido, Zé Rafael 0.2 asistencias/partido | Atletico Paranaense: G. Benavídez 0.29 asistencias/partido, L. Esquivel 0.25 asistencias/partido, Claudinho 0.17 asistencias/partido",
+   "faltas": "Santos: João Schmidt 1.5 faltas/partido, T. Rincón 1.5 faltas/partido, C. Oliva 1.36 faltas/partido | Atletico Paranaense: K. Viveros 2.2 faltas/partido, L. Esquivel 1.69 faltas/partido, Léo 1.33 faltas/partido",
+   "quites": "Santos: João Paulo Ananias 3.0 quites/partido, Igor Vinicius 2.4 quites/partido, G. Escobar 2.29 quites/partido | Atletico Paranaense: L. Esquivel 2.31 quites/partido, Jádson 2.07 quites/partido, Felipinho 1.71 quites/partido"
+  },
+  {
+   "local": "Flamengo",
+   "visitante": "Vitoria",
+   "gole": "Pedro 45.1% &middot; Samuel Lino 22.1%",
+   "remates": "Flamengo: Lorran 2.0 remates totales (2.0 a puerta), Pedro 1.85 remates totales (1.2 a puerta), G. Plata 1.64 remates totales (1.09 a puerta) | Vitoria: Rene 1.86 remates totales (1.29 a puerta), Matheuzinho 1.21 remates totales (0.68 a puerta), E. Brítez 1.0 remates totales (0.0 a puerta)",
+   "tarjetas": "Flamengo: E. Pulgar 0.45 amarillas/partido, Léo Pereira 0.35 amarillas/partido, N. de la Cruz 0.27 amarillas/partido | Vitoria: Zé Marcos 0.5 amarillas/partido, E. Brítez 0.5 amarillas/partido, E. Martínez 0.41 amarillas/partido",
+   "asistencias": "Flamengo: Samuel Lino 0.35 asistencias/partido, G. Varela 0.2 asistencias/partido, Pedro 0.2 asistencias/partido | Vitoria: Erick 0.21 asistencias/partido, Gabriel Baralhas 0.17 asistencias/partido, Luan Cândido 0.14 asistencias/partido",
+   "faltas": "Flamengo: Alex Sandro 1.56 faltas/partido, Lucas Paquetá 1.5 faltas/partido, E. Pulgar 1.45 faltas/partido | Vitoria: Zé Marcos 2.5 faltas/partido, Zé Vitor 1.92 faltas/partido, E. Martínez 1.71 faltas/partido",
+   "quites": "Flamengo: E. Pulgar 1.73 quites/partido, Lucas Paquetá 1.58 quites/partido, G. Plata 1.55 quites/partido | Vitoria: Zé Vitor 2.0 quites/partido, Nathan 1.92 quites/partido, Caíque 1.83 quites/partido"
+  },
+  {
+   "local": "Argentinos JRS",
+   "visitante": "Racing Club",
+   "gole": "",
+   "remates": "Argentinos JRS: G. Verón 2.25 remates totales (1.0 a puerta), T. Molina 2.06 remates totales (0.94 a puerta), M. Giménez 1.5 remates totales (1.0 a puerta) | Racing Club: A. Martínez 1.53 remates totales (0.53 a puerta), M. Miljevic 1.29 remates totales (0.65 a puerta), D. Pizarro 1.0 remates totales (1.0 a puerta)",
+   "tarjetas": "Argentinos JRS: F. Paredes 0.5 amarillas/partido, R. Riquelme 0.46 amarillas/partido, F. Álvarez 0.33 amarillas/partido | Racing Club: J. Nardoni 0.5 amarillas/partido, M. Di Cesare 0.5 amarillas/partido, T. Rubio 0.5 amarillas/partido",
+   "asistencias": "Argentinos JRS: H. López 0.18 asistencias/partido, G. Florentín 0.17 asistencias/partido, L. Lozano 0.14 asistencias/partido | Racing Club: D. Pizarro 0.5 asistencias/partido, M. Kranevitter 0.33 asistencias/partido, G. Rojas 0.29 asistencias/partido",
+   "faltas": "Argentinos JRS: T. Molina 1.24 faltas/partido, I. Morales 1.13 faltas/partido, A. Lescano 1.0 faltas/partido | Racing Club: A. Martínez 1.71 faltas/partido, J. Nardoni 1.5 faltas/partido, B. Gallego 1.5 faltas/partido",
+   "quites": "Argentinos JRS: L. Lozano 2.29 quites/partido, K. Coronel 2.2 quites/partido, F. Álvarez 1.67 quites/partido | Racing Club: E. Cannavo 3.0 quites/partido, S. Sosa 1.8 quites/partido, B. Zuculini 1.75 quites/partido"
   }
  ]
 }
