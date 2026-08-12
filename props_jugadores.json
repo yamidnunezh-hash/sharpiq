@@ -1,19 +1,9 @@
 {
  "partidos": [
   {
-   "local": "Deportes Tolima",
-   "visitante": "Independiente del Valle",
-   "gole": "C. González 63.2% &middot; F. Fydriszewski 33.0% &middot; J. González 18.1%",
-   "remates": "Deportes Tolima: J. Hernández 1.67 remates totales (0.83 a puerta), J. González 1.2 remates totales (0.9 a puerta), L. Sandoval 1.12 remates totales (0.75 a puerta) | Independiente del Valle: C. González 4.17 remates totales (2.17 a puerta), J. Sornoza 2.5 remates totales (1.25 a puerta), J. Alcívar 2.0 remates totales (1.17 a puerta)",
-   "tarjetas": "Deportes Tolima: L. Sandoval 0.38 amarillas/partido, C. Arrieta 0.3 amarillas/partido, J. Nieto 0.25 amarillas/partido | Independiente del Valle: L. Loor 0.33 amarillas/partido, J. Angulo 0.33 amarillas/partido, J. Sornoza 0.25 amarillas/partido",
-   "asistencias": "Deportes Tolima: J. Valencia 0.2 asistencias/partido, L. Sandoval 0.12 asistencias/partido, J. González 0.1 asistencias/partido | Independiente del Valle: L. Loor 0.33 asistencias/partido, J. Sornoza 0.25 asistencias/partido, J. Alcívar 0.17 asistencias/partido",
-   "faltas": "Deportes Tolima: A. Parra 2.1 faltas/partido, C. Trujillo 1.71 faltas/partido, J. Angulo 1.1 faltas/partido | Independiente del Valle: M. Carabajal 1.33 faltas/partido, J. Viacava 1.0 faltas/partido, C. González 0.83 faltas/partido",
-   "quites": "Deportes Tolima: C. Arrieta 2.5 quites/partido, C. Trujillo 1.57 quites/partido, E. López 1.44 quites/partido | Independiente del Valle: R. Briones 1.67 quites/partido, J. Alcívar 1.33 quites/partido, C. González 1.33 quites/partido"
-  },
-  {
    "local": "FC Copenhagen",
    "visitante": "Debreceni VSC",
-   "gole": "Robert 73.6% &middot; M. Emil Madsen 28.3% &middot; A. Cornelius 28.3%",
+   "gole": "Robert 73.6% &middot; M. Emil Madsen 28.3%",
    "remates": "FC Copenhagen: Robert 2.67 remates totales (2.67 a puerta), M. Emil Madsen 1.0 remates totales (0.67 a puerta), A. Cornelius 1.0 remates totales (1.0 a puerta) | Debreceni VSC: Á. Lang 0.67 remates totales (0.0 a puerta), B. Dzsudzsák 0.67 remates totales (0.0 a puerta), B. Boskovic 0.67 remates totales (0.0 a puerta)",
    "tarjetas": "FC Copenhagen: W. Clem 0.67 amarillas/partido, J. Suzuki 0.5 amarillas/partido, T. Delaney 0.5 amarillas/partido | Debreceni VSC: B. Boskovic 0.67 amarillas/partido, Á. Lang 0.33 amarillas/partido, S. Baldoni 0.33 amarillas/partido",
    "asistencias": "FC Copenhagen: M. Elyounoussi 0.67 asistencias/partido, M. Emil Madsen 0.67 asistencias/partido, M. López 0.33 asistencias/partido | Debreceni VSC: S. Baldoni 0.33 asistencias/partido",
@@ -43,17 +33,32 @@
   {
    "local": "Platense",
    "visitante": "Coquimbo Unido",
-   "gole": "F. Zapiola 39.3%"
+   "gole": "F. Zapiola 39.3%",
+   "remates": "Platense: F. Zapiola 1.83 remates totales (1.33 a puerta), G. Mainero 1.8 remates totales (0.2 a puerta), N. Retamar 1.2 remates totales (0.8 a puerta) | Coquimbo Unido: G. Vadalá 1.8 remates totales (1.6 a puerta), N. Johansen 1.17 remates totales (0.83 a puerta), M. Fernández 0.83 remates totales (0.5 a puerta)",
+   "tarjetas": "Platense: G. Mainero 0.6 amarillas/partido, Stefan Đokić 0.5 amarillas/partido, F. Zapiola 0.33 amarillas/partido | Coquimbo Unido: M. Fernández 0.5 amarillas/partido, D. Glaby 0.5 amarillas/partido, S. Cordero 0.4 amarillas/partido",
+   "asistencias": "Platense: G. Mainero 0.4 asistencias/partido, T. Silva 0.17 asistencias/partido, F. Zapiola 0.17 asistencias/partido | Coquimbo Unido: B. Chandía 0.33 asistencias/partido, G. Vadalá 0.2 asistencias/partido, F. Salinas 0.17 asistencias/partido",
+   "faltas": "Platense: T. Nasif 2.33 faltas/partido, A. Lagos 2.2 faltas/partido, P. Ferreira 1.6 faltas/partido | Coquimbo Unido: B. Gazzolo 1.83 faltas/partido, A. Camargo 1.8 faltas/partido, S. Cordero 1.8 faltas/partido",
+   "quites": "Platense: T. Silva 3.0 quites/partido, P. Ferreira 2.6 quites/partido, F. Amarfil 1.8 quites/partido | Coquimbo Unido: M. Fernández 2.5 quites/partido, F. Salinas 2.33 quites/partido, B. Gazzolo 2.0 quites/partido"
   },
   {
    "local": "Tigre",
    "visitante": "Atletico Torque",
-   "gole": "D. Romero 45.1% &middot; S. Rodríguez 34.9% &middot; I. Russo 31.3%"
+   "gole": "D. Romero 45.1% &middot; S. Rodríguez 34.9% &middot; I. Russo 31.3%",
+   "remates": "Tigre: D. Romero 2.4 remates totales (1.0 a puerta), I. Russo 1.62 remates totales (0.62 a puerta), P. Martínez 1.4 remates totales (0.6 a puerta) | Atletico Torque: F. Pizzichillo 2.0 remates totales (1.0 a puerta), S. Rodríguez 1.71 remates totales (1.14 a puerta), E. Agüero 1.0 remates totales (0.57 a puerta)",
+   "tarjetas": "Tigre: T. Serrago 0.67 amarillas/partido, R. Arias 0.5 amarillas/partido, I. Russo 0.38 amarillas/partido | Atletico Torque: N. da Silva 0.67 amarillas/partido, P. Siles 0.6 amarillas/partido, D. Guzmán 0.6 amarillas/partido",
+   "asistencias": "Tigre: J. Mosqueira 0.5 asistencias/partido, M. Garay 0.29 asistencias/partido, N. Banegas 0.25 asistencias/partido | Atletico Torque: F. Silvera 0.29 asistencias/partido, G. Montes 0.29 asistencias/partido, E. Obregón 0.29 asistencias/partido",
+   "faltas": "Tigre: P. Martínez 1.8 faltas/partido, I. Russo 1.75 faltas/partido, R. Arias 1.75 faltas/partido | Atletico Torque: G. Montes 1.86 faltas/partido, F. Silvera 1.57 faltas/partido, S. Rodríguez 1.57 faltas/partido",
+   "quites": "Tigre: N. Banegas 5.5 quites/partido, B. Leyes 3.14 quites/partido, S. López 2.0 quites/partido | Atletico Torque: E. Agüero 1.86 quites/partido, G. Kagelmacher 1.86 quites/partido, E. Obregón 1.71 quites/partido"
   },
   {
    "local": "RB Bragantino",
    "visitante": "Atletico-MG",
-   "gole": "Fernando 39.3% &middot; I. Pitta 31.3% &middot; Rodriguinho 24.9%"
+   "gole": "Fernando 39.3% &middot; I. Pitta 31.3% &middot; Rodriguinho 24.9%",
+   "remates": "RB Bragantino: Rodriguinho 2.43 remates totales (0.86 a puerta), I. Pitta 2.38 remates totales (1.25 a puerta), A. Sant&apos;Anna 2.0 remates totales (0.0 a puerta) | Atletico-MG: Renan Lodi 1.75 remates totales (0.75 a puerta), A. Minda 1.5 remates totales (0.75 a puerta), Vitor Hugo 1.0 remates totales (0.33 a puerta)",
+   "tarjetas": "RB Bragantino: Matheus Fernandes 1.0 amarillas/partido, Henry Mosquera 0.5 amarillas/partido, Marcelinho 0.4 amarillas/partido | Atletico-MG: T. Cuello 0.67 amarillas/partido, A. Preciado 0.5 amarillas/partido, Bernard 0.33 amarillas/partido",
+   "asistencias": "RB Bragantino: Marcelinho 0.4 asistencias/partido, Fernando 0.33 asistencias/partido, Gustavo Marques 0.2 asistencias/partido | Atletico-MG: T. Cuello 1.33 asistencias/partido, Gustavo Scarpa 0.25 asistencias/partido",
+   "faltas": "RB Bragantino: Alix 2.5 faltas/partido, Gustavinho 2.0 faltas/partido, Juninho Capixaba 1.4 faltas/partido | Atletico-MG: A. Preciado 2.0 faltas/partido, Igor Gomes 1.5 faltas/partido, Vitor Hugo 1.0 faltas/partido",
+   "quites": "RB Bragantino: Juninho Capixaba 2.8 quites/partido, A. Sant&apos;Anna 2.75 quites/partido, Gabriel 2.5 quites/partido | Atletico-MG: T. Pérez 3.0 quites/partido, Renan Lodi 2.0 quites/partido, Vitor Hugo 1.67 quites/partido"
   },
   {
    "local": "Cruzeiro",
@@ -78,12 +83,12 @@
   {
    "local": "NSI Runavik",
    "visitante": "FC Lugano",
-   "gole": "K. Behrens 56.8%"
+   "gole": "K. Behrens 73.1%"
   },
   {
    "local": "FC Vaduz",
    "visitante": "Inter Turku",
-   "gole": "C. Jephta 56.8% &middot; J. Tuominen 18.1%"
+   "gole": "C. Jephta 60.1% &middot; J. Tuominen 18.1%"
   }
  ]
 }
