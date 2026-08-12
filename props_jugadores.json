@@ -1,6 +1,16 @@
 {
  "partidos": [
   {
+   "local": "Deportes Tolima",
+   "visitante": "Independiente del Valle",
+   "gole": "C. González 63.2% &middot; F. Fydriszewski 33.0% &middot; J. González 18.1%",
+   "remates": "Deportes Tolima: J. Hernández 1.67 remates totales (0.83 a puerta), J. González 1.2 remates totales (0.9 a puerta), L. Sandoval 1.12 remates totales (0.75 a puerta) | Independiente del Valle: C. González 4.17 remates totales (2.17 a puerta), J. Sornoza 2.5 remates totales (1.25 a puerta), J. Alcívar 2.0 remates totales (1.17 a puerta)",
+   "tarjetas": "Deportes Tolima: L. Sandoval 0.38 amarillas/partido, C. Arrieta 0.3 amarillas/partido, J. Nieto 0.25 amarillas/partido | Independiente del Valle: L. Loor 0.33 amarillas/partido, J. Angulo 0.33 amarillas/partido, J. Sornoza 0.25 amarillas/partido",
+   "asistencias": "Deportes Tolima: J. Valencia 0.2 asistencias/partido, L. Sandoval 0.12 asistencias/partido, J. González 0.1 asistencias/partido | Independiente del Valle: L. Loor 0.33 asistencias/partido, J. Sornoza 0.25 asistencias/partido, J. Alcívar 0.17 asistencias/partido",
+   "faltas": "Deportes Tolima: A. Parra 2.1 faltas/partido, C. Trujillo 1.71 faltas/partido, J. Angulo 1.1 faltas/partido | Independiente del Valle: M. Carabajal 1.33 faltas/partido, J. Viacava 1.0 faltas/partido, C. González 0.83 faltas/partido",
+   "quites": "Deportes Tolima: C. Arrieta 2.5 quites/partido, C. Trujillo 1.57 quites/partido, E. López 1.44 quites/partido | Independiente del Valle: R. Briones 1.67 quites/partido, J. Alcívar 1.33 quites/partido, C. González 1.33 quites/partido"
+  },
+  {
    "local": "FC Copenhagen",
    "visitante": "Debreceni VSC",
    "gole": "Robert 73.6% &middot; M. Emil Madsen 28.3% &middot; A. Cornelius 28.3%",
@@ -44,6 +54,36 @@
    "local": "RB Bragantino",
    "visitante": "Atletico-MG",
    "gole": "Fernando 39.3% &middot; I. Pitta 31.3% &middot; Rodriguinho 24.9%"
+  },
+  {
+   "local": "Cruzeiro",
+   "visitante": "Flamengo",
+   "gole": "Bruno Henrique 48.7% &middot; Matheus Pereira 48.7%",
+   "remates": "Cruzeiro: Matheus Pereira 2.17 remates totales (1.5 a puerta), Christian 1.67 remates totales (0.5 a puerta), Kaio Jorge 1.4 remates totales (0.6 a puerta) | Flamengo: G. de Arrascaeta 2.33 remates totales (1.67 a puerta), Lucas Paquetá 1.75 remates totales (1.25 a puerta), Luiz Araújo 1.67 remates totales (0.83 a puerta)",
+   "tarjetas": "Cruzeiro: L. Romero 0.75 amarillas/partido, Fágner 0.6 amarillas/partido, Matheus Henrique 0.5 amarillas/partido | Flamengo: Luiz Araújo 0.33 amarillas/partido, Emerson Royal 0.17 amarillas/partido, Evertton Araújo 0.17 amarillas/partido",
+   "asistencias": "Cruzeiro: Fágner 0.4 asistencias/partido, Kaio Jorge 0.4 asistencias/partido, L. Villalba 0.33 asistencias/partido | Flamengo: Ayrton Lucas 0.5 asistencias/partido, Bruno Henrique 0.33 asistencias/partido, G. de Arrascaeta 0.33 asistencias/partido",
+   "faltas": "Cruzeiro: L. Sinisterra 2.0 faltas/partido, Kaiki 1.83 faltas/partido, Fágner 1.8 faltas/partido | Flamengo: Emerson Royal 1.17 faltas/partido, Bruno Henrique 1.17 faltas/partido, Léo Ortiz 1.0 faltas/partido",
+   "quites": "Cruzeiro: Kaiki 3.33 quites/partido, Christian 2.33 quites/partido, L. Romero 1.5 quites/partido | Flamengo: Jorginho 2.33 quites/partido, Ayrton Lucas 1.75 quites/partido, Alex Sandro 1.5 quites/partido"
+  },
+  {
+   "local": "Flora Tallinn",
+   "visitante": "Inter Club d'Escaldes",
+   "gole": "C. Jephta 67.9% &middot; J. Tuominen 18.1%"
+  },
+  {
+   "local": "FC Nordsjaelland",
+   "visitante": "Valur Reykjavik",
+   "gole": "R. Norheim 48.7% &middot; N. Røjkjær 48.7%"
+  },
+  {
+   "local": "NSI Runavik",
+   "visitante": "FC Lugano",
+   "gole": "K. Behrens 56.8%"
+  },
+  {
+   "local": "FC Vaduz",
+   "visitante": "Inter Turku",
+   "gole": "C. Jephta 56.8% &middot; J. Tuominen 18.1%"
   }
  ]
 }
