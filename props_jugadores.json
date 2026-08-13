@@ -1,59 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Flora Tallinn",
-   "visitante": "Inter Club d'Escaldes",
-   "gole": "C. Jephta 60.3% &middot; J. Tuominen 18.1%"
-  },
-  {
-   "local": "Dunajska Streda",
-   "visitante": "Twente",
-   "gole": "",
-   "remates": "Dunajska Streda: F. Blažek 0.33 remates totales (0.33 a puerta), U. Kabić 0.33 remates totales (0.0 a puerta), S. Ouro 0.33 remates totales (0.0 a puerta)",
-   "tarjetas": "Dunajska Streda: K. Nemanič 0.33 amarillas/partido, U. Kabić 0.33 amarillas/partido, F. Diongue 0.33 amarillas/partido",
-   "faltas": "Dunajska Streda: F. Diongue 1.0 faltas/partido, F. Blažek 0.67 faltas/partido, U. Kabić 0.67 faltas/partido",
-   "quites": "Dunajska Streda: T. Kapanadze 1.0 quites/partido, F. Blažek 0.67 quites/partido, U. Kabić 0.67 quites/partido"
-  },
-  {
-   "local": "FC Midtjylland",
-   "visitante": "Bohemians",
-   "gole": "",
-   "remates": "Bohemians: C. Parsons 0.25 remates totales (0.25 a puerta), P. Hickey 0.2 remates totales (0.0 a puerta), R. Tierney 0.2 remates totales (0.0 a puerta)",
-   "tarjetas": "Bohemians: C. Parsons 0.5 amarillas/partido, D. Devoy 0.4 amarillas/partido, S. Diallo 0.33 amarillas/partido",
-   "faltas": "Bohemians: S. Mullen 0.75 faltas/partido, D. Rooney 0.6 faltas/partido, C. Parsons 0.25 faltas/partido",
-   "quites": "Bohemians: D. Devoy 0.4 quites/partido, R. Tierney 0.4 quites/partido, D. Power 0.25 quites/partido"
-  },
-  {
-   "local": "FC Nordsjaelland",
-   "visitante": "Valur Reykjavik",
-   "gole": "R. Norheim 48.7% &middot; N. Røjkjær 48.7%",
-   "remates": "FC Nordsjaelland: Ibrahim Adel 3.0 remates totales (1.0 a puerta), R. Norheim 2.33 remates totales (1.33 a puerta), V. Berthelsen 1.5 remates totales (0.5 a puerta) | Valur Reykjavik: M. Nakkim 0.33 remates totales (0.0 a puerta), T. Haraldsson 0.33 remates totales (0.33 a puerta), L. Heimisson 0.33 remates totales (0.0 a puerta)",
-   "tarjetas": "FC Nordsjaelland: Caleb Marfo Yirenkyi 0.5 amarillas/partido, S. Acquah 0.5 amarillas/partido, P. Ankersen 0.33 amarillas/partido | Valur Reykjavik: J. Pálsson 0.5 amarillas/partido, T. Haraldsson 0.33 amarillas/partido",
-   "asistencias": "FC Nordsjaelland: V. Berthelsen 0.5 asistencias/partido, Ibrahim Adel 0.5 asistencias/partido, N. Røjkjær 0.33 asistencias/partido",
-   "faltas": "FC Nordsjaelland: Ibrahim Adel 2.5 faltas/partido, Caleb Marfo Yirenkyi 2.0 faltas/partido, Justin Janssen 2.0 faltas/partido | Valur Reykjavik: B. Heimisson 0.33 faltas/partido, A. Skoglund 0.33 faltas/partido, T. Haraldsson 0.33 faltas/partido",
-   "quites": "FC Nordsjaelland: Justin Janssen 3.0 quites/partido, J. LÃ¤hteenmÃ¤ki 2.0 quites/partido, S. Acquah 1.5 quites/partido | Valur Reykjavik: M. Nakkim 1.33 quites/partido, H. Eyjólfsson 0.67 quites/partido, A. Skoglund 0.67 quites/partido"
-  },
-  {
-   "local": "NSI Runavik",
-   "visitante": "FC Lugano",
-   "gole": "K. Behrens 73.1%",
-   "remates": "NSI Runavik: F. Drinic 0.2 remates totales (0.0 a puerta), B. Nolsøe 0.2 remates totales (0.2 a puerta), M. Przybylski 0.2 remates totales (0.0 a puerta) | FC Lugano: K. Behrens 3.0 remates totales (1.33 a puerta), R. Steffen 2.67 remates totales (1.33 a puerta), Daniel Dos Santos 2.0 remates totales (1.0 a puerta)",
-   "tarjetas": "NSI Runavik: T. Amos 0.2 amarillas/partido, D. Obbekjær 0.2 amarillas/partido, V. í Davidsen 0.2 amarillas/partido | FC Lugano: M. Zanotti 0.33 amarillas/partido, K. Behrens 0.33 amarillas/partido",
-   "asistencias": "FC Lugano: M. Zanotti 0.67 asistencias/partido, A. Papadopoulos 0.33 asistencias/partido, Y. Cimignani 0.33 asistencias/partido",
-   "faltas": "NSI Runavik: J. Benjaminsen 0.2 faltas/partido, M. Przybylski 0.2 faltas/partido | FC Lugano: M. Zanotti 2.67 faltas/partido, U. Bislimi 2.0 faltas/partido, D. Moncada 2.0 faltas/partido",
-   "quites": "NSI Runavik: A. Elísson 0.75 quites/partido, E. Joensen 0.25 quites/partido, V. í Davidsen 0.2 quites/partido | FC Lugano: U. Bislimi 2.33 quites/partido, R. Steffen 2.0 quites/partido, J. Bichsel 1.5 quites/partido"
-  },
-  {
-   "local": "FC Vaduz",
-   "visitante": "Inter Turku",
-   "gole": "C. Jephta 60.1% &middot; J. Tuominen 18.1%",
-   "remates": "Inter Turku: J. Tuominen 0.6 remates totales (0.2 a puerta), L. Kuittinen 0.25 remates totales (0.25 a puerta), J. Botué 0.25 remates totales (0.25 a puerta)",
-   "tarjetas": "Inter Turku: J. Tuominen 0.6 amarillas/partido, J. Laine 0.5 amarillas/partido, L. Kuittinen 0.25 amarillas/partido",
-   "asistencias": "Inter Turku: J. Laine 0.25 asistencias/partido, J. Tuominen 0.2 asistencias/partido",
-   "faltas": "Inter Turku: J. Tuominen 1.0 faltas/partido, J. Laine 0.75 faltas/partido, J. Tauriainen 0.5 faltas/partido",
-   "quites": "Inter Turku: B. Ampofo 1.25 quites/partido, S. Saarinen 0.8 quites/partido, J. Laine 0.75 quites/partido"
-  },
-  {
    "local": "FC Sion",
    "visitante": "FC Noah",
    "gole": "Winsley Boteli Mokango 63.2%",
@@ -82,6 +29,66 @@
    "asistencias": "Gyori ETO FC: D. Štefulj 0.33 asistencias/partido",
    "faltas": "Gyori ETO FC: A. Décsy 3.0 faltas/partido, M. Lamin Mass 1.5 faltas/partido, M. Huszár 1.5 faltas/partido | Riga: R. Aouani 1.33 faltas/partido, A. Taiwo 1.0 faltas/partido, B. Musah 0.67 faltas/partido",
    "quites": "Gyori ETO FC: D. Štefulj 1.67 quites/partido, M. Vitális 1.5 quites/partido, S. Schön 1.33 quites/partido | Riga: A. Ankrah 1.0 quites/partido, Iago Siqueira Augusto 1.0 quites/partido, A. Salazar 0.33 quites/partido"
+  },
+  {
+   "local": "Shelbourne",
+   "visitante": "Ajax",
+   "gole": "O. Gloukh 73.6% &middot; D. Klaassen 48.7% &middot; S. Berghuis 28.3%",
+   "remates": "Shelbourne: E. Caffrey 0.33 remates totales (0.33 a puerta), D. Kelly 0.33 remates totales (0.33 a puerta), A. Coote 0.33 remates totales (0.33 a puerta) | Ajax: K. Dolberg 3.33 remates totales (2.33 a puerta), M. Godts 3.33 remates totales (1.67 a puerta), S. Berghuis 3.0 remates totales (1.33 a puerta)",
+   "tarjetas": "Shelbourne: J. Lunney 0.5 amarillas/partido, Daniel Ring 0.5 amarillas/partido, E. Caffrey 0.33 amarillas/partido | Ajax: J. Mokio 0.33 amarillas/partido",
+   "asistencias": "Ajax: S. Berghuis 1.0 asistencias/partido, M. Godts 0.67 asistencias/partido, A. Ouazane 0.5 asistencias/partido",
+   "faltas": "Shelbourne: E. Caffrey 0.67 faltas/partido, M. Mbeng 0.33 faltas/partido, S. Moore 0.33 faltas/partido | Ajax: O. Wijndal 2.67 faltas/partido, A. Bouwman 1.0 faltas/partido, Y. Regeer 1.0 faltas/partido",
+   "quites": "Shelbourne: S. Bone 2.5 quites/partido, Jack Henry-Francis 1.5 quites/partido, P. Barrett 1.0 quites/partido | Ajax: Lucas Rosa 2.0 quites/partido, D. Blind 1.67 quites/partido, O. Wijndal 1.67 quites/partido"
+  },
+  {
+   "local": "Mirassol",
+   "visitante": "LDU de Quito",
+   "gole": "",
+   "remates": "Mirassol: Everton Galdino 1.33 remates totales (0.67 a puerta), Reinaldo 1.25 remates totales (0.75 a puerta), Shaylon 1.25 remates totales (0.5 a puerta) | LDU de Quito: J. Corozo 2.0 remates totales (0.67 a puerta), Deyverson 1.83 remates totales (0.5 a puerta), Richard Alexander Mina Caicedo 1.5 remates totales (0.0 a puerta)",
+   "tarjetas": "Mirassol: Alesson 0.6 amarillas/partido, Lucas Oliveira 0.5 amarillas/partido, Victor Luís 0.5 amarillas/partido | LDU de Quito: L. Segovia 0.6 amarillas/partido, Richard Alexander Mina Caicedo 0.5 amarillas/partido, J. Cuero 0.5 amarillas/partido",
+   "asistencias": "Mirassol: Alesson 0.6 asistencias/partido, Reinaldo 0.25 asistencias/partido | LDU de Quito: J. Corozo 0.67 asistencias/partido, J. Medina 0.25 asistencias/partido, J. Pretell 0.17 asistencias/partido",
+   "faltas": "Mirassol: Igor Formiga 2.0 faltas/partido, Chico 2.0 faltas/partido, José Aldo 1.5 faltas/partido | LDU de Quito: José Alfredo Quintero Ordóñez 2.0 faltas/partido, J. Pretell 2.0 faltas/partido, F. Cornejo 1.6 faltas/partido",
+   "quites": "Mirassol: Chico 4.0 quites/partido, Lucas Oliveira 2.5 quites/partido, Igor Formiga 2.0 quites/partido | LDU de Quito: J. Pretell 4.0 quites/partido, Yerlin Quinonez 2.0 quites/partido, F. Cornejo 1.8 quites/partido"
+  },
+  {
+   "local": "Santos",
+   "visitante": "Macara",
+   "gole": "Gabriel Barbosa 48.7% &middot; Gabriel Bontempo 31.3%",
+   "remates": "Santos: Gabriel Barbosa 2.67 remates totales (1.17 a puerta), Neymar 2.0 remates totales (0.75 a puerta), Gabriel Menino 1.5 remates totales (1.0 a puerta) | Macara: F. Posse 2.0 remates totales (0.86 a puerta), F. Paz 1.8 remates totales (0.6 a puerta), J. Klinger 1.25 remates totales (0.5 a puerta)",
+   "tarjetas": "Santos: Lucas Veríssimo 0.5 amarillas/partido, Gabriel Menino 0.5 amarillas/partido, Luan Peres 0.4 amarillas/partido | Macara: J. Jiménez 0.5 amarillas/partido, S. Etchebarne 0.29 amarillas/partido, J. Marrufo 0.29 amarillas/partido",
+   "asistencias": "Santos: Gabriel Menino 0.5 asistencias/partido, Gabriel Barbosa 0.33 asistencias/partido, B. Rollheiser 0.29 asistencias/partido | Macara: M. Viera 0.2 asistencias/partido, J. Estacio 0.2 asistencias/partido, F. Posse 0.14 asistencias/partido",
+   "faltas": "Santos: João Schmidt 2.5 faltas/partido, Gustavo Henrique Pereira 1.25 faltas/partido, Lucas Veríssimo 1.0 faltas/partido | Macara: J. Cazares 1.71 faltas/partido, J. Estacio 1.4 faltas/partido, M. Viera 1.2 faltas/partido",
+   "quites": "Santos: Gustavo Henrique Pereira 4.5 quites/partido, C. Oliva 2.83 quites/partido, Willian Arão 2.67 quites/partido | Macara: J. Estacio 3.2 quites/partido, J. Bolaños 2.5 quites/partido, J. Cazares 1.86 quites/partido"
+  },
+  {
+   "local": "Vasco DA Gama",
+   "visitante": "Olimpia",
+   "gole": "Adson 39.3%",
+   "remates": "Vasco DA Gama: J. Rojas 3.0 remates totales (1.0 a puerta), C. Spinelli 2.71 remates totales (1.14 a puerta), Thiago Mendes 1.75 remates totales (0.5 a puerta) | Olimpia: A. Alcaraz 2.29 remates totales (0.71 a puerta), F. Cardozo 1.75 remates totales (1.0 a puerta), J. Alfaro 1.43 remates totales (0.86 a puerta)",
+   "tarjetas": "Vasco DA Gama: Cauan Barros 0.75 amarillas/partido, Matheus França 0.67 amarillas/partido, Hugo Moura 0.5 amarillas/partido | Olimpia: A. Silva 1.0 amarillas/partido, B. Bentaberry 0.75 amarillas/partido, R. Benitez 0.6 amarillas/partido",
+   "asistencias": "Vasco DA Gama: Adson 0.5 asistencias/partido, Cuiabano 0.33 asistencias/partido, J. Rojas 0.33 asistencias/partido | Olimpia: R. Benitez 0.6 asistencias/partido, H. Sandoval 0.25 asistencias/partido, H. Quintana 0.2 asistencias/partido",
+   "faltas": "Vasco DA Gama: Tchê Tchê 1.5 faltas/partido, Cauan Barros 1.25 faltas/partido, C. Cuesta 1.17 faltas/partido | Olimpia: J. Alfaro 1.86 faltas/partido, F. Cardozo 1.25 faltas/partido, A. Alcaraz 1.14 faltas/partido",
+   "quites": "Vasco DA Gama: Cuiabano 2.67 quites/partido, Hugo Moura 2.0 quites/partido, Avellar 1.8 quites/partido | Olimpia: F. Cardozo 2.0 quites/partido, J. Vera 1.75 quites/partido, R. Cáceres 1.33 quites/partido"
+  },
+  {
+   "local": "Rosario Central",
+   "visitante": "Corinthians",
+   "gole": "Gustavo Henrique 39.3%",
+   "remates": "Rosario Central: A. Véliz 3.0 remates totales (1.6 a puerta), J. Campaz 2.0 remates totales (1.17 a puerta), Á. Di María 1.4 remates totales (1.0 a puerta) | Corinthians: R. Garro 1.5 remates totales (0.67 a puerta), Kayke 1.5 remates totales (1.0 a puerta), Gustavo Henrique 1.33 remates totales (1.0 a puerta)",
+   "tarjetas": "Rosario Central: A. Sandez 0.6 amarillas/partido, F. Ibarra 0.6 amarillas/partido, G. Cantizano 0.5 amarillas/partido | Corinthians: Allan 0.25 amarillas/partido, Matheuzinho 0.2 amarillas/partido, Andre 0.2 amarillas/partido",
+   "asistencias": "Rosario Central: G. Cantizano 1.0 asistencias/partido, G. Fernández 0.25 asistencias/partido, J. Fernández 0.2 asistencias/partido | Corinthians: R. Garro 0.67 asistencias/partido, Matheuzinho 0.2 asistencias/partido, Gustavo Henrique 0.17 asistencias/partido",
+   "faltas": "Rosario Central: E. Coronel 2.17 faltas/partido, F. Ibarra 1.8 faltas/partido, A. Sandez 1.0 faltas/partido | Corinthians: Breno 1.6 faltas/partido, Andre 1.0 faltas/partido, Matheuzinho 0.6 faltas/partido",
+   "quites": "Rosario Central: A. Soto 2.33 quites/partido, F. Ibarra 2.2 quites/partido, E. Coronel 1.83 quites/partido | Corinthians: Kayke 3.0 quites/partido, Andre 2.6 quites/partido, Matheuzinho 2.2 quites/partido"
+  },
+  {
+   "local": "Cienciano",
+   "visitante": "Botafogo",
+   "gole": "C. Garcés 35.9% &middot; A. Hohberg 28.3%",
+   "remates": "Cienciano: A. Hohberg 2.67 remates totales (1.22 a puerta), C. Garcés 2.11 remates totales (1.11 a puerta), N. Bandiera 1.86 remates totales (0.43 a puerta) | Botafogo: Kauan Toledo 6.0 remates totales (2.5 a puerta), J. Correa 2.67 remates totales (1.33 a puerta), Danilo Santos 2.0 remates totales (1.33 a puerta)",
+   "tarjetas": "Cienciano: S. Arias 0.75 amarillas/partido, C. Garcés 0.33 amarillas/partido, S. Cavero 0.33 amarillas/partido | Botafogo: Bartolomeu Jacinto Quissanga 1.0 amarillas/partido, Vitinho 0.33 amarillas/partido, Allan 0.33 amarillas/partido",
+   "asistencias": "Cienciano: C. Souza 0.44 asistencias/partido, C. Garcés 0.33 asistencias/partido, G. Barreto 0.11 asistencias/partido | Botafogo: J. Correa 1.0 asistencias/partido, Chris Ramos 0.33 asistencias/partido, Matheus Martins 0.25 asistencias/partido",
+   "faltas": "Cienciano: G. Barreto 2.0 faltas/partido, H. Caparó 1.33 faltas/partido, C. Núñez 1.11 faltas/partido | Botafogo: Bartolomeu Jacinto Quissanga 2.0 faltas/partido, L. Villalba 1.67 faltas/partido, N. Ferraresi 1.33 faltas/partido",
+   "quites": "Cienciano: K. Becerra 2.62 quites/partido, G. Barreto 2.44 quites/partido, M. Martinich 2.25 quites/partido | Botafogo: N. Ferraresi 2.0 quites/partido, C. Medina 1.8 quites/partido, Álvaro Montoro 1.67 quites/partido"
   }
  ]
 }
