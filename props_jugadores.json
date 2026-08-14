@@ -1,26 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Austria Vienna",
-   "visitante": "Beitar Jerusalem",
-   "gole": "E. Kara 71.1% &middot; Moulaye Haïdara 52.8% &middot; P. Dahl 39.3%",
-   "remates": "Austria Vienna: M. Wels 2.5 remates totales (2.0 a puerta), K. Boateng 1.5 remates totales (1.0 a puerta), M. Fischer 1.33 remates totales (0.33 a puerta) | Beitar Jerusalem: N. Muche 1.0 remates totales (0.33 a puerta), S. Weissman 0.67 remates totales (0.67 a puerta), Y. Cohen 0.33 remates totales (0.0 a puerta)",
-   "tarjetas": "Austria Vienna: S. Saljic 0.5 amarillas/partido, R. Ranftl 0.33 amarillas/partido, F. Wustinger 0.33 amarillas/partido | Beitar Jerusalem: B. Carabalí 0.67 amarillas/partido, N. Muche 0.67 amarillas/partido, Z. Shimol 0.5 amarillas/partido",
-   "asistencias": "Austria Vienna: M. Fischer 0.67 asistencias/partido, Philipp Maybach 0.33 asistencias/partido",
-   "faltas": "Austria Vienna: V. Markovic 2.67 faltas/partido, M. Fischer 1.67 faltas/partido, Philipp Maybach 1.67 faltas/partido | Beitar Jerusalem: D. Worko 1.33 faltas/partido, N. Antwi 1.0 faltas/partido, B. Carabalí 1.0 faltas/partido",
-   "quites": "Austria Vienna: Matteo Schablas 5.0 quites/partido, R. Ranftl 2.67 quites/partido, V. Markovic 2.33 quites/partido | Beitar Jerusalem: Y. Cohen 1.67 quites/partido, D. Worko 1.0 quites/partido, Y. Shua 1.0 quites/partido"
-  },
-  {
-   "local": "Mirassol",
-   "visitante": "LDU de Quito",
-   "gole": "",
-   "remates": "Mirassol: Everton Galdino 1.33 remates totales (0.67 a puerta), Reinaldo 1.25 remates totales (0.75 a puerta), Shaylon 1.25 remates totales (0.5 a puerta) | LDU de Quito: J. Corozo 2.0 remates totales (0.67 a puerta), Deyverson 1.83 remates totales (0.5 a puerta), Richard Alexander Mina Caicedo 1.5 remates totales (0.0 a puerta)",
-   "tarjetas": "Mirassol: Alesson 0.6 amarillas/partido, Lucas Oliveira 0.5 amarillas/partido, Victor Luís 0.5 amarillas/partido | LDU de Quito: L. Segovia 0.6 amarillas/partido, Richard Alexander Mina Caicedo 0.5 amarillas/partido, J. Cuero 0.5 amarillas/partido",
-   "asistencias": "Mirassol: Alesson 0.6 asistencias/partido, Reinaldo 0.25 asistencias/partido | LDU de Quito: J. Corozo 0.67 asistencias/partido, J. Medina 0.25 asistencias/partido, J. Pretell 0.17 asistencias/partido",
-   "faltas": "Mirassol: Igor Formiga 2.0 faltas/partido, Chico 2.0 faltas/partido, José Aldo 1.5 faltas/partido | LDU de Quito: José Alfredo Quintero Ordóñez 2.0 faltas/partido, J. Pretell 2.0 faltas/partido, F. Cornejo 1.6 faltas/partido",
-   "quites": "Mirassol: Chico 4.0 quites/partido, Lucas Oliveira 2.5 quites/partido, Igor Formiga 2.0 quites/partido | LDU de Quito: J. Pretell 4.0 quites/partido, Yerlin Quinonez 2.0 quites/partido, F. Cornejo 1.8 quites/partido"
-  },
-  {
    "local": "Santos",
    "visitante": "Macara",
    "gole": "Gabriel Barbosa 48.7% &middot; Gabriel Bontempo 31.3%",
@@ -29,16 +9,6 @@
    "asistencias": "Santos: Gabriel Menino 0.5 asistencias/partido, Gabriel Barbosa 0.33 asistencias/partido, B. Rollheiser 0.29 asistencias/partido | Macara: M. Viera 0.2 asistencias/partido, J. Estacio 0.2 asistencias/partido, F. Posse 0.14 asistencias/partido",
    "faltas": "Santos: João Schmidt 2.5 faltas/partido, Gustavo Henrique Pereira 1.25 faltas/partido, Lucas Veríssimo 1.0 faltas/partido | Macara: J. Cazares 1.71 faltas/partido, J. Estacio 1.4 faltas/partido, M. Viera 1.2 faltas/partido",
    "quites": "Santos: Gustavo Henrique Pereira 4.5 quites/partido, C. Oliva 2.83 quites/partido, Willian Arão 2.67 quites/partido | Macara: J. Estacio 3.2 quites/partido, J. Bolaños 2.5 quites/partido, J. Cazares 1.86 quites/partido"
-  },
-  {
-   "local": "Vasco DA Gama",
-   "visitante": "Olimpia",
-   "gole": "Adson 39.3%",
-   "remates": "Vasco DA Gama: J. Rojas 3.0 remates totales (1.0 a puerta), C. Spinelli 2.71 remates totales (1.14 a puerta), Thiago Mendes 1.75 remates totales (0.5 a puerta) | Olimpia: A. Alcaraz 2.29 remates totales (0.71 a puerta), F. Cardozo 1.75 remates totales (1.0 a puerta), J. Alfaro 1.43 remates totales (0.86 a puerta)",
-   "tarjetas": "Vasco DA Gama: Cauan Barros 0.75 amarillas/partido, Matheus França 0.67 amarillas/partido, Hugo Moura 0.5 amarillas/partido | Olimpia: A. Silva 1.0 amarillas/partido, B. Bentaberry 0.75 amarillas/partido, R. Benitez 0.6 amarillas/partido",
-   "asistencias": "Vasco DA Gama: Adson 0.5 asistencias/partido, Cuiabano 0.33 asistencias/partido, J. Rojas 0.33 asistencias/partido | Olimpia: R. Benitez 0.6 asistencias/partido, H. Sandoval 0.25 asistencias/partido, H. Quintana 0.2 asistencias/partido",
-   "faltas": "Vasco DA Gama: Tchê Tchê 1.5 faltas/partido, Cauan Barros 1.25 faltas/partido, C. Cuesta 1.17 faltas/partido | Olimpia: J. Alfaro 1.86 faltas/partido, F. Cardozo 1.25 faltas/partido, A. Alcaraz 1.14 faltas/partido",
-   "quites": "Vasco DA Gama: Cuiabano 2.67 quites/partido, Hugo Moura 2.0 quites/partido, Avellar 1.8 quites/partido | Olimpia: F. Cardozo 2.0 quites/partido, J. Vera 1.75 quites/partido, R. Cáceres 1.33 quites/partido"
   },
   {
    "local": "Rosario Central",
