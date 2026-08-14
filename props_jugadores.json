@@ -1,36 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Santos",
-   "visitante": "Macara",
-   "gole": "Gabriel Barbosa 48.7% &middot; Gabriel Bontempo 31.3%",
-   "remates": "Santos: Gabriel Barbosa 2.67 remates totales (1.17 a puerta), Neymar 2.0 remates totales (0.75 a puerta), Gabriel Menino 1.5 remates totales (1.0 a puerta) | Macara: F. Posse 2.0 remates totales (0.86 a puerta), F. Paz 1.8 remates totales (0.6 a puerta), J. Klinger 1.25 remates totales (0.5 a puerta)",
-   "tarjetas": "Santos: Lucas Veríssimo 0.5 amarillas/partido, Gabriel Menino 0.5 amarillas/partido, Luan Peres 0.4 amarillas/partido | Macara: J. Jiménez 0.5 amarillas/partido, S. Etchebarne 0.29 amarillas/partido, J. Marrufo 0.29 amarillas/partido",
-   "asistencias": "Santos: Gabriel Menino 0.5 asistencias/partido, Gabriel Barbosa 0.33 asistencias/partido, B. Rollheiser 0.29 asistencias/partido | Macara: M. Viera 0.2 asistencias/partido, J. Estacio 0.2 asistencias/partido, F. Posse 0.14 asistencias/partido",
-   "faltas": "Santos: João Schmidt 2.5 faltas/partido, Gustavo Henrique Pereira 1.25 faltas/partido, Lucas Veríssimo 1.0 faltas/partido | Macara: J. Cazares 1.71 faltas/partido, J. Estacio 1.4 faltas/partido, M. Viera 1.2 faltas/partido",
-   "quites": "Santos: Gustavo Henrique Pereira 4.5 quites/partido, C. Oliva 2.83 quites/partido, Willian Arão 2.67 quites/partido | Macara: J. Estacio 3.2 quites/partido, J. Bolaños 2.5 quites/partido, J. Cazares 1.86 quites/partido"
-  },
-  {
-   "local": "Rosario Central",
-   "visitante": "Corinthians",
-   "gole": "Gustavo Henrique 39.3%",
-   "remates": "Rosario Central: A. Véliz 3.0 remates totales (1.6 a puerta), J. Campaz 2.0 remates totales (1.17 a puerta), Á. Di María 1.4 remates totales (1.0 a puerta) | Corinthians: R. Garro 1.5 remates totales (0.67 a puerta), Kayke 1.5 remates totales (1.0 a puerta), Gustavo Henrique 1.33 remates totales (1.0 a puerta)",
-   "tarjetas": "Rosario Central: A. Sandez 0.6 amarillas/partido, F. Ibarra 0.6 amarillas/partido, G. Cantizano 0.5 amarillas/partido | Corinthians: Allan 0.25 amarillas/partido, Matheuzinho 0.2 amarillas/partido, Andre 0.2 amarillas/partido",
-   "asistencias": "Rosario Central: G. Cantizano 1.0 asistencias/partido, G. Fernández 0.25 asistencias/partido, J. Fernández 0.2 asistencias/partido | Corinthians: R. Garro 0.67 asistencias/partido, Matheuzinho 0.2 asistencias/partido, Gustavo Henrique 0.17 asistencias/partido",
-   "faltas": "Rosario Central: E. Coronel 2.17 faltas/partido, F. Ibarra 1.8 faltas/partido, A. Sandez 1.0 faltas/partido | Corinthians: Breno 1.6 faltas/partido, Andre 1.0 faltas/partido, Matheuzinho 0.6 faltas/partido",
-   "quites": "Rosario Central: A. Soto 2.33 quites/partido, F. Ibarra 2.2 quites/partido, E. Coronel 1.83 quites/partido | Corinthians: Kayke 3.0 quites/partido, Andre 2.6 quites/partido, Matheuzinho 2.2 quites/partido"
-  },
-  {
-   "local": "Cienciano",
-   "visitante": "Botafogo",
-   "gole": "C. Garcés 35.9% &middot; A. Hohberg 28.3%",
-   "remates": "Cienciano: A. Hohberg 2.67 remates totales (1.22 a puerta), C. Garcés 2.11 remates totales (1.11 a puerta), N. Bandiera 1.86 remates totales (0.43 a puerta) | Botafogo: Kauan Toledo 6.0 remates totales (2.5 a puerta), J. Correa 2.67 remates totales (1.33 a puerta), Danilo Santos 2.0 remates totales (1.33 a puerta)",
-   "tarjetas": "Cienciano: S. Arias 0.75 amarillas/partido, C. Garcés 0.33 amarillas/partido, S. Cavero 0.33 amarillas/partido | Botafogo: Bartolomeu Jacinto Quissanga 1.0 amarillas/partido, Vitinho 0.33 amarillas/partido, Allan 0.33 amarillas/partido",
-   "asistencias": "Cienciano: C. Souza 0.44 asistencias/partido, C. Garcés 0.33 asistencias/partido, G. Barreto 0.11 asistencias/partido | Botafogo: J. Correa 1.0 asistencias/partido, Chris Ramos 0.33 asistencias/partido, Matheus Martins 0.25 asistencias/partido",
-   "faltas": "Cienciano: G. Barreto 2.0 faltas/partido, H. Caparó 1.33 faltas/partido, C. Núñez 1.11 faltas/partido | Botafogo: Bartolomeu Jacinto Quissanga 2.0 faltas/partido, L. Villalba 1.67 faltas/partido, N. Ferraresi 1.33 faltas/partido",
-   "quites": "Cienciano: K. Becerra 2.62 quites/partido, G. Barreto 2.44 quites/partido, M. Martinich 2.25 quites/partido | Botafogo: N. Ferraresi 2.0 quites/partido, C. Medina 1.8 quites/partido, Álvaro Montoro 1.67 quites/partido"
-  },
-  {
    "local": "Telstar",
    "visitante": "Sparta Rotterdam",
    "gole": "P. Brouwer 63.2% &middot; Rui Mendes 63.2%"
