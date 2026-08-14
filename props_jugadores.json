@@ -1,11 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Telstar",
-   "visitante": "Sparta Rotterdam",
-   "gole": "P. Brouwer 63.2% &middot; Rui Mendes 63.2%"
-  },
-  {
    "local": "Ponte Preta",
    "visitante": "Nautico Recife",
    "gole": "Chrystian Barletta 39.3% &middot; Perotti 36.2% &middot; Vinícius 33.0%"
@@ -139,6 +134,26 @@
    "local": "Atlanta United FC",
    "visitante": "New York Red Bulls",
    "gole": "N. Fernández Mercau 51.4% &middot; J. Hall 39.3%"
+  },
+  {
+   "local": "Charlotte",
+   "visitante": "Columbus Crew",
+   "gole": "Pep Biel 39.3%",
+   "remates": "Charlotte: Pep Biel 1.83 remates totales (0.89 a puerta), W. Zaha 1.69 remates totales (1.08 a puerta), I. Toklomati Giorno 1.22 remates totales (0.61 a puerta) | Columbus Crew: W. Abou Ali 2.0 remates totales (1.29 a puerta), D. Rossi 1.93 remates totales (0.8 a puerta), M. Arfsten 1.12 remates totales (0.59 a puerta)",
+   "tarjetas": "Charlotte: W. Zaha 0.54 amarillas/partido, A. Westwood 0.35 amarillas/partido, D. Schnegg 0.3 amarillas/partido | Columbus Crew: R. Camacho 0.28 amarillas/partido, S. Bangoura 0.19 amarillas/partido, T. Habroune 0.18 amarillas/partido",
+   "asistencias": "Charlotte: Pep Biel 0.28 asistencias/partido, L. Abada 0.25 asistencias/partido, Will Cleary 0.25 asistencias/partido | Columbus Crew: M. Arfsten 0.24 asistencias/partido, M. Farsi 0.22 asistencias/partido, W. Abou Ali 0.14 asistencias/partido",
+   "faltas": "Charlotte: W. Zaha 1.77 faltas/partido, D. Schnegg 1.1 faltas/partido, D. Diani 1.06 faltas/partido | Columbus Crew: T. Karumanchi 1.5 faltas/partido, André Gomes 1.36 faltas/partido, T. Habroune 1.24 faltas/partido",
+   "quites": "Charlotte: H. Toffolo 2.08 quites/partido, B. Bronico 1.14 quites/partido, D. Diani 1.06 quites/partido | Columbus Crew: T. Habroune 2.53 quites/partido, T. Karumanchi 2.0 quites/partido, M. Amundsen 1.92 quites/partido"
+  },
+  {
+   "local": "Toronto FC",
+   "visitante": "New England Revolution",
+   "gole": "N. Fernández Mercau 51.4%",
+   "remates": "Toronto FC: D. Sallói 1.72 remates totales (1.06 a puerta), J. Sargent 1.36 remates totales (0.82 a puerta), D. Mihailović 1.25 remates totales (0.88 a puerta) | New England Revolution: D. Turgeman 1.61 remates totales (0.78 a puerta), P. Miller 1.56 remates totales (0.75 a puerta), Carles Gil 1.22 remates totales (0.78 a puerta)",
+   "tarjetas": "Toronto FC: J. Osorio 0.41 amarillas/partido, B. Kuscevic 0.33 amarillas/partido, J. Cifuentes 0.3 amarillas/partido | New England Revolution: B. Raines 0.41 amarillas/partido, B. Ceballos 0.33 amarillas/partido, W. Harris 0.25 amarillas/partido",
+   "asistencias": "Toronto FC: D. Mihailović 0.25 asistencias/partido, J. Osorio 0.18 asistencias/partido, Alonso Coello 0.17 asistencias/partido | New England Revolution: L. Langoni 0.4 asistencias/partido, D. Turgeman 0.22 asistencias/partido, Carles Gil 0.17 asistencias/partido",
+   "faltas": "Toronto FC: M. Cimermancic 3.0 faltas/partido, R. Laryea 1.69 faltas/partido, Matheus Pereira 1.5 faltas/partido | New England Revolution: B. Raines 2.41 faltas/partido, A. Yusuf 1.5 faltas/partido, B. Ceballos 1.44 faltas/partido",
+   "quites": "Toronto FC: R. Edwards 3.33 quites/partido, J. Cifuentes 2.0 quites/partido, N. Gomis 2.0 quites/partido | New England Revolution: M. Fofana 1.82 quites/partido, A. Yusuf 1.78 quites/partido, B. Raines 1.65 quites/partido"
   }
  ]
 }
