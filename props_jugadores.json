@@ -1,46 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Ponte Preta",
-   "visitante": "Nautico Recife",
-   "gole": "Chrystian Barletta 39.3% &middot; Perotti 36.2% &middot; Vinícius 33.0%",
-   "remates": "Ponte Preta: Bryan 1.5 remates totales (0.75 a puerta), William Pottker 1.42 remates totales (0.83 a puerta), Élvis 1.24 remates totales (0.65 a puerta) | Nautico Recife: Jean Carlos 2.5 remates totales (1.75 a puerta), Vinícius 2.4 remates totales (1.33 a puerta), Dodozinho 2.25 remates totales (1.12 a puerta)",
-   "tarjetas": "Ponte Preta: Luis Phelipe 0.5 amarillas/partido, Julio 0.5 amarillas/partido, Vinicius 0.5 amarillas/partido | Nautico Recife: Gustavo Henrique 0.5 amarillas/partido, B. Borasi 0.5 amarillas/partido, Luiz Felipe 0.43 amarillas/partido",
-   "asistencias": "Ponte Preta: Diego Tavares 0.27 asistencias/partido, Élvis 0.18 asistencias/partido, Luis Phelipe 0.12 asistencias/partido | Nautico Recife: Jean Carlos 0.5 asistencias/partido, Yuri 0.2 asistencias/partido, Paulo Sérgio 0.17 asistencias/partido",
-   "faltas": "Ponte Preta: Léo Gomes 1.89 faltas/partido, Danilo Barcelos 1.87 faltas/partido, S. Palacios 1.78 faltas/partido | Nautico Recife: B. Borasi 2.5 faltas/partido, Wenderson 1.79 faltas/partido, Luiz Felipe 1.79 faltas/partido",
-   "quites": "Ponte Preta: Julio 3.12 quites/partido, Murilo 2.14 quites/partido, Thalys 1.92 quites/partido | Nautico Recife: B. Borasi 2.5 quites/partido, Matheus Ribeiro 1.79 quites/partido, Gustavo Henrique 1.5 quites/partido"
-  },
-  {
-   "local": "São Bernardo",
-   "visitante": "Botafogo SP",
-   "gole": "Hygor 30.0% &middot; Everton Morelli 29.5%",
-   "remates": "São Bernardo: Pedro Vitor 1.64 remates totales (0.93 a puerta), Lucas Lima 1.0 remates totales (0.75 a puerta), Eduardo 0.85 remates totales (0.35 a puerta) | Botafogo SP: Everton Morelli 1.7 remates totales (0.6 a puerta), Hygor 1.43 remates totales (0.79 a puerta), L. Maciel 0.86 remates totales (0.21 a puerta)",
-   "tarjetas": "São Bernardo: Hélder 0.44 amarillas/partido, Felipe Garcia 0.33 amarillas/partido, Pedro Vitor 0.29 amarillas/partido | Botafogo SP: Felipe Vieira 0.62 amarillas/partido, Matheus Sales 0.41 amarillas/partido, Márcio Carlos Maranhão 0.4 amarillas/partido",
-   "asistencias": "São Bernardo: Mário Sérgio 0.4 asistencias/partido, Lucas Lima 0.25 asistencias/partido, Romisson 0.24 asistencias/partido | Botafogo SP: Rafael Gava 0.37 asistencias/partido, Patrick Brey 0.16 asistencias/partido, Zé Hugo 0.1 asistencias/partido",
-   "faltas": "São Bernardo: Felipe Garcia 1.8 faltas/partido, Hugo Sanches 1.5 faltas/partido, Eduardo 1.25 faltas/partido | Botafogo SP: Gabriel Mateus de Souza Porte 2.0 faltas/partido, Patrick Brey 1.95 faltas/partido, Carlão 1.75 faltas/partido",
-   "quites": "São Bernardo: Pedro Vitor 2.07 quites/partido, Jemerson 1.5 quites/partido, Rodrigo Ferreira 1.3 quites/partido | Botafogo SP: Gabriel Mateus de Souza Porte 2.23 quites/partido, Patrick Brey 2.0 quites/partido, Matheus Sales 1.53 quites/partido"
-  },
-  {
-   "local": "Racing Club",
-   "visitante": "Banfield",
-   "gole": "M. Méndez 31.3% &middot; Tiziano Perrota 29.7%",
-   "remates": "Racing Club: A. Martínez 1.44 remates totales (0.5 a puerta), M. Miljevic 1.39 remates totales (0.67 a puerta), D. Pizarro 1.0 remates totales (1.0 a puerta) | Banfield: Tiziano Perrota 1.65 remates totales (0.76 a puerta), D. Zalazar 1.62 remates totales (0.44 a puerta), M. Méndez 1.56 remates totales (0.75 a puerta)",
-   "tarjetas": "Racing Club: J. Nardoni 0.5 amarillas/partido, T. Rubio 0.5 amarillas/partido, M. Kranevitter 0.5 amarillas/partido | Banfield: T. Adoryán 0.4 amarillas/partido, Santiago Esquivel 0.25 amarillas/partido, J. Alfaro 0.25 amarillas/partido",
-   "asistencias": "Racing Club: D. Pizarro 0.5 asistencias/partido, G. Rojas 0.29 asistencias/partido, A. Tello 0.25 asistencias/partido | Banfield: S. López 0.2 asistencias/partido, I. Abraham 0.2 asistencias/partido, M. Méndez 0.19 asistencias/partido",
-   "faltas": "Racing Club: A. Martínez 1.67 faltas/partido, J. Nardoni 1.5 faltas/partido, B. Gallego 1.5 faltas/partido | Banfield: L. Ríos 2.0 faltas/partido, T. Adoryán 2.0 faltas/partido, I. Pais 1.88 faltas/partido",
-   "quites": "Racing Club: E. Cannavo 2.94 quites/partido, S. Sosa 1.8 quites/partido, B. Zuculini 1.75 quites/partido | Banfield: I. Pais 2.69 quites/partido, T. Adoryán 2.53 quites/partido, J. Alfaro 2.5 quites/partido"
-  },
-  {
-   "local": "Sport Recife",
-   "visitante": "Londrina",
-   "gole": "Bruno Santos 49.7% &middot; Chrystian Barletta 39.3% &middot; Perotti 36.2%",
-   "remates": "Sport Recife: Perotti 2.2 remates totales (1.2 a puerta), Chrystian Barletta 1.83 remates totales (0.94 a puerta), Iury Castilho 1.46 remates totales (0.54 a puerta) | Londrina: Bruno Santos 2.19 remates totales (1.19 a puerta), Iago Teles 2.08 remates totales (1.08 a puerta), Raí 2.0 remates totales (0.67 a puerta)",
-   "tarjetas": "Sport Recife: Chrystian Barletta 0.39 amarillas/partido, Dudu 0.33 amarillas/partido, Iury Castilho 0.31 amarillas/partido | Londrina: Kevyn 0.45 amarillas/partido, Fabiano 0.4 amarillas/partido, João Vitor 0.4 amarillas/partido",
-   "asistencias": "Sport Recife: Chrystian Barletta 0.17 asistencias/partido, Biel 0.16 asistencias/partido, C. de Pena 0.14 asistencias/partido | Londrina: João Vitor 0.4 asistencias/partido, Victor Hugo 0.24 asistencias/partido, Iago Teles 0.23 asistencias/partido",
-   "faltas": "Sport Recife: Perotti 1.9 faltas/partido, Biel 1.47 faltas/partido, Zé Marcos 1.38 faltas/partido | Londrina: Iago Teles 1.85 faltas/partido, Pablo Dyego 1.6 faltas/partido, William Pottker 1.5 faltas/partido",
-   "quites": "Sport Recife: Biel 2.05 quites/partido, Claudinho 2.0 quites/partido, Habraão 1.57 quites/partido | Londrina: Victor Hugo 1.59 quites/partido, Yago Lincoln 1.44 quites/partido, Heron 1.44 quites/partido"
-  },
-  {
    "local": "Willem II",
    "visitante": "NEC Nijmegen",
    "gole": "K. Sierhuis 63.2%"
