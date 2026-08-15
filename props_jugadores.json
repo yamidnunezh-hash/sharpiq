@@ -1,41 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Utrecht",
-   "visitante": "AZ Alkmaar",
-   "gole": "C. Stengs 63.2% &middot; R. Daal 63.2% &middot; A. Blake 43.8%"
-  },
-  {
-   "local": "Academico Viseu",
-   "visitante": "Santa Clara",
-   "gole": "Gonçalo Paciência 60.1% &middot; Rúben Pereira 47.4% &middot; André Clóvis 47.4%"
-  },
-  {
-   "local": "Aldosivi",
-   "visitante": "Tigre",
-   "gole": "D. Romero 44.2% &middot; I. Russo 25.9%",
-   "remates": "Aldosivi: A. Vombergar 2.0 remates totales (0.0 a puerta), J. Arias 1.27 remates totales (0.27 a puerta), N. Cordero 1.19 remates totales (0.5 a puerta) | Tigre: D. Romero 2.42 remates totales (1.17 a puerta), I. Russo 1.75 remates totales (0.85 a puerta), P. Martínez 1.53 remates totales (0.8 a puerta)",
-   "tarjetas": "Aldosivi: F. Gino 0.46 amarillas/partido, E. Rolón 0.43 amarillas/partido, Federico Laurelli 0.33 amarillas/partido | Tigre: J. Villalba 0.67 amarillas/partido, G. Piñeiro 0.43 amarillas/partido, V. Moreno 0.42 amarillas/partido",
-   "asistencias": "Aldosivi: L. Rodríguez 0.09 asistencias/partido, T. Fernández 0.08 asistencias/partido, F. Román 0.07 asistencias/partido | Tigre: J. Saralegui 0.17 asistencias/partido, D. Romero 0.17 asistencias/partido, I. Russo 0.15 asistencias/partido",
-   "faltas": "Aldosivi: J. Novillo 1.75 faltas/partido, J. Pombo 1.75 faltas/partido, F. Gino 1.62 faltas/partido | Tigre: G. Piñeiro 2.14 faltas/partido, S. López 1.42 faltas/partido, B. Leyes 1.33 faltas/partido",
-   "quites": "Aldosivi: N. Breitenbruch 2.4 quites/partido, R. Bochi 2.1 quites/partido, E. Iñíguez 2.0 quites/partido | Tigre: N. Banegas 2.25 quites/partido, V. Moreno 2.17 quites/partido, S. López 2.11 quites/partido"
-  },
-  {
-   "local": "San Lorenzo",
-   "visitante": "Union Santa Fe",
-   "gole": "C. Tarragona 33.6%",
-   "remates": "San Lorenzo: R. Auzmendi 2.33 remates totales (1.42 a puerta), A. Cuello 1.5 remates totales (0.6 a puerta), F. Lorenzón 1.0 remates totales (0.33 a puerta) | Union Santa Fe: M. Estigarribia 2.55 remates totales (1.1 a puerta), C. Tarragona 2.05 remates totales (1.23 a puerta), V. Malcorra 1.67 remates totales (0.33 a puerta)",
-   "tarjetas": "San Lorenzo: F. Lorenzón 0.67 amarillas/partido, M. de Ritis 0.35 amarillas/partido, J. Devecchi 0.33 amarillas/partido | Union Santa Fe: L. Vargas 0.38 amarillas/partido, M. Estigarribia 0.35 amarillas/partido, M. Pittón 0.28 amarillas/partido",
-   "asistencias": "San Lorenzo: N. Barrios 0.2 asistencias/partido, Facundo Gulli 0.15 asistencias/partido, A. Cuello 0.15 asistencias/partido | Union Santa Fe: J. Palacios 0.33 asistencias/partido, R. Profini 0.28 asistencias/partido, E. Álvarez 0.25 asistencias/partido",
-   "faltas": "San Lorenzo: L. Montenegro 1.67 faltas/partido, E. Cerutti 1.57 faltas/partido, A. Cuello 1.55 faltas/partido | Union Santa Fe: C. Tarragona 1.59 faltas/partido, M. Estigarribia 1.5 faltas/partido, J. Palacios 1.43 faltas/partido",
-   "quites": "San Lorenzo: F. Lorenzón 3.0 quites/partido, G. Hernández 2.89 quites/partido, A. Cordoba 2.75 quites/partido | Union Santa Fe: T. Fagioli 3.0 quites/partido, L. Ayala 2.67 quites/partido, M. Luna Diale 2.0 quites/partido"
-  },
-  {
-   "local": "Excelsior",
-   "visitante": "PSV Eindhoven",
-   "gole": "N. Naujoks 85.5% &middot; I. Yegoian 63.2% &middot; N. Fernandez 63.2%"
-  },
-  {
    "local": "Atletico Goianiense",
    "visitante": "Vila Nova",
    "gole": "Gustavo Coutinho 41.1% &middot; Janderson 22.1%",
@@ -83,7 +48,7 @@
   {
    "local": "Rio Ave",
    "visitante": "FC Porto",
-   "gole": "Gabri Veiga 60.8%"
+   "gole": "Gabri Veiga 52.4%"
   },
   {
    "local": "Estudiantes L.P.",
@@ -254,6 +219,56 @@
    "asistencias": "Real Salt Lake: S. Lobzhanidze 0.67 asistencias/partido, J. Sanabria 0.29 asistencias/partido, M. Guilavogui 0.29 asistencias/partido | Minnesota United FC: J. Pereyra 0.33 asistencias/partido, J. Rodríguez 0.33 asistencias/partido, T. Chancalay 0.17 asistencias/partido",
    "faltas": "Real Salt Lake: D. Yedlin 1.75 faltas/partido, S. Spierings 1.71 faltas/partido, Z. Gozo 1.31 faltas/partido | Minnesota United FC: J. Díaz 1.38 faltas/partido, T. Chancalay 1.28 faltas/partido, D. Taylor 1.25 faltas/partido",
    "quites": "Real Salt Lake: Z. Gozo 2.62 quites/partido, J. Sanabria 1.79 quites/partido, D. Yedlin 1.75 quites/partido | Minnesota United FC: A. Markanich 2.0 quites/partido, N. Triantis 1.87 quites/partido, J. Díaz 1.69 quites/partido"
+  },
+  {
+   "local": "Colorado Rapids",
+   "visitante": "Sporting Kansas City",
+   "gole": "Rafael Navarro 39.3%",
+   "remates": "Colorado Rapids: Rafael Navarro 2.39 remates totales (1.56 a puerta), P. Aaronson 1.28 remates totales (0.78 a puerta), D. Sealy 0.82 remates totales (0.29 a puerta) | Sporting Kansas City: D. Joveljić 1.44 remates totales (1.11 a puerta), C. Harris 1.33 remates totales (0.61 a puerta), Capita 1.09 remates totales (0.55 a puerta)",
+   "tarjetas": "Colorado Rapids: J. Atencio 0.47 amarillas/partido, H. Ojediran 0.44 amarillas/partido, M. Navarro 0.38 amarillas/partido | Sporting Kansas City: Capita 0.36 amarillas/partido, Jansen Miller 0.22 amarillas/partido, Z. Bassong 0.22 amarillas/partido",
+   "asistencias": "Colorado Rapids: P. Aaronson 0.22 asistencias/partido, Rafael Navarro 0.17 asistencias/partido, G. Minoungou 0.17 asistencias/partido | Sporting Kansas City: Manu García 0.22 asistencias/partido, C. Harris 0.17 asistencias/partido, J. Davis 0.12 asistencias/partido",
+   "faltas": "Colorado Rapids: H. Ojediran 2.06 faltas/partido, Rafael Navarro 2.06 faltas/partido, J. Atencio 1.47 faltas/partido | Sporting Kansas City: Capita 2.18 faltas/partido, Z. Bassong 1.78 faltas/partido, J. Davis 1.65 faltas/partido",
+   "quites": "Colorado Rapids: H. Ojediran 1.62 quites/partido, M. Navarro 1.54 quites/partido, P. Aaronson 1.44 quites/partido | Sporting Kansas City: J. Davis 2.24 quites/partido, Capita 2.09 quites/partido, J. Reid 2.0 quites/partido"
+  },
+  {
+   "local": "Los Angeles FC",
+   "visitante": "San Diego",
+   "gole": "P. Judd 47.6% &middot; M. Ingvartsen 45.7% &middot; D. Bouanga 42.7%",
+   "remates": "Los Angeles FC: D. Bouanga 2.33 remates totales (1.39 a puerta), Son Heung-Min 1.71 remates totales (1.0 a puerta), D. Martínez 1.0 remates totales (0.61 a puerta) | San Diego: A. Dreyer 2.17 remates totales (1.61 a puerta), M. Ingvartsen 2.06 remates totales (1.0 a puerta), O. Valakari 1.0 remates totales (0.61 a puerta)",
+   "tarjetas": "Los Angeles FC: R. Raposo 0.25 amarillas/partido, Sergi Palencia 0.22 amarillas/partido, D. Bouanga 0.22 amarillas/partido | San Diego: C. McVey 0.31 amarillas/partido, L. Bombino 0.29 amarillas/partido, B. Duke 0.25 amarillas/partido",
+   "asistencias": "Los Angeles FC: Son Heung-Min 0.47 asistencias/partido, D. Bouanga 0.22 asistencias/partido, J. Shaffelburg 0.22 asistencias/partido | San Diego: A. Saidi 0.5 asistencias/partido, A. Dreyer 0.39 asistencias/partido, P. Soma 0.22 asistencias/partido",
+   "faltas": "Los Angeles FC: D. Bouanga 1.83 faltas/partido, Sergi Palencia 1.56 faltas/partido, Y. Cheberko 1.25 faltas/partido | San Diego: D. Vazquez 1.56 faltas/partido, P. Soma 1.33 faltas/partido, O. SÃ¸e 1.33 faltas/partido",
+   "quites": "Los Angeles FC: Y. Cheberko 2.25 quites/partido, E. Segura 1.71 quites/partido, S. Eustáquio 1.7 quites/partido | San Diego: O. Valakari 2.06 quites/partido, J. Tverskov 2.0 quites/partido, L. Bombino 1.79 quites/partido"
+  },
+  {
+   "local": "San Jose Earthquakes",
+   "visitante": "St. Louis City",
+   "gole": "P. Judd 47.6% &middot; M. Ingvartsen 45.7%",
+   "remates": "San Jose Earthquakes: P. Judd 2.53 remates totales (1.53 a puerta), T. Werner 1.6 remates totales (1.2 a puerta), O. Bouda 1.33 remates totales (0.72 a puerta) | St. Louis City: M. Hartel 2.88 remates totales (1.56 a puerta), S. Becher 1.78 remates totales (0.61 a puerta), E. Löwen 1.09 remates totales (0.27 a puerta)",
+   "tarjetas": "San Jose Earthquakes: D. Jones 0.4 amarillas/partido, B. Kikanovic 0.33 amarillas/partido, P. Judd 0.29 amarillas/partido | St. Louis City: C. Durkin 0.5 amarillas/partido, B. Lundt 0.5 amarillas/partido, M. Fall 0.33 amarillas/partido",
+   "asistencias": "San Jose Earthquakes: N. Adimabua 0.5 asistencias/partido, N. Tsakiris 0.36 asistencias/partido, P. Marie 0.31 asistencias/partido | St. Louis City: S. Becher 0.22 asistencias/partido, M. Hartel 0.19 asistencias/partido, T. Totland 0.14 asistencias/partido",
+   "faltas": "San Jose Earthquakes: R. Vieira 1.73 faltas/partido, N. Adimabua 1.5 faltas/partido, P. Judd 1.47 faltas/partido | St. Louis City: C. Durkin 2.25 faltas/partido, C. Wallem 2.13 faltas/partido, S. Becher 1.56 faltas/partido",
+   "quites": "San Jose Earthquakes: D. Jones 2.4 quites/partido, Beau Leroux 2.0 quites/partido, N. Tsakiris 1.64 quites/partido | St. Louis City: C. Wallem 1.8 quites/partido, F. Fall 1.8 quites/partido, C. Durkin 1.75 quites/partido"
+  },
+  {
+   "local": "Atlas",
+   "visitante": "Tigres UANL",
+   "gole": "",
+   "remates": "Atlas: Duk 1.67 remates totales (1.0 a puerta), A. González 1.67 remates totales (1.0 a puerta), R. Mmaee 1.33 remates totales (0.33 a puerta) | Tigres UANL: J. Brunetta 2.67 remates totales (1.33 a puerta), O. Herrera 2.67 remates totales (0.67 a puerta), R. Aguirre 1.5 remates totales (0.5 a puerta)",
+   "tarjetas": "Atlas: M. Capasso 0.67 amarillas/partido, A. Rocha 0.5 amarillas/partido, J. Sánchez 0.5 amarillas/partido | Tigres UANL: V. Loroña 0.67 amarillas/partido, F. Gorriarán 0.67 amarillas/partido, N. Guzmán 0.33 amarillas/partido",
+   "asistencias": "Atlas: Gustavo Ferrareis 0.33 asistencias/partido | Tigres UANL: Joaquim 0.67 asistencias/partido, J. Brunetta 0.67 asistencias/partido",
+   "faltas": "Atlas: R. Mmaee 2.0 faltas/partido, Gustavo Ferrareis 1.33 faltas/partido, M. Capasso 1.33 faltas/partido | Tigres UANL: F. Gorriarán 2.33 faltas/partido, R. Aguirre 2.0 faltas/partido, Rômulo 1.67 faltas/partido",
+   "quites": "Atlas: M. Valenzuela 4.67 quites/partido, Duk 3.0 quites/partido, S. Hernández 2.33 quites/partido | Tigres UANL: C. Araújo 2.33 quites/partido, D. Lainez 1.67 quites/partido, V. Loroña 1.33 quites/partido"
+  },
+  {
+   "local": "ADO Den Haag",
+   "visitante": "Groningen",
+   "gole": "B. Willumsson 50.3%"
+  },
+  {
+   "local": "Feyenoord",
+   "visitante": "GO Ahead Eagles",
+   "gole": "M. Meulensteen 61.8% &middot; E. Flataker 61.8% &middot; J. Dirksen 61.8%"
   }
  ]
 }
