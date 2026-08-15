@@ -1,19 +1,9 @@
 {
  "partidos": [
   {
-   "local": "Willem II",
-   "visitante": "NEC Nijmegen",
-   "gole": "K. Sierhuis 63.2%"
-  },
-  {
-   "local": "Alverca",
-   "visitante": "Estrela",
-   "gole": "B. Souza 61.3% &middot; L. Antonetti 61.3%"
-  },
-  {
    "local": "Utrecht",
    "visitante": "AZ Alkmaar",
-   "gole": "C. Stengs 63.2% &middot; R. Daal 63.2% &middot; A. Blake 54.2%"
+   "gole": "C. Stengs 63.2% &middot; R. Daal 63.2% &middot; A. Blake 43.8%"
   },
   {
    "local": "Academico Viseu",
@@ -244,6 +234,26 @@
    "asistencias": "Houston Dynamo: J. McGlynn 0.36 asistencias/partido, Guilherme 0.28 asistencias/partido, L. Ennali 0.11 asistencias/partido | Los Angeles Galaxy: M. Reus 0.32 asistencias/partido, Gabriel Pec 0.29 asistencias/partido, J. Paintsil 0.13 asistencias/partido",
    "faltas": "Houston Dynamo: Felipe Andrade 1.4 faltas/partido, E. Ponce 1.24 faltas/partido, E. Sviatchenko 1.1 faltas/partido | Los Angeles Galaxy: C. Garcés 1.17 faltas/partido, João Klauss 1.12 faltas/partido, J. Haak 1.11 faltas/partido",
    "quites": "Houston Dynamo: Felipe Andrade 2.2 quites/partido, D. Holmes 1.9 quites/partido, Lucas Halter 1.43 quites/partido | Los Angeles Galaxy: C. Garcés 2.17 quites/partido, L. Sanabria 1.95 quites/partido, M. Yamane 1.56 quites/partido"
+  },
+  {
+   "local": "Monterrey",
+   "visitante": "FC Juarez",
+   "gole": "L. Ocampos 73.6% &middot; D. Rossi 28.3%",
+   "remates": "Monterrey: L. Ocampos 3.0 remates totales (1.67 a puerta), D. Rossi 2.33 remates totales (1.0 a puerta), L. Orellano 2.0 remates totales (2.0 a puerta) | FC Juarez: Ricardinho 1.5 remates totales (0.0 a puerta), J. Torres 1.33 remates totales (0.0 a puerta), J. Rodríguez 1.0 remates totales (0.33 a puerta)",
+   "tarjetas": "Monterrey: C. Salcedo 1.0 amarillas/partido, R. Chávez 0.33 amarillas/partido, A. Aceves 0.33 amarillas/partido | FC Juarez: Guilherme Castilho 0.67 amarillas/partido, H. Ortega 0.33 amarillas/partido, J. Torres 0.33 amarillas/partido",
+   "asistencias": "Monterrey: Óliver Torres 0.33 asistencias/partido, L. Ocampos 0.33 asistencias/partido, D. Rossi 0.33 asistencias/partido | FC Juarez: J. Torres 0.33 asistencias/partido",
+   "faltas": "Monterrey: R. Chávez 2.33 faltas/partido, C. Salcedo 2.0 faltas/partido, S. Medina 1.5 faltas/partido | FC Juarez: Guilherme Castilho 2.33 faltas/partido, Monchu 1.67 faltas/partido, Ricardinho 1.5 faltas/partido",
+   "quites": "Monterrey: Óliver Torres 2.67 quites/partido, J. Rodríguez 2.67 quites/partido, L. Ocampos 2.33 quites/partido | FC Juarez: D. García 2.67 quites/partido, J. Aquino 2.0 quites/partido, H. Ortega 1.33 quites/partido"
+  },
+  {
+   "local": "Real Salt Lake",
+   "visitante": "Minnesota United FC",
+   "gole": "",
+   "remates": "Real Salt Lake: Z. Gozo 2.44 remates totales (1.25 a puerta), S. Solans 2.0 remates totales (0.94 a puerta), M. Guilavogui 1.79 remates totales (1.07 a puerta) | Minnesota United FC: T. Chancalay 1.89 remates totales (0.83 a puerta), K. Yeboah 1.76 remates totales (0.88 a puerta), J. Rodríguez 1.5 remates totales (0.5 a puerta)",
+   "tarjetas": "Real Salt Lake: D. Yedlin 0.42 amarillas/partido, L. Moisa 0.33 amarillas/partido, M. Guilavogui 0.29 amarillas/partido | Minnesota United FC: J. Díaz 0.38 amarillas/partido, D. Taylor 0.25 amarillas/partido, J. Gressel 0.25 amarillas/partido",
+   "asistencias": "Real Salt Lake: S. Lobzhanidze 0.67 asistencias/partido, J. Sanabria 0.29 asistencias/partido, M. Guilavogui 0.29 asistencias/partido | Minnesota United FC: J. Pereyra 0.33 asistencias/partido, J. Rodríguez 0.33 asistencias/partido, T. Chancalay 0.17 asistencias/partido",
+   "faltas": "Real Salt Lake: D. Yedlin 1.75 faltas/partido, S. Spierings 1.71 faltas/partido, Z. Gozo 1.31 faltas/partido | Minnesota United FC: J. Díaz 1.38 faltas/partido, T. Chancalay 1.28 faltas/partido, D. Taylor 1.25 faltas/partido",
+   "quites": "Real Salt Lake: Z. Gozo 2.62 quites/partido, J. Sanabria 1.79 quites/partido, D. Yedlin 1.75 quites/partido | Minnesota United FC: A. Markanich 2.0 quites/partido, N. Triantis 1.87 quites/partido, J. Díaz 1.69 quites/partido"
   }
  ]
 }
