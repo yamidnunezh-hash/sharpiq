@@ -1,34 +1,9 @@
 {
  "partidos": [
   {
-   "local": "Feyenoord",
-   "visitante": "GO Ahead Eagles",
-   "gole": "M. Meulensteen 58.3% &middot; E. Flataker 58.3% &middot; J. Dirksen 58.3%"
-  },
-  {
-   "local": "Chapecoense-sc",
-   "visitante": "Bahia",
-   "gole": "Luciano Juba 32.2%",
-   "remates": "Chapecoense-sc: Neto Pessoa 1.3 remates totales (0.5 a puerta), Y. Bolasie 1.29 remates totales (0.53 a puerta), João Vitor 1.18 remates totales (0.27 a puerta) | Bahia: C. Olivera 1.25 remates totales (0.88 a puerta), Rodrigo Nestor 1.2 remates totales (0.27 a puerta), Luciano Juba 1.06 remates totales (0.67 a puerta)",
-   "tarjetas": "Chapecoense-sc: Eduardo Vinicius 0.5 amarillas/partido, Matheus Aurélio 0.33 amarillas/partido, João Paulo 0.33 amarillas/partido | Bahia: Kanu 0.67 amarillas/partido, Zé Guilherme 0.6 amarillas/partido, João Paulo 0.5 amarillas/partido",
-   "asistencias": "Chapecoense-sc: K. Ramírez 0.25 asistencias/partido, Bruno Pacheco 0.23 asistencias/partido, Jean Carlos 0.12 asistencias/partido | Bahia: Éverton Ribeiro 0.24 asistencias/partido, Gilberto 0.14 asistencias/partido, Jean Lucas 0.11 asistencias/partido",
-   "faltas": "Chapecoense-sc: João Paulo 1.83 faltas/partido, Higor Meritão 1.55 faltas/partido, Camilo 1.5 faltas/partido | Bahia: N. Acevedo 2.2 faltas/partido, A. Véliz 2.0 faltas/partido, Jean Lucas 1.68 faltas/partido",
-   "quites": "Chapecoense-sc: Camilo 2.22 quites/partido, Higor Meritão 2.0 quites/partido, Bruno Matias 1.5 quites/partido | Bahia: N. Acevedo 2.35 quites/partido, Roman Gomez 1.88 quites/partido, Éverton Ribeiro 1.47 quites/partido"
-  },
-  {
-   "local": "Operario-PR",
-   "visitante": "Avai",
-   "gole": "Boschilia 40.9% &middot; Pablo 24.3%",
-   "remates": "Operario-PR: Boschilia 2.16 remates totales (1.11 a puerta), Pablo 1.39 remates totales (0.72 a puerta), Vinícius Diniz 1.26 remates totales (0.42 a puerta) | Avai: Daniel Penha 1.38 remates totales (0.75 a puerta), Jean Lucas 0.85 remates totales (0.35 a puerta), Thayllon 0.81 remates totales (0.24 a puerta)",
-   "tarjetas": "Operario-PR: J. Cuenú 0.36 amarillas/partido, Miranda 0.33 amarillas/partido, Vinícius Diniz 0.32 amarillas/partido | Avai: DG 0.5 amarillas/partido, Paulo Vitor 0.38 amarillas/partido, Guilherme Vargas 0.38 amarillas/partido",
-   "asistencias": "Operario-PR: Mikael Doka 0.2 asistencias/partido, Gabriel Feliciano 0.19 asistencias/partido, Pablo 0.17 asistencias/partido | Avai: J. Sousa Rocha Leandro 0.5 asistencias/partido, Jean Lucas 0.15 asistencias/partido, Thayllon 0.14 asistencias/partido",
-   "faltas": "Operario-PR: Vinícius Diniz 1.84 faltas/partido, Pablo 1.56 faltas/partido, Boschilia 1.42 faltas/partido | Avai: Reynaldo 2.5 faltas/partido, Wallison 2.06 faltas/partido, Luiz Henrique 1.75 faltas/partido",
-   "quites": "Operario-PR: Mikael Doka 1.8 quites/partido, Matheus Trindade 1.65 quites/partido, J. Torres 1.5 quites/partido | Avai: DG 2.28 quites/partido, Wallison 1.76 quites/partido, Luiz Henrique 1.65 quites/partido"
-  },
-  {
    "local": "Nacional",
    "visitante": "Estoril",
-   "gole": "Y. Begraoui 58.3% &middot; Miguel Baeza 56.3%"
+   "gole": "Miguel Baeza 58.2% &middot; Y. Begraoui 52.4%"
   },
   {
    "local": "Ajax",
@@ -244,6 +219,31 @@
    "asistencias": "Estudiantes de Rio Cuarto: R. Lozano 0.12 asistencias/partido, M. Valenti 0.08 asistencias/partido, G. Maffini 0.07 asistencias/partido | Atletico Tucuman: R. Ruíz Rodríguez 0.11 asistencias/partido, G. Compagnucci 0.08 asistencias/partido, K. Ortíz 0.07 asistencias/partido",
    "faltas": "Estudiantes de Rio Cuarto: T. Gonzalez 1.84 faltas/partido, G. Gonzalez 1.75 faltas/partido, Y. Moreno 1.5 faltas/partido | Atletico Tucuman: L. Vega 2.25 faltas/partido, J. Dominguez 1.92 faltas/partido, L. Díaz 1.59 faltas/partido",
    "quites": "Estudiantes de Rio Cuarto: F. Cobos 2.45 quites/partido, T. Gonzalez 2.05 quites/partido, A. Cabrera 1.73 quites/partido | Atletico Tucuman: L. Vega 3.88 quites/partido, K. Ortíz 2.21 quites/partido, N. Laméndola 1.83 quites/partido"
+  },
+  {
+   "local": "Casa Pia",
+   "visitante": "Benfica",
+   "gole": "G. Prestianni 63.2%"
+  },
+  {
+   "local": "Lanus",
+   "visitante": "Independiente",
+   "gole": "G. Ávalos 40.8% &middot; D. Aquino 29.7% &middot; M. Abaldo 22.1%",
+   "remates": "Lanus: M. Moreno 2.22 remates totales (1.56 a puerta), R. Castillo 1.4 remates totales (0.8 a puerta), R. Carrera 1.3 remates totales (0.45 a puerta) | Independiente: G. Ávalos 2.19 remates totales (0.71 a puerta), S. Montiel 1.44 remates totales (0.81 a puerta), M. Abaldo 1.2 remates totales (0.85 a puerta)",
+   "tarjetas": "Lanus: C. Izquierdoz 0.41 amarillas/partido, R. Carrera 0.4 amarillas/partido, A. Medina 0.31 amarillas/partido | Independiente: D. Martínez 0.5 amarillas/partido, M. Valenzuela 0.29 amarillas/partido, F. Zabala 0.26 amarillas/partido",
+   "asistencias": "Lanus: R. Castillo 0.6 asistencias/partido, E. Salvio 0.15 asistencias/partido, R. Carrera 0.15 asistencias/partido | Independiente: G. Ávalos 0.24 asistencias/partido, V. Malcorra 0.2 asistencias/partido, F. Tempone 0.2 asistencias/partido",
+   "faltas": "Lanus: N. Morgantini 1.67 faltas/partido, R. Castillo 1.6 faltas/partido, A. Medina 1.56 faltas/partido | Independiente: F. Zabala 1.63 faltas/partido, G. Ávalos 1.43 faltas/partido, M. Valenzuela 1.43 faltas/partido",
+   "quites": "Lanus: A. Medina 2.12 quites/partido, S. Marcich 1.85 quites/partido, T. Guidara 1.71 quites/partido | Independiente: D. Martínez 2.5 quites/partido, F. Zabala 2.21 quites/partido, I. Marcone 2.21 quites/partido"
+  },
+  {
+   "local": "Velez Sarsfield",
+   "visitante": "Defensa Y Justicia",
+   "gole": "F. Monzón 31.3%",
+   "remates": "Velez Sarsfield: F. Monzón 1.88 remates totales (1.06 a puerta), M. Pellegrini 1.19 remates totales (0.62 a puerta), M. Lanzini 1.14 remates totales (0.57 a puerta) | Defensa Y Justicia: C. Pérez 1.86 remates totales (0.29 a puerta), J. Gutiérrez 1.6 remates totales (0.85 a puerta), L. Fernández 1.5 remates totales (0.75 a puerta)",
+   "tarjetas": "Velez Sarsfield: L. Robertone 0.32 amarillas/partido, M. Pellegrini 0.31 amarillas/partido, Elías Gómez 0.3 amarillas/partido | Defensa Y Justicia: F. Román 0.5 amarillas/partido, D. Martínez 0.36 amarillas/partido, D. Fernández 0.31 amarillas/partido",
+   "asistencias": "Velez Sarsfield: T. Aguirre 0.33 asistencias/partido, D. Valdés 0.28 asistencias/partido, M. Arias 0.2 asistencias/partido | Defensa Y Justicia: V. Loza 0.5 asistencias/partido, A. Molinas 0.27 asistencias/partido, J. Gutiérrez 0.15 asistencias/partido",
+   "faltas": "Velez Sarsfield: Jano Gordon 2.0 faltas/partido, F. Monzón 1.44 faltas/partido, T. Andrada 1.41 faltas/partido | Defensa Y Justicia: D. Martínez 1.36 faltas/partido, C. Pérez 1.29 faltas/partido, L. Souto 1.06 faltas/partido",
+   "quites": "Velez Sarsfield: Jano Gordon 3.33 quites/partido, S. Escobar 2.75 quites/partido, T. Andrada 2.59 quites/partido | Defensa Y Justicia: D. Fernández 2.75 quites/partido, D. Martínez 2.07 quites/partido, C. Pérez 2.0 quites/partido"
   }
  ]
 }
