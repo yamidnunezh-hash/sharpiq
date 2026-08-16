@@ -1,31 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Arouca",
-   "visitante": "Moreirense",
-   "gole": "Barbero 62.6% &middot; João Veloso 53.0% &middot; N. John 53.0%"
-  },
-  {
-   "local": "Sarmiento Junin",
-   "visitante": "Huracan",
-   "gole": "J. Caicedo 40.8% &middot; J. Marabel 36.2%",
-   "remates": "Sarmiento Junin: J. Marabel 1.75 remates totales (0.9 a puerta), J. Mavilla 1.0 remates totales (0.67 a puerta), Mauricio Leonel Martínez 0.8 remates totales (0.27 a puerta) | Huracan: J. Caicedo 1.71 remates totales (1.1 a puerta), N. Paz 1.4 remates totales (0.4 a puerta), L. Blondel 1.36 remates totales (0.21 a puerta)",
-   "tarjetas": "Sarmiento Junin: E. Giménez 0.5 amarillas/partido, J. Insaurralde 0.41 amarillas/partido, S. Salle 0.37 amarillas/partido | Huracan: C. Ibáñez 0.5 amarillas/partido, Ignacio Campo 0.5 amarillas/partido, J. Caicedo 0.48 amarillas/partido",
-   "asistencias": "Sarmiento Junin: J. Marabel 0.15 asistencias/partido, P. Magnín 0.14 asistencias/partido, J. Contrera 0.12 asistencias/partido | Huracan: Ó. Cortés 0.2 asistencias/partido, E. Ojeda 0.11 asistencias/partido, C. Ibáñez 0.11 asistencias/partido",
-   "faltas": "Sarmiento Junin: E. Giménez 2.5 faltas/partido, J. Contrera 2.18 faltas/partido, M. García 1.79 faltas/partido | Huracan: C. Ibáñez 2.11 faltas/partido, J. Caicedo 2.0 faltas/partido, F. Waller 1.94 faltas/partido",
-   "quites": "Sarmiento Junin: E. Giménez 2.5 quites/partido, C. Zabala 2.45 quites/partido, M. García 2.0 quites/partido | Huracan: F. Waller 2.94 quites/partido, C. Ibáñez 2.78 quites/partido, F. Vera 2.67 quites/partido"
-  },
-  {
-   "local": "U.N.A.M. - Pumas",
-   "visitante": "Club Queretaro",
-   "gole": "Juninho 63.2% &middot; A. Ávila 60.1% &middot; R. Morales 28.3%",
-   "remates": "U.N.A.M. - Pumas: S. Córdova 1.0 remates totales (0.33 a puerta), R. Morales 1.0 remates totales (0.33 a puerta), Juninho 1.0 remates totales (1.0 a puerta) | Club Queretaro: M. Coronel 3.0 remates totales (0.67 a puerta), A. Ávila 2.67 remates totales (1.67 a puerta), Carlo Adriano 1.67 remates totales (0.67 a puerta)",
-   "tarjetas": "U.N.A.M. - Pumas: U. Antuna 0.5 amarillas/partido, R. López 0.33 amarillas/partido, P. Vite 0.33 amarillas/partido | Club Queretaro: L. Abascia 1.0 amarillas/partido, B. Duarte 0.67 amarillas/partido, D. Reyes 0.67 amarillas/partido",
-   "asistencias": "U.N.A.M. - Pumas: R. Morales 1.0 asistencias/partido, U. Antuna 0.5 asistencias/partido, R. López 0.33 asistencias/partido | Club Queretaro: B. Duarte 0.33 asistencias/partido, S. Homenchenko 0.33 asistencias/partido",
-   "faltas": "U.N.A.M. - Pumas: Á. Angulo 2.0 faltas/partido, P. Vite 2.0 faltas/partido, V. Arteaga 2.0 faltas/partido | Club Queretaro: B. Duarte 2.33 faltas/partido, A. Ávila 2.33 faltas/partido, L. Abascia 2.0 faltas/partido",
-   "quites": "U.N.A.M. - Pumas: Á. Angulo 2.33 quites/partido, P. Vite 2.33 quites/partido, R. López 2.0 quites/partido | Club Queretaro: S. Homenchenko 4.33 quites/partido, L. Abascia 3.67 quites/partido, B. Duarte 2.0 quites/partido"
-  },
-  {
    "local": "Atletico-MG",
    "visitante": "Gremio",
    "gole": "Carlos Vinícius 39.3%",
@@ -38,7 +13,7 @@
   {
    "local": "Vasco DA Gama",
    "visitante": "Santos",
-   "gole": "Neymar 48.7% &middot; Gabriel Barbosa 39.3%",
+   "gole": "Neymar 42.3% &middot; Gabriel Barbosa 39.3%",
    "remates": "Vasco DA Gama: Philippe Coutinho 3.33 remates totales (2.33 a puerta), A. Gómez 2.44 remates totales (1.0 a puerta), C. Spinelli 1.6 remates totales (0.73 a puerta) | Santos: Neymar 2.56 remates totales (1.33 a puerta), Gabriel Barbosa 1.43 remates totales (0.57 a puerta), G. Caballero 1.33 remates totales (0.33 a puerta)",
    "tarjetas": "Vasco DA Gama: Thiago Mendes 0.39 amarillas/partido, A. Gómez 0.33 amarillas/partido, A. Saldivia 0.27 amarillas/partido | Santos: Neymar 0.67 amarillas/partido, Diógenes 0.5 amarillas/partido, T. Rincón 0.5 amarillas/partido",
    "asistencias": "Vasco DA Gama: J. Rodríguez 0.29 asistencias/partido, Ramon Rique 0.25 asistencias/partido, Cuiabano 0.21 asistencias/partido | Santos: M. Terceros 0.22 asistencias/partido, Neymar 0.22 asistencias/partido, Zé Rafael 0.2 asistencias/partido",
@@ -48,7 +23,7 @@
   {
    "local": "Famalicao",
    "visitante": "Maritimo",
-   "gole": "G. Koutsias 48.8% &middot; Raphael Guzzo 42.3%"
+   "gole": "G. Koutsias 46.7% &middot; Raphael Guzzo 45.1%"
   },
   {
    "local": "River Plate",
