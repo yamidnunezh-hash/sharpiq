@@ -1,14 +1,9 @@
 {
  "partidos": [
   {
-   "local": "ADO Den Haag",
-   "visitante": "Groningen",
-   "gole": "B. Willumsson 63.2%"
-  },
-  {
    "local": "Feyenoord",
    "visitante": "GO Ahead Eagles",
-   "gole": "M. Meulensteen 61.8% &middot; E. Flataker 61.8% &middot; J. Dirksen 61.8%"
+   "gole": "M. Meulensteen 58.3% &middot; E. Flataker 58.3% &middot; J. Dirksen 58.3%"
   },
   {
    "local": "Chapecoense-sc",
@@ -239,6 +234,16 @@
    "asistencias": "Club Tijuana: Y. Padilla 0.33 asistencias/partido | Cruz Azul: C. Rodríguez 0.67 asistencias/partido, J. Márquez 0.33 asistencias/partido, J. Paradela 0.33 asistencias/partido",
    "faltas": "Club Tijuana: I. Tona 2.0 faltas/partido, R. Fernández 1.33 faltas/partido, P. Ortíz 1.33 faltas/partido | Cruz Azul: J. Orozco 2.0 faltas/partido, C. Rodríguez 1.67 faltas/partido, G. Piovi 1.33 faltas/partido",
    "quites": "Club Tijuana: I. Tona 2.67 quites/partido, R. Árciga 2.67 quites/partido, Adonis Preciado 2.67 quites/partido | Cruz Azul: J. Márquez 3.33 quites/partido, C. Rotondi 2.5 quites/partido, W. Ditta 2.0 quites/partido"
+  },
+  {
+   "local": "Estudiantes de Rio Cuarto",
+   "visitante": "Atletico Tucuman",
+   "gole": "L. Díaz 33.8%",
+   "remates": "Estudiantes de Rio Cuarto: A. Quiroga 2.25 remates totales (0.75 a puerta), Y. Moreno 1.25 remates totales (0.25 a puerta), M. Bajamich 1.0 remates totales (0.5 a puerta) | Atletico Tucuman: L. Díaz 2.06 remates totales (1.12 a puerta), C. Ferreira 1.07 remates totales (0.36 a puerta), G. Abeldano 1.0 remates totales (0.22 a puerta)",
+   "tarjetas": "Estudiantes de Rio Cuarto: I. Hesar 0.5 amarillas/partido, M. Valenti 0.46 amarillas/partido, T. Gonzalez 0.37 amarillas/partido | Atletico Tucuman: L. Vega 0.5 amarillas/partido, M. Villa 0.25 amarillas/partido, J. Dominguez 0.25 amarillas/partido",
+   "asistencias": "Estudiantes de Rio Cuarto: R. Lozano 0.12 asistencias/partido, M. Valenti 0.08 asistencias/partido, G. Maffini 0.07 asistencias/partido | Atletico Tucuman: R. Ruíz Rodríguez 0.11 asistencias/partido, G. Compagnucci 0.08 asistencias/partido, K. Ortíz 0.07 asistencias/partido",
+   "faltas": "Estudiantes de Rio Cuarto: T. Gonzalez 1.84 faltas/partido, G. Gonzalez 1.75 faltas/partido, Y. Moreno 1.5 faltas/partido | Atletico Tucuman: L. Vega 2.25 faltas/partido, J. Dominguez 1.92 faltas/partido, L. Díaz 1.59 faltas/partido",
+   "quites": "Estudiantes de Rio Cuarto: F. Cobos 2.45 quites/partido, T. Gonzalez 2.05 quites/partido, A. Cabrera 1.73 quites/partido | Atletico Tucuman: L. Vega 3.88 quites/partido, K. Ortíz 2.21 quites/partido, N. Laméndola 1.83 quites/partido"
   }
  ]
 }
