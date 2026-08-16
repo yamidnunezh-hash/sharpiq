@@ -1,106 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Atletico Goianiense",
-   "visitante": "Vila Nova",
-   "gole": "Gustavo Coutinho 41.1% &middot; Janderson 22.1%",
-   "remates": "Atletico Goianiense: Gustavo Coutinho 2.18 remates totales (1.18 a puerta), Marrony 1.68 remates totales (0.79 a puerta), Soares Geovany 1.2 remates totales (0.8 a puerta) | Vila Nova: Rafa Silva 2.0 remates totales (1.6 a puerta), Ryan Lima 1.4 remates totales (0.6 a puerta), Janderson 1.25 remates totales (0.75 a puerta)",
-   "tarjetas": "Atletico Goianiense: Cristiano 0.37 amarillas/partido, Guilherme Lopes 0.32 amarillas/partido, Gustavo Coutinho 0.29 amarillas/partido | Vila Nova: Pedro Romano 0.57 amarillas/partido, Dalberson 0.5 amarillas/partido, Rafa Silva 0.4 amarillas/partido",
-   "asistencias": "Atletico Goianiense: Guilherme Marques 0.2 asistencias/partido, Soares Geovany 0.2 asistencias/partido, Bruno José 0.19 asistencias/partido | Vila Nova: Marquinhos Gabriel 0.28 asistencias/partido, Janderson 0.2 asistencias/partido, Enzo 0.17 asistencias/partido",
-   "faltas": "Atletico Goianiense: Assis 2.09 faltas/partido, Igor Henrique 1.92 faltas/partido, Guilherme Marques 1.6 faltas/partido | Vila Nova: João Vieira 1.89 faltas/partido, Elias 1.89 faltas/partido, Higor Meritão 1.8 faltas/partido",
-   "quites": "Atletico Goianiense: Gustavo Daniel 2.0 quites/partido, Ewerthon 1.9 quites/partido, Marrony 1.74 quites/partido | Vila Nova: Higor Meritão 2.2 quites/partido, Igor Cariús 2.0 quites/partido, Higor 1.61 quites/partido"
-  },
-  {
-   "local": "Ceara",
-   "visitante": "Cuiaba",
-   "gole": "Melk 19.0%",
-   "remates": "Ceara: Vina 1.67 remates totales (0.78 a puerta), Vinicius Zanocelo 1.33 remates totales (0.33 a puerta), N. Ferreira 1.33 remates totales (0.67 a puerta) | Cuiaba: Igor Inocêncio 1.5 remates totales (0.0 a puerta), Rodrigo Farofa 1.4 remates totales (0.85 a puerta), Hernandes 1.4 remates totales (0.8 a puerta)",
-   "tarjetas": "Ceara: Caio 0.5 amarillas/partido, Bruno Ferreira 0.4 amarillas/partido, Matheus Araújo 0.36 amarillas/partido | Cuiaba: Gabriel 0.75 amarillas/partido, David Miguel 0.5 amarillas/partido, Hernandes 0.4 amarillas/partido",
-   "asistencias": "Ceara: Gabriel Rocha 0.5 asistencias/partido, N. Ferreira 0.33 asistencias/partido, Giulio 0.27 asistencias/partido | Cuiaba: Eliel 0.4 asistencias/partido, Hernandes 0.2 asistencias/partido, Pepê 0.17 asistencias/partido",
-   "faltas": "Ceara: Vinicius Zanocelo 2.0 faltas/partido, Gabriel Rocha 2.0 faltas/partido, Joao Gabriel 1.88 faltas/partido | Cuiaba: David Miguel 2.22 faltas/partido, Pepê 1.78 faltas/partido, Hernandes 1.6 faltas/partido",
-   "quites": "Ceara: Bryan 3.33 quites/partido, Gabriel Rocha 3.0 quites/partido, Rafael Ramos 2.38 quites/partido | Cuiaba: Lorenzo 1.8 quites/partido, Raul 1.71 quites/partido, Gabriel 1.5 quites/partido"
-  },
-  {
-   "local": "Criciuma",
-   "visitante": "Goias",
-   "gole": "Kadu 40.8% &middot; Anselmo Ramon 23.1%",
-   "remates": "Criciuma: Cauê 2.0 remates totales (0.67 a puerta), R. Otero 1.32 remates totales (0.53 a puerta), Marcelo Hermes 1.19 remates totales (0.38 a puerta) | Goias: Kadu 2.09 remates totales (0.82 a puerta), Gegê 1.14 remates totales (0.5 a puerta), Anselmo Ramon 0.95 remates totales (0.47 a puerta)",
-   "tarjetas": "Criciuma: Ruan 0.4 amarillas/partido, Bruno Alves 0.38 amarillas/partido, Eduardo 0.38 amarillas/partido | Goias: Luquinhas 0.33 amarillas/partido, Nicolas 0.28 amarillas/partido, Luiz Felipe 0.27 amarillas/partido",
-   "asistencias": "Criciuma: Ronald 0.25 asistencias/partido, Ruan 0.2 asistencias/partido, Romarinho 0.17 asistencias/partido | Goias: E. García 0.23 asistencias/partido, Diego Caito 0.17 asistencias/partido, Lucas Lima 0.15 asistencias/partido",
-   "faltas": "Criciuma: Ruan 2.2 faltas/partido, Eduardo 2.15 faltas/partido, Cauê 2.0 faltas/partido | Goias: Kadu 1.91 faltas/partido, Luquinhas 1.44 faltas/partido, Luiz Felipe 1.2 faltas/partido",
-   "quites": "Criciuma: Ruan 2.4 quites/partido, Marcelo Hermes 1.57 quites/partido, Jean Irmer 1.45 quites/partido | Goias: Luquinhas 1.89 quites/partido, Lucas Lima 1.5 quites/partido, Guilherme Baldória 1.25 quites/partido"
-  },
-  {
-   "local": "Fortuna Sittard",
-   "visitante": "Cambuur",
-   "gole": "É. Michut 63.2% &middot; O. Romeny 63.2%"
-  },
-  {
-   "local": "Fluminense",
-   "visitante": "Palmeiras",
-   "gole": "John Kennedy 39.3% &middot; J. López 27.1%",
-   "remates": "Fluminense: Hulk 2.75 remates totales (1.25 a puerta), John Kennedy 1.89 remates totales (1.44 a puerta), J. Savarino 1.5 remates totales (0.78 a puerta) | Palmeiras: Vitor Roque 1.6 remates totales (0.8 a puerta), J. Arias 1.47 remates totales (0.71 a puerta), J. López 1.42 remates totales (0.74 a puerta)",
-   "tarjetas": "Fluminense: Thiago Silva 0.5 amarillas/partido, Nonato 0.44 amarillas/partido, Alisson 0.38 amarillas/partido | Palmeiras: Luis Felipe 0.67 amarillas/partido, A. Barboza 0.33 amarillas/partido, Luighi Hanri 0.29 amarillas/partido",
-   "asistencias": "Fluminense: L. Acosta 0.22 asistencias/partido, Guga 0.15 asistencias/partido, Renê 0.13 asistencias/partido | Palmeiras: Andreas Pereira 0.43 asistencias/partido, J. Piquerez 0.3 asistencias/partido, J. López 0.16 asistencias/partido",
-   "faltas": "Fluminense: R. Castillo 1.69 faltas/partido, Hércules 1.55 faltas/partido, J. Millán 1.5 faltas/partido | Palmeiras: A. Barboza 2.0 faltas/partido, J. López 1.58 faltas/partido, Murilo 1.42 faltas/partido",
-   "quites": "Fluminense: Renê 2.27 quites/partido, Nonato 1.78 quites/partido, F. Bernal 1.6 quites/partido | Palmeiras: A. Barboza 2.0 quites/partido, A. Giay 1.71 quites/partido, Arthur 1.62 quites/partido"
-  },
-  {
-   "local": "Rio Ave",
-   "visitante": "FC Porto",
-   "gole": "Gabri Veiga 52.4%"
-  },
-  {
-   "local": "Estudiantes L.P.",
-   "visitante": "Gimnasia L.P.",
-   "gole": "M. Torres 34.4% &middot; A. Módica 33.8%",
-   "remates": "Estudiantes L.P.: G. Carrillo 2.27 remates totales (1.4 a puerta), C. Medina 1.2 remates totales (0.6 a puerta), F. Farías 0.92 remates totales (0.33 a puerta) | Gimnasia L.P.: A. Colazo 2.0 remates totales (1.5 a puerta), M. Zalazar 1.62 remates totales (0.62 a puerta), A. Auzmendi 1.14 remates totales (0.55 a puerta)",
-   "tarjetas": "Estudiantes L.P.: L. González 0.47 amarillas/partido, E. Meza 0.33 amarillas/partido, T. Palacios 0.33 amarillas/partido | Gimnasia L.P.: I. Fernández 0.45 amarillas/partido, A. Max 0.39 amarillas/partido, A. Steimbach 0.38 amarillas/partido",
-   "asistencias": "Estudiantes L.P.: C. Medina 0.2 asistencias/partido, T. Palacios 0.18 asistencias/partido, J. Burgos 0.17 asistencias/partido | Gimnasia L.P.: A. Steimbach 0.24 asistencias/partido, N. Schelotto 0.16 asistencias/partido, P. Silva 0.14 asistencias/partido",
-   "faltas": "Estudiantes L.P.: J. Pereyra 1.67 faltas/partido, Lucas Ezequiel Piovi 1.39 faltas/partido, E. Meza 1.33 faltas/partido | Gimnasia L.P.: I. Fernández 1.5 faltas/partido, I. Miramón 1.41 faltas/partido, E. Martínez 1.21 faltas/partido",
-   "quites": "Estudiantes L.P.: Lucas Ezequiel Piovi 3.28 quites/partido, C. Medina 2.2 quites/partido, E. Meza 1.87 quites/partido | Gimnasia L.P.: A. Max 2.94 quites/partido, A. Steimbach 2.62 quites/partido, I. Miramón 2.18 quites/partido"
-  },
-  {
-   "local": "Atletico Paranaense",
-   "visitante": "RB Bragantino",
-   "gole": "K. Viveros 48.7% &middot; I. Pitta 27.1%",
-   "remates": "Atletico Paranaense: K. Viveros 2.29 remates totales (1.62 a puerta), Leozinho 1.38 remates totales (0.5 a puerta), S. Mendoza 1.05 remates totales (0.5 a puerta) | RB Bragantino: Davi Gomes 2.0 remates totales (1.0 a puerta), Lucas Barbosa 1.95 remates totales (0.95 a puerta), I. Pitta 1.79 remates totales (0.68 a puerta)",
-   "tarjetas": "Atletico Paranaense: Jádson 0.31 amarillas/partido, Arthur Dias 0.3 amarillas/partido, G. Benavídez 0.28 amarillas/partido | RB Bragantino: Juninho Capixaba 0.5 amarillas/partido, Alix 0.33 amarillas/partido, I. Sosa 0.33 amarillas/partido",
-   "asistencias": "Atletico Paranaense: G. Benavídez 0.28 asistencias/partido, L. Esquivel 0.25 asistencias/partido, Claudinho 0.17 asistencias/partido | RB Bragantino: Marcelinho 0.2 asistencias/partido, Henry Mosquera 0.18 asistencias/partido, A. Sant&apos;Anna 0.12 asistencias/partido",
-   "faltas": "Atletico Paranaense: K. Viveros 2.24 faltas/partido, L. Esquivel 1.69 faltas/partido, Léo 1.33 faltas/partido | RB Bragantino: Juninho Capixaba 2.0 faltas/partido, Lucas Barbosa 1.95 faltas/partido, Alix 1.72 faltas/partido",
-   "quites": "Atletico Paranaense: L. Esquivel 2.31 quites/partido, Jádson 2.12 quites/partido, Claudinho 1.67 quites/partido | RB Bragantino: Juninho Capixaba 2.11 quites/partido, Cauê Nascimento Santos 2.0 quites/partido, Ryan Tavares 2.0 quites/partido"
-  },
-  {
-   "local": "Juventude",
-   "visitante": "Fortaleza EC",
-   "gole": "J. Miritello 24.3% &middot; Raí 22.1%",
-   "remates": "Juventude: Raí 1.3 remates totales (0.65 a puerta), Alisson Safira 1.25 remates totales (0.5 a puerta), Marcos Paulo 1.24 remates totales (0.88 a puerta) | Fortaleza EC: Pedro Henrique 1.75 remates totales (0.75 a puerta), J. Miritello 1.67 remates totales (1.0 a puerta), Maílton 1.5 remates totales (0.69 a puerta)",
-   "tarjetas": "Juventude: Gabriel Pinheiro 0.36 amarillas/partido, Titi 0.33 amarillas/partido, Lucas Mineiro 0.31 amarillas/partido | Fortaleza EC: Lucas Emanoel 0.5 amarillas/partido, Nathan Fogaça 0.5 amarillas/partido, Rodriguinho 0.36 amarillas/partido",
-   "asistencias": "Juventude: Raí 0.15 asistencias/partido, Luan Gonçalves 0.12 asistencias/partido, Marcos Paulo 0.11 asistencias/partido | Fortaleza EC: Kayke 0.33 asistencias/partido, Paulo Baya 0.09 asistencias/partido, E. Brítez 0.08 asistencias/partido",
-   "faltas": "Juventude: I. Ly 3.5 faltas/partido, Rodrigo Sam 2.0 faltas/partido, Mandaca 1.9 faltas/partido | Fortaleza EC: Kayke 2.0 faltas/partido, Nathan Fogaça 2.0 faltas/partido, Pierre 1.67 faltas/partido",
-   "quites": "Juventude: Aderlan 2.44 quites/partido, Rodrigo Sam 2.41 quites/partido, I. Ly 2.0 quites/partido | Fortaleza EC: Pierre 1.67 quites/partido, Mauricio Junior 1.62 quites/partido, Lucas Sasha 1.53 quites/partido"
-  },
-  {
-   "local": "Belgrano Cordoba",
-   "visitante": "Independ. Rivadavia",
-   "gole": "M. Santos 29.7% &middot; F. Sartori 29.5% &middot; A. Luna 27.1%",
-   "remates": "Belgrano Cordoba: L. Zelarayán 1.64 remates totales (0.59 a puerta), R. Hernandes 1.57 remates totales (0.57 a puerta), N. Fernández 1.5 remates totales (0.91 a puerta) | Independ. Rivadavia: A. Arce 1.86 remates totales (0.64 a puerta), S. Villa 1.79 remates totales (0.64 a puerta), J. Florentín 1.65 remates totales (0.6 a puerta)",
-   "tarjetas": "Belgrano Cordoba: A. Falcon 0.5 amarillas/partido, R. Hernandes 0.43 amarillas/partido, Alcides Benítez 0.29 amarillas/partido | Independ. Rivadavia: I. Villalba 0.33 amarillas/partido, M. Fernández 0.32 amarillas/partido, A. Riep 0.25 amarillas/partido",
-   "asistencias": "Belgrano Cordoba: L. Passerini 0.33 asistencias/partido, N. Fernández 0.18 asistencias/partido, E. Rigoni 0.14 asistencias/partido | Independ. Rivadavia: S. Villa 0.36 asistencias/partido, M. Fernández 0.26 asistencias/partido, R. Atencio 0.21 asistencias/partido",
-   "faltas": "Belgrano Cordoba: R. Hernandes 1.86 faltas/partido, L. Passerini 1.72 faltas/partido, A. Sánchez 1.55 faltas/partido | Independ. Rivadavia: J. Florentín 1.65 faltas/partido, F. Sartori 1.2 faltas/partido, M. Fernández 1.16 faltas/partido",
-   "quites": "Belgrano Cordoba: R. Hernandes 2.71 quites/partido, A. Sánchez 2.68 quites/partido, Alcides Benítez 2.59 quites/partido | Independ. Rivadavia: I. Villalba 2.0 quites/partido, T. Bottari 2.0 quites/partido, J. Florentín 1.65 quites/partido"
-  },
-  {
-   "local": "Newells Old Boys",
-   "visitante": "Deportivo Riestra",
-   "gole": "",
-   "remates": "Newells Old Boys: I. Ramírez 1.07 remates totales (0.71 a puerta), O. Salomón 1.0 remates totales (0.62 a puerta), L. Herrera 0.88 remates totales (0.38 a puerta) | Deportivo Riestra: M. Céliz 3.0 remates totales (2.0 a puerta), Antony Daniel Alonso Espinoza 1.35 remates totales (0.9 a puerta), T. González 1.25 remates totales (0.75 a puerta)",
-   "tarjetas": "Newells Old Boys: L. Regiardo 0.4 amarillas/partido, M. Luciano 0.38 amarillas/partido, S. Salcedo 0.29 amarillas/partido | Deportivo Riestra: G. Flores 0.6 amarillas/partido, L. Landriel 0.5 amarillas/partido, Á. Stringa 0.5 amarillas/partido",
-   "asistencias": "Newells Old Boys: T. Rios 0.25 asistencias/partido, M. Ortega 0.2 asistencias/partido, J. Russo 0.12 asistencias/partido | Deportivo Riestra: C. Quintana 0.25 asistencias/partido, N. Sansotre 0.06 asistencias/partido, N. Watson 0.06 asistencias/partido",
-   "faltas": "Newells Old Boys: L. Herrera 2.0 faltas/partido, R. Herrera 1.6 faltas/partido, L. Regiardo 1.47 faltas/partido | Deportivo Riestra: M. Céliz 2.25 faltas/partido, N. Benegas 1.69 faltas/partido, N. Watson 1.62 faltas/partido",
-   "quites": "Newells Old Boys: A. Méndez 3.79 quites/partido, F. Escobar 2.5 quites/partido, R. Herrera 2.07 quites/partido | Deportivo Riestra: M. Céliz 2.5 quites/partido, M. Bracamonte 2.22 quites/partido, P. Ramírez 2.08 quites/partido"
-  },
-  {
    "local": "Atlante FC",
    "visitante": "Toluca",
    "gole": "I. López 63.2% &middot; E. Pizzuto 48.7% &middot; J. Gallardo 28.3%",
@@ -269,6 +169,81 @@
    "local": "Feyenoord",
    "visitante": "GO Ahead Eagles",
    "gole": "M. Meulensteen 61.8% &middot; E. Flataker 61.8% &middot; J. Dirksen 61.8%"
+  },
+  {
+   "local": "Chapecoense-sc",
+   "visitante": "Bahia",
+   "gole": "Luciano Juba 32.2%",
+   "remates": "Chapecoense-sc: Neto Pessoa 1.3 remates totales (0.5 a puerta), Y. Bolasie 1.29 remates totales (0.53 a puerta), João Vitor 1.18 remates totales (0.27 a puerta) | Bahia: C. Olivera 1.25 remates totales (0.88 a puerta), Rodrigo Nestor 1.2 remates totales (0.27 a puerta), Luciano Juba 1.06 remates totales (0.67 a puerta)",
+   "tarjetas": "Chapecoense-sc: Eduardo Vinicius 0.5 amarillas/partido, Matheus Aurélio 0.33 amarillas/partido, João Paulo 0.33 amarillas/partido | Bahia: Kanu 0.67 amarillas/partido, Zé Guilherme 0.6 amarillas/partido, João Paulo 0.5 amarillas/partido",
+   "asistencias": "Chapecoense-sc: K. Ramírez 0.25 asistencias/partido, Bruno Pacheco 0.23 asistencias/partido, Jean Carlos 0.12 asistencias/partido | Bahia: Éverton Ribeiro 0.24 asistencias/partido, Gilberto 0.14 asistencias/partido, Jean Lucas 0.11 asistencias/partido",
+   "faltas": "Chapecoense-sc: João Paulo 1.83 faltas/partido, Higor Meritão 1.55 faltas/partido, Camilo 1.5 faltas/partido | Bahia: N. Acevedo 2.2 faltas/partido, A. Véliz 2.0 faltas/partido, Jean Lucas 1.68 faltas/partido",
+   "quites": "Chapecoense-sc: Camilo 2.22 quites/partido, Higor Meritão 2.0 quites/partido, Bruno Matias 1.5 quites/partido | Bahia: N. Acevedo 2.35 quites/partido, Roman Gomez 1.88 quites/partido, Éverton Ribeiro 1.47 quites/partido"
+  },
+  {
+   "local": "Operario-PR",
+   "visitante": "Avai",
+   "gole": "Boschilia 40.9% &middot; Pablo 24.3%",
+   "remates": "Operario-PR: Boschilia 2.16 remates totales (1.11 a puerta), Pablo 1.39 remates totales (0.72 a puerta), Vinícius Diniz 1.26 remates totales (0.42 a puerta) | Avai: Daniel Penha 1.38 remates totales (0.75 a puerta), Jean Lucas 0.85 remates totales (0.35 a puerta), Thayllon 0.81 remates totales (0.24 a puerta)",
+   "tarjetas": "Operario-PR: J. Cuenú 0.36 amarillas/partido, Miranda 0.33 amarillas/partido, Vinícius Diniz 0.32 amarillas/partido | Avai: DG 0.5 amarillas/partido, Paulo Vitor 0.38 amarillas/partido, Guilherme Vargas 0.38 amarillas/partido",
+   "asistencias": "Operario-PR: Mikael Doka 0.2 asistencias/partido, Gabriel Feliciano 0.19 asistencias/partido, Pablo 0.17 asistencias/partido | Avai: J. Sousa Rocha Leandro 0.5 asistencias/partido, Jean Lucas 0.15 asistencias/partido, Thayllon 0.14 asistencias/partido",
+   "faltas": "Operario-PR: Vinícius Diniz 1.84 faltas/partido, Pablo 1.56 faltas/partido, Boschilia 1.42 faltas/partido | Avai: Reynaldo 2.5 faltas/partido, Wallison 2.06 faltas/partido, Luiz Henrique 1.75 faltas/partido",
+   "quites": "Operario-PR: Mikael Doka 1.8 quites/partido, Matheus Trindade 1.65 quites/partido, J. Torres 1.5 quites/partido | Avai: DG 2.28 quites/partido, Wallison 1.76 quites/partido, Luiz Henrique 1.65 quites/partido"
+  },
+  {
+   "local": "Nacional",
+   "visitante": "Estoril",
+   "gole": "Y. Begraoui 58.3% &middot; Miguel Baeza 56.3%"
+  },
+  {
+   "local": "Ajax",
+   "visitante": "Heerenveen",
+   "gole": "J. Brandt 63.2% &middot; J. Mokio 63.2% &middot; L. Oyen 63.2%"
+  },
+  {
+   "local": "Arouca",
+   "visitante": "Moreirense",
+   "gole": "Barbero 62.6% &middot; João Veloso 53.0% &middot; N. John 53.0%"
+  },
+  {
+   "local": "Sarmiento Junin",
+   "visitante": "Huracan",
+   "gole": "J. Caicedo 40.8% &middot; J. Marabel 36.2%",
+   "remates": "Sarmiento Junin: J. Marabel 1.75 remates totales (0.9 a puerta), J. Mavilla 1.0 remates totales (0.67 a puerta), Mauricio Leonel Martínez 0.8 remates totales (0.27 a puerta) | Huracan: J. Caicedo 1.71 remates totales (1.1 a puerta), N. Paz 1.4 remates totales (0.4 a puerta), L. Blondel 1.36 remates totales (0.21 a puerta)",
+   "tarjetas": "Sarmiento Junin: E. Giménez 0.5 amarillas/partido, J. Insaurralde 0.41 amarillas/partido, S. Salle 0.37 amarillas/partido | Huracan: C. Ibáñez 0.5 amarillas/partido, Ignacio Campo 0.5 amarillas/partido, J. Caicedo 0.48 amarillas/partido",
+   "asistencias": "Sarmiento Junin: J. Marabel 0.15 asistencias/partido, P. Magnín 0.14 asistencias/partido, J. Contrera 0.12 asistencias/partido | Huracan: Ó. Cortés 0.2 asistencias/partido, E. Ojeda 0.11 asistencias/partido, C. Ibáñez 0.11 asistencias/partido",
+   "faltas": "Sarmiento Junin: E. Giménez 2.5 faltas/partido, J. Contrera 2.18 faltas/partido, M. García 1.79 faltas/partido | Huracan: C. Ibáñez 2.11 faltas/partido, J. Caicedo 2.0 faltas/partido, F. Waller 1.94 faltas/partido",
+   "quites": "Sarmiento Junin: E. Giménez 2.5 quites/partido, C. Zabala 2.45 quites/partido, M. García 2.0 quites/partido | Huracan: F. Waller 2.94 quites/partido, C. Ibáñez 2.78 quites/partido, F. Vera 2.67 quites/partido"
+  },
+  {
+   "local": "U.N.A.M. - Pumas",
+   "visitante": "Club Queretaro",
+   "gole": "Juninho 63.2% &middot; A. Ávila 60.1% &middot; R. Morales 28.3%",
+   "remates": "U.N.A.M. - Pumas: S. Córdova 1.0 remates totales (0.33 a puerta), R. Morales 1.0 remates totales (0.33 a puerta), Juninho 1.0 remates totales (1.0 a puerta) | Club Queretaro: M. Coronel 3.0 remates totales (0.67 a puerta), A. Ávila 2.67 remates totales (1.67 a puerta), Carlo Adriano 1.67 remates totales (0.67 a puerta)",
+   "tarjetas": "U.N.A.M. - Pumas: U. Antuna 0.5 amarillas/partido, R. López 0.33 amarillas/partido, P. Vite 0.33 amarillas/partido | Club Queretaro: L. Abascia 1.0 amarillas/partido, B. Duarte 0.67 amarillas/partido, D. Reyes 0.67 amarillas/partido",
+   "asistencias": "U.N.A.M. - Pumas: R. Morales 1.0 asistencias/partido, U. Antuna 0.5 asistencias/partido, R. López 0.33 asistencias/partido | Club Queretaro: B. Duarte 0.33 asistencias/partido, S. Homenchenko 0.33 asistencias/partido",
+   "faltas": "U.N.A.M. - Pumas: Á. Angulo 2.0 faltas/partido, P. Vite 2.0 faltas/partido, V. Arteaga 2.0 faltas/partido | Club Queretaro: B. Duarte 2.33 faltas/partido, A. Ávila 2.33 faltas/partido, L. Abascia 2.0 faltas/partido",
+   "quites": "U.N.A.M. - Pumas: Á. Angulo 2.33 quites/partido, P. Vite 2.33 quites/partido, R. López 2.0 quites/partido | Club Queretaro: S. Homenchenko 4.33 quites/partido, L. Abascia 3.67 quites/partido, B. Duarte 2.0 quites/partido"
+  },
+  {
+   "local": "Atletico-MG",
+   "visitante": "Gremio",
+   "gole": "Carlos Vinícius 39.3%",
+   "remates": "Atletico-MG: Hulk 1.42 remates totales (0.58 a puerta), T. Cuello 1.32 remates totales (0.47 a puerta), Gustavo Scarpa 1.0 remates totales (0.3 a puerta) | Gremio: Carlos Vinícius 1.45 remates totales (1.1 a puerta), Tetê 1.31 remates totales (0.62 a puerta), F. Amuzu 1.21 remates totales (0.42 a puerta)",
+   "tarjetas": "Atletico-MG: I. Román 0.5 amarillas/partido, Ruan Tressoldi 0.39 amarillas/partido, Lyanco 0.33 amarillas/partido | Gremio: W. Kannemann 0.67 amarillas/partido, Diego Caito 0.5 amarillas/partido, André Henrique 0.4 amarillas/partido",
+   "asistencias": "Atletico-MG: Hulk 0.25 asistencias/partido, A. Minda 0.18 asistencias/partido, Renan Lodi 0.11 asistencias/partido | Gremio: Jovane Cabral 0.5 asistencias/partido, F. Amuzu 0.16 asistencias/partido, C. Pavón 0.16 asistencias/partido",
+   "faltas": "Atletico-MG: I. Román 2.0 faltas/partido, Renan Lodi 1.68 faltas/partido, A. Franco 1.62 faltas/partido | Gremio: L. Pérez 1.67 faltas/partido, Viery 1.54 faltas/partido, Diego Caito 1.5 faltas/partido",
+   "quites": "Atletico-MG: I. Román 1.67 quites/partido, A. Preciado 1.56 quites/partido, A. Franco 1.5 quites/partido | Gremio: Marlon 2.75 quites/partido, Viery 2.23 quites/partido, Luis Eduardo 2.0 quites/partido"
+  },
+  {
+   "local": "Vasco DA Gama",
+   "visitante": "Santos",
+   "gole": "Neymar 48.7% &middot; Gabriel Barbosa 39.3%",
+   "remates": "Vasco DA Gama: Philippe Coutinho 3.33 remates totales (2.33 a puerta), A. Gómez 2.44 remates totales (1.0 a puerta), C. Spinelli 1.6 remates totales (0.73 a puerta) | Santos: Neymar 2.56 remates totales (1.33 a puerta), Gabriel Barbosa 1.43 remates totales (0.57 a puerta), G. Caballero 1.33 remates totales (0.33 a puerta)",
+   "tarjetas": "Vasco DA Gama: Thiago Mendes 0.39 amarillas/partido, A. Gómez 0.33 amarillas/partido, A. Saldivia 0.27 amarillas/partido | Santos: Neymar 0.67 amarillas/partido, Diógenes 0.5 amarillas/partido, T. Rincón 0.5 amarillas/partido",
+   "asistencias": "Vasco DA Gama: J. Rodríguez 0.29 asistencias/partido, Ramon Rique 0.25 asistencias/partido, Cuiabano 0.21 asistencias/partido | Santos: M. Terceros 0.22 asistencias/partido, Neymar 0.22 asistencias/partido, Zé Rafael 0.2 asistencias/partido",
+   "faltas": "Vasco DA Gama: Cauan Barros 1.72 faltas/partido, Cuiabano 1.36 faltas/partido, A. Gómez 1.22 faltas/partido | Santos: T. Rincón 1.5 faltas/partido, C. Oliva 1.47 faltas/partido, João Schmidt 1.45 faltas/partido",
+   "quites": "Vasco DA Gama: Cuiabano 3.29 quites/partido, V. Joao 3.0 quites/partido, Jair 2.0 quites/partido | Santos: João Paulo Ananias 2.6 quites/partido, Igor Vinicius 2.4 quites/partido, Gustavo Henrique Pereira 2.22 quites/partido"
   }
  ]
 }
