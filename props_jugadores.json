@@ -1,99 +1,9 @@
 {
  "partidos": [
   {
-   "local": "Platense",
-   "visitante": "Boca Juniors",
-   "gole": "M. Merentiel 24.3%",
-   "remates": "Platense: F. Zapiola 1.42 remates totales (0.68 a puerta), N. López 1.33 remates totales (1.33 a puerta), H. Bobadilla 1.33 remates totales (0.67 a puerta) | Boca Juniors: L. Flores 2.5 remates totales (0.75 a puerta), A. Bareiro 1.7 remates totales (1.0 a puerta), M. Giménez 1.62 remates totales (0.75 a puerta)",
-   "tarjetas": "Platense: V. Cuesta 0.42 amarillas/partido, M. Mendia 0.4 amarillas/partido, F. Amarfil 0.36 amarillas/partido | Boca Juniors: L. Paredes 0.44 amarillas/partido, A. Bareiro 0.4 amarillas/partido, L. Janson 0.33 amarillas/partido",
-   "asistencias": "Platense: N. Retamar 0.12 asistencias/partido, J. Gauto 0.11 asistencias/partido, T. Nasif 0.08 asistencias/partido | Boca Juniors: E. Zeballos 0.38 asistencias/partido, S. Villa 0.25 asistencias/partido, L. Paredes 0.17 asistencias/partido",
-   "faltas": "Platense: L. Giménez 2.0 faltas/partido, F. Amarfil 1.71 faltas/partido, Stefan Đokić 1.67 faltas/partido | Boca Juniors: L. Janson 2.33 faltas/partido, A. Bareiro 1.7 faltas/partido, L. Lozano 1.67 faltas/partido",
-   "quites": "Platense: P. Ferreira 3.29 quites/partido, T. Silva 3.12 quites/partido, J. Saborido 2.67 quites/partido | Boca Juniors: L. Blanco 2.89 quites/partido, L. Di Lollo 2.76 quites/partido, M. Braida 2.43 quites/partido"
-  },
-  {
-   "local": "Nashville SC",
-   "visitante": "Inter Miami",
-   "gole": "S. Surridge 60.0% &middot; L. Messi 58.0%",
-   "remates": "Nashville SC: S. Surridge 1.75 remates totales (1.42 a puerta), H. Mukhtar 1.72 remates totales (1.06 a puerta), W. Madrigal 1.2 remates totales (0.53 a puerta) | Inter Miami: L. Messi 4.0 remates totales (2.33 a puerta), L. Suárez 1.86 remates totales (1.21 a puerta), G. Berterame 1.82 remates totales (1.06 a puerta)",
-   "tarjetas": "Nashville SC: S. Mohammed 0.25 amarillas/partido, D. Lovitz 0.22 amarillas/partido, A. Najar 0.2 amarillas/partido | Inter Miami: T. Segovia 0.5 amarillas/partido, Casemiro 0.5 amarillas/partido, I. Fray 0.38 amarillas/partido",
-   "asistencias": "Nashville SC: C. Espinoza 0.43 asistencias/partido, P. Yazbek 0.3 asistencias/partido, H. Mukhtar 0.22 asistencias/partido | Inter Miami: L. Messi 0.47 asistencias/partido, T. Segovia 0.38 asistencias/partido, Mateo Silvetti 0.31 asistencias/partido",
-   "faltas": "Nashville SC: S. Mohammed 1.25 faltas/partido, B. Acosta 1.18 faltas/partido, D. Lovitz 1.17 faltas/partido | Inter Miami: T. Segovia 1.81 faltas/partido, Y. Bright 1.6 faltas/partido, G. Berterame 1.47 faltas/partido",
-   "quites": "Nashville SC: M. Woledzi 1.72 quites/partido, J. Palacios 1.64 quites/partido, E. Tagseth 1.62 quites/partido | Inter Miami: Y. Bright 3.33 quites/partido, G. Luján 1.92 quites/partido, Micael 1.71 quites/partido"
-  },
-  {
-   "local": "Houston Dynamo",
-   "visitante": "Los Angeles Galaxy",
-   "gole": "Guilherme 45.7% &middot; D. Bouanga 26.4%",
-   "remates": "Houston Dynamo: M. Bogusz 2.47 remates totales (1.29 a puerta), Guilherme 2.17 remates totales (1.39 a puerta), E. Ponce 0.88 remates totales (0.24 a puerta) | Los Angeles Galaxy: Gabriel Pec 2.79 remates totales (2.07 a puerta), João Klauss 2.12 remates totales (1.5 a puerta), J. Paintsil 1.8 remates totales (1.0 a puerta)",
-   "tarjetas": "Houston Dynamo: Felipe Andrade 0.47 amarillas/partido, Lucas Halter 0.43 amarillas/partido, E. Sviatchenko 0.3 amarillas/partido | Los Angeles Galaxy: J. Glesnes 0.5 amarillas/partido, M. Cuevas 0.33 amarillas/partido, E. Cerrillo 0.31 amarillas/partido",
-   "asistencias": "Houston Dynamo: J. McGlynn 0.36 asistencias/partido, Guilherme 0.28 asistencias/partido, L. Ennali 0.11 asistencias/partido | Los Angeles Galaxy: M. Reus 0.32 asistencias/partido, Gabriel Pec 0.29 asistencias/partido, J. Paintsil 0.13 asistencias/partido",
-   "faltas": "Houston Dynamo: Felipe Andrade 1.4 faltas/partido, E. Ponce 1.24 faltas/partido, E. Sviatchenko 1.1 faltas/partido | Los Angeles Galaxy: C. Garcés 1.17 faltas/partido, João Klauss 1.12 faltas/partido, J. Haak 1.11 faltas/partido",
-   "quites": "Houston Dynamo: Felipe Andrade 2.2 quites/partido, D. Holmes 1.9 quites/partido, Lucas Halter 1.43 quites/partido | Los Angeles Galaxy: C. Garcés 2.17 quites/partido, L. Sanabria 1.95 quites/partido, M. Yamane 1.56 quites/partido"
-  },
-  {
-   "local": "Monterrey",
-   "visitante": "FC Juarez",
-   "gole": "L. Ocampos 73.6% &middot; D. Rossi 28.3%",
-   "remates": "Monterrey: L. Ocampos 3.0 remates totales (1.67 a puerta), D. Rossi 2.33 remates totales (1.0 a puerta), L. Orellano 2.0 remates totales (2.0 a puerta) | FC Juarez: Ricardinho 1.5 remates totales (0.0 a puerta), J. Torres 1.33 remates totales (0.0 a puerta), J. Rodríguez 1.0 remates totales (0.33 a puerta)",
-   "tarjetas": "Monterrey: C. Salcedo 1.0 amarillas/partido, R. Chávez 0.33 amarillas/partido, A. Aceves 0.33 amarillas/partido | FC Juarez: Guilherme Castilho 0.67 amarillas/partido, H. Ortega 0.33 amarillas/partido, J. Torres 0.33 amarillas/partido",
-   "asistencias": "Monterrey: Óliver Torres 0.33 asistencias/partido, L. Ocampos 0.33 asistencias/partido, D. Rossi 0.33 asistencias/partido | FC Juarez: J. Torres 0.33 asistencias/partido",
-   "faltas": "Monterrey: R. Chávez 2.33 faltas/partido, C. Salcedo 2.0 faltas/partido, S. Medina 1.5 faltas/partido | FC Juarez: Guilherme Castilho 2.33 faltas/partido, Monchu 1.67 faltas/partido, Ricardinho 1.5 faltas/partido",
-   "quites": "Monterrey: Óliver Torres 2.67 quites/partido, J. Rodríguez 2.67 quites/partido, L. Ocampos 2.33 quites/partido | FC Juarez: D. García 2.67 quites/partido, J. Aquino 2.0 quites/partido, H. Ortega 1.33 quites/partido"
-  },
-  {
-   "local": "Real Salt Lake",
-   "visitante": "Minnesota United FC",
-   "gole": "",
-   "remates": "Real Salt Lake: Z. Gozo 2.44 remates totales (1.25 a puerta), S. Solans 2.0 remates totales (0.94 a puerta), M. Guilavogui 1.79 remates totales (1.07 a puerta) | Minnesota United FC: T. Chancalay 1.89 remates totales (0.83 a puerta), K. Yeboah 1.76 remates totales (0.88 a puerta), J. Rodríguez 1.5 remates totales (0.5 a puerta)",
-   "tarjetas": "Real Salt Lake: D. Yedlin 0.42 amarillas/partido, L. Moisa 0.33 amarillas/partido, M. Guilavogui 0.29 amarillas/partido | Minnesota United FC: J. Díaz 0.38 amarillas/partido, D. Taylor 0.25 amarillas/partido, J. Gressel 0.25 amarillas/partido",
-   "asistencias": "Real Salt Lake: S. Lobzhanidze 0.67 asistencias/partido, J. Sanabria 0.29 asistencias/partido, M. Guilavogui 0.29 asistencias/partido | Minnesota United FC: J. Pereyra 0.33 asistencias/partido, J. Rodríguez 0.33 asistencias/partido, T. Chancalay 0.17 asistencias/partido",
-   "faltas": "Real Salt Lake: D. Yedlin 1.75 faltas/partido, S. Spierings 1.71 faltas/partido, Z. Gozo 1.31 faltas/partido | Minnesota United FC: J. Díaz 1.38 faltas/partido, T. Chancalay 1.28 faltas/partido, D. Taylor 1.25 faltas/partido",
-   "quites": "Real Salt Lake: Z. Gozo 2.62 quites/partido, J. Sanabria 1.79 quites/partido, D. Yedlin 1.75 quites/partido | Minnesota United FC: A. Markanich 2.0 quites/partido, N. Triantis 1.87 quites/partido, J. Díaz 1.69 quites/partido"
-  },
-  {
-   "local": "Colorado Rapids",
-   "visitante": "Sporting Kansas City",
-   "gole": "Rafael Navarro 39.3%",
-   "remates": "Colorado Rapids: Rafael Navarro 2.39 remates totales (1.56 a puerta), P. Aaronson 1.28 remates totales (0.78 a puerta), D. Sealy 0.82 remates totales (0.29 a puerta) | Sporting Kansas City: D. Joveljić 1.44 remates totales (1.11 a puerta), C. Harris 1.33 remates totales (0.61 a puerta), Capita 1.09 remates totales (0.55 a puerta)",
-   "tarjetas": "Colorado Rapids: J. Atencio 0.47 amarillas/partido, H. Ojediran 0.44 amarillas/partido, M. Navarro 0.38 amarillas/partido | Sporting Kansas City: Capita 0.36 amarillas/partido, Jansen Miller 0.22 amarillas/partido, Z. Bassong 0.22 amarillas/partido",
-   "asistencias": "Colorado Rapids: P. Aaronson 0.22 asistencias/partido, Rafael Navarro 0.17 asistencias/partido, G. Minoungou 0.17 asistencias/partido | Sporting Kansas City: Manu García 0.22 asistencias/partido, C. Harris 0.17 asistencias/partido, J. Davis 0.12 asistencias/partido",
-   "faltas": "Colorado Rapids: H. Ojediran 2.06 faltas/partido, Rafael Navarro 2.06 faltas/partido, J. Atencio 1.47 faltas/partido | Sporting Kansas City: Capita 2.18 faltas/partido, Z. Bassong 1.78 faltas/partido, J. Davis 1.65 faltas/partido",
-   "quites": "Colorado Rapids: H. Ojediran 1.62 quites/partido, M. Navarro 1.54 quites/partido, P. Aaronson 1.44 quites/partido | Sporting Kansas City: J. Davis 2.24 quites/partido, Capita 2.09 quites/partido, J. Reid 2.0 quites/partido"
-  },
-  {
-   "local": "Los Angeles FC",
-   "visitante": "San Diego",
-   "gole": "P. Judd 47.6% &middot; M. Ingvartsen 45.7% &middot; D. Bouanga 42.7%",
-   "remates": "Los Angeles FC: D. Bouanga 2.33 remates totales (1.39 a puerta), Son Heung-Min 1.71 remates totales (1.0 a puerta), D. Martínez 1.0 remates totales (0.61 a puerta) | San Diego: A. Dreyer 2.17 remates totales (1.61 a puerta), M. Ingvartsen 2.06 remates totales (1.0 a puerta), O. Valakari 1.0 remates totales (0.61 a puerta)",
-   "tarjetas": "Los Angeles FC: R. Raposo 0.25 amarillas/partido, Sergi Palencia 0.22 amarillas/partido, D. Bouanga 0.22 amarillas/partido | San Diego: C. McVey 0.31 amarillas/partido, L. Bombino 0.29 amarillas/partido, B. Duke 0.25 amarillas/partido",
-   "asistencias": "Los Angeles FC: Son Heung-Min 0.47 asistencias/partido, D. Bouanga 0.22 asistencias/partido, J. Shaffelburg 0.22 asistencias/partido | San Diego: A. Saidi 0.5 asistencias/partido, A. Dreyer 0.39 asistencias/partido, P. Soma 0.22 asistencias/partido",
-   "faltas": "Los Angeles FC: D. Bouanga 1.83 faltas/partido, Sergi Palencia 1.56 faltas/partido, Y. Cheberko 1.25 faltas/partido | San Diego: D. Vazquez 1.56 faltas/partido, P. Soma 1.33 faltas/partido, O. SÃ¸e 1.33 faltas/partido",
-   "quites": "Los Angeles FC: Y. Cheberko 2.25 quites/partido, E. Segura 1.71 quites/partido, S. Eustáquio 1.7 quites/partido | San Diego: O. Valakari 2.06 quites/partido, J. Tverskov 2.0 quites/partido, L. Bombino 1.79 quites/partido"
-  },
-  {
-   "local": "San Jose Earthquakes",
-   "visitante": "St. Louis City",
-   "gole": "P. Judd 47.6% &middot; M. Ingvartsen 45.7%",
-   "remates": "San Jose Earthquakes: P. Judd 2.53 remates totales (1.53 a puerta), T. Werner 1.6 remates totales (1.2 a puerta), O. Bouda 1.33 remates totales (0.72 a puerta) | St. Louis City: M. Hartel 2.88 remates totales (1.56 a puerta), S. Becher 1.78 remates totales (0.61 a puerta), E. Löwen 1.09 remates totales (0.27 a puerta)",
-   "tarjetas": "San Jose Earthquakes: D. Jones 0.4 amarillas/partido, B. Kikanovic 0.33 amarillas/partido, P. Judd 0.29 amarillas/partido | St. Louis City: C. Durkin 0.5 amarillas/partido, B. Lundt 0.5 amarillas/partido, M. Fall 0.33 amarillas/partido",
-   "asistencias": "San Jose Earthquakes: N. Adimabua 0.5 asistencias/partido, N. Tsakiris 0.36 asistencias/partido, P. Marie 0.31 asistencias/partido | St. Louis City: S. Becher 0.22 asistencias/partido, M. Hartel 0.19 asistencias/partido, T. Totland 0.14 asistencias/partido",
-   "faltas": "San Jose Earthquakes: R. Vieira 1.73 faltas/partido, N. Adimabua 1.5 faltas/partido, P. Judd 1.47 faltas/partido | St. Louis City: C. Durkin 2.25 faltas/partido, C. Wallem 2.13 faltas/partido, S. Becher 1.56 faltas/partido",
-   "quites": "San Jose Earthquakes: D. Jones 2.4 quites/partido, Beau Leroux 2.0 quites/partido, N. Tsakiris 1.64 quites/partido | St. Louis City: C. Wallem 1.8 quites/partido, F. Fall 1.8 quites/partido, C. Durkin 1.75 quites/partido"
-  },
-  {
-   "local": "Atlas",
-   "visitante": "Tigres UANL",
-   "gole": "",
-   "remates": "Atlas: Duk 1.67 remates totales (1.0 a puerta), A. González 1.67 remates totales (1.0 a puerta), R. Mmaee 1.33 remates totales (0.33 a puerta) | Tigres UANL: J. Brunetta 2.67 remates totales (1.33 a puerta), O. Herrera 2.67 remates totales (0.67 a puerta), R. Aguirre 1.5 remates totales (0.5 a puerta)",
-   "tarjetas": "Atlas: M. Capasso 0.67 amarillas/partido, A. Rocha 0.5 amarillas/partido, J. Sánchez 0.5 amarillas/partido | Tigres UANL: V. Loroña 0.67 amarillas/partido, F. Gorriarán 0.67 amarillas/partido, N. Guzmán 0.33 amarillas/partido",
-   "asistencias": "Atlas: Gustavo Ferrareis 0.33 asistencias/partido | Tigres UANL: Joaquim 0.67 asistencias/partido, J. Brunetta 0.67 asistencias/partido",
-   "faltas": "Atlas: R. Mmaee 2.0 faltas/partido, Gustavo Ferrareis 1.33 faltas/partido, M. Capasso 1.33 faltas/partido | Tigres UANL: F. Gorriarán 2.33 faltas/partido, R. Aguirre 2.0 faltas/partido, Rômulo 1.67 faltas/partido",
-   "quites": "Atlas: M. Valenzuela 4.67 quites/partido, Duk 3.0 quites/partido, S. Hernández 2.33 quites/partido | Tigres UANL: C. Araújo 2.33 quites/partido, D. Lainez 1.67 quites/partido, V. Loroña 1.33 quites/partido"
-  },
-  {
    "local": "ADO Den Haag",
    "visitante": "Groningen",
-   "gole": "B. Willumsson 50.3%"
+   "gole": "B. Willumsson 63.2%"
   },
   {
    "local": "Feyenoord",
@@ -176,11 +86,6 @@
    "quites": "Vasco DA Gama: Cuiabano 3.29 quites/partido, V. Joao 3.0 quites/partido, Jair 2.0 quites/partido | Santos: João Paulo Ananias 2.6 quites/partido, Igor Vinicius 2.4 quites/partido, Gustavo Henrique Pereira 2.22 quites/partido"
   },
   {
-   "local": "SC Braga",
-   "visitante": "GIL Vicente",
-   "gole": "Pau Victor 63.2%"
-  },
-  {
    "local": "Famalicao",
    "visitante": "Maritimo",
    "gole": "G. Koutsias 48.8% &middot; Raphael Guzzo 42.3%"
@@ -234,6 +139,106 @@
    "asistencias": "CRB: Dadá Belmonte 0.26 asistencias/partido, Thiaguinho 0.21 asistencias/partido, Hereda 0.2 asistencias/partido | Novorizontino: Romulo 0.33 asistencias/partido, Robson 0.2 asistencias/partido, Nicolas Careca 0.2 asistencias/partido",
    "faltas": "CRB: Hereda 1.93 faltas/partido, Wallace 1.5 faltas/partido, Lucas Lovat 1.15 faltas/partido | Novorizontino: J. Lora 2.0 faltas/partido, Patrick 1.7 faltas/partido, Maykon 1.38 faltas/partido",
    "quites": "CRB: Hereda 1.47 quites/partido, Fábio Alemão 1.44 quites/partido, Dadá Belmonte 1.42 quites/partido | Novorizontino: Reidiney 2.12 quites/partido, J. Lora 1.5 quites/partido, Sander 1.5 quites/partido"
+  },
+  {
+   "local": "New York City FC",
+   "visitante": "Philadelphia Union",
+   "gole": "N. Fernández Mercau 51.4% &middot; M. Iloski 42.7% &middot; J. Hall 39.3%",
+   "remates": "New York City FC: N. Fernández Mercau 2.11 remates totales (1.56 a puerta), A. Ojeda 1.17 remates totales (0.61 a puerta), A. Perea 1.12 remates totales (0.62 a puerta) | Philadelphia Union: M. Iloski 2.72 remates totales (1.39 a puerta), Neil Pierre 2.67 remates totales (0.67 a puerta), Q. Sullivan 1.67 remates totales (0.67 a puerta)",
+   "tarjetas": "New York City FC: N. Fernández Mercau 0.33 amarillas/partido, J. Sands 0.33 amarillas/partido, T. Gray 0.24 amarillas/partido | Philadelphia Union: O. Makhanya 0.38 amarillas/partido, J. Sery Larsen 0.36 amarillas/partido, D. Jean-Jacques 0.29 amarillas/partido",
+   "asistencias": "New York City FC: M. Moralez 0.43 asistencias/partido, A. Ojeda 0.22 asistencias/partido, N. Fernández Mercau 0.17 asistencias/partido | Philadelphia Union: K. Wagner 1.0 asistencias/partido, F. Westfield 0.29 asistencias/partido, A. Bedoya 0.2 asistencias/partido",
+   "faltas": "New York City FC: N. Fernández Mercau 2.06 faltas/partido, A. O&apos;Neill 1.64 faltas/partido, K. Parks 1.43 faltas/partido | Philadelphia Union: J. Sery Larsen 2.18 faltas/partido, B. Damiani 1.72 faltas/partido, N. Harriel 1.5 faltas/partido",
+   "quites": "New York City FC: A. O&apos;Neill 2.73 quites/partido, Nico Cavallo 2.33 quites/partido, T. Gray 2.12 quites/partido | Philadelphia Union: F. Sundstrom 2.5 quites/partido, O. Makhanya 2.31 quites/partido, N. Harriel 2.06 quites/partido"
+  },
+  {
+   "local": "Chicago Fire",
+   "visitante": "Portland Timbers",
+   "gole": "H. Cuypers 69.3% &middot; K. Kelsy 41.1%",
+   "remates": "Chicago Fire: H. Cuypers 3.09 remates totales (2.0 a puerta), P. Zinckernagel 1.88 remates totales (0.94 a puerta), R. Lewandowski 1.67 remates totales (1.0 a puerta) | Portland Timbers: K. Kelsy 1.88 remates totales (0.88 a puerta), K. Velde 1.82 remates totales (1.0 a puerta), C. Bassett 1.43 remates totales (0.64 a puerta)",
+   "tarjetas": "Chicago Fire: T. D&apos;Avilla 0.38 amarillas/partido, R. Lewandowski 0.33 amarillas/partido, J. Waterman 0.31 amarillas/partido | Portland Timbers: D. Chará 0.29 amarillas/partido, K. Miller 0.29 amarillas/partido, Ian Smith 0.23 amarillas/partido",
+   "asistencias": "Chicago Fire: P. Zinckernagel 0.41 asistencias/partido, M. Haile-Selassie 0.18 asistencias/partido, J. Bamba 0.17 asistencias/partido | Portland Timbers: David Pereira da Costa 0.4 asistencias/partido, J. Mosquera 0.33 asistencias/partido, K. Velde 0.24 asistencias/partido",
+   "faltas": "Chicago Fire: P. Zinckernagel 1.76 faltas/partido, T. D&apos;Avilla 1.38 faltas/partido, H. Cuypers 1.36 faltas/partido | Portland Timbers: K. Velde 1.24 faltas/partido, K. Kelsy 1.24 faltas/partido, J. Fory 1.18 faltas/partido",
+   "quites": "Chicago Fire: P. Zinckernagel 2.06 quites/partido, Leonardo Barroso 1.67 quites/partido, M. Mbokazi 1.67 quites/partido | Portland Timbers: D. Chará 2.07 quites/partido, J. Caicedo 2.0 quites/partido, F. Surman 1.61 quites/partido"
+  },
+  {
+   "local": "Corinthians",
+   "visitante": "Cruzeiro",
+   "gole": "Kaio Jorge 31.3% &middot; Christian 25.5%",
+   "remates": "Corinthians: Yuri Alberto 1.88 remates totales (1.0 a puerta), R. Garro 1.05 remates totales (0.67 a puerta), João Pedro 1.0 remates totales (0.5 a puerta) | Cruzeiro: Matheus Pereira 1.95 remates totales (0.79 a puerta), Kaio Jorge 1.69 remates totales (0.75 a puerta), N. Villareal 1.58 remates totales (0.67 a puerta)",
+   "tarjetas": "Corinthians: Kauê Camargo 1.0 amarillas/partido, André Ramalho 0.57 amarillas/partido, João Pedro 0.5 amarillas/partido | Cruzeiro: Matheus Pereira 0.47 amarillas/partido, Lucas Silva 0.33 amarillas/partido, Kenji 0.33 amarillas/partido",
+   "asistencias": "Corinthians: R. Garro 0.29 asistencias/partido, Z. Labyad 0.18 asistencias/partido, Yuri Alberto 0.12 asistencias/partido | Cruzeiro: Fágner 0.27 asistencias/partido, L. Romero 0.2 asistencias/partido, Christian 0.18 asistencias/partido",
+   "faltas": "Corinthians: Raniele 1.53 faltas/partido, A. Carrillo 1.5 faltas/partido, João Pedro 1.5 faltas/partido | Cruzeiro: Kaiki 2.25 faltas/partido, G. Rojas 1.75 faltas/partido, Matheus Pereira 1.74 faltas/partido",
+   "quites": "Corinthians: Raniele 1.84 quites/partido, Matheus Bidu 1.82 quites/partido, Kaio César 1.8 quites/partido | Cruzeiro: Kaiki 2.25 quites/partido, G. Rojas 2.0 quites/partido, Kauã Moraes 1.8 quites/partido"
+  },
+  {
+   "local": "Club America",
+   "visitante": "Atletico San Luis",
+   "gole": "Rafa Llorente 61.8% &middot; H. Martín 28.3% &middot; I. Violante 28.3%",
+   "remates": "Club America: I. Violante 2.67 remates totales (1.33 a puerta), R. Juárez 1.67 remates totales (0.33 a puerta), Raphael Veiga 1.33 remates totales (1.0 a puerta) | Atletico San Luis: S. Salles-Lamonge 2.0 remates totales (0.67 a puerta), D. Rodríguez 2.0 remates totales (1.0 a puerta), L. Flores 1.67 remates totales (0.0 a puerta)",
+   "tarjetas": "Club America: K. Álvarez 0.67 amarillas/partido, A. Cervantes 0.5 amarillas/partido, R. Juárez 0.33 amarillas/partido | Atletico San Luis: Robson Bambu 0.67 amarillas/partido, M. García 0.33 amarillas/partido",
+   "asistencias": "Club America: D. Espinoza 0.33 asistencias/partido, K. Álvarez 0.33 asistencias/partido, I. Violante 0.33 asistencias/partido | Atletico San Luis: R. Torres 0.33 asistencias/partido, L. Flores 0.33 asistencias/partido",
+   "faltas": "Club America: D. Espinoza 1.67 faltas/partido, K. Álvarez 1.67 faltas/partido, A. Cervantes 1.5 faltas/partido | Atletico San Luis: Robson Bambu 2.33 faltas/partido, S. Salles-Lamonge 1.67 faltas/partido, L. Flores 1.0 faltas/partido",
+   "quites": "Club America: É. Sánchez 2.33 quites/partido, C. Borja 2.0 quites/partido, Icaro 2.0 quites/partido | Atletico San Luis: E.  Águila 2.0 quites/partido, Ó. Macías 1.67 quites/partido, S. Salles-Lamonge 1.67 quites/partido"
+  },
+  {
+   "local": "Barracas Central",
+   "visitante": "Rosario Central",
+   "gole": "M. Santos 29.7% &middot; E. Copetti 22.1%",
+   "remates": "Barracas Central: F. Bruera 1.35 remates totales (0.59 a puerta), N. Briasco 1.17 remates totales (0.5 a puerta), R. Insúa 1.0 remates totales (0.4 a puerta) | Rosario Central: J. Campaz 2.31 remates totales (1.25 a puerta), Á. Di María 1.89 remates totales (0.94 a puerta), A. Véliz 1.82 remates totales (0.76 a puerta)",
+   "tarjetas": "Barracas Central: F. Bruera 0.29 amarillas/partido, G. Maroni 0.29 amarillas/partido, Ivan Guaraz 0.27 amarillas/partido | Rosario Central: E. Veron 0.5 amarillas/partido, F. Ibarra 0.38 amarillas/partido, E. Giménez 0.29 amarillas/partido",
+   "asistencias": "Barracas Central: T. Porra 0.2 asistencias/partido, I. Tapia 0.1 asistencias/partido, N. Demartini 0.07 asistencias/partido | Rosario Central: J. Campaz 0.25 asistencias/partido, Á. Di María 0.22 asistencias/partido, G. Cantizano 0.17 asistencias/partido",
+   "faltas": "Barracas Central: F. Bruera 2.12 faltas/partido, N. Briasco 1.67 faltas/partido, N. Demartini 1.57 faltas/partido | Rosario Central: F. Ibarra 1.67 faltas/partido, E. Giménez 1.59 faltas/partido, E. Coronel 1.41 faltas/partido",
+   "quites": "Barracas Central: N. Demartini 1.86 quites/partido, D. Miloc 1.68 quites/partido, N. Capraro 1.47 quites/partido | Rosario Central: F. Ibarra 4.33 quites/partido, E. Giménez 2.06 quites/partido, G. Cantizano 1.67 quites/partido"
+  },
+  {
+   "local": "Central Cordoba de Santiago",
+   "visitante": "Instituto Cordoba",
+   "gole": "M. Santos 29.7% &middot; A. Luna 27.1% &middot; E. Copetti 22.1%",
+   "remates": "Central Cordoba de Santiago: M. Santos 1.59 remates totales (0.76 a puerta), D. Barrera 0.84 remates totales (0.47 a puerta), M. Iacobellis 0.8 remates totales (0.2 a puerta) | Instituto Cordoba: A. Luna 2.42 remates totales (1.26 a puerta), F. Jara 1.36 remates totales (0.55 a puerta), M. Tissera 1.1 remates totales (0.7 a puerta)",
+   "tarjetas": "Central Cordoba de Santiago: Y. Casermeiro 0.4 amarillas/partido, A. Maciel 0.33 amarillas/partido, L. Marchi 0.33 amarillas/partido | Instituto Cordoba: F. Alarcón 0.41 amarillas/partido, F. Moyano 0.33 amarillas/partido, L. Mosevich 0.3 amarillas/partido",
+   "asistencias": "Central Cordoba de Santiago: M. Santos 0.12 asistencias/partido, H. Tijanovich 0.12 asistencias/partido, M. Iacobellis 0.07 asistencias/partido | Instituto Cordoba: J. Lázaro 0.2 asistencias/partido, D. Sosa 0.15 asistencias/partido, G. Lodico 0.13 asistencias/partido",
+   "faltas": "Central Cordoba de Santiago: F. Juárez 1.5 faltas/partido, S. Moyano 1.39 faltas/partido, M. Santos 1.29 faltas/partido | Instituto Cordoba: J. Córdoba 1.62 faltas/partido, A. Luna 1.53 faltas/partido, F. Alarcón 1.41 faltas/partido",
+   "quites": "Central Cordoba de Santiago: M. Vera 2.21 quites/partido, A. Maciel 2.11 quites/partido, Y. Casermeiro 1.8 quites/partido | Instituto Cordoba: G. Cerato 2.3 quites/partido, F. Alarcón 2.0 quites/partido, A. Massaccesi 2.0 quites/partido"
+  },
+  {
+   "local": "Austin",
+   "visitante": "FC Dallas",
+   "gole": "P. Musa 54.2%",
+   "remates": "Austin: M. Uzuni 1.94 remates totales (1.0 a puerta), B. Vázquez 1.57 remates totales (1.0 a puerta), F. Torres 1.0 remates totales (0.56 a puerta) | FC Dallas: P. Musa 2.75 remates totales (1.69 a puerta), L. Farrington 1.18 remates totales (0.71 a puerta), P. Delgado 0.8 remates totales (0.47 a puerta)",
+   "tarjetas": "Austin: B. Šabović 0.31 amarillas/partido, Ilie Sánchez 0.27 amarillas/partido, M. Uzuni 0.25 amarillas/partido | FC Dallas: Samuel Sarver 0.36 amarillas/partido, N. Norris 0.33 amarillas/partido, O. Urhoghide 0.27 amarillas/partido",
+   "asistencias": "Austin: R. Taylor 0.5 asistencias/partido, Ervin Torres 0.4 asistencias/partido, F. Torres 0.28 asistencias/partido | FC Dallas: J. Valiente 0.19 asistencias/partido, R. Binyamin 0.13 asistencias/partido, H. Johansson 0.12 asistencias/partido",
+   "faltas": "Austin: J. Rosales 1.83 faltas/partido, Jorge Alastuey 1.5 faltas/partido, O. Wolff 1.12 faltas/partido | FC Dallas: H. Johansson 1.75 faltas/partido, O. Urhoghide 1.47 faltas/partido, P. Musa 1.44 faltas/partido",
+   "quites": "Austin: J. Rosales 2.0 quites/partido, N. Dubersarsky 1.64 quites/partido, M. Desler 1.44 quites/partido | FC Dallas: O. Urhoghide 1.6 quites/partido, N. Norris 1.6 quites/partido, S. Moore 1.56 quites/partido"
+  },
+  {
+   "local": "Santos Laguna",
+   "visitante": "Guadalajara Chivas",
+   "gole": "R. Alvarado 48.7%",
+   "remates": "Santos Laguna: E. Bullaude 2.67 remates totales (1.0 a puerta), L. Di Yorio 1.0 remates totales (0.67 a puerta), E. Aguirre 1.0 remates totales (1.0 a puerta) | Guadalajara Chivas: A. González 2.67 remates totales (1.33 a puerta), B. González 2.33 remates totales (1.33 a puerta), R. Alvarado 2.33 remates totales (1.67 a puerta)",
+   "tarjetas": "Santos Laguna: C. Gruezo 0.5 amarillas/partido, Felipe Sánchez 0.33 amarillas/partido, Fran Villalba 0.33 amarillas/partido | Guadalajara Chivas: R. Alvarado 0.33 amarillas/partido, J. Carrillo 0.33 amarillas/partido, R. Marín 0.33 amarillas/partido",
+   "asistencias": "Santos Laguna: Felipe Sánchez 0.33 asistencias/partido | Guadalajara Chivas: E. Álvarez 0.5 asistencias/partido, R. Marín 0.33 asistencias/partido",
+   "faltas": "Santos Laguna: E. Bullaude 2.0 faltas/partido, E. EcheverrÃ­a 1.5 faltas/partido, R. Sordo 1.33 faltas/partido | Guadalajara Chivas: D. Aguirre 2.0 faltas/partido, L. Romo 2.0 faltas/partido, D. Campillo 1.5 faltas/partido",
+   "quites": "Santos Laguna: C. Gruezo 4.5 quites/partido, F. Pardo 2.67 quites/partido, R. Sordo 2.67 quites/partido | Guadalajara Chivas: L. Romo 2.67 quites/partido, R. Alvarado 2.0 quites/partido, D. Aguirre 1.67 quites/partido"
+  },
+  {
+   "local": "Seattle Sounders",
+   "visitante": "Vancouver Whitecaps",
+   "gole": "B. White 44.5%",
+   "remates": "Seattle Sounders: Y. Gómez 1.33 remates totales (0.33 a puerta), A. Rusnák 1.19 remates totales (0.69 a puerta), J. Morris 1.09 remates totales (0.64 a puerta) | Vancouver Whitecaps: B. White 3.0 remates totales (1.82 a puerta), Bruno Steven Caicedo Quiñonez 2.0 remates totales (0.89 a puerta), S. Berhalter 1.93 remates totales (0.64 a puerta)",
+   "tarjetas": "Seattle Sounders: N. Petković 0.5 amarillas/partido, J. Ragen 0.36 amarillas/partido, H. Dotson 0.31 amarillas/partido | Vancouver Whitecaps: A. Cubas 0.43 amarillas/partido, É. Ocampo 0.38 amarillas/partido, J. Ngando 0.33 amarillas/partido",
+   "asistencias": "Seattle Sounders: A. Rusnák 0.25 asistencias/partido, J. Ferreira 0.18 asistencias/partido, J. Morris 0.18 asistencias/partido | Vancouver Whitecaps: Bruno Steven Caicedo Quiñonez 0.33 asistencias/partido, S. Berhalter 0.29 asistencias/partido, K. Cabrera 0.22 asistencias/partido",
+   "faltas": "Seattle Sounders: P. Rothrock 1.62 faltas/partido, P. Kingston 1.08 faltas/partido, G. Minoungou 1.0 faltas/partido | Vancouver Whitecaps: S. Berhalter 2.14 faltas/partido, E. Sabbi 1.5 faltas/partido, A. Cubas 1.43 faltas/partido",
+   "quites": "Seattle Sounders: C. Roldan 2.08 quites/partido, Y. Gómez 2.0 quites/partido, A. Roldan 1.75 quites/partido | Vancouver Whitecaps: A. Cubas 4.57 quites/partido, É. Ocampo 2.31 quites/partido, S. Berhalter 2.29 quites/partido"
+  },
+  {
+   "local": "Club Tijuana",
+   "visitante": "Cruz Azul",
+   "gole": "J. Márquez 48.7% &middot; Mourad 48.7% &middot; L. Romero 28.3%",
+   "remates": "Club Tijuana: Mourad 1.33 remates totales (1.0 a puerta), Y. Padilla 1.0 remates totales (0.67 a puerta), D. Abreu 1.0 remates totales (0.33 a puerta) | Cruz Azul: C. Rotondi 2.5 remates totales (2.0 a puerta), G. Fernández 2.33 remates totales (1.0 a puerta), A. Palavecino 1.67 remates totales (0.67 a puerta)",
+   "tarjetas": "Club Tijuana: J. Porozo 0.33 amarillas/partido, P. Ortíz 0.33 amarillas/partido, I. Tona 0.33 amarillas/partido | Cruz Azul: C. Rodríguez 0.67 amarillas/partido, W. Ditta 0.33 amarillas/partido, N. Ibáñez 0.33 amarillas/partido",
+   "asistencias": "Club Tijuana: Y. Padilla 0.33 asistencias/partido | Cruz Azul: C. Rodríguez 0.67 asistencias/partido, J. Márquez 0.33 asistencias/partido, J. Paradela 0.33 asistencias/partido",
+   "faltas": "Club Tijuana: I. Tona 2.0 faltas/partido, R. Fernández 1.33 faltas/partido, P. Ortíz 1.33 faltas/partido | Cruz Azul: J. Orozco 2.0 faltas/partido, C. Rodríguez 1.67 faltas/partido, G. Piovi 1.33 faltas/partido",
+   "quites": "Club Tijuana: I. Tona 2.67 quites/partido, R. Árciga 2.67 quites/partido, Adonis Preciado 2.67 quites/partido | Cruz Azul: J. Márquez 3.33 quites/partido, C. Rotondi 2.5 quites/partido, W. Ditta 2.0 quites/partido"
   }
  ]
 }
