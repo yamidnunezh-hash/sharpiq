@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Nacional",
-   "visitante": "Estoril",
-   "gole": "Miguel Baeza 58.2% &middot; Y. Begraoui 52.4%"
-  },
-  {
-   "local": "Ajax",
-   "visitante": "Heerenveen",
-   "gole": "J. Brandt 63.2% &middot; J. Mokio 63.2% &middot; L. Oyen 63.2%"
-  },
-  {
    "local": "Arouca",
    "visitante": "Moreirense",
    "gole": "Barbero 62.6% &middot; João Veloso 53.0% &middot; N. John 53.0%"
@@ -244,6 +234,16 @@
    "asistencias": "Velez Sarsfield: T. Aguirre 0.33 asistencias/partido, D. Valdés 0.28 asistencias/partido, M. Arias 0.2 asistencias/partido | Defensa Y Justicia: V. Loza 0.5 asistencias/partido, A. Molinas 0.27 asistencias/partido, J. Gutiérrez 0.15 asistencias/partido",
    "faltas": "Velez Sarsfield: Jano Gordon 2.0 faltas/partido, F. Monzón 1.44 faltas/partido, T. Andrada 1.41 faltas/partido | Defensa Y Justicia: D. Martínez 1.36 faltas/partido, C. Pérez 1.29 faltas/partido, L. Souto 1.06 faltas/partido",
    "quites": "Velez Sarsfield: Jano Gordon 3.33 quites/partido, S. Escobar 2.75 quites/partido, T. Andrada 2.59 quites/partido | Defensa Y Justicia: D. Fernández 2.75 quites/partido, D. Martínez 2.07 quites/partido, C. Pérez 2.0 quites/partido"
+  },
+  {
+   "local": "Internacional",
+   "visitante": "Remo",
+   "gole": "Jája Silva 28.3% &middot; J. Carbonero 21.2% &middot; Alef Manga 20.3%",
+   "remates": "Internacional: A. Bernabéi 1.79 remates totales (0.79 a puerta), J. Carbonero 1.76 remates totales (0.76 a puerta), R. Borré 1.28 remates totales (0.67 a puerta) | Remo: Patrick de Paula 1.83 remates totales (0.5 a puerta), Gabriel Taliari 1.5 remates totales (0.7 a puerta), Jája Silva 1.44 remates totales (0.89 a puerta)",
+   "tarjetas": "Internacional: Matheus Cunha 0.5 amarillas/partido, Victor Gabriel 0.44 amarillas/partido, G. Mercado 0.38 amarillas/partido | Remo: Zé Ivaldo 0.67 amarillas/partido, Patrick de Paula 0.67 amarillas/partido, João Lucas 0.5 amarillas/partido",
+   "asistencias": "Internacional: Alerrandro 0.15 asistencias/partido, Vitinho 0.14 asistencias/partido, J. Carbonero 0.14 asistencias/partido | Remo: Patrick de Paula 0.33 asistencias/partido, Vitor Bueno 0.2 asistencias/partido, Alef Manga 0.14 asistencias/partido",
+   "faltas": "Internacional: A. Bernabéi 2.11 faltas/partido, Victor Gabriel 1.56 faltas/partido, R. Borré 1.5 faltas/partido | Remo: João Pedro 2.0 faltas/partido, Zé Ricardo 1.55 faltas/partido, Gabriel Taliari 1.4 faltas/partido",
+   "quites": "Internacional: Bruno Gomes 2.18 quites/partido, A. Bernabéi 1.79 quites/partido, Ronaldo 1.67 quites/partido | Remo: João Lucas 3.17 quites/partido, Leo Andrade 2.25 quites/partido, Patrick 2.21 quites/partido"
   }
  ]
 }
