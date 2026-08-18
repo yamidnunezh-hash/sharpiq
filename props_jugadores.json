@@ -1,36 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Gimnasia M.",
-   "visitante": "Talleres Cordoba",
-   "gole": "M. Torres 34.4% &middot; A. Módica 33.8% &middot; M. Santos 29.7%",
-   "remates": "Gimnasia M.: F. Lencioni 1.75 remates totales (0.65 a puerta), A. Módica 1.59 remates totales (0.94 a puerta), U. Sánchez 1.0 remates totales (0.38 a puerta) | Talleres Cordoba: Rick 1.74 remates totales (0.89 a puerta), R. Martínez 1.33 remates totales (0.81 a puerta), V. Dávila 1.16 remates totales (0.74 a puerta)",
-   "tarjetas": "Gimnasia M.: L. Petruchi 0.5 amarillas/partido, G. Guiffrey 0.5 amarillas/partido, E. Fernández 0.33 amarillas/partido | Talleres Cordoba: F. Fattori 0.75 amarillas/partido, M. Gómez 0.5 amarillas/partido, Rodrigo Guth 0.5 amarillas/partido",
-   "asistencias": "Gimnasia M.: F. Lencioni 0.3 asistencias/partido, I. Sabatini 0.22 asistencias/partido, L. Cingolani 0.09 asistencias/partido | Talleres Cordoba: G. Baroni 0.2 asistencias/partido, B. Barticciotto 0.2 asistencias/partido, F. Cristaldo 0.15 asistencias/partido",
-   "faltas": "Gimnasia M.: N. Linares 1.62 faltas/partido, F. Antonini 1.62 faltas/partido, F. Saavedra 1.46 faltas/partido | Talleres Cordoba: F. Fattori 2.25 faltas/partido, V. Fascendini 2.0 faltas/partido, D. Ortegoza 1.53 faltas/partido",
-   "quites": "Gimnasia M.: G. Guiffrey 3.0 quites/partido, U. Sánchez 1.85 quites/partido, F. Antonini 1.81 quites/partido | Talleres Cordoba: M. Gómez 3.0 quites/partido, F. Fattori 2.0 quites/partido, A. Schott 2.0 quites/partido"
-  },
-  {
-   "local": "Necaxa",
-   "visitante": "Leon",
-   "gole": "J. Carranza 54.5%",
-   "remates": "Necaxa: J. Carranza 3.0 remates totales (2.0 a puerta), J. Torres 1.33 remates totales (1.0 a puerta), A. Oliveros 1.0 remates totales (0.0 a puerta) | Leon: S. Vegas 1.5 remates totales (1.5 a puerta), D. Cambindo 1.5 remates totales (0.5 a puerta), D. Arcila 1.33 remates totales (0.33 a puerta)",
-   "tarjetas": "Necaxa: R. Martínez 0.67 amarillas/partido, R. Monreal 0.5 amarillas/partido, J. Valencia 0.5 amarillas/partido | Leon: R. Echeverría 0.67 amarillas/partido, S. Vegas 0.5 amarillas/partido, J. Alvarado 0.5 amarillas/partido",
-   "asistencias": "Necaxa: A. Peña 0.5 asistencias/partido, M. Zaleta 0.5 asistencias/partido, J. Carranza 0.33 asistencias/partido | Leon: J. Alvarado 0.5 asistencias/partido",
-   "faltas": "Necaxa: J. Carranza 2.67 faltas/partido, J. Ruiz 2.0 faltas/partido, C. Vargas 1.67 faltas/partido | Leon: Juan José Guevara Possu 3.33 faltas/partido, J. Alvarado 1.5 faltas/partido, E. Guerra 1.33 faltas/partido",
-   "quites": "Necaxa: C. Vargas 2.67 quites/partido, D. Leyva 2.0 quites/partido, J. Ruiz 2.0 quites/partido | Leon: S. Vegas 4.5 quites/partido, J. Cortizo 4.0 quites/partido, I. Moreno 2.0 quites/partido"
-  },
-  {
-   "local": "CF Pachuca",
-   "visitante": "Puebla",
-   "gole": "S. Rondón 63.2%",
-   "remates": "CF Pachuca: S. Rondón 2.67 remates totales (1.33 a puerta), E. Montiel 1.0 remates totales (0.33 a puerta), N. Vallejo 1.0 remates totales (0.0 a puerta) | Puebla: F. Almada 1.33 remates totales (0.33 a puerta), F. Monárrez 1.0 remates totales (0.33 a puerta), K. Velasco 0.67 remates totales (0.33 a puerta)",
-   "tarjetas": "CF Pachuca: Kenedy 0.5 amarillas/partido, C. Sánchez 0.5 amarillas/partido, A. Alcaraz 0.5 amarillas/partido | Puebla: A. Ramírez 0.5 amarillas/partido, F. Monárrez 0.33 amarillas/partido, E. Mustre 0.33 amarillas/partido",
-   "asistencias": "CF Pachuca: O. Idrissi 0.67 asistencias/partido, E. Montiel 0.33 asistencias/partido | Puebla: A. Herrera 1.0 asistencias/partido",
-   "faltas": "CF Pachuca: O. Idrissi 2.67 faltas/partido, C. Rivera 2.33 faltas/partido, A. Alcaraz 1.5 faltas/partido | Puebla: A. Herrera 2.5 faltas/partido, F. Monárrez 1.33 faltas/partido, S. Sanabria 1.33 faltas/partido",
-   "quites": "CF Pachuca: C. Rivera 4.67 quites/partido, E. Montiel 2.33 quites/partido, A. Mozo 2.0 quites/partido | Puebla: S. Sanabria 3.0 quites/partido, F. Monárrez 2.0 quites/partido, E. Gómez 1.67 quites/partido"
-  },
-  {
    "local": "Dinamo Zagreb",
    "visitante": "Viking",
    "gole": "M. Valinčić 22.1%",
@@ -89,6 +59,186 @@
    "asistencias": "Londrina: João Vitor 0.33 asistencias/partido, Iago Teles 0.23 asistencias/partido, Victor Hugo 0.22 asistencias/partido | Atletico Goianiense: Henrique Freitas Alves 0.5 asistencias/partido, Guilherme Marques 0.19 asistencias/partido, Soares Geovany 0.19 asistencias/partido",
    "faltas": "Londrina: Iago Teles 1.85 faltas/partido, Pablo Dyego 1.5 faltas/partido, Thalis 1.31 faltas/partido | Atletico Goianiense: Peixoto 2.5 faltas/partido, Assis 2.09 faltas/partido, Igor Henrique 1.85 faltas/partido",
    "quites": "Londrina: Victor Hugo 1.61 quites/partido, Yago Lincoln 1.58 quites/partido, Lucas Marques 1.44 quites/partido | Atletico Goianiense: Gustavo Daniel 2.0 quites/partido, Ewerthon 1.82 quites/partido, Marrony 1.74 quites/partido"
+  },
+  {
+   "local": "Nautico Recife",
+   "visitante": "Ceara",
+   "gole": "Chrystian Barletta 37.7% &middot; Perotti 34.9% &middot; Vinícius 33.0%",
+   "remates": "Nautico Recife: Jean Carlos 2.6 remates totales (1.6 a puerta), Vinícius 2.4 remates totales (1.33 a puerta), Dodozinho 2.25 remates totales (1.12 a puerta) | Ceara: Vina 1.5 remates totales (0.7 a puerta), N. Ferreira 1.5 remates totales (0.75 a puerta), Vinicius Zanocelo 1.33 remates totales (0.33 a puerta)",
+   "tarjetas": "Nautico Recife: B. Borasi 0.67 amarillas/partido, P. Núñez 0.5 amarillas/partido, Luiz Felipe 0.43 amarillas/partido | Ceara: Caio 0.5 amarillas/partido, Bruno Ferreira 0.4 amarillas/partido, Éder 0.35 amarillas/partido",
+   "asistencias": "Nautico Recife: Jean Carlos 0.4 asistencias/partido, Yuri 0.2 asistencias/partido, Paulo Sérgio 0.17 asistencias/partido | Ceara: Gabriel Rocha 0.5 asistencias/partido, Giulio 0.25 asistencias/partido, N. Ferreira 0.25 asistencias/partido",
+   "faltas": "Nautico Recife: B. Borasi 2.33 faltas/partido, Luiz Felipe 1.79 faltas/partido, Samuel 1.73 faltas/partido | Ceara: Vinicius Zanocelo 2.0 faltas/partido, Gabriel Rocha 2.0 faltas/partido, Joao Gabriel 1.88 faltas/partido",
+   "quites": "Nautico Recife: B. Borasi 3.0 quites/partido, Matheus Ribeiro 1.79 quites/partido, Wenderson 1.5 quites/partido | Ceara: Bryan 3.33 quites/partido, Gabriel Rocha 3.0 quites/partido, Fernandinho 1.82 quites/partido"
+  },
+  {
+   "local": "Deportes Tolima",
+   "visitante": "Independiente del Valle",
+   "gole": "C. González 63.2% &middot; F. Fydriszewski 33.0%",
+   "remates": "Deportes Tolima: J. Hernández 1.67 remates totales (0.83 a puerta), J. González 1.2 remates totales (0.9 a puerta), L. Sandoval 1.12 remates totales (0.75 a puerta) | Independiente del Valle: C. González 4.17 remates totales (2.17 a puerta), J. Sornoza 2.5 remates totales (1.25 a puerta), J. Alcívar 2.0 remates totales (1.17 a puerta)",
+   "tarjetas": "Deportes Tolima: L. Sandoval 0.38 amarillas/partido, C. Arrieta 0.3 amarillas/partido, J. Nieto 0.25 amarillas/partido | Independiente del Valle: L. Loor 0.33 amarillas/partido, J. Angulo 0.33 amarillas/partido, J. Sornoza 0.25 amarillas/partido",
+   "asistencias": "Deportes Tolima: J. Valencia 0.2 asistencias/partido, L. Sandoval 0.12 asistencias/partido, J. González 0.1 asistencias/partido | Independiente del Valle: L. Loor 0.33 asistencias/partido, J. Sornoza 0.25 asistencias/partido, J. Alcívar 0.17 asistencias/partido",
+   "faltas": "Deportes Tolima: A. Parra 2.1 faltas/partido, C. Trujillo 1.71 faltas/partido, J. Angulo 1.1 faltas/partido | Independiente del Valle: M. Carabajal 1.33 faltas/partido, J. Viacava 1.0 faltas/partido, C. González 0.83 faltas/partido",
+   "quites": "Deportes Tolima: C. Arrieta 2.5 quites/partido, C. Trujillo 1.57 quites/partido, E. López 1.44 quites/partido | Independiente del Valle: R. Briones 1.67 quites/partido, J. Alcívar 1.33 quites/partido, C. González 1.33 quites/partido"
+  },
+  {
+   "local": "U. Catolica",
+   "visitante": "Estudiantes L.P.",
+   "gole": "F. Zampedri 43.5% &middot; T. Palacios 39.3%",
+   "remates": "U. Catolica: J. Giani 1.86 remates totales (1.0 a puerta), F. Zampedri 1.86 remates totales (0.86 a puerta), C. Montes 1.5 remates totales (1.17 a puerta) | Estudiantes L.P.: F. Pérez Escudero 2.0 remates totales (0.75 a puerta), T. Palacios 1.83 remates totales (1.0 a puerta), E. Cetré 1.67 remates totales (0.67 a puerta)",
+   "tarjetas": "U. Catolica: C. Cuevas 0.43 amarillas/partido, F. Zampedri 0.43 amarillas/partido, J. Valencia 0.29 amarillas/partido | Estudiantes L.P.: T. Palacios 0.67 amarillas/partido, Lucas Ezequiel Piovi 0.67 amarillas/partido, T. Palacios 0.5 amarillas/partido",
+   "asistencias": "U. Catolica: C. Montes 0.33 asistencias/partido, J. Giani 0.29 asistencias/partido, M. Palavecino 0.2 asistencias/partido | Estudiantes L.P.: M. Amondarain 0.33 asistencias/partido, A. Castro 0.14 asistencias/partido",
+   "faltas": "U. Catolica: C. Cuevas 2.43 faltas/partido, J. Valencia 2.14 faltas/partido, J. Giani 1.86 faltas/partido | Estudiantes L.P.: T. Palacios 1.83 faltas/partido, Lucas Ezequiel Piovi 1.67 faltas/partido, L. González 1.33 faltas/partido",
+   "quites": "U. Catolica: C. Montes 2.33 quites/partido, C. Cuevas 2.29 quites/partido, J. Valencia 1.71 quites/partido | Estudiantes L.P.: Lucas Ezequiel Piovi 3.33 quites/partido, E. Meza 1.57 quites/partido, M. Amondarain 1.5 quites/partido"
+  },
+  {
+   "local": "Sao Paulo",
+   "visitante": "Bolívar",
+   "gole": "",
+   "remates": "Sao Paulo: Luciano 2.67 remates totales (1.0 a puerta), Ferreira 1.33 remates totales (0.67 a puerta), Artur 1.2 remates totales (0.6 a puerta) | Bolívar: D. Asprilla 3.67 remates totales (1.0 a puerta), C. Melgar 2.67 remates totales (0.67 a puerta), R. Matheus 2.33 remates totales (1.0 a puerta)",
+   "tarjetas": "Sao Paulo: Carlos Coronel 0.5 amarillas/partido, J. Calleri 0.5 amarillas/partido, Sabino 0.5 amarillas/partido | Bolívar: C. Melgar 0.33 amarillas/partido",
+   "asistencias": "Sao Paulo: J. Calleri 0.5 asistencias/partido, D. Bobadilla 0.2 asistencias/partido, André Silva 0.2 asistencias/partido | Bolívar: R. Matheus 0.33 asistencias/partido, P. Rodríguez 0.33 asistencias/partido",
+   "faltas": "Sao Paulo: E. Díaz 2.75 faltas/partido, D. Ferreira 2.0 faltas/partido, Dória 1.5 faltas/partido | Bolívar: C. Melgar 2.67 faltas/partido, D. Asprilla 1.33 faltas/partido, P. Rodríguez 1.0 faltas/partido",
+   "quites": "Sao Paulo: D. Bobadilla 2.4 quites/partido, E. Díaz 1.75 quites/partido, Cédric Soares 1.5 quites/partido | Bolívar: C. Melgar 2.0 quites/partido, P. Rodríguez 2.0 quites/partido, L. Justiniano 2.0 quites/partido"
+  },
+  {
+   "local": "Goias",
+   "visitante": "Juventude",
+   "gole": "Kadu 39.3% &middot; Anselmo Ramon 22.1% &middot; Raí 21.2%",
+   "remates": "Goias: Kadu 2.0 remates totales (0.83 a puerta), Gegê 1.13 remates totales (0.47 a puerta), Cadu 0.94 remates totales (0.38 a puerta) | Juventude: Raí 1.24 remates totales (0.62 a puerta), Marcos Paulo 1.22 remates totales (0.83 a puerta), Alisson Safira 1.2 remates totales (0.47 a puerta)",
+   "tarjetas": "Goias: Marcos Vinícius 0.5 amarillas/partido, Luquinhas 0.33 amarillas/partido, Filipe Machado 0.31 amarillas/partido | Juventude: Gabriel Pinheiro 0.36 amarillas/partido, Mandaca 0.3 amarillas/partido, Marcos Paulo 0.25 amarillas/partido",
+   "asistencias": "Goias: E. García 0.21 asistencias/partido, Diego Caito 0.17 asistencias/partido, Lucas Lima 0.14 asistencias/partido | Juventude: Raí 0.14 asistencias/partido, Luan Gonçalves 0.11 asistencias/partido, Marcos Paulo 0.1 asistencias/partido",
+   "faltas": "Goias: Kadu 1.75 faltas/partido, Luquinhas 1.44 faltas/partido, Luiz Felipe 1.19 faltas/partido | Juventude: Alisson Safira 2.0 faltas/partido, Mandaca 1.9 faltas/partido, Rodrigo Sam 1.89 faltas/partido",
+   "quites": "Goias: Luquinhas 1.89 quites/partido, Lucas Lima 1.48 quites/partido, Guilherme Baldória 1.25 quites/partido | Juventude: Aderlan 2.7 quites/partido, Rodrigo Sam 2.33 quites/partido, Raí 1.81 quites/partido"
+  },
+  {
+   "local": "Hapoel Beer Sheva",
+   "visitante": "Sabah FA",
+   "gole": "J. Mickels 28.3% &middot; V. Simić 28.3%",
+   "remates": "Sabah FA: J. Mickels 1.67 remates totales (0.83 a puerta), U. Rahmonaliyev 0.67 remates totales (0.17 a puerta), A. Isaev 0.67 remates totales (0.17 a puerta)",
+   "tarjetas": "Sabah FA: J. Mickels 0.33 amarillas/partido, K. Parris 0.2 amarillas/partido, S. Solvet 0.2 amarillas/partido",
+   "asistencias": "Sabah FA: A. Malouda 0.5 asistencias/partido, A. Zedadka 0.17 asistencias/partido, U. Rahmonaliyev 0.17 asistencias/partido",
+   "faltas": "Sabah FA: J. Mickels 0.67 faltas/partido, I. Lepinjica 0.67 faltas/partido, S. Solvet 0.6 faltas/partido",
+   "quites": "Sabah FA: I. Lepinjica 1.0 quites/partido, U. Rahmonaliyev 0.83 quites/partido, K. Parris 0.6 quites/partido"
+  },
+  {
+   "local": "NEC Nijmegen",
+   "visitante": "Bodo/Glimt",
+   "gole": "A. Helmersen 39.3% &middot; J. Hauge 39.3%",
+   "remates": "NEC Nijmegen: T. Chery 3.0 remates totales (1.0 a puerta), B. Linssen 1.5 remates totales (1.0 a puerta), E. Mor 1.5 remates totales (1.0 a puerta) | Bodo/Glimt: P. Berg 2.5 remates totales (1.0 a puerta), J. Hauge 1.5 remates totales (0.5 a puerta), A. Helmersen 1.5 remates totales (1.5 a puerta)",
+   "tarjetas": "NEC Nijmegen: B. Pereira 0.5 amarillas/partido | Bodo/Glimt: J. Gundersen 0.5 amarillas/partido, S. Auklend 0.5 amarillas/partido, S. Fet 0.5 amarillas/partido",
+   "asistencias": "NEC Nijmegen: D. Tadić 0.5 asistencias/partido | Bodo/Glimt: J. Hauge 0.5 asistencias/partido, A. Helmersen 0.5 asistencias/partido",
+   "faltas": "NEC Nijmegen: N. Lebreton 3.0 faltas/partido, B. Pereira 2.5 faltas/partido, Jamiro Monteiro 2.0 faltas/partido | Bodo/Glimt: F. Sjøvold 1.0 faltas/partido, F. Bjørkan 1.0 faltas/partido, O. Brynhildsen 1.0 faltas/partido",
+   "quites": "NEC Nijmegen: E. Mor 4.0 quites/partido, N. Lebreton 3.0 quites/partido, Clement Bischoff 2.5 quites/partido | Bodo/Glimt: F. Sjøvold 4.0 quites/partido, P. Berg 4.0 quites/partido, F. Bjørkan 1.5 quites/partido"
+  },
+  {
+   "local": "Cerro Porteno",
+   "visitante": "Palmeiras",
+   "gole": "J. Arias 34.9% &middot; P. Vegetti 34.9% &middot; J. López 34.9%",
+   "remates": "Cerro Porteno: C. Domínguez 1.5 remates totales (0.5 a puerta), J. Torres 1.43 remates totales (0.86 a puerta), P. Vegetti 0.71 remates totales (0.57 a puerta) | Palmeiras: J. López 2.29 remates totales (1.14 a puerta), J. Arias 2.14 remates totales (1.29 a puerta), Allan 1.43 remates totales (1.14 a puerta)",
+   "tarjetas": "Cerro Porteno: E. Torales 0.5 amarillas/partido, G. Benítez 0.4 amarillas/partido, C. Bobadilla 0.33 amarillas/partido | Palmeiras: G. Gómez 0.29 amarillas/partido, Arthur 0.29 amarillas/partido, A. Giay 0.17 amarillas/partido",
+   "asistencias": "Cerro Porteno: M. Pérez 0.2 asistencias/partido, F. Domínguez 0.2 asistencias/partido, J. Morel 0.14 asistencias/partido | Palmeiras: J. López 0.57 asistencias/partido, Allan 0.29 asistencias/partido, Murilo 0.14 asistencias/partido",
+   "faltas": "Cerro Porteno: F. Domínguez 2.2 faltas/partido, R. Piris Da Motta 2.0 faltas/partido, J. Morel 1.57 faltas/partido | Palmeiras: J. López 1.43 faltas/partido, A. Giay 1.33 faltas/partido, Arthur 1.0 faltas/partido",
+   "quites": "Cerro Porteno: F. Domínguez 4.8 quites/partido, G. Benítez 2.6 quites/partido, J. Morel 2.57 quites/partido | Palmeiras: Arthur 2.43 quites/partido, A. Giay 2.0 quites/partido, Allan 1.57 quites/partido"
+  },
+  {
+   "local": "Coquimbo Unido",
+   "visitante": "Platense",
+   "gole": "G. Vadalá 39.3%",
+   "remates": "Coquimbo Unido: G. Vadalá 1.67 remates totales (1.5 a puerta), N. Johansen 1.17 remates totales (0.83 a puerta), L. Pratto 0.86 remates totales (0.14 a puerta) | Platense: G. Mainero 1.83 remates totales (0.5 a puerta), F. Zapiola 1.71 remates totales (1.29 a puerta), N. Retamar 1.2 remates totales (0.8 a puerta)",
+   "tarjetas": "Coquimbo Unido: M. Fernández 0.5 amarillas/partido, P. Rodriguez 0.5 amarillas/partido, D. Glaby 0.5 amarillas/partido | Platense: G. Mainero 0.5 amarillas/partido, Stefan Đokić 0.5 amarillas/partido, E. Raggio 0.33 amarillas/partido",
+   "asistencias": "Coquimbo Unido: B. Chandía 0.29 asistencias/partido, G. Vadalá 0.17 asistencias/partido, F. Salinas 0.14 asistencias/partido | Platense: J. Saborido 0.33 asistencias/partido, G. Mainero 0.33 asistencias/partido, T. Silva 0.14 asistencias/partido",
+   "faltas": "Coquimbo Unido: A. Camargo 1.83 faltas/partido, B. Gazzolo 1.57 faltas/partido, S. Galani 1.5 faltas/partido | Platense: T. Nasif 2.33 faltas/partido, A. Lagos 2.2 faltas/partido, P. Ferreira 1.5 faltas/partido",
+   "quites": "Coquimbo Unido: P. Rodriguez 3.0 quites/partido, M. Fernández 2.5 quites/partido, F. Salinas 2.14 quites/partido | Platense: P. Ferreira 2.83 quites/partido, T. Silva 2.71 quites/partido, V. Cuesta 1.83 quites/partido"
+  },
+  {
+   "local": "Atletico-MG",
+   "visitante": "RB Bragantino",
+   "gole": "Fernando 29.5% &middot; I. Pitta 28.3%",
+   "remates": "Atletico-MG: Renan Lodi 1.8 remates totales (0.6 a puerta), A. Minda 1.2 remates totales (0.6 a puerta), Gustavo Scarpa 1.0 remates totales (0.5 a puerta) | RB Bragantino: Rodriguinho 2.5 remates totales (1.12 a puerta), I. Pitta 2.22 remates totales (1.11 a puerta), Lucas Barbosa 1.83 remates totales (0.33 a puerta)",
+   "tarjetas": "Atletico-MG: A. Preciado 0.5 amarillas/partido, T. Cuello 0.5 amarillas/partido, Bernard 0.29 amarillas/partido | RB Bragantino: Matheus Fernandes 1.0 amarillas/partido, Henry Mosquera 0.5 amarillas/partido, Marcelinho 0.33 amarillas/partido",
+   "asistencias": "Atletico-MG: T. Cuello 1.0 asistencias/partido, Igor Gomes 0.33 asistencias/partido, Gustavo Scarpa 0.25 asistencias/partido | RB Bragantino: Marcelinho 0.33 asistencias/partido, Fernando 0.33 asistencias/partido, Gustavo Marques 0.17 asistencias/partido",
+   "faltas": "Atletico-MG: A. Preciado 2.0 faltas/partido, Igor Gomes 1.33 faltas/partido, Bernard 1.14 faltas/partido | RB Bragantino: Alix 2.5 faltas/partido, Gustavinho 1.83 faltas/partido, Juninho Capixaba 1.33 faltas/partido",
+   "quites": "Atletico-MG: T. Pérez 3.0 quites/partido, A. Franco 2.0 quites/partido, Renan Lodi 1.6 quites/partido | RB Bragantino: Juninho Capixaba 2.5 quites/partido, Gabriel 2.4 quites/partido, A. Sant&apos;Anna 2.4 quites/partido"
+  },
+  {
+   "local": "Avai",
+   "visitante": "Sport Recife",
+   "gole": "Chrystian Barletta 37.7% &middot; Perotti 34.9% &middot; Vinícius 33.0%",
+   "remates": "Avai: Felipe Vizeu 2.5 remates totales (2.0 a puerta), Daniel Penha 1.38 remates totales (0.75 a puerta), Jean Lucas 0.86 remates totales (0.33 a puerta) | Sport Recife: Perotti 2.19 remates totales (1.14 a puerta), Chrystian Barletta 1.84 remates totales (0.89 a puerta), Iury Castilho 1.46 remates totales (0.54 a puerta)",
+   "tarjetas": "Avai: DG 0.5 amarillas/partido, Felipe Vizeu 0.5 amarillas/partido, Paulo Vitor 0.41 amarillas/partido | Sport Recife: Chrystian Barletta 0.37 amarillas/partido, Iury Castilho 0.31 amarillas/partido, Zé Lucas 0.29 amarillas/partido",
+   "asistencias": "Avai: J. Sousa Rocha Leandro 0.5 asistencias/partido, Thayllon 0.14 asistencias/partido, Jean Lucas 0.14 asistencias/partido | Sport Recife: Clayson 0.19 asistencias/partido, Chrystian Barletta 0.16 asistencias/partido, Biel 0.15 asistencias/partido",
+   "faltas": "Avai: Reynaldo 2.33 faltas/partido, Wallison 1.94 faltas/partido, Luiz Henrique 1.71 faltas/partido | Sport Recife: Perotti 1.81 faltas/partido, Biel 1.4 faltas/partido, Zé Marcos 1.38 faltas/partido",
+   "quites": "Avai: DG 2.28 quites/partido, Wallison 1.67 quites/partido, Luiz Henrique 1.62 quites/partido | Sport Recife: Claudinho 2.67 quites/partido, Biel 1.95 quites/partido, Habraão 1.57 quites/partido"
+  },
+  {
+   "local": "Fortaleza EC",
+   "visitante": "São Bernardo",
+   "gole": "J. Miritello 24.3%",
+   "remates": "Fortaleza EC: Pedro Henrique 1.75 remates totales (0.75 a puerta), J. Miritello 1.67 remates totales (1.0 a puerta), Maílton 1.41 remates totales (0.65 a puerta) | São Bernardo: Pedro Vitor 1.53 remates totales (0.87 a puerta), Hyoran 0.94 remates totales (0.31 a puerta), Eduardo 0.86 remates totales (0.38 a puerta)",
+   "tarjetas": "Fortaleza EC: Lucas Emanoel 0.5 amarillas/partido, E. Brítez 0.33 amarillas/partido, Rodriguinho 0.33 amarillas/partido | São Bernardo: Júnior Oliveira 0.5 amarillas/partido, Hélder 0.5 amarillas/partido, Felipe Garcia 0.31 amarillas/partido",
+   "asistencias": "Fortaleza EC: Kayke 0.33 asistencias/partido, E. Brítez 0.08 asistencias/partido, Luan 0.08 asistencias/partido | São Bernardo: Mário Sérgio 0.4 asistencias/partido, Romisson 0.22 asistencias/partido, Lucas Lima 0.2 asistencias/partido",
+   "faltas": "Fortaleza EC: Kayke 2.0 faltas/partido, Pierre 1.62 faltas/partido, E. Brítez 1.5 faltas/partido | São Bernardo: Felipe Garcia 1.69 faltas/partido, Hugo Sanches 1.5 faltas/partido, Eduardo 1.24 faltas/partido",
+   "quites": "Fortaleza EC: Mauricio Junior 1.62 quites/partido, Pierre 1.54 quites/partido, Lucas Sasha 1.45 quites/partido | São Bernardo: Pedro Vitor 1.93 quites/partido, Jemerson 1.47 quites/partido, Rodrigo Ferreira 1.29 quites/partido"
+  },
+  {
+   "local": "Philadelphia Union",
+   "visitante": "Inter Miami",
+   "gole": "L. Messi 55.6% &middot; M. Iloski 40.9%",
+   "remates": "Philadelphia Union: M. Iloski 2.79 remates totales (1.42 a puerta), Neil Pierre 2.0 remates totales (0.5 a puerta), B. Damiani 1.58 remates totales (0.47 a puerta) | Inter Miami: L. Messi 4.19 remates totales (2.31 a puerta), G. Berterame 1.82 remates totales (1.06 a puerta), L. Suárez 1.73 remates totales (1.13 a puerta)",
+   "tarjetas": "Philadelphia Union: O. Makhanya 0.38 amarillas/partido, J. Sery Larsen 0.36 amarillas/partido, G. Martínez 0.29 amarillas/partido | Inter Miami: Casemiro 0.67 amarillas/partido, T. Segovia 0.47 amarillas/partido, I. Fray 0.36 amarillas/partido",
+   "asistencias": "Philadelphia Union: K. Wagner 0.75 asistencias/partido, F. Westfield 0.27 asistencias/partido, Q. Sullivan 0.25 asistencias/partido | Inter Miami: L. Messi 0.5 asistencias/partido, T. Segovia 0.35 asistencias/partido, Mateo Silvetti 0.31 asistencias/partido",
+   "faltas": "Philadelphia Union: J. Sery Larsen 2.18 faltas/partido, B. Damiani 1.74 faltas/partido, J. Lukić 1.61 faltas/partido | Inter Miami: T. Segovia 1.71 faltas/partido, Y. Bright 1.69 faltas/partido, G. Berterame 1.47 faltas/partido",
+   "quites": "Philadelphia Union: F. Sundstrom 2.5 quites/partido, O. Makhanya 2.31 quites/partido, F. Westfield 2.0 quites/partido | Inter Miami: Y. Bright 3.31 quites/partido, G. Luján 1.79 quites/partido, Micael 1.71 quites/partido"
+  },
+  {
+   "local": "FC Cincinnati",
+   "visitante": "New York City FC",
+   "gole": "N. Fernández Mercau 51.4% &middot; K. Denkey 45.7% &middot; Evander 42.7%",
+   "remates": "New York City FC: N. Fernández Mercau 2.11 remates totales (1.56 a puerta), A. Ojeda 1.11 remates totales (0.58 a puerta), H. Wolf 1.0 remates totales (0.53 a puerta)",
+   "tarjetas": "New York City FC: N. Fernández Mercau 0.33 amarillas/partido, T. Gray 0.28 amarillas/partido, J. Sands 0.25 amarillas/partido",
+   "asistencias": "New York City FC: M. Moralez 0.43 asistencias/partido, A. Ojeda 0.21 asistencias/partido, N. Fernández Mercau 0.17 asistencias/partido",
+   "faltas": "New York City FC: N. Fernández Mercau 2.06 faltas/partido, A. O&apos;Neill 1.64 faltas/partido, K. Parks 1.4 faltas/partido",
+   "quites": "New York City FC: A. O&apos;Neill 2.73 quites/partido, Nico Cavallo 2.3 quites/partido, T. Gray 2.06 quites/partido"
+  },
+  {
+   "local": "Columbus Crew",
+   "visitante": "CF Montreal",
+   "gole": "P. Owusu 45.7%",
+   "remates": "Columbus Crew: W. Abou Ali 2.0 remates totales (1.29 a puerta), D. Rossi 1.93 remates totales (0.8 a puerta), M. Arfsten 1.12 remates totales (0.59 a puerta) | CF Montreal: H. Synchuk 2.08 remates totales (1.15 a puerta), P. Owusu 2.06 remates totales (1.11 a puerta), W. Carmona 1.25 remates totales (0.67 a puerta)",
+   "tarjetas": "Columbus Crew: R. Camacho 0.28 amarillas/partido, S. Bangoura 0.19 amarillas/partido, M. Arfsten 0.18 amarillas/partido | CF Montreal: P. Owusu 0.33 amarillas/partido, S. Breza 0.33 amarillas/partido, B. Craig 0.29 amarillas/partido",
+   "asistencias": "Columbus Crew: M. Arfsten 0.24 asistencias/partido, M. Farsi 0.22 asistencias/partido, W. Abou Ali 0.14 asistencias/partido | CF Montreal: P. Owusu 0.33 asistencias/partido, W. Carmona 0.17 asistencias/partido, M. Longstaff 0.16 asistencias/partido",
+   "faltas": "Columbus Crew: André Gomes 1.42 faltas/partido, T. Karumanchi 1.33 faltas/partido, T. Habroune 1.17 faltas/partido | CF Montreal: P. Owusu 2.5 faltas/partido, D. Pereira 1.5 faltas/partido, J. Neal 1.33 faltas/partido",
+   "quites": "Columbus Crew: T. Karumanchi 3.33 quites/partido, T. Habroune 2.44 quites/partido, M. Arfsten 1.88 quites/partido | CF Montreal: D. Bugaj 1.87 quites/partido, T. Avilés 1.75 quites/partido, E. Morales 1.71 quites/partido"
+  },
+  {
+   "local": "New York Red Bulls",
+   "visitante": "Nashville SC",
+   "gole": "S. Surridge 60.3% &middot; N. Fernández Mercau 51.4% &middot; J. Hall 37.7%"
+  },
+  {
+   "local": "Orlando City SC",
+   "visitante": "Chicago Fire",
+   "gole": "H. Cuypers 56.8% &middot; M. Ojeda 52.0%"
+  },
+  {
+   "local": "Toronto FC",
+   "visitante": "Charlotte",
+   "gole": "Pep Biel 40.9%"
+  },
+  {
+   "local": "DC United",
+   "visitante": "New England Revolution",
+   "gole": "N. Fernández Mercau 51.4%"
+  },
+  {
+   "local": "Cuiaba",
+   "visitante": "Operario-PR",
+   "gole": "Boschilia 39.3% &middot; Pablo 23.1%"
+  },
+  {
+   "local": "Vila Nova",
+   "visitante": "Ponte Preta",
+   "gole": "Janderson 21.2%"
   }
  ]
 }
