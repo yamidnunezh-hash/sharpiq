@@ -1,54 +1,14 @@
 {
  "partidos": [
   {
-   "local": "Dinamo Zagreb",
-   "visitante": "Viking",
-   "gole": "M. Valinčić 22.1%",
-   "remates": "Dinamo Zagreb: M. Zajc 2.33 remates totales (1.0 a puerta), D. Beljo 1.25 remates totales (0.5 a puerta), S. McKenna 1.0 remates totales (0.25 a puerta)",
-   "tarjetas": "Dinamo Zagreb: M. Zajc 0.67 amarillas/partido, B. Goda 0.33 amarillas/partido, A. Hoxha 0.33 amarillas/partido",
-   "asistencias": "Dinamo Zagreb: F. Topić 0.5 asistencias/partido, M. Valinčić 0.25 asistencias/partido, J. Mišić 0.25 asistencias/partido",
-   "faltas": "Dinamo Zagreb: L. Kačavenda 1.25 faltas/partido, M. Lisica 1.0 faltas/partido, J. Mišić 0.75 faltas/partido",
-   "quites": "Dinamo Zagreb: Sergi Domínguez 1.75 quites/partido, G. Vidović 1.5 quites/partido, M. Valinčić 1.0 quites/partido"
-  },
-  {
-   "local": "Fenerbahçe",
-   "visitante": "Lyon",
-   "gole": "Talisca 63.2%",
-   "remates": "Fenerbahçe: Talisca 5.0 remates totales (3.25 a puerta), K. Aktürkoğlu 1.25 remates totales (1.25 a puerta), M. Greenwood 0.75 remates totales (0.5 a puerta) | Lyon: C. Tolisso 2.5 remates totales (1.0 a puerta), M. Fofana 2.5 remates totales (2.5 a puerta), T. Morton 1.5 remates totales (1.0 a puerta)",
-   "tarjetas": "Fenerbahçe: Nélson Semedo 0.5 amarillas/partido, A. Brown 0.5 amarillas/partido, J. Oosterwolde 0.33 amarillas/partido | Lyon: A. Maitland-Niles 0.5 amarillas/partido",
-   "asistencias": "Fenerbahçe: K. Aktürkoğlu 0.25 asistencias/partido, Marco Asensio 0.25 asistencias/partido | Lyon: C. Tolisso 0.5 asistencias/partido",
-   "faltas": "Fenerbahçe: Nélson Semedo 2.0 faltas/partido, J. Oosterwolde 1.67 faltas/partido, İ. Yüksek 1.5 faltas/partido | Lyon: L. Openda 3.0 faltas/partido, A. Maitland-Niles 1.5 faltas/partido, T. Tessmann 1.0 faltas/partido",
-   "quites": "Fenerbahçe: N. Kanté 7.0 quites/partido, M. Škriniar 4.5 quites/partido, İ. Yüksek 3.0 quites/partido | Lyon: C. Tolisso 3.5 quites/partido, Abner 2.0 quites/partido, Clinton Mata 1.5 quites/partido"
-  },
-  {
-   "local": "Levski Sofia",
-   "visitante": "AEK Athens FC",
-   "gole": "Reinaldo 39.3%",
-   "remates": "Levski Sofia: Reinaldo 0.67 remates totales (0.17 a puerta), Everton Bala 0.33 remates totales (0.17 a puerta), Serginho 0.17 remates totales (0.0 a puerta)",
-   "tarjetas": "Levski Sofia: Aldair 0.6 amarillas/partido, N. Serafimov 0.5 amarillas/partido, Maicon 0.4 amarillas/partido",
-   "asistencias": "Levski Sofia: Álex Centelles 0.5 asistencias/partido, Everton Bala 0.17 asistencias/partido",
-   "faltas": "Levski Sofia: Aldair 0.4 faltas/partido, J. Perea 0.4 faltas/partido, E. El Moubarik 0.4 faltas/partido",
-   "quites": "Levski Sofia: G. Trdin 0.67 quites/partido, E. El Moubarik 0.6 quites/partido, Aldair 0.4 quites/partido"
-  },
-  {
    "local": "Independ. Rivadavia",
    "visitante": "Fluminense",
-   "gole": "A. Arce 54.2% &middot; S. Villa 39.3%",
+   "gole": "A. Arce 49.8% &middot; S. Villa 39.3%",
    "remates": "Independ. Rivadavia: A. Arce 2.67 remates totales (1.33 a puerta), S. Villa 2.0 remates totales (1.17 a puerta), M. Fernández 1.71 remates totales (0.86 a puerta) | Fluminense: John Kennedy 1.83 remates totales (0.83 a puerta), R. Castillo 1.67 remates totales (0.83 a puerta), J. Savarino 1.57 remates totales (0.86 a puerta)",
    "tarjetas": "Independ. Rivadavia: J. Florentín 0.5 amarillas/partido, E. Bonifacio 0.33 amarillas/partido, L. Gómez 0.33 amarillas/partido | Fluminense: Nonato 0.5 amarillas/partido, L. Acosta 0.4 amarillas/partido, Guga 0.33 amarillas/partido",
    "asistencias": "Independ. Rivadavia: M. Fernández 0.57 asistencias/partido, S. Villa 0.5 asistencias/partido, L. Gómez 0.17 asistencias/partido | Fluminense: Martinelli 0.25 asistencias/partido, J. Savarino 0.14 asistencias/partido",
    "faltas": "Independ. Rivadavia: A. Arce 2.0 faltas/partido, J. Florentín 1.5 faltas/partido, E. Bonifacio 1.17 faltas/partido | Fluminense: Renê 1.67 faltas/partido, L. Acosta 1.6 faltas/partido, Hércules 1.43 faltas/partido",
    "quites": "Independ. Rivadavia: T. Bottari 3.43 quites/partido, L. Gómez 1.67 quites/partido, J. Florentín 1.5 quites/partido | Fluminense: Renê 3.67 quites/partido, Guga 3.0 quites/partido, Martinelli 2.25 quites/partido"
-  },
-  {
-   "local": "Deportivo Recoleta",
-   "visitante": "Boca Juniors",
-   "gole": "",
-   "remates": "Deportivo Recoleta: A. Wlk 2.0 remates totales (1.0 a puerta), Junior Alexander Noguera Machuca 1.0 remates totales (0.4 a puerta), A. González 0.8 remates totales (0.4 a puerta) | Boca Juniors: S. Ascacíbar 2.67 remates totales (0.67 a puerta), M. Delgado 2.0 remates totales (0.33 a puerta), L. Paredes 2.0 remates totales (0.0 a puerta)",
-   "tarjetas": "Deportivo Recoleta: O. Toledo 0.5 amarillas/partido, J. Franco 0.43 amarillas/partido, R. Domínguez 0.33 amarillas/partido | Boca Juniors: N. Figal 0.5 amarillas/partido, L. Lozano 0.5 amarillas/partido, A. Costa 0.33 amarillas/partido",
-   "asistencias": "Deportivo Recoleta: R. Domínguez 0.17 asistencias/partido, P. Rios 0.14 asistencias/partido, J. Franco 0.14 asistencias/partido | Boca Juniors: S. Villa 0.67 asistencias/partido, L. Paredes 0.33 asistencias/partido, M. Merentiel 0.33 asistencias/partido",
-   "faltas": "Deportivo Recoleta: J. Franco 2.29 faltas/partido, R. Domínguez 2.17 faltas/partido, F. A. Echeguren Zarza 1.83 faltas/partido | Boca Juniors: M. Delgado 1.33 faltas/partido, A. Costa 1.0 faltas/partido, L. Flores 1.0 faltas/partido",
-   "quites": "Deportivo Recoleta: F. A. Echeguren Zarza 2.0 quites/partido, D. Mosquera 2.0 quites/partido, W. Báez 1.71 quites/partido | Boca Juniors: M. Delgado 2.0 quites/partido, L. Paredes 2.0 quites/partido, S. Ascacíbar 2.0 quites/partido"
   },
   {
    "local": "Londrina",
