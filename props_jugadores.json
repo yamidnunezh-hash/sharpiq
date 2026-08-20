@@ -1,52 +1,6 @@
 {
  "partidos": [
   {
-   "local": "FC Sion",
-   "visitante": "Ajax",
-   "gole": "O. Gloukh 73.6% &middot; Winsley Boteli Mokango 63.2% &middot; D. Klaassen 48.7%",
-   "remates": "FC Sion: Winsley Boteli Mokango 3.25 remates totales (1.75 a puerta), I. Chouaref 1.5 remates totales (0.5 a puerta), F. Surdez 1.5 remates totales (0.25 a puerta) | Ajax: K. Dolberg 3.33 remates totales (2.33 a puerta), M. Godts 3.33 remates totales (1.67 a puerta), S. Berghuis 3.0 remates totales (1.33 a puerta)",
-   "tarjetas": "FC Sion: N. Hefti 0.33 amarillas/partido, Baltazar Costa 0.25 amarillas/partido, R. Nivokazi 0.25 amarillas/partido | Ajax: Marcos Leonardo 0.5 amarillas/partido, A. Bouwman 0.25 amarillas/partido, J. Mokio 0.25 amarillas/partido",
-   "asistencias": "FC Sion: R. Nivokazi 0.75 asistencias/partido, I. Chouaref 0.25 asistencias/partido, Winsley Boteli Mokango 0.25 asistencias/partido | Ajax: S. Berghuis 1.0 asistencias/partido, M. Godts 0.67 asistencias/partido, A. Ouazane 0.33 asistencias/partido",
-   "faltas": "FC Sion: I. Chouaref 1.75 faltas/partido, R. Nivokazi 1.75 faltas/partido, Baltazar Costa 1.5 faltas/partido | Ajax: O. Wijndal 2.0 faltas/partido, A. Bouwman 1.0 faltas/partido, J. Mokio 1.0 faltas/partido",
-   "quites": "FC Sion: N. Sow 2.0 quites/partido, Baltazar Costa 1.75 quites/partido, I. Chouaref 1.75 quites/partido | Ajax: Y. Regeer 2.75 quites/partido, A. Gaaei 2.5 quites/partido, Lucas Rosa 2.0 quites/partido"
-  },
-  {
-   "local": "Gent",
-   "visitante": "Hibernian",
-   "gole": "",
-   "asistencias": "Gent: Tiago Araújo 0.25 asistencias/partido"
-  },
-  {
-   "local": "FC Lugano",
-   "visitante": "Maccabi Tel Aviv",
-   "gole": "K. Behrens 71.3%",
-   "remates": "FC Lugano: K. Behrens 4.0 remates totales (2.0 a puerta), R. Steffen 2.25 remates totales (1.25 a puerta), Daniel Dos Santos 2.0 remates totales (1.25 a puerta)",
-   "tarjetas": "FC Lugano: M. Zanotti 0.25 amarillas/partido, K. Behrens 0.25 amarillas/partido",
-   "asistencias": "FC Lugano: M. Zanotti 0.75 asistencias/partido, A. Papadopoulos 0.25 asistencias/partido, Y. Cimignani 0.25 asistencias/partido",
-   "faltas": "FC Lugano: M. Zanotti 2.5 faltas/partido, R. Steffen 1.75 faltas/partido, D. Moncada 1.75 faltas/partido",
-   "quites": "FC Lugano: E. Pihlström 2.5 quites/partido, U. Bislimi 2.25 quites/partido, Y. Cimignani 1.75 quites/partido"
-  },
-  {
-   "local": "Panathinaikos",
-   "visitante": "Hradec Králové",
-   "gole": "A. Jagusic 39.3%",
-   "remates": "Panathinaikos: Santino Andino 2.5 remates totales (1.25 a puerta), A. Jagusic 1.5 remates totales (1.0 a puerta), A. Zaroury 1.5 remates totales (0.5 a puerta)",
-   "tarjetas": "Panathinaikos: T. Tsapras 1.0 amarillas/partido, A. Čerin 0.25 amarillas/partido, E. Rastoder 0.25 amarillas/partido",
-   "asistencias": "Panathinaikos: S. de Vrij 0.25 asistencias/partido, Santino Andino 0.25 asistencias/partido",
-   "faltas": "Panathinaikos: E. Camara 2.5 faltas/partido, G. Kiriakopoulos 1.5 faltas/partido, T. Tsapras 1.33 faltas/partido",
-   "quites": "Panathinaikos: Santino Andino 2.25 quites/partido, A. Touba 2.0 quites/partido, G. Kiriakopoulos 2.0 quites/partido"
-  },
-  {
-   "local": "Heart Of Midlothian",
-   "visitante": "Rapid Vienna",
-   "gole": "E. Kara 77.7% &middot; Moulaye Haïdara 52.8% &middot; P. Dahl 39.3%",
-   "remates": "Rapid Vienna: Y. Demir 2.33 remates totales (1.33 a puerta), Nikolaus Wurmbrand 2.0 remates totales (1.0 a puerta), E. Kara 2.0 remates totales (2.0 a puerta)",
-   "tarjetas": "Rapid Vienna: B. Bolla 0.67 amarillas/partido, J. Schöller 0.5 amarillas/partido, L. Schaub 0.33 amarillas/partido",
-   "asistencias": "Rapid Vienna: B. Bolla 1.0 asistencias/partido, E. Kara 0.5 asistencias/partido, J. Horn 0.5 asistencias/partido",
-   "faltas": "Rapid Vienna: B. Bolla 2.0 faltas/partido, R. Amané 2.0 faltas/partido, Y. Demir 1.67 faltas/partido",
-   "quites": "Rapid Vienna: R. Amané 4.0 quites/partido, B. Bolla 2.0 quites/partido, M. Seidl 2.0 quites/partido"
-  },
-  {
    "local": "Rayo Vallecano",
    "visitante": "Alaves",
    "gole": "M. Díaz 63.2% &middot; Mikel Rodriguez 63.2% &middot; N. Tenaglia 63.2%"
