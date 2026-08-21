@@ -1,26 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Corinthians",
-   "visitante": "Rosario Central",
-   "gole": "Gustavo Henrique 34.9%",
-   "remates": "Corinthians: Kayke 1.5 remates totales (1.0 a puerta), Yuri Alberto 1.33 remates totales (0.67 a puerta), R. Garro 1.29 remates totales (0.57 a puerta) | Rosario Central: A. Véliz 3.0 remates totales (1.6 a puerta), J. Campaz 2.14 remates totales (1.14 a puerta), Á. Di María 1.5 remates totales (1.0 a puerta)",
-   "tarjetas": "Corinthians: Allan 0.4 amarillas/partido, Matheuzinho 0.33 amarillas/partido, Andre 0.2 amarillas/partido | Rosario Central: A. Sandez 0.5 amarillas/partido, F. Ibarra 0.5 amarillas/partido, G. Fernández 0.5 amarillas/partido",
-   "asistencias": "Corinthians: R. Garro 0.57 asistencias/partido, Matheuzinho 0.17 asistencias/partido, Yuri Alberto 0.17 asistencias/partido | Rosario Central: G. Cantizano 0.67 asistencias/partido, G. Fernández 0.25 asistencias/partido, J. Fernández 0.2 asistencias/partido",
-   "faltas": "Corinthians: Breno 1.83 faltas/partido, Andre 1.0 faltas/partido, Matheus Bidu 0.67 faltas/partido | Rosario Central: E. Coronel 2.43 faltas/partido, F. Ibarra 1.5 faltas/partido, A. Sandez 1.33 faltas/partido",
-   "quites": "Corinthians: Kayke 3.0 quites/partido, Matheuzinho 2.83 quites/partido, Andre 2.6 quites/partido | Rosario Central: F. Ibarra 2.83 quites/partido, A. Soto 2.33 quites/partido, E. Giménez 1.67 quites/partido"
-  },
-  {
-   "local": "Botafogo",
-   "visitante": "Cienciano",
-   "gole": "C. Garcés 35.9% &middot; M. Succar 31.3% &middot; N. Bandiera 31.3%",
-   "remates": "Botafogo: Kauan Toledo 4.0 remates totales (1.67 a puerta), J. Correa 2.67 remates totales (1.33 a puerta), L. Villalba 2.0 remates totales (1.33 a puerta) | Cienciano: A. Hohberg 3.0 remates totales (1.4 a puerta), N. Bandiera 2.25 remates totales (0.75 a puerta), C. Garcés 2.11 remates totales (1.11 a puerta)",
-   "tarjetas": "Botafogo: Bartolomeu Jacinto Quissanga 1.0 amarillas/partido, G. Justino 0.5 amarillas/partido, Vitinho 0.33 amarillas/partido | Cienciano: S. Arias 0.75 amarillas/partido, C. Garcés 0.33 amarillas/partido, S. Cavero 0.33 amarillas/partido",
-   "asistencias": "Botafogo: J. Correa 1.0 asistencias/partido, Chris Ramos 0.33 asistencias/partido, A. Barboza 0.2 asistencias/partido | Cienciano: C. Souza 0.5 asistencias/partido, C. Garcés 0.33 asistencias/partido, A. Hohberg 0.3 asistencias/partido",
-   "faltas": "Botafogo: Huguinho 4.0 faltas/partido, Bartolomeu Jacinto Quissanga 2.0 faltas/partido, L. Villalba 1.67 faltas/partido | Cienciano: G. Barreto 1.8 faltas/partido, C. Cabello 1.33 faltas/partido, H. Caparó 1.29 faltas/partido",
-   "quites": "Botafogo: Huguinho 2.0 quites/partido, N. Ferraresi 1.75 quites/partido, C. Medina 1.67 quites/partido | Cienciano: G. Barreto 2.6 quites/partido, K. Becerra 2.56 quites/partido, M. Martinich 2.11 quites/partido"
-  },
-  {
    "local": "Aldosivi",
    "visitante": "Union Santa Fe",
    "gole": "C. Tarragona 32.4%",
@@ -39,6 +19,81 @@
    "asistencias": "Estudiantes de Rio Cuarto: R. Lozano 0.12 asistencias/partido, M. Valenti 0.07 asistencias/partido, G. Maffini 0.06 asistencias/partido | San Lorenzo: N. Barrios 0.2 asistencias/partido, A. Cuello 0.14 asistencias/partido, Facundo Gulli 0.13 asistencias/partido",
    "faltas": "Estudiantes de Rio Cuarto: G. Gonzalez 2.0 faltas/partido, T. Gonzalez 1.8 faltas/partido, Y. Moreno 1.2 faltas/partido | San Lorenzo: J. Álvarez 2.5 faltas/partido, L. Montenegro 1.67 faltas/partido, E. Cerutti 1.57 faltas/partido",
    "quites": "Estudiantes de Rio Cuarto: F. Rodríguez 3.0 quites/partido, F. Cobos 2.45 quites/partido, T. Gonzalez 2.1 quites/partido | San Lorenzo: F. Lorenzón 3.0 quites/partido, G. Hernández 2.89 quites/partido, A. Cordoba 2.75 quites/partido"
+  },
+  {
+   "local": "Leon",
+   "visitante": "Monterrey",
+   "gole": "L. Ocampos 67.9% &middot; D. Rossi 39.3% &middot; D. Arcila 39.3%",
+   "remates": "Leon: D. Arcila 2.0 remates totales (1.0 a puerta), D. Cambindo 2.0 remates totales (1.0 a puerta), E. Guerra 1.33 remates totales (1.0 a puerta) | Monterrey: L. Ocampos 3.25 remates totales (1.75 a puerta), D. Rossi 2.5 remates totales (1.25 a puerta), L. Orellano 2.25 remates totales (2.0 a puerta)",
+   "tarjetas": "Leon: B. Colula 0.67 amarillas/partido, R. Echeverría 0.5 amarillas/partido, J. Alvarado 0.5 amarillas/partido | Monterrey: C. Salcedo 1.0 amarillas/partido, R. Chávez 0.25 amarillas/partido, A. Aceves 0.25 amarillas/partido",
+   "asistencias": "Leon: J. Alvarado 0.5 asistencias/partido, L. Valadez 0.25 asistencias/partido | Monterrey: D. Rossi 0.75 asistencias/partido, O. Pineda 0.33 asistencias/partido, H. Cuypers 0.33 asistencias/partido",
+   "faltas": "Leon: Juan José Guevara Possu 2.75 faltas/partido, J. Alvarado 1.5 faltas/partido, S. Vegas 1.33 faltas/partido | Monterrey: V. Guzmán 2.5 faltas/partido, R. Chávez 2.25 faltas/partido, C. Salcedo 2.0 faltas/partido",
+   "quites": "Leon: S. Vegas 3.67 quites/partido, J. Cortizo 3.25 quites/partido, I. Moreno 2.25 quites/partido | Monterrey: Óliver Torres 3.5 quites/partido, L. Ocampos 2.75 quites/partido, C. Salcedo 2.0 quites/partido"
+  },
+  {
+   "local": "Tigres UANL",
+   "visitante": "Atlante FC",
+   "gole": "E. Pizzuto 39.3% &middot; J. Brunetta 39.3%",
+   "remates": "Tigres UANL: J. Brunetta 3.75 remates totales (2.25 a puerta), O. Herrera 2.67 remates totales (0.67 a puerta), R. Aguirre 1.33 remates totales (0.33 a puerta) | Atlante FC: L. Calzadilla 2.0 remates totales (1.5 a puerta), L. Puente 1.5 remates totales (1.0 a puerta), J. Julio 1.25 remates totales (1.0 a puerta)",
+   "tarjetas": "Tigres UANL: V. Loroña 0.5 amarillas/partido, F. Gorriarán 0.5 amarillas/partido, A. Franco 0.5 amarillas/partido | Atlante FC: J. N. Carrera 0.5 amarillas/partido, E. Jiménez 0.33 amarillas/partido, Walter Portales 0.25 amarillas/partido",
+   "asistencias": "Tigres UANL: Joaquim 0.5 asistencias/partido, J. Brunetta 0.5 asistencias/partido, R. Aguirre 0.33 asistencias/partido | Atlante FC: J. Julio 0.5 asistencias/partido, Walter Portales 0.25 asistencias/partido, L. Calzadilla 0.25 asistencias/partido",
+   "faltas": "Tigres UANL: F. Gorriarán 2.25 faltas/partido, C. Araújo 1.67 faltas/partido, R. Aguirre 1.67 faltas/partido | Atlante FC: M. Fernández 2.33 faltas/partido, J. N. Carrera 2.25 faltas/partido, J. Julio 1.5 faltas/partido",
+   "quites": "Tigres UANL: C. Araújo 2.67 quites/partido, D. Lainez 2.0 quites/partido, F. Gorriarán 1.75 quites/partido | Atlante FC: E. Tercero 4.0 quites/partido, Walter Portales 3.75 quites/partido, J. N. Carrera 3.75 quites/partido"
+  },
+  {
+   "local": "FC Juarez",
+   "visitante": "Club America",
+   "gole": "Raphael Veiga 22.1%",
+   "remates": "FC Juarez: Ricardinho 1.33 remates totales (0.0 a puerta), J. Rodríguez 1.0 remates totales (0.25 a puerta), J. Torres 1.0 remates totales (0.0 a puerta) | Club America: D. Arriaga 3.0 remates totales (0.5 a puerta), I. Violante 2.75 remates totales (1.0 a puerta), Raphael Veiga 2.0 remates totales (1.5 a puerta)",
+   "tarjetas": "FC Juarez: Guilherme Castilho 0.5 amarillas/partido, R. Fulgencio 0.5 amarillas/partido, H. Ortega 0.25 amarillas/partido | Club America: K. Álvarez 0.67 amarillas/partido, H. Martín 0.5 amarillas/partido, A. Cervantes 0.33 amarillas/partido",
+   "asistencias": "FC Juarez: J. Rodríguez 0.25 asistencias/partido, J. Torres 0.25 asistencias/partido | Club America: D. Espinoza 0.5 asistencias/partido, Raphael Veiga 0.5 asistencias/partido, K. Álvarez 0.33 asistencias/partido",
+   "faltas": "FC Juarez: Guilherme Castilho 2.0 faltas/partido, Ricardinho 1.33 faltas/partido, Monchu 1.25 faltas/partido | Club America: K. Álvarez 1.67 faltas/partido, Icaro 1.67 faltas/partido, D. Espinoza 1.5 faltas/partido",
+   "quites": "FC Juarez: J. Aquino 3.0 quites/partido, D. García 2.25 quites/partido, H. Ortega 1.5 quites/partido | Club America: C. Borja 2.0 quites/partido, D. Espinoza 1.75 quites/partido, É. Sánchez 1.75 quites/partido"
+  },
+  {
+   "local": "Club Queretaro",
+   "visitante": "Toluca",
+   "gole": "A. Ávila 49.8%",
+   "remates": "Club Queretaro: M. Coronel 3.0 remates totales (0.67 a puerta), A. Ávila 2.25 remates totales (1.5 a puerta), Carlo Adriano 1.25 remates totales (0.5 a puerta) | Toluca: A. Vega 2.33 remates totales (1.33 a puerta), Helinho 1.75 remates totales (0.75 a puerta), J. Gallardo 1.67 remates totales (0.67 a puerta)",
+   "tarjetas": "Club Queretaro: L. Abascia 0.75 amarillas/partido, Paulo Victor 0.75 amarillas/partido, B. Duarte 0.5 amarillas/partido | Toluca: F. Romero 0.5 amarillas/partido, J. Gallardo 0.33 amarillas/partido, Helinho 0.25 amarillas/partido",
+   "asistencias": "Club Queretaro: B. Duarte 0.25 asistencias/partido, S. Homenchenko 0.25 asistencias/partido | Toluca: Helinho 0.5 asistencias/partido, J. Gallardo 0.33 asistencias/partido",
+   "faltas": "Club Queretaro: A. Ávila 2.25 faltas/partido, B. Duarte 1.75 faltas/partido, L. Abascia 1.5 faltas/partido | Toluca: E. López 2.67 faltas/partido, F. Pereira 2.0 faltas/partido, É. Gutiérrez 1.67 faltas/partido",
+   "quites": "Club Queretaro: S. Homenchenko 3.75 quites/partido, L. Abascia 3.0 quites/partido, D. Parra 2.0 quites/partido | Toluca: D. Barbosa 4.5 quites/partido, E. López 3.67 quites/partido, F. Romero 2.75 quites/partido"
+  },
+  {
+   "local": "Fortuna Sittard",
+   "visitante": "AZ Alkmaar",
+   "gole": "A. Oufkir 39.3% &middot; C. Stengs 39.3% &middot; É. Michut 39.3%",
+   "remates": "Fortuna Sittard: O. Romeny 2.5 remates totales (2.0 a puerta), L. Zeefuik 2.0 remates totales (1.0 a puerta), M. Ihattaren 1.5 remates totales (1.5 a puerta) | AZ Alkmaar: Weslley Patati 4.0 remates totales (1.5 a puerta), D. Kwakman 2.0 remates totales (1.0 a puerta), M. Meerdink 2.0 remates totales (1.0 a puerta)",
+   "tarjetas": "Fortuna Sittard: L. Zeefuik 0.5 amarillas/partido | AZ Alkmaar: M. Chávez 0.5 amarillas/partido, Weslley Patati 0.5 amarillas/partido",
+   "asistencias": "Fortuna Sittard: J. Dahlhaus 0.5 asistencias/partido, M. Ihattaren 0.5 asistencias/partido | AZ Alkmaar: M. Chávez 1.0 asistencias/partido, K. Smit 1.0 asistencias/partido",
+   "faltas": "Fortuna Sittard: L. Zeefuik 2.0 faltas/partido, S. Wylin 1.0 faltas/partido, J. Dahlhaus 1.0 faltas/partido | AZ Alkmaar: M. Chávez 2.0 faltas/partido, P. Koopmeiners 1.5 faltas/partido, Weslley Patati 1.5 faltas/partido",
+   "quites": "Fortuna Sittard: S. van Ottele 2.0 quites/partido, S. Wylin 1.5 quites/partido, P. Brittijn 1.5 quites/partido | AZ Alkmaar: D. Kwakman 4.0 quites/partido, P. Koopmeiners 3.5 quites/partido, Weslley Patati 2.5 quites/partido"
+  },
+  {
+   "local": "Maritimo",
+   "visitante": "Academico Viseu",
+   "gole": "Maurice Osei Boakye 39.3% &middot; Rúben Pereira 39.3%",
+   "remates": "Maritimo: Martín Tejón 3.0 remates totales (1.5 a puerta), M. Diouri 1.5 remates totales (0.5 a puerta), Adrián Butzke 1.5 remates totales (0.0 a puerta) | Academico Viseu: João Guilherme 2.5 remates totales (0.0 a puerta), Rúben Pereira 1.5 remates totales (1.0 a puerta), André Clóvis 1.5 remates totales (1.0 a puerta)",
+   "tarjetas": "Maritimo: Igor Julião 0.5 amarillas/partido, Raphael Guzzo 0.5 amarillas/partido, Adrián Butzke 0.5 amarillas/partido | Academico Viseu: A. Correia 0.5 amarillas/partido, Rúben Pereira 0.5 amarillas/partido, Igor Milioransa 0.5 amarillas/partido",
+   "asistencias": "Maritimo: Martín Tejón 0.5 asistencias/partido | Academico Viseu: C. Kahraman 0.5 asistencias/partido",
+   "faltas": "Maritimo: Rodrigo Andrade 3.0 faltas/partido, V. Danilović 2.0 faltas/partido, Raphael Guzzo 2.0 faltas/partido | Academico Viseu: João Guilherme 2.0 faltas/partido, A. Correia 1.5 faltas/partido, S. Messeguem 1.5 faltas/partido",
+   "quites": "Maritimo: Igor Julião 3.0 quites/partido, Martín Tejón 3.0 quites/partido, Raphael Guzzo 2.5 quites/partido | Academico Viseu: João Guilherme 4.0 quites/partido, A. Mestanza 3.5 quites/partido, S. Messeguem 2.0 quites/partido"
+  },
+  {
+   "local": "Athletic Club",
+   "visitante": "Sevilla",
+   "gole": "Peque Fernández 48.2% &middot; Jon Guridi 48.2%"
+  },
+  {
+   "local": "Sparta Rotterdam",
+   "visitante": "Utrecht",
+   "gole": "N. Þórisson 39.3% &middot; A. Blake 39.3%",
+   "remates": "Sparta Rotterdam: N. Þórisson 3.5 remates totales (2.0 a puerta), A. Santos 2.0 remates totales (1.0 a puerta), M. Young 1.0 remates totales (0.5 a puerta) | Utrecht: M. Eerdhuijzen 1.5 remates totales (0.5 a puerta), D. de Wit 1.0 remates totales (1.0 a puerta), Y. Cathline 1.0 remates totales (0.0 a puerta)",
+   "tarjetas": "Sparta Rotterdam: L. Martes 0.5 amarillas/partido, C. Terho 0.5 amarillas/partido, M. van Bergen 0.5 amarillas/partido | Utrecht: A. Zagré 0.5 amarillas/partido, D. de Wit 0.5 amarillas/partido, F. Pohl 0.5 amarillas/partido",
+   "asistencias": "Sparta Rotterdam: S. Mito 0.5 asistencias/partido, N. Þórisson 0.5 asistencias/partido, B. Kuipers 0.5 asistencias/partido | Utrecht: Y. Cathline 0.5 asistencias/partido, D. van den Berg 0.5 asistencias/partido",
+   "faltas": "Sparta Rotterdam: N. Þórisson 3.5 faltas/partido, L. Martes 1.5 faltas/partido, M. Zonneveld 1.5 faltas/partido | Utrecht: A. Zagré 3.0 faltas/partido, D. de Wit 2.0 faltas/partido, N. Vesterlund 1.5 faltas/partido",
+   "quites": "Sparta Rotterdam: L. Martes 3.5 quites/partido, M. Young 3.0 quites/partido, A. Santos 2.0 quites/partido | Utrecht: N. Vesterlund 3.0 quites/partido, S. Horemans 3.0 quites/partido, A. Zagré 2.5 quites/partido"
   }
  ]
 }
