@@ -1,28 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Rayo Vallecano",
-   "visitante": "Alaves",
-   "gole": "M. Díaz 63.2% &middot; Mikel Rodriguez 63.2% &middot; N. Tenaglia 63.2%"
-  },
-  {
-   "local": "SC Braga",
-   "visitante": "Austria Vienna",
-   "gole": "E. Kara 53.7% &middot; Ricardo Horta 52.8% &middot; Moulaye Haïdara 52.8%",
-   "remates": "Austria Vienna: M. Wels 1.67 remates totales (1.33 a puerta), K. Boateng 1.5 remates totales (1.0 a puerta), M. Fischer 1.0 remates totales (0.25 a puerta)",
-   "tarjetas": "SC Braga: Fran Navarro 0.5 amarillas/partido, Jean-Baptiste Gorby 0.33 amarillas/partido, Gabriel Silva 0.25 amarillas/partido | Austria Vienna: R. Ranftl 0.5 amarillas/partido, F. Wustinger 0.5 amarillas/partido, Matteo Schablas 0.5 amarillas/partido",
-   "asistencias": "SC Braga: Ricardo Horta 0.5 asistencias/partido, Pau Victor 0.25 asistencias/partido | Austria Vienna: M. Fischer 0.5 asistencias/partido, Daniel Nnodim 0.5 asistencias/partido, Philipp Maybach 0.25 asistencias/partido",
-   "faltas": "Austria Vienna: V. Markovic 2.25 faltas/partido, R. Ranftl 1.75 faltas/partido, M. Fischer 1.75 faltas/partido",
-   "quites": "Austria Vienna: Daniel Nnodim 5.5 quites/partido, Matteo Schablas 4.25 quites/partido, V. Markovic 3.5 quites/partido"
-  },
-  {
-   "local": "Benfica",
-   "visitante": "Aarhus",
-   "gole": "V. Pavlidis 81.1% &middot; Rafa 39.3% &middot; D. Lukebakio 39.3%",
-   "tarjetas": "Benfica: G. Prestianni 0.5 amarillas/partido, A. Bah 0.33 amarillas/partido, V. Pavlidis 0.33 amarillas/partido",
-   "asistencias": "Benfica: D. Lukebakio 0.5 asistencias/partido, A. Bah 0.33 asistencias/partido, L. Barreiro 0.33 asistencias/partido"
-  },
-  {
    "local": "LDU de Quito",
    "visitante": "Mirassol",
    "gole": "",
@@ -33,29 +11,9 @@
    "quites": "LDU de Quito: J. Pretell 3.86 quites/partido, Yerlin Quinonez 2.14 quites/partido, J. Cuero 2.0 quites/partido | Mirassol: Chico 4.0 quites/partido, Igor Formiga 3.0 quites/partido, Lucas Oliveira 2.5 quites/partido"
   },
   {
-   "local": "Macara",
-   "visitante": "Santos",
-   "gole": "Gabriel Barbosa 51.0% &middot; F. Posse 31.3% &middot; Gabriel Bontempo 28.3%",
-   "remates": "Macara: F. Posse 1.88 remates totales (0.88 a puerta), F. Paz 1.8 remates totales (0.6 a puerta), M. Viera 1.17 remates totales (0.0 a puerta) | Santos: Gabriel Barbosa 2.57 remates totales (1.29 a puerta), Neymar 2.2 remates totales (1.0 a puerta), Thaciano 1.4 remates totales (0.4 a puerta)",
-   "tarjetas": "Macara: J. Jiménez 0.5 amarillas/partido, L. Ayala 0.38 amarillas/partido, J. Estacio 0.33 amarillas/partido | Santos: Lucas Veríssimo 0.5 amarillas/partido, G. Escobar 0.43 amarillas/partido, Luan Peres 0.33 amarillas/partido",
-   "asistencias": "Macara: M. Viera 0.33 asistencias/partido, J. Estacio 0.17 asistencias/partido, F. Posse 0.12 asistencias/partido | Santos: Neymar 0.4 asistencias/partido, Gabriel Menino 0.33 asistencias/partido, Gabriel Barbosa 0.29 asistencias/partido",
-   "faltas": "Macara: J. Cazares 2.0 faltas/partido, J. Estacio 1.67 faltas/partido, J. Bolaños 1.33 faltas/partido | Santos: João Schmidt 1.67 faltas/partido, Gustavo Henrique Pereira 1.25 faltas/partido, C. Oliva 1.14 faltas/partido",
-   "quites": "Macara: J. Estacio 3.33 quites/partido, J. Bolaños 2.67 quites/partido, J. Cazares 2.12 quites/partido | Santos: Gustavo Henrique Pereira 4.5 quites/partido, C. Oliva 2.86 quites/partido, G. Escobar 2.43 quites/partido"
-  },
-  {
-   "local": "Olimpia",
-   "visitante": "Vasco DA Gama",
-   "gole": "Adson 34.9%",
-   "remates": "Olimpia: A. Alcaraz 2.29 remates totales (0.71 a puerta), J. Alfaro 1.43 remates totales (0.86 a puerta), H. Quintana 1.4 remates totales (1.0 a puerta) | Vasco DA Gama: J. Rojas 2.75 remates totales (1.0 a puerta), C. Spinelli 2.62 remates totales (1.12 a puerta), David 2.0 remates totales (0.33 a puerta)",
-   "tarjetas": "Olimpia: A. Silva 1.0 amarillas/partido, B. Bentaberry 0.6 amarillas/partido, H. Sandoval 0.5 amarillas/partido | Vasco DA Gama: Matheus França 0.67 amarillas/partido, Cauan Barros 0.6 amarillas/partido, Hugo Moura 0.5 amarillas/partido",
-   "asistencias": "Olimpia: R. Benitez 0.5 asistencias/partido, H. Sandoval 0.25 asistencias/partido, H. Quintana 0.2 asistencias/partido | Vasco DA Gama: Adson 0.43 asistencias/partido, Cuiabano 0.25 asistencias/partido, J. Rojas 0.25 asistencias/partido",
-   "faltas": "Olimpia: J. Alfaro 1.86 faltas/partido, F. Cardozo 1.2 faltas/partido, A. Alcaraz 1.14 faltas/partido | Vasco DA Gama: Tchê Tchê 1.5 faltas/partido, C. Cuesta 1.17 faltas/partido, A. Saldivia 1.0 faltas/partido",
-   "quites": "Olimpia: F. Cardozo 2.0 quites/partido, J. Vera 1.75 quites/partido, R. Cáceres 1.43 quites/partido | Vasco DA Gama: A. Saldivia 2.75 quites/partido, Cuiabano 2.25 quites/partido, Hugo Moura 2.0 quites/partido"
-  },
-  {
    "local": "Athletic Club",
    "visitante": "CRB",
-   "gole": "Ronaldo Tavares 54.2%",
+   "gole": "Ronaldo Tavares 52.0%",
    "remates": "Athletic Club: Ronaldo Tavares 2.5 remates totales (1.5 a puerta), Ian Luccas 1.71 remates totales (0.59 a puerta), W. Aponza 1.67 remates totales (1.0 a puerta) | CRB: Mikael 2.81 remates totales (1.43 a puerta), Thiaguinho 1.8 remates totales (0.6 a puerta), Dadá Belmonte 1.75 remates totales (0.8 a puerta)",
    "tarjetas": "Athletic Club: Diogo Batista 0.33 amarillas/partido, W. Aponza 0.33 amarillas/partido, Jhonatan 0.32 amarillas/partido | CRB: Daniel 0.35 amarillas/partido, Fábio Alemão 0.33 amarillas/partido, Guilherme Estrella 0.33 amarillas/partido",
    "asistencias": "Athletic Club: Ruan Assis 0.14 asistencias/partido, Max 0.13 asistencias/partido, Ian Luccas 0.12 asistencias/partido | CRB: Dadá Belmonte 0.25 asistencias/partido, Léo Campos 0.2 asistencias/partido, Thiaguinho 0.2 asistencias/partido",
