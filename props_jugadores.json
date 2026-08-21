@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Aldosivi",
-   "visitante": "Union Santa Fe",
-   "gole": "C. Tarragona 32.4%",
-   "remates": "Aldosivi: M. García 8.5 remates totales (2.0 a puerta), A. Vombergar 2.25 remates totales (0.5 a puerta), J. Arias 1.27 remates totales (0.27 a puerta) | Union Santa Fe: M. Estigarribia 2.52 remates totales (1.05 a puerta), C. Tarragona 1.96 remates totales (1.17 a puerta), M. Del Blanco 1.56 remates totales (0.61 a puerta)",
-   "tarjetas": "Aldosivi: M. García 2.0 amarillas/partido, F. Gino 0.46 amarillas/partido, E. Rolón 0.43 amarillas/partido | Union Santa Fe: L. Vargas 0.36 amarillas/partido, M. Estigarribia 0.33 amarillas/partido, L. Menossi 0.3 amarillas/partido",
-   "asistencias": "Aldosivi: L. Rodríguez 0.09 asistencias/partido, T. Fernández 0.08 asistencias/partido, F. Román 0.07 asistencias/partido | Union Santa Fe: J. Palacios 0.32 asistencias/partido, R. Profini 0.28 asistencias/partido, E. Álvarez 0.25 asistencias/partido",
-   "faltas": "Aldosivi: M. García 10.5 faltas/partido, J. Novillo 1.75 faltas/partido, F. Anso 1.75 faltas/partido | Union Santa Fe: C. Tarragona 1.65 faltas/partido, M. Estigarribia 1.57 faltas/partido, J. Palacios 1.45 faltas/partido",
-   "quites": "Aldosivi: M. García 11.5 quites/partido, B. Cufré 3.0 quites/partido, N. Breitenbruch 2.4 quites/partido | Union Santa Fe: M. Luna Diale 3.5 quites/partido, T. Fagioli 3.0 quites/partido, L. Ayala 2.67 quites/partido"
-  },
-  {
    "local": "Estudiantes de Rio Cuarto",
    "visitante": "San Lorenzo",
    "gole": "R. Auzmendi 37.0%",
@@ -83,7 +73,7 @@
   {
    "local": "Athletic Club",
    "visitante": "Sevilla",
-   "gole": "Peque Fernández 48.2% &middot; Jon Guridi 48.2%"
+   "gole": "Peque Fernández 50.0% &middot; Jon Guridi 50.0%"
   },
   {
    "local": "Sparta Rotterdam",
@@ -99,6 +89,16 @@
    "local": "Fluminense",
    "visitante": "Remo",
    "gole": "John Kennedy 39.3% &middot; Jája Silva 27.1% &middot; Alef Manga 19.5%"
+  },
+  {
+   "local": "Atletico Tucuman",
+   "visitante": "Instituto Cordoba",
+   "gole": "L. Díaz 33.8% &middot; M. Santos 28.3% &middot; A. Luna 25.9%",
+   "remates": "Atletico Tucuman: L. Díaz 2.06 remates totales (1.12 a puerta), C. Ferreira 1.13 remates totales (0.47 a puerta), G. Abeldano 1.0 remates totales (0.22 a puerta) | Instituto Cordoba: A. Luna 2.4 remates totales (1.25 a puerta), F. Jara 1.36 remates totales (0.55 a puerta), M. Tissera 1.18 remates totales (0.73 a puerta)",
+   "tarjetas": "Atletico Tucuman: L. Vega 0.56 amarillas/partido, C. Ferreira 0.27 amarillas/partido, M. Villa 0.25 amarillas/partido | Instituto Cordoba: F. Alarcón 0.44 amarillas/partido, J. Galván 0.33 amarillas/partido, F. Moyano 0.33 amarillas/partido",
+   "asistencias": "Atletico Tucuman: R. Ruíz Rodríguez 0.11 asistencias/partido, G. Compagnucci 0.08 asistencias/partido, K. Ortíz 0.07 asistencias/partido | Instituto Cordoba: J. Lázaro 0.2 asistencias/partido, D. Sosa 0.14 asistencias/partido, G. Lodico 0.13 asistencias/partido",
+   "faltas": "Atletico Tucuman: L. Vega 2.22 faltas/partido, J. Dominguez 1.92 faltas/partido, L. Díaz 1.59 faltas/partido | Instituto Cordoba: J. Córdoba 1.65 faltas/partido, A. Luna 1.45 faltas/partido, F. Alarcón 1.44 faltas/partido",
+   "quites": "Atletico Tucuman: L. Vega 4.33 quites/partido, K. Ortíz 2.29 quites/partido, N. Laméndola 1.79 quites/partido | Instituto Cordoba: G. Cerato 2.24 quites/partido, F. Alarcón 2.17 quites/partido, A. Massaccesi 2.0 quites/partido"
   }
  ]
 }
