@@ -1,46 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Leon",
-   "visitante": "Monterrey",
-   "gole": "L. Ocampos 66.5% &middot; D. Rossi 39.3% &middot; D. Arcila 39.3%",
-   "remates": "Leon: D. Arcila 2.0 remates totales (1.0 a puerta), D. Cambindo 2.0 remates totales (1.0 a puerta), E. Guerra 1.33 remates totales (1.0 a puerta) | Monterrey: L. Ocampos 3.25 remates totales (1.75 a puerta), D. Rossi 2.5 remates totales (1.25 a puerta), L. Orellano 2.25 remates totales (2.0 a puerta)",
-   "tarjetas": "Leon: B. Colula 0.67 amarillas/partido, R. Echeverría 0.5 amarillas/partido, J. Alvarado 0.5 amarillas/partido | Monterrey: C. Salcedo 1.0 amarillas/partido, R. Chávez 0.25 amarillas/partido, A. Aceves 0.25 amarillas/partido",
-   "asistencias": "Leon: J. Alvarado 0.5 asistencias/partido, L. Valadez 0.25 asistencias/partido | Monterrey: D. Rossi 0.75 asistencias/partido, O. Pineda 0.33 asistencias/partido, H. Cuypers 0.33 asistencias/partido",
-   "faltas": "Leon: Juan José Guevara Possu 2.75 faltas/partido, J. Alvarado 1.5 faltas/partido, S. Vegas 1.33 faltas/partido | Monterrey: V. Guzmán 2.5 faltas/partido, R. Chávez 2.25 faltas/partido, C. Salcedo 2.0 faltas/partido",
-   "quites": "Leon: S. Vegas 3.67 quites/partido, J. Cortizo 3.25 quites/partido, I. Moreno 2.25 quites/partido | Monterrey: Óliver Torres 3.5 quites/partido, L. Ocampos 2.75 quites/partido, C. Salcedo 2.0 quites/partido"
-  },
-  {
-   "local": "Tigres UANL",
-   "visitante": "Atlante FC",
-   "gole": "E. Pizzuto 39.3% &middot; J. Brunetta 39.3%",
-   "remates": "Tigres UANL: J. Brunetta 3.75 remates totales (2.25 a puerta), O. Herrera 2.67 remates totales (0.67 a puerta), R. Aguirre 1.33 remates totales (0.33 a puerta) | Atlante FC: L. Calzadilla 2.0 remates totales (1.5 a puerta), L. Puente 1.5 remates totales (1.0 a puerta), J. Julio 1.25 remates totales (1.0 a puerta)",
-   "tarjetas": "Tigres UANL: V. Loroña 0.5 amarillas/partido, F. Gorriarán 0.5 amarillas/partido, A. Franco 0.5 amarillas/partido | Atlante FC: J. N. Carrera 0.5 amarillas/partido, E. Jiménez 0.33 amarillas/partido, Walter Portales 0.25 amarillas/partido",
-   "asistencias": "Tigres UANL: Joaquim 0.5 asistencias/partido, J. Brunetta 0.5 asistencias/partido, R. Aguirre 0.33 asistencias/partido | Atlante FC: J. Julio 0.5 asistencias/partido, Walter Portales 0.25 asistencias/partido, L. Calzadilla 0.25 asistencias/partido",
-   "faltas": "Tigres UANL: F. Gorriarán 2.25 faltas/partido, C. Araújo 1.67 faltas/partido, R. Aguirre 1.67 faltas/partido | Atlante FC: M. Fernández 2.33 faltas/partido, J. N. Carrera 2.25 faltas/partido, J. Julio 1.5 faltas/partido",
-   "quites": "Tigres UANL: C. Araújo 2.67 quites/partido, D. Lainez 2.0 quites/partido, F. Gorriarán 1.75 quites/partido | Atlante FC: E. Tercero 4.0 quites/partido, Walter Portales 3.75 quites/partido, J. N. Carrera 3.75 quites/partido"
-  },
-  {
-   "local": "FC Juarez",
-   "visitante": "Club America",
-   "gole": "Raphael Veiga 22.1%",
-   "remates": "FC Juarez: Ricardinho 1.33 remates totales (0.0 a puerta), J. Rodríguez 1.0 remates totales (0.25 a puerta), J. Torres 1.0 remates totales (0.0 a puerta) | Club America: D. Arriaga 3.0 remates totales (0.5 a puerta), I. Violante 2.75 remates totales (1.0 a puerta), Raphael Veiga 2.0 remates totales (1.5 a puerta)",
-   "tarjetas": "FC Juarez: Guilherme Castilho 0.5 amarillas/partido, R. Fulgencio 0.5 amarillas/partido, H. Ortega 0.25 amarillas/partido | Club America: K. Álvarez 0.67 amarillas/partido, H. Martín 0.5 amarillas/partido, A. Cervantes 0.33 amarillas/partido",
-   "asistencias": "FC Juarez: J. Rodríguez 0.25 asistencias/partido, J. Torres 0.25 asistencias/partido | Club America: D. Espinoza 0.5 asistencias/partido, Raphael Veiga 0.5 asistencias/partido, K. Álvarez 0.33 asistencias/partido",
-   "faltas": "FC Juarez: Guilherme Castilho 2.0 faltas/partido, Ricardinho 1.33 faltas/partido, Monchu 1.25 faltas/partido | Club America: K. Álvarez 1.67 faltas/partido, Icaro 1.67 faltas/partido, D. Espinoza 1.5 faltas/partido",
-   "quites": "FC Juarez: J. Aquino 3.0 quites/partido, D. García 2.25 quites/partido, H. Ortega 1.5 quites/partido | Club America: C. Borja 2.0 quites/partido, D. Espinoza 1.75 quites/partido, É. Sánchez 1.75 quites/partido"
-  },
-  {
-   "local": "Club Queretaro",
-   "visitante": "Toluca",
-   "gole": "A. Ávila 49.8%",
-   "remates": "Club Queretaro: M. Coronel 3.0 remates totales (0.67 a puerta), A. Ávila 2.25 remates totales (1.5 a puerta), Carlo Adriano 1.25 remates totales (0.5 a puerta) | Toluca: A. Vega 2.33 remates totales (1.33 a puerta), Helinho 1.75 remates totales (0.75 a puerta), J. Gallardo 1.67 remates totales (0.67 a puerta)",
-   "tarjetas": "Club Queretaro: L. Abascia 0.75 amarillas/partido, Paulo Victor 0.75 amarillas/partido, B. Duarte 0.5 amarillas/partido | Toluca: F. Romero 0.5 amarillas/partido, J. Gallardo 0.33 amarillas/partido, Helinho 0.25 amarillas/partido",
-   "asistencias": "Club Queretaro: B. Duarte 0.25 asistencias/partido, S. Homenchenko 0.25 asistencias/partido | Toluca: Helinho 0.5 asistencias/partido, J. Gallardo 0.33 asistencias/partido",
-   "faltas": "Club Queretaro: A. Ávila 2.25 faltas/partido, B. Duarte 1.75 faltas/partido, L. Abascia 1.5 faltas/partido | Toluca: E. López 2.67 faltas/partido, F. Pereira 2.0 faltas/partido, É. Gutiérrez 1.67 faltas/partido",
-   "quites": "Club Queretaro: S. Homenchenko 3.75 quites/partido, L. Abascia 3.0 quites/partido, D. Parra 2.0 quites/partido | Toluca: D. Barbosa 4.5 quites/partido, E. López 3.67 quites/partido, F. Romero 2.75 quites/partido"
-  },
-  {
    "local": "Fortuna Sittard",
    "visitante": "AZ Alkmaar",
    "gole": "A. Oufkir 39.3% &middot; C. Stengs 39.3% &middot; É. Michut 39.3%",
@@ -124,6 +84,46 @@
    "asistencias": "Sporting CP: Geny Catamo 1.0 asistencias/partido, F. Ioannidis 1.0 asistencias/partido, R. Zalazar 0.5 asistencias/partido | Alverca: I. James 0.5 asistencias/partido",
    "faltas": "Sporting CP: I. Doumbia 2.5 faltas/partido, G. Vagiannidis 2.0 faltas/partido, Sergi Altimira 1.5 faltas/partido | Alverca: D. Gui 1.5 faltas/partido, Chiquinho 1.5 faltas/partido, Vivaldo Semedo 1.5 faltas/partido",
    "quites": "Sporting CP: Sergi Altimira 5.5 quites/partido, I. Doumbia 2.5 quites/partido, Eduardo Quaresma 2.0 quites/partido | Alverca: D. Gui 3.0 quites/partido, Chiquinho 3.0 quites/partido, Figueiredo 2.5 quites/partido"
+  },
+  {
+   "local": "Ceara",
+   "visitante": "Londrina",
+   "gole": "Bruno Santos 49.7% &middot; Melk 17.3%",
+   "remates": "Ceara: Vina 1.5 remates totales (0.7 a puerta), Vinicius Zanocelo 1.33 remates totales (0.33 a puerta), Melk 1.33 remates totales (0.71 a puerta) | Londrina: Bruno Santos 2.19 remates totales (1.19 a puerta), Iago Teles 2.08 remates totales (1.08 a puerta), João Vitor 1.71 remates totales (0.43 a puerta)",
+   "tarjetas": "Ceara: Caio 0.5 amarillas/partido, Bruno Ferreira 0.4 amarillas/partido, Matheus Araújo 0.38 amarillas/partido | Londrina: João Vitor 0.43 amarillas/partido, Fabiano 0.4 amarillas/partido, Kevyn 0.38 amarillas/partido",
+   "asistencias": "Ceara: Gabriel Rocha 0.33 asistencias/partido, Giulio 0.23 asistencias/partido, Giovanni Pavani 0.2 asistencias/partido | Londrina: João Vitor 0.29 asistencias/partido, Iago Teles 0.23 asistencias/partido, Victor Hugo 0.21 asistencias/partido",
+   "faltas": "Ceara: Vinicius Zanocelo 2.0 faltas/partido, Joao Gabriel 1.82 faltas/partido, Éder 1.7 faltas/partido | Londrina: Iago Teles 1.85 faltas/partido, William Pottker 1.5 faltas/partido, Pablo Dyego 1.43 faltas/partido",
+   "quites": "Ceara: Bryan 3.33 quites/partido, Gabriel Rocha 2.67 quites/partido, Fernandinho 1.82 quites/partido | Londrina: Yago Lincoln 1.65 quites/partido, Victor Hugo 1.63 quites/partido, Lucas Marques 1.37 quites/partido"
+  },
+  {
+   "local": "Internacional",
+   "visitante": "Atletico-MG",
+   "gole": "J. Carbonero 23.9%",
+   "remates": "Internacional: J. Carbonero 1.86 remates totales (0.82 a puerta), A. Bernabéi 1.8 remates totales (0.75 a puerta), R. Borré 1.28 remates totales (0.67 a puerta) | Atletico-MG: Hulk 1.42 remates totales (0.58 a puerta), T. Cuello 1.4 remates totales (0.55 a puerta), Gustavo Scarpa 1.0 remates totales (0.3 a puerta)",
+   "tarjetas": "Internacional: Victor Gabriel 0.44 amarillas/partido, G. Mercado 0.36 amarillas/partido, Matheus Cunha 0.33 amarillas/partido | Atletico-MG: I. Román 0.5 amarillas/partido, Ruan Tressoldi 0.37 amarillas/partido, Lyanco 0.33 amarillas/partido",
+   "asistencias": "Internacional: Vitinho 0.14 asistencias/partido, J. Carbonero 0.14 asistencias/partido, Alerrandro 0.14 asistencias/partido | Atletico-MG: Hulk 0.25 asistencias/partido, A. Minda 0.17 asistencias/partido, Renan Lodi 0.15 asistencias/partido",
+   "faltas": "Internacional: A. Bernabéi 2.0 faltas/partido, Victor Gabriel 1.56 faltas/partido, R. Borré 1.5 faltas/partido | Atletico-MG: I. Román 2.0 faltas/partido, Renan Lodi 1.7 faltas/partido, A. Preciado 1.6 faltas/partido",
+   "quites": "Internacional: Bruno Gomes 2.26 quites/partido, Matheus Bahia 1.73 quites/partido, A. Bernabéi 1.7 quites/partido | Atletico-MG: A. Preciado 1.7 quites/partido, I. Román 1.67 quites/partido, J. Alonso 1.5 quites/partido"
+  },
+  {
+   "local": "Independiente",
+   "visitante": "Independ. Rivadavia",
+   "gole": "G. Ávalos 39.3% &middot; F. Sartori 29.5% &middot; M. Abaldo 22.1%",
+   "remates": "Independiente: G. Ávalos 2.14 remates totales (0.68 a puerta), S. Montiel 1.35 remates totales (0.76 a puerta), M. Gutiérrez 1.15 remates totales (0.46 a puerta) | Independ. Rivadavia: S. Villa 1.79 remates totales (0.64 a puerta), A. Arce 1.73 remates totales (0.6 a puerta), M. Fernández 1.63 remates totales (0.89 a puerta)",
+   "tarjetas": "Independiente: D. Martínez 0.33 amarillas/partido, M. Valenzuela 0.29 amarillas/partido, L. Godoy 0.25 amarillas/partido | Independ. Rivadavia: L. Sabato 1.0 amarillas/partido, M. Salas 0.5 amarillas/partido, I. Villalba 0.37 amarillas/partido",
+   "asistencias": "Independiente: G. Ávalos 0.23 asistencias/partido, V. Malcorra 0.2 asistencias/partido, F. Tempone 0.2 asistencias/partido | Independ. Rivadavia: S. Villa 0.36 asistencias/partido, M. Fernández 0.26 asistencias/partido, R. Atencio 0.2 asistencias/partido",
+   "faltas": "Independiente: F. Zabala 1.65 faltas/partido, M. Valenzuela 1.43 faltas/partido, G. Ávalos 1.36 faltas/partido | Independ. Rivadavia: J. Florentín 1.71 faltas/partido, F. Sartori 1.2 faltas/partido, M. Fernández 1.16 faltas/partido",
+   "quites": "Independiente: F. Zabala 2.4 quites/partido, I. Marcone 2.4 quites/partido, M. Valenzuela 2.14 quites/partido | Independ. Rivadavia: T. Bottari 2.0 quites/partido, I. Villalba 1.89 quites/partido, J. Florentín 1.81 quites/partido"
+  },
+  {
+   "local": "Cuiaba",
+   "visitante": "Goias",
+   "gole": "Kadu 37.0% &middot; Anselmo Ramon 21.2%",
+   "remates": "Cuiaba: Hernandes 1.4 remates totales (0.8 a puerta), Rodrigo Farofa 1.32 remates totales (0.77 a puerta), Jean Dias 1.29 remates totales (0.43 a puerta) | Goias: Kadu 2.0 remates totales (0.85 a puerta), Gegê 1.06 remates totales (0.44 a puerta), Lourenço 0.88 remates totales (0.31 a puerta)",
+   "tarjetas": "Cuiaba: Gabriel 0.75 amarillas/partido, David Miguel 0.45 amarillas/partido, Hernandes 0.4 amarillas/partido | Goias: Luquinhas 0.33 amarillas/partido, Marcos Vinícius 0.33 amarillas/partido, Filipe Machado 0.29 amarillas/partido",
+   "asistencias": "Cuiaba: Eliel 0.43 asistencias/partido, Fábio Gomes 0.33 asistencias/partido, Hernandes 0.2 asistencias/partido | Goias: E. García 0.2 asistencias/partido, Diego Caito 0.17 asistencias/partido, Lucas Lima 0.14 asistencias/partido",
+   "faltas": "Cuiaba: David Miguel 2.15 faltas/partido, Pepê 1.8 faltas/partido, Hernandes 1.6 faltas/partido | Goias: Kadu 2.0 faltas/partido, Luquinhas 1.44 faltas/partido, Luis Fellipe 1.18 faltas/partido",
+   "quites": "Cuiaba: Raul 1.87 quites/partido, Igor Inocêncio 1.75 quites/partido, Lorenzo 1.71 quites/partido | Goias: Luquinhas 1.89 quites/partido, Lucas Lima 1.5 quites/partido, Kadu 1.46 quites/partido"
   }
  ]
 }
