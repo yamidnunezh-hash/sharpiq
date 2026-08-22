@@ -1,31 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Athletic Club",
-   "visitante": "Sevilla",
-   "gole": "Peque Fernández 63.2% &middot; Jon Guridi 63.2%"
-  },
-  {
-   "local": "Sparta Rotterdam",
-   "visitante": "Utrecht",
-   "gole": "N. Þórisson 39.3% &middot; A. Blake 39.3%",
-   "remates": "Sparta Rotterdam: N. Þórisson 3.5 remates totales (2.0 a puerta), A. Santos 2.0 remates totales (1.0 a puerta), M. Young 1.0 remates totales (0.5 a puerta) | Utrecht: M. Eerdhuijzen 1.5 remates totales (0.5 a puerta), D. de Wit 1.0 remates totales (1.0 a puerta), Y. Cathline 1.0 remates totales (0.0 a puerta)",
-   "tarjetas": "Sparta Rotterdam: L. Martes 0.5 amarillas/partido, C. Terho 0.5 amarillas/partido, M. van Bergen 0.5 amarillas/partido | Utrecht: A. Zagré 0.5 amarillas/partido, D. de Wit 0.5 amarillas/partido, F. Pohl 0.5 amarillas/partido",
-   "asistencias": "Sparta Rotterdam: S. Mito 0.5 asistencias/partido, N. Þórisson 0.5 asistencias/partido, B. Kuipers 0.5 asistencias/partido | Utrecht: Y. Cathline 0.5 asistencias/partido, D. van den Berg 0.5 asistencias/partido",
-   "faltas": "Sparta Rotterdam: N. Þórisson 3.5 faltas/partido, L. Martes 1.5 faltas/partido, M. Zonneveld 1.5 faltas/partido | Utrecht: A. Zagré 3.0 faltas/partido, D. de Wit 2.0 faltas/partido, N. Vesterlund 1.5 faltas/partido",
-   "quites": "Sparta Rotterdam: L. Martes 3.5 quites/partido, M. Young 3.0 quites/partido, A. Santos 2.0 quites/partido | Utrecht: N. Vesterlund 3.0 quites/partido, S. Horemans 3.0 quites/partido, A. Zagré 2.5 quites/partido"
-  },
-  {
-   "local": "Estoril",
-   "visitante": "Rio Ave",
-   "gole": "",
-   "remates": "Estoril: André Lacximicant 2.5 remates totales (2.0 a puerta), Xeka 2.0 remates totales (1.0 a puerta), Isma Sierra 1.5 remates totales (0.0 a puerta) | Rio Ave: J. Blesa 1.5 remates totales (0.5 a puerta), Tamble Monteiro 1.5 remates totales (0.5 a puerta), G. Liavas 1.0 remates totales (0.0 a puerta)",
-   "tarjetas": "Estoril: Ricard Sánchez 0.5 amarillas/partido, Ferro 0.5 amarillas/partido, Isma Sierra 0.5 amarillas/partido | Rio Ave: G. Liavas 0.5 amarillas/partido, N. Abbey 0.5 amarillas/partido",
-   "asistencias": "Estoril: Pedro Carvalho 0.5 asistencias/partido",
-   "faltas": "Estoril: Xeka 3.5 faltas/partido, Ricard Sánchez 2.5 faltas/partido, A. Tsoungui 2.0 faltas/partido | Rio Ave: N. Abbey 1.5 faltas/partido, T. Nikitscher 1.0 faltas/partido, G. Liavas 0.5 faltas/partido",
-   "quites": "Estoril: Ricard Sánchez 2.5 quites/partido, Fernando Medrano 2.5 quites/partido, R. Guitane 2.5 quites/partido | Rio Ave: T. Nikitscher 4.0 quites/partido, G. Liavas 3.0 quites/partido, N. Abbey 3.0 quites/partido"
-  },
-  {
    "local": "Fluminense",
    "visitante": "Remo",
    "gole": "John Kennedy 39.3% &middot; Jája Silva 27.1% &middot; Alef Manga 19.5%",
@@ -68,7 +43,7 @@
   {
    "local": "Espanyol",
    "visitante": "Real Madrid",
-   "gole": "Roberto Fernández 66.8% &middot; Lee Kang-In 63.2% &middot; Álex Baena 63.2%"
+   "gole": "Roberto Fernández 65.2% &middot; Álex Baena 63.2% &middot; Lee Kang-In 63.2%"
   },
   {
    "local": "Sporting CP",
@@ -179,6 +154,86 @@
    "asistencias": "Orlando City SC: A. Griezmann 0.4 asistencias/partido, Justin Ellis 0.31 asistencias/partido, E. Atuesta 0.21 asistencias/partido | Real Salt Lake: S. Lobzhanidze 0.6 asistencias/partido, M. Guilavogui 0.27 asistencias/partido, Z. Gozo 0.25 asistencias/partido",
    "faltas": "Orlando City SC: B. Ojeda 1.33 faltas/partido, Tiago 1.18 faltas/partido, D. Brekalo 1.0 faltas/partido | Real Salt Lake: D. Yedlin 1.77 faltas/partido, S. Spierings 1.5 faltas/partido, M. Guilavogui 1.33 faltas/partido",
    "quites": "Orlando City SC: G. Dorsey 1.88 quites/partido, E. Atuesta 1.86 quites/partido, I. Angulo 1.85 quites/partido | Real Salt Lake: Z. Gozo 2.62 quites/partido, J. Sanabria 1.88 quites/partido, S. Spierings 1.75 quites/partido"
+  },
+  {
+   "local": "Charlotte",
+   "visitante": "DC United",
+   "gole": "Pep Biel 39.3%",
+   "remates": "Charlotte: A. Saint-Maximin 2.5 remates totales (1.5 a puerta), Pep Biel 1.85 remates totales (0.95 a puerta), W. Zaha 1.69 remates totales (1.08 a puerta) | DC United: L. Munteanu 2.38 remates totales (1.19 a puerta), T. Baribo 1.94 remates totales (1.0 a puerta), K. Nono 1.5 remates totales (0.5 a puerta)",
+   "tarjetas": "Charlotte: W. Zaha 0.54 amarillas/partido, A. Westwood 0.37 amarillas/partido, D. Schnegg 0.33 amarillas/partido | DC United: A. Dozzell 0.4 amarillas/partido, L. Bartlett 0.26 amarillas/partido, Peglow 0.22 amarillas/partido",
+   "asistencias": "Charlotte: L. Abada 0.29 asistencias/partido, Pep Biel 0.25 asistencias/partido, K. Vargas 0.24 asistencias/partido | DC United: K. Nono 0.5 asistencias/partido, N. Ordaz 0.2 asistencias/partido, K. Kurokawa 0.2 asistencias/partido",
+   "faltas": "Charlotte: W. Zaha 1.77 faltas/partido, B. Bronico 1.06 faltas/partido, D. Diani 1.0 faltas/partido | DC United: Peglow 1.67 faltas/partido, L. Bartlett 1.58 faltas/partido, Gabriel Pirani 1.57 faltas/partido",
+   "quites": "Charlotte: H. Toffolo 2.08 quites/partido, H. Kessler 1.25 quites/partido, B. Bronico 1.12 quites/partido | DC United: K. Nono 3.5 quites/partido, S. Hefti 3.0 quites/partido, Peglow 2.72 quites/partido"
+  },
+  {
+   "local": "Cruzeiro",
+   "visitante": "Flamengo",
+   "gole": "Pedro 47.1% &middot; Kaio Jorge 29.7% &middot; Christian 25.5%",
+   "remates": "Cruzeiro: Matheus Pereira 1.85 remates totales (0.75 a puerta), Kaio Jorge 1.59 remates totales (0.71 a puerta), N. Villareal 1.58 remates totales (0.67 a puerta) | Flamengo: Pedro 1.82 remates totales (1.23 a puerta), Lucas Paquetá 1.5 remates totales (0.64 a puerta), G. de Arrascaeta 1.47 remates totales (0.73 a puerta)",
+   "tarjetas": "Cruzeiro: Felipe Morais 0.5 amarillas/partido, Matheus Pereira 0.45 amarillas/partido, Lucas Silva 0.33 amarillas/partido | Flamengo: E. Pulgar 0.38 amarillas/partido, Léo Pereira 0.32 amarillas/partido, N. de la Cruz 0.27 amarillas/partido",
+   "asistencias": "Cruzeiro: Fágner 0.25 asistencias/partido, L. Romero 0.19 asistencias/partido, Christian 0.18 asistencias/partido | Flamengo: Samuel Lino 0.32 asistencias/partido, J. Carrascal 0.25 asistencias/partido, G. Plata 0.23 asistencias/partido",
+   "faltas": "Cruzeiro: Felipe Morais 3.0 faltas/partido, Kaiki 2.25 faltas/partido, G. Rojas 1.75 faltas/partido | Flamengo: Lorran 2.0 faltas/partido, Alex Sandro 1.56 faltas/partido, Lucas Paquetá 1.36 faltas/partido",
+   "quites": "Cruzeiro: Kaiki 2.25 quites/partido, G. Rojas 2.0 quites/partido, Kauã Moraes 1.8 quites/partido | Flamengo: Lucas Paquetá 1.79 quites/partido, G. Plata 1.69 quites/partido, E. Pulgar 1.62 quites/partido"
+  },
+  {
+   "local": "Huracan",
+   "visitante": "Deportivo Riestra",
+   "gole": "J. Caicedo 39.3%",
+   "remates": "Huracan: J. Caicedo 1.64 remates totales (1.05 a puerta), N. Paz 1.4 remates totales (0.4 a puerta), L. Blondel 1.33 remates totales (0.2 a puerta) | Deportivo Riestra: M. Céliz 2.6 remates totales (1.6 a puerta), T. González 1.4 remates totales (0.6 a puerta), Antony Daniel Alonso Espinoza 1.33 remates totales (0.86 a puerta)",
+   "tarjetas": "Huracan: C. Ibáñez 0.5 amarillas/partido, R. Fernández 0.5 amarillas/partido, I. Pussetto 0.5 amarillas/partido | Deportivo Riestra: G. Flores 0.6 amarillas/partido, C. Quintana 0.6 amarillas/partido, L. Landriel 0.5 amarillas/partido",
+   "asistencias": "Huracan: Ó. Cortés 0.19 asistencias/partido, E. Ojeda 0.11 asistencias/partido, C. Ibáñez 0.11 asistencias/partido | Deportivo Riestra: C. Quintana 0.2 asistencias/partido, N. Sansotre 0.06 asistencias/partido, N. Watson 0.06 asistencias/partido",
+   "faltas": "Huracan: R. Fernández 3.0 faltas/partido, C. Ibáñez 2.11 faltas/partido, J. Caicedo 2.0 faltas/partido | Deportivo Riestra: M. Céliz 2.6 faltas/partido, N. Benegas 1.57 faltas/partido, N. Watson 1.53 faltas/partido",
+   "quites": "Huracan: R. Fernández 3.0 quites/partido, F. Waller 2.94 quites/partido, C. Ibáñez 2.78 quites/partido | Deportivo Riestra: M. Céliz 2.2 quites/partido, B. Sánchez 2.2 quites/partido, P. Ramírez 2.0 quites/partido"
+  },
+  {
+   "local": "Newells Old Boys",
+   "visitante": "Banfield",
+   "gole": "M. Méndez 31.3% &middot; Tiziano Perrota 29.7%",
+   "remates": "Newells Old Boys: I. Ramírez 1.07 remates totales (0.67 a puerta), O. Salomón 1.0 remates totales (0.62 a puerta), L. Herrera 0.88 remates totales (0.38 a puerta) | Banfield: Tiziano Perrota 1.65 remates totales (0.76 a puerta), D. Zalazar 1.62 remates totales (0.44 a puerta), M. Méndez 1.56 remates totales (0.75 a puerta)",
+   "tarjetas": "Newells Old Boys: L. Regiardo 0.44 amarillas/partido, M. Luciano 0.33 amarillas/partido, S. Salcedo 0.29 amarillas/partido | Banfield: T. Adoryán 0.4 amarillas/partido, S. Vittor 0.23 amarillas/partido, Santiago Esquivel 0.23 amarillas/partido",
+   "asistencias": "Newells Old Boys: M. Ortega 0.33 asistencias/partido, T. Rios 0.2 asistencias/partido, Facundo Gauch 0.16 asistencias/partido | Banfield: S. López 0.19 asistencias/partido, I. Abraham 0.19 asistencias/partido, M. Méndez 0.19 asistencias/partido",
+   "faltas": "Newells Old Boys: L. Herrera 2.0 faltas/partido, L. Regiardo 1.5 faltas/partido, R. Herrera 1.5 faltas/partido | Banfield: L. Ríos 2.0 faltas/partido, T. Adoryán 2.0 faltas/partido, I. Pais 1.88 faltas/partido",
+   "quites": "Newells Old Boys: A. Méndez 3.79 quites/partido, F. Escobar 2.6 quites/partido, R. Herrera 2.0 quites/partido | Banfield: I. Pais 2.59 quites/partido, T. Adoryán 2.53 quites/partido, J. Alfaro 2.2 quites/partido"
+  },
+  {
+   "local": "Nashville SC",
+   "visitante": "Columbus Crew",
+   "gole": "S. Surridge 57.6%",
+   "remates": "Nashville SC: H. Mukhtar 1.9 remates totales (1.15 a puerta), S. Surridge 1.79 remates totales (1.36 a puerta), W. Madrigal 1.2 remates totales (0.53 a puerta) | Columbus Crew: W. Abou Ali 2.0 remates totales (1.29 a puerta), D. Rossi 1.93 remates totales (0.8 a puerta), M. Arfsten 1.12 remates totales (0.59 a puerta)",
+   "tarjetas": "Nashville SC: E. Saad 0.33 amarillas/partido, D. Lovitz 0.25 amarillas/partido, M. Corcoran 0.24 amarillas/partido | Columbus Crew: R. Camacho 0.32 amarillas/partido, André Gomes 0.23 amarillas/partido, S. Bangoura 0.19 amarillas/partido",
+   "asistencias": "Nashville SC: E. Saad 0.67 asistencias/partido, C. Espinoza 0.5 asistencias/partido, P. Yazbek 0.27 asistencias/partido | Columbus Crew: M. Arfsten 0.24 asistencias/partido, M. Farsi 0.2 asistencias/partido, W. Abou Ali 0.14 asistencias/partido",
+   "faltas": "Nashville SC: E. Saad 2.33 faltas/partido, B. Acosta 1.18 faltas/partido, D. Lovitz 1.15 faltas/partido | Columbus Crew: André Gomes 1.46 faltas/partido, T. Habroune 1.16 faltas/partido, W. Abou Ali 1.14 faltas/partido",
+   "quites": "Nashville SC: E. Saad 2.0 quites/partido, J. Palacios 1.8 quites/partido, M. Corcoran 1.71 quites/partido | Columbus Crew: T. Karumanchi 2.5 quites/partido, T. Habroune 2.32 quites/partido, M. Arfsten 1.88 quites/partido"
+  },
+  {
+   "local": "St. Louis City",
+   "visitante": "Houston Dynamo",
+   "gole": "Guilherme 45.1%",
+   "remates": "St. Louis City: M. Hartel 2.88 remates totales (1.56 a puerta), S. Becher 1.95 remates totales (0.75 a puerta), E. Löwen 1.08 remates totales (0.31 a puerta) | Houston Dynamo: M. Bogusz 2.26 remates totales (1.21 a puerta), Guilherme 2.15 remates totales (1.3 a puerta), E. Ponce 0.88 remates totales (0.24 a puerta)",
+   "tarjetas": "St. Louis City: C. Durkin 0.5 amarillas/partido, B. Lundt 0.5 amarillas/partido, M. Fall 0.33 amarillas/partido | Houston Dynamo: Felipe Andrade 0.47 amarillas/partido, Lucas Halter 0.33 amarillas/partido, E. Sviatchenko 0.3 amarillas/partido",
+   "asistencias": "St. Louis City: S. Becher 0.2 asistencias/partido, T. Totland 0.19 asistencias/partido, M. Hartel 0.19 asistencias/partido | Houston Dynamo: J. McGlynn 0.31 asistencias/partido, Guilherme 0.25 asistencias/partido, L. Ennali 0.1 asistencias/partido",
+   "faltas": "St. Louis City: C. Wallem 2.35 faltas/partido, C. Durkin 2.11 faltas/partido, S. Becher 1.45 faltas/partido | Houston Dynamo: Felipe Andrade 1.4 faltas/partido, E. Ponce 1.24 faltas/partido, A. Resch 1.21 faltas/partido",
+   "quites": "St. Louis City: C. Durkin 2.0 quites/partido, C. Wallem 1.88 quites/partido, D. Polvara 1.8 quites/partido | Houston Dynamo: Felipe Andrade 2.2 quites/partido, D. Holmes 1.75 quites/partido, A. Resch 1.42 quites/partido"
+  },
+  {
+   "local": "Austin",
+   "visitante": "Philadelphia Union",
+   "gole": "M. Iloski 39.3%",
+   "remates": "Austin: M. Uzuni 1.88 remates totales (0.94 a puerta), B. Vázquez 1.33 remates totales (0.89 a puerta), P. Płacheta 1.2 remates totales (0.8 a puerta) | Philadelphia Union: M. Iloski 2.8 remates totales (1.4 a puerta), Neil Pierre 2.0 remates totales (0.8 a puerta), B. Damiani 1.55 remates totales (0.5 a puerta)",
+   "tarjetas": "Austin: M. Uzuni 0.29 amarillas/partido, B. Šabović 0.27 amarillas/partido, Ilie Sánchez 0.24 amarillas/partido | Philadelphia Union: K. Wagner 0.4 amarillas/partido, O. Makhanya 0.38 amarillas/partido, J. Sery Larsen 0.36 amarillas/partido",
+   "asistencias": "Austin: R. Taylor 0.5 asistencias/partido, Ervin Torres 0.29 asistencias/partido, F. Torres 0.25 asistencias/partido | Philadelphia Union: K. Wagner 0.6 asistencias/partido, F. Westfield 0.31 asistencias/partido, Q. Sullivan 0.2 asistencias/partido",
+   "faltas": "Austin: J. Rosales 1.74 faltas/partido, O. Wolff 1.12 faltas/partido, N. Dubersarsky 1.0 faltas/partido | Philadelphia Union: J. Sery Larsen 2.18 faltas/partido, B. Damiani 1.7 faltas/partido, J. Lukić 1.61 faltas/partido",
+   "quites": "Austin: J. Rosales 1.89 quites/partido, N. Dubersarsky 1.64 quites/partido, M. Desler 1.4 quites/partido | Philadelphia Union: F. Sundstrom 2.5 quites/partido, O. Makhanya 2.31 quites/partido, F. Westfield 1.94 quites/partido"
+  },
+  {
+   "local": "Puebla",
+   "visitante": "Santos Laguna",
+   "gole": "E. Mustre 22.1%",
+   "remates": "Puebla: F. Almada 1.25 remates totales (0.5 a puerta), F. Monárrez 1.0 remates totales (0.25 a puerta), K. Velasco 1.0 remates totales (0.5 a puerta) | Santos Laguna: E. Bullaude 2.5 remates totales (0.75 a puerta), L. Di Yorio 1.0 remates totales (0.67 a puerta), E. EcheverrÃ­a 1.0 remates totales (0.67 a puerta)",
+   "tarjetas": "Puebla: A. Ramírez 0.33 amarillas/partido, F. Monárrez 0.25 amarillas/partido, E. Mustre 0.25 amarillas/partido | Santos Laguna: C. Gruezo 0.5 amarillas/partido, Felipe Sánchez 0.25 amarillas/partido, M. Cuevas 0.25 amarillas/partido",
+   "asistencias": "Puebla: A. Herrera 1.0 asistencias/partido, L. Hernández 0.33 asistencias/partido, E. Mustre 0.25 asistencias/partido | Santos Laguna: Felipe Sánchez 0.25 asistencias/partido",
+   "faltas": "Puebla: A. Herrera 2.5 faltas/partido, A. Organista 1.5 faltas/partido, S. Sanabria 1.5 faltas/partido | Santos Laguna: E. Bullaude 2.0 faltas/partido, L. Di Yorio 1.33 faltas/partido, E. EcheverrÃ­a 1.33 faltas/partido",
+   "quites": "Puebla: S. Sanabria 3.5 quites/partido, F. Monárrez 1.75 quites/partido, E. Gómez 1.75 quites/partido | Santos Laguna: C. Gruezo 4.5 quites/partido, E. Bullaude 2.25 quites/partido, R. Sordo 2.0 quites/partido"
   }
  ]
 }
