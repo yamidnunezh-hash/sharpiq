@@ -1,19 +1,9 @@
 {
  "partidos": [
   {
-   "local": "Estudiantes de Rio Cuarto",
-   "visitante": "San Lorenzo",
-   "gole": "R. Auzmendi 37.0%",
-   "remates": "Estudiantes de Rio Cuarto: A. Quiroga 2.25 remates totales (0.75 a puerta), Y. Moreno 1.2 remates totales (0.2 a puerta), M. Bajamich 1.0 remates totales (0.5 a puerta) | San Lorenzo: R. Auzmendi 2.31 remates totales (1.46 a puerta), A. Cuello 1.57 remates totales (0.62 a puerta), F. Lorenzón 1.0 remates totales (0.33 a puerta)",
-   "tarjetas": "Estudiantes de Rio Cuarto: I. Hesar 0.67 amarillas/partido, M. Valenti 0.43 amarillas/partido, T. Gonzalez 0.35 amarillas/partido | San Lorenzo: F. Lorenzón 0.67 amarillas/partido, M. de Ritis 0.35 amarillas/partido, L. Montenegro 0.33 amarillas/partido",
-   "asistencias": "Estudiantes de Rio Cuarto: R. Lozano 0.12 asistencias/partido, M. Valenti 0.07 asistencias/partido, G. Maffini 0.06 asistencias/partido | San Lorenzo: N. Barrios 0.2 asistencias/partido, A. Cuello 0.14 asistencias/partido, Facundo Gulli 0.13 asistencias/partido",
-   "faltas": "Estudiantes de Rio Cuarto: G. Gonzalez 2.0 faltas/partido, T. Gonzalez 1.8 faltas/partido, Y. Moreno 1.2 faltas/partido | San Lorenzo: J. Álvarez 2.5 faltas/partido, L. Montenegro 1.67 faltas/partido, E. Cerutti 1.57 faltas/partido",
-   "quites": "Estudiantes de Rio Cuarto: F. Rodríguez 3.0 quites/partido, F. Cobos 2.45 quites/partido, T. Gonzalez 2.1 quites/partido | San Lorenzo: F. Lorenzón 3.0 quites/partido, G. Hernández 2.89 quites/partido, A. Cordoba 2.75 quites/partido"
-  },
-  {
    "local": "Leon",
    "visitante": "Monterrey",
-   "gole": "L. Ocampos 67.9% &middot; D. Rossi 39.3% &middot; D. Arcila 39.3%",
+   "gole": "L. Ocampos 66.5% &middot; D. Rossi 39.3% &middot; D. Arcila 39.3%",
    "remates": "Leon: D. Arcila 2.0 remates totales (1.0 a puerta), D. Cambindo 2.0 remates totales (1.0 a puerta), E. Guerra 1.33 remates totales (1.0 a puerta) | Monterrey: L. Ocampos 3.25 remates totales (1.75 a puerta), D. Rossi 2.5 remates totales (1.25 a puerta), L. Orellano 2.25 remates totales (2.0 a puerta)",
    "tarjetas": "Leon: B. Colula 0.67 amarillas/partido, R. Echeverría 0.5 amarillas/partido, J. Alvarado 0.5 amarillas/partido | Monterrey: C. Salcedo 1.0 amarillas/partido, R. Chávez 0.25 amarillas/partido, A. Aceves 0.25 amarillas/partido",
    "asistencias": "Leon: J. Alvarado 0.5 asistencias/partido, L. Valadez 0.25 asistencias/partido | Monterrey: D. Rossi 0.75 asistencias/partido, O. Pineda 0.33 asistencias/partido, H. Cuypers 0.33 asistencias/partido",
@@ -124,6 +114,16 @@
    "local": "Espanyol",
    "visitante": "Real Madrid",
    "gole": "Roberto Fernández 66.8% &middot; Lee Kang-In 63.2% &middot; Álex Baena 63.2%"
+  },
+  {
+   "local": "Sporting CP",
+   "visitante": "Alverca",
+   "gole": "Vivaldo Semedo 39.3%",
+   "remates": "Sporting CP: F. Ioannidis 4.0 remates totales (2.0 a puerta), Flávio Gonçalves 2.0 remates totales (1.5 a puerta), R. Zalazar 1.0 remates totales (1.0 a puerta) | Alverca: Ian Luccas 2.5 remates totales (1.0 a puerta), Chiquinho 2.5 remates totales (0.5 a puerta), Vivaldo Semedo 2.0 remates totales (1.0 a puerta)",
+   "tarjetas": "Sporting CP: Eduardo Quaresma 0.5 amarillas/partido, Gonçalo Inácio 0.5 amarillas/partido, Sergi Altimira 0.5 amarillas/partido | Alverca: Matheus Mendes 0.5 amarillas/partido, Y. Bojang 0.5 amarillas/partido, Zoubdi 0.5 amarillas/partido",
+   "asistencias": "Sporting CP: Geny Catamo 1.0 asistencias/partido, F. Ioannidis 1.0 asistencias/partido, R. Zalazar 0.5 asistencias/partido | Alverca: I. James 0.5 asistencias/partido",
+   "faltas": "Sporting CP: I. Doumbia 2.5 faltas/partido, G. Vagiannidis 2.0 faltas/partido, Sergi Altimira 1.5 faltas/partido | Alverca: D. Gui 1.5 faltas/partido, Chiquinho 1.5 faltas/partido, Vivaldo Semedo 1.5 faltas/partido",
+   "quites": "Sporting CP: Sergi Altimira 5.5 quites/partido, I. Doumbia 2.5 quites/partido, Eduardo Quaresma 2.0 quites/partido | Alverca: D. Gui 3.0 quites/partido, Chiquinho 3.0 quites/partido, Figueiredo 2.5 quites/partido"
   }
  ]
 }
