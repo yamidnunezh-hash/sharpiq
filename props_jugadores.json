@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Vitória SC",
-   "visitante": "Nacional",
-   "gole": "Léo Santos 39.3%",
-   "remates": "Vitória SC: Gustavo 3.5 remates totales (1.0 a puerta), A. Ndoye 3.5 remates totales (0.5 a puerta), Samu 3.0 remates totales (1.0 a puerta) | Nacional: Léo Santos 2.5 remates totales (0.5 a puerta), Pablo Ruan 2.0 remates totales (0.5 a puerta), Zé Vitor 1.0 remates totales (0.5 a puerta)",
-   "tarjetas": "Vitória SC: Óscar Rivas 0.5 amarillas/partido, Thiago Balieiro 0.5 amarillas/partido, Gustavo 0.5 amarillas/partido | Nacional: Filipe Soares 1.0 amarillas/partido, Matheus Dias 0.5 amarillas/partido, Wesley Gasolina 0.5 amarillas/partido",
-   "asistencias": "Vitória SC: T. Strata 0.5 asistencias/partido, Miguel Nogueira 0.5 asistencias/partido | Nacional: Léo Santos 0.5 asistencias/partido, Daniel Júnior 0.5 asistencias/partido",
-   "faltas": "Vitória SC: A. Ndoye 2.5 faltas/partido, Gustavo 2.0 faltas/partido, João Mendes 1.5 faltas/partido | Nacional: Liziero 2.5 faltas/partido, Pablo Ruan 2.0 faltas/partido, Léo Santos 1.5 faltas/partido",
-   "quites": "Vitória SC: Gustavo 4.5 quites/partido, João Mendes 2.5 quites/partido, Beni 2.5 quites/partido | Nacional: Liziero 4.0 quites/partido, Zé Vitor 2.5 quites/partido, Filipe Soares 2.0 quites/partido"
-  },
-  {
    "local": "Cambuur",
    "visitante": "Feyenoord",
    "gole": "A. Ueda 39.3% &middot; G. Zechiël 39.3%",
@@ -23,7 +13,7 @@
   {
    "local": "Atletico Madrid",
    "visitante": "Villarreal",
-   "gole": "N. Pépé 63.2% &middot; P. Gueye 63.2% &middot; Álex Baena 60.1%"
+   "gole": "Álex Baena 63.2% &middot; Lee Kang-In 63.2% &middot; N. Pépé 63.2%"
   },
   {
    "local": "Santa Clara",
@@ -214,6 +204,16 @@
    "asistencias": "Atlanta United FC: A. Miranchuk 0.32 asistencias/partido, M. Almirón 0.21 asistencias/partido, E. Latte Lath 0.14 asistencias/partido | Sporting Kansas City: Manu García 0.22 asistencias/partido, C. Harris 0.15 asistencias/partido, J. Reynolds 0.12 asistencias/partido",
    "faltas": "Atlanta United FC: M. Galarza 1.8 faltas/partido, C. Sanchez 1.78 faltas/partido, R. Hernández 1.5 faltas/partido | Sporting Kansas City: Capita 2.08 faltas/partido, Z. Bassong 1.82 faltas/partido, M. Mosquera 1.67 faltas/partido",
    "quites": "Atlanta United FC: M. Galarza 2.6 quites/partido, T. Muyumba 2.3 quites/partido, T. Jacob 2.24 quites/partido | Sporting Kansas City: E. Karić 2.83 quites/partido, J. Davis 2.16 quites/partido, J. Reid 1.8 quites/partido"
+  },
+  {
+   "local": "Atletico San Luis",
+   "visitante": "CF Pachuca",
+   "gole": "S. Rondón 71.3% &middot; Rafa Llorente 68.3%",
+   "remates": "Atletico San Luis: D. Rodríguez 2.0 remates totales (1.0 a puerta), S. Salles-Lamonge 1.75 remates totales (0.75 a puerta), L. Flores 1.25 remates totales (0.0 a puerta) | CF Pachuca: S. Rondón 3.75 remates totales (1.5 a puerta), C. Sánchez 1.33 remates totales (0.33 a puerta), O. Idrissi 1.0 remates totales (0.5 a puerta)",
+   "tarjetas": "Atletico San Luis: Robson Bambu 0.75 amarillas/partido, M. García 0.25 amarillas/partido | CF Pachuca: F. Venegas 0.33 amarillas/partido, Kenedy 0.33 amarillas/partido, C. Sánchez 0.33 amarillas/partido",
+   "asistencias": "Atletico San Luis: R. Torres 0.25 asistencias/partido, L. Flores 0.25 asistencias/partido | CF Pachuca: O. Idrissi 0.5 asistencias/partido, C. Sánchez 0.33 asistencias/partido, E. Montiel 0.25 asistencias/partido",
+   "faltas": "Atletico San Luis: Robson Bambu 2.25 faltas/partido, S. Salles-Lamonge 1.5 faltas/partido, F. Mora 1.0 faltas/partido | CF Pachuca: C. Rivera 2.33 faltas/partido, O. Idrissi 2.0 faltas/partido, F. Venegas 1.33 faltas/partido",
+   "quites": "Atletico San Luis: Ó. Macías 2.0 quites/partido, E.  Águila 1.75 quites/partido, R. Torres 1.75 quites/partido | CF Pachuca: C. Rivera 4.67 quites/partido, Eduardo Bauermann 2.0 quites/partido, A. Domínguez 2.0 quites/partido"
   }
  ]
 }
