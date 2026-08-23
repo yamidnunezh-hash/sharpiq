@@ -1,56 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Cambuur",
-   "visitante": "Feyenoord",
-   "gole": "A. Ueda 39.3% &middot; G. Zechiël 39.3%",
-   "remates": "Cambuur: S. Bouhoudane 3.0 remates totales (0.5 a puerta), R. El Arguioui 2.0 remates totales (1.0 a puerta), Iwan Henstra 1.5 remates totales (0.5 a puerta) | Feyenoord: G. Diarra 4.0 remates totales (1.5 a puerta), A. Ueda 3.5 remates totales (1.0 a puerta), A. Hadj-Moussa 3.0 remates totales (0.5 a puerta)",
-   "tarjetas": "Cambuur: L. Jetten 0.5 amarillas/partido, N. Souren 0.5 amarillas/partido | Feyenoord: C. Vanhoutte 0.5 amarillas/partido",
-   "asistencias": "Cambuur: N. Souren 0.5 asistencias/partido | Feyenoord: G. Zechiël 0.5 asistencias/partido, A. Hadj-Moussa 0.5 asistencias/partido, A. Ueda 0.5 asistencias/partido",
-   "faltas": "Cambuur: J. Amofa 1.0 faltas/partido, N. Souren 1.0 faltas/partido, S. Vink 1.0 faltas/partido | Feyenoord: A. Hadj-Moussa 1.0 faltas/partido, G. Read 0.5 faltas/partido, T. Kraaijeveld 0.5 faltas/partido",
-   "quites": "Cambuur: J. Amofa 2.5 quites/partido, Iwan Henstra 2.5 quites/partido, N. Souren 2.0 quites/partido | Feyenoord: G. Read 2.0 quites/partido, G. Zechiël 1.5 quites/partido, C. Vanhoutte 1.5 quites/partido"
-  },
-  {
-   "local": "Atletico Madrid",
-   "visitante": "Villarreal",
-   "gole": "Álex Baena 63.2% &middot; Lee Kang-In 63.2% &middot; N. Pépé 63.2%"
-  },
-  {
-   "local": "Santa Clara",
-   "visitante": "Famalicao",
-   "gole": "Gonçalo Paciência 63.4%",
-   "remates": "Santa Clara: Gonçalo Paciência 4.0 remates totales (2.5 a puerta), Daniel Borges 1.0 remates totales (0.5 a puerta), Vinícius Lopes 1.0 remates totales (0.5 a puerta) | Famalicao: Sorriso 2.5 remates totales (1.5 a puerta), U. Abubakar 1.0 remates totales (0.5 a puerta), F. van Breemen 0.5 remates totales (0.5 a puerta)",
-   "tarjetas": "Santa Clara: Pedro Pacheco 0.5 amarillas/partido, Guilherme Romão 0.5 amarillas/partido, Daniel Borges 0.5 amarillas/partido | Famalicao: Rodrigo Pinheiro 0.5 amarillas/partido, F. van Breemen 0.5 amarillas/partido, R. Beney 0.5 amarillas/partido",
-   "asistencias": "Santa Clara: Diogo Calila 0.5 asistencias/partido | Famalicao: Gil Dias 0.5 asistencias/partido, Óscar Aranda 0.5 asistencias/partido",
-   "faltas": "Santa Clara: Pedro Ferreira 2.0 faltas/partido, Daniel Borges 2.0 faltas/partido, Tiago Ribeiro 2.0 faltas/partido | Famalicao: F. van Breemen 3.0 faltas/partido, Pedro Santos 2.5 faltas/partido, Mathias De Amorim 2.0 faltas/partido",
-   "quites": "Santa Clara: Pedro Ferreira 3.5 quites/partido, Diogo Calila 3.0 quites/partido, José Luís Rocha Tavares 2.5 quites/partido | Famalicao: Mathias De Amorim 3.5 quites/partido, Rodrigo Pinheiro 2.5 quites/partido, T. van de Looi 2.5 quites/partido"
-  },
-  {
-   "local": "Getafe",
-   "visitante": "Racing Santander",
-   "gole": "Sergio Martínez 63.2% &middot; Andrés Martín 63.2%"
-  },
-  {
-   "local": "Barracas Central",
-   "visitante": "Platense",
-   "gole": "M. Santos 28.3%",
-   "remates": "Barracas Central: F. Bruera 1.33 remates totales (0.61 a puerta), N. Briasco 1.17 remates totales (0.5 a puerta), J. Morales 1.0 remates totales (0.42 a puerta) | Platense: F. Zapiola 1.42 remates totales (0.68 a puerta), N. López 1.33 remates totales (1.33 a puerta), H. Bobadilla 1.33 remates totales (0.67 a puerta)",
-   "tarjetas": "Barracas Central: F. Bruera 0.28 amarillas/partido, Ivan Guaraz 0.27 amarillas/partido, G. Maroni 0.27 amarillas/partido | Platense: V. Cuesta 0.42 amarillas/partido, F. Amarfil 0.36 amarillas/partido, S. Dalmasso 0.33 amarillas/partido",
-   "asistencias": "Barracas Central: T. Porra 0.19 asistencias/partido, I. Tapia 0.1 asistencias/partido, N. Demartini 0.07 asistencias/partido | Platense: N. Retamar 0.12 asistencias/partido, J. Gauto 0.11 asistencias/partido, T. Nasif 0.08 asistencias/partido",
-   "faltas": "Barracas Central: F. Bruera 2.0 faltas/partido, N. Briasco 1.67 faltas/partido, N. Demartini 1.57 faltas/partido | Platense: F. Amarfil 1.71 faltas/partido, Stefan Đokić 1.67 faltas/partido, L. Giménez 1.33 faltas/partido",
-   "quites": "Barracas Central: N. Demartini 1.86 quites/partido, D. Miloc 1.65 quites/partido, R. Barrios 1.64 quites/partido | Platense: T. Silva 2.94 quites/partido, P. Ferreira 2.88 quites/partido, J. Saborido 2.67 quites/partido"
-  },
-  {
-   "local": "Sarmiento Junin",
-   "visitante": "Estudiantes L.P.",
-   "gole": "J. Marabel 37.9%",
-   "remates": "Sarmiento Junin: J. Marabel 1.76 remates totales (0.9 a puerta), J. Mavilla 1.25 remates totales (0.5 a puerta), Mauricio Leonel Martínez 0.81 remates totales (0.31 a puerta) | Estudiantes L.P.: G. Carrillo 2.19 remates totales (1.38 a puerta), C. Medina 1.2 remates totales (0.6 a puerta), A. Gaich 1.0 remates totales (0.42 a puerta)",
-   "tarjetas": "Sarmiento Junin: J. Insaurralde 0.39 amarillas/partido, C. Villalba 0.36 amarillas/partido, S. Salle 0.35 amarillas/partido | Estudiantes L.P.: L. González 0.47 amarillas/partido, J. Pereyra 0.33 amarillas/partido, E. Meza 0.31 amarillas/partido",
-   "asistencias": "Sarmiento Junin: G. González 0.2 asistencias/partido, J. Marabel 0.14 asistencias/partido, P. Magnín 0.12 asistencias/partido | Estudiantes L.P.: J. Burgos 0.23 asistencias/partido, C. Medina 0.2 asistencias/partido, A. Gaich 0.17 asistencias/partido",
-   "faltas": "Sarmiento Junin: E. Giménez 2.67 faltas/partido, J. Contrera 2.17 faltas/partido, M. García 1.79 faltas/partido | Estudiantes L.P.: J. Pereyra 1.67 faltas/partido, Lucas Ezequiel Piovi 1.42 faltas/partido, E. Meza 1.25 faltas/partido",
-   "quites": "Sarmiento Junin: C. Zabala 2.45 quites/partido, M. García 2.0 quites/partido, E. Giménez 2.0 quites/partido | Estudiantes L.P.: Lucas Ezequiel Piovi 3.11 quites/partido, C. Medina 2.2 quites/partido, G. Benedetti 1.82 quites/partido"
-  },
-  {
    "local": "RB Bragantino",
    "visitante": "Gremio",
    "gole": "Carlos Vinícius 37.9% &middot; I. Pitta 25.9%",
@@ -103,12 +53,12 @@
   {
    "local": "Elche",
    "visitante": "Barcelona",
-   "gole": "Marc Aguado 61.9%"
+   "gole": "Marc Aguado 58.2%"
   },
   {
    "local": "FC Porto",
    "visitante": "Arouca",
-   "gole": "Barbero 50.3%",
+   "gole": "Barbero 43.3%",
    "remates": "FC Porto: William 2.0 remates totales (1.0 a puerta), Borja Sainz 1.5 remates totales (1.5 a puerta), D. Gül 1.5 remates totales (0.0 a puerta) | Arouca: T. Fukui 1.5 remates totales (1.0 a puerta), Barbero 1.5 remates totales (1.0 a puerta), José Fontán 1.0 remates totales (1.0 a puerta)",
    "tarjetas": "Arouca: I. de Arruabarrena 0.5 amarillas/partido, Javi Sánchez 0.5 amarillas/partido, Lee Hyun-Ju 0.5 amarillas/partido",
    "asistencias": "FC Porto: Gabri Veiga 0.5 asistencias/partido | Arouca: N. Djouahra 1.5 asistencias/partido, Lee Hyun-Ju 0.5 asistencias/partido",
@@ -214,6 +164,60 @@
    "asistencias": "Atletico San Luis: R. Torres 0.25 asistencias/partido, L. Flores 0.25 asistencias/partido | CF Pachuca: O. Idrissi 0.5 asistencias/partido, C. Sánchez 0.33 asistencias/partido, E. Montiel 0.25 asistencias/partido",
    "faltas": "Atletico San Luis: Robson Bambu 2.25 faltas/partido, S. Salles-Lamonge 1.5 faltas/partido, F. Mora 1.0 faltas/partido | CF Pachuca: C. Rivera 2.33 faltas/partido, O. Idrissi 2.0 faltas/partido, F. Venegas 1.33 faltas/partido",
    "quites": "Atletico San Luis: Ó. Macías 2.0 quites/partido, E.  Águila 1.75 quites/partido, R. Torres 1.75 quites/partido | CF Pachuca: C. Rivera 4.67 quites/partido, Eduardo Bauermann 2.0 quites/partido, A. Domínguez 2.0 quites/partido"
+  },
+  {
+   "local": "Racing Club",
+   "visitante": "Boca Juniors",
+   "gole": "M. Merentiel 23.1%",
+   "remates": "Racing Club: M. Miljevic 1.53 remates totales (0.63 a puerta), E. Torres 1.5 remates totales (0.25 a puerta), A. Martínez 1.44 remates totales (0.5 a puerta) | Boca Juniors: L. Flores 2.0 remates totales (0.6 a puerta), A. Bareiro 1.7 remates totales (1.0 a puerta), M. Giménez 1.62 remates totales (0.75 a puerta)",
+   "tarjetas": "Racing Club: M. Kranevitter 0.6 amarillas/partido, J. Nardoni 0.5 amarillas/partido, T. Rubio 0.5 amarillas/partido | Boca Juniors: L. Paredes 0.42 amarillas/partido, A. Bareiro 0.4 amarillas/partido, L. Janson 0.33 amarillas/partido",
+   "asistencias": "Racing Club: D. Pizarro 0.5 asistencias/partido, G. Rojas 0.29 asistencias/partido, S. Solari 0.2 asistencias/partido | Boca Juniors: E. Zeballos 0.38 asistencias/partido, S. Villa 0.2 asistencias/partido, W. Alarcón 0.17 asistencias/partido",
+   "faltas": "Racing Club: A. Martínez 1.67 faltas/partido, J. Nardoni 1.5 faltas/partido, B. Gallego 1.5 faltas/partido | Boca Juniors: L. Janson 2.33 faltas/partido, A. Bareiro 1.7 faltas/partido, L. Lozano 1.25 faltas/partido",
+   "quites": "Racing Club: E. Cannavo 2.83 quites/partido, G. Escudero 2.0 quites/partido, S. Sosa 1.8 quites/partido | Boca Juniors: L. Blanco 2.74 quites/partido, L. Di Lollo 2.61 quites/partido, M. Braida 2.43 quites/partido"
+  },
+  {
+   "local": "U.N.A.M. - Pumas",
+   "visitante": "Necaxa",
+   "gole": "J. Carranza 60.1% &middot; Juninho 52.8% &middot; R. Morales 22.1%",
+   "remates": "U.N.A.M. - Pumas: U. Antuna 1.67 remates totales (0.33 a puerta), A. Carrasquilla 1.5 remates totales (1.0 a puerta), R. Morales 1.25 remates totales (0.5 a puerta) | Necaxa: J. Carranza 3.0 remates totales (2.0 a puerta), D. Leyva 1.5 remates totales (0.5 a puerta), J. Torres 1.5 remates totales (1.0 a puerta)",
+   "tarjetas": "U.N.A.M. - Pumas: U. Antuna 0.33 amarillas/partido, R. López 0.25 amarillas/partido, Nathan Silva 0.25 amarillas/partido | Necaxa: R. Martínez 0.5 amarillas/partido, A. Oliveros 0.33 amarillas/partido, R. Monreal 0.33 amarillas/partido",
+   "asistencias": "U.N.A.M. - Pumas: R. Morales 0.75 asistencias/partido, A. Carrasquilla 0.5 asistencias/partido, U. Antuna 0.33 asistencias/partido | Necaxa: A. Peña 0.33 asistencias/partido, J. Carranza 0.33 asistencias/partido, M. Zaleta 0.33 asistencias/partido",
+   "faltas": "U.N.A.M. - Pumas: Á. Angulo 2.0 faltas/partido, P. Vite 2.0 faltas/partido, V. Arteaga 1.75 faltas/partido | Necaxa: J. Carranza 2.67 faltas/partido, J. Ruiz 2.25 faltas/partido, R. Martínez 1.25 faltas/partido",
+   "quites": "U.N.A.M. - Pumas: Á. Angulo 2.33 quites/partido, P. Vite 2.0 quites/partido, R. López 1.75 quites/partido | Necaxa: C. Vargas 2.25 quites/partido, J. Ruiz 2.25 quites/partido, D. Leyva 2.0 quites/partido"
+  },
+  {
+   "local": "GIL Vicente",
+   "visitante": "Casa Pia",
+   "gole": "",
+   "remates": "Casa Pia: Rochinha 1.5 remates totales (1.0 a puerta), David Sousa 1.0 remates totales (0.5 a puerta), Henrique Araújo 1.0 remates totales (0.5 a puerta)",
+   "tarjetas": "Casa Pia: David Sousa 0.5 amarillas/partido, S. Pérez 0.5 amarillas/partido, A. Jatta 0.5 amarillas/partido",
+   "faltas": "Casa Pia: Geraldes 2.0 faltas/partido, S. Pérez 1.5 faltas/partido, A. Jatta 1.5 faltas/partido",
+   "quites": "Casa Pia: L. Ofori 2.0 quites/partido, Gabi Pereira 2.0 quites/partido, Abdu Conté 1.5 quites/partido"
+  },
+  {
+   "local": "Malaga",
+   "visitante": "Deportivo La Coruna",
+   "gole": "P. Aubameyang 63.2%"
+  },
+  {
+   "local": "Tigre",
+   "visitante": "Central Cordoba de Santiago",
+   "gole": "D. Romero 44.2% &middot; M. Santos 28.3% &middot; A. Luna 25.9%",
+   "remates": "Tigre: D. Romero 2.42 remates totales (1.17 a puerta), I. Russo 1.76 remates totales (0.86 a puerta), P. Martínez 1.53 remates totales (0.8 a puerta) | Central Cordoba de Santiago: M. Santos 1.56 remates totales (0.72 a puerta), L. Sequeira 1.0 remates totales (0.0 a puerta), D. Barrera 0.85 remates totales (0.45 a puerta)",
+   "tarjetas": "Tigre: G. Requena 0.5 amarillas/partido, J. Villalba 0.5 amarillas/partido, G. Piñeiro 0.43 amarillas/partido | Central Cordoba de Santiago: L. Sequeira 0.5 amarillas/partido, A. Maciel 0.37 amarillas/partido, Y. Casermeiro 0.36 amarillas/partido",
+   "asistencias": "Tigre: D. Romero 0.17 asistencias/partido, J. Saralegui 0.15 asistencias/partido, I. Russo 0.14 asistencias/partido | Central Cordoba de Santiago: L. Sequeira 0.5 asistencias/partido, H. Tijanovich 0.12 asistencias/partido, M. Santos 0.11 asistencias/partido",
+   "faltas": "Tigre: G. Piñeiro 2.14 faltas/partido, S. López 1.4 faltas/partido, B. Leyes 1.33 faltas/partido | Central Cordoba de Santiago: F. Juárez 1.5 faltas/partido, M. Santos 1.39 faltas/partido, S. Moyano 1.37 faltas/partido",
+   "quites": "Tigre: N. Banegas 2.25 quites/partido, V. Moreno 2.17 quites/partido, S. López 2.1 quites/partido | Central Cordoba de Santiago: M. Vera 2.15 quites/partido, A. Maciel 2.11 quites/partido, L. Sequeira 2.0 quites/partido"
+  },
+  {
+   "local": "Athletic Club",
+   "visitante": "Novorizontino",
+   "gole": "Ronaldo Tavares 47.4% &middot; Robson 39.3%",
+   "remates": "Athletic Club: Ronaldo Tavares 2.5 remates totales (1.5 a puerta), Ian Luccas 1.71 remates totales (0.59 a puerta), W. Aponza 1.5 remates totales (0.75 a puerta) | Novorizontino: Robson 1.59 remates totales (0.91 a puerta), Romulo 1.17 remates totales (0.52 a puerta), Matheus Bianqui 1.12 remates totales (0.29 a puerta)",
+   "tarjetas": "Athletic Club: W. Aponza 0.5 amarillas/partido, Diogo Batista 0.32 amarillas/partido, Jhonatan 0.3 amarillas/partido | Novorizontino: J. Lora 0.5 amarillas/partido, Madson 0.5 amarillas/partido, N. Castrillón 0.42 amarillas/partido",
+   "asistencias": "Athletic Club: Ruan Assis 0.14 asistencias/partido, Ian Luccas 0.12 asistencias/partido, Max 0.12 asistencias/partido | Novorizontino: Romulo 0.3 asistencias/partido, Diego Mathias 0.25 asistencias/partido, Robson 0.18 asistencias/partido",
+   "faltas": "Athletic Club: Kauan Lindes 2.0 faltas/partido, Ronaldo Tavares 1.83 faltas/partido, Carlinhos 1.6 faltas/partido | Novorizontino: J. Lora 2.0 faltas/partido, Reidiney 1.8 faltas/partido, Patrick 1.67 faltas/partido",
+   "quites": "Athletic Club: Diogo Batista 2.05 quites/partido, JoÃ£o Miguel 1.52 quites/partido, Léo Chú 1.5 quites/partido | Novorizontino: Reidiney 2.3 quites/partido, Sander 1.83 quites/partido, J. Lora 1.5 quites/partido"
   }
  ]
 }
