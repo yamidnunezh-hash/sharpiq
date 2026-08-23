@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "PSV Eindhoven",
-   "visitante": "Groningen",
-   "gole": "T. van Bergen 63.2% &middot; B. Willumsson 63.2%",
-   "remates": "PSV Eindhoven: R. Pepi 3.5 remates totales (1.5 a puerta), R. Flamingo 1.5 remates totales (0.5 a puerta), D. Man 1.5 remates totales (0.5 a puerta) | Groningen: T. van Bergen 4.5 remates totales (3.0 a puerta), B. Willumsson 2.5 remates totales (2.5 a puerta), T. de Jonge 2.0 remates totales (1.5 a puerta)",
-   "tarjetas": "PSV Eindhoven: D. Man 0.5 amarillas/partido | Groningen: D. van der Werff 0.5 amarillas/partido",
-   "asistencias": "PSV Eindhoven: I. Perišić 0.5 asistencias/partido | Groningen: E. Vaessen 0.5 asistencias/partido, T. Land 0.5 asistencias/partido, T. van Bergen 0.5 asistencias/partido",
-   "faltas": "PSV Eindhoven: R. Flamingo 1.0 faltas/partido, A. Obispo 1.0 faltas/partido, P. Wanner 1.0 faltas/partido | Groningen: J. Schreuders 3.5 faltas/partido, T. van Bergen 2.0 faltas/partido, Wouter Prins 1.5 faltas/partido",
-   "quites": "PSV Eindhoven: I. Perišić 2.0 quites/partido, A. Obispo 2.0 quites/partido, A. Bouhamdi 2.0 quites/partido | Groningen: J. Schreuders 3.0 quites/partido, T. Blokzijl 1.0 quites/partido, T. de Jonge 1.0 quites/partido"
-  },
-  {
    "local": "Vitória SC",
    "visitante": "Nacional",
    "gole": "Léo Santos 39.3%",
@@ -33,7 +23,7 @@
   {
    "local": "Atletico Madrid",
    "visitante": "Villarreal",
-   "gole": "Álex Baena 63.2% &middot; Lee Kang-In 63.2% &middot; N. Pépé 63.2%"
+   "gole": "N. Pépé 63.2% &middot; P. Gueye 63.2% &middot; Álex Baena 60.1%"
   },
   {
    "local": "Santa Clara",
@@ -184,6 +174,46 @@
    "asistencias": "Santos: M. Terceros 0.22 asistencias/partido, Zé Rafael 0.2 asistencias/partido, Neymar 0.2 asistencias/partido | Mirassol: Reinaldo 0.21 asistencias/partido, Alesson 0.2 asistencias/partido, Gabriel Pires 0.14 asistencias/partido",
    "faltas": "Santos: T. Rincón 1.5 faltas/partido, Neymar 1.5 faltas/partido, C. Oliva 1.5 faltas/partido | Mirassol: Denilson 1.8 faltas/partido, Bruno Santos 1.6 faltas/partido, José Aldo 1.53 faltas/partido",
    "quites": "Santos: Igor Vinicius 2.44 quites/partido, G. Escobar 2.44 quites/partido, Gustavo Henrique Pereira 2.2 quites/partido | Mirassol: Igor Formiga 2.68 quites/partido, Japa 1.75 quites/partido, Alesson 1.75 quites/partido"
+  },
+  {
+   "local": "Criciuma",
+   "visitante": "Fortaleza EC",
+   "gole": "J. Miritello 23.1%",
+   "remates": "Criciuma: R. Otero 1.25 remates totales (0.5 a puerta), Marcelo Hermes 1.22 remates totales (0.39 a puerta), Waguininho 1.04 remates totales (0.43 a puerta) | Fortaleza EC: J. Miritello 1.68 remates totales (1.05 a puerta), Maílton 1.44 remates totales (0.67 a puerta), Vitinho 1.42 remates totales (0.84 a puerta)",
+   "tarjetas": "Criciuma: Bruno Alves 0.43 amarillas/partido, Eduardo 0.33 amarillas/partido, Luciano Castán 0.32 amarillas/partido | Fortaleza EC: Lucas Emanoel 0.5 amarillas/partido, Pierre 0.43 amarillas/partido, E. Brítez 0.33 amarillas/partido",
+   "asistencias": "Criciuma: Romarinho 0.17 asistencias/partido, Ronald 0.17 asistencias/partido, Ruan 0.14 asistencias/partido | Fortaleza EC: Kayke 0.33 asistencias/partido, E. Brítez 0.08 asistencias/partido, Luan 0.08 asistencias/partido",
+   "faltas": "Criciuma: Eduardo 2.2 faltas/partido, Ruan 1.57 faltas/partido, Luciano Castán 1.53 faltas/partido | Fortaleza EC: Kayke 2.0 faltas/partido, Pierre 1.64 faltas/partido, E. Brítez 1.5 faltas/partido",
+   "quites": "Criciuma: Marcelo Hermes 1.74 quites/partido, Ruan 1.71 quites/partido, Bruno Alves 1.5 quites/partido | Fortaleza EC: Lucas Sasha 1.76 quites/partido, Pierre 1.71 quites/partido, Rodriguinho 1.62 quites/partido"
+  },
+  {
+   "local": "River Plate",
+   "visitante": "Velez Sarsfield",
+   "gole": "F. Monzón 31.3%",
+   "remates": "River Plate: S. Driussi 1.6 remates totales (0.8 a puerta), J. Quintero 1.53 remates totales (1.0 a puerta), F. Vera 1.5 remates totales (0.35 a puerta) | Velez Sarsfield: F. Monzón 1.88 remates totales (1.06 a puerta), M. Lanzini 1.18 remates totales (0.59 a puerta), M. Pellegrini 1.18 remates totales (0.59 a puerta)",
+   "tarjetas": "River Plate: M. Viña 0.5 amarillas/partido, T. Andrada 0.5 amarillas/partido, M. Arambarri 0.5 amarillas/partido | Velez Sarsfield: M. Pellegrini 0.35 amarillas/partido, Thiago Silveor 0.33 amarillas/partido, B. Romero 0.3 amarillas/partido",
+   "asistencias": "River Plate: J. Meza 0.25 asistencias/partido, J. Quintero 0.2 asistencias/partido, F. Colidio 0.16 asistencias/partido | Velez Sarsfield: D. Valdés 0.28 asistencias/partido, T. Aguirre 0.25 asistencias/partido, M. Arias 0.2 asistencias/partido",
+   "faltas": "River Plate: T. Andrada 2.0 faltas/partido, M. Arambarri 2.0 faltas/partido, J. Freitas 1.47 faltas/partido | Velez Sarsfield: Jano Gordon 2.0 faltas/partido, F. Monzón 1.44 faltas/partido, T. Andrada 1.41 faltas/partido",
+   "quites": "River Plate: T. Andrada 4.0 quites/partido, A. Moreno 3.17 quites/partido, N. Otamendi 2.2 quites/partido | Velez Sarsfield: Jano Gordon 3.33 quites/partido, S. Escobar 2.75 quites/partido, T. Andrada 2.59 quites/partido"
+  },
+  {
+   "local": "Coritiba",
+   "visitante": "Corinthians",
+   "gole": "Breno Lopes 33.0%",
+   "remates": "Coritiba: Pedro Rocha 1.59 remates totales (0.73 a puerta), Lucas Ronier 1.5 remates totales (0.5 a puerta), Breno Lopes 0.9 remates totales (0.65 a puerta) | Corinthians: Yuri Alberto 1.88 remates totales (1.0 a puerta), R. Garro 1.14 remates totales (0.68 a puerta), João Pedro 1.0 remates totales (0.67 a puerta)",
+   "tarjetas": "Coritiba: Lucas Taverna 0.33 amarillas/partido, Paulo Roberto 0.33 amarillas/partido, Thiago Santos 0.31 amarillas/partido | Corinthians: Kauê Camargo 1.0 amarillas/partido, André Ramalho 0.57 amarillas/partido, F. Angileri 0.38 amarillas/partido",
+   "asistencias": "Coritiba: Josué 0.38 asistencias/partido, Tinga 0.12 asistencias/partido, Lucas Ronier 0.11 asistencias/partido | Corinthians: R. Garro 0.27 asistencias/partido, Z. Labyad 0.18 asistencias/partido, Yuri Alberto 0.12 asistencias/partido",
+   "faltas": "Coritiba: S. Gómez 1.37 faltas/partido, Wallisson 1.33 faltas/partido, Lucas Taverna 1.33 faltas/partido | Corinthians: Raniele 1.53 faltas/partido, A. Carrillo 1.47 faltas/partido, Yuri Alberto 1.35 faltas/partido",
+   "quites": "Coritiba: Lucas Ronier 1.72 quites/partido, Jacy 1.7 quites/partido, S. Gómez 1.47 quites/partido | Corinthians: Raniele 1.84 quites/partido, Matheuzinho 1.84 quites/partido, Matheus Bidu 1.83 quites/partido"
+  },
+  {
+   "local": "Atlanta United FC",
+   "visitante": "Sporting Kansas City",
+   "gole": "",
+   "remates": "Atlanta United FC: M. Almirón 1.79 remates totales (1.0 a puerta), S. Lobzhanidze 1.31 remates totales (0.85 a puerta), E. Latte Lath 1.29 remates totales (0.36 a puerta) | Sporting Kansas City: D. Joveljić 1.45 remates totales (1.1 a puerta), C. Harris 1.4 remates totales (0.65 a puerta), Capita 1.0 remates totales (0.46 a puerta)",
+   "tarjetas": "Atlanta United FC: Adrian Gill 0.5 amarillas/partido, T. Jacob 0.41 amarillas/partido, William Reilly 0.38 amarillas/partido | Sporting Kansas City: Z. Bassong 0.36 amarillas/partido, M. Mosquera 0.33 amarillas/partido, Capita 0.31 amarillas/partido",
+   "asistencias": "Atlanta United FC: A. Miranchuk 0.32 asistencias/partido, M. Almirón 0.21 asistencias/partido, E. Latte Lath 0.14 asistencias/partido | Sporting Kansas City: Manu García 0.22 asistencias/partido, C. Harris 0.15 asistencias/partido, J. Reynolds 0.12 asistencias/partido",
+   "faltas": "Atlanta United FC: M. Galarza 1.8 faltas/partido, C. Sanchez 1.78 faltas/partido, R. Hernández 1.5 faltas/partido | Sporting Kansas City: Capita 2.08 faltas/partido, Z. Bassong 1.82 faltas/partido, M. Mosquera 1.67 faltas/partido",
+   "quites": "Atlanta United FC: M. Galarza 2.6 quites/partido, T. Muyumba 2.3 quites/partido, T. Jacob 2.24 quites/partido | Sporting Kansas City: E. Karić 2.83 quites/partido, J. Davis 2.16 quites/partido, J. Reid 1.8 quites/partido"
   }
  ]
 }
