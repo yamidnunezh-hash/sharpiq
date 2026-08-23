@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "GO Ahead Eagles",
-   "visitante": "ADO Den Haag",
-   "gole": "S. Tengstedt 63.2% &middot; M. Meulensteen 63.2%",
-   "remates": "GO Ahead Eagles: V. Edvardsen 3.0 remates totales (2.0 a puerta), S. Tengstedt 2.0 remates totales (1.0 a puerta), E. Flataker 2.0 remates totales (1.0 a puerta) | ADO Den Haag: Y. Eduardo 2.0 remates totales (0.5 a puerta), M. Hokke 0.5 remates totales (0.5 a puerta), P. Mulder 0.5 remates totales (0.0 a puerta)",
-   "tarjetas": "GO Ahead Eagles: D. James 0.5 amarillas/partido | ADO Den Haag: J. Kilo 0.5 amarillas/partido",
-   "asistencias": "GO Ahead Eagles: M. Suray 1.0 asistencias/partido, E. Linthorst 0.5 asistencias/partido, V. Edvardsen 0.5 asistencias/partido",
-   "faltas": "GO Ahead Eagles: J. Kramer 1.0 faltas/partido, D. James 1.0 faltas/partido, E. Flataker 1.0 faltas/partido | ADO Den Haag: P. Mulder 1.5 faltas/partido, S. Sylla 1.5 faltas/partido, J. Kilo 1.5 faltas/partido",
-   "quites": "GO Ahead Eagles: D. James 1.5 quites/partido, S. Tengstedt 1.5 quites/partido, G. van Zwam 1.5 quites/partido | ADO Den Haag: J. Kilo 3.5 quites/partido, M. Hokke 2.5 quites/partido, P. Mulder 2.5 quites/partido"
-  },
-  {
    "local": "PSV Eindhoven",
    "visitante": "Groningen",
    "gole": "T. van Bergen 63.2% &middot; B. Willumsson 63.2%",
@@ -23,7 +13,7 @@
   {
    "local": "Vitória SC",
    "visitante": "Nacional",
-   "gole": "Léo Santos 39.3% &middot; Miguel Baeza 39.3%",
+   "gole": "Léo Santos 39.3%",
    "remates": "Vitória SC: Gustavo 3.5 remates totales (1.0 a puerta), A. Ndoye 3.5 remates totales (0.5 a puerta), Samu 3.0 remates totales (1.0 a puerta) | Nacional: Léo Santos 2.5 remates totales (0.5 a puerta), Pablo Ruan 2.0 remates totales (0.5 a puerta), Zé Vitor 1.0 remates totales (0.5 a puerta)",
    "tarjetas": "Vitória SC: Óscar Rivas 0.5 amarillas/partido, Thiago Balieiro 0.5 amarillas/partido, Gustavo 0.5 amarillas/partido | Nacional: Filipe Soares 1.0 amarillas/partido, Matheus Dias 0.5 amarillas/partido, Wesley Gasolina 0.5 amarillas/partido",
    "asistencias": "Vitória SC: T. Strata 0.5 asistencias/partido, Miguel Nogueira 0.5 asistencias/partido | Nacional: Léo Santos 0.5 asistencias/partido, Daniel Júnior 0.5 asistencias/partido",
@@ -138,7 +128,7 @@
   {
    "local": "FC Porto",
    "visitante": "Arouca",
-   "gole": "Barbero 50.3% &middot; Borja Sainz 39.3% &middot; D. Nandín 39.3%",
+   "gole": "Barbero 50.3%",
    "remates": "FC Porto: William 2.0 remates totales (1.0 a puerta), Borja Sainz 1.5 remates totales (1.5 a puerta), D. Gül 1.5 remates totales (0.0 a puerta) | Arouca: T. Fukui 1.5 remates totales (1.0 a puerta), Barbero 1.5 remates totales (1.0 a puerta), José Fontán 1.0 remates totales (1.0 a puerta)",
    "tarjetas": "Arouca: I. de Arruabarrena 0.5 amarillas/partido, Javi Sánchez 0.5 amarillas/partido, Lee Hyun-Ju 0.5 amarillas/partido",
    "asistencias": "FC Porto: Gabri Veiga 0.5 asistencias/partido | Arouca: N. Djouahra 1.5 asistencias/partido, Lee Hyun-Ju 0.5 asistencias/partido",
@@ -184,6 +174,16 @@
    "asistencias": "Chapecoense-sc: Bruno Pacheco 0.21 asistencias/partido, Giovanni Augusto 0.2 asistencias/partido, K. Ramírez 0.2 asistencias/partido | Sao Paulo: Osorio Luis 0.2 asistencias/partido, Wendell 0.19 asistencias/partido, D. Bobadilla 0.12 asistencias/partido",
    "faltas": "Chapecoense-sc: João Paulo 2.2 faltas/partido, Camilo 1.63 faltas/partido, Higor Meritão 1.55 faltas/partido | Sao Paulo: Wendell 1.94 faltas/partido, E. Díaz 1.77 faltas/partido, J. Calleri 1.6 faltas/partido",
    "quites": "Chapecoense-sc: Camilo 2.26 quites/partido, Higor Meritão 2.0 quites/partido, Bruno Pacheco 1.43 quites/partido | Sao Paulo: E. Díaz 2.46 quites/partido, R. Tolói 2.17 quites/partido, Maik 2.0 quites/partido"
+  },
+  {
+   "local": "Santos",
+   "visitante": "Mirassol",
+   "gole": "Neymar 45.1% &middot; Gabriel Barbosa 41.3%",
+   "remates": "Santos: Neymar 2.7 remates totales (1.4 a puerta), Gabriel Barbosa 1.53 remates totales (0.6 a puerta), Á. Barreal 1.26 remates totales (0.53 a puerta) | Mirassol: Nathan Fogaça 1.7 remates totales (1.0 a puerta), Bruno Santos 1.6 remates totales (0.6 a puerta), Japa 1.5 remates totales (0.75 a puerta)",
+   "tarjetas": "Santos: Neymar 0.6 amarillas/partido, Diógenes 0.5 amarillas/partido, T. Rincón 0.5 amarillas/partido | Mirassol: Negueba 0.44 amarillas/partido, José Aldo 0.41 amarillas/partido, Neto Moura 0.4 amarillas/partido",
+   "asistencias": "Santos: M. Terceros 0.22 asistencias/partido, Zé Rafael 0.2 asistencias/partido, Neymar 0.2 asistencias/partido | Mirassol: Reinaldo 0.21 asistencias/partido, Alesson 0.2 asistencias/partido, Gabriel Pires 0.14 asistencias/partido",
+   "faltas": "Santos: T. Rincón 1.5 faltas/partido, Neymar 1.5 faltas/partido, C. Oliva 1.5 faltas/partido | Mirassol: Denilson 1.8 faltas/partido, Bruno Santos 1.6 faltas/partido, José Aldo 1.53 faltas/partido",
+   "quites": "Santos: Igor Vinicius 2.44 quites/partido, G. Escobar 2.44 quites/partido, Gustavo Henrique Pereira 2.2 quites/partido | Mirassol: Igor Formiga 2.68 quites/partido, Japa 1.75 quites/partido, Alesson 1.75 quites/partido"
   }
  ]
 }
