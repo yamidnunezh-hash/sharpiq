@@ -1,46 +1,6 @@
 {
  "partidos": [
   {
-   "local": "River Plate",
-   "visitante": "Velez Sarsfield",
-   "gole": "F. Monzón 31.3%",
-   "remates": "River Plate: S. Driussi 1.6 remates totales (0.8 a puerta), J. Quintero 1.53 remates totales (1.0 a puerta), F. Vera 1.5 remates totales (0.35 a puerta) | Velez Sarsfield: F. Monzón 1.88 remates totales (1.06 a puerta), M. Lanzini 1.18 remates totales (0.59 a puerta), M. Pellegrini 1.18 remates totales (0.59 a puerta)",
-   "tarjetas": "River Plate: M. Viña 0.5 amarillas/partido, T. Andrada 0.5 amarillas/partido, M. Arambarri 0.5 amarillas/partido | Velez Sarsfield: M. Pellegrini 0.35 amarillas/partido, Thiago Silveor 0.33 amarillas/partido, B. Romero 0.3 amarillas/partido",
-   "asistencias": "River Plate: J. Meza 0.25 asistencias/partido, J. Quintero 0.2 asistencias/partido, F. Colidio 0.16 asistencias/partido | Velez Sarsfield: D. Valdés 0.28 asistencias/partido, T. Aguirre 0.25 asistencias/partido, M. Arias 0.2 asistencias/partido",
-   "faltas": "River Plate: T. Andrada 2.0 faltas/partido, M. Arambarri 2.0 faltas/partido, J. Freitas 1.47 faltas/partido | Velez Sarsfield: Jano Gordon 2.0 faltas/partido, F. Monzón 1.44 faltas/partido, T. Andrada 1.41 faltas/partido",
-   "quites": "River Plate: T. Andrada 4.0 quites/partido, A. Moreno 3.17 quites/partido, N. Otamendi 2.2 quites/partido | Velez Sarsfield: Jano Gordon 3.33 quites/partido, S. Escobar 2.75 quites/partido, T. Andrada 2.59 quites/partido"
-  },
-  {
-   "local": "Coritiba",
-   "visitante": "Corinthians",
-   "gole": "Breno Lopes 33.0%",
-   "remates": "Coritiba: Pedro Rocha 1.59 remates totales (0.73 a puerta), Lucas Ronier 1.5 remates totales (0.5 a puerta), Breno Lopes 0.9 remates totales (0.65 a puerta) | Corinthians: Yuri Alberto 1.88 remates totales (1.0 a puerta), R. Garro 1.14 remates totales (0.68 a puerta), João Pedro 1.0 remates totales (0.67 a puerta)",
-   "tarjetas": "Coritiba: Lucas Taverna 0.33 amarillas/partido, Paulo Roberto 0.33 amarillas/partido, Thiago Santos 0.31 amarillas/partido | Corinthians: Kauê Camargo 1.0 amarillas/partido, André Ramalho 0.57 amarillas/partido, F. Angileri 0.38 amarillas/partido",
-   "asistencias": "Coritiba: Josué 0.38 asistencias/partido, Tinga 0.12 asistencias/partido, Lucas Ronier 0.11 asistencias/partido | Corinthians: R. Garro 0.27 asistencias/partido, Z. Labyad 0.18 asistencias/partido, Yuri Alberto 0.12 asistencias/partido",
-   "faltas": "Coritiba: S. Gómez 1.37 faltas/partido, Wallisson 1.33 faltas/partido, Lucas Taverna 1.33 faltas/partido | Corinthians: Raniele 1.53 faltas/partido, A. Carrillo 1.47 faltas/partido, Yuri Alberto 1.35 faltas/partido",
-   "quites": "Coritiba: Lucas Ronier 1.72 quites/partido, Jacy 1.7 quites/partido, S. Gómez 1.47 quites/partido | Corinthians: Raniele 1.84 quites/partido, Matheuzinho 1.84 quites/partido, Matheus Bidu 1.83 quites/partido"
-  },
-  {
-   "local": "Atlanta United FC",
-   "visitante": "Sporting Kansas City",
-   "gole": "",
-   "remates": "Atlanta United FC: M. Almirón 1.79 remates totales (1.0 a puerta), S. Lobzhanidze 1.31 remates totales (0.85 a puerta), E. Latte Lath 1.29 remates totales (0.36 a puerta) | Sporting Kansas City: D. Joveljić 1.45 remates totales (1.1 a puerta), C. Harris 1.4 remates totales (0.65 a puerta), Capita 1.0 remates totales (0.46 a puerta)",
-   "tarjetas": "Atlanta United FC: Adrian Gill 0.5 amarillas/partido, T. Jacob 0.41 amarillas/partido, William Reilly 0.38 amarillas/partido | Sporting Kansas City: Z. Bassong 0.36 amarillas/partido, M. Mosquera 0.33 amarillas/partido, Capita 0.31 amarillas/partido",
-   "asistencias": "Atlanta United FC: A. Miranchuk 0.32 asistencias/partido, M. Almirón 0.21 asistencias/partido, E. Latte Lath 0.14 asistencias/partido | Sporting Kansas City: Manu García 0.22 asistencias/partido, C. Harris 0.15 asistencias/partido, J. Reynolds 0.12 asistencias/partido",
-   "faltas": "Atlanta United FC: M. Galarza 1.8 faltas/partido, C. Sanchez 1.78 faltas/partido, R. Hernández 1.5 faltas/partido | Sporting Kansas City: Capita 2.08 faltas/partido, Z. Bassong 1.82 faltas/partido, M. Mosquera 1.67 faltas/partido",
-   "quites": "Atlanta United FC: M. Galarza 2.6 quites/partido, T. Muyumba 2.3 quites/partido, T. Jacob 2.24 quites/partido | Sporting Kansas City: E. Karić 2.83 quites/partido, J. Davis 2.16 quites/partido, J. Reid 1.8 quites/partido"
-  },
-  {
-   "local": "Atletico San Luis",
-   "visitante": "CF Pachuca",
-   "gole": "S. Rondón 69.3% &middot; Rafa Llorente 60.1%",
-   "remates": "Atletico San Luis: D. Rodríguez 2.0 remates totales (1.0 a puerta), S. Salles-Lamonge 1.75 remates totales (0.75 a puerta), L. Flores 1.25 remates totales (0.0 a puerta) | CF Pachuca: S. Rondón 3.75 remates totales (1.5 a puerta), C. Sánchez 1.33 remates totales (0.33 a puerta), O. Idrissi 1.0 remates totales (0.5 a puerta)",
-   "tarjetas": "Atletico San Luis: Robson Bambu 0.75 amarillas/partido, M. García 0.25 amarillas/partido | CF Pachuca: F. Venegas 0.33 amarillas/partido, Kenedy 0.33 amarillas/partido, C. Sánchez 0.33 amarillas/partido",
-   "asistencias": "Atletico San Luis: R. Torres 0.25 asistencias/partido, L. Flores 0.25 asistencias/partido | CF Pachuca: O. Idrissi 0.5 asistencias/partido, C. Sánchez 0.33 asistencias/partido, E. Montiel 0.25 asistencias/partido",
-   "faltas": "Atletico San Luis: Robson Bambu 2.25 faltas/partido, S. Salles-Lamonge 1.5 faltas/partido, F. Mora 1.0 faltas/partido | CF Pachuca: C. Rivera 2.33 faltas/partido, O. Idrissi 2.0 faltas/partido, F. Venegas 1.33 faltas/partido",
-   "quites": "Atletico San Luis: Ó. Macías 2.0 quites/partido, E.  Águila 1.75 quites/partido, R. Torres 1.75 quites/partido | CF Pachuca: C. Rivera 4.67 quites/partido, Eduardo Bauermann 2.0 quites/partido, A. Domínguez 2.0 quites/partido"
-  },
-  {
    "local": "Racing Club",
    "visitante": "Boca Juniors",
    "gole": "M. Merentiel 23.1%",
@@ -53,7 +13,7 @@
   {
    "local": "U.N.A.M. - Pumas",
    "visitante": "Necaxa",
-   "gole": "J. Carranza 60.1% &middot; Juninho 52.8% &middot; R. Morales 22.1%",
+   "gole": "J. Carranza 58.3% &middot; Juninho 52.8% &middot; R. Morales 22.1%",
    "remates": "U.N.A.M. - Pumas: U. Antuna 1.67 remates totales (0.33 a puerta), A. Carrasquilla 1.5 remates totales (1.0 a puerta), R. Morales 1.25 remates totales (0.5 a puerta) | Necaxa: J. Carranza 3.0 remates totales (2.0 a puerta), D. Leyva 1.5 remates totales (0.5 a puerta), J. Torres 1.5 remates totales (1.0 a puerta)",
    "tarjetas": "U.N.A.M. - Pumas: U. Antuna 0.33 amarillas/partido, R. López 0.25 amarillas/partido, Nathan Silva 0.25 amarillas/partido | Necaxa: R. Martínez 0.5 amarillas/partido, A. Oliveros 0.33 amarillas/partido, R. Monreal 0.33 amarillas/partido",
    "asistencias": "U.N.A.M. - Pumas: R. Morales 0.75 asistencias/partido, A. Carrasquilla 0.5 asistencias/partido, U. Antuna 0.33 asistencias/partido | Necaxa: A. Peña 0.33 asistencias/partido, J. Carranza 0.33 asistencias/partido, M. Zaleta 0.33 asistencias/partido",
@@ -77,7 +37,7 @@
   {
    "local": "Tigre",
    "visitante": "Central Cordoba de Santiago",
-   "gole": "D. Romero 44.2% &middot; M. Santos 28.3% &middot; A. Luna 25.9%",
+   "gole": "D. Romero 44.2% &middot; M. Santos 28.3% &middot; I. Russo 24.9%",
    "remates": "Tigre: D. Romero 2.42 remates totales (1.17 a puerta), I. Russo 1.76 remates totales (0.86 a puerta), P. Martínez 1.53 remates totales (0.8 a puerta) | Central Cordoba de Santiago: M. Santos 1.56 remates totales (0.72 a puerta), L. Sequeira 1.0 remates totales (0.0 a puerta), D. Barrera 0.85 remates totales (0.45 a puerta)",
    "tarjetas": "Tigre: G. Requena 0.5 amarillas/partido, J. Villalba 0.5 amarillas/partido, G. Piñeiro 0.43 amarillas/partido | Central Cordoba de Santiago: L. Sequeira 0.5 amarillas/partido, A. Maciel 0.37 amarillas/partido, Y. Casermeiro 0.36 amarillas/partido",
    "asistencias": "Tigre: D. Romero 0.17 asistencias/partido, J. Saralegui 0.15 asistencias/partido, I. Russo 0.14 asistencias/partido | Central Cordoba de Santiago: L. Sequeira 0.5 asistencias/partido, H. Tijanovich 0.12 asistencias/partido, M. Santos 0.11 asistencias/partido",
