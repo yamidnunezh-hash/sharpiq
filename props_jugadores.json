@@ -1,26 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Racing Club",
-   "visitante": "Boca Juniors",
-   "gole": "M. Merentiel 23.1%",
-   "remates": "Racing Club: M. Miljevic 1.53 remates totales (0.63 a puerta), E. Torres 1.5 remates totales (0.25 a puerta), A. Martínez 1.44 remates totales (0.5 a puerta) | Boca Juniors: L. Flores 2.0 remates totales (0.6 a puerta), A. Bareiro 1.7 remates totales (1.0 a puerta), M. Giménez 1.62 remates totales (0.75 a puerta)",
-   "tarjetas": "Racing Club: M. Kranevitter 0.6 amarillas/partido, J. Nardoni 0.5 amarillas/partido, T. Rubio 0.5 amarillas/partido | Boca Juniors: L. Paredes 0.42 amarillas/partido, A. Bareiro 0.4 amarillas/partido, L. Janson 0.33 amarillas/partido",
-   "asistencias": "Racing Club: D. Pizarro 0.5 asistencias/partido, G. Rojas 0.29 asistencias/partido, S. Solari 0.2 asistencias/partido | Boca Juniors: E. Zeballos 0.38 asistencias/partido, S. Villa 0.2 asistencias/partido, W. Alarcón 0.17 asistencias/partido",
-   "faltas": "Racing Club: A. Martínez 1.67 faltas/partido, J. Nardoni 1.5 faltas/partido, B. Gallego 1.5 faltas/partido | Boca Juniors: L. Janson 2.33 faltas/partido, A. Bareiro 1.7 faltas/partido, L. Lozano 1.25 faltas/partido",
-   "quites": "Racing Club: E. Cannavo 2.83 quites/partido, G. Escudero 2.0 quites/partido, S. Sosa 1.8 quites/partido | Boca Juniors: L. Blanco 2.74 quites/partido, L. Di Lollo 2.61 quites/partido, M. Braida 2.43 quites/partido"
-  },
-  {
-   "local": "U.N.A.M. - Pumas",
-   "visitante": "Necaxa",
-   "gole": "J. Carranza 58.3% &middot; Juninho 52.8% &middot; R. Morales 22.1%",
-   "remates": "U.N.A.M. - Pumas: U. Antuna 1.67 remates totales (0.33 a puerta), A. Carrasquilla 1.5 remates totales (1.0 a puerta), R. Morales 1.25 remates totales (0.5 a puerta) | Necaxa: J. Carranza 3.0 remates totales (2.0 a puerta), D. Leyva 1.5 remates totales (0.5 a puerta), J. Torres 1.5 remates totales (1.0 a puerta)",
-   "tarjetas": "U.N.A.M. - Pumas: U. Antuna 0.33 amarillas/partido, R. López 0.25 amarillas/partido, Nathan Silva 0.25 amarillas/partido | Necaxa: R. Martínez 0.5 amarillas/partido, A. Oliveros 0.33 amarillas/partido, R. Monreal 0.33 amarillas/partido",
-   "asistencias": "U.N.A.M. - Pumas: R. Morales 0.75 asistencias/partido, A. Carrasquilla 0.5 asistencias/partido, U. Antuna 0.33 asistencias/partido | Necaxa: A. Peña 0.33 asistencias/partido, J. Carranza 0.33 asistencias/partido, M. Zaleta 0.33 asistencias/partido",
-   "faltas": "U.N.A.M. - Pumas: Á. Angulo 2.0 faltas/partido, P. Vite 2.0 faltas/partido, V. Arteaga 1.75 faltas/partido | Necaxa: J. Carranza 2.67 faltas/partido, J. Ruiz 2.25 faltas/partido, R. Martínez 1.25 faltas/partido",
-   "quites": "U.N.A.M. - Pumas: Á. Angulo 2.33 quites/partido, P. Vite 2.0 quites/partido, R. López 1.75 quites/partido | Necaxa: C. Vargas 2.25 quites/partido, J. Ruiz 2.25 quites/partido, D. Leyva 2.0 quites/partido"
-  },
-  {
    "local": "GIL Vicente",
    "visitante": "Casa Pia",
    "gole": "",
@@ -73,6 +53,76 @@
    "asistencias": "Botafogo: Kauan Toledo 0.33 asistencias/partido, Nathan Fernandes 0.25 asistencias/partido, A. Barboza 0.17 asistencias/partido | Atletico Paranaense: João Cruz 0.31 asistencias/partido, G. Benavídez 0.26 asistencias/partido, L. Esquivel 0.25 asistencias/partido",
    "faltas": "Botafogo: Huguinho 2.14 faltas/partido, A. Barboza 1.92 faltas/partido, Arthur Cabral 1.58 faltas/partido | Atletico Paranaense: K. Viveros 2.23 faltas/partido, Léo 2.0 faltas/partido, L. Esquivel 1.69 faltas/partido",
    "quites": "Botafogo: A. Barboza 2.08 quites/partido, Vitinho 1.95 quites/partido, N. Ferraresi 1.94 quites/partido | Atletico Paranaense: Gilberto 3.0 quites/partido, L. Esquivel 2.31 quites/partido, Jádson 2.18 quites/partido"
+  },
+  {
+   "local": "Lanus",
+   "visitante": "Argentinos JRS",
+   "gole": "D. Aquino 28.3% &middot; T. Molina 23.1%",
+   "remates": "Lanus: M. Moreno 2.22 remates totales (1.56 a puerta), A. Wlk 2.2 remates totales (1.0 a puerta), R. Castillo 1.4 remates totales (0.8 a puerta) | Argentinos JRS: G. Verón 2.4 remates totales (1.0 a puerta), T. Molina 2.16 remates totales (0.95 a puerta), H. López 1.58 remates totales (0.79 a puerta)",
+   "tarjetas": "Lanus: B. Acosta 0.5 amarillas/partido, R. Carrera 0.43 amarillas/partido, C. Izquierdoz 0.39 amarillas/partido | Argentinos JRS: F. Paredes 0.5 amarillas/partido, R. Riquelme 0.46 amarillas/partido, F. Álvarez 0.35 amarillas/partido",
+   "asistencias": "Lanus: R. Castillo 0.6 asistencias/partido, R. Carrera 0.19 asistencias/partido, E. Salvio 0.14 asistencias/partido | Argentinos JRS: H. López 0.16 asistencias/partido, L. Lozano 0.14 asistencias/partido, N. Oroz 0.13 asistencias/partido",
+   "faltas": "Lanus: R. Castillo 1.6 faltas/partido, A. Medina 1.56 faltas/partido, S. Marcich 1.48 faltas/partido | Argentinos JRS: T. Molina 1.16 faltas/partido, I. Morales 1.12 faltas/partido, H. López 1.05 faltas/partido",
+   "quites": "Lanus: A. Medina 2.12 quites/partido, S. Marcich 1.9 quites/partido, T. Guidara 1.83 quites/partido | Argentinos JRS: L. Lozano 2.29 quites/partido, K. Coronel 2.0 quites/partido, F. Vázquez 1.67 quites/partido"
+  },
+  {
+   "local": "Talleres Cordoba",
+   "visitante": "Rosario Central",
+   "gole": "M. Santos 28.3% &middot; A. Luna 24.9%",
+   "remates": "Talleres Cordoba: Rick 1.85 remates totales (0.9 a puerta), R. Martínez 1.33 remates totales (0.81 a puerta), V. Depietri 1.2 remates totales (0.47 a puerta) | Rosario Central: J. Campaz 2.31 remates totales (1.25 a puerta), Á. Di María 1.89 remates totales (0.94 a puerta), A. Véliz 1.82 remates totales (0.76 a puerta)",
+   "tarjetas": "Talleres Cordoba: F. Fattori 0.6 amarillas/partido, M. Gómez 0.5 amarillas/partido, Rodrigo Guth 0.5 amarillas/partido | Rosario Central: E. Veron 0.4 amarillas/partido, F. Ibarra 0.38 amarillas/partido, E. Giménez 0.29 amarillas/partido",
+   "asistencias": "Talleres Cordoba: G. Baroni 0.2 asistencias/partido, B. Barticciotto 0.2 asistencias/partido, F. Cristaldo 0.14 asistencias/partido | Rosario Central: J. Campaz 0.25 asistencias/partido, Á. Di María 0.22 asistencias/partido, G. Cantizano 0.17 asistencias/partido",
+   "faltas": "Talleres Cordoba: F. Fattori 1.8 faltas/partido, V. Fascendini 1.75 faltas/partido, D. Ortegoza 1.53 faltas/partido | Rosario Central: F. Ibarra 1.67 faltas/partido, E. Giménez 1.59 faltas/partido, E. Coronel 1.39 faltas/partido",
+   "quites": "Talleres Cordoba: M. Gómez 3.0 quites/partido, A. Schott 2.0 quites/partido, M. Galarza 1.95 quites/partido | Rosario Central: F. Ibarra 4.33 quites/partido, L. Ramos 2.5 quites/partido, E. Giménez 2.06 quites/partido"
+  },
+  {
+   "local": "Sabah FA",
+   "visitante": "Hapoel Beer Sheva",
+   "gole": "V. Simić 34.9% &middot; J. Mickels 24.9%",
+   "remates": "Sabah FA: J. Mickels 1.71 remates totales (0.86 a puerta), U. Rahmonaliyev 0.71 remates totales (0.29 a puerta), S. Solvet 0.67 remates totales (0.17 a puerta) | Hapoel Beer Sheva: I. Zlatanović 0.8 remates totales (0.6 a puerta), M. Kna&apos;an 0.67 remates totales (0.33 a puerta), A. Ganah 0.33 remates totales (0.0 a puerta)",
+   "tarjetas": "Sabah FA: J. Mickels 0.29 amarillas/partido, K. Parris 0.2 amarillas/partido, S. Solvet 0.17 amarillas/partido | Hapoel Beer Sheva: I. Rotman 0.6 amarillas/partido, M. Baltaxa 0.5 amarillas/partido, M. Vítor 0.4 amarillas/partido",
+   "asistencias": "Sabah FA: A. Malouda 0.5 asistencias/partido, T. Puchacz 0.29 asistencias/partido, A. Zedadka 0.14 asistencias/partido | Hapoel Beer Sheva: E. Peretz 0.2 asistencias/partido",
+   "faltas": "Sabah FA: J. Mickels 0.71 faltas/partido, S. Solvet 0.67 faltas/partido, I. Lepinjica 0.57 faltas/partido | Hapoel Beer Sheva: I. Rotman 0.4 faltas/partido, N. Yehoshua 0.4 faltas/partido, Pedro Amador 0.33 faltas/partido",
+   "quites": "Sabah FA: I. Lepinjica 1.29 quites/partido, V. Simić 1.0 quites/partido, U. Rahmonaliyev 0.71 quites/partido | Hapoel Beer Sheva: Pedro Amador 1.0 quites/partido, N. Yehoshua 1.0 quites/partido, G. Mizrahi 0.4 quites/partido"
+  },
+  {
+   "local": "Valencia",
+   "visitante": "Real Betis",
+   "gole": "Rodrigo Riquelme 61.8%"
+  },
+  {
+   "local": "Lask Linz",
+   "visitante": "Celtic",
+   "gole": "C. Durán 69.9%"
+  },
+  {
+   "local": "Bodo/Glimt",
+   "visitante": "NEC Nijmegen",
+   "gole": "A. Helmersen 48.7% &middot; J. Hauge 28.3%",
+   "remates": "Bodo/Glimt: P. Berg 2.33 remates totales (0.67 a puerta), A. Helmersen 1.67 remates totales (1.67 a puerta), J. Hauge 1.0 remates totales (0.33 a puerta) | NEC Nijmegen: T. Chery 3.0 remates totales (1.67 a puerta), B. Linssen 1.67 remates totales (0.67 a puerta), K. Sierhuis 1.5 remates totales (1.0 a puerta)",
+   "tarjetas": "Bodo/Glimt: J. Gundersen 0.5 amarillas/partido, S. Auklend 0.33 amarillas/partido, S. Fet 0.33 amarillas/partido | NEC Nijmegen: K. Sierhuis 0.5 amarillas/partido, T. Storm 0.33 amarillas/partido, Jamiro Monteiro 0.33 amarillas/partido",
+   "asistencias": "Bodo/Glimt: J. Hauge 0.67 asistencias/partido, P. Berg 0.33 asistencias/partido, A. Helmersen 0.33 asistencias/partido | NEC Nijmegen: D. Tadić 0.67 asistencias/partido, K. Sierhuis 0.5 asistencias/partido",
+   "faltas": "Bodo/Glimt: F. Sjøvold 1.33 faltas/partido, S. Auklend 1.33 faltas/partido, O. Brynhildsen 1.0 faltas/partido | NEC Nijmegen: N. Lebreton 2.67 faltas/partido, Jamiro Monteiro 1.67 faltas/partido, B. Linssen 1.67 faltas/partido",
+   "quites": "Bodo/Glimt: F. Sjøvold 4.0 quites/partido, P. Berg 4.0 quites/partido, F. Bjørkan 2.67 quites/partido | NEC Nijmegen: N. Lebreton 3.0 quites/partido, E. Mor 3.0 quites/partido, P. Sandler 2.0 quites/partido"
+  },
+  {
+   "local": "Atletico Goianiense",
+   "visitante": "Botafogo SP",
+   "gole": "Gustavo Coutinho 37.7% &middot; Everton Morelli 27.2% &middot; Hygor 26.8%",
+   "remates": "Atletico Goianiense: Gustavo Coutinho 2.0 remates totales (1.11 a puerta), Henrique Freitas Alves 2.0 remates totales (0.67 a puerta), Marrony 1.7 remates totales (0.75 a puerta) | Botafogo SP: Everton Morelli 1.64 remates totales (0.59 a puerta), Hygor 1.38 remates totales (0.69 a puerta), Patrick Brey 0.9 remates totales (0.48 a puerta)",
+   "tarjetas": "Atletico Goianiense: Matheusinho 0.5 amarillas/partido, Guilherme Lopes 0.33 amarillas/partido, Cristiano 0.33 amarillas/partido | Botafogo SP: Felipe Vieira 0.62 amarillas/partido, Márcio Carlos Maranhão 0.4 amarillas/partido, Matheus Sales 0.37 amarillas/partido",
+   "asistencias": "Atletico Goianiense: Henrique Freitas Alves 0.33 asistencias/partido, Guilherme Marques 0.19 asistencias/partido, Soares Geovany 0.18 asistencias/partido | Botafogo SP: Rafael Gava 0.33 asistencias/partido, Patrick Brey 0.14 asistencias/partido, Zé Hugo 0.14 asistencias/partido",
+   "faltas": "Atletico Goianiense: Assis 2.09 faltas/partido, Peixoto 2.0 faltas/partido, Igor Henrique 1.85 faltas/partido | Botafogo SP: Patrick Brey 1.86 faltas/partido, Carlão 1.75 faltas/partido, Everton Morelli 1.45 faltas/partido",
+   "quites": "Atletico Goianiense: Gustavo Daniel 2.0 quites/partido, Ewerthon 1.82 quites/partido, Marrony 1.8 quites/partido | Botafogo SP: Patrick Brey 2.0 quites/partido, Wesley Pinheiro Santos 1.46 quites/partido, Matheus Sales 1.37 quites/partido"
+  },
+  {
+   "local": "Juventude",
+   "visitante": "CRB",
+   "gole": "Raí 20.3%",
+   "remates": "Juventude: Alisson Safira 1.32 remates totales (0.5 a puerta), Raí 1.23 remates totales (0.59 a puerta), Marcos Paulo 1.16 remates totales (0.79 a puerta) | CRB: Mikael 3.0 remates totales (1.55 a puerta), Dadá Belmonte 1.9 remates totales (0.86 a puerta), Thiaguinho 1.69 remates totales (0.56 a puerta)",
+   "tarjetas": "Juventude: Titi 0.4 amarillas/partido, Lucas Mineiro 0.35 amarillas/partido, Gabriel Pinheiro 0.33 amarillas/partido | CRB: Daniel 0.33 amarillas/partido, Guilherme Estrella 0.33 amarillas/partido, Fábio Alemão 0.31 amarillas/partido",
+   "asistencias": "Juventude: Raí 0.14 asistencias/partido, Alan Kardec 0.12 asistencias/partido, Luan Gonçalves 0.11 asistencias/partido | CRB: Dadá Belmonte 0.24 asistencias/partido, Léo Campos 0.2 asistencias/partido, Thiaguinho 0.19 asistencias/partido",
+   "faltas": "Juventude: Alisson Safira 2.09 faltas/partido, Mandaca 1.9 faltas/partido, Rodrigo Sam 1.89 faltas/partido | CRB: Hereda 1.76 faltas/partido, Wallace 1.5 faltas/partido, Thiaguinho 1.19 faltas/partido",
+   "quites": "Juventude: Aderlan 3.36 quites/partido, Rodrigo Sam 2.32 quites/partido, Marcos Paulo 1.8 quites/partido | CRB: Fábio Alemão 1.44 quites/partido, Hereda 1.41 quites/partido, Dadá Belmonte 1.29 quites/partido"
   }
  ]
 }
