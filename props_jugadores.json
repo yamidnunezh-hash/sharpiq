@@ -1,51 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Real Madrid",
-   "visitante": "Real Sociedad",
-   "gole": "Álex Baena 39.3% &middot; G. Simeone 39.3% &middot; Lee Kang-In 39.3%"
-  },
-  {
-   "local": "Celje",
-   "visitante": "Slovan Bratislava",
-   "gole": "",
-   "remates": "Celje: A. Kotnik 0.5 remates totales (0.5 a puerta), Papa Mustapha Daniel 0.25 remates totales (0.25 a puerta), M. Avdyli 0.2 remates totales (0.2 a puerta) | Slovan Bratislava: A. Šporar 0.5 remates totales (0.0 a puerta), Suleiman Camara 0.33 remates totales (0.0 a puerta), D. Matsuoka 0.25 remates totales (0.25 a puerta)",
-   "tarjetas": "Celje: Papa Mustapha Daniel 0.75 amarillas/partido, B. Verbič 0.5 amarillas/partido, A. Tutyškinas 0.5 amarillas/partido | Slovan Bratislava: C. Blackman 0.4 amarillas/partido, A. Mustafić 0.4 amarillas/partido, Suleiman Camara 0.33 amarillas/partido",
-   "asistencias": "Celje: M. Kvesić 0.2 asistencias/partido",
-   "faltas": "Celje: B. Verbič 1.0 faltas/partido, S. Sešlar 0.6 faltas/partido, A. Tutyškinas 0.5 faltas/partido | Slovan Bratislava: T. Barseghyan 0.5 faltas/partido, C. Blackman 0.4 faltas/partido, P. Pokorný 0.4 faltas/partido",
-   "quites": "Celje: B. Verbič 1.0 quites/partido, Papa Mustapha Daniel 0.75 quites/partido, M. Ivanšek 0.5 quites/partido | Slovan Bratislava: Sandro Cruz 0.8 quites/partido, C. Blackman 0.6 quites/partido, A. Mustafić 0.6 quites/partido"
-  },
-  {
-   "local": "AEK Athens FC",
-   "visitante": "Levski Sofia",
-   "gole": "Reinaldo 34.9%",
-   "remates": "Levski Sofia: Reinaldo 0.86 remates totales (0.14 a puerta), Serginho 0.43 remates totales (0.0 a puerta), Everton Bala 0.43 remates totales (0.14 a puerta)",
-   "tarjetas": "Levski Sofia: Aldair 0.5 amarillas/partido, N. Serafimov 0.43 amarillas/partido, A. Bouras 0.33 amarillas/partido",
-   "asistencias": "Levski Sofia: Álex Centelles 0.14 asistencias/partido, Everton Bala 0.14 asistencias/partido",
-   "faltas": "Levski Sofia: Aldair 0.67 faltas/partido, J. Perea 0.5 faltas/partido, Hevertton Santos 0.5 faltas/partido",
-   "quites": "Levski Sofia: E. El Moubarik 1.33 quites/partido, G. Trdin 0.67 quites/partido, Aldair 0.67 quites/partido"
-  },
-  {
-   "local": "Lyon",
-   "visitante": "Fenerbahçe",
-   "gole": "Talisca 55.1% &middot; M. Greenwood 33.0%",
-   "remates": "Lyon: C. Tolisso 2.33 remates totales (1.33 a puerta), L. Openda 1.67 remates totales (1.0 a puerta), M. Fofana 1.67 remates totales (1.67 a puerta) | Fenerbahçe: Talisca 4.2 remates totales (2.6 a puerta), M. Greenwood 1.4 remates totales (1.0 a puerta), K. Aktürkoğlu 1.2 remates totales (1.2 a puerta)",
-   "tarjetas": "Lyon: A. Maitland-Niles 0.33 amarillas/partido, Abner 0.33 amarillas/partido | Fenerbahçe: Nélson Semedo 0.4 amarillas/partido, A. Brown 0.33 amarillas/partido, J. Oosterwolde 0.33 amarillas/partido",
-   "asistencias": "Lyon: C. Tolisso 0.67 asistencias/partido | Fenerbahçe: K. Aktürkoğlu 0.4 asistencias/partido, Marco Asensio 0.2 asistencias/partido",
-   "faltas": "Lyon: L. Openda 3.33 faltas/partido, R. Kluivert 2.33 faltas/partido, M. Niakhaté 2.0 faltas/partido | Fenerbahçe: Nélson Semedo 1.8 faltas/partido, J. Oosterwolde 1.67 faltas/partido, N. Kanté 1.67 faltas/partido",
-   "quites": "Lyon: C. Tolisso 2.67 quites/partido, R. Kluivert 2.33 quites/partido, A. Maitland-Niles 2.0 quites/partido | Fenerbahçe: N. Kanté 5.33 quites/partido, M. Škriniar 4.0 quites/partido, İ. Yüksek 3.0 quites/partido"
-  },
-  {
-   "local": "Viking",
-   "visitante": "Dinamo Zagreb",
-   "gole": "D. Beljo 33.0% &middot; M. Valinčić 18.1%",
-   "remates": "Dinamo Zagreb: M. Zajc 2.25 remates totales (0.75 a puerta), D. Beljo 1.4 remates totales (0.6 a puerta), Olof Matteo Perez Vinlöf 1.25 remates totales (0.25 a puerta)",
-   "tarjetas": "Dinamo Zagreb: M. Zajc 0.5 amarillas/partido, B. Goda 0.33 amarillas/partido, A. Hoxha 0.25 amarillas/partido",
-   "asistencias": "Dinamo Zagreb: F. Topić 0.5 asistencias/partido, Olof Matteo Perez Vinlöf 0.25 asistencias/partido, J. Mišić 0.2 asistencias/partido",
-   "faltas": "Dinamo Zagreb: L. Kačavenda 1.4 faltas/partido, D. Beljo 1.2 faltas/partido, M. Zajc 1.0 faltas/partido",
-   "quites": "Dinamo Zagreb: Sergi Domínguez 2.2 quites/partido, G. Vidović 1.5 quites/partido, M. Valinčić 1.4 quites/partido"
-  },
-  {
    "local": "River Plate",
    "visitante": "Santa Fe",
    "gole": "",
@@ -125,6 +80,22 @@
    "gole": "V. Pavlidis 81.1% &middot; Rafa 39.3% &middot; D. Lukebakio 39.3%",
    "tarjetas": "Benfica: G. Prestianni 0.5 amarillas/partido, A. Bah 0.33 amarillas/partido, V. Pavlidis 0.33 amarillas/partido",
    "asistencias": "Benfica: D. Lukebakio 0.5 asistencias/partido, A. Bah 0.33 asistencias/partido, L. Barreiro 0.33 asistencias/partido"
+  },
+  {
+   "local": "CSKA Sofia",
+   "visitante": "OFI",
+   "gole": "Bruno Jordão 39.3% &middot; Pastor 18.4%",
+   "asistencias": "CSKA Sofia: Pastor 0.5 asistencias/partido"
+  },
+  {
+   "local": "Austria Vienna",
+   "visitante": "SC Braga",
+   "gole": "E. Kara 55.4% &middot; Ricardo Horta 52.8% &middot; Moulaye Haïdara 45.1%",
+   "remates": "Austria Vienna: M. Wels 1.67 remates totales (1.33 a puerta), K. Boateng 1.5 remates totales (1.0 a puerta), J. Hettwer 1.0 remates totales (0.6 a puerta) | SC Braga: João Moutinho 0.4 remates totales (0.0 a puerta), D. Huseinbašić 0.4 remates totales (0.4 a puerta), Pau Victor 0.4 remates totales (0.4 a puerta)",
+   "tarjetas": "Austria Vienna: Lee Tae-Seok 0.5 amarillas/partido, R. Ranftl 0.4 amarillas/partido, F. Wustinger 0.4 amarillas/partido | SC Braga: Gabri Martínez 0.5 amarillas/partido, Fran Navarro 0.4 amarillas/partido, Jean-Baptiste Gorby 0.33 amarillas/partido",
+   "asistencias": "Austria Vienna: M. Fischer 0.4 asistencias/partido, Daniel Nnodim 0.33 asistencias/partido, Philipp Maybach 0.2 asistencias/partido | SC Braga: Ricardo Horta 0.5 asistencias/partido, M. Dorgeles 0.33 asistencias/partido",
+   "faltas": "Austria Vienna: V. Markovic 3.2 faltas/partido, R. Ranftl 1.8 faltas/partido, M. Fischer 1.8 faltas/partido | SC Braga: A. Bajrami 1.0 faltas/partido, Pau Victor 0.8 faltas/partido, Gabri Martínez 0.5 faltas/partido",
+   "quites": "Austria Vienna: Daniel Nnodim 4.67 quites/partido, V. Markovic 3.8 quites/partido, Matteo Schablas 3.4 quites/partido | SC Braga: A. Bajrami 0.75 quites/partido, G. Lagerbielke 0.5 quites/partido, Fran Navarro 0.4 quites/partido"
   }
  ]
 }
