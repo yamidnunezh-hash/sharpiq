@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Rapid Vienna",
-   "visitante": "Heart Of Midlothian",
-   "gole": "E. Kara 63.2% &middot; Moulaye Haïdara 45.1% &middot; P. Dahl 33.0%",
-   "remates": "Rapid Vienna: Nikolaus Wurmbrand 1.8 remates totales (1.0 a puerta), Y. Demir 1.75 remates totales (1.0 a puerta), T. Gulliksen 1.67 remates totales (0.0 a puerta)",
-   "tarjetas": "Rapid Vienna: B. Bolla 0.5 amarillas/partido, J. Schöller 0.5 amarillas/partido, R. Amané 0.33 amarillas/partido",
-   "asistencias": "Rapid Vienna: B. Bolla 0.75 asistencias/partido, M. Seidl 0.4 asistencias/partido, J. Horn 0.33 asistencias/partido",
-   "faltas": "Rapid Vienna: B. Bolla 2.0 faltas/partido, Y. Demir 2.0 faltas/partido, R. Amané 2.0 faltas/partido",
-   "quites": "Rapid Vienna: R. Amané 3.33 quites/partido, Y. Demir 3.0 quites/partido, M. Seidl 2.2 quites/partido"
-  },
-  {
    "local": "Real Madrid",
    "visitante": "Real Sociedad",
    "gole": "Álex Baena 39.3% &middot; G. Simeone 39.3% &middot; Lee Kang-In 39.3%"
@@ -48,7 +38,7 @@
   {
    "local": "Viking",
    "visitante": "Dinamo Zagreb",
-   "gole": "D. Beljo 33.0% &middot; M. Valinčić 18.6%",
+   "gole": "D. Beljo 33.0% &middot; M. Valinčić 18.1%",
    "remates": "Dinamo Zagreb: M. Zajc 2.25 remates totales (0.75 a puerta), D. Beljo 1.4 remates totales (0.6 a puerta), Olof Matteo Perez Vinlöf 1.25 remates totales (0.25 a puerta)",
    "tarjetas": "Dinamo Zagreb: M. Zajc 0.5 amarillas/partido, B. Goda 0.33 amarillas/partido, A. Hoxha 0.25 amarillas/partido",
    "asistencias": "Dinamo Zagreb: F. Topić 0.5 asistencias/partido, Olof Matteo Perez Vinlöf 0.25 asistencias/partido, J. Mišić 0.2 asistencias/partido",
@@ -128,6 +118,13 @@
    "local": "FC ST. Gallen",
    "visitante": "FC Nordsjaelland",
    "gole": "A. Hunziker 58.2% &middot; D. Besio 48.7% &middot; N. Røjkjær 45.1%"
+  },
+  {
+   "local": "Aarhus",
+   "visitante": "Benfica",
+   "gole": "V. Pavlidis 81.1% &middot; Rafa 39.3% &middot; D. Lukebakio 39.3%",
+   "tarjetas": "Benfica: G. Prestianni 0.5 amarillas/partido, A. Bah 0.33 amarillas/partido, V. Pavlidis 0.33 amarillas/partido",
+   "asistencias": "Benfica: D. Lukebakio 0.5 asistencias/partido, A. Bah 0.33 asistencias/partido, L. Barreiro 0.33 asistencias/partido"
   }
  ]
 }
