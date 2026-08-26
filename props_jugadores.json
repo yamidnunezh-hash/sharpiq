@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "Independiente del Valle",
-   "visitante": "Deportes Tolima",
-   "gole": "C. González 57.6% &middot; F. Fydriszewski 33.0%",
-   "remates": "Independiente del Valle: C. González 3.86 remates totales (2.0 a puerta), J. Sornoza 2.0 remates totales (1.0 a puerta), J. Alcívar 1.71 remates totales (1.0 a puerta) | Deportes Tolima: J. Hernández 1.71 remates totales (0.86 a puerta), J. González 1.2 remates totales (0.9 a puerta), L. Sandoval 1.12 remates totales (0.75 a puerta)",
-   "tarjetas": "Independiente del Valle: L. Loor 0.29 amarillas/partido, J. Angulo 0.25 amarillas/partido, J. Sornoza 0.2 amarillas/partido | Deportes Tolima: L. Sandoval 0.38 amarillas/partido, C. Arrieta 0.3 amarillas/partido, J. Nieto 0.25 amarillas/partido",
-   "asistencias": "Independiente del Valle: L. Loor 0.29 asistencias/partido, J. Sornoza 0.2 asistencias/partido, M. Perelló 0.17 asistencias/partido | Deportes Tolima: J. Valencia 0.17 asistencias/partido, L. Sandoval 0.12 asistencias/partido, J. González 0.1 asistencias/partido",
-   "faltas": "Independiente del Valle: M. Carabajal 1.29 faltas/partido, J. Viacava 1.0 faltas/partido, J. Sornoza 0.8 faltas/partido | Deportes Tolima: A. Parra 2.36 faltas/partido, C. Trujillo 1.71 faltas/partido, J. Angulo 1.09 faltas/partido",
-   "quites": "Independiente del Valle: R. Briones 1.57 quites/partido, J. Alcívar 1.43 quites/partido, C. González 1.29 quites/partido | Deportes Tolima: C. Arrieta 2.5 quites/partido, C. Trujillo 1.57 quites/partido, E. López 1.3 quites/partido"
-  },
-  {
    "local": "Rapid Vienna",
    "visitante": "Heart Of Midlothian",
    "gole": "E. Kara 63.2% &middot; Moulaye Haïdara 45.1% &middot; P. Dahl 33.0%",
@@ -64,6 +54,80 @@
    "asistencias": "Dinamo Zagreb: F. Topić 0.5 asistencias/partido, Olof Matteo Perez Vinlöf 0.25 asistencias/partido, M. Valinčić 0.2 asistencias/partido",
    "faltas": "Dinamo Zagreb: L. Kačavenda 1.4 faltas/partido, D. Beljo 1.2 faltas/partido, M. Zajc 1.0 faltas/partido",
    "quites": "Dinamo Zagreb: Sergi Domínguez 2.2 quites/partido, G. Vidović 1.5 quites/partido, M. Valinčić 1.4 quites/partido"
+  },
+  {
+   "local": "River Plate",
+   "visitante": "Santa Fe",
+   "gole": "",
+   "remates": "River Plate: J. Quintero 3.0 remates totales (2.0 a puerta), M. Salas 2.25 remates totales (1.0 a puerta), L. Martínez 1.0 remates totales (0.75 a puerta) | Santa Fe: H. Rodallega 3.0 remates totales (1.33 a puerta), N. Bustos 2.33 remates totales (1.0 a puerta), F. Fagúndez 1.33 remates totales (0.67 a puerta)",
+   "tarjetas": "River Plate: M. Viña 0.67 amarillas/partido, G. Pezzella 0.5 amarillas/partido, F. Gonzalez 0.5 amarillas/partido | Santa Fe: E. Olivera 0.33 amarillas/partido, D. Torres 0.33 amarillas/partido",
+   "asistencias": "River Plate: L. Martínez 0.5 asistencias/partido, J. Quintero 0.33 asistencias/partido, F. Bustos 0.25 asistencias/partido | Santa Fe: C. Mafla 0.5 asistencias/partido, J. Obrian 0.33 asistencias/partido, N. Bustos 0.33 asistencias/partido",
+   "faltas": "River Plate: F. Gonzalez 2.5 faltas/partido, K. Castaño 2.0 faltas/partido, M. Meza 2.0 faltas/partido | Santa Fe: D. Torres 1.33 faltas/partido, J. Torres 1.33 faltas/partido, E. Olivera 1.0 faltas/partido",
+   "quites": "River Plate: K. Castaño 3.5 quites/partido, A. Moreno 3.25 quites/partido, F. Bustos 2.75 quites/partido | Santa Fe: H. Palacios 3.67 quites/partido, K. Toscano 3.0 quites/partido, E. Olivera 2.67 quites/partido"
+  },
+  {
+   "local": "FK Jablonec",
+   "visitante": "Rangers",
+   "gole": "",
+   "remates": "FK Jablonec: M. Cedidla 0.4 remates totales (0.4 a puerta), R. Sedláček 0.2 remates totales (0.0 a puerta), L. Jawo 0.2 remates totales (0.2 a puerta)",
+   "tarjetas": "FK Jablonec: F. Vecheta 0.5 amarillas/partido, R. Sedláček 0.4 amarillas/partido, H. Ahl 0.25 amarillas/partido",
+   "faltas": "FK Jablonec: R. Sedláček 0.6 faltas/partido, S. Nebyla 0.6 faltas/partido, D. Pavlović 0.5 faltas/partido",
+   "quites": "FK Jablonec: J. Sláma 0.6 quites/partido, N. Tekijaški 0.4 quites/partido, R. Sedláček 0.4 quites/partido"
+  },
+  {
+   "local": "Maccabi Tel Aviv",
+   "visitante": "FC Lugano",
+   "gole": "K. Behrens 69.9%",
+   "remates": "FC Lugano: K. Behrens 3.4 remates totales (1.8 a puerta), R. Steffen 2.2 remates totales (1.0 a puerta), Daniel Dos Santos 2.2 remates totales (1.0 a puerta)",
+   "tarjetas": "FC Lugano: M. Zanotti 0.2 amarillas/partido, K. Behrens 0.2 amarillas/partido",
+   "asistencias": "FC Lugano: M. Zanotti 0.6 asistencias/partido, Y. Cimignani 0.4 asistencias/partido, A. Papadopoulos 0.2 asistencias/partido",
+   "faltas": "FC Lugano: M. Zanotti 2.8 faltas/partido, D. Moncada 1.6 faltas/partido, D. Kelvin 1.5 faltas/partido",
+   "quites": "FC Lugano: U. Bislimi 2.0 quites/partido, E. Pihlström 2.0 quites/partido, M. Zanotti 1.6 quites/partido"
+  },
+  {
+   "local": "Qarabag",
+   "visitante": "Twente",
+   "gole": "M. Pjaca 58.9%",
+   "remates": "Qarabag: J. Mouaddib 1.0 remates totales (0.33 a puerta), O. Kashchuk 0.67 remates totales (0.67 a puerta), Kady 0.67 remates totales (0.33 a puerta) | Twente: D. Weidmann 2.67 remates totales (2.0 a puerta), M. Pjaca 2.33 remates totales (2.0 a puerta), S. Ørjasæter 1.5 remates totales (0.5 a puerta)",
+   "tarjetas": "Qarabag: Matheus Silva 0.67 amarillas/partido, B. Hüseynov 0.5 amarillas/partido | Twente: R. Pröpper 0.67 amarillas/partido, A. Adelgaard 0.5 amarillas/partido, D. Rots 0.33 amarillas/partido",
+   "asistencias": "Qarabag: M. Qurbanlı 0.33 asistencias/partido | Twente: S. Ørjasæter 1.5 asistencias/partido, D. Weidmann 0.67 asistencias/partido, W. Weghorst 0.5 asistencias/partido",
+   "faltas": "Qarabag: B. Hüseynov 0.5 faltas/partido, Samuel Lobato 0.33 faltas/partido, M. Janković 0.33 faltas/partido | Twente: B. van Rooij 2.0 faltas/partido, R. Zerrouki 1.67 faltas/partido, W. Weghorst 1.5 faltas/partido",
+   "quites": "Qarabag: Bruno Langa 1.33 quites/partido, Samuel Lobato 1.33 quites/partido, Matheus Silva 0.67 quites/partido | Twente: R. Nijstad 2.5 quites/partido, B. van Rooij 2.0 quites/partido, A. Adelgaard 2.0 quites/partido"
+  },
+  {
+   "local": "SC Freiburg",
+   "visitante": "Motherwell",
+   "gole": "",
+   "remates": "Motherwell: Tawanda Jethro Maswanhise 0.25 remates totales (0.0 a puerta), M. Moormann 0.2 remates totales (0.0 a puerta), R. Charles-Cook 0.2 remates totales (0.2 a puerta)",
+   "tarjetas": "Motherwell: A. Lowry 0.67 amarillas/partido, J. Girdwood-Reich 0.2 amarillas/partido, L. Fadinger 0.2 amarillas/partido",
+   "asistencias": "Motherwell: M. Emmanuel 0.2 asistencias/partido",
+   "faltas": "Motherwell: Tawanda Jethro Maswanhise 0.75 faltas/partido, I. Said 0.75 faltas/partido, A. Lowry 0.67 faltas/partido",
+   "quites": "Motherwell: I. Said 1.25 quites/partido, J. Girdwood-Reich 1.0 quites/partido, L. Fadinger 0.8 quites/partido"
+  },
+  {
+   "local": "FC Copenhagen",
+   "visitante": "Inter Turku",
+   "gole": "Robert 55.1% &middot; A. Cornelius 52.8% &middot; M. Elyounoussi 45.1%"
+  },
+  {
+   "local": "Hradec Králové",
+   "visitante": "Panathinaikos",
+   "gole": "A. Jagusic 33.0%"
+  },
+  {
+   "local": "Kauno Žalgiris",
+   "visitante": "Beşiktaş",
+   "gole": "O. Kökçü 39.3% &middot; Tiago Djaló 11.3%"
+  },
+  {
+   "local": "Ajax",
+   "visitante": "FC Sion",
+   "gole": "O. Gloukh 58.6% &middot; Winsley Boteli Mokango 55.1% &middot; D. Klaassen 52.8%"
+  },
+  {
+   "local": "FC ST. Gallen",
+   "visitante": "FC Nordsjaelland",
+   "gole": "A. Hunziker 58.6% &middot; D. Besio 48.7% &middot; N. Røjkjær 45.1%"
   }
  ]
 }
