@@ -1,16 +1,6 @@
 {
  "partidos": [
   {
-   "local": "River Plate",
-   "visitante": "Santa Fe",
-   "gole": "",
-   "remates": "River Plate: J. Quintero 3.0 remates totales (2.0 a puerta), M. Salas 2.25 remates totales (1.0 a puerta), L. Martínez 1.0 remates totales (0.75 a puerta) | Santa Fe: H. Rodallega 3.0 remates totales (1.33 a puerta), N. Bustos 2.33 remates totales (1.0 a puerta), F. Fagúndez 1.33 remates totales (0.67 a puerta)",
-   "tarjetas": "River Plate: M. Viña 0.67 amarillas/partido, G. Pezzella 0.5 amarillas/partido, F. Gonzalez 0.5 amarillas/partido | Santa Fe: E. Olivera 0.33 amarillas/partido, D. Torres 0.33 amarillas/partido",
-   "asistencias": "River Plate: L. Martínez 0.5 asistencias/partido, J. Quintero 0.33 asistencias/partido, F. Bustos 0.25 asistencias/partido | Santa Fe: C. Mafla 0.5 asistencias/partido, J. Obrian 0.33 asistencias/partido, N. Bustos 0.33 asistencias/partido",
-   "faltas": "River Plate: F. Gonzalez 2.5 faltas/partido, K. Castaño 2.0 faltas/partido, M. Meza 2.0 faltas/partido | Santa Fe: D. Torres 1.33 faltas/partido, J. Torres 1.33 faltas/partido, E. Olivera 1.0 faltas/partido",
-   "quites": "River Plate: K. Castaño 3.5 quites/partido, A. Moreno 3.25 quites/partido, F. Bustos 2.75 quites/partido | Santa Fe: H. Palacios 3.67 quites/partido, K. Toscano 3.0 quites/partido, E. Olivera 2.67 quites/partido"
-  },
-  {
    "local": "FK Jablonec",
    "visitante": "Rangers",
    "gole": "",
@@ -96,6 +86,15 @@
    "asistencias": "Austria Vienna: M. Fischer 0.4 asistencias/partido, Daniel Nnodim 0.33 asistencias/partido, Philipp Maybach 0.2 asistencias/partido | SC Braga: Ricardo Horta 0.5 asistencias/partido, M. Dorgeles 0.33 asistencias/partido",
    "faltas": "Austria Vienna: V. Markovic 3.2 faltas/partido, R. Ranftl 1.8 faltas/partido, M. Fischer 1.8 faltas/partido | SC Braga: A. Bajrami 1.0 faltas/partido, Pau Victor 0.8 faltas/partido, Gabri Martínez 0.5 faltas/partido",
    "quites": "Austria Vienna: Daniel Nnodim 4.67 quites/partido, V. Markovic 3.8 quites/partido, Matteo Schablas 3.4 quites/partido | SC Braga: A. Bajrami 0.75 quites/partido, G. Lagerbielke 0.5 quites/partido, Fran Navarro 0.4 quites/partido"
+  },
+  {
+   "local": "Brighton",
+   "visitante": "Tromso",
+   "gole": "",
+   "remates": "Tromso: M. Tønnessen 0.67 remates totales (0.0 a puerta), L. Olden Larsen 0.33 remates totales (0.0 a puerta), I. Vådebu 0.33 remates totales (0.0 a puerta)",
+   "tarjetas": "Tromso: H. Larsen 0.33 amarillas/partido, T. Nyhammer 0.33 amarillas/partido",
+   "faltas": "Tromso: Ieltsin Camões 0.5 faltas/partido, L. Olden Larsen 0.33 faltas/partido, D. Edvardsson 0.33 faltas/partido",
+   "quites": "Tromso: I. Dahlqvist 0.67 quites/partido, I. Vådebu 0.67 quites/partido, R. Jenssen 0.5 quites/partido"
   }
  ]
 }
