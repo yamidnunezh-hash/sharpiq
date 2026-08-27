@@ -1,112 +1,9 @@
 {
  "partidos": [
   {
-   "local": "FK Jablonec",
-   "visitante": "Rangers",
-   "gole": "",
-   "remates": "FK Jablonec: M. Cedidla 0.4 remates totales (0.4 a puerta), R. Sedláček 0.2 remates totales (0.0 a puerta), L. Jawo 0.2 remates totales (0.2 a puerta)",
-   "tarjetas": "FK Jablonec: F. Vecheta 0.5 amarillas/partido, R. Sedláček 0.4 amarillas/partido, H. Ahl 0.25 amarillas/partido",
-   "faltas": "FK Jablonec: R. Sedláček 0.6 faltas/partido, S. Nebyla 0.6 faltas/partido, D. Pavlović 0.5 faltas/partido",
-   "quites": "FK Jablonec: J. Sláma 0.6 quites/partido, R. Sedláček 0.4 quites/partido, N. Tekijaški 0.4 quites/partido"
-  },
-  {
-   "local": "Maccabi Tel Aviv",
-   "visitante": "FC Lugano",
-   "gole": "K. Behrens 69.9%",
-   "remates": "FC Lugano: K. Behrens 3.4 remates totales (1.8 a puerta), R. Steffen 2.2 remates totales (1.0 a puerta), Daniel Dos Santos 2.2 remates totales (1.0 a puerta)",
-   "tarjetas": "FC Lugano: K. Behrens 0.2 amarillas/partido, M. Zanotti 0.2 amarillas/partido",
-   "asistencias": "FC Lugano: M. Zanotti 0.6 asistencias/partido, Y. Cimignani 0.4 asistencias/partido, R. Steffen 0.2 asistencias/partido",
-   "faltas": "FC Lugano: M. Zanotti 2.8 faltas/partido, D. Moncada 1.6 faltas/partido, D. Kelvin 1.5 faltas/partido",
-   "quites": "FC Lugano: U. Bislimi 2.0 quites/partido, E. Pihlström 2.0 quites/partido, M. Zanotti 1.6 quites/partido"
-  },
-  {
-   "local": "Qarabag",
-   "visitante": "Twente",
-   "gole": "M. Pjaca 58.0%",
-   "remates": "Qarabag: J. Mouaddib 1.0 remates totales (0.33 a puerta), Kady 0.67 remates totales (0.33 a puerta), O. Kashchuk 0.67 remates totales (0.67 a puerta) | Twente: D. Weidmann 2.67 remates totales (2.0 a puerta), M. Pjaca 2.33 remates totales (2.0 a puerta), S. Ørjasæter 1.5 remates totales (0.5 a puerta)",
-   "tarjetas": "Qarabag: Matheus Silva 0.67 amarillas/partido, B. Hüseynov 0.5 amarillas/partido | Twente: R. Pröpper 0.67 amarillas/partido, A. Adelgaard 0.5 amarillas/partido, R. Zerrouki 0.33 amarillas/partido",
-   "asistencias": "Qarabag: M. Qurbanlı 0.33 asistencias/partido | Twente: S. Ørjasæter 1.5 asistencias/partido, D. Weidmann 0.67 asistencias/partido, W. Weghorst 0.5 asistencias/partido",
-   "faltas": "Qarabag: B. Hüseynov 0.5 faltas/partido, M. Janković 0.33 faltas/partido, M. Qurbanlı 0.33 faltas/partido | Twente: B. van Rooij 2.0 faltas/partido, R. Zerrouki 1.67 faltas/partido, W. Weghorst 1.5 faltas/partido",
-   "quites": "Qarabag: Bruno Langa 1.33 quites/partido, Samuel Lobato 1.33 quites/partido, Matheus Silva 0.67 quites/partido | Twente: R. Nijstad 2.5 quites/partido, B. van Rooij 2.0 quites/partido, D. Weidmann 2.0 quites/partido"
-  },
-  {
-   "local": "SC Freiburg",
-   "visitante": "Motherwell",
-   "gole": "",
-   "remates": "Motherwell: Tawanda Jethro Maswanhise 0.25 remates totales (0.0 a puerta), R. Charles-Cook 0.2 remates totales (0.2 a puerta), M. Moormann 0.2 remates totales (0.0 a puerta)",
-   "tarjetas": "Motherwell: A. Lowry 0.67 amarillas/partido, L. Fadinger 0.2 amarillas/partido, J. Girdwood-Reich 0.2 amarillas/partido",
-   "asistencias": "Motherwell: M. Emmanuel 0.2 asistencias/partido",
-   "faltas": "Motherwell: I. Said 0.75 faltas/partido, Tawanda Jethro Maswanhise 0.75 faltas/partido, A. Lowry 0.67 faltas/partido",
-   "quites": "Motherwell: I. Said 1.25 quites/partido, L. Fadinger 0.8 quites/partido, J. Girdwood-Reich 0.8 quites/partido"
-  },
-  {
-   "local": "Brann",
-   "visitante": "PAOK",
-   "gole": "",
-   "remates": "Brann: K. Eriksen 0.5 remates totales (0.25 a puerta)",
-   "tarjetas": "Brann: F. Knudsen 0.6 amarillas/partido, J. Soltvedt 0.4 amarillas/partido, B. Finne 0.25 amarillas/partido",
-   "asistencias": "Brann: J. Soltvedt 0.2 asistencias/partido",
-   "faltas": "Brann: F. Knudsen 0.4 faltas/partido, J. Soltvedt 0.4 faltas/partido, J. Sørensen 0.25 faltas/partido",
-   "quites": "Brann: V. Dragsnes 1.5 quites/partido, T. Pedersen 0.8 quites/partido, F. Knudsen 0.6 quites/partido"
-  },
-  {
-   "local": "FC Copenhagen",
-   "visitante": "Inter Turku",
-   "gole": "Robert 55.1% &middot; A. Cornelius 52.8% &middot; M. Elyounoussi 45.1%",
-   "remates": "FC Copenhagen: Robert 2.2 remates totales (1.6 a puerta), A. Cornelius 1.5 remates totales (1.5 a puerta), Y. Moukoko 1.33 remates totales (0.0 a puerta) | Inter Turku: Alie Conteh 2.25 remates totales (2.0 a puerta), C. Jephta 1.75 remates totales (0.75 a puerta), J. Tuominen 0.57 remates totales (0.14 a puerta)",
-   "tarjetas": "FC Copenhagen: W. Clem 0.4 amarillas/partido, T. Delaney 0.25 amarillas/partido, J. Suzuki 0.25 amarillas/partido | Inter Turku: J. Tuominen 0.43 amarillas/partido, J. Laine 0.33 amarillas/partido, Alie Conteh 0.25 amarillas/partido",
-   "asistencias": "FC Copenhagen: A. Cornelius 0.5 asistencias/partido, M. Emil Madsen 0.4 asistencias/partido, M. Elyounoussi 0.4 asistencias/partido | Inter Turku: A. Essomba 0.25 asistencias/partido, J. Laine 0.17 asistencias/partido, J. Tuominen 0.14 asistencias/partido",
-   "faltas": "FC Copenhagen: A. Cornelius 1.75 faltas/partido, J. Suzuki 1.5 faltas/partido, M. Emil Madsen 1.4 faltas/partido | Inter Turku: Alie Conteh 1.0 faltas/partido, J. Tuominen 0.71 faltas/partido, L. Laine 0.67 faltas/partido",
-   "quites": "FC Copenhagen: J. Suzuki 2.0 quites/partido, M. Elyounoussi 1.8 quites/partido, M. López 1.75 quites/partido | Inter Turku: J. Hämäläinen 2.5 quites/partido, A. Essomba 1.0 quites/partido, B. Ampofo 1.0 quites/partido"
-  },
-  {
-   "local": "Hradec Králové",
-   "visitante": "Panathinaikos",
-   "gole": "A. Jagusic 33.0%",
-   "remates": "Panathinaikos: Santino Andino 2.0 remates totales (1.0 a puerta), A. Tetteh 1.67 remates totales (0.67 a puerta), C. Dessers 1.5 remates totales (1.5 a puerta)",
-   "tarjetas": "Panathinaikos: T. Tsapras 0.75 amarillas/partido, Georgios Marios Katris 0.5 amarillas/partido, A. Čerin 0.25 amarillas/partido",
-   "asistencias": "Panathinaikos: S. de Vrij 0.2 asistencias/partido, Santino Andino 0.2 asistencias/partido",
-   "faltas": "Panathinaikos: E. Camara 2.0 faltas/partido, A. Tetteh 1.33 faltas/partido, G. Kiriakopoulos 1.2 faltas/partido",
-   "quites": "Panathinaikos: A. Touba 2.0 quites/partido, Santino Andino 1.8 quites/partido, G. Kiriakopoulos 1.6 quites/partido"
-  },
-  {
-   "local": "Kauno Žalgiris",
-   "visitante": "Beşiktaş",
-   "gole": "O. Kökçü 39.3% &middot; Tiago Djaló 13.7%"
-  },
-  {
-   "local": "Riga",
-   "visitante": "KI Klaksvik",
-   "gole": "",
-   "remates": "Riga: O. Galo 1.33 remates totales (0.33 a puerta), Reginaldo Ramires 1.2 remates totales (0.4 a puerta), R. Aouani 0.8 remates totales (0.4 a puerta)",
-   "tarjetas": "Riga: R. Aouani 0.6 amarillas/partido, B. Musah 0.4 amarillas/partido, A. Ankrah 0.4 amarillas/partido",
-   "asistencias": "Riga: A. Salazar 0.2 asistencias/partido",
-   "faltas": "Riga: R. Aouani 1.2 faltas/partido, Iago Siqueira Augusto 0.8 faltas/partido, A. Taiwo 0.67 faltas/partido",
-   "quites": "Riga: M. Diop 1.33 quites/partido, A. Ankrah 1.2 quites/partido, Iago Siqueira Augusto 0.8 quites/partido"
-  },
-  {
-   "local": "Hapoel Tel Aviv",
-   "visitante": "Atalanta",
-   "gole": "",
-   "remates": "Hapoel Tel Aviv: Xande Silva 0.4 remates totales (0.4 a puerta), M. Buskila 0.25 remates totales (0.0 a puerta), E. Boateng 0.2 remates totales (0.2 a puerta)",
-   "tarjetas": "Hapoel Tel Aviv: Chico 0.4 amarillas/partido, Xande Silva 0.2 amarillas/partido, M. Coco 0.2 amarillas/partido",
-   "faltas": "Hapoel Tel Aviv: Falcão 0.6 faltas/partido, O. Altman 0.6 faltas/partido, E. Boateng 0.4 faltas/partido",
-   "quites": "Hapoel Tel Aviv: M. Coco 0.6 quites/partido, O. Altman 0.6 quites/partido, M. Buskila 0.5 quites/partido"
-  },
-  {
-   "local": "Ajax",
-   "visitante": "FC Sion",
-   "gole": "O. Gloukh 63.2% &middot; Winsley Boteli Mokango 55.1% &middot; D. Klaassen 52.8%",
-   "remates": "Ajax: K. Dolberg 3.33 remates totales (2.33 a puerta), M. Godts 3.33 remates totales (1.67 a puerta), S. Berghuis 3.25 remates totales (1.25 a puerta) | FC Sion: Winsley Boteli Mokango 3.0 remates totales (1.4 a puerta), I. Chouaref 1.8 remates totales (0.8 a puerta), F. Surdez 1.6 remates totales (0.4 a puerta)",
-   "tarjetas": "Ajax: J. Mokio 0.4 amarillas/partido, Lucas Rosa 0.33 amarillas/partido, A. Gaaei 0.33 amarillas/partido | FC Sion: Baltazar Costa 0.4 amarillas/partido, N. Hefti 0.25 amarillas/partido, R. Nivokazi 0.2 amarillas/partido",
-   "asistencias": "Ajax: S. Berghuis 0.75 asistencias/partido, M. Godts 0.67 asistencias/partido, T. Arokodare 0.5 asistencias/partido | FC Sion: R. Nivokazi 0.6 asistencias/partido, I. Chouaref 0.2 asistencias/partido, A. Kabacalman 0.2 asistencias/partido",
-   "faltas": "Ajax: O. Wijndal 1.8 faltas/partido, A. Gaaei 1.33 faltas/partido, T. Arokodare 1.0 faltas/partido | FC Sion: R. Nivokazi 1.8 faltas/partido, I. Chouaref 1.4 faltas/partido, Baltazar Costa 1.4 faltas/partido",
-   "quites": "Ajax: Y. Regeer 2.4 quites/partido, A. Gaaei 2.0 quites/partido, A. Bouwman 1.8 quites/partido | FC Sion: I. Chouaref 2.0 quites/partido, N. Sow 1.8 quites/partido, Baltazar Costa 1.6 quites/partido"
-  },
-  {
    "local": "FC ST. Gallen",
    "visitante": "FC Nordsjaelland",
-   "gole": "A. Hunziker 58.2% &middot; D. Besio 48.7% &middot; N. Røjkjær 45.1%",
+   "gole": "A. Hunziker 60.1% &middot; D. Besio 48.7% &middot; N. Røjkjær 45.1%",
    "remates": "FC ST. Gallen: A. Balde 3.0 remates totales (0.67 a puerta), A. Hunziker 2.0 remates totales (1.67 a puerta), L. Görtler 1.67 remates totales (0.33 a puerta) | FC Nordsjaelland: H. Boe Rasmussen 5.67 remates totales (3.67 a puerta), Ibrahim Adel 2.33 remates totales (0.67 a puerta), R. Norheim 2.0 remates totales (1.25 a puerta)",
    "tarjetas": "FC ST. Gallen: L. Daschner 0.67 amarillas/partido, L. Görtler 0.33 amarillas/partido | FC Nordsjaelland: Caleb Marfo Yirenkyi 0.5 amarillas/partido, S. Acquah 0.25 amarillas/partido, P. Ankersen 0.2 amarillas/partido",
    "asistencias": "FC ST. Gallen: C. Konietzke 0.5 asistencias/partido, C. Okoroji 0.33 asistencias/partido, L. Görtler 0.33 asistencias/partido | FC Nordsjaelland: Ibrahim Adel 0.67 asistencias/partido, V. Berthelsen 0.5 asistencias/partido, Lamine Sadio 0.33 asistencias/partido",
@@ -114,22 +11,9 @@
    "quites": "FC ST. Gallen: J. Stanić 3.0 quites/partido, C. Okoroji 3.0 quites/partido, L. Görtler 3.0 quites/partido | FC Nordsjaelland: Justin Janssen 3.0 quites/partido, Noah Markmann 2.0 quites/partido, V. Gustafsen 2.0 quites/partido"
   },
   {
-   "local": "Aarhus",
-   "visitante": "Benfica",
-   "gole": "V. Pavlidis 81.1% &middot; Rafa 39.3% &middot; D. Lukebakio 39.3%",
-   "tarjetas": "Benfica: G. Prestianni 0.5 amarillas/partido, A. Bah 0.33 amarillas/partido, V. Pavlidis 0.33 amarillas/partido",
-   "asistencias": "Benfica: D. Lukebakio 0.5 asistencias/partido, A. Bah 0.33 asistencias/partido, L. Barreiro 0.33 asistencias/partido"
-  },
-  {
-   "local": "CSKA Sofia",
-   "visitante": "OFI",
-   "gole": "Bruno Jordão 39.3% &middot; Pastor 18.4%",
-   "asistencias": "CSKA Sofia: Pastor 0.5 asistencias/partido"
-  },
-  {
    "local": "Austria Vienna",
    "visitante": "SC Braga",
-   "gole": "E. Kara 55.4% &middot; Ricardo Horta 52.8% &middot; Moulaye Haïdara 39.3%",
+   "gole": "Ricardo Horta 52.8% &middot; E. Kara 37.6% &middot; Moulaye Haïdara 37.6%",
    "remates": "Austria Vienna: M. Wels 1.67 remates totales (1.33 a puerta), K. Boateng 1.5 remates totales (1.0 a puerta), J. Hettwer 1.0 remates totales (0.6 a puerta) | SC Braga: João Moutinho 0.4 remates totales (0.0 a puerta), D. Huseinbašić 0.4 remates totales (0.4 a puerta), Pau Victor 0.4 remates totales (0.4 a puerta)",
    "tarjetas": "Austria Vienna: Lee Tae-Seok 0.5 amarillas/partido, R. Ranftl 0.4 amarillas/partido, F. Wustinger 0.4 amarillas/partido | SC Braga: Gabri Martínez 0.5 amarillas/partido, Fran Navarro 0.4 amarillas/partido, Jean-Baptiste Gorby 0.33 amarillas/partido",
    "asistencias": "Austria Vienna: M. Fischer 0.4 asistencias/partido, Daniel Nnodim 0.33 asistencias/partido, Philipp Maybach 0.2 asistencias/partido | SC Braga: Ricardo Horta 0.5 asistencias/partido, M. Dorgeles 0.33 asistencias/partido",
@@ -144,6 +28,133 @@
    "tarjetas": "Tromso: H. Larsen 0.33 amarillas/partido, T. Nyhammer 0.33 amarillas/partido",
    "faltas": "Tromso: Ieltsin Camões 0.5 faltas/partido, L. Olden Larsen 0.33 faltas/partido, D. Edvardsson 0.33 faltas/partido",
    "quites": "Tromso: I. Dahlqvist 0.67 quites/partido, I. Vådebu 0.67 quites/partido, R. Jenssen 0.5 quites/partido"
+  },
+  {
+   "local": "Ferencvarosi TC",
+   "visitante": "Trabzonspor",
+   "gole": "B. Yusuf 39.3%",
+   "tarjetas": "Ferencvarosi TC: B. Yusuf 0.5 amarillas/partido"
+  },
+  {
+   "local": "HNK Rijeka",
+   "visitante": "FC Midtjylland",
+   "gole": "",
+   "remates": "HNK Rijeka: N. Janković 0.4 remates totales (0.2 a puerta), A. Majstorović 0.2 remates totales (0.0 a puerta), J. Lasickas 0.2 remates totales (0.0 a puerta) | FC Midtjylland: V. Byskov 1.33 remates totales (1.33 a puerta), D. Osorio 1.0 remates totales (0.33 a puerta), Franculino Djú 1.0 remates totales (1.0 a puerta)",
+   "tarjetas": "HNK Rijeka: A. Barco 0.4 amarillas/partido, I. Ćubelić 0.25 amarillas/partido, T. Fruk 0.25 amarillas/partido | FC Midtjylland: S. Johannesen 0.67 amarillas/partido, A. Gabriel 0.33 amarillas/partido, D. Osorio 0.33 amarillas/partido",
+   "asistencias": "FC Midtjylland: Franculino Djú 0.67 asistencias/partido, D. Osorio 0.33 asistencias/partido",
+   "faltas": "HNK Rijeka: A. Barco 0.8 faltas/partido, B. Pavic 0.8 faltas/partido, A. Oreč 0.6 faltas/partido | FC Midtjylland: P. Bravo 2.33 faltas/partido, Cho Gue-Sung 2.0 faltas/partido, P. Billing 1.67 faltas/partido",
+   "quites": "HNK Rijeka: A. Oreč 1.2 quites/partido, A. Majstorović 0.8 quites/partido, Tiago Dantas 0.8 quites/partido | FC Midtjylland: P. Bravo 3.0 quites/partido, R. Kristensen 2.33 quites/partido, P. Billing 2.33 quites/partido"
+  },
+  {
+   "local": "Barcelona",
+   "visitante": "Athletic Club",
+   "gole": "Fermín 78.0% &middot; Raphinha 78.0%"
+  },
+  {
+   "local": "Hibernian",
+   "visitante": "Gent",
+   "gole": "",
+   "asistencias": "Gent: Tiago Araújo 0.25 asistencias/partido"
+  },
+  {
+   "local": "FK Partizan",
+   "visitante": "Getafe",
+   "gole": "",
+   "remates": "FK Partizan: M. AleksiÄ 0.5 remates totales (0.0 a puerta), Jeh 0.33 remates totales (0.0 a puerta), M. Roganović 0.25 remates totales (0.0 a puerta)",
+   "tarjetas": "FK Partizan: M. Lekic 0.5 amarillas/partido, S. Milić 0.25 amarillas/partido, M. Vukotić 0.25 amarillas/partido",
+   "asistencias": "FK Partizan: Jeh 0.33 asistencias/partido",
+   "faltas": "FK Partizan: S. Milić 1.0 faltas/partido, M. Roganović 0.5 faltas/partido, Samson Nwulu 0.5 faltas/partido",
+   "quites": "FK Partizan: M. Roganović 1.0 quites/partido, N. Simić 1.0 quites/partido, S. Milić 0.5 quites/partido"
+  },
+  {
+   "local": "Racing Santander",
+   "visitante": "Elche",
+   "gole": "Marc Aguado 39.3%",
+   "remates": "Racing Santander: Andrés Martín 3.5 remates totales (1.5 a puerta), Sergio Canales 1.0 remates totales (1.0 a puerta), Manu Hernando 1.0 remates totales (0.0 a puerta) | Elche: Ali Houary 1.5 remates totales (0.5 a puerta), Gonzalo Villar 1.0 remates totales (1.0 a puerta), D. Affengruber 1.0 remates totales (0.0 a puerta)",
+   "tarjetas": "Racing Santander: Pablo Ramón 0.5 amarillas/partido, Manu Hernando 0.5 amarillas/partido, Álvaro Mantilla 0.5 amarillas/partido | Elche: Gonzalo Villar 0.5 amarillas/partido, Ali Houary 0.5 amarillas/partido",
+   "asistencias": "Elche: Gonzalo Villar 0.5 asistencias/partido",
+   "faltas": "Racing Santander: G. Puerta 3.5 faltas/partido, M. Gueye 2.0 faltas/partido, Andrés Martín 1.5 faltas/partido | Elche: Gonzalo Villar 2.5 faltas/partido, Buba Sangaré 2.0 faltas/partido, Tete Morente 1.5 faltas/partido",
+   "quites": "Racing Santander: Pablo Ramón 4.0 quites/partido, Jorge Salinas 3.5 quites/partido, Álvaro Mantilla 3.0 quites/partido | Elche: Víctor Chust 2.0 quites/partido, Gonzalo Villar 1.5 quites/partido, F. Redondo 1.5 quites/partido"
+  },
+  {
+   "local": "Groningen",
+   "visitante": "Fortuna Sittard",
+   "gole": "B. Willumsson 63.2% &middot; T. van Bergen 48.7%",
+   "remates": "Groningen: T. van Bergen 3.0 remates totales (2.0 a puerta), B. Willumsson 2.33 remates totales (2.33 a puerta), T. de Jonge 1.33 remates totales (1.0 a puerta) | Fortuna Sittard: M. Ihattaren 2.0 remates totales (1.5 a puerta), O. Romeny 1.67 remates totales (1.33 a puerta), L. Zeefuik 1.67 remates totales (0.67 a puerta)",
+   "tarjetas": "Groningen: M. Csinger 0.5 amarillas/partido, D. van der Werff 0.33 amarillas/partido | Fortuna Sittard: L. Zeefuik 0.33 amarillas/partido",
+   "asistencias": "Groningen: T. van Bergen 0.67 asistencias/partido, E. Vaessen 0.33 asistencias/partido, T. Land 0.33 asistencias/partido | Fortuna Sittard: M. Ihattaren 0.5 asistencias/partido, Ivo Pinto 0.5 asistencias/partido, J. Dahlhaus 0.5 asistencias/partido",
+   "faltas": "Groningen: J. Schreuders 2.33 faltas/partido, T. van Bergen 1.33 faltas/partido, B. Willumsson 1.0 faltas/partido | Fortuna Sittard: L. Zeefuik 3.0 faltas/partido, M. Ihattaren 1.0 faltas/partido, Y. Oukili 1.0 faltas/partido",
+   "quites": "Groningen: J. Schreuders 2.33 quites/partido, T. de Jonge 2.0 quites/partido, T. Blokzijl 1.0 quites/partido | Fortuna Sittard: Ivo Pinto 2.0 quites/partido, S. van Ottele 2.0 quites/partido, Shiloh Kiesar ’t Zand 1.5 quites/partido"
+  },
+  {
+   "local": "AC Milan",
+   "visitante": "Venezia",
+   "gole": "A. Rabiot 63.2% &middot; A. Cissè 63.2%"
+  },
+  {
+   "local": "Lille",
+   "visitante": "Paris Saint Germain",
+   "gole": "O. Giroud 63.2% &middot; Tiago Santos 63.2% &middot; Ferran Torres 56.5%"
+  },
+  {
+   "local": "Rio Ave",
+   "visitante": "Sporting CP",
+   "gole": "J. Blesa 28.3%",
+   "remates": "Rio Ave: Tamble Monteiro 1.33 remates totales (0.67 a puerta), J. Blesa 1.33 remates totales (0.67 a puerta), G. Liavas 0.67 remates totales (0.0 a puerta) | Sporting CP: F. Ioannidis 4.0 remates totales (2.0 a puerta), Flávio Gonçalves 2.0 remates totales (1.33 a puerta), I. Doumbia 1.33 remates totales (0.0 a puerta)",
+   "tarjetas": "Rio Ave: J. Brabec 0.5 amarillas/partido, A. Ntoi 0.5 amarillas/partido, G. Liavas 0.33 amarillas/partido | Sporting CP: Geny Catamo 0.67 amarillas/partido, Gonçalo Inácio 0.5 amarillas/partido, J. Derry 0.5 amarillas/partido",
+   "asistencias": "Rio Ave: J. Blesa 0.33 asistencias/partido | Sporting CP: F. Ioannidis 1.0 asistencias/partido, Geny Catamo 1.0 asistencias/partido, R. Zalazar 0.33 asistencias/partido",
+   "faltas": "Rio Ave: T. Nikitscher 2.0 faltas/partido, Diogo Nascimento 1.0 faltas/partido, A. Ntoi 1.0 faltas/partido | Sporting CP: Sergi Altimira 2.33 faltas/partido, I. Doumbia 2.33 faltas/partido, G. Vagiannidis 2.0 faltas/partido",
+   "quites": "Rio Ave: N. Abbey 3.67 quites/partido, T. Nikitscher 3.33 quites/partido, G. Liavas 2.33 quites/partido | Sporting CP: Sergi Altimira 4.33 quites/partido, I. Doumbia 2.67 quites/partido, Iván Fresneda 2.33 quites/partido"
+  },
+  {
+   "local": "Alaves",
+   "visitante": "Villarreal",
+   "gole": "M. Díaz 63.2% &middot; N. Pépé 39.3%",
+   "remates": "Alaves: Toni Martínez 3.5 remates totales (0.0 a puerta), M. Díaz 2.0 remates totales (2.0 a puerta), Antonio Blanco 1.5 remates totales (0.0 a puerta) | Villarreal: G. Mikautadze 3.5 remates totales (2.0 a puerta), N. Pépé 1.5 remates totales (1.5 a puerta), Ayoze Pérez 1.0 remates totales (1.0 a puerta)",
+   "tarjetas": "Alaves: M. Díaz 0.5 amarillas/partido, Denis Suárez 0.5 amarillas/partido, N. Tenaglia 0.5 amarillas/partido | Villarreal: J. Foyth 1.0 amarillas/partido, S. Mouriño 1.0 amarillas/partido, P. Gueye 0.5 amarillas/partido",
+   "asistencias": "Alaves: M. Díaz 1.0 asistencias/partido | Villarreal: G. Mikautadze 0.5 asistencias/partido, Alberto Moleiro 0.5 asistencias/partido",
+   "faltas": "Alaves: Antonio Blanco 3.5 faltas/partido, A. Rebbach 2.5 faltas/partido, Denis Suárez 1.5 faltas/partido | Villarreal: Santi Comesaña 2.5 faltas/partido, S. Mouriño 2.5 faltas/partido, Gerard Moreno 1.0 faltas/partido",
+   "quites": "Alaves: A. Rebbach 2.5 quites/partido, N. Tenaglia 2.0 quites/partido, Antonio Blanco 2.0 quites/partido | Villarreal: S. Mouriño 4.5 quites/partido, Carlos Romero 2.5 quites/partido, Santi Comesaña 2.0 quites/partido"
+  },
+  {
+   "local": "Union Santa Fe",
+   "visitante": "Sarmiento Junin",
+   "gole": "C. Tarragona 36.7% &middot; J. Marabel 36.6%",
+   "remates": "Union Santa Fe: M. Estigarribia 2.45 remates totales (1.0 a puerta), C. Tarragona 2.12 remates totales (1.21 a puerta), M. Del Blanco 1.56 remates totales (0.61 a puerta) | Sarmiento Junin: J. Marabel 1.82 remates totales (0.86 a puerta), J. Mavilla 1.4 remates totales (0.6 a puerta), J. Herrera 0.83 remates totales (0.5 a puerta)",
+   "tarjetas": "Union Santa Fe: L. Vargas 0.36 amarillas/partido, M. Estigarribia 0.32 amarillas/partido, M. Pittón 0.28 amarillas/partido | Sarmiento Junin: J. Insaurralde 0.37 amarillas/partido, J. Contrera 0.37 amarillas/partido, C. Villalba 0.36 amarillas/partido",
+   "asistencias": "Union Santa Fe: J. Palacios 0.3 asistencias/partido, R. Profini 0.28 asistencias/partido, M. Luna Diale 0.25 asistencias/partido | Sarmiento Junin: J. Mavilla 0.2 asistencias/partido, J. Marabel 0.18 asistencias/partido, G. González 0.17 asistencias/partido",
+   "faltas": "Union Santa Fe: C. Tarragona 1.67 faltas/partido, M. Estigarribia 1.5 faltas/partido, J. Palacios 1.48 faltas/partido | Sarmiento Junin: E. Giménez 2.67 faltas/partido, J. Contrera 2.21 faltas/partido, M. García 1.79 faltas/partido",
+   "quites": "Union Santa Fe: T. Fagioli 3.0 quites/partido, L. Ayala 2.75 quites/partido, M. Luna Diale 2.0 quites/partido | Sarmiento Junin: C. Zabala 2.48 quites/partido, M. García 2.0 quites/partido, E. Giménez 2.0 quites/partido"
+  },
+  {
+   "local": "Goias",
+   "visitante": "São Bernardo",
+   "gole": "Kadu 34.9% &middot; Anselmo Ramon 20.3%",
+   "remates": "Goias: Kadu 1.93 remates totales (0.79 a puerta), Gegê 1.06 remates totales (0.44 a puerta), Jean Carlos Alves Ferreira 0.88 remates totales (0.38 a puerta) | São Bernardo: Pedro Vitor 1.47 remates totales (0.76 a puerta), Hyoran 1.0 remates totales (0.33 a puerta), Eduardo 0.91 remates totales (0.43 a puerta)",
+   "tarjetas": "Goias: Luis Fellipe 0.33 amarillas/partido, Luquinhas 0.3 amarillas/partido, Filipe Machado 0.28 amarillas/partido | São Bernardo: Júnior Oliveira 0.5 amarillas/partido, Hélder 0.42 amarillas/partido, Augusto 0.28 amarillas/partido",
+   "asistencias": "Goias: E. García 0.2 asistencias/partido, Diego Caito 0.17 asistencias/partido, Anselmo Ramon 0.14 asistencias/partido | São Bernardo: Mário Sérgio 0.4 asistencias/partido, Romisson 0.2 asistencias/partido, Eduardo 0.17 asistencias/partido",
+   "faltas": "Goias: Kadu 1.93 faltas/partido, Luis Fellipe 1.33 faltas/partido, Luquinhas 1.3 faltas/partido | São Bernardo: Felipe Garcia 1.5 faltas/partido, Eduardo 1.22 faltas/partido, Augusto 1.06 faltas/partido",
+   "quites": "Goias: Luquinhas 1.8 quites/partido, Kadu 1.57 quites/partido, Lucas Lima 1.52 quites/partido | São Bernardo: Pedro Vitor 1.82 quites/partido, Jemerson 1.41 quites/partido, Rodrigo Ferreira 1.22 quites/partido"
+  },
+  {
+   "local": "Nautico Recife",
+   "visitante": "Athletic Club",
+   "gole": "Ronaldo Tavares 52.4% &middot; Chrystian Barletta 37.7% &middot; Perotti 35.3%",
+   "remates": "Nautico Recife: Jean Carlos 2.86 remates totales (1.57 a puerta), Vinícius 2.31 remates totales (1.25 a puerta), Dodozinho 2.25 remates totales (1.12 a puerta) | Athletic Club: Ronaldo Tavares 2.5 remates totales (1.5 a puerta), W. Aponza 1.8 remates totales (0.8 a puerta), Ian Luccas 1.71 remates totales (0.59 a puerta)",
+   "tarjetas": "Nautico Recife: Gustavo Henrique 0.5 amarillas/partido, Luiz Felipe 0.43 amarillas/partido, B. Borasi 0.4 amarillas/partido | Athletic Club: W. Aponza 0.4 amarillas/partido, Diogo Batista 0.35 amarillas/partido, Jhonatan 0.3 amarillas/partido",
+   "asistencias": "Nautico Recife: Jean Carlos 0.43 asistencias/partido, Yuri 0.2 asistencias/partido, Paulo Sérgio 0.17 asistencias/partido | Athletic Club: Assis 0.5 asistencias/partido, Jota 0.2 asistencias/partido, Ruan Assis 0.14 asistencias/partido",
+   "faltas": "Nautico Recife: B. Borasi 2.4 faltas/partido, Gustavo Henrique 2.0 faltas/partido, Samuel 1.85 faltas/partido | Athletic Club: Jota 2.6 faltas/partido, Kauan Lindes 2.0 faltas/partido, Ronaldo Tavares 1.83 faltas/partido",
+   "quites": "Nautico Recife: B. Borasi 2.0 quites/partido, Gustavo Henrique 2.0 quites/partido, Matheus Ribeiro 1.79 quites/partido | Athletic Club: Felipe Vieira 3.5 quites/partido, Jota 2.0 quites/partido, Diogo Batista 1.95 quites/partido"
+  },
+  {
+   "local": "Novorizontino",
+   "visitante": "Sport Recife",
+   "gole": "Robson 40.7% &middot; Chrystian Barletta 37.7% &middot; Perotti 35.3%",
+   "remates": "Novorizontino: Robson 1.65 remates totales (1.0 a puerta), Romulo 1.21 remates totales (0.54 a puerta), Matheus Bianqui 1.11 remates totales (0.33 a puerta) | Sport Recife: Perotti 2.22 remates totales (1.22 a puerta), D. Hernández 2.0 remates totales (0.71 a puerta), Chrystian Barletta 1.84 remates totales (0.89 a puerta)",
+   "tarjetas": "Novorizontino: J. Lora 0.5 amarillas/partido, N. Castrillón 0.42 amarillas/partido, Madson 0.33 amarillas/partido | Sport Recife: Chrystian Barletta 0.37 amarillas/partido, Iury Castilho 0.31 amarillas/partido, Zé Lucas 0.29 amarillas/partido",
+   "asistencias": "Novorizontino: Romulo 0.33 asistencias/partido, Diego Mathias 0.25 asistencias/partido, Robson 0.17 asistencias/partido | Sport Recife: Juan Alano 0.67 asistencias/partido, Clayson 0.17 asistencias/partido, Chrystian Barletta 0.16 asistencias/partido",
+   "faltas": "Novorizontino: J. Lora 2.0 faltas/partido, Reidiney 1.82 faltas/partido, Patrick 1.59 faltas/partido | Sport Recife: Perotti 1.83 faltas/partido, Juan Alano 1.67 faltas/partido, Zé Marcos 1.38 faltas/partido",
+   "quites": "Novorizontino: Reidiney 2.36 quites/partido, Sander 2.0 quites/partido, J. Lora 1.5 quites/partido | Sport Recife: Biel 1.9 quites/partido, Claudinho 1.6 quites/partido, Habraão 1.57 quites/partido"
   }
  ]
 }
